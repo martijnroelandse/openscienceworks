@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ArticleStory – Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0; padding: 0;
+      background: #f3f4f6; color: #111827;
+    }
+    .page {
+      max-width: 1000px;
+      margin: 2.5rem auto;
+      padding: 0 1.25rem 3rem;
+    }
+    header.hero { margin-bottom: 2rem; }
+    .hero-title {
+      font-size: 2.1rem; font-weight: 700; margin: 0; color: #111827;
+    }
+    .hero-meta { margin-top: 0.5rem; color: #4b5563; font-size: 0.95rem; }
+    .hero-meta div { margin-bottom: 0.15rem; }
+    .card {
+      background: #ffffff;
+      border-radius: 0.9rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.75rem;
+    }
+    .story-text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .story-subheading {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0.4rem 0 0.2rem;
+      color: #4b5563;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .logo-wrap img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+    .card h2 span {
+      color: #111827;
+      font-weight: 600;
+      text-transform: none;
+      font-size: 1.25rem;
+      letter-spacing: 0;
+    }
+    .story-text { font-size: 0.98rem; line-height: 1.7; color: #111827; }
+    .toolbar { display:flex; justify-content:flex-end; margin-bottom:0.75rem; }
+    .download-btn {
+      border:none; border-radius:999px; padding:0.35rem 0.9rem;
+      font-size:0.8rem; cursor:pointer; background:#111827; color:#f9fafb;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
+    }
+    .download-btn:hover { opacity: 0.9; }
+    .grid {
+      display:grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: minmax(0,1fr); }
+    }
+    ul { padding-left: 1.2rem; margin: 0.4rem 0 0; }
+    li { margin-bottom: 0.5rem; font-size: 0.95rem; }
+    a { color:#2563eb; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .scite-link {
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+    .scite-link:hover {
+      text-decoration: underline;
+      color: #4b5563;
+    }
+    a, li { word-break: break-word; overflow-wrap:anywhere; }
+    .tag {
+      display:inline-block;
+      padding:0.15rem 0.45rem;
+      border-radius:999px;
+      background:#e5f2ff;
+      color:#1d4ed8;
+      font-size:0.8rem;
+      margin:0.1rem 0.2rem 0.1rem 0;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+    }
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 0.4rem 0.6rem;
+      vertical-align: top;
+    }
+    th {
+      background: #f9fafb;
+      text-align: left;
+      font-weight: 600;
+      color: #374151;
+    }
+    .badge {
+      display:inline-block;
+      padding:0.2rem 0.6rem;
+      border-radius:999px;
+      background:#eef2ff;
+      color:#4338ca;
+      font-size:0.75rem;
+      font-weight:500;
+    }
+    .orcid-badge {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin-left:0.3rem;
+      padding:0.05rem 0.35rem;
+      border-radius:999px;
+      background:#a6ce39;
+      color:#ffffff;
+      font-size:0.65rem;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:0.04em;
+    }
+    .muted { color:#6b7280; font-size:0.85rem; }
+    footer.page-footer {
+      margin-top: 2rem;
+      text-align: right;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+    @media print {
+      body { background:#ffffff; }
+      .page { margin:0; max-width:100%; box-shadow:none; }
+      .card { box-shadow:none; border-radius:0; page-break-inside:avoid; }
+      .toolbar { display:none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button class="download-btn" onclick="window.print()">Download as PDF</button>
+</div>
+
+<div class="page">
+
+<header class="hero">
+  <div class="header-bar">
+    <div class="logo-title">
+      <div class="logo-wrap">
+        <img src="articlestories-logo.png" alt="ArticleStories logo">
+      </div>
+      <div>
+        <h1 class="hero-title">Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance</h1>
+        <div class="hero-meta">
+          <div><strong>Author(s):</strong> <a href="https://orcid.org/0000-0003-0908-6982" target="_blank" rel="noopener noreferrer">Bernadeta Dadonaite<span class="orcid-badge" title="ORCID iD">iD</span></a>, <a href="https://orcid.org/0009-0000-3912-7162" target="_blank" rel="noopener noreferrer">Jenny Ahn<span class="orcid-badge" title="ORCID iD">iD</span></a>, <a href="https://orcid.org/0000-0001-6977-4168" target="_blank" rel="noopener noreferrer">Jordan T. Ort<span class="orcid-badge" title="ORCID iD">iD</span></a>, <a href="https://orcid.org/0000-0002-5429-1080" target="_blank" rel="noopener noreferrer">Yu Jin<span class="orcid-badge" title="ORCID iD">iD</span></a>, <a href="https://orcid.org/0000-0002-2846-5219" target="_blank" rel="noopener noreferrer">Colleen Furey<span class="orcid-badge" title="ORCID iD">iD</span></a>, <a href="https://orcid.org/0000-0001-6858-4725" target="_blank" rel="noopener noreferrer">Annie Dosey<span class="orcid-badge" title="ORCID iD">iD</span></a>, <a href="https://orcid.org/0000-0002-6014-4749" target="_blank" rel="noopener noreferrer">William W. Hannon<span class="orcid-badge" title="ORCID iD">iD</span></a>, Amy L. Vincent Baker, Richard J. Webby, <a href="https://orcid.org/0000-0002-2978-4692" target="_blank" rel="noopener noreferrer">Neil P. King<span class="orcid-badge" title="ORCID iD">iD</span></a>, <a href="https://orcid.org/0000-0002-2566-6867" target="_blank" rel="noopener noreferrer">Yan Liu<span class="orcid-badge" title="ORCID iD">iD</span></a>, <a href="https://orcid.org/0000-0002-2928-7506" target="_blank" rel="noopener noreferrer">Scott E. Hensley<span class="orcid-badge" title="ORCID iD">iD</span></a>, <a href="https://orcid.org/0000-0001-7077-2928" target="_blank" rel="noopener noreferrer">Thomas P. Peacock<span class="orcid-badge" title="ORCID iD">iD</span></a>, <a href="https://orcid.org/0000-0001-5722-1988" target="_blank" rel="noopener noreferrer">Louise H. Moncla<span class="orcid-badge" title="ORCID iD">iD</span></a>, <a href="https://orcid.org/0000-0003-1267-3408" target="_blank" rel="noopener noreferrer">Jesse D. Bloom<span class="orcid-badge" title="ORCID iD">iD</span></a></div>
+          <div><strong>Venue:</strong> PLoS Biology</div>
+          <div><strong>Publication year:</strong> 2024</div>
+          <div><strong>DOI:</strong> <a href="https://doi.org/10.1371/journal.pbio.3002916" target="_blank" rel="noopener noreferrer">10.1371/journal.pbio.3002916</a></div>
+          <div class="muted">Schema: articlestory.v1</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="card">
+  <h2><span>The story so far…</span></h2>
+<div class="story-text story-text-block"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">Published in 2024 in PLoS Biology, "Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance" advances influenza research by mapping mutations in the H5 hemagglutinin protein. With 58 citations and citing works spanning articles, preprints, and reviews, the paper has impacted fields including virology and influenza A virus subtype H5N1 research. Its uptake is visible in prominent venues such as npj Viruses and Nature Ecology & Evolution, signaling cross-disciplinary relevance despite unknown open access status.</p>
+
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">This article, authored by a multidisciplinary team including Bernadeta Dadonaite at Fred Hutch Cancer Center and colleagues from University of Washington, University of Pennsylvania, Imperial College London, and other institutions, was published in November 2024 in PLoS Biology. The collaboration spans expert groups focused on virology and molecular biology, reflecting a broad expertise base. Its timely release contributes to ongoing influenza surveillance efforts amid emerging viral strains.</p>
+
+<p class="story-text">Conceptually, the paper is grounded in key areas such as biology (score 0.83), hemagglutinin (influenza) (0.78), and virology (0.73), emphasizing mutagenesis and antigenic drift in influenza A virus (0.56). These thematic focuses align with the study’s use of deep mutational scanning to explore mutations affecting viral phenotype and neutralization, suggesting an emphasis on understanding how mutations modulate viral properties relevant to immune escape and surveillance.</p>
+
+<p class="story-text">The citation landscape illustrates significant engagement, with 58 citing works including 29 articles and 18 preprints, indicating rapid knowledge dissemination through both peer-reviewed and emergent scholarly channels. Top citing venues such as npj Viruses (3) and Nature Ecology & Evolution (3) highlight the article’s reach within specialized virology and evolutionary biology communities. The most frequent citing concepts include Virology (19) and Influenza A virus subtype H5N1 (17), underscoring a focused scientific influence. Notably, the US leads citing country affiliations with 35, reflecting a strong geographic center of uptake.</p>
+
+<p class="story-text">Online attention, albeit modest, includes one recorded mention in newsfeed sources per Crossref Event Data. While limited in volume, this rare online mention suggests early but cautious public or media interest. The absence of a publisher landing page and best open access full text source constrains broader accessibility and reduces visible online dissemination metrics at this time.</p>
+
+<p class="story-text">Open access status is currently unknown and no direct publisher landing page or openly accessible full text has been identified. This limits immediate evaluation of the article’s accessibility and reuse potential. The lack of concrete open access information highlights an area where enhanced metadata transparency could facilitate wider dissemination and reuse assessment in future monitoring efforts.</p>
+
+<p class="story-text">Further qualitative follow-up might explore how the article’s 19 total scite statements, including one supporting and no contradicting statements, contribute to nuanced scientific validation and interpretation. Such analysis could reveal the nature of scholarly endorsement or discussion surrounding the findings, deepening understanding beyond citation counts and venue presence.</p></div>
+</section>
+
+<section class="card">
+  <h2><span>Impact metrics</span></h2>
+  <ul>
+    <li><strong>Citations (OpenAlex):</strong> 58</li>
+    <li><strong>Online mentions (Crossref Event Data):</strong> 1</li>
+    <li><strong>Citation context (scite):</strong> 19 (<a href='https://scite.ai/reports/10.1371%2Fjournal.pbio.3002916' target='_blank' rel='noopener noreferrer'>scite</a>)</li>
+    <li><strong>Open access status:</strong> gold</li>
+    <li><strong>Publisher landing page:</strong> <a href='https://doi.org/10.1371/journal.pbio.3002916' target='_blank'>https://doi.org/10.1371/journal.pbio.3002916</a></li>
+    <li><strong>Best OA PDF:</strong> <a href='https://journals.plos.org/plosbiology/article/file?id=10.1371/journal.pbio.3002916&amp;type=printable' target='_blank'>https://journals.plos.org/plosbiology/article/file?id=10.1371/journal.pbio.3002916&amp;type=printable</a></li>
+  </ul>
+</section>
+
+
+    <section class="card">
+      <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
+      <ul>
+        <li><strong>Total citing works captured:</strong> 58</li>
+        <li><strong>Top citing venues:</strong> <span class='tag'>npj Viruses (3)</span> <span class='tag'>Nature Ecology &amp; Evolution (3)</span> <span class='tag'>mAbs (2)</span> <span class='tag'>Nature Communications (2)</span> <span class='tag'>Nature (2)</span> <span class='tag'>ImmunoHorizons (2)</span> <span class='tag'>npj Vaccines (1)</span> <span class='tag'>npj Antimicrobials and Resistance (1)</span> <span class='tag'>Virus Evolution (1)</span> <span class='tag'>The Lancet Microbe (1)</span></li>
+        <li><strong>Citing work types:</strong> <span class='tag'>article (29)</span> <span class='tag'>preprint (18)</span> <span class='tag'>review (7)</span> <span class='tag'>letter (3)</span> <span class='tag'>editorial (1)</span></li>
+        <li><strong>Top citing concepts:</strong> <span class='tag'>Virology (19)</span> <span class='tag'>Influenza A virus subtype H5N1 (17)</span> <span class='tag'>Biology (15)</span> <span class='tag'>Hemagglutinin (influenza) (7)</span> <span class='tag'>Computational biology (5)</span> <span class='tag'>Virus (4)</span> <span class='tag'>Clade (3)</span> <span class='tag'>Mutagenesis (2)</span> <span class='tag'>Glycan (2)</span> <span class='tag'>Receptor (2)</span></li>
+        <li><strong>Countries (from affiliations):</strong> <span class='tag'>US (35)</span> <span class='tag'>IN (6)</span> <span class='tag'>NL (5)</span> <span class='tag'>ZA (4)</span> <span class='tag'>CN (4)</span> <span class='tag'>HK (4)</span> <span class='tag'>GB (4)</span> <span class='tag'>JP (3)</span> <span class='tag'>BE (3)</span> <span class='tag'>CA (3)</span></li>
+        <li><strong>Citation timeline (by year):</strong> 2024: 11, 2025: 46, 2026: 1</li>
+      </ul>
+    </section>
+    
+        <section class="card">
+          <h2><span>Inferred roles</span></h2>
+          <p class="muted">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <span class='badge' title='{&#x27;top_venues&#x27;: [&#x27;npj Viruses&#x27;, &#x27;Nature Ecology &amp; Evolution&#x27;, &#x27;mAbs&#x27;, &#x27;Nature Communications&#x27;, &#x27;Nature&#x27;, &#x27;ImmunoHorizons&#x27;, &#x27;npj Vaccines&#x27;, &#x27;npj Antimicrobials and Resistance&#x27;, &#x27;Virus Evolution&#x27;, &#x27;The Lancet Microbe&#x27;]}'>High-visibility uptake (0.70)</span><span class='badge' title='{&#x27;preprints&#x27;: 18, &#x27;total&#x27;: 58, &#x27;share&#x27;: 0.31}'>Rapid uptake (0.62)</span><span class='badge' title='{&#x27;reviews&#x27;: 7, &#x27;total&#x27;: 58, &#x27;share&#x27;: 0.12}'>Reference point for synthesis (0.36)</span><span class='badge' title='{&#x27;letters&#x27;: 3, &#x27;editorials&#x27;: 1, &#x27;total&#x27;: 58}'>Active discussion signal (0.28)</span>
+          </div>
+        </section>
+        
+        <section class="card">
+          <h2><span>Claim signals</span> <span class="badge">scite</span></h2>
+          <p class="muted">Derived from scite tallies (supporting/mentioning/contradicting).</p>
+          <ul>
+            <li><strong>Citation context mix (scite):</strong> <span class='muted'>{&#x27;total&#x27;: 19, &#x27;supporting&#x27;: 1, &#x27;mentioning&#x27;: 18, &#x27;contradicting&#x27;: 0, &#x27;supporting_ratio&#x27;: 0.05, &#x27;contradicting_ratio&#x27;: 0.0}</span></li>
+          </ul>
+        </section>
+        
+
+<div class="grid">
+  <section class="card">
+    <h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+    <ul><li><span class='tag'>Biology</span></li>
+<li><span class='tag'>Hemagglutinin (influenza)</span></li>
+<li><span class='tag'>Virology</span></li>
+<li><span class='tag'>Virus</span></li>
+<li><span class='tag'>Mutation</span></li>
+<li><span class='tag'>Influenza A virus</span></li>
+<li><span class='tag'>Neutralization</span></li>
+<li><span class='tag'>Phenotype</span></li>
+<li><span class='tag'>Antigenic drift</span></li>
+<li><span class='tag'>Mutagenesis</span></li>
+<li><span class='tag'>Sialic acid</span></li>
+<li><span class='tag'>Gene</span></li>
+<li><span class='tag'>Genetics</span></li></ul>
+  </section>
+
+  <section class="card">
+    <h2><span>Access</span></h2>
+    <ul>
+      <li><strong>OA status:</strong> gold</li>
+      <li><strong>Landing page:</strong> <a href='https://doi.org/10.1371/journal.pbio.3002916' target='_blank'>https://doi.org/10.1371/journal.pbio.3002916</a></li>
+      <li><strong>Best OA PDF:</strong> <a href='https://journals.plos.org/plosbiology/article/file?id=10.1371/journal.pbio.3002916&amp;type=printable' target='_blank'>https://journals.plos.org/plosbiology/article/file?id=10.1371/journal.pbio.3002916&amp;type=printable</a></li>
+    </ul>
+  </section>
+</div>
+
+<section class="card">
+  <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+  <table>
+    <thead>
+      <tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>2026</td><td>Influenza hemagglutinin subtypes have different sequence constraints despite sharing extremely similar structures</td><td></td><td><a href="https://doi.org/10.64898/2026.01.05.697808" target="_blank" rel="noopener noreferrer">10.64898/2026.01.05.697808</a>&nbsp;<a href="https://scite.ai/reports/10.64898/2026.01.05.697808" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Nonviral protein cages as tools to decipher and combat viral threats</td><td>npj Viruses</td><td><a href="https://doi.org/10.1038/s44298-025-00127-8" target="_blank" rel="noopener noreferrer">10.1038/s44298-025-00127-8</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s44298-025-00127-8" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Impact of naturally occurring hemagglutinin substitutions on antigenicity and fitness of influenza A(H5N1) virus</td><td>npj Viruses</td><td><a href="https://doi.org/10.1038/s44298-025-00154-5" target="_blank" rel="noopener noreferrer">10.1038/s44298-025-00154-5</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s44298-025-00154-5" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Balancing stability and function: impact of the surface charge of SARS-CoV-2 Omicron spike protein</td><td>npj Viruses</td><td><a href="https://doi.org/10.1038/s44298-025-00104-1" target="_blank" rel="noopener noreferrer">10.1038/s44298-025-00104-1</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s44298-025-00104-1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Inverted H1 hemagglutinin nanoparticle vaccines protect mice against challenges with human H1N1 and bovine H5N1 influenza viruses</td><td>npj Vaccines</td><td><a href="https://doi.org/10.1038/s41541-025-01276-w" target="_blank" rel="noopener noreferrer">10.1038/s41541-025-01276-w</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s41541-025-01276-w" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Strategies and efforts in circumventing the emergence of antiviral resistance against conventional antivirals</td><td>npj Antimicrobials and Resistance</td><td><a href="https://doi.org/10.1038/s44259-025-00125-z" target="_blank" rel="noopener noreferrer">10.1038/s44259-025-00125-z</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s44259-025-00125-z" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>AbAgym: a well-curated dataset for the mutational analysis of antibody–antigen complexes</td><td>mAbs</td><td><a href="https://doi.org/10.1080/19420862.2025.2592421" target="_blank" rel="noopener noreferrer">10.1080/19420862.2025.2592421</a>&nbsp;<a href="https://scite.ai/reports/10.1080/19420862.2025.2592421" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>AbAgym: a well-curated dataset for the mutational analysis of antibody–antigen complexes</td><td>mAbs</td><td><a href="https://doi.org/10.1080/19420862.2025.2592421" target="_blank" rel="noopener noreferrer">10.1080/19420862.2025.2592421</a>&nbsp;<a href="https://scite.ai/reports/10.1080/19420862.2025.2592421" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Development of avian influenza A(H5) virus datasets for Nextclade enables rapid and accurate clade assignment</td><td>Virus Evolution</td><td><a href="https://doi.org/10.1093/ve/veaf058" target="_blank" rel="noopener noreferrer">10.1093/ve/veaf058</a>&nbsp;<a href="https://scite.ai/reports/10.1093/ve/veaf058" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Attachment and replication of clade 2.3.4.4b influenza A (H5N1) viruses in human respiratory epithelium: an in-vitro study</td><td>The Lancet Microbe</td><td><a href="https://doi.org/10.1016/j.lanmic.2025.101230" target="_blank" rel="noopener noreferrer">10.1016/j.lanmic.2025.101230</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.lanmic.2025.101230" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Structure of a zoonotic H5N1 hemagglutinin reveals a receptor-binding site occupied by an auto-glycan</td><td>Structure</td><td><a href="https://doi.org/10.1016/j.str.2025.01.001" target="_blank" rel="noopener noreferrer">10.1016/j.str.2025.01.001</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.str.2025.01.001" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Preclinical Evaluation of an mRNA Vaccine Developed from the First Human Isolate of Bovine H5N1</td><td>SSRN Electronic Journal</td><td><a href="https://doi.org/10.2139/ssrn.5353082" target="_blank" rel="noopener noreferrer">10.2139/ssrn.5353082</a>&nbsp;<a href="https://scite.ai/reports/10.2139/ssrn.5353082" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>The Q226L mutation can convert a highly pathogenic H5 2.3.4.4e virus to bind human-type receptors</td><td>Proceedings of the National Academy of Sciences</td><td><a href="https://doi.org/10.1073/pnas.2419800122" target="_blank" rel="noopener noreferrer">10.1073/pnas.2419800122</a>&nbsp;<a href="https://scite.ai/reports/10.1073/pnas.2419800122" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>The sweet side of H5N1 influenza virus infection</td><td>PLoS Pathogens</td><td><a href="https://doi.org/10.1371/journal.ppat.1012847" target="_blank" rel="noopener noreferrer">10.1371/journal.ppat.1012847</a>&nbsp;<a href="https://scite.ai/reports/10.1371/journal.ppat.1012847" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Multiplexed assays of variant effect for clinical variant interpretation</td><td>Nature Reviews Genetics</td><td><a href="https://doi.org/10.1038/s41576-025-00870-x" target="_blank" rel="noopener noreferrer">10.1038/s41576-025-00870-x</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s41576-025-00870-x" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Cross-neutralizing and potent human monoclonal antibodies against historical and emerging H5Nx influenza viruses</td><td>Nature Microbiology</td><td><a href="https://doi.org/10.1038/s41564-025-02137-x" target="_blank" rel="noopener noreferrer">10.1038/s41564-025-02137-x</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s41564-025-02137-x" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Pleiotropic mutational effects on function and stability constrain the antigenic evolution of influenza haemagglutinin</td><td>Nature Ecology &amp; Evolution</td><td><a href="https://doi.org/10.1038/s41559-025-02895-1" target="_blank" rel="noopener noreferrer">10.1038/s41559-025-02895-1</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s41559-025-02895-1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Learning a viral protein’s vocabulary</td><td>Nature Ecology &amp; Evolution</td><td><a href="https://doi.org/10.1038/s41559-025-02928-9" target="_blank" rel="noopener noreferrer">10.1038/s41559-025-02928-9</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s41559-025-02928-9" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Learning a viral protein’s vocabulary</td><td>Nature Ecology &amp; Evolution</td><td><a href="https://doi.org/10.1038/s41559-025-02928-9" target="_blank" rel="noopener noreferrer">10.1038/s41559-025-02928-9</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s41559-025-02928-9" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Host switching mutations in H5N1 influenza hemagglutinin suppress site-specific activation dynamics</td><td>Nature Communications</td><td><a href="https://doi.org/10.1038/s41467-025-66926-y" target="_blank" rel="noopener noreferrer">10.1038/s41467-025-66926-y</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s41467-025-66926-y" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Lengthy delays in H5N1 genome submissions to GISAID</td><td>Nature Biotechnology</td><td><a href="https://doi.org/10.1038/s41587-025-02636-6" target="_blank" rel="noopener noreferrer">10.1038/s41587-025-02636-6</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s41587-025-02636-6" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Receptor-binding specificity of a bovine influenza A virus</td><td>Nature</td><td><a href="https://doi.org/10.1038/s41586-025-08822-5" target="_blank" rel="noopener noreferrer">10.1038/s41586-025-08822-5</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s41586-025-08822-5" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Hemagglutinin-displaying influenza nanovaccines: progress and promise</td><td>Nanomedicine</td><td><a href="https://doi.org/10.1080/17435889.2025.2598329" target="_blank" rel="noopener noreferrer">10.1080/17435889.2025.2598329</a>&nbsp;<a href="https://scite.ai/reports/10.1080/17435889.2025.2598329" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Decoding non-human mammalian adaptive signatures of 2.3.4.4b H5N1 to assess its human adaptive potential</td><td>Microbiology Spectrum</td><td><a href="https://doi.org/10.1128/spectrum.00948-25" target="_blank" rel="noopener noreferrer">10.1128/spectrum.00948-25</a>&nbsp;<a href="https://scite.ai/reports/10.1128/spectrum.00948-25" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Experimental and computational approaches to adaptive viral evolution: Linking molecular variation to phenotypic outcomes</td><td>Journal of Microbiological Methods</td><td><a href="https://doi.org/10.1016/j.mimet.2025.107379" target="_blank" rel="noopener noreferrer">10.1016/j.mimet.2025.107379</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.mimet.2025.107379" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>H5N1 2.3.4.4b: a review of mammalian adaptations and risk of pandemic emergence</td><td>Journal of General Virology</td><td><a href="https://doi.org/10.1099/jgv.0.002109" target="_blank" rel="noopener noreferrer">10.1099/jgv.0.002109</a>&nbsp;<a href="https://scite.ai/reports/10.1099/jgv.0.002109" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Mutations in the influenza virus, primarily H5N1, enhance the virus’s virulence, favor receptor interaction, and increase drug resistance</td><td>International Journal of Surgery</td><td><a href="https://doi.org/10.1097/js9.0000000000002403" target="_blank" rel="noopener noreferrer">10.1097/js9.0000000000002403</a>&nbsp;<a href="https://scite.ai/reports/10.1097/js9.0000000000002403" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Immunological and virological questions for H5N1 pandemic emergence</td><td>ImmunoHorizons</td><td><a href="https://doi.org/10.1093/immhor/vlaf062" target="_blank" rel="noopener noreferrer">10.1093/immhor/vlaf062</a>&nbsp;<a href="https://scite.ai/reports/10.1093/immhor/vlaf062" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Immunological and virological questions for H5N1 pandemic emergence</td><td>ImmunoHorizons</td><td><a href="https://doi.org/10.1093/immhor/vlaf062" target="_blank" rel="noopener noreferrer">10.1093/immhor/vlaf062</a>&nbsp;<a href="https://scite.ai/reports/10.1093/immhor/vlaf062" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Risk assessment of 2024 cattle H5N1 using age-stratified serosurveillance data</td><td>Emerging Microbes &amp; Infections</td><td><a href="https://doi.org/10.1080/22221751.2025.2497304" target="_blank" rel="noopener noreferrer">10.1080/22221751.2025.2497304</a>&nbsp;<a href="https://scite.ai/reports/10.1080/22221751.2025.2497304" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Large-scale computational modelling of H5 influenza variants against HA1-neutralising antibodies</td><td>EBioMedicine</td><td><a href="https://doi.org/10.1016/j.ebiom.2025.105632" target="_blank" rel="noopener noreferrer">10.1016/j.ebiom.2025.105632</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.ebiom.2025.105632" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>A review of the animal influenza viruses and their impact on human health</td><td>Discover Public Health</td><td><a href="https://doi.org/10.1186/s12982-025-00679-3" target="_blank" rel="noopener noreferrer">10.1186/s12982-025-00679-3</a>&nbsp;<a href="https://scite.ai/reports/10.1186/s12982-025-00679-3" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Deep mutational scanning of rabies glycoprotein defines mutational constraint and antibody-escape mutations</td><td>Cell Host &amp; Microbe</td><td><a href="https://doi.org/10.1016/j.chom.2025.04.018" target="_blank" rel="noopener noreferrer">10.1016/j.chom.2025.04.018</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.chom.2025.04.018" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Insights from deep mutational scanning in the context of an emerging pathogen</td><td>Biochemical Society Transactions</td><td><a href="https://doi.org/10.1042/bst20253033" target="_blank" rel="noopener noreferrer">10.1042/bst20253033</a>&nbsp;<a href="https://scite.ai/reports/10.1042/bst20253033" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>The Q226L mutation can convert a highly pathogenic H5 2.3.4.4e virus to bind human-type receptors</td><td></td><td><a href="https://doi.org/10.1101/2025.01.10.632119" target="_blank" rel="noopener noreferrer">10.1101/2025.01.10.632119</a>&nbsp;<a href="https://scite.ai/reports/10.1101/2025.01.10.632119" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Targeted tiled amplicon based protocol for sequencing the Hemagglutinin (HA) gene segment of seasonal influenza A and influenza B virus from wastewater at high depth of coverage</td><td></td><td><a href="https://doi.org/10.1101/2025.10.15.25338105" target="_blank" rel="noopener noreferrer">10.1101/2025.10.15.25338105</a>&nbsp;<a href="https://scite.ai/reports/10.1101/2025.10.15.25338105" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Susceptibility of bovine respiratory and mammary epithelial cells to avian and mammalian derived clade 2.3.4.4b H5N1 highly pathogenic avian influenza viruses</td><td></td><td><a href="https://doi.org/10.1101/2025.01.09.632235" target="_blank" rel="noopener noreferrer">10.1101/2025.01.09.632235</a>&nbsp;<a href="https://scite.ai/reports/10.1101/2025.01.09.632235" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Stabilization of H5 highly pathogenic avian influenza hemagglutinin improves vaccine-elicited neutralizing antibody responses</td><td></td><td><a href="https://doi.org/10.1101/2025.07.30.667762" target="_blank" rel="noopener noreferrer">10.1101/2025.07.30.667762</a>&nbsp;<a href="https://scite.ai/reports/10.1101/2025.07.30.667762" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Seasonal influenza viruses show distinct adaptive dynamics during growth in chicken eggs</td><td></td><td><a href="https://doi.org/10.1101/2025.06.12.659400" target="_blank" rel="noopener noreferrer">10.1101/2025.06.12.659400</a>&nbsp;<a href="https://scite.ai/reports/10.1101/2025.06.12.659400" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Random mutagenesis of influenza hemagglutinin identifies new sites which modulate its acid-stability and cleavability</td><td></td><td><a href="https://doi.org/10.1101/2025.07.25.666873" target="_blank" rel="noopener noreferrer">10.1101/2025.07.25.666873</a>&nbsp;<a href="https://scite.ai/reports/10.1101/2025.07.25.666873" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Pleiotropic mutational effects on function and stability constrain the antigenic evolution of influenza hemagglutinin</td><td></td><td><a href="https://doi.org/10.1101/2025.05.24.655919" target="_blank" rel="noopener noreferrer">10.1101/2025.05.24.655919</a>&nbsp;<a href="https://scite.ai/reports/10.1101/2025.05.24.655919" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Mutational spectra reveal influenza virus transmission routes and adaptation</td><td></td><td><a href="https://doi.org/10.1101/2025.11.26.690773" target="_blank" rel="noopener noreferrer">10.1101/2025.11.26.690773</a>&nbsp;<a href="https://scite.ai/reports/10.1101/2025.11.26.690773" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Host Switching Mutations in H5N1 Influenza Hemagglutinin Suppress Site-specific Activation Dynamics</td><td></td><td><a href="https://doi.org/10.1101/2025.10.06.680362" target="_blank" rel="noopener noreferrer">10.1101/2025.10.06.680362</a>&nbsp;<a href="https://scite.ai/reports/10.1101/2025.10.06.680362" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>H5N1 Influenza A is now promiscuous in host range and has improved replication in mammals</td><td></td><td><a href="https://doi.org/10.1101/2025.03.15.641219" target="_blank" rel="noopener noreferrer">10.1101/2025.03.15.641219</a>&nbsp;<a href="https://scite.ai/reports/10.1101/2025.03.15.641219" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Functional and antigenic constraints on the Nipah virus fusion protein</td><td></td><td><a href="https://doi.org/10.1101/2025.10.15.682664" target="_blank" rel="noopener noreferrer">10.1101/2025.10.15.682664</a>&nbsp;<a href="https://scite.ai/reports/10.1101/2025.10.15.682664" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Evaluating variant effect prediction across viruses</td><td></td><td><a href="https://doi.org/10.1101/2025.08.04.668549" target="_blank" rel="noopener noreferrer">10.1101/2025.08.04.668549</a>&nbsp;<a href="https://scite.ai/reports/10.1101/2025.08.04.668549" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>A Fine-tuned ProtGPT2 (transformer model) for Predicting more Virulent SARS-CoV-2 variants and understanding its virulence by biophysical methods</td><td></td><td><a href="https://doi.org/10.1101/2025.01.13.632691" target="_blank" rel="noopener noreferrer">10.1101/2025.01.13.632691</a>&nbsp;<a href="https://scite.ai/reports/10.1101/2025.01.13.632691" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>A single mutation in bovine influenza H5N1 hemagglutinin switches specificity to human receptors</td><td>Science</td><td><a href="https://doi.org/10.1126/science.adt0180" target="_blank" rel="noopener noreferrer">10.1126/science.adt0180</a>&nbsp;<a href="https://scite.ai/reports/10.1126/science.adt0180" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>PLOS Biology and the life sciences in 2024</td><td>PLoS Biology</td><td><a href="https://doi.org/10.1371/journal.pbio.3002985" target="_blank" rel="noopener noreferrer">10.1371/journal.pbio.3002985</a>&nbsp;<a href="https://scite.ai/reports/10.1371/journal.pbio.3002985" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Critical Illness in an Adolescent with Influenza A(H5N1) Virus Infection</td><td>New England Journal of Medicine</td><td><a href="https://doi.org/10.1056/nejmc2415890" target="_blank" rel="noopener noreferrer">10.1056/nejmc2415890</a>&nbsp;<a href="https://scite.ai/reports/10.1056/nejmc2415890" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>A single mutation in dairy cow-associated H5N1 viruses increases receptor binding breadth</td><td>Nature Communications</td><td><a href="https://doi.org/10.1038/s41467-024-54934-3" target="_blank" rel="noopener noreferrer">10.1038/s41467-024-54934-3</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s41467-024-54934-3" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>The global H5N1 influenza panzootic in mammals</td><td>Nature</td><td><a href="https://doi.org/10.1038/s41586-024-08054-z" target="_blank" rel="noopener noreferrer">10.1038/s41586-024-08054-z</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s41586-024-08054-z" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Analysis of the Monophyletic Lineage of Avian Influenza H5N1 Which Circulated in Venezuelan Birds During the 2022–2023 Outbreak</td><td>Microorganisms</td><td><a href="https://doi.org/10.3390/microorganisms12122519" target="_blank" rel="noopener noreferrer">10.3390/microorganisms12122519</a>&nbsp;<a href="https://scite.ai/reports/10.3390/microorganisms12122519" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Predictive Modeling of Respiratory Virus Evolution: Current Capabilities and Limitations</td><td>Mathematical Biology and Bioinformatics</td><td><a href="https://doi.org/10.17537/2024.19.579" target="_blank" rel="noopener noreferrer">10.17537/2024.19.579</a>&nbsp;<a href="https://scite.ai/reports/10.17537/2024.19.579" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Structure of a zoonotic H5N1 hemagglutinin reveals a receptor-binding site occupied by an auto-glycan</td><td></td><td><a href="https://doi.org/10.1101/2024.12.06.626699" target="_blank" rel="noopener noreferrer">10.1101/2024.12.06.626699</a>&nbsp;<a href="https://scite.ai/reports/10.1101/2024.12.06.626699" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Risk assessment of 2024 cattle H5N1 using age-stratified serosurveillance data</td><td></td><td><a href="https://doi.org/10.1101/2024.12.23.24319580" target="_blank" rel="noopener noreferrer">10.1101/2024.12.23.24319580</a>&nbsp;<a href="https://scite.ai/reports/10.1101/2024.12.23.24319580" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Receptor Binding Specificity of a Bovine A(H5N1) Influenza Virus</td><td></td><td><a href="https://doi.org/10.1101/2024.07.30.605893" target="_blank" rel="noopener noreferrer">10.1101/2024.07.30.605893</a>&nbsp;<a href="https://scite.ai/reports/10.1101/2024.07.30.605893" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Deep mutational scanning of rabies glycoprotein defines mutational constraint and antibody-escape mutations</td><td></td><td><a href="https://doi.org/10.1101/2024.12.17.628970" target="_blank" rel="noopener noreferrer">10.1101/2024.12.17.628970</a>&nbsp;<a href="https://scite.ai/reports/10.1101/2024.12.17.628970" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="page-footer">
+  Generated by BookStories on 2026-01-20T16:11:56+00:00 UTC
+</footer>
+
+</div>
+</body>
+</html>
