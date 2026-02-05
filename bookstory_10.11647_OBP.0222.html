@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BookStory – A European Public Investment Outlook</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f4f6;
+      color: #111827;
+    }
+    .page {
+      max-width: 1000px;
+      margin: 2.5rem auto;
+      padding: 0 1.25rem 3rem;
+    }
+    header.hero {
+      margin-bottom: 2rem;
+    }
+    .hero-title {
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin: 0;
+      color: #111827;
+    }
+    .hero-meta {
+      margin-top: 0.5rem;
+      color: #4b5563;
+      font-size: 0.95rem;
+    }
+    .hero-meta div {
+      margin-bottom: 0.15rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 0.9rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.75rem;
+    }
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+    .card h2 span {
+      color: #111827;
+      font-weight: 600;
+      text-transform: none;
+      font-size: 1.25rem;
+      letter-spacing: 0;
+    }
+    .story-text {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: #111827;
+    }
+    .doab-abstract {
+      margin-bottom: 0.5rem;
+    }
+    .story-text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .story-subheading {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0.4rem 0 0.2rem;
+      color: #4b5563;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+    .usage-chart {
+      margin-top: 0.5rem;
+    }
+    .usage-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.15rem 0;
+      font-size: 0.85rem;
+    }
+    .toolbar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 0.75rem;
+    }
+    .event-summary-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+      gap: 1.25rem;
+      margin-top: 0.25rem;
+    }
+    @media (max-width: 800px) {
+      .event-summary-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+    .event-source-list,
+    .event-examples-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.25rem 0 0;
+    }
+    .event-source-item,
+    .event-example-item {
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .event-example-meta {
+      margin-bottom: 0.2rem;
+    }
+    .event-example-date {
+      font-size: 0.8rem;
+    }
+    .event-footnote {
+      margin-top: 0.75rem;
+    }
+
+    .download-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      background: #111827;
+      color: #f9fafb;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
+    }
+    .download-btn:hover {
+      opacity: 0.9;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+      .page {
+        margin: 0;
+        max-width: 100%;
+        box-shadow: none;
+      }
+      .card {
+        box-shadow: none;
+        border-radius: 0;
+        page-break-inside: avoid;
+      }
+      .toolbar {
+        display: none;  /* hide button on PDF/print */
+      }
+    }
+    .usage-month {
+      width: 2.5rem;
+      color: #6b7280;
+    }
+    .usage-bar-wrap {
+      flex: 1;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+      height: 0.45rem;
+    }
+    .usage-bar {
+      height: 100%;
+      border-radius: 999px;
+      background: #2563eb;
+    }
+    .usage-value {
+      width: 3rem;
+      text-align: right;
+      color: #374151;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .logo-wrap img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .cover-wrap img {
+      width: 110px;
+      height: auto;
+      border-radius: 0.5rem;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
+      object-fit: cover;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+    ul {
+      padding-left: 1.2rem;
+      margin: 0.4rem 0 0;
+    }
+    li {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    a, li {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: #e5f2ff;
+      color: #1d4ed8;
+      font-size: 0.8rem;
+      margin: 0.1rem 0.2rem 0.1rem 0;
+    }
+    .tag-soft {
+      background: #f3f4f6;
+      color: #4b5563;
+    }
+    .tag-list {
+      display: inline-block;
+      margin-top: 0.15rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+    }
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 0.4rem 0.6rem;
+      vertical-align: top;
+    }
+    th {
+      background: #f9fafb;
+      text-align: left;
+      font-weight: 600;
+      color: #374151;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #4338ca;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .scite-link {
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+    .scite-link:hover {
+      text-decoration: underline;
+      color: #4b5563;
+    }
+    .orcid-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 0.3rem;
+      padding: 0.05rem 0.35rem;
+      border-radius: 999px;
+      background: #a6ce39; /* ORCID green */
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .muted {
+      color: #6b7280;
+      font-size: 0.85rem;
+    }
+    footer.page-footer {
+      margin-top: 2rem;
+      text-align: right;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button class="download-btn" onclick="window.print()">Download as PDF</button>
+</div>
+
+<div class="page">
+
+<header class="hero">
+  <div class="header-bar">
+    <div class="logo-title">
+      <div class="logo-wrap">
+        <img src="bookstories-logo.png" alt="BookStories logo">
+      </div>
+      <div>
+        <h1 class="hero-title">A European Public Investment Outlook</h1>
+        <div class="hero-meta">
+          <div><strong>Author(s):</strong> <a href="https://orcid.org/0000-0001-9972-716X" target="_blank" rel="noopener noreferrer">Floriana Cerniglia<span class="orcid-badge" title="ORCID iD">iD</span></a>, <a href="https://orcid.org/0000-0003-0121-4329" target="_blank" rel="noopener noreferrer">Francesco Saraceno<span class="orcid-badge" title="ORCID iD">iD</span></a></div>
+          <div><strong>Publisher:</strong> Open Book Publishers</div>
+          <div><strong>Publication year:</strong> 2025</div>
+          <div><strong>DOI:</strong> 10.11647/OBP.0222</div>
+        </div>
+      </div>
+    </div>
+    <div class="cover-wrap"><img src="https://covers.openlibrary.org/b/isbn/9781800640115-L.jpg?default=false" alt="Book cover for A European Public Investment Outlook"></div>
+  </div>
+</header>
+
+<section class="card">
+  <h2><span>The story so far…</span></h2>
+  <div class="story-text">
+    <h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">A European Public Investment Outlook offers an incisive analysis of public investment trends across major European economies, contributing to policy discourse by highlighting underinvestment and advocating for fiscal reforms that support sustainable growth and public capital enhancement in the European Union.</p>
+
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">Published in 2020 by Open Book Publishers, A European Public Investment Outlook provides a comprehensive examination of public capital developments in key European countries including France, Germany, Italy, and Spain. The volume contextualizes current investment patterns within the lingering effects of the 2008 Global Financial Crisis, noting a broad trend of insufficient public investment that continues to challenge economic stability and growth.</p>
+<p class="story-text">The book adopts a multidisciplinary approach, bringing together diverse international perspectives from political science, law, business, and economics. This cross-sectoral lens enriches the dialogue on public investment by offering both sector-specific recommendations—such as in transport, social capital, research and development, and environmental policy—and broader fiscal policy considerations, particularly the need to address biases in European fiscal rules that may hinder investment.</p>
+<p class="story-text">While citation data indicates modest scholarly engagement with 55 recorded citations, the book's presence in open access formats and its positioning as a resource for policymakers underscores its role in shaping ongoing debates about Europe's economic future. However, absence of usage and event data suggests limited wider public visibility or direct engagement from broader audiences to date.</p>
+<p class="story-text">Overall, the book contributes meaningfully to the discourse on public investment by framing it as a crucial factor for stable and sustainable growth in Europe. Its timely arguments for reform and investment prioritization provide valuable guidance for policymakers and scholars concerned with the economic governance and long-term vitality of the European Union.</p>
+  </div>
+</section>
+
+<div class="grid">
+  <section class="card">
+    <h2><span>Where your book is available</span></h2>
+    <ul><li><strong>DOI landing page</strong><br><a href='https://doi.org/10.11647/OBP.0222' target='_blank'>https://doi.org/10.11647/OBP.0222</a></li></ul>
+  </section>
+
+  <section class="card">
+    <h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+    <ul><li><span class='tag'>Investment (military)</span></li>
+<li><span class='tag'>Public investment</span></li>
+<li><span class='tag'>Business</span></li>
+<li><span class='tag'>Political science</span></li>
+<li><span class='tag'>International trade</span></li>
+<li><span class='tag'>European union</span></li>
+<li><span class='tag'>Law</span></li>
+<li><span class='tag'>Politics</span></li></ul>
+  </section>
+</div>
+
+<section class="card">
+  <h2><span>OER &amp; teaching use</span></h2>
+  <ul><li class='muted'>No OER or teaching listings detected yet.</li></ul>
+</section>
+
+
+        <section class="card">
+          <h2><span>Open access metadata</span> <span class="badge">DOAB</span></h2>
+          <p><strong>Publisher:</strong> <span class='muted'>Not available</span></p>
+          <p><strong>Rights / License:</strong> open access</p>
+          <p><strong>Keywords:</strong> <span class='muted'>None listed</span></p>
+          <p><strong>Abstract:</strong><br>&quot;This outlook provides a focused assessment of the state of public capital in the major European countries and identifies areas where public investment could contribute more to stable and sustainable growth. A European Public Investment Outlook brings together contributions from a range of international authors from diverse intellectual and professional backgrounds, providing a valuable resource for the policy-making community in Europe to feed their discussion on public investment. The volume both offers sector-specific advice and highlights larger areas which should be prioritized in the policy debate (from transport to social capital, R&amp;D and the environment).
+
+The outlook is structured into two parts: the chapters of Part I respectively explore public investment trends in France, Germany, Italy, Spain and Europe as a whole, and illuminate how the legacy of the 2008 Global Financial Crisis is one of insufficient public investment. Part II investigates some areas into which resources could be channelled to reverse the recent trend and provide European economies with an adequate public capital stock.
+
+The essays in this outlook collectively foster a broad approach to and definition of public investment, that is today more relevant than ever. Offering up a timely and clear case for the elimination of bias against investment in European fiscal rules, this outlook is a welcome contribution to the European debate, aimed both at policy makers and general readers&quot;</p>
+        </section>
+        
+
+        <section class="card">
+          <h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref Event Data</span></h2>
+          <p class="muted">No public Event Data activity found for this DOI.</p>
+        </section>
+        
+
+<section class="card">
+  <h2><span>Usage (OAPEN / OPERAS)</span></h2>
+  <p class='muted'>No OAPEN / OPERAS record found.</p>
+</section>
+
+<section class="card">
+  <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+  <table>
+    <thead>
+      <tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>2020</td><td>Port management and governance in a post-COVID-19 era: quo vadis?</td><td></td><td><a href="https://doi.org/10.1057/s41278-020-00162-7" target="_blank" rel="noopener noreferrer">10.1057/s41278-020-00162-7</a>&nbsp;<a href="https://scite.ai/reports/10.1057/s41278-020-00162-7" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>7. Crowding In-Out of Public Investment</td><td></td><td><a href="https://doi.org/10.11647/obp.0280.07" target="_blank" rel="noopener noreferrer">10.11647/obp.0280.07</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0280.07" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>4. Relaunching Public Investment in Italy</td><td></td><td><a href="https://doi.org/10.11647/obp.0280.04" target="_blank" rel="noopener noreferrer">10.11647/obp.0280.04</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0280.04" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>The Great Reset</td><td></td><td><a href="https://doi.org/10.11647/obp.0280" target="_blank" rel="noopener noreferrer">10.11647/obp.0280</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0280" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>2. From Fiscal Consolidation to the Plan de relance</td><td></td><td><a href="https://doi.org/10.11647/obp.0280.02" target="_blank" rel="noopener noreferrer">10.11647/obp.0280.02</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0280.02" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>The return of fiscal policy</td><td></td><td><a href="https://doi.org/10.54394/whwg2947" target="_blank" rel="noopener noreferrer">10.54394/whwg2947</a>&nbsp;<a href="https://scite.ai/reports/10.54394/whwg2947" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Europe, public debts, and safe assets: the scope for a European Debt Agency</td><td></td><td><a href="https://doi.org/10.1007/s40888-021-00236-6" target="_blank" rel="noopener noreferrer">10.1007/s40888-021-00236-6</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s40888-021-00236-6" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Public investment multipliers by functions of government: An empirical analysis for European countries</td><td></td><td><a href="https://doi.org/10.1016/j.strueco.2022.01.006" target="_blank" rel="noopener noreferrer">10.1016/j.strueco.2022.01.006</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.strueco.2022.01.006" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>1. Public Investment in the Pandemic—Europe at a Glance</td><td></td><td><a href="https://doi.org/10.11647/obp.0280.01" target="_blank" rel="noopener noreferrer">10.11647/obp.0280.01</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0280.01" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Greening Europe</td><td></td><td><a href="https://doi.org/10.11647/obp.0328" target="_blank" rel="noopener noreferrer">10.11647/obp.0328</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0328" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>The impact of European Cohesion Policy: a spatial perspective</td><td></td><td><a href="https://doi.org/10.1093/jeg/lbae006" target="_blank" rel="noopener noreferrer">10.1093/jeg/lbae006</a>&nbsp;<a href="https://scite.ai/reports/10.1093/jeg/lbae006" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Is public investment in construction and in R&amp;amp;D, growth enhancing? A PVAR approach</td><td></td><td><a href="https://doi.org/10.1080/00036846.2023.2203455" target="_blank" rel="noopener noreferrer">10.1080/00036846.2023.2203455</a>&nbsp;<a href="https://scite.ai/reports/10.1080/00036846.2023.2203455" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Squaring the Circle: How to Guarantee Fiscal Space and Debt Sustainability with a European Debt Agency</td><td></td><td><a href="https://doi.org/10.2139/ssrn.4011081" target="_blank" rel="noopener noreferrer">10.2139/ssrn.4011081</a>&nbsp;<a href="https://scite.ai/reports/10.2139/ssrn.4011081" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>European economic, fiscal, and social policy at the crossroads</td><td></td><td><a href="https://doi.org/10.1111/1467-8675.12540" target="_blank" rel="noopener noreferrer">10.1111/1467-8675.12540</a>&nbsp;<a href="https://scite.ai/reports/10.1111/1467-8675.12540" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Investing in the Structural Transformation</td><td></td><td><a href="https://doi.org/10.11647/obp.0434" target="_blank" rel="noopener noreferrer">10.11647/obp.0434</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0434" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>8. The Public Spending Needs of Reaching the EU’s Climate Targets</td><td></td><td><a href="https://doi.org/10.11647/obp.0328.08" target="_blank" rel="noopener noreferrer">10.11647/obp.0328.08</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0328.08" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Gdzie naprawdę są konfitury? Najważniejsze gospodarcze korzyści członkostwa Polski w Unii Europejskiej</td><td></td><td><a href="https://doi.org/10.31338/uw.9788323553489" target="_blank" rel="noopener noreferrer">10.31338/uw.9788323553489</a>&nbsp;<a href="https://scite.ai/reports/10.31338/uw.9788323553489" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>The short-run displacement of EU cohesion funds in Italy: Has reprogramming a positive impact on regional growth?</td><td></td><td><a href="https://doi.org/10.1016/j.jpolmod.2024.09.003" target="_blank" rel="noopener noreferrer">10.1016/j.jpolmod.2024.09.003</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.jpolmod.2024.09.003" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>3. Public Investment in Germany</td><td></td><td><a href="https://doi.org/10.11647/obp.0280.03" target="_blank" rel="noopener noreferrer">10.11647/obp.0280.03</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0280.03" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>13. Towards a Socially Just Green Transition</td><td></td><td><a href="https://doi.org/10.11647/obp.0328.13" target="_blank" rel="noopener noreferrer">10.11647/obp.0328.13</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0328.13" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>4. NRRP—Italy’s Strategic Reform and Investment Programme</td><td></td><td><a href="https://doi.org/10.11647/obp.0328.04" target="_blank" rel="noopener noreferrer">10.11647/obp.0328.04</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0328.04" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Economy: Exceptionality as a driver of structural change in the Basque Autonomous Community and Navarre</td><td></td><td><a href="https://doi.org/10.35295/osls.iisl/0000-0000-0000-1338" target="_blank" rel="noopener noreferrer">10.35295/osls.iisl/0000-0000-0000-1338</a>&nbsp;<a href="https://scite.ai/reports/10.35295/osls.iisl/0000-0000-0000-1338" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>2. Public Investment and Low-carbon Transition in France</td><td></td><td><a href="https://doi.org/10.11647/obp.0328.02" target="_blank" rel="noopener noreferrer">10.11647/obp.0328.02</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0328.02" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Utilizing Investment in Fixed Assets and R&amp;amp;D as a Catalyst for Boosting Productivity to Stimulate Economic Growth</td><td></td><td><a href="https://doi.org/10.3390/economies12100266" target="_blank" rel="noopener noreferrer">10.3390/economies12100266</a>&nbsp;<a href="https://scite.ai/reports/10.3390/economies12100266" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Why Zambia’s System of Energy Provision Did Not Prevent the Power Outages of 2015 and 2016</td><td></td><td><a href="https://doi.org/10.1007/978-3-030-71266-2_5" target="_blank" rel="noopener noreferrer">10.1007/978-3-030-71266-2_5</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-030-71266-2_5" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>12. Environmental Impact Evaluation of a European High-Speed Railway Network along the “European Silk Road”</td><td></td><td><a href="https://doi.org/10.11647/obp.0280.12" target="_blank" rel="noopener noreferrer">10.11647/obp.0280.12</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0280.12" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>9. Education, Human Capital, and Social Cohesion</td><td></td><td><a href="https://doi.org/10.11647/obp.0280.09" target="_blank" rel="noopener noreferrer">10.11647/obp.0280.09</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0280.09" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>10. COVID-19 and the Corporate Digital Divide</td><td></td><td><a href="https://doi.org/10.11647/obp.0280.10" target="_blank" rel="noopener noreferrer">10.11647/obp.0280.10</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0280.10" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>11. EU Investment in Energy Supply for Europe</td><td></td><td><a href="https://doi.org/10.11647/obp.0280.11" target="_blank" rel="noopener noreferrer">10.11647/obp.0280.11</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0280.11" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>7. Europe’s Green Investment Requirements and the Role of Next Generation EU</td><td></td><td><a href="https://doi.org/10.11647/obp.0328.07" target="_blank" rel="noopener noreferrer">10.11647/obp.0328.07</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0328.07" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>1. Challenges for Public Investment in the EU</td><td></td><td><a href="https://doi.org/10.11647/obp.0328.01" target="_blank" rel="noopener noreferrer">10.11647/obp.0328.01</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0328.01" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>12. Green Investments</td><td></td><td><a href="https://doi.org/10.11647/obp.0328.12" target="_blank" rel="noopener noreferrer">10.11647/obp.0328.12</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0328.12" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>0. Introduction</td><td></td><td><a href="https://doi.org/10.11647/obp.0386.00" target="_blank" rel="noopener noreferrer">10.11647/obp.0386.00</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0386.00" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>3. Public Investment in Germany</td><td></td><td><a href="https://doi.org/10.11647/obp.0328.03" target="_blank" rel="noopener noreferrer">10.11647/obp.0328.03</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0328.03" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>5. Trends and Patterns in Public Investment in Spain</td><td></td><td><a href="https://doi.org/10.11647/obp.0222.05" target="_blank" rel="noopener noreferrer">10.11647/obp.0222.05</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0222.05" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>13. Cohesion Policy and Public Investment in the EU</td><td></td><td><a href="https://doi.org/10.11647/obp.0280.13" target="_blank" rel="noopener noreferrer">10.11647/obp.0280.13</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0280.13" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>8. Investing in Health</td><td></td><td><a href="https://doi.org/10.11647/obp.0280.08" target="_blank" rel="noopener noreferrer">10.11647/obp.0280.08</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0280.08" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>5. Public Investment in Poland</td><td></td><td><a href="https://doi.org/10.11647/obp.0280.05" target="_blank" rel="noopener noreferrer">10.11647/obp.0280.05</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0280.05" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Preface</td><td></td><td><a href="https://doi.org/10.11647/obp.0280.14" target="_blank" rel="noopener noreferrer">10.11647/obp.0280.14</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0280.14" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Introduction</td><td></td><td><a href="https://doi.org/10.11647/obp.0280.15" target="_blank" rel="noopener noreferrer">10.11647/obp.0280.15</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0280.15" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Wpływ członkostwa Polski w Unii Europejskiej na długookresowe przepływy kapitałowe</td><td></td><td><a href="https://doi.org/10.31338/uw.9788323553489.pp.87-109" target="_blank" rel="noopener noreferrer">10.31338/uw.9788323553489.pp.87-109</a>&nbsp;<a href="https://scite.ai/reports/10.31338/uw.9788323553489.pp.87-109" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Wstęp. Skąd tytuł książki?</td><td></td><td><a href="https://doi.org/10.31338/uw.9788323553489.pp.9-18" target="_blank" rel="noopener noreferrer">10.31338/uw.9788323553489.pp.9-18</a>&nbsp;<a href="https://scite.ai/reports/10.31338/uw.9788323553489.pp.9-18" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Pieniądze z UE całego szczęścia nie dają… (uwagi o wpływie transferów na rozwój Polski)</td><td></td><td><a href="https://doi.org/10.31338/uw.9788323553489.pp.124-135" target="_blank" rel="noopener noreferrer">10.31338/uw.9788323553489.pp.124-135</a>&nbsp;<a href="https://scite.ai/reports/10.31338/uw.9788323553489.pp.124-135" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Swoboda przepływu pracowników</td><td></td><td><a href="https://doi.org/10.31338/uw.9788323549551.pp.110-123" target="_blank" rel="noopener noreferrer">10.31338/uw.9788323549551.pp.110-123</a>&nbsp;<a href="https://scite.ai/reports/10.31338/uw.9788323549551.pp.110-123" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Introduction</td><td></td><td><a href="https://doi.org/10.11647/obp.0328.15" target="_blank" rel="noopener noreferrer">10.11647/obp.0328.15</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0328.15" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>5. Current Challenges in the Spanish Energy Market</td><td></td><td><a href="https://doi.org/10.11647/obp.0328.05" target="_blank" rel="noopener noreferrer">10.11647/obp.0328.05</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0328.05" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Preface</td><td></td><td><a href="https://doi.org/10.11647/obp.0328.14" target="_blank" rel="noopener noreferrer">10.11647/obp.0328.14</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0328.14" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>11. Assessing the Quality of Green Finance Standards</td><td></td><td><a href="https://doi.org/10.11647/obp.0328.11" target="_blank" rel="noopener noreferrer">10.11647/obp.0328.11</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0328.11" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>9. The Investment Needs for REPowerEU</td><td></td><td><a href="https://doi.org/10.11647/obp.0328.09" target="_blank" rel="noopener noreferrer">10.11647/obp.0328.09</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0328.09" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>6. How Big Are Green Spending Multipliers?</td><td></td><td><a href="https://doi.org/10.11647/obp.0328.06" target="_blank" rel="noopener noreferrer">10.11647/obp.0328.06</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0328.06" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>10. Public Spending for Future Generations</td><td></td><td><a href="https://doi.org/10.11647/obp.0328.10" target="_blank" rel="noopener noreferrer">10.11647/obp.0328.10</a>&nbsp;<a href="https://scite.ai/reports/10.11647/obp.0328.10" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Le grandi Opere Pubbliche: fiscal multipliers of public infrastructure in Italy (1870–1998)</td><td></td><td><a href="https://doi.org/10.1007/s40888-024-00353-y" target="_blank" rel="noopener noreferrer">10.1007/s40888-024-00353-y</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s40888-024-00353-y" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>A metric analysis of the knowledge map of ecological civilization education in China</td><td></td><td><a href="https://doi.org/10.1007/s12564-025-10048-z" target="_blank" rel="noopener noreferrer">10.1007/s12564-025-10048-z</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s12564-025-10048-z" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Understanding the nexus between national climate investment and public perception of pollution damage in Europe</td><td></td><td><a href="https://doi.org/10.1007/s10668-025-07027-0" target="_blank" rel="noopener noreferrer">10.1007/s10668-025-07027-0</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s10668-025-07027-0" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Understanding the nexus between national climate investment and public perception of pollution damage in Europe</td><td></td><td><a href="https://doi.org/10.1007/s10668-025-07027-0" target="_blank" rel="noopener noreferrer">10.1007/s10668-025-07027-0</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s10668-025-07027-0" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="page-footer">
+  Generated by BookStories on 2026-01-06T11:29:57+00:00 UTC
+</footer>
+
+</div>
+</body>
+</html>
