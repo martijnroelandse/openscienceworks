@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BookStory – Sisters in Science</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f4f6;
+      color: #111827;
+    }
+    .page {
+      max-width: 1000px;
+      margin: 2.5rem auto;
+      padding: 0 1.25rem 3rem;
+    }
+    header.hero { margin-bottom: 2rem; }
+    .hero-title {
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin: 0;
+      color: #111827;
+    }
+    .discipline-badge {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      border: 1px solid rgba(15, 23, 42, 0.15);
+      background: rgba(15, 23, 42, 0.04);
+    }
+    .hero-meta {
+      margin-top: 0.5rem;
+      color: #4b5563;
+      font-size: 0.95rem;
+    }
+    .hero-meta div { margin-bottom: 0.15rem; }
+    .card {
+      background: #ffffff;
+      border-radius: 0.9rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.75rem;
+    }
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+    .card h2 span {
+      color: #111827;
+      font-weight: 600;
+      text-transform: none;
+      font-size: 1.25rem;
+      letter-spacing: 0;
+    }
+    .story-text { font-size: 0.98rem; line-height: 1.7; color: #111827; }
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+    .usage-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.15rem 0;
+      font-size: 0.85rem;
+    }
+    .toolbar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 0.75rem;
+    }
+    .event-source-list,
+    .event-examples-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.25rem 0 0;
+    }
+    .event-source-item,
+    .event-example-item {
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .event-example-meta { margin-bottom: 0.2rem; }
+    .download-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      background: #111827;
+      color: #f9fafb;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
+    }
+    .download-btn:hover { opacity: 0.9; }
+    @media print {
+      body { background: #ffffff; }
+      .page { margin: 0; max-width: 100%; box-shadow: none; }
+      .card { box-shadow: none; border-radius: 0; page-break-inside: avoid; }
+      .toolbar { display: none; }
+    }
+    .usage-month { width: 2.5rem; color: #6b7280; }
+    .usage-bar-wrap {
+      flex: 1;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+      height: 0.45rem;
+    }
+    .usage-bar {
+      height: 100%;
+      border-radius: 999px;
+      background: #2563eb;
+    }
+    .usage-value { width: 3rem; text-align: right; color: #374151; }
+    .logo-title { display: flex; align-items: center; gap: 1.25rem; }
+    .logo-wrap img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: block;
+    }
+    .cover-wrap img {
+      width: 110px;
+      height: auto;
+      border-radius: 0.5rem;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
+      object-fit: cover;
+    }
+    .cover-placeholder {
+      width: 110px;
+      height: 160px;
+      border-radius: 0.5rem;
+      border: 1px dashed rgba(15, 23, 42, 0.22);
+      background: rgba(15, 23, 42, 0.04);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: minmax(0, 1fr); }
+    }
+    ul { padding-left: 1.2rem; margin: 0.4rem 0 0; }
+    li { margin-bottom: 0.5rem; font-size: 0.95rem; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a, li { word-break: break-word; overflow-wrap: anywhere; }
+    .tag {
+      display: inline-block;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: #e5f2ff;
+      color: #1d4ed8;
+      font-size: 0.8rem;
+      margin: 0.1rem 0.2rem 0.1rem 0;
+    }
+    .tag-soft { background: #f3f4f6; color: #4b5563; }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+    }
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 0.4rem 0.6rem;
+      vertical-align: top;
+    }
+    th {
+      background: #f9fafb;
+      text-align: left;
+      font-weight: 600;
+      color: #374151;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #4338ca;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .scite-link { font-size: 0.75rem; color: #6b7280; }
+    .scite-link:hover { text-decoration: underline; color: #4b5563; }
+    .orcid-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 0.3rem;
+      padding: 0.05rem 0.35rem;
+      border-radius: 999px;
+      background: #a6ce39;
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .muted { color: #6b7280; font-size: 0.85rem; }
+    footer.page-footer {
+      margin-top: 2rem;
+      text-align: right;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button class="download-btn" onclick="window.print()">Download as PDF</button>
+</div>
+
+<div class="page">
+
+<header class="hero">
+  <div class="header-bar">
+    <div class="logo-title">
+      <div class="logo-wrap">
+        <img src="bookstories-logo.png" alt="BookStories logo">
+      </div>
+      <div>
+        <h1 class="hero-title">Sisters in Science</h1>
+        <div class="discipline-badge">Social Sciences</div>
+        <div class="hero-meta">
+          <div><strong>Author(s):</strong> Diann Jordan</div>
+          <div><strong>Publisher:</strong> Purdue University</div>
+          <div><strong>Publication year:</strong> 2006</div>
+          <div><strong>DOI:</strong> 10.5703/1288284317628</div>
+        </div>
+      </div>
+    </div>
+    <div class="cover-wrap"><img src="https://www.fulcrum.org/image-service/nc580q49t1683299359/full/225,/0/default.jpg" alt="Book cover for Sisters in Science"></div>
+  </div>
+</header>
+
+<section class="card">
+  <h2><span>The story so far…</span></h2>
+  <div class="story-text">
+    <h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">Sisters in Science offers a unique oral history that highlights the lived experiences of prominent Black women scientists in America, exploring themes of race, gender, and perseverance across scientific disciplines. Despite limited citation and event data, its availability as an open-access resource underlines its role in broadening understanding of intersectional challenges in science. The book’s historical and sociological lens enriches biomedical discourse by foregrounding underrepresented voices and inspiring future scholarship on diversity in science.</p>
+
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">Published in 2006 by Purdue University, Sisters in Science presents an important collection of narratives from 18 pioneering Black women scientists. Through oral histories, the book captures their personal journeys, emphasizing the intersections of race, gender, and scientific ambition. These stories span multiple disciplines, from engineering to microbiology, contributing valuable sociological and historical perspectives to biomedical and broader scientific fields. The authorship by Diann Jordan reflects long-term dedication, filling a significant gap in documented experiences of Black women in science.</p>
+
+<p class="story-text">The book’s thematic richness is underscored by its concept labels encompassing medicine, race biology, gender studies, and sociology, among others. These interdisciplinary foci demonstrate the work’s breadth in addressing not only scientific achievements but also systemic barriers and cultural contexts. Its oral history format grants agency and visibility to voices historically marginalized in academic discourse. This qualitative contribution complements quantitative scientific literature by providing nuanced insights into how identity shapes scientific careers and leadership roles.</p>
+
+<p class="story-text">While Sisters in Science currently shows zero citations in OpenAlex and no recorded digital event data, its impact likely resides outside conventional bibliometrics. The absence of citation and event metrics suggests limited formal scholarly referencing or digital engagement tracked by standard tools, which is common for oral history and interdisciplinary works. However, its download data from OAPEN, totaling over 300, indicates meaningful access and use. This engagement reflects interest from readers and educators who value the book as a resource for understanding diversity and inclusion in science.</p>
+
+<p class="story-text">The book’s availability on platforms like Fulcrum and OAPEN as an open-access monograph enhances its dissemination potential. Open access ensures that diverse audiences, including students, researchers, and practitioners in health professions and social sciences, can consult these narratives without barriers. This accessibility aligns with wider efforts in scholarly communications to democratize knowledge and support equity in understanding scientific history and culture. By preserving the testimonies of Black women trailblazers, Sisters in Science contributes to ongoing conversations about representation and equity in biomedicine and beyond.</p>
+  </div>
+</section>
+
+
+    <section class="card">
+      <h2><span>Impact metrics</span></h2>
+      <ul>
+        <li><strong>Citations (OpenAlex):</strong> 0</li>
+        <li><strong>Downloads (OAPEN / OPERAS):</strong> 317</li>
+        <li><strong>Online mentions (Crossref Event Data):</strong> 0</li>
+        <li><strong>Citation context (scite):</strong> 0</li>
+      </ul>
+    </section>
+    
+
+
+<div class="grid">
+  <section class="card">
+    <h2><span>Where your book is available</span></h2>
+    <ul><li><strong>Fulcrum</strong><br><a href='https://www.fulcrum.org/concern/monographs/37720g44j' target='_blank'>https://www.fulcrum.org/concern/monographs/37720g44j</a></li>
+<li><strong>OAPEN Library</strong><br><a href='https://library.oapen.org/handle/20.500.12657/64163' target='_blank'>https://library.oapen.org/handle/20.500.12657/64163</a></li></ul>
+  </section>
+
+  <section class="card">
+    <h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+    <ul><li><span class='tag'>Presentation (obstetrics)</span></li>
+<li><span class='tag'>Presidency</span></li>
+<li><span class='tag'>Race (biology)</span></li>
+<li><span class='tag'>Oral history</span></li>
+<li><span class='tag'>Gender studies</span></li>
+<li><span class='tag'>Sociology</span></li>
+<li><span class='tag'>History</span></li>
+<li><span class='tag'>Political science</span></li>
+<li><span class='tag'>Law</span></li>
+<li><span class='tag'>Anthropology</span></li>
+<li><span class='tag'>Medicine</span></li>
+<li><span class='tag'>Politics</span></li>
+<li><span class='tag'>Radiology</span></li></ul>
+  </section>
+</div>
+
+<section class="card">
+  <h2><span>OER &amp; teaching use</span></h2>
+  <ul><li class='muted'>No OER or teaching listings detected yet.</li></ul>
+</section>
+
+
+        <section class="card">
+          <h2><span>Open access metadata</span> <span class="badge">DOAB</span></h2>
+          <p><strong>Publisher:</strong> <span class='muted'>Not available</span></p>
+          <p><strong>Rights / License:</strong> open access</p>
+          <p><strong>Keywords:</strong> <span class='muted'>None listed</span></p>
+          <p><strong>Abstract:</strong><br>Author Diann Jordan took a journey to find out what inspired and daunted black women in their desire to become scientists in America. Letting 18 prominent black women scientists talk for themselves, Sisters in Science becomes an oral history stretching across decades and disciplines and desires. From Yvonne Clark, the first black woman to be awarded a B.S. in mechanical engineering to Georgia Dunston, a microbiologist who is researching the genetic code for her race, to Shirley Jackson, whose aspiration led to the presidency of Rensselaer Polytechnic Institute, Jordan has created a significant record of women who persevered to become firsts in many of their fields. It all began for Jordan when she was asked to give a presentation on black women scientists. She found little information and little help. After almost nine years of work, the stories of black women scientists can finally be told.</p>
+        </section>
+        
+
+            <section class="card">
+              <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+              <p class="muted">Counts below are scite.ai tallies (if available).</p>
+              <ul>
+                <li><strong>Total:</strong> 0</li><li><strong>Supporting:</strong> 0</li><li><strong>Mentioning:</strong> 0</li><li><strong>Contradicting:</strong> 0</li>
+              </ul>
+            </section>
+            
+
+        <section class="card">
+          <h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref Event Data</span></h2>
+          <p class="muted">No public Event Data activity found for this DOI.</p>
+        </section>
+        
+
+<section class="card">
+  <h2><span>Usage (OAPEN / OPERAS)</span></h2>
+  <p><strong>Total downloads:</strong> 317</p><div class='usage-row'><span class='usage-month'>01</span><div class='usage-bar-wrap'><div class='usage-bar' style='width:39.7%'></div></div><span class='usage-value'>23</span></div><div class='usage-row'><span class='usage-month'>02</span><div class='usage-bar-wrap'><div class='usage-bar' style='width:39.7%'></div></div><span class='usage-value'>23</span></div><div class='usage-row'><span class='usage-month'>03</span><div class='usage-bar-wrap'><div class='usage-bar' style='width:55.2%'></div></div><span class='usage-value'>32</span></div><div class='usage-row'><span class='usage-month'>04</span><div class='usage-bar-wrap'><div class='usage-bar' style='width:50.0%'></div></div><span class='usage-value'>29</span></div><div class='usage-row'><span class='usage-month'>05</span><div class='usage-bar-wrap'><div class='usage-bar' style='width:53.4%'></div></div><span class='usage-value'>31</span></div><div class='usage-row'><span class='usage-month'>06</span><div class='usage-bar-wrap'><div class='usage-bar' style='width:53.4%'></div></div><span class='usage-value'>31</span></div><div class='usage-row'><span class='usage-month'>07</span><div class='usage-bar-wrap'><div class='usage-bar' style='width:100.0%'></div></div><span class='usage-value'>58</span></div><div class='usage-row'><span class='usage-month'>08</span><div class='usage-bar-wrap'><div class='usage-bar' style='width:15.5%'></div></div><span class='usage-value'>9</span></div><div class='usage-row'><span class='usage-month'>09</span><div class='usage-bar-wrap'><div class='usage-bar' style='width:41.4%'></div></div><span class='usage-value'>24</span></div><div class='usage-row'><span class='usage-month'>10</span><div class='usage-bar-wrap'><div class='usage-bar' style='width:46.6%'></div></div><span class='usage-value'>27</span></div><div class='usage-row'><span class='usage-month'>11</span><div class='usage-bar-wrap'><div class='usage-bar' style='width:31.0%'></div></div><span class='usage-value'>18</span></div><div class='usage-row'><span class='usage-month'>12</span><div class='usage-bar-wrap'><div class='usage-bar' style='width:20.7%'></div></div><span class='usage-value'>12</span></div>
+</section>
+
+<section class="card">
+  <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+  <table>
+    <thead>
+      <tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr>
+    </thead>
+    <tbody>
+      <tr><td colspan='4' class='muted'>No citations found.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="page-footer">
+  Generated by BookStories on 2026-01-20T19:34:12+00:00 UTC
+</footer>
+
+</div>
+</body>
+</html>
