@@ -5,9 +5,7 @@
   <meta charset="utf-8">
   <title>BookStory – Urban Fantasy</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
@@ -20,29 +18,34 @@
       margin: 2.5rem auto;
       padding: 0 1.25rem 3rem;
     }
-    header.hero {
-      margin-bottom: 1.5rem;
-    }
+    header.hero { margin-bottom: 2rem; }
     .hero-title {
       font-size: 2.1rem;
       font-weight: 700;
       margin: 0;
       color: #111827;
     }
+    .discipline-badge {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      border: 1px solid rgba(15, 23, 42, 0.15);
+      background: rgba(15, 23, 42, 0.04);
+    }
     .hero-meta {
       margin-top: 0.5rem;
       color: #4b5563;
       font-size: 0.95rem;
     }
-    .hero-meta div {
-      margin-bottom: 0.15rem;
-    }
+    .hero-meta div { margin-bottom: 0.15rem; }
     .card {
       background: #ffffff;
       border-radius: 0.9rem;
       box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
       padding: 1.5rem 1.75rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
     }
     .card h2 {
       margin-top: 0;
@@ -58,35 +61,12 @@
       font-size: 1.25rem;
       letter-spacing: 0;
     }
-    .story-text {
-      font-size: 0.98rem;
-      line-height: 1.7;
-      color: #111827;
-    }
-    .doab-abstract {
-      margin-bottom: 0.5rem;
-    }
-    .story-text-block {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .story-subheading {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin: 0.4rem 0 0.2rem;
-      color: #4b5563;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
+    .story-text { font-size: 0.98rem; line-height: 1.7; color: #111827; }
     .header-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1.25rem;
-    }
-    .usage-chart {
-      margin-top: 0.5rem;
     }
     .usage-row {
       display: flex;
@@ -100,17 +80,6 @@
       justify-content: flex-end;
       margin-bottom: 0.75rem;
     }
-    .event-summary-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
-      gap: 1.25rem;
-      margin-top: 0.25rem;
-    }
-    @media (max-width: 800px) {
-      .event-summary-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
     .event-source-list,
     .event-examples-list {
       list-style: none;
@@ -122,16 +91,7 @@
       margin-bottom: 0.5rem;
       font-size: 0.9rem;
     }
-    .event-example-meta {
-      margin-bottom: 0.2rem;
-    }
-    .event-example-date {
-      font-size: 0.8rem;
-    }
-    .event-footnote {
-      margin-top: 0.75rem;
-    }
-
+    .event-example-meta { margin-bottom: 0.2rem; }
     .download-btn {
       border: none;
       border-radius: 999px;
@@ -142,32 +102,14 @@
       color: #f9fafb;
       box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
     }
-    .download-btn:hover {
-      opacity: 0.9;
-    }
-
+    .download-btn:hover { opacity: 0.9; }
     @media print {
-      body {
-        background: #ffffff;
-      }
-      .page {
-        margin: 0;
-        max-width: 100%;
-        box-shadow: none;
-      }
-      .card {
-        box-shadow: none;
-        border-radius: 0;
-        page-break-inside: avoid;
-      }
-      .toolbar {
-        display: none;  /* hide button on PDF/print */
-      }
+      body { background: #ffffff; }
+      .page { margin: 0; max-width: 100%; box-shadow: none; }
+      .card { box-shadow: none; border-radius: 0; page-break-inside: avoid; }
+      .toolbar { display: none; }
     }
-    .usage-month {
-      width: 2.5rem;
-      color: #6b7280;
-    }
+    .usage-month { width: 2.5rem; color: #6b7280; }
     .usage-bar-wrap {
       flex: 1;
       background: #e5e7eb;
@@ -180,25 +122,14 @@
       border-radius: 999px;
       background: #2563eb;
     }
-    .usage-value {
-      width: 3rem;
-      text-align: right;
-      color: #374151;
-    }
-
-    .logo-title {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
-
+    .usage-value { width: 3rem; text-align: right; color: #374151; }
+    .logo-title { display: flex; align-items: center; gap: 1.25rem; }
     .logo-wrap img {
       width: 100px;
       height: 100px;
       border-radius: 50%;
       display: block;
     }
-
     .cover-wrap img {
       width: 110px;
       height: auto;
@@ -206,36 +137,37 @@
       box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
       object-fit: cover;
     }
+    .cover-placeholder {
+      width: 110px;
+      height: 160px;
+      border-radius: 0.5rem;
+      border: 1px dashed rgba(15, 23, 42, 0.22);
+      background: rgba(15, 23, 42, 0.04);
+    }
     .grid {
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 1.5rem;
     }
     @media (max-width: 800px) {
-      .grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+      .grid { grid-template-columns: minmax(0, 1fr); }
     }
-    ul {
-      padding-left: 1.2rem;
-      margin: 0.4rem 0 0;
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+      margin-bottom: 1.75rem;
     }
-    li {
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
-    }
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    a, li {
-      word-break: break-word;
-      overflow-wrap: anywhere;
-    }
+    .grid-2 .card { margin-bottom: 0; height: 100%; }
 
+    @media (max-width: 980px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    ul { padding-left: 1.2rem; margin: 0.4rem 0 0; }
+    li { margin-bottom: 0.5rem; font-size: 0.95rem; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a, li { word-break: break-word; overflow-wrap: anywhere; }
     .tag {
       display: inline-block;
       padding: 0.15rem 0.45rem;
@@ -245,16 +177,7 @@
       font-size: 0.8rem;
       margin: 0.1rem 0.2rem 0.1rem 0;
     }
-    .tag-soft {
-      background: #f3f4f6;
-      color: #4b5563;
-    }
-    .tag-list {
-      display: inline-block;
-      margin-top: 0.15rem;
-      font-size: 0.8rem;
-      color: #6b7280;
-    }
+    .tag-soft { background: #f3f4f6; color: #4b5563; }
     table {
       border-collapse: collapse;
       width: 100%;
@@ -281,14 +204,8 @@
       font-size: 0.75rem;
       font-weight: 500;
     }
-    .scite-link {
-      font-size: 0.75rem;
-      color: #6b7280;
-    }
-    .scite-link:hover {
-      text-decoration: underline;
-      color: #4b5563;
-    }
+    .scite-link { font-size: 0.75rem; color: #6b7280; }
+    .scite-link:hover { text-decoration: underline; color: #4b5563; }
     .orcid-badge {
       display: inline-flex;
       align-items: center;
@@ -296,17 +213,14 @@
       margin-left: 0.3rem;
       padding: 0.05rem 0.35rem;
       border-radius: 999px;
-      background: #a6ce39; /* ORCID green */
+      background: #a6ce39;
       color: #ffffff;
       font-size: 0.65rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
-    .muted {
-      color: #6b7280;
-      font-size: 0.85rem;
-    }
+    .muted { color: #6b7280; font-size: 0.85rem; }
     footer.page-footer {
       margin-top: 2rem;
       text-align: right;
@@ -331,6 +245,7 @@
       </div>
       <div>
         <h1 class="hero-title">Urban Fantasy</h1>
+        <div class="discipline-badge">Humanities</div>
         <div class="hero-meta">
           <div><strong>Author(s):</strong> Stefan Ekman</div>
           <div><strong>Publisher:</strong> Lever Press</div>
@@ -339,7 +254,7 @@
         </div>
       </div>
     </div>
-    <div class="cover-wrap"><img src="https://www.fulcrum.org/image-service/mp48sg85p1723216850/full/225,/0/default.jpg" alt="Book cover for Urban Fantasy"></div>
+    <div class="cover-wrap"><img src="https://www.fulcrum.org/image-service/mp48sg85p1723216850/full/286,/0/default.png" alt="Book cover for Urban Fantasy"></div>
   </div>
 </header>
 
@@ -347,20 +262,78 @@
   <h2><span>The story so far…</span></h2>
   <div class="story-text">
     <h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Stefan Ekman’s <em>Urban Fantasy</em> offers a timely, in-depth examination of a young yet culturally resonant literary genre. Its open access availability and incorporation into digital platforms indicate emerging academic engagement and promising potential to shape future scholarship on fantasy’s role in framing modernity.</p>
+<p class="story-text">Urban Fantasy by Stefan Ekman offers a comprehensive exploration of the urban fantasy genre, highlighting its intersection with modernity through themes like magic, literature, and philosophy. Published in 2024 by Lever Press and hosted on Fulcrum, it has attracted notable public visibility, particularly on Wikipedia, which accounts for all 163 recorded non-citation event mentions. Despite having no citations or OAPEN download data yet, the book’s coverage signals growing interest in its in-depth analysis of the genre’s evolution and social commentary.</p>
 
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Published in 2024 by Lever Press, <em>Urban Fantasy: Exploring Modernity through Magic</em> by Stefan Ekman presents a thorough scholarly exploration of urban fantasy as a literary and cultural phenomenon. Positioned within the humanities, the work addresses complex intersections of literature, philosophy, and aesthetics, situating the genre’s fantastic elements in direct dialogue with modernity’s social and epistemological structures. Although it currently registers no citation impact in OpenAlex, such a pattern is typical for recently published monographs, where visible academic engagement often accrues over multiple years.</p>
+<p class="story-text">Urban Fantasy, released in 2024 by Lever Press and available through the Fulcrum platform, delves into the literary genre where magic intertwines with modern urban settings. The book’s thematic breadth spans concept labels such as Modernity, Fantasy, Art, and Philosophy, indicating a multidisciplinary approach. While the book currently has no recorded citations in OpenAlex, its presence on a respected scholarly platform and its rich conceptual focus position it as a foundational text for those interested in the dynamic relationship between the supernatural and contemporary society.</p>
 
-<p class="story-text">The book’s conceptual breadth is notable, encompassing themes from MAGIC (perhaps referencing frameworks from the Knowledge Organization system) and epistemology to art and physics, demonstrating the genre’s multidisciplinary reach. This rich interface invites scholars across literary studies, cultural theory, and philosophy to consider urban fantasy as a critical resource for decoding contemporary social dynamics. Ekman’s detailed analyses of authors including Neil Gaiman, N.K. Jemisin, and Ben Aaronovitch provide focal points for interdisciplinary discourse, amplifying the book’s relevance to courses and research on the fantastic across several decades.</p>
+<p class="story-text">Though traditional citation metrics are not yet available, the Event Data reflects a significant public visibility footprint, with 163 recorded events exclusively on Wikipedia. This concentrated attention on an open-access information platform suggests the book is becoming a reference point in public knowledge spaces, enhancing understanding of urban fantasy’s cultural and academic contours. The absence of OER listings and OAPEN downloads to date indicates that while academic usage metrics are modest, public engagement signals offer a promising alternative impact pathway.</p>
 
-<p class="story-text">Although bibliometric indicators show zero citations as of now, the substantial event data—exclusively from Wikipedia with 163 recorded events—signifies discernible visibility in public knowledge platforms. This suggests that the book’s concepts are permeating broader cultural conversations, particularly among audiences interested in genre definitions and social imaginaries. Such digital footprint might preface more formal academic uptake, serving as a form of early diffuse engagement characteristic of humanities scholarship.</p>
+<p class="story-text">This public visibility is further underscored by the inferred role labeled as a "Public visibility signal" with a strength of 0.8, derived from the volume and source of events. This highlights how the book’s conceptual contributions to themes like Epistemology and Literature resonate beyond formal academic citations, influencing discourse on platforms used by broader audiences. Such a role reflects the evolving nature of scholarly influence, where media mentions and knowledge dissemination on open platforms can complement or precede citation-based recognition.</p>
 
-<p class="story-text">The absence of Open Educational Resources (OER) listings and OAPEN downloads limits current evidence of adoption in pedagogical settings, but the book’s open access status via the Fulcrum platform strategically positions it for future instructional use. Open access monographs in the humanities often gain traction through teaching and research networks before measurable citation impact emerges. Given its comprehensive scope and accessible format, <em>Urban Fantasy</em> is well placed to become a foundational text in university-level curricula on genre studies, speculative fiction, and cultural modernity.</p>
+<p class="story-text">The book’s publisher, Lever Press, is known for its open access scholarly monographs, which aligns with the book’s DOAB listing emphasizing open access rights. While no download data is available from OAPEN, the hosting on Fulcrum, a platform supporting accessible monographs, ensures that the work is discoverable and accessible to a wide scholarly and student audience. Its focus on urban fantasy texts by multiple contemporary authors enriches literary scholarship by offering diverse narrative analyses, fostering interdisciplinary dialogue.</p>
 
-<p class="story-text">Looking forward, the volume’s synthesis of historical and thematic perspectives equips scholars and students to rethink magic’s symbolic and narrative function in urban contexts. The work challenges binary distinctions between the supernatural and modern life, fostering nuanced conversation about marginality, visibility, and social critique in literature. Through this lens, Ekman’s monograph could influence subsequent theoretical frameworks by situating urban fantasy as a valuable analytic tool rather than mere entertainment genre, potentially inspiring new research trajectories and interdisciplinary methodologies.</p>
+<p class="story-text">In summary, Urban Fantasy’s current impact is most clearly articulated through its public visibility on Wikipedia and its integration into accessible scholarly infrastructure, rather than through conventional academic citations or usage statistics. This positioning suggests the book is emerging as a valuable resource for understanding urban fantasy’s role in probing modernity, appreciated both in academic and broader cultural contexts. Future citation and usage data may provide additional indicators of its sustained scholarly influence.</p>
   </div>
 </section>
+
+
+    <section class="card">
+      <h2><span>Impact metrics</span></h2>
+      <ul>
+        <li><strong>Citations (OpenAlex):</strong> 0</li>
+        <li><strong>Downloads (OAPEN / OPERAS):</strong> <span class='muted'>Not available</span></li>
+        <li><strong>Online mentions (Crossref Event Data):</strong> 163</li>
+        <li><strong>Citation context (scite):</strong> 0</li>
+      </ul>
+    </section>
+    
+
+    <section class="card">
+      <h2><span>Inferred roles</span></h2>
+      <p class="muted">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+        <span class='tag'>Public visibility signal (0.80)</span>
+      </div>
+    </section>
+    
+<div class="grid-2">
+    <section class="card">
+      <h2><span>Usage landscape</span> <span class="badge">OAPEN / OPERAS</span></h2>
+      <ul>
+        <li><strong>Total downloads:</strong> <span class='muted'>Not available.</span></li>
+        <li><strong>Recent trend:</strong> <span class='muted'>Not available.</span></li>
+        <li><strong>Host distribution:</strong> <span class='tag'>Fulcrum (1)</span></li>
+      </ul>
+    </section>
+    
+    <section class="card">
+      <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+      <ul>
+        <li><strong>Recorded events:</strong> 163</li>
+        <li><strong>Top sources:</strong> <span class='tag'>wikipedia (163)</span></li>
+      </ul>
+    </section>
+    </div><div class="grid-2">
+    <section class="card">
+      <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+      <ul>
+        <li><strong>Open Library:</strong> <a href="https://openlibrary.org/books/OL51408085M" target="_blank" rel="noopener noreferrer">View</a><span class='muted'> · 0 ratings</span></li><li><strong>Google Books:</strong> <a href="https://books.google.com/books/about/Urban_Fantasy.html?hl=&amp;id=QsEYEQAAQBAJ" target="_blank" rel="noopener noreferrer">View</a> · <a href="http://books.google.nl/books?id=QsEYEQAAQBAJ&amp;printsec=frontcover&amp;dq=isbn:9781643150642&amp;hl=&amp;cd=1&amp;source=gbs_api" target="_blank" rel="noopener noreferrer">Preview</a><span class='muted'></span> <span class='muted'>(matched: Urban Fantasy)</span></li><li><strong>Commercial:</strong> <a href="https://www.amazon.com/s?k=9781643150642" target="_blank" rel="noopener noreferrer">Amazon search</a> · <a href="https://www.goodreads.com/search?q=9781643150642" target="_blank" rel="noopener noreferrer">Goodreads search</a></li>
+      </ul>
+    </section>
+    
+    <section class="card">
+      <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+      <ul><li><strong>Total:</strong> 0</li><li><strong>Supporting:</strong> 0</li><li><strong>Mentioning:</strong> 0</li><li><strong>Contradicting:</strong> 0</li></ul>
+    </section>
+    </div>
+    <section class="card">
+      <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
+      <ul>
+        <li><strong>Total citing works captured:</strong> 0</li>
+      </ul>
+    </section>
+    
 
 <div class="grid">
   <section class="card">
@@ -389,18 +362,6 @@
 </section>
 
 
-        <section class="card">
-          <h2><span>Open access metadata</span> <span class="badge">DOAB</span></h2>
-          <p><strong>Publisher:</strong> <span class='muted'>Not available</span></p>
-          <p><strong>Rights / License:</strong> open access</p>
-          <p><strong>Keywords:</strong> <span class='muted'>None listed</span></p>
-          <p><strong>Abstract:</strong><br>Urban fantasy, the genre of fantastic literature in which magic and monsters meet modern society, is fairly young but has old roots. Stefan Ekman’s book, Urban Fantasy: Exploring Modernity through Magic, examines the genre in depth, including its inherent social commentary, its historical development, and its interplay between modernity and the fantastic.
- 
- The author draws on a wide range of urban fantasy texts from five decades, combining detailed analysis of dozens of novels and other media with broad discussions to provide a comprehensive understanding of the genre across three sections. The first section presents an overview of what the genre looks like today—both in terms of its common traits and its variety of settings—and how it has developed over time, including the history of urban fantasy scholarship. The second section examines urban fantasy’s core concern with the unseen, for example through a focus on unseen individuals overlooked by society or hiding within it, and on ignored urban spaces or labyrinthine undergrounds. The third section addresses how urban fantasy explores the relationship between the supernatural and modernity. Ekman offers readings of fiction by Ben Aaronovitch, Lauren Beukes, P. Djelí Clark, Charles de Lint, Neil Gaiman, Max Gladstone, Kim Harrison, N.K. Jemisin, and Megan Lindholm, among others.
- 
- Urban Fantasy will appeal to teachers and students of the fantastic as well as to urban fantasy enthusiasts and literary scholars. Ekman illuminates the genre’s evolution and defining traits, inviting readers to rethink urban fantasy as a creative tool for using magic to explore modernity.</p>
-        </section>
-        
 
         <section class="card">
           <h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref Event Data</span></h2>
@@ -412,6 +373,19 @@
           <ul class="event-examples-list">
             <li class='event-example-item'><div class='event-example-meta'><span class='tag'>Wikipedia</span></div><a href='https://en.wikipedia.org/w/index.php?title=Urban_fantasy&amp;oldid=1252635935' target='_blank'>Urban fantasy</a><br><span class='muted'>2024-10-22</span></li>
           </ul>
+        </section>
+        
+
+        <section class="card">
+          <h2><span>Open access metadata</span> <span class="badge">DOAB</span></h2>
+          <p><strong>Publisher:</strong> <span class='muted'>Not available</span></p>
+          <p><strong>Rights / License:</strong> open access</p>
+          <p><strong>Keywords:</strong> <span class='muted'>None listed</span></p>
+          <p><strong>Abstract:</strong><br>Urban fantasy, the genre of fantastic literature in which magic and monsters meet modern society, is fairly young but has old roots. Stefan Ekman’s book, Urban Fantasy: Exploring Modernity through Magic, examines the genre in depth, including its inherent social commentary, its historical development, and its interplay between modernity and the fantastic.
+ 
+ The author draws on a wide range of urban fantasy texts from five decades, combining detailed analysis of dozens of novels and other media with broad discussions to provide a comprehensive understanding of the genre across three sections. The first section presents an overview of what the genre looks like today—both in terms of its common traits and its variety of settings—and how it has developed over time, including the history of urban fantasy scholarship. The second section examines urban fantasy’s core concern with the unseen, for example through a focus on unseen individuals overlooked by society or hiding within it, and on ignored urban spaces or labyrinthine undergrounds. The third section addresses how urban fantasy explores the relationship between the supernatural and modernity. Ekman offers readings of fiction by Ben Aaronovitch, Lauren Beukes, P. Djelí Clark, Charles de Lint, Neil Gaiman, Max Gladstone, Kim Harrison, N.K. Jemisin, and Megan Lindholm, among others.
+ 
+ Urban Fantasy will appeal to teachers and students of the fantastic as well as to urban fantasy enthusiasts and literary scholars. Ekman illuminates the genre’s evolution and defining traits, inviting readers to rethink urban fantasy as a creative tool for using magic to explore modernity.</p>
         </section>
         
 
@@ -433,7 +407,7 @@
 </section>
 
 <footer class="page-footer">
-  Generated by BookStories on 2025-12-03T16:18:39+00:00 UTC
+  Generated by BookStories on 2026-02-10T11:19:38+00:00 UTC
 </footer>
 
 </div>

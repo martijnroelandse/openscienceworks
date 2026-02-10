@@ -5,9 +5,7 @@
   <meta charset="utf-8">
   <title>BookStory – Music on the Move</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
@@ -20,29 +18,34 @@
       margin: 2.5rem auto;
       padding: 0 1.25rem 3rem;
     }
-    header.hero {
-      margin-bottom: 1.5rem;
-    }
+    header.hero { margin-bottom: 2rem; }
     .hero-title {
       font-size: 2.1rem;
       font-weight: 700;
       margin: 0;
       color: #111827;
     }
+    .discipline-badge {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      border: 1px solid rgba(15, 23, 42, 0.15);
+      background: rgba(15, 23, 42, 0.04);
+    }
     .hero-meta {
       margin-top: 0.5rem;
       color: #4b5563;
       font-size: 0.95rem;
     }
-    .hero-meta div {
-      margin-bottom: 0.15rem;
-    }
+    .hero-meta div { margin-bottom: 0.15rem; }
     .card {
       background: #ffffff;
       border-radius: 0.9rem;
       box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
       padding: 1.5rem 1.75rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
     }
     .card h2 {
       margin-top: 0;
@@ -58,35 +61,12 @@
       font-size: 1.25rem;
       letter-spacing: 0;
     }
-    .story-text {
-      font-size: 0.98rem;
-      line-height: 1.7;
-      color: #111827;
-    }
-    .doab-abstract {
-      margin-bottom: 0.5rem;
-    }
-    .story-text-block {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .story-subheading {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin: 0.4rem 0 0.2rem;
-      color: #4b5563;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
+    .story-text { font-size: 0.98rem; line-height: 1.7; color: #111827; }
     .header-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1.25rem;
-    }
-    .usage-chart {
-      margin-top: 0.5rem;
     }
     .usage-row {
       display: flex;
@@ -100,17 +80,6 @@
       justify-content: flex-end;
       margin-bottom: 0.75rem;
     }
-    .event-summary-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
-      gap: 1.25rem;
-      margin-top: 0.25rem;
-    }
-    @media (max-width: 800px) {
-      .event-summary-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
     .event-source-list,
     .event-examples-list {
       list-style: none;
@@ -122,16 +91,7 @@
       margin-bottom: 0.5rem;
       font-size: 0.9rem;
     }
-    .event-example-meta {
-      margin-bottom: 0.2rem;
-    }
-    .event-example-date {
-      font-size: 0.8rem;
-    }
-    .event-footnote {
-      margin-top: 0.75rem;
-    }
-
+    .event-example-meta { margin-bottom: 0.2rem; }
     .download-btn {
       border: none;
       border-radius: 999px;
@@ -142,32 +102,14 @@
       color: #f9fafb;
       box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
     }
-    .download-btn:hover {
-      opacity: 0.9;
-    }
-
+    .download-btn:hover { opacity: 0.9; }
     @media print {
-      body {
-        background: #ffffff;
-      }
-      .page {
-        margin: 0;
-        max-width: 100%;
-        box-shadow: none;
-      }
-      .card {
-        box-shadow: none;
-        border-radius: 0;
-        page-break-inside: avoid;
-      }
-      .toolbar {
-        display: none;  /* hide button on PDF/print */
-      }
+      body { background: #ffffff; }
+      .page { margin: 0; max-width: 100%; box-shadow: none; }
+      .card { box-shadow: none; border-radius: 0; page-break-inside: avoid; }
+      .toolbar { display: none; }
     }
-    .usage-month {
-      width: 2.5rem;
-      color: #6b7280;
-    }
+    .usage-month { width: 2.5rem; color: #6b7280; }
     .usage-bar-wrap {
       flex: 1;
       background: #e5e7eb;
@@ -180,25 +122,14 @@
       border-radius: 999px;
       background: #2563eb;
     }
-    .usage-value {
-      width: 3rem;
-      text-align: right;
-      color: #374151;
-    }
-
-    .logo-title {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
-
+    .usage-value { width: 3rem; text-align: right; color: #374151; }
+    .logo-title { display: flex; align-items: center; gap: 1.25rem; }
     .logo-wrap img {
       width: 100px;
       height: 100px;
       border-radius: 50%;
       display: block;
     }
-
     .cover-wrap img {
       width: 110px;
       height: auto;
@@ -206,36 +137,37 @@
       box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
       object-fit: cover;
     }
+    .cover-placeholder {
+      width: 110px;
+      height: 160px;
+      border-radius: 0.5rem;
+      border: 1px dashed rgba(15, 23, 42, 0.22);
+      background: rgba(15, 23, 42, 0.04);
+    }
     .grid {
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 1.5rem;
     }
     @media (max-width: 800px) {
-      .grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+      .grid { grid-template-columns: minmax(0, 1fr); }
     }
-    ul {
-      padding-left: 1.2rem;
-      margin: 0.4rem 0 0;
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+      margin-bottom: 1.75rem;
     }
-    li {
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
-    }
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    a, li {
-      word-break: break-word;
-      overflow-wrap: anywhere;
-    }
+    .grid-2 .card { margin-bottom: 0; height: 100%; }
 
+    @media (max-width: 980px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    ul { padding-left: 1.2rem; margin: 0.4rem 0 0; }
+    li { margin-bottom: 0.5rem; font-size: 0.95rem; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a, li { word-break: break-word; overflow-wrap: anywhere; }
     .tag {
       display: inline-block;
       padding: 0.15rem 0.45rem;
@@ -245,16 +177,7 @@
       font-size: 0.8rem;
       margin: 0.1rem 0.2rem 0.1rem 0;
     }
-    .tag-soft {
-      background: #f3f4f6;
-      color: #4b5563;
-    }
-    .tag-list {
-      display: inline-block;
-      margin-top: 0.15rem;
-      font-size: 0.8rem;
-      color: #6b7280;
-    }
+    .tag-soft { background: #f3f4f6; color: #4b5563; }
     table {
       border-collapse: collapse;
       width: 100%;
@@ -281,14 +204,8 @@
       font-size: 0.75rem;
       font-weight: 500;
     }
-    .scite-link {
-      font-size: 0.75rem;
-      color: #6b7280;
-    }
-    .scite-link:hover {
-      text-decoration: underline;
-      color: #4b5563;
-    }
+    .scite-link { font-size: 0.75rem; color: #6b7280; }
+    .scite-link:hover { text-decoration: underline; color: #4b5563; }
     .orcid-badge {
       display: inline-flex;
       align-items: center;
@@ -296,17 +213,14 @@
       margin-left: 0.3rem;
       padding: 0.05rem 0.35rem;
       border-radius: 999px;
-      background: #a6ce39; /* ORCID green */
+      background: #a6ce39;
       color: #ffffff;
       font-size: 0.65rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
-    .muted {
-      color: #6b7280;
-      font-size: 0.85rem;
-    }
+    .muted { color: #6b7280; font-size: 0.85rem; }
     footer.page-footer {
       margin-top: 2rem;
       text-align: right;
@@ -331,15 +245,16 @@
       </div>
       <div>
         <h1 class="hero-title">Music on the Move</h1>
+        <div class="discipline-badge">Humanities</div>
         <div class="hero-meta">
           <div><strong>Author(s):</strong> Danielle Fosler-Lussier</div>
           <div><strong>Publisher:</strong> University of Michigan Press</div>
-          <div><strong>Publication year:</strong> 2025</div>
+          <div><strong>Publication year:</strong> 2020</div>
           <div><strong>DOI:</strong> 10.3998/mpub.9853855</div>
         </div>
       </div>
     </div>
-    <div class="cover-wrap"><img src="https://www.fulcrum.org/image-service/nc580p6681591082672/full/225,/0/default.jpg" alt="Book cover for Music on the Move"></div>
+    <div class="cover-wrap"><img src="https://www.fulcrum.org/image-service/nc580p6681591082672/full/286,/0/default.png" alt="Book cover for Music on the Move"></div>
   </div>
 </header>
 
@@ -347,16 +262,78 @@
   <h2><span>The story so far…</span></h2>
   <div class="story-text">
     <h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Music on the Move has gained modest academic traction since its 2020 release, with a small but notable citation presence and visibility through digital platforms. Its interdisciplinary approach intersects visual arts and music, positioning it for further scholarly engagement in cultural and artistic mobility studies.</p>
+<p class="story-text">Music on the Move, published by University of Michigan Press in 2020, contributes to interdisciplinary dialogues at the intersection of visual arts and art, as reflected in its concept labels. The book’s modest scholarly uptake is evidenced by 16 citing works, while its visibility extends into public domains, notably with 23 recorded online events, primarily on Wikipedia and Wordpress. Hosted on Fulcrum, it remains accessible but shows no recorded OER presence or OAPEN download data, signaling a niche yet visible impact within academic and public contexts.</p>
 
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Published by University of Michigan Press in 2020, Music on the Move explores intersections of music and visual arts, contributing to discourse on artistic mobility. The book has accrued a modest number of citations, indicative of its emerging influence within scholarly communities that examine cultural expression and art dissemination. Its open online presence on platforms such as Fulcrum aids accessibility and signals alignment with contemporary open dissemination practices, although measurable download data remains unavailable.</p>
+<p class="story-text">Music on the Move’s scholarly influence is modest but notable, with 16 citations documented in OpenAlex. This level of citation suggests engagement principally within specific academic communities interested in visual arts and art, the primary concepts associated with the book. The absence of OAPEN download data and OER listings indicates limited distribution through open-access educational repositories, which could constrain broader academic adoption despite its affiliation with a reputable publisher. Its hosting on Fulcrum supports structured accessibility, yet download metrics remain unavailable, underscoring an area for potential growth in usage tracking and dissemination.</p>
 
-<p class="story-text">The disciplinary labels of visual arts and art suggest the book primarily engages with humanities scholarship; however, its cataloguing in a STEM discipline bucket reflects its potential interdisciplinary relevance, for instance in computational analysis of art or digital humanities methodologies. The book's event data show non-citation engagement largely originating from Wikipedia and a smaller number of WordPress sources, indicating some penetration into public and educational knowledge bases, as well as grassroots academic discourse. This form of engagement highlights the text’s utility beyond purely academic contexts, possibly as a reference for cultural history or arts education.</p>
+<p class="story-text">The book’s public visibility is more distinctly pronounced in alternative attention sources, registering 23 total online events. Wikipedia accounts for the majority (19 events), complemented by Wordpress appearances (4 events), reflecting engagement from both general informational platforms and independent web outlets. This distribution highlights Music on the Move’s resonance beyond traditional scholarly networks, reaching wider online communities interested in cultural topics linked to art. The sustained visibility, with events spanning from late 2020 to mid-2025, indicates lasting public interest and reference value in digital spaces, distinct from citation-based academic impact.</p>
 
-<p class="story-text">Despite the absence of open educational resource (OER) listings or comprehensive usage statistics, the documented digital footprint and citations suggest that Music on the Move occupies a niche but meaningful space in scholarly conversations around the movement of music within visual and cultural frameworks. Future impact may expand as interdisciplinary research increasingly integrates multimedia and arts scholarship with digital platforms for knowledge diffusion. Given evolving academic interests in mobility studies and media convergence, the book’s thematic focus positions it well for sustained relevance and potential adoption within diverse academic and teaching settings.</p>
+<p class="story-text">Despite limited citation counts, the inferred roles derived from integrated signals paint a dual narrative of scholarly uptake and public visibility. The book scores 0.6 on scholarly uptake, aligning with its citation data, and a notable 0.8 on public visibility, supported by event frequency and source diversity. This suggests that while Music on the Move may not dominate academic citation indexes, it holds a significant place in broader discourse, especially in digital environments such as Wikipedia, where it contributes to culturally relevant knowledge dissemination. Institutions evaluating impact might consider these non-traditional indicators critical alongside conventional metrics.</p>
+
+<p class="story-text">From a disciplinary standpoint, the book straddles visual arts and art, which likely shapes both its audience and impact pathways. This intersection can invite cross-disciplinary curiosity yet may challenge typical STEM-centric impact measurement frameworks. The lack of claim signals, such as those derived from scite data, implies an absence of documented supportive or contradicting citations, further suggesting a developing rather than established scholarly conversation. Consequently, Music on the Move embodies a niche scholarly artifact with emerging public recognition mediated through accessible online platforms rather than widespread academic debate.</p>
+
+<p class="story-text">Overall, Music on the Move illustrates the complexities of measuring monograph impact in fields entwined with cultural and artistic inquiry. The limited citation and usage data contrasted with respectable public engagement via Wikipedia and blogs underscore diverse pathways through which academic books convey value. As open-access and usage reporting continue to evolve, future tracking may reveal expanded influence, particularly if efforts to enhance OER integration or download monitoring on hosting platforms like Fulcrum are pursued. For now, this book’s story exemplifies a balanced, though modest, blend of academic and public resonance.</p>
   </div>
 </section>
+
+
+    <section class="card">
+      <h2><span>Impact metrics</span></h2>
+      <ul>
+        <li><strong>Citations (OpenAlex):</strong> 16</li>
+        <li><strong>Downloads (OAPEN / OPERAS):</strong> <span class='muted'>Not available</span></li>
+        <li><strong>Online mentions (Crossref Event Data):</strong> 23</li>
+        <li><strong>Citation context (scite):</strong> 0</li>
+      </ul>
+    </section>
+    
+
+    <section class="card">
+      <h2><span>Inferred roles</span></h2>
+      <p class="muted">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+        <span class='tag'>Public visibility signal (0.80)</span><span class='tag'>Scholarly uptake (0.60)</span>
+      </div>
+    </section>
+    
+<div class="grid-2">
+    <section class="card">
+      <h2><span>Usage landscape</span> <span class="badge">OAPEN / OPERAS</span></h2>
+      <ul>
+        <li><strong>Total downloads:</strong> <span class='muted'>Not available.</span></li>
+        <li><strong>Recent trend:</strong> <span class='muted'>Not available.</span></li>
+        <li><strong>Host distribution:</strong> <span class='tag'>Fulcrum (1)</span></li>
+      </ul>
+    </section>
+    
+    <section class="card">
+      <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+      <ul>
+        <li><strong>Recorded events:</strong> 23</li>
+        <li><strong>Top sources:</strong> <span class='tag'>wikipedia (19)</span> <span class='tag'>wordpressdotcom (4)</span></li>
+      </ul>
+    </section>
+    </div><div class="grid-2">
+    <section class="card">
+      <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+      <ul>
+        <li><strong>Open Library:</strong> <a href="https://openlibrary.org/books/OL29822785M" target="_blank" rel="noopener noreferrer">View</a><span class='muted'> · 0 ratings</span></li><li><strong>Google Books:</strong> <a href="https://books.google.com/books/about/Music_on_the_Move.html?hl=&amp;id=jXm0xgEACAAJ" target="_blank" rel="noopener noreferrer">View</a> · <a href="http://books.google.nl/books?id=jXm0xgEACAAJ&amp;dq=isbn:9780472074501&amp;hl=&amp;cd=1&amp;source=gbs_api" target="_blank" rel="noopener noreferrer">Preview</a><span class='muted'></span> <span class='muted'>(matched: Music on the Move)</span></li><li><strong>Commercial:</strong> <a href="https://www.amazon.com/s?k=9780472074501" target="_blank" rel="noopener noreferrer">Amazon search</a> · <a href="https://www.goodreads.com/search?q=9780472074501" target="_blank" rel="noopener noreferrer">Goodreads search</a></li>
+      </ul>
+    </section>
+    
+    <section class="card">
+      <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+      <ul><li><strong>Total:</strong> 0</li><li><strong>Supporting:</strong> 0</li><li><strong>Mentioning:</strong> 0</li><li><strong>Contradicting:</strong> 0</li></ul>
+    </section>
+    </div>
+    <section class="card">
+      <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
+      <ul>
+        <li><strong>Total citing works captured:</strong> 16</li><li><strong>Top citing venues:</strong> <span class='tag'>Austrian History Yearbook (1)</span> <span class='tag'>International Journal of Academic Research in Business and Social Sciences (1)</span> <span class='tag'>Interdisciplinary Studies in Musicology (1)</span> <span class='tag'>New Global Studies (1)</span> <span class='tag'>KnE Social Sciences (1)</span> <span class='tag'>MUSICultures (1)</span> <span class='tag'>SSRN Electronic Journal (1)</span> <span class='tag'>Türkbilig (1)</span> <span class='tag'>Journal of Central and Eastern European African Studies (1)</span> <span class='tag'>Journal of Beckett Studies (1)</span></li><li><strong>Citing work types:</strong> <span class='tag'>article (12)</span> <span class='tag'>book-chapter (3)</span> <span class='tag'>book (1)</span></li><li><strong>Citation timeline (by year):</strong> 2021: 1, 2022: 1, 2023: 5, 2024: 3, 2025: 6</li>
+      </ul>
+    </section>
+    
 
 <div class="grid">
   <section class="card">
@@ -391,6 +368,7 @@
         </section>
         
 
+
 <section class="card">
   <h2><span>Usage (OAPEN / OPERAS)</span></h2>
   <p class='muted'>No OAPEN / OPERAS record found.</p>
@@ -403,29 +381,28 @@
       <tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr>
     </thead>
     <tbody>
-      <tr><td>2021</td><td>Encounters with Music in Rudolf II&#x27;s Prague</td><td></td><td><a href="https://doi.org/10.1017/s0067237821000126" target="_blank" rel="noopener noreferrer">10.1017/s0067237821000126</a>&nbsp;<a href="https://scite.ai/reports/10.1017/s0067237821000126" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Exploring Blockchain-Based Applications for Digital Copyright Protection</td><td></td><td><a href="https://doi.org/10.6007/ijarbss/v13-i8/17799" target="_blank" rel="noopener noreferrer">10.6007/ijarbss/v13-i8/17799</a>&nbsp;<a href="https://scite.ai/reports/10.6007/ijarbss/v13-i8/17799" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Coke Studio: A Strategic Tool for Pakistan’s Cultural Diplomacy</td><td></td><td><a href="https://doi.org/10.2139/ssrn.4622050" target="_blank" rel="noopener noreferrer">10.2139/ssrn.4622050</a>&nbsp;<a href="https://scite.ai/reports/10.2139/ssrn.4622050" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Virtual Authenticity: On Reinvention, Transformation and Functionality of Traditional Dancing during COVID-19</td><td></td><td><a href="https://doi.org/10.14746/ism.2022.22.6" target="_blank" rel="noopener noreferrer">10.14746/ism.2022.22.6</a>&nbsp;<a href="https://scite.ai/reports/10.14746/ism.2022.22.6" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>The Dominance of Gamelan in South Korea in a Discursive Perspective</td><td></td><td><a href="https://doi.org/10.18502/kss.v8i15.13904" target="_blank" rel="noopener noreferrer">10.18502/kss.v8i15.13904</a>&nbsp;<a href="https://scite.ai/reports/10.18502/kss.v8i15.13904" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Ethnicize and Historicize: Thoughts on Anti-Racist Pedagogy and Post-Secondary Music History</td><td></td><td><a href="https://doi.org/10.7202/1110011ar" target="_blank" rel="noopener noreferrer">10.7202/1110011ar</a>&nbsp;<a href="https://scite.ai/reports/10.7202/1110011ar" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>TÜRK HALK MÜZİĞİ VE MEDYA İLİŞKİSİ İÇERİSİNDE ŞEKİLLENEN ARABULUCU BİR TÜR: BAĞLAMA ETÜTLERİ</td><td></td><td><a href="https://doi.org/10.59257/turkbilig.1506825" target="_blank" rel="noopener noreferrer">10.59257/turkbilig.1506825</a>&nbsp;<a href="https://scite.ai/reports/10.59257/turkbilig.1506825" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+      <tr><td>2021</td><td>Encounters with Music in Rudolf II&#x27;s Prague</td><td>Austrian History Yearbook</td><td><a href="https://doi.org/10.1017/s0067237821000126" target="_blank" rel="noopener noreferrer">10.1017/s0067237821000126</a>&nbsp;<a href="https://scite.ai/reports/10.1017/s0067237821000126" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Exploring Blockchain-Based Applications for Digital Copyright Protection</td><td>International Journal of Academic Research in Business and Social Sciences</td><td><a href="https://doi.org/10.6007/ijarbss/v13-i8/17799" target="_blank" rel="noopener noreferrer">10.6007/ijarbss/v13-i8/17799</a>&nbsp;<a href="https://scite.ai/reports/10.6007/ijarbss/v13-i8/17799" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Virtual Authenticity: On Reinvention, Transformation and Functionality of Traditional Dancing during COVID-19</td><td>Interdisciplinary Studies in Musicology</td><td><a href="https://doi.org/10.14746/ism.2022.22.6" target="_blank" rel="noopener noreferrer">10.14746/ism.2022.22.6</a>&nbsp;<a href="https://scite.ai/reports/10.14746/ism.2022.22.6" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Infrastructures of Musical Globalization, 1850–2000: Introduction</td><td>New Global Studies</td><td><a href="https://doi.org/10.1515/ngs-2025-0003" target="_blank" rel="noopener noreferrer">10.1515/ngs-2025-0003</a>&nbsp;<a href="https://scite.ai/reports/10.1515/ngs-2025-0003" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>The Dominance of Gamelan in South Korea in a Discursive Perspective</td><td>KnE Social Sciences</td><td><a href="https://doi.org/10.18502/kss.v8i15.13904" target="_blank" rel="noopener noreferrer">10.18502/kss.v8i15.13904</a>&nbsp;<a href="https://scite.ai/reports/10.18502/kss.v8i15.13904" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Ethnicize and Historicize: Thoughts on Anti-Racist Pedagogy and Post-Secondary Music History</td><td>MUSICultures</td><td><a href="https://doi.org/10.7202/1110011ar" target="_blank" rel="noopener noreferrer">10.7202/1110011ar</a>&nbsp;<a href="https://scite.ai/reports/10.7202/1110011ar" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Coke Studio: A Strategic Tool for Pakistan’s Cultural Diplomacy</td><td>SSRN Electronic Journal</td><td><a href="https://doi.org/10.2139/ssrn.4622050" target="_blank" rel="noopener noreferrer">10.2139/ssrn.4622050</a>&nbsp;<a href="https://scite.ai/reports/10.2139/ssrn.4622050" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>TÜRK HALK MÜZİĞİ VE MEDYA İLİŞKİSİ İÇERİSİNDE ŞEKİLLENEN ARABULUCU BİR TÜR: BAĞLAMA ETÜTLERİ</td><td>Türkbilig</td><td><a href="https://doi.org/10.59257/turkbilig.1506825" target="_blank" rel="noopener noreferrer">10.59257/turkbilig.1506825</a>&nbsp;<a href="https://scite.ai/reports/10.59257/turkbilig.1506825" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
 <tr><td>2023</td><td>Music and Memory</td><td></td><td><a href="https://doi.org/10.1007/978-3-030-93789-8_10-1" target="_blank" rel="noopener noreferrer">10.1007/978-3-030-93789-8_10-1</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-030-93789-8_10-1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Egypt’s Geopolitical Alignment via the Digital Humanities</td><td></td><td><a href="https://doi.org/10.59569/jceeas.2023.3.2.172" target="_blank" rel="noopener noreferrer">10.59569/jceeas.2023.3.2.172</a>&nbsp;<a href="https://scite.ai/reports/10.59569/jceeas.2023.3.2.172" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>‘Repeat play’: Musical Minimalism in the Processes of Samuel Beckett’s Late Drama</td><td></td><td><a href="https://doi.org/10.3366/jobs.2024.0432" target="_blank" rel="noopener noreferrer">10.3366/jobs.2024.0432</a>&nbsp;<a href="https://scite.ai/reports/10.3366/jobs.2024.0432" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2025</td><td>Infrastructures of Musical Globalization, 1850–2000: Introduction</td><td></td><td><a href="https://doi.org/10.1515/ngs-2025-0003" target="_blank" rel="noopener noreferrer">10.1515/ngs-2025-0003</a>&nbsp;<a href="https://scite.ai/reports/10.1515/ngs-2025-0003" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2025</td><td>An Ethnomusicological Approach to Culture in Culturally Relevant Pedagogies and Curricula</td><td></td><td><a href="https://doi.org/10.4018/979-8-3373-2955-0.ch019" target="_blank" rel="noopener noreferrer">10.4018/979-8-3373-2955-0.ch019</a>&nbsp;<a href="https://scite.ai/reports/10.4018/979-8-3373-2955-0.ch019" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Egypt’s Geopolitical Alignment via the Digital Humanities</td><td>Journal of Central and Eastern European African Studies</td><td><a href="https://doi.org/10.59569/jceeas.2023.3.2.172" target="_blank" rel="noopener noreferrer">10.59569/jceeas.2023.3.2.172</a>&nbsp;<a href="https://scite.ai/reports/10.59569/jceeas.2023.3.2.172" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>‘Repeat play’: Musical Minimalism in the Processes of Samuel Beckett’s Late Drama</td><td>Journal of Beckett Studies</td><td><a href="https://doi.org/10.3366/jobs.2024.0432" target="_blank" rel="noopener noreferrer">10.3366/jobs.2024.0432</a>&nbsp;<a href="https://scite.ai/reports/10.3366/jobs.2024.0432" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>An Ethnomusicological Approach to Culture in Culturally Relevant Pedagogies and Curricula</td><td>IGI Global eBooks</td><td><a href="https://doi.org/10.4018/979-8-3373-2955-0.ch019" target="_blank" rel="noopener noreferrer">10.4018/979-8-3373-2955-0.ch019</a>&nbsp;<a href="https://scite.ai/reports/10.4018/979-8-3373-2955-0.ch019" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
 <tr><td>2025</td><td>Afro Hip Hop Culture and Youth Resistance of Gerontocracy in Africa</td><td></td><td><a href="https://doi.org/10.1108/978-1-83708-222-320251006" target="_blank" rel="noopener noreferrer">10.1108/978-1-83708-222-320251006</a>&nbsp;<a href="https://scite.ai/reports/10.1108/978-1-83708-222-320251006" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
 <tr><td>2025</td><td>Aineeton kulttuuriperintö: Käsite, käytäntö, politiikka</td><td></td><td><a href="https://doi.org/10.21435/tl.296" target="_blank" rel="noopener noreferrer">10.21435/tl.296</a>&nbsp;<a href="https://scite.ai/reports/10.21435/tl.296" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2025</td><td>Music and Song: Tom Munnelly’s View of Ownership</td><td></td><td><a href="https://doi.org/10.3390/genealogy9040102" target="_blank" rel="noopener noreferrer">10.3390/genealogy9040102</a>&nbsp;<a href="https://scite.ai/reports/10.3390/genealogy9040102" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2025</td><td>Falsehood Flies! Music&#x27;s Copyright Coup</td><td></td><td><a href="https://doi.org/10.1080/08854300.2025.2580834" target="_blank" rel="noopener noreferrer">10.1080/08854300.2025.2580834</a>&nbsp;<a href="https://scite.ai/reports/10.1080/08854300.2025.2580834" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2025</td><td>Falsehood Flies! Music&#x27;s Copyright Coup</td><td></td><td><a href="https://doi.org/10.1080/08854300.2025.2580834" target="_blank" rel="noopener noreferrer">10.1080/08854300.2025.2580834</a>&nbsp;<a href="https://scite.ai/reports/10.1080/08854300.2025.2580834" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Music and Song: Tom Munnelly’s View of Ownership</td><td>Genealogy</td><td><a href="https://doi.org/10.3390/genealogy9040102" target="_blank" rel="noopener noreferrer">10.3390/genealogy9040102</a>&nbsp;<a href="https://scite.ai/reports/10.3390/genealogy9040102" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Falsehood Flies! Music&#x27;s Copyright Coup</td><td>Socialism and Democracy</td><td><a href="https://doi.org/10.1080/08854300.2025.2580834" target="_blank" rel="noopener noreferrer">10.1080/08854300.2025.2580834</a>&nbsp;<a href="https://scite.ai/reports/10.1080/08854300.2025.2580834" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
     </tbody>
   </table>
 </section>
 
 <footer class="page-footer">
-  Generated by BookStories on 2025-12-03T16:17:28+00:00 UTC
+  Generated by BookStories on 2026-02-10T11:24:31+00:00 UTC
 </footer>
 
 </div>

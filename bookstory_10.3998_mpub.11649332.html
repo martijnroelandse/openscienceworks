@@ -5,9 +5,7 @@
   <meta charset="utf-8">
   <title>BookStory – Elizabeth Bishop and the Literary Archive</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
@@ -20,29 +18,34 @@
       margin: 2.5rem auto;
       padding: 0 1.25rem 3rem;
     }
-    header.hero {
-      margin-bottom: 1.5rem;
-    }
+    header.hero { margin-bottom: 2rem; }
     .hero-title {
       font-size: 2.1rem;
       font-weight: 700;
       margin: 0;
       color: #111827;
     }
+    .discipline-badge {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      border: 1px solid rgba(15, 23, 42, 0.15);
+      background: rgba(15, 23, 42, 0.04);
+    }
     .hero-meta {
       margin-top: 0.5rem;
       color: #4b5563;
       font-size: 0.95rem;
     }
-    .hero-meta div {
-      margin-bottom: 0.15rem;
-    }
+    .hero-meta div { margin-bottom: 0.15rem; }
     .card {
       background: #ffffff;
       border-radius: 0.9rem;
       box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
       padding: 1.5rem 1.75rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
     }
     .card h2 {
       margin-top: 0;
@@ -58,35 +61,12 @@
       font-size: 1.25rem;
       letter-spacing: 0;
     }
-    .story-text {
-      font-size: 0.98rem;
-      line-height: 1.7;
-      color: #111827;
-    }
-    .doab-abstract {
-      margin-bottom: 0.5rem;
-    }
-    .story-text-block {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .story-subheading {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin: 0.4rem 0 0.2rem;
-      color: #4b5563;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
+    .story-text { font-size: 0.98rem; line-height: 1.7; color: #111827; }
     .header-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1.25rem;
-    }
-    .usage-chart {
-      margin-top: 0.5rem;
     }
     .usage-row {
       display: flex;
@@ -100,17 +80,6 @@
       justify-content: flex-end;
       margin-bottom: 0.75rem;
     }
-    .event-summary-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
-      gap: 1.25rem;
-      margin-top: 0.25rem;
-    }
-    @media (max-width: 800px) {
-      .event-summary-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
     .event-source-list,
     .event-examples-list {
       list-style: none;
@@ -122,16 +91,7 @@
       margin-bottom: 0.5rem;
       font-size: 0.9rem;
     }
-    .event-example-meta {
-      margin-bottom: 0.2rem;
-    }
-    .event-example-date {
-      font-size: 0.8rem;
-    }
-    .event-footnote {
-      margin-top: 0.75rem;
-    }
-
+    .event-example-meta { margin-bottom: 0.2rem; }
     .download-btn {
       border: none;
       border-radius: 999px;
@@ -142,32 +102,14 @@
       color: #f9fafb;
       box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
     }
-    .download-btn:hover {
-      opacity: 0.9;
-    }
-
+    .download-btn:hover { opacity: 0.9; }
     @media print {
-      body {
-        background: #ffffff;
-      }
-      .page {
-        margin: 0;
-        max-width: 100%;
-        box-shadow: none;
-      }
-      .card {
-        box-shadow: none;
-        border-radius: 0;
-        page-break-inside: avoid;
-      }
-      .toolbar {
-        display: none;  /* hide button on PDF/print */
-      }
+      body { background: #ffffff; }
+      .page { margin: 0; max-width: 100%; box-shadow: none; }
+      .card { box-shadow: none; border-radius: 0; page-break-inside: avoid; }
+      .toolbar { display: none; }
     }
-    .usage-month {
-      width: 2.5rem;
-      color: #6b7280;
-    }
+    .usage-month { width: 2.5rem; color: #6b7280; }
     .usage-bar-wrap {
       flex: 1;
       background: #e5e7eb;
@@ -180,25 +122,14 @@
       border-radius: 999px;
       background: #2563eb;
     }
-    .usage-value {
-      width: 3rem;
-      text-align: right;
-      color: #374151;
-    }
-
-    .logo-title {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
-
+    .usage-value { width: 3rem; text-align: right; color: #374151; }
+    .logo-title { display: flex; align-items: center; gap: 1.25rem; }
     .logo-wrap img {
       width: 100px;
       height: 100px;
       border-radius: 50%;
       display: block;
     }
-
     .cover-wrap img {
       width: 110px;
       height: auto;
@@ -206,36 +137,37 @@
       box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
       object-fit: cover;
     }
+    .cover-placeholder {
+      width: 110px;
+      height: 160px;
+      border-radius: 0.5rem;
+      border: 1px dashed rgba(15, 23, 42, 0.22);
+      background: rgba(15, 23, 42, 0.04);
+    }
     .grid {
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 1.5rem;
     }
     @media (max-width: 800px) {
-      .grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+      .grid { grid-template-columns: minmax(0, 1fr); }
     }
-    ul {
-      padding-left: 1.2rem;
-      margin: 0.4rem 0 0;
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+      margin-bottom: 1.75rem;
     }
-    li {
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
-    }
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    a, li {
-      word-break: break-word;
-      overflow-wrap: anywhere;
-    }
+    .grid-2 .card { margin-bottom: 0; height: 100%; }
 
+    @media (max-width: 980px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    ul { padding-left: 1.2rem; margin: 0.4rem 0 0; }
+    li { margin-bottom: 0.5rem; font-size: 0.95rem; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a, li { word-break: break-word; overflow-wrap: anywhere; }
     .tag {
       display: inline-block;
       padding: 0.15rem 0.45rem;
@@ -245,16 +177,7 @@
       font-size: 0.8rem;
       margin: 0.1rem 0.2rem 0.1rem 0;
     }
-    .tag-soft {
-      background: #f3f4f6;
-      color: #4b5563;
-    }
-    .tag-list {
-      display: inline-block;
-      margin-top: 0.15rem;
-      font-size: 0.8rem;
-      color: #6b7280;
-    }
+    .tag-soft { background: #f3f4f6; color: #4b5563; }
     table {
       border-collapse: collapse;
       width: 100%;
@@ -281,14 +204,8 @@
       font-size: 0.75rem;
       font-weight: 500;
     }
-    .scite-link {
-      font-size: 0.75rem;
-      color: #6b7280;
-    }
-    .scite-link:hover {
-      text-decoration: underline;
-      color: #4b5563;
-    }
+    .scite-link { font-size: 0.75rem; color: #6b7280; }
+    .scite-link:hover { text-decoration: underline; color: #4b5563; }
     .orcid-badge {
       display: inline-flex;
       align-items: center;
@@ -296,17 +213,14 @@
       margin-left: 0.3rem;
       padding: 0.05rem 0.35rem;
       border-radius: 999px;
-      background: #a6ce39; /* ORCID green */
+      background: #a6ce39;
       color: #ffffff;
       font-size: 0.65rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
-    .muted {
-      color: #6b7280;
-      font-size: 0.85rem;
-    }
+    .muted { color: #6b7280; font-size: 0.85rem; }
     footer.page-footer {
       margin-top: 2rem;
       text-align: right;
@@ -331,15 +245,16 @@
       </div>
       <div>
         <h1 class="hero-title">Elizabeth Bishop and the Literary Archive</h1>
+        <div class="discipline-badge">Humanities</div>
         <div class="hero-meta">
           <div><strong>Author(s):</strong> Bethany Hicok</div>
           <div><strong>Publisher:</strong> Lever Press</div>
-          <div><strong>Publication year:</strong> 2021</div>
+          <div><strong>Publication year:</strong> 2020</div>
           <div><strong>DOI:</strong> 10.3998/mpub.11649332</div>
         </div>
       </div>
     </div>
-    <div class="cover-wrap"><img src="https://www.fulcrum.org/image-service/2z10wr81b1608582754/full/225,/0/default.jpg" alt="Book cover for Elizabeth Bishop and the Literary Archive"></div>
+    <div class="cover-wrap"><img src="https://www.fulcrum.org/image-service/2z10wr81b1608582754/full/286,/0/default.png" alt="Book cover for Elizabeth Bishop and the Literary Archive"></div>
   </div>
 </header>
 
@@ -347,20 +262,78 @@
   <h2><span>The story so far…</span></h2>
   <div class="story-text">
     <h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Elizabeth Bishop and the Literary Archive has established a meaningful presence in humanities scholarship, reflected in a modest citation footprint and engagement on a digital academic platform. Its nuanced exploration of literary archiving offers foundations for ongoing debates around textual preservation and authorial legacy within art and literary studies.</p>
+<p class="story-text">Elizabeth Bishop and the Literary Archive, published in 2020 by Lever Press, engages with themes in art, history, art history, and literature through its exploration of literary archives. Hosted on Fulcrum, it has accumulated 41 citations, reflecting notable scholarly uptake. Although public visibility is modest, with a single newsfeed event recorded shortly after publication, the book occupies a meaningful position within humanities discourse, as underscored by its balanced signals of scholarly attention and public recognition.</p>
 
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Published by Lever Press in 2020, <em>Elizabeth Bishop and the Literary Archive</em> occupies an important niche at the intersection of literature, art history, and archival studies. Its focused inquiry into the literary archives of Elizabeth Bishop situates the book within broader critical conversations about how literary legacy is constructed and mediated through historical documents. While the book’s citation record to date is modest, this level of academic engagement is appropriate and expected for a specialized humanities monograph in its early years, particularly given the depth and niche specificity of its subject matter.</p>
+<p class="story-text">This 2020 monograph from Lever Press investigates Elizabeth Bishop’s relationship to literary archives, drawing on interdisciplinary concepts such as art history and literature. Its thematic focus spans art, history, and literature, indicating a multifaceted approach to literary scholarship. The book’s presence on Fulcrum, a respected digital hosting platform, ensures accessibility within academic networks, although no usage download data is available to further quantify engagement. This situates the book as a thoughtfully positioned scholarly resource amidst contemporary humanities publications.</p>
 
-<p class="story-text">The book’s digital hosting on Fulcrum, a platform dedicated to scholarly monographs, underscores a commitment to open and accessible scholarship, which aligns with evolving trends in humanities publishing. Despite the absence of recorded downloads on major open access repositories such as OAPEN and lack of listings in Open Educational Resources platforms, this is not unusual for monographs focused on archival literary studies, which tend to attract a more specialized academic readership rather than broad public consumption or curricular use.</p>
+<p class="story-text">The book’s scholarly impact is marked by a moderate citation count of 41 according to OpenAlex. This level of engagement suggests that it has garnered attention and stimulated discourse among scholars interested in literary archival studies and interdisciplinary humanities. The inferred role of “scholarly uptake” is supported with a strength rating of 0.6, indicating a meaningful, if not extensive, incorporation into academic dialogue. The coverage of concepts such as art and history further illustrates the book’s contribution to expanding literary analysis beyond traditional boundaries.</p>
 
-<p class="story-text">Notably, the presence of even a single non-citation event recorded in newsfeed sources at the time of publication indicates some level of external visibility beyond academic citations alone. This points to initial interest within scholarly networks or potentially in public humanities discourse, which may help seed further discussion around issues of literary heritage and archival methodology. The book’s multidisciplinary conceptual framing—art, history, art history, and literature—enhances its appeal to a cross-section of scholars interested in the dynamics of cultural memory, the materiality of texts, and the ways archives serve as cultural artifacts themselves.</p>
+<p class="story-text">Regarding public visibility, the available Event Data shows only one recorded event from a newsfeed source on the date of 2020-04-07. This limited non-citation attention reflects a modest public impact and suggests that the book’s reach beyond academia has been minimal thus far. The inferred role for public visibility carries a medium strength score of 0.5, again highlighting a measured rather than broad recognition. The lack of additional events and the absence of listings on open educational resource platforms underscore the book’s primary resonance within scholarly rather than public domains.</p>
 
-<p class="story-text">From a humanities perspective, the book contributes to ongoing discourse on the practices of literary archiving by using Elizabeth Bishop’s case as a prism through which questions of authorship, textual preservation, and institutional custodianship are critically examined. These discussions resonate within contemporary debates about digitization, access, and the role of archives in shaping literary canons. The book’s careful attention to the archival landscape invites scholars to reconsider how literary histories are constructed, prompting potential future scholarship that might integrate digital humanities methodologies or comparative archival studies.</p>
+<p class="story-text">Notably, the book lacks data on download counts from OAPEN and does not appear on any OER platforms, which limits quantitative assessment of its usage and educational dissemination. Despite this, its hosting on Fulcrum and the modest citation footprint suggest it remains a valued text for certain research communities. The alignment of evidence from citations, event data, and hosting platform collectively frames Elizabeth Bishop and the Literary Archive as a work of scholarly interest, with tempered but distinct signals of academic engagement and visibility.</p>
 
-<p class="story-text">Looking forward, the potential impact of <em>Elizabeth Bishop and the Literary Archive</em> may deepen as its nuanced arguments filter into broader interdisciplinary inquiries. As conversations about literary archives increasingly engage with issues of material culture and the politics of preservation, this book provides a valuable reference point. It may also serve as a key resource for scholars examining the interconnectedness of literary form, authorial presence, and archival practice, thereby influencing emerging theoretical frameworks in literary and art historical research.</p>
+<p class="story-text">In summary, Elizabeth Bishop and the Literary Archive demonstrates a credible scholarly presence, validated by citation metrics and concept breadth, while exhibiting restrained public outreach based on event data. Its impact elucidates the dynamics of specialized humanities scholarship in the digital age, where focused academic uptake and modest public recognition coexist. This nuanced profile invites further monitoring of its evolving influence within literary and archival studies.</p>
   </div>
 </section>
+
+
+    <section class="card">
+      <h2><span>Impact metrics</span></h2>
+      <ul>
+        <li><strong>Citations (OpenAlex):</strong> 41</li>
+        <li><strong>Downloads (OAPEN / OPERAS):</strong> <span class='muted'>Not available</span></li>
+        <li><strong>Online mentions (Crossref Event Data):</strong> 1</li>
+        <li><strong>Citation context (scite):</strong> 0</li>
+      </ul>
+    </section>
+    
+
+    <section class="card">
+      <h2><span>Inferred roles</span></h2>
+      <p class="muted">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+        <span class='tag'>Scholarly uptake (0.60)</span><span class='tag'>Public visibility signal (0.50)</span>
+      </div>
+    </section>
+    
+<div class="grid-2">
+    <section class="card">
+      <h2><span>Usage landscape</span> <span class="badge">OAPEN / OPERAS</span></h2>
+      <ul>
+        <li><strong>Total downloads:</strong> <span class='muted'>Not available.</span></li>
+        <li><strong>Recent trend:</strong> <span class='muted'>Not available.</span></li>
+        <li><strong>Host distribution:</strong> <span class='tag'>Fulcrum (1)</span></li>
+      </ul>
+    </section>
+    
+    <section class="card">
+      <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+      <ul>
+        <li><strong>Recorded events:</strong> 1</li>
+        <li><strong>Top sources:</strong> <span class='tag'>newsfeed (1)</span></li>
+      </ul>
+    </section>
+    </div><div class="grid-2">
+    <section class="card">
+      <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+      <ul>
+        <li><strong>Open Library:</strong> <a href="https://openlibrary.org/books/OL28413903M" target="_blank" rel="noopener noreferrer">View</a><span class='muted'> · 0 ratings</span></li><li><strong>Google Books:</strong> <a href="https://books.google.com/books/about/Elizabeth_Bishop_and_the_Literary_Archiv.html?hl=&amp;id=WDfnDwAAQBAJ" target="_blank" rel="noopener noreferrer">View</a> · <a href="http://books.google.nl/books?id=WDfnDwAAQBAJ&amp;printsec=frontcover&amp;dq=isbn:9781643150116&amp;hl=&amp;cd=1&amp;source=gbs_api" target="_blank" rel="noopener noreferrer">Preview</a><span class='muted'></span> <span class='muted'>(matched: Elizabeth Bishop and the Literary Archive)</span></li><li><strong>Commercial:</strong> <a href="https://www.amazon.com/s?k=9781643150116" target="_blank" rel="noopener noreferrer">Amazon search</a> · <a href="https://www.goodreads.com/search?q=9781643150116" target="_blank" rel="noopener noreferrer">Goodreads search</a></li>
+      </ul>
+    </section>
+    
+    <section class="card">
+      <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+      <ul><li><strong>Total:</strong> 0</li><li><strong>Supporting:</strong> 0</li><li><strong>Mentioning:</strong> 0</li><li><strong>Contradicting:</strong> 0</li></ul>
+    </section>
+    </div>
+    <section class="card">
+      <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
+      <ul>
+        <li><strong>Total citing works captured:</strong> 41</li><li><strong>Top citing venues:</strong> <span class='tag'>Cambridge University Press eBooks (39)</span> <span class='tag'>MELUS Multi-Ethnic Literature of the United States (1)</span></li><li><strong>Citing work types:</strong> <span class='tag'>book-chapter (37)</span> <span class='tag'>book (1)</span> <span class='tag'>article (1)</span> <span class='tag'>other (1)</span> <span class='tag'>paratext (1)</span></li><li><strong>Citation timeline (by year):</strong> 2020: 1, 2021: 40</li>
+      </ul>
+    </section>
+    
 
 <div class="grid">
   <section class="card">
@@ -397,6 +370,7 @@
         </section>
         
 
+
 <section class="card">
   <h2><span>Usage (OAPEN / OPERAS)</span></h2>
   <p class='muted'>No OAPEN / OPERAS record found.</p>
@@ -409,53 +383,53 @@
       <tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr>
     </thead>
     <tbody>
-      <tr><td>2020</td><td>Respeaking the Spoken: Elizabeth Alexander’s American Sublime and the Archive</td><td></td><td><a href="https://doi.org/10.1093/melus/mlaa031" target="_blank" rel="noopener noreferrer">10.1093/melus/mlaa031</a>&nbsp;<a href="https://scite.ai/reports/10.1093/melus/mlaa031" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Romantic and Victorian Poetry</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.015" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.015</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.015" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Criticism and Reviews</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.035" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.035</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.035" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Bishop’s Influence</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.037" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.037</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.037" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Surrealism and the Avant-Garde</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.016" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.016</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.016" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Mid-Century Poetics</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.018" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.018</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.018" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>“My Saving Grace”: On Editing Elizabeth Bishop</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.036" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.036</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.036" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Translation</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.012" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.012</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.012" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Archives</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.014" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.014</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.014" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Psychoanalysis</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.023" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.023</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.023" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Brazil</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.008" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.008</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.008" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Bishop Studies</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.034" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.034</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.034" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>New York</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.005" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.005</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.005" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Elizabeth Bishop in Context</td><td></td><td><a href="https://doi.org/10.1017/9781108856492" target="_blank" rel="noopener noreferrer">10.1017/9781108856492</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Modernism</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.017" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.017</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.017" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Letters</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.011" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.011</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.011" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Travel</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.026" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.026</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.026" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Nova Scotia</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.003" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.003</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.003" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Nature</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.032" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.032</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.032" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Brazilian Literature</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.019" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.019</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.019" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Anthropology</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.025" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.025</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.025" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Religion</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.024" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.024</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.024" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Gender</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.029" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.029</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.029" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Queerness</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.030" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.030</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.030" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+      <tr><td>2021</td><td>Elizabeth Bishop in Context</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492" target="_blank" rel="noopener noreferrer">10.1017/9781108856492</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Letters</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.011" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.011</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.011" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Nature</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.032" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.032</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.032" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Animals</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.033" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.033</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.033" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Prose</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.010" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.010</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.010" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Race</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.031" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.031</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.031" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Music</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.022" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.022</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.022" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Humor</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.028" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.028</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.028" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Respeaking the Spoken: Elizabeth Alexander’s American Sublime and the Archive</td><td>MELUS Multi-Ethnic Literature of the United States</td><td><a href="https://doi.org/10.1093/melus/mlaa031" target="_blank" rel="noopener noreferrer">10.1093/melus/mlaa031</a>&nbsp;<a href="https://scite.ai/reports/10.1093/melus/mlaa031" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Romantic and Victorian Poetry</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.015" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.015</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.015" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Criticism and Reviews</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.035" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.035</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.035" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Bishop’s Influence</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.037" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.037</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.037" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Surrealism and the Avant-Garde</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.016" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.016</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.016" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Mid-Century Poetics</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.018" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.018</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.018" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>“My Saving Grace”: On Editing Elizabeth Bishop</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.036" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.036</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.036" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Translation</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.012" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.012</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.012" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Archives</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.014" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.014</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.014" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Psychoanalysis</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.023" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.023</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.023" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Brazil</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.008" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.008</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.008" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Bishop Studies</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.034" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.034</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.034" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>New York</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.005" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.005</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.005" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Modernism</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.017" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.017</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.017" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Travel</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.026" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.026</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.026" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Nova Scotia</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.003" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.003</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.003" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Brazilian Literature</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.019" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.019</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.019" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Anthropology</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.025" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.025</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.025" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Religion</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.024" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.024</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.024" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Gender</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.029" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.029</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.029" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Queerness</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.030" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.030</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.030" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
 <tr><td>2021</td><td>Chronology</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.001" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.001</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.001" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Introduction</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.002" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.002</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.002" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Dreams</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.027" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.027</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.027" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Animals</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.033" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.033</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.033" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Works Cited</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.038" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.038</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.038" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Lyric Poetry</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.009" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.009</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.009" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>The Cold War</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.021" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.021</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.021" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>New England</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.004" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.004</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.004" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Florida</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.007" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.007</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.007" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Visual Art</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.013" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.013</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.013" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Prose</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.010" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.010</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.010" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>War</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.020" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.020</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.020" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Race</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.031" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.031</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.031" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Index</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.039" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.039</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.039" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Humor</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.028" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.028</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.028" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Music</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.022" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.022</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.022" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Paris</td><td></td><td><a href="https://doi.org/10.1017/9781108856492.006" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.006</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.006" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Introduction</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.002" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.002</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.002" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Dreams</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.027" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.027</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.027" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Works Cited</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.038" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.038</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.038" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Lyric Poetry</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.009" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.009</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.009" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>The Cold War</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.021" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.021</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.021" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>New England</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.004" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.004</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.004" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Florida</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.007" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.007</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.007" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Visual Art</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.013" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.013</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.013" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>War</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.020" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.020</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.020" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Index</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.039" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.039</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.039" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Paris</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108856492.006" target="_blank" rel="noopener noreferrer">10.1017/9781108856492.006</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108856492.006" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
     </tbody>
   </table>
 </section>
 
 <footer class="page-footer">
-  Generated by BookStories on 2025-12-03T16:18:15+00:00 UTC
+  Generated by BookStories on 2026-02-10T11:27:49+00:00 UTC
 </footer>
 
 </div>
