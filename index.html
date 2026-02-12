@@ -55,6 +55,10 @@
       font-size: 0.8rem;
       color: #9ca3af;
     }
+    footer.page-footer a {
+      color: #9ca3af;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -120,11 +124,28 @@
   </section>
 
   <section class="card">
-    <input type="search" id="search-input" placeholder="Search stories...">
+    <form onSubmit="showResults()"><input type="search" id="search-input" placeholder="Search stories..."></form>
+    <script>
+      function showResults() {
+        const query = document.getElementById('search-input').value.toLowerCase();
+        const results = document.getElementById('results');
+        const items = results.getElementsByTagName('li');
+        results.style.display = 'block';
+        for (let i = 0; i < items.length; i++) {
+          const item = items[i];
+          if (item.textContent.toLowerCase().includes(query)) {
+            item.style.display = 'list-item';
+          } else {
+            item.style.display = 'none';
+          }
+        }
+        return false; // prevent form submission
+      }
+    </script>
   </section>
 
   <section>
-    <ul id="results">
+    <ul id="results" style="display: none;">
         <li><a href="articlestory_10.1038_nphys1170.html">ArticleStory: Measured measurement</a></li>
         <li><a href="articlestory_10.7554_elife.79714.html">ArticleStory: Stable population structure in Europe since the Iron Age, despite high mobility</a></li>
         <li><a href="articlestory_10.1371_journal.pbio.3002916.html">ArticleStory: Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance</a></li>
@@ -141,7 +162,7 @@
   </section>
 
   <footer class="page-footer">
-    &copy; 2026 OpenScience.works - All rights reserved
+    &copy; 2026 OpenScience.works - All rights reserved | <a href="about.html">About us</a>
   </footer>
 </div>
 </body>
