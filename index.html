@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>BookStory – Opening Science</title>
+  <title>OpenScience.works</title>
   <style>
     * { box-sizing: border-box; }
     body {
@@ -17,28 +17,23 @@
       margin: 2.5rem auto;
       padding: 0 1.25rem 3rem;
     }
-    header.hero { margin-bottom: 2rem; }
-    .hero-title {
-      font-size: 2.1rem;
-      font-weight: 700;
-      margin: 0;
-      color: #111827;
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
     }
-    .discipline-badge {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      border: 1px solid rgba(15, 23, 42, 0.15);
-      background: rgba(15, 23, 42, 0.04);
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
     }
-    .hero-meta {
-      margin-top: 0.5rem;
-      color: #4b5563;
-      font-size: 0.95rem;
+    .logo-wrap img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      display: block;
     }
-    .hero-meta div { margin-bottom: 0.15rem; }
     .card {
       background: #ffffff;
       border-radius: 0.9rem;
@@ -46,169 +41,14 @@
       padding: 1.5rem 1.75rem;
       margin-bottom: 1.75rem;
     }
-    .card h2 {
-      margin-top: 0;
-      font-size: 1.1rem;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      color: #6b7280;
+    .card input {
+      border: 0;
+      margin: -1.5rem -1.75rem;
+      padding: 1.5rem 1.75rem;
+      width: calc(100% + 3.5rem);
+      font-size: 1rem;
+      border-radius: 0.9rem;
     }
-    .card h2 span {
-      color: #111827;
-      font-weight: 600;
-      text-transform: none;
-      font-size: 1.25rem;
-      letter-spacing: 0;
-    }
-    .story-text { font-size: 0.98rem; line-height: 1.7; color: #111827; }
-    .header-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.25rem;
-    }
-    .usage-row {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 0.15rem 0;
-      font-size: 0.85rem;
-    }
-    .toolbar {
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 0.75rem;
-    }
-    .event-source-list,
-    .event-examples-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0.25rem 0 0;
-    }
-    .event-source-item,
-    .event-example-item {
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-    }
-    .event-example-meta { margin-bottom: 0.2rem; }
-    .download-btn {
-      border: none;
-      border-radius: 999px;
-      padding: 0.35rem 0.9rem;
-      font-size: 0.8rem;
-      cursor: pointer;
-      background: #111827;
-      color: #f9fafb;
-      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
-    }
-    .download-btn:hover { opacity: 0.9; }
-    @media print {
-      body { background: #ffffff; }
-      .page { margin: 0; max-width: 100%; box-shadow: none; }
-      .card { box-shadow: none; border-radius: 0; page-break-inside: avoid; }
-      .toolbar { display: none; }
-    }
-    .usage-month { width: 2.5rem; color: #6b7280; }
-    .usage-bar-wrap {
-      flex: 1;
-      background: #e5e7eb;
-      border-radius: 999px;
-      overflow: hidden;
-      height: 0.45rem;
-    }
-    .usage-bar {
-      height: 100%;
-      border-radius: 999px;
-      background: #2563eb;
-    }
-    .usage-value { width: 3rem; text-align: right; color: #374151; }
-    .logo-title { display: flex; align-items: center; gap: 1.25rem; }
-    .logo-wrap img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      display: block;
-    }
-    .cover-wrap img {
-      width: 110px;
-      height: auto;
-      border-radius: 0.5rem;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
-      object-fit: cover;
-    }
-    .cover-placeholder {
-      width: 110px;
-      height: 160px;
-      border-radius: 0.5rem;
-      border: 1px dashed rgba(15, 23, 42, 0.22);
-      background: rgba(15, 23, 42, 0.04);
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 1.5rem;
-    }
-    @media (max-width: 800px) {
-      .grid { grid-template-columns: minmax(0, 1fr); }
-    }
-    ul { padding-left: 1.2rem; margin: 0.4rem 0 0; }
-    li { margin-bottom: 0.5rem; font-size: 0.95rem; }
-    a { color: #2563eb; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    a, li { word-break: break-word; overflow-wrap: anywhere; }
-    .tag {
-      display: inline-block;
-      padding: 0.15rem 0.45rem;
-      border-radius: 999px;
-      background: #e5f2ff;
-      color: #1d4ed8;
-      font-size: 0.8rem;
-      margin: 0.1rem 0.2rem 0.1rem 0;
-    }
-    .tag-soft { background: #f3f4f6; color: #4b5563; }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      font-size: 0.85rem;
-      margin-top: 0.75rem;
-    }
-    th, td {
-      border: 1px solid #e5e7eb;
-      padding: 0.4rem 0.6rem;
-      vertical-align: top;
-    }
-    th {
-      background: #f9fafb;
-      text-align: left;
-      font-weight: 600;
-      color: #374151;
-    }
-    .badge {
-      display: inline-block;
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      background: #eef2ff;
-      color: #4338ca;
-      font-size: 0.75rem;
-      font-weight: 500;
-    }
-    .scite-link { font-size: 0.75rem; color: #6b7280; }
-    .scite-link:hover { text-decoration: underline; color: #4b5563; }
-    .orcid-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-left: 0.3rem;
-      padding: 0.05rem 0.35rem;
-      border-radius: 999px;
-      background: #a6ce39;
-      color: #ffffff;
-      font-size: 0.65rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .muted { color: #6b7280; font-size: 0.85rem; }
     footer.page-footer {
       margin-top: 2rem;
       text-align: right;
@@ -218,6 +58,91 @@
   </style>
 </head>
 <body>
-Work in progress, for more info check https://www.martijnroelandse.dev/bookstories/ 
+<div class="page">
+
+  <header class="hero">
+    <div class="header-bar">
+      <div class="logo-title">
+        <div class="logo-wrap">
+          <img src="Openscienceworks - tranparant.png" alt="openscience.works logo">
+        </div>
+        <div>
+          <h1 class="hero-title">OpenScience.works</h1>
+        </div>
+      </div>
+    </div>  
+  </header>
+
+  <section>
+    <div style="display: flex; justify-content: space-between;">
+      <div style="margin-bottom: 1rem;">
+        <label><input id="toggleArticleStories" type="checkbox" checked onchange="toggleStories()"> Find ArticleStories</label>
+        &nbsp;
+        <label><input id="toggleBooksStories" type="checkbox" checked onchange="toggleStories()"> Find BooksStories</label>
+      </div>
+      <a href="#" onclick="toggleAdvancedSearch()">Advanced search</a>
+    </div>
+    <fieldset style="display: none; margin-bottom: 2rem;" id="advancedSearch">
+      <legend>Filter by discipline</legend>
+      <label><input type="checkbox" checked> All disciplines</label>
+      <br>&nbsp;
+      <label><input type="checkbox" checked> Life Sciences</label>
+      <br>&nbsp;
+      <label><input type="checkbox" checked> Physical Sciences</label>
+      <br>&nbsp;
+      <label><input type="checkbox" checked> Social Sciences</label>
+      <br>&nbsp;
+      <label><input type="checkbox" checked> Humanities</label>
+    </fieldset>
+    <script>
+      function toggleAdvancedSearch() {
+        const fieldset = document.getElementById('advancedSearch');
+        fieldset.style.display = fieldset.style.display === 'none' ? 'block' : 'none';
+      }
+      function toggleStories() {
+        //toggle all li items in the results list that contain "ArticleStory:"  
+        const results = document.getElementById('results');
+        const items = results.getElementsByTagName('li');
+        const newBooksState = document.getElementById('toggleBooksStories').checked;
+        const newArticleState = document.getElementById('toggleArticleStories').checked;
+        for (let i = 0; i < items.length; i++) {
+          const item = items[i];
+          if (item.textContent.includes('ArticleStory:')) {
+            item.style.display = newArticleState ? 'list-item' : 'none';
+          } else if (item.textContent.includes('BookStory:')) {
+            item.style.display = newBooksState ? 'list-item' : 'none';
+          } else {
+            item.style.display = 'list-item';
+          }
+        }
+      }
+    </script>
+  </section>
+
+  <section class="card">
+    <input type="search" id="search-input" placeholder="Search stories...">
+  </section>
+
+  <section>
+    <ul id="results">
+        <li><a href="articlestory_10.1038_nphys1170.html">ArticleStory: Measured measurement</a></li>
+        <li><a href="articlestory_10.7554_elife.79714.html">ArticleStory: Stable population structure in Europe since the Iron Age, despite high mobility</a></li>
+        <li><a href="articlestory_10.1371_journal.pbio.3002916.html">ArticleStory: Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance</a></li>
+        <li><a href="articlestory_10.3998_mpub.9853855.html">ArticleStory: Music on the Move</a></li>
+        <li><a href="bookstory_10.3998_mpub.14414299.html">BookStory: Urban Fantasy</a></li>
+        <li><a href="bookstory_10.3998_mpub.11927713.html">BookStory: Coronavirus Politics</a></li>
+        <li><a href="bookstory_10.3368_HNAL9672.html">BookStory: Farm Boys: Lives of Gay Men from the Rural Midwest</a></li>
+        <li><a href="bookstory_10.1007_978-3-319-00026-8.html">BookStory: Opening Science</a></li>
+        <li><a href="bookstory_10.11647_OBP.0222.html">BookStory: A European Public Investment Outlook</a></li>
+        <li><a href="bookstory_10.5703_1288284317628.html">BookStory: Sisters in Science</a></li>
+        <li><a href="bookstory_10.3998_mpub.11649332.html">BookStory: Elizabeth Bishop and the Literary Archive</a></li>
+        <li><a href="bookstory_10.3998_mpub.9853855.html">BookStory: Music on the Move</a></li>
+    </ul>
+  </section>
+
+  <footer class="page-footer">
+    &copy; 2026 OpenScience.works - All rights reserved
+  </footer>
+</div>
 </body>
 </html>
