@@ -121,18 +121,6 @@
             item.style.display = 'list-item';
           }
         }
-        //if zero results are visible, show all results
-        let visibleCount = 0;
-        for (let i = 0; i < items.length; i++) {
-          if (items[i].style.display === 'list-item') {
-            visibleCount++;
-          }
-        }
-        if (visibleCount === 0) {
-          for (let i = 0; i < items.length; i++) {
-            items[i].style.display = 'list-item';
-          }
-        }
       }
     </script>
   </section>
@@ -144,13 +132,20 @@
         const query = document.getElementById('search-input').value.toLowerCase();
         const results = document.getElementById('results');
         const items = results.getElementsByTagName('li');
+        var visibleCount = 0;
         results.style.display = 'block';
         for (let i = 0; i < items.length; i++) {
           const item = items[i];
           if (item.textContent.toLowerCase().includes(query)) {
             item.style.display = 'list-item';
+            visibleCount++;
           } else {
             item.style.display = 'none';
+          }
+        }
+        if (visibleCount === 0) {
+          for (let i = 0; i < items.length; i++) {
+            items[i].style.display = 'list-item';
           }
         }
         return false; // prevent form submission
