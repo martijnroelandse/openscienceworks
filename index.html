@@ -61,6 +61,15 @@
     }
     a { color: #2563eb; text-decoration: none; }
     a:hover { text-decoration: underline; }
+    input[list] {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      border: 0;
+      border-radius: 0.45rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
   </style>
 </head>
 <body>
@@ -88,55 +97,35 @@
       </div>
       <a href="#" onclick="toggleAdvancedSearch()">Advanced search</a>
     </div>
-    <div id="advancedSearch" style="display: none; margin-bottom: 2rem; display: columns; column-gap: 2rem; column-width: 20rem;">
-      <fieldset style="margin-bottom: 1rem;">
-        <legend>Filter by concept</legend>
-        <label><input type="checkbox" checked> All concepts</label>
-        <br>&nbsp;
-        <label><input type="checkbox"> Concept A</label>
-        <br>&nbsp;
-        <label><input type="checkbox"> Concept B</label>
-        <br>&nbsp;
-        <label><input type="checkbox"> Concept C</label>
-        <br>&nbsp;
-        <label><input type="checkbox"> Concept D</label>
-      </fieldset>
-      <fieldset style="margin-bottom: 1rem;">
-        <legend>Filter by publisher</legend>
-        <label><input type="checkbox" checked> All publishers</label>
-        <br>&nbsp;
-        <label><input type="checkbox"> Publisher A</label>
-        <br>&nbsp;
-        <label><input type="checkbox"> Publisher B</label>
-        <br>&nbsp;
-        <label><input type="checkbox"> Publisher C</label>
-        <br>&nbsp;
-        <label><input type="checkbox"> Publisher D</label>
-      </fieldset>
-      <fieldset style="margin-bottom: 1rem;">
-        <legend>Filter by journal</legend>
-        <label><input type="checkbox" checked> All journals</label>
-        <br>&nbsp;
-        <label><input type="checkbox"> Journal A</label>
-        <br>&nbsp;
-        <label><input type="checkbox"> Journal B</label>
-        <br>&nbsp;
-        <label><input type="checkbox"> Journal C</label>
-        <br>&nbsp;
-        <label><input type="checkbox"> Journal D</label>
-      </fieldset>
-      <fieldset style="margin-bottom: 1rem;">
-        <legend>Filter by inferred role</legend>
-        <label><input type="checkbox" checked> All roles</label>
-        <br>&nbsp;
-        <label><input type="checkbox"> Role A</label>
-        <br>&nbsp;
-        <label><input type="checkbox"> Role B</label>
-        <br>&nbsp;
-        <label><input type="checkbox"> Role C</label>
-        <br>&nbsp;
-        <label><input type="checkbox"> Role D</label>
-      </fieldset>
+    <div id="advancedSearch" style="display: none; margin-bottom: 0.5rem; display: columns; column-gap: 2rem; column-width: 20rem;">
+      <input placeholder="Filter by concepts..." list="conceptsList">
+      <datalist id="conceptsList">
+        <option value="Concept A">
+        <option value="Concept B">
+        <option value="Concept C">
+        <option value="Concept D">
+      </datalist>
+      <input placeholder="Filter by publisher..." list="publishersList">
+      <datalist id="publishersList">
+        <option value="Publisher A">
+        <option value="Publisher B">
+        <option value="Publisher C">
+        <option value="Publisher D">
+      </datalist>
+      <input placeholder="Filter by journal..." list="journalsList">
+      <datalist id="journalsList">
+        <option value="Journal A">
+        <option value="Journal B">
+        <option value="Journal C">
+        <option value="Journal D">
+      </datalist>
+      <input placeholder="Filter by inferred role..." list="inferredRolesList">
+      <datalist id="inferredRolesList">
+        <option value="Role A">
+        <option value="Role B">
+        <option value="Role C">
+        <option value="Role D">
+      </datalist>
     </div>
     <script>
       function toggleAdvancedSearch() {
