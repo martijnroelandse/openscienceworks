@@ -98,7 +98,7 @@
       <a href="#" onclick="toggleAdvancedSearch()">Advanced search</a>
     </div>
     <div id="advancedSearch" style="display: none; margin-bottom: 0.5rem; display: columns; column-gap: 2rem; column-width: 20rem;">
-      <input placeholder="Filter by concepts..." list="conceptsList">
+      <input id="concept_" placeholder="Filter by concepts..." list="conceptsList">
       <datalist id="conceptsList">
         <option value="Physics">
         <option value="History">
@@ -106,7 +106,7 @@
         <option value="Virology">
         <option value="Sociology">
       </datalist>
-      <input placeholder="Filter by publisher..." list="publishersList">
+      <input id="publisher_" placeholder="Filter by publisher..." list="publishersList">
       <datalist id="publishersList">
         <option value="Lever Press">
         <option value="Open Book Publishers">
@@ -115,13 +115,13 @@
         <option value="Uni of Michigan Press">
         <option value="Uni of Wisconsin Press">
       </datalist>
-      <input placeholder="Filter by journal..." list="journalsList">
+      <input id="journal_" placeholder="Filter by journal..." list="journalsList">
       <datalist id="journalsList">
         <option value="Nature Physics">
         <option value="PLOS Biology">
         <option value="Elife">
       </datalist>
-      <input placeholder="Filter by inferred role..." list="inferredRolesList">
+      <input id="role_" placeholder="Filter by inferred role..." list="inferredRolesList">
       <datalist id="inferredRolesList">
         <option value="Scholarly uptake">
         <option value="Usage-driven uptake">
@@ -136,68 +136,83 @@
         const fieldset = document.getElementById('advancedSearch');
         fieldset.style.display = fieldset.style.display === 'none' ? 'block' : 'none';
       }
-      function toggleStories() {
-        //toggle all li items in the results list that contain "ArticleStory:"  
-        const results = document.getElementById('results');
-        const items = results.getElementsByTagName('li');
-        const newBooksState = document.getElementById('toggleBooksStories').checked;
-        const newArticleState = document.getElementById('toggleArticleStories').checked;
-        for (let i = 0; i < items.length; i++) {
-          const item = items[i];
-          if (item.textContent.includes('ArticleStory:')) {
-            item.style.display = newArticleState ? 'list-item' : 'none';
-          } else if (item.textContent.includes('BookStory:')) {
-            item.style.display = newBooksState ? 'list-item' : 'none';
-          } else {
-            item.style.display = 'list-item';
-          }
-        }
-      }
     </script>
   </section>
 
   <section class="card">
-    <form onSubmit="return showResults()" action="/" method="post"><input type="search" id="search-input" placeholder="Search stories..."></form>
+    <form onSubmit="return false" action="/" method="post"><input type="search" id="search-input" placeholder="Search stories..."></form>
     <script>
       function showResults() {
         const query = document.getElementById('search-input').value.toLowerCase();
         const results = document.getElementById('results');
         const items = results.getElementsByTagName('li');
+        const conceptFilter = 'concept_'+document.getElementById('concept_').value.toLowerCase().replace(/\s/g, '-');
+        const publisherFilter = 'publisher_'+document.getElementById('publisher_').value.toLowerCase().replace(/\s/g, '-');
+        const journalFilter = 'journal_'+document.getElementById('journal_').value.toLowerCase().replace(/\s/g, '-');
+        const roleFilter = 'role_'+document.getElementById('role_').value.toLowerCase().replace(/\s/g, '-');
+        const newBooksState = document.getElementById('toggleBooksStories').checked;
+        const newArticleState = document.getElementById('toggleArticleStories').checked;
         var visibleCount = 0;
         results.style.display = 'block';
         for (let i = 0; i < items.length; i++) {
           const item = items[i];
-          if (item.textContent.toLowerCase().includes(query)) {
+          let matches = true;
+          let hasquery = query && query.trim() !== '';
+          let hasconceptFilter = conceptFilter && conceptFilter !== 'concept_';
+          let haspublisherFilter = publisherFilter && publisherFilter !== 'publisher_';
+          let hasjournalFilter = journalFilter && journalFilter !== 'journal_';
+          let hasroleFilter = roleFilter && roleFilter !== 'role_';
+          let isArticleStory = item.textContent.includes('ArticleStory:');
+          let isBookStory = item.textContent.includes('BookStory:');
+          if (!newBooksState && isBookStory) {
+            matches = false;
+          }
+          if (!newArticleState && isArticleStory) {
+            matches = false;
+          }
+          if (hasquery && !item.textContent.toLowerCase().includes(query)) {
+            matches = false;
+          }
+          if (hasconceptFilter && !item.classList.contains(conceptFilter)) {
+            matches = false;
+          }
+          if (haspublisherFilter && !item.classList.contains(publisherFilter)) {
+            matches = false;
+          }
+          if (hasjournalFilter && !item.classList.contains(journalFilter)) {
+            matches = false;
+          }
+          if (hasroleFilter && !item.classList.contains(roleFilter)) {
+            matches = false;
+          }
+          if (matches && (hasquery || hasconceptFilter || haspublisherFilter || hasjournalFilter || hasroleFilter)) {
             item.style.display = 'list-item';
             visibleCount++;
           } else {
             item.style.display = 'none';
           }
         }
-        if (visibleCount === 0) {
-          for (let i = 0; i < items.length; i++) {
-            items[i].style.display = 'list-item';
-          }
-        }
-        return false; // prevent form submission
       }
+
+      //on keypress or click anywhere on the document, call showResults
+      document.addEventListener('input', showResults);
+      document.addEventListener('click', showResults);
     </script>
   </section>
 
   <section>
     <ul id="results" style="display: none;">
-        <li><a href="articlestory_10.1038_nphys1170.html">ArticleStory: Measured measurement</a></li>
-        <li><a href="articlestory_10.7554_elife.79714.html">ArticleStory: Stable population structure in Europe since the Iron Age, despite high mobility</a></li>
-        <li><a href="articlestory_10.1371_journal.pbio.3002916.html">ArticleStory: Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance</a></li>
-        <li><a href="articlestory_10.3998_mpub.9853855.html">ArticleStory: Music on the Move</a></li>
-        <li><a href="bookstory_10.3998_mpub.14414299.html">BookStory: Urban Fantasy</a></li>
-        <li><a href="bookstory_10.3998_mpub.11927713.html">BookStory: Coronavirus Politics</a></li>
-        <li><a href="bookstory_10.3368_HNAL9672.html">BookStory: Farm Boys: Lives of Gay Men from the Rural Midwest</a></li>
-        <li><a href="bookstory_10.1007_978-3-319-00026-8.html">BookStory: Opening Science</a></li>
-        <li><a href="bookstory_10.11647_OBP.0222.html">BookStory: A European Public Investment Outlook</a></li>
-        <li><a href="bookstory_10.5703_1288284317628.html">BookStory: Sisters in Science</a></li>
-        <li><a href="bookstory_10.3998_mpub.11649332.html">BookStory: Elizabeth Bishop and the Literary Archive</a></li>
-        <li><a href="bookstory_10.3998_mpub.9853855.html">BookStory: Music on the Move</a></li>
+        <li class="concept_history concept_physics concept_quantum journal_nature-physics role_scholarly-uptake"><a href="articlestory_10.1038_nphys1170.html">ArticleStory: Measured measurement</a></li>
+        <li class="concept_geography concept_sociology concept_physics journal_elife role_rapid-uptake role_high-visibility-uptake"><a href="articlestory_10.7554_elife.79714.html">ArticleStory: Stable population structure in Europe since the Iron Age, despite high mobility</a></li>
+        <li class="concept_biology concept_virology concept_genetics journal_plos-biology role_high-visibility-uptake role_rapid-uptake role_reference-point-for-synthesis"><a href="articlestory_10.1371_journal.pbio.3002916.html">ArticleStory: Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance</a></li>
+        <li class="concept_art concept_fantasy concept_philosophy journal_lever-press role_usage-driven-uptake role_public-visibility-signal role_scholarly-uptake"><a href="bookstory_10.3998_mpub.14414299.html">BookStory: Urban Fantasy</a></li>
+        <li class="concept_politics concept_medicine concept_sociology publisher_uni-of-michigan-press role_usage-driven-uptake role_public-visibility-signal role_scholarly-uptake"><a href="bookstory_10.3998_mpub.11927713.html">BookStory: Coronavirus Politics</a></li>
+        <li class="concept_sociology concept_gender-studies concept_geography publisher_uni-of-wisconsin-press role_usage-driven-uptake role_scholarly-uptake"><a href="bookstory_10.3368_HNAL9672.html">BookStory: Farm Boys: Lives of Gay Men from the Rural Midwest</a></li>
+        <li class="concept_computer-science publisher_springeropen role_usage-driven-uptake role_public-visibility-signal role_scholarly-uptake"><a href="bookstory_10.1007_978-3-319-00026-8.html">BookStory: Opening Science</a></li>
+        <li class="concept_business concept_politics concept_law publisher_open-book-publishers role_usage-driven-uptake role_scholarly-uptake"><a href="bookstory_10.11647_OBP.0222.html">BookStory: A European Public Investment Outlook</a></li>
+        <li class="concept_law concept_history concept_politics publisher_purdue-university role_usage-driven-uptake"><a href="bookstory_10.5703_1288284317628.html">BookStory: Sisters in Science</a></li>
+        <li class="concept_art concept_history concept_literature publisher_lever-press role_public-visibility-signal role_scholarly-uptake"><a href="bookstory_10.3998_mpub.11649332.html">BookStory: Elizabeth Bishop and the Literary Archive</a></li>
+        <li class="concept_art concept_music concept_history publisher_lever-press role_public-visibility-signal role_scholarly-uptake"><a href="bookstory_10.3998_mpub.9853855.html">BookStory: Music on the Move</a></li>
     </ul>
   </section>
 
