@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Leuven University Press - Dashboard</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1100px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.75rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        
+        .header-bar { display: flex; align-items: center; gap: 1.5rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; }
+        .hero-title { font-size: 2.1rem; margin: 0 0 0.5rem 0; font-weight: 700; line-height: 1.2; }
+        
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.1rem 0.2rem 0.2rem 0; font-weight: 500; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        
+        .stat-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem; text-align: center; }
+        .stat-number { font-size: 2.5rem; font-weight: 700; color: #0f172a; line-height: 1; margin-bottom: 0.25rem; }
+        .stat-label { font-size: 0.85rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+        
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; position: sticky; top: 0; z-index: 10; }
+        tr:hover { background-color: #f9fafb; }
+        
+        h2 { margin-top: 0; font-size: 1.25rem; color: #111827; display: flex; justify-content: space-between; align-items: center; }
+        
+        .list-row { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f3f4f6; padding:0.4rem 0; }
+        .list-row:last-child { border-bottom: none; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; }
+            .grid-2, .grid-3, .grid-4 { display: grid !important; }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000;">
+        Print PDF Dashboard
+    </button>
+    
+    <div class="page">
+        <header class="hero card">
+            <div class="header-bar">
+                <div class="logo-wrap">
+                    <img src="openscience-logo.png" alt="OpenScience Works Logo">
+                </div>
+                <div>
+                    <h1 class="hero-title">Leuven University Press</h1>
+                    <div class="muted" style="font-size: 1rem;">Aggregated analysis of <strong>108</strong> works (1 Articles, 107 Books)</div>
+                </div>
+            </div>
+        </header>
+
+        
+        <section class="card" style="margin-top: -0.5rem;">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text" style="line-height: 1.6;">
+                <h3 class='story-subheading'>Executive Summary</h3><p class='story-text'>The Leuven University Press encompasses 108 works that have collectively generated significant scholarly and public impact. Anchored predominantly in Art, Sociology, and Political science, this collection has amassed a highly concentrated thematic footprint.</p><p class='story-text'>Commitment to open knowledge sharing is a defining characteristic of this dataset. An impressive 100% of the portfolio is available via Open Access, ensuring global accessibility.</p><p class='story-text'>The impact of these works is geographically and institutionally diverse. Noteworthy engagement extends beyond standard academia, with measurable uptake in the Facility and Nonprofit sectors. Supported by foundational backing from KU Leuven, this portfolio demonstrates both rapid public uptake and sustained relevance as a methodological anchor for future synthesis.</p>
+            </div>
+        </section>
+        
+        
+        <div class="grid-4">
+            <div class="stat-box">
+                <div class="stat-number">374</div>
+                <div class="stat-label">Total Citations</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">453</div>
+                <div class="stat-label">Online Mentions</div>
+            </div>
+            <div class="stat-box">
+                
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Open Access</div>
+                <div class="muted" style="font-size:0.7rem; margin-top:0.25rem;">108 of 108 works</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">15</div>
+                <div class="stat-label">Citing Countries</div>
+            </div>
+        </div>
+
+        
+
+        <div class="grid-4">
+            <section class="card" style="margin-bottom:0; padding:1.25rem;">
+                <h2 style="font-size:1.1rem; margin-bottom:0.2rem;"><span>Citing Sectors</span> <span class="badge">ROR</span></h2>
+                <div class='muted' style='margin-bottom:1rem; font-size:0.8rem;'>Institutional profiles.</div>
+                <div style="height: 180px; width: 100%; display: flex; justify-content: center;">
+                    <canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Funder&#34;, &#34;Facility&#34;, &#34;Archive&#34;, &#34;Nonprofit&#34;, &#34;Government&#34;, &#34;Healthcare&#34;, &#34;Other&#34;, &#34;Company&#34;]" data-values="[258, 14, 47, 26, 31, 20, 8, 5, 8]"></canvas>
+                </div>
+            </section>
+            
+            <section class="card" style="margin-bottom:0; padding:1.25rem;">
+                <h2 style="font-size:1.1rem; margin-bottom:0.2rem;"><span>Citation Context</span> <span class="badge">scite</span></h2>
+                <div class='muted' style='margin-bottom:1rem; font-size:0.8rem;'>Scholarly reception.</div>
+                <div style="height: 180px; width: 100%; display: flex; justify-content: center;">
+                    <canvas id="sciteChart" data-labels="[&#34;Supporting&#34;, &#34;Mentioning&#34;, &#34;Contradicting&#34;]" data-values="[1, 58, 0]"></canvas>
+                </div>
+            </section>
+            
+            <section class="card" style="margin-bottom:0; padding:1.25rem;">
+                <h2 style="font-size:1.1rem; margin-bottom:0.2rem;"><span>Citing Work Types</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-bottom:1rem; font-size:0.8rem;'>Composition of literature.</div>
+                <div style="height: 180px; width: 100%; display: flex; justify-content: center;">
+                    <canvas id="wtChart" data-labels="[&#34;Article&#34;, &#34;Book&#34;, &#34;Paratext&#34;, &#34;Book-Chapter&#34;, &#34;Other&#34;, &#34;Dissertation&#34;, &#34;Preprint&#34;, &#34;Dataset&#34;, &#34;Review&#34;]" data-values="[265, 9, 2, 73, 8, 9, 5, 2, 1]"></canvas>
+                </div>
+            </section>
+
+            <section class="card" style="margin-bottom:0; padding:1.25rem;">
+                <h2 style="font-size:1.1rem; margin-bottom:0.2rem;"><span>Top Citing Venues</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-bottom:1rem; font-size:0.8rem;'>Most frequent journals.</div>
+                <div style="height: 180px; width: 100%; display: flex; justify-content: center;">
+                    <canvas id="venueChart" data-labels="[&#34;Unknown&#34;, &#34;Cambridge University Press eBooks&#34;, &#34;Archaeological and Anthropological Sciences&#34;, &#34;Journal of Archaeological Science&#34;, &#34;Archaeometry&#34;, &#34;Heritage Science&#34;]" data-values="[36, 23, 12, 11, 9, 8]"></canvas>
+                </div>
+            </section>
+        </div>
+
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Dominant Concepts</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:1rem;'>Weighted by AI confidence score.</div>
+                <div>
+                    
+                        
+                            <span class="tag">Art</span>
+                        
+                    
+                        
+                            <span class="tag">Sociology</span>
+                        
+                    
+                        
+                            <span class="tag">Political science</span>
+                        
+                    
+                        
+                            <span class="tag">History</span>
+                        
+                    
+                        
+                            <span class="tag">Politics</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Philosophy</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Humanities</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Gender studies</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Literature</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Narrative</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Visual arts</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Aesthetics</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Computer science</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Colonialism</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Law</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Epistemology</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Art history</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Architecture</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Geography</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Archaeology</span>
+                        
+                    
+                    
+                </div>
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Inferred Portfolio Roles</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:1rem;'>Cumulative heuristic classification.</div>
+                <div style="display:flex; flex-direction:column; gap:0.5rem;">
+                    
+                        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f3f4f6; padding-bottom:0.25rem;">
+                            <span style="font-weight: 500; color: #374151;">Commercial Linkage</span>
+                            <span class="muted">Score: 96.3</span>
+                        </div>
+                    
+                        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f3f4f6; padding-bottom:0.25rem;">
+                            <span style="font-weight: 500; color: #374151;">Sustainability & Policy Relevance</span>
+                            <span class="muted">Score: 36.3</span>
+                        </div>
+                    
+                        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f3f4f6; padding-bottom:0.25rem;">
+                            <span style="font-weight: 500; color: #374151;">Active Public Discourse</span>
+                            <span class="muted">Score: 28.9</span>
+                        </div>
+                    
+                        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f3f4f6; padding-bottom:0.25rem;">
+                            <span style="font-weight: 500; color: #374151;">Scholarly Uptake</span>
+                            <span class="muted">Score: 27.4</span>
+                        </div>
+                    
+                    
+                </div>
+            </section>
+        </div>
+
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Top Citing Countries</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:1rem;'>Based on author affiliations of citing works.</div>
+                <div>
+                    
+                        
+                            <span class="tag">United Kingdom (56)</span>
+                        
+                    
+                        
+                            <span class="tag">Belgium (46)</span>
+                        
+                    
+                        
+                            <span class="tag">China (28)</span>
+                        
+                    
+                        
+                            <span class="tag">United States (25)</span>
+                        
+                    
+                        
+                            <span class="tag">Spain (24)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Italy (18)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">France (17)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Portugal (15)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Germany (14)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Poland (11)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Netherlands (9)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Canada (6)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Brazil (6)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Lithuania (5)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Denmark (5)</span>
+                        
+                    
+                    
+                </div>
+            </section>
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Top Citing Institutions</span> <span class="badge">ROR / OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:1rem;'>Canonical names based on author affiliations.</div>
+                <div>
+                    
+                        
+                            <span class="tag">KU Leuven (25)</span>
+                        
+                    
+                        
+                            <span class="tag">University of Oxford (12)</span>
+                        
+                    
+                        
+                            <span class="tag">European Corporate Governance Institute (9)</span>
+                        
+                    
+                        
+                            <span class="tag">University of Chinese Academy of Sciences (8)</span>
+                        
+                    
+                        
+                            <span class="tag">Oxford Archaeology (7)</span>
+                        
+                    
+                        
+                            <span class="tag">University of Aveiro (7)</span>
+                        
+                    
+                        
+                            <span class="tag">University of St Andrews (6)</span>
+                        
+                    
+                        
+                            <span class="tag">British Museum (6)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">University of Exeter (5)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Sichuan University (5)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Peking University (5)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Institute of Vertebrate Paleontology and Paleoanthropology (5)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Field Museum of Natural History (5)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Chinese Academy of Sciences (4)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Instituto de Historia (4)</span>
+                        
+                    
+                    
+                </div>
+            </section>
+        </div>
+
+        <div class="grid-2">
+            <section class="card span-full" style="margin-bottom:0;">
+                <h2><span>Top Funders</span> <span class="badge">Europe PMC</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:1rem;'>Number of distinct works supported.</div>
+                <div>
+                    
+                        
+                            <span class="tag tag-soft" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0;">KU Leuven (69)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0;">European Research Council (9)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0;">CARMAH (3)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0;">Humboldt-Universität zu Berlin (3)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0;">Knowledge Unlatched (3)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0;">Research Foundation Flanders (FWO) (3)</span>
+                        
+                            <span class="tag tag-soft" >Fondation Universitaire de Belgique (2)</span>
+                        
+                            <span class="tag tag-soft" >Belgian Federal Science Policy Office (2)</span>
+                        
+                            <span class="tag " >University of Sydney (1)</span>
+                        
+                            <span class="tag " >The Popular Culture Association of Australia and New Zealand (1)</span>
+                        
+                            <span class="tag " >Arts Research Institute at the University of California, Santa Cruz (1)</span>
+                        
+                            <span class="tag " >Liz Warnock Publication Fund, Northwestern University (1)</span>
+                        
+                            <span class="tag " >Institute of Art History (1)</span>
+                        
+                            <span class="tag " >ELV (Expertisecentrum Literair Vertalen) (1)</span>
+                        
+                            <span class="tag " >Delft University of Technology (1)</span>
+                        
+                    
+                </div>
+            </section>
+            
+            
+        </div>
+
+        <section class="card span-full">
+            <h2><span>Core Authors</span> <span class="badge">Portfolio</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:1rem;'>Authors with more than 1 work in this dataset.</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.5rem 1.5rem;">
+                
+                    <div class="list-row" style="border-bottom: 1px solid #f3f4f6;">
+                        <span style="font-weight: 500; color: #374151;">Paulo de Assis</span>
+                        <span class="tag tag-soft" style="margin:0;">2 papers</span>
+                    </div>
+                
+                    <div class="list-row" style="border-bottom: 1px solid #f3f4f6;">
+                        <span style="font-weight: 500; color: #374151;">Arjun Appadurai</span>
+                        <span class="tag tag-soft" style="margin:0;">2 papers</span>
+                    </div>
+                
+                    <div class="list-row" style="border-bottom: 1px solid #f3f4f6;">
+                        <span style="font-weight: 500; color: #374151;">Pierre Bourdieu</span>
+                        <span class="tag tag-soft" style="margin:0;">2 papers</span>
+                    </div>
+                
+                    <div class="list-row" style="border-bottom: 1px solid #f3f4f6;">
+                        <span style="font-weight: 500; color: #374151;">Michel Foucault</span>
+                        <span class="tag tag-soft" style="margin:0;">2 papers</span>
+                    </div>
+                
+                    <div class="list-row" style="border-bottom: 1px solid #f3f4f6;">
+                        <span style="font-weight: 500; color: #374151;">Benedict Anderson</span>
+                        <span class="tag tag-soft" style="margin:0;">2 papers</span>
+                    </div>
+                
+                    <div class="list-row" style="border-bottom: 1px solid #f3f4f6;">
+                        <span style="font-weight: 500; color: #374151;">Stuart Hall</span>
+                        <span class="tag tag-soft" style="margin:0;">2 papers</span>
+                    </div>
+                
+                    <div class="list-row" style="border-bottom: 1px solid #f3f4f6;">
+                        <span style="font-weight: 500; color: #374151;">Avtar Brah</span>
+                        <span class="tag tag-soft" style="margin:0;">2 papers</span>
+                    </div>
+                
+                    <div class="list-row" style="border-bottom: 1px solid #f3f4f6;">
+                        <span style="font-weight: 500; color: #374151;">Luis</span>
+                        <span class="tag tag-soft" style="margin:0;">2 papers</span>
+                    </div>
+                
+                    <div class="list-row" style="border-bottom: 1px solid #f3f4f6;">
+                        <span style="font-weight: 500; color: #374151;">Madeleine Reeves</span>
+                        <span class="tag tag-soft" style="margin:0;">2 papers</span>
+                    </div>
+                
+                    <div class="list-row" style="border-bottom: 1px solid #f3f4f6;">
+                        <span style="font-weight: 500; color: #374151;">James Ferguson</span>
+                        <span class="tag tag-soft" style="margin:0;">2 papers</span>
+                    </div>
+                
+                    <div class="list-row" style="border-bottom: 1px solid #f3f4f6;">
+                        <span style="font-weight: 500; color: #374151;">Akhil Gupta</span>
+                        <span class="tag tag-soft" style="margin:0;">2 papers</span>
+                    </div>
+                
+                    <div class="list-row" style="border-bottom: 1px solid #f3f4f6;">
+                        <span style="font-weight: 500; color: #374151;">Ernst Wolff</span>
+                        <span class="tag tag-soft" style="margin:0;">2 papers</span>
+                    </div>
+                
+                    <div class="list-row" style="border-bottom: 1px solid #f3f4f6;">
+                        <span style="font-weight: 500; color: #374151;">Nadia Fadil</span>
+                        <span class="tag tag-soft" style="margin:0;">2 papers</span>
+                    </div>
+                
+                    <div class="list-row" style="border-bottom: 1px solid #f3f4f6;">
+                        <span style="font-weight: 500; color: #374151;">Samuli Schielke</span>
+                        <span class="tag tag-soft" style="margin:0;">2 papers</span>
+                    </div>
+                
+                    <div class="list-row" style="border-bottom: 1px solid #f3f4f6;">
+                        <span style="font-weight: 500; color: #374151;">Heynickx, Rajesh::0000-0002-0889-7380::600</span>
+                        <span class="tag tag-soft" style="margin:0;">2 papers</span>
+                    </div>
+                
+                
+            </div>
+        </section>
+        </div>
+
+        <section class="card">
+            <h2><span>Citation Timeline</span></h2>
+            <div style="height: 220px; width: 100%; margin-top: 0.5rem;">
+                <canvas id="citationChart" data-labels="[&#34;2013&#34;, &#34;2014&#34;, &#34;2015&#34;, &#34;2016&#34;, &#34;2017&#34;, &#34;2018&#34;, &#34;2019&#34;, &#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[7, 5, 6, 7, 10, 11, 17, 41, 44, 42, 55, 69, 50, 10]"></canvas>
+            </div>
+        </section>
+
+        <section class="card print-breakable">
+            <h2><span>Included Works</span></h2>
+            <div style="max-height: 600px; overflow-y: auto;">
+                <table>
+                    <thead><tr><th>Year</th><th>Type</th><th>Title</th><th>DOI</th><th>Citations</th><th>Events</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Beyond Provenance: New Approaches to Interpreting the Chemistry of Archaeological Copper Alloys</td>
+                        <td><a href="https://doi.org/10.11116/9789461662668" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461662668</a></td>
+                        <td><strong>56</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Logic of Experimentation: Rethinking Music Performance Through Artistic Research</td>
+                        <td><a href="https://doi.org/10.11116/9789461662507" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461662507</a></td>
+                        <td><strong>42</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Glass Making in the Greco-Roman World: Results of the ARCHGLASS project</td>
+                        <td><a href="https://doi.org/10.11116/9789461661579" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461661579</a></td>
+                        <td><strong>40</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2011</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Virtues for the People</td>
+                        <td><a href="https://doi.org/10.11116/VP_PLU" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/VP_PLU</a></td>
+                        <td><strong>33</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Images of Immigrants and Refugees</td>
+                        <td><a href="https://doi.org/10.11116/9789461662811" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461662811</a></td>
+                        <td><strong>24</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>The Global Horizon</td>
+                        <td><a href="https://doi.org/10.11116/9789461663993" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663993</a></td>
+                        <td><strong>15</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Essays on Plato’s Epistemology</td>
+                        <td><a href="https://doi.org/10.11116/EPE_AMP" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/EPE_AMP</a></td>
+                        <td><strong>13</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Building Collaborative Governance in Times of Uncertainty</td>
+                        <td><a href="https://doi.org/10.11116/9789461665058" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665058</a></td>
+                        <td><strong>11</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>European Perspectives for Public Administration</td>
+                        <td><a href="https://doi.org/10.11116/9789461663078" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663078</a></td>
+                        <td><strong>8</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>The Elemental Analysis of Glass Beads</td>
+                        <td><a href="https://doi.org/10.11116/9789461664655" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664655</a></td>
+                        <td><strong>8</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Virtual Works – Actual Things</td>
+                        <td><a href="https://doi.org/10.11116/9789461662521" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461662521</a></td>
+                        <td><strong>6</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Powers of Divergence: An Experimental Approach to Music Performance</td>
+                        <td><a href="https://doi.org/10.11116/9789461662514" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461662514</a></td>
+                        <td><strong>6</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Public Administration in Ethiopia</td>
+                        <td><a href="https://doi.org/10.11116/9789461663634" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663634</a></td>
+                        <td><strong>6</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Unfinished Histories</td>
+                        <td><a href="https://doi.org/10.11116/9789461664914" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664914</a></td>
+                        <td><strong>5</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2012</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Gender and Christianity in Modern Europe</td>
+                        <td><a href="https://doi.org/10.11116/GCME_KAD" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/GCME_KAD</a></td>
+                        <td><strong>5</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Mapping Landscapes in Transformation</td>
+                        <td><a href="https://doi.org/10.11116/9789461662835" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461662835</a></td>
+                        <td><strong>5</strong></td>
+                        <td>12</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Migration at Work</td>
+                        <td><a href="https://doi.org/10.11116/9789461663443" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663443</a></td>
+                        <td><strong>5</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Performing Hysteria</td>
+                        <td><a href="https://doi.org/10.11116/9789461663139" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663139</a></td>
+                        <td><strong>5</strong></td>
+                        <td>7</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Christian Masculinity</td>
+                        <td><a href="https://doi.org/10.11116/9789461664280" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664280</a></td>
+                        <td><strong>4</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Homo Mimeticus</td>
+                        <td><a href="https://doi.org/10.11116/9789461664778" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664778</a></td>
+                        <td><strong>4</strong></td>
+                        <td>13</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Migratie in België in 21 vragen en antwoorden</td>
+                        <td><a href="https://doi.org/10.11116/9789461662590" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461662590</a></td>
+                        <td><strong>4</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Oil Wealth and Development in Uganda and Beyond</td>
+                        <td><a href="https://doi.org/10.11116/9789461663092" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663092</a></td>
+                        <td><strong>4</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Silver Empowerment</td>
+                        <td><a href="https://doi.org/10.11116/9789461665072" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665072</a></td>
+                        <td><strong>4</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Transpositions</td>
+                        <td><a href="https://doi.org/10.11116/9789461662538" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461662538</a></td>
+                        <td><strong>3</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Absent Presences in the Colonial Archive</td>
+                        <td><a href="https://doi.org/10.11116/9789461664693" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664693</a></td>
+                        <td><strong>3</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Across Anthropology</td>
+                        <td><a href="https://doi.org/10.11116/9789461663184" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663184</a></td>
+                        <td><strong>3</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Experimental Affinities in Music</td>
+                        <td><a href="https://doi.org/10.11116/9789461661883" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461661883</a></td>
+                        <td><strong>3</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Living with History, 1914-1964</td>
+                        <td><a href="https://doi.org/10.11116/9789461663962" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663962</a></td>
+                        <td><strong>3</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Making Home(s) in Displacement</td>
+                        <td><a href="https://doi.org/10.11116/9789461664082" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664082</a></td>
+                        <td><strong>3</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>The Tacit Dimension</td>
+                        <td><a href="https://doi.org/10.11116/9789461663801" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663801</a></td>
+                        <td><strong>3</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Translation Policies in Legal and Institutional Settings</td>
+                        <td><a href="https://doi.org/10.11116/9789461664112" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664112</a></td>
+                        <td><strong>3</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Aristotle and the Ontology of St. Bonaventure</td>
+                        <td><a href="https://doi.org/10.11116/9789461664884" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664884</a></td>
+                        <td><strong>2</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2013</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>A Small Nation in the Turmoil of the Second World War</td>
+                        <td><a href="https://doi.org/10.11116/SNTSWW" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/SNTSWW</a></td>
+                        <td><strong>2</strong></td>
+                        <td>47</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>At Home in Renaissance Bruges</td>
+                        <td><a href="https://doi.org/10.11116/9789461664389" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664389</a></td>
+                        <td><strong>2</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Contested Legacies</td>
+                        <td><a href="https://doi.org/10.11116/9789461665140" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665140</a></td>
+                        <td><strong>2</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Evolving as a Digital Scholar</td>
+                        <td><a href="https://doi.org/10.11116/9789461663900" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663900</a></td>
+                        <td><strong>2</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Handbook for Ethiopian Public Administration Program Accreditation</td>
+                        <td><a href="https://doi.org/10.11116/9789461664679" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664679</a></td>
+                        <td><strong>2</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Article</span></td>
+                        <td>Islamic Glass in the Making</td>
+                        <td><a href="https://doi.org/10.11116/9789461664419" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664419</a></td>
+                        <td><strong>2</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Newcomers Navigating the Welfare State</td>
+                        <td><a href="https://doi.org/10.11116/9789461665249" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665249</a></td>
+                        <td><strong>2</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Participatiegolven</td>
+                        <td><a href="https://doi.org/10.11116/9789461662880" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461662880</a></td>
+                        <td><strong>2</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Working Through Colonial Collections</td>
+                        <td><a href="https://doi.org/10.11116/9789461664242" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664242</a></td>
+                        <td><strong>1</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>A Dark Trace</td>
+                        <td><a href="https://doi.org/10.11116/9789461664174" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664174</a></td>
+                        <td><strong>1</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Architectures of Resistance</td>
+                        <td><a href="https://doi.org/10.11116/9789461665522" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665522</a></td>
+                        <td><strong>1</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Arrival Cities</td>
+                        <td><a href="https://doi.org/10.11116/9789461663245" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663245</a></td>
+                        <td><strong>1</strong></td>
+                        <td>62</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Between Conventional and Experimental</td>
+                        <td><a href="https://doi.org/10.11116/9789461665515" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665515</a></td>
+                        <td><strong>1</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Brokers of Modernity</td>
+                        <td><a href="https://doi.org/10.11116/9789461662545" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461662545</a></td>
+                        <td><strong>1</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Comunidad, pertenencia, extrenjería</td>
+                        <td><a href="https://doi.org/10.11116/9789461664440" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664440</a></td>
+                        <td><strong>1</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Dialogen over België</td>
+                        <td><a href="https://doi.org/10.11116/9789461663481" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663481</a></td>
+                        <td><strong>1</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Documenting Ancient Sagalassos</td>
+                        <td><a href="https://doi.org/10.11116/9789461665256" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665256</a></td>
+                        <td><strong>1</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Financing Quality Education for All</td>
+                        <td><a href="https://doi.org/10.11116/9789461663009" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663009</a></td>
+                        <td><strong>1</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>New Multicultural Identities in Europe</td>
+                        <td><a href="https://doi.org/10.11116/NMIE_CII" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/NMIE_CII</a></td>
+                        <td><strong>1</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Pietro Pomponazzi and the Renaissance Theory of the Elements</td>
+                        <td><a href="https://doi.org/10.11116/9789461665607" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665607</a></td>
+                        <td><strong>1</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Plutarch’s Cosmological Ethics</td>
+                        <td><a href="https://doi.org/10.11116/9789461664518" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664518</a></td>
+                        <td><strong>1</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Revival After the Great War</td>
+                        <td><a href="https://doi.org/10.11116/9789461663542" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663542</a></td>
+                        <td><strong>1</strong></td>
+                        <td>37</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>The Belgian Photonovel, 1954-1985</td>
+                        <td><a href="https://doi.org/10.11116/9789461665119" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665119</a></td>
+                        <td><strong>1</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>The Hybrid Practitioner</td>
+                        <td><a href="https://doi.org/10.11116/9789461664556" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664556</a></td>
+                        <td><strong>1</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>The Romero Memory</td>
+                        <td><a href="https://doi.org/10.11116/9789461665621" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665621</a></td>
+                        <td><strong>1</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Tot de bodem</td>
+                        <td><a href="https://doi.org/10.11116/9789461664990" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664990</a></td>
+                        <td><strong>1</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Tracheal Transplantation</td>
+                        <td><a href="https://doi.org/10.11116/9789461662965" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461662965</a></td>
+                        <td><strong>1</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Turkish German Muslims and Comedy Entertainment</td>
+                        <td><a href="https://doi.org/10.11116/9789461663412" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663412</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Ubiquity</td>
+                        <td><a href="https://doi.org/10.11116/9789461664020" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664020</a></td>
+                        <td><strong>0</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Watching, Waiting</td>
+                        <td><a href="https://doi.org/10.11116/9789461665195" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665195</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>A Constellation of Courts</td>
+                        <td><a href="https://doi.org/10.11116/9789461664297" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664297</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Alles verandert altijd - Herziene editie</td>
+                        <td><a href="https://doi.org/10.11116/9789461665324" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665324</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>An Opaque Mirror For Trajan</td>
+                        <td><a href="https://doi.org/10.11116/9789461665355" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665355</a></td>
+                        <td><strong>0</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>As German as Kafka</td>
+                        <td><a href="https://doi.org/10.11116/9789461662842" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461662842</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Black Matrilineage, Photography, and Representation</td>
+                        <td><a href="https://doi.org/10.11116/9789461664631" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664631</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Building a White Nation</td>
+                        <td><a href="https://doi.org/10.11116/9789461665263" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665263</a></td>
+                        <td><strong>0</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Character Constellations</td>
+                        <td><a href="https://doi.org/10.11116/9789461664129" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664129</a></td>
+                        <td><strong>0</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Cold War Triangle</td>
+                        <td><a href="https://doi.org/10.11116/9789461663979" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663979</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Collecting Asian Art</td>
+                        <td><a href="https://doi.org/10.11116/9789461665409" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665409</a></td>
+                        <td><strong>0</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Comics of the New Europe</td>
+                        <td><a href="https://doi.org/10.11116/9789461665270" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665270</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Congoville</td>
+                        <td><a href="https://doi.org/10.11116/9789461663948" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663948</a></td>
+                        <td><strong>0</strong></td>
+                        <td>48</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Congoville</td>
+                        <td><a href="https://doi.org/10.11116/9789461663955" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663955</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Contact Zones</td>
+                        <td><a href="https://doi.org/10.11116/9789461663573" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663573</a></td>
+                        <td><strong>0</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>De stad op de berg</td>
+                        <td><a href="https://doi.org/10.11116/9789461664051" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664051</a></td>
+                        <td><strong>0</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Dies irae</td>
+                        <td><a href="https://doi.org/10.11116/9789461664303" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664303</a></td>
+                        <td><strong>0</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Europees burgerschap in de klas</td>
+                        <td><a href="https://doi.org/10.11116/9789461664570" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664570</a></td>
+                        <td><strong>0</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Exploring the Transnational Neighbourhood</td>
+                        <td><a href="https://doi.org/10.11116/9789461664815" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664815</a></td>
+                        <td><strong>0</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Fake news in oorlogstijd</td>
+                        <td><a href="https://doi.org/10.11116/9789461663788" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663788</a></td>
+                        <td><strong>0</strong></td>
+                        <td>9</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Francis Alÿs. The Nature of the Game</td>
+                        <td><a href="https://doi.org/10.11116/9789461665416" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665416</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Islamophobia as a Form of Radicalisation</td>
+                        <td><a href="https://doi.org/10.11116/9789461665096" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665096</a></td>
+                        <td><strong>0</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Japan’s Book Donation to the University of Louvain</td>
+                        <td><a href="https://doi.org/10.11116/9789461663283" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663283</a></td>
+                        <td><strong>0</strong></td>
+                        <td>147</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>La Monarquía Indiana de Carlos II en la encrujiada</td>
+                        <td><a href="https://doi.org/10.11116/9789461665553" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665553</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Landscapes of Liberation</td>
+                        <td><a href="https://doi.org/10.11116/9789461665171" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665171</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Leaving Spain</td>
+                        <td><a href="https://doi.org/10.11116/9789461664495" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664495</a></td>
+                        <td><strong>0</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Martin Versfeld</td>
+                        <td><a href="https://doi.org/10.11116/9789461664143" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664143</a></td>
+                        <td><strong>0</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Militant Jihadism</td>
+                        <td><a href="https://doi.org/10.11116/9789461663023" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663023</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Mobs and Microbes</td>
+                        <td><a href="https://doi.org/10.11116/9789461664952" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664952</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Modern Etruscans</td>
+                        <td><a href="https://doi.org/10.11116/9789461665232" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665232</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Modern Islamic Thinking and Activism</td>
+                        <td><a href="https://doi.org/10.11116/MITA_CII" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/MITA_CII</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Mongameli Mabona</td>
+                        <td><a href="https://doi.org/10.11116/9789461663610" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663610</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Muslim Marriage and Non-Marriage</td>
+                        <td><a href="https://doi.org/10.11116/9789461665423" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665423</a></td>
+                        <td><strong>0</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Performing by the Book?</td>
+                        <td><a href="https://doi.org/10.11116/9789461665591" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665591</a></td>
+                        <td><strong>0</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Plutarch and Rhetoric</td>
+                        <td><a href="https://doi.org/10.11116/9789461665706" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665706</a></td>
+                        <td><strong>0</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Plutarch's Science of Natural Problems</td>
+                        <td><a href="https://doi.org/10.11116/9789461662293" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461662293</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Portraits and Poses</td>
+                        <td><a href="https://doi.org/10.11116/9789461664532" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664532</a></td>
+                        <td><strong>0</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Predicting the Past</td>
+                        <td><a href="https://doi.org/10.11116/9789461664310" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664310</a></td>
+                        <td><strong>0</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Protagonists of War</td>
+                        <td><a href="https://doi.org/10.11116/9789461664037" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664037</a></td>
+                        <td><strong>0</strong></td>
+                        <td>11</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Re-Imagining Class</td>
+                        <td><a href="https://doi.org/10.11116/9789461665690" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665690</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Spatial Boundaries, Abounding Spaces</td>
+                        <td><a href="https://doi.org/10.11116/9789461663832" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663832</a></td>
+                        <td><strong>0</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Stilte in de klas</td>
+                        <td><a href="https://doi.org/10.11116/9789461664792" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664792</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Strategic Imaginations</td>
+                        <td><a href="https://doi.org/10.11116/9789461663504" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663504</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Sugar, Spice, and the Not So Nice</td>
+                        <td><a href="https://doi.org/10.11116/9789461664976" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664976</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>The Figure of Knowledge</td>
+                        <td><a href="https://doi.org/10.11116/9789461663221" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461663221</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>The Legacy of Elise Hall</td>
+                        <td><a href="https://doi.org/10.11116/9789461665478" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665478</a></td>
+                        <td><strong>0</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>The Leopard, the Lion, and the Cock</td>
+                        <td><a href="https://doi.org/10.11116/9789461665218" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461665218</a></td>
+                        <td><strong>0</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Theory into practice</td>
+                        <td><a href="https://doi.org/10.11116/9789461664327" target="_blank" style="color:#2563eb; text-decoration:none;">10.11116/9789461664327</a></td>
+                        <td><strong>0</strong></td>
+                        <td>2</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="muted" style="text-align: right; margin-top: 2rem;">Dashboard generated on 2026-03-18 21:55:53 UTC</footer>
+    </div>
+
+    <script>
+        // 1. Citation Timeline (Restored to solid #3b82f6 blue)
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, border: { display: false } },
+                        x: { grid: { display: false }, border: { display: false } }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        })();
+
+        // 2. Scite Context (Semantic Doughnut)
+        (function() {
+            const canvas = document.getElementById('sciteChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            
+            if(data.reduce((a, b) => a + b, 0) === 0) {
+                canvas.parentElement.innerHTML = '<div class="muted" style="display:flex; align-items:center; height:100%;">No citation context data available.</div>';
+                return;
+            }
+
+            new Chart(canvas.getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: ['#16a34a', '#9ca3af', '#dc2626'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: { legend: { position: 'right', labels: { boxWidth: 10, font: { size: 10 } } } }
+                }
+            });
+        })();
+
+        // 3. Work Types (Professional Blue/Slate Palette Doughnut)
+        (function() {
+            const canvas = document.getElementById('wtChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            
+            if(data.length === 0) {
+                canvas.parentElement.innerHTML = '<div class="muted" style="display:flex; align-items:center; height:100%;">No work type data available.</div>';
+                return;
+            }
+
+            new Chart(canvas.getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: ['#2563eb', '#0d9488', '#6366f1', '#475569', '#9333ea', '#0ea5e9', '#8b5cf6', '#14b8a6'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: { legend: { position: 'right', labels: { boxWidth: 10, font: { size: 10 } } } }
+                }
+            });
+        })();
+
+        // 4. Venues (Greyscale Doughnut)
+        (function() {
+            const canvas = document.getElementById('venueChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            
+            if(data.length === 0) {
+                canvas.parentElement.innerHTML = '<div class="muted" style="display:flex; align-items:center; height:100%;">No venue data available.</div>';
+                return;
+            }
+
+            new Chart(canvas.getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: ['#2563eb', '#0d9488', '#6366f1', '#475569', '#9333ea', '#0ea5e9', '#8b5cf6', '#14b8a6'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: { legend: { position: 'right', labels: { boxWidth: 10, font: { size: 10 } } } }
+                }
+            });
+        })();
+
+        // 5. Sectors (Professional Blue/Slate Palette Doughnut)
+        (function() {
+            const canvas = document.getElementById('sectorChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            
+            if(data.length === 0) {
+                canvas.parentElement.innerHTML = '<div class="muted" style="display:flex; align-items:center; height:100%;">No sector data available.</div>';
+                return;
+            }
+
+            new Chart(canvas.getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: ['#2563eb', '#0d9488', '#6366f1', '#475569', '#9333ea', '#0ea5e9', '#8b5cf6', '#14b8a6'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false, cutout: '70%',
+                    plugins: { legend: { position: 'right', labels: { boxWidth: 10, font: { size: 10 } } } }
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
