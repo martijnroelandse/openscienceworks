@@ -144,38 +144,50 @@
     <h3>How do we calculate impact?</h3>
     <p class="story-text">We believe that citations alone do not tell the full story of a piece of research. This engine looks at a variety of signals to determine the impact of a work, resulting in what we call <strong>Inferred Roles</strong>.</p>
 
-    <h3>What are "Inferred Roles"?</h3>
-    <p class="story-text">Inferred Roles are generated using a heuristic classification model that analyzes the "digital exhaust" surrounding a work. By examining the disciplines of citing papers, the nature of the venues where it is mentioned, and its presence on educational syllabi, the engine determines the work's primary function:</p>
+    <section class="card">
+      <h2><span>Inferred Roles & Classification</span></h2>
+      <p class="story-text">Our pipeline goes beyond simple citation counts. By analyzing the composition of a work's attention, usage, and citing landscape, we dynamically assign "Inferred Roles" across four major impact domains:</p>
+  
+      <h3 style="margin-top: 1.5rem; color: #1f2937;">1. Academic &amp; Scientific Impact</h3>
+      <ul class="metric-list">
+          <li><strong>Scholarly Uptake:</strong> High citation density within core academic journals and monographs. The work serves as a foundational building block for further research.</li>
+          <li><strong>Reference Point for Synthesis:</strong> Frequently cited in literature reviews, meta-analyses, or encyclopedic entries, serving as a "shorthand" for a specific finding or historical overview.</li>
+          <li><strong>Evidence-Bearing Reference:</strong> The work is explicitly applied as hard data or methodology (triggered by high "supporting" citation tallies via scite, links to clinical trials, or heavy citations by datasets and software).</li>
+      </ul>
+  
+      <h3 style="margin-top: 1.5rem; color: #1f2937;">2. Readership &amp; Educational Impact</h3>
+      <ul class="metric-list">
+          <li><strong>Usage-Driven Uptake:</strong> The work demonstrates immense value through direct consumption rather than formal citation (triggered by high download counts on platforms like OAPEN/OPERAS, massive HTML views, or heavy institutional library holdings).</li>
+          <li><strong>Pedagogical Anchor:</strong> The work has been widely adopted for teaching and training (triggered by inclusion in Open Educational Resources (OER) syllabi, reading lists, or textbook citations).</li>
+      </ul>
+  
+      <h3 style="margin-top: 1.5rem; color: #1f2937;">3. Public Engagement &amp; Media</h3>
+      <ul class="metric-list">
+          <li><strong>Active Public Discourse:</strong> High, fast-moving engagement in community spaces; the work has sparked conversation (triggered by heavy activity on X/Twitter, Reddit, Facebook, or community blogs).</li>
+          <li><strong>Public Visibility &amp; Knowledge Base:</strong> The work serves as a trusted reference for the general public, establishing a lasting public record (triggered by citations in Wikipedia, Stack Exchange, or non-academic wikis).</li>
+          <li><strong>High-Visibility Media Uptake:</strong> The work has "broken out" into mainstream awareness (triggered by mentions in prestigious global news outlets, broadsheet newspapers, or high-impact professional magazines).</li>
+      </ul>
+  
+      <h3 style="margin-top: 1.5rem; color: #1f2937;">4. Practical &amp; Real-World Application</h3>
+      <ul class="metric-list">
+          <li><strong>Sustainability &amp; Policy Relevance:</strong> Direct influence on governance and societal frameworks (triggered by citations in government white papers, WHO reports, NGO briefs, or UN policy documents).</li>
+          <li><strong>Commercial Linkage:</strong> The work crosses over into the retail or commercial sphere, indicating consumer interest or industry application (triggered by strong presence on Amazon, Goodreads, or citations in corporate patents).</li>
+      </ul>
+  </section>
+
+    <section class="card">
+    <h2><span>Data Sources &amp; Integrations</span></h2>
+    <p class="story-text">To build a comprehensive picture of a work's impact, OpenScience.works aggregates real-time data from a diverse ecosystem of global APIs and repositories:</p>
     
     <ul class="metric-list">
-      <li><strong>Scholarly Uptake:</strong> High citation density within core academic journals and monographs. The work serves as a foundational building block for further research.</li>
-      <li><strong>Reference Point for Synthesis:</strong> Frequently cited in literature reviews, meta-analyses, or encyclopedic entries, serving as a "shorthand" for a specific finding.</li>
-      <li><strong>Evidence-Bearing Reference:</strong> The work is explicitly applied as hard data or methodology (e.g., high supporting citations, dataset linkages, or clinical trials).</li>
-
-      <li><strong>Usage-Driven Uptake:</strong> Demonstrates immense value through direct consumption (high downloads or library holdings) rather than formal citation.</li>
-      <li><strong>Pedagogical Anchor:</strong> Widely adopted for teaching and training, indicated by inclusion in Open Educational Resources (OER) or academic syllabi.</li>
-
-      <li><strong>Active Public Discourse:</strong> High engagement in fast-moving non-academic spaces like X (Twitter), Reddit, and community blogs; the work has sparked conversation.</li>
-      <li><strong>Public Visibility & Knowledge Base:</strong> Serves as a trusted reference for the general public, establishing a lasting record in spaces like Wikipedia or Stack Exchange.</li>
-      <li><strong>High-Visibility Media Uptake:</strong> Mentions in prestigious global news outlets, broadsheet newspapers, or high-impact professional blogs.</li>
-
-      <li><strong>Sustainability & Policy Relevance:</strong> Citations in government white papers, WHO reports, or UN policy documents, indicating direct influence on decision-making.</li>
-      <li><strong>Commercial Linkage:</strong> Crosses over into the retail or commercial sphere, indicating consumer interest or industry application (e.g., strong presence on Amazon or Goodreads).</li>
+        <li><strong>Citation &amp; Landscape Analysis:</strong> Powered natively by <strong>OpenAlex</strong>, capturing global citation networks, geographic distribution, and institutional affiliations.</li>
+        <li><strong>Open Access Verification:</strong> We cross-reference multiple platforms—including <strong>OpenAlex, Thoth Open Metadata, the Directory of Open Access Books (DOAB), and the OAPEN Library</strong>—to guarantee accurate tracking of Gold and Green Open Access status.</li>
+        <li><strong>Scientific Stewardship &amp; Data Links:</strong> Through <strong>EuropePMC</strong> and <strong>DataCite</strong> integrations, we actively hunt for linked data repositories (such as Zenodo, Figshare, and Dryad), open code, and registered Clinical Trials.</li>
+        <li><strong>Online Mentions &amp; Media:</strong> We utilize <strong>Crossref Event Data</strong> to track public engagement across Wikipedia, global news outlets, policy documents, and social media platforms.</li>
+        <li><strong>Usage &amp; Readership:</strong> Download metrics are captured via the <strong>OPERAS Metrics API</strong>, while commercial readership footprint is assessed through integrations with Google Books, Goodreads, and Amazon.</li>
+        <li><strong>Citation Context:</strong> We integrate with <strong>scite.ai</strong> to look beyond simple citation counts, analyzing the full text of citing papers to determine whether a work is being "mentioned," "supported," or "contrasted."</li>
     </ul>
-
-    <h3>Data Sources Used</h3>
-    <p class="story-text">To ensure a comprehensive view, we aggregate data from leading open infrastructure providers and specialized scholarly datasets:</p>
-    <ul class="metric-list" style="margin-bottom: 0;">
-      <li><strong>OpenAlex:</strong> Global index of research works, authors, and concepts.</li>
-      <li><strong>Crossref Event Data:</strong> Tracks online mentions across Wikipedia, news, and social platforms.</li>
-      <li><strong>EuropePMC:</strong> Text-mining for Resource Identifiers, Data Sharing links, and Clinical Trials.</li>
-      <li><strong>DataCite:</strong> Metadata for datasets, software, and non-traditional research outputs.</li>
-      <li><strong>DOAB (Directory of Open Access Books):</strong> Verification of peer-reviewed OA monographs.</li>
-      <li><strong>OER & Open Syllabus:</strong> Tracking presence in open educational repositories and syllabi.</li>
-      <li><strong>scite.ai:</strong> Smart citations showing the context of how a work is being cited.</li>
-      <li><strong>OPERAS / OAPEN:</strong> Usage metrics and download statistics for open access books.</li>
-    </ul>
-  </section>
+</section>
 
   <section class="card">
     <h2><span>About Martijn Roelandse</span></h2>
