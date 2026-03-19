@@ -1,583 +1,1552 @@
-
 <!DOCTYPE html>
+
+
+
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>BookStory – Opening Science</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f3f4f6;
-      color: #111827;
-    }
-    .page {
-      max-width: 1000px;
-      margin: 2.5rem auto;
-      padding: 0 1.25rem 3rem;
-    }
-    header.hero { margin-bottom: 2rem; }
-    .hero-title {
-      font-size: 2.1rem;
-      font-weight: 700;
-      margin: 0;
-      color: #111827;
-    }
-    .discipline-badge {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      border: 1px solid rgba(15, 23, 42, 0.15);
-      background: rgba(15, 23, 42, 0.04);
-    }
-    .hero-meta {
-      margin-top: 0.5rem;
-      color: #4b5563;
-      font-size: 0.95rem;
-    }
-    .hero-meta div { margin-bottom: 0.15rem; }
-    .card {
-      background: #ffffff;
-      border-radius: 0.9rem;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-      padding: 1.5rem 1.75rem;
-      margin-bottom: 1.75rem;
-    }
-    .card h2 {
-      margin-top: 0;
-      font-size: 1.1rem;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      color: #6b7280;
-    }
-    .card h2 span {
-      color: #111827;
-      font-weight: 600;
-      text-transform: none;
-      font-size: 1.25rem;
-      letter-spacing: 0;
-    }
-    .story-text { font-size: 0.98rem; line-height: 1.7; color: #111827; }
-    .header-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.25rem;
-    }
-    .usage-row {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 0.15rem 0;
-      font-size: 0.85rem;
-    }
-    .toolbar {
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 0.75rem;
-    }
-    .event-source-list,
-    .event-examples-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0.25rem 0 0;
-    }
-    .event-source-item,
-    .event-example-item {
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-    }
-    .event-example-meta { margin-bottom: 0.2rem; }
-    .download-btn {
-      border: none;
-      border-radius: 999px;
-      padding: 0.35rem 0.9rem;
-      font-size: 0.8rem;
-      cursor: pointer;
-      background: #111827;
-      color: #f9fafb;
-      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
-    }
-    .download-btn:hover { opacity: 0.9; }
-    @media print {
-      body { background: #ffffff; }
-      .page { margin: 0; max-width: 100%; box-shadow: none; }
-      .card { box-shadow: none; border-radius: 0; page-break-inside: avoid; }
-      .toolbar { display: none; }
-    }
-    .usage-month { width: 2.5rem; color: #6b7280; }
-    .usage-bar-wrap {
-      flex: 1;
-      background: #e5e7eb;
-      border-radius: 999px;
-      overflow: hidden;
-      height: 0.45rem;
-    }
-    .usage-bar {
-      height: 100%;
-      border-radius: 999px;
-      background: #2563eb;
-    }
-    .usage-value { width: 3rem; text-align: right; color: #374151; }
-    .logo-title { display: flex; align-items: center; gap: 1.25rem; }
-    .logo-wrap img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      display: block;
-    }
-    .cover-wrap img {
-      width: 110px;
-      height: auto;
-      border-radius: 0.5rem;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
-      object-fit: cover;
-    }
-    .cover-placeholder {
-      width: 110px;
-      height: 160px;
-      border-radius: 0.5rem;
-      border: 1px dashed rgba(15, 23, 42, 0.22);
-      background: rgba(15, 23, 42, 0.04);
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 1.5rem;
-    }
-    @media (max-width: 800px) {
-      .grid { grid-template-columns: minmax(0, 1fr); }
-    }
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.75rem;
-      margin-bottom: 1.75rem;
-    }
-    .grid-2 .card { margin-bottom: 0; height: 100%; }
-
-    @media (max-width: 980px) {
-      .grid-2 { grid-template-columns: 1fr; }
-    }
-    ul { padding-left: 1.2rem; margin: 0.4rem 0 0; }
-    li { margin-bottom: 0.5rem; font-size: 0.95rem; }
-    a { color: #2563eb; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    a, li { word-break: break-word; overflow-wrap: anywhere; }
-    .tag {
-      display: inline-block;
-      padding: 0.15rem 0.45rem;
-      border-radius: 999px;
-      background: #e5f2ff;
-      color: #1d4ed8;
-      font-size: 0.8rem;
-      margin: 0.1rem 0.2rem 0.1rem 0;
-    }
-    .tag-soft { background: #f3f4f6; color: #4b5563; }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      font-size: 0.85rem;
-      margin-top: 0.75rem;
-    }
-    th, td {
-      border: 1px solid #e5e7eb;
-      padding: 0.4rem 0.6rem;
-      vertical-align: top;
-    }
-    th {
-      background: #f9fafb;
-      text-align: left;
-      font-weight: 600;
-      color: #374151;
-    }
-    .badge {
-      display: inline-block;
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      background: #eef2ff;
-      color: #4338ca;
-      font-size: 0.75rem;
-      font-weight: 500;
-    }
-    .scite-link { font-size: 0.75rem; color: #6b7280; }
-    .scite-link:hover { text-decoration: underline; color: #4b5563; }
-    .orcid-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-left: 0.3rem;
-      padding: 0.05rem 0.35rem;
-      border-radius: 999px;
-      background: #a6ce39;
-      color: #ffffff;
-      font-size: 0.65rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .muted { color: #6b7280; font-size: 0.85rem; }
-    footer.page-footer {
-      margin-top: 2rem;
-      text-align: right;
-      font-size: 0.8rem;
-      color: #9ca3af;
-    }
-  </style>
-  <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" /><style>#metrics-widget {  --color-line-graph-1: #4b7094;  --color-line-graph-2: #70944b;  --color-line-graph-3: #944b70;  --color-line-graph-4: #94704b;}</style>
+    <meta charset="utf-8">
+    <title>BookStory - Opening Science</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print PDF Report
+    </button>
+    
+    <div class="page">
+        <header class="hero card">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="bookstories-logo.png" alt="Logo"></div>
+                    <div>
+                        <h1 class="hero-title">Opening Science</h1>
+                        
+                            <div class="discipline-badge" style="background:#fef08a; color:#854d0e; border-color:#fde047; font-weight:600;">
+                                <svg style="width:14px; height:14px; display:inline; vertical-align:middle; margin-right:4px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                                Open Access (Gold)
+                            </div>
+                        
+                        <div class="discipline-badge">Stem</div>
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> Sönke Bartling, Sascha Friesike</div>
+                            <div><strong>Publisher:</strong> Springer International Publishing</div>
+                            <div><strong>Publication year:</strong> 2014</div>
+                            <div><strong>DOI:</strong> <a href="https://doi.org/10.1007/978-3-319-00026-8" target="_blank">10.1007/978-3-319-00026-8</a></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="cover-wrap">
+                    
+                    <img src="https://media.springernature.com/full/springer-static/cover-hires/book/978-3-319-00026-8" alt="Cover" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+                    
+                </div>
+                
+            </div>
+        </header>
 
-<div class="toolbar">
-  <button class="download-btn" onclick="window.print()">Download as PDF</button>
-</div>
-
-<div class="page">
-
-<header class="hero">
-  <div class="header-bar">
-    <div class="logo-title">
-      <div class="logo-wrap">
-        <img src="bookstories-logo.png" alt="BookStories logo">
-      </div>
-      <div>
-        <h1 class="hero-title">Opening Science</h1>
-        <div class="discipline-badge">Stem</div>
-        <div class="hero-meta">
-          <div><strong>Author(s):</strong> <a href="https://orcid.org/0000-0001-5434-9433" target="_blank" rel="noopener noreferrer">Sönke Bartling<span class="orcid-badge" title="ORCID iD">iD</span></a>, <a href="https://orcid.org/0000-0002-9314-5633" target="_blank" rel="noopener noreferrer">Sascha Friesike<span class="orcid-badge" title="ORCID iD">iD</span></a></div>
-          <div><strong>Publisher:</strong> Springer International Publishing</div>
-          <div><strong>Publication year:</strong> 2014</div>
-          <div><strong>DOI:</strong> 10.1007/978-3-319-00026-8</div>
-        </div>
-      </div>
-    </div>
-    <div class="cover-wrap"><img src="https://covers.openlibrary.org/b/isbn/9783319000251-L.jpg?default=false" alt="Book cover for Opening Science"></div>
-  </div>
-</header>
-
-<section class="card">
-  <h2><span>The story so far…</span></h2>
-  <div class="story-text">
-    <h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Published in 2014 by Springer International Publishing, <em>Opening Science</em> explores the transformative effects of the internet on research and scholarly communication, particularly within computer science. The book shows sustained engagement through 12,669 downloads on SpringerLink and 200 Wikipedia mentions, signaling ongoing public and academic interest. Its 155 citations reflect a substantial scholarly footprint, while the inferred roles highlight balanced usage uptake and public visibility, placing it as a significant reference in discussions on open science and digital collaboration.</p>
-
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">"Opening Science" has become a key reference point in the discourse surrounding public accessibility and engagement with scientific research. Its intersection with commercial platforms like Amazon and Goodreads further underscores its relevance in both academic and popular contexts, fostering an environment for broader discussions on scientific openness.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text"><em>Opening Science</em> was published in 2014 by Springer International Publishing and is hosted primarily on SpringerLink. This positioning within an established STEM-focused academic platform has facilitated access to over 12,600 downloads, indicating steady user interest. While recent download trend data is unavailable, the total downloads highlight consistent engagement by researchers, practitioners, and potentially students in the computer science community and adjacent disciplines. The book's thematic focus on open science and digital collaboration aligns well with its concept labeling under computer science.</p>
+<p class="story-text">Published in 2014 by Springer International Publishing, "Opening Science" has firmly established itself as a significant work within the academic landscape. With 157 citations, the book serves as a vital reference point for researchers and practitioners interested in the principles of open science. Its influence is evidenced not only in academic citations but also through widespread mentions on platforms like Wikipedia, indicating a strong public visibility and knowledge base.</p>
+<p class="story-text">The book's engagement with commercial platforms, evidenced by its presence on Amazon and Goodreads, suggests an active public discourse surrounding its themes of accessibility and scientific openness. This crossover between academia and the public sphere enhances its potential impact, enabling a broader audience to connect with its core ideas. The significance of “Opening Science” lies not only in its academic merit but also in how it resonates within societal discussions on the role of science in modern life.</p>
+<p class="story-text">In today’s rapidly evolving research environment, the need for open communication of scientific knowledge has never been more critical. "Opening Science" contributes to an ongoing conversation about transparency and accessibility in research, making it a relevant resource for current and future discussions about open science policies. It represents an essential part of a growing movement that champions the dissemination of knowledge beyond traditional academic boundaries.</p>
+<p class="story-text">The book’s robust citation metrics illustrate its role as a touchstone for scholars and activists alike, drawing attention to the necessity for open access in fostering innovation and collaboration in science. As discussions around open science continue to gain momentum, “Opening Science” remains a crucial piece of literature that advocates for an inclusive approach to scientific research and knowledge sharing.</p></div>
+        </section>
+        
 
-<p class="story-text">The book’s citation count stands at 155 according to OpenAlex, demonstrating moderate scholarly uptake since publication. These citations suggest that the work serves as a recognized academic resource, contributing to ongoing research dialogues surrounding web technologies, open data, and collaborative scientific practices. However, the citation context information from scite shows 27 mentions without any supporting or contradicting citations, indicating the work is typically referenced for background or thematic framing rather than as a point of empirical evidence or contention.</p>
+        <section class="card">
+            <h2><span>Impact metrics</span></h2>
+            <ul class="metric-list">
+                
+                    <li><strong>Citations (OpenAlex):</strong> 157</li>
+                    <li><strong>Online mentions (Crossref Event Data):</strong> 200</li>
+                
+                
+                
+                <li><strong>Downloads (OAPEN / OPERAS):</strong> 12669</li>
+                
+                
+                <li><strong>Citation context (scite):</strong> 28</li>
+                
+                
+            </ul>
+        </section>
 
-<p class="story-text">Public visibility is notably supported by the event data, which records 200 events exclusively from Wikipedia. This singular source concentration implies the book has found a niche role in public knowledge repositories and outreach rather than broad media or social media attention. This engagement pattern aligns with the inferred role of “Public visibility signal,” which is marked at a strength of 0.8, emphasizing its influence in educational or informational contexts accessible to a wide audience.</p>
+        
+        <section class="card">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.8rem;">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Active public discourse (1.00)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Commercial linkage (0.90)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Reference point for synthesis (0.90)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Public visibility & knowledge base (0.85)</span>
+                
+            </div>
+        </section>
+        
 
-<p class="story-text">The combined evidence from download counts, citation data, and event sourcing supports the categorization of <em>Opening Science</em> under the inferred roles “Usage-driven uptake” (strength 0.8) and “Scholarly uptake” (strength 0.75). Meanwhile, its role in the evidence profile is more modest (strength 0.4), reflecting a scholarly presence more oriented toward referencing than providing foundational claims. Additionally, the absence of OER listings or OAPEN downloads suggests the book remains primarily within traditional academic distribution channels, limiting its reach in open educational resources.</p>
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2 style="margin-top:0;"><span>Access</span> <span class="badge" style="background:#f3f4f6; color:#4b5563;">Availability</span></h2>
+                <ul class="metric-list" style="line-height: 1.8;">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1007/978-3-319-00026-8" target="_blank" style="word-break: break-all;">https://doi.org/10.1007/978-3-319-00026-8</a></li>
+                    
+                    <li><strong>OA status:</strong> 
+                        
+                            Gold
+                        
+                    </li>
 
-<p class="story-text">In summary, <em>Opening Science</em> occupies a distinctive position within the discourse on digital transformation in science, especially from a computer science perspective. Its sustained download figures and focused citation profile underscore its ongoing relevance, while frequent Wikipedia mentions highlight its contribution to public understanding of open science concepts. Although lacking diversified event sources or extensive impact in open education platforms, the book remains a valuable scholarly and public resource for exploring how the internet reshapes research collaboration and publishing.</p>
-  </div>
-</section>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </section>
+
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>200</strong> recorded events globally
+                        
+                    </p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+
+        <div class="grid-2">
+            
+                <section class="card" style="margin-bottom:0;">
+                    <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+                    <ul class="metric-list">
+                        
+                        
+                        <li><strong>Google Books:</strong> <a href="" target="_blank">View</a></li>
+                        
+                        
+                        <li><strong>Commercial:</strong> 
+                            <a href="https://www.amazon.com/s?k=9783319000251" target="_blank">Amazon</a>
+                             · 
+                            <a href="https://www.goodreads.com/search?q=9783319000251" target="_blank">Goodreads</a>
+                        </li>
+                        
+                    </ul>
+                </section>
+                <section class="card" style="margin-bottom:0;">
+                    <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                    
+                    <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                        <li><strong>Total:</strong> 28</li>
+                        <li><strong>Supporting:</strong> 0</li>
+                        <li><strong>Mentioning:</strong> 27</li>
+                        <li><strong>Contradicting:</strong> 0</li>
+                    </ul>
+                    
+                </section>
+
+            
+        </div>
+
+        
+        
+        <section class="card">
+            <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
+            <ul class="metric-list">
+                <li><strong>Total citing works (OpenAlex):</strong> 157 <span class="muted" style="font-weight:normal;">(Landscape analysis & tables limited to 1000 most recent works to optimize speed)</span></li>
+                
+                
+                <li><strong>Top citing venues:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Unknown (11)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Publications (5)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">El Profesional de la Informacion (5)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Preprints.org (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cambridge University Press eBooks (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">SocArXiv (OSF Preprints) (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">PsyArXiv (OSF Preprints) (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">F1000Research (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Applied Sciences (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">D-Lib Magazine (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Israel Journal of Chemistry (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Research Ideas and Outcomes (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Advances in knowledge acquisition, transfer, and management book series/Advances in knowledge acquisition, transfer and management book series (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">IMISCOE research series (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">GRURRR. Gewerblicher Rechtsschutz und Urheberrecht, Rechtsprechungs-Report/GRUR-DVD/GRUR-CD/IIC/Gewerblicher Rechtsschutz und Urheberrecht/Gewerblicher Rechtsschutz und Urheberrecht. Internationaler Teil (2)</span> </li>
+                
+                
+                
+                <li><strong>Citing work types:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (103)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (23)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (20)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book (5)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (5)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">dissertation (1)</span> </li>
+                
+                
+                
+                <li><strong>Top citing concepts:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science (39)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Open science (31)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Humanities (19)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Political science (14)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Philosophy (11)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Data science (11)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Publishing (11)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Openness to experience (9)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Transparency (behavior) (9)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sociology (8)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Psychology (8)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scholarship (8)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Social media (7)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Open data (7)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Identity (music) (5)</span> </li>
+                
+                
+                
+                <li><strong>Countries (from affiliations):</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Germany (27)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">United States (26)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">United Kingdom (21)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Spain (21)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Italy (15)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Netherlands (10)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Canada (8)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Portugal (8)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Australia (6)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Brazil (6)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">China (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Switzerland (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Belgium (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Colombia (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Greece (3)</span> </li>
+                
+                
+                
+                <li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+                    <strong>Citation timeline:</strong>
+                    <div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+                        <canvas id="citationChart" data-labels="[&#34;1975&#34;, &#34;2014&#34;, &#34;2015&#34;, &#34;2016&#34;, &#34;2017&#34;, &#34;2018&#34;, &#34;2019&#34;, &#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[1, 3, 8, 7, 5, 7, 16, 26, 15, 21, 24, 17, 5, 2]"></canvas>
+                    </div>
+                </li>
+                
+            </ul>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            <section class="card span-full" style="margin-bottom:0;">
+                <h2><span>Online mentions & activity</span> <span class="badge">Crossref Event Data</span></h2>
+                
+                
+                    
+                    
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        Detailed breakdown of the <strong>200</strong> recorded events for this work.
+                    </p>
+                    
+                    <ul style="list-style:none; padding-left:0; margin-bottom:1.5rem;">
+                        
+                        
+                        
+                        
+                        
+                            
+                                
+                                
+                                
+                            
+                        
+                    </ul>
+                    
+                    <h3 style="margin-top:0;">Selected examples</h3>
+                    <ul style="list-style:none; padding-left:0;">
+                        
+                        
+                        
+                        <li style="margin-bottom:1.2rem;">
+                            <div style="margin-bottom:0.4rem;">
+                                <span class="tag" style="background:#e5f2ff; color:#1d4ed8; margin:0;">Wikipedia</span>
+                            </div>
+                            <a href="https://en.wikipedia.org/w/index.php?title=Altmetrics&oldid=778178187" target="_blank" style="word-break: break-word; font-weight:500; text-decoration:none; color:#2563eb; display:block; margin-bottom:0.2rem; line-height:1.4;">
+                                Altmetrics
+                            </a>
+                            <span class="muted"></span>
+                        </li>
+                        
+                        
+                        
+                        <li style="margin-bottom:1.2rem;">
+                            <div style="margin-bottom:0.4rem;">
+                                <span class="tag" style="background:#e5f2ff; color:#1d4ed8; margin:0;">Wikipedia</span>
+                            </div>
+                            <a href="https://ru.wikipedia.org/w/index.php?title=%D0%90%D0%BB%D1%8C%D1%82%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%8F&oldid=100041899" target="_blank" style="word-break: break-word; font-weight:500; text-decoration:none; color:#2563eb; display:block; margin-bottom:0.2rem; line-height:1.4;">
+                                Альтметрия
+                            </a>
+                            <span class="muted"></span>
+                        </li>
+                        
+                        
+                        
+                        <li style="margin-bottom:1.2rem;">
+                            <div style="margin-bottom:0.4rem;">
+                                <span class="tag" style="background:#e5f2ff; color:#1d4ed8; margin:0;">Wikipedia</span>
+                            </div>
+                            <a href="https://id.wikipedia.org/w/index.php?title=Public_Knowledge_Project&oldid=17751196" target="_blank" style="word-break: break-word; font-weight:500; text-decoration:none; color:#2563eb; display:block; margin-bottom:0.2rem; line-height:1.4;">
+                                Public Knowledge Project
+                            </a>
+                            <span class="muted"></span>
+                        </li>
+                        
+                    </ul>
+                
+            </section>
+        </div>
+
+        
+        
+            
+                
+            
+        
+            
+                
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>2 authors · 2 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Sönke Bartling</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-5434-9433" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Sascha Friesike</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-9314-5633" target="_blank">ORCID</a>
+                    </li>
+                    
+                </ul>
+
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/04cdgtt98" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">German Cancer Research Center</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/02h1qnm70" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Alexander von Humboldt Institute for Internet and Society</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
 
 
-    <section class="card">
-      <h2><span>Impact metrics</span></h2>
-      <ul>
-        <li><strong>Citations (OpenAlex):</strong> 155</li>
-        <li><strong>Downloads (OAPEN / OPERAS):</strong> 12669</li>
-        <li><strong>Online mentions (Crossref Event Data):</strong> 200</li>
-        <li><strong>Citation context (scite):</strong> 28</li>
-      </ul>
-    </section>
-    
+        
+        <section class="card" id="operas-metrics-card">
+            <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
+            <div id="metrics-widget"></div>
+            <script type="application/json" id="operas-metrics-config">{"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "tab1", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN \u00b7 downloads", "works": ["info:doi:10.1007/978-3-319-00026-8"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}}, "graphs": [{"id": "g1", "type": "line", "title": "Downloads over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}</script>
+            <script src="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js" async></script>
+        </section>
 
-    <section class="card">
-      <h2><span>Inferred roles</span></h2>
-      <p class="muted">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
-      <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-        <span class='tag'>Usage-driven uptake (0.80)</span><span class='tag'>Public visibility signal (0.80)</span><span class='tag'>Scholarly uptake (0.75)</span><span class='tag'>Evidence-bearing reference point (0.40)</span>
-      </div>
-    </section>
-    
-<div class="grid-2">
-    <section class="card">
-      <h2><span>Usage landscape</span> <span class="badge">OAPEN / OPERAS</span></h2>
-      <ul>
-        <li><strong>Total downloads:</strong> 12669</li>
-        <li><strong>Recent trend:</strong> <span class='muted'>Not available.</span></li>
-        <li><strong>Host distribution:</strong> <span class='tag'>SpringerLink (1)</span></li>
-      </ul>
-    </section>
-    
-    <section class="card">
-      <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
-      <ul>
-        <li><strong>Recorded events:</strong> 200</li>
-        <li><strong>Top sources:</strong> <span class='tag'>wikipedia (200)</span></li>
-      </ul>
-    </section>
-    </div><div class="grid-2">
-    <section class="card">
-      <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
-      <ul>
-        <li><strong>Open Library:</strong> <a href="https://openlibrary.org/books/OL26381235M" target="_blank" rel="noopener noreferrer">View</a><span class='muted'> · 0 ratings</span></li><li><strong>Google Books:</strong> <a href="https://books.google.com/books/about/Opening_Science.html?hl=&amp;id=_L5CmwEACAAJ" target="_blank" rel="noopener noreferrer">View</a> · <a href="http://books.google.nl/books?id=_L5CmwEACAAJ&amp;dq=isbn:9783319000251&amp;hl=&amp;cd=1&amp;source=gbs_api" target="_blank" rel="noopener noreferrer">Preview</a><span class='muted'></span> <span class='muted'>(matched: Opening Science)</span></li><li><strong>Commercial:</strong> <a href="https://www.amazon.com/s?k=9783319000251" target="_blank" rel="noopener noreferrer">Amazon search</a> · <a href="https://www.goodreads.com/search?q=9783319000251" target="_blank" rel="noopener noreferrer">Goodreads search</a></li>
-      </ul>
-    </section>
-    
-    <section class="card">
-      <h2><span>Citation context</span> <span class="badge">scite</span></h2>
-      <ul><li><strong>Total:</strong> 28</li><li><strong>Supporting:</strong> 0</li><li><strong>Mentioning:</strong> 27</li><li><strong>Contradicting:</strong> 0</li></ul>
-    </section>
+
+
+        
+        
+        <section class="card print-breakable">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>Displaying 157 most recent citing works</div>
+            <div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+                <table>
+                    <thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>1975</td>
+                        <td>The specificity of the scientific field and the social conditions of the progress of reason</td>
+                        <td>Social Science Information</td>
+                        <td><a href="https://doi.org/10.1177/053901847501400602" target="_blank" style="word-break: break-all;">10.1177/053901847501400602</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Impact of Dataset Size on Classification Performance: An Empirical Evaluation in the Medical Domain</td>
+                        <td>Applied Sciences</td>
+                        <td><a href="https://doi.org/10.3390/app11020796" target="_blank" style="word-break: break-all;">10.3390/app11020796</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Opening science: towards an agenda of open science in academia and industry</td>
+                        <td>The Journal of Technology Transfer</td>
+                        <td><a href="https://doi.org/10.1007/s10961-014-9375-6" target="_blank" style="word-break: break-all;">10.1007/s10961-014-9375-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Seven Easy Steps to Open Science</td>
+                        <td>Zeitschrift für Psychologie</td>
+                        <td><a href="https://doi.org/10.1027/2151-2604/a000387" target="_blank" style="word-break: break-all;">10.1027/2151-2604/a000387</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>COVID-19 Image Data Collection: Prospective Predictions are the Future</td>
+                        <td>The Journal of Machine Learning for Biomedical Imaging</td>
+                        <td><a href="https://doi.org/10.59275/j.melba.2020-48g7" target="_blank" style="word-break: break-all;">10.59275/j.melba.2020-48g7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Philosophy of Open Science</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781009416368" target="_blank" style="word-break: break-all;">10.1017/9781009416368</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Has open data arrived at the <i>British Medical Journal (BMJ)</i> ? An observational study</td>
+                        <td>BMJ Open</td>
+                        <td><a href="https://doi.org/10.1136/bmjopen-2016-011784" target="_blank" style="word-break: break-all;">10.1136/bmjopen-2016-011784</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Open collaborative writing with Manubot</td>
+                        <td>PLoS Computational Biology</td>
+                        <td><a href="https://doi.org/10.1371/journal.pcbi.1007128" target="_blank" style="word-break: break-all;">10.1371/journal.pcbi.1007128</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Open Lab: A web application for running and sharing online experiments</td>
+                        <td>Behavior Research Methods</td>
+                        <td><a href="https://doi.org/10.3758/s13428-021-01776-2" target="_blank" style="word-break: break-all;">10.3758/s13428-021-01776-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>(Why) Are Open Research Practices the Future for the Study of Language Learning?</td>
+                        <td>Language Learning</td>
+                        <td><a href="https://doi.org/10.1111/lang.12568" target="_blank" style="word-break: break-all;">10.1111/lang.12568</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Ciencia Abierta, un modelo por definir con muchos retos por delante</td>
+                        <td>Hipertext net Revista Académica sobre Documentación Digital y Comunicación Interactiva</td>
+                        <td><a href="https://doi.org/10.31009/hipertext.net.2019.i19.01" target="_blank" style="word-break: break-all;">10.31009/hipertext.net.2019.i19.01</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Perspectives on social media in and as research: A synthetic review</td>
+                        <td>International Review of Psychiatry</td>
+                        <td><a href="https://doi.org/10.3109/09540261.2015.1009419" target="_blank" style="word-break: break-all;">10.3109/09540261.2015.1009419</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>The Landscape of Research Data Repositories in 2015: A re3data Analysis</td>
+                        <td>D-Lib Magazine</td>
+                        <td><a href="https://doi.org/10.1045/march2017-kindling" target="_blank" style="word-break: break-all;">10.1045/march2017-kindling</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>DataCite and DOI names for research data</td>
+                        <td>Journal of Computer-Aided Molecular Design</td>
+                        <td><a href="https://doi.org/10.1007/s10822-014-9776-5" target="_blank" style="word-break: break-all;">10.1007/s10822-014-9776-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>A tale of two 'opens': intersections between Free and Open Source Software and Open Scholarship</td>
+                        <td>SocArXiv (OSF Preprints)</td>
+                        <td><a href="https://doi.org/10.31235/osf.io/2kxq8" target="_blank" style="word-break: break-all;">10.31235/osf.io/2kxq8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Ciencia abierta: un modelo con piezas por encajar</td>
+                        <td>Arbor</td>
+                        <td><a href="https://doi.org/10.3989/arbor.2021.799003" target="_blank" style="word-break: break-all;">10.3989/arbor.2021.799003</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Chemistry Education Fostering Creativity in the Digital Era</td>
+                        <td>Israel Journal of Chemistry</td>
+                        <td><a href="https://doi.org/10.1002/ijch.201800179" target="_blank" style="word-break: break-all;">10.1002/ijch.201800179</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Open Access in Theory and Practice</td>
+                        <td>BiblioBoard Library Catalog (Open Research Library)</td>
+                        <td><a href="https://doi.org/10.4324/9780429276842" target="_blank" style="word-break: break-all;">10.4324/9780429276842</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>7 Easy Steps to Open Science: An Annotated Reading List</td>
+                        <td>PsyArXiv (OSF Preprints)</td>
+                        <td><a href="https://doi.org/10.31234/osf.io/cfzyx" target="_blank" style="word-break: break-all;">10.31234/osf.io/cfzyx</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Stepping up Open Science Training for European Research</td>
+                        <td>Publications</td>
+                        <td><a href="https://doi.org/10.3390/publications4020016" target="_blank" style="word-break: break-all;">10.3390/publications4020016</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Ciência aberta na perspectiva de especialistas brasileiros: proposta de taxonomia</td>
+                        <td>Encontros Bibli Revista Eletrônica de Biblioteconomia e Ciência da Informação</td>
+                        <td><a href="https://doi.org/10.5007/1518-2924.2021.e79646" target="_blank" style="word-break: break-all;">10.5007/1518-2924.2021.e79646</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Toward Open Research: A Narrative Review of the Challenges and Opportunities for Open Humanities</td>
+                        <td>Journal of Communication</td>
+                        <td><a href="https://doi.org/10.1093/joc/jqab028" target="_blank" style="word-break: break-all;">10.1093/joc/jqab028</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Knowledge and Perceptions of Open Science among Researchers—A Case Study for Colombia</td>
+                        <td>Information</td>
+                        <td><a href="https://doi.org/10.3390/info9110292" target="_blank" style="word-break: break-all;">10.3390/info9110292</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Is There a Social Life in Open Data? The Case of Open Data Practices in Educational Technology Research</td>
+                        <td>Publications</td>
+                        <td><a href="https://doi.org/10.3390/publications7010009" target="_blank" style="word-break: break-all;">10.3390/publications7010009</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Caracterización de las publicaciones de España y Portugal sobre Open Science y análisis de su presencia en las redes sociales</td>
+                        <td>Revista española de Documentación Científica</td>
+                        <td><a href="https://doi.org/10.3989/redc.2019.2.1580" target="_blank" style="word-break: break-all;">10.3989/redc.2019.2.1580</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>The Charcoal Quantification Tool (CharTool): A Suite of Open-source Tools for Quantifying Charcoal Fragments and Sediment Properties in Archaeological and Paleoecological Analysis</td>
+                        <td>Ethnobiology Letters</td>
+                        <td><a href="https://doi.org/10.14237/ebl.11.1.2020.1653" target="_blank" style="word-break: break-all;">10.14237/ebl.11.1.2020.1653</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>The odd couple: contrasting openness in innovation and science</td>
+                        <td>Innovation</td>
+                        <td><a href="https://doi.org/10.1080/14479338.2020.1837631" target="_blank" style="word-break: break-all;">10.1080/14479338.2020.1837631</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Dual voices, hybrid identities: the recontextualization of research in digital dissemination scientific discourse</td>
+                        <td>Círculo de lingüística aplicada a la comunicación</td>
+                        <td><a href="https://doi.org/10.5209/clac.85566" target="_blank" style="word-break: break-all;">10.5209/clac.85566</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Legal assessment tool (LAT): an interactive tool to address privacy and data protection issues for data sharing</td>
+                        <td>BMC Medical Informatics and Decision Making</td>
+                        <td><a href="https://doi.org/10.1186/s12911-016-0325-0" target="_blank" style="word-break: break-all;">10.1186/s12911-016-0325-0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Virtual Summit: Incorporating Data Science and Open Science in Aquatic Research</td>
+                        <td>Limnology and Oceanography Bulletin</td>
+                        <td><a href="https://doi.org/10.1002/lob.10411" target="_blank" style="word-break: break-all;">10.1002/lob.10411</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Verbal and visual resources in graphical abstracts: Analyzing patterns of knowledge presentation in digital genres</td>
+                        <td>Ibérica</td>
+                        <td><a href="https://doi.org/10.17398/2340-2784.46.129" target="_blank" style="word-break: break-all;">10.17398/2340-2784.46.129</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Social Media Impact of Myopia Research</td>
+                        <td>International Journal of Environmental Research and Public Health</td>
+                        <td><a href="https://doi.org/10.3390/ijerph19127270" target="_blank" style="word-break: break-all;">10.3390/ijerph19127270</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Shaping an Image of Science in the 21st Century: The Perspective of Metamodernism</td>
+                        <td>Societies</td>
+                        <td><a href="https://doi.org/10.3390/soc13120254" target="_blank" style="word-break: break-all;">10.3390/soc13120254</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>The structural transformation of the scientific public sphere: Constitution and consequences of the path towards open access</td>
+                        <td>Philosophy & Social Criticism</td>
+                        <td><a href="https://doi.org/10.1177/01914537231203558" target="_blank" style="word-break: break-all;">10.1177/01914537231203558</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>From Theoretical Debates to Lived Experiences: Autoethnographic Insights into Open Educational Practices in German Higher Education</td>
+                        <td>Research Ideas and Outcomes</td>
+                        <td><a href="https://doi.org/10.3897/rio.8.e86663" target="_blank" style="word-break: break-all;">10.3897/rio.8.e86663</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Open Science Under Debate: Disentangling the Interest on Twitter and Scholarly Research</td>
+                        <td>SAGE Open</td>
+                        <td><a href="https://doi.org/10.1177/21582440241271300" target="_blank" style="word-break: break-all;">10.1177/21582440241271300</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Faculty Adoption of Open Science and Their Practices Towards Data Sharing in Tanzanian Health Universities</td>
+                        <td>The International Information & Library Review</td>
+                        <td><a href="https://doi.org/10.1080/10572317.2024.2409600" target="_blank" style="word-break: break-all;">10.1080/10572317.2024.2409600</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>The Observed Availability of Data and Code in Earth Science and Artificial Intelligence</td>
+                        <td>Bulletin of the American Meteorological Society</td>
+                        <td><a href="https://doi.org/10.1175/bams-d-24-0147.1" target="_blank" style="word-break: break-all;">10.1175/bams-d-24-0147.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Open Access to Scientific Information in Emerging Countries</td>
+                        <td>D-Lib Magazine</td>
+                        <td><a href="https://doi.org/10.1045/march2017-schopfel" target="_blank" style="word-break: break-all;">10.1045/march2017-schopfel</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Reproducibility in the Field: Transparency, Version Control and Collaboration on the Project Panormos Survey</td>
+                        <td>Open Archaeology</td>
+                        <td><a href="https://doi.org/10.1515/opar-2017-0019" target="_blank" style="word-break: break-all;">10.1515/opar-2017-0019</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Exploring Digital Scholarship</td>
+                        <td>Advances in knowledge acquisition, transfer, and management book series/Advances in knowledge acquisition, transfer and management book series</td>
+                        <td><a href="https://doi.org/10.4018/978-1-5225-0830-4.ch007" target="_blank" style="word-break: break-all;">10.4018/978-1-5225-0830-4.ch007</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Open science and codes of conduct on research integrity</td>
+                        <td>Informaatiotutkimus</td>
+                        <td><a href="https://doi.org/10.23978/inf.77414" target="_blank" style="word-break: break-all;">10.23978/inf.77414</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Purposeful Evaluation of Scholarship in the Open Science Era</td>
+                        <td>Challenges</td>
+                        <td><a href="https://doi.org/10.3390/challe12010006" target="_blank" style="word-break: break-all;">10.3390/challe12010006</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Scientific Cooperation: Supporting Circumpolar Permafrost Monitoring and Data Sharing</td>
+                        <td>Land</td>
+                        <td><a href="https://doi.org/10.3390/land10060590" target="_blank" style="word-break: break-all;">10.3390/land10060590</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>A Sociocultural Approach to Identity through Diary Studies</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108755146.019" target="_blank" style="word-break: break-all;">10.1017/9781108755146.019</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Migration Research in a Digitized World</td>
+                        <td>IMISCOE research series</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-01319-5" target="_blank" style="word-break: break-all;">10.1007/978-3-031-01319-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Open scholarship in Australia: A review of needs, barriers, and opportunities</td>
+                        <td>Digital Scholarship in the Humanities</td>
+                        <td><a href="https://doi.org/10.1093/llc/fqaa063" target="_blank" style="word-break: break-all;">10.1093/llc/fqaa063</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Producing Open Data</td>
+                        <td>Research Ideas and Outcomes</td>
+                        <td><a href="https://doi.org/10.3897/rio.8.e86384" target="_blank" style="word-break: break-all;">10.3897/rio.8.e86384</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Open access: a journey from impossible to probable, but still uncertain</td>
+                        <td>El Profesional de la Informacion</td>
+                        <td><a href="https://doi.org/10.3145/epi.2023.ene.13" target="_blank" style="word-break: break-all;">10.3145/epi.2023.ene.13</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>‘Help us better understand our changing climate’: Exploring the discourse of Citizen Science</td>
+                        <td>Discourse & Communication</td>
+                        <td><a href="https://doi.org/10.1177/17504813231158927" target="_blank" style="word-break: break-all;">10.1177/17504813231158927</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Gatekeeping should be conserved in the open science era</td>
+                        <td>Synthese</td>
+                        <td><a href="https://doi.org/10.1007/s11229-024-04559-2" target="_blank" style="word-break: break-all;">10.1007/s11229-024-04559-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Enhancing medical students’ science communication skills: from the perspective of new media</td>
+                        <td>AJP Advances in Physiology Education</td>
+                        <td><a href="https://doi.org/10.1152/advan.00192.2023" target="_blank" style="word-break: break-all;">10.1152/advan.00192.2023</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Monitoring Open Science as transformative change: Towards a systemic framework</td>
+                        <td>F1000Research</td>
+                        <td><a href="https://doi.org/10.12688/f1000research.148290.1" target="_blank" style="word-break: break-all;">10.12688/f1000research.148290.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Data journals: eclosión de nuevas revistas especializadas en datos</td>
+                        <td>El Profesional de la Informacion</td>
+                        <td><a href="https://doi.org/10.3145/epi.2015.nov.17" target="_blank" style="word-break: break-all;">10.3145/epi.2015.nov.17</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>How do academic topics shift across altmetric sources? A case study of the research area of Big Data</td>
+                        <td>Scientometrics</td>
+                        <td><a href="https://doi.org/10.1007/s11192-020-03415-7" target="_blank" style="word-break: break-all;">10.1007/s11192-020-03415-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Open access and soft power: Chinese voices in international scholarship</td>
+                        <td>Media Culture & Society</td>
+                        <td><a href="https://doi.org/10.1177/0163443714567019" target="_blank" style="word-break: break-all;">10.1177/0163443714567019</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Drivers and barriers in the transition to open science: the perspective of stakeholders in the Spanish scientific community</td>
+                        <td>El Profesional de la Informacion</td>
+                        <td><a href="https://doi.org/10.3145/epi.2022.may.05" target="_blank" style="word-break: break-all;">10.3145/epi.2022.may.05</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Selvitys avoimesta vertaisarvioinnista kotimaisen tiedejulkaisemisen kentällä</td>
+                        <td>Tieteellisten seurain valtuuskunnan verkkojulkaisuja</td>
+                        <td><a href="https://doi.org/10.23847/978-952-599516-9" target="_blank" style="word-break: break-all;">10.23847/978-952-599516-9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Evolution of the visibility of scholarly monographs in the academic field</td>
+                        <td>El Profesional de la Informacion</td>
+                        <td><a href="https://doi.org/10.3145/epi.2019.jul.09" target="_blank" style="word-break: break-all;">10.3145/epi.2019.jul.09</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Plan S y ecosistema de revistas españolas de ciencias sociales hacia el acceso abierto: amenazas y oportunidades</td>
+                        <td>El Profesional de la Informacion</td>
+                        <td><a href="https://doi.org/10.3145/epi.2020.mar.14" target="_blank" style="word-break: break-all;">10.3145/epi.2020.mar.14</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Holistic graph-based document representation and management for open science</td>
+                        <td>International Journal on Digital Libraries</td>
+                        <td><a href="https://doi.org/10.1007/s00799-022-00328-z" target="_blank" style="word-break: break-all;">10.1007/s00799-022-00328-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Open Access and Sensitive Social Sciences Data in Different Legislative Contexts: The Case of Strategic Selection “Elite” Interviewing in Sweden</td>
+                        <td>International Journal of Qualitative Methods</td>
+                        <td><a href="https://doi.org/10.1177/16094069221120747" target="_blank" style="word-break: break-all;">10.1177/16094069221120747</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Rethinking Transparency and Rigor from a Qualitative Open Science Perspective</td>
+                        <td>PsyArXiv (OSF Preprints)</td>
+                        <td><a href="https://doi.org/10.31234/osf.io/bpu5f" target="_blank" style="word-break: break-all;">10.31234/osf.io/bpu5f</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>AI Approaches in Computer-Aided Diagnosis and Recognition of Neoplastic Changes in MRI Brain Images</td>
+                        <td>Applied Sciences</td>
+                        <td><a href="https://doi.org/10.3390/app122311880" target="_blank" style="word-break: break-all;">10.3390/app122311880</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Intersectional Research as a Methodology for Shaping Transition Research in Support of Equitable Postschool Outcomes</td>
+                        <td>Career Development and Transition for Exceptional Individuals</td>
+                        <td><a href="https://doi.org/10.1177/21651434231169990" target="_blank" style="word-break: break-all;">10.1177/21651434231169990</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Scholarly Twitter Metrics</td>
+                        <td>Springer handbooks</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-02511-3_28" target="_blank" style="word-break: break-all;">10.1007/978-3-030-02511-3_28</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Identity construction in digital communication for public engagement in science</td>
+                        <td>Discourse Studies</td>
+                        <td><a href="https://doi.org/10.1177/14614456241255267" target="_blank" style="word-break: break-all;">10.1177/14614456241255267</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Open Data in Data Journalism: Opportunities and Future Directions</td>
+                        <td>Canadian Journal of Communication</td>
+                        <td><a href="https://doi.org/10.3138/cjc-2023-0040" target="_blank" style="word-break: break-all;">10.3138/cjc-2023-0040</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>The Values and Limits of Altmetrics</td>
+                        <td>New Directions for Institutional Research</td>
+                        <td><a href="https://doi.org/10.1002/ir.20267" target="_blank" style="word-break: break-all;">10.1002/ir.20267</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Open Science-Forschung und qualitative Methoden – fünf Ebenen der Reflexion</td>
+                        <td>MedienPädagogik Zeitschrift für Theorie und Praxis der Medienbildung</td>
+                        <td><a href="https://doi.org/10.21240/mpaed/32/2018.10.28.x" target="_blank" style="word-break: break-all;">10.21240/mpaed/32/2018.10.28.x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Special Issue: Engaging with Open Science in Learning and Teaching</td>
+                        <td>Education for Information</td>
+                        <td><a href="https://doi.org/10.3233/efi-200386" target="_blank" style="word-break: break-all;">10.3233/efi-200386</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Transitioning Machine Learning from Theory to Practice in Natural Resources Management</td>
+                        <td>Ecological Modelling</td>
+                        <td><a href="https://doi.org/10.1016/j.ecolmodel.2020.109257" target="_blank" style="word-break: break-all;">10.1016/j.ecolmodel.2020.109257</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Abrir la ciencia para cambiar el mundo</td>
+                        <td>International Journal of Engineering Social Justice and Peace</td>
+                        <td><a href="https://doi.org/10.24908/ijesjp.v7i2.13724" target="_blank" style="word-break: break-all;">10.24908/ijesjp.v7i2.13724</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>The varying openness of digital open science tools</td>
+                        <td>F1000Research</td>
+                        <td><a href="https://doi.org/10.12688/f1000research.26615.2" target="_blank" style="word-break: break-all;">10.12688/f1000research.26615.2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Wie offen sind „offene“ Online-Gemeinschaften? Inklusion, Exklusion und die Ambivalenz von Schließungen</td>
+                        <td>KZfSS Kölner Zeitschrift für Soziologie und Sozialpsychologie</td>
+                        <td><a href="https://doi.org/10.1007/s11577-022-00836-5" target="_blank" style="word-break: break-all;">10.1007/s11577-022-00836-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>La producción científica de Uruguay disponible en acceso abierto a partir de Web of Science (1980-2019)</td>
+                        <td>Informatio</td>
+                        <td><a href="https://doi.org/10.35643/info.27.1.4" target="_blank" style="word-break: break-all;">10.35643/info.27.1.4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Public Biological Databases and the Sui Generis Database Right</td>
+                        <td>GRURRR. Gewerblicher Rechtsschutz und Urheberrecht, Rechtsprechungs-Report/GRUR-DVD/GRUR-CD/IIC/Gewerblicher Rechtsschutz und Urheberrecht/Gewerblicher Rechtsschutz und Urheberrecht. Internationaler Teil</td>
+                        <td><a href="https://doi.org/10.1007/s40319-023-01373-0" target="_blank" style="word-break: break-all;">10.1007/s40319-023-01373-0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>‚Open Data‘ in den ethnologischen Fächern</td>
+                        <td>ISGV digital</td>
+                        <td><a href="https://doi.org/10.25366/2019.07" target="_blank" style="word-break: break-all;">10.25366/2019.07</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Alive Publication</td>
+                        <td>Publications</td>
+                        <td><a href="https://doi.org/10.3390/publications11020024" target="_blank" style="word-break: break-all;">10.3390/publications11020024</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Funding University-Born Projects and Developing Research Crowdfunding Ecosystem: The Case of BiUniCrowd in Italy</td>
+                        <td>Contributions to finance and accounting</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-30069-1_7" target="_blank" style="word-break: break-all;">10.1007/978-3-031-30069-1_7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Open Science and Policy Interface: The Tanzania Perspective</td>
+                        <td>East African Journal of Science Technology and Innovation</td>
+                        <td><a href="https://doi.org/10.37425/eajsti.v4i3.771" target="_blank" style="word-break: break-all;">10.37425/eajsti.v4i3.771</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Datasets reflecting students' and teachers' views on the use of learning technology in a <scp>UK</scp> university</td>
+                        <td>British Journal of Educational Technology</td>
+                        <td><a href="https://doi.org/10.1111/bjet.12332" target="_blank" style="word-break: break-all;">10.1111/bjet.12332</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Perspectivas de la ciencia abierta : un estado de la cuesti�n para una pol�tica nacional en Colombi</td>
+                        <td>BiD: textos universitaris de biblioteconomia i documentació</td>
+                        <td><a href="https://doi.org/10.1344/bid2018.40.4" target="_blank" style="word-break: break-all;">10.1344/bid2018.40.4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Situating Linguistics in the Social Science Data Movement</td>
+                        <td>The MIT Press eBooks</td>
+                        <td><a href="https://doi.org/10.7551/mitpress/12200.003.0006" target="_blank" style="word-break: break-all;">10.7551/mitpress/12200.003.0006</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>The varying openness of digital open science tools</td>
+                        <td>F1000Research</td>
+                        <td><a href="https://doi.org/10.12688/f1000research.26615.1" target="_blank" style="word-break: break-all;">10.12688/f1000research.26615.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Effects of Digital Transformation in Scientific Collaboration. A Bibliographic Review</td>
+                        <td>Communications in computer and information science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-32475-9_30" target="_blank" style="word-break: break-all;">10.1007/978-3-030-32475-9_30</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Skalierung von Plattformen in der disruptiven Digitalisierung der Forschung</td>
+                        <td>Angewandte Wirtschaftsinformatik</td>
+                        <td><a href="https://doi.org/10.1007/978-3-658-26618-9_16" target="_blank" style="word-break: break-all;">10.1007/978-3-658-26618-9_16</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>The Meanings of Publication in Open Access Journal: Experience of State Islamic University's Lecturers</td>
+                        <td>Insaniyat Journal of Islam and Humanities</td>
+                        <td><a href="https://doi.org/10.15408/insaniyat.v6i2.25462" target="_blank" style="word-break: break-all;">10.15408/insaniyat.v6i2.25462</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Open Science Practices in The Journal <i>Human Factors</i> : 2017–2022</td>
+                        <td>Proceedings of the Human Factors and Ergonomics Society Annual Meeting</td>
+                        <td><a href="https://doi.org/10.1177/21695067231192276" target="_blank" style="word-break: break-all;">10.1177/21695067231192276</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Co-Production as a Research Method</td>
+                        <td>Advances in public policy and administration (APPA) book series</td>
+                        <td><a href="https://doi.org/10.4018/978-1-7998-4975-9.ch014" target="_blank" style="word-break: break-all;">10.4018/978-1-7998-4975-9.ch014</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Reshaping How Universities Can Evaluate the Research Impact of Open Humanities for Societal Benefit</td>
+                        <td>Journal of Electronic Publishing</td>
+                        <td><a href="https://doi.org/10.3998/jep.788" target="_blank" style="word-break: break-all;">10.3998/jep.788</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Ciência e comunicação: a presença de instituições brasileiras no YouTube</td>
+                        <td>Reciis</td>
+                        <td><a href="https://doi.org/10.29397/reciis.v17i2.3228" target="_blank" style="word-break: break-all;">10.29397/reciis.v17i2.3228</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Digital Identity and Promotion of Research Works Case Study of Social Science Researchers at Taiwanese Institutions</td>
+                        <td>International Journal of Social Science Studies</td>
+                        <td><a href="https://doi.org/10.11114/ijsss.v11i5.6316" target="_blank" style="word-break: break-all;">10.11114/ijsss.v11i5.6316</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>OLEAtool: An open-source software for morphopalynological research in Olea europaea L. pollen</td>
+                        <td>Open Research Europe</td>
+                        <td><a href="https://doi.org/10.12688/openreseurope.15309.2" target="_blank" style="word-break: break-all;">10.12688/openreseurope.15309.2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>‘The Cloud is Not Not IT’: Ecological Change in Research Computing in the Cloud</td>
+                        <td>Computer Supported Cooperative Work (CSCW)</td>
+                        <td><a href="https://doi.org/10.1007/s10606-024-09490-1" target="_blank" style="word-break: break-all;">10.1007/s10606-024-09490-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>The Living Library: a process-based tool for open literature review, probing the boundaries of open science</td>
+                        <td>SN Social Sciences</td>
+                        <td><a href="https://doi.org/10.1007/s43545-024-00964-z" target="_blank" style="word-break: break-all;">10.1007/s43545-024-00964-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Mentoring Doctoral Students in the Chemical Sciences</td>
+                        <td>Israel Journal of Chemistry</td>
+                        <td><a href="https://doi.org/10.1002/ijch.202512004" target="_blank" style="word-break: break-all;">10.1002/ijch.202512004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>FuSeOn: A Low-Cost Portable Multi Sensor Fusion Research Testbed for Robotics</td>
+                        <td>Advances in intelligent systems and computing</td>
+                        <td><a href="https://doi.org/10.1007/978-3-319-27146-0_5" target="_blank" style="word-break: break-all;">10.1007/978-3-319-27146-0_5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Transitioning Machine Learning from Theory to Practice in Natural Resources Management</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.31223/x5d01h" target="_blank" style="word-break: break-all;">10.31223/x5d01h</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Leveraging the Web for Migration Studies: Data Sources and Data Extraction</td>
+                        <td>IMISCOE research series</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-01319-5_7" target="_blank" style="word-break: break-all;">10.1007/978-3-031-01319-5_7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Dynamically Updated Alive Publication Date</td>
+                        <td>Publications</td>
+                        <td><a href="https://doi.org/10.3390/publications10040048" target="_blank" style="word-break: break-all;">10.3390/publications10040048</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Open Data in Data Journalism: Opportunities and Future Directions</td>
+                        <td>ZBW Publication Archive (ZBW – Leibniz Information Centre for Economics)</td>
+                        <td><a href="https://doi.org/10.31235/osf.io/wh8jx" target="_blank" style="word-break: break-all;">10.31235/osf.io/wh8jx</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Supporting the modern research workflow</td>
+                        <td>Proceedings of the Association for Information Science and Technology</td>
+                        <td><a href="https://doi.org/10.1002/pra2.2016.14505301136" target="_blank" style="word-break: break-all;">10.1002/pra2.2016.14505301136</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>As bibliotecas e o percurso histórico de abertura da ciência: revendo um roteiro de colaboração</td>
+                        <td>Palabra clave</td>
+                        <td><a href="https://doi.org/10.24215/18539912e077" target="_blank" style="word-break: break-all;">10.24215/18539912e077</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Data Processing and Analytics for Data-Centric Sciences</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-52829-4_10" target="_blank" style="word-break: break-all;">10.1007/978-3-030-52829-4_10</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Case Study: ENVRI Science Demonstrators with D4Science</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-52829-4_17" target="_blank" style="word-break: break-all;">10.1007/978-3-030-52829-4_17</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>A New Market for Unprotected Ideas: Analyzing the Economic Efficiency of Trading Ownerless Ideas</td>
+                        <td>GRURRR. Gewerblicher Rechtsschutz und Urheberrecht, Rechtsprechungs-Report/GRUR-DVD/GRUR-CD/IIC/Gewerblicher Rechtsschutz und Urheberrecht/Gewerblicher Rechtsschutz und Urheberrecht. Internationaler Teil</td>
+                        <td><a href="https://doi.org/10.1007/s40319-020-00976-1" target="_blank" style="word-break: break-all;">10.1007/s40319-020-00976-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>THE GLOBAL CONTEXT OF OPEN ACCESS TO SCIENTIFIC PUBLICATIONS</td>
+                        <td>Akademos</td>
+                        <td><a href="https://doi.org/10.52673/18570461.21.1-60.02" target="_blank" style="word-break: break-all;">10.52673/18570461.21.1-60.02</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Multiple Facets of Open: A Different View on Open Science</td>
+                        <td>IntechOpen eBooks</td>
+                        <td><a href="https://doi.org/10.5772/intechopen.97815" target="_blank" style="word-break: break-all;">10.5772/intechopen.97815</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>On Research Exchanges in the Times of Pandemiс. Lessons for Russia</td>
+                        <td>Science management theory and practice</td>
+                        <td><a href="https://doi.org/10.19181/smtp.2022.4.1.12" target="_blank" style="word-break: break-all;">10.19181/smtp.2022.4.1.12</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Visualização de Dados de Saúde Pública: um estudo de caso sobre a Covid-19</td>
+                        <td>InCID Revista de Ciência da Informação e Documentação</td>
+                        <td><a href="https://doi.org/10.11606/issn.2178-2075.v13i2p283-304" target="_blank" style="word-break: break-all;">10.11606/issn.2178-2075.v13i2p283-304</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Monitoring Open Science as Transformative Change: Towards a Systemic Framework</td>
+                        <td>SocArXiv (OSF Preprints)</td>
+                        <td><a href="https://doi.org/10.31235/osf.io/knhzt" target="_blank" style="word-break: break-all;">10.31235/osf.io/knhzt</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Participatory culture and knowledge sharing among educators and scholars in higher education</td>
+                        <td>Educational Media International</td>
+                        <td><a href="https://doi.org/10.1080/09523987.2024.2357954" target="_blank" style="word-break: break-all;">10.1080/09523987.2024.2357954</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>RepOSGate: Open Science Gateways for Institutional Repositories</td>
+                        <td>Communications in computer and information science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-39905-4_15" target="_blank" style="word-break: break-all;">10.1007/978-3-030-39905-4_15</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Factores motivacionales en los desarrolladores de software libre</td>
+                        <td>Investigación Administrativa</td>
+                        <td><a href="https://doi.org/10.35426/iav49n126.04" target="_blank" style="word-break: break-all;">10.35426/iav49n126.04</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Scientific Publishing: Education as the Key Enabler for the Transition to Open Science</td>
+                        <td>Preprints.org</td>
+                        <td><a href="https://doi.org/10.20944/preprints201910.0057.v4" target="_blank" style="word-break: break-all;">10.20944/preprints201910.0057.v4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Open Bioinformation in the Life Sciences as a Gatekeeper for Innovation and Development</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.2704243" target="_blank" style="word-break: break-all;">10.2139/ssrn.2704243</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Open Research Data and Open Peer Review: Perceptions of a Medical and Health Sciences Community in Greece</td>
+                        <td>Preprints.org</td>
+                        <td><a href="https://doi.org/10.20944/preprints202011.0282.v1" target="_blank" style="word-break: break-all;">10.20944/preprints202011.0282.v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Scientific Publishing: Education as the Key Enabler for the Transition to Open Science</td>
+                        <td>Preprints.org</td>
+                        <td><a href="https://doi.org/10.20944/preprints201910.0057.v2" target="_blank" style="word-break: break-all;">10.20944/preprints201910.0057.v2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Scientific Publishing: Education as the Key Enabler for the Transition to Open Science</td>
+                        <td>Preprints.org</td>
+                        <td><a href="https://doi.org/10.20944/preprints201910.0057.v3" target="_blank" style="word-break: break-all;">10.20944/preprints201910.0057.v3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Meeting report: The road to science‐based policy – ESOF through the eyes of young scientists</td>
+                        <td>BioEssays</td>
+                        <td><a href="https://doi.org/10.1002/bies.201400169" target="_blank" style="word-break: break-all;">10.1002/bies.201400169</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Algunos aspectos del artículo científico en la Revista Peruana de Biología</td>
+                        <td>Revista Peruana de Biología</td>
+                        <td><a href="https://doi.org/10.15381/rpb.v22i3.11431" target="_blank" style="word-break: break-all;">10.15381/rpb.v22i3.11431</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Legal requirement clusters as means to build legally interoperable data bridges between research infrastructures</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/echallenges.2015.7441063" target="_blank" style="word-break: break-all;">10.1109/echallenges.2015.7441063</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>GitHub use in public administration in Canada: Early experience with a new collaboration tool</td>
+                        <td>Canadian Public Administration</td>
+                        <td><a href="https://doi.org/10.1111/capa.12192" target="_blank" style="word-break: break-all;">10.1111/capa.12192</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Research 2.0</td>
+                        <td>Advances in knowledge acquisition, transfer, and management book series/Advances in knowledge acquisition, transfer and management book series</td>
+                        <td><a href="https://doi.org/10.4018/978-1-5225-0830-4.ch012" target="_blank" style="word-break: break-all;">10.4018/978-1-5225-0830-4.ch012</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Curb My Cynicism: Employing Photo Elicitation to Address the Problem of Research on Bullying</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-3-319-64413-4_8" target="_blank" style="word-break: break-all;">10.1007/978-3-319-64413-4_8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Look Better: Single Atoms in Chemistry and Single Atoms in Physics</td>
+                        <td>ChemPhysChem</td>
+                        <td><a href="https://doi.org/10.1002/cphc.201900311" target="_blank" style="word-break: break-all;">10.1002/cphc.201900311</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Theory in open access studies</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.4324/9780429276842-5" target="_blank" style="word-break: break-all;">10.4324/9780429276842-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>FlyClockbase: Importance of Biological Model Curation for Analyzing Variability in the Circadian Clock of Drosophila melanogaster by Integrating Time Series from 25 Years of Research</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/099192" target="_blank" style="word-break: break-all;">10.1101/099192</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Yes! We’re open. Open science and the future of academic practices in translation and interpreting studies</td>
+                        <td>The International Journal of Translation and Interpreting Research</td>
+                        <td><a href="https://doi.org/10.12807/ti.113202.2021.a01" target="_blank" style="word-break: break-all;">10.12807/ti.113202.2021.a01</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Open Innovation and the Energy Transition: An Exploratory Study</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.3970512" target="_blank" style="word-break: break-all;">10.2139/ssrn.3970512</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Methodological Approaches</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108755146.013" target="_blank" style="word-break: break-all;">10.1017/9781108755146.013</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Pré-registro de estudos na linguística experimental</td>
+                        <td>Cadernos de Linguística</td>
+                        <td><a href="https://doi.org/10.25189/2675-4916.2022.v3.n1.id616" target="_blank" style="word-break: break-all;">10.25189/2675-4916.2022.v3.n1.id616</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Research 2.0</td>
+                        <td>IGI Global eBooks</td>
+                        <td><a href="https://doi.org/10.4018/978-1-5225-6921-3.ch001" target="_blank" style="word-break: break-all;">10.4018/978-1-5225-6921-3.ch001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Integrative Data Analysis and Exploratory Data Mining in Biological Knowledge Graphs</td>
+                        <td>Integrative Bioinformatics</td>
+                        <td><a href="https://doi.org/10.1007/978-981-16-6795-4_8" target="_blank" style="word-break: break-all;">10.1007/978-981-16-6795-4_8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Bibliografia</td>
+                        <td>Ledizioni eBooks</td>
+                        <td><a href="https://doi.org/10.4000/books.ledizioni.10547" target="_blank" style="word-break: break-all;">10.4000/books.ledizioni.10547</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Desenvolvimento e aplicação de governança de dados no Laboratório de Análise por Ativação Neutrônica (LAN) do Instituto de Pesquisas Energéticas Nucleares (IPEN/CNEN): proposta do modelo estrutural de aplicação para e-Science</td>
+                        <td>Digital Library of Theses and Dissertations  (Universidade de São Paulo)</td>
+                        <td><a href="https://doi.org/10.11606/d.85.2021.tde-23122022-145543" target="_blank" style="word-break: break-all;">10.11606/d.85.2021.tde-23122022-145543</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>How a learning community can empower science educators and disrupt toxic academic norms</td>
+                        <td>eScholarship (California Digital Library)</td>
+                        <td><a href="https://doi.org/10.21428/a70c814c.fade888d" target="_blank" style="word-break: break-all;">10.21428/a70c814c.fade888d</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>OLEAtool: An open-source software for morphopalynological research in Olea europaea L. pollen</td>
+                        <td>Open Research Europe</td>
+                        <td><a href="https://doi.org/10.12688/openreseurope.15309.1" target="_blank" style="word-break: break-all;">10.12688/openreseurope.15309.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>(Why) Are Open Research Practices the Future for the Study of Language Learning?</td>
+                        <td>OSF Preprints (OSF Preprints)</td>
+                        <td><a href="https://doi.org/10.31219/osf.io/hpgk6" target="_blank" style="word-break: break-all;">10.31219/osf.io/hpgk6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>¿Cómo difundir hoy el conocimiento científico?</td>
+                        <td>Ingeniería y Región</td>
+                        <td><a href="https://doi.org/10.25054/22161325.3698" target="_blank" style="word-break: break-all;">10.25054/22161325.3698</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>What do we talk about when we talk about "Open"? On Education, Science, Research, and Open Scholarship</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.59350/dxdqq-e4n18" target="_blank" style="word-break: break-all;">10.59350/dxdqq-e4n18</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Undergraduate Psychology Students’ Perceptions of Open Research: The Relationship Between Statistics Understanding, Attitudes, and Questionable Research Practices</td>
+                        <td>PsyArXiv (OSF Preprints)</td>
+                        <td><a href="https://doi.org/10.31234/osf.io/2qx6m" target="_blank" style="word-break: break-all;">10.31234/osf.io/2qx6m</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>*READ**THIS*!! Spam as a Threat for Open Science</td>
+                        <td>SocArXiv (OSF Preprints)</td>
+                        <td><a href="https://doi.org/10.31235/osf.io/cufes" target="_blank" style="word-break: break-all;">10.31235/osf.io/cufes</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Akademska zajednica kao akter zagovaranja otvorene znanosti u visokom obrazovanju</td>
+                        <td>Vjesnik bibliotekara Hrvatske</td>
+                        <td><a href="https://doi.org/10.30754/vbh.66.3.1122" target="_blank" style="word-break: break-all;">10.30754/vbh.66.3.1122</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Doing Open Data: Interviews als (re-)medialisierte Forschungspraxis und audiovisuelle Forschungsdaten</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-3-658-36629-2_9-1" target="_blank" style="word-break: break-all;">10.1007/978-3-658-36629-2_9-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>PERTINENCIAS DE PUBLICACIONES DE ACCESO LIBRE Y DE PAGO COMO RESULTADOS DE FCI UNIVERSIDAD DE GUAYAQUIL.</td>
+                        <td>Zenodo (CERN European Organization for Nuclear Research)</td>
+                        <td><a href="https://doi.org/10.59764/ceo.65" target="_blank" style="word-break: break-all;">10.59764/ceo.65</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Productividad y redes de colaboración en las principales revistas españolas de sociología: un análisis del período 2001-2020 desde la perspectiva de género</td>
+                        <td>Revista Española de Investigaciones Sociológicas</td>
+                        <td><a href="https://doi.org/10.5477/cis/reis.186.43-64" target="_blank" style="word-break: break-all;">10.5477/cis/reis.186.43-64</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Is This the End of Anthropology as We Know It? Some Implication of FAIR Principles on Tales in Ethnological and Anthropological Qualitative Research</td>
+                        <td>Publications</td>
+                        <td><a href="https://doi.org/10.3390/publications12040042" target="_blank" style="word-break: break-all;">10.3390/publications12040042</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>#OpenAccess: Free online, open-access crowdsource-reviewed publishing is the future; traditional peer-reviewed journals are on the way out</td>
+                        <td>Figshare</td>
+                        <td><a href="https://doi.org/10.32920/27922140.v1" target="_blank" style="word-break: break-all;">10.32920/27922140.v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>#OpenAccess: Free online, open-access crowdsource-reviewed publishing is the future; traditional peer-reviewed journals are on the way out</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.32920/27922140" target="_blank" style="word-break: break-all;">10.32920/27922140</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Open Data: why do it, things worth knowing and possible pitfalls</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.31219/osf.io/hk786_v1" target="_blank" style="word-break: break-all;">10.31219/osf.io/hk786_v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Digital Identity and Promotion of Research Works – Analytical Study of Social Science Researchers at Taiwanese Institutions</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.32388/g85lx9.3" target="_blank" style="word-break: break-all;">10.32388/g85lx9.3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Using Open Science Tools to Teach Environmental Sciences</td>
+                        <td>Ecology and Evolution</td>
+                        <td><a href="https://doi.org/10.1002/ece3.71837" target="_blank" style="word-break: break-all;">10.1002/ece3.71837</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>What do we talk about when we talk about "Open"? On Education, Science, Research, and Open Scholarship</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.59350/zddf5-kda18" target="_blank" style="word-break: break-all;">10.59350/zddf5-kda18</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Carrierwave: A granular, incentive-aligned infrastructure for scientific communication</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.64898/2026.03.01.708795" target="_blank" style="word-break: break-all;">10.64898/2026.03.01.708795</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Open Educational Resources (OER) in Deutschland: Teil eines Open Science Kulturwandels</td>
+                        <td>Zeitschrift für Erziehungswissenschaft</td>
+                        <td><a href="https://doi.org/10.1007/s11618-026-01400-z" target="_blank" style="word-break: break-all;">10.1007/s11618-026-01400-z</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+
+        <footer class="muted" style="text-align: right; margin-top: 2rem;">Generated on 2026-03-19T11:10:07+00:00</footer>
     </div>
-    <section class="card">
-      <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
-      <ul>
-        <li><strong>Total citing works captured:</strong> 155</li><li><strong>Top citing venues:</strong> <span class='tag'>Publications (5)</span> <span class='tag'>El Profesional de la Informacion (5)</span> <span class='tag'>Preprints.org (4)</span> <span class='tag'>Cambridge University Press eBooks (3)</span> <span class='tag'>F1000Research (3)</span> <span class='tag'>Applied Sciences (2)</span> <span class='tag'>D-Lib Magazine (2)</span> <span class='tag'>Israel Journal of Chemistry (2)</span> <span class='tag'>Advances in knowledge acquisition, transfer, and management book series/Advances in knowledge acquisition, transfer and management book series (2)</span> <span class='tag'>IMISCOE research series (2)</span></li><li><strong>Citing work types:</strong> <span class='tag'>article (100)</span> <span class='tag'>preprint (23)</span> <span class='tag'>book-chapter (20)</span> <span class='tag'>book (5)</span> <span class='tag'>review (5)</span> <span class='tag'>dissertation (1)</span></li><li><strong>Citation timeline (by year):</strong> 2014: 3, 2015: 8, 2016: 7, 2017: 5, 2018: 7, 2019: 16, 2020: 26, 2021: 15, 2022: 21, 2023: 24, 2024: 17, 2025: 5</li>
-      </ul>
-    </section>
+
     
-<section class="card">
-  <h2><span>Contributors &amp; affiliations</span> <span class='badge'>OpenAlex</span></h2>
-  <div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">2 authors · 3 institutions · 1 country</div>
-    <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3><ul><li><a href='https://orcid.org/0000-0001-5434-9433' target='_blank' rel='noopener noreferrer'>Sönke Bartling<span class='orcid-badge' title='ORCID iD'>iD</span></a> <a class='muted' style='text-decoration:none' href='https://openalex.org/A5046374875' target='_blank' rel='noopener noreferrer'>OpenAlex</a> <span class='badge'>First</span> <span class='badge'>Corresponding</span><div class='muted' style='margin-top:0.15rem;'>German Cancer Research Center <span class='muted'>+1 more</span></div></li><li><a href='https://orcid.org/0000-0002-9314-5633' target='_blank' rel='noopener noreferrer'>Sascha Friesike<span class='orcid-badge' title='ORCID iD'>iD</span></a> <a class='muted' style='text-decoration:none' href='https://openalex.org/A5003713200' target='_blank' rel='noopener noreferrer'>OpenAlex</a> <span class='badge'>Last</span><div class='muted' style='margin-top:0.15rem;'>Alexander von Humboldt Institute for Internet and Society</div></li></ul>
-    <h3 style="margin:0.9rem 0 0.25rem;">Institutions</h3><ul><li><a href='https://openalex.org/I17937529' target='_blank' rel='noopener noreferrer'>German Cancer Research Center</a> <span class='muted'>(DE · facility)</span></li><li><a href='https://openalex.org/I223822909' target='_blank' rel='noopener noreferrer'>Heidelberg University</a> <span class='muted'>(DE · education)</span></li><li><a href='https://openalex.org/I4210118181' target='_blank' rel='noopener noreferrer'>Alexander von Humboldt Institute for Internet and Society</a> <span class='muted'>(DE · other)</span></li></ul>
-</section>
-
-<div class="grid">
-  <section class="card">
-    <h2><span>Where your book is available</span></h2>
-    <ul><li><strong>SpringerLink</strong><br><a href='https://link.springer.com/book/10.1007/978-3-319-00026-8' target='_blank'>https://link.springer.com/book/10.1007/978-3-319-00026-8</a></li></ul>
-  </section>
-
-  <section class="card">
-    <h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
-    <ul><li><span class='tag'>Computer science</span></li></ul>
-  </section>
-</div>
-
-<section class="card">
-  <h2><span>OER &amp; teaching use</span></h2>
-  <ul><li class='muted'>No OER or teaching listings detected yet.</li></ul>
-</section>
-
-
-
-        <section class="card">
-          <h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref Event Data</span></h2>
-          <p class="muted">This work has <strong>200</strong> recorded events between 2017-05-01 and 2021-02-17.</p>
-          <ul class="event-source-list">
-            <li class='event-source-item'><span class='tag'><a href="https://en.wikipedia.org/w/index.php?title=Altmetrics&amp;oldid=778178187" target="_blank">Wikipedia</a></span><span class='tag tag-soft'>200 events</span></li>
-          </ul>
-          <h3>Selected examples</h3>
-          <ul class="event-examples-list">
-            <li class='event-example-item'><div class='event-example-meta'><span class='tag'>Wikipedia</span></div><a href='https://en.wikipedia.org/w/index.php?title=Altmetrics&amp;oldid=778178187' target='_blank'>Altmetrics</a><br><span class='muted'>2017-05-01</span></li><li class='event-example-item'><div class='event-example-meta'><span class='tag'>Wikipedia</span></div><a href='https://ru.wikipedia.org/w/index.php?title=%D0%90%D0%BB%D1%8C%D1%82%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%8F&amp;oldid=100041899' target='_blank'>Альтметрия</a><br><span class='muted'>2019-05-26</span></li><li class='event-example-item'><div class='event-example-meta'><span class='tag'>Wikipedia</span></div><a href='https://id.wikipedia.org/w/index.php?title=Public_Knowledge_Project&amp;oldid=17751196' target='_blank'>Public Knowledge Project</a><br><span class='muted'>2020-12-24</span></li>
-          </ul>
-        </section>
-        
-
-        <section class="card">
-          <h2><span>Open access metadata</span> <span class="badge">DOAB</span></h2>
-          <p><strong>Publisher:</strong> <span class='muted'>Not available</span></p>
-          <p><strong>Rights / License:</strong> open access</p>
-          <p><strong>Keywords:</strong> <span class='muted'>None listed</span></p>
-          <p><strong>Abstract:</strong><br>Job Careers in Science and Engineering;  Computers and Society;  Communication Studies;  Web 2.0 and interoperability;  Scientific micro blogging;  Social networking platforms;  Creative commons;  Dynamic publication formats;  Scientific intellectual property;  Collaborative work;  Scientific wiki;  Open source science;  Open data</p>
-        </section>
-        
-<!-- operas-widget debug: work_uri=info:doi:10.1007/978-3-319-00026-8 measures=['https://metrics.operas-eu.org/oapen/downloads/v1'] tabs=1 -->
-<section class="card" id="operas-metrics-card">
-    <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
-    <p class="muted">Usage signals currently indexed by OPERAS Metrics (source-separated).</p>
-    <div id="metrics-widget"></div>
-
-    <script type="application/json" id="operas-metrics-config">
-    {"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "downloads", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN · downloads", "works": ["info:doi:10.1007/978-3-319-00026-8"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}}, "graphs": [{"id": "downloads_over_time", "type": "line", "title": "Downloads over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}
-    </script>
-
     <script>
-    window.operaswidget = (e => {
-      if (document.getElementById(e)) return window.operaswidget;
-      let t = document.createElement('script');
-      t.id = e;
-      t.src = 'https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js';
-      document.body.appendChild(t);
-      let i = window.operaswidget || {};
-      i.eventQueue = i.eventQueue || [];
-      i.ready = cb => { i.eventQueue.push(cb); };
-      return i;
-    })('operas-metrics-script');
-  </script>
-</section>
-
-
-<section class="card">
-  <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
-  <table>
-    <thead>
-      <tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>1975</td><td>The specificity of the scientific field and the social conditions of the progress of reason</td><td>Social Science Information</td><td><a href="https://doi.org/10.1177/053901847501400602" target="_blank" rel="noopener noreferrer">10.1177/053901847501400602</a>&nbsp;<a href="https://scite.ai/reports/10.1177/053901847501400602" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Impact of Dataset Size on Classification Performance: An Empirical Evaluation in the Medical Domain</td><td>Applied Sciences</td><td><a href="https://doi.org/10.3390/app11020796" target="_blank" rel="noopener noreferrer">10.3390/app11020796</a>&nbsp;<a href="https://scite.ai/reports/10.3390/app11020796" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2014</td><td>Opening science: towards an agenda of open science in academia and industry</td><td>The Journal of Technology Transfer</td><td><a href="https://doi.org/10.1007/s10961-014-9375-6" target="_blank" rel="noopener noreferrer">10.1007/s10961-014-9375-6</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s10961-014-9375-6" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Seven Easy Steps to Open Science</td><td>Zeitschrift für Psychologie</td><td><a href="https://doi.org/10.1027/2151-2604/a000387" target="_blank" rel="noopener noreferrer">10.1027/2151-2604/a000387</a>&nbsp;<a href="https://scite.ai/reports/10.1027/2151-2604/a000387" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>COVID-19 Image Data Collection: Prospective Predictions are the Future</td><td>The Journal of Machine Learning for Biomedical Imaging</td><td><a href="https://doi.org/10.59275/j.melba.2020-48g7" target="_blank" rel="noopener noreferrer">10.59275/j.melba.2020-48g7</a>&nbsp;<a href="https://scite.ai/reports/10.59275/j.melba.2020-48g7" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Philosophy of Open Science</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781009416368" target="_blank" rel="noopener noreferrer">10.1017/9781009416368</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781009416368" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2016</td><td>Has open data arrived at the &lt;i&gt;British Medical Journal (BMJ)&lt;/i&gt; ? An observational study</td><td>BMJ Open</td><td><a href="https://doi.org/10.1136/bmjopen-2016-011784" target="_blank" rel="noopener noreferrer">10.1136/bmjopen-2016-011784</a>&nbsp;<a href="https://scite.ai/reports/10.1136/bmjopen-2016-011784" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Open collaborative writing with Manubot</td><td>PLoS Computational Biology</td><td><a href="https://doi.org/10.1371/journal.pcbi.1007128" target="_blank" rel="noopener noreferrer">10.1371/journal.pcbi.1007128</a>&nbsp;<a href="https://scite.ai/reports/10.1371/journal.pcbi.1007128" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Open Lab: A web application for running and sharing online experiments</td><td>Behavior Research Methods</td><td><a href="https://doi.org/10.3758/s13428-021-01776-2" target="_blank" rel="noopener noreferrer">10.3758/s13428-021-01776-2</a>&nbsp;<a href="https://scite.ai/reports/10.3758/s13428-021-01776-2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2014</td><td>DataCite and DOI names for research data</td><td>Journal of Computer-Aided Molecular Design</td><td><a href="https://doi.org/10.1007/s10822-014-9776-5" target="_blank" rel="noopener noreferrer">10.1007/s10822-014-9776-5</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s10822-014-9776-5" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>(Why) Are Open Research Practices the Future for the Study of Language Learning?</td><td>Language Learning</td><td><a href="https://doi.org/10.1111/lang.12568" target="_blank" rel="noopener noreferrer">10.1111/lang.12568</a>&nbsp;<a href="https://scite.ai/reports/10.1111/lang.12568" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Ciencia Abierta, un modelo por definir con muchos retos por delante</td><td>Hipertext net Revista Académica sobre Documentación Digital y Comunicación Interactiva</td><td><a href="https://doi.org/10.31009/hipertext.net.2019.i19.01" target="_blank" rel="noopener noreferrer">10.31009/hipertext.net.2019.i19.01</a>&nbsp;<a href="https://scite.ai/reports/10.31009/hipertext.net.2019.i19.01" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>The Charcoal Quantification Tool (CharTool): A Suite of Open-source Tools for Quantifying Charcoal Fragments and Sediment Properties in Archaeological and Paleoecological Analysis</td><td>Ethnobiology Letters</td><td><a href="https://doi.org/10.14237/ebl.11.1.2020.1653" target="_blank" rel="noopener noreferrer">10.14237/ebl.11.1.2020.1653</a>&nbsp;<a href="https://scite.ai/reports/10.14237/ebl.11.1.2020.1653" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Virtual Summit: Incorporating Data Science and Open Science in Aquatic Research</td><td>Limnology and Oceanography Bulletin</td><td><a href="https://doi.org/10.1002/lob.10411" target="_blank" rel="noopener noreferrer">10.1002/lob.10411</a>&nbsp;<a href="https://scite.ai/reports/10.1002/lob.10411" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2015</td><td>Perspectives on social media in and as research: A synthetic review</td><td>International Review of Psychiatry</td><td><a href="https://doi.org/10.3109/09540261.2015.1009419" target="_blank" rel="noopener noreferrer">10.3109/09540261.2015.1009419</a>&nbsp;<a href="https://scite.ai/reports/10.3109/09540261.2015.1009419" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2017</td><td>The Landscape of Research Data Repositories in 2015: A re3data Analysis</td><td>D-Lib Magazine</td><td><a href="https://doi.org/10.1045/march2017-kindling" target="_blank" rel="noopener noreferrer">10.1045/march2017-kindling</a>&nbsp;<a href="https://scite.ai/reports/10.1045/march2017-kindling" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>A tale of two &#x27;opens&#x27;: intersections between Free and Open Source Software and Open Scholarship</td><td></td><td><a href="https://doi.org/10.31235/osf.io/2kxq8" target="_blank" rel="noopener noreferrer">10.31235/osf.io/2kxq8</a>&nbsp;<a href="https://scite.ai/reports/10.31235/osf.io/2kxq8" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Ciencia abierta: un modelo con piezas por encajar</td><td>Arbor</td><td><a href="https://doi.org/10.3989/arbor.2021.799003" target="_blank" rel="noopener noreferrer">10.3989/arbor.2021.799003</a>&nbsp;<a href="https://scite.ai/reports/10.3989/arbor.2021.799003" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Chemistry Education Fostering Creativity in the Digital Era</td><td>Israel Journal of Chemistry</td><td><a href="https://doi.org/10.1002/ijch.201800179" target="_blank" rel="noopener noreferrer">10.1002/ijch.201800179</a>&nbsp;<a href="https://scite.ai/reports/10.1002/ijch.201800179" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Open Access in Theory and Practice</td><td></td><td><a href="https://doi.org/10.4324/9780429276842" target="_blank" rel="noopener noreferrer">10.4324/9780429276842</a>&nbsp;<a href="https://scite.ai/reports/10.4324/9780429276842" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2018</td><td>7 Easy Steps to Open Science: An Annotated Reading List</td><td></td><td><a href="https://doi.org/10.31234/osf.io/cfzyx" target="_blank" rel="noopener noreferrer">10.31234/osf.io/cfzyx</a>&nbsp;<a href="https://scite.ai/reports/10.31234/osf.io/cfzyx" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2016</td><td>Stepping up Open Science Training for European Research</td><td>Publications</td><td><a href="https://doi.org/10.3390/publications4020016" target="_blank" rel="noopener noreferrer">10.3390/publications4020016</a>&nbsp;<a href="https://scite.ai/reports/10.3390/publications4020016" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Ciência aberta na perspectiva de especialistas brasileiros: proposta de taxonomia</td><td>Encontros Bibli Revista Eletrônica de Biblioteconomia e Ciência da Informação</td><td><a href="https://doi.org/10.5007/1518-2924.2021.e79646" target="_blank" rel="noopener noreferrer">10.5007/1518-2924.2021.e79646</a>&nbsp;<a href="https://scite.ai/reports/10.5007/1518-2924.2021.e79646" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Toward Open Research: A Narrative Review of the Challenges and Opportunities for Open Humanities</td><td>Journal of Communication</td><td><a href="https://doi.org/10.1093/joc/jqab028" target="_blank" rel="noopener noreferrer">10.1093/joc/jqab028</a>&nbsp;<a href="https://scite.ai/reports/10.1093/joc/jqab028" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2018</td><td>Knowledge and Perceptions of Open Science among Researchers—A Case Study for Colombia</td><td>Information</td><td><a href="https://doi.org/10.3390/info9110292" target="_blank" rel="noopener noreferrer">10.3390/info9110292</a>&nbsp;<a href="https://scite.ai/reports/10.3390/info9110292" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Caracterización de las publicaciones de España y Portugal sobre Open Science y análisis de su presencia en las redes sociales</td><td>Revista española de Documentación Científica</td><td><a href="https://doi.org/10.3989/redc.2019.2.1580" target="_blank" rel="noopener noreferrer">10.3989/redc.2019.2.1580</a>&nbsp;<a href="https://scite.ai/reports/10.3989/redc.2019.2.1580" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Dual voices, hybrid identities: the recontextualization of research in digital dissemination scientific discourse</td><td>Círculo de lingüística aplicada a la comunicación</td><td><a href="https://doi.org/10.5209/clac.85566" target="_blank" rel="noopener noreferrer">10.5209/clac.85566</a>&nbsp;<a href="https://scite.ai/reports/10.5209/clac.85566" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Social Media Impact of Myopia Research</td><td>International Journal of Environmental Research and Public Health</td><td><a href="https://doi.org/10.3390/ijerph19127270" target="_blank" rel="noopener noreferrer">10.3390/ijerph19127270</a>&nbsp;<a href="https://scite.ai/reports/10.3390/ijerph19127270" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Shaping an Image of Science in the 21st Century: The Perspective of Metamodernism</td><td>Societies</td><td><a href="https://doi.org/10.3390/soc13120254" target="_blank" rel="noopener noreferrer">10.3390/soc13120254</a>&nbsp;<a href="https://scite.ai/reports/10.3390/soc13120254" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>The structural transformation of the scientific public sphere: Constitution and consequences of the path towards open access</td><td>Philosophy &amp; Social Criticism</td><td><a href="https://doi.org/10.1177/01914537231203558" target="_blank" rel="noopener noreferrer">10.1177/01914537231203558</a>&nbsp;<a href="https://scite.ai/reports/10.1177/01914537231203558" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Is There a Social Life in Open Data? The Case of Open Data Practices in Educational Technology Research</td><td>Publications</td><td><a href="https://doi.org/10.3390/publications7010009" target="_blank" rel="noopener noreferrer">10.3390/publications7010009</a>&nbsp;<a href="https://scite.ai/reports/10.3390/publications7010009" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2017</td><td>Open Access to Scientific Information in Emerging Countries</td><td>D-Lib Magazine</td><td><a href="https://doi.org/10.1045/march2017-schopfel" target="_blank" rel="noopener noreferrer">10.1045/march2017-schopfel</a>&nbsp;<a href="https://scite.ai/reports/10.1045/march2017-schopfel" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2017</td><td>Reproducibility in the Field: Transparency, Version Control and Collaboration on the Project Panormos Survey</td><td>Open Archaeology</td><td><a href="https://doi.org/10.1515/opar-2017-0019" target="_blank" rel="noopener noreferrer">10.1515/opar-2017-0019</a>&nbsp;<a href="https://scite.ai/reports/10.1515/opar-2017-0019" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2016</td><td>Exploring Digital Scholarship</td><td>Advances in knowledge acquisition, transfer, and management book series/Advances in knowledge acquisition, transfer and management book series</td><td><a href="https://doi.org/10.4018/978-1-5225-0830-4.ch007" target="_blank" rel="noopener noreferrer">10.4018/978-1-5225-0830-4.ch007</a>&nbsp;<a href="https://scite.ai/reports/10.4018/978-1-5225-0830-4.ch007" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>The odd couple: contrasting openness in innovation and science</td><td>Innovation</td><td><a href="https://doi.org/10.1080/14479338.2020.1837631" target="_blank" rel="noopener noreferrer">10.1080/14479338.2020.1837631</a>&nbsp;<a href="https://scite.ai/reports/10.1080/14479338.2020.1837631" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2018</td><td>Open science and codes of conduct on research integrity</td><td>Informaatiotutkimus</td><td><a href="https://doi.org/10.23978/inf.77414" target="_blank" rel="noopener noreferrer">10.23978/inf.77414</a>&nbsp;<a href="https://scite.ai/reports/10.23978/inf.77414" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Purposeful Evaluation of Scholarship in the Open Science Era</td><td>Challenges</td><td><a href="https://doi.org/10.3390/challe12010006" target="_blank" rel="noopener noreferrer">10.3390/challe12010006</a>&nbsp;<a href="https://scite.ai/reports/10.3390/challe12010006" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Scientific Cooperation: Supporting Circumpolar Permafrost Monitoring and Data Sharing</td><td>Land</td><td><a href="https://doi.org/10.3390/land10060590" target="_blank" rel="noopener noreferrer">10.3390/land10060590</a>&nbsp;<a href="https://scite.ai/reports/10.3390/land10060590" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>A Sociocultural Approach to Identity through Diary Studies</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108755146.019" target="_blank" rel="noopener noreferrer">10.1017/9781108755146.019</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108755146.019" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Migration Research in a Digitized World</td><td>IMISCOE research series</td><td><a href="https://doi.org/10.1007/978-3-031-01319-5" target="_blank" rel="noopener noreferrer">10.1007/978-3-031-01319-5</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-031-01319-5" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Open scholarship in Australia: A review of needs, barriers, and opportunities</td><td>Digital Scholarship in the Humanities</td><td><a href="https://doi.org/10.1093/llc/fqaa063" target="_blank" rel="noopener noreferrer">10.1093/llc/fqaa063</a>&nbsp;<a href="https://scite.ai/reports/10.1093/llc/fqaa063" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Producing Open Data</td><td>Research Ideas and Outcomes</td><td><a href="https://doi.org/10.3897/rio.8.e86384" target="_blank" rel="noopener noreferrer">10.3897/rio.8.e86384</a>&nbsp;<a href="https://scite.ai/reports/10.3897/rio.8.e86384" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Open access: a journey from impossible to probable, but still uncertain</td><td>El Profesional de la Informacion</td><td><a href="https://doi.org/10.3145/epi.2023.ene.13" target="_blank" rel="noopener noreferrer">10.3145/epi.2023.ene.13</a>&nbsp;<a href="https://scite.ai/reports/10.3145/epi.2023.ene.13" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Verbal and visual resources in graphical abstracts: Analyzing patterns of knowledge presentation in digital genres</td><td>Ibérica</td><td><a href="https://doi.org/10.17398/2340-2784.46.129" target="_blank" rel="noopener noreferrer">10.17398/2340-2784.46.129</a>&nbsp;<a href="https://scite.ai/reports/10.17398/2340-2784.46.129" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>‘Help us better understand our changing climate’: Exploring the discourse of Citizen Science</td><td>Discourse &amp; Communication</td><td><a href="https://doi.org/10.1177/17504813231158927" target="_blank" rel="noopener noreferrer">10.1177/17504813231158927</a>&nbsp;<a href="https://scite.ai/reports/10.1177/17504813231158927" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Gatekeeping should be conserved in the open science era</td><td>Synthese</td><td><a href="https://doi.org/10.1007/s11229-024-04559-2" target="_blank" rel="noopener noreferrer">10.1007/s11229-024-04559-2</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s11229-024-04559-2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Enhancing medical students’ science communication skills: from the perspective of new media</td><td>AJP Advances in Physiology Education</td><td><a href="https://doi.org/10.1152/advan.00192.2023" target="_blank" rel="noopener noreferrer">10.1152/advan.00192.2023</a>&nbsp;<a href="https://scite.ai/reports/10.1152/advan.00192.2023" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Monitoring Open Science as transformative change: Towards a systemic framework</td><td>F1000Research</td><td><a href="https://doi.org/10.12688/f1000research.148290.1" target="_blank" rel="noopener noreferrer">10.12688/f1000research.148290.1</a>&nbsp;<a href="https://scite.ai/reports/10.12688/f1000research.148290.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2015</td><td>Data journals: eclosión de nuevas revistas especializadas en datos</td><td>El Profesional de la Informacion</td><td><a href="https://doi.org/10.3145/epi.2015.nov.17" target="_blank" rel="noopener noreferrer">10.3145/epi.2015.nov.17</a>&nbsp;<a href="https://scite.ai/reports/10.3145/epi.2015.nov.17" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>How do academic topics shift across altmetric sources? A case study of the research area of Big Data</td><td>Scientometrics</td><td><a href="https://doi.org/10.1007/s11192-020-03415-7" target="_blank" rel="noopener noreferrer">10.1007/s11192-020-03415-7</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s11192-020-03415-7" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2015</td><td>Open access and soft power: Chinese voices in international scholarship</td><td>Media Culture &amp; Society</td><td><a href="https://doi.org/10.1177/0163443714567019" target="_blank" rel="noopener noreferrer">10.1177/0163443714567019</a>&nbsp;<a href="https://scite.ai/reports/10.1177/0163443714567019" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Drivers and barriers in the transition to open science: the perspective of stakeholders in the Spanish scientific community</td><td>El Profesional de la Informacion</td><td><a href="https://doi.org/10.3145/epi.2022.may.05" target="_blank" rel="noopener noreferrer">10.3145/epi.2022.may.05</a>&nbsp;<a href="https://scite.ai/reports/10.3145/epi.2022.may.05" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2016</td><td>Legal assessment tool (LAT): an interactive tool to address privacy and data protection issues for data sharing</td><td>BMC Medical Informatics and Decision Making</td><td><a href="https://doi.org/10.1186/s12911-016-0325-0" target="_blank" rel="noopener noreferrer">10.1186/s12911-016-0325-0</a>&nbsp;<a href="https://scite.ai/reports/10.1186/s12911-016-0325-0" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Selvitys avoimesta vertaisarvioinnista kotimaisen tiedejulkaisemisen kentällä</td><td>Tieteellisten seurain valtuuskunnan verkkojulkaisuja</td><td><a href="https://doi.org/10.23847/978-952-599516-9" target="_blank" rel="noopener noreferrer">10.23847/978-952-599516-9</a>&nbsp;<a href="https://scite.ai/reports/10.23847/978-952-599516-9" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Evolution of the visibility of scholarly monographs in the academic field</td><td>El Profesional de la Informacion</td><td><a href="https://doi.org/10.3145/epi.2019.jul.09" target="_blank" rel="noopener noreferrer">10.3145/epi.2019.jul.09</a>&nbsp;<a href="https://scite.ai/reports/10.3145/epi.2019.jul.09" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Plan S y ecosistema de revistas españolas de ciencias sociales hacia el acceso abierto: amenazas y oportunidades</td><td>El Profesional de la Informacion</td><td><a href="https://doi.org/10.3145/epi.2020.mar.14" target="_blank" rel="noopener noreferrer">10.3145/epi.2020.mar.14</a>&nbsp;<a href="https://scite.ai/reports/10.3145/epi.2020.mar.14" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Holistic graph-based document representation and management for open science</td><td>International Journal on Digital Libraries</td><td><a href="https://doi.org/10.1007/s00799-022-00328-z" target="_blank" rel="noopener noreferrer">10.1007/s00799-022-00328-z</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s00799-022-00328-z" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Open Access and Sensitive Social Sciences Data in Different Legislative Contexts: The Case of Strategic Selection “Elite” Interviewing in Sweden</td><td>International Journal of Qualitative Methods</td><td><a href="https://doi.org/10.1177/16094069221120747" target="_blank" rel="noopener noreferrer">10.1177/16094069221120747</a>&nbsp;<a href="https://scite.ai/reports/10.1177/16094069221120747" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Rethinking Transparency and Rigor from a Qualitative Open Science Perspective</td><td></td><td><a href="https://doi.org/10.31234/osf.io/bpu5f" target="_blank" rel="noopener noreferrer">10.31234/osf.io/bpu5f</a>&nbsp;<a href="https://scite.ai/reports/10.31234/osf.io/bpu5f" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>AI Approaches in Computer-Aided Diagnosis and Recognition of Neoplastic Changes in MRI Brain Images</td><td>Applied Sciences</td><td><a href="https://doi.org/10.3390/app122311880" target="_blank" rel="noopener noreferrer">10.3390/app122311880</a>&nbsp;<a href="https://scite.ai/reports/10.3390/app122311880" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Intersectional Research as a Methodology for Shaping Transition Research in Support of Equitable Postschool Outcomes</td><td>Career Development and Transition for Exceptional Individuals</td><td><a href="https://doi.org/10.1177/21651434231169990" target="_blank" rel="noopener noreferrer">10.1177/21651434231169990</a>&nbsp;<a href="https://scite.ai/reports/10.1177/21651434231169990" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Scholarly Twitter Metrics</td><td>Springer handbooks</td><td><a href="https://doi.org/10.1007/978-3-030-02511-3_28" target="_blank" rel="noopener noreferrer">10.1007/978-3-030-02511-3_28</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-030-02511-3_28" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Identity construction in digital communication for public engagement in science</td><td>Discourse Studies</td><td><a href="https://doi.org/10.1177/14614456241255267" target="_blank" rel="noopener noreferrer">10.1177/14614456241255267</a>&nbsp;<a href="https://scite.ai/reports/10.1177/14614456241255267" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2025</td><td>Open Data in Data Journalism: Opportunities and Future Directions</td><td>Canadian Journal of Communication</td><td><a href="https://doi.org/10.3138/cjc-2023-0040" target="_blank" rel="noopener noreferrer">10.3138/cjc-2023-0040</a>&nbsp;<a href="https://scite.ai/reports/10.3138/cjc-2023-0040" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2018</td><td>The Values and Limits of Altmetrics</td><td>New Directions for Institutional Research</td><td><a href="https://doi.org/10.1002/ir.20267" target="_blank" rel="noopener noreferrer">10.1002/ir.20267</a>&nbsp;<a href="https://scite.ai/reports/10.1002/ir.20267" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2018</td><td>Open Science-Forschung und qualitative Methoden – fünf Ebenen der Reflexion</td><td>MedienPädagogik Zeitschrift für Theorie und Praxis der Medienbildung</td><td><a href="https://doi.org/10.21240/mpaed/32/2018.10.28.x" target="_blank" rel="noopener noreferrer">10.21240/mpaed/32/2018.10.28.x</a>&nbsp;<a href="https://scite.ai/reports/10.21240/mpaed/32/2018.10.28.x" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Special Issue: Engaging with Open Science in Learning and Teaching</td><td>Education for Information</td><td><a href="https://doi.org/10.3233/efi-200386" target="_blank" rel="noopener noreferrer">10.3233/efi-200386</a>&nbsp;<a href="https://scite.ai/reports/10.3233/efi-200386" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Transitioning Machine Learning from Theory to Practice in Natural Resources Management</td><td>Ecological Modelling</td><td><a href="https://doi.org/10.1016/j.ecolmodel.2020.109257" target="_blank" rel="noopener noreferrer">10.1016/j.ecolmodel.2020.109257</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.ecolmodel.2020.109257" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Abrir la ciencia para cambiar el mundo</td><td>International Journal of Engineering Social Justice and Peace</td><td><a href="https://doi.org/10.24908/ijesjp.v7i2.13724" target="_blank" rel="noopener noreferrer">10.24908/ijesjp.v7i2.13724</a>&nbsp;<a href="https://scite.ai/reports/10.24908/ijesjp.v7i2.13724" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>The varying openness of digital open science tools</td><td>F1000Research</td><td><a href="https://doi.org/10.12688/f1000research.26615.2" target="_blank" rel="noopener noreferrer">10.12688/f1000research.26615.2</a>&nbsp;<a href="https://scite.ai/reports/10.12688/f1000research.26615.2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Wie offen sind „offene“ Online-Gemeinschaften? Inklusion, Exklusion und die Ambivalenz von Schließungen</td><td>KZfSS Kölner Zeitschrift für Soziologie und Sozialpsychologie</td><td><a href="https://doi.org/10.1007/s11577-022-00836-5" target="_blank" rel="noopener noreferrer">10.1007/s11577-022-00836-5</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s11577-022-00836-5" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>La producción científica de Uruguay disponible en acceso abierto a partir de Web of Science (1980-2019)</td><td>Informatio</td><td><a href="https://doi.org/10.35643/info.27.1.4" target="_blank" rel="noopener noreferrer">10.35643/info.27.1.4</a>&nbsp;<a href="https://scite.ai/reports/10.35643/info.27.1.4" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Public Biological Databases and the Sui Generis Database Right</td><td>GRURRR. Gewerblicher Rechtsschutz und Urheberrecht, Rechtsprechungs-Report/GRUR-DVD/GRUR-CD/IIC/Gewerblicher Rechtsschutz und Urheberrecht/Gewerblicher Rechtsschutz und Urheberrecht. Internationaler Teil</td><td><a href="https://doi.org/10.1007/s40319-023-01373-0" target="_blank" rel="noopener noreferrer">10.1007/s40319-023-01373-0</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s40319-023-01373-0" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>‚Open Data‘ in den ethnologischen Fächern</td><td>ISGV digital</td><td><a href="https://doi.org/10.25366/2019.07" target="_blank" rel="noopener noreferrer">10.25366/2019.07</a>&nbsp;<a href="https://scite.ai/reports/10.25366/2019.07" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Alive Publication</td><td>Publications</td><td><a href="https://doi.org/10.3390/publications11020024" target="_blank" rel="noopener noreferrer">10.3390/publications11020024</a>&nbsp;<a href="https://scite.ai/reports/10.3390/publications11020024" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Funding University-Born Projects and Developing Research Crowdfunding Ecosystem: The Case of BiUniCrowd in Italy</td><td>Contributions to finance and accounting</td><td><a href="https://doi.org/10.1007/978-3-031-30069-1_7" target="_blank" rel="noopener noreferrer">10.1007/978-3-031-30069-1_7</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-031-30069-1_7" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Open Science and Policy Interface: The Tanzania Perspective</td><td>East African Journal of Science Technology and Innovation</td><td><a href="https://doi.org/10.37425/eajsti.v4i3.771" target="_blank" rel="noopener noreferrer">10.37425/eajsti.v4i3.771</a>&nbsp;<a href="https://scite.ai/reports/10.37425/eajsti.v4i3.771" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2015</td><td>Datasets reflecting students&#x27; and teachers&#x27; views on the use of learning technology in a &lt;scp&gt;UK&lt;/scp&gt; university</td><td>British Journal of Educational Technology</td><td><a href="https://doi.org/10.1111/bjet.12332" target="_blank" rel="noopener noreferrer">10.1111/bjet.12332</a>&nbsp;<a href="https://scite.ai/reports/10.1111/bjet.12332" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2018</td><td>Perspectivas de la ciencia abierta : un estado de la cuesti�n para una pol�tica nacional en Colombi</td><td>BiD: textos universitaris de biblioteconomia i documentació</td><td><a href="https://doi.org/10.1344/bid2018.40.4" target="_blank" rel="noopener noreferrer">10.1344/bid2018.40.4</a>&nbsp;<a href="https://scite.ai/reports/10.1344/bid2018.40.4" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Situating Linguistics in the Social Science Data Movement</td><td>The MIT Press eBooks</td><td><a href="https://doi.org/10.7551/mitpress/12200.003.0006" target="_blank" rel="noopener noreferrer">10.7551/mitpress/12200.003.0006</a>&nbsp;<a href="https://scite.ai/reports/10.7551/mitpress/12200.003.0006" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>The varying openness of digital open science tools</td><td>F1000Research</td><td><a href="https://doi.org/10.12688/f1000research.26615.1" target="_blank" rel="noopener noreferrer">10.12688/f1000research.26615.1</a>&nbsp;<a href="https://scite.ai/reports/10.12688/f1000research.26615.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Effects of Digital Transformation in Scientific Collaboration. A Bibliographic Review</td><td>Communications in computer and information science</td><td><a href="https://doi.org/10.1007/978-3-030-32475-9_30" target="_blank" rel="noopener noreferrer">10.1007/978-3-030-32475-9_30</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-030-32475-9_30" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Skalierung von Plattformen in der disruptiven Digitalisierung der Forschung</td><td>Angewandte Wirtschaftsinformatik</td><td><a href="https://doi.org/10.1007/978-3-658-26618-9_16" target="_blank" rel="noopener noreferrer">10.1007/978-3-658-26618-9_16</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-658-26618-9_16" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>The Meanings of Publication in Open Access Journal: Experience of State Islamic University&#x27;s Lecturers</td><td>Insaniyat Journal of Islam and Humanities</td><td><a href="https://doi.org/10.15408/insaniyat.v6i2.25462" target="_blank" rel="noopener noreferrer">10.15408/insaniyat.v6i2.25462</a>&nbsp;<a href="https://scite.ai/reports/10.15408/insaniyat.v6i2.25462" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Open Science Practices in The Journal &lt;i&gt;Human Factors&lt;/i&gt;: 2017–2022</td><td>Proceedings of the Human Factors and Ergonomics Society Annual Meeting</td><td><a href="https://doi.org/10.1177/21695067231192276" target="_blank" rel="noopener noreferrer">10.1177/21695067231192276</a>&nbsp;<a href="https://scite.ai/reports/10.1177/21695067231192276" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Co-Production as a Research Method</td><td>Advances in public policy and administration (APPA) book series</td><td><a href="https://doi.org/10.4018/978-1-7998-4975-9.ch014" target="_blank" rel="noopener noreferrer">10.4018/978-1-7998-4975-9.ch014</a>&nbsp;<a href="https://scite.ai/reports/10.4018/978-1-7998-4975-9.ch014" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Reshaping How Universities Can Evaluate the Research Impact of Open Humanities for Societal Benefit</td><td>Journal of Electronic Publishing</td><td><a href="https://doi.org/10.3998/jep.788" target="_blank" rel="noopener noreferrer">10.3998/jep.788</a>&nbsp;<a href="https://scite.ai/reports/10.3998/jep.788" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Ciência e comunicação: a presença de instituições brasileiras no YouTube</td><td>Reciis</td><td><a href="https://doi.org/10.29397/reciis.v17i2.3228" target="_blank" rel="noopener noreferrer">10.29397/reciis.v17i2.3228</a>&nbsp;<a href="https://scite.ai/reports/10.29397/reciis.v17i2.3228" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Digital Identity and Promotion of Research Works Case Study of Social Science Researchers at Taiwanese Institutions</td><td>International Journal of Social Science Studies</td><td><a href="https://doi.org/10.11114/ijsss.v11i5.6316" target="_blank" rel="noopener noreferrer">10.11114/ijsss.v11i5.6316</a>&nbsp;<a href="https://scite.ai/reports/10.11114/ijsss.v11i5.6316" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>OLEAtool: An open-source software for morphopalynological research in Olea europaea L. pollen</td><td>Open Research Europe</td><td><a href="https://doi.org/10.12688/openreseurope.15309.2" target="_blank" rel="noopener noreferrer">10.12688/openreseurope.15309.2</a>&nbsp;<a href="https://scite.ai/reports/10.12688/openreseurope.15309.2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>‘The Cloud is Not Not IT’: Ecological Change in Research Computing in the Cloud</td><td>Computer Supported Cooperative Work (CSCW)</td><td><a href="https://doi.org/10.1007/s10606-024-09490-1" target="_blank" rel="noopener noreferrer">10.1007/s10606-024-09490-1</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s10606-024-09490-1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Open Science Under Debate: Disentangling the Interest on Twitter and Scholarly Research</td><td>SAGE Open</td><td><a href="https://doi.org/10.1177/21582440241271300" target="_blank" rel="noopener noreferrer">10.1177/21582440241271300</a>&nbsp;<a href="https://scite.ai/reports/10.1177/21582440241271300" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>The Living Library: a process-based tool for open literature review, probing the boundaries of open science</td><td>SN Social Sciences</td><td><a href="https://doi.org/10.1007/s43545-024-00964-z" target="_blank" rel="noopener noreferrer">10.1007/s43545-024-00964-z</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s43545-024-00964-z" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2025</td><td>Mentoring Doctoral Students in the Chemical Sciences</td><td>Israel Journal of Chemistry</td><td><a href="https://doi.org/10.1002/ijch.202512004" target="_blank" rel="noopener noreferrer">10.1002/ijch.202512004</a>&nbsp;<a href="https://scite.ai/reports/10.1002/ijch.202512004" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2015</td><td>FuSeOn: A Low-Cost Portable Multi Sensor Fusion Research Testbed for Robotics</td><td>Advances in intelligent systems and computing</td><td><a href="https://doi.org/10.1007/978-3-319-27146-0_5" target="_blank" rel="noopener noreferrer">10.1007/978-3-319-27146-0_5</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-319-27146-0_5" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Transitioning Machine Learning from Theory to Practice in Natural Resources Management</td><td></td><td><a href="https://doi.org/10.31223/x5d01h" target="_blank" rel="noopener noreferrer">10.31223/x5d01h</a>&nbsp;<a href="https://scite.ai/reports/10.31223/x5d01h" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Leveraging the Web for Migration Studies: Data Sources and Data Extraction</td><td>IMISCOE research series</td><td><a href="https://doi.org/10.1007/978-3-031-01319-5_7" target="_blank" rel="noopener noreferrer">10.1007/978-3-031-01319-5_7</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-031-01319-5_7" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>From Theoretical Debates to Lived Experiences: Autoethnographic Insights into Open Educational Practices in German Higher Education</td><td>Research Ideas and Outcomes</td><td><a href="https://doi.org/10.3897/rio.8.e86663" target="_blank" rel="noopener noreferrer">10.3897/rio.8.e86663</a>&nbsp;<a href="https://scite.ai/reports/10.3897/rio.8.e86663" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Dynamically Updated Alive Publication Date</td><td>Publications</td><td><a href="https://doi.org/10.3390/publications10040048" target="_blank" rel="noopener noreferrer">10.3390/publications10040048</a>&nbsp;<a href="https://scite.ai/reports/10.3390/publications10040048" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Open Data in Data Journalism: Opportunities and Future Directions</td><td></td><td><a href="https://doi.org/10.31235/osf.io/wh8jx" target="_blank" rel="noopener noreferrer">10.31235/osf.io/wh8jx</a>&nbsp;<a href="https://scite.ai/reports/10.31235/osf.io/wh8jx" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2016</td><td>Supporting the modern research workflow</td><td>Proceedings of the Association for Information Science and Technology</td><td><a href="https://doi.org/10.1002/pra2.2016.14505301136" target="_blank" rel="noopener noreferrer">10.1002/pra2.2016.14505301136</a>&nbsp;<a href="https://scite.ai/reports/10.1002/pra2.2016.14505301136" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>As bibliotecas e o percurso histórico de abertura da ciência: revendo um roteiro de colaboração</td><td>Palabra clave</td><td><a href="https://doi.org/10.24215/18539912e077" target="_blank" rel="noopener noreferrer">10.24215/18539912e077</a>&nbsp;<a href="https://scite.ai/reports/10.24215/18539912e077" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Data Processing and Analytics for Data-Centric Sciences</td><td>Lecture notes in computer science</td><td><a href="https://doi.org/10.1007/978-3-030-52829-4_10" target="_blank" rel="noopener noreferrer">10.1007/978-3-030-52829-4_10</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-030-52829-4_10" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Case Study: ENVRI Science Demonstrators with D4Science</td><td>Lecture notes in computer science</td><td><a href="https://doi.org/10.1007/978-3-030-52829-4_17" target="_blank" rel="noopener noreferrer">10.1007/978-3-030-52829-4_17</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-030-52829-4_17" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>A New Market for Unprotected Ideas: Analyzing the Economic Efficiency of Trading Ownerless Ideas</td><td>GRURRR. Gewerblicher Rechtsschutz und Urheberrecht, Rechtsprechungs-Report/GRUR-DVD/GRUR-CD/IIC/Gewerblicher Rechtsschutz und Urheberrecht/Gewerblicher Rechtsschutz und Urheberrecht. Internationaler Teil</td><td><a href="https://doi.org/10.1007/s40319-020-00976-1" target="_blank" rel="noopener noreferrer">10.1007/s40319-020-00976-1</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s40319-020-00976-1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>THE GLOBAL CONTEXT OF OPEN ACCESS TO SCIENTIFIC PUBLICATIONS</td><td>Akademos</td><td><a href="https://doi.org/10.52673/18570461.21.1-60.02" target="_blank" rel="noopener noreferrer">10.52673/18570461.21.1-60.02</a>&nbsp;<a href="https://scite.ai/reports/10.52673/18570461.21.1-60.02" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Multiple Facets of Open: A Different View on Open Science</td><td>IntechOpen eBooks</td><td><a href="https://doi.org/10.5772/intechopen.97815" target="_blank" rel="noopener noreferrer">10.5772/intechopen.97815</a>&nbsp;<a href="https://scite.ai/reports/10.5772/intechopen.97815" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>On Research Exchanges in the Times of Pandemiс. Lessons for Russia</td><td>Science management theory and practice</td><td><a href="https://doi.org/10.19181/smtp.2022.4.1.12" target="_blank" rel="noopener noreferrer">10.19181/smtp.2022.4.1.12</a>&nbsp;<a href="https://scite.ai/reports/10.19181/smtp.2022.4.1.12" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Visualização de Dados de Saúde Pública: um estudo de caso sobre a Covid-19</td><td>InCID Revista de Ciência da Informação e Documentação</td><td><a href="https://doi.org/10.11606/issn.2178-2075.v13i2p283-304" target="_blank" rel="noopener noreferrer">10.11606/issn.2178-2075.v13i2p283-304</a>&nbsp;<a href="https://scite.ai/reports/10.11606/issn.2178-2075.v13i2p283-304" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Monitoring Open Science as Transformative Change: Towards a Systemic Framework</td><td></td><td><a href="https://doi.org/10.31235/osf.io/knhzt" target="_blank" rel="noopener noreferrer">10.31235/osf.io/knhzt</a>&nbsp;<a href="https://scite.ai/reports/10.31235/osf.io/knhzt" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Participatory culture and knowledge sharing among educators and scholars in higher education</td><td>Educational Media International</td><td><a href="https://doi.org/10.1080/09523987.2024.2357954" target="_blank" rel="noopener noreferrer">10.1080/09523987.2024.2357954</a>&nbsp;<a href="https://scite.ai/reports/10.1080/09523987.2024.2357954" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>RepOSGate: Open Science Gateways for Institutional Repositories</td><td>Communications in computer and information science</td><td><a href="https://doi.org/10.1007/978-3-030-39905-4_15" target="_blank" rel="noopener noreferrer">10.1007/978-3-030-39905-4_15</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-030-39905-4_15" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Factores motivacionales en los desarrolladores de software libre</td><td>Investigación Administrativa</td><td><a href="https://doi.org/10.35426/iav49n126.04" target="_blank" rel="noopener noreferrer">10.35426/iav49n126.04</a>&nbsp;<a href="https://scite.ai/reports/10.35426/iav49n126.04" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Scientific Publishing: Education as the Key Enabler for the Transition to Open Science</td><td>Preprints.org</td><td><a href="https://doi.org/10.20944/preprints201910.0057.v4" target="_blank" rel="noopener noreferrer">10.20944/preprints201910.0057.v4</a>&nbsp;<a href="https://scite.ai/reports/10.20944/preprints201910.0057.v4" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2015</td><td>Open Bioinformation in the Life Sciences as a Gatekeeper for Innovation and Development</td><td>SSRN Electronic Journal</td><td><a href="https://doi.org/10.2139/ssrn.2704243" target="_blank" rel="noopener noreferrer">10.2139/ssrn.2704243</a>&nbsp;<a href="https://scite.ai/reports/10.2139/ssrn.2704243" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Open Research Data and Open Peer Review: Perceptions of a Medical and Health Sciences Community in Greece</td><td>Preprints.org</td><td><a href="https://doi.org/10.20944/preprints202011.0282.v1" target="_blank" rel="noopener noreferrer">10.20944/preprints202011.0282.v1</a>&nbsp;<a href="https://scite.ai/reports/10.20944/preprints202011.0282.v1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Scientific Publishing: Education as the Key Enabler for the Transition to Open Science</td><td>Preprints.org</td><td><a href="https://doi.org/10.20944/preprints201910.0057.v2" target="_blank" rel="noopener noreferrer">10.20944/preprints201910.0057.v2</a>&nbsp;<a href="https://scite.ai/reports/10.20944/preprints201910.0057.v2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Scientific Publishing: Education as the Key Enabler for the Transition to Open Science</td><td>Preprints.org</td><td><a href="https://doi.org/10.20944/preprints201910.0057.v3" target="_blank" rel="noopener noreferrer">10.20944/preprints201910.0057.v3</a>&nbsp;<a href="https://scite.ai/reports/10.20944/preprints201910.0057.v3" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2014</td><td>Meeting report: The road to science‐based policy – ESOF through the eyes of young scientists</td><td>BioEssays</td><td><a href="https://doi.org/10.1002/bies.201400169" target="_blank" rel="noopener noreferrer">10.1002/bies.201400169</a>&nbsp;<a href="https://scite.ai/reports/10.1002/bies.201400169" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2015</td><td>Algunos aspectos del artículo científico en la Revista Peruana de Biología</td><td>Revista Peruana de Biología</td><td><a href="https://doi.org/10.15381/rpb.v22i3.11431" target="_blank" rel="noopener noreferrer">10.15381/rpb.v22i3.11431</a>&nbsp;<a href="https://scite.ai/reports/10.15381/rpb.v22i3.11431" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2015</td><td>Legal requirement clusters as means to build legally interoperable data bridges between research infrastructures</td><td></td><td><a href="https://doi.org/10.1109/echallenges.2015.7441063" target="_blank" rel="noopener noreferrer">10.1109/echallenges.2015.7441063</a>&nbsp;<a href="https://scite.ai/reports/10.1109/echallenges.2015.7441063" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2016</td><td>GitHub use in public administration in Canada: Early experience with a new collaboration tool</td><td>Canadian Public Administration</td><td><a href="https://doi.org/10.1111/capa.12192" target="_blank" rel="noopener noreferrer">10.1111/capa.12192</a>&nbsp;<a href="https://scite.ai/reports/10.1111/capa.12192" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2016</td><td>Research 2.0</td><td>Advances in knowledge acquisition, transfer, and management book series/Advances in knowledge acquisition, transfer and management book series</td><td><a href="https://doi.org/10.4018/978-1-5225-0830-4.ch012" target="_blank" rel="noopener noreferrer">10.4018/978-1-5225-0830-4.ch012</a>&nbsp;<a href="https://scite.ai/reports/10.4018/978-1-5225-0830-4.ch012" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2017</td><td>Curb My Cynicism: Employing Photo Elicitation to Address the Problem of Research on Bullying</td><td></td><td><a href="https://doi.org/10.1007/978-3-319-64413-4_8" target="_blank" rel="noopener noreferrer">10.1007/978-3-319-64413-4_8</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-319-64413-4_8" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Look Better: Single Atoms in Chemistry and Single Atoms in Physics</td><td>ChemPhysChem</td><td><a href="https://doi.org/10.1002/cphc.201900311" target="_blank" rel="noopener noreferrer">10.1002/cphc.201900311</a>&nbsp;<a href="https://scite.ai/reports/10.1002/cphc.201900311" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Theory in open access studies</td><td></td><td><a href="https://doi.org/10.4324/9780429276842-5" target="_blank" rel="noopener noreferrer">10.4324/9780429276842-5</a>&nbsp;<a href="https://scite.ai/reports/10.4324/9780429276842-5" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2017</td><td>FlyClockbase: Importance of Biological Model Curation for Analyzing Variability in the Circadian Clock of Drosophila melanogaster by Integrating Time Series from 25 Years of Research</td><td></td><td><a href="https://doi.org/10.1101/099192" target="_blank" rel="noopener noreferrer">10.1101/099192</a>&nbsp;<a href="https://scite.ai/reports/10.1101/099192" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Yes! We’re open. Open science and the future of academic practices in translation and interpreting studies</td><td>The International Journal of Translation and Interpreting Research</td><td><a href="https://doi.org/10.12807/ti.113202.2021.a01" target="_blank" rel="noopener noreferrer">10.12807/ti.113202.2021.a01</a>&nbsp;<a href="https://scite.ai/reports/10.12807/ti.113202.2021.a01" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Open Innovation and the Energy Transition: An Exploratory Study</td><td>SSRN Electronic Journal</td><td><a href="https://doi.org/10.2139/ssrn.3970512" target="_blank" rel="noopener noreferrer">10.2139/ssrn.3970512</a>&nbsp;<a href="https://scite.ai/reports/10.2139/ssrn.3970512" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Methodological Approaches</td><td>Cambridge University Press eBooks</td><td><a href="https://doi.org/10.1017/9781108755146.013" target="_blank" rel="noopener noreferrer">10.1017/9781108755146.013</a>&nbsp;<a href="https://scite.ai/reports/10.1017/9781108755146.013" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Pré-registro de estudos na linguística experimental</td><td>Cadernos de Linguística</td><td><a href="https://doi.org/10.25189/2675-4916.2022.v3.n1.id616" target="_blank" rel="noopener noreferrer">10.25189/2675-4916.2022.v3.n1.id616</a>&nbsp;<a href="https://scite.ai/reports/10.25189/2675-4916.2022.v3.n1.id616" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2018</td><td>Research 2.0</td><td>IGI Global eBooks</td><td><a href="https://doi.org/10.4018/978-1-5225-6921-3.ch001" target="_blank" rel="noopener noreferrer">10.4018/978-1-5225-6921-3.ch001</a>&nbsp;<a href="https://scite.ai/reports/10.4018/978-1-5225-6921-3.ch001" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Integrative Data Analysis and Exploratory Data Mining in Biological Knowledge Graphs</td><td>Integrative Bioinformatics</td><td><a href="https://doi.org/10.1007/978-981-16-6795-4_8" target="_blank" rel="noopener noreferrer">10.1007/978-981-16-6795-4_8</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-981-16-6795-4_8" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Bibliografia</td><td>Ledizioni eBooks</td><td><a href="https://doi.org/10.4000/books.ledizioni.10547" target="_blank" rel="noopener noreferrer">10.4000/books.ledizioni.10547</a>&nbsp;<a href="https://scite.ai/reports/10.4000/books.ledizioni.10547" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Desenvolvimento e aplicação de governança de dados no Laboratório de Análise por Ativação Neutrônica (LAN) do Instituto de Pesquisas Energéticas Nucleares (IPEN/CNEN): proposta do modelo estrutural de aplicação para e-Science</td><td></td><td><a href="https://doi.org/10.11606/d.85.2021.tde-23122022-145543" target="_blank" rel="noopener noreferrer">10.11606/d.85.2021.tde-23122022-145543</a>&nbsp;<a href="https://scite.ai/reports/10.11606/d.85.2021.tde-23122022-145543" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>How a learning community can empower science educators and disrupt toxic academic norms</td><td></td><td><a href="https://doi.org/10.21428/a70c814c.fade888d" target="_blank" rel="noopener noreferrer">10.21428/a70c814c.fade888d</a>&nbsp;<a href="https://scite.ai/reports/10.21428/a70c814c.fade888d" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>OLEAtool: An open-source software for morphopalynological research in Olea europaea L. pollen</td><td>Open Research Europe</td><td><a href="https://doi.org/10.12688/openreseurope.15309.1" target="_blank" rel="noopener noreferrer">10.12688/openreseurope.15309.1</a>&nbsp;<a href="https://scite.ai/reports/10.12688/openreseurope.15309.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>(Why) Are Open Research Practices the Future for the Study of Language Learning?</td><td></td><td><a href="https://doi.org/10.31219/osf.io/hpgk6" target="_blank" rel="noopener noreferrer">10.31219/osf.io/hpgk6</a>&nbsp;<a href="https://scite.ai/reports/10.31219/osf.io/hpgk6" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>¿Cómo difundir hoy el conocimiento científico?</td><td>Ingeniería y Región</td><td><a href="https://doi.org/10.25054/22161325.3698" target="_blank" rel="noopener noreferrer">10.25054/22161325.3698</a>&nbsp;<a href="https://scite.ai/reports/10.25054/22161325.3698" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>What do we talk about when we talk about &quot;Open&quot;? On Education, Science, Research, and Open Scholarship</td><td></td><td><a href="https://doi.org/10.59350/dxdqq-e4n18" target="_blank" rel="noopener noreferrer">10.59350/dxdqq-e4n18</a>&nbsp;<a href="https://scite.ai/reports/10.59350/dxdqq-e4n18" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Undergraduate Psychology Students’ Perceptions of Open Research: The Relationship Between Statistics Understanding, Attitudes, and Questionable Research Practices</td><td></td><td><a href="https://doi.org/10.31234/osf.io/2qx6m" target="_blank" rel="noopener noreferrer">10.31234/osf.io/2qx6m</a>&nbsp;<a href="https://scite.ai/reports/10.31234/osf.io/2qx6m" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>*READ**THIS*!! Spam as a Threat for Open Science</td><td></td><td><a href="https://doi.org/10.31235/osf.io/cufes" target="_blank" rel="noopener noreferrer">10.31235/osf.io/cufes</a>&nbsp;<a href="https://scite.ai/reports/10.31235/osf.io/cufes" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Akademska zajednica kao akter zagovaranja otvorene znanosti u visokom obrazovanju</td><td>Vjesnik bibliotekara Hrvatske</td><td><a href="https://doi.org/10.30754/vbh.66.3.1122" target="_blank" rel="noopener noreferrer">10.30754/vbh.66.3.1122</a>&nbsp;<a href="https://scite.ai/reports/10.30754/vbh.66.3.1122" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Doing Open Data: Interviews als (re-)medialisierte Forschungspraxis und audiovisuelle Forschungsdaten</td><td></td><td><a href="https://doi.org/10.1007/978-3-658-36629-2_9-1" target="_blank" rel="noopener noreferrer">10.1007/978-3-658-36629-2_9-1</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-658-36629-2_9-1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>PERTINENCIAS DE PUBLICACIONES DE ACCESO LIBRE Y DE PAGO COMO RESULTADOS DE FCI UNIVERSIDAD DE GUAYAQUIL.</td><td></td><td><a href="https://doi.org/10.59764/ceo.65" target="_blank" rel="noopener noreferrer">10.59764/ceo.65</a>&nbsp;<a href="https://scite.ai/reports/10.59764/ceo.65" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Productividad y redes de colaboración en las principales revistas españolas de sociología: un análisis del período 2001-2020 desde la perspectiva de género</td><td>Revista Española de Investigaciones Sociológicas</td><td><a href="https://doi.org/10.5477/cis/reis.186.43-64" target="_blank" rel="noopener noreferrer">10.5477/cis/reis.186.43-64</a>&nbsp;<a href="https://scite.ai/reports/10.5477/cis/reis.186.43-64" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Faculty Adoption of Open Science and Their Practices Towards Data Sharing in Tanzanian Health Universities</td><td>The International Information &amp; Library Review</td><td><a href="https://doi.org/10.1080/10572317.2024.2409600" target="_blank" rel="noopener noreferrer">10.1080/10572317.2024.2409600</a>&nbsp;<a href="https://scite.ai/reports/10.1080/10572317.2024.2409600" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Is This the End of Anthropology as We Know It? Some Implication of FAIR Principles on Tales in Ethnological and Anthropological Qualitative Research</td><td>Publications</td><td><a href="https://doi.org/10.3390/publications12040042" target="_blank" rel="noopener noreferrer">10.3390/publications12040042</a>&nbsp;<a href="https://scite.ai/reports/10.3390/publications12040042" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>#OpenAccess: Free online, open-access crowdsource-reviewed publishing is the future; traditional peer-reviewed journals are on the way out</td><td></td><td><a href="https://doi.org/10.32920/27922140.v1" target="_blank" rel="noopener noreferrer">10.32920/27922140.v1</a>&nbsp;<a href="https://scite.ai/reports/10.32920/27922140.v1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>#OpenAccess: Free online, open-access crowdsource-reviewed publishing is the future; traditional peer-reviewed journals are on the way out</td><td></td><td><a href="https://doi.org/10.32920/27922140" target="_blank" rel="noopener noreferrer">10.32920/27922140</a>&nbsp;<a href="https://scite.ai/reports/10.32920/27922140" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2025</td><td>Open Data: why do it, things worth knowing and possible pitfalls</td><td></td><td><a href="https://doi.org/10.31219/osf.io/hk786_v1" target="_blank" rel="noopener noreferrer">10.31219/osf.io/hk786_v1</a>&nbsp;<a href="https://scite.ai/reports/10.31219/osf.io/hk786_v1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2025</td><td>The Observed Availability of Data and Code in Earth Science and Artificial Intelligence</td><td>Bulletin of the American Meteorological Society</td><td><a href="https://doi.org/10.1175/bams-d-24-0147.1" target="_blank" rel="noopener noreferrer">10.1175/bams-d-24-0147.1</a>&nbsp;<a href="https://scite.ai/reports/10.1175/bams-d-24-0147.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Digital Identity and Promotion of Research Works – Analytical Study of Social Science Researchers at Taiwanese Institutions</td><td></td><td><a href="https://doi.org/10.32388/g85lx9.3" target="_blank" rel="noopener noreferrer">10.32388/g85lx9.3</a>&nbsp;<a href="https://scite.ai/reports/10.32388/g85lx9.3" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2025</td><td>Using Open Science Tools to Teach Environmental Sciences</td><td>Ecology and Evolution</td><td><a href="https://doi.org/10.1002/ece3.71837" target="_blank" rel="noopener noreferrer">10.1002/ece3.71837</a>&nbsp;<a href="https://scite.ai/reports/10.1002/ece3.71837" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>What do we talk about when we talk about &quot;Open&quot;? On Education, Science, Research, and Open Scholarship</td><td></td><td><a href="https://doi.org/10.59350/zddf5-kda18" target="_blank" rel="noopener noreferrer">10.59350/zddf5-kda18</a>&nbsp;<a href="https://scite.ai/reports/10.59350/zddf5-kda18" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-    </tbody>
-  </table>
-</section>
-
-<footer class="page-footer">
-  Generated by BookStories on 2026-02-13T14:46:11+00:00 UTC
-</footer>
-
-</div>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+    
 </body>
 </html>
