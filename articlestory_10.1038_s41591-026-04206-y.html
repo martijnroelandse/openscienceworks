@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ArticleStory - Predicting onset of symptomatic Alzheimerʼs disease with plasma p-tau217 clocks</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print PDF Report
+    </button>
+    
+    <div class="page">
+        <header class="hero card">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo"></div>
+                    <div>
+                        <h1 class="hero-title">Predicting onset of symptomatic Alzheimerʼs disease with plasma p-tau217 clocks</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.25rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+                                <a href="https://pubpeer.com/publications/F2E53AA127348ADB06C47BC74FB646" target="_blank" style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fffbeb; color: #d97706; border: 1px solid #fde68a; text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.2s;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
+                                    Community Commentary
+                                </a>
+                            
+
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                                    Linked to Data
+                                </span>
+                            
+
+                            
+
+                            
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> Kellen Petersen, Marta Milà-Alomà, Yan Li, Lianlian Du, Chengjie Xiong, Duygu Tosun, Benjamin Saef, Ziad S. Saad, Lei Du‐Cuny, Janaky Coomaraswamy, Yulia Mordashova, Carrie Rubel, Emily A. Meyers, L. Shaw, Jeffrey L. Dage, Nicholas J. Ashton, Henrik Zetterberg, Kyle Ferber, Gallen Triana-Baltzer, Michael Baratta, Erin G. Rosenbaugh, Carlos Cruchaga, DO Eric McDade, David M. Holtzman, John C. Morris, J. Martin Sabandal, Randall J. Bateman, Anthony W. Bannon, William Z. Potter, Suzanne E. Schindler, Alzheimer’s Disease Neuroimaging Initiative (ADNI)</div>
+                            <div><strong>Publisher:</strong> Nature Medicine</div>
+                            <div><strong>Publication year:</strong> 2026</div>
+                            <div><strong>DOI:</strong> <a href="https://doi.org/10.1038/s41591-026-04206-y" target="_blank">10.1038/s41591-026-04206-y</a></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        
+        <section class="card" style="border: 1px solid #fecaca; background:#fff5f5; margin-bottom: 1.75rem;">
+            <h2><span>Credibility & Risk Signals</span> <span class="badge" style="background:#fee2e2; color:#dc2626;">Alerts</span></h2>
+            <ul class="metric-list" style="line-height: 1.8; margin-top: 0.5rem;">
+                
+                
+                
+                    <li><span style="color:#dc2626; font-weight:bold; margin-right:6px;">!</span> <strong>PubPeer Activity:</strong> <a href="https://pubpeer.com/publications/F2E53AA127348ADB06C47BC74FB646" target="_blank" style="color:#dc2626; font-weight:600;">4 post-publication discussion thread(s)</a> detected.</li>
+                
+            </ul>
+        </section>
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The research presented in "Predicting onset of symptomatic Alzheimer's disease with plasma p-tau217 clocks" has gained traction in both academic and public spheres, evidenced by its citations and online mentions. The contributions of key institutions like Indiana University School of Medicine and Takeda have underscored the significance of plasma biomarkers in Alzheimer's disease research.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The article "Predicting onset of symptomatic Alzheimer's disease with plasma p-tau217 clocks" has made notable strides in advancing the understanding of Alzheimer's disease diagnostics. Authored by a collaboration that includes researchers from prestigious institutions such as AbbVie and the University of Pennsylvania, this work is exemplary of the ongoing efforts to refine biomarker applications in neurology. The backing from prominent funding bodies such as the NIH and the Alzheimer’s Association underscores institutional trust and investment in this critical field of study.</p>
+
+<p class="story-text">With a recent count of 8 online mentions, the study reflects a growing public interest and societal engagement with the implications of its findings. This visibility not only enhances academic discourse but also positions the research within a broader context of public health endeavor. The integrated approach of leveraging plasma p-tau217 as a predictive tool offers promising avenues for early diagnosis, potentially altering treatment pathways for Alzheimer’s.</p>
+
+<p class="story-text">The absence of Resource Identifiers in this study does not detract from its contributions. However, the work's dedication to scientific stewardship is highlighted by the establishment of a GitHub repository, suggesting an openness to sharing methodologies and data for further investigative work. Such a commitment reinforces the importance of transparency and collaboration in the scientific community.</p>
+
+<p class="story-text">The initial reception of the work indicates its relevance to contemporaneous discussions in the field of Alzheimer's research, with its contributions echoed in other significant journals, including Nature. This pattern of citing across multiple high-impact venues illustrates the growing footprint of the research and its implications for future studies aimed at clinical applications. These multidimensional impacts showcase the study's holistic integration into the current scientific ecosystem surrounding Alzheimer’s disease.</p></div>
+        </section>
+        
+
+        <section class="card">
+            <h2><span>Impact metrics</span></h2>
+            <ul class="metric-list">
+                
+                    <li><strong>Citations (OpenAlex):</strong> 2</li>
+                    <li><strong>Online mentions (Crossref Event Data):</strong> 8</li>
+                
+                
+                
+                
+                <li><strong>Citation context (scite):</strong> 0</li>
+                
+                
+            </ul>
+        </section>
+
+        
+        <section class="card">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.8rem;">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">High-visibility uptake (0.85)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Active public discourse (0.56)</span>
+                
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1038/s41591-026-04206-y" target="_blank">10.1038/s41591-026-04206-y</a></li>
+                    <li><strong>OA status:</strong> Hybrid</li>
+                    
+                    <li><strong>Landing page:</strong> <a href="https://doi.org/10.1038/s41591-026-04206-y" target="_blank" style="word-break: break-all;">https://doi.org/10.1038/s41591-026-04206-y</a></li>
+                    
+                    
+                </ul>
+            </section>
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>8</strong> recorded events globally
+                        
+                    </p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 0</li>
+                                <li><strong>Supporting:</strong> 0</li>
+                                <li><strong>Mentioning:</strong> 0</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite</span></h2>
+                            
+                            
+                                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Associated data repositories and clinical trials.</p>
+                                
+                                
+                                <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Data Repositories & Code</h3>
+                                <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom: 1rem; max-height: 250px; overflow-y: auto;">
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/WashUFluidBiomarkers/plasma_ptau217_time" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/Betthauser-Neuro-Lab/SILA-AD-Biomarker" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                </div>
+                                
+
+                                
+                            
+                        </section>
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+        
+        <section class="card">
+            <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
+            <ul class="metric-list">
+                <li><strong>Total citing works (OpenAlex):</strong> 2 <span class="muted" style="font-weight:normal;">(Landscape analysis & tables limited to 1000 most recent works to optimize speed)</span></li>
+                
+                
+                <li><strong>Top citing venues:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Nature (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Nature Medicine (1)</span> </li>
+                
+                
+                
+                <li><strong>Citing work types:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (2)</span> </li>
+                
+                
+                
+                <li><strong>Top citing concepts:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Medicine (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Disease (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Intensive care medicine (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biomarker (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Polyneuropathy (1)</span> </li>
+                
+                
+                
+                <li><strong>Countries (from affiliations):</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">BY (1)</span> </li>
+                
+                
+                
+                <li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+                    <strong>Citation timeline:</strong>
+                    <div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+                        <canvas id="citationChart" data-labels="[&#34;2026&#34;]" data-values="[2]"></canvas>
+                    </div>
+                </li>
+                
+            </ul>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            <section class="card span-full" style="margin-bottom:0;">
+                <h2><span>Online mentions & activity</span> <span class="badge">Crossref Event Data</span></h2>
+                
+                
+                    
+                    
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        Detailed breakdown of the <strong>8</strong> recorded events for this work.
+                    </p>
+                    
+                    <ul style="list-style:none; padding-left:0; margin-bottom:1.5rem;">
+                        
+                        
+                        
+                        
+                        
+                            
+                                
+                                
+                                
+                            
+                        
+                    </ul>
+                    
+                    <h3 style="margin-top:0;">Selected examples</h3>
+                    <ul style="list-style:none; padding-left:0;">
+                        
+                        
+                        
+                        <li style="margin-bottom:1.2rem;">
+                            <div style="margin-bottom:0.4rem;">
+                                <span class="tag" style="background:#e5f2ff; color:#1d4ed8; margin:0;">News & Blogs</span>
+                            </div>
+                            <a href="https://gizmodo.com/a-simple-blood-test-could-eventually-tell-you-when-alzheimers-is-coming-2000723492" target="_blank" style="word-break: break-word; font-weight:500; text-decoration:none; color:#2563eb; display:block; margin-bottom:0.2rem; line-height:1.4;">
+                                A Simple Blood Test Could Eventually Tell You When Alzheimer’s Is Coming
+                            </a>
+                            <span class="muted"></span>
+                        </li>
+                        
+                        
+                        
+                        <li style="margin-bottom:1.2rem;">
+                            <div style="margin-bottom:0.4rem;">
+                                <span class="tag" style="background:#e5f2ff; color:#1d4ed8; margin:0;">News & Blogs</span>
+                            </div>
+                            <a href="https://www.news-medical.net/news/20260219/Single-blood-test-predicts-onset-of-Alzheimere28099s-symptoms-years-ahead.aspx" target="_blank" style="word-break: break-word; font-weight:500; text-decoration:none; color:#2563eb; display:block; margin-bottom:0.2rem; line-height:1.4;">
+                                Single blood test predicts onset of Alzheimer’s symptoms years ahead
+                            </a>
+                            <span class="muted"></span>
+                        </li>
+                        
+                        
+                        
+                        <li style="margin-bottom:1.2rem;">
+                            <div style="margin-bottom:0.4rem;">
+                                <span class="tag" style="background:#e5f2ff; color:#1d4ed8; margin:0;">News & Blogs</span>
+                            </div>
+                            <a href="https://www.discovermagazine.com/new-blood-test-may-forecast-alzheimer-s-symptoms-years-in-advance-48711" target="_blank" style="word-break: break-word; font-weight:500; text-decoration:none; color:#2563eb; display:block; margin-bottom:0.2rem; line-height:1.4;">
+                                New Blood Test May Forecast Alzheimer’s Symptoms Years in Advance
+                            </a>
+                            <span class="muted"></span>
+                        </li>
+                        
+                        
+                        
+                        <li style="margin-bottom:1.2rem;">
+                            <div style="margin-bottom:0.4rem;">
+                                <span class="tag" style="background:#e5f2ff; color:#1d4ed8; margin:0;">News & Blogs</span>
+                            </div>
+                            <a href="https://www.dailymail.co.uk/health/article-15578235/blood-test-predict-age-develop-dementia.html?ns_mchannel=rss&ns_campaign=1490&ito=1490" target="_blank" style="word-break: break-word; font-weight:500; text-decoration:none; color:#2563eb; display:block; margin-bottom:0.2rem; line-height:1.4;">
+                                A simple blood test could predict exactly when you'll develop dementia
+                            </a>
+                            <span class="muted"></span>
+                        </li>
+                        
+                        
+                        
+                        <li style="margin-bottom:1.2rem;">
+                            <div style="margin-bottom:0.4rem;">
+                                <span class="tag" style="background:#e5f2ff; color:#1d4ed8; margin:0;">News & Blogs</span>
+                            </div>
+                            <a href="https://www.news-medical.net/news/20260222/Blood-test-models-predict-when-Alzheimere28099s-symptoms-may-start-years-in-advance.aspx" target="_blank" style="word-break: break-word; font-weight:500; text-decoration:none; color:#2563eb; display:block; margin-bottom:0.2rem; line-height:1.4;">
+                                Blood test models predict when Alzheimer’s symptoms may start years in advance
+                            </a>
+                            <span class="muted"></span>
+                        </li>
+                        
+                    </ul>
+                
+            </section>
+        </div>
+
+        
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+        
+            
+                
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                
+            
+        
+            
+        
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>31 authors · 14 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Kellen Petersen</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Marta Milà-Alomà</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Yan Li</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Lianlian Du</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Chengjie Xiong</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Duygu Tosun</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Benjamin Saef</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Ziad S. Saad</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Lei Du‐Cuny</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Janaky Coomaraswamy</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Yulia Mordashova</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Carrie Rubel</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Emily A. Meyers</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>L. Shaw</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Jeffrey L. Dage</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Nicholas J. Ashton</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Henrik Zetterberg</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Kyle Ferber</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-4730-6993" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Gallen Triana-Baltzer</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Michael Baratta</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Erin G. Rosenbaugh</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Carlos Cruchaga</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>DO Eric McDade</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>David M. Holtzman</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>John C. Morris</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>J. Martin Sabandal</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Randall J. Bateman</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Anthony W. Bannon</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>William Z. Potter</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Suzanne E. Schindler</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Alzheimer’s Disease Neuroimaging Initiative (ADNI)</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                </ul>
+
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/01yc7t268" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Washington University in St. Louis</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/043mz5j54" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">University of California, San Francisco</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/01j7c0b24" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Rush University Medical Center</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/03qd7mz70" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Johnson & Johnson (United States)</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/03538jp08" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">AbbVie (Germany)</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/03bygaq51" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Takeda (United States)</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/02jqkb192" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Biogen (United States)</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/0375f4d26" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Alzheimer's Association</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/00b30xv10" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">University of Pennsylvania</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/02ets8c94" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Indiana University School of Medicine</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/04gjkkf30" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Banner Sun Health Research Institute</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/01y2jtd41" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">University of Wisconsin–Madison</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/00k86s890" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Foundation for the National Institutes of Health</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/02g5p4n58" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">AbbVie (United States)</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>15 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Medicine</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Internal medicine</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Disease</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Oncology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Positron emission tomography</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biomarker</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Clinical trial</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cardiology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Age of onset</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Alzheimer's disease</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Clinical significance</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Amyloid (mycology)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Endocrinology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Predictive value of tests</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Plasma levels</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
+        <section class="card">
+            <h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>19 financial grants and sponsors detected.</div>
+            
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>U.S. Department of Health &amp; Human Services | NIH | National Institute on Aging</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(P01AG003991)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>U.S. Department of Health & Human Services | NIH | National Institute on Aging (U.S. National Institute on Aging)</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R01AG067505)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Alzheimer&apos;s Association</strong> 
+                        
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Biogen</strong> 
+                        
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>U.S. Department of Health & Human Services | NIH | National Institute on Aging (U.S. National Institute on Aging)</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(P01AG003991)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>U.S. Department of Health & Human Services | NIH | National Institute on Aging (U.S. National Institute on Aging)</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(P01AG026276)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>U.S. Department of Health &amp; Human Services | NIH | National Institute on Aging</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(P30AG066444)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Takeda Pharmaceutical Company</strong> 
+                        
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>U.S. Department of Health &amp; Human Services | NIH | National Institute on Aging</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(P01AG026276)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>U.S. Department of Health &amp; Human Services | NIH | National Institute on Aging</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R01AG070941)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>U.S. Department of Health &amp; Human Services | NIH | National Institute on Aging</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(RF1R01AG053550)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>U.S. Department of Health &amp; Human Services | NIH | National Institute on Aging</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R01AG067505)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>U.S. Department of Health & Human Services | NIH | National Institute on Aging (U.S. National Institute on Aging)</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(RF1R01AG053550)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>U.S. Department of Health & Human Services | NIH | National Institute on Aging (U.S. National Institute on Aging)</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R01AG070941)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Takeda Pharmaceutical Company Limited | Takeda Oncology</strong> 
+                        
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>U.S. Department of Health & Human Services | NIH | National Institute on Aging (U.S. National Institute on Aging)</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(P30AG066444)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>AbbVie Inc. | AbbVie Deutschland</strong> 
+                        
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>AbbVie</strong> 
+                        
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Janssen Research and Development</strong> 
+                        
+                    </span>
+                
+            </div>
+        </section>
+        
+
+
+
+        
+        
+        <section class="card no-print">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>Displaying 2 most recent citing works</div>
+            <div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+                <table>
+                    <thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Blood test holds promise for predicting when Alzheimer’s symptoms will start</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/d41586-026-00531-x" target="_blank" style="word-break: break-all;">10.1038/d41586-026-00531-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>A biomarker of Alzheimer’s disease could be a useful diagnostic tool for other amyloidoses</td>
+                        <td>Nature Medicine</td>
+                        <td><a href="https://doi.org/10.1038/s41591-026-04336-3" target="_blank" style="word-break: break-all;">10.1038/s41591-026-04336-3</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+
+        <footer class="muted" style="text-align: right; margin-top: 2rem;">Generated on 2026-03-23T15:41:48+00:00</footer>
+    </div>
+
+    
+    <script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+    
+</body>
+</html>
