@@ -106,6 +106,23 @@
     footer.page-footer a:hover {
       text-decoration: underline;
     }
+    /* Inferred Role Icon Layout */
+    .role-grid { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1rem; }
+    .role-card { display: flex; align-items: flex-start; gap: 1.25rem; background: #ffffff; border: 1px solid #f3f4f6; padding: 1.25rem; border-radius: 0.75rem; transition: box-shadow 0.2s; }
+    .role-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .role-icon { flex-shrink: 0; width: 48px; height: 48px; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; }
+    .role-icon svg { width: 24px; height: 24px; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .role-content h4 { margin: 0 0 0.25rem 0; font-size: 1.05rem; color: #111827; }
+    .role-content p { margin: 0; font-size: 0.9rem; color: #4b5563; line-height: 1.5; }
+
+    /* The Color Spectrum */
+    .theme-blue { background: #dbeafe; color: #2563eb; }
+    .theme-teal { background: #ccfbf1; color: #0d9488; }
+    .theme-purple { background: #f3e8ff; color: #9333ea; }
+    .theme-amber { background: #fef3c7; color: #d97706; }
+    .theme-orange { background: #ffedd5; color: #ea580c; }
+    .theme-red { background: #fee2e2; color: #dc2626; }
+    .theme-rose { background: #ffe4e6; color: #e11d48; }
   </style>
 </head>
 <body>
@@ -148,33 +165,137 @@
       <h2><span>Inferred Roles & Classification</span></h2>
       <p class="story-text">Our pipeline goes beyond simple citation counts. By analyzing the composition of a work's attention, usage, and citing landscape, we dynamically assign "Inferred Roles" across four major impact domains:</p>
   
-      <h3 style="margin-top: 1.5rem; color: #1f2937;">1. Academic &amp; Scientific Impact</h3>
-      <ul class="metric-list">
-          <li><strong>Scholarly Uptake:</strong> High citation density within core academic journals and monographs. The work serves as a foundational building block for further research.</li>
-          <li><strong>Rapid Uptake:</strong> The work has accumulated a high volume of citations or downloads in a unusually short period since publication, indicating immediate relevance and urgency within the field.</li>
-          <li><strong>Reference Point for Synthesis:</strong> Frequently cited in literature reviews, meta-analyses, or encyclopedic entries, serving as a "shorthand" for a specific finding or historical overview.</li>
-          <li><strong>Methodological Anchor:</strong> The work serves as a standard protocol, framework, or software tool utilized by other researchers (triggered by specific citation contexts or high usage in datasets and software).</li>
-          <li><strong>Evidence-Bearing Reference:</strong> The work is explicitly applied as hard data or methodology (triggered by high "supporting" citation tallies via scite or links to registered clinical trials).</li>
-      </ul>
+      <h3 style="margin-top: 2rem; color: #1e3a8a; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem;">1. Academic & Scientific Impact</h3>
+      <div class="role-grid">
+          <div class="role-card">
+              <div class="role-icon theme-blue">
+                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              </div>
+              <div class="role-content">
+                  <h4>Scholarly Uptake</h4>
+                  <p>High citation density within core academic journals and monographs. The work serves as a foundational building block for further research.</p>
+              </div>
+          </div>
   
-      <h3 style="margin-top: 1.5rem; color: #1f2937;">2. Readership &amp; Educational Impact</h3>
-      <ul class="metric-list">
-          <li><strong>Usage-Driven Uptake:</strong> The work demonstrates immense value through direct consumption rather than formal citation (triggered by high download counts on platforms like OAPEN/OPERAS, massive HTML views, or heavy institutional library holdings).</li>
-          <li><strong>Pedagogical Anchor:</strong> The work has been widely adopted for teaching and training (triggered by inclusion in Open Educational Resources (OER) syllabi, reading lists, or textbook citations).</li>
-      </ul>
+          <div class="role-card">
+              <div class="role-icon theme-blue">
+                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              </div>
+              <div class="role-content">
+                  <h4>Rapid Uptake</h4>
+                  <p>The work has accumulated a high volume of citations or downloads in an unusually short period since publication, indicating immediate relevance and urgency within the field.</p>
+              </div>
+          </div>
   
-      <h3 style="margin-top: 1.5rem; color: #1f2937;">3. Public Engagement &amp; Media</h3>
-      <ul class="metric-list">
-          <li><strong>Active Public Discourse:</strong> High, fast-moving engagement in community spaces; the work has sparked conversation (triggered by heavy activity on X/Twitter, Reddit, Facebook, or community blogs).</li>
-          <li><strong>Public Visibility &amp; Knowledge Base:</strong> The work serves as a trusted reference for the general public, establishing a lasting public record (triggered by citations in Wikipedia, Stack Exchange, or non-academic wikis).</li>
-          <li><strong>High-Visibility Uptake (Media &amp; News):</strong> The work has "broken out" into mainstream awareness (triggered by mentions in prestigious global news outlets, broadsheet newspapers, or high-impact professional magazines).</li>
-      </ul>
+          <div class="role-card">
+              <div class="role-icon theme-blue">
+                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+              </div>
+              <div class="role-content">
+                  <h4>Reference Point for Synthesis</h4>
+                  <p>Frequently cited in literature reviews, meta-analyses, or encyclopedic entries, serving as a "shorthand" for a specific finding or historical overview.</p>
+              </div>
+          </div>
   
-      <h3 style="margin-top: 1.5rem; color: #1f2937;">4. Practical &amp; Real-World Application</h3>
-      <ul class="metric-list">
-          <li><strong>Sustainability &amp; Policy Relevance:</strong> Direct influence on governance and societal frameworks (triggered by citations in government white papers, WHO reports, NGO briefs, or UN policy documents).</li>
-          <li><strong>Commercial Linkage:</strong> The work crosses over into the retail or commercial sphere, indicating consumer interest or industry application (triggered by strong presence on Amazon, Goodreads, or citations in corporate patents).</li>
-      </ul>
+          <div class="role-card">
+              <div class="role-icon theme-teal">
+                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+              </div>
+              <div class="role-content">
+                  <h4>Methodological Anchor</h4>
+                  <p>The work serves as a standard protocol, framework, or software tool utilized by other researchers (triggered by specific citation contexts or high usage in datasets and software).</p>
+              </div>
+          </div>
+  
+          <div class="role-card">
+              <div class="role-icon theme-teal">
+                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+              </div>
+              <div class="role-content">
+                  <h4>Evidence-Bearing Reference</h4>
+                  <p>The work is explicitly applied as hard data or methodology (triggered by high "supporting" citation tallies via scite or links to registered clinical trials).</p>
+              </div>
+          </div>
+      </div>
+  
+      <h3 style="margin-top: 2.5rem; color: #6b21a8; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem;">2. Readership & Educational Impact</h3>
+      <div class="role-grid">
+          <div class="role-card">
+              <div class="role-icon theme-purple">
+                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+              </div>
+              <div class="role-content">
+                  <h4>Usage-Driven Uptake</h4>
+                  <p>The work demonstrates immense value through direct consumption rather than formal citation (triggered by high download counts on platforms like OAPEN/OPERAS, massive HTML views, or heavy library holdings).</p>
+              </div>
+          </div>
+  
+          <div class="role-card">
+              <div class="role-icon theme-purple">
+                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+              </div>
+              <div class="role-content">
+                  <h4>Pedagogical Anchor</h4>
+                  <p>The work has been widely adopted for teaching and training (triggered by inclusion in Open Educational Resources (OER) syllabi, reading lists, or textbook citations).</p>
+              </div>
+          </div>
+      </div>
+  
+      <h3 style="margin-top: 2.5rem; color: #9a3412; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem;">3. Public Engagement & Media</h3>
+      <div class="role-grid">
+          <div class="role-card">
+              <div class="role-icon theme-amber">
+                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
+              </div>
+              <div class="role-content">
+                  <h4>Active Public Discourse</h4>
+                  <p>High, fast-moving engagement in community spaces; the work has sparked conversation (triggered by heavy activity on X/Twitter, Reddit, Facebook, or community blogs).</p>
+              </div>
+          </div>
+  
+          <div class="role-card">
+              <div class="role-icon theme-amber">
+                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <div class="role-content">
+                  <h4>Public Visibility & Knowledge Base</h4>
+                  <p>The work serves as a trusted reference for the general public, establishing a lasting public record (triggered by citations in Wikipedia, Stack Exchange, or non-academic wikis).</p>
+              </div>
+          </div>
+  
+          <div class="role-card">
+              <div class="role-icon theme-orange">
+                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2.5 2.5 0 00-2.5-2.5H14"></path></svg>
+              </div>
+              <div class="role-content">
+                  <h4>High-Visibility Uptake (Media)</h4>
+                  <p>The work has "broken out" into mainstream awareness (triggered by mentions in prestigious global news outlets, broadsheet newspapers, or high-impact professional magazines).</p>
+              </div>
+          </div>
+      </div>
+  
+      <h3 style="margin-top: 2.5rem; color: #9f1239; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem;">4. Practical & Real-World Application</h3>
+      <div class="role-grid">
+          <div class="role-card">
+              <div class="role-icon theme-red">
+                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+              </div>
+              <div class="role-content">
+                  <h4>Sustainability & Policy Relevance</h4>
+                  <p>Direct influence on governance and societal frameworks (triggered by citations in government white papers, WHO reports, NGO briefs, or UN policy documents).</p>
+              </div>
+          </div>
+  
+          <div class="role-card">
+              <div class="role-icon theme-rose">
+                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+              </div>
+              <div class="role-content">
+                  <h4>Commercial Linkage</h4>
+                  <p>The work crosses over into the retail or commercial sphere, indicating consumer interest or industry application (triggered by strong presence on Amazon, Goodreads, or patents).</p>
+              </div>
+          </div>
+      </div>
   </section>
 
     <section class="card">
