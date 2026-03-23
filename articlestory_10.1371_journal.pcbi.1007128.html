@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ArticleStory - Open collaborative writing with Manubot</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print PDF Report
+    </button>
+    
+    <div class="page">
+        <header class="hero card">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo"></div>
+                    <div>
+                        <h1 class="hero-title">Open collaborative writing with Manubot</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.25rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                                    Linked to Data
+                                </span>
+                            
+
+                            
+
+                            
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> Daniel Himmelstein, Vincent Rubinetti, David R. Slochower, Dongbo Hu, Venkat S. Malladi, Casey S. Greene, Anthony Gitter</div>
+                            <div><strong>Publisher:</strong> PLoS Computational Biology</div>
+                            <div><strong>Publication year:</strong> 2019</div>
+                            <div><strong>DOI:</strong> <a href="https://doi.org/10.1371/journal.pcbi.1007128" target="_blank">10.1371/journal.pcbi.1007128</a></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The work titled "Open collaborative writing with Manubot" has made notable strides in the realm of collaborative software tools, achieving 83 citations across various academic venues.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The article "Open collaborative writing with Manubot," authored by a team from prominent institutions such as The University of Texas Southwestern Medical Center and the University of Pennsylvania, has garnered a significant academic response with 83 citations. This indicates a robust engagement within the scientific community, particularly reflecting the need for advanced collaborative writing tools in computational biology.</p>
+<p class="story-text">The diversity of citation venues further amplifies the work's impact, with notable mentions in respected journals such as bioRxiv, eLife, and GigaScience. This multi-platform recognition enhances the visibility of the software tool, suggesting its applicability across various research contexts. Furthermore, the geographical spread of citations, predominantly from the United States, Germany, and Switzerland, underscores its international relevance and appeal.</p>
+<p class="story-text">Funding from prominent organizations such as the Cancer Prevention and Research Institute of Texas and the Gordon and Betty Moore Foundation signifies a strong institutional investment in this research area. Such support not only legitimizes the authors' efforts but also highlights the significance of collaborative tools in enhancing scientific productivity and accessibility.</p>
+<p class="story-text">Additionally, the inclusion of data repositories such as GitHub and Figshare speaks to a commitment to open data and transparency in research. By making their tool accessible through these platforms, the authors facilitate community engagement and promote the reproducibility of research findings, values that are increasingly critical in modern science.</p></div>
+        </section>
+        
+
+        <section class="card">
+            <h2><span>Impact metrics</span></h2>
+            <ul class="metric-list">
+                
+                    <li><strong>Citations (OpenAlex):</strong> 83</li>
+                    <li><strong>Online mentions (Crossref Event Data):</strong> 0</li>
+                
+                
+                
+                
+                <li><strong>Citation context (scite):</strong> 66</li>
+                
+                
+            </ul>
+        </section>
+
+        
+        <section class="card">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.8rem;">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Rapid uptake (0.77)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scholarly uptake (0.73)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sustainability & policy relevance (0.55)</span>
+                
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1371/journal.pcbi.1007128" target="_blank">10.1371/journal.pcbi.1007128</a></li>
+                    <li><strong>OA status:</strong> Gold</li>
+                    
+                    <li><strong>Landing page:</strong> <a href="https://doi.org/10.1371/journal.pcbi.1007128" target="_blank" style="word-break: break-all;">https://doi.org/10.1371/journal.pcbi.1007128</a></li>
+                    
+                    <li><strong>Best OA PDF:</strong> <a href="https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1007128&type=printable" target="_blank" style="word-break: break-all;">https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1007128&type=printable</a></li>
+                </ul>
+            </section>
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>0</strong> recorded events globally
+                        
+                    </p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 66</li>
+                                <li><strong>Supporting:</strong> 0</li>
+                                <li><strong>Mentioning:</strong> 65</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite</span></h2>
+                            
+                            
+                                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Associated data repositories and clinical trials.</p>
+                                
+                                
+                                <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Data Repositories & Code</h3>
+                                <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom: 1rem; max-height: 250px; overflow-y: auto;">
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/greenelab/meta-review" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/manubot/manubot" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://gitlab.com/manubot/manubot" target="_blank">GitLab Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/manubot/rootstock" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://gitlab.com/manubot/rootstock" target="_blank">GitLab Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/greenelab/deep-review" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/greenelab/deep-review/graphs/contributors" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/citation-style-language/schema" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/xlcnd/isbnlib" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/manubot/try-manubot" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/greenelab/scihub-manuscript" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/bitcoinbook/bitcoinbook" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/ethereumbook/ethereumbook" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/cboettig/knitcitations" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/ewanmellor/gh-publisher" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/mfenner/jekyll-travis" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://10.6084/m9.figshare.5346577" target="_blank">Figshare</a>
+                                            
+                                            
+                                                
+                                                
+                                                <a href="datastory_https:__10.6084_m9.figshare.5346577.html" style="font-size: 0.75rem; color: #6b7280; text-decoration: underline; display: inline-flex; align-items: center; gap: 0.2rem;" title="Run 'python3 -m bookstories.cli https://10.6084/m9.figshare.5346577' to generate this dashboard!">
+                                                    <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                                    View DataStory
+                                                </a>
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://10.6084/m9.figshare.7946192.v2" target="_blank">Figshare</a>
+                                            
+                                            
+                                                
+                                                
+                                                <a href="datastory_https:__10.6084_m9.figshare.7946192.v2.html" style="font-size: 0.75rem; color: #6b7280; text-decoration: underline; display: inline-flex; align-items: center; gap: 0.2rem;" title="Run 'python3 -m bookstories.cli https://10.6084/m9.figshare.7946192.v2' to generate this dashboard!">
+                                                    <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                                    View DataStory
+                                                </a>
+                                            
+                                        </div>
+                                    
+                                </div>
+                                
+
+                                
+                            
+                        </section>
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+
+        
+        
+        <section class="card">
+            <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
+            <ul class="metric-list">
+                <li><strong>Total citing works (OpenAlex):</strong> 83 <span class="muted" style="font-weight:normal;">(Landscape analysis & tables limited to 1000 most recent works to optimize speed)</span></li>
+                
+                
+                <li><strong>Top citing venues:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">bioRxiv (23)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">eLife (6)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Unknown (6)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">GigaScience (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Nature Communications (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">PLoS ONE (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Patterns (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">PLoS Computational Biology (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">PubMed (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Bioinformatics (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Global Ecology and Biogeography (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">ACS Measurement Science Au (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Earth and Space Science (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell Genomics (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Methods in Ecology and Evolution (1)</span> </li>
+                
+                
+                
+                <li><strong>Citing work types:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (45)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (32)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">peer-review (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (1)</span> </li>
+                
+                
+                
+                <li><strong>Top citing concepts:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science (32)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology (9)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computational biology (9)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Workflow (8)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Data science (6)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Medicine (5)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Journalism (5)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Publishing (5)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Pipeline (software) (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Interoperability (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Genome (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Context (archaeology) (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Open science (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Exocytosis (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Political science (3)</span> </li>
+                
+                
+                
+                <li><strong>Countries (from affiliations):</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">United States (50)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Germany (21)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Switzerland (18)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">United Kingdom (10)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Netherlands (7)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Canada (6)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Turkey (6)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Australia (6)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sweden (5)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Czechia (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">India (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Denmark (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Norway (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Brazil (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">France (2)</span> </li>
+                
+                
+                
+                <li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+                    <strong>Citation timeline:</strong>
+                    <div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+                        <canvas id="citationChart" data-labels="[&#34;2018&#34;, &#34;2019&#34;, &#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;]" data-values="[1, 5, 9, 19, 13, 19, 12, 3]"></canvas>
+                    </div>
+                </li>
+                
+            </ul>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            <section class="card span-full" style="margin-bottom:0;">
+                <h2><span>Online mentions & activity</span> <span class="badge">Crossref Event Data</span></h2>
+                
+                <p class="muted">Not available.</p>
+            </section>
+        </div>
+
+        
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+        
+            
+                
+            
+        
+            
+        
+            
+                
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>7 authors · 5 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Daniel Himmelstein</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-3012-7446" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Vincent Rubinetti</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-4655-3773" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>David R. Slochower</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-3928-5050" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Dongbo Hu</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-7870-8242" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Venkat S. Malladi</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-0144-0564" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Casey S. Greene</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-8713-9213" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Anthony Gitter</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-5324-9833" target="_blank">ORCID</a>
+                    </li>
+                    
+                </ul>
+
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/00b30xv10" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">University of Pennsylvania</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/02z3rcy16" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Translational Therapeutics (United States)</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/0168r3w48" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">University of California, San Diego</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/05byvp690" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">The University of Texas Southwestern Medical Center</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/01y2jtd41" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">University of Wisconsin–Madison</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>21 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">World Wide Web</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Identifier</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Workflow</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Metadata</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Citation</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Process (computing)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Software</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scholarly communication</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cloud computing</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Publishing</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Service (business)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Information retrieval</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Data science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Database</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Programming language</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Economy</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Economics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Law</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Operating system</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Political science</span>
+                    
+                    
+                </div>
+                
+                
+                <h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 targets detected.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Quality Education (0.60)</span>
+                    
+                </div>
+                
+            </section>
+        </div>
+
+        
+        <section class="card">
+            <h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>3 financial grants and sponsors detected.</div>
+            
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Cancer Prevention and Research Institute of Texas</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(RP150596)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Gordon and Betty Moore Foundation</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(GBMF4552)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Alfred P. Sloan Foundation</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(G-2018-11163)</span>
+                    </span>
+                
+            </div>
+        </section>
+        
+
+
+
+        
+        
+        <section class="card no-print">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>Displaying 81 most recent citing works</div>
+            <div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+                <table>
+                    <thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Associations between blood type and COVID-19 infection, intubation, and death</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-020-19623-x" target="_blank" style="word-break: break-all;">10.1038/s41467-020-19623-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Scaling tree-based automated machine learning to biomedical big data with a feature set selector</td>
+                        <td>Bioinformatics</td>
+                        <td><a href="https://doi.org/10.1093/bioinformatics/btz470" target="_blank" style="word-break: break-all;">10.1093/bioinformatics/btz470</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>The LOTUS initiative for open knowledge management in natural products research</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.70780" target="_blank" style="word-break: break-all;">10.7554/elife.70780</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>sPlotOpen – An environmentally balanced, open‐access, global dataset of vegetation plots</td>
+                        <td>Global Ecology and Biogeography</td>
+                        <td><a href="https://doi.org/10.1111/geb.13346" target="_blank" style="word-break: break-all;">10.1111/geb.13346</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Comprehensive Overview of Bottom-Up Proteomics Using Mass Spectrometry</td>
+                        <td>ACS Measurement Science Au</td>
+                        <td><a href="https://doi.org/10.1021/acsmeasuresciau.3c00068" target="_blank" style="word-break: break-all;">10.1021/acsmeasuresciau.3c00068</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>From Open Data to Open Science</td>
+                        <td>Earth and Space Science</td>
+                        <td><a href="https://doi.org/10.1029/2020ea001562" target="_blank" style="word-break: break-all;">10.1029/2020ea001562</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>OpenPBTA: The Open Pediatric Brain Tumor Atlas</td>
+                        <td>Cell Genomics</td>
+                        <td><a href="https://doi.org/10.1016/j.xgen.2023.100340" target="_blank" style="word-break: break-all;">10.1016/j.xgen.2023.100340</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Streamlining data-intensive biology with workflow systems</td>
+                        <td>GigaScience</td>
+                        <td><a href="https://doi.org/10.1093/gigascience/giaa140" target="_blank" style="word-break: break-all;">10.1093/gigascience/giaa140</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Not just for programmers: How <scp>GitHub</scp> can accelerate collaborative and reproducible research in ecology and evolution</td>
+                        <td>Methods in Ecology and Evolution</td>
+                        <td><a href="https://doi.org/10.1111/2041-210x.14108" target="_blank" style="word-break: break-all;">10.1111/2041-210x.14108</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Morphofunctional changes at the active zone during synaptic vesicle exocytosis</td>
+                        <td>EMBO Reports</td>
+                        <td><a href="https://doi.org/10.15252/embr.202255719" target="_blank" style="word-break: break-all;">10.15252/embr.202255719</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>GitHub enables collaborative and reproducible laboratory research</td>
+                        <td>PLoS Biology</td>
+                        <td><a href="https://doi.org/10.1371/journal.pbio.3003029" target="_blank" style="word-break: break-all;">10.1371/journal.pbio.3003029</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Bitcoin for the biological literature</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/d41586-019-00447-9" target="_blank" style="word-break: break-all;">10.1038/d41586-019-00447-9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Unifying the identification of biomedical entities with the Bioregistry</td>
+                        <td>Scientific Data</td>
+                        <td><a href="https://doi.org/10.1038/s41597-022-01807-3" target="_blank" style="word-break: break-all;">10.1038/s41597-022-01807-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Defocus Corrected Large Area Cryo-EM (DeCo-LACE) for label-free detection of molecules across entire cell sections</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.80980" target="_blank" style="word-break: break-all;">10.7554/elife.80980</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A publishing infrastructure for Artificial Intelligence (AI)-assisted academic authoring</td>
+                        <td>Journal of the American Medical Informatics Association</td>
+                        <td><a href="https://doi.org/10.1093/jamia/ocae139" target="_blank" style="word-break: break-all;">10.1093/jamia/ocae139</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>The probability of edge existence due to node degree: a baseline for network-based predictions</td>
+                        <td>GigaScience</td>
+                        <td><a href="https://doi.org/10.1093/gigascience/giae001" target="_blank" style="word-break: break-all;">10.1093/gigascience/giae001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Analysis of scientific society honors reveals disparities</td>
+                        <td>Cell Systems</td>
+                        <td><a href="https://doi.org/10.1016/j.cels.2021.07.007" target="_blank" style="word-break: break-all;">10.1016/j.cels.2021.07.007</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Modeling chromatin state from sequence across angiosperms using recurrent convolutional neural networks</td>
+                        <td>The Plant Genome</td>
+                        <td><a href="https://doi.org/10.1002/tpg2.20249" target="_blank" style="word-break: break-all;">10.1002/tpg2.20249</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>UV-induced reorganization of 3D genome mediates DNA damage response</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-024-55724-7" target="_blank" style="word-break: break-all;">10.1038/s41467-024-55724-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Pulmonary acini exhibit complex changes during postnatal rat lung development</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0257349" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0257349</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>CryoVesNet: A dedicated framework for synaptic vesicle segmentation in cryo-electron tomograms</td>
+                        <td>The Journal of Cell Biology</td>
+                        <td><a href="https://doi.org/10.1083/jcb.202402169" target="_blank" style="word-break: break-all;">10.1083/jcb.202402169</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Analysis of science journalism reveals gender and regional disparities in coverage</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.84855.3" target="_blank" style="word-break: break-all;">10.7554/elife.84855.3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Reproducible, portable, and efficient ancient genome reconstruction with nf-core/eager</td>
+                        <td>Zurich Open Repository and Archive (University of Zurich)</td>
+                        <td><a href="https://doi.org/10.5167/uzh-202801" target="_blank" style="word-break: break-all;">10.5167/uzh-202801</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Hetnet connectivity search provides rapid insights into how biomedical entities are related</td>
+                        <td>GigaScience</td>
+                        <td><a href="https://doi.org/10.1093/gigascience/giad047" target="_blank" style="word-break: break-all;">10.1093/gigascience/giad047</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td><i>MMV_Im2Im</i>: an open-source microscopy machine vision toolbox for image-to-image transformation</td>
+                        <td>GigaScience</td>
+                        <td><a href="https://doi.org/10.1093/gigascience/giad120" target="_blank" style="word-break: break-all;">10.1093/gigascience/giad120</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Not just for programmers: How GitHub can accelerate collaborative and reproducible research in ecology and evolution</td>
+                        <td>Duo Research Archive (University of Oslo)</td>
+                        <td><a href="https://doi.org/10.31222/osf.io/x3p2q" target="_blank" style="word-break: break-all;">10.31222/osf.io/x3p2q</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Introducing Massively Open Online Papers (MOOPs)</td>
+                        <td>KULA knowledge creation dissemination and preservation studies</td>
+                        <td><a href="https://doi.org/10.5334/kula.63" target="_blank" style="word-break: break-all;">10.5334/kula.63</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Comparative analyses of two primate species diverged by more than 60 million years show different rates but similar distribution of genome-wide UV repair events</td>
+                        <td>BMC Genomics</td>
+                        <td><a href="https://doi.org/10.1186/s12864-021-07898-3" target="_blank" style="word-break: break-all;">10.1186/s12864-021-07898-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Plasmids for Independently Tunable, Low-Noise Expression of Two Genes</td>
+                        <td>mSphere</td>
+                        <td><a href="https://doi.org/10.1128/msphere.00340-19" target="_blank" style="word-break: break-all;">10.1128/msphere.00340-19</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Widespread redundancy in -omics profiles of cancer mutation states</td>
+                        <td>Genome biology</td>
+                        <td><a href="https://doi.org/10.1186/s13059-022-02705-y" target="_blank" style="word-break: break-all;">10.1186/s13059-022-02705-y</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>The role of metadata in reproducible computational research</td>
+                        <td>Patterns</td>
+                        <td><a href="https://doi.org/10.1016/j.patter.2021.100322" target="_blank" style="word-break: break-all;">10.1016/j.patter.2021.100322</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Amending the literature through version control</td>
+                        <td>Biology Letters</td>
+                        <td><a href="https://doi.org/10.1098/rsbl.2022.0463" target="_blank" style="word-break: break-all;">10.1098/rsbl.2022.0463</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Living Papers: A Language Toolkit for Augmented Scholarly Communication</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1145/3586183.3606791" target="_blank" style="word-break: break-all;">10.1145/3586183.3606791</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Supporting Collaborative Writing Tasks in Large-Scale Distance Education</td>
+                        <td>IEEE Transactions on Learning Technologies</td>
+                        <td><a href="https://doi.org/10.1109/tlt.2024.3355791" target="_blank" style="word-break: break-all;">10.1109/tlt.2024.3355791</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Ten simple rules for typographically appealing scientific texts</td>
+                        <td>PLoS Computational Biology</td>
+                        <td><a href="https://doi.org/10.1371/journal.pcbi.1008458" target="_blank" style="word-break: break-all;">10.1371/journal.pcbi.1008458</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Challenges in Scholarly Communication and Scientific Publication – Present Scenario and Opportunities through Blockchain Solutions</td>
+                        <td>The 5th International Conference on Future Networks &amp; Distributed Systems</td>
+                        <td><a href="https://doi.org/10.1145/3508072.3508174" target="_blank" style="word-break: break-all;">10.1145/3508072.3508174</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Optimizer’s dilemma: optimization strongly influences model selection in transcriptomic prediction</td>
+                        <td>Bioinformatics Advances</td>
+                        <td><a href="https://doi.org/10.1093/bioadv/vbae004" target="_blank" style="word-break: break-all;">10.1093/bioadv/vbae004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Open Collaborative Writing</td>
+                        <td>Proceedings of the ACM on Human-Computer Interaction</td>
+                        <td><a href="https://doi.org/10.1145/3449211" target="_blank" style="word-break: break-all;">10.1145/3449211</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>New Technology and Tools to Enhance Collaborative Video Analysis in Live ‘Data Sessions’</td>
+                        <td>VBN Forskningsportal (Aalborg Universitet)</td>
+                        <td><a href="https://doi.org/10.31235/osf.io/eu7yw" target="_blank" style="word-break: break-all;">10.31235/osf.io/eu7yw</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Analysis of science journalism reveals gender and regional disparities in coverage</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.84855" target="_blank" style="word-break: break-all;">10.7554/elife.84855</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Escritura e identidad en contextos de investigación: escritura e identidad</td>
+                        <td>Literatura y lingüística</td>
+                        <td><a href="https://doi.org/10.29344/0717621x.46.3157" target="_blank" style="word-break: break-all;">10.29344/0717621x.46.3157</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Microtomographic investigation of a large corpus of cichlids</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0291003" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0291003</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Best holdout assessment is sufficient for cancer transcriptomic model selection</td>
+                        <td>Patterns</td>
+                        <td><a href="https://doi.org/10.1016/j.patter.2024.101115" target="_blank" style="word-break: break-all;">10.1016/j.patter.2024.101115</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>MicroCT-based vascular imaging in bone and peri-implant tissues</td>
+                        <td>Tomography of Materials and Structures</td>
+                        <td><a href="https://doi.org/10.1016/j.tmater.2025.100074" target="_blank" style="word-break: break-all;">10.1016/j.tmater.2025.100074</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Facilitating reproducible research through direct connection of data analysis with manuscript preparation: StatTag for connecting statistical software to Microsoft Word</td>
+                        <td>JAMIA Open</td>
+                        <td><a href="https://doi.org/10.1093/jamiaopen/ooaa043" target="_blank" style="word-break: break-all;">10.1093/jamiaopen/ooaa043</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Open scientist in the wonderland: advocating for blockchain-based decentralized applications for science</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.5753/opensciense.2021.17143" target="_blank" style="word-break: break-all;">10.5753/opensciense.2021.17143</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Testing the association between blood type and COVID-19 infection, intubation, and death</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2020.04.08.20058073" target="_blank" style="word-break: break-all;">10.1101/2020.04.08.20058073</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>The LOTUS Initiative for Open Natural Products Research: Knowledge Management through Wikidata</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2021.02.28.433265" target="_blank" style="word-break: break-all;">10.1101/2021.02.28.433265</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A publishing infrastructure for AI-assisted academic authoring</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.01.21.525030" target="_blank" style="word-break: break-all;">10.1101/2023.01.21.525030</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Reproducible, portable, and efficient ancient genome reconstruction with nf-core/eager</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2020.06.11.145615" target="_blank" style="word-break: break-all;">10.1101/2020.06.11.145615</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Analysis of ISCB honorees and keynotes reveals disparities</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2020.04.14.927251" target="_blank" style="word-break: break-all;">10.1101/2020.04.14.927251</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Analysis of science journalism reveals gender and regional disparities in coverage</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2021.06.21.449261" target="_blank" style="word-break: break-all;">10.1101/2021.06.21.449261</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Morphofunctional changes at the active zone during synaptic vesicle exocytosis</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2022.03.07.483217" target="_blank" style="word-break: break-all;">10.1101/2022.03.07.483217</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Comprehensive Overview of Bottom-up Proteomics using Mass Spectrometry</td>
+                        <td>PubMed</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2311.07791" target="_blank" style="word-break: break-all;">10.48550/arxiv.2311.07791</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>OpenPBTA: An Open Pediatric Brain Tumor Atlas</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2022.09.13.507832" target="_blank" style="word-break: break-all;">10.1101/2022.09.13.507832</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>CryoVesNet: A Dedicated Framework for Synaptic Vesicle Segmentation in Cryo Electron Tomograms</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.02.26.582080" target="_blank" style="word-break: break-all;">10.1101/2024.02.26.582080</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Scaling tree-based automated machine learning to biomedical big data with a dataset selector</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/502484" target="_blank" style="word-break: break-all;">10.1101/502484</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Two real use cases of FAIR maturity indicators in the life sciences</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/739334" target="_blank" style="word-break: break-all;">10.1101/739334</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>The probability of edge existence due to node degree: a baseline for network-based predictions</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.01.05.522939" target="_blank" style="word-break: break-all;">10.1101/2023.01.05.522939</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Comparative analyses of two primate species diverged by more than 60 million years show different rates but similar distribution of genome-wide UV repair events</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2020.04.06.027201" target="_blank" style="word-break: break-all;">10.1101/2020.04.06.027201</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Widespread redundancy in -omics profiles of cancer mutation states</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2021.10.27.466140" target="_blank" style="word-break: break-all;">10.1101/2021.10.27.466140</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>MicroCT-Based Imaging of Microvasculature in Bone and Peri-Implant Tissues</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.03.08.531678" target="_blank" style="word-break: break-all;">10.1101/2023.03.08.531678</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Plasmids for independently tunable, low-noise expression of two genes</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/515940" target="_blank" style="word-break: break-all;">10.1101/515940</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Modeling chromatin state from sequence across angiosperms using recurrent convolutional neural networks</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2021.11.11.468292" target="_blank" style="word-break: break-all;">10.1101/2021.11.11.468292</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Unifying the Identification of Biomedical Entities with the Bioregistry</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2022.07.08.499378" target="_blank" style="word-break: break-all;">10.1101/2022.07.08.499378</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>An Open-Publishing Response to the COVID-19 Infodemic</td>
+                        <td>PubMed</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2109.08633" target="_blank" style="word-break: break-all;">10.48550/arxiv.2109.08633</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Optimizer’s dilemma: optimization strongly influences model selection in transcriptomic prediction</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.06.26.546586" target="_blank" style="word-break: break-all;">10.1101/2023.06.26.546586</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>UV-induced reorganization of 3D genome mediates DNA damage response</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.05.27.595922" target="_blank" style="word-break: break-all;">10.1101/2024.05.27.595922</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Ten quick tips for deep learning in biology</td>
+                        <td>PLoS Computational Biology</td>
+                        <td><a href="https://doi.org/10.1371/journal.pcbi.1009803" target="_blank" style="word-break: break-all;">10.1371/journal.pcbi.1009803</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Hetnet connectivity search provides rapid insights into how two biomedical entities are related</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.01.05.522941" target="_blank" style="word-break: break-all;">10.1101/2023.01.05.522941</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Peer Review #1 of "Reproducible, portable, and efficient ancient genome reconstruction with nf-core/eager (v0.1)"</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.7287/peerj.10947v0.1/reviews/1" target="_blank" style="word-break: break-all;">10.7287/peerj.10947v0.1/reviews/1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Peer Review #3 of "Reproducible, portable, and efficient ancient genome reconstruction with nf-core/eager (v0.1)"</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.7287/peerj.10947v0.1/reviews/3" target="_blank" style="word-break: break-all;">10.7287/peerj.10947v0.1/reviews/3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Peer Review #2 of "Reproducible, portable, and efficient ancient genome reconstruction with nf-core/eager (v0.1)"</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.7287/peerj.10947v0.1/reviews/2" target="_blank" style="word-break: break-all;">10.7287/peerj.10947v0.1/reviews/2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Defocus Corrected Large Area Cryo-EM (DeCo-LACE) for Label-Free Detection of Molecules across Entire Cell Sections</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2022.06.13.495969" target="_blank" style="word-break: break-all;">10.1101/2022.06.13.495969</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Git going with LEGO</td>
+                        <td>The Journal of Play in Adulthood</td>
+                        <td><a href="https://doi.org/10.5920/jpa.1030" target="_blank" style="word-break: break-all;">10.5920/jpa.1030</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Analysis of science journalism reveals gender and regional disparities in coverage</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.84855.1" target="_blank" style="word-break: break-all;">10.7554/elife.84855.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Microtomographic investigation of a large corpus of cichlids</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.03.30.534917" target="_blank" style="word-break: break-all;">10.1101/2023.03.30.534917</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Supporting collaborative writing tasks in large-scale distance education</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.36227/techrxiv.24466321" target="_blank" style="word-break: break-all;">10.36227/techrxiv.24466321</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Supporting collaborative writing tasks in large-scale distance education</td>
+                        <td>Figshare</td>
+                        <td><a href="https://doi.org/10.36227/techrxiv.24466321.v1" target="_blank" style="word-break: break-all;">10.36227/techrxiv.24466321.v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Tracking E-Orange Press Workflow Menggunakan Automatic Notification System</td>
+                        <td>Reputasi Jurnal Rekayasa Perangkat Lunak</td>
+                        <td><a href="https://doi.org/10.31294/reputasi.v4i2.2270" target="_blank" style="word-break: break-all;">10.31294/reputasi.v4i2.2270</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Analysis of science journalism reveals gender and regional disparities in coverage</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.84855.2" target="_blank" style="word-break: break-all;">10.7554/elife.84855.2</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+
+        <footer class="muted" style="text-align: right; margin-top: 2rem;">Generated on 2026-03-23T14:46:17+00:00</footer>
+    </div>
+
+    
+    <script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+    
+</body>
+</html>

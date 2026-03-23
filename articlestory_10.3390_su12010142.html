@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ArticleStory - A Comparison of Machine Learning Methods for the Prediction of Traffic Speed in Urban Places</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print PDF Report
+    </button>
+    
+    <div class="page">
+        <header class="hero card">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo"></div>
+                    <div>
+                        <h1 class="hero-title">A Comparison of Machine Learning Methods for the Prediction of Traffic Speed in Urban Places</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.25rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> Charalampos Bratsas, Kleanthis Koupidis, Josep Maria Salanova Grau, Κωνσταντίνος Γιαννακόπουλος, Aristeidis Kaloudis, Georgia Aifadopoulou</div>
+                            <div><strong>Publisher:</strong> Sustainability</div>
+                            <div><strong>Publication year:</strong> 2019</div>
+                            <div><strong>DOI:</strong> <a href="https://doi.org/10.3390/su12010142" target="_blank">10.3390/su12010142</a></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The article titled "A Comparison of Machine Learning Methods for the Prediction of Traffic Speed in Urban Places" has received significant academic attention, as evidenced by its 80 citations across various venues, including the journal Sustainability. This research, backed by institutions such as the Hellenic Open University and Aristotle University of Thessaloniki, demonstrates a burgeoning interest in applying machine learning techniques to enhance urban traffic management.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The article "A Comparison of Machine Learning Methods for the Prediction of Traffic Speed in Urban Places," published in the journal Sustainability, is an indicative work in the intersection of artificial intelligence and urban studies. The significant scholarly impact of this study is exemplified by its accumulation of 80 citations from an array of outlets, with notable recognition appearing in Sustainability itself, indicating its relevance and integration into ongoing research dialogues. This high citation count underscores the growing recognition of machine learning approaches in traffic prediction, highlighting their potential to improve urban mobility.</p>
+
+<p class="story-text">Moreover, the article's foundational contribution to traffic management methodologies aligns well with the current priorities of various countries, particularly China and India, which have emerged as the top citing nations with 12 citations each. The presence of esteemed institutions such as the Hellenic Open University and Aristotle University of Thessaloniki further emphasizes the study's credibility and the collaborative effort behind its development, showcasing a strong academic alliance in addressing urban challenges.</p>
+
+<p class="story-text">As the article has not received any online mentions, we observe a focused academic engagement rather than a broader public discourse thus far. However, the scholarly impact is marked by a diverse array of citing work types, with a substantial majority being articles, thus reinforcing the article's scholarly value. The research landscape illustrated by the citation dynamics suggests that the methodologies explored have catalyzed further inquiry, driving innovation within the field.</p>
+
+<p class="story-text">In summary, the results from this study not only provide a comparative analysis of machine learning techniques but also contribute to the growing body of knowledge aimed at improving urban transportation systems. Future work may benefit from incorporating additional datasets or exploring new methodologies, fostering an environment where both academia and industry can leverage these insights for tangible urban improvements.</p></div>
+        </section>
+        
+
+        <section class="card">
+            <h2><span>Impact metrics</span></h2>
+            <ul class="metric-list">
+                
+                    <li><strong>Citations (OpenAlex):</strong> 80</li>
+                    <li><strong>Online mentions (Crossref Event Data):</strong> 0</li>
+                
+                
+                
+                
+                <li><strong>Citation context (scite):</strong> 30</li>
+                
+                
+            </ul>
+        </section>
+
+        
+        <section class="card">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.8rem;">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scholarly uptake (0.73)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sustainability & policy relevance (0.55)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Reference point for synthesis (0.19)</span>
+                
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.3390/su12010142" target="_blank">10.3390/su12010142</a></li>
+                    <li><strong>OA status:</strong> Gold</li>
+                    
+                    <li><strong>Landing page:</strong> <a href="https://doi.org/10.3390/su12010142" target="_blank" style="word-break: break-all;">https://doi.org/10.3390/su12010142</a></li>
+                    
+                    <li><strong>Best OA PDF:</strong> <a href="https://www.mdpi.com/2071-1050/12/1/142/pdf?version=1577104009" target="_blank" style="word-break: break-all;">https://www.mdpi.com/2071-1050/12/1/142/pdf?version=1577104009</a></li>
+                </ul>
+            </section>
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>0</strong> recorded events globally
+                        
+                    </p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 30</li>
+                                <li><strong>Supporting:</strong> 0</li>
+                                <li><strong>Mentioning:</strong> 29</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+
+        
+        
+        <section class="card">
+            <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
+            <ul class="metric-list">
+                <li><strong>Total citing works (OpenAlex):</strong> 80 <span class="muted" style="font-weight:normal;">(Landscape analysis & tables limited to 1000 most recent works to optimize speed)</span></li>
+                
+                
+                <li><strong>Top citing venues:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Unknown (11)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sustainability (6)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sensors (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Applied Sciences (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scientific Reports (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Communications in computer and information science (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">IEEE Access (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sustainable Computing Informatics and Systems (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Renewable and Sustainable Energy Reviews (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Journal of Electrical Systems and Information Technology (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Data Intelligence (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Lecture notes in electrical engineering (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computers and Electronics in Agriculture (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Smart Cities (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">International Journal of Applied Earth Observation and Geoinformation (1)</span> </li>
+                
+                
+                
+                <li><strong>Citing work types:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (64)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (10)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (5)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (1)</span> </li>
+                
+                
+                
+                <li><strong>Top citing concepts:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science (43)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Artificial intelligence (11)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Traffic flow (computer networking) (8)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Intelligent transportation system (7)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Traffic congestion (6)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mean squared error (6)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Artificial neural network (6)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Support vector machine (6)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Machine learning (5)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Transport engineering (5)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Random forest (5)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Context (archaeology) (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Environmental science (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Deep learning (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Perceptron (3)</span> </li>
+                
+                
+                
+                <li><strong>Countries (from affiliations):</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">China (12)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">India (12)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">United States (7)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Canada (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Iran (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Turkey (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Italy (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Egypt (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">South Africa (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Spain (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Brazil (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Netherlands (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">United Arab Emirates (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Jordan (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Morocco (2)</span> </li>
+                
+                
+                
+                <li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+                    <strong>Citation timeline:</strong>
+                    <div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+                        <canvas id="citationChart" data-labels="[&#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[5, 14, 17, 15, 14, 14, 1]"></canvas>
+                    </div>
+                </li>
+                
+            </ul>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            <section class="card span-full" style="margin-bottom:0;">
+                <h2><span>Online mentions & activity</span> <span class="badge">Crossref Event Data</span></h2>
+                
+                <p class="muted">Not available.</p>
+            </section>
+        </div>
+
+        
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+            
+        
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>6 authors · 3 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Charalampos Bratsas</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-6400-3233" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Kleanthis Koupidis</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-1621-0104" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Josep Maria Salanova Grau</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-1564-2471" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Κωνσταντίνος Γιαννακόπουλος</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-6801-8125" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Aristeidis Kaloudis</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Georgia Aifadopoulou</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                </ul>
+
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/02kq26x23" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Hellenic Open University</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/02j61yw88" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Aristotle University of Thessaloniki</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/03bndpq63" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Centre for Research and Technology Hellas</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>19 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Support vector machine</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Random forest</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Multilayer perceptron</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Perceptron</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Linear regression</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Machine learning</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Artificial neural network</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Regression analysis</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Traffic congestion</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Regression</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Field (mathematics)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Artificial intelligence</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Data mining</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Statistics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Engineering</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Transport engineering</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mathematics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Pure mathematics</span>
+                    
+                    
+                </div>
+                
+                
+                <h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 targets detected.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Sustainable cities and communities (0.82)</span>
+                    
+                </div>
+                
+            </section>
+        </div>
+
+        
+
+
+
+        
+        
+        <section class="card no-print">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>Displaying 80 most recent citing works</div>
+            <div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+                <table>
+                    <thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Urban traffic flow prediction techniques: A review</td>
+                        <td>Sustainable Computing Informatics and Systems</td>
+                        <td><a href="https://doi.org/10.1016/j.suscom.2022.100739" target="_blank" style="word-break: break-all;">10.1016/j.suscom.2022.100739</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Practical application of energy management strategy for hybrid electric vehicles based on intelligent and connected technologies: Development stages, challenges, and future trends</td>
+                        <td>Renewable and Sustainable Energy Reviews</td>
+                        <td><a href="https://doi.org/10.1016/j.rser.2022.112947" target="_blank" style="word-break: break-all;">10.1016/j.rser.2022.112947</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Artificial intelligence-based traffic flow prediction: a comprehensive review</td>
+                        <td>Journal of Electrical Systems and Information Technology</td>
+                        <td><a href="https://doi.org/10.1186/s43067-023-00081-6" target="_blank" style="word-break: break-all;">10.1186/s43067-023-00081-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Applying Hybrid Lstm-Gru Model Based on Heterogeneous Data Sources for Traffic Speed Prediction in Urban Areas</td>
+                        <td>Sensors</td>
+                        <td><a href="https://doi.org/10.3390/s22093348" target="_blank" style="word-break: break-all;">10.3390/s22093348</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Comparative Evaluation and Comprehensive Analysis of Machine Learning Models for Regression Problems</td>
+                        <td>Data Intelligence</td>
+                        <td><a href="https://doi.org/10.1162/dint_a_00155" target="_blank" style="word-break: break-all;">10.1162/dint_a_00155</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Applications of Machine Learning and Artificial Intelligence in Intelligent Transportation System: A Review</td>
+                        <td>Lecture notes in electrical engineering</td>
+                        <td><a href="https://doi.org/10.1007/978-981-16-3067-5_16" target="_blank" style="word-break: break-all;">10.1007/978-981-16-3067-5_16</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Predicting the sugarcane yield in real-time by harvester engine parameters and machine learning approaches</td>
+                        <td>Computers and Electronics in Agriculture</td>
+                        <td><a href="https://doi.org/10.1016/j.compag.2020.105945" target="_blank" style="word-break: break-all;">10.1016/j.compag.2020.105945</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>A New SDN-Based Routing Protocol for Improving Delay in Smart City Environments</td>
+                        <td>Smart Cities</td>
+                        <td><a href="https://doi.org/10.3390/smartcities3030050" target="_blank" style="word-break: break-all;">10.3390/smartcities3030050</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Comparative Study of Ensemble Models for Predicting Road Traffic Congestion</td>
+                        <td>Applied Sciences</td>
+                        <td><a href="https://doi.org/10.3390/app12031337" target="_blank" style="word-break: break-all;">10.3390/app12031337</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Operational framework to predict field level crop biomass using remote sensing and data driven models</td>
+                        <td>International Journal of Applied Earth Observation and Geoinformation</td>
+                        <td><a href="https://doi.org/10.1016/j.jag.2022.102725" target="_blank" style="word-break: break-all;">10.1016/j.jag.2022.102725</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Challenges and opportunities in traffic flow prediction:  review of machine learning and deep learning perspectives</td>
+                        <td>Data & Metadata</td>
+                        <td><a href="https://doi.org/10.56294/dm2024378" target="_blank" style="word-break: break-all;">10.56294/dm2024378</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>RF-Based Moisture Content Determination in Rice Using Machine Learning Techniques</td>
+                        <td>Sensors</td>
+                        <td><a href="https://doi.org/10.3390/s21051875" target="_blank" style="word-break: break-all;">10.3390/s21051875</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Comparing Machine Learning Approaches for Predicting Spatially Explicit Life Cycle Global Warming and Eutrophication Impacts from Corn Production</td>
+                        <td>Sustainability</td>
+                        <td><a href="https://doi.org/10.3390/su12041481" target="_blank" style="word-break: break-all;">10.3390/su12041481</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Traffic speed prediction techniques in urban environments</td>
+                        <td>Heliyon</td>
+                        <td><a href="https://doi.org/10.1016/j.heliyon.2022.e11847" target="_blank" style="word-break: break-all;">10.1016/j.heliyon.2022.e11847</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A hybrid deep and machine learning model for short‐term traffic volume forecasting of adjacent intersections</td>
+                        <td>IET Intelligent Transport Systems</td>
+                        <td><a href="https://doi.org/10.1049/itr2.12224" target="_blank" style="word-break: break-all;">10.1049/itr2.12224</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Comparative Study Analysis of ANFIS and ANFIS-GA Models on Flow of Vehicles at Road Intersections</td>
+                        <td>Applied Sciences</td>
+                        <td><a href="https://doi.org/10.3390/app13020744" target="_blank" style="word-break: break-all;">10.3390/app13020744</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Efficient linear predictive model with short term features for lithium-ion batteries state of health estimation</td>
+                        <td>Journal of Energy Storage</td>
+                        <td><a href="https://doi.org/10.1016/j.est.2021.103409" target="_blank" style="word-break: break-all;">10.1016/j.est.2021.103409</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Traffic flow prediction using support vector regression</td>
+                        <td>International Journal of Information Technology</td>
+                        <td><a href="https://doi.org/10.1007/s41870-021-00852-2" target="_blank" style="word-break: break-all;">10.1007/s41870-021-00852-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Performance Evaluation of a Hybrid PSO Enhanced ANFIS Model in Prediction of Traffic Flow of Vehicles on Freeways: Traffic Data Evidence from South Africa</td>
+                        <td>Infrastructures</td>
+                        <td><a href="https://doi.org/10.3390/infrastructures7010002" target="_blank" style="word-break: break-all;">10.3390/infrastructures7010002</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Modeling drought-related yield losses using new geospatial technologies and machine learning approaches: case of the Gharb plain, North-West Morocco</td>
+                        <td>Modeling Earth Systems and Environment</td>
+                        <td><a href="https://doi.org/10.1007/s40808-022-01523-2" target="_blank" style="word-break: break-all;">10.1007/s40808-022-01523-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>ST-TDCN: A two-channel tree-structure spatial–temporal convolutional network model for traffic velocity prediction</td>
+                        <td>Expert Systems with Applications</td>
+                        <td><a href="https://doi.org/10.1016/j.eswa.2024.125053" target="_blank" style="word-break: break-all;">10.1016/j.eswa.2024.125053</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A leap forward in chemical process design: Introducing an automated framework for integrated AI and CFD simulations</td>
+                        <td>Computers & Chemical Engineering</td>
+                        <td><a href="https://doi.org/10.1016/j.compchemeng.2024.108906" target="_blank" style="word-break: break-all;">10.1016/j.compchemeng.2024.108906</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Machine learning-based cost predictive model for better operating expenditure estimations of U.S. light rail transit projects</td>
+                        <td>Journal of Public Transportation</td>
+                        <td><a href="https://doi.org/10.1016/j.jpubtr.2022.100031" target="_blank" style="word-break: break-all;">10.1016/j.jpubtr.2022.100031</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Recognition of Commercial Vehicle Driving Cycles Based on Multilayer Perceptron Model</td>
+                        <td>Sustainability</td>
+                        <td><a href="https://doi.org/10.3390/su15032644" target="_blank" style="word-break: break-all;">10.3390/su15032644</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Personalizing digital pain management with adapted machine learning approach</td>
+                        <td>PAIN Reports</td>
+                        <td><a href="https://doi.org/10.1097/pr9.0000000000001065" target="_blank" style="word-break: break-all;">10.1097/pr9.0000000000001065</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Enhancing urban mobility: predicting traffic congestion with optimized ML model</td>
+                        <td>Engineering Research Express</td>
+                        <td><a href="https://doi.org/10.1088/2631-8695/ad8dbd" target="_blank" style="word-break: break-all;">10.1088/2631-8695/ad8dbd</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Methodology for the Identification of Vehicle Congestion Based on Dynamic Clustering</td>
+                        <td>Sustainability</td>
+                        <td><a href="https://doi.org/10.3390/su152416575" target="_blank" style="word-break: break-all;">10.3390/su152416575</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A Review on Machine Learning in Intelligent Transportation Systems Applications</td>
+                        <td>The Open Transportation Journal</td>
+                        <td><a href="https://doi.org/10.2174/0126671212330496240821114216" target="_blank" style="word-break: break-all;">10.2174/0126671212330496240821114216</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>An explainable multi-task deep learning framework for crash severity prediction using multi-source data</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-025-09226-1" target="_blank" style="word-break: break-all;">10.1038/s41598-025-09226-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Exploring the Efficacy of Artificial Intelligence in Speed Prediction: Explainable Machine-Learning Approach</td>
+                        <td>Journal of Computing in Civil Engineering</td>
+                        <td><a href="https://doi.org/10.1061/jccee5.cpeng-5980" target="_blank" style="word-break: break-all;">10.1061/jccee5.cpeng-5980</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Comparing Artificial Intelligence Techniques for Predicting Energy Consumption and Renewable Energy Production</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/bigdata62323.2024.10825300" target="_blank" style="word-break: break-all;">10.1109/bigdata62323.2024.10825300</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>A Genetic Algorithm-based AutoML Approach for Large-scale Traffic Speed Prediction</td>
+                        <td>2020 IEEE 5th International Conference on Intelligent Transportation Engineering (ICITE)</td>
+                        <td><a href="https://doi.org/10.1109/icite50838.2020.9231486" target="_blank" style="word-break: break-all;">10.1109/icite50838.2020.9231486</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Learning dynamic interaction for multimodal transportation systems: A joint passenger flow prediction approach based on spatiotemporal hypergraph convolution networks</td>
+                        <td>Transportation Research Part C Emerging Technologies</td>
+                        <td><a href="https://doi.org/10.1016/j.trc.2025.105257" target="_blank" style="word-break: break-all;">10.1016/j.trc.2025.105257</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A Comparative Study for the Traffic Predictions in Smart Cities Using Artificial Intelligence Techniques: Survey</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-47839-0_10" target="_blank" style="word-break: break-all;">10.1007/978-3-031-47839-0_10</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Integrating Machine Learning with Optimization to Solve Time-Dependent Cash in Transit Vehicle Routing Problem with Time Windows</td>
+                        <td>Communications in computer and information science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-93601-2_16" target="_blank" style="word-break: break-all;">10.1007/978-3-031-93601-2_16</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>An Improved Hybrid Highway Traffic Flow Prediction Model Based on Machine Learning</td>
+                        <td>Sustainability</td>
+                        <td><a href="https://doi.org/10.3390/su12208298" target="_blank" style="word-break: break-all;">10.3390/su12208298</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Real-Time Traffic Flow Forecasting via a Novel Method Combining Periodic-Trend Decomposition</td>
+                        <td>Sustainability</td>
+                        <td><a href="https://doi.org/10.3390/su12155891" target="_blank" style="word-break: break-all;">10.3390/su12155891</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Deep Learning for Road Traffic Forecasting: Does it Make a Difference?</td>
+                        <td>IEEE Transactions on Intelligent Transportation Systems</td>
+                        <td><a href="https://doi.org/10.1109/tits.2021.3083957" target="_blank" style="word-break: break-all;">10.1109/tits.2021.3083957</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Machine Learning Techniques for Intelligent Transportation Systems-An overview</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icccnt51525.2021.9579970" target="_blank" style="word-break: break-all;">10.1109/icccnt51525.2021.9579970</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Indian Commodity Market Price Comparative Study of Forecasting Methods - A Case Study on Onion, Potato and Tomato</td>
+                        <td>Asian Journal of Research in Computer Science</td>
+                        <td><a href="https://doi.org/10.9734/ajrcos/2021/v12i430300" target="_blank" style="word-break: break-all;">10.9734/ajrcos/2021/v12i430300</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Artificial neural network for tilt compensation in yaw estimation</td>
+                        <td>Transactions of the Institute of Measurement and Control</td>
+                        <td><a href="https://doi.org/10.1177/01423312231214832" target="_blank" style="word-break: break-all;">10.1177/01423312231214832</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A Traffic Flow Data Quality Repair Model Based on Spatiotemporal Correlation</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2024.3439998" target="_blank" style="word-break: break-all;">10.1109/access.2024.3439998</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Analysis of Traffic Flow Congestion by Integrating Supervised Machine Learning with K-mean Clustering</td>
+                        <td>SN Computer Science</td>
+                        <td><a href="https://doi.org/10.1007/s42979-025-03761-4" target="_blank" style="word-break: break-all;">10.1007/s42979-025-03761-4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>TRAFFIC VOLUMES PREDICTION USING BIG DATA ANALYTICS METHODS</td>
+                        <td>International Journal for Traffic and Transport Engineering</td>
+                        <td><a href="https://doi.org/10.7708/ijtte.2021.11(2).01" target="_blank" style="word-break: break-all;">10.7708/ijtte.2021.11(2).01</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Artificial Intelligence-Enabled and Period-Aware Forecasting COVID-19 Spread</td>
+                        <td>Ingénierie des systèmes d information</td>
+                        <td><a href="https://doi.org/10.18280/isi.260105" target="_blank" style="word-break: break-all;">10.18280/isi.260105</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>A Comparison of Artificial Intelligence-Based Methods in Traffic Prediction</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/iccsai53272.2021.9609739" target="_blank" style="word-break: break-all;">10.1109/iccsai53272.2021.9609739</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Extreme learning with Artifical Electric Field Algorithm (EL-AEFA) for estimation of Short-term Vehicular Traffic System</td>
+                        <td>2021 IEEE 8th Uttar Pradesh Section International Conference on Electrical, Electronics and Computer Engineering (UPCON)</td>
+                        <td><a href="https://doi.org/10.1109/upcon52273.2021.9667659" target="_blank" style="word-break: break-all;">10.1109/upcon52273.2021.9667659</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Dimensions management of traffic big data for short-term traffic prediction on suburban roadways</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-024-51988-7" target="_blank" style="word-break: break-all;">10.1038/s41598-024-51988-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>An Efficient Hardware Design for a Low-Latency Traffic Flow Prediction System Using an Online Neural Network</td>
+                        <td>Electronics</td>
+                        <td><a href="https://doi.org/10.3390/electronics10161875" target="_blank" style="word-break: break-all;">10.3390/electronics10161875</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Machine Learning for Ecological Sustainability</td>
+                        <td>Advances in human and social aspects of technology book series</td>
+                        <td><a href="https://doi.org/10.4018/978-1-6684-4045-2.ch001" target="_blank" style="word-break: break-all;">10.4018/978-1-6684-4045-2.ch001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Adaptive City Traffic Lights As Collective IoT Devices</td>
+                        <td>Studies in systems, decision and control</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-22938-1_48" target="_blank" style="word-break: break-all;">10.1007/978-3-031-22938-1_48</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Generating Synthetic Vehicle Speed Records Using LSTM</td>
+                        <td>IFIP advances in information and communication technology</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-34111-3_12" target="_blank" style="word-break: break-all;">10.1007/978-3-031-34111-3_12</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Machine-learning approach facilitates prediction of whitefly spatiotemporal dynamics in a plant canopy</td>
+                        <td>Journal of Economic Entomology</td>
+                        <td><a href="https://doi.org/10.1093/jee/toaf035" target="_blank" style="word-break: break-all;">10.1093/jee/toaf035</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Advancing Urban Planning with Deep Learning: Intelligent Traffic Flow Prediction and Optimization for Smart Cities</td>
+                        <td>Future Transportation</td>
+                        <td><a href="https://doi.org/10.3390/futuretransp5040133" target="_blank" style="word-break: break-all;">10.3390/futuretransp5040133</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Improving Map Matching of Floating Car Data with Artificial Intelligence Techniques</td>
+                        <td>Information</td>
+                        <td><a href="https://doi.org/10.3390/info13110508" target="_blank" style="word-break: break-all;">10.3390/info13110508</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Impact of traffic volume and composition on the change in the speed of traffic flow</td>
+                        <td>Transport technologies</td>
+                        <td><a href="https://doi.org/10.23939/tt2023.01.012" target="_blank" style="word-break: break-all;">10.23939/tt2023.01.012</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Derin Öğrenme Tabanlı Trafik Yoğunluğu Tahmini: İstanbul İçin Bir Vaka Çalışması</td>
+                        <td>Düzce Üniversitesi Bilim ve Teknoloji Dergisi</td>
+                        <td><a href="https://doi.org/10.29130/dubited.1139534" target="_blank" style="word-break: break-all;">10.29130/dubited.1139534</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Deep Learning for Traffic Data Mining</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/eict61409.2023.10427697" target="_blank" style="word-break: break-all;">10.1109/eict61409.2023.10427697</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Traffic Flow Forecasting for Road Projects Design in Burkina Faso</td>
+                        <td>Civil Engineering and Architecture</td>
+                        <td><a href="https://doi.org/10.13189/cea.2024.121335" target="_blank" style="word-break: break-all;">10.13189/cea.2024.121335</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Condition monitoring and warning of a belt drive system based on a logical analysis of data regression-based residual control chart</td>
+                        <td>Structural Health Monitoring</td>
+                        <td><a href="https://doi.org/10.1177/14759217241252046" target="_blank" style="word-break: break-all;">10.1177/14759217241252046</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Comparative Analysis of Machine Learning Algorithms in Traffic Mainstream Control on Freeway Networks</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/ines63318.2024.10629114" target="_blank" style="word-break: break-all;">10.1109/ines63318.2024.10629114</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>PREDICTING TRAFFIC CONGESTION DURING COVID19 USING HUMAN MOBILITY AND STREET-WASTE FEATURES</td>
+                        <td>ISPRS annals of the photogrammetry, remote sensing and spatial information sciences</td>
+                        <td><a href="https://doi.org/10.5194/isprs-annals-x-4-w3-2022-301-2022" target="_blank" style="word-break: break-all;">10.5194/isprs-annals-x-4-w3-2022-301-2022</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Traffic Prediction: A Comparison between the LSTM and Multi-Layer Perceptron Algorithm</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icicyta57421.2022.10038130" target="_blank" style="word-break: break-all;">10.1109/icicyta57421.2022.10038130</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Modeling Lane-Choice Behavior and Public Willingness to Pay for HOT Lanes: A Neural Network Approach</td>
+                        <td>Advances in science and technology</td>
+                        <td><a href="https://doi.org/10.4028/p-u1g3rh" target="_blank" style="word-break: break-all;">10.4028/p-u1g3rh</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Comparative analysis of existing security techniques in intelligent transportation system for smart cities</td>
+                        <td>AIP conference proceedings</td>
+                        <td><a href="https://doi.org/10.1063/5.0177444" target="_blank" style="word-break: break-all;">10.1063/5.0177444</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Analysis of different machine learning approaches in the context of urban mobility: a systematic review</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/la-cci58595.2023.10409391" target="_blank" style="word-break: break-all;">10.1109/la-cci58595.2023.10409391</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Vehicle Ethernet Flow Estimation Using Intelligent Methods</td>
+                        <td>Journal of Physics Conference Series</td>
+                        <td><a href="https://doi.org/10.1088/1742-6596/1754/1/012087" target="_blank" style="word-break: break-all;">10.1088/1742-6596/1754/1/012087</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Design Feature Assessment for Fused Deposition Modeling Using Supervised Machine Learning Algorithms</td>
+                        <td>Lecture notes in mechanical engineering</td>
+                        <td><a href="https://doi.org/10.1007/978-981-16-7059-6_20" target="_blank" style="word-break: break-all;">10.1007/978-981-16-7059-6_20</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Comparative Analysis of Classical Machine Learning and Deep Learning Approaches for Diabetic Peripheral Neuropathy Prediction</td>
+                        <td>Advances in intelligent systems and computing</td>
+                        <td><a href="https://doi.org/10.1007/978-981-16-5652-1_38" target="_blank" style="word-break: break-all;">10.1007/978-981-16-5652-1_38</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>AKILLI KAVŞAKLARDA TRAFİK HACMİ TAHMİNİ İÇİN MAKİNE ÖĞRENMESİ MODELLERİNİN KARŞILAŞTIRILMASI</td>
+                        <td>Gazi Journal of Engineering Sciences</td>
+                        <td><a href="https://doi.org/10.30855/gmbd.0705s14" target="_blank" style="word-break: break-all;">10.30855/gmbd.0705s14</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Road Traffic Flow Prediction with Visual Analytics</td>
+                        <td>Studies in computational intelligence</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-46549-9_10" target="_blank" style="word-break: break-all;">10.1007/978-3-031-46549-9_10</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Travel time prediction with machine learning: competition of linear regression, multivariate regression, random forest and deep neural network</td>
+                        <td>Journal of Geomatics Science and Technology</td>
+                        <td><a href="https://doi.org/10.61186/jgst.14.2.1" target="_blank" style="word-break: break-all;">10.61186/jgst.14.2.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Data-Driven Mobility System for Vehicular Communication: A Step Towards Transport Resilience in Intelligent Transport Systems</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2025.3579566" target="_blank" style="word-break: break-all;">10.1109/access.2025.3579566</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Artificial Intelligence Techniques and Discrete Event System Simulation in Optimal Management of Renewable Energy</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/eurocon64445.2025.11073265" target="_blank" style="word-break: break-all;">10.1109/eurocon64445.2025.11073265</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Sustainable Data Construction and CLS-DW Stacking for Traffic Flow Prediction in High-Altitude Plateau Regions</td>
+                        <td>Sustainability</td>
+                        <td><a href="https://doi.org/10.3390/su17167427" target="_blank" style="word-break: break-all;">10.3390/su17167427</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A Gaussian Temporal Based Graph Convolutional Network for Traffic Operation Flow Forecasting</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icccn65249.2025.11133757" target="_blank" style="word-break: break-all;">10.1109/icccn65249.2025.11133757</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Building a Traffic Database for Vehicle Detection: A YOLO-NAS-Based Approach</td>
+                        <td>Communications in computer and information science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-98290-3_7" target="_blank" style="word-break: break-all;">10.1007/978-3-031-98290-3_7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Artificial Intelligence and ChatGPT in Optimal Management of Battery Energy Storage Systems: Advantages and Challenges</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icoailo66760.2025.11156030" target="_blank" style="word-break: break-all;">10.1109/icoailo66760.2025.11156030</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Machine Learning Approaches for Traffic Prediction: A Comprehensive Study</td>
+                        <td>Algorithms for intelligent systems</td>
+                        <td><a href="https://doi.org/10.1007/978-981-96-7059-8_12" target="_blank" style="word-break: break-all;">10.1007/978-981-96-7059-8_12</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Willingness to pay for electric vehicle charging: A comparative study of machine learning and ordered logit models</td>
+                        <td>Asian Transport Studies</td>
+                        <td><a href="https://doi.org/10.1016/j.eastsj.2026.100179" target="_blank" style="word-break: break-all;">10.1016/j.eastsj.2026.100179</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+
+        <footer class="muted" style="text-align: right; margin-top: 2rem;">Generated on 2026-03-23T14:45:37+00:00</footer>
+    </div>
+
+    
+    <script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+    
+</body>
+</html>

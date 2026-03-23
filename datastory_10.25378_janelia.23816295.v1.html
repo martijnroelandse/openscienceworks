@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+
+
+
+    
+        
+        
+    
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DataStory - Drosophila GAL4 brain imagery</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print PDF Report
+    </button>
+    
+    <div class="page">
+        <header class="hero card">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="datastories-logo.png" alt="Logo"></div>
+                    <div>
+                        <h1 class="hero-title">Drosophila GAL4 brain imagery</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.25rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #faf5ff; color: #86198f; border: 1px solid #e9d5ff; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                                    Proven Reuse
+                                </span>
+                            
+
+                            
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> Meissner, Geoffrey, Nern, Aljoscha, Dorman, Zachary, DePasquale, Gina M, Forster, Kaitlyn, Gibney, Theresa, K Hausenfluck, Joanna, He, Yisheng, Iyer, Nirmala, Jeter, Jennifer, Johnson, Lauren, Johnston, Rebecca M, Lee, Kelley, Melton, Brian, Yarbrough, Brianna, Zugates, Christopher T, Clements, Jody, Goina, Cristian, Otsuna, Hideo, Rokicki, Konrad, Svirskas, Rob, Aso, Yoshinori, Card, Gwyneth M, Dickson, Barry J, Ehrhardt, Erica, Goldammer, Jens, Ito, Masayoshi, Kainmueller, Dagmar, Korff, Wyatt, Mais, Lisa, Minegishi, Ryo, Namiki, Shigehiro, Rubin, Gerald M., Sterne, Gabriella, Wolff, Tanya, Malkesman, Oz, FlyLight Project Team</div>
+                            <div><strong>Publisher:</strong> Figshare</div>
+                            <div><strong>Publication year:</strong> 2023</div>
+                            <div><strong>DOI:</strong> <a href="https://doi.org/10.25378/janelia.23816295.v1" target="_blank">10.25378/janelia.23816295.v1</a></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">This dataset on Drosophila GAL4 brain imagery, authored by a team from Janelia Research Campus, represents a valuable resource for research in neurobiology. Despite having no recorded views or downloads, it contributes to the ongoing exploration of brain structure and function in this model organism.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The dataset titled "Drosophila GAL4 brain imagery" is published on Figshare and is a notable output from researchers at the Janelia Research Campus. The work aligns with significant advancements in the study of neurobiology, specifically through the lens of Drosophila research, which is recognized for its contributions to understanding genetic and neural mechanisms. As a dataset, it serves as a foundational element for further studies, offering researchers a comprehensive resource for investigating neuronal pathways and connectivity.</p>
+<p class="story-text">This dataset, while currently lacking any views or downloads, is positioned to support future research projects that aim to leverage the detailed insights provided by the GAL4 system in Drosophila. The authors, including Geoffrey Meissner, Aljoscha Nern, Zachary Dorman, Gina M DePasquale, and Kaitlyn Forster, have collectively created a body of knowledge that could be crucial for those in the field of genetic neurobiology seeking to replicate or build upon their findings.</p>
+<p class="story-text">Despite the absence of online mentions or formal citations at this time, the data’s alignment with the research community's interests may foster future engagement. As researchers increasingly rely on open datasets like this one to validate and innovate their approaches, the potential for this imagery to be utilized in novel studies increases.</p>
+<p class="story-text">Overall, the Drosophila GAL4 brain imagery dataset represents a commitment to propelling research in neurobiology, even if it has yet to gain visibility through downloads or broader recognition. The solid backing from Janelia Research Campus underlines the institutional support for this area, promoting a culture of open science and availability of research outputs. Future efforts to circulate this dataset could enhance its impact in the academic and public domains alike.</p></div>
+        </section>
+        
+
+        <section class="card">
+            <h2><span>Impact metrics</span></h2>
+            <ul class="metric-list">
+                
+                    <li><strong>Citations (OpenAlex):</strong> 0</li>
+                    <li><strong>Online mentions (Crossref Event Data):</strong> 0</li>
+                
+                
+                
+                
+                <li><strong>Citation context (scite):</strong> 0</li>
+                
+                
+            </ul>
+        </section>
+
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access & Visibility</span> <span class="badge" style="background:#f0fdf4; color:#15803d; border:1px solid #bbf7d0;">DataCite</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.25378/janelia.23816295.v1" target="_blank">10.25378/janelia.23816295.v1</a></li>
+                    <li><strong>Resource Type:</strong> Dataset</li>
+                    <li><strong>Total Views:</strong> 0</li>
+                    <li><strong>Total Downloads:</strong> 0</li>
+                </ul>
+            </section>
+            
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>0</strong> recorded events globally
+                        
+                    </p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 0</li>
+                                <li><strong>Supporting:</strong> 0</li>
+                                <li><strong>Mentioning:</strong> 0</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite</span></h2>
+                            
+                            
+                                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Tracking downstream reuse and integration.</p>
+                                <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Reused in 1 related works:</h3>
+                                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom: 1rem;">
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">1 Associated Articles</span>
+                                    
+                                </div>
+                                
+                                
+                                    <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Known Links:</h3>
+                                    <div style="display:flex; flex-direction:column; gap:0.3rem; max-height: 150px; overflow-y: auto;">
+                                        
+                                            <a href="https://doi.org/10.7554/elife.80660" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">DataCite Associated Article &#8594;</a>
+                                        
+                                    </div>
+                                
+
+                            
+                        </section>
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+
+        
+        
+        <section class="card">
+            <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
+            <ul class="metric-list">
+                <li><strong>Total citing works (OpenAlex):</strong> 0 <span class="muted" style="font-weight:normal;">(Landscape analysis & tables limited to 1000 most recent works to optimize speed)</span></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </ul>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            <section class="card span-full" style="margin-bottom:0;">
+                <h2><span>Online mentions & activity</span> <span class="badge">Crossref Event Data</span></h2>
+                
+                <p class="muted">Not available.</p>
+            </section>
+        </div>
+
+        
+        
+            
+                
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>37 authors · 1 institution</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Meissner, Geoffrey</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Nern, Aljoscha</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Dorman, Zachary</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-9933-7217" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>DePasquale, Gina M</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Forster, Kaitlyn</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Gibney, Theresa</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>K Hausenfluck, Joanna</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>He, Yisheng</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Iyer, Nirmala</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-0202-4746" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Jeter, Jennifer</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Johnson, Lauren</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Johnston, Rebecca M</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Lee, Kelley</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Melton, Brian</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Yarbrough, Brianna</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Zugates, Christopher T</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-1882-3665" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Clements, Jody</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Goina, Cristian</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Otsuna, Hideo</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Rokicki, Konrad</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-2799-9833" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Svirskas, Rob</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Aso, Yoshinori</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Card, Gwyneth M</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Dickson, Barry J</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Ehrhardt, Erica</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-9252-1414" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Goldammer, Jens</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Ito, Masayoshi</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Kainmueller, Dagmar</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-9830-2415" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Korff, Wyatt</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Mais, Lisa</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Minegishi, Ryo</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-2895-9438" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Namiki, Shigehiro</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Rubin, Gerald M.</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-8762-8703" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Sterne, Gabriella</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Wolff, Tanya</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Malkesman, Oz</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>FlyLight Project Team</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                </ul>
+
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/013sk6x84" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Janelia Research Campus</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>24 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neuroscience</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neuron</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Artificial intelligence</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computational biology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Key (lock)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell type</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Light sheet fluorescence microscopy</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Bridge (graph theory)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Confocal</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Pattern recognition (psychology)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer vision</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Drosophila melanogaster</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Expression (computer science)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">High resolution</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Confocal microscopy</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Resolution (logic)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Nervous system</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Drosophila (subgenus)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Noise (video)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Photic Stimulation</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Central nervous system</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
+
+
+
+        
+        
+
+        <footer class="muted" style="text-align: right; margin-top: 2rem;">Generated on 2026-03-23T14:46:15+00:00</footer>
+    </div>
+
+    
+</body>
+</html>

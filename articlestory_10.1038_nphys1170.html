@@ -1,299 +1,481 @@
-
 <!DOCTYPE html>
+
+
+
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>ArticleStory – Measured measurement</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      margin: 0; padding: 0;
-      background: #f3f4f6; color: #111827;
-    }
-    .page {
-      max-width: 1000px;
-      margin: 2.5rem auto;
-      padding: 0 1.25rem 3rem;
-    }
-    header.hero { margin-bottom: 2rem; }
-    .hero-title {
-      font-size: 2.1rem; font-weight: 700; margin: 0; color: #111827;
-    }
-    .hero-meta { margin-top: 0.5rem; color: #4b5563; font-size: 0.95rem; }
-    .hero-meta div { margin-bottom: 0.15rem; }
-    .card {
-      background: #ffffff;
-      border-radius: 0.9rem;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-      padding: 1.5rem 1.75rem;
-      margin-bottom: 1.75rem;
-    }
-    .story-text-block {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .story-subheading {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin: 0.4rem 0 0.2rem;
-      color: #4b5563;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    .header-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.25rem;
-    }
-    .logo-title {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
-    .logo-wrap img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      display: block;
-    }
-
-    .card h2 {
-      margin-top: 0;
-      font-size: 1.1rem;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      color: #6b7280;
-    }
-    .card h2 span {
-      color: #111827;
-      font-weight: 600;
-      text-transform: none;
-      font-size: 1.25rem;
-      letter-spacing: 0;
-    }
-    .story-text { font-size: 0.98rem; line-height: 1.7; color: #111827; }
-    .toolbar { display:flex; justify-content:flex-end; margin-bottom:0.75rem; }
-    .download-btn {
-      border:none; border-radius:999px; padding:0.35rem 0.9rem;
-      font-size:0.8rem; cursor:pointer; background:#111827; color:#f9fafb;
-      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
-    }
-    .download-btn:hover { opacity: 0.9; }
-    .grid {
-      display:grid;
-      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
-      gap: 1.5rem;
-    }
-    @media (max-width: 800px) {
-      .grid { grid-template-columns: minmax(0,1fr); }
-    }
-    ul { padding-left: 1.2rem; margin: 0.4rem 0 0; }
-    li { margin-bottom: 0.5rem; font-size: 0.95rem; }
-    a { color:#2563eb; text-decoration:none; }
-    a:hover { text-decoration:underline; }
-    .scite-link {
-      font-size: 0.75rem;
-      color: #6b7280;
-    }
-    .scite-link:hover {
-      text-decoration: underline;
-      color: #4b5563;
-    }
-    a, li { word-break: break-word; overflow-wrap:anywhere; }
-    .tag {
-      display:inline-block;
-      padding:0.15rem 0.45rem;
-      border-radius:999px;
-      background:#e5f2ff;
-      color:#1d4ed8;
-      font-size:0.8rem;
-      margin:0.1rem 0.2rem 0.1rem 0;
-    }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      font-size: 0.85rem;
-      margin-top: 0.75rem;
-    }
-    th, td {
-      border: 1px solid #e5e7eb;
-      padding: 0.4rem 0.6rem;
-      vertical-align: top;
-    }
-    th {
-      background: #f9fafb;
-      text-align: left;
-      font-weight: 600;
-      color: #374151;
-    }
-    .badge {
-      display:inline-block;
-      padding:0.2rem 0.6rem;
-      border-radius:999px;
-      background:#eef2ff;
-      color:#4338ca;
-      font-size:0.75rem;
-      font-weight:500;
-    }
-    .orcid-badge {
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      margin-left:0.3rem;
-      padding:0.05rem 0.35rem;
-      border-radius:999px;
-      background:#a6ce39;
-      color:#ffffff;
-      font-size:0.65rem;
-      font-weight:600;
-      text-transform:uppercase;
-      letter-spacing:0.04em;
-    }
-    .muted { color:#6b7280; font-size:0.85rem; }
-    footer.page-footer {
-      margin-top: 2rem;
-      text-align: right;
-      font-size: 0.8rem;
-      color: #9ca3af;
-    }
-    @media print {
-      body { background:#ffffff; }
-      .page { margin:0; max-width:100%; box-shadow:none; }
-      .card { box-shadow:none; border-radius:0; page-break-inside:avoid; }
-      .toolbar { display:none; }
-    }
-  </style>
+    <meta charset="utf-8">
+    <title>ArticleStory - Measured measurement</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print PDF Report
+    </button>
+    
+    <div class="page">
+        <header class="hero card">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo"></div>
+                    <div>
+                        <h1 class="hero-title">Measured measurement</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.25rem; gap: 0.4rem;">
+                            
+                            
 
-<div class="toolbar">
-  <button class="download-btn" onclick="window.print()">Download as PDF</button>
-</div>
+                            
 
-<div class="page">
+                            
 
-<header class="hero">
-  <div class="header-bar">
-    <div class="logo-title">
-      <div class="logo-wrap">
-        <img src="articlestories-logo.png" alt="ArticleStories logo">
-      </div>
-      <div>
-        <h1 class="hero-title">Measured measurement</h1>
-        <div class="hero-meta">
-          <div><strong>Author(s):</strong> <a href="https://orcid.org/0000-0003-4499-7335" target="_blank" rel="noopener noreferrer">Markus Aspelmeyer<span class="orcid-badge" title="ORCID iD">iD</span></a></div>
-          <div><strong>Venue:</strong> Nature Physics</div>
-          <div><strong>Publication year:</strong> 2009</div>
-          <div><strong>DOI:</strong> <a href="https://doi.org/10.1038/nphys1170" target="_blank" rel="noopener noreferrer">10.1038/nphys1170</a></div>
-          <div class="muted">Schema: articlestory.v1</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
+                            
 
+                            
 
-<section class="card">
-  <h2><span>The story so far…</span></h2>
-<div class="story-text story-text-block"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">"Measured measurement," published in 2009 in Nature Physics by Markus Aspelmeyer, explores topics centered on quantum and statistical physics. The article has accrued 10 citations and has an unusual online presence with 108 Wikipedia mentions, reflecting notable interest from a public knowledge platform. The citing landscape reveals diverse venues including Chinese Physics B and Optics Communications, indicating the paper’s influence extends into various physics subfields.</p>
+                            
+                        </div>
 
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> Markus Aspelmeyer</div>
+                            <div><strong>Publisher:</strong> Nature Physics</div>
+                            <div><strong>Publication year:</strong> 2009</div>
+                            <div><strong>DOI:</strong> <a href="https://doi.org/10.1038/nphys1170" target="_blank">10.1038/nphys1170</a></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">Markus Aspelmeyer's work, published in Nature Physics, has garnered notable attention within the academic community, with 10 citations, reflecting its importance in the field.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">This article, "Measured measurement," appeared in the high-impact journal Nature Physics in 2009 and was authored by Markus Aspelmeyer from the Institute for Quantum Optics and Quantum Information Innsbruck. While the publisher's landing page and open access status are not available, the article’s DOI (10.1038/nphys1170) anchors it within a reputable publication venue. The relatively modest citation count of 10 shows limited but sustained scholarly attention over more than a decade.</p>
-<p class="story-text">The paper is positioned within core physics disciplines, as indicated by OpenAlex concept scores emphasizing general physics (0.89), quantum (0.52), and quantum tomography (0.49). Secondary concepts like quantum measurement (0.46) and statistical physics (0.33) further contextualize its focus, linking it closely to foundational quantum mechanics and measurement theory, which aligns with the author’s institutional expertise in quantum optics.</p>
-<p class="story-text">Citing works come exclusively from journal articles (10), with notable repeated citations from Chinese Physics B and Optics Communications (two each), demonstrating engagement in both quantum and applied optics communities. The citation timeline from 2009 through 2019 shows a steady citation pattern, while the citing countries—China (5), United States (4), Czech Republic (3), and the Netherlands (3)—suggest an international impact, including significant attention in Asia and North America.</p>
-<p class="story-text">Online attention for the article is strongly characterized by 108 mentions on Wikipedia, as reflected by Crossref Event Data. This level of presence in a widely accessed knowledge repository suggests the article’s concepts have permeated public or educational discourse, although there are no supporting or contradicting scite statements recorded (1 mention only), indicating a cautious citation environment without direct claim validation or dispute.</p>
-<p class="story-text">Open access availability and direct publisher landing page links are not available, limiting immediate accessibility for reuse or further dissemination via open channels. The absence of an identified best open-access full text may constrain broader uptake, especially outside institutions with subscription access to Nature Portfolio journals, potentially affecting the paper’s reach despite its conceptual relevance.</p>
-<p class="story-text">Future qualitative follow-up could utilize scite’s expanded citation context to analyze how the article’s findings are interpreted or debated in citing literature, although current data shows only one neutral mention and no supporting or contradicting statements. Such an analysis would further clarify the article's role in quantum physics discourse beyond its modest citation count and significant Wikipedia integration.</p></div>
-</section>
+<p class="story-text">The article "Measured measurement" by Markus Aspelmeyer, affiliated with the Institute for Quantum Optics and Quantum Information Innsbruck, has made a significant impact on the scientific landscape, indicated by its 10 citations across various scholarly venues. The work's reach is further highlighted by 108 online mentions, showcasing its resonance within both academic and public domains.</p>
 
-<section class="card">
-  <h2><span>Impact metrics</span></h2>
-  <ul>
-    <li><strong>Citations (OpenAlex):</strong> 10</li>
-    <li><strong>Online mentions (Crossref Event Data):</strong> 108</li>
-    <li><strong>Citation context (scite):</strong> 1 (<a href='https://scite.ai/reports/10.1038%2Fnphys1170' target='_blank' rel='noopener noreferrer'>scite</a>)</li>
-    <li><strong>Open access status:</strong> closed</li>
-    <li><strong>Publisher landing page:</strong> <a href='https://doi.org/10.1038/nphys1170' target='_blank'>https://doi.org/10.1038/nphys1170</a></li>
-    <li><strong>Best OA PDF:</strong> <span class='muted'>Not available</span></li>
-  </ul>
-</section>
+<p class="story-text">Published in Nature Physics, a leading journal in the field, Aspelmeyer's research has been cited by a diverse array of articles, demonstrating a cross-disciplinary interest. Notable citing venues include Optics Communications and Chinese Physics B, each contributing two citations. This indicates a robust engagement from researchers in related fields, underscoring the article's relevance and applicability across different scientific inquiries.</p>
+
+<p class="story-text">The geographic footprint of this work is also noteworthy, with significant citations stemming from countries such as China, the United States, and the Netherlands. This pattern reflects a global interest in the concepts presented in the publication, highlighting the international relevance of Aspelmeyer's contributions.</p>
+
+<p class="story-text">While there are no data repositories or clinical trials associated with this work, the lack of funding agencies also means that it stands independently as a significant scholarly article. The absence of Research Resource Identifiers and supporting metrics suggests a focused contribution to theoretical discussions, which can catalyze future research and exploration in quantum optics and measurement.</p></div>
+        </section>
+        
+
+        <section class="card">
+            <h2><span>Impact metrics</span></h2>
+            <ul class="metric-list">
+                
+                    <li><strong>Citations (OpenAlex):</strong> 10</li>
+                    <li><strong>Online mentions (Crossref Event Data):</strong> 108</li>
+                
+                
+                
+                
+                <li><strong>Citation context (scite):</strong> 1</li>
+                
+                
+            </ul>
+        </section>
+
+        
+        <section class="card">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.8rem;">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Active public discourse (0.95)</span>
+                
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1038/nphys1170" target="_blank">10.1038/nphys1170</a></li>
+                    <li><strong>OA status:</strong> Closed</li>
+                    
+                    <li><strong>Landing page:</strong> <a href="https://doi.org/10.1038/nphys1170" target="_blank" style="word-break: break-all;">https://doi.org/10.1038/nphys1170</a></li>
+                    
+                    
+                </ul>
+            </section>
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>108</strong> recorded events globally
+                        
+                    </p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 1</li>
+                                <li><strong>Supporting:</strong> 0</li>
+                                <li><strong>Mentioning:</strong> 1</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+
+        
+        
+        <section class="card">
+            <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
+            <ul class="metric-list">
+                <li><strong>Total citing works (OpenAlex):</strong> 10 <span class="muted" style="font-weight:normal;">(Landscape analysis & tables limited to 1000 most recent works to optimize speed)</span></li>
+                
+                
+                <li><strong>Top citing venues:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Optics Communications (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Chinese Physics B (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Frontiers of Physics (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Journal of Rheology (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">The European Physical Journal Special Topics (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Physica Scripta (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">International Journal of Theoretical Physics (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Physica E Low-dimensional Systems and Nanostructures (1)</span> </li>
+                
+                
+                
+                <li><strong>Citing work types:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (10)</span> </li>
+                
+                
+                
+                <li><strong>Top citing concepts:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Operator (biology) (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Physics (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Transformation (genetics) (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mesoscopic physics (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Fresnel integral (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Eigenvalues and eigenvectors (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">S transform (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Wavelet transform (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Quantum state (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Optics (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Tomography (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Icon (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Citation (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Quantum dynamics (1)</span> </li>
+                
+                
+                
+                <li><strong>Countries (from affiliations):</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">China (5)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">United States (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Netherlands (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Czechia (3)</span> </li>
+                
+                
+                
+                <li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+                    <strong>Citation timeline:</strong>
+                    <div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+                        <canvas id="citationChart" data-labels="[&#34;2009&#34;, &#34;2010&#34;, &#34;2011&#34;, &#34;2012&#34;, &#34;2016&#34;, &#34;2019&#34;]" data-values="[2, 1, 1, 4, 1, 1]"></canvas>
+                    </div>
+                </li>
+                
+            </ul>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            <section class="card span-full" style="margin-bottom:0;">
+                <h2><span>Online mentions & activity</span> <span class="badge">Crossref Event Data</span></h2>
+                
+                
+                    
+                    
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        Detailed breakdown of the <strong>108</strong> recorded events for this work.
+                    </p>
+                    
+                    <ul style="list-style:none; padding-left:0; margin-bottom:1.5rem;">
+                        
+                        
+                        
+                        
+                        
+                            
+                                
+                                
+                                
+                            
+                        
+                    </ul>
+                    
+                    <h3 style="margin-top:0;">Selected examples</h3>
+                    <ul style="list-style:none; padding-left:0;">
+                        
+                        
+                        
+                        <li style="margin-bottom:1.2rem;">
+                            <div style="margin-bottom:0.4rem;">
+                                <span class="tag" style="background:#e5f2ff; color:#1d4ed8; margin:0;">Wikipedia</span>
+                            </div>
+                            <a href="https://www.mediawiki.org/w/index.php?title=Extension:WikiSEO&oldid=4478969" target="_blank" style="word-break: break-word; font-weight:500; text-decoration:none; color:#2563eb; display:block; margin-bottom:0.2rem; line-height:1.4;">
+                                Extension:WikiSEO
+                            </a>
+                            <span class="muted"></span>
+                        </li>
+                        
+                    </ul>
+                
+            </section>
+        </div>
+
+        
+        
+            
+                
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 author · 1 institution</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Markus Aspelmeyer</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-4499-7335" target="_blank">ORCID</a>
+                    </li>
+                    
+                </ul>
+
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/056hzt889" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Institute for Quantum Optics and Quantum Information Innsbruck</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>10 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Physics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Quantum</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Quantum tomography</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Suite</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Quantum measurement</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Statistical physics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Quantum mechanics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Quantum state</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">History</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Archaeology</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
 
 
-    <section class="card">
-      <h2><span>Inferred roles</span></h2>
-      <p class="muted">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
-      <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-        <span class='tag'>Scholarly uptake (0.30)</span>
-      </div>
-    </section>
+
+        
+        
+        <section class="card no-print">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>Displaying 10 most recent citing works</div>
+            <div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+                <table>
+                    <thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2012</td>
+                        <td>Correspondence between quantum-optical transform and classical-optical transform explored by developing Dirac’s symbolic method</td>
+                        <td>Frontiers of Physics</td>
+                        <td><a href="https://doi.org/10.1007/s11467-011-0206-z" target="_blank" style="word-break: break-all;">10.1007/s11467-011-0206-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2009</td>
+                        <td>Optical Fresnel transformation and quantum tomography</td>
+                        <td>Optics Communications</td>
+                        <td><a href="https://doi.org/10.1016/j.optcom.2009.06.031" target="_blank" style="word-break: break-all;">10.1016/j.optcom.2009.06.031</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>A small-gap effective-temperature model of transient shear band formation during flow</td>
+                        <td>Journal of Rheology</td>
+                        <td><a href="https://doi.org/10.1122/1.4960514" target="_blank" style="word-break: break-all;">10.1122/1.4960514</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Non-equilibrium dynamics: quantum systems and foundations of quantum mechanics</td>
+                        <td>The European Physical Journal Special Topics</td>
+                        <td><a href="https://doi.org/10.1140/epjst/e2019-900018-7" target="_blank" style="word-break: break-all;">10.1140/epjst/e2019-900018-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2011</td>
+                        <td>A new theorem relating quantum tomogram to the Fresnel operator</td>
+                        <td>Chinese Physics B</td>
+                        <td><a href="https://doi.org/10.1088/1674-1056/20/6/060303" target="_blank" style="word-break: break-all;">10.1088/1674-1056/20/6/060303</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2012</td>
+                        <td>Physics at the FQMT'11 conference</td>
+                        <td>Physica Scripta</td>
+                        <td><a href="https://doi.org/10.1088/0031-8949/2012/t151/014001" target="_blank" style="word-break: break-all;">10.1088/0031-8949/2012/t151/014001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2010</td>
+                        <td>On the Radon transformation of Wigner function altered with various optical processes</td>
+                        <td>Optics Communications</td>
+                        <td><a href="https://doi.org/10.1016/j.optcom.2010.04.043" target="_blank" style="word-break: break-all;">10.1016/j.optcom.2010.04.043</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2012</td>
+                        <td>Tomography Theory for the Tripartite Entangled System</td>
+                        <td>International Journal of Theoretical Physics</td>
+                        <td><a href="https://doi.org/10.1007/s10773-012-1141-7" target="_blank" style="word-break: break-all;">10.1007/s10773-012-1141-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2012</td>
+                        <td>New theorem relating two-mode entangled tomography to two-mode Fresnel operator</td>
+                        <td>Chinese Physics B</td>
+                        <td><a href="https://doi.org/10.1088/1674-1056/21/1/010302" target="_blank" style="word-break: break-all;">10.1088/1674-1056/21/1/010302</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2009</td>
+                        <td>Physics at the FMQT’08 conference</td>
+                        <td>Physica E Low-dimensional Systems and Nanostructures</td>
+                        <td><a href="https://doi.org/10.1016/j.physe.2009.11.064" target="_blank" style="word-break: break-all;">10.1016/j.physe.2009.11.064</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+
+        <footer class="muted" style="text-align: right; margin-top: 2rem;">Generated on 2026-03-23T14:44:29+00:00</footer>
+    </div>
+
     
-    <section class="card">
-      <h2><span>Citation context</span> <span class="badge">scite</span></h2>
-      <ul><li><strong>Total:</strong> 1</li><li><strong>Supporting:</strong> 0</li><li><strong>Mentioning:</strong> 1</li><li><strong>Contradicting:</strong> 0</li></ul>
-    </section>
+    <script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
     
-    <section class="card">
-      <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
-      <ul>
-        <li><strong>Total citing works captured:</strong> 10</li><li><strong>Top citing venues:</strong> <span class='tag'>Chinese Physics B (2)</span> <span class='tag'>Optics Communications (2)</span> <span class='tag'>The European Physical Journal Special Topics (1)</span> <span class='tag'>Journal of Rheology (1)</span> <span class='tag'>Physica Scripta (1)</span> <span class='tag'>International Journal of Theoretical Physics (1)</span> <span class='tag'>Frontiers of Physics (1)</span> <span class='tag'>Physica E Low-dimensional Systems and Nanostructures (1)</span></li><li><strong>Citing work types:</strong> <span class='tag'>article (10)</span></li><li><strong>Top citing concepts:</strong> <span class='tag'>Physics (3)</span> <span class='tag'>Operator (biology) (3)</span> <span class='tag'>Mesoscopic physics (2)</span> <span class='tag'>Eigenvalues and eigenvectors (2)</span> <span class='tag'>Fresnel integral (2)</span> <span class='tag'>Transformation (genetics) (2)</span> <span class='tag'>Quantum dynamics (1)</span> <span class='tag'>Quantum (1)</span> <span class='tag'>Icon (1)</span> <span class='tag'>Citation (1)</span></li><li><strong>Countries (from affiliations):</strong> <span class='tag'>CN (5)</span> <span class='tag'>US (4)</span> <span class='tag'>CZ (3)</span> <span class='tag'>NL (3)</span></li><li><strong>Citation timeline (by year):</strong> 2009: 2, 2010: 1, 2011: 1, 2012: 4, 2016: 1, 2019: 1</li>
-      </ul>
-    </section>
-    
-
-<div class="grid">
-  <section class="card">
-    <h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
-    <ul><li><span class='tag'>Physics</span></li>
-<li><span class='tag'>Quantum</span></li>
-<li><span class='tag'>Quantum tomography</span></li>
-<li><span class='tag'>Suite</span></li>
-<li><span class='tag'>Quantum measurement</span></li>
-<li><span class='tag'>Statistical physics</span></li>
-<li><span class='tag'>Quantum mechanics</span></li>
-<li><span class='tag'>Quantum state</span></li>
-<li><span class='tag'>History</span></li>
-<li><span class='tag'>Archaeology</span></li></ul>
-  </section>
-
-  <section class="card">
-    <h2><span>Access</span></h2>
-    <ul>
-      <li><strong>OA status:</strong> closed</li>
-      <li><strong>Landing page:</strong> <a href='https://doi.org/10.1038/nphys1170' target='_blank'>https://doi.org/10.1038/nphys1170</a></li>
-      <li><strong>Best OA PDF:</strong> <span class='muted'>Not available</span></li>
-    </ul>
-  </section>
-</div>
-
-<section class="card">
-  <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
-  <table>
-    <thead>
-      <tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>2019</td><td>Non-equilibrium dynamics: quantum systems and foundations of quantum mechanics</td><td>The European Physical Journal Special Topics</td><td><a href="https://doi.org/10.1140/epjst/e2019-900018-7" target="_blank" rel="noopener noreferrer">10.1140/epjst/e2019-900018-7</a>&nbsp;<a href="https://scite.ai/reports/10.1140/epjst/e2019-900018-7" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2016</td><td>A small-gap effective-temperature model of transient shear band formation during flow</td><td>Journal of Rheology</td><td><a href="https://doi.org/10.1122/1.4960514" target="_blank" rel="noopener noreferrer">10.1122/1.4960514</a>&nbsp;<a href="https://scite.ai/reports/10.1122/1.4960514" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2012</td><td>Physics at the FQMT&#x27;11 conference</td><td>Physica Scripta</td><td><a href="https://doi.org/10.1088/0031-8949/2012/t151/014001" target="_blank" rel="noopener noreferrer">10.1088/0031-8949/2012/t151/014001</a>&nbsp;<a href="https://scite.ai/reports/10.1088/0031-8949/2012/t151/014001" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2012</td><td>Tomography Theory for the Tripartite Entangled System</td><td>International Journal of Theoretical Physics</td><td><a href="https://doi.org/10.1007/s10773-012-1141-7" target="_blank" rel="noopener noreferrer">10.1007/s10773-012-1141-7</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s10773-012-1141-7" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2012</td><td>Correspondence between quantum-optical transform and classical-optical transform explored by developing Dirac’s symbolic method</td><td>Frontiers of Physics</td><td><a href="https://doi.org/10.1007/s11467-011-0206-z" target="_blank" rel="noopener noreferrer">10.1007/s11467-011-0206-z</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s11467-011-0206-z" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2012</td><td>New theorem relating two-mode entangled tomography to two-mode Fresnel operator</td><td>Chinese Physics B</td><td><a href="https://doi.org/10.1088/1674-1056/21/1/010302" target="_blank" rel="noopener noreferrer">10.1088/1674-1056/21/1/010302</a>&nbsp;<a href="https://scite.ai/reports/10.1088/1674-1056/21/1/010302" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2011</td><td>A new theorem relating quantum tomogram to the Fresnel operator</td><td>Chinese Physics B</td><td><a href="https://doi.org/10.1088/1674-1056/20/6/060303" target="_blank" rel="noopener noreferrer">10.1088/1674-1056/20/6/060303</a>&nbsp;<a href="https://scite.ai/reports/10.1088/1674-1056/20/6/060303" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2010</td><td>On the Radon transformation of Wigner function altered with various optical processes</td><td>Optics Communications</td><td><a href="https://doi.org/10.1016/j.optcom.2010.04.043" target="_blank" rel="noopener noreferrer">10.1016/j.optcom.2010.04.043</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.optcom.2010.04.043" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2009</td><td>Physics at the FMQT’08 conference</td><td>Physica E Low-dimensional Systems and Nanostructures</td><td><a href="https://doi.org/10.1016/j.physe.2009.11.064" target="_blank" rel="noopener noreferrer">10.1016/j.physe.2009.11.064</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.physe.2009.11.064" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2009</td><td>Optical Fresnel transformation and quantum tomography</td><td>Optics Communications</td><td><a href="https://doi.org/10.1016/j.optcom.2009.06.031" target="_blank" rel="noopener noreferrer">10.1016/j.optcom.2009.06.031</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.optcom.2009.06.031" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-    </tbody>
-  </table>
-</section>
-
-<footer class="page-footer">
-  Generated by BookStories on 2026-02-10T14:54:14+00:00 UTC
-</footer>
-
-</div>
 </body>
 </html>
