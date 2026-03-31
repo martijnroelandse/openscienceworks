@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>BookStory - European Perspectives for Public Administration</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print PDF Report
+    </button>
+    
+    <div class="page">
+        <header class="hero card">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="bookstories-logo.png" alt="Logo"></div>
+                    <div>
+                        <h1 class="hero-title">European Perspectives for Public Administration</h1>
+                        
+                            <div class="discipline-badge" style="background:#fef08a; color:#854d0e; border-color:#fde047; font-weight:600;">
+                                <svg style="width:14px; height:14px; display:inline; vertical-align:middle; margin-right:4px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                                Open Access (Hybrid)
+                            </div>
+                        
+                        <div class="discipline-badge">Stem</div>                        
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> Karré, Philip, Steen, Martijn, Schillemans, T.</div>
+                            <div><strong>Publisher:</strong> Leuven University Press</div>
+                            <div><strong>Publication year:</strong> 2019</div>
+                            <div><strong>DOI:</strong> <a href="https://doi.org/10.11116/9789461663078" target="_blank">10.11116/9789461663078</a></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="cover-wrap">
+                    
+                    <div style="width: 110px; height: 155px; background: #f3f4f6; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; text-align: center; color: #9ca3af; font-size: 0.85rem; font-weight: 500; border: 1px dashed #d1d5db; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05);">
+                        No Cover <br> Available
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </header>
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">Despite a lack of citations and online mentions, the book "European Perspectives for Public Administration" has secured commercial linkages, demonstrating its availability on platforms like Amazon and Goodreads, which indicates a level of public engagement and potential student interest.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">"European Perspectives for Public Administration," published by Leuven University Press in 2019, presents an analytical view of public administration within the European context. While the book has not generated citations or online discussions as of now, its presence on commercial platforms such as Amazon and Goodreads reflects its availability and potential uptake by readers interested in the field.</p>
+
+<p class="story-text">The lack of measurable online engagement, including Wikipedia mentions or social media discussions, presents an interesting contrast to many contemporary academic works that thrive on public discourse. However, the book's commercial linkage suggests that it may still be valued within academic surroundings, particularly as a resource for students and practitioners in public administration.</p>
+
+<p class="story-text">Despite the absence of open access indicators and high-fidelity community discourse, the book stands as an academic contribution to the field of public administration, and it indicates a significant effort in creating a narrative specific to European governance frameworks.</p>
+
+<p class="story-text">Overall, while "European Perspectives for Public Administration" may currently lack extensive impact metrics such as citations and community engagement, its commercial presence suggests that it serves as a notable academic resource. Future developments could enhance its visibility and facilitate broader discourse within the public administration community.</p></div>
+        </section>
+        
+
+        <section class="card">
+            <h2><span>Impact metrics</span></h2>
+            <ul class="metric-list">
+                
+                <li style="margin-bottom: 0.8rem;">
+                    <strong>Total Citations (OpenAlex):</strong> 
+                    
+                        8
+                    
+                    
+                    
+                    
+                                        
+                    
+                    
+                </li>
+                
+                <li style="margin-bottom: 0.8rem;">
+                    <strong>Total Online mentions (Crossref & Open Web):</strong> 0
+                    
+                    
+                </li>
+
+                
+                
+                
+                <li style="margin-bottom: 0.8rem;">
+                    <strong>Downloads (OAPEN / OPERAS):</strong> 6916
+                </li>
+                
+                
+                <li style="margin-bottom: 0.8rem;"><strong>Citation context (scite):</strong> 0</li>
+                
+                
+                
+            </ul>
+        </section>
+
+        
+        <section class="card">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.8rem;">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Commercial linkage (0.90)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scholarly uptake (0.45)</span>
+                
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2 style="margin-top:0;"><span>Access</span> <span class="badge" style="background:#f3f4f6; color:#4b5563;">Availability</span></h2>
+                <ul class="metric-list" style="line-height: 1.8;">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.11116/9789461663078" target="_blank" style="word-break: break-all;">https://doi.org/10.11116/9789461663078</a></li>
+                    
+                    <li><strong>OA status:</strong> 
+                        
+                            Hybrid
+                        
+                    </li>
+
+                    
+                        <li><strong>Landing page:</strong> <a href="https://chooser.crossref.org/?doi=10.11116%2F9789461663078" target="_blank" style="word-break: break-all;">https://chooser.crossref.org/?doi=10.11116%2F9789461663078</a></li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </section>
+
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>0</strong> recorded events globally
+                        
+                    </p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+                <ul class="metric-list">
+                    
+                    
+
+                    
+                    <li style="margin-bottom: 0.6rem;">
+                        <strong>Google Books:</strong> <a href="" target="_blank" style="color: #2563eb; text-decoration: none;">View listing ↗</a>
+                    </li>
+                    
+                    
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Commercial:</strong> 
+                        <a href="https://www.amazon.com/s?k=9789461663078" target="_blank" style="color: #2563eb; text-decoration: none;">Amazon</a>
+                         · 
+                        <a href="https://www.goodreads.com/search?q=9789461663078" target="_blank" style="color: #2563eb; text-decoration: none;">Goodreads</a>
+                    </li>
+                    
+                    
+                </ul>
+            </section>
+
+                <section class="card" style="margin-bottom:0;">
+                    <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                    
+                    <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                        <li><strong>Total:</strong> 0</li>
+                        <li><strong>Supporting:</strong> 0</li>
+                        <li><strong>Mentioning:</strong> 0</li>
+                        <li><strong>Contradicting:</strong> 0</li>
+                    </ul>
+                    
+                </section>
+
+            
+        </div>
+
+        
+        
+        <section class="card">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+                Analysis of the 8 most recent citing works. 
+                <br>
+                <strong>175.0%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>1.0</strong> times itself.
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 1.5rem;">
+                
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Belgium (3)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Norway (2)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Hungary (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Lithuania (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Russia (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">France (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">India (1)</span>
+                        
+                    </div>
+                    
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (7)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (3)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Other (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Company (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (1)</span>
+                        
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>European Corporate Governance Institute</strong> 
+                            
+                                <a href="https://ror.org/04egehb02" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of Oslo</strong> 
+                            
+                                <a href="https://ror.org/01xtthb56" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(2)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>KU Leuven</strong> 
+                            
+                                <a href="https://ror.org/05f950310" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(2)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of Bergen</strong> 
+                            
+                                <a href="https://ror.org/03zga2b32" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of Agder</strong> 
+                            
+                                <a href="https://ror.org/03x297z98" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of California, Berkeley</strong> 
+                            
+                                <a href="https://ror.org/01an7q238" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Financial Research (Hungary)</strong> 
+                            
+                                <a href="https://ror.org/00jf79q69" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>State Studies Foundation</strong> 
+                            
+                                <a href="https://ror.org/02wdjff78" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Financial University</strong> 
+                            
+                                <a href="https://ror.org/01hnrbb29" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Université de Versailles Saint-Quentin-en-Yvelines</strong> 
+                            
+                                <a href="https://ror.org/03mkjjy25" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Marleen Brans</strong> 
+                            
+                                <a href="https://orcid.org/0000-0003-0468-2929" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(2)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Tom Christensen</strong> 
+                            
+                                <a href="https://orcid.org/0000-0003-1441-9243" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Per Lægreid</strong> 
+                            
+                                <a href="https://orcid.org/0000-0001-5048-4275" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Kiflie Worku Angaw</strong> 
+                            
+                                <a href="https://orcid.org/0000-0001-7926-9210" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Bacha Kebede Debela</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-9447-8341" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Geert BOUCKAERT</strong> 
+                            
+                                <a href="https://openalex.org/A5015925494" target="_blank" class="orcid-badge">Profile</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Geert BOUCKAERT</strong> 
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Geert Bouckaert</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-0282-8106" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Jarle Trondal</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-6723-7761" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Viktorija Girinskienė</strong> 
+                            
+                                <a href="https://openalex.org/A5093371509" target="_blank" class="orcid-badge">Profile</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+                <ul class="metric-list">
+                    <li><strong>Citing work types:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (6)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (2)</span> 
+                        
+                    </li>
+                    <li><strong>Top citing venues:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">International Journal of Public Administration (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Journal of Public Affairs Education (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Transylvanian Review of Administrative Sciences (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">The British Journal of Politics and International Relations (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">European administrative governance (1)</span> 
+                        
+                    </li>
+                    <li><strong>Top citing concepts:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Public administration (4)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Administration (probate law) (3)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Political science (2)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Corporate governance (2)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Bureaucracy (2)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Politics (2)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Public sector (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Context (archaeology) (1)</span> 
+                        
+                    </li>
+                    
+                    <li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+                        <strong>Citation timeline:</strong>
+                        <div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+                            <canvas id="citationChart" 
+                                data-labels="[2019, 2022, 2023, 2024, 2025]" 
+                                data-values="[1, 1, 2, 1, 3]">
+                            </canvas>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+        </div>
+
+        
+        <section class="card">
+            <h2><span>Teaching, Practice & Library Adoption</span></h2>
+            <div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem;">
+                Evidence of structured teaching use, reading lists, and library availability.
+            </div>
+            
+            <div class="grid-2" style="align-items: start;">
+                
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        OpenCourseWare Mentions <span class="badge" style="float: right;">Google Custom Search</span>
+                    </h3>
+                    
+                        <ul style="padding-left: 0; list-style: none; margin: 0;">
+                            
+                            <li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                                    <a href="https://ocw.mit.edu/courses/11-235-analyzing-projects-and-organizations-fall-2009/pages/readings/" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;">
+                                        Readings | Analyzing Projects and Organizations
+                                    </a>
+                                    <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        ocw.mit.edu
+                                    </span>
+                                </div>
+                                <div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...This section provides the list readings assigned for each lecture session of the course along with notes from the professors on the readings...."
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        Library & Community Access <span class="badge" style="float: right; background: #f0fdf4; color: #166534;">Open Library</span>
+                    </h3>
+                    
+                    <ul class="metric-list" style="margin-top: 0;">
+                        
+                        
+                        
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Institutional Availability:</strong>
+                            <div style="margin-top: 0.4rem;">
+                                <a href="https://www.worldcat.org/search?q=bn:9789461663078" target="_blank" class="tag" style="background:#e5f2ff; color:#1d4ed8; font-weight: 600; text-decoration: none;">
+                                    Search Global Libraries (WorldCat) ↗
+                                </a>
+                            </div>
+                        </li>
+                        
+
+                        
+
+                        
+
+                        
+                        <li style="margin-top: 1.2rem; padding-top: 1rem; border-top: 1px dashed #e5e7eb;">
+                            <strong>Open Educational Resource (OER):</strong>
+                            <div style="margin-top: 0.5rem;">
+                                <a href="https://open.umn.edu/opentextbooks/textbooks/political-ideologies-and-worldviews-an-introduction" target="_blank" style="display: inline-flex; align-items: center; gap: 0.4rem; background:#f0fdf4; color:#166534; border: 1px solid #bbf7d0; padding: 0.3rem 0.6rem; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 0.85rem;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477-4.5 1.253"></path></svg>
+                                    View in Open Textbook Library ↗
+                                </a>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </section>
+        
+        
+        
+        
+            
+        
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>3 authors · 0 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Karré, Philip</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Steen, Martijn</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Schillemans, T.</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                </ul>
+
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>20 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Field (mathematics)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Administration (probate law)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Futures contract</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Political science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Public sector</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Public administration</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Public relations</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Focus (optics)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Futures studies</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Engineering ethics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Business</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Engineering</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Law</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Pure mathematics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Physics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Optics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Finance</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mathematics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Artificial intelligence</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
+        <section class="card">
+            <h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>2 financial grants and sponsors detected.</div>
+            
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Alexander von Humboldt Foundation</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(Thoth Verified)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>European Perspectives for Public Administration (EPPA)</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(Thoth Verified)</span>
+                    </span>
+                
+            </div>
+        </section>
+        
+
+
+        
+        <section class="card" id="operas-metrics-card">
+            <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
+            <div id="metrics-widget"></div>
+            <script type="application/json" id="operas-metrics-config">{"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "tab1", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN \u00b7 downloads", "works": ["info:doi:10.11116/9789461663078"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}}, "graphs": [{"id": "g1", "type": "line", "title": "Downloads over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}</script>
+            <script src="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js" async></script>
+        </section>
+
+
+
+        
+        
+        <section class="card no-print">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>Displaying 8 most recent citing works</div>
+            <div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+                <table>
+                    <thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Future Directions of Public Administration Research—Addressing Fundamental Issues and Questions</td>
+                        <td>International Journal of Public Administration</td>
+                        <td><a href="https://doi.org/10.1080/01900692.2025.2470006" target="_blank" style="word-break: break-all;">10.1080/01900692.2025.2470006</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Evaluating the impact of Public Administration programs on governance competencies in Ethiopia</td>
+                        <td>Journal of Public Affairs Education</td>
+                        <td><a href="https://doi.org/10.1080/15236803.2025.2457886" target="_blank" style="word-break: break-all;">10.1080/15236803.2025.2457886</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>From NPM to NWS in Europe</td>
+                        <td>Transylvanian Review of Administrative Sciences</td>
+                        <td><a href="https://doi.org/10.24193/tras.si2022.2" target="_blank" style="word-break: break-all;">10.24193/tras.si2022.2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>The politics of bureaucracy in the face of different legal futures</td>
+                        <td>The British Journal of Politics and International Relations</td>
+                        <td><a href="https://doi.org/10.1177/1369148119842026" target="_blank" style="word-break: break-all;">10.1177/1369148119842026</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>An Introduction to the Administrative State</td>
+                        <td>European administrative governance</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-28008-5_1" target="_blank" style="word-break: break-all;">10.1007/978-3-031-28008-5_1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Why should the civil service operate on the principle of a corporation?</td>
+                        <td>SHILAP Revista de lepidopterología</td>
+                        <td><a href="https://doi.org/10.56131/tmt.2023.2.2.184" target="_blank" style="word-break: break-all;">10.56131/tmt.2023.2.2.184</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Generation of Priority-Based Scenarios</td>
+                        <td>Green energy and technology</td>
+                        <td><a href="https://doi.org/10.1007/978-3-319-14702-4_2" target="_blank" style="word-break: break-all;">10.1007/978-3-319-14702-4_2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Bibliometric Study of Journals in Public Administration</td>
+                        <td>Hrvatska i komparativna javna uprava</td>
+                        <td><a href="https://doi.org/10.31297/hkju.25.2.2" target="_blank" style="word-break: break-all;">10.31297/hkju.25.2.2</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-03-31T12:23:24+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    
+    <script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+    
+    <script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+</body>
+</html>

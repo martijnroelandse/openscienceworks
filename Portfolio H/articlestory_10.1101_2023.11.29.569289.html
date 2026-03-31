@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ArticleStory - A fluorogenic complementation tool kit for interrogating lipid droplet-organelle interaction</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print PDF Report
+    </button>
+    
+    <div class="page">
+        <header class="hero card">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo"></div>
+                    <div>
+                        <h1 class="hero-title">A fluorogenic complementation tool kit for interrogating lipid droplet-organelle interaction</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                                <a href="https://doi.org/10.1083/jcb.202311126" target="_blank" style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Peer-Reviewed & Published ↗
+                                </a>
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> Xiao Li, Rico Gamuyao, Ming-Lun Wu, Woo Jung Cho, Nathan B. Kurtz, Sharon V. King, Rebecca A. Petersen, Daniel R. Stabley, Caleb Lindow, Leslie K. Climer, Abbas Shirinifard, Francesca Ferrara, Robert E. Throm, Camenzind G. Robinson, Alexandre F. Carisey, Alison G. Tebo, Chi‐Lun Chang</div>
+                            <div><strong>Publisher:</strong> bioRxiv (Cold Spring Harbor Laboratory)</div>
+                            <div><strong>Publication year:</strong> 2023</div>
+                            <div><strong>DOI:</strong> <a href="https://doi.org/10.1101/2023.11.29.569289" target="_blank">10.1101/2023.11.29.569289</a></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The research on a fluorogenic complementation toolkit for investigating lipid droplet-organelle interactions has garnered significant attention, with 25 citations since its posting on bioRxiv. This preprint has successfully transitioned to a formal publication in the Journal of Cell Biology, reflecting its influence in the field and its importance in understanding cellular dynamics.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">This study presents a novel fluorogenic complementation tool kit aimed at probing lipid droplet-organelle interactions, a critical aspect of cellular organization and function. Initially shared as a preprint on bioRxiv, the work has received 25 citations, indicative of its relevance and impact on current research. Following its successful peer review, it was formally published in the Journal of Cell Biology, where it has accumulated an additional 21 citations to date. This trajectory underscores the work's substantial reception within the academic community.</p>
+<p class="story-text">The authors are affiliated with esteemed institutions, including St. Jude Children's Research Hospital and the Howard Hughes Medical Institute, adding credibility to their research contributions. The geographical diversity of the top citing countries, which includes France, Italy, the United Kingdom, the United States, and Germany, reflects the broad international interest in the findings and methodologies presented in this research.</p>
+<p class="story-text">Moreover, this toolkit allows for innovative approaches in studying lipid droplets and their interactions with various organelles, potentially opening new avenues for understanding lipid metabolism and related cellular processes. The downstream reuse of this research materials exceeds 27 occurrences, showcasing its utility and impact in facilitating subsequent studies in this evolving field.</p>
+<p class="story-text">The formulation and early sharing of this preprint exemplify a commitment to open science, allowing the broader research community to engage with and build upon their findings prior to formal publication. This proactive approach fosters immediate community dialogue and enhances the overall scientific discourse surrounding lipid droplet research. The authors' work is crucial in driving forward the understanding of cellular mechanics in health and disease contexts.</p></div>
+        </section>
+        
+
+        <section class="card">
+            <h2><span>Impact metrics</span></h2>
+            <ul class="metric-list">
+                
+                <li style="margin-bottom: 0.8rem;">
+                    <strong>Total Citations (OpenAlex):</strong> 
+                    
+                        25
+                    
+                    
+                    
+                    
+                                        
+                    
+                    
+                </li>
+                
+                <li style="margin-bottom: 0.8rem;">
+                    <strong>Total Online mentions (Crossref & Open Web):</strong> 0
+                    
+                    
+                </li>
+
+                
+                
+                
+                
+                <li style="margin-bottom: 0.8rem;"><strong>Citation context (scite):</strong> 1</li>
+                
+                
+                
+            </ul>
+        </section>
+
+        
+        <section class="card">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.8rem;">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Active public discourse (0.86)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sustainability & policy relevance (0.55)</span>
+                
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1101/2023.11.29.569289" target="_blank">10.1101/2023.11.29.569289</a></li>
+                    <li><strong>OA status:</strong> Green</li>
+                    
+                    <li><strong>Landing page:</strong> <a href="https://doi.org/10.1101/2023.11.29.569289" target="_blank" style="word-break: break-all;">https://doi.org/10.1101/2023.11.29.569289</a></li>
+                    
+                    <li><strong>Best OA PDF:</strong> <a href="https://www.biorxiv.org/content/biorxiv/early/2023/11/29/2023.11.29.569289.full.pdf" target="_blank" style="word-break: break-all;">https://www.biorxiv.org/content/biorxiv/early/2023/11/29/2023.11.29.569289.full.pdf</a></li>
+                </ul>
+            </section>
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>0</strong> recorded events globally
+                        
+                    </p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 1</li>
+                                <li><strong>Supporting:</strong> 0</li>
+                                <li><strong>Mentioning:</strong> 1</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+        
+        <section class="card">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+                Analysis of the 25 most recent citing works. 
+                <br>
+                <strong>325.0%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>9.5</strong> times itself.
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 1.5rem;">
+                
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">France (3)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Italy (2)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (2)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (2)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Sweden (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Spain (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Switzerland (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Belgium (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">South Korea (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Arab Emirates (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">BI (1)</span>
+                        
+                    </div>
+                    
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (4)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (3)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (2)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Healthcare (2)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Other (2)</span>
+                        
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Centre National de la Recherche Scientifique</strong> 
+                            
+                                <a href="https://ror.org/02feahw73" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(2)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Sorbonne Université</strong> 
+                            
+                                <a href="https://ror.org/02en5vm52" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(2)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of Padua</strong> 
+                            
+                                <a href="https://ror.org/00240q980" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(2)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>National Research Council</strong> 
+                            
+                                <a href="https://ror.org/04zaypm56" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>European Institute of Oncology</strong> 
+                            
+                                <a href="https://ror.org/02vr0ne26" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>KTH Royal Institute of Technology</strong> 
+                            
+                                <a href="https://ror.org/026vcq606" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Karolinska Institutet</strong> 
+                            
+                                <a href="https://ror.org/056d84691" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>École Normale Supérieure - PSL</strong> 
+                            
+                                <a href="https://ror.org/05a0dhs15" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>VIB-KU Leuven Center for Cancer Biology</strong> 
+                            
+                                <a href="https://ror.org/00eyng893" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Università della Svizzera italiana</strong> 
+                            
+                                <a href="https://ror.org/03c4atk17" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Arnaud Gautier</strong> 
+                            
+                                <a href="https://orcid.org/0000-0003-1017-9879" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(2)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Paloma García Casas</strong> 
+                            
+                                <a href="https://openalex.org/A5009602762" target="_blank" class="orcid-badge">Profile</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Michela Rossini</strong> 
+                            
+                                <a href="https://orcid.org/0009-0008-9482-0371" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Linnéa Påvénius</strong> 
+                            
+                                <a href="https://orcid.org/0000-0001-6730-2458" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Mezida B. Saeed</strong> 
+                            
+                                <a href="https://orcid.org/0000-0003-1921-6015" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Nikita Arnst</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-7377-8601" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Sonia Sonda</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-7972-8728" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Tânia Fernandes</strong> 
+                            
+                                <a href="https://orcid.org/0000-0001-7872-2343" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Irene D’Arsiè</strong> 
+                            
+                                <a href="https://openalex.org/A5114599177" target="_blank" class="orcid-badge">Profile</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Matteo Bruzzone</strong> 
+                            
+                                <a href="https://orcid.org/0000-0001-7683-8107" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+                <ul class="metric-list">
+                    <li><strong>Citing work types:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (2)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (1)</span> 
+                        
+                    </li>
+                    <li><strong>Top citing venues:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nature Communications (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nature Reviews Molecular Cell Biology (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">PLoS Biology (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">bioRxiv (1)</span> 
+                        
+                    </li>
+                    <li><strong>Top citing concepts:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Dynamics (music) (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Membrane (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Biophysics (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Key (lock) (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Organelle (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Chemistry (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Biology (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Lamin (1)</span> 
+                        
+                    </li>
+                    
+                    <li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+                        <strong>Citation timeline:</strong>
+                        <div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+                            <canvas id="citationChart" 
+                                data-labels="[2024, 2025]" 
+                                data-values="[2, 2]">
+                            </canvas>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+        </div>
+
+        
+        
+        
+        
+            
+                
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>17 authors · 2 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Xiao Li</strong> 
+                        <span class="badge">First</span>
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-4187-1430" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Rico Gamuyao</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-0112-6428" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Ming-Lun Wu</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0009-0007-1836-272X" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Woo Jung Cho</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-9837-0840" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Nathan B. Kurtz</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Sharon V. King</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Rebecca A. Petersen</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-6960-2948" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Daniel R. Stabley</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-9187-6099" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Caleb Lindow</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0009-0001-9649-5671" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Leslie K. Climer</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-0236-1822" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Abbas Shirinifard</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-4517-6080" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Francesca Ferrara</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-4973-1520" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Robert E. Throm</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-9191-4742" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Camenzind G. Robinson</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-7277-692X" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Alexandre F. Carisey</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-1326-2205" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Alison G. Tebo</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-0788-5617" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Chi‐Lun Chang</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-0017-2243" target="_blank">ORCID</a>
+                    </li>
+                    
+                </ul>
+
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/02r3e0967" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">St. Jude Children's Research Hospital</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/006w34k90" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Howard Hughes Medical Institute</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>14 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Organelle</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Endoplasmic reticulum</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Lipid droplet</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Chemistry</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biogenesis</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biophysics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Membrane contact site</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell biology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biochemistry</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Membrane protein</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Membrane</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Gene</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Integral membrane protein</span>
+                    
+                    
+                </div>
+                
+                
+                <h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 targets detected.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Affordable and clean energy (0.72)</span>
+                    
+                </div>
+                
+            </section>
+        </div>
+
+        
+
+
+
+        
+        
+        <section class="card no-print">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>Displaying 4 most recent citing works</div>
+            <div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+                <table>
+                    <thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Simultaneous detection of membrane contact dynamics and associated Ca2+ signals by reversible chemogenetic reporters</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-024-52985-0" target="_blank" style="word-break: break-all;">10.1038/s41467-024-52985-0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Key challenges and recommendations for defining organelle membrane contact sites</td>
+                        <td>Nature Reviews Molecular Cell Biology</td>
+                        <td><a href="https://doi.org/10.1038/s41580-025-00864-x" target="_blank" style="word-break: break-all;">10.1038/s41580-025-00864-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Nondisruptive inducible labeling of ER-membrane contact sites using the Lamin B receptor</td>
+                        <td>PLoS Biology</td>
+                        <td><a href="https://doi.org/10.1371/journal.pbio.3003249" target="_blank" style="word-break: break-all;">10.1371/journal.pbio.3003249</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A tunable and versatile chemogenetic near infrared fluorescent reporter</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.04.05.588310" target="_blank" style="word-break: break-all;">10.1101/2024.04.05.588310</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-03-31T12:56:18+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    
+    <script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+    
+    <script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+</body>
+</html>

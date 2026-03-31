@@ -1,0 +1,2203 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ArticleStory - A searchable image resource of Drosophila GAL4 driver expression patterns with single neuron resolution</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print PDF Report
+    </button>
+    
+    <div class="page">
+        <header class="hero card">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo"></div>
+                    <div>
+                        <h1 class="hero-title">A searchable image resource of Drosophila GAL4 driver expression patterns with single neuron resolution</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                                    Linked to Data
+                                </span>
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> Geoffrey W Meissner, Aljoscha Nern, Zachary Dorman, Gina M DePasquale, Kaitlyn Forster, Theresa V Gibney, Joanna H Hausenfluck, Yisheng He, Nirmala Iyer, Jennifer Jeter, Lauren Johnson, Rebecca M. Johnston, Kelley Lee, Brian Melton, Brianna Yarbrough, Christopher T Zugates, Jody Clements, Cristian Goina, Hideo Otsuna, Konrad Rokicki, Robert Svirskas, Yoshinori Aso, Gwyneth M Card, Barry J. Dickson, Erica Ehrhardt, Jens Goldammer, Masayoshi Ito, Dagmar Kainmueller, Wyatt Korff, Lisa Mais, Ryo Minegishi, Shigehiro Namiki, Gerald M. Rubin, Gabriella R Sterne, Tanya Wolff, Oz Malkesman, FlyLight Project Team</div>
+                            <div><strong>Publisher:</strong> eLife</div>
+                            <div><strong>Publication year:</strong> 2023</div>
+                            <div><strong>DOI:</strong> <a href="https://doi.org/10.7554/elife.80660" target="_blank">10.7554/elife.80660</a></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The dataset titled "A searchable image resource of Drosophila GAL4 driver expression patterns with single neuron resolution" has gained notable attention within the scientific community, as evidenced by its 126 citations, predominantly from reputable journals like eLife and bioRxiv. This work exemplifies a robust commitment to technical reproducibility, highlighted by the inclusion of 17 Research Resource Identifiers (RRIDs), ensuring that its findings can be reliably replicated in future studies.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">This dataset, developed by researchers from the Howard Hughes Medical Institute, focuses on the GAL4 driver expression patterns in Drosophila, providing a vital resource for genetic studies within neuroscience. The dataset’s comprehensive nature and single-neuron resolution are critical for advancing our understanding of Drosophila neural circuitry. With 126 citations recorded on OpenAlex, the dataset has been embraced within various scholarly discussions, particularly in key venues such as eLife and bioRxiv, underscoring its relevance in current biological research.</p>
+<p class="story-text">An important aspect of this scholarly output is the strong commitment to technical reproducibility, as demonstrated by the presence of 17 Research Resource Identifiers (RRIDs), which allow other researchers to easily reference and access the resources used in the study. Such identifiers are crucial for maintaining rigor in experimental science and enhance the overall reliability of findings in subsequent work.</p>
+<p class="story-text">Moreover, the dataset demonstrates active scholarly engagement by being cited across various types of works, including articles and preprints, indicating that it is influencing the cutting edge of research in the field. The significant uptake of 129 instances of proven downstream reuse further illustrates its impact, as researchers are actively using this dataset to fuel new discoveries and advancements.</p>
+<p class="story-text">The development of this dataset has been supported by substantial funding from the NIH and the Howard Hughes Medical Institute, reflecting an institutional investment in the advancement of genetic and neuroscience research methodologies. This financial backing underscores the significance of the research area, highlighting its importance in broader scientific conversations. The ongoing interest in this dataset emphasizes its role as a foundational resource in the study of Drosophila and its neurogenetic implications.</p></div>
+        </section>
+        
+
+        <section class="card">
+            <h2><span>Impact metrics</span></h2>
+            <ul class="metric-list">
+                
+                <li style="margin-bottom: 0.8rem;">
+                    <strong>Total Citations (OpenAlex):</strong> 
+                    
+                        126
+                    
+                    
+                    
+                        <span class="badge" style="background: #fefce8; color: #b45309; border: 1px solid #fde68a; margin-left: 0.4rem;">
+                            🏆 Top 1% Cited
+                        </span>
+                    
+                    
+                                        
+                    
+                    
+                </li>
+                
+                <li style="margin-bottom: 0.8rem;">
+                    <strong>Total Online mentions (Crossref & Open Web):</strong> 2
+                    
+                    
+                </li>
+
+                
+                
+                
+                
+                <li style="margin-bottom: 0.8rem;"><strong>Citation context (scite):</strong> 98</li>
+                
+                
+                <li style="margin-bottom: 0.8rem;"><strong>Research Resource Identifiers (RRIDs):</strong> 17</li>
+                
+                
+            </ul>
+        </section>
+
+        
+        <section class="card">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.8rem;">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Active public discourse (0.92)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Methodological anchor (0.90)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Rapid uptake (0.86)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">High-visibility uptake (0.85)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scholarly uptake (0.78)</span>
+                
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.7554/elife.80660" target="_blank">10.7554/elife.80660</a></li>
+                    <li><strong>OA status:</strong> Gold</li>
+                    
+                    <li><strong>Landing page:</strong> <a href="https://doi.org/10.7554/elife.80660" target="_blank" style="word-break: break-all;">https://doi.org/10.7554/elife.80660</a></li>
+                    
+                    
+                </ul>
+            </section>
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>2</strong> recorded events globally
+                        
+                    </p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0; height: 100%;">
+                            <h2><span>Resource Identifiers</span> <span class="badge">Europe PMC</span></h2>
+                            <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;"><strong>17</strong> unique RRIDs detected.</p>
+                            
+                            <div style="max-height: 400px; overflow-y: auto;">
+                                
+                                
+                                    
+                                    
+                                        
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
+                                        
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+
+                                
+                                <div style="margin-top: 0.8rem;">
+                                    <h3 style="margin: 0 0 0.4rem; font-size: 0.95rem;">BDSC <span class="muted" style="font-weight:normal;">(8)</span></h3>
+                                    <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                                        <a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:BDSC_64085" target="_blank">RRID:BDSC_64085</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:BDSC_64086" target="_blank">RRID:BDSC_64086</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:BDSC_64088" target="_blank">RRID:BDSC_64088</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:BDSC_64089" target="_blank">RRID:BDSC_64089</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:BDSC_64090" target="_blank">RRID:BDSC_64090</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:BDSC_64091" target="_blank">RRID:BDSC_64091</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:BDSC_64087" target="_blank">RRID:BDSC_64087</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:BDSC_32185" target="_blank">RRID:BDSC_32185</a>
+                                    </div>
+                                </div>
+                                
+                                <div style="margin-top: 0.8rem;">
+                                    <h3 style="margin: 0 0 0.4rem; font-size: 0.95rem;">AB <span class="muted" style="font-weight:normal;">(9)</span></h3>
+                                    <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                                        <a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:AB_2314866" target="_blank">RRID:AB_2314866</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:AB_1549585" target="_blank">RRID:AB_1549585</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:AB_1625981" target="_blank">RRID:AB_1625981</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:AB_2687576" target="_blank">RRID:AB_2687576</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:AB_10893386" target="_blank">RRID:AB_10893386</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:AB_2340621" target="_blank">RRID:AB_2340621</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:AB_221569" target="_blank">RRID:AB_221569</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:AB_2576217" target="_blank">RRID:AB_2576217</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:AB_144696" target="_blank">RRID:AB_144696</a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite</span></h2>
+                            
+                            
+                                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Associated data repositories and clinical trials.</p>
+                                
+                                
+                                <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Data Repositories & Code</h3>
+                                <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom: 1rem; max-height: 250px; overflow-y: auto;">
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/JaneliaSciComp/workstation" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://doi.org/10.25378/janelia.23816295.v1" target="_blank">DataCite Dataset</a>
+                                            
+                                            
+                                                
+                                                
+                                                <a href="datastory_10.25378_janelia.23816295.v1.html" style="font-size: 0.75rem; color: #6b7280; text-decoration: underline; display: inline-flex; align-items: center; gap: 0.2rem;" title="Run 'python3 -m bookstories.cli 10.25378/janelia.23816295.v1' to generate this dashboard!">
+                                                    <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                                    View DataStory
+                                                </a>
+                                            
+                                        </div>
+                                    
+                                </div>
+                                
+
+                                
+                            
+                        </section>
+                    
+
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 98</li>
+                                <li><strong>Supporting:</strong> 0</li>
+                                <li><strong>Mentioning:</strong> 98</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+            
+        </div>
+
+        
+        
+        <section class="card">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+                Analysis of the 126 most recent citing works. 
+                <br>
+                <strong>184.1%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>4.0</strong> times itself.
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 1.5rem;">
+                
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (99)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (33)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (27)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Switzerland (13)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Australia (12)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Japan (10)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Israel (6)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Canada (5)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Portugal (5)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Spain (5)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">France (4)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">China (4)</span>
+                        
+                    </div>
+                    
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (102)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (78)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Healthcare (18)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Company (11)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (9)</span>
+                        
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Howard Hughes Medical Institute</strong> 
+                            
+                                <a href="https://ror.org/006w34k90" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(54)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Janelia Research Campus</strong> 
+                            
+                                <a href="https://ror.org/013sk6x84" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(52)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of Cambridge</strong> 
+                            
+                                <a href="https://ror.org/013meh722" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(21)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>MRC Laboratory of Molecular Biology</strong> 
+                            
+                                <a href="https://ror.org/00tw3jy02" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(20)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of Washington</strong> 
+                            
+                                <a href="https://ror.org/00cvxb145" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(18)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Columbia University</strong> 
+                            
+                                <a href="https://ror.org/00hj8s172" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(16)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Allen Institute for Brain Science</strong> 
+                            
+                                <a href="https://ror.org/00dcv1019" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(14)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of Cologne</strong> 
+                            
+                                <a href="https://ror.org/00rcxh774" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(13)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Harvard University</strong> 
+                            
+                                <a href="https://ror.org/03vek6s52" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(12)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Princeton University</strong> 
+                            
+                                <a href="https://ror.org/00hx57361" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(12)</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Gerald M. Rubin</strong> 
+                            
+                                <a href="https://orcid.org/0000-0001-8762-8703" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(28)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Aljoscha Nern</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-3822-489X" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(21)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Gregory S.X.E. Jefferis</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-0587-9355" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(19)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Gwyneth M Card</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-7679-3639" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(18)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Shigehiro Namiki</strong> 
+                            
+                                <a href="https://orcid.org/0000-0003-1559-799X" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(17)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Yoshinori Aso</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-2939-1688" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(17)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Katharina Eichler</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-7833-8621" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(15)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Gabriella R Sterne</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-7221-648X" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(15)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Marta Costa</strong> 
+                            
+                                <a href="https://orcid.org/0000-0001-5948-3092" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(14)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Han SJ Cheong</strong> 
+                            
+                                <a href="https://orcid.org/0000-0001-5233-3438" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(14)</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+                <ul class="metric-list">
+                    <li><strong>Citing work types:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (56)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (54)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (8)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">peer-review (5)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">editorial (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">letter (1)</span> 
+                        
+                    </li>
+                    <li><strong>Top citing venues:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">eLife (40)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">bioRxiv (34)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nature (11)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Proceedings of the National Academy of Sciences (4)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nature Communications (3)</span> 
+                        
+                    </li>
+                    <li><strong>Top citing concepts:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Neuroscience (59)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Biology (36)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Drosophila (subgenus) (32)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Computer science (20)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Connectome (17)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Drosophila melanogaster (16)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Sensory system (11)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Mushroom bodies (10)</span> 
+                        
+                    </li>
+                    
+                    <li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+                        <strong>Citation timeline:</strong>
+                        <div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+                            <canvas id="citationChart" 
+                                data-labels="[2020, 2022, 2023, 2024, 2025, 2026]" 
+                                data-values="[2, 2, 21, 51, 42, 8]">
+                            </canvas>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+            <section class="card span-full" style="margin-bottom:0;">
+                <h2><span>Online mentions & activity</span> <span class="badge">Crossref & Open Web</span></h2>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+                
+                
+                <h3 style="margin-top: 1.5rem; font-size: 1.1rem; color: #1f2937;">
+                    Community Engagement & Discourse
+                </h3>
+                
+                
+                
+                
+
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; border-bottom: 2px solid #e5e7eb; margin-bottom: 1.5rem; margin-top: 1rem;">
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    <button onclick="openSocialTab(event, 'soc-hyp')" class="soc-tab-btn soc-tab-active">
+                        Hypothesis <span style="background: #fce7f3; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.75rem; margin-left: 0.3rem;">1</span>
+                    </button>
+                    
+                </div>
+
+                <div style="position: relative; border-left: 2px solid #e2e8f0; padding-left: 1.5rem; margin-top: 1rem;">
+                    
+                    
+                    
+
+                    
+                    
+
+                    
+                    
+
+                    
+                    
+                    <div id="soc-hyp" class="soc-tab-content" style="display: block; animation: fadeIn 0.3s;">
+                        
+                        <div style="position: relative; margin-bottom: 1.5rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #db2777; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span class="badge" style="background: #fdf2f8; color: #9d174d; font-size: 0.65rem; text-transform: uppercase;">Expert Annotation</span>
+                                <span class="muted" style="font-size: 0.7rem;">2024-11-04</span>
+                            </div>
+                            <div style="font-size: 0.85rem; color: #334155; line-height: 1.5; border-left: 3px solid #fce7f3; padding-left: 0.75rem;">
+                                **Author response:**
+
+The following is the authors’ response to the original reviews.
+
+> **Public Reviews:**
+> 
+> **Reviewer #1 (Public Review):**
+> 
+> Summary:
+> 
+> The emergence of Drosophila EM connectomes has revealed numerous neurons within the ...
+                            </div>
+                            <a href="https://hyp.is/80lCUprKEe-aygO9qxw27w/www.biorxiv.org/content/10.1101/2023.09.15.557808v3" target="_blank" style="display: inline-block; margin-top: 0.4rem; font-size: 0.75rem; color: #9d174d; text-decoration: none; font-weight: 500;">View context on PDF ↗</a>
+                        </div>
+                        
+                    </div>
+                    
+
+                </div>
+                
+                
+                
+                
+                
+                <div class="muted" style="margin-top: 1.5rem; font-size: 0.8rem; text-align: center; border-top: 1px dashed #e5e7eb; padding-top: 0.8rem;">
+                    Displaying the 1 most detailed mentions. Other aggregated events lack public URLs.
+                </div>
+                
+                
+            </section>
+            
+        </div>
+
+        
+        
+        
+        
+            
+                
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>37 authors · 1 institution</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Geoffrey W Meissner</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-0369-9788" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Aljoscha Nern</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-3822-489X" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Zachary Dorman</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-9933-7217" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Gina M DePasquale</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Kaitlyn Forster</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Theresa V Gibney</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-5461-724X" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Joanna H Hausenfluck</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Yisheng He</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-4029-5494" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Nirmala Iyer</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-0202-4746" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Jennifer Jeter</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Lauren Johnson</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Rebecca M. Johnston</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Kelley Lee</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-3625-1915" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Brian Melton</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Brianna Yarbrough</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Christopher T Zugates</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-1882-3665" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Jody Clements</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-3932-8188" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Cristian Goina</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-2835-7602" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Hideo Otsuna</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-2107-8881" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Konrad Rokicki</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-2799-9833" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Robert Svirskas</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-8374-6008" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Yoshinori Aso</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-2939-1688" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Gwyneth M Card</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-7679-3639" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Barry J. Dickson</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-0715-892X" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Erica Ehrhardt</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-9252-1414" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Jens Goldammer</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-5623-8339" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Masayoshi Ito</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-5624-5918" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Dagmar Kainmueller</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-9830-2415" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Wyatt Korff</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-8396-1533" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Lisa Mais</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-9281-2668" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Ryo Minegishi</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-2895-9438" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Shigehiro Namiki</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-1559-799X" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Gerald M. Rubin</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-8762-8703" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Gabriella R Sterne</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-7221-648X" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Tanya Wolff</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-8681-1749" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Oz Malkesman</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-2219-7476" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>FlyLight Project Team</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                </ul>
+
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/006w34k90" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Howard Hughes Medical Institute</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>17 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Key (lock)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Drosophila (subgenus)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Resource (disambiguation)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neuron</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computational biology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Expression (computer science)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neuroscience</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Drosophila melanogaster</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell biology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Artificial intelligence</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Genetics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Gene</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer security</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer network</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Programming language</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
+        <section class="card">
+            <h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>2 financial grants and sponsors detected.</div>
+            
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(P40 OD018537)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Howard Hughes Medical Institute</strong> 
+                        
+                    </span>
+                
+            </div>
+        </section>
+        
+
+
+
+        
+        
+        <section class="card no-print">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>Displaying 126 most recent citing works</div>
+            <div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+                <table>
+                    <thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Neuronal wiring diagram of an adult brain</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/s41586-024-07558-y" target="_blank" style="word-break: break-all;">10.1038/s41586-024-07558-y</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>An unbiased template of the Drosophila brain and ventral nerve cord</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0236495" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0236495</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Connectomic reconstruction of a female Drosophila ventral nerve cord</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/s41586-024-07389-x" target="_blank" style="word-break: break-all;">10.1038/s41586-024-07389-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>The Drosophila Split Gal4 System for Neural Circuit Mapping</td>
+                        <td>Frontiers in Neural Circuits</td>
+                        <td><a href="https://doi.org/10.3389/fncir.2020.603397" target="_blank" style="word-break: break-all;">10.3389/fncir.2020.603397</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Synaptic connectome of the Drosophila circadian clock</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-024-54694-0" target="_blank" style="word-break: break-all;">10.1038/s41467-024-54694-0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>NeuronBridge: an intuitive web application for neuronal morphology search across large data sets</td>
+                        <td>BMC Bioinformatics</td>
+                        <td><a href="https://doi.org/10.1186/s12859-024-05732-7" target="_blank" style="word-break: break-all;">10.1186/s12859-024-05732-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Synaptic architecture of leg and wing premotor control networks in Drosophila</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/s41586-024-07600-z" target="_blank" style="word-break: break-all;">10.1038/s41586-024-07600-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Virtual Fly Brain—An interactive atlas of the Drosophila nervous system</td>
+                        <td>Frontiers in Physiology</td>
+                        <td><a href="https://doi.org/10.3389/fphys.2023.1076533" target="_blank" style="word-break: break-all;">10.3389/fphys.2023.1076533</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>BigNeuron: a resource to benchmark and predict performance of algorithms for automated tracing of neurons in light microscopy datasets</td>
+                        <td>Nature Methods</td>
+                        <td><a href="https://doi.org/10.1038/s41592-023-01848-5" target="_blank" style="word-break: break-all;">10.1038/s41592-023-01848-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Female reproductive dormancy in <i>Drosophila</i> is regulated by DH31-producing neurons projecting into the corpus allatum</td>
+                        <td>Development</td>
+                        <td><a href="https://doi.org/10.1242/dev.201186" target="_blank" style="word-break: break-all;">10.1242/dev.201186</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Connectome-driven neural inventory of a complete visual system</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/s41586-025-08746-0" target="_blank" style="word-break: break-all;">10.1038/s41586-025-08746-0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Transforming descending input into behavior: The organization of premotor circuits in the Drosophila Male Adult Nerve Cord connectome</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.96084.1" target="_blank" style="word-break: break-all;">10.7554/elife.96084.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Neural circuit mechanisms underlying context-specific halting in Drosophila</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/s41586-024-07854-7" target="_blank" style="word-break: break-all;">10.1038/s41586-024-07854-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Using single-cell RNA sequencing to generate predictive cell-type-specific split-GAL4 reagents throughout development</td>
+                        <td>Proceedings of the National Academy of Sciences</td>
+                        <td><a href="https://doi.org/10.1073/pnas.2307451120" target="_blank" style="word-break: break-all;">10.1073/pnas.2307451120</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>The fly connectome reveals a path to the effectome</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/s41586-024-07982-0" target="_blank" style="word-break: break-all;">10.1038/s41586-024-07982-0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Mating activates neuroendocrine pathways signaling hunger in Drosophila females</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.85117" target="_blank" style="word-break: break-all;">10.7554/elife.85117</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>New genetic tools for mushroom body output neurons in Drosophila</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.90523" target="_blank" style="word-break: break-all;">10.7554/elife.90523</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Comparative connectomics of Drosophila descending and ascending neurons</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/s41586-025-08925-z" target="_blank" style="word-break: break-all;">10.1038/s41586-025-08925-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Connectomic reconstruction predicts visual features used for navigation</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/s41586-024-07967-z" target="_blank" style="word-break: break-all;">10.1038/s41586-024-07967-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Social state alters vision using three circuit mechanisms in Drosophila</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/s41586-024-08255-6" target="_blank" style="word-break: break-all;">10.1038/s41586-024-08255-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Divergent neural circuits for proprioceptive and exteroceptive sensing of the Drosophila leg</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-025-59302-3" target="_blank" style="word-break: break-all;">10.1038/s41467-025-59302-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A split-GAL4 driver line resource for Drosophila neuron types</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.98405" target="_blank" style="word-break: break-all;">10.7554/elife.98405</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A split-GAL4 driver line resource for Drosophila neuron types</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.98405.3" target="_blank" style="word-break: break-all;">10.7554/elife.98405.3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>The dorsal fan-shaped body is a neurochemically heterogeneous sleep-regulating center in Drosophila</td>
+                        <td>PLoS Biology</td>
+                        <td><a href="https://doi.org/10.1371/journal.pbio.3003014" target="_blank" style="word-break: break-all;">10.1371/journal.pbio.3003014</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A brief history of insect neuropeptide and peptide hormone research</td>
+                        <td>Cell and Tissue Research</td>
+                        <td><a href="https://doi.org/10.1007/s00441-024-03936-0" target="_blank" style="word-break: break-all;">10.1007/s00441-024-03936-0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Transforming descending input into motor output: An analysis of the Drosophila Male Adult Nerve Cord connectome</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.96084" target="_blank" style="word-break: break-all;">10.7554/elife.96084</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A comprehensive neuroanatomical survey of the Drosophila Lobula Plate Tangential Neurons with predictions for their optic flow sensitivity</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.93659.1" target="_blank" style="word-break: break-all;">10.7554/elife.93659.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Dimensionality reduction simplifies synaptic partner matching in an olfactory circuit</td>
+                        <td>Science</td>
+                        <td><a href="https://doi.org/10.1126/science.ads7633" target="_blank" style="word-break: break-all;">10.1126/science.ads7633</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Driver lines for studying associative learning in Drosophila</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.94168" target="_blank" style="word-break: break-all;">10.7554/elife.94168</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>BIFROST: A method for registering diverse imaging datasets of the <i>Drosophila</i> brain</td>
+                        <td>Proceedings of the National Academy of Sciences</td>
+                        <td><a href="https://doi.org/10.1073/pnas.2322687121" target="_blank" style="word-break: break-all;">10.1073/pnas.2322687121</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>LarvaTagger: manual and automatic tagging of <i>Drosophila</i> larval behaviour</td>
+                        <td>Bioinformatics</td>
+                        <td><a href="https://doi.org/10.1093/bioinformatics/btae441" target="_blank" style="word-break: break-all;">10.1093/bioinformatics/btae441</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Cell type-specific driver lines targeting the Drosophila central complex and their use to investigate neuropeptide expression and sleep regulation</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.104764" target="_blank" style="word-break: break-all;">10.7554/elife.104764</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Cell type-specific driver lines targeting the Drosophila central complex and their use to investigate neuropeptide expression and sleep regulation</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.104764.3" target="_blank" style="word-break: break-all;">10.7554/elife.104764.3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Heterogeneity in the projections and excitability of tyraminergic/octopaminergic neurons that innervate the Drosophila reproductive tract</td>
+                        <td>Frontiers in Molecular Neuroscience</td>
+                        <td><a href="https://doi.org/10.3389/fnmol.2024.1374896" target="_blank" style="word-break: break-all;">10.3389/fnmol.2024.1374896</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Olfactory projection neuron rewiring in the brain of an ecological specialist</td>
+                        <td>Cell Reports</td>
+                        <td><a href="https://doi.org/10.1016/j.celrep.2025.115615" target="_blank" style="word-break: break-all;">10.1016/j.celrep.2025.115615</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Neural Control of Naturalistic Behavior Choices</td>
+                        <td>Annual Review of Neuroscience</td>
+                        <td><a href="https://doi.org/10.1146/annurev-neuro-111020-094019" target="_blank" style="word-break: break-all;">10.1146/annurev-neuro-111020-094019</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A split-GAL4 driver line resource for Drosophila CNS cell types</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.98405.1" target="_blank" style="word-break: break-all;">10.7554/elife.98405.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Selective presynaptic inhibition of leg proprioception in behaving Drosophila</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/s41586-025-09554-2" target="_blank" style="word-break: break-all;">10.1038/s41586-025-09554-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Driver lines for studying associative learning in Drosophila</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.94168.4" target="_blank" style="word-break: break-all;">10.7554/elife.94168.4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Cell type-specific driver lines targeting the Drosophila central complex and their use to investigate neuropeptide expression and sleep regulation</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.104764.2" target="_blank" style="word-break: break-all;">10.7554/elife.104764.2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>The Drosophila adult brain: short overview of structure, function, and resources Graphical Review Paper</td>
+                        <td>Current Research in Insect Science</td>
+                        <td><a href="https://doi.org/10.1016/j.cris.2025.100113" target="_blank" style="word-break: break-all;">10.1016/j.cris.2025.100113</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A cell type in the visual system that receives feedback about limb movement</td>
+                        <td>Current Biology</td>
+                        <td><a href="https://doi.org/10.1016/j.cub.2025.06.055" target="_blank" style="word-break: break-all;">10.1016/j.cub.2025.06.055</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Molecular characterization of gustatory second-order neurons reveals integrative mechanisms of gustatory and metabolic information</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.100947" target="_blank" style="word-break: break-all;">10.7554/elife.100947</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>On analogies in vertebrate and insect visual systems</td>
+                        <td>Nature reviews. Neuroscience</td>
+                        <td><a href="https://doi.org/10.1038/s41583-025-00932-3" target="_blank" style="word-break: break-all;">10.1038/s41583-025-00932-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Neuronal calcium spikes enable vector inversion in the Drosophila brain</td>
+                        <td>Cell</td>
+                        <td><a href="https://doi.org/10.1016/j.cell.2025.11.040" target="_blank" style="word-break: break-all;">10.1016/j.cell.2025.11.040</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>A neural connectivity atlas for fly flight control</td>
+                        <td>Current Biology</td>
+                        <td><a href="https://doi.org/10.1016/j.cub.2025.12.024" target="_blank" style="word-break: break-all;">10.1016/j.cub.2025.12.024</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Are we missing a trick by not exploiting fruit flies in inflammation-led drug discovery for neurodegeneration?</td>
+                        <td>Expert Opinion on Drug Discovery</td>
+                        <td><a href="https://doi.org/10.1080/17460441.2025.2498675" target="_blank" style="word-break: break-all;">10.1080/17460441.2025.2498675</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Proprioceptive limit detectors contribute to sensorimotor control of the Drosophila leg</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-026-69333-z" target="_blank" style="word-break: break-all;">10.1038/s41467-026-69333-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Dissecting neuron-specific functions of circadian genes using modified cell-specific CRISPR approaches</td>
+                        <td>Proceedings of the National Academy of Sciences</td>
+                        <td><a href="https://doi.org/10.1073/pnas.2303779120" target="_blank" style="word-break: break-all;">10.1073/pnas.2303779120</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Investigation of epilepsy-related genes in a Drosophila model</td>
+                        <td>Neural Regeneration Research</td>
+                        <td><a href="https://doi.org/10.4103/nrr.nrr-d-24-00877" target="_blank" style="word-break: break-all;">10.4103/nrr.nrr-d-24-00877</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Columnar cholinergic neurotransmission onto T5 cells of Drosophila</td>
+                        <td>Current Biology</td>
+                        <td><a href="https://doi.org/10.1016/j.cub.2025.02.004" target="_blank" style="word-break: break-all;">10.1016/j.cub.2025.02.004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>New genetic tools for mushroom body output neurons in Drosophila</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.90523.3" target="_blank" style="word-break: break-all;">10.7554/elife.90523.3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Driver lines for studying associative learning in Drosophila</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.94168.1" target="_blank" style="word-break: break-all;">10.7554/elife.94168.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>The self as part of the sensory ecology: how behavior affects sensation from the inside out</td>
+                        <td>Current Opinion in Insect Science</td>
+                        <td><a href="https://doi.org/10.1016/j.cois.2023.101053" target="_blank" style="word-break: break-all;">10.1016/j.cois.2023.101053</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A comprehensive neuroanatomical survey of the Drosophila Lobula Plate Tangential Neurons with predictions for their optic flow sensitivity</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.93659" target="_blank" style="word-break: break-all;">10.7554/elife.93659</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>New genetic tools for mushroom body output neurons in Drosophila</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.90523.1" target="_blank" style="word-break: break-all;">10.7554/elife.90523.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>FISBe: A Real-World Benchmark Dataset for Instance Segmentation of Long-Range thin Filamentous Structures</td>
+                        <td>MDC Repository (Max-Delbrueck-Center for Molecular Medicine)</td>
+                        <td><a href="https://doi.org/10.1109/cvpr52733.2024.02100" target="_blank" style="word-break: break-all;">10.1109/cvpr52733.2024.02100</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Single-cell type analysis of wing premotor circuits in the ventral nerve cord of Drosophila melanogaster</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.106548.1" target="_blank" style="word-break: break-all;">10.7554/elife.106548.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Transforming descending input into motor output: An analysis of the Drosophila Male Adult Nerve Cord connectome</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.96084.2" target="_blank" style="word-break: break-all;">10.7554/elife.96084.2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Driver lines for studying associative learning in Drosophila</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.94168.2" target="_blank" style="word-break: break-all;">10.7554/elife.94168.2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Molecular characterization of gustatory second-order neurons reveals integrative mechanisms of gustatory and metabolic information</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.100947.1" target="_blank" style="word-break: break-all;">10.7554/elife.100947.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Single-cell type analysis of wing premotor circuits in the ventral nerve cord of Drosophila melanogaster</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.106548" target="_blank" style="word-break: break-all;">10.7554/elife.106548</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Neuronal wiring diagram of an adult brain</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.06.27.546656" target="_blank" style="word-break: break-all;">10.1101/2023.06.27.546656</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Metrics reloaded: Recommendations for image analysis validation</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2206.01653" target="_blank" style="word-break: break-all;">10.48550/arxiv.2206.01653</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Transforming descending input into motor output: An analysis of the <i>Drosophila</i> Male Adult Nerve Cord connectome</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.06.07.543976" target="_blank" style="word-break: break-all;">10.1101/2023.06.07.543976</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Connectome-driven neural inventory of a complete visual system</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.04.16.589741" target="_blank" style="word-break: break-all;">10.1101/2024.04.16.589741</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Presynaptic inhibition selectively suppresses leg proprioception in behaving <i>Drosophila</i></td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.10.20.563322" target="_blank" style="word-break: break-all;">10.1101/2023.10.20.563322</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Tools for connectomic reconstruction and analysis of a female <i>Drosophila</i> ventral nerve cord</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2022.12.15.520299" target="_blank" style="word-break: break-all;">10.1101/2022.12.15.520299</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Comparative connectomics of the descending and ascending neurons of the <i>Drosophila</i> nervous system: stereotypy and sexual dimorphism</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.06.04.596633" target="_blank" style="word-break: break-all;">10.1101/2024.06.04.596633</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Synaptic connectome of the <i>Drosophila</i> circadian clock</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.09.11.557222" target="_blank" style="word-break: break-all;">10.1101/2023.09.11.557222</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A central steering circuit in <i>Drosophila</i></td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.06.27.601106" target="_blank" style="word-break: break-all;">10.1101/2024.06.27.601106</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Driver lines for studying associative learning in Drosophila</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.09.15.557808" target="_blank" style="word-break: break-all;">10.1101/2023.09.15.557808</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A comprehensive neuroanatomical survey of the <i>Drosophila</i> Lobula Plate Tangential Neurons with predictions for their optic flow sensitivity</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.10.16.562634" target="_blank" style="word-break: break-all;">10.1101/2023.10.16.562634</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Social state gates vision using three circuit mechanisms in <i>Drosophila</i></td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.03.15.585289" target="_blank" style="word-break: break-all;">10.1101/2024.03.15.585289</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Using single-cell RNA sequencing to generate cell-type-specific split-GAL4 reagents throughout development</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.02.03.527019" target="_blank" style="word-break: break-all;">10.1101/2023.02.03.527019</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A split-GAL4 driver line resource for <i>Drosophila</i> neuron types</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.01.09.574419" target="_blank" style="word-break: break-all;">10.1101/2024.01.09.574419</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>What do the mushroom bodies do for the insect brain? Twenty-five years of progress</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/lm.053827.123" target="_blank" style="word-break: break-all;">10.1101/lm.053827.123</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Cell type-specific driver lines targeting the <i>Drosophila</i> central complex and their use to investigate neuropeptide expression and sleep regulation</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.10.21.619448" target="_blank" style="word-break: break-all;">10.1101/2024.10.21.619448</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Divergent neural circuits for proprioceptive and exteroceptive sensing of the <i>Drosophila</i> leg</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.04.23.590808" target="_blank" style="word-break: break-all;">10.1101/2024.04.23.590808</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Centralized brain networks underlie body part coordination during grooming</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.12.17.628844" target="_blank" style="word-break: break-all;">10.1101/2024.12.17.628844</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Neural circuit mechanisms underlying context-specific halting in <i>Drosophila</i></td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.09.25.559438" target="_blank" style="word-break: break-all;">10.1101/2023.09.25.559438</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Neuronal calcium spikes enable vector inversion in the <i>Drosophila</i> brain</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.11.24.568537" target="_blank" style="word-break: break-all;">10.1101/2023.11.24.568537</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Neural connectivity of a computational map for fly flight control</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.05.29.656834" target="_blank" style="word-break: break-all;">10.1101/2025.05.29.656834</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>New genetic tools for mushroom body output neurons in Drosophila</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.06.23.546330" target="_blank" style="word-break: break-all;">10.1101/2023.06.23.546330</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>From connectome to effectome: learning the causal interaction map of the fly brain</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.10.31.564922" target="_blank" style="word-break: break-all;">10.1101/2023.10.31.564922</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>The dorsal fan-shaped body is a neurochemically heterogeneous sleep-regulating center in <i>Drosophila</i></td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.04.10.588925" target="_blank" style="word-break: break-all;">10.1101/2024.04.10.588925</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>eLife Assessment: A split-GAL4 driver line resource for Drosophila CNS cell types</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.98405.1.sa4" target="_blank" style="word-break: break-all;">10.7554/elife.98405.1.sa4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>An updated catalogue of split-GAL4 driver lines for descending neurons in <i>Drosophila melanogaster</i></td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.02.22.639679" target="_blank" style="word-break: break-all;">10.1101/2025.02.22.639679</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Developmental Genetic and Molecular Analysis of<i>Drosophila</i>Central Complex Lineages</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/pdb.top108429" target="_blank" style="word-break: break-all;">10.1101/pdb.top108429</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Specialized parallel pathways for adaptive control of visual object pursuit</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.04.23.650240" target="_blank" style="word-break: break-all;">10.1101/2025.04.23.650240</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Olfactory projection neuron rewiring in the brain of an ecological specialist</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.07.26.605288" target="_blank" style="word-break: break-all;">10.1101/2024.07.26.605288</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Dimensionality reduction simplifies synaptic partner matching in an olfactory circuit</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.08.27.609939" target="_blank" style="word-break: break-all;">10.1101/2024.08.27.609939</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Networks of sexually dimorphic neurons that regulate social behaviors in <i>Drosophila</i></td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.10.21.683766" target="_blank" style="word-break: break-all;">10.1101/2025.10.21.683766</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Author response: A split-GAL4 driver line resource for Drosophila CNS cell types</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.98405.1.sa0" target="_blank" style="word-break: break-all;">10.7554/elife.98405.1.sa0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Peripheral anatomy and central connectivity of proprioceptive sensory neurons in the <i>Drosophila</i> wing</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.05.29.656810" target="_blank" style="word-break: break-all;">10.1101/2025.05.29.656810</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Toward building a library of cell type–specific drivers across developmental stages</td>
+                        <td>Proceedings of the National Academy of Sciences</td>
+                        <td><a href="https://doi.org/10.1073/pnas.2312196120" target="_blank" style="word-break: break-all;">10.1073/pnas.2312196120</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>New genetic tools for mushroom body output neurons in Drosophila</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.90523.2" target="_blank" style="word-break: break-all;">10.7554/elife.90523.2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Pre-Pulse Inhibition of an escape response in adult fruit fly, Drosophila melanogaster</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-3853873/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-3853873/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Molecular characterization of gustatory second-order neurons reveals integrative mechanisms of gustatory and metabolic information</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.06.17.598832" target="_blank" style="word-break: break-all;">10.1101/2024.06.17.598832</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Reviewer #2 (Public Review): A split-GAL4 driver line resource for Drosophila CNS cell types</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.98405.1.sa2" target="_blank" style="word-break: break-all;">10.7554/elife.98405.1.sa2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Reviewer #1 (Public Review): A split-GAL4 driver line resource for Drosophila CNS cell types</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.98405.1.sa3" target="_blank" style="word-break: break-all;">10.7554/elife.98405.1.sa3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Reviewer #3 (Public Review): A split-GAL4 driver line resource for Drosophila CNS cell types</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.98405.1.sa1" target="_blank" style="word-break: break-all;">10.7554/elife.98405.1.sa1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Columnar cholinergic neurotransmission onto T5 cells of <i>Drosophila</i></td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.08.28.610055" target="_blank" style="word-break: break-all;">10.1101/2024.08.28.610055</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Experimental approaches to hormones and behavior: Invertebrates</td>
+                        <td>Elsevier eBooks</td>
+                        <td><a href="https://doi.org/10.1016/b978-0-443-29068-8.00064-7" target="_blank" style="word-break: break-all;">10.1016/b978-0-443-29068-8.00064-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A split-GAL4 driver line resource for Drosophila neuron types</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.98405.2" target="_blank" style="word-break: break-all;">10.7554/elife.98405.2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Driver lines for studying associative learning in Drosophila</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.94168.3" target="_blank" style="word-break: break-all;">10.7554/elife.94168.3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Cell type-specific driver lines targeting the Drosophila central complex and their use to investigate neuropeptide expression and sleep regulation</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.104764.1" target="_blank" style="word-break: break-all;">10.7554/elife.104764.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A toolkit for seeing how the fly brain’s visual system works</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/d41586-025-00885-8" target="_blank" style="word-break: break-all;">10.1038/d41586-025-00885-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Molecular characterization of gustatory second-order neurons reveals integrative mechanisms of gustatory and metabolic information</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.100947.2" target="_blank" style="word-break: break-all;">10.7554/elife.100947.2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Molecular characterization of gustatory second-order neurons reveals integrative mechanisms of gustatory and metabolic information</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.100947.3" target="_blank" style="word-break: break-all;">10.7554/elife.100947.3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>The TRP-channel <i>painless</i> mediates substrate stiffness sensing in the legs during <i>Drosophila</i> oviposition</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.08.18.670869" target="_blank" style="word-break: break-all;">10.1101/2025.08.18.670869</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>An essential experimental control for functional connectivity mapping with optogenetics</td>
+                        <td>Genetics</td>
+                        <td><a href="https://doi.org/10.1093/genetics/iyaf174" target="_blank" style="word-break: break-all;">10.1093/genetics/iyaf174</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Peripheral anatomy and central connectivity of proprioceptive sensory neurons in the Drosophila wing</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.107867" target="_blank" style="word-break: break-all;">10.7554/elife.107867</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Peripheral anatomy and central connectivity of proprioceptive sensory neurons in the Drosophila wing</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.107867.1" target="_blank" style="word-break: break-all;">10.7554/elife.107867.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>An updated catalogue of split-GAL4 driver lines for descending neurons in Drosophila melanogaster</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.107450" target="_blank" style="word-break: break-all;">10.7554/elife.107450</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>An updated catalogue of split-GAL4 driver lines for descending neurons in Drosophila melanogaster</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.107450.1" target="_blank" style="word-break: break-all;">10.7554/elife.107450.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Neural control of coordinated wing and leg movements during a terrestrial threat display</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.10.25.684556" target="_blank" style="word-break: break-all;">10.1101/2025.10.25.684556</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>How neural feedback enables flexible visual processing in Drosophila</td>
+                        <td>Trends in Neurosciences</td>
+                        <td><a href="https://doi.org/10.1016/j.tins.2025.10.012" target="_blank" style="word-break: break-all;">10.1016/j.tins.2025.10.012</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A new system for studying neuronal remodeling and its relation to behavior in Drosophila</td>
+                        <td>Communications Biology</td>
+                        <td><a href="https://doi.org/10.1038/s42003-025-09344-6" target="_blank" style="word-break: break-all;">10.1038/s42003-025-09344-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>The TRP-channel painless mediates substrate stiffness sensing in the legs during Drosophila oviposition</td>
+                        <td>PLoS Genetics</td>
+                        <td><a href="https://doi.org/10.1371/journal.pgen.1011980" target="_blank" style="word-break: break-all;">10.1371/journal.pgen.1011980</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>A dedicated brain circuit controls forward walking in <i>Drosophila</i></td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.01.04.697356" target="_blank" style="word-break: break-all;">10.64898/2026.01.04.697356</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Pre-Pulse Inhibition of an escape response in adult fruit fly, Drosophila melanogaster</td>
+                        <td>Translational Psychiatry</td>
+                        <td><a href="https://doi.org/10.1038/s41398-025-03717-5" target="_blank" style="word-break: break-all;">10.1038/s41398-025-03717-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Peripheral anatomy and central connectivity of proprioceptive sensory neurons in the Drosophila wing</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.107867.2" target="_blank" style="word-break: break-all;">10.7554/elife.107867.2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Specialized parallel pathways for adaptive control of visual object pursuit</td>
+                        <td>Neuron</td>
+                        <td><a href="https://doi.org/10.1016/j.neuron.2026.01.001" target="_blank" style="word-break: break-all;">10.1016/j.neuron.2026.01.001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>ShineGAL4 drivers for tissue and cell-type specific optogenetics in <i>Drosophila</i></td>
+                        <td>Development</td>
+                        <td><a href="https://doi.org/10.1242/dev.204981" target="_blank" style="word-break: break-all;">10.1242/dev.204981</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Peripheral anatomy and central connectivity of proprioceptive sensory neurons in the Drosophila wing</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.107867.3" target="_blank" style="word-break: break-all;">10.7554/elife.107867.3</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-03-31T13:43:39+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    
+    <script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+    
+    <script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+</body>
+</html>

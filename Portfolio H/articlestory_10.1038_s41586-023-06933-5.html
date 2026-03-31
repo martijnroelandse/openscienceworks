@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ArticleStory - Template and target-site recognition by human LINE-1 in retrotransposition</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print PDF Report
+    </button>
+    
+    <div class="page">
+        <header class="hero card">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo"></div>
+                    <div>
+                        <h1 class="hero-title">Template and target-site recognition by human LINE-1 in retrotransposition</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    Methodologically Supported
+                                </span>
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> Akanksha Thawani, Alfredo Jose Florez Ariza, Eva Nogales, Kathleen Collins</div>
+                            <div><strong>Publisher:</strong> Nature</div>
+                            <div><strong>Publication year:</strong> 2023</div>
+                            <div><strong>DOI:</strong> <a href="https://doi.org/10.1038/s41586-023-06933-5" target="_blank">10.1038/s41586-023-06933-5</a></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The research titled "Template and target-site recognition by human LINE-1 in retrotransposition" has garnered significant academic attention, evidenced by 67 citations across diverse venues, including notable journals like Nature and Science. Backed financially by the NIGMS and NHLBI via NIH, the study demonstrates a robust contribution to the understanding of retrotransposition mechanisms.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The work of Akanksha Thawani, Alfredo Jose Florez Ariza, Eva Nogales, and Kathleen Collins, published in Nature, has quickly established itself within the academic community, amassing 67 citations according to OpenAlex. This reflects a strong interest in the processes of retrotransposition, particularly regarding the template and target-site recognition by human LINE-1 elements. Such recognition is vital for understanding genetic insertion mechanisms, which may have implications for genetic disorders and cancer biology.</p>
+<p class="story-text">The institutional support for this work is underscored by its affiliation with QB3, signifying a commitment to cutting-edge research in molecular biology and genomics. This collaborative environment likely fosters innovative research approaches, amplifying the study's impact and relevance. Furthermore, the geographical distribution of citations denotes a global engagement, with the highest proportions coming from the United States, the United Kingdom, and China, highlighting the research's broad appeal and significance across different scientific communities.</p>
+<p class="story-text">Financial investment in this research by prominent entities such as the NIGMS and NHLBI underlines the recognized importance of delineating retrotransposition mechanisms. This funding serves as a validation of the research field’s relevance, offering resources for undertaking complex biological investigations and refining the understanding of genetic elements that impact human health.</p>
+<p class="story-text">Lastly, the work has demonstrated proven downstream reuse with 72 instances of subsequent research benefiting from the data and conclusions presented. This showcases not only the foundational aspect of the findings but also the ongoing relevance of the study in influencing future research trajectories in the field. Such attributions speak to the significant scholarly discourse that is taking place in light of this research, establishing it as a noteworthy contribution to genetic studies.</p></div>
+        </section>
+        
+
+        <section class="card">
+            <h2><span>Impact metrics</span></h2>
+            <ul class="metric-list">
+                
+                <li style="margin-bottom: 0.8rem;">
+                    <strong>Total Citations (OpenAlex):</strong> 
+                    
+                        67
+                    
+                    
+                    
+                        <span class="badge" style="background: #fefce8; color: #b45309; border: 1px solid #fde68a; margin-left: 0.4rem;">
+                            🏆 Top 1% Cited
+                        </span>
+                    
+                    
+                                        
+                    
+                    
+                </li>
+                
+                <li style="margin-bottom: 0.8rem;">
+                    <strong>Total Online mentions (Crossref & Open Web):</strong> 5
+                    
+                    
+                </li>
+
+                
+                
+                
+                
+                <li style="margin-bottom: 0.8rem;"><strong>Citation context (scite):</strong> 61</li>
+                
+                
+                
+            </ul>
+        </section>
+
+        
+        <section class="card">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.8rem;">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Active public discourse (0.95)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">High-visibility uptake (0.85)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scholarly uptake (0.72)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sustainability & policy relevance (0.55)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Rapid uptake (0.45)</span>
+                
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1038/s41586-023-06933-5" target="_blank">10.1038/s41586-023-06933-5</a></li>
+                    <li><strong>OA status:</strong> Hybrid</li>
+                    
+                    <li><strong>Landing page:</strong> <a href="https://doi.org/10.1038/s41586-023-06933-5" target="_blank" style="word-break: break-all;">https://doi.org/10.1038/s41586-023-06933-5</a></li>
+                    
+                    
+                </ul>
+            </section>
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>5</strong> recorded events globally
+                        
+                    </p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 61</li>
+                                <li><strong>Supporting:</strong> 6</li>
+                                <li><strong>Mentioning:</strong> 54</li>
+                                <li><strong>Contradicting:</strong> 1</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+        
+        <section class="card">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+                Analysis of the 67 most recent citing works. 
+                <br>
+                <strong>68.3%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>3.0</strong> times itself.
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 1.5rem;">
+                
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (43)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (8)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">China (8)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">France (5)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Spain (5)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (4)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Canada (3)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Australia (3)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Russia (3)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">India (2)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Italy (2)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Japan (1)</span>
+                        
+                    </div>
+                    
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (53)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (28)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (22)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Healthcare (14)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Government (12)</span>
+                        
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Harvard University</strong> 
+                            
+                                <a href="https://ror.org/03vek6s52" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(6)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Dana-Farber Cancer Institute</strong> 
+                            
+                                <a href="https://ror.org/02jzgtq86" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(6)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of California San Diego</strong> 
+                            
+                                <a href="https://ror.org/0168r3w48" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(5)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Broad Institute</strong> 
+                            
+                                <a href="https://ror.org/05a0ya142" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(5)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Marine Biological Laboratory</strong> 
+                            
+                                <a href="https://ror.org/046dg4z72" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(4)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Howard Hughes Medical Institute</strong> 
+                            
+                                <a href="https://ror.org/006w34k90" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(4)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of California, Berkeley</strong> 
+                            
+                                <a href="https://ror.org/01an7q238" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(4)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Lawrence Berkeley National Laboratory</strong> 
+                            
+                                <a href="https://ror.org/02jbv0t02" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>QB3</strong> 
+                            
+                                <a href="https://ror.org/04n1n3n22" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Inserm</strong> 
+                            
+                                <a href="https://ror.org/02vjkv261" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Kathleen H. Burns</strong> 
+                            
+                                <a href="https://orcid.org/0000-0003-1620-3761" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(5)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Kathleen Collins</strong> 
+                            
+                                <a href="https://orcid.org/0000-0003-3172-7088" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(4)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Akanksha Thawani</strong> 
+                            
+                                <a href="https://orcid.org/0000-0003-4168-128X" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Hongmiao Hu</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-3086-3072" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(2)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Ludmil B. Alexandrov</strong> 
+                            
+                                <a href="https://orcid.org/0000-0003-3596-4515" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(2)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>John M. Sedivy</strong> 
+                            
+                                <a href="https://orcid.org/0000-0001-9363-4253" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(2)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>G. Jogl</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-5465-5315" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(2)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Sumit Handa</strong> 
+                            
+                                <a href="https://openalex.org/A5021828457" target="_blank" class="orcid-badge">Profile</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(2)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Tapan Biswas</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-9460-1813" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(2)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Jeet Chakraborty</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-8444-4519" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(2)</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+                <ul class="metric-list">
+                    <li><strong>Citing work types:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (38)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (15)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (8)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">editorial (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (1)</span> 
+                        
+                    </li>
+                    <li><strong>Top citing venues:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">bioRxiv (14)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Science (5)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Chinese Medical Journal (2)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nature (2)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nature Communications (2)</span> 
+                        
+                    </li>
+                    <li><strong>Top citing concepts:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Biology (35)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Retrotransposon (26)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Reverse transcriptase (12)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Transposable element (9)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">DNA (5)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Genome (4)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">RNA (4)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Genetics (3)</span> 
+                        
+                    </li>
+                    
+                    <li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+                        <strong>Citation timeline:</strong>
+                        <div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+                            <canvas id="citationChart" 
+                                data-labels="[2022, 2023, 2024, 2025, 2026]" 
+                                data-values="[1, 1, 19, 33, 9]">
+                            </canvas>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+            <section class="card span-full" style="margin-bottom:0;">
+                <h2><span>Online mentions & activity</span> <span class="badge">Crossref & Open Web</span></h2>
+                
+                
+                
+                
+                
+                
+                
+                    
+                    
+                
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                        
+                    
+                
+                
+                
+                <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                    
+                    <li style="margin-bottom: 0.6rem;">
+                        <a href="http://www.natureasia.com/ja-jp/nature/highlights/124931" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 500;">
+                            構造生物学: ヒトLINE-1のレトロトランスポジションでの標的認識機構(Nature)
+                        </a>
+                        <span class="badge" style="background: #f3f4f6; color: #4b5563; font-size: 0.65rem; text-transform: uppercase; margin-left: 0.4rem;">newsfeed</span>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.6rem;">
+                        <a href="https://phys.org/news/2024-02-junk-dna-birds-key-safe.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 500;">
+                            Junk DNA in birds may hold key to safe, efficient gene therapy
+                        </a>
+                        <span class="badge" style="background: #f3f4f6; color: #4b5563; font-size: 0.65rem; text-transform: uppercase; margin-left: 0.4rem;">newsfeed</span>
+                    </li>
+                    
+                </ul>
+                
+
+                
+                
+                
+                
+                
+                
+                <div class="muted" style="margin-top: 1.5rem; font-size: 0.8rem; text-align: center; border-top: 1px dashed #e5e7eb; padding-top: 0.8rem;">
+                    Displaying the 2 most detailed mentions. Other aggregated events lack public URLs.
+                </div>
+                
+                
+            </section>
+            
+        </div>
+
+        
+        
+        
+        
+            
+                
+            
+        
+            
+        
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>4 authors · 1 institution</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Akanksha Thawani</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-4168-128X" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Alfredo Jose Florez Ariza</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-2429-4659" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Eva Nogales</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-9816-3681" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Kathleen Collins</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-3172-7088" target="_blank">ORCID</a>
+                    </li>
+                    
+                </ul>
+
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/04n1n3n22" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">QB3</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>15 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Retrotransposon</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Reverse transcriptase</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">RNA</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">DNA</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Human genome</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computational biology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Alu element</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Genetics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mobile genetic elements</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Endonuclease</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Genome</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell biology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Gene</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Transposable element</span>
+                    
+                    
+                </div>
+                
+                
+                <h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 targets detected.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Life in Land (0.45)</span>
+                    
+                </div>
+                
+            </section>
+        </div>
+
+        
+        <section class="card">
+            <h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>3 financial grants and sponsors detected.</div>
+            
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIGMS NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R35 GM127018)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIGMS NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R01 GM032543)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NHLBI NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(DP1 HL156819)</span>
+                    </span>
+                
+            </div>
+        </section>
+        
+
+
+
+        
+        
+        <section class="card no-print">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>Displaying 63 most recent citing works</div>
+            <div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+                <table>
+                    <thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Regulation and function of transposable elements in cancer genomes</td>
+                        <td>Cellular and Molecular Life Sciences</td>
+                        <td><a href="https://doi.org/10.1007/s00018-024-05195-2" target="_blank" style="word-break: break-all;">10.1007/s00018-024-05195-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Structural mechanism of LINE-1 target-primed reverse transcription</td>
+                        <td>Science</td>
+                        <td><a href="https://doi.org/10.1126/science.ads8412" target="_blank" style="word-break: break-all;">10.1126/science.ads8412</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Emerging concepts and treatments in autoinflammatory interferonopathies and monogenic systemic lupus erythematosus</td>
+                        <td>Nature Reviews Rheumatology</td>
+                        <td><a href="https://doi.org/10.1038/s41584-024-01184-8" target="_blank" style="word-break: break-all;">10.1038/s41584-024-01184-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Retrotransposon life cycle and its impacts on cellular responses</td>
+                        <td>RNA Biology</td>
+                        <td><a href="https://doi.org/10.1080/15476286.2024.2409607" target="_blank" style="word-break: break-all;">10.1080/15476286.2024.2409607</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Transposable elements as instructors of the immune system</td>
+                        <td>Nature reviews. Immunology</td>
+                        <td><a href="https://doi.org/10.1038/s41577-025-01172-3" target="_blank" style="word-break: break-all;">10.1038/s41577-025-01172-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Transposable elements as genome regulators in normal and malignant haematopoiesis</td>
+                        <td>Blood Cancer Journal</td>
+                        <td><a href="https://doi.org/10.1038/s41408-025-01295-9" target="_blank" style="word-break: break-all;">10.1038/s41408-025-01295-9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Nanobioreactor detection of space-associated hematopoietic stem and progenitor cell aging</td>
+                        <td>Cell stem cell</td>
+                        <td><a href="https://doi.org/10.1016/j.stem.2025.07.013" target="_blank" style="word-break: break-all;">10.1016/j.stem.2025.07.013</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Transposable elements in health and disease: Molecular basis and clinical implications</td>
+                        <td>Chinese Medical Journal</td>
+                        <td><a href="https://doi.org/10.1097/cm9.0000000000003775" target="_blank" style="word-break: break-all;">10.1097/cm9.0000000000003775</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Structural basis of the RNA-mediated Retron-Eco2 oligomerization</td>
+                        <td>Cell Discovery</td>
+                        <td><a href="https://doi.org/10.1038/s41421-025-00823-y" target="_blank" style="word-break: break-all;">10.1038/s41421-025-00823-y</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Rapid DNA cleavage by the LINE-1 endonuclease proximal to DNA ends and at mismatches</td>
+                        <td>Journal of Biological Chemistry</td>
+                        <td><a href="https://doi.org/10.1016/j.jbc.2025.110994" target="_blank" style="word-break: break-all;">10.1016/j.jbc.2025.110994</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>RNA control of reverse transcription in a diversity-generating retroelement</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/s41586-024-08405-w" target="_blank" style="word-break: break-all;">10.1038/s41586-024-08405-w</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Identification and characterization of small molecule inhibitors of the LINE-1 retrotransposon endonuclease</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-024-48066-x" target="_blank" style="word-break: break-all;">10.1038/s41467-024-48066-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Inhibiting EZH2 targets atypical teratoid rhabdoid tumor by triggering viral mimicry via both RNA and DNA sensing pathways</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-024-53515-8" target="_blank" style="word-break: break-all;">10.1038/s41467-024-53515-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Nucleoside Reverse Transcriptase Inhibitor Exposure Is Associated with Lower Alzheimer’s Disease Risk: A Retrospective Cohort Proof-of-Concept Study</td>
+                        <td>Pharmaceuticals</td>
+                        <td><a href="https://doi.org/10.3390/ph17040408" target="_blank" style="word-break: break-all;">10.3390/ph17040408</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>CRISPR-Enabled Autonomous Transposable Element (CREATE) for RNA-based gene editing and delivery</td>
+                        <td>EMBO Reports</td>
+                        <td><a href="https://doi.org/10.1038/s44319-024-00364-7" target="_blank" style="word-break: break-all;">10.1038/s44319-024-00364-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Structures of vertebrate R2 retrotransposon complexes during target-primed reverse transcription and after second-strand nicking</td>
+                        <td>Science Advances</td>
+                        <td><a href="https://doi.org/10.1126/sciadv.adu5533" target="_blank" style="word-break: break-all;">10.1126/sciadv.adu5533</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Inflammatory mitochondrial signalling and viral mimicry in cancer</td>
+                        <td>Journal of Translational Medicine</td>
+                        <td><a href="https://doi.org/10.1186/s12967-025-06931-3" target="_blank" style="word-break: break-all;">10.1186/s12967-025-06931-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Snapshots of genetic copy-and-paste machinery in action</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/d41586-024-00112-w" target="_blank" style="word-break: break-all;">10.1038/d41586-024-00112-w</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Insights into LINE-1 reverse transcription guide therapy development</td>
+                        <td>Trends in cancer</td>
+                        <td><a href="https://doi.org/10.1016/j.trecan.2024.02.010" target="_blank" style="word-break: break-all;">10.1016/j.trecan.2024.02.010</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>LINE-1 ribonucleoprotein condensates bind DNA to enable nuclear entry during mitosis</td>
+                        <td>Science Advances</td>
+                        <td><a href="https://doi.org/10.1126/sciadv.adt9318" target="_blank" style="word-break: break-all;">10.1126/sciadv.adt9318</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Sequence Diversity and Encoded Enzymatic Differences of Monocistronic L1 ORF2 mRNA Variants in the Aged Normal and Alzheimer's Disease Brain</td>
+                        <td>Journal of Neuroscience</td>
+                        <td><a href="https://doi.org/10.1523/jneurosci.2298-24.2025" target="_blank" style="word-break: break-all;">10.1523/jneurosci.2298-24.2025</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Structural basis for the evolution of a domesticated group II intron–like reverse transcriptase to function in host cell DNA repair</td>
+                        <td>Proceedings of the National Academy of Sciences</td>
+                        <td><a href="https://doi.org/10.1073/pnas.2504208122" target="_blank" style="word-break: break-all;">10.1073/pnas.2504208122</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Advanced analysis of retrotransposon variation in the human genome with nanopore sequencing using RetroInspector</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-025-98847-7" target="_blank" style="word-break: break-all;">10.1038/s41598-025-98847-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>The 5′ truncation of retrotransposon L1: a process of genome integrity</td>
+                        <td>Genetics</td>
+                        <td><a href="https://doi.org/10.1093/genetics/iyaf202" target="_blank" style="word-break: break-all;">10.1093/genetics/iyaf202</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Systemic <scp>LINE</scp> ‐1 <scp>RNA</scp> in Plasma Extracellular Vesicles Drives Neuroinflammation and Cognitive Dysfunction via <scp>cGAS</scp> ‐ <scp>STING</scp> Pathway in Aging</td>
+                        <td>Aging Cell</td>
+                        <td><a href="https://doi.org/10.1111/acel.70350" target="_blank" style="word-break: break-all;">10.1111/acel.70350</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Concurrent L1 retrotransposition events promote reciprocal translocations in human tumorigenesis</td>
+                        <td>Science</td>
+                        <td><a href="https://doi.org/10.1126/science.aee4513" target="_blank" style="word-break: break-all;">10.1126/science.aee4513</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>L1-ORF1p nucleoprotein can rapidly assume distinct conformations and simultaneously bind more than one nucleic acid</td>
+                        <td>Nucleic Acids Research</td>
+                        <td><a href="https://doi.org/10.1093/nar/gkae1141" target="_blank" style="word-break: break-all;">10.1093/nar/gkae1141</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Domain Mobility in the ORF2p Complex Revealed by Molecular Dynamics Simulations and Big Data Analysis</td>
+                        <td>International Journal of Molecular Sciences</td>
+                        <td><a href="https://doi.org/10.3390/ijms26010073" target="_blank" style="word-break: break-all;">10.3390/ijms26010073</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Structural and biochemical studies of mobile retrotransposon proteins in action</td>
+                        <td>Current Opinion in Structural Biology</td>
+                        <td><a href="https://doi.org/10.1016/j.sbi.2025.103053" target="_blank" style="word-break: break-all;">10.1016/j.sbi.2025.103053</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Large Deletions, Cleavage of the Telomeric Repeat Sequence, and Reverse Transcriptase-Mediated DNA Damage Response Associated with Long Interspersed Element-1 ORF2p Enzymatic Activities</td>
+                        <td>Genes</td>
+                        <td><a href="https://doi.org/10.3390/genes15020143" target="_blank" style="word-break: break-all;">10.3390/genes15020143</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Internal initiation of reverse transcription in a Penelope-like retrotransposon</td>
+                        <td>Mobile DNA</td>
+                        <td><a href="https://doi.org/10.1186/s13100-024-00322-z" target="_blank" style="word-break: break-all;">10.1186/s13100-024-00322-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>From Junk <scp>DNA</scp> to Genomic Treasure: Impacts of Transposable Element <scp>DNA</scp>, <scp>RNA</scp>, and Protein in Mammalian Development and Disease</td>
+                        <td>Wiley Interdisciplinary Reviews - RNA</td>
+                        <td><a href="https://doi.org/10.1002/wrna.70022" target="_blank" style="word-break: break-all;">10.1002/wrna.70022</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Controlling and controlled elements: highlights of the year in mobile DNA research</td>
+                        <td>Mobile DNA</td>
+                        <td><a href="https://doi.org/10.1186/s13100-024-00340-x" target="_blank" style="word-break: break-all;">10.1186/s13100-024-00340-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Diverse single-stranded nucleic acid binding proteins enable both stable protection and rapid exchange required for biological function</td>
+                        <td>QRB Discovery</td>
+                        <td><a href="https://doi.org/10.1017/qrd.2024.21" target="_blank" style="word-break: break-all;">10.1017/qrd.2024.21</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Role of LINE-1 in the nervous system and neurological disorders</td>
+                        <td>Chinese Medical Journal</td>
+                        <td><a href="https://doi.org/10.1097/cm9.0000000000003891" target="_blank" style="word-break: break-all;">10.1097/cm9.0000000000003891</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Chromosomal rearrangements and instability caused by LINE-1 retrotransposition</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.12.14.628481" target="_blank" style="word-break: break-all;">10.1101/2024.12.14.628481</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Synchronous L1 retrotransposition events promote chromosomal crossover early in human tumorigenesis</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.08.27.596794" target="_blank" style="word-break: break-all;">10.1101/2024.08.27.596794</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Revisiting the impact of synthetic ORF sequences on engineered LINE-1 retrotransposition</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2022.08.29.505632" target="_blank" style="word-break: break-all;">10.1101/2022.08.29.505632</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Deciphering lung adenocarcinoma evolution and the role of LINE-1 retrotransposition</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.03.14.643063" target="_blank" style="word-break: break-all;">10.1101/2025.03.14.643063</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>CRISPR-Enabled Autonomous Transposable Element (CREATE) for RNA-based gene editing and delivery</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.01.29.577809" target="_blank" style="word-break: break-all;">10.1101/2024.01.29.577809</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Structures of vertebrate R2 retrotransposon complexes during target-primed reverse transcription and after second strand nicking</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.11.11.623112" target="_blank" style="word-break: break-all;">10.1101/2024.11.11.623112</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>mRNA poly(A)-tail length is a battleground for coronavirus–host competition</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.10.09.680815" target="_blank" style="word-break: break-all;">10.1101/2025.10.09.680815</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Structural Requirements for Reverse Transcription by a Diversity-generating Retroelement</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.10.23.563531" target="_blank" style="word-break: break-all;">10.1101/2023.10.23.563531</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>LINE-1 ribonucleoprotein complexes bind DNA to enable nuclear entry during mitosis</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.10.01.616040" target="_blank" style="word-break: break-all;">10.1101/2024.10.01.616040</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Structural basis for the evolution of a domesticated group II intron-like reverse transcriptase to function in host cell DNA repair</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.01.14.632616" target="_blank" style="word-break: break-all;">10.1101/2025.01.14.632616</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Comparative Genomics Reveals LINE-1 Recombination with Diverse RNAs</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.02.02.635956" target="_blank" style="word-break: break-all;">10.1101/2025.02.02.635956</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>L1 insertion intermediates recombine with one another or with DNA breaks to form genome rearrangements</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.09.17.676864" target="_blank" style="word-break: break-all;">10.1101/2025.09.17.676864</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>PRINTing Transgenes with an Avian Retroelement</td>
+                        <td>GEN Biotechnology</td>
+                        <td><a href="https://doi.org/10.1089/genbio.2024.29142.ama" target="_blank" style="word-break: break-all;">10.1089/genbio.2024.29142.ama</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Matrin3 stimulates IFITM1 expression to negatively regulate hepatitis B virus RNA levels</td>
+                        <td>International Journal of Biological Macromolecules</td>
+                        <td><a href="https://doi.org/10.1016/j.ijbiomac.2025.145277" target="_blank" style="word-break: break-all;">10.1016/j.ijbiomac.2025.145277</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Mechanism for Nucleotidyl Transfer in LINE-1 ORF2p Revealed by QM/MM Simulations</td>
+                        <td>International Journal of Molecular Sciences</td>
+                        <td><a href="https://doi.org/10.3390/ijms26178661" target="_blank" style="word-break: break-all;">10.3390/ijms26178661</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Pan-cancer analysis reveals context-dependent roles of LINE-1 ORF1p in immune regulation and copy number alterations</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.10.03.680361" target="_blank" style="word-break: break-all;">10.1101/2025.10.03.680361</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Mechanism of DNA targeting by human LINE-1</td>
+                        <td>Science</td>
+                        <td><a href="https://doi.org/10.1126/science.adu3433" target="_blank" style="word-break: break-all;">10.1126/science.adu3433</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Direct identification of <i>de novo</i> mobile element insertions from single molecule sequencing of human sperm</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.10.25.684559" target="_blank" style="word-break: break-all;">10.1101/2025.10.25.684559</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Different DNA repair pathways support intact or truncated insertions by R2 retrotransposon protein</td>
+                        <td>Science</td>
+                        <td><a href="https://doi.org/10.1126/science.adz3121" target="_blank" style="word-break: break-all;">10.1126/science.adz3121</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Endogenous retrotransposon reverse transcriptase supports osteocyte function: implications for antiretroviral therapy-associated bone loss</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2025.12.27.696700" target="_blank" style="word-break: break-all;">10.64898/2025.12.27.696700</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Detection of endogenous <scp>LINE</scp> ‐1 <scp>ORF2p</scp> and its potent reverse transcriptase activity in the <scp>MCF</scp> ‐7 breast cancer cell line</td>
+                        <td>FEBS Journal</td>
+                        <td><a href="https://doi.org/10.1111/febs.70375" target="_blank" style="word-break: break-all;">10.1111/febs.70375</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>An Alternative DNA Endonuclease Activity is Associated with the LINE-1 ORF2-encoded Protein</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.01.20.700639" target="_blank" style="word-break: break-all;">10.64898/2026.01.20.700639</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Potential Mechanisms by Which Reverse-Transcriptase L1 ORF2p Precisely Recognizes and Cleaves Genomic Target Site for Targeted Gene Editing and Related Pathophysiological Significance</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.6067427" target="_blank" style="word-break: break-all;">10.2139/ssrn.6067427</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Full-size recombinant ORF1p-L1 and RT domain of ORF2p-L1: Protein expression, purification and characterization</td>
+                        <td>Biochimica et Biophysica Acta (BBA) - Proteins and Proteomics</td>
+                        <td><a href="https://doi.org/10.1016/j.bbapap.2026.141130" target="_blank" style="word-break: break-all;">10.1016/j.bbapap.2026.141130</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Comparative genomics reveals LINE-1 recombination with diverse RNAs</td>
+                        <td>Cell Genomics</td>
+                        <td><a href="https://doi.org/10.1016/j.xgen.2026.101165" target="_blank" style="word-break: break-all;">10.1016/j.xgen.2026.101165</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Single-turnover kinetic analysis of non-long terminal repeat retrotransposition defines the pathway and rate constants leading to second-strand synthesis</td>
+                        <td>Nucleic Acids Research</td>
+                        <td><a href="https://doi.org/10.1093/nar/gkag223" target="_blank" style="word-break: break-all;">10.1093/nar/gkag223</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Cryo–electron microscopy structure of the budding yeast telomerase holoenzyme</td>
+                        <td>Science</td>
+                        <td><a href="https://doi.org/10.1126/science.adz5344" target="_blank" style="word-break: break-all;">10.1126/science.adz5344</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Shaping mammalian genomes: The regulation and co-option of transposable elements in early development and gametogenesis</td>
+                        <td>Advances in genetics</td>
+                        <td><a href="https://doi.org/10.1016/bs.adgen.2026.03.001" target="_blank" style="word-break: break-all;">10.1016/bs.adgen.2026.03.001</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-03-31T12:51:32+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    
+    <script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+    
+    <script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+</body>
+</html>

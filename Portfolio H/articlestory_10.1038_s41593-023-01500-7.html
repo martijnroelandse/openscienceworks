@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ArticleStory - Decoding motor plans using a closed-loop ultrasonic brain–machine interface</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print PDF Report
+    </button>
+    
+    <div class="page">
+        <header class="hero card">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo"></div>
+                    <div>
+                        <h1 class="hero-title">Decoding motor plans using a closed-loop ultrasonic brain–machine interface</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    Methodologically Supported
+                                </span>
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                                    Linked to Data
+                                </span>
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> Whitney S. Griggs, Sumner L. Norman, Thomas Deffieux, Florian Segura, Bruno-Félix Osmanski, Geeling Chau, Vasileios Christopoulos, Charles Y. Liu, Mickaël Tanter, Mikhail G. Shapiro, Richard A. Andersen</div>
+                            <div><strong>Publisher:</strong> Nature Neuroscience</div>
+                            <div><strong>Publication year:</strong> 2023</div>
+                            <div><strong>DOI:</strong> <a href="https://doi.org/10.1038/s41593-023-01500-7" target="_blank">10.1038/s41593-023-01500-7</a></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The research article titled "Decoding motor plans using a closed-loop ultrasonic brain–machine interface" has gained notable recognition, accumulating 47 citations since its publication in <em>Nature Neuroscience</em>. This work is supported by significant funding from various NIH institutes and is associated with prestigious institutions such as the California Institute of Technology and the Centre National de la Recherche Scientifique.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The study conducted by Griggs et al. presents a groundbreaking approach to understanding motor plans through a closed-loop ultrasonic brain–machine interface. The innovative nature of this research is underlined by its citation count of 47 in <em>Nature Neuroscience</em>, indicating a strong interest and relevance within the neuroscientific community. The collaborative efforts from such esteemed institutions as the California Institute of Technology, University of California, Riverside, and the Centre National de la Recherche Scientifique further validate the importance of this research in advancing brain-machine interactions.</p>
+<p class="story-text">Moreover, the paper's impact is underscored by its context within the citing landscape, with a diverse array of citing works across various venues, including a strong influence in preprints (11 citations from <em>bioRxiv</em>). This indicates that the findings are entering discussions at the forefront of the field, influencing upcoming research directions and innovations.</p>
+<p class="story-text">Financial backing from multiple NIH institutes, including the National Institute of Neurological Disorders and Stroke and the National Institute of General Medical Sciences, points to a significant institutional investment in this research area. Such funding not only supports the current study but also emphasizes the value placed on exploring brain-machine interfaces and their potential applications in neuroscience and rehabilitation.</p>
+<p class="story-text">Additionally, the research has resulted in the release of valuable datasets, hosted on platforms like Zenodo and DataCite, committing to open data practices. This promotes accessibility and serves as a foundational research output that enhances community engagements and subsequent research efforts, as reflected in the documentation of 48 instances of proven downstream reuse. Overall, these factors indicate that the work is driving forward discussions and explorations within the neuroscience community while also contributing significant empirical resources for future studies.</p></div>
+        </section>
+        
+
+        <section class="card">
+            <h2><span>Impact metrics</span></h2>
+            <ul class="metric-list">
+                
+                <li style="margin-bottom: 0.8rem;">
+                    <strong>Total Citations (OpenAlex):</strong> 
+                    
+                        47
+                    
+                    
+                    
+                        <span class="badge" style="background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; margin-left: 0.4rem;">
+                            ⭐ Top 10% Cited
+                        </span>
+                    
+                    
+                                        
+                    
+                    
+                </li>
+                
+                <li style="margin-bottom: 0.8rem;">
+                    <strong>Total Online mentions (Crossref & Open Web):</strong> 2
+                    
+                    
+                </li>
+
+                
+                
+                
+                
+                <li style="margin-bottom: 0.8rem;"><strong>Citation context (scite):</strong> 39</li>
+                
+                
+                
+            </ul>
+        </section>
+
+        
+        <section class="card">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.8rem;">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sustainability & policy relevance (0.55)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Rapid uptake (0.47)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Active public discourse (0.46)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Reference point for synthesis (0.45)</span>
+                
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1038/s41593-023-01500-7" target="_blank">10.1038/s41593-023-01500-7</a></li>
+                    <li><strong>OA status:</strong> Hybrid</li>
+                    
+                    <li><strong>Landing page:</strong> <a href="https://doi.org/10.1038/s41593-023-01500-7" target="_blank" style="word-break: break-all;">https://doi.org/10.1038/s41593-023-01500-7</a></li>
+                    
+                    <li><strong>Best OA PDF:</strong> <a href="https://www.nature.com/articles/s41593-023-01500-7.pdf" target="_blank" style="word-break: break-all;">https://www.nature.com/articles/s41593-023-01500-7.pdf</a></li>
+                </ul>
+            </section>
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>2</strong> recorded events globally
+                        
+                    </p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 39</li>
+                                <li><strong>Supporting:</strong> 1</li>
+                                <li><strong>Mentioning:</strong> 38</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite</span></h2>
+                            
+                            
+                                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Associated data repositories and clinical trials.</p>
+                                
+                                
+                                <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Data Repositories & Code</h3>
+                                <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom: 1rem; max-height: 250px; overflow-y: auto;">
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/wsgriggs2/rt_fUS_BMI" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://10.5281/zenodo.8414598" target="_blank">Zenodo</a>
+                                            
+                                            
+                                                
+                                                
+                                                <a href="datastory_https:__10.5281_zenodo.8414598.html" style="font-size: 0.75rem; color: #6b7280; text-decoration: underline; display: inline-flex; align-items: center; gap: 0.2rem;" title="Run 'python3 -m bookstories.cli https://10.5281/zenodo.8414598' to generate this dashboard!">
+                                                    <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                                    View DataStory
+                                                </a>
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://doi.org/10.22002/pa710-cdn95" target="_blank">DataCite Dataset</a>
+                                            
+                                            
+                                                
+                                                
+                                                <a href="datastory_10.22002_pa710-cdn95.html" style="font-size: 0.75rem; color: #6b7280; text-decoration: underline; display: inline-flex; align-items: center; gap: 0.2rem;" title="Run 'python3 -m bookstories.cli 10.22002/pa710-cdn95' to generate this dashboard!">
+                                                    <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                                    View DataStory
+                                                </a>
+                                            
+                                        </div>
+                                    
+                                </div>
+                                
+
+                                
+                            
+                        </section>
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+        
+        <section class="card">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+                Analysis of the 47 most recent citing works. 
+                <br>
+                <strong>89.4%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>1.0</strong> times itself.
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 1.5rem;">
+                
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">China (19)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (14)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Netherlands (6)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (4)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Hong Kong (4)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Singapore (3)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Canada (3)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">France (3)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (2)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Belgium (2)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Austria (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Denmark (1)</span>
+                        
+                    </div>
+                    
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (41)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (19)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Healthcare (19)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Funder (9)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Government (6)</span>
+                        
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of Southern California</strong> 
+                            
+                                <a href="https://ror.org/03taz7m60" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(7)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Rancho Los Amigos National Rehabilitation Center</strong> 
+                            
+                                <a href="https://ror.org/03t3q6164" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(6)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Chinese Academy of Sciences</strong> 
+                            
+                                <a href="https://ror.org/034t30j35" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(5)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Neurological Surgery</strong> 
+                            
+                                <a href="https://ror.org/04r0gp612" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(5)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>California Institute of Technology</strong> 
+                            
+                                <a href="https://ror.org/05dxps055" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(4)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Fudan University</strong> 
+                            
+                                <a href="https://ror.org/013q1eq08" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of Chinese Academy of Sciences</strong> 
+                            
+                                <a href="https://ror.org/05qbk4x57" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Hong Kong Polytechnic University</strong> 
+                            
+                                <a href="https://ror.org/0030zas98" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Centre National de la Recherche Scientifique</strong> 
+                            
+                                <a href="https://ror.org/02feahw73" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of California, Los Angeles</strong> 
+                            
+                                <a href="https://ror.org/046rm7j60" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Charles Y. Liu</strong> 
+                            
+                                <a href="https://orcid.org/0000-0001-6423-8577" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(8)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Sumner L. Norman</strong> 
+                            
+                                <a href="https://orcid.org/0000-0001-9945-697X" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Vasileios Christopoulos</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-0541-8700" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Mikhail G. Shapiro</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-0291-4215" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Richard A. Andersen</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-7947-0472" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Sadaf Soloukey</strong> 
+                            
+                                <a href="https://orcid.org/0000-0001-7711-3271" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Arnaud J.P.E. Vincent</strong> 
+                            
+                                <a href="https://orcid.org/0000-0003-0865-8272" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Pieter Kruizinga</strong> 
+                            
+                                <a href="https://orcid.org/0000-0003-2278-1218" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Aidin Abedi</strong> 
+                            
+                                <a href="https://orcid.org/0000-0001-8243-3878" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Hairong Zheng</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-8558-5102" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(2)</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+                <ul class="metric-list">
+                    <li><strong>Citing work types:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (26)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (11)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (7)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (2)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">editorial (1)</span> 
+                        
+                    </li>
+                    <li><strong>Top citing venues:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">bioRxiv (10)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nature Communications (3)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Science Advances (2)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Imaging Neuroscience (2)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">IEEE Reviews in Biomedical Engineering (1)</span> 
+                        
+                    </li>
+                    <li><strong>Top citing concepts:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Computer science (20)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Neuroscience (9)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Ultrasound (9)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Brain–computer interface (7)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Medicine (6)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Ultrasound imaging (5)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Neuromodulation (3)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nonhuman primate (3)</span> 
+                        
+                    </li>
+                    
+                    <li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+                        <strong>Citation timeline:</strong>
+                        <div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+                            <canvas id="citationChart" 
+                                data-labels="[2023, 2024, 2025, 2026]" 
+                                data-values="[1, 11, 33, 2]">
+                            </canvas>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+            <section class="card span-full" style="margin-bottom:0;">
+                <h2><span>Online mentions & activity</span> <span class="badge">Crossref & Open Web</span></h2>
+                
+                
+                
+                
+                
+                
+                
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                
+                
+                
+                <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                    
+                    <li style="margin-bottom: 0.6rem;">
+                        <a href="https://doi.org/10.22002/pa710-cdn95" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 500;">
+                            https://doi.org/10.22002/pa710-cdn95
+                        </a>
+                        <span class="badge" style="background: #f3f4f6; color: #4b5563; font-size: 0.65rem; text-transform: uppercase; margin-left: 0.4rem;">datacite</span>
+                    </li>
+                    
+                </ul>
+                
+
+                
+                
+                
+                
+                
+                
+                <div class="muted" style="margin-top: 1.5rem; font-size: 0.8rem; text-align: center; border-top: 1px dashed #e5e7eb; padding-top: 0.8rem;">
+                    Displaying the 1 most detailed mentions. Other aggregated events lack public URLs.
+                </div>
+                
+                
+            </section>
+            
+        </div>
+
+        
+        
+        
+        
+            
+                
+            
+        
+            
+        
+            
+                
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>11 authors · 3 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Whitney S. Griggs</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-2941-6803" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Sumner L. Norman</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-9945-697X" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Thomas Deffieux</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-9114-2028" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Florian Segura</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Bruno-Félix Osmanski</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-1198-5303" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Geeling Chau</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Vasileios Christopoulos</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-0541-8700" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Charles Y. Liu</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-6423-8577" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Mickaël Tanter</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-7739-8051" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Mikhail G. Shapiro</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-0291-4215" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Richard A. Andersen</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-7947-0472" target="_blank">ORCID</a>
+                    </li>
+                    
+                </ul>
+
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/05dxps055" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">California Institute of Technology</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/02feahw73" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Centre National de la Recherche Scientifique</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/03nawhv43" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">University of California, Riverside</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>17 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Brain–computer interface</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Decoding methods</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neuroscience</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Interface (matter)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neural decoding</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Closed loop</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Motor cortex</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Psychology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Control engineering</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Engineering</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Telecommunications</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Electroencephalography</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Parallel computing</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Bubble</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Stimulation</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Maximum bubble pressure method</span>
+                    
+                    
+                </div>
+                
+                
+                <h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 targets detected.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Partnerships for the goals (0.45)</span>
+                    
+                </div>
+                
+            </section>
+        </div>
+
+        
+        <section class="card">
+            <h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>13 financial grants and sponsors detected.</div>
+            
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>U.S. Department of Health &amp; Human Services | NIH | National Eye Institute</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(F30EY032799)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>U.S. Department of Health &amp; Human Services | NIH | National Institute of Neurological Disorders and Stroke</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(T32 NS105595)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Della Martin Foundation</strong> 
+                        
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Della Martin Foundation and T&amp;C Chen Brain-Machine Interface Center</strong> 
+                        
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>U.S. Department of Health &amp; Human Services | NIH | National Institute of General Medical Sciences</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(T32 GM008042)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>James G. Boswell Foundation</strong> 
+                        
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NEI NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(F30 EY032799)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIGMS NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(T32 GM008042)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NINDS NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R01 NS123663)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Josephine De Karman Fellowship Trust</strong> 
+                        
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>U.S. Department of Health &amp; Human Services | NIH | National Institute of Neurological Disorders and Stroke</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R01NS123663)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NINDS NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(T32 NS105595)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>T&amp;C Chen Brain-Machine Interface Center</strong> 
+                        
+                    </span>
+                
+            </div>
+        </section>
+        
+
+
+
+        
+        
+        <section class="card no-print">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>Displaying 47 most recent citing works</div>
+            <div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+                <table>
+                    <thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Non-Invasive Brain-Computer Interfaces: State of the Art and Trends</td>
+                        <td>IEEE Reviews in Biomedical Engineering</td>
+                        <td><a href="https://doi.org/10.1109/rbme.2024.3449790" target="_blank" style="word-break: break-all;">10.1109/rbme.2024.3449790</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Emerging Wearable Acoustic Sensing Technologies</td>
+                        <td>Advanced Science</td>
+                        <td><a href="https://doi.org/10.1002/advs.202408653" target="_blank" style="word-break: break-all;">10.1002/advs.202408653</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>The future of transcranial ultrasound as a precision brain interface</td>
+                        <td>PLoS Biology</td>
+                        <td><a href="https://doi.org/10.1371/journal.pbio.3002884" target="_blank" style="word-break: break-all;">10.1371/journal.pbio.3002884</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>3D ultrasound localization microscopy of the nonhuman primate brain</td>
+                        <td>EBioMedicine</td>
+                        <td><a href="https://doi.org/10.1016/j.ebiom.2024.105457" target="_blank" style="word-break: break-all;">10.1016/j.ebiom.2024.105457</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Brain–computer interfaces in 2023–2024</td>
+                        <td>Brain‐X</td>
+                        <td><a href="https://doi.org/10.1002/brx2.70024" target="_blank" style="word-break: break-all;">10.1002/brx2.70024</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Deep learning-enhanced anti-noise triboelectric acoustic sensor for human-machine collaboration in noisy environments</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-025-59523-6" target="_blank" style="word-break: break-all;">10.1038/s41467-025-59523-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Photoacoustic and fluorescence hybrid microscope for cortex-wide imaging of neurovascular dynamics with subcellular resolution</td>
+                        <td>Science Advances</td>
+                        <td><a href="https://doi.org/10.1126/sciadv.adw5275" target="_blank" style="word-break: break-all;">10.1126/sciadv.adw5275</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Brain–Computer Interface—A Brain-in-the-Loop Communication System</td>
+                        <td>Proceedings of the IEEE</td>
+                        <td><a href="https://doi.org/10.1109/jproc.2025.3600389" target="_blank" style="word-break: break-all;">10.1109/jproc.2025.3600389</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Functional ultrasound neuroimaging reveals mesoscopic organization of saccades in the lateral intraparietal area</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-025-63826-z" target="_blank" style="word-break: break-all;">10.1038/s41467-025-63826-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Functional imaging of the exposed brain</td>
+                        <td>Frontiers in Neuroscience</td>
+                        <td><a href="https://doi.org/10.3389/fnins.2023.1087912" target="_blank" style="word-break: break-all;">10.3389/fnins.2023.1087912</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Optogenetic Brain–Computer Interfaces</td>
+                        <td>Bioengineering</td>
+                        <td><a href="https://doi.org/10.3390/bioengineering11080821" target="_blank" style="word-break: break-all;">10.3390/bioengineering11080821</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Brain-computer interface</td>
+                        <td>Elsevier eBooks</td>
+                        <td><a href="https://doi.org/10.1016/b978-0-323-95730-4.00003-2" target="_blank" style="word-break: break-all;">10.1016/b978-0-323-95730-4.00003-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Mobile human brain imaging using functional ultrasound</td>
+                        <td>Science Advances</td>
+                        <td><a href="https://doi.org/10.1126/sciadv.adu9133" target="_blank" style="word-break: break-all;">10.1126/sciadv.adu9133</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Bidirectional mechanisms and emerging strategies for implantable bioelectronic interfaces</td>
+                        <td>Bioactive Materials</td>
+                        <td><a href="https://doi.org/10.1016/j.bioactmat.2025.06.014" target="_blank" style="word-break: break-all;">10.1016/j.bioactmat.2025.06.014</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Preparation and simulation of high-frequency lead-free NBBT/epoxy 1–3 piezoelectric composites with high electromechanical coupling characteristics</td>
+                        <td>Applied Physics Letters</td>
+                        <td><a href="https://doi.org/10.1063/5.0250445" target="_blank" style="word-break: break-all;">10.1063/5.0250445</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Replacement as an aging intervention</td>
+                        <td>Nature Aging</td>
+                        <td><a href="https://doi.org/10.1038/s43587-025-00858-6" target="_blank" style="word-break: break-all;">10.1038/s43587-025-00858-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Robust single-trial decoding of physical self-motion from hemodynamic signals in the brain measured by functional ultrasound imaging</td>
+                        <td>Proceedings of the National Academy of Sciences</td>
+                        <td><a href="https://doi.org/10.1073/pnas.2414354122" target="_blank" style="word-break: break-all;">10.1073/pnas.2414354122</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Functional ultrasound imaging combined with machine learning for whole-brain analysis of drug-induced hemodynamic changes</td>
+                        <td>Imaging Neuroscience</td>
+                        <td><a href="https://doi.org/10.1162/imag.a.139" target="_blank" style="word-break: break-all;">10.1162/imag.a.139</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Brain-Wide Transcranial Ultrasound Localization Microscopy of the Nonhuman Primate</td>
+                        <td>IEEE Transactions on Ultrasonics Ferroelectrics and Frequency Control</td>
+                        <td><a href="https://doi.org/10.1109/tuffc.2025.3611501" target="_blank" style="word-break: break-all;">10.1109/tuffc.2025.3611501</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>ControlIt: A Universal Framework for Translational, Adaptive, and Online Brain–Computer Interfaces</td>
+                        <td>Advanced Intelligent Systems</td>
+                        <td><a href="https://doi.org/10.1002/aisy.202501148" target="_blank" style="word-break: break-all;">10.1002/aisy.202501148</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>HYBRIDMINDS—summary and outlook of the 2023 international conference on the ethics and regulation of intelligent neuroprostheses</td>
+                        <td>Frontiers in Human Neuroscience</td>
+                        <td><a href="https://doi.org/10.3389/fnhum.2024.1489307" target="_blank" style="word-break: break-all;">10.3389/fnhum.2024.1489307</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Functional ultrasound imaging and neuronal activity: How accurate is the spatiotemporal match?</td>
+                        <td>Imaging Neuroscience</td>
+                        <td><a href="https://doi.org/10.1162/imag.a.34" target="_blank" style="word-break: break-all;">10.1162/imag.a.34</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Dual Sidelobe-Blanking Beamforming Method for High Frame Rate Ultrasound Imaging</td>
+                        <td>IEEE Transactions on Instrumentation and Measurement</td>
+                        <td><a href="https://doi.org/10.1109/tim.2025.3566840" target="_blank" style="word-break: break-all;">10.1109/tim.2025.3566840</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Deciphering the skeletal interoceptive circuitry to control bone homeostasis</td>
+                        <td>BMEMat</td>
+                        <td><a href="https://doi.org/10.1002/bmm2.12138" target="_blank" style="word-break: break-all;">10.1002/bmm2.12138</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Repair, Regeneration, and Replacement, Revisited (Redux)</td>
+                        <td>Journal of Diabetes Science and Technology</td>
+                        <td><a href="https://doi.org/10.1177/19322968251326906" target="_blank" style="word-break: break-all;">10.1177/19322968251326906</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Exploring Neural Dynamics in the Auditory Telencephalon of Crows Using Functional Ultrasound Imaging</td>
+                        <td>Journal of Neuroscience</td>
+                        <td><a href="https://doi.org/10.1523/jneurosci.0016-25.2025" target="_blank" style="word-break: break-all;">10.1523/jneurosci.0016-25.2025</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Human spinal cord activation during filling and emptying of the bladder</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-025-61470-1" target="_blank" style="word-break: break-all;">10.1038/s41467-025-61470-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Transcranial Functional Ultrasound Imaging Detects Focused Ultrasound Neuromodulation Induced Hemodynamic Changes In Vivo</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.03.08.583971" target="_blank" style="word-break: break-all;">10.1101/2024.03.08.583971</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Functional ultrasound imaging and neuronal activity: how accurate is the spatiotemporal match?</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.07.10.602912" target="_blank" style="word-break: break-all;">10.1101/2024.07.10.602912</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Miniaturized Four-Dimensional Functional Ultrasound for Mapping Human Brain Activity</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.08.19.25332261" target="_blank" style="word-break: break-all;">10.1101/2025.08.19.25332261</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Human spinal cord activation during filling and emptying of the bladder</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.02.16.580736" target="_blank" style="word-break: break-all;">10.1101/2024.02.16.580736</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Acoustic Transparency Enabling Functional Ultrasound Imaging Through Mouse and Human Skulls</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.08.22.671878" target="_blank" style="word-break: break-all;">10.1101/2025.08.22.671878</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Functional ultrasound neuroimaging reveals mesoscopic organization of saccades in the lateral intraparietal area of posterior parietal cortex</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.06.28.600796" target="_blank" style="word-break: break-all;">10.1101/2024.06.28.600796</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Exploring Neural Dynamics in the Auditory Telencephalon of Crows using Functional Ultrasound Imaging</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.11.26.625563" target="_blank" style="word-break: break-all;">10.1101/2024.11.26.625563</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>VARS-fUSI: Variable Sampling for Fast and Efficient Functional Ultrasound Imaging using Neural Operators</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.04.16.649237" target="_blank" style="word-break: break-all;">10.1101/2025.04.16.649237</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Miniaturized and accessible functional ultrasound imaging system for freely moving mice</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.04.24.650351" target="_blank" style="word-break: break-all;">10.1101/2025.04.24.650351</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Miniaturized and accessible functional ultrasound imaging system for freely moving mice</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-6514023/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-6514023/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Selective-plane Functional Ultrasound Neuroimaging</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.06.12.659275" target="_blank" style="word-break: break-all;">10.1101/2025.06.12.659275</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Clinical practice of Brain–Machine interfaces in neurological disorders</td>
+                        <td>EngMedicine</td>
+                        <td><a href="https://doi.org/10.1016/j.engmed.2025.100090" target="_blank" style="word-break: break-all;">10.1016/j.engmed.2025.100090</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>From Electrophysiological to Biochemically‐Modulated Interfaces: Evolution of Brain–Machine Communication</td>
+                        <td>Small Methods</td>
+                        <td><a href="https://doi.org/10.1002/smtd.202501471" target="_blank" style="word-break: break-all;">10.1002/smtd.202501471</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Next-Generation Neurotechnologies Inspired by Motor Primitive Model for Restoring Human Natural Movement</td>
+                        <td>Research</td>
+                        <td><a href="https://doi.org/10.34133/research.0942" target="_blank" style="word-break: break-all;">10.34133/research.0942</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>压电材料声电转换技术及其在脑科学中的应用（特邀）</td>
+                        <td>Chinese Journal of Lasers</td>
+                        <td><a href="https://doi.org/10.3788/cjl250952" target="_blank" style="word-break: break-all;">10.3788/cjl250952</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Deep Learning of Mesoscale Cortical Dynamics for Real-Time Classification of Forelimb Movement in Mice</td>
+                        <td>SPIRE - Sciences Po Institutional REpository</td>
+                        <td><a href="https://doi.org/10.1109/mlsp62443.2025.11204287" target="_blank" style="word-break: break-all;">10.1109/mlsp62443.2025.11204287</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Advance in Ultrasound Super-resolution Imaging, Cell Manipulation and Inter-brain Communication</td>
+                        <td>Advanced ultrasound in diagnosis and therapy</td>
+                        <td><a href="https://doi.org/10.26599/audt.2025.250100" target="_blank" style="word-break: break-all;">10.26599/audt.2025.250100</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Neurorestoration – A New Synthesis: Repair, Replace, and Optimize</td>
+                        <td>Neurosurgery</td>
+                        <td><a href="https://doi.org/10.1017/9781009597852.006" target="_blank" style="word-break: break-all;">10.1017/9781009597852.006</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A Multi-Teacher Distilling Framework With Data Privacy for EEG Emotion Recognition</td>
+                        <td>Journal of Integrative Neuroscience</td>
+                        <td><a href="https://doi.org/10.31083/jin44121" target="_blank" style="word-break: break-all;">10.31083/jin44121</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>OpenAI-backed firm to use ultrasound to read minds. Does the science stand up?</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/d41586-026-00329-x" target="_blank" style="word-break: break-all;">10.1038/d41586-026-00329-x</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-03-31T12:55:58+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    
+    <script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+    
+    <script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+</body>
+</html>

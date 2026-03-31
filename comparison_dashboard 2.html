@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio Comparison</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1200px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.5rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .span-full { grid-column: 1 / -1; }
+        .integrity-border-risk { border-left: 4px solid #ef4444; }
+        .integrity-border-ok { border-left: 4px solid #10b981; }
+        
+        h1 { font-size: 2rem; margin: 0 0 0.25rem 0; line-height: 1.2; }
+        h2 { font-size: 1.25rem; margin: 0 0 1rem 0; color: #111827; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.75rem; }
+        
+        .color-a { color: #2563eb; } /* Blue */
+        .color-b { color: #0d9488; } /* Teal */
+        
+        .compare-row { display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 0; border-bottom: 1px solid #f3f4f6; }
+        .compare-row:last-child { border-bottom: none; padding-bottom: 0.25rem; }
+        
+        .stat-val-container { width: 25%; text-align: center; }
+        .stat-label-container { width: 50%; text-align: center; }
+        /* Reduced font size so numbers like 23,347 don't wrap */
+        .stat-number { font-size: 1.7rem; font-weight: 700; line-height: 1; } 
+        .stat-label { font-size: 0.85rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+        
+        .list-row { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f3f4f6; padding:0.4rem 0; font-size: 0.85rem; }
+        .list-row:last-child { border-bottom: none; }
+        
+        /* Fixed truncation: display inline-block is required for text-overflow to work */
+        .truncate { display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 85%; vertical-align: middle; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print PDF Comparison
+    </button>
+
+    <div class="page">
+        <header class="card" style="display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem;">
+            <div style="flex: 1;">
+                <h1 class="color-a" style="font-size: 1.75rem; font-weight: 700; margin: 0 0 0.5rem 0; line-height: 1.2;">Portfolio A</h1>
+                <div style="margin-bottom: 0.5rem;"><span class="muted" style="font-size: 0.95rem; color: #4b5563;">Analysis of <strong>108</strong> works:</span></div>
+                <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                    
+                    <span style="display: inline-block; background: #f3f4f6; color: #374151; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; border: 1px solid #e5e7eb;">107 Books</span>
+                    
+                    <span style="display: inline-block; background: #f3f4f6; color: #374151; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; border: 1px solid #e5e7eb;">1 Article</span>
+                    
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; padding: 0 2rem;">
+                <img src="openscience-logo.png" alt="OpenScience Works Logo" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
+            </div>
+            <div style="flex: 1; text-align: right;">
+                <h1 class="color-b" style="font-size: 1.75rem; font-weight: 700; margin: 0 0 0.5rem 0; line-height: 1.2;">Portfolio B</h1>
+                <div style="margin-bottom: 0.5rem;"><span class="muted" style="font-size: 0.95rem; color: #4b5563;">Analysis of <strong>52</strong> works:</span></div>
+                <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: flex-end;">
+                    
+                    <span style="display: inline-block; background: #f3f4f6; color: #374151; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; border: 1px solid #e5e7eb;">26 Articles</span>
+                    
+                    <span style="display: inline-block; background: #f3f4f6; color: #374151; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; border: 1px solid #e5e7eb;">21 Preprints</span>
+                    
+                    <span style="display: inline-block; background: #f3f4f6; color: #374151; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; border: 1px solid #e5e7eb;">4 Reviews</span>
+                    
+                    <span style="display: inline-block; background: #f3f4f6; color: #374151; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; border: 1px solid #e5e7eb;">1 Letter</span>
+                    
+                </div>
+            </div>
+        </header>
+
+        <div class="grid-2">
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <section class="card">
+                    <h2><span>Open Science Adoption</span></h2>
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">100%</span></div><div class="stat-label-container"><span class="stat-label">Open Access</span></div><div class="stat-val-container"><span class="stat-number color-b">98%</span></div></div>
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0%</span></div><div class="stat-label-container"><span class="stat-label">Preprints Linked</span></div><div class="stat-val-container"><span class="stat-number color-b">8%</span></div></div>
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0%</span></div><div class="stat-label-container"><span class="stat-label">Open Data / Code</span></div><div class="stat-val-container"><span class="stat-number color-b">21%</span></div></div>
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0%</span></div><div class="stat-label-container"><span class="stat-label">Open Peer Review</span></div><div class="stat-val-container"><span class="stat-number color-b">0%</span></div></div>
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0%</span></div><div class="stat-label-container"><span class="stat-label">Contains RRIDs</span></div><div class="stat-val-container"><span class="stat-number color-b">13%</span></div></div>
+                </section>
+
+                <section class="card">
+                    <h2><span>Volume & Reach</span></h2>
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">380</span></div><div class="stat-label-container"><span class="stat-label">Total Citations</span></div><div class="stat-val-container"><span class="stat-number color-b">1,455</span></div></div>
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">63</span></div><div class="stat-label-container"><span class="stat-label">Online Mentions</span></div><div class="stat-val-container"><span class="stat-number color-b">81</span></div></div>
+                    
+                    
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0%</span></div><div class="stat-label-container"><span class="stat-label">🏆 In Top 1% Cited</span></div><div class="stat-val-container"><span class="stat-number color-b">13%</span></div></div>
+                    
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">8%</span></div><div class="stat-label-container"><span class="stat-label">⭐ In Top 10% Cited</span></div><div class="stat-val-container"><span class="stat-number color-b">37%</span></div></div>
+                    
+                </section>
+            </div>
+            
+            <section class="card">
+                <h2><span>Impact Footprint (Roles)</span></h2>
+                <div style="height: 480px; width: 100%;">
+                    <canvas id="radarChart"></canvas>
+                </div>
+            </section>
+        </div>
+        
+        <section class="card span-full integrity-border-risk">
+            <h2><span>Status & Integrity Alerts</span></h2>
+            
+            
+                <div class="grid-2" style="gap: 4rem; margin-top: 1rem;">
+                    
+                    <div>
+                        <h3 class="color-a" style="font-size: 1rem; margin: 0 0 1rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Portfolio A</h3>
+                        
+                            <div class="muted" style="padding: 0.5rem 0; color: #10b981; font-weight: 600;">Clear - No alerts</div>
+                        
+                    </div>
+
+                    <div>
+                        <h3 class="color-b" style="font-size: 1rem; margin: 0 0 1rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Portfolio B</h3>
+                        
+                            <ul style="margin: 0; padding-left: 1.25rem; color: #7f1d1d; font-size: 0.85rem; line-height: 1.6;">
+                                
+                                
+
+                                
+
+                                
+                                    <li style="margin-bottom: 0.4rem;">
+                                        <span style="display: inline-block; background:#fef2f2; color:#ef4444; border:1px solid #fecaca; border-radius: 999px; padding:0.1rem 0.5rem; font-size: 0.75rem; font-weight: 600; margin-right:0.4rem;">PubPeer (1 threads)</span> 
+                                        <strong>Protective anti‐prion antibodies in human immunoglobulin repertoires</strong> 
+                                        <a href="https://pubpeer.com/publications/7F4C85BD6465BCAE03E181F83E34E6" target="_blank" style="color: #dc2626; text-decoration: underline; margin-left: 0.3rem;">Read Discussions ↗</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+
+                </div>
+            
+        </section>
+
+        
+        <section class="card span-full" style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.25rem 1.75rem;">
+            <h2 style="border-bottom: none; margin-bottom: 0;"><span>Teaching, Practice & Library Adoption</span></h2>
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 1.5rem; margin-bottom: 0;">
+                
+                <div style="text-align: center; border-right: 1px solid #e2e8f0; padding: 0 0.5rem;">
+                    <div style="display: flex; justify-content: space-around; align-items: baseline;">
+                        <span class="stat-number color-a">12</span>
+                        <span class="stat-number color-b">0</span>
+                    </div>
+                    <div class="stat-label" style="margin-top: 0.5rem;">Library Holdings</div>
+                </div>
+                
+                <div style="text-align: center; border-right: 1px solid #e2e8f0; padding: 0 0.5rem;">
+                    <div style="display: flex; justify-content: space-around; align-items: baseline;">
+                        <span class="stat-number color-a">0</span>
+                        <span class="stat-number color-b">0</span>
+                    </div>
+                    <div class="stat-label" style="margin-top: 0.5rem;">Formal Reviews</div>
+                </div>
+
+                <div style="text-align: center; border-right: 1px solid #e2e8f0; padding: 0 0.5rem;">
+                    <div style="display: flex; justify-content: space-around; align-items: baseline;">
+                        <span class="stat-number color-a">75</span>
+                        <span class="stat-number color-b">1</span>
+                    </div>
+                    <div class="stat-label" style="margin-top: 0.5rem;">Syllabi / OCW</div>
+                </div>
+
+                <div style="text-align: center; border-right: 1px solid #e2e8f0; padding: 0 0.5rem;">
+                    <div style="display: flex; justify-content: space-around; align-items: baseline;">
+                        <span class="stat-number color-a">0</span>
+                        <span class="stat-number color-b">0</span>
+                    </div>
+                    <div class="stat-label" style="margin-top: 0.5rem;">OER / Open Texts</div>
+                </div>
+
+                <div style="text-align: center; padding: 0 0.5rem;">
+                    <div style="display: flex; justify-content: space-around; align-items: baseline;">
+                        <span class="stat-number color-a">1130</span>
+                        <span class="stat-number color-b">0</span>
+                    </div>
+                    <div class="stat-label" style="margin-top: 0.5rem;">Pooled Chapter Cites</div>
+                </div>
+
+            </div>
+        </section>
+        
+        
+        <div class="grid-2">
+            <section class="card">
+                <h2><span>Citing Work Types</span></h2>
+                <div style="height: 250px; width: 100%;"><canvas id="typeChart"></canvas></div>
+            </section>
+            <section class="card">
+                <h2><span>Citing Sectors</span></h2>
+                <div style="height: 250px; width: 100%;"><canvas id="sectorChart"></canvas></div>
+            </section>
+        </div>
+
+        <section class="card span-full">
+            <h2><span>Citation Context (scite.ai)</span></h2>
+            
+                <div class="grid-2" style="gap: 4rem; margin-top: 1rem;">
+                    <div>
+                        <h3 class="color-a" style="font-size: 1rem; margin: 0 0 1rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Portfolio A</h3>
+                        <div class="compare-row" style="padding: 0.5rem 0;">
+                            <span class="stat-label">Supporting</span>
+                            <span class="stat-number" style="font-size: 1.5rem; color: #16a34a;">1.7%</span>
+                        </div>
+                        <div class="compare-row" style="padding: 0.5rem 0;">
+                            <span class="stat-label">Contradicting</span>
+                            <span class="stat-number" style="font-size: 1.5rem; color: #dc2626;">0.0%</span>
+                        </div>
+                        <div class="compare-row" style="padding: 0.5rem 0;">
+                            <span class="stat-label">Mentioning</span>
+                            <span class="stat-number" style="font-size: 1.5rem; color: #6b7280;">98.3%</span>
+                        </div>
+                        <div class="muted" style="font-size: 0.8rem; margin-top: 0.75rem; text-align: right;">Based on <strong>59</strong> typed citations</div>
+                    </div>
+
+                    <div>
+                        <h3 class="color-b" style="font-size: 1rem; margin: 0 0 1rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Portfolio B</h3>
+                        <div class="compare-row" style="padding: 0.5rem 0;">
+                            <span class="stat-label">Supporting</span>
+                            <span class="stat-number" style="font-size: 1.5rem; color: #16a34a;">5.9%</span>
+                        </div>
+                        <div class="compare-row" style="padding: 0.5rem 0;">
+                            <span class="stat-label">Contradicting</span>
+                            <span class="stat-number" style="font-size: 1.5rem; color: #dc2626;">0.4%</span>
+                        </div>
+                        <div class="compare-row" style="padding: 0.5rem 0;">
+                            <span class="stat-label">Mentioning</span>
+                            <span class="stat-number" style="font-size: 1.5rem; color: #6b7280;">93.7%</span>
+                        </div>
+                        <div class="muted" style="font-size: 0.8rem; margin-top: 0.75rem; text-align: right;">Based on <strong>781</strong> typed citations</div>
+                    </div>
+                </div>
+            
+        </section>
+
+        <div class="grid-2">
+            <section class="card span-full">
+                <h2><span>Dominant Concepts</span></h2>
+                <div class="grid-2" style="gap: 4rem; margin-top: 1rem;">
+                    <div>
+                        <h3 class="color-a" style="font-size: 1rem; margin: 0 0 0.5rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Portfolio A</h3>
+                        <div class="list-row"><span class="truncate" style="color: #374151;" title="Art">Art</span> <span style="color: #9ca3af; font-weight: 600;">18.9</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Sociology">Sociology</span> <span style="color: #9ca3af; font-weight: 600;">17.5</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Political science">Political science</span> <span style="color: #9ca3af; font-weight: 600;">16.6</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="History">History</span> <span style="color: #9ca3af; font-weight: 600;">15.3</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Politics">Politics</span> <span style="color: #9ca3af; font-weight: 600;">9.3</span></div>
+                    </div>
+                    <div>
+                        <h3 class="color-b" style="font-size: 1rem; margin: 0 0 0.5rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Portfolio B</h3>
+                        <div class="list-row"><span class="truncate" style="color: #374151;" title="Biology">Biology</span> <span style="color: #9ca3af; font-weight: 600;">25.4</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Genetics">Genetics</span> <span style="color: #9ca3af; font-weight: 600;">9.2</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Cell biology">Cell biology</span> <span style="color: #9ca3af; font-weight: 600;">8.3</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Gene">Gene</span> <span style="color: #9ca3af; font-weight: 600;">5.8</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Neuroscience">Neuroscience</span> <span style="color: #9ca3af; font-weight: 600;">5.5</span></div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="card span-full">
+                <h2><span>Top Citing Venues</span></h2>
+                <div class="grid-2" style="gap: 4rem; margin-top: 1rem;">
+                    <div>
+                        <h3 class="color-a" style="font-size: 1rem; margin: 0 0 0.5rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Portfolio A</h3>
+                        <div class="list-row"><span class="truncate" style="color: #374151;" title="Cambridge University Press eBooks">Cambridge University Press eBooks</span> <span style="color: #9ca3af; font-weight: 600;">24</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Archaeological and Anthropological Sciences">Archaeological and Anthropological Sciences</span> <span style="color: #9ca3af; font-weight: 600;">12</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Journal of Archaeological Science">Journal of Archaeological Science</span> <span style="color: #9ca3af; font-weight: 600;">11</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Archaeometry">Archaeometry</span> <span style="color: #9ca3af; font-weight: 600;">9</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Heritage Science">Heritage Science</span> <span style="color: #9ca3af; font-weight: 600;">8</span></div>
+                    </div>
+                    <div>
+                        <h3 class="color-b" style="font-size: 1rem; margin: 0 0 0.5rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Portfolio B</h3>
+                        <div class="list-row"><span class="truncate" style="color: #374151;" title="bioRxiv">bioRxiv</span> <span style="color: #9ca3af; font-weight: 600;">192</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="eLife">eLife</span> <span style="color: #9ca3af; font-weight: 600;">39</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Nature Communications">Nature Communications</span> <span style="color: #9ca3af; font-weight: 600;">36</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="bioRxiv (Cold Spring Harbor Laboratory)">bioRxiv (Cold Spring Harbor Laboratory)</span> <span style="color: #9ca3af; font-weight: 600;">18</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Journal of Medicinal Chemistry">Journal of Medicinal Chemistry</span> <span style="color: #9ca3af; font-weight: 600;">14</span></div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="card span-full">
+                <h2><span>Top Citing Institutions</span></h2>
+                <div class="grid-2" style="gap: 4rem; margin-top: 1rem;">
+                    <div>
+                        <h3 class="color-a" style="font-size: 1rem; margin: 0 0 0.5rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Portfolio A</h3>
+                        <div class="list-row"><span class="truncate" style="color: #374151;" title="KU Leuven">KU Leuven</span> <span style="color: #9ca3af; font-weight: 600;">25</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="University of Oxford">University of Oxford</span> <span style="color: #9ca3af; font-weight: 600;">12</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="European Corporate Governance Institute">European Corporate Governance Institute</span> <span style="color: #9ca3af; font-weight: 600;">9</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="University of Chinese Academy of Sciences">University of Chinese Academy of Sciences</span> <span style="color: #9ca3af; font-weight: 600;">8</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Oxford Archaeology">Oxford Archaeology</span> <span style="color: #9ca3af; font-weight: 600;">7</span></div>
+                    </div>
+                    <div>
+                        <h3 class="color-b" style="font-size: 1rem; margin: 0 0 0.5rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Portfolio B</h3>
+                        <div class="list-row"><span class="truncate" style="color: #374151;" title="Howard Hughes Medical Institute">Howard Hughes Medical Institute</span> <span style="color: #9ca3af; font-weight: 600;">92</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Inserm">Inserm</span> <span style="color: #9ca3af; font-weight: 600;">55</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Université Paris Cité">Université Paris Cité</span> <span style="color: #9ca3af; font-weight: 600;">48</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Harvard University">Harvard University</span> <span style="color: #9ca3af; font-weight: 600;">47</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Rockefeller University">Rockefeller University</span> <span style="color: #9ca3af; font-weight: 600;">46</span></div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="card span-full">
+                <h2><span>Top Funders</span></h2>
+                <div class="grid-2" style="gap: 4rem; margin-top: 1rem;">
+                    <div>
+                        <h3 class="color-a" style="font-size: 1rem; margin: 0 0 0.5rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Portfolio A</h3>
+                        <div class="list-row"><span class="truncate" style="color: #374151;" title="KU Leuven">KU Leuven</span> <span style="color: #9ca3af; font-weight: 600;">69</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="European Research Council">European Research Council</span> <span style="color: #9ca3af; font-weight: 600;">10</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Humboldt-Universität zu Berlin">Humboldt-Universität zu Berlin</span> <span style="color: #9ca3af; font-weight: 600;">3</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="CARMAH">CARMAH</span> <span style="color: #9ca3af; font-weight: 600;">3</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Knowledge Unlatched">Knowledge Unlatched</span> <span style="color: #9ca3af; font-weight: 600;">3</span></div>
+                    </div>
+                    <div>
+                        <h3 class="color-b" style="font-size: 1rem; margin: 0 0 0.5rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Portfolio B</h3>
+                        <div class="list-row"><span class="truncate" style="color: #374151;" title="Howard Hughes Medical Institute">Howard Hughes Medical Institute</span> <span style="color: #9ca3af; font-weight: 600;">21</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="NIGMS NIH HHS">NIGMS NIH HHS</span> <span style="color: #9ca3af; font-weight: 600;">13</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="NIAID NIH HHS">NIAID NIH HHS</span> <span style="color: #9ca3af; font-weight: 600;">7</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="NCI NIH HHS">NCI NIH HHS</span> <span style="color: #9ca3af; font-weight: 600;">6</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="National Institutes of Health">National Institutes of Health</span> <span style="color: #9ca3af; font-weight: 600;">5</span></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">Generated on 2026-03-31 13:31:41 UTC</div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const colorA = 'rgba(37, 99, 235, 0.25)'; const borderA = 'rgba(37, 99, 235, 1)';
+        const colorB = 'rgba(13, 148, 136, 0.4)'; const borderB = 'rgba(13, 148, 136, 1)';
+        
+        const commonOptions = { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, grid: { color: '#f3f4f6' }, border: { display: false } }, x: { grid: { display: false }, border: { display: false } } }, plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20 } } } };
+
+        new Chart(document.getElementById('radarChart'), { type: 'radar', data: { labels: JSON.parse('["Active Discussion Signal", "Active Public Discourse", "Commercial Linkage", "High-Visibility Uptake", "Methodological Anchor", "Public Visibility & Knowledge Base", "Rapid Uptake", "Reference Point For Synthesis", "Reproducibility Standard", "Scholarly Uptake", "Sustainability & Policy Relevance"]'), datasets: [ { label: 'Portfolio A', data: JSON.parse('[0, 28.949999999999992, 97.20000000000013, 0, 0, 10.199999999999998, 0, 0, 0, 28.04999999999998, 36.300000000000004]'), backgroundColor: colorA, borderColor: borderA, pointBackgroundColor: borderA, borderWidth: 2 }, { label: 'Portfolio B', data: JSON.parse('[1.0081447963800905, 12.330000000000002, 0, 12.749999999999996, 2.7, 0, 5.2070087403440795, 11.763383778170985, 2.6, 9.947999999999999, 18.60000000000001]'), backgroundColor: colorB, borderColor: borderB, pointBackgroundColor: borderB, borderWidth: 2 } ] }, options: { responsive: true, maintainAspectRatio: false, layout: { padding: 30 }, scales: { r: { angleLines: { display: true, color: '#f3f4f6' }, grid: { color: '#f3f4f6' }, suggestedMin: 0, ticks: { display: false }, pointLabels: { font: { size: 10, family: 'system-ui' }, color: '#4b5563' } } }, plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20 } } } } });
+        new Chart(document.getElementById('typeChart'), { type: 'bar', data: { labels: JSON.parse('["Article", "Book", "Book-Chapter", "Dataset", "Dissertation", "Editorial", "Letter", "Other", "Paratext", "Peer-Review", "Preprint", "Review"]'), datasets: [ { label: 'Portfolio A', data: JSON.parse('[265, 10, 73, 2, 9, 0, 0, 8, 2, 0, 5, 1]'), backgroundColor: borderA, borderRadius: 2 }, { label: 'Portfolio B', data: JSON.parse('[689, 0, 23, 0, 2, 9, 13, 2, 0, 5, 223, 235]'), backgroundColor: borderB, borderRadius: 2 } ] }, options: commonOptions });
+        new Chart(document.getElementById('sectorChart'), { type: 'bar', data: { labels: JSON.parse('["Archive", "Company", "Education", "Facility", "Funder", "Government", "Healthcare", "Nonprofit", "Other"]'), datasets: [ { label: 'Portfolio A', data: JSON.parse('[26, 8, 259, 47, 11, 22, 8, 32, 5]'), backgroundColor: borderA, borderRadius: 2 }, { label: 'Portfolio B', data: JSON.parse('[13, 112, 1062, 484, 125, 179, 479, 210, 52]'), backgroundColor: borderB, borderRadius: 2 } ] }, options: commonOptions });
+        
+    </script>
+</body>
+</html>
