@@ -209,6 +209,31 @@ def extract(filepath):
     except (TypeError, ValueError):
         event_count = 0
 
+    # ── downloads (OA books via OPERAS/OAPEN — lives in impact.downloads) ──
+    download_count = 0
+    impact_block = d.get("impact") or {}
+    if isinstance(impact_block, dict):
+        dl = impact_block.get("downloads") or {}
+        if isinstance(dl, dict):
+            totals = dl.get("totals") or {}
+            download_count = totals.get("downloads", 0) or 0
+    try:
+        download_count = int(download_count)
+    except (TypeError, ValueError):
+        download_count = 0
+
+    # ── institutions — unique affiliations from template_authors ──
+    institutions = []
+    seen_inst = set()
+    for a in signals.get("template_authors") or []:
+        if not isinstance(a, dict):
+            continue
+        aff = a.get("affiliation") or ""
+        if aff and aff not in seen_inst:
+            institutions.append(aff)
+            seen_inst.add(aff)
+    institutions = institutions[:10]  # cap per story
+
     # ── narrative excerpt ──
     narrative = d.get("narrative") or ""
     excerpt = first_sentence(narrative) if narrative else ""
@@ -255,6 +280,8 @@ def extract(filepath):
         "excerpt": excerpt,
         "cover_url": cover_url,
         "authors": author_str,
+        "institutions": institutions,
+        "download_count": download_count,
     }
 
 # ── main ──────────────────────────────────────────────────────────────────────

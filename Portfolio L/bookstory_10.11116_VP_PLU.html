@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>BookStory - Virtues for the People</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print PDF Report
+    </button>
+    
+    <div class="page">
+        <header class="hero card">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="bookstories-logo.png" alt="Logo"></div>
+                    <div>
+                        <h1 class="hero-title">Virtues for the People</h1>
+                        
+                            <div class="discipline-badge" style="background:#fef08a; color:#854d0e; border-color:#fde047; font-weight:600;">
+                                <svg style="width:14px; height:14px; display:inline; vertical-align:middle; margin-right:4px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                                Open Access (Hybrid)
+                            </div>
+                        
+                        <div class="discipline-badge">Social Sciences</div>                        
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> Geert Roskam</div>
+                            <div><strong>Publisher:</strong> Leuven University Press</div>
+                            <div><strong>Publication year:</strong> 2011</div>
+                            <div><strong>DOI:</strong> <a href="https://doi.org/10.11116/VP_PLU" target="_blank">10.11116/VP_PLU</a></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="cover-wrap">
+                    
+                    <div style="width: 110px; height: 155px; background: #f3f4f6; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; text-align: center; color: #9ca3af; font-size: 0.85rem; font-weight: 500; border: 1px dashed #d1d5db; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05);">
+                        No Cover <br> Available
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </header>
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">Despite being published in 2011, "Virtues for the People" has garnered attention in the academic community, evidenced by its 33 citations. However, it has yet to establish a significant presence in public or social media discourse.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">"Virtues for the People," published by Leuven University Press in 2011, has had a measured impact within scholarly environments, as reflected by its citation count of 33. This indicates that the work has been recognized by peers in the field, showcasing its contribution to ongoing academic discussions. The relatively stable citations suggest that it addresses themes relevant to the discourse surrounding virtues and public engagement.</p>
+<p class="story-text">However, the work has not achieved significant visibility on platforms such as Wikipedia, Reddit, or Bluesky, indicating that it has yet to spark significant public or societal dialogue outside of academia. The absence of community interactions on these platforms underscores a potential area for increased outreach and engagement, which could enhance its societal relevance.</p>
+<p class="story-text">In terms of commercial linkage, "Virtues for the People" maintains a notable presence on retail platforms such as Amazon and Goodreads. This commercial visibility reflects ongoing interest, albeit primarily from a consumer perspective rather than that of an academic or scholarly discourse, thereby suggesting that the work might appeal to a wider audience while needing to deepen its impact within scholarly circles.</p>
+<p class="story-text">Overall, while the work demonstrates a solid scholarly uptake indicated by its citation count, the lack of broader discourse signifies a gap in its outreach efforts. Efforts to bridge this gap may enhance the impact of "Virtues for the People" and foster a more robust dialogue between the academic and the general community.</p></div>
+        </section>
+        
+
+        <section class="card">
+            <h2><span>Impact metrics</span></h2>
+            <ul class="metric-list">
+                
+                <li style="margin-bottom: 0.8rem;">
+                    <strong>Total Citations (OpenAlex):</strong> 
+                    
+                        33
+                    
+                    
+                    
+                        <span class="badge" style="background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; margin-left: 0.4rem;">
+                            ⭐ Top 10% Cited
+                        </span>
+                    
+                    
+                                        
+                    
+                    
+                </li>
+                
+                <li style="margin-bottom: 0.8rem;">
+                    <strong>Total Online mentions (Crossref & Open Web):</strong> 0
+                    
+                    
+                </li>
+
+                
+                
+                
+                <li style="margin-bottom: 0.8rem;">
+                    <strong>Downloads (OAPEN / OPERAS):</strong> 3530
+                </li>
+                
+                
+                <li style="margin-bottom: 0.8rem;"><strong>Citation context (scite):</strong> 0</li>
+                
+                
+                
+            </ul>
+        </section>
+
+        
+        <section class="card">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.8rem;">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Commercial linkage (0.90)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scholarly uptake (0.60)</span>
+                
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2 style="margin-top:0;"><span>Access</span> <span class="badge" style="background:#f3f4f6; color:#4b5563;">Availability</span></h2>
+                <ul class="metric-list" style="line-height: 1.8;">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.11116/VP_PLU" target="_blank" style="word-break: break-all;">https://doi.org/10.11116/VP_PLU</a></li>
+                    
+                    <li><strong>OA status:</strong> 
+                        
+                            Hybrid
+                        
+                    </li>
+
+                    
+                        <li><strong>Landing page:</strong> <a href="https://chooser.crossref.org/?doi=10.11116%2FVP_PLU" target="_blank" style="word-break: break-all;">https://chooser.crossref.org/?doi=10.11116%2FVP_PLU</a></li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </section>
+
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>0</strong> recorded events globally
+                        
+                    </p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+                <ul class="metric-list">
+                    
+                    
+
+                    
+                    <li style="margin-bottom: 0.6rem;">
+                        <strong>Google Books:</strong> <a href="" target="_blank" style="color: #2563eb; text-decoration: none;">View listing ↗</a>
+                    </li>
+                    
+                    
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Commercial:</strong> 
+                        <a href="https://www.amazon.com/s?k=9789461661180" target="_blank" style="color: #2563eb; text-decoration: none;">Amazon</a>
+                         · 
+                        <a href="https://www.goodreads.com/search?q=9789461661180" target="_blank" style="color: #2563eb; text-decoration: none;">Goodreads</a>
+                    </li>
+                    
+                    
+                </ul>
+            </section>
+
+                <section class="card" style="margin-bottom:0;">
+                    <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                    
+                    <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                        <li><strong>Total:</strong> 0</li>
+                        <li><strong>Supporting:</strong> 0</li>
+                        <li><strong>Mentioning:</strong> 0</li>
+                        <li><strong>Contradicting:</strong> 0</li>
+                    </ul>
+                    
+                </section>
+
+            
+        </div>
+
+        
+        
+        <section class="card">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+                Analysis of the 33 most recent citing works. 
+                <br>
+                <strong>39.4%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>1.0</strong> times itself.
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 1.5rem;">
+                
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (6)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Switzerland (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">New Zealand (1)</span>
+                        
+                    </div>
+                    
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (9)</span>
+                        
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of Exeter</strong> 
+                            
+                                <a href="https://ror.org/03yghzc09" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(5)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of St Andrews</strong> 
+                            
+                                <a href="https://ror.org/02wn5qz54" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(5)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of Pittsburgh</strong> 
+                            
+                                <a href="https://ror.org/01an3r305" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of Bern</strong> 
+                            
+                                <a href="https://ror.org/02k7v4d05" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of Otago</strong> 
+                            
+                                <a href="https://ror.org/01jmxt844" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Rebecca Langlands</strong> 
+                            
+                                <a href="https://openalex.org/A5043171305" target="_blank" class="orcid-badge">Profile</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(5)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Jason König</strong> 
+                            
+                                <a href="https://orcid.org/0000-0001-9758-1099" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(5)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>James Uden</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-8770-446X" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(5)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Caillan Davenport</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-2294-6855" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(2)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Sean McConnell</strong> 
+                            
+                                <a href="https://orcid.org/0000-0001-8206-0688" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(2)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Christina Hoenig</strong> 
+                            
+                                <a href="https://openalex.org/A5044521227" target="_blank" class="orcid-badge">Profile</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Kelly E. Shannon‐Henderson</strong> 
+                            
+                                <a href="https://openalex.org/A5074303674" target="_blank" class="orcid-badge">Profile</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Tom Geue</strong> 
+                            
+                                <a href="https://orcid.org/0000-0003-0148-3393" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Laura Salah Nasrallah</strong> 
+                            
+                                <a href="https://openalex.org/A5080574496" target="_blank" class="orcid-badge">Profile</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Myles Lavan</strong> 
+                            
+                                <a href="https://orcid.org/0000-0001-8290-7893" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+                <ul class="metric-list">
+                    <li><strong>Citing work types:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (18)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (6)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">other (5)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book (2)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">dissertation (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">paratext (1)</span> 
+                        
+                    </li>
+                    <li><strong>Top citing venues:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Cambridge University Press eBooks (21)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Unknown (6)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Antichthon (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">British Journal for the History of Philosophy (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">The Classical Quarterly (1)</span> 
+                        
+                    </li>
+                    <li><strong>Top citing concepts:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Literature (7)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Computer science (6)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Narrative (5)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Empire (3)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">History (3)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Politics (3)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Ideal (ethics) (3)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Information retrieval (3)</span> 
+                        
+                    </li>
+                    
+                    <li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+                        <strong>Citation timeline:</strong>
+                        <div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+                            <canvas id="citationChart" 
+                                data-labels="[2013, 2016, 2017, 2018, 2020]" 
+                                data-values="[3, 2, 3, 2, 23]">
+                            </canvas>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+        </div>
+
+        
+        
+        
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 author · 0 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Geert Roskam</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        
+                    </li>
+                    
+                </ul>
+
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>2 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sociology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Psychology</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
+
+
+        
+        <section class="card" id="operas-metrics-card">
+            <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
+            <div id="metrics-widget"></div>
+            <script type="application/json" id="operas-metrics-config">{"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "tab1", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN \u00b7 downloads", "works": ["info:doi:10.11116/VP_PLU"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}}, "graphs": [{"id": "g1", "type": "line", "title": "Downloads over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}</script>
+            <script src="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js" async></script>
+        </section>
+
+
+
+        
+        
+        <section class="card no-print">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>Displaying 33 most recent citing works</div>
+            <div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+                <table>
+                    <thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Plato's &lt;I&gt;Timaeus&lt;/I&gt; and the Latin Tradition</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108235211" target="_blank" style="word-break: break-all;">10.1017/9781108235211</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Constructing a New Imperial Paradoxography</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.010" target="_blank" style="word-break: break-all;">10.1017/9781108637336.010</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Keeping/Losing Records, Keeping/Losing Faith</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.012" target="_blank" style="word-break: break-all;">10.1017/9781108637336.012</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>A Formation of a Christian Archive?</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.011" target="_blank" style="word-break: break-all;">10.1017/9781108637336.011</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Dying for Justice</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.015" target="_blank" style="word-break: break-all;">10.1017/9781108637336.015</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Lucretius on the Nature of Parental Love</td>
+                        <td>Antichthon</td>
+                        <td><a href="https://doi.org/10.1017/ann.2018.1" target="_blank" style="word-break: break-all;">10.1017/ann.2018.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Plutarch and Roman Exemplary Ethics</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.006" target="_blank" style="word-break: break-all;">10.1017/9781108637336.006</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Beyond Romans and Others</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.004" target="_blank" style="word-break: break-all;">10.1017/9781108637336.004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Introduction</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.003" target="_blank" style="word-break: break-all;">10.1017/9781108637336.003</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>The Romance of Republican History</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.008" target="_blank" style="word-break: break-all;">10.1017/9781108637336.008</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Carving, taming or gardening? Plutarch on emotions, reason and virtue</td>
+                        <td>British Journal for the History of Philosophy</td>
+                        <td><a href="https://doi.org/10.1080/09608788.2017.1393620" target="_blank" style="word-break: break-all;">10.1080/09608788.2017.1393620</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Tactical Interactions</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.009" target="_blank" style="word-break: break-all;">10.1017/9781108637336.009</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Chaldean Interactions</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.017" target="_blank" style="word-break: break-all;">10.1017/9781108637336.017</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>DEMETRIUS OF LACONIA AND THE DEBATE BETWEEN THE STOICS AND THE EPICUREANS ON THE NATURE OF PARENTAL LOVE</td>
+                        <td>The Classical Quarterly</td>
+                        <td><a href="https://doi.org/10.1017/s0009838817000313" target="_blank" style="word-break: break-all;">10.1017/s0009838817000313</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Literature and Culture in the Roman Empire, 96–235</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336" target="_blank" style="word-break: break-all;">10.1017/9781108637336</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>The Noise-Lovers</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.005" target="_blank" style="word-break: break-all;">10.1017/9781108637336.005</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>References</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.020" target="_blank" style="word-break: break-all;">10.1017/9781108637336.020</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Architectural Criticism in the Roman World and the Limits of Literary Interaction</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.014" target="_blank" style="word-break: break-all;">10.1017/9781108637336.014</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2013</td>
+                        <td>Morality, Characterization, and Individuality</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1002/9781118316450.ch24" target="_blank" style="word-break: break-all;">10.1002/9781118316450.ch24</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2013</td>
+                        <td>Plutarch and the Stoics</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1002/9781118316450.ch6" target="_blank" style="word-break: break-all;">10.1002/9781118316450.ch6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2013</td>
+                        <td><i>Kratein Onomatôn</i></td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1002/9781118316450.ch21" target="_blank" style="word-break: break-all;">10.1002/9781118316450.ch21</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Psychagogy in Plutarch's Moralia and Parallel Lives : the image of the ideal Woman</td>
+                        <td>SUNScholar (Stellenbosch University)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Do As I Say and As I Do: Lessons on the Use of History for the Civic Statesman in Plutarch’s Praecepta</td>
+                        <td>The Classical World</td>
+                        <td><a href="https://doi.org/10.1353/clw.2016.0035" target="_blank" style="word-break: break-all;">10.1353/clw.2016.0035</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Dying for justice: narratives of Roman judicial authority in the High Empire</td>
+                        <td>Unknown</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Patronage, Cultural Difference and Literary Interactivity</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.007" target="_blank" style="word-break: break-all;">10.1017/9781108637336.007</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Afterword</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.019" target="_blank" style="word-break: break-all;">10.1017/9781108637336.019</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Bardaisan’s Disciples and Ethnographic Knowledge in the Roman Empire</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.016" target="_blank" style="word-break: break-all;">10.1017/9781108637336.016</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Shaping Buildings into Stories</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.013" target="_blank" style="word-break: break-all;">10.1017/9781108637336.013</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Gilgamos in Rome</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.018" target="_blank" style="word-break: break-all;">10.1017/9781108637336.018</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Bibliography</td>
+                        <td>New Surveys in the Classics</td>
+                        <td><a href="https://doi.org/10.1017/s0533245121000201" target="_blank" style="word-break: break-all;">10.1017/s0533245121000201</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Preface</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.001" target="_blank" style="word-break: break-all;">10.1017/9781108637336.001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Index</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.021" target="_blank" style="word-break: break-all;">10.1017/9781108637336.021</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Map</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1017/9781108637336.002" target="_blank" style="word-break: break-all;">10.1017/9781108637336.002</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-03-31T12:17:43+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    
+    <script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+    
+    <script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+</body>
+</html>
