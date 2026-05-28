@@ -90,6 +90,11 @@ def extract(filepath):
     if not year:
         year = d.get("publication_year")
     if not year:
+        # identifiers.pub_year (used by dataset / software records)
+        ids = d.get("identifiers") or {}
+        if isinstance(ids, dict):
+            year = ids.get("pub_year")
+    if not year:
         # Try to find in signals
         pub = signals.get("published_metrics") or {}
         if isinstance(pub, dict):
@@ -247,7 +252,9 @@ def extract(filepath):
     except (TypeError, ValueError):
         event_count = 0
 
-    # ── downloads (OA books via OPERAS/OAPEN — lives in impact.downloads) ──
+    # ── downloads ──
+    # OA books (OAPEN): impact.downloads.totals.downloads
+    # Datasets / software (DataCite): signals.datacite.downloads
     download_count = 0
     impact_block = d.get("impact") or {}
     if isinstance(impact_block, dict):
@@ -255,6 +262,15 @@ def extract(filepath):
         if isinstance(dl, dict):
             totals = dl.get("totals") or {}
             download_count = totals.get("downloads", 0) or 0
+    if not download_count:
+        dc = signals.get("datacite") or {}
+        if isinstance(dc, dict):
+            raw = dc.get("downloads") or 0
+            # DataCite may return a string like "3,224"
+            try:
+                download_count = int(str(raw).replace(",", "").strip())
+            except (TypeError, ValueError):
+                download_count = 0
     try:
         download_count = int(download_count)
     except (TypeError, ValueError):

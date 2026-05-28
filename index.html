@@ -1014,19 +1014,7 @@ function renderFacets(allStories, filtered) {
     "OCW / syllabi", "Video lectures", "Library holdings", "Open textbook (OTL)",
   ];
   renderFacetGroup("fo-features", "features", allC.features, filtC.features,
-    k => {
-      const icons = {
-        "SDG-linked":           "🌍",
-        "Peer reviewed":        "✅",
-        "Data / code linked":   "🔗",
-        "Has downloads":        "⬇",
-        "OCW / syllabi":        "🎓",
-        "Video lectures":       "▶",
-        "Library holdings":     "📚",
-        "Open textbook (OTL)":  "📖",
-      };
-      return `<span style="margin-right:0.3rem">${icons[k]||""}</span>${esc(k)}`;
-    },
+    k => esc(k),
     featOrder.filter(k => allC.features[k])
   );
 }
