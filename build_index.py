@@ -86,7 +86,7 @@ def extract(filepath):
     year = None
     bib = d.get("bibliographic")
     if isinstance(bib, dict):
-        year = bib.get("year")
+        year = bib.get("year") or bib.get("published_year")
     if not year:
         year = d.get("publication_year")
     if not year:
@@ -94,6 +94,28 @@ def extract(filepath):
         pub = signals.get("published_metrics") or {}
         if isinstance(pub, dict):
             year = pub.get("year")
+    if not year and doi:
+        # Recover year from DOI patterns
+        # bioRxiv/medRxiv, Elsevier: /2023.01.15... or .2023.
+        m = re.search(r"/20(\d\d)\.", doi)
+        if m:
+            year = 2000 + int(m.group(1))
+        if not year:
+            m = re.search(r"\.(20\d\d)\.", doi)
+            if m:
+                y = int(m.group(1))
+                if 2000 <= y <= 2030:
+                    year = y
+        if not year:
+            # Springer/Nature short suffix: s12345-023- → 2023
+            m = re.search(r"s\d+[-.](\d{3})[-.]", doi)
+            if not m:
+                m = re.search(r"s\d+-(\d{3})-", doi)
+            if m:
+                yr2 = int(m.group(1)) % 100
+                y = 2000 + yr2 if yr2 <= 30 else 1900 + yr2
+                if 2000 <= y <= 2030:
+                    year = y
     year = int(year) if year else None
 
     # ── venue / publisher ──

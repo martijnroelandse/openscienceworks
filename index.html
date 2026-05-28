@@ -277,6 +277,94 @@
       color: var(--muted);
       font-weight: 500;
     }
+    .view-toggle {
+      display: flex;
+      gap: 0.25rem;
+      background: var(--border);
+      padding: 0.2rem;
+      border-radius: 8px;
+    }
+    .view-btn {
+      background: transparent;
+      border: none;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: var(--muted);
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .view-btn.active {
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .agg-view { display: none; }
+    .agg-view.visible { display: block; }
+    .agg-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .agg-table th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 2px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+    }
+    .agg-table th:hover { color: var(--text); }
+    .agg-table th.sort-asc::after { content: " ▲"; }
+    .agg-table th.sort-desc::after { content: " ▼"; }
+    .agg-table td {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .agg-table tr:hover td { background: var(--accent-light); }
+    .agg-name {
+      font-weight: 600;
+      color: var(--text);
+      max-width: 280px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .agg-name-link {
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+    .agg-name-link:hover { text-decoration: underline; color: var(--c-article); }
+    .agg-bar-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .agg-bar {
+      height: 6px;
+      background: var(--c-article);
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .agg-num { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .agg-oa-badge {
+      display: inline-block;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .agg-oa-badge.high { background: #d4f0e4; color: #1a6640; }
+    .agg-oa-badge.mid  { background: #fff3cd; color: #856404; }
+    .agg-oa-badge.low  { background: #fde8e8; color: #7d1111; }
     .active-filters {
       display: flex;
       flex-wrap: wrap;
@@ -555,9 +643,15 @@
   <main class="main-area">
     <div class="results-header">
       <span class="count" id="resultsCount">Loading…</span>
+      <div class="view-toggle">
+        <button class="view-btn active" id="vbtn-stories"       onclick="setView('stories')">Stories</button>
+        <button class="view-btn"        id="vbtn-institution"   onclick="setView('institution')">By institution</button>
+        <button class="view-btn"        id="vbtn-publisher"     onclick="setView('publisher')">By publisher</button>
+      </div>
       <div class="active-filters" id="activeFilters"></div>
     </div>
     <div class="cards-grid" id="cardsGrid"></div>
+    <div class="agg-view" id="aggView"></div>
   </main>
 </div>
 
@@ -571,6 +665,8 @@
 const state = {
   query: "",
   sort: "citations",
+  view: "stories",   // "stories" | "institution" | "publisher"
+  aggSort: { key: "stories", dir: "desc" },
   filters: {
     type: new Set(),
     role: new Set(),
@@ -657,7 +753,10 @@ function filterStories(stories) {
       const oaKey = s.oa_status || (s.is_oa===true?"oa":"closed");
       if (!state.filters.oa.has(oaKey)) return false;
     }
-    if (state.filters.role.size && !s.roles.some(r => state.filters.role.has(r))) return false;
+    // AND within each multi-value facet: story must carry ALL selected values
+    if (state.filters.role.size && ![...state.filters.role].every(r => s.roles.includes(r))) return false;
+    if (state.filters.concept.size && ![...state.filters.concept].every(c => s.concepts.includes(c))) return false;
+    if (state.filters.institution.size && ![...state.filters.institution].every(i => (s.institutions||[]).includes(i))) return false;
     if (state.filters.features.size) {
       const feats = new Set();
       if (s.has_sdgs)        feats.add("Has SDGs");
@@ -667,8 +766,6 @@ function filterStories(stories) {
       if ((s.download_count||0) > 0) feats.add("Has downloads");
       if (![...state.filters.features].every(f => feats.has(f))) return false;
     }
-    if (state.filters.concept.size && !s.concepts.some(c => state.filters.concept.has(c))) return false;
-    if (state.filters.institution.size && !(s.institutions||[]).some(i => state.filters.institution.has(i))) return false;
     if (state.filters.venue.size && !state.filters.venue.has(s.venue)) return false;
     if (state.filters.year.size && !state.filters.year.has(s.year)) return false;
     return true;
@@ -678,7 +775,7 @@ function filterStories(stories) {
 function sortStories(stories) {
   return [...stories].sort((a, b) => {
     if (state.sort==="citations")  return b.citation_count - a.citation_count;
-    if (state.sort==="recent")     return (b.year||0) - (a.year||0);
+    if (state.sort==="recent")     return ((b.year||0) - (a.year||0)) || (b.citation_count - a.citation_count);
     if (state.sort==="events")     return b.event_count - a.event_count;
     if (state.sort==="downloads")  return (b.download_count||0) - (a.download_count||0);
     if (state.sort==="alpha")      return a.title.localeCompare(b.title);
@@ -821,6 +918,131 @@ function renderHeroStats() {
   ].join("");
 }
 
+// ── aggregation view ─────────────────────────────────────────────────────
+function buildAggGroups(stories, groupKey) {
+  const map = {};
+  for (const s of stories) {
+    let keys = [];
+    if (groupKey === "institution") {
+      keys = (s.institutions || []).filter(Boolean);
+      if (!keys.length) keys = ["(no institution)"];
+    } else {
+      const k = s.publisher || s.venue || "(no publisher)";
+      keys = [k];
+    }
+    for (const k of keys) {
+      if (!map[k]) map[k] = { name: k, count: 0, citations: 0, downloads: 0, oa: 0 };
+      map[k].count++;
+      map[k].citations += s.citation_count || 0;
+      map[k].downloads += s.download_count || 0;
+      if (s.is_oa) map[k].oa++;
+    }
+  }
+  return Object.values(map);
+}
+
+function sortAggGroups(groups) {
+  const { key, dir } = state.aggSort;
+  const mul = dir === "desc" ? -1 : 1;
+  return [...groups].sort((a, b) => {
+    let va = a[key] ?? 0, vb = b[key] ?? 0;
+    if (key === "name") { va = a.name.toLowerCase(); vb = b.name.toLowerCase(); return mul * va.localeCompare(vb); }
+    if (key === "pct_oa") { va = a.count ? a.oa / a.count : 0; vb = b.count ? b.oa / b.count : 0; }
+    if (key === "avg_cit") { va = a.count ? a.citations / a.count : 0; vb = b.count ? b.citations / b.count : 0; }
+    return mul * (vb - va);
+  });
+}
+
+// Global lookup so drill-in doesn't need to escape names in onclick attrs
+const _aggDrillMap = {};
+
+function renderAgg(stories, groupKey) {
+  const groups = sortAggGroups(buildAggGroups(stories, groupKey));
+  const maxCit = Math.max(...groups.map(g => g.citations), 1);
+  const hasDl  = groups.some(g => g.downloads > 0);
+  const facetKey = groupKey === "institution" ? "institution" : "venue";
+
+  // Build an index so clicks can look up the real name safely
+  Object.assign(_aggDrillMap, Object.fromEntries(groups.map((g, i) => [i, g.name])));
+
+  function th(label, sortKey, title="") {
+    const active = state.aggSort.key === sortKey;
+    const cls = active ? (state.aggSort.dir === "desc" ? "sort-desc" : "sort-asc") : "";
+    return `<th class="${cls}" onclick="setAggSort('${sortKey}')" title="${title}">${label}</th>`;
+  }
+
+  const rows = groups.map((g, i) => {
+    const pct = g.count ? Math.round(100 * g.oa / g.count) : 0;
+    const barCit = Math.round(160 * g.citations / maxCit);
+    const oaCls = pct >= 80 ? "high" : pct >= 40 ? "mid" : "low";
+    const avgCit = g.count ? (g.citations / g.count).toFixed(1) : "0";
+
+    return `<tr>
+      <td class="agg-name" title="${escHtml(g.name)}">
+        <a class="agg-name-link" onclick="drillInto('${facetKey}',${i})">
+          ${escHtml(g.name)}
+        </a>
+      </td>
+      <td class="agg-num">${g.count}</td>
+      <td>
+        <div class="agg-bar-wrap">
+          <div class="agg-bar" style="width:${barCit}px"></div>
+          <span>${fmt(g.citations)}</span>
+        </div>
+      </td>
+      <td class="agg-num">${avgCit}</td>
+      <td><span class="agg-oa-badge ${oaCls}">${pct}%</span></td>
+      ${hasDl ? `<td class="agg-num">${g.downloads > 0 ? fmt(g.downloads) : "—"}</td>` : ""}
+    </tr>`;
+  }).join("");
+
+  document.getElementById("aggView").innerHTML = `
+    <table class="agg-table">
+      <thead><tr>
+        ${th("Name", "name")}
+        ${th("Stories", "count")}
+        ${th("Total citations", "citations")}
+        ${th("Avg citations", "avg_cit")}
+        ${th("Open access", "pct_oa", "% of stories that are OA")}
+        ${hasDl ? th("Downloads", "downloads") : ""}
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <p style="margin-top:0.75rem;font-size:0.8rem;color:var(--muted)">
+      ${groups.length} groups · click a name to filter stories
+    </p>`;
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+function setAggSort(key) {
+  if (state.aggSort.key === key) {
+    state.aggSort.dir = state.aggSort.dir === "desc" ? "asc" : "desc";
+  } else {
+    state.aggSort.key = key;
+    state.aggSort.dir = key === "name" ? "asc" : "desc";
+  }
+  update();
+}
+
+function setView(v) {
+  state.view = v;
+  document.querySelectorAll(".view-btn").forEach(b => b.classList.remove("active"));
+  document.getElementById("vbtn-" + v).classList.add("active");
+  update();
+}
+
+function drillInto(facetKey, idx) {
+  const val = _aggDrillMap[idx];
+  if (!val) return;
+  setView("stories");
+  state.filters[facetKey].clear();
+  state.filters[facetKey].add(val);
+  update();
+}
+
 // ── interactions ──────────────────────────────────────────────────────────
 function toggleFacet(id) {
   document.getElementById(id).classList.toggle("collapsed");
@@ -844,7 +1066,21 @@ function update() {
   const all      = window.STORIES_DATA;
   const filtered = filterStories(all);
   const sorted   = sortStories(filtered);
-  renderCards(sorted);
+
+  const isAgg = state.view !== "stories";
+  document.getElementById("cardsGrid").style.display = isAgg ? "none" : "";
+  document.getElementById("sortSelect").parentElement.style.opacity = isAgg ? "0.4" : "";
+  document.getElementById("sortSelect").disabled = isAgg;
+
+  const aggEl = document.getElementById("aggView");
+  if (isAgg) {
+    aggEl.classList.add("visible");
+    renderAgg(filtered, state.view);
+  } else {
+    aggEl.classList.remove("visible");
+    renderCards(sorted);
+  }
+
   renderFacets(all, filtered);
   renderActiveFilters();
   renderResultsCount(filtered.length, all.length);
