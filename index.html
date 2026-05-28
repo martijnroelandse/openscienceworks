@@ -2,223 +2,851 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>openscience.works</title>
+  <meta name="description" content="Turning open scholarly works into contextual impact narratives. Browse ArticleStories, BookStories, DataStories and more.">
   <style>
-    * { box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --bg: #f3f4f6;
+      --surface: #ffffff;
+      --border: #e5e7eb;
+      --text: #111827;
+      --muted: #6b7280;
+      --accent: #2E4563;       /* Articlestories navy – primary accent */
+      --accent-light: #e8edf3;
+      --fold: #F2C94C;         /* Brand yellow fold */
+      --c-article:  #3C5A7F;
+      --c-book:     #B34444;
+      --c-data:     #34675A;
+      --c-software: #6A4FA3;
+      --radius: 0.9rem;
+      --shadow: 0 4px 24px rgba(15,23,42,0.08);
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Montserrat, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       margin: 0;
       padding: 0;
-      background: #f3f4f6;
-      color: #111827;
+      line-height: 1.5;
     }
-    .page {
-      max-width: 1000px;
-      margin: 2.5rem auto;
+
+    /* ── HERO ─────────────────────────────────────────────────────────── */
+    .hero {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 2rem 2rem;
+    }
+    .hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .hero-logo {
+      width: 130px;
+      height: 130px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .hero-text h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 0 0 0.35rem 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .hero-text h1 b { color: var(--text); font-weight: 800; }
+    .hero-text h1 .dot { color: var(--fold); }
+    .hero-text h1 .works { font-weight: 400; color: var(--text); }
+    .hero-tagline {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin: 0 0 1.25rem 0;
+    }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .stat-pill {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.35rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .stat-pill span.num { color: var(--c-article); font-size: 1rem; font-weight: 700; }
+    .hero-about {
+      margin-top: 1.5rem;
+      max-width: 680px;
+      font-size: 0.95rem;
+      color: #374151;
+      line-height: 1.65;
+    }
+    .hero-links { margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.5rem 1.1rem;
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-primary { background: var(--c-article); color: #fff; }
+    .btn-outline { background: transparent; color: var(--c-article); border: 1.5px solid var(--c-article); }
+
+    /* ── SHELL ────────────────────────────────────────────────────────── */
+    .shell {
+      max-width: 1180px;
+      margin: 1.75rem auto;
       padding: 0 1.25rem 3rem;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 1.5rem;
+      align-items: start;
     }
-    .header-bar {
+
+    /* ── SIDEBAR ──────────────────────────────────────────────────────── */
+    .sidebar {
+      position: sticky;
+      top: 1rem;
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.25rem 1.25rem 1.5rem;
+      max-height: calc(100vh - 2rem);
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+    .sidebar h2 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 0 0 0.75rem 0;
+    }
+
+    .search-wrap {
+      position: relative;
+      margin-bottom: 1.25rem;
+    }
+    .search-wrap input {
+      width: 100%;
+      padding: 0.55rem 0.75rem 0.55rem 2.1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--bg);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .search-wrap input:focus { border-color: var(--c-article); }
+    .search-wrap svg {
+      position: absolute;
+      left: 0.6rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      stroke: var(--muted);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      pointer-events: none;
+    }
+
+    .facet-group {
+      margin-bottom: 1.25rem;
+    }
+    .facet-group h3 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin: 0 0 0.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .facet-group h3 .caret {
+      font-size: 0.65rem;
+      transition: transform 0.2s;
+      display: inline-block;
+    }
+    .facet-group.collapsed h3 .caret { transform: rotate(-90deg); }
+    .facet-group.collapsed .facet-options { display: none; }
+
+    .facet-options { display: flex; flex-direction: column; gap: 0.1rem; }
+    .facet-options.overflow { max-height: 180px; overflow-y: auto; }
+    .facet-opt {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.35rem;
+      border-radius: 0.35rem;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--text);
+      transition: background 0.1s;
+      user-select: none;
+    }
+    .facet-opt:hover { background: var(--bg); }
+    .facet-opt input[type=checkbox] { accent-color: var(--c-article); cursor: pointer; }
+    .facet-opt .count {
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: var(--muted);
+      background: var(--bg);
+      padding: 0.05rem 0.4rem;
+      border-radius: 999px;
+    }
+    .facet-opt .oa-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+
+    .sort-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .sort-row select {
+      flex: 1;
+      padding: 0.45rem 0.6rem;
+      border: 1.5px solid var(--border);
+      border-radius: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text);
+      background: var(--bg);
+      cursor: pointer;
+    }
+
+    .clear-btn {
+      width: 100%;
+      padding: 0.5rem;
+      background: none;
+      border: 1.5px solid var(--border);
+      border-radius: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: all 0.15s;
+    }
+    .clear-btn:hover { border-color: #dc2626; color: #dc2626; }
+
+    /* ── MAIN AREA ────────────────────────────────────────────────────── */
+    .main-area {}
+    .results-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1.25rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
-    .logo-title {
+    .results-header .count {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .active-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .af-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: var(--accent-light);
+      color: var(--c-article);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .af-tag:hover { opacity: 0.75; }
+    .af-tag .x { font-size: 0.9rem; font-weight: 700; }
+
+    /* ── CARDS GRID ───────────────────────────────────────────────────── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .story-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.25rem 1.4rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      transition: box-shadow 0.2s, transform 0.15s;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Yellow fold accent — echoes the brand icon corner detail */
+    .story-card::after {
+      content: "";
+      position: absolute;
+      top: 0; right: 0;
+      width: 28px; height: 28px;
+      background: linear-gradient(225deg, var(--fold) 50%, transparent 50%);
+      border-radius: 0 var(--radius) 0 0;
+      opacity: 0.85;
+    }
+    .story-card:hover {
+      box-shadow: 0 8px 32px rgba(15,23,42,0.13);
+      transform: translateY(-2px);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .type-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+    .type-article  { background: #3C5A7F; color: #fff; }
+    .type-book     { background: #B34444; color: #fff; }
+    .type-data     { background: #34675A; color: #fff; }
+    .type-software { background: #6A4FA3; color: #fff; }
+
+    .oa-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+    .oa-gold   { background: #fef3c7; color: #92400e; }
+    .oa-hybrid { background: #e0f2fe; color: #0369a1; }
+    .oa-green  { background: #dcfce7; color: #166534; }
+    .oa-bronze { background: #ffedd5; color: #9a3412; }
+    .oa-closed { background: #f3f4f6; color: #6b7280; }
+
+    .card-title {
+      font-size: 0.97rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+      margin: 0;
+    }
+    .card-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .card-meta .sep { color: #d1d5db; }
+
+    .card-excerpt {
+      font-size: 0.82rem;
+      color: #4b5563;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: auto;
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 500;
+    }
+    .tag-concept { background: #f3f4f6; color: #374151; }
+    .tag-role    { background: #fef3c7; color: #92400e; }
+    .tag-sdg     { background: #dcfce7; color: #166534; }
+    .tag-teach   { background: #e0f2fe; color: #0369a1; }
+
+    .card-footer {
       display: flex;
       align-items: center;
-      gap: 1.25rem;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--muted);
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border);
+      gap: 0.5rem;
+      flex-wrap: wrap;
     }
-    .logo-wrap img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      display: block;
+    .cit-count { font-weight: 600; color: var(--text); }
+
+    /* ── NO RESULTS ───────────────────────────────────────────────────── */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--muted);
     }
-    .card {
-      background: #ffffff;
-      border-radius: 0.9rem;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-      padding: 1.5rem 1.75rem;
-      margin-bottom: 1.75rem;
-    }
-    .card input {
-      border: 0;
-      margin: -1.5rem -1.75rem;
-      padding: 1.5rem 1.75rem;
-      width: calc(100% + 3.5rem);
-      font-size: 1rem;
-      border-radius: 0.9rem;
-    }
-    footer.page-footer {
-      margin-top: 2rem;
+    .no-results h3 { margin: 0 0 0.5rem; font-size: 1.1rem; color: var(--text); }
+
+    /* ── FOOTER ───────────────────────────────────────────────────────── */
+    .page-footer {
+      max-width: 1180px;
+      margin: 0 auto 2rem;
+      padding: 0 1.25rem;
       text-align: right;
       font-size: 0.8rem;
       color: #9ca3af;
     }
-    footer.page-footer a {
-      color: #9ca3af;
-      text-decoration: none;
-    }
-    a { color: #2563eb; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    input[list] {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      border: 0;
-      border-radius: 0.45rem;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    .page-footer a { color: #9ca3af; text-decoration: none; }
+    .page-footer a:hover { text-decoration: underline; }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────────────── */
+    @media (max-width: 840px) {
+      .shell { grid-template-columns: 1fr; }
+      .hero-inner { grid-template-columns: 1fr; gap: 1rem; }
+      .hero-logo { width: 72px; height: 72px; }
+      .sidebar { position: static; }
     }
   </style>
 </head>
 <body>
-<div class="page">
 
-  <header class="hero">
-    <div class="header-bar">
-      <div class="logo-title">
-        <div class="logo-wrap">
-          <img src="Openscienceworks - tranparant.png" alt="openscience.works logo" style="cursor: pointer;" onclick="document.location.href='index.html';">
-        </div>
-        <div>
-          <h1 class="hero-title">openscience.works</h1>
-        </div>
+<!-- ══ HERO ══════════════════════════════════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-inner">
+    <img src="openscience.works%20logos/openscience.works%20logo.png" alt="openscience.works" class="hero-logo">
+    <div class="hero-text">
+      <h1><b>openscience</b><span class="dot">.</span><span class="works">works</span></h1>
+      <p class="hero-tagline">The home of research signals.</p>
+      <div class="hero-stats" id="heroStats"><!-- filled by JS --></div>
+      <p class="hero-about">
+        <strong>openscience.works</strong> builds open, reusable services that help researchers, libraries, and publishers understand how open scholarly works are used, shared, and discussed across the research ecosystem. Instead of reducing research to single metrics, we focus on helping organisations tell richer, evidence-based stories about the reach and value of open scholarship &mdash; every data source transparent and inspectable.
+      </p>
+      <div class="hero-links">
+        <a href="#explorer" class="btn btn-primary" onclick="document.getElementById('explorer').scrollIntoView({behavior:'smooth'}); return false;" style="background:#F2C94C;color:#111827;">Browse stories ↓</a>
+        <a href="about.html" class="btn btn-outline">About us</a>
       </div>
-    </div>  
-  </header>
-
-  <section>
-    <div style="display: flex; justify-content: space-between;">
-      <div style="margin-bottom: 1rem;">
-        <label><input id="toggleArticleStories" type="checkbox" checked onchange="toggleStories()"> Find ArticleStories</label>
-        &nbsp;
-        <label><input id="toggleBooksStories" type="checkbox" checked onchange="toggleStories()"> Find BooksStories</label>
-      </div>
-      <a href="#" onclick="toggleAdvancedSearch()">Advanced search</a>
     </div>
-    <div id="advancedSearch" style="display: none; margin-bottom: 0.5rem; display: columns; column-gap: 2rem; column-width: 20rem;">
-      <input id="concept_" placeholder="Filter by concepts..." list="conceptsList">
-      <datalist id="conceptsList">
-        <option value="Physics">
-        <option value="History">
-        <option value="Biology">
-        <option value="Virology">
-        <option value="Sociology">
-      </datalist>
-      <input id="publisher_" placeholder="Filter by publisher..." list="publishersList">
-      <datalist id="publishersList">
-        <option value="Lever Press">
-        <option value="Open Book Publishers">
-        <option value="Purdue University">
-        <option value="SpringerOpen">
-        <option value="Uni of Michigan Press">
-        <option value="Uni of Wisconsin Press">
-      </datalist>
-      <input id="journal_" placeholder="Filter by journal..." list="journalsList">
-      <datalist id="journalsList">
-        <option value="Nature Physics">
-        <option value="PLOS Biology">
-        <option value="Elife">
-      </datalist>
-      <input id="role_" placeholder="Filter by inferred role..." list="inferredRolesList">
-      <datalist id="inferredRolesList">
-        <option value="Scholarly uptake">
-        <option value="Usage-driven uptake">
-        <option value="Rapid uptake">
-        <option value="High-visibility uptake">
-        <option value="Active discussion signal">
-        <option value="Public visibility signal">
-      </datalist>
+  </div>
+</header>
+
+<!-- ══ EXPLORER ══════════════════════════════════════════════════════════════ -->
+<div class="shell" id="explorer">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <h2>Filter &amp; explore</h2>
+
+    <!-- Search -->
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="searchInput" placeholder="Search titles, authors…" autocomplete="off">
     </div>
-    <script>
-      function toggleAdvancedSearch() {
-        const fieldset = document.getElementById('advancedSearch');
-        fieldset.style.display = fieldset.style.display === 'none' ? 'block' : 'none';
-      }
-    </script>
-  </section>
 
-  <section class="card">
-    <form onSubmit="return false" action="/" method="post"><input type="search" id="search-input" placeholder="Search stories..."></form>
-    <script>
-      function showResults() {
-        const query = document.getElementById('search-input').value.toLowerCase();
-        const results = document.getElementById('results');
-        const items = results.getElementsByTagName('li');
-        const conceptFilter = 'concept_'+document.getElementById('concept_').value.toLowerCase().replace(/\s/g, '-');
-        const publisherFilter = 'publisher_'+document.getElementById('publisher_').value.toLowerCase().replace(/\s/g, '-');
-        const journalFilter = 'journal_'+document.getElementById('journal_').value.toLowerCase().replace(/\s/g, '-');
-        const roleFilter = 'role_'+document.getElementById('role_').value.toLowerCase().replace(/\s/g, '-');
-        const newBooksState = document.getElementById('toggleBooksStories').checked;
-        const newArticleState = document.getElementById('toggleArticleStories').checked;
-        var visibleCount = 0;
-        results.style.display = 'block';
-        for (let i = 0; i < items.length; i++) {
-          const item = items[i];
-          let matches = true;
-          let hasquery = query && query.trim() !== '';
-          let hasconceptFilter = conceptFilter && conceptFilter !== 'concept_';
-          let haspublisherFilter = publisherFilter && publisherFilter !== 'publisher_';
-          let hasjournalFilter = journalFilter && journalFilter !== 'journal_';
-          let hasroleFilter = roleFilter && roleFilter !== 'role_';
-          let isArticleStory = item.textContent.includes('ArticleStory:');
-          let isBookStory = item.textContent.includes('BookStory:');
-          if (!newBooksState && isBookStory) {
-            matches = false;
-          }
-          if (!newArticleState && isArticleStory) {
-            matches = false;
-          }
-          if (hasquery && !item.textContent.toLowerCase().includes(query)) {
-            matches = false;
-          }
-          if (hasconceptFilter && !item.classList.contains(conceptFilter)) {
-            matches = false;
-          }
-          if (haspublisherFilter && !item.classList.contains(publisherFilter)) {
-            matches = false;
-          }
-          if (hasjournalFilter && !item.classList.contains(journalFilter)) {
-            matches = false;
-          }
-          if (hasroleFilter && !item.classList.contains(roleFilter)) {
-            matches = false;
-          }
-          if (matches && (hasquery || hasconceptFilter || haspublisherFilter || hasjournalFilter || hasroleFilter)) {
-            item.style.display = 'list-item';
-            visibleCount++;
-          } else {
-            item.style.display = 'none';
-          }
-        }
-      }
+    <!-- Sort -->
+    <div class="sort-row">
+      <select id="sortSelect">
+        <option value="citations">Sort: most cited</option>
+        <option value="recent">Sort: most recent</option>
+        <option value="events">Sort: most attention</option>
+        <option value="alpha">Sort: A → Z</option>
+      </select>
+    </div>
 
-      //on keypress or click anywhere on the document, call showResults
-      document.addEventListener('input', showResults);
-      document.addEventListener('click', showResults);
-    </script>
-  </section>
+    <!-- Story type -->
+    <div class="facet-group" id="fg-type">
+      <h3 onclick="toggleFacet('fg-type')">Story type <span class="caret">▾</span></h3>
+      <div class="facet-options" id="fo-type"></div>
+    </div>
 
-  <section>
-    <ul id="results" style="display: none;">
-        <li class="concept_history concept_physics concept_quantum journal_nature-physics role_scholarly-uptake"><a href="articlestory_10.1038_nphys1170.html">ArticleStory: Measured measurement</a></li>
-        <li class="concept_geography concept_sociology concept_physics journal_elife role_rapid-uptake role_high-visibility-uptake"><a href="articlestory_10.7554_elife.79714.html">ArticleStory: Stable population structure in Europe since the Iron Age, despite high mobility</a></li>
-        <li class="concept_biology concept_virology concept_genetics journal_plos-biology role_high-visibility-uptake role_rapid-uptake role_reference-point-for-synthesis"><a href="articlestory_10.1371_journal.pbio.3002916.html">ArticleStory: Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance</a></li>
-        <li class="concept_art concept_fantasy concept_philosophy journal_lever-press role_usage-driven-uptake role_public-visibility-signal role_scholarly-uptake"><a href="bookstory_10.3998_mpub.14414299.html">BookStory: Urban Fantasy</a></li>
-        <li class="concept_politics concept_medicine concept_sociology publisher_uni-of-michigan-press role_usage-driven-uptake role_public-visibility-signal role_scholarly-uptake"><a href="bookstory_10.3998_mpub.11927713.html">BookStory: Coronavirus Politics</a></li>
-        <li class="concept_sociology concept_gender-studies concept_geography publisher_uni-of-wisconsin-press role_usage-driven-uptake role_scholarly-uptake"><a href="bookstory_10.3368_HNAL9672.html">BookStory: Farm Boys: Lives of Gay Men from the Rural Midwest</a></li>
-        <li class="concept_computer-science publisher_springeropen role_usage-driven-uptake role_public-visibility-signal role_scholarly-uptake"><a href="bookstory_10.1007_978-3-319-00026-8.html">BookStory: Opening Science</a></li>
-        <li class="concept_business concept_politics concept_law publisher_open-book-publishers role_usage-driven-uptake role_scholarly-uptake"><a href="bookstory_10.11647_OBP.0222.html">BookStory: A European Public Investment Outlook</a></li>
-        <li class="concept_law concept_history concept_politics publisher_purdue-university role_usage-driven-uptake"><a href="bookstory_10.5703_1288284317628.html">BookStory: Sisters in Science</a></li>
-        <li class="concept_art concept_history concept_literature publisher_lever-press role_public-visibility-signal role_scholarly-uptake"><a href="bookstory_10.3998_mpub.11649332.html">BookStory: Elizabeth Bishop and the Literary Archive</a></li>
-        <li class="concept_art concept_music concept_history publisher_lever-press role_public-visibility-signal role_scholarly-uptake"><a href="bookstory_10.3998_mpub.9853855.html">BookStory: Music on the Move</a></li>
-    </ul>
-  </section>
+    <!-- OA Status -->
+    <div class="facet-group" id="fg-oa">
+      <h3 onclick="toggleFacet('fg-oa')">Open access <span class="caret">▾</span></h3>
+      <div class="facet-options" id="fo-oa"></div>
+    </div>
 
-  <footer class="page-footer">
-    &copy; 2026 openscience.works - All rights reserved | <a href="about.html">About us</a>
-  </footer>
+    <!-- Discipline / concept -->
+    <div class="facet-group" id="fg-concept">
+      <h3 onclick="toggleFacet('fg-concept')">Discipline <span class="caret">▾</span></h3>
+      <div class="facet-options overflow" id="fo-concept"></div>
+    </div>
+
+    <!-- Role / signal -->
+    <div class="facet-group" id="fg-role">
+      <h3 onclick="toggleFacet('fg-role')">Impact signal <span class="caret">▾</span></h3>
+      <div class="facet-options overflow" id="fo-role"></div>
+    </div>
+
+    <!-- Publisher / venue -->
+    <div class="facet-group collapsed" id="fg-venue">
+      <h3 onclick="toggleFacet('fg-venue')">Publisher / venue <span class="caret">▾</span></h3>
+      <div class="facet-options overflow" id="fo-venue"></div>
+    </div>
+
+    <!-- Year -->
+    <div class="facet-group collapsed" id="fg-year">
+      <h3 onclick="toggleFacet('fg-year')">Year <span class="caret">▾</span></h3>
+      <div class="facet-options overflow" id="fo-year"></div>
+    </div>
+
+    <!-- Features -->
+    <div class="facet-group collapsed" id="fg-features">
+      <h3 onclick="toggleFacet('fg-features')">Features <span class="caret">▾</span></h3>
+      <div class="facet-options" id="fo-features"></div>
+    </div>
+
+    <button class="clear-btn" id="clearBtn" onclick="clearAll()">Clear all filters</button>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-area">
+    <div class="results-header">
+      <span class="count" id="resultsCount">Loading…</span>
+      <div class="active-filters" id="activeFilters"></div>
+    </div>
+    <div class="cards-grid" id="cardsGrid"></div>
+  </main>
 </div>
+
+<footer class="page-footer">
+  &copy; 2026 openscience.works — All rights reserved | <a href="about.html">About us</a>
+</footer>
+
+<script src="stories_data.js"></script>
+<script>
+// ── state ─────────────────────────────────────────────────────────────────
+const state = {
+  query: "",
+  sort: "citations",
+  filters: {
+    type: new Set(),
+    oa: new Set(),
+    concept: new Set(),
+    role: new Set(),
+    venue: new Set(),
+    year: new Set(),
+    features: new Set(),
+  }
+};
+
+// ── helpers ───────────────────────────────────────────────────────────────
+function fmt(n) {
+  if (n >= 1000000) return (n/1000000).toFixed(1)+"M";
+  if (n >= 1000) return (n/1000).toFixed(1)+"k";
+  return n.toString();
+}
+
+function oaLabel(s) {
+  const m = { gold:"Gold OA", hybrid:"Hybrid OA", green:"Green OA", bronze:"Bronze OA", closed:"Closed", "":"Unknown" };
+  return m[s] || (s ? s.charAt(0).toUpperCase()+s.slice(1) : "Unknown");
+}
+function oaClass(s) {
+  const m = { gold:"oa-gold", hybrid:"oa-hybrid", green:"oa-green", bronze:"oa-bronze", closed:"oa-closed" };
+  return m[s] || "oa-closed";
+}
+function oaColor(s) {
+  const m = { gold:"#f59e0b", hybrid:"#0ea5e9", green:"#22c55e", bronze:"#f97316", closed:"#9ca3af" };
+  return m[s] || "#9ca3af";
+}
+function typeClass(t) {
+  if (t==="ArticleStory") return "type-article";
+  if (t==="BookStory") return "type-book";
+  if (t==="DataStory") return "type-data";
+  if (t==="SoftwareStory") return "type-software";
+  return "type-article";
+}
+function typeLabel(t) {
+  return { ArticleStory:"Articlestory", BookStory:"Bookstory", DataStory:"Datastory", SoftwareStory:"Softwarestory" }[t] || t;
+}
+function typeColor(t) {
+  return { ArticleStory:"#3C5A7F", BookStory:"#B34444", DataStory:"#34675A", SoftwareStory:"#6A4FA3" }[t] || "#374151";
+}
+function typeLogo(t) {
+  return {
+    ArticleStory:  "openscience.works%20logos/Articlestories%20icon.png",
+    BookStory:     "openscience.works%20logos/Bookstories%20icon.png",
+    DataStory:     "openscience.works%20logos/Datastories%20icon.png",
+    SoftwareStory: "openscience.works%20logos/Softwarestories%20icon.png",
+  }[t] || "";
+}
+
+// ── build facet counts ────────────────────────────────────────────────────
+function buildFacetCounts(stories) {
+  const counts = { type:{}, oa:{}, concept:{}, role:{}, venue:{}, year:{}, features:{} };
+  for (const s of stories) {
+    counts.type[s.type] = (counts.type[s.type]||0)+1;
+    const oaKey = s.oa_status || (s.is_oa===true?"oa":"closed");
+    counts.oa[oaKey] = (counts.oa[oaKey]||0)+1;
+    for (const c of s.concepts) counts.concept[c] = (counts.concept[c]||0)+1;
+    for (const r of s.roles) counts.role[r] = (counts.role[r]||0)+1;
+    if (s.venue) counts.venue[s.venue] = (counts.venue[s.venue]||0)+1;
+    if (s.year) counts.year[s.year] = (counts.year[s.year]||0)+1;
+    if (s.has_sdgs)      counts.features["Has SDGs"]          = (counts.features["Has SDGs"]||0)+1;
+    if (s.has_teaching)  counts.features["Teaching adoption"] = (counts.features["Teaching adoption"]||0)+1;
+    if (s.has_peer_review) counts.features["Peer reviewed"]   = (counts.features["Peer reviewed"]||0)+1;
+    if (s.has_reuse)     counts.features["Reuse / data linked"] = (counts.features["Reuse / data linked"]||0)+1;
+  }
+  return counts;
+}
+
+// ── filter ────────────────────────────────────────────────────────────────
+function filterStories(stories) {
+  return stories.filter(s => {
+    if (state.query) {
+      const haystack = [s.title, s.authors, s.venue, s.excerpt, ...s.concepts, ...s.roles].join(" ").toLowerCase();
+      if (!haystack.includes(state.query)) return false;
+    }
+    if (state.filters.type.size && !state.filters.type.has(s.type)) return false;
+    if (state.filters.oa.size) {
+      const oaKey = s.oa_status || (s.is_oa===true?"oa":"closed");
+      if (!state.filters.oa.has(oaKey)) return false;
+    }
+    if (state.filters.concept.size && !s.concepts.some(c => state.filters.concept.has(c))) return false;
+    if (state.filters.role.size && !s.roles.some(r => state.filters.role.has(r))) return false;
+    if (state.filters.venue.size && !state.filters.venue.has(s.venue)) return false;
+    if (state.filters.year.size && !state.filters.year.has(s.year)) return false;
+    if (state.filters.features.size) {
+      const feats = new Set();
+      if (s.has_sdgs)      feats.add("Has SDGs");
+      if (s.has_teaching)  feats.add("Teaching adoption");
+      if (s.has_peer_review) feats.add("Peer reviewed");
+      if (s.has_reuse)     feats.add("Reuse / data linked");
+      if (![...state.filters.features].every(f => feats.has(f))) return false;
+    }
+    return true;
+  });
+}
+
+function sortStories(stories) {
+  return [...stories].sort((a, b) => {
+    if (state.sort==="citations") return b.citation_count - a.citation_count;
+    if (state.sort==="recent")    return (b.year||0) - (a.year||0);
+    if (state.sort==="events")    return b.event_count - a.event_count;
+    if (state.sort==="alpha")     return a.title.localeCompare(b.title);
+    return 0;
+  });
+}
+
+// ── render cards ──────────────────────────────────────────────────────────
+function esc(str) {
+  if (!str) return "";
+  return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+function renderCards(stories) {
+  const grid = document.getElementById("cardsGrid");
+  if (!stories.length) {
+    grid.innerHTML = `<div class="no-results"><h3>No stories match your filters</h3><p>Try broadening your search or clearing some filters.</p></div>`;
+    return;
+  }
+  grid.innerHTML = stories.map(s => {
+    const metaParts = [];
+    if (s.venue)   metaParts.push(`<span>${esc(s.venue)}</span>`);
+    if (s.year)    metaParts.push(`<span>${s.year}</span>`);
+    if (s.authors) metaParts.push(`<span>${esc(s.authors)}</span>`);
+    const meta = metaParts.join(`<span class="sep">·</span>`);
+
+    const conceptTags = s.concepts.slice(0,4).map(c => `<span class="tag tag-concept">${esc(c)}</span>`).join("");
+    const roleTags    = s.roles.slice(0,2).map(r => `<span class="tag tag-role">${esc(r)}</span>`).join("");
+    const extraTags   = [
+      s.has_sdgs     ? `<span class="tag tag-sdg">SDGs</span>` : "",
+      s.has_teaching ? `<span class="tag tag-teach">Teaching</span>` : "",
+    ].join("");
+
+    const excerpt = s.excerpt ? `<p class="card-excerpt">${esc(s.excerpt)}</p>` : "";
+    const attn    = s.event_count > 0 ? `<span>${fmt(s.event_count)} attention events</span>` : "";
+
+    return `<a class="story-card" href="${s.file}">
+      <div class="card-top">
+        <span class="type-badge ${typeClass(s.type)}">${typeLabel(s.type)}</span>
+        <span class="oa-badge ${oaClass(s.oa_status)}">${oaLabel(s.oa_status)}</span>
+      </div>
+      <h3 class="card-title">${esc(s.title)}</h3>
+      <div class="card-meta">${meta}</div>
+      ${excerpt}
+      <div class="card-tags">${conceptTags}${roleTags}${extraTags}</div>
+      <div class="card-footer">
+        <span><span class="cit-count">${fmt(s.citation_count)}</span> citations</span>
+        ${attn}
+      </div>
+    </a>`;
+  }).join("");
+}
+
+// ── render facets ─────────────────────────────────────────────────────────
+function renderFacetGroup(elId, facetKey, allCounts, filtCounts, labelFn, keys) {
+  const el = document.getElementById(elId);
+  const activeSet = state.filters[facetKey];
+  el.innerHTML = keys.map(k => {
+    const total = allCounts[k] || 0;
+    const filt  = filtCounts[k] || 0;
+    const checked = activeSet.has(k) ? "checked" : "";
+    const dim = !filt && !activeSet.has(k) ? `style="opacity:0.4"` : "";
+    const safeK = String(k).replace(/\\/g,"\\\\").replace(/'/g,"\\'");
+    return `<label class="facet-opt" ${dim}>
+      <input type="checkbox" ${checked} onchange="toggleFilter('${facetKey}','${safeK}',this.checked)">
+      <span>${labelFn(k)}</span>
+      <span class="count">${activeSet.has(k) ? total : filt||total}</span>
+    </label>`;
+  }).join("");
+}
+
+function renderFacets(allStories, filtered) {
+  const allC  = buildFacetCounts(allStories);
+  const filtC = buildFacetCounts(filtered);
+
+  renderFacetGroup("fo-type", "type", allC.type, filtC.type,
+    k => `<span style="display:inline-flex;align-items:center;gap:0.5rem">
+      <img src="${typeLogo(k)}" style="width:20px;height:20px;object-fit:contain;border-radius:4px;flex-shrink:0">
+      <span style="font-size:0.85rem;font-weight:600;color:${typeColor(k)}">${typeLabel(k)}</span>
+    </span>`,
+    Object.keys(allC.type).sort()
+  );
+
+  const oaOrder = ["gold","hybrid","green","bronze","closed",""];
+  renderFacetGroup("fo-oa", "oa", allC.oa, filtC.oa,
+    k => `<span class="oa-dot" style="background:${oaColor(k)}"></span>${oaLabel(k)}`,
+    oaOrder.filter(k => allC.oa[k])
+  );
+
+  const topConcepts = Object.entries(allC.concept).sort((a,b)=>b[1]-a[1]).slice(0,30).map(([k])=>k);
+  renderFacetGroup("fo-concept", "concept", allC.concept, filtC.concept, k => esc(k), topConcepts);
+
+  const topRoles = Object.entries(allC.role).sort((a,b)=>b[1]-a[1]).map(([k])=>k);
+  renderFacetGroup("fo-role", "role", allC.role, filtC.role, k => esc(k), topRoles);
+
+  const topVenues = Object.entries(allC.venue).sort((a,b)=>b[1]-a[1]).slice(0,25).map(([k])=>k);
+  renderFacetGroup("fo-venue", "venue", allC.venue, filtC.venue, k => esc(k), topVenues);
+
+  const years = Object.keys(allC.year).map(Number).sort((a,b)=>b-a);
+  renderFacetGroup("fo-year", "year", allC.year, filtC.year, k => k, years);
+
+  const featOrder = ["Has SDGs","Teaching adoption","Peer reviewed","Reuse / data linked"];
+  renderFacetGroup("fo-features", "features", allC.features, filtC.features, k => esc(k),
+    featOrder.filter(k => allC.features[k])
+  );
+}
+
+function renderActiveFilters() {
+  const af = document.getElementById("activeFilters");
+  const tags = [];
+  for (const [facet, set] of Object.entries(state.filters)) {
+    for (const val of set) {
+      const label = facet==="type" ? typeLabel(val) : facet==="oa" ? oaLabel(val) : val;
+      const safeF = facet.replace(/'/g,"\\'");
+      const safeV = String(val).replace(/\\/g,"\\\\").replace(/'/g,"\\'");
+      tags.push(`<span class="af-tag" onclick="toggleFilter('${safeF}','${safeV}',false)">
+        <span>${esc(String(label))}</span><span class="x">×</span>
+      </span>`);
+    }
+  }
+  af.innerHTML = tags.join("");
+}
+
+function renderResultsCount(n, total) {
+  document.getElementById("resultsCount").textContent =
+    n === total ? `${total} stories` : `${n} of ${total} stories`;
+}
+
+// ── hero stats ────────────────────────────────────────────────────────────
+function renderHeroStats() {
+  const st = window.STORIES_STATS;
+  document.getElementById("heroStats").innerHTML = [
+    `<span class="stat-pill"><span class="num">${fmt(st.total)}</span> stories</span>`,
+    `<span class="stat-pill"><span class="num">${fmt(st.total_citations)}</span> citations</span>`,
+    `<span class="stat-pill"><span class="num">${st.pct_oa}%</span> open access</span>`,
+    `<span class="stat-pill"><span class="num">${st.num_disciplines}+</span> disciplines</span>`,
+  ].join("");
+}
+
+// ── interactions ──────────────────────────────────────────────────────────
+function toggleFacet(id) {
+  document.getElementById(id).classList.toggle("collapsed");
+}
+
+function toggleFilter(facet, val, checked) {
+  const key = facet==="year" ? Number(val) : val;
+  if (checked) state.filters[facet].add(key);
+  else         state.filters[facet].delete(key);
+  update();
+}
+
+function clearAll() {
+  state.query = "";
+  document.getElementById("searchInput").value = "";
+  for (const s of Object.values(state.filters)) s.clear();
+  update();
+}
+
+function update() {
+  const all      = window.STORIES_DATA;
+  const filtered = filterStories(all);
+  const sorted   = sortStories(filtered);
+  renderCards(sorted);
+  renderFacets(all, filtered);
+  renderActiveFilters();
+  renderResultsCount(filtered.length, all.length);
+}
+
+// ── events ────────────────────────────────────────────────────────────────
+document.getElementById("searchInput").addEventListener("input", e => {
+  state.query = e.target.value.toLowerCase().trim();
+  update();
+});
+document.getElementById("sortSelect").addEventListener("change", e => {
+  state.sort = e.target.value;
+  update();
+});
+
+// ── init ──────────────────────────────────────────────────────────────────
+renderHeroStats();
+update();
+</script>
 </body>
 </html>
