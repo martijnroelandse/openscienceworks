@@ -639,6 +639,41 @@ window.STORIES_DATA = [
 "authors": ""
 },
 {
+"file": "articlestory_10.12688_f1000research.6555.1.html",
+"title": "The Resource Identification Initiative: A cultural shift in publishing",
+"type": "ArticleStory",
+"doi": "10.12688/f1000research.6555.1",
+"year": null,
+"venue": "F1000Research",
+"venue_name": "F1000Research",
+"publisher": "Faculty of 1000",
+"concepts": [
+"Identification (biology)",
+"Resource (disambiguation)",
+"Publishing",
+"Identifier",
+"Library science",
+"World Wide Web",
+"Computer science",
+"Web resource"
+],
+"roles": [
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 135,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": true,
+"has_reuse": true,
+"excerpt": "Short impact summary The article \"The Resource Identification Initiative: A cultural shift in publishing\" has generated considerable attention in the academic sphere, accumulating 135 citations across…",
+"cover_url": "",
+"authors": "Anita Bandrowski, Matthew Brush, Jeffrey S. Grethe et al."
+},
+{
 "file": "articlestory_10.1182_blood.2023022222.html",
 "title": "Causes and consequences of clonal hematopoiesis",
 "type": "ArticleStory",
@@ -715,6 +750,43 @@ window.STORIES_DATA = [
 "authors": "Tuan M. Nguyen, Vedagopuram Sreekanth, Arghya Deb et al."
 },
 {
+"file": "articlestory_10.1073_pnas.111146798.html",
+"title": "Cytoskeletal microdifferentiation: A mechanism for organizing morphological plasticity in dendrites",
+"type": "ArticleStory",
+"doi": "10.1073/pnas.111146798",
+"year": null,
+"venue": "Proceedings of the National Academy of Sciences",
+"venue_name": "Proceedings of the National Academy of Sciences",
+"publisher": "National Academy of Sciences",
+"concepts": [
+"Microtubule",
+"Microfilament",
+"Biology",
+"Cell biology",
+"Dendritic spine",
+"Actin remodeling of neurons",
+"Dendritic filopodia",
+"Dendrite (mathematics)"
+],
+"roles": [
+"Scholarly uptake",
+"Reference point for synthesis",
+"Active public discourse"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 123,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article titled \"Cytoskeletal microdifferentiation: A mechanism for organizing morphological plasticity in dendrites\" has made a significant impact in the field of neuroscience…",
+"cover_url": "",
+"authors": "Stefanie Kaech, Hema Parmar, Martijn Roelandse et al."
+},
+{
 "file": "articlestory_10.1038_s41893-020-0532-7.html",
 "title": "Hydrological limits to carbon capture and storage",
 "type": "ArticleStory",
@@ -752,6 +824,43 @@ window.STORIES_DATA = [
 "excerpt": "Short impact summary The article \"Hydrological limits to carbon capture and storage,\" published in Nature Sustainability, explores critical factors impacting carbon capture technologies.",
 "cover_url": "",
 "authors": "Lorenzo Rosa, Jeffrey A. Reimer, Marjorie Went et al."
+},
+{
+"file": "articlestory_10.1101_2020.01.15.908111.html",
+"title": "Rigor and Transparency Index, a new metric of quality for assessing biological and medical science methods",
+"type": "ArticleStory",
+"doi": "10.1101/2020.01.15.908111",
+"year": null,
+"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+"publisher": "Cold Spring Harbor Laboratory",
+"concepts": [
+"Transparency (behavior)",
+"Rigour",
+"Index (typography)",
+"Medical journal",
+"Metric (unit)",
+"Incentive",
+"Scale (ratio)",
+"Computer science"
+],
+"roles": [
+"High-visibility uptake",
+"Scholarly uptake",
+"Active public discourse"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 100,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The \"Rigor and Transparency Index\" represents a significant advancement in evaluating biological and medical science methodologies, having garnered 100 citations since its initial…",
+"cover_url": "",
+"authors": "Joseph Menke, Martijn Roelandse, İbrahim Burak Özyurt et al."
 },
 {
 "file": "articlestory_10.1038_s41588-023-01603-8.html",
@@ -832,6 +941,87 @@ window.STORIES_DATA = [
 "excerpt": "Short impact summary The research article, “Stable population structure in Europe since the Iron Age, despite high mobility,” has garnered significant academic attention, as demonstrated by its 85 cit…",
 "cover_url": "",
 "authors": "Margaret L. Antonio, Clemens L. Weiß, Ziyue Gao et al."
+},
+{
+"file": "articlestory_10.1016_j.isci.2020.101698.html",
+"title": "The Rigor and Transparency Index Quality Metric for Assessing Biological and Medical Science Methods",
+"type": "ArticleStory",
+"doi": "10.1016/j.isci.2020.101698",
+"year": null,
+"venue": "iScience",
+"venue_name": "iScience",
+"publisher": "Cell Press",
+"concepts": [
+"Blinding",
+"Rigour",
+"Transparency (behavior)",
+"Metric (unit)",
+"Quality (philosophy)",
+"Proxy (statistics)",
+"Index (typography)",
+"Computer science"
+],
+"roles": [
+"Active public discourse",
+"Scholarly uptake",
+"Reproducibility standard",
+"Sustainability & Policy relevance",
+"Rapid uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 84,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Gender equality"
+],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The paper titled \"The Rigor and Transparency Index Quality Metric for Assessing Biological and Medical Science Methods,\" authored by a team from the University of California, San …",
+"cover_url": "",
+"authors": "Joseph Menke, Martijn Roelandse, İbrahim Burak Özyurt et al."
+},
+{
+"file": "articlestory_10.1038_d41586-019-01643-3.html",
+"title": "Rethinking impact factors: better ways to judge a journal",
+"type": "ArticleStory",
+"doi": "10.1038/d41586-019-01643-3",
+"year": null,
+"venue": "Nature",
+"venue_name": "Nature",
+"publisher": "Nature Portfolio",
+"concepts": [
+"Suite",
+"Publishing",
+"Political science",
+"Library science",
+"Computer science",
+"Data science",
+"Engineering ethics",
+"Engineering"
+],
+"roles": [
+"Scholarly uptake",
+"Sustainability & Policy relevance",
+"Active public discourse",
+"Active discussion signal"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 84,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article \"Rethinking impact factors: better ways to judge a journal,\" published in Nature by Paul Wouters and colleagues, has been cited 84 times, demonstrating its influence i…",
+"cover_url": "",
+"authors": "Paul Wouters, Cassidy R. Sugimoto, Vincent Larivière et al."
 },
 {
 "file": "articlestory_10.1371_journal.pcbi.1007128.html",
@@ -1076,6 +1266,42 @@ window.STORIES_DATA = [
 "authors": "Akanksha Thawani, Alfredo Jose Florez Ariza, Eva Nogales et al."
 },
 {
+"file": "articlestory_10.1111_j.1460-9568.2004.03503.x.html",
+"title": "Trophic support delays but does not prevent cell‐intrinsic degeneration of neurons deficient for <i>munc18‐1</i>",
+"type": "ArticleStory",
+"doi": "10.1111/j.1460-9568.2004.03503.x",
+"year": null,
+"venue": "European Journal of Neuroscience",
+"venue_name": "European Journal of Neuroscience",
+"publisher": "Wiley",
+"concepts": [
+"Biology",
+"Neuron",
+"Synapse",
+"Neuroscience",
+"Mutant",
+"Cell biology",
+"Degeneration (medical)",
+"Neurotransmission"
+],
+"roles": [
+"Scholarly uptake",
+"Reference point for synthesis"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 67,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research on the intrinsic degeneration of neurons lacking munc18-1 contributes significantly to the understanding of cellular mechanisms in neurodegeneration.",
+"cover_url": "",
+"authors": "Joost H. Heeroma, Martijn Roelandse, Keimpe Wierda et al."
+},
+{
 "file": "articlestory_10.1016_j.molcel.2023.10.045.html",
 "title": "Epigenetic pioneering by SWI/SNF family remodelers",
 "type": "ArticleStory",
@@ -1263,6 +1489,43 @@ window.STORIES_DATA = [
 "excerpt": "Short impact summary Despite its publication in 2020, \"A European Public Investment Outlook\" is yet to achieve significant academic traction, reflected in its current citation metrics.",
 "cover_url": "",
 "authors": "Floriana Cerniglia, Francesco Saraceno"
+},
+{
+"file": "articlestory_10.1523_jneurosci.2872-04.2004.html",
+"title": "Hypothermia-Associated Loss of Dendritic Spines",
+"type": "ArticleStory",
+"doi": "10.1523/jneurosci.2872-04.2004",
+"year": null,
+"venue": "Journal of Neuroscience",
+"venue_name": "Journal of Neuroscience",
+"publisher": "Society for Neuroscience",
+"concepts": [
+"Dendritic spine",
+"Hippocampal formation",
+"Neuroscience",
+"Dendritic filopodia",
+"Biology",
+"Excitatory postsynaptic potential",
+"SPINE (molecular biology)",
+"Neurotransmission"
+],
+"roles": [
+"Reference point for synthesis",
+"Scholarly uptake",
+"Active public discourse"
+],
+"is_oa": true,
+"oa_status": "bronze",
+"citation_count": 53,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study by Martijn Roelandse and Andrew Matus, published in the Journal of Neuroscience, has received notable engagement within the academic community, accumulating 53 citations…",
+"cover_url": "",
+"authors": "Martijn Roelandse, Andrew Matus"
 },
 {
 "file": "articlestory_10.1016_j.cell.2023.11.036.html",
@@ -1461,6 +1724,41 @@ window.STORIES_DATA = [
 "authors": "Yong Qian, Orhan T. Celiker, Zeguan Wang et al."
 },
 {
+"file": "articlestory_10.1042_bc20100036.html",
+"title": "Munc18 and Munc13 regulate early neurite outgrowth",
+"type": "ArticleStory",
+"doi": "10.1042/bc20100036",
+"year": null,
+"venue": "Biology of the Cell",
+"venue_name": "Biology of the Cell",
+"publisher": "Wiley",
+"concepts": [
+"Filopodia",
+"Synaptogenesis",
+"Growth cone",
+"Neurite",
+"Biology",
+"Cell biology",
+"Axon guidance",
+"Synapse"
+],
+"roles": [
+"Reference point for synthesis"
+],
+"is_oa": true,
+"oa_status": "bronze",
+"citation_count": 47,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study by Broeke et al.",
+"cover_url": "",
+"authors": "Jurjen H. Broeke, Martijn Roelandse, Maartje J. Luteijn et al."
+},
+{
 "file": "articlestory_10.1126_scitranslmed.adh4529.html",
 "title": "T cell responses to SARS-CoV-2 infection and vaccination are elevated in B cell deficiency and reduce risk of severe COVID-19",
 "type": "ArticleStory",
@@ -1597,6 +1895,45 @@ window.STORIES_DATA = [
 "excerpt": "Short impact summary The publication \"Glass Making in the Greco-Roman World: Results of the ARCHGLASS project\" serves as a significant scholarly resource elucidating the complexities of ancient glass …",
 "cover_url": "",
 "authors": "Patrick Degryse"
+},
+{
+"file": "articlestory_10.1016_s0306-4522(03)00405-6.html",
+"title": "Focal motility determines the geometry of dendritic spines☆",
+"type": "ArticleStory",
+"doi": "10.1016/s0306-4522(03)00405-6",
+"year": null,
+"venue": "Neuroscience",
+"venue_name": "Neuroscience",
+"publisher": "Elsevier BV",
+"concepts": [
+"Dendritic filopodia",
+"Dendritic spine",
+"Filopodia",
+"Lamellipodium",
+"Excitatory postsynaptic potential",
+"Biology",
+"Actin remodeling of neurons",
+"Hippocampal formation"
+],
+"roles": [
+"Sustainability & Policy relevance",
+"Active public discourse",
+"Reference point for synthesis"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 39,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Life in Land"
+],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article titled \"Focal motility determines the geometry of dendritic spines,\" authored by Martijn Roelandse and colleagues from the Friedrich Miescher Institute, has garnered n…",
+"cover_url": "",
+"authors": "Martijn Roelandse, Arkadiusz Welman, Uta Wagner et al."
 },
 {
 "file": "articlestory_10.1101_2023.11.29.569241.html",
@@ -1971,6 +2308,79 @@ window.STORIES_DATA = [
 "excerpt": "Short impact summary The study titled \"Electrostatic encoding of genome organization principles within single native nucleosomes\" has garnered a noteworthy academic response, amassing 25 citations sin…",
 "cover_url": "",
 "authors": "Sangwoo Park, Advait Athreya, Gustavo Carrizo et al."
+},
+{
+"file": "articlestory_10.2196_37324.html",
+"title": "Establishing Institutional Scores With the Rigor and Transparency Index: Large-scale Analysis of Scientific Reporting Quality",
+"type": "ArticleStory",
+"doi": "10.2196/37324",
+"year": null,
+"venue": "Journal of Medical Internet Research",
+"venue_name": "Journal of Medical Internet Research",
+"publisher": "JMIR Publications",
+"concepts": [
+"Transparency (behavior)",
+"Scale (ratio)",
+"Index (typography)",
+"Quality (philosophy)",
+"Data quality",
+"Data science",
+"Computer science",
+"Psychology"
+],
+"roles": [
+"Reproducibility standard",
+"Active public discourse",
+"Reference point for synthesis",
+"Active discussion signal"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 25,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The analysis presented in the article \"Establishing Institutional Scores With the Rigor and Transparency Index\" underscores a significant commitment to enhancing scientific report…",
+"cover_url": "",
+"authors": "Joseph Menke, Peter Eckmann, İbrahim Burak Özyurt et al."
+},
+{
+"file": "articlestory_10.2196_preprints.37324.html",
+"title": "Establishing Institutional Scores With the Rigor and Transparency Index: Large-scale Analysis of Scientific Reporting Quality (Preprint)",
+"type": "ArticleStory",
+"doi": "10.2196/preprints.37324",
+"year": null,
+"venue": "Unknown",
+"venue_name": "Unknown",
+"publisher": "",
+"concepts": [
+"Transparency (behavior)",
+"Checklist",
+"Rigour",
+"Computer science",
+"Library science",
+"Accounting",
+"Medicine",
+"Political science"
+],
+"roles": [
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 25,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary This article presents the results of a large-scale analysis established by the Rigor and Transparency Index, highlighting the quality of scientific reporting.",
+"cover_url": "",
+"authors": "Joseph Menke, Peter Eckmann, İbrahim Burak Özyurt et al."
 },
 {
 "file": "bookstory_10.3368_HNAL9672.html",
@@ -2365,6 +2775,42 @@ window.STORIES_DATA = [
 "excerpt": "Short impact summary The book \"Music on the Move,\" published by the University of Michigan Press in 2020, has begun to establish its presence within academic discourse, evidenced by its scholarly upta…",
 "cover_url": "",
 "authors": "Danielle Fosler-Lussier"
+},
+{
+"file": "articlestory_10.1371_journal.pone.0003059.html",
+"title": "Cre-Dependent Expression of Multiple Transgenes in Isolated Neurons of the Adult Forebrain",
+"type": "ArticleStory",
+"doi": "10.1371/journal.pone.0003059",
+"year": null,
+"venue": "PLoS ONE",
+"venue_name": "PLoS ONE",
+"publisher": "Public Library of Science",
+"concepts": [
+"Transgene",
+"Green fluorescent protein",
+"Biology",
+"Genetically modified mouse",
+"Forebrain",
+"Cell biology",
+"Ectopic expression",
+"Neuroscience"
+],
+"roles": [
+"Active public discourse",
+"Reference point for synthesis"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 15,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article, titled \"Cre-Dependent Expression of Multiple Transgenes in Isolated Neurons of the Adult Forebrain,\" authored by a team from renowned institutions such as the Max Pla…",
+"cover_url": "",
+"authors": "Sridhara Chakravarthy, Tara Keck, Martijn Roelandse et al."
 },
 {
 "file": "articlestory_10.7554_elife.90486.html",
@@ -2953,6 +3399,42 @@ window.STORIES_DATA = [
 "excerpt": "Short impact summary The research article titled \"Divergent genetic landscapes drive lower levels of AmpC induction and stable de-repression in Serratia marcescens compared to Enterobacter cloacae \" h…",
 "cover_url": "",
 "authors": "Jacob E. Lazarus, Yin Wang, Matthew K. Waldor et al."
+},
+{
+"file": "articlestory_10.7490_f1000research.1116751.1.html",
+"title": "Rethinking Impact Factors: New Pathways in Journal Metrics",
+"type": "ArticleStory",
+"doi": "10.7490/f1000research.1116751.1",
+"year": null,
+"venue": "Faculty of 1000 Research Ltd",
+"venue_name": "Faculty of 1000 Research Ltd",
+"publisher": "",
+"concepts": [
+"Impact factor",
+"Citation",
+"Scrutiny",
+"Context (archaeology)",
+"Library science",
+"Citation index",
+"Quality (philosophy)",
+"Political science"
+],
+"roles": [
+"High-visibility uptake",
+"Active public discourse"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 8,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary \"Rethinking Impact Factors: New Pathways in Journal Metrics\" by Cassidy R.",
+"cover_url": "",
+"authors": "Cassidy R. Sugimoto, Liz Allen, Jeroen Bosman et al."
 },
 {
 "file": "bookstory_10.11116_9789461663078.html",
@@ -3902,6 +4384,77 @@ window.STORIES_DATA = [
 "authors": "Young Ho Lee, Linelle Abueg, Jin‐Koo Kim et al."
 },
 {
+"file": "articlestory_10.1101_2024.01.15.575636.html",
+"title": "Do organisms need an impact factor? Citations of key biological resources including model organisms reveal usage patterns and impact",
+"type": "ArticleStory",
+"doi": "10.1101/2024.01.15.575636",
+"year": null,
+"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+"publisher": "Cold Spring Harbor Laboratory",
+"concepts": [
+"Citation",
+"Stock (firearms)",
+"Computer science",
+"Resource (disambiguation)",
+"Key (lock)",
+"Data science",
+"Library science",
+"History"
+],
+"roles": [
+"Reproducibility standard",
+"Active public discourse"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 3,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary This article, titled \"Do organisms need an impact factor?",
+"cover_url": "",
+"authors": "Agata Piękniewska, Nathan Anderson, Martijn Roelandse et al."
+},
+{
+"file": "articlestory_10.1101_pdb.prot4664.html",
+"title": "Transfecting Cultured Hippocampal Neurons with an Actin-GFP Plasmid",
+"type": "ArticleStory",
+"doi": "10.1101/pdb.prot4664",
+"year": null,
+"venue": "Cold Spring Harbor Protocols",
+"venue_name": "Cold Spring Harbor Protocols",
+"publisher": "Cold Spring Harbor Laboratory Press",
+"concepts": [
+"Transfection",
+"Hippocampal formation",
+"Green fluorescent protein",
+"Cell biology",
+"In vitro",
+"Actin",
+"Calcium imaging",
+"Chemistry"
+],
+"roles": [
+"High-visibility uptake"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 3,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study titled \"Transfecting Cultured Hippocampal Neurons with an Actin-GFP Plasmid,\" authored by Andrew Matus and colleagues, has made a notable impact within the academic comm…",
+"cover_url": "",
+"authors": "Andrew Matus, Virginie Biou, Heike Brinkhaus et al."
+},
+{
 "file": "articlestory_10.1371_journal.ppat.1011861.html",
 "title": "Using viral sequence diversity to estimate time of HIV infection in infants",
 "type": "ArticleStory",
@@ -4332,6 +4885,41 @@ window.STORIES_DATA = [
 "excerpt": "Short impact summary This research investigates the relationship between human leukocyte antigen (HLA) types and asymptomatic SARS-CoV-2 infection, contributing to the understanding of host factors in…",
 "cover_url": "",
 "authors": "Astrid Marchal, Elizabeth T. Cirulli, Iva Neveux et al."
+},
+{
+"file": "articlestory_10.36591_se-d-4602-15.html",
+"title": "Assessing the Effectiveness of SciScore in Supporting the Reproducibility of Scientific Research",
+"type": "ArticleStory",
+"doi": "10.36591/se-d-4602-15",
+"year": null,
+"venue": "Science Editor",
+"venue_name": "Science Editor",
+"publisher": "Council of Science Editors",
+"concepts": [
+"Transparency (behavior)",
+"Rigour",
+"Agency (philosophy)",
+"Funding Agency",
+"Consolidated Standards of Reporting Trials",
+"Research design",
+"Computer science",
+"Engineering ethics"
+],
+"roles": [
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 2,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article \"Assessing the Effectiveness of SciScore in Supporting the Reproducibility of Scientific Research\" examines the role of SciScore in promoting reproducibility within sc…",
+"cover_url": "",
+"authors": "Martijn Roelandse, İbrahim Burak Özyurt, Daniel Evanko et al."
 },
 {
 "file": "bookstory_10.11116_9789461662880.html",
@@ -5472,6 +6060,177 @@ window.STORIES_DATA = [
 "excerpt": "Short impact summary The forthcoming book \"Urban Fantasy,\" published by Lever Press in 2024, reflects a growing interest in urban themes within the fantasy genre, indicating a significant commercial l…",
 "cover_url": "",
 "authors": "Stefan Ekman"
+},
+{
+"file": "articlestory_10.1101_pdb.ip28.html",
+"title": "Imaging Actin in Tissue Slices from Transgenic Mouse Brain: Figure 1.",
+"type": "ArticleStory",
+"doi": "10.1101/pdb.ip28",
+"year": null,
+"venue": "Cold Spring Harbor Protocols",
+"venue_name": "Cold Spring Harbor Protocols",
+"publisher": "Cold Spring Harbor Laboratory Press",
+"concepts": [
+"Genetically modified mouse",
+"Brain tissue",
+"Transgene",
+"Actin",
+"Cell biology",
+"Biology",
+"Neuroscience",
+"Biochemistry"
+],
+"roles": [],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research on imaging actin in transgenic mouse brain tissue slices contributes to the understanding of cellular structures and their dynamics, as evidenced by its foundational …",
+"cover_url": "",
+"authors": "Andrew Matus, Virginie Biou, Heike Brinkhaus et al."
+},
+{
+"file": "articlestory_10.1371_journal.pone.0327344.html",
+"title": "Do organisms need an impact factor? Citations of key biological resources including model organisms reveal usage patterns and impact",
+"type": "ArticleStory",
+"doi": "10.1371/journal.pone.0327344",
+"year": null,
+"venue": "PLoS ONE",
+"venue_name": "PLoS ONE",
+"publisher": "Public Library of Science",
+"concepts": [
+"Identifier",
+"Citation",
+"Stock (firearms)",
+"Computer science",
+"Resource (disambiguation)",
+"Data science",
+"Library science",
+"Geography"
+],
+"roles": [
+"Methodological anchor"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article titled \"Do organisms need an impact factor?\" explores the usage patterns and impact of key biological resources and model organisms.",
+"cover_url": "",
+"authors": "Agata Piękniewska, Martijn Roelandse, K. C. Kent Lloyd et al."
+},
+{
+"file": "articlestory_10.23640_07243.5959789.v1.html",
+"title": "Task Force: ORCID in Books Workflows",
+"type": "ArticleStory",
+"doi": "10.23640/07243.5959789.v1",
+"year": null,
+"venue": "Figshare",
+"venue_name": "Figshare",
+"publisher": "Figshare (United Kingdom)",
+"concepts": [
+"Task (project management)",
+"Workflow",
+"Computer science",
+"Task force",
+"World Wide Web",
+"Engineering",
+"Database",
+"Political science"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The narrative surrounding the task force's work on integrating ORCID into books workflows demonstrates an emerging commitment to enhancing scholarly communications, even in the ab…",
+"cover_url": "",
+"authors": "ORCID, Alice Meadows, Tony Alves et al."
+},
+{
+"file": "articlestory_10.3233_isu-240004.html",
+"title": "Dotcoms to watch: Addressing the scholarly publishing industry’s challenges through technology",
+"type": "ArticleStory",
+"doi": "10.3233/isu-240004",
+"year": null,
+"venue": "Information Services & Use",
+"venue_name": "Information Services & Use",
+"publisher": "IOS Press",
+"concepts": [
+"Publishing",
+"Scholarly communication",
+"Library science",
+"Business",
+"World Wide Web",
+"Political science",
+"Computer science",
+"Law"
+],
+"roles": [
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "diamond",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Industry, innovation and infrastructure"
+],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The article \"Dotcoms to watch: Addressing the scholarly publishing industry’s challenges through technology\" explores the intersection of technology and the scholarly publishing s…",
+"cover_url": "",
+"authors": "Martijn Roelandse, Adam Day, Tijmen Altena et al."
+},
+{
+"file": "articlestory_10.5451_unibas-003686587.html",
+"title": "Synaptic activity and the formation and maintenance of neuronal circuits",
+"type": "ArticleStory",
+"doi": "10.5451/unibas-003686587",
+"year": null,
+"venue": "edoc (University of Basel)",
+"venue_name": "edoc (University of Basel)",
+"publisher": "University of Basel",
+"concepts": [
+"Filopodia",
+"Dendritic filopodia",
+"Biology",
+"Dendritic spine",
+"Dendrite (mathematics)",
+"Neurite",
+"Neuroscience",
+"Live cell imaging"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary This research by Martijn Roelandse explores the intricate mechanisms of synaptic activity in the formation and maintenance of neuronal circuits, potentially contributing valuable …",
+"cover_url": "",
+"authors": "Martijn Roelandse"
 },
 {
 "file": "articlestory_10.7554_eLife.103118.html",
@@ -7352,6 +8111,35 @@ window.STORIES_DATA = [
 "authors": "Raymond Hinnebusch"
 },
 {
+"file": "datastory_10.23640_07243.5259502.v1.html",
+"title": "ORCID in Book Workflows: Survey",
+"type": "DataStory",
+"doi": "10.23640/07243.5259502.v1",
+"year": null,
+"venue": "Figshare",
+"venue_name": "Figshare",
+"publisher": "Figshare (United Kingdom)",
+"concepts": [
+"Workflow",
+"Computer science",
+"World Wide Web",
+"Database"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The dataset titled \"ORCID in Book Workflows: Survey\" is a foundational research output available on Figshare.",
+"cover_url": "",
+"authors": "terence smyre, 0000-0001-7094-8102, Smyre, Terence et al."
+},
+{
 "file": "datastory_10.25378_janelia.23816295.v1.html",
 "title": "Drosophila GAL4 brain imagery",
 "type": "DataStory",
@@ -7448,4 +8236,4 @@ window.STORIES_DATA = [
 "authors": "Stocker, Benjamin"
 }
 ];
-window.STORIES_STATS = {"total": 204, "total_articles": 80, "total_books": 121, "total_data": 2, "total_software": 1, "total_oa": 191, "pct_oa": 94, "total_citations": 85350, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 226, "total_articles": 101, "total_books": 121, "total_data": 3, "total_software": 1, "total_oa": 210, "pct_oa": 93, "total_citations": 86163, "num_disciplines": 30};
