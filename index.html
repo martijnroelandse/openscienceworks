@@ -257,7 +257,7 @@
       font-size: 0.82rem;
       color: var(--muted);
       cursor: pointer;
-      margin-top: 0.5rem;
+      margin-bottom: 0.75rem;
       transition: all 0.15s;
     }
     .clear-btn:hover { border-color: #dc2626; color: #dc2626; }
@@ -698,6 +698,8 @@
       <input type="search" id="searchInput" placeholder="Search titles, authors…" autocomplete="off">
     </div>
 
+    <button class="clear-btn" id="clearBtn" onclick="clearAll()">Clear all filters</button>
+
     <!-- Sort -->
     <div class="sort-row">
       <select id="sortSelect">
@@ -721,9 +723,9 @@
       <div class="facet-options overflow" id="fo-role"></div>
     </div>
 
-    <!-- Features -->
+    <!-- Open science signals -->
     <div class="facet-group" id="fg-features">
-      <h3 onclick="toggleFacet('fg-features')">Features <span class="caret">▾</span></h3>
+      <h3 onclick="toggleFacet('fg-features')">Open science signals <span class="caret">▾</span></h3>
       <div class="facet-options" id="fo-features"></div>
     </div>
 
@@ -757,7 +759,6 @@
       <div class="facet-options overflow" id="fo-year"></div>
     </div>
 
-    <button class="clear-btn" id="clearBtn" onclick="clearAll()">Clear all filters</button>
   </aside>
 
   <!-- MAIN -->
@@ -852,11 +853,14 @@ function buildFacetCounts(stories) {
     for (const r of s.roles) counts.role[r] = (counts.role[r]||0)+1;
     if (s.venue) counts.venue[s.venue] = (counts.venue[s.venue]||0)+1;
     if (s.year) counts.year[s.year] = (counts.year[s.year]||0)+1;
-    if (s.has_sdgs)        counts.features["Has SDGs"]            = (counts.features["Has SDGs"]||0)+1;
-    if (s.has_teaching)    counts.features["Teaching adoption"]  = (counts.features["Teaching adoption"]||0)+1;
-    if (s.has_peer_review) counts.features["Peer reviewed"]      = (counts.features["Peer reviewed"]||0)+1;
-    if (s.has_reuse)       counts.features["Reuse / data linked"]= (counts.features["Reuse / data linked"]||0)+1;
-    if ((s.download_count||0) > 0) counts.features["Has downloads"] = (counts.features["Has downloads"]||0)+1;
+    if (s.has_sdgs)              counts.features["SDG-linked"]          = (counts.features["SDG-linked"]||0)+1;
+    if (s.has_peer_review)       counts.features["Peer reviewed"]       = (counts.features["Peer reviewed"]||0)+1;
+    if (s.has_reuse)             counts.features["Data / code linked"]  = (counts.features["Data / code linked"]||0)+1;
+    if ((s.download_count||0)>0) counts.features["Has downloads"]       = (counts.features["Has downloads"]||0)+1;
+    if ((s.ta_ocw||0)>0)         counts.features["OCW / syllabi"]       = (counts.features["OCW / syllabi"]||0)+1;
+    if ((s.ta_youtube||0)>0)     counts.features["Video lectures"]      = (counts.features["Video lectures"]||0)+1;
+    if ((s.ta_ol_holdings||0)>0) counts.features["Library holdings"]    = (counts.features["Library holdings"]||0)+1;
+    if (s.ta_otl)                counts.features["Open textbook (OTL)"] = (counts.features["Open textbook (OTL)"]||0)+1;
     for (const inst of (s.institutions||[])) counts.institution[inst] = (counts.institution[inst]||0)+1;
   }
   return counts;
@@ -880,11 +884,14 @@ function filterStories(stories) {
     if (state.filters.institution.size && ![...state.filters.institution].every(i => (s.institutions||[]).includes(i))) return false;
     if (state.filters.features.size) {
       const feats = new Set();
-      if (s.has_sdgs)        feats.add("Has SDGs");
-      if (s.has_teaching)    feats.add("Teaching adoption");
-      if (s.has_peer_review) feats.add("Peer reviewed");
-      if (s.has_reuse)       feats.add("Reuse / data linked");
-      if ((s.download_count||0) > 0) feats.add("Has downloads");
+      if (s.has_sdgs)              feats.add("SDG-linked");
+      if (s.has_peer_review)       feats.add("Peer reviewed");
+      if (s.has_reuse)             feats.add("Data / code linked");
+      if ((s.download_count||0)>0) feats.add("Has downloads");
+      if ((s.ta_ocw||0)>0)         feats.add("OCW / syllabi");
+      if ((s.ta_youtube||0)>0)     feats.add("Video lectures");
+      if ((s.ta_ol_holdings||0)>0) feats.add("Library holdings");
+      if (s.ta_otl)                feats.add("Open textbook (OTL)");
       if (![...state.filters.features].every(f => feats.has(f))) return false;
     }
     if (state.filters.venue.size && !state.filters.venue.has(s.venue)) return false;
@@ -1001,8 +1008,25 @@ function renderFacets(allStories, filtered) {
   const years = Object.keys(allC.year).map(Number).sort((a,b)=>b-a);
   renderFacetGroup("fo-year", "year", allC.year, filtC.year, k => k, years);
 
-  const featOrder = ["Has SDGs","Teaching adoption","Peer reviewed","Reuse / data linked"];
-  renderFacetGroup("fo-features", "features", allC.features, filtC.features, k => esc(k),
+  // Signals grouped: scholarly integrity first, then teaching/adoption
+  const featOrder = [
+    "SDG-linked", "Peer reviewed", "Data / code linked", "Has downloads",
+    "OCW / syllabi", "Video lectures", "Library holdings", "Open textbook (OTL)",
+  ];
+  renderFacetGroup("fo-features", "features", allC.features, filtC.features,
+    k => {
+      const icons = {
+        "SDG-linked":           "🌍",
+        "Peer reviewed":        "✅",
+        "Data / code linked":   "🔗",
+        "Has downloads":        "⬇",
+        "OCW / syllabi":        "🎓",
+        "Video lectures":       "▶",
+        "Library holdings":     "📚",
+        "Open textbook (OTL)":  "📖",
+      };
+      return `<span style="margin-right:0.3rem">${icons[k]||""}</span>${esc(k)}`;
+    },
     featOrder.filter(k => allC.features[k])
   );
 }
