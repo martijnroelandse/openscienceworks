@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 
-
-
-
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>ArticleStory - The BAF chromatin remodeler synergizes with RNA polymerase II and transcription factors to evict nucleosomes</title>
-    <style>
+<meta charset="utf-8"/>
+<title>ArticleStory - The BAF chromatin remodeler synergizes with RNA polymerase II and transcription factors to evict nucleosomes</title>
+<style>
         * { box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
         .page { max-width: 1000px; margin: auto; }
@@ -43,1398 +40,602 @@
             tr { page-break-inside: avoid !important; page-break-after: auto !important; }
             thead { display: table-header-group !important; }
         }
-    </style>
-    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+.role-pill[title]:hover::after{
+  content:attr(title);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:#111827;color:white;padding:.5rem .75rem;border-radius:.5rem;font-size:.72rem;
+  width:230px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.role-pill[title]:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+</style>
+<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
-        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
         Print PDF Report
     </button>
-    
-    <div class="page">
-        <header class="hero card">
-            <div class="header-bar">
-                <div style="display: flex; align-items: center; gap: 1.25rem;">
-                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo"></div>
-                    <div>
-                        <h1 class="hero-title">The BAF chromatin remodeler synergizes with RNA polymerase II and transcription factors to evict nucleosomes</h1>
-                        
-                                                
-                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
-                            
-                            
-
-                            
-
-                            
-                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef08a; color: #854d0e; border: 1px solid #fde047; text-transform: uppercase; letter-spacing: 0.05em;">
-                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+<div class="page" id="sec-credibility">
+<header class="hero card" id="sec-hero">
+<div class="header-bar">
+<div style="display: flex; align-items: center; gap: 1.25rem;">
+<div class="logo-wrap"><img alt="Logo" src="articlestories-logo.png"/></div>
+<div>
+<h1 class="hero-title">The BAF chromatin remodeler synergizes with RNA polymerase II and transcription factors to evict nucleosomes</h1>
+<div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+<span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef08a; color: #854d0e; border: 1px solid #fde047; text-transform: uppercase; letter-spacing: 0.05em;" title="A correction or erratum has been published for this work — see publisher site">
+<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                                     Correction Published
-                                </span>
-                            
-
-                            
-
-                            
-                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em;">
-                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· notice</span></span>
+<span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em;" title="scite found more citations supporting than contrasting this work's methodology">
+<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                                     Methodologically Supported
-                                </span>
-                            
+                                <span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· scite</span></span>
+</div>
+<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+<div><strong>Author(s):</strong> Sandipan Brahma, Steven Henikoff</div>
+<div><strong>Publisher:</strong> Nature Genetics</div>
+<div><strong>Publication year:</strong> 2023</div>
+<div><strong>DOI:</strong> <a href="https://doi.org/10.1038/s41588-023-01603-8" target="_blank">10.1038/s41588-023-01603-8</a></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">87</div>
+<div class="stats-strip-label">Total Citations</div>
+<div class="stats-strip-badge">🏆 Top 1% Cited</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">1</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">31</div>
+<div class="stats-strip-label">scite References</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Hybrid</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
 
-                            
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-mentions">Mentions</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-funding">Funding</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
 
-                            
-
-                            
-
-                            
-                            
-                            
-
-                        </div>
-
-                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
-                            <div><strong>Author(s):</strong> Sandipan Brahma, Steven Henikoff</div>
-                            <div><strong>Publisher:</strong> Nature Genetics</div>
-                            <div><strong>Publication year:</strong> 2023</div>
-                            <div><strong>DOI:</strong> <a href="https://doi.org/10.1038/s41588-023-01603-8" target="_blank">10.1038/s41588-023-01603-8</a></div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-            </div>
-        </header>
-
-        
-        <section class="card" style="border: 1px solid #fecaca; background:#fff5f5; margin-bottom: 1.75rem;">
-            <h2><span>Credibility & Risk Signals</span> <span class="badge" style="background:#fee2e2; color:#dc2626;">Alerts</span></h2>
-            <ul class="metric-list" style="line-height: 1.8; margin-top: 0.5rem;">
-                
-                
-
-                
-                
-                
-
-                
-
-                
-                    
-                        <li style="margin-bottom: 0.4rem;">
-                            <span class="badge" style="background:#fef08a; color:#854d0e; border:1px solid #fde047; padding:0.1rem 0.4rem; margin-right:0.4rem;">Update Of</span> 
-                            <strong style="color: #854d0e;">Update issued by publisher</strong> 
-                            <a href="https://doi.org/10.1101/2023.01.22.525083" target="_blank" style="color: #ca8a04; text-decoration: underline; margin-left: 0.3rem;">View Correction ↗</a>
-                        </li>
-                    
-                
-            </ul>
-        </section>
-        
-        
-        
-        <section class="card">
-            <h2><span>The Story So Far</span></h2>
-            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<section class="card" id="sec-credibility" style="border: 1px solid #fecaca; background:#fff5f5; margin-bottom: 1.75rem;">
+<h2><span>Credibility &amp; Risk Signals</span> <span class="badge" style="background:#fee2e2; color:#dc2626;">Alerts</span></h2>
+<ul class="metric-list" style="line-height: 1.8; margin-top: 0.5rem;">
+<li style="margin-bottom: 0.4rem;">
+<span class="badge" style="background:#fef08a; color:#854d0e; border:1px solid #fde047; padding:0.1rem 0.4rem; margin-right:0.4rem;">Update Of</span>
+<strong style="color: #854d0e;">Update issued by publisher</strong>
+<a href="https://doi.org/10.1101/2023.01.22.525083" style="color: #ca8a04; text-decoration: underline; margin-left: 0.3rem;" target="_blank">View Correction ↗</a>
+</li>
+</ul>
+</section>
+<section class="card" id="sec-story">
+<h2><span>The Story So Far</span></h2>
+<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
 <p class="story-text">This research published in Nature Genetics by Sandipan Brahma and Steven Henikoff explores the collaborative dynamics of the BAF chromatin remodeler with RNA polymerase II and transcription factors in nucleosome eviction, contributing to a foundational understanding of chromatin dynamics in transcription regulation.</p>
 <h3 class="story-subheading">Full narrative</h3>
 <p class="story-text">The study published in the esteemed journal Nature Genetics highlights the intricate role of the BAF chromatin remodeler in facilitating the eviction of nucleosomes, a crucial step in transcriptional regulation by RNA polymerase II. Authored by researchers from notable institutions, including the Nebraska Medical Center and the Cape Town HVTN Immunology Laboratory, this work demonstrates a significant advancement in understanding chromatin dynamics.</p>
 <p class="story-text">With a noteworthy citation count of 87 as reported by OpenAlex, the paper has garnered considerable attention within the academic community. This indicates that its insights are resonating with researchers across disciplines that study transcription mechanisms. Highlighting the broad relevance of the findings, a substantial number of citations emanate from top venues such as bioRxiv and Nature Communications, showcasing the paper's influence on contemporary research.</p>
 <p class="story-text">The strong institutional backing, evidenced by funding from major agencies such as the U.S. National Institutes of Health and the Howard Hughes Medical Institute, underscores the validation of this research area. Such financial support not only facilitates groundbreaking research but also signals its significance in the broader context of genetic and chromatin studies.</p>
 <p class="story-text">As the field continues to evolve, this study exemplifies a commitment to the principles of open science, though it does not include any data repositories or preprints at this time. Nonetheless, with proven downstream reuse reported at 88 instances, it is evident that the materials and insights derived from this research are being actively utilized by other scholars, fostering further exploration and understanding in the field.</p></div>
-        </section>
-        
+</section>
+<section class="card" id="sec-impact">
+<h2><span>Impact metrics</span></h2>
 
-        <section class="card">
-            <h2><span>Impact metrics</span></h2>
-            <ul class="metric-list">
-                
-                <li style="margin-bottom: 0.8rem;">
-                    <strong>Total Citations (OpenAlex):</strong> 
-                    
-                        87
-                    
-                    
-                    
-                        <span class="badge" style="background: #fefce8; color: #b45309; border: 1px solid #fde68a; margin-left: 0.4rem;">
-                            🏆 Top 1% Cited
-                        </span>
-                    
-                    
-                                        
-                    
-                    
-                </li>
-                
-                <li style="margin-bottom: 0.8rem;">
-                    <strong>Total Online mentions (Crossref & Open Web):</strong> 1
-                    
-                    
-                </li>
+<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">87</div><div class="im-label">Total Citations</div></div><div class="im-spark"><svg height="36" style="display:block;overflow:visible;" viewbox="0 0 120 36" width="120" xmlns="http://www.w3.org/2000/svg"><path d="M0.0,26.5 L40.0,5.8 L80.0,2.0 L120.0,20.8 L120.0,36.0 L0,36.0 Z" fill="#dbeafe" opacity="0.6"></path><polyline fill="none" points="0.0,26.5 40.0,5.8 80.0,2.0 120.0,20.8" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline></svg><div class="im-spark-range">2023–2026</div></div></div><div class="im-top-badge">🏆 Top 1% Cited</div></div><div class="im-card"><div class="im-num">1</div><div class="im-label">Online Mentions</div></div><div class="im-card"><div class="im-num">31</div><div class="im-label">scite References</div></div></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-slate" href="#sec-teaching">📖 Wikipedia</a><a class="sig-pill sig-amber" href="#sec-funding">💰 6 grants</a><a class="sig-pill sig-blue" href="#sec-citing">🌍 34 countries</a></div></div></div></section>
+<section class="card" id="sec-roles">
+<h2><span>Inferred roles</span></h2>
+<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#b45309;">📢 Public Engagement &amp; Media</div><div class="roles-row"><span class="role-pill role-pill-public" style="opacity:1;" title="Mentioned in mainstream news, broadsheets, or high-impact professional media."><span class="role-dot" style="background:#f59e0b;"></span>High-visibility uptake<span class="role-strength" style="background:#fef3c7;color:#92400e;">Strong</span></span><span class="role-pill role-pill-public" style="opacity:0.9;" title="Heavy social-platform engagement — the work has sparked ongoing community conversation."><span class="role-dot" style="background:#f59e0b;"></span>Active public discourse<span class="role-strength" style="background:#fef3c7;color:#92400e;">Moderate</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#1d4ed8;">🎓 Academic &amp; Scientific</div><div class="roles-row"><span class="role-pill role-pill-academic" style="opacity:0.9;" title="Foundational building block cited heavily in core academic journals and monographs."><span class="role-dot" style="background:#3b82f6;"></span>Scholarly uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Moderate</span></span><span class="role-pill role-pill-academic" style="opacity:0.75;" title="Accumulated high citations or downloads unusually fast after publication."><span class="role-dot" style="background:#3b82f6;"></span>Rapid uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Emerging</span></span><span class="role-pill role-pill-academic" style="opacity:0.75;" title="Frequently cited in literature reviews and meta-analyses as a shorthand reference."><span class="role-dot" style="background:#3b82f6;"></span>Reference point for synthesis<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Emerging</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
 
-                
-                
-                
-                
-                <li style="margin-bottom: 0.8rem;"><strong>Citation context (scite):</strong> 31</li>
-                
-                
-                
-            </ul>
-        </section>
-
-        
-        <section class="card">
-            <h2><span>Inferred roles</span></h2>
-            <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.8rem;">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
-            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-                
-                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">High-visibility uptake (0.85)</span>
-                
-                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scholarly uptake (0.74)</span>
-                
-                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Active public discourse (0.70)</span>
-                
-                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Rapid uptake (0.48)</span>
-                
-                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Reference point for synthesis (0.34)</span>
-                
-            </div>
-        </section>
-        
-
-        <div class="grid-2">
-            
-            
-            <section class="card" style="margin-bottom:0;">
-                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
-                <ul class="metric-list">
-                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1038/s41588-023-01603-8" target="_blank">10.1038/s41588-023-01603-8</a></li>
-                    <li><strong>OA status:</strong> Hybrid</li>
-                    
-                    <li><strong>Landing page:</strong> <a href="https://doi.org/10.1038/s41588-023-01603-8" target="_blank" style="word-break: break-all;">https://doi.org/10.1038/s41588-023-01603-8</a></li>
-                    
-                    <li><strong>Best OA PDF:</strong> <a href="https://www.nature.com/articles/s41588-023-01603-8.pdf" target="_blank" style="word-break: break-all;">https://www.nature.com/articles/s41588-023-01603-8.pdf</a></li>
-                </ul>
-            </section>
-            
-
-            <section class="card" style="margin-bottom:0;">
-                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
-                
-                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+</section>
+<div class="grid-2">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+<ul class="metric-list">
+<li><strong>DOI:</strong> <a href="https://doi.org/10.1038/s41588-023-01603-8" target="_blank">10.1038/s41588-023-01603-8</a></li>
+<li><strong>OA status:</strong> Hybrid</li>
+<li><strong>Landing page:</strong> <a href="https://doi.org/10.1038/s41588-023-01603-8" style="word-break: break-all;" target="_blank">https://doi.org/10.1038/s41588-023-01603-8</a></li>
+<li><strong>Best OA PDF:</strong> <a href="https://www.nature.com/articles/s41588-023-01603-8.pdf" style="word-break: break-all;" target="_blank">https://www.nature.com/articles/s41588-023-01603-8.pdf</a></li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
                         This work has <strong>1</strong> recorded events globally
                         
                     </p>
-                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
-                        <em>(See specific sources and examples in the Online Mentions section below).</em>
-                    </p>
-                
-            </section>
-        </div>
-        
-        <div class="grid-2" style="align-items: start;">
-            
-                
-                
-                
-
-                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    
-                        <section class="card" style="margin-bottom:0;">
-                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
-                            
-                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
-                                <li><strong>Total:</strong> 31</li>
-                                <li><strong>Supporting:</strong> 2</li>
-                                <li><strong>Mentioning:</strong> 29</li>
-                                <li><strong>Contradicting:</strong> 0</li>
-                            </ul>
-                            
-                        </section>
-                    
-                </div>
-
-                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    
-
-                    
-                </div>
-            
-        </div>
-
-        
-        
-        <section class="card">
-            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
-            <div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+<p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+<em>(See specific sources and examples in the Online Mentions section below).</em>
+</p>
+</section>
+</div>
+<div class="grid-2" style="align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Citation context</span> <span class="badge">scite</span></h2>
+<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+<li><strong>Total:</strong> 31</li>
+<li><strong>Supporting:</strong> 2</li>
+<li><strong>Mentioning:</strong> 29</li>
+<li><strong>Contradicting:</strong> 0</li>
+</ul>
+</section>
+</div>
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+</div>
+</div>
+<section class="card" id="sec-citing">
+<h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
                 Analysis of the 87 most recent citing works. 
-                <br>
-                <strong>68.6%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>1.5</strong> times itself.
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 1.5rem;">
-                
-                <div>
-                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
-                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
-                        
-                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (44)</span>
-                        
-                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">China (16)</span>
-                        
-                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (9)</span>
-                        
-                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (8)</span>
-                        
-                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">France (8)</span>
-                        
-                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Canada (7)</span>
-                        
-                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Switzerland (6)</span>
-                        
-                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Russia (5)</span>
-                        
-                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">South Korea (4)</span>
-                        
-                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Australia (3)</span>
-                        
-                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Belgium (2)</span>
-                        
-                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Spain (2)</span>
-                        
-                    </div>
-                    
-                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
-                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
-                        
-                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (71)</span>
-                        
-                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (39)</span>
-                        
-                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Healthcare (37)</span>
-                        
-                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Government (11)</span>
-                        
-                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (10)</span>
-                        
-                    </div>
-                </div>
-
-                <div>
-                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
-                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Howard Hughes Medical Institute</strong> 
-                            
-                                <a href="https://ror.org/006w34k90" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(7)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Centre National de la Recherche Scientifique</strong> 
-                            
-                                <a href="https://ror.org/02feahw73" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(7)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Université Paris-Saclay</strong> 
-                            
-                                <a href="https://ror.org/03xjwb503" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(7)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Institut de Biologie Intégrative de la Cellule</strong> 
-                            
-                                <a href="https://ror.org/01fftxe08" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(6)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Commissariat à l'Énergie Atomique et aux Énergies Alternatives</strong> 
-                            
-                                <a href="https://ror.org/00jjx8s55" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(6)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>CEA Paris-Saclay</strong> 
-                            
-                                <a href="https://ror.org/03n15ch10" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(6)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>University of Nebraska Medical Center</strong> 
-                            
-                                <a href="https://ror.org/00thqtb16" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(5)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Institute of Gene Biology</strong> 
-                            
-                                <a href="https://ror.org/01yq9ya27" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(5)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Peking University</strong> 
-                            
-                                <a href="https://ror.org/02v51f717" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(5)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Peking University International Hospital</strong> 
-                            
-                                <a href="https://ror.org/03jxhcr96" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(5)</span>
-                        </li>
-                        
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
-                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Sandipan Brahma</strong> 
-                            
-                                <a href="https://orcid.org/0000-0001-7511-5409" target="_blank" class="orcid-badge">ORCID</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(5)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Elias T. Friman</strong> 
-                            
-                                <a href="https://openalex.org/A5001379247" target="_blank" class="orcid-badge">Profile</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(5)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Kami Ahmad</strong> 
-                            
-                                <a href="https://orcid.org/0000-0001-8572-6182" target="_blank" class="orcid-badge">ORCID</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(4)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Steven Henikoff</strong> 
-                            
-                                <a href="https://orcid.org/0000-0002-7621-8685" target="_blank" class="orcid-badge">ORCID</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(4)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Zheng Fan</strong> 
-                            
-                                <a href="https://orcid.org/0000-0003-1934-2521" target="_blank" class="orcid-badge">ORCID</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(4)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Emily C. Dykhuizen</strong> 
-                            
-                                <a href="https://orcid.org/0000-0003-3072-1469" target="_blank" class="orcid-badge">ORCID</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Yatendra Kumar</strong> 
-                            
-                                <a href="https://orcid.org/0000-0001-8371-2887" target="_blank" class="orcid-badge">ORCID</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Dipta Sengupta</strong> 
-                            
-                                <a href="https://orcid.org/0000-0002-7836-4774" target="_blank" class="orcid-badge">ORCID</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Robert S. Illingworth</strong> 
-                            
-                                <a href="https://orcid.org/0000-0001-9275-1933" target="_blank" class="orcid-badge">ORCID</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
-                        </li>
-                        
-                        <li style="margin-bottom: 0.4rem;">
-                            <strong>Kristian Helin</strong> 
-                            
-                                <a href="https://orcid.org/0000-0003-1975-6097" target="_blank" class="orcid-badge">ORCID</a>
-                            
-                            <span class="muted" style="margin-left: 0.2rem;">(3)</span>
-                        </li>
-                        
-                    </ul>
-                </div>
+                <br/>
+<strong>68.6%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>1.5</strong> times itself.
             </div>
 
-            <div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
-                <ul class="metric-list">
-                    <li><strong>Citing work types:</strong> 
-                        
-                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (54)</span> 
-                        
-                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (21)</span> 
-                        
-                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (10)</span> 
-                        
-                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">letter (1)</span> 
-                        
-                    </li>
-                    <li><strong>Top citing venues:</strong> 
-                        
-                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">bioRxiv (20)</span> 
-                        
-                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nature Communications (12)</span> 
-                        
-                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Molecular Cell (6)</span> 
-                        
-                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">bioRxiv (Cold Spring Harbor Laboratory) (5)</span> 
-                        
-                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">eLife (4)</span> 
-                        
-                    </li>
-                    <li><strong>Top citing concepts:</strong> 
-                        
-                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Chromatin (39)</span> 
-                        
-                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Biology (36)</span> 
-                        
-                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nucleosome (11)</span> 
-                        
-                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Histone (11)</span> 
-                        
-                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Cell biology (11)</span> 
-                        
-                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">SWI/SNF (10)</span> 
-                        
-                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Enhancer (8)</span> 
-                        
-                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Transcription factor (7)</span> 
-                        
-                    </li>
-                    
-                    <li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
-                        <strong>Citation timeline:</strong>
-                        <div style="height: 180px; width: 100%; margin-top: 0.5rem;">
-                            <canvas id="citationChart" 
-                                data-labels="[2023, 2024, 2025, 2026]" 
-                                data-values="[8, 30, 34, 14]">
-                            </canvas>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        
+<div class="cite-analysis-always"><div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+<ul class="metric-list">
+<li><strong>Citing work types:</strong>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (54)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (21)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (10)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">letter (1)</span>
+</li>
+<li><strong>Top citing venues:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">bioRxiv (20)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nature Communications (12)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Molecular Cell (6)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">bioRxiv (Cold Spring Harbor Laboratory) (5)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">eLife (4)</span>
+</li>
+<li><strong>Top citing concepts:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Chromatin (39)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Biology (36)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nucleosome (11)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Histone (11)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Cell biology (11)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">SWI/SNF (10)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Enhancer (8)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Transcription factor (7)</span>
+</li>
+<li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+<strong>Citation timeline:</strong>
+<div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+<canvas data-labels="[2023, 2024, 2025, 2026]" data-values="[8, 30, 34, 14]" id="citationChart">
+</canvas>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="cite-tabs">
+<button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-ppl')">👤 Top Citers</button>
+</div>
+<div class="cite-tab-pane active" id="cite-geo"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (44)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">China (16)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (9)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (8)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">France (8)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Canada (7)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Switzerland (6)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Russia (5)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">South Korea (4)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Australia (3)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Belgium (2)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Spain (2)</span>
+</div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (71)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (39)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Healthcare (37)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Government (11)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (10)</span>
+</div>
+</div></div>
+<div class="cite-tab-pane" id="cite-inst"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Howard Hughes Medical Institute</strong>
+<a class="orcid-badge" href="https://ror.org/006w34k90" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(7)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Centre National de la Recherche Scientifique</strong>
+<a class="orcid-badge" href="https://ror.org/02feahw73" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(7)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Université Paris-Saclay</strong>
+<a class="orcid-badge" href="https://ror.org/03xjwb503" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(7)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Institut de Biologie Intégrative de la Cellule</strong>
+<a class="orcid-badge" href="https://ror.org/01fftxe08" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(6)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Commissariat à l'Énergie Atomique et aux Énergies Alternatives</strong>
+<a class="orcid-badge" href="https://ror.org/00jjx8s55" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(6)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>CEA Paris-Saclay</strong>
+<a class="orcid-badge" href="https://ror.org/03n15ch10" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(6)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Nebraska Medical Center</strong>
+<a class="orcid-badge" href="https://ror.org/00thqtb16" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Institute of Gene Biology</strong>
+<a class="orcid-badge" href="https://ror.org/01yq9ya27" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Peking University</strong>
+<a class="orcid-badge" href="https://ror.org/02v51f717" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Peking University International Hospital</strong>
+<a class="orcid-badge" href="https://ror.org/03jxhcr96" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+</ul>
+</div></div>
+<div class="cite-tab-pane" id="cite-ppl"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Sandipan Brahma</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-7511-5409" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Elias T. Friman</strong>
+<a class="orcid-badge" href="https://openalex.org/A5001379247" target="_blank">Profile</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Kami Ahmad</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-8572-6182" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Steven Henikoff</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-7621-8685" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Zheng Fan</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-1934-2521" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Emily C. Dykhuizen</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-3072-1469" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Yatendra Kumar</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-8371-2887" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Dipta Sengupta</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-7836-4774" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Robert S. Illingworth</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-9275-1933" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Kristian Helin</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-1975-6097" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+</ul>
+</div></div>
 
-        <div class="grid-2">
-            
 
-            
-            
-            
-            
-            <section class="card span-full" style="margin-bottom:0;">
-                <h2><span>Online mentions & activity</span> <span class="badge">Crossref & Open Web</span></h2>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-
-                
-                
-                
-                
-                
-                <h3 style="margin-top: 1.5rem; font-size: 1.1rem; color: #1f2937;">
-                    Community Engagement & Discourse
+</section>
+<div class="grid-2" id="sec-mentions">
+<section class="card span-full" id="sec-mentions" style="margin-bottom:0;">
+<h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref &amp; Open Web</span></h2>
+<h3 style="margin-top: 1.5rem; font-size: 1.1rem; color: #1f2937;">
+                    Community Engagement &amp; Discourse
                 </h3>
-                
-                
-                
-                
-
-                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; border-bottom: 2px solid #e5e7eb; margin-bottom: 1.5rem; margin-top: 1rem;">
-                    
-                    
-                
-                    
-                    
-                    <button onclick="openSocialTab(event, 'soc-wiki')" class="soc-tab-btn soc-tab-active">
+<div style="display: flex; flex-wrap: wrap; gap: 0.5rem; border-bottom: 2px solid #e5e7eb; margin-bottom: 1.5rem; margin-top: 1rem;">
+<button class="soc-tab-btn soc-tab-active" onclick="openSocialTab(event, 'soc-wiki')">
                         Wikipedia <span style="background: #f1f5f9; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.75rem; margin-left: 0.3rem;">1</span>
-                    </button>
-                    
-                
-                    
-                    
-                    
-                    
-                    
-                
-                    
-                    
-                </div>
+</button>
+</div>
+<div style="position: relative; border-left: 2px solid #e2e8f0; padding-left: 1.5rem; margin-top: 1rem;">
+<div class="soc-tab-content" id="soc-wiki" style="display: block; animation: fadeIn 0.3s;">
+<div style="position: relative; margin-bottom: 1.25rem;">
+<span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #64748b; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.65rem; text-transform: uppercase;">Wikipedia (en)</span>
+</div>
+<a href="https://en.wikipedia.org/wiki/Mammalian_SWI/SNF_%28BAF%29_complex" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.95rem;" target="_blank">Mammalian SWI/SNF (BAF) complex</a>
+<p class="muted" style="font-size: 0.8rem; margin: 0.1rem 0 0 0;">Work cited as a foundational reference in this encyclopedic entry.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="grid-2" id="sec-contributors">
+<section class="card" id="sec-contributors" style="margin-bottom:0;">
+<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">2 authors · 2 institutions</div>
+<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Sandipan Brahma</strong>
+<span class="badge">First</span>
+<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-7511-5409" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Steven Henikoff</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-7621-8685" target="_blank">ORCID</a>
+</li>
+</ul>
+<h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/03azxga02" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Nebraska Medical Center</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/00wdsp051" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Cape Town HVTN Immunology Laboratory / Hutchinson Centre Research Institute of South Africa</a>
+</li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">17 specific concepts identified.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Chromatin</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Nucleosome</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Chromatin remodeling</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">RNA polymerase II</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell biology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">ChIA-PET</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">SWI/SNF</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Genetics</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Transcription (linguistics)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Molecular biology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">DNA</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Promoter</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Gene</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Gene expression</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Linguistics</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Philosophy</span>
+</div>
+</section>
+</div>
+<section class="card" id="sec-funding">
+<h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">6 financial grants and sponsors detected.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>U.S. Department of Health &amp; Human Services | National Institutes of Health</strong>
+<span style="opacity: 0.8; font-weight: normal;">(GM138920)</span>
+</span>
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>Howard Hughes Medical Institute</strong>
+<span style="opacity: 0.8; font-weight: normal;">(Henikoff)</span>
+</span>
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>NIGMS NIH HHS</strong>
+<span style="opacity: 0.8; font-weight: normal;">(R00 GM138920)</span>
+</span>
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>NIGMS NIH HHS</strong>
+<span style="opacity: 0.8; font-weight: normal;">(K99 GM138920)</span>
+</span>
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>NCI NIH HHS</strong>
+<span style="opacity: 0.8; font-weight: normal;">(P30 CA015704)</span>
+</span>
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>U.S. Department of Health &amp; Human Services | National Institutes of Health</strong>
+<span style="opacity: 0.8; font-weight: normal;">(P30CA015704)</span>
+</span>
+</div>
+</section>
+<section class="card no-print" id="sec-citations">
+<h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">Displaying 86 most recent citing works</div>
+<div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+<table>
+<thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+<tbody id="cit-tbody"></tbody>
+</table>
+</div>
+<div class="cit-pagination">
+<span class="cit-pagination-info" id="cit-info">Loading…</span>
+<div class="cit-pagination-btns">
+<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
+<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
+<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
+</div>
+</div>
 
-                <div style="position: relative; border-left: 2px solid #e2e8f0; padding-left: 1.5rem; margin-top: 1rem;">
-                    
-                    
-                    
-                    
-                    
-                    
-                    <div id="soc-wiki" class="soc-tab-content" style="display: block; animation: fadeIn 0.3s;">
-                        
-                        <div style="position: relative; margin-bottom: 1.25rem;">
-                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #64748b; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
-                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
-                                <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.65rem; text-transform: uppercase;">Wikipedia (en)</span>
-                            </div>
-                            <a href="https://en.wikipedia.org/wiki/Mammalian_SWI/SNF_%28BAF%29_complex" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Mammalian SWI/SNF (BAF) complex</a>
-                            <p class="muted" style="font-size: 0.8rem; margin: 0.1rem 0 0 0;">Work cited as a foundational reference in this encyclopedic entry.</p>
-                        </div>
-                        
-                    </div>
-                    
-
-                    
-                    
-
-                    
-                    
-
-                    
-                    
-                </div>
-                
-                
-                
-                
-                
-                
-            </section>
-            
-        </div>
-
-        
-        
-        
-        
-            
-                
-            
-        
-            
-                
-            
-        
-        <div class="grid-2">
-            <section class="card" style="margin-bottom:0;">
-                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
-                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>2 authors · 2 institutions</div>
-                
-                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
-                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
-                
-                
-                    
-                    <li style="margin-bottom: 0.4rem;">
-                        <strong>Sandipan Brahma</strong> 
-                        <span class="badge">First</span>
-                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-                        <a class="orcid-badge" href="https://orcid.org/0000-0001-7511-5409" target="_blank">ORCID</a>
-                    </li>
-                    
-                    <li style="margin-bottom: 0.4rem;">
-                        <strong>Steven Henikoff</strong> 
-                        
-                        
-                        <a class="orcid-badge" href="https://orcid.org/0000-0002-7621-8685" target="_blank">ORCID</a>
-                    </li>
-                    
-                </ul>
-
-                
-                <h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
-                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
-                    
-                    <li style="margin-bottom: 0.4rem;">
-                        
-                            <a href="https://ror.org/03azxga02" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Nebraska Medical Center</a>
-                        
-                    </li>
-                    
-                    <li style="margin-bottom: 0.4rem;">
-                        
-                            <a href="https://ror.org/00wdsp051" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Cape Town HVTN Immunology Laboratory / Hutchinson Centre Research Institute of South Africa</a>
-                        
-                    </li>
-                    
-                </ul>
-                
-            </section>
-
-            <section class="card" style="margin-bottom:0;">
-                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
-                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>17 specific concepts identified.</div>
-                
-                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Chromatin</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Nucleosome</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Chromatin remodeling</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">RNA polymerase II</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell biology</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">ChIA-PET</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">SWI/SNF</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Genetics</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Transcription (linguistics)</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Molecular biology</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">DNA</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Promoter</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Gene</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Gene expression</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Linguistics</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Philosophy</span>
-                    
-                    
-                </div>
-                
-                
-            </section>
-        </div>
-
-        
-        <section class="card">
-            <h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
-            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>6 financial grants and sponsors detected.</div>
-            
-            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-                
-                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-                        <strong>U.S. Department of Health &amp; Human Services | National Institutes of Health</strong> 
-                        <span style="opacity: 0.8; font-weight: normal;">(GM138920)</span>
-                    </span>
-                
-                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-                        <strong>Howard Hughes Medical Institute</strong> 
-                        <span style="opacity: 0.8; font-weight: normal;">(Henikoff)</span>
-                    </span>
-                
-                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-                        <strong>NIGMS NIH HHS</strong> 
-                        <span style="opacity: 0.8; font-weight: normal;">(R00 GM138920)</span>
-                    </span>
-                
-                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-                        <strong>NIGMS NIH HHS</strong> 
-                        <span style="opacity: 0.8; font-weight: normal;">(K99 GM138920)</span>
-                    </span>
-                
-                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-                        <strong>NCI NIH HHS</strong> 
-                        <span style="opacity: 0.8; font-weight: normal;">(P30 CA015704)</span>
-                    </span>
-                
-                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-                        <strong>U.S. Department of Health &amp; Human Services | National Institutes of Health</strong> 
-                        <span style="opacity: 0.8; font-weight: normal;">(P30CA015704)</span>
-                    </span>
-                
-            </div>
-        </section>
-        
-
-
-
-        
-        
-        <section class="card no-print">
-            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
-            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>Displaying 86 most recent citing works</div>
-            <div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
-                <table>
-                    <thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
-                    <tbody>
-                    
-                    <tr>
-                        <td>2023</td>
-                        <td>Epigenetic pioneering by SWI/SNF family remodelers</td>
-                        <td>Molecular Cell</td>
-                        <td><a href="https://doi.org/10.1016/j.molcel.2023.10.045" target="_blank" style="word-break: break-all;">10.1016/j.molcel.2023.10.045</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2023</td>
-                        <td>Genome-wide analysis of the interplay between chromatin-associated RNA and 3D genome organization in human cells</td>
-                        <td>Nature Communications</td>
-                        <td><a href="https://doi.org/10.1038/s41467-023-42274-7" target="_blank" style="word-break: break-all;">10.1038/s41467-023-42274-7</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Multifunctional histone variants in genome function</td>
-                        <td>Nature Reviews Genetics</td>
-                        <td><a href="https://doi.org/10.1038/s41576-024-00759-1" target="_blank" style="word-break: break-all;">10.1038/s41576-024-00759-1</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2023</td>
-                        <td>Epigenomic analysis of formalin-fixed paraffin-embedded samples by CUT&amp;Tag</td>
-                        <td>Nature Communications</td>
-                        <td><a href="https://doi.org/10.1038/s41467-023-41666-z" target="_blank" style="word-break: break-all;">10.1038/s41467-023-41666-z</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Nucleosome remodeler exclusion by histone deacetylation enforces heterochromatic silencing and epigenetic inheritance</td>
-                        <td>Molecular Cell</td>
-                        <td><a href="https://doi.org/10.1016/j.molcel.2024.07.006" target="_blank" style="word-break: break-all;">10.1016/j.molcel.2024.07.006</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Collaboration between distinct SWI/SNF chromatin remodeling complexes directs enhancer selection and activation of macrophage inflammatory genes</td>
-                        <td>Immunity</td>
-                        <td><a href="https://doi.org/10.1016/j.immuni.2024.05.008" target="_blank" style="word-break: break-all;">10.1016/j.immuni.2024.05.008</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Rapid unleashing of macrophage efferocytic capacity via transcriptional pause release</td>
-                        <td>Nature</td>
-                        <td><a href="https://doi.org/10.1038/s41586-024-07172-y" target="_blank" style="word-break: break-all;">10.1038/s41586-024-07172-y</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>SWI/SNF-dependent genes are defined by their chromatin landscape</td>
-                        <td>Cell Reports</td>
-                        <td><a href="https://doi.org/10.1016/j.celrep.2024.113855" target="_blank" style="word-break: break-all;">10.1016/j.celrep.2024.113855</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>The phenylalanine-and-glycine repeats of NUP98 oncofusions form condensates that selectively partition transcriptional coactivators</td>
-                        <td>Molecular Cell</td>
-                        <td><a href="https://doi.org/10.1016/j.molcel.2024.12.026" target="_blank" style="word-break: break-all;">10.1016/j.molcel.2024.12.026</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Long non-coding RNAs direct the SWI/SNF complex to cell type-specific enhancers</td>
-                        <td>Nature Communications</td>
-                        <td><a href="https://doi.org/10.1038/s41467-024-55539-6" target="_blank" style="word-break: break-all;">10.1038/s41467-024-55539-6</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>The HIV-1 Transcriptional Program: From Initiation to Elongation Control</td>
-                        <td>Journal of Molecular Biology</td>
-                        <td><a href="https://doi.org/10.1016/j.jmb.2024.168690" target="_blank" style="word-break: break-all;">10.1016/j.jmb.2024.168690</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Activity-assembled nBAF complex mediates rapid immediate early gene transcription by regulating RNA polymerase II productive elongation</td>
-                        <td>Cell Reports</td>
-                        <td><a href="https://doi.org/10.1016/j.celrep.2024.114877" target="_blank" style="word-break: break-all;">10.1016/j.celrep.2024.114877</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>GAGA zinc finger transcription factor searches chromatin by 1D–3D facilitated diffusion</td>
-                        <td>Nature Structural & Molecular Biology</td>
-                        <td><a href="https://doi.org/10.1038/s41594-025-01643-0" target="_blank" style="word-break: break-all;">10.1038/s41594-025-01643-0</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Single-molecule imaging of SWI/SNF chromatin remodelers reveals bromodomain-mediated and cancer-mutants-specific landscape of multi-modal DNA-binding dynamics</td>
-                        <td>Nature Communications</td>
-                        <td><a href="https://doi.org/10.1038/s41467-024-52040-y" target="_blank" style="word-break: break-all;">10.1038/s41467-024-52040-y</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Multi-epitope immunocapture of huntingtin reveals striatum-selective molecular signatures</td>
-                        <td>Molecular Systems Biology</td>
-                        <td><a href="https://doi.org/10.1038/s44320-025-00096-3" target="_blank" style="word-break: break-all;">10.1038/s44320-025-00096-3</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>SWI/SNF Complex Connects Signaling and Epigenetic State in Cells of Nervous System</td>
-                        <td>Molecular Neurobiology</td>
-                        <td><a href="https://doi.org/10.1007/s12035-024-04355-6" target="_blank" style="word-break: break-all;">10.1007/s12035-024-04355-6</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>PHF6 cooperates with SWI/SNF complexes to facilitate transcriptional progression</td>
-                        <td>Nature Communications</td>
-                        <td><a href="https://doi.org/10.1038/s41467-024-51566-5" target="_blank" style="word-break: break-all;">10.1038/s41467-024-51566-5</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>RNA polymerase II promotes the organization of chromatin following DNA replication</td>
-                        <td>EMBO Reports</td>
-                        <td><a href="https://doi.org/10.1038/s44319-024-00085-x" target="_blank" style="word-break: break-all;">10.1038/s44319-024-00085-x</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>ZIC2 and ZIC3 promote SWI/SNF recruitment to safeguard progression towards human primed pluripotency</td>
-                        <td>Nature Communications</td>
-                        <td><a href="https://doi.org/10.1038/s41467-024-52431-1" target="_blank" style="word-break: break-all;">10.1038/s41467-024-52431-1</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>The BAF complex enhances transcription through interaction with H3K56ac in the histone globular domain</td>
-                        <td>Nature Communications</td>
-                        <td><a href="https://doi.org/10.1038/s41467-024-53981-0" target="_blank" style="word-break: break-all;">10.1038/s41467-024-53981-0</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Chromatin protein complexes involved in gene repression in lamina-associated domains</td>
-                        <td>The EMBO Journal</td>
-                        <td><a href="https://doi.org/10.1038/s44318-024-00214-1" target="_blank" style="word-break: break-all;">10.1038/s44318-024-00214-1</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Proteasome Inhibition Reprograms Chromatin Landscape in Breast Cancer</td>
-                        <td>Cancer Research Communications</td>
-                        <td><a href="https://doi.org/10.1158/2767-9764.crc-23-0476" target="_blank" style="word-break: break-all;">10.1158/2767-9764.crc-23-0476</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Short circuit: Transcription factor addiction as a growing vulnerability in cancer</td>
-                        <td>Current Opinion in Structural Biology</td>
-                        <td><a href="https://doi.org/10.1016/j.sbi.2024.102948" target="_blank" style="word-break: break-all;">10.1016/j.sbi.2024.102948</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Basic Epigenetic Mechanisms</td>
-                        <td>Sub-cellular biochemistry/Subcellular biochemistry</td>
-                        <td><a href="https://doi.org/10.1007/978-3-031-75980-2_1" target="_blank" style="word-break: break-all;">10.1007/978-3-031-75980-2_1</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>The SWI/SNF PBAF complex facilitates REST occupancy at repressive chromatin</td>
-                        <td>Molecular Cell</td>
-                        <td><a href="https://doi.org/10.1016/j.molcel.2025.03.026" target="_blank" style="word-break: break-all;">10.1016/j.molcel.2025.03.026</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Gene Expression Dysregulation in Whole Blood of Patients with Clostridioides difficile Infection</td>
-                        <td>International Journal of Molecular Sciences</td>
-                        <td><a href="https://doi.org/10.3390/ijms252312653" target="_blank" style="word-break: break-all;">10.3390/ijms252312653</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Bclaf1 mediates super-enhancer-driven activation of POLR2A to enhance chromatin accessibility in nitrosamine-induced esophageal carcinogenesis</td>
-                        <td>Journal of Hazardous Materials</td>
-                        <td><a href="https://doi.org/10.1016/j.jhazmat.2025.138218" target="_blank" style="word-break: break-all;">10.1016/j.jhazmat.2025.138218</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Intrinsically Disordered Regions Define Unique Protein Interaction Networks in <scp>CHD</scp> Family Remodelers</td>
-                        <td>The FASEB Journal</td>
-                        <td><a href="https://doi.org/10.1096/fj.202402808rr" target="_blank" style="word-break: break-all;">10.1096/fj.202402808rr</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Precise modulation of BRG1 levels reveals features of mSWI/SNF dosage sensitivity</td>
-                        <td>Nature Genetics</td>
-                        <td><a href="https://doi.org/10.1038/s41588-025-02305-z" target="_blank" style="word-break: break-all;">10.1038/s41588-025-02305-z</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>SWI/SNF complexes govern ontology-specific transcription factor function in MYC-subtype atypical teratoid rhabdoid tumor</td>
-                        <td>Neuro-Oncology</td>
-                        <td><a href="https://doi.org/10.1093/neuonc/noaf081" target="_blank" style="word-break: break-all;">10.1093/neuonc/noaf081</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Multidimensional <scp>OMICs</scp> reveal <scp>ARID1A</scp> orchestrated control of <scp>DNA</scp> damage, splicing, and cell cycle in normal‐like and malignant urothelial cells</td>
-                        <td>Molecular Oncology</td>
-                        <td><a href="https://doi.org/10.1002/1878-0261.70019" target="_blank" style="word-break: break-all;">10.1002/1878-0261.70019</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>β-catenin functions as a molecular adapter for disordered cBAF interactions</td>
-                        <td>Molecular Cell</td>
-                        <td><a href="https://doi.org/10.1016/j.molcel.2025.06.026" target="_blank" style="word-break: break-all;">10.1016/j.molcel.2025.06.026</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>SMARCB1-related schwannomatosis and other SMARCB1-associated phenotypes: clinical spectrum and molecular pathogenesis</td>
-                        <td>Familial Cancer</td>
-                        <td><a href="https://doi.org/10.1007/s10689-025-00486-4" target="_blank" style="word-break: break-all;">10.1007/s10689-025-00486-4</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>DNA methylation and histone modifications drive the trained immunity duration</td>
-                        <td>Trends in Immunology</td>
-                        <td><a href="https://doi.org/10.1016/j.it.2025.10.004" target="_blank" style="word-break: break-all;">10.1016/j.it.2025.10.004</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Genome-wide investigation of transcription factor footprints and dynamics using cFOOT-seq</td>
-                        <td>Protein & Cell</td>
-                        <td><a href="https://doi.org/10.1093/procel/pwaf071" target="_blank" style="word-break: break-all;">10.1093/procel/pwaf071</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Deciphering histone mark-specific fine-scale chromatin organization at high resolution with Micro-C-ChIP</td>
-                        <td>Nature Communications</td>
-                        <td><a href="https://doi.org/10.1038/s41467-025-64350-w" target="_blank" style="word-break: break-all;">10.1038/s41467-025-64350-w</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Opening and changing: mammalian SWI/SNF complexes in organ development and carcinogenesis</td>
-                        <td>Open Biology</td>
-                        <td><a href="https://doi.org/10.1098/rsob.240039" target="_blank" style="word-break: break-all;">10.1098/rsob.240039</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2023</td>
-                        <td>RNA polymerase II promoter-proximal pausing promotes BAF chromatin binding and remodeling</td>
-                        <td>Nature Genetics</td>
-                        <td><a href="https://doi.org/10.1038/s41588-023-01628-z" target="_blank" style="word-break: break-all;">10.1038/s41588-023-01628-z</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Visualizing, quantifying and mapping chromatin remodelers at work with single-molecule and single-cell imaging</td>
-                        <td>The International Journal of Biochemistry & Cell Biology</td>
-                        <td><a href="https://doi.org/10.1016/j.biocel.2024.106667" target="_blank" style="word-break: break-all;">10.1016/j.biocel.2024.106667</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>ACTL6A depletion induces KLF4-mediated anti-tumorigenic effects in colorectal cancer</td>
-                        <td>Cell Death and Disease</td>
-                        <td><a href="https://doi.org/10.1038/s41419-025-07946-w" target="_blank" style="word-break: break-all;">10.1038/s41419-025-07946-w</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2023</td>
-                        <td>GAGA zinc finger transcription factor searches chromatin by 1D-3D facilitated diffusion</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2023.07.14.549009" target="_blank" style="word-break: break-all;">10.1101/2023.07.14.549009</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2023</td>
-                        <td>Activity-assembled nBAF complex mediates rapid immediate early gene transcription by regulating RNA Polymerase II productive elongation</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2023.12.30.573688" target="_blank" style="word-break: break-all;">10.1101/2023.12.30.573688</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2023</td>
-                        <td>Acetylation of H3K115 is detected associated with fragile nucleosomes at CpG island promoters and active regulatory sites</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2023.11.10.566531" target="_blank" style="word-break: break-all;">10.1101/2023.11.10.566531</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>SWR1 is recruited to activated ABA response genes to maintain gene body H2A.Z in <i>Arabidopsis thaliana</i></td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2024.07.14.603444" target="_blank" style="word-break: break-all;">10.1101/2024.07.14.603444</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>The SWI/SNF PBAF complex facilitates REST occupancy at repressive chromatin</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2024.08.23.609212" target="_blank" style="word-break: break-all;">10.1101/2024.08.23.609212</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Multi-epitope immunocapture of huntingtin reveals striatum-selective molecular signatures</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2024.09.07.611843" target="_blank" style="word-break: break-all;">10.1101/2024.09.07.611843</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Huntingtin interactome reveals huntingtin role in regulation of double strand break DNA damage response (DSB/DDR), chromatin remodeling and RNA processing pathways</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2024.12.27.630542" target="_blank" style="word-break: break-all;">10.1101/2024.12.27.630542</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Mouse cortical cellular diversification through lineage progression of radial glia</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/gad.352826.125" target="_blank" style="word-break: break-all;">10.1101/gad.352826.125</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2023</td>
-                        <td>Heterotypic interactions in the dilute phase can drive co-condensation of prion-like low-complexity domains of FET proteins and mammalian SWI/SNF complex</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2023.04.12.536623" target="_blank" style="word-break: break-all;">10.1101/2023.04.12.536623</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Chromatin protein complexes involved in gene repression in lamina-associated domains</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2024.05.05.592629" target="_blank" style="word-break: break-all;">10.1101/2024.05.05.592629</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Mechanisms of gene regulation by SRCAP and H2A.Z</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2024.06.07.597899" target="_blank" style="word-break: break-all;">10.1101/2024.06.07.597899</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Intrinsically Disordered Regions Define Unique Protein Interaction Networks in CHD Family Remodelers</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2024.08.25.609601" target="_blank" style="word-break: break-all;">10.1101/2024.08.25.609601</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Endogenous variability in transcription factor concentrations shapes their genome-wide occupancy</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2025.09.24.678270" target="_blank" style="word-break: break-all;">10.1101/2025.09.24.678270</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Long non-coding RNAs direct the SWI/SNF complex to cell-specific enhancers</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2024.03.21.585172" target="_blank" style="word-break: break-all;">10.1101/2024.03.21.585172</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Response to “Learning from chromatin reconstitution: Pioneering factors enabling nucleosome remodelers”</td>
-                        <td>Molecular Cell</td>
-                        <td><a href="https://doi.org/10.1016/j.molcel.2024.03.020" target="_blank" style="word-break: break-all;">10.1016/j.molcel.2024.03.020</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Refined mechanism of promoter Nucleosome-Depleted Regions resetting after replication</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2024.04.14.589417" target="_blank" style="word-break: break-all;">10.1101/2024.04.14.589417</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
-                        <td>Paused Polymerase synergises with transcription factors and RNA to enhance the transcriptional potential of promoters</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2024.10.18.618990" target="_blank" style="word-break: break-all;">10.1101/2024.10.18.618990</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Mouse Cortical Cellular Diversification Through Lineage Progression of Radial Glia</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2025.01.24.634707" target="_blank" style="word-break: break-all;">10.1101/2025.01.24.634707</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Profiling regulatory elements in vivo by genome-wide methods</td>
-                        <td>Current Opinion in Structural Biology</td>
-                        <td><a href="https://doi.org/10.1016/j.sbi.2025.103064" target="_blank" style="word-break: break-all;">10.1016/j.sbi.2025.103064</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>The SAMD1 transcription factor coordinates hematopoietic lineage differentiation and H3K4 methylation status</td>
-                        <td>Blood Advances</td>
-                        <td><a href="https://doi.org/10.1182/bloodadvances.2024015627" target="_blank" style="word-break: break-all;">10.1182/bloodadvances.2024015627</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>The Splicing Factor PTBP1 interacts with RUNX1 and is Required for Leukemia Cell Survival</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2025.05.16.654547" target="_blank" style="word-break: break-all;">10.1101/2025.05.16.654547</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>How cBAF and PBAF regulate the nucleosomal and subnucleosomal landscape of promoters, enhancers and REST repressor binding sites</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2025.06.12.659349" target="_blank" style="word-break: break-all;">10.1101/2025.06.12.659349</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Refined mechanism of promoter nucleosome-depleted regions resetting after replication</td>
-                        <td>Nucleic Acids Research</td>
-                        <td><a href="https://doi.org/10.1093/nar/gkaf1025" target="_blank" style="word-break: break-all;">10.1093/nar/gkaf1025</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Activity of the SWI/SNF complex is indispensable for syncytiotrophoblast formation</td>
-                        <td>Development</td>
-                        <td><a href="https://doi.org/10.1242/dev.204770" target="_blank" style="word-break: break-all;">10.1242/dev.204770</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Single-Cell Heterogeneity of Epigenetic Factor Regulation Deciphers Alteration of RNA Metabolism During Proliferative SHH-Medulloblastoma</td>
-                        <td>Cancers</td>
-                        <td><a href="https://doi.org/10.3390/cancers17213424" target="_blank" style="word-break: break-all;">10.3390/cancers17213424</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Paused RNA polymerase primes promoters via RNA-mediated stabilisation of transcription factor ERα</td>
-                        <td>Nature Communications</td>
-                        <td><a href="https://doi.org/10.1038/s41467-025-64569-7" target="_blank" style="word-break: break-all;">10.1038/s41467-025-64569-7</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>WITHDRAWN: Mammalian longevity is associated with restricted epithelial plasticity</td>
-                        <td>bioRxiv</td>
-                        <td><a href="https://doi.org/10.1101/2025.10.22.683248" target="_blank" style="word-break: break-all;">10.1101/2025.10.22.683248</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>The splicing factor PTBP1 interacts with RUNX1 and is required for leukemia cell survival</td>
-                        <td>Leukemia</td>
-                        <td><a href="https://doi.org/10.1038/s41375-025-02799-w" target="_blank" style="word-break: break-all;">10.1038/s41375-025-02799-w</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Acetylation of H3K115 is associated with fragile nucleosomes at CpG island promoters and active regulatory sites</td>
-                        <td>eLife</td>
-                        <td><a href="https://doi.org/10.7554/elife.108802.1" target="_blank" style="word-break: break-all;">10.7554/elife.108802.1</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Acetylation of H3K115 is associated with fragile nucleosomes at CpG island promoters and active regulatory sites</td>
-                        <td>eLife</td>
-                        <td><a href="https://doi.org/10.7554/elife.108802" target="_blank" style="word-break: break-all;">10.7554/elife.108802</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>SMARCA2/4-Dependent Chromatin Remodelling Establishes Gene Regulatory Programs in Early Human Embryos and Blastoids</td>
-                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
-                        <td><a href="https://doi.org/10.64898/2025.12.01.691499" target="_blank" style="word-break: break-all;">10.64898/2025.12.01.691499</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Co-condensation between transcription factor and cBAF selectively modulates chromatin remodeling and gene expression</td>
-                        <td>Nature Communications</td>
-                        <td><a href="https://doi.org/10.1038/s41467-025-67322-2" target="_blank" style="word-break: break-all;">10.1038/s41467-025-67322-2</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2026</td>
-                        <td>Age-Dependent Chromatin Remodeling Drives Inflammatory Dysregulation in Tendon Cells</td>
-                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
-                        <td><a href="https://doi.org/10.64898/2026.01.05.697725" target="_blank" style="word-break: break-all;">10.64898/2026.01.05.697725</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2026</td>
-                        <td>Chromatin modifiers KMT2D, BAF, and p300 are required for <i>de novo</i> binding of transcription factors on enhancers</td>
-                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
-                        <td><a href="https://doi.org/10.64898/2026.01.29.702555" target="_blank" style="word-break: break-all;">10.64898/2026.01.29.702555</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2026</td>
-                        <td>Role of PBAF and Mediator kinase module in the RELA-dependent activation of CXCL1–3 inflammation genes of the NF-kB pathway</td>
-                        <td>Frontiers in Immunology</td>
-                        <td><a href="https://doi.org/10.3389/fimmu.2026.1702928" target="_blank" style="word-break: break-all;">10.3389/fimmu.2026.1702928</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2026</td>
-                        <td>Chromatin remodeler BAF maintains HBV cccDNA transcriptional competence and represents a therapeutic target</td>
-                        <td>Nucleic Acids Research</td>
-                        <td><a href="https://doi.org/10.1093/nar/gkag073" target="_blank" style="word-break: break-all;">10.1093/nar/gkag073</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2026</td>
-                        <td>Promoter proximal pausing of RNA polymerase across evolution</td>
-                        <td>Nature Structural & Molecular Biology</td>
-                        <td><a href="https://doi.org/10.1038/s41594-026-01745-3" target="_blank" style="word-break: break-all;">10.1038/s41594-026-01745-3</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2026</td>
-                        <td>Acetylation of H3K115 is detected associated with fragile nucleosomes at CpG island promoters and active regulatory sites</td>
-                        <td>eLife</td>
-                        <td><a href="https://doi.org/10.7554/elife.108802.2" target="_blank" style="word-break: break-all;">10.7554/elife.108802.2</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2026</td>
-                        <td>Cooperation of Transcription Factor PAX6 with Chromatin-Remodeling Complex BAF During Embryonic Development in Mammals</td>
-                        <td>Cellular and Molecular Neurobiology</td>
-                        <td><a href="https://doi.org/10.1007/s10571-026-01692-z" target="_blank" style="word-break: break-all;">10.1007/s10571-026-01692-z</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2026</td>
-                        <td>H3K9me2 is a determinant for the mitosis-to-meiosis transition in female germ cells</td>
-                        <td>Cell Death and Disease</td>
-                        <td><a href="https://doi.org/10.1038/s41419-026-08473-y" target="_blank" style="word-break: break-all;">10.1038/s41419-026-08473-y</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2026</td>
-                        <td>Canonical BAF chromatin remodeling complex specifies stem cell fate via cell-type-specific co-factor recruitment</td>
-                        <td>Nature Communications</td>
-                        <td><a href="https://doi.org/10.1038/s41467-026-70038-6" target="_blank" style="word-break: break-all;">10.1038/s41467-026-70038-6</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2026</td>
-                        <td>Acetylation of H3K115 is associated with fragile nucleosomes at CpG island promoters and active regulatory sites</td>
-                        <td>eLife</td>
-                        <td><a href="https://doi.org/10.7554/elife.108802.3" target="_blank" style="word-break: break-all;">10.7554/elife.108802.3</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2026</td>
-                        <td>Mechanisms of gene regulation by SRCAP and H2A.Z</td>
-                        <td>Nature Communications</td>
-                        <td><a href="https://doi.org/10.1038/s41467-026-70087-x" target="_blank" style="word-break: break-all;">10.1038/s41467-026-70087-x</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2026</td>
-                        <td>Huntingtin (HTT) interactome in regulation of DNA repair/remodeling and RNA processing pathways</td>
-                        <td>Life Science Alliance</td>
-                        <td><a href="https://doi.org/10.26508/lsa.202503424" target="_blank" style="word-break: break-all;">10.26508/lsa.202503424</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2026</td>
-                        <td>Genome-wide DNA supercoiling arises from transcription and SMC activity and mediates transcriptional negative feedback</td>
-                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
-                        <td><a href="https://doi.org/10.64898/2026.03.26.714539" target="_blank" style="word-break: break-all;">10.64898/2026.03.26.714539</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2026</td>
-                        <td>Chromatin remodelling enables enhancer resetting to facilitate the ERK transcriptional response</td>
-                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
-                        <td><a href="https://doi.org/10.64898/2026.03.27.714694" target="_blank" style="word-break: break-all;">10.64898/2026.03.27.714694</a></td>
-                    </tr>
-                    
-                    </tbody>
-                </table>
-            </div>
-        </section>
-        
-
-        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
-            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-                
-                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
-                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
-                </div>
-        
-                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+</section>
+<footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+<div style="display: flex; flex-direction: column; gap: 0.4rem;">
+<div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+<svg fill="none" height="16" stroke="currentColor" style="color: #9ca3af;" viewbox="0 0 24 24" width="16"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Understanding our metrics: <a href="https://www.openscience.works/about.html" style="color: #2563eb; text-decoration: none; font-weight: 600;" target="_blank">Read the Methodology &amp; Legend ↗</a></span>
+</div>
+<div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
                     Generated on 2026-04-03T09:20:22+00:00
                 </div>
-                
-            </div>
-        </footer>
-    </div>
-
-    
-    <script>
+</div>
+</footer>
+</div>
+<script>
         (function() {
             const canvas = document.getElementById('citationChart');
             if(!canvas) return;
@@ -1468,8 +669,7 @@
             });
         })();
     </script>
-    
-    <style>
+<style>
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(5px); }
             to { opacity: 1; transform: translateY(0); }
@@ -1493,8 +693,7 @@
             color: #111827;
         }
     </style>
-    
-    <script>
+<script>
         function openSocialTab(evt, tabId) {
             // Hide all tab content
             var contents = document.getElementsByClassName("soc-tab-content");
@@ -1511,5 +710,159 @@
             evt.currentTarget.classList.add("soc-tab-active");
         }
     </script>
+
+<script>
+(function() {
+  var DATA = [{"year": "2023", "title": "Epigenetic pioneering by SWI/SNF family remodelers", "venue": "Molecular Cell", "doi": "10.1016/j.molcel.2023.10.045", "doi_url": "https://doi.org/10.1016/j.molcel.2023.10.045"}, {"year": "2023", "title": "Genome-wide analysis of the interplay between chromatin-associated RNA and 3D genome organization in human cells", "venue": "Nature Communications", "doi": "10.1038/s41467-023-42274-7", "doi_url": "https://doi.org/10.1038/s41467-023-42274-7"}, {"year": "2024", "title": "Multifunctional histone variants in genome function", "venue": "Nature Reviews Genetics", "doi": "10.1038/s41576-024-00759-1", "doi_url": "https://doi.org/10.1038/s41576-024-00759-1"}, {"year": "2023", "title": "Epigenomic analysis of formalin-fixed paraffin-embedded samples by CUT&Tag", "venue": "Nature Communications", "doi": "10.1038/s41467-023-41666-z", "doi_url": "https://doi.org/10.1038/s41467-023-41666-z"}, {"year": "2024", "title": "Nucleosome remodeler exclusion by histone deacetylation enforces heterochromatic silencing and epigenetic inheritance", "venue": "Molecular Cell", "doi": "10.1016/j.molcel.2024.07.006", "doi_url": "https://doi.org/10.1016/j.molcel.2024.07.006"}, {"year": "2024", "title": "Collaboration between distinct SWI/SNF chromatin remodeling complexes directs enhancer selection and activation of macrophage inflammatory genes", "venue": "Immunity", "doi": "10.1016/j.immuni.2024.05.008", "doi_url": "https://doi.org/10.1016/j.immuni.2024.05.008"}, {"year": "2024", "title": "Rapid unleashing of macrophage efferocytic capacity via transcriptional pause release", "venue": "Nature", "doi": "10.1038/s41586-024-07172-y", "doi_url": "https://doi.org/10.1038/s41586-024-07172-y"}, {"year": "2024", "title": "SWI/SNF-dependent genes are defined by their chromatin landscape", "venue": "Cell Reports", "doi": "10.1016/j.celrep.2024.113855", "doi_url": "https://doi.org/10.1016/j.celrep.2024.113855"}, {"year": "2025", "title": "The phenylalanine-and-glycine repeats of NUP98 oncofusions form condensates that selectively partition transcriptional coactivators", "venue": "Molecular Cell", "doi": "10.1016/j.molcel.2024.12.026", "doi_url": "https://doi.org/10.1016/j.molcel.2024.12.026"}, {"year": "2025", "title": "Long non-coding RNAs direct the SWI/SNF complex to cell type-specific enhancers", "venue": "Nature Communications", "doi": "10.1038/s41467-024-55539-6", "doi_url": "https://doi.org/10.1038/s41467-024-55539-6"}, {"year": "2024", "title": "The HIV-1 Transcriptional Program: From Initiation to Elongation Control", "venue": "Journal of Molecular Biology", "doi": "10.1016/j.jmb.2024.168690", "doi_url": "https://doi.org/10.1016/j.jmb.2024.168690"}, {"year": "2024", "title": "Activity-assembled nBAF complex mediates rapid immediate early gene transcription by regulating RNA polymerase II productive elongation", "venue": "Cell Reports", "doi": "10.1016/j.celrep.2024.114877", "doi_url": "https://doi.org/10.1016/j.celrep.2024.114877"}, {"year": "2025", "title": "GAGA zinc finger transcription factor searches chromatin by 1D–3D facilitated diffusion", "venue": "Nature Structural & Molecular Biology", "doi": "10.1038/s41594-025-01643-0", "doi_url": "https://doi.org/10.1038/s41594-025-01643-0"}, {"year": "2024", "title": "Single-molecule imaging of SWI/SNF chromatin remodelers reveals bromodomain-mediated and cancer-mutants-specific landscape of multi-modal DNA-binding dynamics", "venue": "Nature Communications", "doi": "10.1038/s41467-024-52040-y", "doi_url": "https://doi.org/10.1038/s41467-024-52040-y"}, {"year": "2025", "title": "Multi-epitope immunocapture of huntingtin reveals striatum-selective molecular signatures", "venue": "Molecular Systems Biology", "doi": "10.1038/s44320-025-00096-3", "doi_url": "https://doi.org/10.1038/s44320-025-00096-3"}, {"year": "2024", "title": "SWI/SNF Complex Connects Signaling and Epigenetic State in Cells of Nervous System", "venue": "Molecular Neurobiology", "doi": "10.1007/s12035-024-04355-6", "doi_url": "https://doi.org/10.1007/s12035-024-04355-6"}, {"year": "2024", "title": "PHF6 cooperates with SWI/SNF complexes to facilitate transcriptional progression", "venue": "Nature Communications", "doi": "10.1038/s41467-024-51566-5", "doi_url": "https://doi.org/10.1038/s41467-024-51566-5"}, {"year": "2024", "title": "RNA polymerase II promotes the organization of chromatin following DNA replication", "venue": "EMBO Reports", "doi": "10.1038/s44319-024-00085-x", "doi_url": "https://doi.org/10.1038/s44319-024-00085-x"}, {"year": "2024", "title": "ZIC2 and ZIC3 promote SWI/SNF recruitment to safeguard progression towards human primed pluripotency", "venue": "Nature Communications", "doi": "10.1038/s41467-024-52431-1", "doi_url": "https://doi.org/10.1038/s41467-024-52431-1"}, {"year": "2024", "title": "The BAF complex enhances transcription through interaction with H3K56ac in the histone globular domain", "venue": "Nature Communications", "doi": "10.1038/s41467-024-53981-0", "doi_url": "https://doi.org/10.1038/s41467-024-53981-0"}, {"year": "2024", "title": "Chromatin protein complexes involved in gene repression in lamina-associated domains", "venue": "The EMBO Journal", "doi": "10.1038/s44318-024-00214-1", "doi_url": "https://doi.org/10.1038/s44318-024-00214-1"}, {"year": "2024", "title": "Proteasome Inhibition Reprograms Chromatin Landscape in Breast Cancer", "venue": "Cancer Research Communications", "doi": "10.1158/2767-9764.crc-23-0476", "doi_url": "https://doi.org/10.1158/2767-9764.crc-23-0476"}, {"year": "2024", "title": "Short circuit: Transcription factor addiction as a growing vulnerability in cancer", "venue": "Current Opinion in Structural Biology", "doi": "10.1016/j.sbi.2024.102948", "doi_url": "https://doi.org/10.1016/j.sbi.2024.102948"}, {"year": "2025", "title": "Basic Epigenetic Mechanisms", "venue": "Sub-cellular biochemistry/Subcellular biochemistry", "doi": "10.1007/978-3-031-75980-2_1", "doi_url": "https://doi.org/10.1007/978-3-031-75980-2_1"}, {"year": "2025", "title": "The SWI/SNF PBAF complex facilitates REST occupancy at repressive chromatin", "venue": "Molecular Cell", "doi": "10.1016/j.molcel.2025.03.026", "doi_url": "https://doi.org/10.1016/j.molcel.2025.03.026"}, {"year": "2024", "title": "Gene Expression Dysregulation in Whole Blood of Patients with Clostridioides difficile Infection", "venue": "International Journal of Molecular Sciences", "doi": "10.3390/ijms252312653", "doi_url": "https://doi.org/10.3390/ijms252312653"}, {"year": "2025", "title": "Bclaf1 mediates super-enhancer-driven activation of POLR2A to enhance chromatin accessibility in nitrosamine-induced esophageal carcinogenesis", "venue": "Journal of Hazardous Materials", "doi": "10.1016/j.jhazmat.2025.138218", "doi_url": "https://doi.org/10.1016/j.jhazmat.2025.138218"}, {"year": "2025", "title": "Intrinsically Disordered Regions Define Unique Protein Interaction Networks inCHDFamily Remodelers", "venue": "The FASEB Journal", "doi": "10.1096/fj.202402808rr", "doi_url": "https://doi.org/10.1096/fj.202402808rr"}, {"year": "2025", "title": "Precise modulation of BRG1 levels reveals features of mSWI/SNF dosage sensitivity", "venue": "Nature Genetics", "doi": "10.1038/s41588-025-02305-z", "doi_url": "https://doi.org/10.1038/s41588-025-02305-z"}, {"year": "2025", "title": "SWI/SNF complexes govern ontology-specific transcription factor function in MYC-subtype atypical teratoid rhabdoid tumor", "venue": "Neuro-Oncology", "doi": "10.1093/neuonc/noaf081", "doi_url": "https://doi.org/10.1093/neuonc/noaf081"}, {"year": "2025", "title": "MultidimensionalOMICsrevealARID1Aorchestrated control ofDNAdamage, splicing, and cell cycle in normal‐like and malignant urothelial cells", "venue": "Molecular Oncology", "doi": "10.1002/1878-0261.70019", "doi_url": "https://doi.org/10.1002/1878-0261.70019"}, {"year": "2025", "title": "β-catenin functions as a molecular adapter for disordered cBAF interactions", "venue": "Molecular Cell", "doi": "10.1016/j.molcel.2025.06.026", "doi_url": "https://doi.org/10.1016/j.molcel.2025.06.026"}, {"year": "2025", "title": "SMARCB1-related schwannomatosis and other SMARCB1-associated phenotypes: clinical spectrum and molecular pathogenesis", "venue": "Familial Cancer", "doi": "10.1007/s10689-025-00486-4", "doi_url": "https://doi.org/10.1007/s10689-025-00486-4"}, {"year": "2025", "title": "DNA methylation and histone modifications drive the trained immunity duration", "venue": "Trends in Immunology", "doi": "10.1016/j.it.2025.10.004", "doi_url": "https://doi.org/10.1016/j.it.2025.10.004"}, {"year": "2025", "title": "Genome-wide investigation of transcription factor footprints and dynamics using cFOOT-seq", "venue": "Protein & Cell", "doi": "10.1093/procel/pwaf071", "doi_url": "https://doi.org/10.1093/procel/pwaf071"}, {"year": "2025", "title": "Deciphering histone mark-specific fine-scale chromatin organization at high resolution with Micro-C-ChIP", "venue": "Nature Communications", "doi": "10.1038/s41467-025-64350-w", "doi_url": "https://doi.org/10.1038/s41467-025-64350-w"}, {"year": "2024", "title": "Opening and changing: mammalian SWI/SNF complexes in organ development and carcinogenesis", "venue": "Open Biology", "doi": "10.1098/rsob.240039", "doi_url": "https://doi.org/10.1098/rsob.240039"}, {"year": "2023", "title": "RNA polymerase II promoter-proximal pausing promotes BAF chromatin binding and remodeling", "venue": "Nature Genetics", "doi": "10.1038/s41588-023-01628-z", "doi_url": "https://doi.org/10.1038/s41588-023-01628-z"}, {"year": "2024", "title": "Visualizing, quantifying and mapping chromatin remodelers at work with single-molecule and single-cell imaging", "venue": "The International Journal of Biochemistry & Cell Biology", "doi": "10.1016/j.biocel.2024.106667", "doi_url": "https://doi.org/10.1016/j.biocel.2024.106667"}, {"year": "2025", "title": "ACTL6A depletion induces KLF4-mediated anti-tumorigenic effects in colorectal cancer", "venue": "Cell Death and Disease", "doi": "10.1038/s41419-025-07946-w", "doi_url": "https://doi.org/10.1038/s41419-025-07946-w"}, {"year": "2023", "title": "GAGA zinc finger transcription factor searches chromatin by 1D-3D facilitated diffusion", "venue": "bioRxiv", "doi": "10.1101/2023.07.14.549009", "doi_url": "https://doi.org/10.1101/2023.07.14.549009"}, {"year": "2023", "title": "Activity-assembled nBAF complex mediates rapid immediate early gene transcription by regulating RNA Polymerase II productive elongation", "venue": "bioRxiv", "doi": "10.1101/2023.12.30.573688", "doi_url": "https://doi.org/10.1101/2023.12.30.573688"}, {"year": "2023", "title": "Acetylation of H3K115 is detected associated with fragile nucleosomes at CpG island promoters and active regulatory sites", "venue": "bioRxiv", "doi": "10.1101/2023.11.10.566531", "doi_url": "https://doi.org/10.1101/2023.11.10.566531"}, {"year": "2024", "title": "SWR1 is recruited to activated ABA response genes to maintain gene body H2A.Z inArabidopsis thaliana", "venue": "bioRxiv", "doi": "10.1101/2024.07.14.603444", "doi_url": "https://doi.org/10.1101/2024.07.14.603444"}, {"year": "2024", "title": "The SWI/SNF PBAF complex facilitates REST occupancy at repressive chromatin", "venue": "bioRxiv", "doi": "10.1101/2024.08.23.609212", "doi_url": "https://doi.org/10.1101/2024.08.23.609212"}, {"year": "2024", "title": "Multi-epitope immunocapture of huntingtin reveals striatum-selective molecular signatures", "venue": "bioRxiv", "doi": "10.1101/2024.09.07.611843", "doi_url": "https://doi.org/10.1101/2024.09.07.611843"}, {"year": "2024", "title": "Huntingtin interactome reveals huntingtin role in regulation of double strand break DNA damage response (DSB/DDR), chromatin remodeling and RNA processing pathways", "venue": "bioRxiv", "doi": "10.1101/2024.12.27.630542", "doi_url": "https://doi.org/10.1101/2024.12.27.630542"}, {"year": "2025", "title": "Mouse cortical cellular diversification through lineage progression of radial glia", "venue": "bioRxiv", "doi": "10.1101/gad.352826.125", "doi_url": "https://doi.org/10.1101/gad.352826.125"}, {"year": "2023", "title": "Heterotypic interactions in the dilute phase can drive co-condensation of prion-like low-complexity domains of FET proteins and mammalian SWI/SNF complex", "venue": "bioRxiv", "doi": "10.1101/2023.04.12.536623", "doi_url": "https://doi.org/10.1101/2023.04.12.536623"}, {"year": "2024", "title": "Chromatin protein complexes involved in gene repression in lamina-associated domains", "venue": "bioRxiv", "doi": "10.1101/2024.05.05.592629", "doi_url": "https://doi.org/10.1101/2024.05.05.592629"}, {"year": "2024", "title": "Mechanisms of gene regulation by SRCAP and H2A.Z", "venue": "bioRxiv", "doi": "10.1101/2024.06.07.597899", "doi_url": "https://doi.org/10.1101/2024.06.07.597899"}, {"year": "2024", "title": "Intrinsically Disordered Regions Define Unique Protein Interaction Networks in CHD Family Remodelers", "venue": "bioRxiv", "doi": "10.1101/2024.08.25.609601", "doi_url": "https://doi.org/10.1101/2024.08.25.609601"}, {"year": "2025", "title": "Endogenous variability in transcription factor concentrations shapes their genome-wide occupancy", "venue": "bioRxiv", "doi": "10.1101/2025.09.24.678270", "doi_url": "https://doi.org/10.1101/2025.09.24.678270"}, {"year": "2024", "title": "Long non-coding RNAs direct the SWI/SNF complex to cell-specific enhancers", "venue": "bioRxiv", "doi": "10.1101/2024.03.21.585172", "doi_url": "https://doi.org/10.1101/2024.03.21.585172"}, {"year": "2024", "title": "Response to “Learning from chromatin reconstitution: Pioneering factors enabling nucleosome remodelers”", "venue": "Molecular Cell", "doi": "10.1016/j.molcel.2024.03.020", "doi_url": "https://doi.org/10.1016/j.molcel.2024.03.020"}, {"year": "2024", "title": "Refined mechanism of promoter Nucleosome-Depleted Regions resetting after replication", "venue": "bioRxiv", "doi": "10.1101/2024.04.14.589417", "doi_url": "https://doi.org/10.1101/2024.04.14.589417"}, {"year": "2024", "title": "Paused Polymerase synergises with transcription factors and RNA to enhance the transcriptional potential of promoters", "venue": "bioRxiv", "doi": "10.1101/2024.10.18.618990", "doi_url": "https://doi.org/10.1101/2024.10.18.618990"}, {"year": "2025", "title": "Mouse Cortical Cellular Diversification Through Lineage Progression of Radial Glia", "venue": "bioRxiv", "doi": "10.1101/2025.01.24.634707", "doi_url": "https://doi.org/10.1101/2025.01.24.634707"}, {"year": "2025", "title": "Profiling regulatory elements in vivo by genome-wide methods", "venue": "Current Opinion in Structural Biology", "doi": "10.1016/j.sbi.2025.103064", "doi_url": "https://doi.org/10.1016/j.sbi.2025.103064"}, {"year": "2025", "title": "The SAMD1 transcription factor coordinates hematopoietic lineage differentiation and H3K4 methylation status", "venue": "Blood Advances", "doi": "10.1182/bloodadvances.2024015627", "doi_url": "https://doi.org/10.1182/bloodadvances.2024015627"}, {"year": "2025", "title": "The Splicing Factor PTBP1 interacts with RUNX1 and is Required for Leukemia Cell Survival", "venue": "bioRxiv", "doi": "10.1101/2025.05.16.654547", "doi_url": "https://doi.org/10.1101/2025.05.16.654547"}, {"year": "2025", "title": "How cBAF and PBAF regulate the nucleosomal and subnucleosomal landscape of promoters, enhancers and REST repressor binding sites", "venue": "bioRxiv", "doi": "10.1101/2025.06.12.659349", "doi_url": "https://doi.org/10.1101/2025.06.12.659349"}, {"year": "2025", "title": "Refined mechanism of promoter nucleosome-depleted regions resetting after replication", "venue": "Nucleic Acids Research", "doi": "10.1093/nar/gkaf1025", "doi_url": "https://doi.org/10.1093/nar/gkaf1025"}, {"year": "2025", "title": "Activity of the SWI/SNF complex is indispensable for syncytiotrophoblast formation", "venue": "Development", "doi": "10.1242/dev.204770", "doi_url": "https://doi.org/10.1242/dev.204770"}, {"year": "2025", "title": "Single-Cell Heterogeneity of Epigenetic Factor Regulation Deciphers Alteration of RNA Metabolism During Proliferative SHH-Medulloblastoma", "venue": "Cancers", "doi": "10.3390/cancers17213424", "doi_url": "https://doi.org/10.3390/cancers17213424"}, {"year": "2025", "title": "Paused RNA polymerase primes promoters via RNA-mediated stabilisation of transcription factor ERα", "venue": "Nature Communications", "doi": "10.1038/s41467-025-64569-7", "doi_url": "https://doi.org/10.1038/s41467-025-64569-7"}, {"year": "2025", "title": "WITHDRAWN: Mammalian longevity is associated with restricted epithelial plasticity", "venue": "bioRxiv", "doi": "10.1101/2025.10.22.683248", "doi_url": "https://doi.org/10.1101/2025.10.22.683248"}, {"year": "2025", "title": "The splicing factor PTBP1 interacts with RUNX1 and is required for leukemia cell survival", "venue": "Leukemia", "doi": "10.1038/s41375-025-02799-w", "doi_url": "https://doi.org/10.1038/s41375-025-02799-w"}, {"year": "2025", "title": "Acetylation of H3K115 is associated with fragile nucleosomes at CpG island promoters and active regulatory sites", "venue": "eLife", "doi": "10.7554/elife.108802.1", "doi_url": "https://doi.org/10.7554/elife.108802.1"}, {"year": "2025", "title": "Acetylation of H3K115 is associated with fragile nucleosomes at CpG island promoters and active regulatory sites", "venue": "eLife", "doi": "10.7554/elife.108802", "doi_url": "https://doi.org/10.7554/elife.108802"}, {"year": "2025", "title": "SMARCA2/4-Dependent Chromatin Remodelling Establishes Gene Regulatory Programs in Early Human Embryos and Blastoids", "venue": "bioRxiv (Cold Spring Harbor Laboratory)", "doi": "10.64898/2025.12.01.691499", "doi_url": "https://doi.org/10.64898/2025.12.01.691499"}, {"year": "2025", "title": "Co-condensation between transcription factor and cBAF selectively modulates chromatin remodeling and gene expression", "venue": "Nature Communications", "doi": "10.1038/s41467-025-67322-2", "doi_url": "https://doi.org/10.1038/s41467-025-67322-2"}, {"year": "2026", "title": "Age-Dependent Chromatin Remodeling Drives Inflammatory Dysregulation in Tendon Cells", "venue": "bioRxiv (Cold Spring Harbor Laboratory)", "doi": "10.64898/2026.01.05.697725", "doi_url": "https://doi.org/10.64898/2026.01.05.697725"}, {"year": "2026", "title": "Chromatin modifiers KMT2D, BAF, and p300 are required forde novobinding of transcription factors on enhancers", "venue": "bioRxiv (Cold Spring Harbor Laboratory)", "doi": "10.64898/2026.01.29.702555", "doi_url": "https://doi.org/10.64898/2026.01.29.702555"}, {"year": "2026", "title": "Role of PBAF and Mediator kinase module in the RELA-dependent activation of CXCL1–3 inflammation genes of the NF-kB pathway", "venue": "Frontiers in Immunology", "doi": "10.3389/fimmu.2026.1702928", "doi_url": "https://doi.org/10.3389/fimmu.2026.1702928"}, {"year": "2026", "title": "Chromatin remodeler BAF maintains HBV cccDNA transcriptional competence and represents a therapeutic target", "venue": "Nucleic Acids Research", "doi": "10.1093/nar/gkag073", "doi_url": "https://doi.org/10.1093/nar/gkag073"}, {"year": "2026", "title": "Promoter proximal pausing of RNA polymerase across evolution", "venue": "Nature Structural & Molecular Biology", "doi": "10.1038/s41594-026-01745-3", "doi_url": "https://doi.org/10.1038/s41594-026-01745-3"}, {"year": "2026", "title": "Acetylation of H3K115 is detected associated with fragile nucleosomes at CpG island promoters and active regulatory sites", "venue": "eLife", "doi": "10.7554/elife.108802.2", "doi_url": "https://doi.org/10.7554/elife.108802.2"}, {"year": "2026", "title": "Cooperation of Transcription Factor PAX6 with Chromatin-Remodeling Complex BAF During Embryonic Development in Mammals", "venue": "Cellular and Molecular Neurobiology", "doi": "10.1007/s10571-026-01692-z", "doi_url": "https://doi.org/10.1007/s10571-026-01692-z"}, {"year": "2026", "title": "H3K9me2 is a determinant for the mitosis-to-meiosis transition in female germ cells", "venue": "Cell Death and Disease", "doi": "10.1038/s41419-026-08473-y", "doi_url": "https://doi.org/10.1038/s41419-026-08473-y"}, {"year": "2026", "title": "Canonical BAF chromatin remodeling complex specifies stem cell fate via cell-type-specific co-factor recruitment", "venue": "Nature Communications", "doi": "10.1038/s41467-026-70038-6", "doi_url": "https://doi.org/10.1038/s41467-026-70038-6"}, {"year": "2026", "title": "Acetylation of H3K115 is associated with fragile nucleosomes at CpG island promoters and active regulatory sites", "venue": "eLife", "doi": "10.7554/elife.108802.3", "doi_url": "https://doi.org/10.7554/elife.108802.3"}, {"year": "2026", "title": "Mechanisms of gene regulation by SRCAP and H2A.Z", "venue": "Nature Communications", "doi": "10.1038/s41467-026-70087-x", "doi_url": "https://doi.org/10.1038/s41467-026-70087-x"}, {"year": "2026", "title": "Huntingtin (HTT) interactome in regulation of DNA repair/remodeling and RNA processing pathways", "venue": "Life Science Alliance", "doi": "10.26508/lsa.202503424", "doi_url": "https://doi.org/10.26508/lsa.202503424"}, {"year": "2026", "title": "Genome-wide DNA supercoiling arises from transcription and SMC activity and mediates transcriptional negative feedback", "venue": "bioRxiv (Cold Spring Harbor Laboratory)", "doi": "10.64898/2026.03.26.714539", "doi_url": "https://doi.org/10.64898/2026.03.26.714539"}, {"year": "2026", "title": "Chromatin remodelling enables enhancer resetting to facilitate the ERK transcriptional response", "venue": "bioRxiv (Cold Spring Harbor Laboratory)", "doi": "10.64898/2026.03.27.714694", "doi_url": "https://doi.org/10.64898/2026.03.27.714694"}];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
 </body>
 </html>

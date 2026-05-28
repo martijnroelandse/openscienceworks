@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ArticleStory - Assessing the Effectiveness of SciScore in Supporting the Reproducibility of Scientific Research</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print PDF Report
+    </button>
+    
+    <div class="page">
+        <header class="hero card">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo"></div>
+                    <div>
+                        <h1 class="hero-title">Assessing the Effectiveness of SciScore in Supporting the Reproducibility of Scientific Research</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> Martijn Roelandse, İbrahim Burak Özyurt, Daniel Evanko, Anita Bandrowski</div>
+                            <div><strong>Publisher:</strong> Science Editor</div>
+                            <div><strong>Publication year:</strong> 2023</div>
+                            <div><strong>DOI:</strong> <a href="https://doi.org/10.36591/se-d-4602-15" target="_blank">10.36591/se-d-4602-15</a></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The article "Assessing the Effectiveness of SciScore in Supporting the Reproducibility of Scientific Research" examines the role of SciScore in promoting reproducibility within science. Authored by a team from the American Association for Cancer Research, the study has garnered attention in multiple scholarly venues and has been validated through substantial funding support from NIH agencies.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The publication titled "Assessing the Effectiveness of SciScore in Supporting the Reproducibility of Scientific Research," authored by Martijn Roelandse, İbrahim Burak Özyurt, Daniel Evanko, and Anita Bandrowski, provides a critical examination of SciScore, a software tool aimed at enhancing the reproducibility of scientific research. The work is underpinned by support from prominent organizations such as the National Institutes of Health (NIH), which highlights a strong institutional investment in the field of scientific reproducibility.</p>
+<p class="story-text">Despite having limited social and community discourse signals indicated by a total of two citations across respected venues such as Royal Society Open Science and GLS KALP: Journal of Multidisciplinary Studies, this study's impact should not be underestimated. The article contributes to growing discourse on reproducibility, a critical issue in contemporary scientific research, thus laying the groundwork for future studies and methodologies.</p>
+<p class="story-text">The authors’ affiliation with the American Association for Cancer Research not only establishes a credible institutional backing but also signals the geographical footprint of the research, which spans multiple countries including Switzerland, Germany, the United States, Italy, and Australia. This international aspect suggests a wider academic engagement with the themes explored in the study.</p>
+<p class="story-text">In conclusion, the insights from this work, supported by significant funding sources such as NIH HHS and its associated agencies, underscore the importance of tools like SciScore in the quest for enhanced reproducibility in science. Although direct community discourse metrics are absent, the foundational nature of the research serves as a stepping stone for future initiatives aimed at addressing reproducibility challenges in various scientific disciplines.</p></div>
+        </section>
+        
+
+        <section class="card">
+            <h2><span>Impact metrics</span></h2>
+            <ul class="metric-list">
+                
+                <li style="margin-bottom: 0.8rem;">
+                    <strong>Total Citations (OpenAlex):</strong> 
+                    
+                        2
+                    
+                    
+                    
+                    
+                                        
+                    
+                    
+                </li>
+                
+                <li style="margin-bottom: 0.8rem;">
+                    <strong>Total Online mentions (Crossref & Open Web):</strong> 0
+                    
+                    
+                </li>
+
+                
+                
+                
+                
+                <li style="margin-bottom: 0.8rem;"><strong>Citation context (scite):</strong> 1</li>
+                
+                
+                
+            </ul>
+        </section>
+
+        
+        <section class="card">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.8rem;">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scholarly uptake (0.30)</span>
+                
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.36591/se-d-4602-15" target="_blank">10.36591/se-d-4602-15</a></li>
+                    <li><strong>OA status:</strong> Green</li>
+                    
+                    <li><strong>Landing page:</strong> <a href="http://dx.doi.org/10.36591/se-d-4602-15" target="_blank" style="word-break: break-all;">http://dx.doi.org/10.36591/se-d-4602-15</a></li>
+                    
+                    <li><strong>Best OA PDF:</strong> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12338114/pdf/nihms-2043516.pdf" target="_blank" style="word-break: break-all;">https://pmc.ncbi.nlm.nih.gov/articles/PMC12338114/pdf/nihms-2043516.pdf</a></li>
+                </ul>
+            </section>
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>0</strong> recorded events globally
+                        
+                    </p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 1</li>
+                                <li><strong>Supporting:</strong> 0</li>
+                                <li><strong>Mentioning:</strong> 1</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+        
+        <section class="card">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+                Analysis of the 2 most recent citing works. 
+                <br>
+                <strong>500.0%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>3.0</strong> times itself.
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 1.5rem;">
+                
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Switzerland (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Italy (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Australia (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Finland (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Netherlands (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">India (1)</span>
+                        
+                    </div>
+                    
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (2)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Healthcare (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Funder (1)</span>
+                        
+                            <span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (1)</span>
+                        
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Radboud University Medical Center</strong> 
+                            
+                                <a href="https://ror.org/05wg1m734" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Torrens University Australia</strong> 
+                            
+                                <a href="https://ror.org/0351xae06" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Finland University</strong> 
+                            
+                                <a href="https://ror.org/014rks409" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University Medical Center</strong> 
+                            
+                                <a href="https://ror.org/036pt7h44" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Berlin Institute of Health at Charité - Universitätsmedizin Berlin</strong> 
+                            
+                                <a href="https://ror.org/0493xsw21" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Radboud University Nijmegen</strong> 
+                            
+                                <a href="https://ror.org/016xsfp80" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Prevention Institute</strong> 
+                            
+                                <a href="https://ror.org/02xdygm42" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Institute for Molecular Medicine Finland</strong> 
+                            
+                                <a href="https://ror.org/030sbze61" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>University of Bern</strong> 
+                            
+                                <a href="https://ror.org/02k7v4d05" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Essen University Hospital</strong> 
+                            
+                                <a href="https://ror.org/02na8dn90" target="_blank" class="orcid-badge" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;">ROR</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Rachel Heyard</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-7531-4333" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Samuel Pawel</strong> 
+                            
+                                <a href="https://orcid.org/0000-0003-2779-320X" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Joris Frese</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-5871-997X" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Bernhard Voelkl</strong> 
+                            
+                                <a href="https://orcid.org/0000-0001-5454-2508" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Hanno Wuerbel</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-2934-3010" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Sarah McCann</strong> 
+                            
+                                <a href="https://orcid.org/0000-0003-4737-2349" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Leonhard Held</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-8686-5325" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Kimberley E. Wever</strong> 
+                            
+                                <a href="https://orcid.org/0000-0003-3635-3660" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Helena Hartmann</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-1331-6683" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.4rem;">
+                            <strong>Louise Townsin</strong> 
+                            
+                                <a href="https://orcid.org/0000-0002-2212-1626" target="_blank" class="orcid-badge">ORCID</a>
+                            
+                            <span class="muted" style="margin-left: 0.2rem;">(1)</span>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+                <ul class="metric-list">
+                    <li><strong>Citing work types:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (1)</span> 
+                        
+                    </li>
+                    <li><strong>Top citing venues:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Royal Society Open Science (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">GLS KALP: Journal of Multidisciplinary Studies. (1)</span> 
+                        
+                    </li>
+                    <li><strong>Top citing concepts:</strong> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Computer science (2)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Replication (statistics) (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Data science (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Toolchain (1)</span> 
+                        
+                            <span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Quality (philosophy) (1)</span> 
+                        
+                    </li>
+                    
+                    <li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+                        <strong>Citation timeline:</strong>
+                        <div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+                            <canvas id="citationChart" 
+                                data-labels="[2025, 2026]" 
+                                data-values="[1, 1]">
+                            </canvas>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+        </div>
+
+        
+        
+        
+        
+            
+        
+            
+        
+            
+                
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>4 authors · 1 institution</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Martijn Roelandse</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-5596-8084" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>İbrahim Burak Özyurt</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-3944-1893" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Daniel Evanko</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-8097-8601" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Anita Bandrowski</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-5497-0243" target="_blank">ORCID</a>
+                    </li>
+                    
+                </ul>
+
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/02fnpv153" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">American Association For Cancer Research</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>20 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Transparency (behavior)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Rigour</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Agency (philosophy)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Funding Agency</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Consolidated Standards of Reporting Trials</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Research design</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Engineering ethics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Data science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Management science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Political science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">MEDLINE</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Public relations</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sociology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Engineering</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Social science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Law</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Epistemology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Philosophy</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer security</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
+        <section class="card">
+            <h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>4 financial grants and sponsors detected.</div>
+            
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R43 OD024432)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIDDK NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(U24 DK097771)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIMH NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R44 MH119094)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIDA NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(U24 DA039832)</span>
+                    </span>
+                
+            </div>
+        </section>
+        
+
+
+
+        
+        
+        <section class="card no-print">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>Displaying 2 most recent citing works</div>
+            <div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+                <table>
+                    <thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A scoping review on metrics to quantify reproducibility: a multitude of questions leads to a multitude of metrics</td>
+                        <td>Royal Society Open Science</td>
+                        <td><a href="https://doi.org/10.1098/rsos.242076" target="_blank" style="word-break: break-all;">10.1098/rsos.242076</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>The AI-Powered Revolution in Academic Publishing: A Holistic Toolchain for Enhanced Efficiency and Quality</td>
+                        <td>GLS KALP: Journal of Multidisciplinary Studies.</td>
+                        <td><a href="https://doi.org/10.69974/glskalp.05.03.04" target="_blank" style="word-break: break-all;">10.69974/glskalp.05.03.04</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-03-31T13:49:54+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    
+    <script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+    
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+    
+    <script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+</body>
+</html>

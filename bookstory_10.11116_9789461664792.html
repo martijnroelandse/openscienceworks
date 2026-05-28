@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 
-
-
-
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>BookStory - Stilte in de klas</title>
-    <style>
+<meta charset="utf-8"/>
+<title>BookStory - Stilte in de klas</title>
+<style>
         * { box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
         .page { max-width: 1000px; margin: auto; }
@@ -43,416 +40,399 @@
             tr { page-break-inside: avoid !important; page-break-after: auto !important; }
             thead { display: table-header-group !important; }
         }
-    </style>
-    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+.role-pill[title]:hover::after{
+  content:attr(title);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:#111827;color:white;padding:.5rem .75rem;border-radius:.5rem;font-size:.72rem;
+  width:230px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.role-pill[title]:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-dl{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+</style>
+<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
-        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
         Print PDF Report
     </button>
-    
-    <div class="page">
-        <header class="hero card">
-            <div class="header-bar">
-                <div style="display: flex; align-items: center; gap: 1.25rem;">
-                    <div class="logo-wrap"><img src="bookstories-logo.png" alt="Logo"></div>
-                    <div>
-                        <h1 class="hero-title">Stilte in de klas</h1>
-                        
-                            <div class="discipline-badge" style="background:#fef08a; color:#854d0e; border-color:#fde047; font-weight:600;">
-                                <svg style="width:14px; height:14px; display:inline; vertical-align:middle; margin-right:4px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
-                                Open Access (Gold)
-                            </div>
-                        
-                        <div class="discipline-badge">Humanities</div>                        
-                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
-                            
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-
-                            
-                            
-                            
-
-                        </div>
-
-                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
-                            <div><strong>Author(s):</strong> Pieter Verstraete</div>
-                            <div><strong>Publisher:</strong> Leuven University Press</div>
-                            <div><strong>Publication year:</strong> 2022</div>
-                            <div><strong>DOI:</strong> <a href="https://doi.org/10.11116/9789461664792" target="_blank">10.11116/9789461664792</a></div>
-                        </div>
+<div class="page" id="sec-story">
+<header class="hero card" id="sec-hero">
+<div class="header-bar">
+<div style="display: flex; align-items: center; gap: 1.25rem;">
+<div class="logo-wrap"><img alt="Logo" src="bookstories-logo.png"/></div>
+<div>
+<h1 class="hero-title">Stilte in de klas</h1>
+<div class="discipline-badge" style="background:#fef08a; color:#854d0e; border-color:#fde047; font-weight:600;" title="Immediate free access with an open licence — published in a fully OA venue"><svg fill="none" stroke="currentColor" style="width:14px; height:14px; display:inline; vertical-align:middle; margin-right:4px;" viewbox="0 0 24 24"><path d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg><span style="opacity:0.58;font-size:0.72em;font-weight:500;margin-right:0.25em;text-transform:uppercase;letter-spacing:0.04em;vertical-align:middle;">Access:</span><span style="vertical-align:middle;">Open Access (Gold)</span></div>
+<div class="discipline-badge" title="Classified in Humanities disciplines (literature, philosophy, history, arts, etc.)"><span style="opacity:0.58;font-size:0.72em;font-weight:500;margin-right:0.25em;text-transform:uppercase;letter-spacing:0.04em;vertical-align:middle;">Field:</span><span style="vertical-align:middle;">Humanities</span></div>
+<div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+</div>
+<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+<div><strong>Author(s):</strong> Pieter Verstraete</div>
+<div><strong>Publisher:</strong> Leuven University Press</div>
+<div><strong>Publication year:</strong> 2022</div>
+<div><strong>DOI:</strong> <a href="https://doi.org/10.11116/9789461664792" target="_blank">10.11116/9789461664792</a></div>
+</div>
+</div>
+</div>
+<div class="cover-wrap">
+<div style="width: 110px; height: 155px; background: #f3f4f6; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; text-align: center; color: #9ca3af; font-size: 0.85rem; font-weight: 500; border: 1px dashed #d1d5db; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05);">
+                        No Cover <br/> Available
                     </div>
-                </div>
-                
-                
-                <div class="cover-wrap">
-                    
-                    <div style="width: 110px; height: 155px; background: #f3f4f6; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; text-align: center; color: #9ca3af; font-size: 0.85rem; font-weight: 500; border: 1px dashed #d1d5db; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05);">
-                        No Cover <br> Available
-                    </div>
-                    
-                </div>
-                
-            </div>
-        </header>
+</div>
+</div>
+</header>
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">0</div>
+<div class="stats-strip-label">Total Citations</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">0</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">2556</div>
+<div class="stats-strip-label">Downloads</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Gold</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
 
-        
-        
-        
-        <section class="card">
-            <h2><span>The Story So Far</span></h2>
-            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-access">Access</a>
+<a href="#sec-attention">Attention</a>
+<a href="#sec-reader">Reader</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-operas">OPERAS</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+
+<section class="card" id="sec-story">
+<h2><span>The Story So Far</span></h2>
+<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
 <p class="story-text">Published by Leuven University Press in 2022, "Stilte in de klas" provides a detailed exploration of silence in the classroom environment, highlighting pedagogical implications. Despite not currently showing citations or public discourse on social media platforms, the work suggests a significant emphasis on commercial linkage through its presence on Amazon and Goodreads.</p>
 <h3 class="story-subheading">Full narrative</h3>
 <p class="story-text">"Stilte in de klas," released by Leuven University Press in 2022, presents a nuanced examination of silence as a crucial factor in educational settings. While quantitative impact metrics such as citations and mentions across various platforms indicate limited academic and societal discourse so far, the work is strategically positioned in commercial spaces like Amazon and Goodreads. This suggests a potential for grassroots engagement and wider readership among individuals interested in pedagogical practices.</p>
-
 <p class="story-text">The absence of OpenAlex citations or community discussions highlights an opportunity for future engagement. The lack of mentions on platforms like Wikipedia, Reddit, and Bluesky indicates that while the work is foundational, it has not yet penetrated broader public or academic conversations. This gap may serve as a call to action for educators and researchers to consider the thematic significance of silence in classrooms and how it can inform teaching strategies.</p>
-
 <p class="story-text">Moreover, the text's implications extend to policy discussions, with evidence of sustainability and relevance to global educational goals, reflected in its association with one Sustainable Development Goal (SDG). This connection underscores the potential for "Stilte in de klas" to influence not only teaching practices but also educational policy more broadly.</p>
-
 <p class="story-text">As it stands, the work illustrates essential themes in education that merit further exploration and discussion, serving as a springboard for potential initiatives aimed at enhancing classroom dynamics. Moving forward, the academic community might benefit from fostering discussions and collaborations around the concepts introduced in this volume to fully unlock its potential impact.</p></div>
-        </section>
-        
+</section>
+<section class="card" id="sec-impact">
+<h2><span>Impact metrics</span></h2>
 
-        <section class="card">
-            <h2><span>Impact metrics</span></h2>
-            <ul class="metric-list">
-                
-                <li style="margin-bottom: 0.8rem;">
-                    <strong>Total Citations (OpenAlex):</strong> 
-                    
-                        0
-                    
-                    
-                    
-                    
-                    
-                    <div style="margin-top: 0.4rem;">
-                        <strong>Pooled Chapter Citations:</strong> 0
-                        <span class="badge" style="background: #f8fafc; color: #475569; border: 1px solid #e2e8f0; margin-left: 0.3rem;">
-                        Across 1 internal chapters
-                        </span>
-                    </div>
-                                        
-                    
-                    
-                </li>
-                
-                <li style="margin-bottom: 0.8rem;">
-                    <strong>Total Online mentions (Crossref & Open Web):</strong> 0
-                    
-                    
-                </li>
+<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">0</div><div class="im-label">Total Citations</div></div></div></div><div class="im-card"><div class="im-num">0</div><div class="im-label">Online Mentions</div></div><a class="im-card im-card-dl" href="#operas-metrics-card"><div class="im-card-top"><div><div class="im-num">2556</div><div class="im-label">Downloads (OAPEN)</div></div><div id="dl-sparkline-container"></div></div><div class="im-card-hint">📊 View full timeline ↓</div></a></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-amber" href="#sec-funding">💰 1 grant</a><a class="sig-pill sig-blue" href="#operas-metrics-card">📊 OPERAS downloads</a></div></div></div></section>
+<section class="card" id="sec-roles">
+<h2><span>Inferred roles</span></h2>
+<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#065f46;">🏛 Practical &amp; Real-World</div><div class="roles-row"><span class="role-pill role-pill-practical" style="opacity:1;" title="Present on Amazon, Goodreads, or in patents — commercial or consumer crossover."><span class="role-dot" style="background:#10b981;"></span>Commercial linkage<span class="role-strength" style="background:#dcfce7;color:#166534;">Strong</span></span><span class="role-pill role-pill-practical" style="opacity:0.9;" title="Cited in government reports, WHO/NGO briefs, or UN policy documents."><span class="role-dot" style="background:#10b981;"></span>Sustainability &amp; policy relevance<span class="role-strength" style="background:#dcfce7;color:#166534;">Moderate</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
 
-                
-                
-                
-                <li style="margin-bottom: 0.8rem;">
-                    <strong>Downloads (OAPEN / OPERAS):</strong> 2556
-                </li>
-                
-                
-                <li style="margin-bottom: 0.8rem;"><strong>Citation context (scite):</strong> 0</li>
-                
-                
-                
-            </ul>
-        </section>
-
-        
-        <section class="card">
-            <h2><span>Inferred roles</span></h2>
-            <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.8rem;">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
-            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-                
-                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Commercial linkage (0.90)</span>
-                
-                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sustainability & policy relevance (0.55)</span>
-                
-            </div>
-        </section>
-        
-
-        <div class="grid-2">
-            
-            
-            <section class="card" style="margin-bottom:0;">
-                <h2 style="margin-top:0;"><span>Access</span> <span class="badge" style="background:#f3f4f6; color:#4b5563;">Availability</span></h2>
-                <ul class="metric-list" style="line-height: 1.8;">
-                    <li><strong>DOI:</strong> <a href="https://doi.org/10.11116/9789461664792" target="_blank" style="word-break: break-all;">https://doi.org/10.11116/9789461664792</a></li>
-                    
-                    <li><strong>OA status:</strong> 
+</section>
+<div class="grid-2" id="sec-access">
+<section class="card" id="sec-access" style="margin-bottom:0;">
+<h2 style="margin-top:0;"><span>Access</span> <span class="badge" style="background:#f3f4f6; color:#4b5563;">Availability</span></h2>
+<ul class="metric-list" style="line-height: 1.8;">
+<li><strong>DOI:</strong> <a href="https://doi.org/10.11116/9789461664792" style="word-break: break-all;" target="_blank">https://doi.org/10.11116/9789461664792</a></li>
+<li><strong>OA status:</strong> 
                         
                             Gold
                         
                     </li>
-
-                    
-                        <li><strong>Landing page:</strong> <a href="https://lup.be/book/stilte-in-de-klas/" target="_blank" style="word-break: break-all;">https://lup.be/book/stilte-in-de-klas/</a></li>
-                    
-                    
-                    
-                    
-                    
-                </ul>
-            </section>
-
-            
-
-            <section class="card" style="margin-bottom:0;">
-                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
-                
-                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+<li><strong>Landing page:</strong> <a href="https://lup.be/book/stilte-in-de-klas/" style="word-break: break-all;" target="_blank">https://lup.be/book/stilte-in-de-klas/</a></li>
+</ul>
+</section>
+<section class="card" id="sec-attention" style="margin-bottom:0;">
+<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
                         This work has <strong>0</strong> recorded events globally
                         
                     </p>
-                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
-                        <em>(See specific sources and examples in the Online Mentions section below).</em>
-                    </p>
-                
-            </section>
-        </div>
-        
-        <div class="grid-2" style="align-items: start;">
-            
-            <section class="card" style="margin-bottom:0;">
-                <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
-                <ul class="metric-list">
-                    
-                    
-
-                    
-                    <li style="margin-bottom: 0.6rem;">
-                        <strong>Google Books:</strong> <a href="" target="_blank" style="color: #2563eb; text-decoration: none;">View listing ↗</a>
-                    </li>
-                    
-                    
-                    
-                    <li style="margin-bottom: 0.4rem;">
-                        <strong>Commercial:</strong> 
-                        <a href="https://www.amazon.com/s?k=9789461664792" target="_blank" style="color: #2563eb; text-decoration: none;">Amazon</a>
+<p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+<em>(See specific sources and examples in the Online Mentions section below).</em>
+</p>
+</section>
+</div>
+<div class="grid-2" id="sec-reader" style="align-items: start;">
+<section class="card" id="sec-reader" style="margin-bottom:0;">
+<h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+<ul class="metric-list">
+<li style="margin-bottom: 0.6rem;">
+<strong>Google Books:</strong> <a href="" style="color: #2563eb; text-decoration: none;" target="_blank">View listing ↗</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Commercial:</strong>
+<a href="https://www.amazon.com/s?k=9789461664792" style="color: #2563eb; text-decoration: none;" target="_blank">Amazon</a>
                          · 
-                        <a href="https://www.goodreads.com/search?q=9789461664792" target="_blank" style="color: #2563eb; text-decoration: none;">Goodreads</a>
-                    </li>
-                    
-                    
-                </ul>
-            </section>
-
-                <section class="card" style="margin-bottom:0;">
-                    <h2><span>Citation context</span> <span class="badge">scite</span></h2>
-                    
-                    <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
-                        <li><strong>Total:</strong> 0</li>
-                        <li><strong>Supporting:</strong> 0</li>
-                        <li><strong>Mentioning:</strong> 0</li>
-                        <li><strong>Contradicting:</strong> 0</li>
-                    </ul>
-                    
-                </section>
-
-            
-        </div>
-
-        
-        
-        <section class="card">
-            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
-            <div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+                        <a href="https://www.goodreads.com/search?q=9789461664792" style="color: #2563eb; text-decoration: none;" target="_blank">Goodreads</a>
+</li>
+</ul>
+</section>
+<section class="card" id="sec-scite" style="margin-bottom:0;">
+<h2><span>Citation context</span> <span class="badge">scite</span></h2>
+<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+<li><strong>Total:</strong> 0</li>
+<li><strong>Supporting:</strong> 0</li>
+<li><strong>Mentioning:</strong> 0</li>
+<li><strong>Contradicting:</strong> 0</li>
+</ul>
+</section>
+</div>
+<section class="card" id="sec-citing">
+<h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
                 Analysis of the 0 most recent citing works. 
-                <br>
-                <strong>0%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>0</strong> times itself.
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 1.5rem;">
-                
-                <div>
-                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
-                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
-                        
-                    </div>
-                    
-                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
-                    <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
-                        
-                    </div>
-                </div>
-
-                <div>
-                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
-                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
-                        
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
-                    <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
-                        
-                    </ul>
-                </div>
+                <br/>
+<strong>0%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>0</strong> times itself.
             </div>
 
-            <div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
-                <ul class="metric-list">
-                    <li><strong>Citing work types:</strong> 
-                        
-                    </li>
-                    <li><strong>Top citing venues:</strong> 
-                        
-                    </li>
-                    <li><strong>Top citing concepts:</strong> 
-                        
-                    </li>
-                    
-                    <li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
-                        <strong>Citation timeline:</strong>
-                        <div style="height: 180px; width: 100%; margin-top: 0.5rem;">
-                            <canvas id="citationChart" 
-                                data-labels="[]" 
-                                data-values="[]">
-                            </canvas>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        
-
-        <div class="grid-2">
-            
-
-            
-            
-            
-            
-        </div>
-
-        
-        
-        
-        
-            
-        
-        <div class="grid-2">
-            <section class="card" style="margin-bottom:0;">
-                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
-                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 author · 0 institutions</div>
-                
-                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
-                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
-                
-                <h3 style="margin:1rem 0 0.25rem; color: #b45309;">Chapter Contributors Network</h3>
-                <div class="muted" style="margin-bottom:0.75rem;">1 distinct authors contributed to chapters within this volume.</div>
-                
-                <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1rem;">
-                    
-                    <span class="tag tag-soft" style="font-size: 0.8rem;">Josephine Giesen‐Bloo</span>
-                    
-                    
-                </div>
-                
-                
-                    
-                    <li style="margin-bottom: 0.4rem;">
-                        <strong>Pieter Verstraete</strong> 
-                        <span class="badge">First</span>
-                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-                        <a class="orcid-badge" href="https://orcid.org/0000-0002-1482-3687" target="_blank">ORCID</a>
-                    </li>
-                    
-                </ul>
-
-                
-            </section>
-
-            <section class="card" style="margin-bottom:0;">
-                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
-                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>3 specific concepts identified.</div>
-                
-                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Theology</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Art</span>
-                    
-                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Philosophy</span>
-                    
-                    
-                </div>
-                
-                
-                <h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
-                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 targets detected.</div>
-                
-                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
-                    
-                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Quality Education (0.77)</span>
-                    
-                </div>
-                
-            </section>
-        </div>
-
-        
-        <section class="card">
-            <h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
-            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 financial grants and sponsors detected.</div>
-            
-            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-                
-                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-                        <strong>KU Leuven</strong> 
-                        <span style="opacity: 0.8; font-weight: normal;">(Thoth Verified)</span>
-                    </span>
-                
-            </div>
-        </section>
-        
+<div class="cite-analysis-always"><div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+<ul class="metric-list">
+<li><strong>Citing work types:</strong>
+</li>
+<li><strong>Top citing venues:</strong>
+</li>
+<li><strong>Top citing concepts:</strong>
+</li>
+<li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+<strong>Citation timeline:</strong>
+<div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+<canvas data-labels="[]" data-values="[]" id="citationChart">
+</canvas>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="cite-tabs">
+<button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-ppl')">👤 Top Citers</button>
+</div>
+<div class="cite-tab-pane active" id="cite-geo"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+</div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+</div>
+</div></div>
+<div class="cite-tab-pane" id="cite-inst"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+</ul>
+</div></div>
+<div class="cite-tab-pane" id="cite-ppl"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+</ul>
+</div></div>
 
 
-        
-        <section class="card" id="operas-metrics-card">
-            <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
-            <div id="metrics-widget"></div>
-            <script type="application/json" id="operas-metrics-config">{"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "tab1", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN \u00b7 downloads", "works": ["info:doi:10.11116/9789461664792"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}}, "graphs": [{"id": "g1", "type": "line", "title": "Downloads over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}</script>
-            <script src="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js" async></script>
-        </section>
-
-
-
-        
-        
-
-        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
-            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-                
-                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
-                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
-                </div>
-        
-                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+</section>
+<div class="grid-2">
+</div>
+<div class="grid-2" id="sec-contributors">
+<section class="card" id="sec-contributors" style="margin-bottom:0;">
+<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">1 author · 0 institutions</div>
+<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+<h3 style="margin:1rem 0 0.25rem; color: #b45309;">Chapter Contributors Network</h3>
+<div class="muted" style="margin-bottom:0.75rem;">1 distinct authors contributed to chapters within this volume.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1rem;">
+<span class="tag tag-soft" style="font-size: 0.8rem;">Josephine Giesen‐Bloo</span>
+</div>
+<li style="margin-bottom: 0.4rem;">
+<strong>Pieter Verstraete</strong>
+<span class="badge">First</span>
+<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-1482-3687" target="_blank">ORCID</a>
+</li>
+</ul>
+</section>
+<section class="card" id="sec-concepts" style="margin-bottom:0;">
+<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">3 specific concepts identified.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Theology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Art</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Philosophy</span>
+</div>
+<h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">1 targets detected.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Quality Education (0.77)</span>
+</div>
+</section>
+</div>
+<section class="card">
+<h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">1 financial grants and sponsors detected.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>KU Leuven</strong>
+<span style="opacity: 0.8; font-weight: normal;">(Thoth Verified)</span>
+</span>
+</div>
+</section>
+<section class="card" id="operas-metrics-card">
+<h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
+<div id="metrics-widget"></div>
+<script id="operas-metrics-config" type="application/json">{"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "tab1", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN \u00b7 downloads", "works": ["info:doi:10.11116/9789461664792"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}}, "graphs": [{"id": "g1", "type": "line", "title": "Downloads over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}</script>
+<script async="" src="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js"></script>
+</section>
+<footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+<div style="display: flex; flex-direction: column; gap: 0.4rem;">
+<div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+<svg fill="none" height="16" stroke="currentColor" style="color: #9ca3af;" viewbox="0 0 24 24" width="16"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Understanding our metrics: <a href="https://www.openscience.works/about.html" style="color: #2563eb; text-decoration: none; font-weight: 600;" target="_blank">Read the Methodology &amp; Legend ↗</a></span>
+</div>
+<div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
                     Generated on 2026-03-31T12:32:09+00:00
                 </div>
-                
-            </div>
-        </footer>
-    </div>
-
-    
-    <style>
+</div>
+</footer>
+</div>
+<style>
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(5px); }
             to { opacity: 1; transform: translateY(0); }
@@ -476,8 +456,7 @@
             color: #111827;
         }
     </style>
-    
-    <script>
+<script>
         function openSocialTab(evt, tabId) {
             // Hide all tab content
             var contents = document.getElementsByClassName("soc-tab-content");
@@ -494,5 +473,208 @@
             evt.currentTarget.classList.add("soc-tab-active");
         }
     </script>
+
+<script>
+(function() {
+  var DATA = [];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  var doi = "info:doi:10.11116/9789461664792";
+  // Real API: metrics-api.operas-eu.org/events (confirmed via network inspection)
+  var url = 'https://metrics-api.operas-eu.org/events?filter=work_uri:' + doi;
+  var container = document.getElementById('dl-sparkline-container');
+  if (!container) return;
+
+  fetch(url, {headers: {Accept: 'application/json'}})
+    .then(function(r) { return r.json(); })
+    .then(function(resp) {
+      var data = resp.data;
+      if (!data || !data.length) return;
+
+      // Aggregate values by year-month (timestamp = "2020-05-01T00:00:00+0000")
+      var byMonth = {};
+      data.forEach(function(d) {
+        var ym = (d.timestamp || '').slice(0, 7); // "YYYY-MM"
+        var v  = parseFloat(d.value || 0);
+        if (ym && v > 0) byMonth[ym] = (byMonth[ym] || 0) + v;
+      });
+      var months = Object.keys(byMonth).sort();
+      var values = months.map(function(m) { return byMonth[m]; });
+      if (values.length < 2) return;
+
+      var W = 120, H = 36, mx = Math.max.apply(null, values), n = values.length;
+      var pts = values.map(function(v, i) {
+        return (i / (n - 1) * W).toFixed(1) + ',' + (H - (v / mx) * (H - 4) - 2).toFixed(1);
+      });
+      var area = 'M' + pts[0] + ' ' + pts.slice(1).map(function(p) { return 'L' + p; }).join(' ')
+               + ' L' + W + ',' + H + ' L0,' + H + ' Z';
+      var yr0 = months[0].slice(0, 4);
+      var yr1 = months[months.length - 1].slice(0, 4);
+
+      container.innerHTML =
+        '<div class="im-spark">' +
+        '<svg viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" ' +
+        'xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:visible;">' +
+        '<path d="' + area + '" fill="#dbeafe" opacity="0.6"/>' +
+        '<polyline points="' + pts.join(' ') + '" fill="none" stroke="#2563eb" ' +
+        'stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>' +
+        '</svg>' +
+        '<div class="im-spark-range">' + yr0 + (yr0 !== yr1 ? '–' + yr1 : '') + '</div>' +
+        '</div>';
+    })
+    .catch(function() { /* API unavailable — card still shows total */ });
+})();
+</script>
 </body>
 </html>
