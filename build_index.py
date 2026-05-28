@@ -200,12 +200,28 @@ def extract(filepath):
     has_sdgs = len(sdg_ids) > 0
 
     # ── teaching adoption ──
+    # Only count as True when there are actual substantive signals, not just
+    # a bare worldcat_url stub that appears on every record.
     ta = signals.get("teaching_adoption")
-    has_teaching = bool(ta and (
-        (isinstance(ta, dict) and any(ta.values())) or
-        (isinstance(ta, list) and len(ta) > 0) or
-        (isinstance(ta, (int, float)) and ta > 0)
-    ))
+    has_teaching = False
+    if isinstance(ta, dict):
+        has_teaching = (
+            bool(ta.get("ocw"))                           # OCW mentions list
+            or bool(ta.get("youtube"))                    # YouTube lectures
+            or bool(ta.get("otl"))                        # Open Textbook Library
+            or bool(ta.get("syllabi"))                    # syllabi list
+            or (isinstance(ta.get("holdings"), dict)
+                and ta["holdings"].get("ol_holdings", 0) > 0)  # real OL holdings
+        )
+    elif isinstance(ta, list):
+        has_teaching = len(ta) > 0
+    elif isinstance(ta, (int, float)):
+        has_teaching = ta > 0
+    # Sub-counts for richer display
+    ta_ocw_count = len(ta.get("ocw") or []) if isinstance(ta, dict) else 0
+    ta_yt_count  = len(ta.get("youtube") or []) if isinstance(ta, dict) else 0
+    ta_ol_count  = (ta.get("holdings") or {}).get("ol_holdings", 0) if isinstance(ta, dict) else 0
+    ta_otl       = bool(ta.get("otl")) if isinstance(ta, dict) else False
 
     # ── peer review ──
     pr = signals.get("peer_reviews")
@@ -297,6 +313,10 @@ def extract(filepath):
         "has_sdgs": has_sdgs,
         "sdg_ids": sdg_ids,
         "has_teaching": has_teaching,
+        "ta_ocw": ta_ocw_count,
+        "ta_youtube": ta_yt_count,
+        "ta_ol_holdings": ta_ol_count,
+        "ta_otl": ta_otl,
         "has_peer_review": has_peer_review,
         "has_reuse": has_reuse,
         "excerpt": excerpt,

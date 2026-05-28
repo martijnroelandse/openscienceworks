@@ -1,0 +1,1127 @@
+#!/usr/bin/env python3
+"""
+openscience.works BookStory UX Transformer
+Applies UX improvements to a BookStory HTML file:
+  1. Key stats strip below the header
+  2. Sticky section navigation bar
+  3. Collapsible section cards
+  4. Inferred Roles redesign: domain grouping, color-coding, tooltips, strength labels
+  5. Enriched Impact Metrics (stat cards + sparkline + signals)
+  6. Sub-tabs inside "Who is citing this work?"
+  7. Paginated citations table (rows extracted to JS, 25 per page)
+"""
+
+import re
+import json
+from pathlib import Path
+from bs4 import BeautifulSoup
+
+SRC = Path("/sessions/loving-great-brown/mnt/openscienceworks/bookstory_10.1007_978-3-319-00026-8.html")
+DST = Path("/sessions/loving-great-brown/mnt/openscienceworks/bookstory_10.1007_978-3-319-00026-8_new.html")
+
+html = SRC.read_text("utf-8")
+soup = BeautifulSoup(html, "html.parser")
+
+
+# ══════════════════════════════════════════════════════════════
+# STEP 1 — Extract citation table rows to JS data array
+# ══════════════════════════════════════════════════════════════
+cit_section = None
+for s in soup.find_all("section"):
+    h2 = s.find("h2")
+    if h2 and "Citations" in h2.get_text() and "who" not in h2.get_text().lower() and "context" not in h2.get_text().lower():
+        cit_section = s
+        break
+
+rows_data = []
+if cit_section:
+    tbody = cit_section.find("tbody")
+    if tbody:
+        for tr in tbody.find_all("tr"):
+            cells = tr.find_all("td")
+            if len(cells) < 3:
+                continue
+            year  = cells[0].get_text(strip=True)
+            title = cells[1].get_text(strip=True)
+            venue = cells[2].get_text(strip=True) if len(cells) > 2 else ""
+            doi_text = doi_url = ""
+            if len(cells) > 3:
+                a = cells[3].find("a")
+                if a:
+                    doi_text = a.get_text(strip=True)
+                    doi_url  = a.get("href", "")
+                else:
+                    doi_text = cells[3].get_text(strip=True)
+            rows_data.append({"year": year, "title": title,
+                              "venue": venue, "doi": doi_text, "doi_url": doi_url})
+        tbody.clear()
+        tbody["id"] = "cit-tbody"
+
+print(f"Extracted {len(rows_data)} citation rows")
+
+
+# ══════════════════════════════════════════════════════════════
+# STEP 2 — Extract key stats for the stats strip
+# ══════════════════════════════════════════════════════════════
+def first_match(pattern, text, default="—"):
+    m = re.search(pattern, text, re.DOTALL | re.IGNORECASE)
+    return m.group(1).strip() if m else default
+
+raw = str(soup)
+total_cit = first_match(r'Total Citations.*?</strong>\s*([\d,]+)', raw)
+total_men = first_match(r'Total Online mentions.*?</strong>\s*([\d,]+)', raw)
+total_sci = first_match(r'Citation context \(scite\):</strong>\s*([\d,]+)', raw)
+top_badge = first_match(r'(Top \d+% Cited|Top \d+% Cited)', raw, "")
+
+# OA status — parse directly from soup for reliability
+oa_status = ""
+for _li in soup.find_all("li"):
+    _t = _li.get_text(" ", strip=True)
+    if "OA status" in _t:
+        oa_status = _t.replace("OA status:", "").strip()
+        break
+
+# Downloads (books)
+downloads = first_match(r'Downloads.*?:</strong>\s*([\d,]+)', raw, "")
+
+# scite breakdown
+scite_sup = first_match(r'<strong>Supporting:</strong>\s*([\d,]+)', raw, "0")
+scite_men = first_match(r'<strong>Mentioning:</strong>\s*([\d,]+)', raw, "0")
+scite_con = first_match(r'<strong>Contradicting:</strong>\s*([\d,]+)', raw, "0")
+
+# Citation timeline for sparkline
+_canvas = soup.find("canvas", id="citationChart")
+chart_labels, chart_values = [], []
+if _canvas:
+    try:
+        chart_labels = json.loads(_canvas.get("data-labels", "[]"))
+        chart_values = json.loads(_canvas.get("data-values", "[]"))
+    except Exception:
+        pass
+
+# Teaching & additional signals
+yt_count        = len(re.findall(r'youtube\.com/watch', raw))
+has_worldcat    = "worldcat.org" in raw.lower()
+has_ocw         = bool(re.search(r'OpenCourseWare|open.*?syllab', raw, re.I))
+has_otl         = "Open Textbook" in raw
+has_wiki        = "wikipedia.org" in raw.lower()
+has_operas      = bool(soup.find(id="metrics-widget"))
+
+# Extract DOI from OPERAS widget config (used for client-side download sparkline)
+operas_doi = ""
+_cfg_tag = soup.find(id="operas-metrics-config")
+if _cfg_tag:
+    try:
+        _cfg = json.loads(_cfg_tag.get_text(strip=True))
+        for _tab in _cfg.get("tabs", []):
+            for _scope in _tab.get("scopes", {}).values():
+                _works = _scope.get("works", [])
+                if _works:
+                    operas_doi = _works[0]
+                    break
+            if operas_doi:
+                break
+    except Exception:
+        pass
+
+clinical_trials = list(dict.fromkeys(re.findall(r'NCT\d+', raw)))
+datasets        = list(dict.fromkeys(re.findall(
+                    r'zenodo\.org|figshare\.com|dryad|b2share|pangaea', raw, re.I)))
+
+# Funding grant count
+grant_count = 0
+for _s in soup.find_all("section"):
+    _h2 = _s.find("h2")
+    if _h2 and "Funding" in _h2.get_text():
+        grant_count = len(_s.find_all("span", class_="tag"))
+        break
+
+# Country count (from Global Reach sub-section of Who is citing)
+country_count = 0
+for _el in soup.find_all(["section", "div"]):
+    if "Global Reach" in _el.get_text()[:300]:
+        _ctags = _el.find_all("span", class_="tag")
+        country_count = sum(
+            1 for t in _ctags
+            if re.search(r'\(\d+\)\s*$', t.get_text(strip=True))
+        )
+        if country_count:
+            break
+
+
+# ══════════════════════════════════════════════════════════════
+# STEP 3 — Add anchor IDs to main sections
+# ══════════════════════════════════════════════════════════════
+SECTION_MAP = {
+    "The Story So Far":               "sec-story",
+    "Impact metrics":                 "sec-impact",
+    "Inferred roles":                 "sec-roles",
+    "Access":                         "sec-access",
+    "Attention landscape":            "sec-attention",
+    "Reader reception":               "sec-reader",
+    "Citation context":               "sec-scite",
+    "Who is citing this work":        "sec-citing",
+    "Teaching, Practice":             "sec-teaching",
+    "Contributors":                   "sec-contributors",
+    "Concepts":                       "sec-concepts",
+    "OPERAS":                         "sec-operas",
+    "Citations":                      "sec-citations",
+}
+
+def tag_sections():
+    for el in soup.find_all(["section", "div"]):
+        h2 = el.find("h2")
+        if not h2:
+            continue
+        txt = h2.get_text()
+        for label, sec_id in SECTION_MAP.items():
+            if label.lower() in txt.lower():
+                if not el.get("id"):
+                    el["id"] = sec_id
+                break
+
+tag_sections()
+
+hero = soup.find("header", class_="hero")
+if hero:
+    hero["id"] = "sec-hero"
+
+
+# ══════════════════════════════════════════════════════════════
+# STEP 3a — Enrich hero badges with tooltips and source labels
+# ══════════════════════════════════════════════════════════════
+
+BADGE_ENHANCEMENTS = {
+    "methodologically supported": {
+        "title": "scite found more citations supporting than contrasting this work's methodology",
+        "suffix": "· scite",
+    },
+    "linked to data": {
+        "title": "Linked research datasets are registered via DataCite or a similar registry",
+        "suffix": "· DataCite",
+    },
+    "clinical trial": {
+        "title": "This study is a registered clinical trial",
+        "suffix": "· registered",
+    },
+    "correction published": {
+        "title": "A correction or erratum has been published for this work — see publisher site",
+        "suffix": "· notice",
+    },
+    "expression of concern": {
+        "title": "The publisher has issued an expression of concern about this work",
+        "suffix": "· notice",
+    },
+    "retracted": {
+        "title": "This work has been retracted by the publisher",
+        "suffix": "· notice",
+    },
+    "peer-reviewed": {
+        "title": "Published in a peer-reviewed academic journal",
+        "suffix": "· journal",
+    },
+}
+
+DISCIPLINE_ENHANCEMENTS = {
+    "open access (gold)": {
+        "label": "Access",
+        "title": "Immediate free access with an open licence — published in a fully OA venue",
+    },
+    "open access (hybrid)": {
+        "label": "Access",
+        "title": "Free to read in a subscription journal; OA enabled by author or institution payment",
+    },
+    "open access (green)": {
+        "label": "Access",
+        "title": "Freely available via an institutional or subject repository (self-archiving)",
+    },
+    "open access (bronze)": {
+        "label": "Access",
+        "title": "Free to read on the publisher's site but without an explicit open licence",
+    },
+    "open access (diamond)": {
+        "label": "Access",
+        "title": "Fully open access with no charges to authors or readers",
+    },
+    "humanities": {
+        "label": "Field",
+        "title": "Classified in Humanities disciplines (literature, philosophy, history, arts, etc.)",
+    },
+    "social sciences": {
+        "label": "Field",
+        "title": "Classified in Social Sciences (sociology, economics, political science, etc.)",
+    },
+    "stem": {
+        "label": "Field",
+        "title": "Science, Technology, Engineering & Mathematics",
+        "expand": "STEM",
+    },
+    "biomedicine": {
+        "label": "Field",
+        "title": "Classified in Biomedicine or Life Sciences",
+    },
+    "unknown": {
+        "label": "Field",
+        "title": "Subject classification not available for this work",
+        "expand": "Unclassified",
+    },
+}
+
+def enrich_hero_badges(hero_el, bs_soup):
+    """Add tooltip titles and source labels to all hero-area badges."""
+    # 1. Badge spans inside the flex-wrap badge row
+    badge_div = hero_el.find(
+        "div",
+        style=lambda x: x and "flex-wrap: wrap" in x and "margin-top: 0.75rem" in x,
+    )
+    if badge_div:
+        for span in badge_div.find_all("span", recursive=False):
+            raw_text = span.get_text(strip=True).lower().rstrip(" ↗")
+            for badge_key, enh in BADGE_ENHANCEMENTS.items():
+                if badge_key in raw_text:
+                    span["title"] = enh["title"]
+                    sfx = bs_soup.new_tag(
+                        "span",
+                        style=(
+                            "opacity:0.55;font-weight:400;font-size:0.65em;"
+                            "margin-left:0.35em;text-transform:none;letter-spacing:0;"
+                        ),
+                    )
+                    sfx.string = enh["suffix"]
+                    span.append(sfx)
+                    break
+
+    # 2. Discipline-badge divs (OA type / field)
+    for db in hero_el.find_all("div", class_="discipline-badge"):
+        raw_text = db.get_text(strip=True)
+        key = raw_text.lower()
+        for disc_key, enh in DISCIPLINE_ENHANCEMENTS.items():
+            if disc_key in key:
+                db["title"] = enh["title"]
+                display_text = enh.get("expand", raw_text)
+                label_str    = enh["label"]
+                svg = db.find("svg")
+                db.clear()
+                if svg:
+                    db.append(svg)
+                frag = BeautifulSoup(
+                    f'<span style="opacity:0.58;font-size:0.72em;font-weight:500;'
+                    f'margin-right:0.25em;text-transform:uppercase;letter-spacing:0.04em;'
+                    f'vertical-align:middle;">{label_str}:</span>'
+                    f'<span style="vertical-align:middle;">{display_text}</span>',
+                    "html.parser",
+                )
+                db.append(frag)
+                break
+
+if hero:
+    enrich_hero_badges(hero, soup)
+    print("Enriched hero badges")
+
+
+# ══════════════════════════════════════════════════════════════
+# STEP 3b — Redesign Inferred Roles section
+# ══════════════════════════════════════════════════════════════
+
+# Role → (domain, short description)  — drawn from about.html
+ROLE_LOOKUP = [
+    ("scholarly",       "academic",    "Foundational building block cited heavily in core academic journals and monographs."),
+    ("rapid uptake",    "academic",    "Accumulated high citations or downloads unusually fast after publication."),
+    ("synthesis",       "academic",    "Frequently cited in literature reviews and meta-analyses as a shorthand reference."),
+    ("methodological",  "academic",    "Standard protocol or framework used as a tool by other researchers."),
+    ("evidence",        "academic",    "Explicitly applied as hard data or methodology — high 'supporting' citation tallies."),
+    ("usage-driven",    "readership",  "Value through direct consumption: high downloads, HTML views, or library holdings."),
+    ("pedagogical",     "readership",  "Widely adopted for teaching in OER syllabi, reading lists, or textbooks."),
+    ("public discourse","public",      "Heavy social-platform engagement — the work has sparked ongoing community conversation."),
+    ("public visibility","public",     "Trusted public reference cited on Wikipedia, Stack Exchange, or non-academic wikis."),
+    ("high-visibility", "public",      "Mentioned in mainstream news, broadsheets, or high-impact professional media."),
+    ("sustainability",  "practical",   "Cited in government reports, WHO/NGO briefs, or UN policy documents."),
+    ("policy",          "practical",   "Cited in government reports, WHO/NGO briefs, or UN policy documents."),
+    ("commercial",      "practical",   "Present on Amazon, Goodreads, or in patents — commercial or consumer crossover."),
+]
+
+DOMAINS = {
+    "academic":    {"label":"Academic & Scientific",      "icon":"🎓", "dot":"#3b82f6","str_bg":"#dbeafe","str_c":"#1d4ed8","lbl_c":"#1d4ed8","pill_cls":"role-pill-academic"},
+    "readership":  {"label":"Readership & Educational",   "icon":"📚", "dot":"#8b5cf6","str_bg":"#ede9fe","str_c":"#6d28d9","lbl_c":"#7c3aed","pill_cls":"role-pill-readership"},
+    "public":      {"label":"Public Engagement & Media",  "icon":"📢", "dot":"#f59e0b","str_bg":"#fef3c7","str_c":"#92400e","lbl_c":"#b45309","pill_cls":"role-pill-public"},
+    "practical":   {"label":"Practical & Real-World",     "icon":"🏛", "dot":"#10b981","str_bg":"#dcfce7","str_c":"#166534","lbl_c":"#065f46","pill_cls":"role-pill-practical"},
+}
+
+def parse_role_tag(text):
+    """'Scholarly uptake (1.00)' → ('Scholarly uptake', 1.0)"""
+    m = re.match(r'^(.*?)\s*\((\d+\.\d+)\)\s*$', text.strip())
+    return (m.group(1).strip(), float(m.group(2))) if m else (text.strip(), 0.5)
+
+def lookup_role(name):
+    n = name.lower()
+    for substr, domain, desc in ROLE_LOOKUP:
+        if substr in n:
+            return domain, desc
+    return "academic", "Heuristic role based on citation and usage signals from the literature."
+
+def strength(score):
+    if score >= 0.80: return "Strong"
+    if score >= 0.50: return "Moderate"
+    if score >= 0.20: return "Emerging"
+    return "Weak"
+
+def opacity(score):
+    if score >= 0.80: return "1"
+    if score >= 0.50: return "0.9"
+    if score >= 0.20: return "0.75"
+    return "0.6"
+
+roles_sec = soup.find(id="sec-roles")
+if roles_sec:
+    tags_div = roles_sec.find("div", style=re.compile(r"display\s*:\s*flex", re.I))
+    muted_p  = roles_sec.find("p", class_="muted")
+
+    if tags_div:
+        # Parse existing role tags
+        parsed = []
+        for span in tags_div.find_all("span", class_="tag"):
+            name, score = parse_role_tag(span.get_text(strip=True))
+            domain, desc = lookup_role(name)
+            parsed.append({"name": name, "score": score,
+                           "domain": domain, "desc": desc})
+
+        # Group by domain, preserving first-seen order
+        dom_order, dom_roles = [], {}
+        for r in parsed:
+            d = r["domain"]
+            if d not in dom_roles:
+                dom_order.append(d)
+                dom_roles[d] = []
+            dom_roles[d].append(r)
+
+        # Build domain group HTML
+        groups_html = ""
+        for dom in dom_order:
+            dinfo = DOMAINS[dom]
+            pills = ""
+            for r in dom_roles[dom]:
+                str_lbl = strength(r["score"])
+                op      = opacity(r["score"])
+                # Escape for HTML attribute
+                desc_safe = r["desc"].replace('"', '&quot;')
+                pills += (
+                    f'<span class="role-pill {dinfo["pill_cls"]}" '
+                    f'style="opacity:{op};" title="{desc_safe}">'
+                    f'<span class="role-dot" style="background:{dinfo["dot"]};"></span>'
+                    f'{r["name"]}'
+                    f'<span class="role-strength" style="background:{dinfo["str_bg"]};color:{dinfo["str_c"]};">'
+                    f'{str_lbl}</span></span>'
+                )
+            groups_html += (
+                f'<div class="roles-domain">'
+                f'<div class="roles-domain-label" style="color:{dinfo["lbl_c"]};">'
+                f'{dinfo["icon"]} {dinfo["label"]}</div>'
+                f'<div class="roles-row">{pills}</div></div>'
+            )
+
+        legend = (
+            '<div class="roles-legend">'
+            '<span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>'
+            '<span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>'
+            '<span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>'
+            '</div>'
+        )
+
+        new_subhead = (
+            '<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">'
+            'Heuristic signals from citation composition, usage, and media activity. '
+            '<a href="https://www.openscience.works/about.html" target="_blank" '
+            'style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a>'
+            '</p>'
+        )
+
+        new_block = BeautifulSoup(new_subhead + groups_html + legend, "html.parser")
+
+        if muted_p:
+            muted_p.replace_with(new_block)
+            tags_div.decompose()
+        else:
+            tags_div.replace_with(new_block)
+
+        role_count = len(parsed)
+        print(f"Redesigned Inferred Roles: {role_count} roles across {len(dom_order)} domain(s)")
+    else:
+        print("  Warning: could not find roles tags div")
+else:
+    print("  Warning: sec-roles section not found")
+
+
+# ══════════════════════════════════════════════════════════════
+# STEP 3c — Enrich Impact Metrics section
+# ══════════════════════════════════════════════════════════════
+
+def make_sparkline(labels, values, width=120, height=36):
+    """Inline SVG sparkline from citation timeline data."""
+    if not values or max(values, default=0) == 0:
+        return ""
+    mx = float(max(values))
+    n = len(values)
+    pts = []
+    for i, v in enumerate(values):
+        x = i / max(n - 1, 1) * width
+        y = height - (v / mx) * (height - 4) - 2
+        pts.append(f"{x:.1f},{y:.1f}")
+    poly = " ".join(pts)
+    area = ("M" + pts[0] + " " + " ".join("L" + p for p in pts[1:])
+            + f" L{width:.1f},{height:.1f} L0,{height:.1f} Z")
+    return (
+        f'<svg viewBox="0 0 {width} {height}" width="{width}" height="{height}" '
+        f'xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:visible;">'
+        f'<path d="{area}" fill="#dbeafe" opacity="0.6"/>'
+        f'<polyline points="{poly}" fill="none" stroke="#2563eb" '
+        f'stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>'
+        f'</svg>'
+    )
+
+sparkline_svg = make_sparkline(chart_labels, chart_values)
+year_range = (f"{chart_labels[0]}–{chart_labels[-1]}" if len(chart_labels) >= 2 else "")
+
+# ── Stat cards ──
+cit_card = (
+    '<div class="im-card im-card-primary">'
+    '<div class="im-card-top"><div>'
+    f'<div class="im-num">{total_cit}</div>'
+    '<div class="im-label">Total Citations</div>'
+    '</div>'
+    + (f'<div class="im-spark">{sparkline_svg}'
+       f'<div class="im-spark-range">{year_range}</div></div>' if sparkline_svg else "")
+    + '</div>'
+    + (f'<div class="im-top-badge">🏆 {top_badge}</div>' if top_badge else "")
+    + '</div>'
+)
+
+men_card = (
+    '<div class="im-card">'
+    f'<div class="im-num">{total_men}</div>'
+    '<div class="im-label">Online Mentions</div>'
+    '</div>'
+)
+
+if downloads:
+    third_card = (
+        '<a href="#operas-metrics-card" class="im-card im-card-dl">'
+        '<div class="im-card-top"><div>'
+        f'<div class="im-num">{downloads}</div>'
+        '<div class="im-label">Downloads (OAPEN)</div>'
+        '</div>'
+        '<div id="dl-sparkline-container"></div>'
+        '</div>'
+        '<div class="im-card-hint">📊 View full timeline ↓</div>'
+        '</a>'
+    )
+elif total_sci and total_sci != "—":
+    third_card = (
+        '<div class="im-card">'
+        f'<div class="im-num">{total_sci}</div>'
+        '<div class="im-label">scite References</div>'
+        '</div>'
+    )
+else:
+    third_card = ""
+
+cards_block = f'<div class="im-cards">{cit_card}{men_card}{third_card}</div>'
+
+# ── scite breakdown bar ──
+scite_bar_block = ""
+try:
+    _sup  = int(scite_sup.replace(",", ""))
+    _msci = int(scite_men.replace(",", ""))
+    _con  = int(scite_con.replace(",", ""))
+    _tot_s = _sup + _msci + _con
+    if _tot_s > 0 and (_sup > 0 or _con > 0):
+        sup_pct = round(_sup  / _tot_s * 100, 1)
+        men_pct = round(_msci / _tot_s * 100, 1)
+        con_pct = round(_con  / _tot_s * 100, 1)
+        scite_bar_block = (
+            '<div class="im-scite">'
+            '<div class="im-scite-title">Citation context '
+            '<span class="im-scite-via">(via scite)</span></div>'
+            '<div class="im-scite-bar">'
+            f'<div class="im-scite-seg im-scite-sup" style="width:{sup_pct}%" '
+            f'title="Supporting: {_sup:,} ({sup_pct}%)"></div>'
+            f'<div class="im-scite-seg im-scite-men" style="width:{men_pct}%" '
+            f'title="Mentioning: {_msci:,} ({men_pct}%)"></div>'
+            f'<div class="im-scite-seg im-scite-con" style="width:{con_pct}%" '
+            f'title="Contradicting: {_con:,} ({con_pct}%)"></div>'
+            '</div>'
+            '<div class="im-scite-leg">'
+            f'<span><span class="im-scite-dot" style="background:#22c55e;"></span>'
+            f'Supporting {_sup:,} ({sup_pct}%)</span>'
+            f'<span><span class="im-scite-dot" style="background:#94a3b8;"></span>'
+            f'Mentioning {_msci:,} ({men_pct}%)</span>'
+            f'<span><span class="im-scite-dot" style="background:#f87171;"></span>'
+            f'Contradicting {_con:,} ({con_pct}%)</span>'
+            '</div></div>'
+        )
+except Exception:
+    pass
+
+# ── Additional signals pills ──
+sig_pills = ""
+if yt_count:
+    sig_pills += (f'<a href="#sec-teaching" class="sig-pill sig-red">'
+                  f'▶ YouTube · {yt_count} video{"s" if yt_count != 1 else ""}</a>')
+if has_wiki:
+    sig_pills += '<a href="#sec-teaching" class="sig-pill sig-slate">📖 Wikipedia</a>'
+if has_worldcat:
+    sig_pills += '<a href="#sec-teaching" class="sig-pill sig-slate">📚 WorldCat</a>'
+if has_ocw:
+    sig_pills += '<a href="#sec-teaching" class="sig-pill sig-indigo">🎓 Course syllabus</a>'
+if has_otl:
+    sig_pills += '<a href="#sec-teaching" class="sig-pill sig-indigo">📗 Open Textbook</a>'
+for _nct in clinical_trials[:3]:
+    sig_pills += f'<a href="#sec-teaching" class="sig-pill sig-teal">🧪 {_nct}</a>'
+if len(clinical_trials) > 3:
+    sig_pills += f'<span class="sig-pill sig-teal">+{len(clinical_trials)-3} more trials</span>'
+if datasets:
+    _ds_label = f'Dataset{"s" if len(datasets) > 1 else ""} · {len(datasets)} repo{"s" if len(datasets) > 1 else ""}'
+    sig_pills += f'<a href="#sec-teaching" class="sig-pill sig-teal">🗂 {_ds_label}</a>'
+if grant_count:
+    sig_pills += (f'<a href="#sec-funding" class="sig-pill sig-amber">'
+                  f'💰 {grant_count} grant{"s" if grant_count != 1 else ""}</a>')
+if country_count:
+    sig_pills += (f'<a href="#sec-citing" class="sig-pill sig-blue">'
+                  f'🌍 {country_count} countries</a>')
+if has_operas:
+    sig_pills += '<a href="#operas-metrics-card" class="sig-pill sig-blue">📊 OPERAS downloads</a>'
+
+signals_block = ""
+if sig_pills:
+    signals_block = (
+        '<div class="im-signals">'
+        '<div class="im-signals-title">Additional signals</div>'
+        f'<div class="im-signals-pills">{sig_pills}</div>'
+        '</div>'
+    )
+
+# ── Replace impact section body — insert new block, remove old metric-list ──
+impact_sec = soup.find(id="sec-impact")
+if impact_sec:
+    h2_im = impact_sec.find("h2")
+    if h2_im:
+        for _el in list(h2_im.find_next_siblings()):
+            _el.extract()
+        impact_sec.append(BeautifulSoup(
+            f'<div class="im-wrapper">{cards_block}{signals_block}</div>',
+            "html.parser"
+        ))
+        print("Enriched Impact Metrics section")
+    else:
+        print("  Warning: no h2 in impact section")
+else:
+    print("  Warning: sec-impact not found")
+
+
+# ══════════════════════════════════════════════════════════════
+# STEP 4 — Restructure "Who is citing" into sub-tabs
+# ══════════════════════════════════════════════════════════════
+citing_sec = soup.find(id="sec-citing")
+if citing_sec:
+    # The 3-col grid
+    grid = citing_sec.find("div", style=re.compile(r"grid-template-columns.*auto-fit", re.I))
+    # The bottom analysis block (border-top)
+    bottom = citing_sec.find("div", style=re.compile(r"border-top.*padding-top", re.I))
+
+    if grid and bottom:
+        cols = [c for c in grid.children if getattr(c, "name", None) == "div"]
+        if len(cols) >= 3:
+            geo_html  = str(cols[0])
+            inst_html = str(cols[1])
+            ppl_html  = str(cols[2])
+            anal_html = str(bottom)
+
+            # Analysis (work types, venues, citation chart) shown first, always visible.
+            # Then 3 tabs for geo/institutions/people exploration.
+            tab_block = BeautifulSoup(f"""
+<div class="cite-analysis-always">{anal_html}</div>
+<div class="cite-tabs">
+  <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+  <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+  <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-ppl')">👤 Top Citers</button>
+</div>
+<div id="cite-geo"  class="cite-tab-pane active">{geo_html}</div>
+<div id="cite-inst" class="cite-tab-pane">{inst_html}</div>
+<div id="cite-ppl"  class="cite-tab-pane">{ppl_html}</div>
+""", "html.parser")
+
+            grid.replace_with(tab_block)
+            bottom.decompose()
+            print("Restructured 'Who is citing' into sub-tabs (3 tabs + always-visible analysis)")
+        else:
+            print(f"  Warning: expected ≥3 cols, found {len(cols)}")
+    else:
+        print("  Warning: could not find grid or bottom div in 'Who is citing' section")
+
+
+# ══════════════════════════════════════════════════════════════
+# STEP 5 — Add pagination UI after the citations table
+# ══════════════════════════════════════════════════════════════
+if cit_section:
+    scroll_div = cit_section.find("div", class_="table-scroll-wrapper")
+    if scroll_div:
+        pag = BeautifulSoup("""
+<div class="cit-pagination">
+  <span class="cit-pagination-info" id="cit-info">Loading…</span>
+  <div class="cit-pagination-btns">
+    <button class="cit-btn" id="cit-prev" onclick="citPrev()" disabled>← Prev</button>
+    <span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
+    <button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
+  </div>
+</div>
+""", "html.parser")
+        scroll_div.insert_after(pag)
+
+
+# ══════════════════════════════════════════════════════════════
+# STEP 6 — Inject new CSS into <head>
+# ══════════════════════════════════════════════════════════════
+new_css = """
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+.role-pill[title]:hover::after{
+  content:attr(title);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:#111827;color:white;padding:.5rem .75rem;border-radius:.5rem;font-size:.72rem;
+  width:230px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.role-pill[title]:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-dl{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+"""
+
+head_style = soup.find("style")
+if head_style:
+    head_style.string = (head_style.string or "") + "\n" + new_css
+
+
+# ══════════════════════════════════════════════════════════════
+# STEP 7 — Inject stats strip + sticky nav after hero
+# ══════════════════════════════════════════════════════════════
+top_badge_html = f'<div class="stats-strip-badge">🏆 {top_badge}</div>' if top_badge else ""
+
+downloads_item = f"""
+  <div class="stats-strip-item">
+    <div class="stats-strip-num">{downloads}</div>
+    <div class="stats-strip-label">Downloads</div>
+  </div>""" if downloads else f"""
+  <div class="stats-strip-item">
+    <div class="stats-strip-num">{total_sci}</div>
+    <div class="stats-strip-label">scite References</div>
+  </div>"""
+
+stats_html = f"""
+<div class="stats-strip no-print">
+  <div class="stats-strip-item">
+    <div class="stats-strip-num">{total_cit}</div>
+    <div class="stats-strip-label">Total Citations</div>
+    {top_badge_html}
+  </div>
+  <div class="stats-strip-item">
+    <div class="stats-strip-num">{total_men}</div>
+    <div class="stats-strip-label">Online Mentions</div>
+  </div>
+  {downloads_item}
+  <div class="stats-strip-item">
+    <div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">{oa_status}</div>
+    <div class="stats-strip-label">Open Access Status</div>
+  </div>
+</div>
+"""
+
+nav_html = """
+<nav class="sticky-nav no-print" id="sticky-nav" aria-label="Page sections">
+  <div class="sticky-nav-inner">
+    <a href="#sec-hero">Overview</a>
+    <a href="#sec-story">Story</a>
+    <a href="#sec-impact">Impact</a>
+    <a href="#sec-roles">Roles</a>
+    <a href="#sec-access">Access</a>
+    <a href="#sec-attention">Attention</a>
+    <a href="#sec-reader">Reader</a>
+    <a href="#sec-citing">Who's Citing</a>
+    <a href="#sec-teaching">Teaching</a>
+    <a href="#sec-contributors">Contributors</a>
+    <a href="#sec-operas">OPERAS</a>
+    <a href="#sec-citations">All Citations</a>
+  </div>
+</nav>
+"""
+
+if hero:
+    hero.insert_after(BeautifulSoup(nav_html, "html.parser"))
+    hero.insert_after(BeautifulSoup(stats_html, "html.parser"))
+
+
+# ══════════════════════════════════════════════════════════════
+# STEP 8 — All new JavaScript blocks
+# ══════════════════════════════════════════════════════════════
+
+PAGE_SIZE = 25
+rows_json = json.dumps(rows_data, ensure_ascii=False)
+
+cit_js = f"""
+<script>
+(function() {{
+  var DATA = {rows_json};
+  var PER  = {PAGE_SIZE};
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {{
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }}
+
+  function render(page) {{
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {{
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }}
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {{
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {{
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }}
+      for (var i=0; i<shown.length; i++) {{
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }}
+      nums.innerHTML = html;
+    }}
+  }}
+
+  window.citGoTo = function(p) {{
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({{behavior:'smooth',block:'start'}});
+  }};
+  window.citPrev = function() {{ window.citGoTo(_p-1); }};
+  window.citNext = function() {{ window.citGoTo(_p+1); }};
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){{render(1);}});
+  else render(1);
+}})();
+</script>
+"""
+
+collapsible_js = """
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+"""
+
+cite_tab_js = """
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+"""
+
+nav_active_js = """
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+"""
+
+# ── Download sparkline JS (book story only) ──
+dl_sparkline_js = ""
+if operas_doi:
+    dl_sparkline_js = f"""
+<script>
+(function() {{
+  var doi = {json.dumps(operas_doi)};
+  // Real API: metrics-api.operas-eu.org/events (confirmed via network inspection)
+  var url = 'https://metrics-api.operas-eu.org/events?filter=work_uri:' + doi;
+  var container = document.getElementById('dl-sparkline-container');
+  if (!container) return;
+
+  fetch(url, {{headers: {{Accept: 'application/json'}}}})
+    .then(function(r) {{ return r.json(); }})
+    .then(function(resp) {{
+      var data = resp.data;
+      if (!data || !data.length) return;
+
+      // Aggregate values by year-month (timestamp = "2020-05-01T00:00:00+0000")
+      var byMonth = {{}};
+      data.forEach(function(d) {{
+        var ym = (d.timestamp || '').slice(0, 7); // "YYYY-MM"
+        var v  = parseFloat(d.value || 0);
+        if (ym && v > 0) byMonth[ym] = (byMonth[ym] || 0) + v;
+      }});
+      var months = Object.keys(byMonth).sort();
+      var values = months.map(function(m) {{ return byMonth[m]; }});
+      if (values.length < 2) return;
+
+      var W = 120, H = 36, mx = Math.max.apply(null, values), n = values.length;
+      var pts = values.map(function(v, i) {{
+        return (i / (n - 1) * W).toFixed(1) + ',' + (H - (v / mx) * (H - 4) - 2).toFixed(1);
+      }});
+      var area = 'M' + pts[0] + ' ' + pts.slice(1).map(function(p) {{ return 'L' + p; }}).join(' ')
+               + ' L' + W + ',' + H + ' L0,' + H + ' Z';
+      var yr0 = months[0].slice(0, 4);
+      var yr1 = months[months.length - 1].slice(0, 4);
+
+      container.innerHTML =
+        '<div class="im-spark">' +
+        '<svg viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" ' +
+        'xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:visible;">' +
+        '<path d="' + area + '" fill="#dbeafe" opacity="0.6"/>' +
+        '<polyline points="' + pts.join(' ') + '" fill="none" stroke="#2563eb" ' +
+        'stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>' +
+        '</svg>' +
+        '<div class="im-spark-range">' + yr0 + (yr0 !== yr1 ? '–' + yr1 : '') + '</div>' +
+        '</div>';
+    }})
+    .catch(function() {{ /* API unavailable — card still shows total */ }});
+}})();
+</script>
+"""
+    print(f"Download sparkline JS injected (DOI: {operas_doi})")
+
+body = soup.find("body")
+extra_chunks = [cit_js, cite_tab_js, collapsible_js, nav_active_js]
+if dl_sparkline_js:
+    extra_chunks.append(dl_sparkline_js)
+for chunk in extra_chunks:
+    body.append(BeautifulSoup(chunk, "html.parser"))
+
+
+# ══════════════════════════════════════════════════════════════
+# OUTPUT
+# ══════════════════════════════════════════════════════════════
+DST.write_text(str(soup), "utf-8")
+orig_size = SRC.stat().st_size
+new_size  = DST.stat().st_size
+print(f"Output: {DST.name}")
+print(f"  Original size : {orig_size:>10,} bytes  ({SRC.stat().st_size // 1024:,} KB)")
+print(f"  New size      : {new_size:>10,} bytes  ({new_size // 1024:,} KB)")
+print(f"  Reduction     : {(1 - new_size/orig_size)*100:.1f}%")
+print(f"  Citation rows : {len(rows_data)}")

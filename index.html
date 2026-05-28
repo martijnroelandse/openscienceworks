@@ -301,8 +301,118 @@
       color: var(--text);
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
+    /* ── aggregation / portfolio view ─────────────────────────── */
     .agg-view { display: none; }
     .agg-view.visible { display: block; }
+
+    /* portfolio summary card */
+    .pf-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+    .pf-card-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .pf-stats-row {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+    .pf-stat { text-align: center; min-width: 70px; }
+    .pf-stat .pf-num {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.1;
+    }
+    .pf-stat .pf-lbl {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+      white-space: nowrap;
+    }
+    .pf-divider { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+
+    /* type mix bar */
+    .pf-section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .type-mix-bar {
+      display: flex;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      gap: 1px;
+      margin-bottom: 0.5rem;
+    }
+    .type-mix-seg { height: 100%; transition: width 0.3s; }
+    .type-mix-seg.article  { background: var(--c-article); }
+    .type-mix-seg.book     { background: var(--c-book); }
+    .type-mix-seg.data     { background: var(--c-data); }
+    .type-mix-seg.software { background: var(--c-software); }
+    .type-mix-legend {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      font-size: 0.75rem; color: var(--muted);
+    }
+    .type-mix-legend span { display: flex; align-items: center; gap: 0.3rem; }
+    .tml-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+    /* open science signals */
+    .signal-pills {
+      display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.4rem;
+    }
+    .signal-pill {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      padding: 0.25rem 0.65rem;
+      background: var(--accent-light);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--c-article);
+    }
+    .signal-pill .sp-n {
+      background: var(--c-article);
+      color: #fff;
+      border-radius: 999px;
+      padding: 0 0.4rem;
+      font-size: 0.72rem;
+      line-height: 1.5;
+    }
+
+    /* concept cloud */
+    .concept-cloud {
+      display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: baseline;
+      margin-top: 0.4rem;
+    }
+    .cc-tag {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      cursor: default;
+      transition: background 0.15s;
+    }
+    .cc-tag:hover { background: var(--accent-light); }
+
+    /* groups table */
     .agg-table {
       width: 100%;
       border-collapse: collapse;
@@ -321,7 +431,7 @@
       user-select: none;
     }
     .agg-table th:hover { color: var(--text); }
-    .agg-table th.sort-asc::after { content: " ▲"; }
+    .agg-table th.sort-asc::after  { content: " ▲"; }
     .agg-table th.sort-desc::after { content: " ▼"; }
     .agg-table td {
       padding: 0.55rem 0.75rem;
@@ -332,39 +442,50 @@
     .agg-name {
       font-weight: 600;
       color: var(--text);
-      max-width: 280px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      max-width: 260px;
+    }
+    .agg-name-inner {
+      display: flex; align-items: center; gap: 0.5rem;
     }
     .agg-name-link {
       cursor: pointer;
       text-decoration: none;
       color: inherit;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 220px;
+      display: block;
     }
     .agg-name-link:hover { text-decoration: underline; color: var(--c-article); }
+    .agg-type-dots { display: flex; gap: 2px; flex-shrink: 0; }
+    .atd { width: 6px; height: 6px; border-radius: 50%; }
+    .atd.article  { background: var(--c-article); }
+    .atd.book     { background: var(--c-book); }
+    .atd.data     { background: var(--c-data); }
+    .atd.software { background: var(--c-software); }
     .agg-bar-wrap {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
+      display: flex; align-items: center; gap: 0.4rem;
     }
     .agg-bar {
-      height: 6px;
-      background: var(--c-article);
-      border-radius: 3px;
-      flex-shrink: 0;
+      height: 6px; background: var(--c-article);
+      border-radius: 3px; flex-shrink: 0;
     }
     .agg-num { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
     .agg-oa-badge {
-      display: inline-block;
-      padding: 0.1rem 0.4rem;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      font-weight: 600;
+      display: inline-block; padding: 0.1rem 0.4rem;
+      border-radius: 4px; font-size: 0.75rem; font-weight: 600;
     }
     .agg-oa-badge.high { background: #d4f0e4; color: #1a6640; }
     .agg-oa-badge.mid  { background: #fff3cd; color: #856404; }
     .agg-oa-badge.low  { background: #fde8e8; color: #7d1111; }
+    .agg-concepts { display: flex; gap: 0.25rem; flex-wrap: wrap; }
+    .agg-concept-pill {
+      font-size: 0.68rem; padding: 0.1rem 0.4rem;
+      border-radius: 999px; background: var(--bg);
+      border: 1px solid var(--border); color: var(--muted);
+      white-space: nowrap;
+    }
     .active-filters {
       display: flex;
       flex-wrap: wrap;
@@ -919,28 +1040,6 @@ function renderHeroStats() {
 }
 
 // ── aggregation view ─────────────────────────────────────────────────────
-function buildAggGroups(stories, groupKey) {
-  const map = {};
-  for (const s of stories) {
-    let keys = [];
-    if (groupKey === "institution") {
-      keys = (s.institutions || []).filter(Boolean);
-      if (!keys.length) keys = ["(no institution)"];
-    } else {
-      const k = s.publisher || s.venue || "(no publisher)";
-      keys = [k];
-    }
-    for (const k of keys) {
-      if (!map[k]) map[k] = { name: k, count: 0, citations: 0, downloads: 0, oa: 0 };
-      map[k].count++;
-      map[k].citations += s.citation_count || 0;
-      map[k].downloads += s.download_count || 0;
-      if (s.is_oa) map[k].oa++;
-    }
-  }
-  return Object.values(map);
-}
-
 function sortAggGroups(groups) {
   const { key, dir } = state.aggSort;
   const mul = dir === "desc" ? -1 : 1;
@@ -956,32 +1055,217 @@ function sortAggGroups(groups) {
 // Global lookup so drill-in doesn't need to escape names in onclick attrs
 const _aggDrillMap = {};
 
+// ── portfolio summary helpers ─────────────────────────────────────────────
+
+function computePortfolioSummary(stories) {
+  const byType = { ArticleStory: 0, BookStory: 0, DataStory: 0, SoftwareStory: 0 };
+  let totalCit = 0, totalDl = 0, oaCount = 0;
+  let sdgCount = 0, teachCount = 0, prCount = 0, reuseCount = 0;
+  let ocwCount = 0, ytCount = 0, olCount = 0, otlCount = 0;
+  const conceptFreq = {};
+  let minYear = 9999, maxYear = 0;
+
+  for (const s of stories) {
+    byType[s.type] = (byType[s.type] || 0) + 1;
+    totalCit += s.citation_count || 0;
+    totalDl  += s.download_count || 0;
+    if (s.is_oa)           oaCount++;
+    if (s.has_sdgs)        sdgCount++;
+    if (s.has_teaching)    teachCount++;
+    if (s.has_peer_review) prCount++;
+    if (s.has_reuse)       reuseCount++;
+    ocwCount += s.ta_ocw          || 0;
+    ytCount  += s.ta_youtube      || 0;
+    olCount  += s.ta_ol_holdings  || 0;
+    if (s.ta_otl) otlCount++;
+    for (const c of (s.concepts || []))
+      conceptFreq[c] = (conceptFreq[c] || 0) + 1;
+    if (s.year) {
+      if (s.year < minYear) minYear = s.year;
+      if (s.year > maxYear) maxYear = s.year;
+    }
+  }
+  const topConcepts = Object.entries(conceptFreq)
+    .sort((a, b) => b[1] - a[1]).slice(0, 20);
+  return {
+    total: stories.length, byType, totalCit, totalDl, oaCount,
+    sdgCount, teachCount, prCount, reuseCount,
+    ocwCount, ytCount, olCount, otlCount,
+    topConcepts,
+    minYear: minYear === 9999 ? null : minYear,
+    maxYear: maxYear === 0   ? null : maxYear,
+  };
+}
+
+function renderPortfolioCard(p, groupLabel) {
+  const { total, byType, totalCit, totalDl, oaCount,
+          sdgCount, teachCount, prCount, reuseCount,
+          ocwCount, ytCount, olCount, otlCount,
+          topConcepts, minYear, maxYear } = p;
+  const pctOA = total ? Math.round(100 * oaCount / total) : 0;
+
+  // ── stats row ──
+  const yearRange = (minYear && maxYear)
+    ? (minYear === maxYear ? `${minYear}` : `${minYear}–${maxYear}`)
+    : "–";
+  const statsHtml = [
+    { n: fmt(totalCit),      l: "total citations" },
+    { n: pctOA + "%",        l: "open access" },
+    ...(totalDl > 0 ? [{ n: fmt(totalDl), l: "downloads" }] : []),
+    { n: yearRange,          l: "year range" },
+  ].map(s =>
+    `<div class="pf-stat"><span class="pf-num">${s.n}</span><span class="pf-lbl">${s.l}</span></div>`
+  ).join("");
+
+  // ── type mix bar ──
+  const typeMap = [
+    { key: "ArticleStory",  cls: "article",  label: "Articles" },
+    { key: "BookStory",     cls: "book",     label: "Books" },
+    { key: "DataStory",     cls: "data",     label: "Datasets" },
+    { key: "SoftwareStory", cls: "software", label: "Software" },
+  ];
+  const mixSegs = typeMap
+    .filter(t => (byType[t.key] || 0) > 0)
+    .map(t => {
+      const pct = Math.round(100 * byType[t.key] / total);
+      return `<div class="type-mix-seg ${t.cls}" style="width:${pct}%" title="${byType[t.key]} ${t.label}"></div>`;
+    }).join("");
+  const mixLegend = typeMap
+    .filter(t => (byType[t.key] || 0) > 0)
+    .map(t => `<span><span class="tml-dot ${t.cls}"></span>${byType[t.key]} ${t.label}</span>`).join("");
+
+  // ── open science signals — two rows ──
+  // Row 1: scholarly / integrity signals
+  const scholSignals = [
+    { n: sdgCount,   l: "SDG-linked" },
+    { n: prCount,    l: "Peer reviewed" },
+    { n: reuseCount, l: "Data / code reuse" },
+  ].filter(s => s.n > 0);
+
+  // Row 2: teaching & adoption signals (richer breakdown)
+  const teachSignals = [
+    ...(ocwCount > 0 ? [{ n: ocwCount,  l: "OCW mentions" }]      : []),
+    ...(ytCount  > 0 ? [{ n: ytCount,   l: "Video lectures" }]     : []),
+    ...(olCount  > 0 ? [{ n: olCount,   l: "Library holdings" }]   : []),
+    ...(otlCount > 0 ? [{ n: otlCount,  l: "Open textbooks" }]     : []),
+  ];
+
+  const allSignals = [...scholSignals, ...teachSignals];
+  const signalsHtml = allSignals.length
+    ? allSignals.map(s =>
+        `<span class="signal-pill"><span class="sp-n">${s.n}</span>${s.l}</span>`
+      ).join("")
+    : `<span style="font-size:0.8rem;color:var(--muted)">No signals recorded</span>`;
+
+  // ── concept cloud ──
+  const maxFreq = topConcepts.length ? topConcepts[0][1] : 1;
+  const cloudHtml = topConcepts.map(([name, freq]) => {
+    const size = 0.72 + 0.45 * (freq / maxFreq);
+    return `<span class="cc-tag" style="font-size:${size.toFixed(2)}rem">${escHtml(name)}</span>`;
+  }).join("");
+
+  return `
+    <div class="pf-card">
+      <div class="pf-card-title">Portfolio overview — ${escHtml(groupLabel)}</div>
+      <div class="pf-stats-row">${statsHtml}</div>
+      <hr class="pf-divider">
+      <div class="pf-section-label">Work type</div>
+      <div class="type-mix-bar">${mixSegs}</div>
+      <div class="type-mix-legend">${mixLegend}</div>
+      ${allSignals.length ? `
+      <hr class="pf-divider">
+      <div class="pf-section-label">Open science &amp; teaching signals</div>
+      <div class="signal-pills">${signalsHtml}</div>` : ""}
+      ${topConcepts.length ? `
+      <hr class="pf-divider">
+      <div class="pf-section-label">Dominant concepts</div>
+      <div class="concept-cloud">${cloudHtml}</div>` : ""}
+    </div>`;
+}
+
+// Also extend buildAggGroups to track types + top concepts per group
+function buildAggGroups(stories, groupKey) {
+  const map = {};
+  for (const s of stories) {
+    let keys = [];
+    if (groupKey === "institution") {
+      keys = (s.institutions || []).filter(Boolean);
+      if (!keys.length) keys = ["(no institution)"];
+    } else {
+      const k = s.publisher || s.venue || "(no publisher)";
+      keys = [k];
+    }
+    for (const k of keys) {
+      if (!map[k]) map[k] = {
+        name: k, count: 0, citations: 0, downloads: 0, oa: 0,
+        byType: {}, concepts: {},
+        minYear: 9999, maxYear: 0,
+      };
+      const g = map[k];
+      g.count++;
+      g.citations += s.citation_count || 0;
+      g.downloads += s.download_count || 0;
+      if (s.is_oa) g.oa++;
+      g.byType[s.type] = (g.byType[s.type] || 0) + 1;
+      for (const c of (s.concepts || []))
+        g.concepts[c] = (g.concepts[c] || 0) + 1;
+      if (s.year) {
+        if (s.year < g.minYear) g.minYear = s.year;
+        if (s.year > g.maxYear) g.maxYear = s.year;
+      }
+    }
+  }
+  // Compute topConcepts per group
+  for (const g of Object.values(map)) {
+    g.topConcepts = Object.entries(g.concepts).sort((a,b) => b[1]-a[1]).slice(0,3).map(([c])=>c);
+    if (g.minYear === 9999) g.minYear = null;
+    if (g.maxYear === 0)    g.maxYear = null;
+  }
+  return Object.values(map);
+}
+
 function renderAgg(stories, groupKey) {
-  const groups = sortAggGroups(buildAggGroups(stories, groupKey));
-  const maxCit = Math.max(...groups.map(g => g.citations), 1);
-  const hasDl  = groups.some(g => g.downloads > 0);
+  const groups   = sortAggGroups(buildAggGroups(stories, groupKey));
+  const maxCit   = Math.max(...groups.map(g => g.citations), 1);
+  const hasDl    = groups.some(g => g.downloads > 0);
   const facetKey = groupKey === "institution" ? "institution" : "venue";
+  const label    = groupKey === "institution" ? "all institutions" : "all publishers";
 
-  // Build an index so clicks can look up the real name safely
-  Object.assign(_aggDrillMap, Object.fromEntries(groups.map((g, i) => [i, g.name])));
+  // Refresh drill-map
+  Object.keys(_aggDrillMap).forEach(k => delete _aggDrillMap[k]);
+  groups.forEach((g, i) => { _aggDrillMap[i] = g.name; });
 
-  function th(label, sortKey, title="") {
+  // Portfolio summary for the full filtered set
+  const pSummary = computePortfolioSummary(stories);
+  const pfCard   = renderPortfolioCard(pSummary, label);
+
+  function th(lbl, sortKey, title="") {
     const active = state.aggSort.key === sortKey;
     const cls = active ? (state.aggSort.dir === "desc" ? "sort-desc" : "sort-asc") : "";
-    return `<th class="${cls}" onclick="setAggSort('${sortKey}')" title="${title}">${label}</th>`;
+    return `<th class="${cls}" onclick="setAggSort('${sortKey}')" title="${title}">${lbl}</th>`;
   }
 
+  const typeIcons = { ArticleStory: "article", BookStory: "book", DataStory: "data", SoftwareStory: "software" };
   const rows = groups.map((g, i) => {
-    const pct = g.count ? Math.round(100 * g.oa / g.count) : 0;
-    const barCit = Math.round(160 * g.citations / maxCit);
-    const oaCls = pct >= 80 ? "high" : pct >= 40 ? "mid" : "low";
-    const avgCit = g.count ? (g.citations / g.count).toFixed(1) : "0";
+    const pct    = g.count ? Math.round(100 * g.oa / g.count) : 0;
+    const barCit = Math.round(150 * g.citations / maxCit);
+    const oaCls  = pct >= 80 ? "high" : pct >= 40 ? "mid" : "low";
+    const avgCit = g.count ? Math.round(g.citations / g.count).toLocaleString() : "0";
+    const dots   = Object.entries(g.byType).map(([t]) =>
+      `<span class="atd ${typeIcons[t]||""}" title="${t.replace("Story","")}"></span>`).join("");
+    const cPills = g.topConcepts.map(c =>
+      `<span class="agg-concept-pill">${escHtml(c)}</span>`).join("");
+    const yr = (g.minYear && g.maxYear)
+      ? (g.minYear === g.maxYear ? g.minYear : `${g.minYear}–${g.maxYear}`)
+      : "–";
 
     return `<tr>
       <td class="agg-name" title="${escHtml(g.name)}">
-        <a class="agg-name-link" onclick="drillInto('${facetKey}',${i})">
-          ${escHtml(g.name)}
-        </a>
+        <div class="agg-name-inner">
+          <div class="agg-type-dots">${dots}</div>
+          <a class="agg-name-link" onclick="drillInto('${facetKey}',${i})">${escHtml(g.name)}</a>
+        </div>
+        <div class="agg-concepts" style="margin-top:0.2rem;margin-left:1rem">${cPills}</div>
       </td>
       <td class="agg-num">${g.count}</td>
       <td>
@@ -993,10 +1277,15 @@ function renderAgg(stories, groupKey) {
       <td class="agg-num">${avgCit}</td>
       <td><span class="agg-oa-badge ${oaCls}">${pct}%</span></td>
       ${hasDl ? `<td class="agg-num">${g.downloads > 0 ? fmt(g.downloads) : "—"}</td>` : ""}
+      <td class="agg-num">${yr}</td>
     </tr>`;
   }).join("");
 
-  document.getElementById("aggView").innerHTML = `
+  const groupWord = groupKey === "institution" ? "institution" : "publisher";
+  document.getElementById("aggView").innerHTML = pfCard + `
+    <div class="pf-section-label" style="margin-bottom:0.5rem">
+      Breakdown by ${groupWord} — ${groups.length} groups · click a name to filter stories
+    </div>
     <table class="agg-table">
       <thead><tr>
         ${th("Name", "name")}
@@ -1005,12 +1294,10 @@ function renderAgg(stories, groupKey) {
         ${th("Avg citations", "avg_cit")}
         ${th("Open access", "pct_oa", "% of stories that are OA")}
         ${hasDl ? th("Downloads", "downloads") : ""}
+        ${th("Years", "stories")}
       </tr></thead>
       <tbody>${rows}</tbody>
-    </table>
-    <p style="margin-top:0.75rem;font-size:0.8rem;color:var(--muted)">
-      ${groups.length} groups · click a name to filter stories
-    </p>`;
+    </table>`;
 }
 
 function escHtml(s) {
