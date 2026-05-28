@@ -495,6 +495,7 @@
         <option value="citations">Sort: most cited</option>
         <option value="recent">Sort: most recent</option>
         <option value="events">Sort: most attention</option>
+        <option value="downloads">Sort: most downloaded</option>
         <option value="alpha">Sort: A → Z</option>
       </select>
     </div>
@@ -505,22 +506,34 @@
       <div class="facet-options" id="fo-type"></div>
     </div>
 
+    <!-- Role / signal -->
+    <div class="facet-group" id="fg-role">
+      <h3 onclick="toggleFacet('fg-role')">Impact signal <span class="caret">▾</span></h3>
+      <div class="facet-options overflow" id="fo-role"></div>
+    </div>
+
+    <!-- Features -->
+    <div class="facet-group" id="fg-features">
+      <h3 onclick="toggleFacet('fg-features')">Features <span class="caret">▾</span></h3>
+      <div class="facet-options" id="fo-features"></div>
+    </div>
+
     <!-- OA Status -->
     <div class="facet-group" id="fg-oa">
       <h3 onclick="toggleFacet('fg-oa')">Open access <span class="caret">▾</span></h3>
       <div class="facet-options" id="fo-oa"></div>
     </div>
 
-    <!-- Discipline / concept -->
+    <!-- Discipline / concept (OpenAlex) -->
     <div class="facet-group" id="fg-concept">
       <h3 onclick="toggleFacet('fg-concept')">Discipline <span class="caret">▾</span></h3>
       <div class="facet-options overflow" id="fo-concept"></div>
     </div>
 
-    <!-- Role / signal -->
-    <div class="facet-group" id="fg-role">
-      <h3 onclick="toggleFacet('fg-role')">Impact signal <span class="caret">▾</span></h3>
-      <div class="facet-options overflow" id="fo-role"></div>
+    <!-- Institution -->
+    <div class="facet-group collapsed" id="fg-inst">
+      <h3 onclick="toggleFacet('fg-inst')">Institution <span class="caret">▾</span></h3>
+      <div class="facet-options overflow" id="fo-inst"></div>
     </div>
 
     <!-- Publisher / venue -->
@@ -533,12 +546,6 @@
     <div class="facet-group collapsed" id="fg-year">
       <h3 onclick="toggleFacet('fg-year')">Year <span class="caret">▾</span></h3>
       <div class="facet-options overflow" id="fo-year"></div>
-    </div>
-
-    <!-- Features -->
-    <div class="facet-group collapsed" id="fg-features">
-      <h3 onclick="toggleFacet('fg-features')">Features <span class="caret">▾</span></h3>
-      <div class="facet-options" id="fo-features"></div>
     </div>
 
     <button class="clear-btn" id="clearBtn" onclick="clearAll()">Clear all filters</button>
@@ -566,12 +573,13 @@ const state = {
   sort: "citations",
   filters: {
     type: new Set(),
+    role: new Set(),
+    features: new Set(),
     oa: new Set(),
     concept: new Set(),
-    role: new Set(),
+    institution: new Set(),
     venue: new Set(),
     year: new Set(),
-    features: new Set(),
   }
 };
 
@@ -618,7 +626,7 @@ function typeLogo(t) {
 
 // ── build facet counts ────────────────────────────────────────────────────
 function buildFacetCounts(stories) {
-  const counts = { type:{}, oa:{}, concept:{}, role:{}, venue:{}, year:{}, features:{} };
+  const counts = { type:{}, oa:{}, concept:{}, role:{}, institution:{}, venue:{}, year:{}, features:{} };
   for (const s of stories) {
     counts.type[s.type] = (counts.type[s.type]||0)+1;
     const oaKey = s.oa_status || (s.is_oa===true?"oa":"closed");
@@ -627,10 +635,12 @@ function buildFacetCounts(stories) {
     for (const r of s.roles) counts.role[r] = (counts.role[r]||0)+1;
     if (s.venue) counts.venue[s.venue] = (counts.venue[s.venue]||0)+1;
     if (s.year) counts.year[s.year] = (counts.year[s.year]||0)+1;
-    if (s.has_sdgs)      counts.features["Has SDGs"]          = (counts.features["Has SDGs"]||0)+1;
-    if (s.has_teaching)  counts.features["Teaching adoption"] = (counts.features["Teaching adoption"]||0)+1;
-    if (s.has_peer_review) counts.features["Peer reviewed"]   = (counts.features["Peer reviewed"]||0)+1;
-    if (s.has_reuse)     counts.features["Reuse / data linked"] = (counts.features["Reuse / data linked"]||0)+1;
+    if (s.has_sdgs)        counts.features["Has SDGs"]            = (counts.features["Has SDGs"]||0)+1;
+    if (s.has_teaching)    counts.features["Teaching adoption"]  = (counts.features["Teaching adoption"]||0)+1;
+    if (s.has_peer_review) counts.features["Peer reviewed"]      = (counts.features["Peer reviewed"]||0)+1;
+    if (s.has_reuse)       counts.features["Reuse / data linked"]= (counts.features["Reuse / data linked"]||0)+1;
+    if ((s.download_count||0) > 0) counts.features["Has downloads"] = (counts.features["Has downloads"]||0)+1;
+    for (const inst of (s.institutions||[])) counts.institution[inst] = (counts.institution[inst]||0)+1;
   }
   return counts;
 }
@@ -647,28 +657,31 @@ function filterStories(stories) {
       const oaKey = s.oa_status || (s.is_oa===true?"oa":"closed");
       if (!state.filters.oa.has(oaKey)) return false;
     }
-    if (state.filters.concept.size && !s.concepts.some(c => state.filters.concept.has(c))) return false;
     if (state.filters.role.size && !s.roles.some(r => state.filters.role.has(r))) return false;
-    if (state.filters.venue.size && !state.filters.venue.has(s.venue)) return false;
-    if (state.filters.year.size && !state.filters.year.has(s.year)) return false;
     if (state.filters.features.size) {
       const feats = new Set();
-      if (s.has_sdgs)      feats.add("Has SDGs");
-      if (s.has_teaching)  feats.add("Teaching adoption");
+      if (s.has_sdgs)        feats.add("Has SDGs");
+      if (s.has_teaching)    feats.add("Teaching adoption");
       if (s.has_peer_review) feats.add("Peer reviewed");
-      if (s.has_reuse)     feats.add("Reuse / data linked");
+      if (s.has_reuse)       feats.add("Reuse / data linked");
+      if ((s.download_count||0) > 0) feats.add("Has downloads");
       if (![...state.filters.features].every(f => feats.has(f))) return false;
     }
+    if (state.filters.concept.size && !s.concepts.some(c => state.filters.concept.has(c))) return false;
+    if (state.filters.institution.size && !(s.institutions||[]).some(i => state.filters.institution.has(i))) return false;
+    if (state.filters.venue.size && !state.filters.venue.has(s.venue)) return false;
+    if (state.filters.year.size && !state.filters.year.has(s.year)) return false;
     return true;
   });
 }
 
 function sortStories(stories) {
   return [...stories].sort((a, b) => {
-    if (state.sort==="citations") return b.citation_count - a.citation_count;
-    if (state.sort==="recent")    return (b.year||0) - (a.year||0);
-    if (state.sort==="events")    return b.event_count - a.event_count;
-    if (state.sort==="alpha")     return a.title.localeCompare(b.title);
+    if (state.sort==="citations")  return b.citation_count - a.citation_count;
+    if (state.sort==="recent")     return (b.year||0) - (a.year||0);
+    if (state.sort==="events")     return b.event_count - a.event_count;
+    if (state.sort==="downloads")  return (b.download_count||0) - (a.download_count||0);
+    if (state.sort==="alpha")      return a.title.localeCompare(b.title);
     return 0;
   });
 }
@@ -713,7 +726,7 @@ function renderCards(stories) {
       <div class="card-tags">${conceptTags}${roleTags}${extraTags}</div>
       <div class="card-footer">
         <span><span class="cit-count">${fmt(s.citation_count)}</span> citations</span>
-        ${attn}
+        ${(s.download_count||0) > 0 ? `<span><span class="cit-count">${fmt(s.download_count)}</span> downloads</span>` : attn}
       </div>
     </a>`;
   }).join("");
@@ -760,6 +773,9 @@ function renderFacets(allStories, filtered) {
 
   const topRoles = Object.entries(allC.role).sort((a,b)=>b[1]-a[1]).map(([k])=>k);
   renderFacetGroup("fo-role", "role", allC.role, filtC.role, k => esc(k), topRoles);
+
+  const topInst = Object.entries(allC.institution).sort((a,b)=>b[1]-a[1]).slice(0,40).map(([k])=>k);
+  renderFacetGroup("fo-inst", "institution", allC.institution, filtC.institution, k => esc(k), topInst);
 
   const topVenues = Object.entries(allC.venue).sort((a,b)=>b[1]-a[1]).slice(0,25).map(([k])=>k);
   renderFacetGroup("fo-venue", "venue", allC.venue, filtC.venue, k => esc(k), topVenues);
