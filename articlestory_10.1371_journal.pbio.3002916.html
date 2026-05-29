@@ -108,14 +108,7 @@
 .role-pill:hover{opacity:1!important;}
 
 /* CSS tooltip for role descriptions */
-.role-pill[data-tip]:hover::after{
-  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
-  background:#111827;color:white;padding:.5rem .75rem;border-radius:.5rem;font-size:.72rem;
-  width:230px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
-  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
-.role-pill[data-tip]:hover::before{
-  content:'';position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);
-  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
 
 .role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
 .role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
@@ -1070,5 +1063,37 @@ function citeSwitchTab(btn, tabId) {
   else init();
 })();
 </script>
+
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('.role-pill[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+
 </body>
 </html>

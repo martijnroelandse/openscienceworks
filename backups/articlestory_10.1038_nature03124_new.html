@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ArticleStory - A FADD-dependent innate immune mechanism in mammalian cells</title>
+<style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+.role-pill[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:0;0px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.role-pill[data-tip]:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 3px);left:1rem;
+  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+.role-pill[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:0;0px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.role-pill[data-tip]:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 3px);left:1rem;
+  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+</style>
+<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Print PDF Report
+    </button>
+<div class="page" id="sec-credibility">
+<header class="hero card" id="sec-hero">
+<div class="header-bar">
+<div style="display: flex; align-items: center; gap: 1.25rem;">
+<div class="logo-wrap"><img alt="Logo" src="articlestories-logo.png"/></div>
+<div>
+<h1 class="hero-title">A FADD-dependent innate immune mechanism in mammalian cells</h1>
+<div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+<a href="https://pubpeer.com/publications/5AE2E333FFBEAF363132C514D2C60B" style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fffbeb; color: #d97706; border: 1px solid #fde68a; text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.2s;" target="_blank">
+<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                    Community Commentary
+                                </a>
+<span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em;" title="scite found more citations supporting than contrasting this work's methodology">
+<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                    Methodologically Supported
+                                <span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· scite</span><span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· scite</span></span>
+</div>
+<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+<div><strong>Author(s):</strong> Siddharth Balachandran, Emmanuel Thomas, Glen N. Barber</div>
+<div><strong>Publisher:</strong> Nature</div>
+<div><strong>Publication year:</strong> 2004</div>
+<div><strong>DOI:</strong> <a href="https://doi.org/10.1038/nature03124" target="_blank">10.1038/nature03124</a></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">218</div>
+<div class="stats-strip-label">Total Citations</div>
+<div class="stats-strip-badge">🏆 Top 10% Cited</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">—</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">—</div>
+<div class="stats-strip-label">scite References</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Closed</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
+
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-mentions">Mentions</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-funding">Funding</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">286</div>
+<div class="stats-strip-label">Total Citations</div>
+<div class="stats-strip-badge">🏆 Top 10% Cited</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">2</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">218</div>
+<div class="stats-strip-label">scite References</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Closed</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-mentions">Mentions</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-funding">Funding</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+<section class="card" id="sec-credibility" style="border: 1px solid #fecaca; background:#fff5f5; margin-bottom: 1.75rem;">
+<h2><span>Credibility &amp; Risk Signals</span> <span class="badge" style="background:#fee2e2; color:#dc2626;">Alerts</span></h2>
+<ul class="metric-list" style="line-height: 1.8; margin-top: 0.5rem;">
+<li style="margin-bottom: 0.5rem;">
+<span class="badge" style="background:#fef2f2; color:#ef4444; border:1px solid #fecaca; padding:0.1rem 0.4rem; margin-right:0.4rem;">
+                            PubPeer (4 threads)
+                        </span>
+<span style="color: #7f1d1d;">Community scrutiny detected.</span>
+<a href="https://pubpeer.com/publications/5AE2E333FFBEAF363132C514D2C60B" style="color: #dc2626; text-decoration: underline; margin-left: 0.3rem;" target="_blank">Read Discussions ↗</a>
+</li>
+</ul>
+</section>
+<section class="card" id="sec-story">
+<h2><span>The Story So Far</span></h2>
+<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The article titled "A FADD-dependent innate immune mechanism in mammalian cells" has garnered significant academic attention, as evidenced by its 286 citations across various research fields. With a strong emphasis on innate immunity, the research, conducted by authors from the Sylvester Comprehensive Cancer Center at the University of Miami, is shaping discussions in immunology and cell biology.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">Published in the esteemed journal Nature, the article has made substantial contributions to our understanding of innate immune mechanisms, specifically highlighting a FADD-dependent pathway in mammalian cells. Its relevance is underscored by 286 citations, indicating that this work is not only being recognized but actively referenced in related research. The citation landscape reflects a diverse engagement, particularly from leading immunology journals such as The Journal of Immunology and Immunity, showcasing its influence in the field.</p>
+<p class="story-text">The impact of the study extends beyond its immediate findings. The research has attracted attention from key institutions, primarily the Sylvester Comprehensive Cancer Center at the University of Miami, reflecting a strong institutional backing for this line of inquiry. Citing countries, including the United States and Japan, further underline the global relevance of the findings, indicating how the research has transcended local boundaries to engage international audiences in the field of immunology.</p>
+<p class="story-text">In terms of dissemination and community engagement, the work has demonstrated a solid scholarly footprint, despite the absence of public mentions on platforms such as Wikipedia and Reddit. Nevertheless, the presence of 4 PubPeer threads suggests an ongoing post-publication discussion regarding the study’s methodology and applications, indicating an active interest within the academic community to scrutinize and build upon its findings. This engagement signifies a commitment to robust academic discourse and the continuous evolution of research in this crucial area.</p>
+<p class="story-text">Furthermore, the research's impact is amplified by its proven downstream reuse, evidenced by the 287 acknowledgments in other works. This points to the valuable materials and insights provided by the authors, which have consequently enabled further exploration and advancements in related research domains. Overall, the article stands as a testament to significant contributions within the immunology landscape, paving the way for future studies and discussions on innate immune responses in mammalian systems.</p></div>
+</section>
+<section class="card" id="sec-impact">
+<h2><span>Impact metrics</span></h2>
+<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">218</div><div class="im-label">Total Citations</div></div><div class="im-spark"><svg height="36" style="display:block;overflow:visible;" viewbox="0 0 120 36" width="120" xmlns="http://www.w3.org/2000/svg"><path d="M0.0,2.0 L5.7,3.0 L11.4,12.7 L17.1,8.8 L22.9,14.6 L28.6,15.6 L34.3,8.8 L40.0,22.4 L45.7,26.2 L51.4,18.5 L57.1,23.3 L62.9,30.1 L68.6,28.2 L74.3,27.2 L80.0,20.4 L85.7,26.2 L91.4,30.1 L97.1,27.2 L102.9,32.1 L108.6,31.1 L114.3,30.1 L120.0,31.1 L120.0,36.0 L0,36.0 Z" fill="#dbeafe" opacity="0.6"></path><polyline fill="none" points="0.0,2.0 5.7,3.0 11.4,12.7 17.1,8.8 22.9,14.6 28.6,15.6 34.3,8.8 40.0,22.4 45.7,26.2 51.4,18.5 57.1,23.3 62.9,30.1 68.6,28.2 74.3,27.2 80.0,20.4 85.7,26.2 91.4,30.1 97.1,27.2 102.9,32.1 108.6,31.1 114.3,30.1 120.0,31.1" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline></svg><div class="im-spark-range">2005–2026</div></div></div><div class="im-top-badge">🏆 Top 10% Cited</div></div><div class="im-card"><div class="im-num">—</div><div class="im-label">Online Mentions</div></div></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-blue" href="#sec-citing">🌍 17 countries</a></div></div></div></section>
+<section class="card" id="sec-roles">
+<h2><span>Inferred roles</span></h2>
+<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#1d4ed8;">🎓 Academic &amp; Scientific</div><div class="roles-row"><span class="role-pill role-pill-academic" style="opacity:1;" data-tip="Frequently cited in literature reviews and meta-analyses as a shorthand reference."><span class="role-dot" style="background:#3b82f6;"></span>Reference point for synthesis<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Strong</span></span><span class="role-pill role-pill-academic" style="opacity:1;" data-tip="Foundational building block cited heavily in core academic journals and monographs."><span class="role-dot" style="background:#3b82f6;"></span>Scholarly uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Strong</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#b45309;">📢 Public Engagement &amp; Media</div><div class="roles-row"><span class="role-pill role-pill-public" style="opacity:1;" data-tip="Heavy social-platform engagement on Reddit, Bluesky, or Mastodon — the work has sparked ongoing community conversation."><span class="role-dot" style="background:#f59e0b;"></span>Active public discourse<span class="role-strength" style="background:#fef3c7;color:#92400e;">Strong</span></span><span class="role-pill role-pill-public" style="opacity:1;" data-tip="Mentioned in mainstream news, broadsheets, or high-impact professional media."><span class="role-dot" style="background:#f59e0b;"></span>High-visibility uptake<span class="role-strength" style="background:#fef3c7;color:#92400e;">Strong</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#065f46;">🏛 Practical &amp; Real-World</div><div class="roles-row"><span class="role-pill role-pill-practical" style="opacity:0.9;" data-tip="Cited in government reports, WHO/NGO briefs, or UN policy documents."><span class="role-dot" style="background:#10b981;"></span>Sustainability &amp; policy relevance<span class="role-strength" style="background:#dcfce7;color:#166534;">Moderate</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
+</section>
+<div class="grid-2">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+<ul class="metric-list">
+<li><strong>DOI:</strong> <a href="https://doi.org/10.1038/nature03124" target="_blank">10.1038/nature03124</a></li>
+<li><strong>OA status:</strong> Closed</li>
+<li><strong>Landing page:</strong> <a href="https://doi.org/10.1038/nature03124" style="word-break: break-all;" target="_blank">https://doi.org/10.1038/nature03124</a></li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>2</strong> recorded events globally
+                        
+                    </p>
+<p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+<em>(See specific sources and examples in the Online Mentions section below).</em>
+</p>
+</section>
+</div>
+<div class="grid-2" style="align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Citation context</span> <span class="badge">scite</span></h2>
+<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+<li><strong>Total:</strong> 218</li>
+<li><strong>Supporting:</strong> 11</li>
+<li><strong>Mentioning:</strong> 207</li>
+<li><strong>Contradicting:</strong> 0</li>
+</ul>
+</section>
+</div>
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+</div>
+</div>
+<section class="card" id="sec-citing">
+<h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+                Analysis of the 286 most recent citing works. 
+                <br/>
+<strong>47.4%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>57.0</strong> times itself.
+            </div>
+<div class="cite-analysis-always"><div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+<ul class="metric-list">
+<li><strong>Citing work types:</strong>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (147)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (111)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (11)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">dissertation (9)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (3)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">letter (2)</span>
+</li>
+<li><strong>Top citing venues:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Unknown (15)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">The Journal of Immunology (14)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Journal of Virology (9)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Journal of Biological Chemistry (8)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Immunity (7)</span>
+</li>
+<li><strong>Top citing concepts:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Biology (148)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Innate immune system (96)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Cell biology (45)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">FADD (36)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Immune system (22)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Interferon (18)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Virology (15)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Death domain (15)</span>
+</li>
+<li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+<strong>Citation timeline:</strong>
+<div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+<canvas data-labels="[2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]" data-values="[33, 32, 22, 26, 20, 19, 26, 12, 8, 16, 11, 4, 6, 7, 14, 8, 4, 7, 2, 3, 4, 3]" id="citationChart">
+</canvas>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="cite-tabs">
+<button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-ppl')">👤 Top Citers</button>
+</div>
+<div class="cite-tab-pane active" id="cite-geo"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (134)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Japan (40)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">China (35)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">France (24)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (19)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Canada (15)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (9)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Australia (6)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Belgium (6)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Denmark (5)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Switzerland (5)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Netherlands (5)</span>
+</div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (228)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Healthcare (84)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (62)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Government (45)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Funder (29)</span>
+</div>
+</div></div>
+<div class="cite-tab-pane" id="cite-inst"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Miami</strong>
+<a class="orcid-badge" href="https://ror.org/02dgjyy92" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(18)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Osaka University</strong>
+<a class="orcid-badge" href="https://ror.org/035t8zc32" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(18)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Japan Science and Technology Agency</strong>
+<a class="orcid-badge" href="https://ror.org/00097mb19" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(16)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Inserm</strong>
+<a class="orcid-badge" href="https://ror.org/02vjkv261" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(16)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Sylvester Comprehensive Cancer Center</strong>
+<a class="orcid-badge" href="https://ror.org/0552r4b12" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(14)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Massachusetts Chan Medical School</strong>
+<a class="orcid-badge" href="https://ror.org/0464eyp60" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(13)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Centre National de la Recherche Scientifique</strong>
+<a class="orcid-badge" href="https://ror.org/02feahw73" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(13)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Kyoto University</strong>
+<a class="orcid-badge" href="https://ror.org/02kpeqv85" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(10)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Université Paris Cité</strong>
+<a class="orcid-badge" href="https://ror.org/05f82e368" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(10)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Yale University</strong>
+<a class="orcid-badge" href="https://ror.org/03v76x132" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(8)</span>
+</li>
+</ul>
+</div></div>
+<div class="cite-tab-pane" id="cite-ppl"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Shizuo Akira</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-7602-9617" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(23)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Glen N. Barber</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4703-0931" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(18)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Taro Kawai</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-7510-4662" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(14)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Siddharth Balachandran</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-2084-1803" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(9)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Osamu Takeuchi</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-1260-6232" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(8)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Takashi Fujita</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-9961-0535" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(7)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Balveen Kaur</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-7738-0804" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(7)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Marco Colonna</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-5222-4987" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(6)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Léa Tourneur</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-6636-1982" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(6)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Gilles Chiocchia</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-9973-0940" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(6)</span>
+</li>
+</ul>
+</div></div>
+</section>
+<div class="grid-2" id="sec-mentions">
+<section class="card span-full" id="sec-mentions" style="margin-bottom:0;">
+<h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref &amp; Open Web</span></h2>
+<div class="muted" style="margin-top: 1.5rem; font-size: 0.8rem; text-align: center; border-top: 1px dashed #e5e7eb; padding-top: 0.8rem;">
+                    Displaying the 0 most detailed mentions. Other aggregated events lack public URLs.
+                </div>
+</section>
+</div>
+<div class="grid-2" id="sec-contributors">
+<section class="card" id="sec-contributors" style="margin-bottom:0;">
+<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">3 authors · 2 institutions</div>
+<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Siddharth Balachandran</strong>
+<span class="badge">First</span>
+<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-2084-1803" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Emmanuel Thomas</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-1416-3903" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Glen N. Barber</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4703-0931" target="_blank">ORCID</a>
+</li>
+</ul>
+<h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/0552r4b12" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Sylvester Comprehensive Cancer Center</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/02dgjyy92" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Miami</a>
+</li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">22 specific concepts identified.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Innate immune system</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">FADD</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell biology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Protein kinase R</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Transcription factor</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Pattern recognition receptor</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Signal transduction</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Interferon</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Immune system</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">MDA5</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">RNA interference</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Protein kinase A</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Kinase</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Gene</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Virology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">RNA</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Genetics</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mitogen-activated protein kinase kinase</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Programmed cell death</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Caspase</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Apoptosis</span>
+</div>
+<h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">1 targets detected.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Zero hunger (0.48)</span>
+</div>
+</section>
+</div>
+<section class="card no-print" id="sec-citations">
+<h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">Displaying 287 most recent citing works</div>
+<div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+<table>
+<thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+<tbody id="cit-tbody"></tbody>
+</table>
+</div>
+<div class="cit-pagination">
+<span class="cit-pagination-info" id="cit-info">Loading…</span>
+<div class="cit-pagination-btns">
+<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
+<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
+<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
+</div>
+</div>
+
+<div class="cit-pagination">
+<span class="cit-pagination-info" id="cit-info">Loading…</span>
+<div class="cit-pagination-btns">
+<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
+<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
+<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
+</div>
+</div>
+</section>
+<footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+<div style="display: flex; flex-direction: column; gap: 0.4rem;">
+<div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+<svg fill="none" height="16" stroke="currentColor" style="color: #9ca3af;" viewbox="0 0 24 24" width="16"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Understanding our metrics: <a href="https://www.openscience.works/about.html" style="color: #2563eb; text-decoration: none; font-weight: 600;" target="_blank">Read the Methodology &amp; Legend ↗</a></span>
+</div>
+<div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-04-03T08:23:55+00:00
+                </div>
+</div>
+</footer>
+</div>
+<script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+<script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<script>
+(function() {
+  var DATA = [{"year": "2006", "title": "Pathogen Recognition and Innate Immunity", "venue": "Cell", "doi": "10.1016/j.cell.2006.02.015", "doi_url": "https://doi.org/10.1016/j.cell.2006.02.015"}, {"year": "2008", "title": "STING is an endoplasmic reticulum adaptor that facilitates innate immune signalling", "venue": "Nature", "doi": "10.1038/nature07317", "doi_url": "https://doi.org/10.1038/nature07317"}, {"year": "2005", "title": "Identification and Characterization of MAVS, a Mitochondrial Antiviral Signaling Protein that Activates NF-κB and IRF3", "venue": "Cell", "doi": "10.1016/j.cell.2005.08.012", "doi_url": "https://doi.org/10.1016/j.cell.2005.08.012"}, {"year": "2009", "title": "Pathogen Recognition and Inflammatory Signaling in Innate Immune Defenses", "venue": "Clinical Microbiology Reviews", "doi": "10.1128/cmr.00046-08", "doi_url": "https://doi.org/10.1128/cmr.00046-08"}, {"year": "2005", "title": "IPS-1, an adaptor triggering RIG-I- and Mda5-mediated type I interferon induction", "venue": "Nature Immunology", "doi": "10.1038/ni1243", "doi_url": "https://doi.org/10.1038/ni1243"}, {"year": "2005", "title": "IRF-7 is the master regulator of type-I interferon-dependent immune responses", "venue": "Nature", "doi": "10.1038/nature03464", "doi_url": "https://doi.org/10.1038/nature03464"}, {"year": "2020", "title": "Targeting NF-κB pathway for the therapy of diseases: mechanism and clinical study", "venue": "Signal Transduction and Targeted Therapy", "doi": "10.1038/s41392-020-00312-6", "doi_url": "https://doi.org/10.1038/s41392-020-00312-6"}, {"year": "2006", "title": "Innate immune recognition of viral infection", "venue": "Nature Immunology", "doi": "10.1038/ni1303", "doi_url": "https://doi.org/10.1038/ni1303"}, {"year": "2006", "title": "TLR signaling", "venue": "Cell Death and Differentiation", "doi": "10.1038/sj.cdd.4401850", "doi_url": "https://doi.org/10.1038/sj.cdd.4401850"}, {"year": "2005", "title": "Shared and Unique Functions of the DExD/H-Box Helicases RIG-I, MDA5, and LGP2 in Antiviral Innate Immunity", "venue": "The Journal of Immunology", "doi": "10.4049/jimmunol.175.5.2851", "doi_url": "https://doi.org/10.4049/jimmunol.175.5.2851"}, {"year": "2009", "title": "The roles of TLRs, RLRs and NLRs in pathogen recognition", "venue": "International Immunology", "doi": "10.1093/intimm/dxp017", "doi_url": "https://doi.org/10.1093/intimm/dxp017"}, {"year": "2005", "title": "Immunology of hepatitis B virus and hepatitis C virus infection", "venue": "Nature reviews. Immunology", "doi": "10.1038/nri1573", "doi_url": "https://doi.org/10.1038/nri1573"}, {"year": "2006", "title": "Regulation and Function of IKK and IKK-Related Kinases", "venue": "Science s STKE", "doi": "10.1126/stke.3572006re13", "doi_url": "https://doi.org/10.1126/stke.3572006re13"}, {"year": "2006", "title": "Type I Interferons in Host Defense", "venue": "Immunity", "doi": "10.1016/j.immuni.2006.08.007", "doi_url": "https://doi.org/10.1016/j.immuni.2006.08.007"}, {"year": "2006", "title": "NF-κB and the immune response", "venue": "Oncogene", "doi": "10.1038/sj.onc.1209943", "doi_url": "https://doi.org/10.1038/sj.onc.1209943"}, {"year": "2006", "title": "Recognition of Cytosolic DNA Activates an IRF3-Dependent Innate Immune Response", "venue": "Immunity", "doi": "10.1016/j.immuni.2005.12.003", "doi_url": "https://doi.org/10.1016/j.immuni.2005.12.003"}, {"year": "2016", "title": "Necroptosis in development, inflammation and disease", "venue": "Nature Reviews Molecular Cell Biology", "doi": "10.1038/nrm.2016.149", "doi_url": "https://doi.org/10.1038/nrm.2016.149"}, {"year": "2008", "title": "Toll‐like Receptor and RIG‐1‐like Receptor Signaling", "venue": "Annals of the New York Academy of Sciences", "doi": "10.1196/annals.1443.020", "doi_url": "https://doi.org/10.1196/annals.1443.020"}, {"year": "2009", "title": "The Many Roles of FAS Receptor Signaling in the Immune System", "venue": "Immunity", "doi": "10.1016/j.immuni.2009.01.001", "doi_url": "https://doi.org/10.1016/j.immuni.2009.01.001"}, {"year": "2009", "title": "MicroRNA-146a Feedback Inhibits RIG-I-Dependent Type I IFN Production in Macrophages by Targeting TRAF6, IRAK1, and IRAK2", "venue": "The Journal of Immunology", "doi": "10.4049/jimmunol.0900707", "doi_url": "https://doi.org/10.4049/jimmunol.0900707"}, {"year": "2014", "title": "Cytosolic-DNA-Mediated, STING-Dependent Proinflammatory Gene Induction Necessitates Canonical NF-κB Activation through TBK1", "venue": "Journal of Virology", "doi": "10.1128/jvi.00037-14", "doi_url": "https://doi.org/10.1128/jvi.00037-14"}, {"year": "2005", "title": "NLRs join TLRs as innate sensors of pathogens", "venue": "Trends in Immunology", "doi": "10.1016/j.it.2005.06.004", "doi_url": "https://doi.org/10.1016/j.it.2005.06.004"}, {"year": "2007", "title": "Innate Recognition of Viruses", "venue": "Immunity", "doi": "10.1016/j.immuni.2007.08.012", "doi_url": "https://doi.org/10.1016/j.immuni.2007.08.012"}, {"year": "2005", "title": "The RNA Helicase Lgp2 Inhibits TLR-Independent Sensing of Viral Replication by Retinoic Acid-Inducible Gene-I", "venue": "The Journal of Immunology", "doi": "10.4049/jimmunol.175.8.5260", "doi_url": "https://doi.org/10.4049/jimmunol.175.8.5260"}, {"year": "2011", "title": "IRF7: activation, regulation, modification and function", "venue": "Genes and Immunity", "doi": "10.1038/gene.2011.21", "doi_url": "https://doi.org/10.1038/gene.2011.21"}, {"year": "2008", "title": "RNA recognition and signal transduction by RIG‐I‐like receptors", "venue": "Immunological Reviews", "doi": "10.1111/j.1600-065x.2008.00727.x", "doi_url": "https://doi.org/10.1111/j.1600-065x.2008.00727.x"}, {"year": "2005", "title": "Pathogen recognition with Toll-like receptors", "venue": "Current Opinion in Immunology", "doi": "10.1016/j.coi.2005.02.007", "doi_url": "https://doi.org/10.1016/j.coi.2005.02.007"}, {"year": "2008", "title": "Expansion and evolution of cell death programmes", "venue": "Nature Reviews Molecular Cell Biology", "doi": "10.1038/nrm2393", "doi_url": "https://doi.org/10.1038/nrm2393"}, {"year": "2005", "title": "Toll-like receptor 9 controls anti-DNA autoantibody production in murine lupus", "venue": "The Journal of Experimental Medicine", "doi": "10.1084/jem.20050338", "doi_url": "https://doi.org/10.1084/jem.20050338"}, {"year": "2015", "title": "The diverse role of RIP kinases in necroptosis and inflammation", "venue": "Nature Immunology", "doi": "10.1038/ni.3206", "doi_url": "https://doi.org/10.1038/ni.3206"}, {"year": "2006", "title": "Essential role of IPS-1 in innate immune responses against RNA viruses", "venue": "The Journal of Experimental Medicine", "doi": "10.1084/jem.20060792", "doi_url": "https://doi.org/10.1084/jem.20060792"}, {"year": "2007", "title": "RIP1, a kinase on the crossroads of a cell's decision to live or die", "venue": "Cell Death and Differentiation", "doi": "10.1038/sj.cdd.4402085", "doi_url": "https://doi.org/10.1038/sj.cdd.4402085"}, {"year": "2006", "title": "Antiviral Signaling Through Pattern Recognition Receptors", "venue": "The Journal of Biochemistry", "doi": "10.1093/jb/mvm032", "doi_url": "https://doi.org/10.1093/jb/mvm032"}, {"year": "2011", "title": "Many stimuli pull the necrotic trigger, an overview", "venue": "Cell Death and Differentiation", "doi": "10.1038/cdd.2011.164", "doi_url": "https://doi.org/10.1038/cdd.2011.164"}, {"year": "2007", "title": "Loss of DExD/H Box RNA Helicase LGP2 Manifests Disparate Antiviral Responses", "venue": "The Journal of Immunology", "doi": "10.4049/jimmunol.178.10.6444", "doi_url": "https://doi.org/10.4049/jimmunol.178.10.6444"}, {"year": "2009", "title": "Major cell death pathways at a glance", "venue": "Microbes and Infection", "doi": "10.1016/j.micinf.2009.08.013", "doi_url": "https://doi.org/10.1016/j.micinf.2009.08.013"}, {"year": "2005", "title": "The RIP kinases: crucial integrators of cellular stress", "venue": "Trends in Biochemical Sciences", "doi": "10.1016/j.tibs.2005.01.003", "doi_url": "https://doi.org/10.1016/j.tibs.2005.01.003"}, {"year": "2006", "title": "RalB GTPase-Mediated Activation of the IκB Family Kinase TBK1 Couples Innate Immune Signaling to Tumor Cell Survival", "venue": "Cell", "doi": "10.1016/j.cell.2006.08.034", "doi_url": "https://doi.org/10.1016/j.cell.2006.08.034"}, {"year": "2006", "title": "Cyclophosphamide enhances glioma virotherapy by inhibiting innate immune responses", "venue": "Proceedings of the National Academy of Sciences", "doi": "10.1073/pnas.0605496103", "doi_url": "https://doi.org/10.1073/pnas.0605496103"}, {"year": "2013", "title": "Interferon-induced RIP1/RIP3-mediated necrosis requires PKR and is licensed by FADD and caspases", "venue": "Proceedings of the National Academy of Sciences", "doi": "10.1073/pnas.1301218110", "doi_url": "https://doi.org/10.1073/pnas.1301218110"}, {"year": "2005", "title": "Regulation of the type I IFN induction: a current view", "venue": "International Immunology", "doi": "10.1093/intimm/dxh318", "doi_url": "https://doi.org/10.1093/intimm/dxh318"}, {"year": "2007", "title": "Recognition of viruses by innate immunity", "venue": "Immunological Reviews", "doi": "10.1111/j.1600-065x.2007.00562.x", "doi_url": "https://doi.org/10.1111/j.1600-065x.2007.00562.x"}, {"year": "2005", "title": "Rip1 Mediates the Trif-dependent Toll-like Receptor 3- and 4-induced NF-κB Activation but Does Not Contribute to Interferon Regulatory Factor 3 Activation", "venue": "Journal of Biological Chemistry", "doi": "10.1074/jbc.m506831200", "doi_url": "https://doi.org/10.1074/jbc.m506831200"}, {"year": "2006", "title": "Protozoan encounters with Toll-like receptor signalling pathways: implications for host parasitism", "venue": "Nature reviews. Immunology", "doi": "10.1038/nri1978", "doi_url": "https://doi.org/10.1038/nri1978"}, {"year": "2008", "title": "TRADD Protein Is an Essential Component of the RIG-like Helicase Antiviral Pathway", "venue": "Immunity", "doi": "10.1016/j.immuni.2008.03.013", "doi_url": "https://doi.org/10.1016/j.immuni.2008.03.013"}, {"year": "2009", "title": "Recognition of viral nucleic acids in innate immunity", "venue": "Reviews in Medical Virology", "doi": "10.1002/rmv.633", "doi_url": "https://doi.org/10.1002/rmv.633"}, {"year": "2005", "title": "Human TLR-7-, -8-, and -9-Mediated Induction of IFN-α/β and -λ Is IRAK-4 Dependent and Redundant for Protective Immunity to Viruses", "venue": "Immunity", "doi": "10.1016/j.immuni.2005.09.016", "doi_url": "https://doi.org/10.1016/j.immuni.2005.09.016"}, {"year": "2008", "title": "Receptor-Interacting Protein Homotypic Interaction Motif-Dependent Control of NF-κB Activation via the DNA-Dependent Activator of IFN Regulatory Factors", "venue": "The Journal of Immunology", "doi": "10.4049/jimmunol.181.9.6427", "doi_url": "https://doi.org/10.4049/jimmunol.181.9.6427"}, {"year": "2005", "title": "Regulators of the Toll and Imd pathways in the Drosophila innate immune response", "venue": "Trends in Immunology", "doi": "10.1016/j.it.2005.02.006", "doi_url": "https://doi.org/10.1016/j.it.2005.02.006"}, {"year": "2012", "title": "HCV Infection Induces a Unique Hepatic Innate Immune Response Associated With Robust Production of Type III Interferons", "venue": "Gastroenterology", "doi": "10.1053/j.gastro.2011.12.055", "doi_url": "https://doi.org/10.1053/j.gastro.2011.12.055"}, {"year": "2005", "title": "Transcriptional signaling by double-stranded RNA: role of TLR3", "venue": "Cytokine & Growth Factor Reviews", "doi": "10.1016/j.cytogfr.2005.01.006", "doi_url": "https://doi.org/10.1016/j.cytogfr.2005.01.006"}, {"year": "2011", "title": "Cytoplasmic DNA innate immune pathways", "venue": "Immunological Reviews", "doi": "10.1111/j.1600-065x.2011.01051.x", "doi_url": "https://doi.org/10.1111/j.1600-065x.2011.01051.x"}, {"year": "2009", "title": "RIG-I-like receptors: Sensing and responding to RNA virus infection", "venue": "Seminars in Immunology", "doi": "10.1016/j.smim.2009.05.001", "doi_url": "https://doi.org/10.1016/j.smim.2009.05.001"}, {"year": "2007", "title": "Modulation of the Interferon Antiviral Response by the TBK1/IKKi Adaptor Protein TANK", "venue": "Journal of Biological Chemistry", "doi": "10.1074/jbc.m700017200", "doi_url": "https://doi.org/10.1074/jbc.m700017200"}, {"year": "2011", "title": "Recognition of nucleic acids by pattern‐recognition receptors and its relevance in autoimmunity", "venue": "Immunological Reviews", "doi": "10.1111/j.1600-065x.2011.01048.x", "doi_url": "https://doi.org/10.1111/j.1600-065x.2011.01048.x"}, {"year": "2007", "title": "Toll-Like Receptors (TLRs) and Their Ligands", "venue": "Handbook of experimental pharmacology", "doi": "10.1007/978-3-540-72167-3_1", "doi_url": "https://doi.org/10.1007/978-3-540-72167-3_1"}, {"year": "2018", "title": "OTULIN limits cell death and inflammation by deubiquitinating LUBAC", "venue": "Nature", "doi": "10.1038/s41586-018-0256-2", "doi_url": "https://doi.org/10.1038/s41586-018-0256-2"}, {"year": "2011", "title": "RIG-I RNA Helicase Activation of IRF3 Transcription Factor Is Negatively Regulated by Caspase-8-Mediated Cleavage of the RIP1 Protein", "venue": "Immunity", "doi": "10.1016/j.immuni.2010.12.018", "doi_url": "https://doi.org/10.1016/j.immuni.2010.12.018"}, {"year": "2005", "title": "Plasmacytoid dendritic cells—virus experts of innate immunity", "venue": "Seminars in Immunology", "doi": "10.1016/j.smim.2005.05.008", "doi_url": "https://doi.org/10.1016/j.smim.2005.05.008"}, {"year": "2010", "title": "FADD: a regulator of life and death", "venue": "Trends in Immunology", "doi": "10.1016/j.it.2010.05.005", "doi_url": "https://doi.org/10.1016/j.it.2010.05.005"}, {"year": "2009", "title": "Functions of the cytoplasmic RNA sensors RIG-I and MDA-5: Key regulators of innate immunity", "venue": "Pharmacology & Therapeutics", "doi": "10.1016/j.pharmthera.2009.06.012", "doi_url": "https://doi.org/10.1016/j.pharmthera.2009.06.012"}, {"year": "2007", "title": "Genetic analysis of resistance to viral infection", "venue": "Nature reviews. Immunology", "doi": "10.1038/nri2174", "doi_url": "https://doi.org/10.1038/nri2174"}, {"year": "2008", "title": "The IKK-related kinases: from innate immunity to oncogenesis", "venue": "Cell Research", "doi": "10.1038/cr.2008.273", "doi_url": "https://doi.org/10.1038/cr.2008.273"}, {"year": "2008", "title": "Interferons: Signaling, antiviral and viral evasion", "venue": "Immunology Letters", "doi": "10.1016/j.imlet.2008.11.002", "doi_url": "https://doi.org/10.1016/j.imlet.2008.11.002"}, {"year": "2010", "title": "Whole-Exome-Sequencing-Based Discovery of Human FADD Deficiency", "venue": "The American Journal of Human Genetics", "doi": "10.1016/j.ajhg.2010.10.028", "doi_url": "https://doi.org/10.1016/j.ajhg.2010.10.028"}, {"year": "2006", "title": "IRF family proteins and type I interferon induction in dendritic cells", "venue": "Cell Research", "doi": "10.1038/sj.cr.7310018", "doi_url": "https://doi.org/10.1038/sj.cr.7310018"}, {"year": "2006", "title": "Cutting Edge: Roles of Caspase-8 and Caspase-10 in Innate Immune Responses to Double-Stranded RNA", "venue": "The Journal of Immunology", "doi": "10.4049/jimmunol.176.8.4520", "doi_url": "https://doi.org/10.4049/jimmunol.176.8.4520"}, {"year": "2019", "title": "Aberrant ER Stress Induced Neuronal-IFNβ Elicits White Matter Injury Due to Microglial Activation and T-Cell Infiltration after TBI", "venue": "Journal of Neuroscience", "doi": "10.1523/jneurosci.0718-19.2019", "doi_url": "https://doi.org/10.1523/jneurosci.0718-19.2019"}, {"year": "2010", "title": "The E3 Ubiquitin Ligase RNF5 Targets Virus-Induced Signaling Adaptor for Ubiquitination and Degradation", "venue": "The Journal of Immunology", "doi": "10.4049/jimmunol.0903748", "doi_url": "https://doi.org/10.4049/jimmunol.0903748"}, {"year": "2007", "title": "Depletion of Peripheral Macrophages and Brain Microglia Increases Brain Tumor Titers of Oncolytic Viruses", "venue": "Cancer Research", "doi": "10.1158/0008-5472.can-07-1063", "doi_url": "https://doi.org/10.1158/0008-5472.can-07-1063"}, {"year": "2010", "title": "TAX1BP1 and A20 Inhibit Antiviral Signaling by Targeting TBK1-IKKi Kinases", "venue": "Journal of Biological Chemistry", "doi": "10.1074/jbc.m110.109819", "doi_url": "https://doi.org/10.1074/jbc.m110.109819"}, {"year": "2010", "title": "Caspase-Mediated Cleavage, IAP Binding, and Ubiquitination: Linking Three Mechanisms Crucial for Drosophila NF-κB Signaling", "venue": "Molecular Cell", "doi": "10.1016/j.molcel.2009.12.036", "doi_url": "https://doi.org/10.1016/j.molcel.2009.12.036"}, {"year": "2007", "title": "Identity Profiling of Cell Surface Markers by Multiplex Gold Nanorod Probes", "venue": "Nano Letters", "doi": "10.1021/nl070894m", "doi_url": "https://doi.org/10.1021/nl070894m"}, {"year": "2011", "title": "A functional C-terminal TRAF3-binding site in MAVS participates in positive and negative regulation of the IFN antiviral response", "venue": "Cell Research", "doi": "10.1038/cr.2011.2", "doi_url": "https://doi.org/10.1038/cr.2011.2"}, {"year": "2011", "title": "Type I interferons: diversity of sources, production pathways and effects on immune responses", "venue": "Current Opinion in Virology", "doi": "10.1016/j.coviro.2011.10.026", "doi_url": "https://doi.org/10.1016/j.coviro.2011.10.026"}, {"year": "2010", "title": "Emerging roles for the non-canonical IKKs in cancer", "venue": "Oncogene", "doi": "10.1038/onc.2010.493", "doi_url": "https://doi.org/10.1038/onc.2010.493"}, {"year": "2008", "title": "Inhibition of proinflammatory and innate immune signaling pathways by a cytomegalovirus RIP1-interacting protein", "venue": "Proceedings of the National Academy of Sciences", "doi": "10.1073/pnas.0800168105", "doi_url": "https://doi.org/10.1073/pnas.0800168105"}, {"year": "2016", "title": "Viral Evasion Strategies in Type I IFN Signaling – A Summary of Recent Developments", "venue": "Frontiers in Immunology", "doi": "10.3389/fimmu.2016.00498", "doi_url": "https://doi.org/10.3389/fimmu.2016.00498"}, {"year": "2010", "title": "NF-κB and Innate Immunity", "venue": "Current topics in microbiology and immunology", "doi": "10.1007/82_2010_102", "doi_url": "https://doi.org/10.1007/82_2010_102"}, {"year": "2014", "title": "The Two Faces of Receptor Interacting Protein Kinase-1", "venue": "Molecular Cell", "doi": "10.1016/j.molcel.2014.11.001", "doi_url": "https://doi.org/10.1016/j.molcel.2014.11.001"}, {"year": "2010", "title": "The STING pathway and regulation of innate immune signaling in response to DNA pathogens", "venue": "Cellular and Molecular Life Sciences", "doi": "10.1007/s00018-010-0605-2", "doi_url": "https://doi.org/10.1007/s00018-010-0605-2"}, {"year": "2011", "title": "Regulation of RLR-mediated innate immune signaling – It is all about keeping the balance", "venue": "European Journal of Cell Biology", "doi": "10.1016/j.ejcb.2011.01.011", "doi_url": "https://doi.org/10.1016/j.ejcb.2011.01.011"}, {"year": "2011", "title": "Intrinsic and Extrinsic Regulation of Innate Immune Receptors", "venue": "Yonsei Medical Journal", "doi": "10.3349/ymj.2011.52.3.379", "doi_url": "https://doi.org/10.3349/ymj.2011.52.3.379"}, {"year": "2014", "title": "A long-awaited merger of the pathways mediating host defence and programmed cell death", "venue": "Nature reviews. Immunology", "doi": "10.1038/nri3720", "doi_url": "https://doi.org/10.1038/nri3720"}, {"year": "2009", "title": "RIG-I-mediated Activation of p38 MAPK Is Essential for Viral Induction of Interferon and Activation of Dendritic Cells", "venue": "Journal of Biological Chemistry", "doi": "10.1074/jbc.m807272200", "doi_url": "https://doi.org/10.1074/jbc.m807272200"}, {"year": "2005", "title": "Viral targeting of the interferon-β-inducing Traf family member-associated NF-κB activator (TANK)-binding kinase-1", "venue": "Proceedings of the National Academy of Sciences", "doi": "10.1073/pnas.0502883102", "doi_url": "https://doi.org/10.1073/pnas.0502883102"}, {"year": "2009", "title": "The role of mitochondria in cellular defense against microbial infection", "venue": "Seminars in Immunology", "doi": "10.1016/j.smim.2009.05.009", "doi_url": "https://doi.org/10.1016/j.smim.2009.05.009"}, {"year": "2013", "title": "Nucleic Acid Sensors and Type I Interferon Production in Systemic Lupus Erythematosus", "venue": "Frontiers in Immunology", "doi": "10.3389/fimmu.2013.00319", "doi_url": "https://doi.org/10.3389/fimmu.2013.00319"}, {"year": "2012", "title": "Emerging Role of Ubiquitination in Antiviral RIG-I Signaling", "venue": "Microbiology and Molecular Biology Reviews", "doi": "10.1128/mmbr.05012-11", "doi_url": "https://doi.org/10.1128/mmbr.05012-11"}, {"year": "2016", "title": "High-throughput proteomics reveal alarmins as amplifiers of tissue pathology and inflammation after spinal cord injury", "venue": "Scientific Reports", "doi": "10.1038/srep21607", "doi_url": "https://doi.org/10.1038/srep21607"}, {"year": "2013", "title": "DDX24 Negatively Regulates Cytosolic RNA-Mediated Innate Immune Signaling", "venue": "PLoS Pathogens", "doi": "10.1371/journal.ppat.1003721", "doi_url": "https://doi.org/10.1371/journal.ppat.1003721"}, {"year": "2009", "title": "Rhabdovirus Evasion of the Interferon System", "venue": "Journal of Interferon & Cytokine Research", "doi": "10.1089/jir.2009.0068", "doi_url": "https://doi.org/10.1089/jir.2009.0068"}, {"year": "2018", "title": "FADD at the Crossroads between Cancer and Inflammation", "venue": "Trends in Immunology", "doi": "10.1016/j.it.2018.10.005", "doi_url": "https://doi.org/10.1016/j.it.2018.10.005"}, {"year": "2012", "title": "Ankrd17 positively regulatesRIG‐I‐like receptor (RLR)‐mediated immune signaling", "venue": "European Journal of Immunology", "doi": "10.1002/eji.201142125", "doi_url": "https://doi.org/10.1002/eji.201142125"}, {"year": "2017", "title": "RIPK3 interacts with MAVS to regulate type I IFN-mediated immunity to Influenza A virus infection", "venue": "PLoS Pathogens", "doi": "10.1371/journal.ppat.1006326", "doi_url": "https://doi.org/10.1371/journal.ppat.1006326"}, {"year": "2019", "title": "Control of antiviral innate immune response by protein geranylgeranylation", "venue": "Science Advances", "doi": "10.1126/sciadv.aav7999", "doi_url": "https://doi.org/10.1126/sciadv.aav7999"}, {"year": "2021", "title": "Innate Immune Sensing of Viruses and Its Consequences for the Central Nervous System", "venue": "Viruses", "doi": "10.3390/v13020170", "doi_url": "https://doi.org/10.3390/v13020170"}, {"year": "2007", "title": "Toll-like receptor signaling", "venue": "Cambridge University Press eBooks", "doi": "10.1017/cbo9780511541551.003", "doi_url": "https://doi.org/10.1017/cbo9780511541551.003"}, {"year": "2020", "title": "OTULIN Prevents Liver Inflammation and Hepatocellular Carcinoma by Inhibiting FADD- and RIPK1 Kinase-Mediated Hepatocyte Apoptosis", "venue": "Cell Reports", "doi": "10.1016/j.celrep.2020.01.028", "doi_url": "https://doi.org/10.1016/j.celrep.2020.01.028"}, {"year": "2022", "title": "DExH/D-box helicases at the frontline of intrinsic and innate immunity against viral infections", "venue": "Journal of General Virology", "doi": "10.1099/jgv.0.001766", "doi_url": "https://doi.org/10.1099/jgv.0.001766"}, {"year": "2022", "title": "Bifurcation of signalling in human innate immune pathways to NF-kB and IRF family activation", "venue": "Biochemical Pharmacology", "doi": "10.1016/j.bcp.2022.115246", "doi_url": "https://doi.org/10.1016/j.bcp.2022.115246"}, {"year": "2010", "title": "FADD–calmodulin interaction: A novel player in cell cycle regulation", "venue": "Biochimica et Biophysica Acta (BBA) - Molecular Cell Research", "doi": "10.1016/j.bbamcr.2010.04.006", "doi_url": "https://doi.org/10.1016/j.bbamcr.2010.04.006"}, {"year": "2023", "title": "Whole-genome CRISPR screen identifies RAVER1 as a key regulator of RIPK1-mediated inflammatory cell death, PANoptosis", "venue": "iScience", "doi": "10.1016/j.isci.2023.106938", "doi_url": "https://doi.org/10.1016/j.isci.2023.106938"}, {"year": "2005", "title": "Activation of Innate Defense against a Paramyxovirus Is Mediated by RIG-I and TLR7 and TLR8 in a Cell-Type-Specific Manner", "venue": "Journal of Virology", "doi": "10.1128/jvi.79.20.12944-12951.2005", "doi_url": "https://doi.org/10.1128/jvi.79.20.12944-12951.2005"}, {"year": "2006", "title": "TIR, CARD and PYRIN: three domains for an antimicrobial triad", "venue": "Cell Death and Differentiation", "doi": "10.1038/sj.cdd.4401890", "doi_url": "https://doi.org/10.1038/sj.cdd.4401890"}, {"year": "2005", "title": "VSV-tumor selective replication and protein translation", "venue": "Oncogene", "doi": "10.1038/sj.onc.1209042", "doi_url": "https://doi.org/10.1038/sj.onc.1209042"}, {"year": "2005", "title": "Nonapoptotic functions of FADD-binding death receptors and their signaling molecules", "venue": "Current Opinion in Cell Biology", "doi": "10.1016/j.ceb.2005.09.010", "doi_url": "https://doi.org/10.1016/j.ceb.2005.09.010"}, {"year": "2010", "title": "Function and Regulation of Retinoic Acid-Inducible Gene-I", "venue": "Critical Reviews in Immunology", "doi": "10.1615/critrevimmunol.v30.i6.10", "doi_url": "https://doi.org/10.1615/critrevimmunol.v30.i6.10"}, {"year": "2010", "title": "NF-κB RelA Subunit Is Crucial for Early IFN-β Expression and Resistance to RNA Virus Replication", "venue": "The Journal of Immunology", "doi": "10.4049/jimmunol.1000114", "doi_url": "https://doi.org/10.4049/jimmunol.1000114"}, {"year": "2005", "title": "Interpreting epithelial cancer biology in the context of stem cells: Tumor properties and therapeutic implications", "venue": "Biochimica et Biophysica Acta (BBA) - Reviews on Cancer", "doi": "10.1016/j.bbcan.2005.07.003", "doi_url": "https://doi.org/10.1016/j.bbcan.2005.07.003"}, {"year": "2007", "title": "YopJ targets TRAF proteins to inhibit TLR-mediated NF-?B, MAPK and IRF3 signal transduction", "venue": "Cellular Microbiology", "doi": "10.1111/j.1462-5822.2007.00990.x", "doi_url": "https://doi.org/10.1111/j.1462-5822.2007.00990.x"}, {"year": "2005", "title": "Connecting Mitochondria and Innate Immunity", "venue": "Cell", "doi": "10.1016/j.cell.2005.08.026", "doi_url": "https://doi.org/10.1016/j.cell.2005.08.026"}, {"year": "2006", "title": "The IFN-Independent Response to Virus Particle Entry Provides a First Line of Antiviral Defense That Is Independent of TLRs and Retinoic Acid-Inducible Gene I", "venue": "The Journal of Immunology", "doi": "10.4049/jimmunol.177.11.8008", "doi_url": "https://doi.org/10.4049/jimmunol.177.11.8008"}, {"year": "2008", "title": "TRAF6 and MEKK1 Play a Pivotal Role in the RIG-I-like Helicase Antiviral Pathway", "venue": "Journal of Biological Chemistry", "doi": "10.1074/jbc.m806576200", "doi_url": "https://doi.org/10.1074/jbc.m806576200"}, {"year": "2005", "title": "Innate Sensors of Microbial Infection", "venue": "Journal of Clinical Immunology", "doi": "10.1007/s10875-005-8065-4", "doi_url": "https://doi.org/10.1007/s10875-005-8065-4"}, {"year": "2009", "title": "Innate recognition of intracellular pathogens: detection and activation of the first line of defense", "venue": "Apmis", "doi": "10.1111/j.1600-0463.2009.02456.x", "doi_url": "https://doi.org/10.1111/j.1600-0463.2009.02456.x"}, {"year": "2005", "title": "Hepatitis A Virus Suppresses RIG-I-Mediated IRF-3 Activation To Block Induction of Beta Interferon", "venue": "Journal of Virology", "doi": "10.1128/jvi.79.17.10968-10977.2005", "doi_url": "https://doi.org/10.1128/jvi.79.17.10968-10977.2005"}, {"year": "2014", "title": "A Novel Mitochondrial MAVS/Caspase-8 Platform Links RNA Virus–Induced Innate Antiviral Signaling to Bax/Bak-Independent Apoptosis", "venue": "The Journal of Immunology", "doi": "10.4049/jimmunol.1300842", "doi_url": "https://doi.org/10.4049/jimmunol.1300842"}, {"year": "2006", "title": "Antiviral defense: interferons and beyond", "venue": "The Journal of Experimental Medicine", "doi": "10.1084/jem.20061377", "doi_url": "https://doi.org/10.1084/jem.20061377"}, {"year": "2008", "title": "Tinkering with a viral ribonucleotide reductase", "venue": "Trends in Biochemical Sciences", "doi": "10.1016/j.tibs.2008.09.008", "doi_url": "https://doi.org/10.1016/j.tibs.2008.09.008"}, {"year": "2007", "title": "Interferon Regulatory Factor 7 Is Activated by a Viral Oncoprotein through RIP-Dependent Ubiquitination", "venue": "Molecular and Cellular Biology", "doi": "10.1128/mcb.02256-06", "doi_url": "https://doi.org/10.1128/mcb.02256-06"}, {"year": "2008", "title": "Toll-Like Receptor 3 Activation Induces Antiviral Immune Responses in Mouse Sertoli Cells1", "venue": "Biology of Reproduction", "doi": "10.1095/biolreprod.108.068619", "doi_url": "https://doi.org/10.1095/biolreprod.108.068619"}, {"year": "2008", "title": "Inhibitor of Apoptosis Proteins in Eukaryotic Evolution and Development: A Model of Thematic Conservation", "venue": "Developmental Cell", "doi": "10.1016/j.devcel.2008.09.012", "doi_url": "https://doi.org/10.1016/j.devcel.2008.09.012"}, {"year": "2011", "title": "Distinct Roles for the NF-κB RelA Subunit during Antiviral Innate Immune Responses", "venue": "Journal of Virology", "doi": "10.1128/jvi.02213-10", "doi_url": "https://doi.org/10.1128/jvi.02213-10"}, {"year": "2017", "title": "Cytosolic nucleic acid sensors and innate immune regulation", "venue": "International Reviews of Immunology", "doi": "10.1080/08830185.2017.1298749", "doi_url": "https://doi.org/10.1080/08830185.2017.1298749"}, {"year": "2013", "title": "Necrosis-dependent and independent signaling of the RIP kinases in inflammation", "venue": "Cytokine & Growth Factor Reviews", "doi": "10.1016/j.cytogfr.2013.12.013", "doi_url": "https://doi.org/10.1016/j.cytogfr.2013.12.013"}, {"year": "2017", "title": "Protein synthesis inhibition and GADD34 control IFN‐β heterogeneous expression in response to dsRNA", "venue": "The EMBO Journal", "doi": "10.15252/embj.201695000", "doi_url": "https://doi.org/10.15252/embj.201695000"}, {"year": "2008", "title": "IRF-5 Is a Mediator of the Death Receptor-induced Apoptotic Signaling Pathway", "venue": "Journal of Biological Chemistry", "doi": "10.1074/jbc.m804744200", "doi_url": "https://doi.org/10.1074/jbc.m804744200"}, {"year": "2007", "title": "Signaling pathways activated by microorganisms", "venue": "Current Opinion in Cell Biology", "doi": "10.1016/j.ceb.2007.02.006", "doi_url": "https://doi.org/10.1016/j.ceb.2007.02.006"}, {"year": "2008", "title": "The antiviral adaptor proteins Cardif and Trif are processed and inactivated by caspases", "venue": "Cell Death and Differentiation", "doi": "10.1038/cdd.2008.119", "doi_url": "https://doi.org/10.1038/cdd.2008.119"}, {"year": "2006", "title": "Differential Activation of IFN Regulatory Factor (IRF)-3 and IRF-5 Transcription Factors during Viral Infection", "venue": "The Journal of Immunology", "doi": "10.4049/jimmunol.176.12.7462", "doi_url": "https://doi.org/10.4049/jimmunol.176.12.7462"}, {"year": "2010", "title": "Fas-associated Death Domain (FADD) and the E3 Ubiquitin-Protein Ligase TRIM21 Interact to Negatively Regulate Virus-induced Interferon Production", "venue": "Journal of Biological Chemistry", "doi": "10.1074/jbc.m110.172288", "doi_url": "https://doi.org/10.1074/jbc.m110.172288"}, {"year": "2015", "title": "Immune Evasion Strategies of Molluscum Contagiosum Virus", "venue": "Advances in virus research", "doi": "10.1016/bs.aivir.2014.11.004", "doi_url": "https://doi.org/10.1016/bs.aivir.2014.11.004"}, {"year": "2008", "title": "Viral sensors: diversity in pathogen recognition", "venue": "Immunological Reviews", "doi": "10.1111/j.1600-065x.2008.00726.x", "doi_url": "https://doi.org/10.1111/j.1600-065x.2008.00726.x"}, {"year": "2014", "title": "Interferon Induction by RNA Viruses and Antagonism by Viral Pathogens", "venue": "Viruses", "doi": "10.3390/v6124999", "doi_url": "https://doi.org/10.3390/v6124999"}, {"year": "2009", "title": "Regulation of the cytosolic DNA-sensing system in innate immunity: a current view", "venue": "Current Opinion in Immunology", "doi": "10.1016/j.coi.2009.01.005", "doi_url": "https://doi.org/10.1016/j.coi.2009.01.005"}, {"year": "2006", "title": "A murine model of mixed connective tissue disease induced with U1 small nuclear RNP autoantigen", "venue": "Arthritis & Rheumatism", "doi": "10.1002/art.21566", "doi_url": "https://doi.org/10.1002/art.21566"}, {"year": "2007", "title": "Lack of Essential Role of NF-κB p50, RelA, and cRel Subunits in Virus-Induced Type 1 IFN Expression", "venue": "The Journal of Immunology", "doi": "10.4049/jimmunol.178.11.6770", "doi_url": "https://doi.org/10.4049/jimmunol.178.11.6770"}, {"year": "2005", "title": "Early Alpha/Beta Interferon Production by Myeloid Dendritic Cells in Response to UV-Inactivated Virus Requires Viral Entry and Interferon Regulatory Factor 3 but Not MyD88", "venue": "Journal of Virology", "doi": "10.1128/jvi.79.16.10376-10385.2005", "doi_url": "https://doi.org/10.1128/jvi.79.16.10376-10385.2005"}, {"year": "2006", "title": "Innate immune responses: Crosstalk of signaling and regulation of gene transcription", "venue": "Virology", "doi": "10.1016/j.virol.2006.04.029", "doi_url": "https://doi.org/10.1016/j.virol.2006.04.029"}, {"year": "2008", "title": "Advances in Oncolytic Virus Therapy for Glioma", "venue": "Recent Patents on CNS Drug Discovery", "doi": "10.2174/157488909787002573", "doi_url": "https://doi.org/10.2174/157488909787002573"}, {"year": "2008", "title": "Identification of MAVS splicing variants that interfere with RIGI/MAVS pathway signaling☆", "venue": "Molecular Immunology", "doi": "10.1016/j.molimm.2007.11.018", "doi_url": "https://doi.org/10.1016/j.molimm.2007.11.018"}, {"year": "2015", "title": "DED or alive: assembly and regulation of the death effector domain complexes", "venue": "Cell Death and Disease", "doi": "10.1038/cddis.2015.213", "doi_url": "https://doi.org/10.1038/cddis.2015.213"}, {"year": "2007", "title": "Fas-Associated Death Domain-Containing Protein-Mediated Antiviral Innate Immune Signaling Involves the Regulation ofIrf7", "venue": "The Journal of Immunology", "doi": "10.4049/jimmunol.178.4.2429", "doi_url": "https://doi.org/10.4049/jimmunol.178.4.2429"}, {"year": "2016", "title": "TAX1BP1 Restrains Virus-Induced Apoptosis by Facilitating Itch-Mediated Degradation of the Mitochondrial Adaptor MAVS", "venue": "Molecular and Cellular Biology", "doi": "10.1128/mcb.00422-16", "doi_url": "https://doi.org/10.1128/mcb.00422-16"}, {"year": "2007", "title": "The role of viral nucleic acid recognition in dendritic cells for innate and adaptive antiviral immunity", "venue": "Immunobiology", "doi": "10.1016/j.imbio.2007.09.007", "doi_url": "https://doi.org/10.1016/j.imbio.2007.09.007"}, {"year": "2009", "title": "Pharmacologic and Chemical Adjuvants in Tumor Virotherapy", "venue": "Chemical Reviews", "doi": "10.1021/cr900048k", "doi_url": "https://doi.org/10.1021/cr900048k"}, {"year": "2011", "title": "dsRNA sensors and plasmacytoid dendritic cells in host defense and autoimmunity", "venue": "Immunological Reviews", "doi": "10.1111/j.1600-065x.2011.01049.x", "doi_url": "https://doi.org/10.1111/j.1600-065x.2011.01049.x"}, {"year": "2019", "title": "FADD in Cancer: Mechanisms of Altered Expression and Function, and Clinical Implications", "venue": "Cancers", "doi": "10.3390/cancers11101462", "doi_url": "https://doi.org/10.3390/cancers11101462"}, {"year": "2014", "title": "Mitochondrial dynamics and the innate antiviral immune response", "venue": "FEBS Journal", "doi": "10.1111/febs.12940", "doi_url": "https://doi.org/10.1111/febs.12940"}, {"year": "2017", "title": "Beclin-1-mediated Autophagy Protects Against Cadmium-activated Apoptosis via the Fas/FasL Pathway in Primary Rat Proximal Tubular Cell Culture", "venue": "Scientific Reports", "doi": "10.1038/s41598-017-00997-w", "doi_url": "https://doi.org/10.1038/s41598-017-00997-w"}, {"year": "2019", "title": "The classical NLRP3 inflammasome controls FADD unconventional secretion through microvesicle shedding", "venue": "Cell Death and Disease", "doi": "10.1038/s41419-019-1412-9", "doi_url": "https://doi.org/10.1038/s41419-019-1412-9"}, {"year": "2010", "title": "Mitochondrial localization of viral proteins as a means to subvert host defense", "venue": "Biochimica et Biophysica Acta (BBA) - Molecular Cell Research", "doi": "10.1016/j.bbamcr.2010.08.009", "doi_url": "https://doi.org/10.1016/j.bbamcr.2010.08.009"}, {"year": "2008", "title": "Specific Inhibition of the PKR-Mediated Antiviral Response by the Murine Cytomegalovirus Proteins m142 and m143", "venue": "Journal of Virology", "doi": "10.1128/jvi.01558-08", "doi_url": "https://doi.org/10.1128/jvi.01558-08"}, {"year": "2011", "title": "Interferon in Rabies Virus Infection", "venue": "Advances in virus research", "doi": "10.1016/b978-0-12-387040-7.00006-8", "doi_url": "https://doi.org/10.1016/b978-0-12-387040-7.00006-8"}, {"year": "2020", "title": "25 years of research put RIPK1 in the clinic", "venue": "Seminars in Cell and Developmental Biology", "doi": "10.1016/j.semcdb.2020.08.007", "doi_url": "https://doi.org/10.1016/j.semcdb.2020.08.007"}, {"year": "2012", "title": "FADD protein release mirrors the development and aggressiveness of human non-small cell lung cancer", "venue": "British Journal of Cancer", "doi": "10.1038/bjc.2012.196", "doi_url": "https://doi.org/10.1038/bjc.2012.196"}, {"year": "2018", "title": "Novel insights into the host immune response of chicken Harderian gland tissue during Newcastle disease virus infection and heat treatment", "venue": "BMC Veterinary Research", "doi": "10.1186/s12917-018-1583-0", "doi_url": "https://doi.org/10.1186/s12917-018-1583-0"}, {"year": "2011", "title": "TLR7/9 versus TLR3/MDA5 signaling during virus infections and diabetes", "venue": "Journal of Leukocyte Biology", "doi": "10.1189/jlb.0311166", "doi_url": "https://doi.org/10.1189/jlb.0311166"}, {"year": "2019", "title": "Therapeutic targeting of the PI4K2A/PKR lysosome network is critical for misfolded protein clearance and survival in cancer cells", "venue": "Oncogene", "doi": "10.1038/s41388-019-1010-4", "doi_url": "https://doi.org/10.1038/s41388-019-1010-4"}, {"year": "2021", "title": "Viral Suppression of RIPK1-Mediated Signaling", "venue": "mBio", "doi": "10.1128/mbio.01723-21", "doi_url": "https://doi.org/10.1128/mbio.01723-21"}, {"year": "2013", "title": "Interferon-γ-Induced Necrosis: An Antitumor Biotherapeutic Perspective", "venue": "Journal of Interferon & Cytokine Research", "doi": "10.1089/jir.2012.0087", "doi_url": "https://doi.org/10.1089/jir.2012.0087"}, {"year": "2007", "title": "Differential tissue targeting of autoimmunity manifestations by Autoantigen‐Associated Y RNAs", "venue": "Arthritis & Rheumatism", "doi": "10.1002/art.22601", "doi_url": "https://doi.org/10.1002/art.22601"}, {"year": "2010", "title": "Characterization of the Extrinsic Apoptotic Pathway in the Basal Chordate Amphioxus", "venue": "Science Signaling", "doi": "10.1126/scisignal.2000906", "doi_url": "https://doi.org/10.1126/scisignal.2000906"}, {"year": "2022", "title": "RIP1 post-translational modifications", "venue": "Biochemical Journal", "doi": "10.1042/bcj20210725", "doi_url": "https://doi.org/10.1042/bcj20210725"}, {"year": "2011", "title": "TLRs, NLRs and RLRs: Innate sensors and their impact on allergic diseases – A current view", "venue": "Immunology Letters", "doi": "10.1016/j.imlet.2011.04.010", "doi_url": "https://doi.org/10.1016/j.imlet.2011.04.010"}, {"year": "2012", "title": "Mitochondrial anti-viral immunity", "venue": "The International Journal of Biochemistry & Cell Biology", "doi": "10.1016/j.biocel.2012.05.018", "doi_url": "https://doi.org/10.1016/j.biocel.2012.05.018"}, {"year": "2018", "title": "Molecular cloning and characterization of FADD from the orange-spotted grouper (Epinephelus coioides)", "venue": "Fish & Shellfish Immunology", "doi": "10.1016/j.fsi.2018.01.018", "doi_url": "https://doi.org/10.1016/j.fsi.2018.01.018"}, {"year": "2015", "title": "Transcriptional profiling provides insights into metronomic cyclophosphamide-activated, innate immune-dependent regression of brain tumor xenografts", "venue": "BMC Cancer", "doi": "10.1186/s12885-015-1358-y", "doi_url": "https://doi.org/10.1186/s12885-015-1358-y"}, {"year": "2015", "title": "A novel function of RIP1 in postnatal development and immune homeostasis by protecting against RIP3-dependent necroptosis and FADD-mediated apoptosis", "venue": "Frontiers in Cell and Developmental Biology", "doi": "10.3389/fcell.2015.00012", "doi_url": "https://doi.org/10.3389/fcell.2015.00012"}, {"year": "2015", "title": "Oncogenic Human T-Cell Lymphotropic Virus Type 1 Tax Suppression of Primary Innate Immune Signaling Pathways", "venue": "Journal of Virology", "doi": "10.1128/jvi.02493-14", "doi_url": "https://doi.org/10.1128/jvi.02493-14"}, {"year": "2012", "title": "Fas-associated death domain protein and adenosine partnership: fad in RA", "venue": "Lara D. Veeken", "doi": "10.1093/rheumatology/ker402", "doi_url": "https://doi.org/10.1093/rheumatology/ker402"}, {"year": "2011", "title": "Antiviral Signaling Through Retinoic Acid-Inducible Gene-I-Like Receptors", "venue": "Archivum Immunologiae et Therapiae Experimentalis", "doi": "10.1007/s00005-010-0107-9", "doi_url": "https://doi.org/10.1007/s00005-010-0107-9"}, {"year": "2017", "title": "RIPK3/Fas-Associated Death Domain Axis Regulates Pulmonary Immunopathology to Cryptococcal Infection Independent of Necroptosis", "venue": "Frontiers in Immunology", "doi": "10.3389/fimmu.2017.01055", "doi_url": "https://doi.org/10.3389/fimmu.2017.01055"}, {"year": "2018", "title": "Engagement of Fas differentially regulates the production ofLPS‐induced proinflammatory cytokines and type I interferons", "venue": "FEBS Journal", "doi": "10.1111/febs.14727", "doi_url": "https://doi.org/10.1111/febs.14727"}, {"year": "2024", "title": "Established and Emerging Roles ofDEAD/H‐Box Helicases in Regulating Infection and Immunity", "venue": "Immunological Reviews", "doi": "10.1111/imr.13426", "doi_url": "https://doi.org/10.1111/imr.13426"}, {"year": "2006", "title": "Oncolytic Viruses: Extreme Treatment for an Extreme Disease", "venue": "Future Microbiology", "doi": "10.2217/17460913.1.4.351", "doi_url": "https://doi.org/10.2217/17460913.1.4.351"}, {"year": "2025", "title": "FADD cooperates with Caspase-8 to positively regulate the innate immune response and promote apoptosis following bacterial infection in Japanese eel", "venue": "Fish & Shellfish Immunology", "doi": "10.1016/j.fsi.2024.110110", "doi_url": "https://doi.org/10.1016/j.fsi.2024.110110"}, {"year": "2024", "title": "Molluscan pleiotropic FADD involved in innate immune signaling and induces apoptosis", "venue": "International Journal of Biological Macromolecules", "doi": "10.1016/j.ijbiomac.2024.133645", "doi_url": "https://doi.org/10.1016/j.ijbiomac.2024.133645"}, {"year": "2005", "title": "Innate immune recognition of nucleic acids: Beyond toll-like receptors", "venue": "International Journal of Cancer", "doi": "10.1002/ijc.21402", "doi_url": "https://doi.org/10.1002/ijc.21402"}, {"year": "2005", "title": "Acute Hepatitis C: A Multifaceted Disease", "venue": "Seminars in Liver Disease", "doi": "10.1055/s-2005-864778", "doi_url": "https://doi.org/10.1055/s-2005-864778"}, {"year": "2005", "title": "Identification of a Novel Pathway Essential for the Immediate-Early, Interferon-Independent Antiviral Response to Enveloped Virions", "venue": "Journal of Virology", "doi": "10.1128/jvi.80.1.226-235.2006", "doi_url": "https://doi.org/10.1128/jvi.80.1.226-235.2006"}, {"year": "2006", "title": "Microarray analysis identifies a set of CXCR3 and CCR2 ligand chemokines as early IFNβ-responsive genes in peripheral blood lymphocytes in vitro: an implication for IFNβ-related adverse effects in multiple sclerosis", "venue": "BMC Neurology", "doi": "10.1186/1471-2377-6-18", "doi_url": "https://doi.org/10.1186/1471-2377-6-18"}, {"year": "2006", "title": "Caspase recruitment domain protein 6 is a microtubule-interacting protein that positively modulates NF-κB activation", "venue": "Proceedings of the National Academy of Sciences", "doi": "10.1073/pnas.0510380103", "doi_url": "https://doi.org/10.1073/pnas.0510380103"}, {"year": "2005", "title": "Detection of foreign RNA: Implications for RNAi", "venue": "Immunology and Cell Biology", "doi": "10.1111/j.1440-1711.2005.01337.x", "doi_url": "https://doi.org/10.1111/j.1440-1711.2005.01337.x"}, {"year": "2008", "title": "Hepatitis C virus (HCV) employs multiple strategies to subvert the host innate antiviral response", "venue": "Biological Chemistry", "doi": "10.1515/bc.2008.147", "doi_url": "https://doi.org/10.1515/bc.2008.147"}, {"year": "2007", "title": "Differential regulation of IKKα-mediated activation of IRF3/7 by NIK", "venue": "Molecular Immunology", "doi": "10.1016/j.molimm.2007.10.034", "doi_url": "https://doi.org/10.1016/j.molimm.2007.10.034"}, {"year": "2011", "title": "UXT-V1 Facilitates the Formation of MAVS Antiviral Signalosome on Mitochondria", "venue": "The Journal of Immunology", "doi": "10.4049/jimmunol.1102079", "doi_url": "https://doi.org/10.4049/jimmunol.1102079"}, {"year": "2006", "title": "The Innate Antiviral Response: New Insights Into A Continuing Story", "venue": "Advances in virus research", "doi": "10.1016/s0065-3527(06)69001-5", "doi_url": "https://doi.org/10.1016/s0065-3527(06)69001-5"}, {"year": "2010", "title": "The IKK Kinases: Operators of Antiviral Signaling", "venue": "Viruses", "doi": "10.3390/v2010055", "doi_url": "https://doi.org/10.3390/v2010055"}, {"year": "2020", "title": "Fas-associated death domain (FADD) in sea cucumber (Apostichopus japonicus): Molecular cloning, characterization and pro-apoptotic function analysis", "venue": "Developmental & Comparative Immunology", "doi": "10.1016/j.dci.2020.103673", "doi_url": "https://doi.org/10.1016/j.dci.2020.103673"}, {"year": "2012", "title": "Recognition of viruses in the cytoplasm by RLRs and other helicases—how conformational changes, mitochondrial dynamics and ubiquitination control innate immune responses", "venue": "International Immunology", "doi": "10.1093/intimm/dxs099", "doi_url": "https://doi.org/10.1093/intimm/dxs099"}, {"year": "2015", "title": "Modulatory role of the anti-apoptotic protein kinase CK2 in the sub-cellular localization of Fas associated death domain protein (FADD)", "venue": "Biochimica et Biophysica Acta (BBA) - Molecular Cell Research", "doi": "10.1016/j.bbamcr.2015.08.001", "doi_url": "https://doi.org/10.1016/j.bbamcr.2015.08.001"}, {"year": "2019", "title": "Fueling Type I Interferonopathies: Regulation and Function of Type I Interferon Antiviral Responses", "venue": "Journal of Interferon & Cytokine Research", "doi": "10.1089/jir.2019.0037", "doi_url": "https://doi.org/10.1089/jir.2019.0037"}, {"year": "2011", "title": "FLIP (Flice-like inhibitory protein) suppresses cytoplasmic double-stranded-RNA-induced apoptosis and NF-κB and IRF3-mediated signaling", "venue": "Cell Communication and Signaling", "doi": "10.1186/1478-811x-9-16", "doi_url": "https://doi.org/10.1186/1478-811x-9-16"}, {"year": "2019", "title": "The first cloned sea cucumber FADD from Holothuria leucospilota: Molecular characterization, inducible expression and involvement of apoptosis", "venue": "Fish & Shellfish Immunology", "doi": "10.1016/j.fsi.2019.04.030", "doi_url": "https://doi.org/10.1016/j.fsi.2019.04.030"}, {"year": "2009", "title": "Identification of differentially expressed genes in large yellow croaker (Pseudosciaena crocea) induced by attenuated live Vibrio anguillarum", "venue": "Aquaculture", "doi": "10.1016/j.aquaculture.2009.02.019", "doi_url": "https://doi.org/10.1016/j.aquaculture.2009.02.019"}, {"year": "2018", "title": "Impacts of DietaryPleurotus eryngiiPolysaccharide on Nutrient Digestion, Metabolism, and Immune Response of the Small Intestine and Colon—An iTRAQ‐Based Proteomic Analysis", "venue": "PROTEOMICS", "doi": "10.1002/pmic.201700443", "doi_url": "https://doi.org/10.1002/pmic.201700443"}, {"year": "2011", "title": "Evaluation of Innate Immune Signaling Pathways in Transformed Cells", "venue": "Methods in molecular biology", "doi": "10.1007/978-1-61779-340-0_15", "doi_url": "https://doi.org/10.1007/978-1-61779-340-0_15"}, {"year": "2020", "title": "Black carp RIPK1 negatively regulates MAVS-mediated antiviral signaling during the innate immune activation", "venue": "Developmental & Comparative Immunology", "doi": "10.1016/j.dci.2020.103726", "doi_url": "https://doi.org/10.1016/j.dci.2020.103726"}, {"year": "2011", "title": "A Novel Kinase Inhibitor of FADD Phosphorylation Chemosensitizes through the Inhibition of NF-κB", "venue": "Molecular Cancer Therapeutics", "doi": "10.1158/1535-7163.mct-11-0362", "doi_url": "https://doi.org/10.1158/1535-7163.mct-11-0362"}, {"year": "2019", "title": "SPOP inhibits mice pancreatic stellate cell activation by promoting FADD degradation in cerulein-induced chronic pancreatitis", "venue": "Experimental Cell Research", "doi": "10.1016/j.yexcr.2019.111606", "doi_url": "https://doi.org/10.1016/j.yexcr.2019.111606"}, {"year": "2021", "title": "Molecular cloning and characterization of FADD from the grass carp (Ctenopharyngodon idellus) in response to bacterial infection", "venue": "Aquaculture", "doi": "10.1016/j.aquaculture.2021.736829", "doi_url": "https://doi.org/10.1016/j.aquaculture.2021.736829"}, {"year": "2022", "title": "A second FADD mediates coelomocyte apoptosis response to Vibrio splendidus infection in sea cucumber Apostichopus japonicus", "venue": "Fish & Shellfish Immunology", "doi": "10.1016/j.fsi.2022.06.046", "doi_url": "https://doi.org/10.1016/j.fsi.2022.06.046"}, {"year": "2020", "title": "Black carp NAP1 positively regulates MDA5-mediated antiviral signaling during the innate immune activation", "venue": "Developmental & Comparative Immunology", "doi": "10.1016/j.dci.2020.103659", "doi_url": "https://doi.org/10.1016/j.dci.2020.103659"}, {"year": "2022", "title": "MAP3K7 is an innate immune regulatory gene with increased expression in human and murine kidney intercalated cells following uropathogenicEscherichia coliexposure", "venue": "Journal of Cellular Biochemistry", "doi": "10.1002/jcb.30318", "doi_url": "https://doi.org/10.1002/jcb.30318"}, {"year": "2006", "title": "Caspase activation is required for antiviral treatment response in chronic hepatitis C virus infection†", "venue": "Hepatology", "doi": "10.1002/hep.21186", "doi_url": "https://doi.org/10.1002/hep.21186"}, {"year": "2006", "title": "Toll-Like Receptor-Independent Triggering of Dendritic Cell Maturation by Viruses", "venue": "Journal of Virology", "doi": "10.1128/jvi.80.7.3128-3134.2006", "doi_url": "https://doi.org/10.1128/jvi.80.7.3128-3134.2006"}, {"year": "2008", "title": "Adenosine Receptors Control a New Pathway of Fas-associated Death Domain Protein Expression Regulation by Secretion", "venue": "Journal of Biological Chemistry", "doi": "10.1074/jbc.m802263200", "doi_url": "https://doi.org/10.1074/jbc.m802263200"}, {"year": "2005", "title": "Intricacies of Host Response in Acute Pancreatitis", "venue": "Journal of the American College of Surgeons", "doi": "10.1016/j.jamcollsurg.2005.10.010", "doi_url": "https://doi.org/10.1016/j.jamcollsurg.2005.10.010"}, {"year": "2013", "title": "Anti-CD70 Immunocytokines for Exploitation of Interferon-γ-Induced RIP1-Dependent Necrosis in Renal Cell Carcinoma", "venue": "PLoS ONE", "doi": "10.1371/journal.pone.0061446", "doi_url": "https://doi.org/10.1371/journal.pone.0061446"}, {"year": "2013", "title": "Innate immunity in an in vitro murine blastocyst model using embryonic and trophoblast stem cells", "venue": "Journal of Bioscience and Bioengineering", "doi": "10.1016/j.jbiosc.2013.09.001", "doi_url": "https://doi.org/10.1016/j.jbiosc.2013.09.001"}, {"year": "2019", "title": "Analysis of Global Transcriptome Change in Mouse Embryonic Fibroblasts After dsDNA and dsRNA Viral Mimic Stimulation", "venue": "Frontiers in Immunology", "doi": "10.3389/fimmu.2019.00836", "doi_url": "https://doi.org/10.3389/fimmu.2019.00836"}, {"year": "2020", "title": "HTNV Sensitizes Host Toward TRAIL-Mediated Apoptosis—A Pivotal Anti-hantaviral Role of TRAIL", "venue": "Frontiers in Immunology", "doi": "10.3389/fimmu.2020.01072", "doi_url": "https://doi.org/10.3389/fimmu.2020.01072"}, {"year": "2009", "title": "Virally Mediated Immunotherapy for Brain Tumors", "venue": "Neurosurgery Clinics of North America", "doi": "10.1016/j.nec.2009.08.013", "doi_url": "https://doi.org/10.1016/j.nec.2009.08.013"}, {"year": "2021", "title": "Differences in IFNβ secretion upon Rab1 inactivation in cells exposed to distinct innate immune stimuli", "venue": "Cellular and Molecular Immunology", "doi": "10.1038/s41423-021-00659-y", "doi_url": "https://doi.org/10.1038/s41423-021-00659-y"}, {"year": "2005", "title": "Interferon gene regulation: not all roads lead to Tolls", "venue": "Trends in Molecular Medicine", "doi": "10.1016/j.molmed.2005.07.006", "doi_url": "https://doi.org/10.1016/j.molmed.2005.07.006"}, {"year": "2014", "title": "Anti-Viral Tetris: Modulation of the Innate Anti-Viral Immune Response by A20", "venue": "Advances in experimental medicine and biology", "doi": "10.1007/978-1-4939-0398-6_4", "doi_url": "https://doi.org/10.1007/978-1-4939-0398-6_4"}, {"year": "2006", "title": "Lessons learned from molecular defects in nuclear factor κB dependent signaling", "venue": "Microbes and Infection", "doi": "10.1016/j.micinf.2005.10.030", "doi_url": "https://doi.org/10.1016/j.micinf.2005.10.030"}, {"year": "2015", "title": "Engagement of Fas on Macrophages Modulates Poly I:C Induced Cytokine Production with Specific Enhancement of IP-10", "venue": "PLoS ONE", "doi": "10.1371/journal.pone.0123635", "doi_url": "https://doi.org/10.1371/journal.pone.0123635"}, {"year": "2011", "title": "Potential of vesicular stomatitis virus as an oncolytic therapy for recurrent and drug-resistant ovarian cancer", "venue": "Chinese Journal of Cancer", "doi": "10.5732/cjc.011.10205", "doi_url": "https://doi.org/10.5732/cjc.011.10205"}, {"year": "2009", "title": "The negative regulators of the host immune response: an unexplored pathway in preterm birth", "venue": "American Journal of Obstetrics and Gynecology", "doi": "10.1016/j.ajog.2009.05.053", "doi_url": "https://doi.org/10.1016/j.ajog.2009.05.053"}, {"year": "2011", "title": "A Window to Innate Neuroimmunity: Toll-Like Receptor-Mediated Cell Responses in the Retina", "venue": "Advances in experimental medicine and biology", "doi": "10.1007/978-1-4614-0631-0_1", "doi_url": "https://doi.org/10.1007/978-1-4614-0631-0_1"}, {"year": "2006", "title": "Recombinant Vesicular Stomatitis Virus (VSV) and Other Strategies in HCV Vaccine Designs and Immunotherapy", "venue": "Unknown", "doi": "", "doi_url": ""}, {"year": "2015", "title": "Association of IPS1 polymorphisms with peginterferon efficacy in chronic hepatitis B with HBeAg-positive in the Chinese population", "venue": "Infection Genetics and Evolution", "doi": "10.1016/j.meegid.2015.01.013", "doi_url": "https://doi.org/10.1016/j.meegid.2015.01.013"}, {"year": "2022", "title": "FADD phosphorylation contributes to development of renal fibrosis by accelerating epithelial-mesenchymal transition", "venue": "Cell Cycle", "doi": "10.1080/15384101.2022.2136463", "doi_url": "https://doi.org/10.1080/15384101.2022.2136463"}, {"year": "2024", "title": "FADD promotes type I interferon production to suppress porcine reproductive and respiratory syndrome virus infection", "venue": "Frontiers in Veterinary Science", "doi": "10.3389/fvets.2024.1380144", "doi_url": "https://doi.org/10.3389/fvets.2024.1380144"}, {"year": "2008", "title": "A New TRADDition in Intracellular Antiviral Signaling", "venue": "Science Signaling", "doi": "10.1126/scisignal.130pe36", "doi_url": "https://doi.org/10.1126/scisignal.130pe36"}, {"year": "2014", "title": "The interferon-inducible antiviral protein Daxx is not essential for interferon-mediated protection against avian sarcoma virus", "venue": "Virology Journal", "doi": "10.1186/1743-422x-11-100", "doi_url": "https://doi.org/10.1186/1743-422x-11-100"}, {"year": "2014", "title": "NF-κB activation induced by hepatitis A virus and Newcastle disease virus occurs by different pathways depending on the structural pattern of viral nucleic acids", "venue": "Archives of Virology", "doi": "10.1007/s00705-014-1993-7", "doi_url": "https://doi.org/10.1007/s00705-014-1993-7"}, {"year": "2010", "title": "Immune Recognition of Nucleic Acids and Their Metabolites", "venue": "Nucleic acids and molecular biology", "doi": "10.1007/978-3-642-12617-8_12", "doi_url": "https://doi.org/10.1007/978-3-642-12617-8_12"}, {"year": "2022", "title": "Bacterial-agglutinating and opsonic activities of RIPK1 in zebrafish", "venue": "Comparative Biochemistry and Physiology Part C Toxicology & Pharmacology", "doi": "10.1016/j.cbpc.2022.109443", "doi_url": "https://doi.org/10.1016/j.cbpc.2022.109443"}, {"year": "2005", "title": "RIGing a virus trap", "venue": "Nature Medicine", "doi": "10.1038/nm0905-929", "doi_url": "https://doi.org/10.1038/nm0905-929"}, {"year": "2011", "title": "Caspase work model during pathogen infection", "venue": "Virologica Sinica", "doi": "10.1007/s12250-011-3218-5", "doi_url": "https://doi.org/10.1007/s12250-011-3218-5"}, {"year": "2006", "title": "Personalizing Oncolytic Virotherapy?", "venue": "Molecular Therapy", "doi": "10.1038/sj.mt.6300056", "doi_url": "https://doi.org/10.1038/sj.mt.6300056"}, {"year": "2011", "title": "Inhibition of nuclear factor kappa B activation reduces Coxsackievirus B3 replication in lymphoid cells", "venue": "Virus Research", "doi": "10.1016/j.virusres.2011.11.014", "doi_url": "https://doi.org/10.1016/j.virusres.2011.11.014"}, {"year": "2009", "title": "Analysis of HSV Oncolytic Virotherapy in Organotypic Cultures", "venue": "Methods in molecular biology", "doi": "10.1007/978-1-59745-561-9_3", "doi_url": "https://doi.org/10.1007/978-1-59745-561-9_3"}, {"year": "2011", "title": "Cytoplasmic Sensing of Viral Double-Stranded RNA and Activation of Innate Immunity by RIG-I-Like Receptors", "venue": "Unknown", "doi": "10.1007/978-1-4419-9914-6_5", "doi_url": "https://doi.org/10.1007/978-1-4419-9914-6_5"}, {"year": "2005", "title": "Viral recognition and type I interferon production by Toll-like receptor and an RNA helicase, RIG-I", "venue": "International Congress Series", "doi": "10.1016/j.ics.2005.07.102", "doi_url": "https://doi.org/10.1016/j.ics.2005.07.102"}, {"year": "2014", "title": "CYTOPATHOGENESIS OF RHABDOVIRUSES", "venue": "WORLD SCIENTIFIC eBooks", "doi": "10.1142/9789814635349_0007", "doi_url": "https://doi.org/10.1142/9789814635349_0007"}, {"year": "2017", "title": "A protective role for FADD dominant negative (FADD-DN) mutant in trinitrochlorobenzene (TNCB)-induced murine contact hypersensitivity reactions", "venue": "Clinical and Experimental Dermatology", "doi": "10.1111/ced.13303", "doi_url": "https://doi.org/10.1111/ced.13303"}, {"year": "2019", "title": "Functional characterisation ofHolothuria leucospilotaFas-associated death domain in the innate immune-related signalling pathways", "venue": "Innate Immunity", "doi": "10.1177/1753425919877680", "doi_url": "https://doi.org/10.1177/1753425919877680"}, {"year": "2012", "title": "Signaling in Innate Immunity and Inflammation", "venue": "bioRxiv", "doi": "10.1101/cshperspect.a006049", "doi_url": "https://doi.org/10.1101/cshperspect.a006049"}, {"year": "2019", "title": "Multitasking Kinase RIPK1 Regulates Cell Death and Inflammation", "venue": "bioRxiv", "doi": "10.1101/cshperspect.a036368", "doi_url": "https://doi.org/10.1101/cshperspect.a036368"}, {"year": "2019", "title": "OTULIN prevents liver inflammation and hepatocellular carcinoma by inhibiting FADD- and RIPK1 kinase-mediated hepatocyte apoptosis", "venue": "bioRxiv", "doi": "10.1101/776088", "doi_url": "https://doi.org/10.1101/776088"}, {"year": "2008", "title": "Pathogen-Related Signal Transduction Pathways of Dendritic Cells: Perspectives for Cancer Immunotherapy", "venue": "Current Signal Transduction Therapy", "doi": "10.2174/157436208784223116", "doi_url": "https://doi.org/10.2174/157436208784223116"}, {"year": "2012", "title": "Strategies to Stimulate Innate Immunity for Designing Effective Vaccine Adjuvants", "venue": "Unknown", "doi": "10.1002/9781118345313.ch2", "doi_url": "https://doi.org/10.1002/9781118345313.ch2"}, {"year": "2007", "title": "Role of the Influenza Virus Nonstructural 1 Protein in Evasion of Immunity", "venue": "Future Virology", "doi": "10.2217/17460794.2.4.389", "doi_url": "https://doi.org/10.2217/17460794.2.4.389"}, {"year": "2006", "title": "Induction and Evasion of Innate Immunity by hepatitis C virus", "venue": "Kanzo", "doi": "10.2957/kanzo.47.491", "doi_url": "https://doi.org/10.2957/kanzo.47.491"}, {"year": "2013", "title": "Atlantic salmon type I interferons - induction and antiviral activity", "venue": "Duo Research Archive (University of Oslo)", "doi": "", "doi_url": ""}, {"year": "2014", "title": "Induction of Atlantic salmon type I interferon and antagonism by infectious pancreatic necrosis virus", "venue": "Duo Research Archive (University of Oslo)", "doi": "", "doi_url": ""}, {"year": "2014", "title": "Characterization of Anti-Fungal Inflammasome Responses and the Role of Caspase-8 in Innate Immune Signaling: A Dissertation", "venue": "University of Massachusetts (UMass) Chan Medical School", "doi": "10.13028/m28c8f", "doi_url": "https://doi.org/10.13028/m28c8f"}, {"year": "2014", "title": "Interferon Regulatory Factors and the Atypical IKK-Related Kinases TBK1 and IKK-ε: Essential Players in the Innate Immune Response to RNA Virus Infection", "venue": "ASM Press eBooks", "doi": "10.1128/9781555815561.ch5", "doi_url": "https://doi.org/10.1128/9781555815561.ch5"}, {"year": "2009", "title": "XIAP promotes the innate immune response during cytosolic bacterial infection", "venue": "Deep Blue (University of Michigan)", "doi": "", "doi_url": ""}, {"year": "2011", "title": "RIP1 and FADD's Role in Innate Immunity", "venue": "Unknown", "doi": "", "doi_url": ""}, {"year": "2010", "title": "The Role of MDA5 and TLR3 in Response to dsRNA and Viral Infection", "venue": "Open Scholarship Institutional Repository (Washington University in St. Louis)", "doi": "10.7936/k7g73bqp", "doi_url": "https://doi.org/10.7936/k7g73bqp"}, {"year": "2010", "title": "The Role of Rip2 Protein in the Nod Mediated Innate Immune Response: A Dissertation", "venue": "University of Massachusetts (UMass) Chan Medical School", "doi": "10.13028/hyk4-j832", "doi_url": "https://doi.org/10.13028/hyk4-j832"}, {"year": "2010", "title": "Ubiquitin Dependent Regulation of Innate Antiviral Signaling", "venue": "Unknown", "doi": "", "doi_url": ""}, {"year": "2012", "title": "Innate Immunity of Airway Epithelium and COPD", "venue": "InTech eBooks", "doi": "10.5772/30828", "doi_url": "https://doi.org/10.5772/30828"}, {"year": "2015", "title": "Investigating the role of Fas (CD95) signalling in the modification of innate immune induced inflammation", "venue": "Cork Open Research Archive (University College Cork, Ireland)", "doi": "", "doi_url": ""}, {"year": "2019", "title": "Obesity alters the immune response to influenza virus infection: a mechanism for immune modulation", "venue": "Carolina Digital Repository (University of North Carolina at Chapel Hill)", "doi": "10.17615/8g6s-9d79", "doi_url": "https://doi.org/10.17615/8g6s-9d79"}, {"year": "2007", "title": "MAPPIT analysis of the early events in Toll-Like receptor signalling", "venue": "Ghent University Academic Bibliography (Ghent University)", "doi": "", "doi_url": ""}, {"year": "2012", "title": "DER EINFLUSS VON INTERLEUKIN- 13 AUF DEN TOLL- LIKE REZEPTORSIGNALWEG", "venue": "Unknown", "doi": "", "doi_url": ""}, {"year": "2015", "title": "Negative regulation of host innate antiviral signaling", "venue": "Unknown", "doi": "", "doi_url": ""}, {"year": "2008", "title": "Helicases at Frontline of RNA Virus Recognition", "venue": "Unknown", "doi": "10.1201/9781420068269.ch17", "doi_url": "https://doi.org/10.1201/9781420068269.ch17"}, {"year": "2006", "title": "NF-_B in the Innate Immune System", "venue": "Unknown", "doi": "10.1201/9781420004274.ch6", "doi_url": "https://doi.org/10.1201/9781420004274.ch6"}, {"year": "2008", "title": "Antiviral Signaling Through TLRs and RLHs", "venue": "Unknown", "doi": "10.1201/9781420068269.ch2", "doi_url": "https://doi.org/10.1201/9781420068269.ch2"}, {"year": "2012", "title": "Mechanism of Ubiquitin Induced Activation of RIG-I Like Receptors in Antiviral Innate Immunity", "venue": "Unknown", "doi": "", "doi_url": ""}, {"year": "2011", "title": "Vaccinia protein C16 blocks innate immune sensing of DNA by binding the Ku complex", "venue": "Spiral (Imperial College London)", "doi": "10.25560/8960", "doi_url": "https://doi.org/10.25560/8960"}, {"year": "2007", "title": "Critical Contribution of RAL GTPases to Growth and Survival of Breast Cancer Cells", "venue": "Unknown", "doi": "10.21236/ada477979", "doi_url": "https://doi.org/10.21236/ada477979"}, {"year": "2014", "title": "Toll-Like Receptors", "venue": "ASM Press eBooks", "doi": "10.1128/9781555816650.ch6", "doi_url": "https://doi.org/10.1128/9781555816650.ch6"}, {"year": "2014", "title": "RNA Recognition by the Pattern Recognition Receptor RIG-I: Roles of RNA Binding, Multimerization, and RNA-dependent ATPase Activity", "venue": "OhioLink ETD Center (Ohio Library and Information Network)", "doi": "", "doi_url": ""}, {"year": "2018", "title": "Dominant negative FADD/MORT1 inhibits the development of intestinal intraepithelial lymphocytes with a marked defect on CD8αα+TCRγδ+ T cells", "venue": "bioRxiv", "doi": "10.1101/313742", "doi_url": "https://doi.org/10.1101/313742"}, {"year": "2014", "title": "The Molecular Mechanism of Host Responses to Viral Infection", "venue": "eScholarship (California Digital Library)", "doi": "", "doi_url": ""}, {"year": "2020", "title": "MODULATION OF RECEPTOR INTERACTING PROTEIN KINASE 1 (RIPK1) SIGNALING DURING DENGUE VIRUS INFECTION", "venue": "Unknown", "doi": "10.23860/udawatte-darshika-2020", "doi_url": "https://doi.org/10.23860/udawatte-darshika-2020"}, {"year": "2019", "title": "Influenza A virus interferes with innate immune signaling in avian cells", "venue": "University of Alberta Library", "doi": "10.7939/r3-grzy-g666", "doi_url": "https://doi.org/10.7939/r3-grzy-g666"}, {"year": "2006", "title": "Faculty Opinions recommendation of Essential role of IPS-1 in innate immune responses against RNA viruses.", "venue": "Faculty Opinions – Post-Publication Peer Review of the Biomedical Literature", "doi": "10.3410/f.1032973.374601", "doi_url": "https://doi.org/10.3410/f.1032973.374601"}, {"year": "2023", "title": "Data from Depletion of Peripheral Macrophages and Brain Microglia Increases Brain Tumor Titers of Oncolytic Viruses", "venue": "Unknown", "doi": "10.1158/0008-5472.c.6496785", "doi_url": "https://doi.org/10.1158/0008-5472.c.6496785"}, {"year": "2025", "title": "From Large to Small Cytokine Receptor Antagonists", "venue": "SLAS DISCOVERY", "doi": "10.1016/j.slasd.2025.100280", "doi_url": "https://doi.org/10.1016/j.slasd.2025.100280"}, {"year": "2025", "title": "Monogenic disorders of the TNF signalling pathway", "venue": "Nature Reviews Rheumatology", "doi": "10.1038/s41584-025-01327-5", "doi_url": "https://doi.org/10.1038/s41584-025-01327-5"}, {"year": "2008", "title": "Recognition of Pathogens: Toll-Like Receptors", "venue": "Unknown", "doi": "10.1007/978-4-431-73884-8_1", "doi_url": "https://doi.org/10.1007/978-4-431-73884-8_1"}, {"year": "2025", "title": "<i>Acanthopagrus schlegelii</i> FADD and caspase-8 are involved in the regulation of apoptosis and inflammation", "venue": "Animal Advances", "doi": "10.48130/animadv-0025-0031", "doi_url": "https://doi.org/10.48130/animadv-0025-0031"}, {"year": "2026", "title": "Adaptor protein supersaturation drives innate immune signaling and cell fate", "venue": "eLife", "doi": "10.7554/elife.107962.2", "doi_url": "https://doi.org/10.7554/elife.107962.2"}, {"year": "2026", "title": "Adaptor protein supersaturation drives innate immune signaling and cell fate", "venue": "eLife", "doi": "10.7554/elife.107962.3", "doi_url": "https://doi.org/10.7554/elife.107962.3"}, {"year": "2026", "title": "FADD is recruited to activated STING oligomers to initiate caspase-mediated NF-κB activation in Drosophila melanogaster", "venue": "The EMBO Journal", "doi": "10.1038/s44318-026-00761-9", "doi_url": "https://doi.org/10.1038/s44318-026-00761-9"}, {"year": "2009", "title": "Caspase Mediated Cleavage, IAP Binding, Ubiquitination and Kinase Activation : Defining the Molecular Mechanisms Required for Drosophila NF-кB Signaling: A Dissertation", "venue": "University of Massachusetts (UMass) Chan Medical School", "doi": "10.13028/pc1q-pe08", "doi_url": "https://doi.org/10.13028/pc1q-pe08"}, {"year": "2007", "title": "Induction of CYR61 by Oncolytic HSV Infection of Glioma", "venue": "The Knowledge Bank (The Ohio State University)", "doi": "", "doi_url": ""}];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  var DATA = [];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>BookStory - Against Meritocracy</title>
+<style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+.role-pill[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:0;0px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.role-pill[data-tip]:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 3px);left:1rem;
+  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-dl{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+.role-pill[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:0;0px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.role-pill[data-tip]:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 3px);left:1rem;
+  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-dl{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+</style>
+<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Print PDF Report
+    </button>
+<div class="page" id="sec-story">
+<header class="hero card" id="sec-hero">
+<div class="header-bar">
+<div style="display: flex; align-items: center; gap: 1.25rem;">
+<div class="logo-wrap"><img alt="Logo" src="bookstories-logo.png"/></div>
+<div>
+<h1 class="hero-title">Against Meritocracy</h1>
+<div class="discipline-badge" style="background:#fef08a; color:#854d0e; border-color:#fde047; font-weight:600;" title="Immediate free access with an open licence — published in a fully OA venue"><svg fill="none" stroke="currentColor" style="width:14px; height:14px; display:inline; vertical-align:middle; margin-right:4px;" viewbox="0 0 24 24"><path d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg><span style="opacity:0.58;font-size:0.72em;font-weight:500;margin-right:0.25em;text-transform:uppercase;letter-spacing:0.04em;vertical-align:middle;">Access:</span><span style="vertical-align:middle;">Access:Open Access (Gold)</span></div>
+<div class="discipline-badge" title="Classified in Social Sciences (sociology, economics, political science, etc.)"><span style="opacity:0.58;font-size:0.72em;font-weight:500;margin-right:0.25em;text-transform:uppercase;letter-spacing:0.04em;vertical-align:middle;">Field:</span><span style="vertical-align:middle;">Field:Social Sciences</span></div>
+<div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+<span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em;" title="scite found more citations supporting than contrasting this work's methodology">
+<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                    Methodologically Supported
+                                <span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· scite</span><span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· scite</span></span>
+</div>
+<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+<div><strong>Author(s):</strong> Jo Littler</div>
+<div><strong>Publisher:</strong> Routledge</div>
+<div><strong>Publication year:</strong> 2017</div>
+<div><strong>DOI:</strong> <a href="https://doi.org/10.4324/9781315712802" target="_blank">10.4324/9781315712802</a></div>
+</div>
+</div>
+</div>
+<div class="cover-wrap">
+<div style="width: 110px; height: 155px; background: #f3f4f6; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; text-align: center; color: #9ca3af; font-size: 0.85rem; font-weight: 500; border: 1px dashed #d1d5db; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05);">
+                        No Cover <br/> Available
+                    </div>
+</div>
+</div>
+</header>
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">54</div>
+<div class="stats-strip-label">Total Citations</div>
+<div class="stats-strip-badge">🏆 Top 1% Cited</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">—</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">54</div>
+<div class="stats-strip-label">Downloads</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Gold</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
+
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-access">Access</a>
+<a href="#sec-attention">Attention</a>
+<a href="#sec-reader">Reader</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-operas">OPERAS</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">298</div>
+<div class="stats-strip-label">Total Citations</div>
+<div class="stats-strip-badge">🏆 Top 1% Cited</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">1</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">9692</div>
+<div class="stats-strip-label">Downloads</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Gold</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-access">Access</a>
+<a href="#sec-attention">Attention</a>
+<a href="#sec-reader">Reader</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-operas">OPERAS</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+<section class="card" id="sec-story">
+<h2><span>The Story So Far</span></h2>
+<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">"Against Meritocracy," published by Routledge in 2017, functions as a significant reference point within discussions about meritocratic systems, influencing 298 academic citations. Despite the absence of social media discussions, its academic stature suggests a strong foundation for further exploration and debate on the themes it presents.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">"Against Meritocracy," published in 2017 by Routledge, addresses critical themes related to meritocratic principles and their implications, highlighting the nuanced challenges that meritocracy poses within societal frameworks. The work has established itself as a notable reference point, as evidenced by its 298 citations in academic literature, indicating its integration into scholarly discourse across various fields.</p>
+<p class="story-text">While the absence of social media discussions suggests limited public engagement, the academic citations alone underscore the work's important role in inspiring further investigation into meritocracy. This significant academic footprint implies that the book is not just an isolated entity, but rather a catalyst for ongoing research and dialogue within its thematic area.</p>
+<p class="story-text">The lack of community discourse metrics such as mentions on Wikipedia or Reddit threads presents an opportunity for increased outreach strategies that could bolster its visibility outside of academia. Enhancing its engagement with broader audiences could amplify the ongoing conversations surrounding meritocracy and its societal consequences.</p>
+<p class="story-text">Overall, "Against Meritocracy" stands as a crucial intellectual resource in understanding meritocratic ideals. As more scholars engage with its concepts, there remains potential for the book to enrich public discourse, bridging the gap between academic exploration and societal relevance in discussions about equity and justice.</p></div>
+</section>
+<section class="card" id="sec-impact">
+<h2><span>Impact metrics</span></h2>
+<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">54</div><div class="im-label">Total Citations</div></div><div class="im-spark"><svg height="36" style="display:block;overflow:visible;" viewbox="0 0 120 36" width="120" xmlns="http://www.w3.org/2000/svg"><path d="M0.0,33.2 L12.0,33.2 L24.0,17.2 L36.0,15.0 L48.0,11.9 L60.0,2.8 L72.0,5.0 L84.0,2.0 L96.0,3.5 L108.0,3.5 L120.0,20.3 L120.0,36.0 L0,36.0 Z" fill="#dbeafe" opacity="0.6"></path><polyline fill="none" points="0.0,33.2 12.0,33.2 24.0,17.2 36.0,15.0 48.0,11.9 60.0,2.8 72.0,5.0 84.0,2.0 96.0,3.5 108.0,3.5 120.0,20.3" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline></svg><div class="im-spark-range">2000–2026</div></div></div><div class="im-top-badge">🏆 Top 1% Cited</div></div><div class="im-card"><div class="im-num">—</div><div class="im-label">Online Mentions</div></div><a class="im-card im-card-dl" href="#operas-metrics-card"><div class="im-card-top"><div><div class="im-num">54</div><div class="im-label">Downloads (OAPEN)</div></div><div id="dl-sparkline-container"></div></div><div class="im-card-hint">📊 View full timeline ↓</div></a></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-red" href="#sec-teaching">▶ YouTube · 1 video</a><a class="sig-pill sig-slate" href="#sec-teaching">📖 Wikipedia</a><a class="sig-pill sig-slate" href="#sec-teaching">📚 WorldCat</a><a class="sig-pill sig-indigo" href="#sec-teaching">🎓 Course syllabus</a><a class="sig-pill sig-blue" href="#sec-citing">🌍 17 countries</a><a class="sig-pill sig-blue" href="#operas-metrics-card">📊 OPERAS downloads</a></div></div></div></section>
+<section class="card" id="sec-roles">
+<h2><span>Inferred roles</span></h2>
+<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#b45309;">📢 Public Engagement &amp; Media</div><div class="roles-row"><span class="role-pill role-pill-public" style="opacity:1;" data-tip="Heavy social-platform engagement on Reddit, Bluesky, or Mastodon — the work has sparked ongoing community conversation."><span class="role-dot" style="background:#f59e0b;"></span>Active public discourse<span class="role-strength" style="background:#fef3c7;color:#92400e;">Strong</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#065f46;">🏛 Practical &amp; Real-World</div><div class="roles-row"><span class="role-pill role-pill-practical" style="opacity:1;" data-tip="Present on Amazon, Goodreads, or in patents — commercial or consumer crossover."><span class="role-dot" style="background:#10b981;"></span>Commercial linkage<span class="role-strength" style="background:#dcfce7;color:#166534;">Strong</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#1d4ed8;">🎓 Academic &amp; Scientific</div><div class="roles-row"><span class="role-pill role-pill-academic" style="opacity:1;" data-tip="Frequently cited in literature reviews and meta-analyses as a shorthand reference."><span class="role-dot" style="background:#3b82f6;"></span>Reference point for synthesis<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Strong</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
+</section>
+<div class="grid-2" id="sec-access">
+<section class="card" id="sec-access" style="margin-bottom:0;">
+<h2 style="margin-top:0;"><span>Access</span> <span class="badge" style="background:#f3f4f6; color:#4b5563;">Availability</span></h2>
+<ul class="metric-list" style="line-height: 1.8;">
+<li><strong>DOI:</strong> <a href="https://doi.org/10.4324/9781315712802" style="word-break: break-all;" target="_blank">https://doi.org/10.4324/9781315712802</a></li>
+<li><strong>OA status:</strong> 
+                        
+                            Gold
+                        
+                    </li>
+<li><strong>Landing page:</strong> <a href="https://doi.org/10.4324/9781315712802" style="word-break: break-all;" target="_blank">https://doi.org/10.4324/9781315712802</a></li>
+</ul>
+</section>
+<section class="card" id="sec-attention" style="margin-bottom:0;">
+<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>1</strong> recorded events globally
+                        
+                    </p>
+<p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+<em>(See specific sources and examples in the Online Mentions section below).</em>
+</p>
+</section>
+</div>
+<div class="grid-2" id="sec-reader" style="align-items: start;">
+<section class="card" id="sec-reader" style="margin-bottom:0;">
+<h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+<ul class="metric-list">
+<li style="margin-bottom: 0.8rem; padding-bottom: 0.8rem; border-bottom: 1px solid #f3f4f6;">
+<strong>Formal Book Reviews:</strong> <span class="badge" style="background: #fdf2f8; color: #be185d;">1 Reviews</span>
+<ul style="margin-top: 0.4rem; padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.4;">
+<li style="margin-bottom: 0.3rem;">
+<em>Postdigital Science and Education</em>: <br/>
+<a href="https://doi.org/" style="color: #2563eb; text-decoration: none;" target="_blank">Review of Kathryn Paige Harden (2021). The Genetic Lottery: Why DNA Matters for Social Equality</a>
+</li>
+</ul>
+</li>
+<li style="margin-bottom: 0.6rem;">
+<strong>Google Books:</strong> <a href="" style="color: #2563eb; text-decoration: none;" target="_blank">View listing ↗</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Commercial:</strong>
+<a href="https://www.amazon.com/s?k=9781315712802" style="color: #2563eb; text-decoration: none;" target="_blank">Amazon</a>
+                         · 
+                        <a href="https://www.goodreads.com/search?q=9781315712802" style="color: #2563eb; text-decoration: none;" target="_blank">Goodreads</a>
+</li>
+</ul>
+</section>
+<section class="card" id="sec-scite" style="margin-bottom:0;">
+<h2><span>Citation context</span> <span class="badge">scite</span></h2>
+<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+<li><strong>Total:</strong> 54</li>
+<li><strong>Supporting:</strong> 1</li>
+<li><strong>Mentioning:</strong> 44</li>
+<li><strong>Contradicting:</strong> 0</li>
+</ul>
+</section>
+</div>
+<section class="card" id="sec-citing">
+<h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+                Analysis of the 298 most recent citing works. 
+                <br/>
+<strong>24.9%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>2.0</strong> times itself.
+            </div>
+<div class="cite-analysis-always"><div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+<ul class="metric-list">
+<li><strong>Citing work types:</strong>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (231)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (55)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (4)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book (2)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">dissertation (2)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">report (1)</span>
+</li>
+<li><strong>Top citing venues:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Unknown (28)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">European Journal of Cultural Studies (16)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Cambridge University Press eBooks (11)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Feminist Media Studies (4)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">British Journal of Sociology (4)</span>
+</li>
+<li><strong>Top citing concepts:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Sociology (96)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Meritocracy (50)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Political science (22)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Narrative (16)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Politics (15)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Inequality (15)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Neoliberalism (international relations) (14)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Computer science (14)</span>
+</li>
+<li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+<strong>Citation timeline:</strong>
+<div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+<canvas data-labels="[2000, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]" data-values="[1, 1, 22, 25, 29, 41, 38, 42, 40, 40, 18]" id="citationChart">
+</canvas>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="cite-tabs">
+<button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-ppl')">👤 Top Citers</button>
+</div>
+<div class="cite-tab-pane active" id="cite-geo"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (127)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (28)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Australia (16)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Netherlands (11)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Canada (11)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (10)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Spain (9)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">France (5)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Switzerland (5)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">China (5)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Sweden (5)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Chile (5)</span>
+</div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (252)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (17)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Government (4)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Healthcare (3)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (3)</span>
+</div>
+</div></div>
+<div class="cite-tab-pane" id="cite-inst"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Leeds</strong>
+<a class="orcid-badge" href="https://ror.org/024mrxd33" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(10)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Queen Mary University of London</strong>
+<a class="orcid-badge" href="https://ror.org/026zzn846" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(10)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>City, University of London</strong>
+<a class="orcid-badge" href="https://ror.org/04489at23" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(8)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>London School of Economics and Political Science</strong>
+<a class="orcid-badge" href="https://ror.org/0090zs177" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(8)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Durham University</strong>
+<a class="orcid-badge" href="https://ror.org/01v29qb04" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(8)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>King's College London</strong>
+<a class="orcid-badge" href="https://ror.org/0220mzb33" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(8)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Cambridge</strong>
+<a class="orcid-badge" href="https://ror.org/013meh722" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(7)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Lancaster University</strong>
+<a class="orcid-badge" href="https://ror.org/04f2nsd36" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(6)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University College London</strong>
+<a class="orcid-badge" href="https://ror.org/02jx3x895" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Amsterdam</strong>
+<a class="orcid-badge" href="https://ror.org/04dkp9463" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+</ul>
+</div></div>
+<div class="cite-tab-pane" id="cite-ppl"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Clive Gabay</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-8359-171X" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(10)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Mitja Sardoč</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-3469-7478" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Jilly Boyce Kay</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-9548-296X" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Rosalind Gill</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-2715-1867" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Hanna Kuusela</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-3845-8140" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Katrina MacDonald</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-0871-1643" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Anamik Saha</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-7704-2493" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Susan L. Robertson</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-6757-8718" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Laura Clancy</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4688-0184" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Luigino Bruni</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-2005-5610" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+</ul>
+</div></div>
+</section>
+<div class="grid-2">
+<section class="card span-full" style="margin-bottom:0;">
+<h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref &amp; Open Web</span></h2>
+<h3 style="margin-top: 1.5rem; font-size: 1.1rem; color: #1f2937;">
+                    Community Engagement &amp; Discourse
+                </h3>
+<div style="display: flex; flex-wrap: wrap; gap: 0.5rem; border-bottom: 2px solid #e5e7eb; margin-bottom: 1.5rem; margin-top: 1rem;">
+<button class="soc-tab-btn soc-tab-active" onclick="openSocialTab(event, 'soc-wiki')">
+                        Wikipedia <span style="background: #f1f5f9; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.75rem; margin-left: 0.3rem;">1</span>
+</button>
+</div>
+<div style="position: relative; border-left: 2px solid #e2e8f0; padding-left: 1.5rem; margin-top: 1rem;">
+<div class="soc-tab-content" id="soc-wiki" style="display: block; animation: fadeIn 0.3s;">
+<div style="position: relative; margin-bottom: 1.25rem;">
+<span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #64748b; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.65rem; text-transform: uppercase;">Wikipedia (en)</span>
+</div>
+<a href="https://en.wikipedia.org/wiki/Myth_of_meritocracy" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.95rem;" target="_blank">Myth of meritocracy</a>
+<p class="muted" style="font-size: 0.8rem; margin: 0.1rem 0 0 0;">Work cited as a foundational reference in this encyclopedic entry.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<section class="card" id="sec-teaching">
+<h2><span>Teaching, Practice &amp; Library Adoption</span></h2>
+<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem;">
+                Evidence of structured teaching use, reading lists, and library availability.
+            </div>
+<div class="grid-2" style="align-items: start;">
+<div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        OpenCourseWare Mentions <span class="badge" style="float: right;">Google Custom Search</span>
+</h3>
+<p class="muted" style="font-size: 0.85rem; font-style: italic;">No verified course syllabi found in open university repositories.</p>
+<h3 style="font-size: 0.95rem; margin-top: 1.5rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem; display: flex; justify-content: space-between; align-items: baseline;">
+                        Video Lectures &amp; Presentations
+                        <span class="badge" style="background: #fef2f2; color: #dc2626; border: 1px solid #fecaca;">YouTube Transcripts</span>
+</h3>
+<ul style="padding-left: 0; list-style: none; margin: 0;">
+<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+<a href="https://www.youtube.com/watch?v=kZRlKeboUao" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
+                                    Gender, Class and Sociology Today: Bev Skeggs, Jo Littler and Michaela Benson
+                                </a>
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                    The Sociological Review Foundation
+                                </span>
+</div>
+<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #fecaca;">
+                                "...Paper explicitly linked in video metadata/description...."
+                            </div>
+<div class="muted" style="font-size: 0.7rem; margin-top: 0.4rem; text-align: right;">
+                                AI Academic Confidence: <strong>100%</strong>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        Library &amp; Community Access <span class="badge" style="float: right; background: #f0fdf4; color: #166534;">Open Library</span>
+</h3>
+<ul class="metric-list" style="margin-top: 0;">
+<li style="margin-bottom: 0.8rem;">
+<strong>Institutional Availability:</strong>
+<div style="margin-top: 0.4rem;">
+<a class="tag" href="https://www.worldcat.org/search?q=bn:9781315712802" style="background:#e5f2ff; color:#1d4ed8; font-weight: 600; text-decoration: none;" target="_blank">
+                                    Search Global Libraries (WorldCat) ↗
+                                </a>
+</div>
+</li>
+<li style="margin-bottom: 0.8rem;">
+<strong>Library Classification Subjects:</strong>
+<div style="display:flex; flex-wrap:wrap; gap:0.3rem; margin-top: 0.4rem;">
+<span class="tag tag-soft" style="font-size: 0.75rem;">Media studies</span>
+<span class="tag tag-soft" style="font-size: 0.75rem;">Social mobility</span>
+<span class="tag tag-soft" style="font-size: 0.75rem;">Plutocracy</span>
+<span class="tag tag-soft" style="font-size: 0.75rem;">Power (Social sciences)</span>
+<span class="tag tag-soft" style="font-size: 0.75rem;">Mobilité sociale</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<div class="grid-2" id="sec-contributors">
+<section class="card" id="sec-contributors" style="margin-bottom:0;">
+<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">1 author · 1 institution</div>
+<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Jo Littler</strong>
+<span class="badge">First</span>
+<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-8496-6192" target="_blank">ORCID</a>
+</li>
+</ul>
+<h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/014axpa37" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Roskilde University</a>
+</li>
+</ul>
+</section>
+<section class="card" id="sec-concepts" style="margin-bottom:0;">
+<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">3 specific concepts identified.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Meritocracy</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Political science</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Law</span>
+</div>
+</section>
+</div>
+<section class="card" id="operas-metrics-card">
+<h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
+<div id="metrics-widget"></div>
+<script id="operas-metrics-config" type="application/json">{"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "tab1", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN \u00b7 downloads", "works": ["info:doi:10.4324/9781315712802"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}}, "graphs": [{"id": "g1", "type": "line", "title": "Downloads over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}</script>
+<script async="" src="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js"></script>
+</section>
+<section class="card no-print" id="sec-citations">
+<h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">Displaying 297 most recent citing works</div>
+<div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+<table>
+<thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+<tbody id="cit-tbody"></tbody>
+</table>
+</div>
+<div class="cit-pagination">
+<span class="cit-pagination-info" id="cit-info">Loading…</span>
+<div class="cit-pagination-btns">
+<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
+<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
+<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
+</div>
+</div>
+
+<div class="cit-pagination">
+<span class="cit-pagination-info" id="cit-info">Loading…</span>
+<div class="cit-pagination-btns">
+<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
+<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
+<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
+</div>
+</div>
+</section>
+<footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+<div style="display: flex; flex-direction: column; gap: 0.4rem;">
+<div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+<svg fill="none" height="16" stroke="currentColor" style="color: #9ca3af;" viewbox="0 0 24 24" width="16"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Understanding our metrics: <a href="https://www.openscience.works/about.html" style="color: #2563eb; text-decoration: none; font-weight: 600;" target="_blank">Read the Methodology &amp; Legend ↗</a></span>
+</div>
+<div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-04-02T15:17:56+00:00
+                </div>
+</div>
+</footer>
+</div>
+<script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+<script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<script>
+(function() {
+  var DATA = [{"year": "2017", "title": "The affective, cultural and psychic life of postfeminism: A postfeminist sensibility 10 years on", "venue": "European Journal of Cultural Studies", "doi": "10.1177/1367549417733003", "doi_url": "https://doi.org/10.1177/1367549417733003"}, {"year": "2018", "title": "The Amazing Bounce-Backable Woman: Resilience and the Psychological Turn in Neoliberalism", "venue": "Sociological Research Online", "doi": "10.1177/1360780418769673", "doi_url": "https://doi.org/10.1177/1360780418769673"}, {"year": "2022", "title": "Rethinking authentic assessment: work, well-being, and society", "venue": "Higher Education", "doi": "10.1007/s10734-022-00822-y", "doi_url": "https://doi.org/10.1007/s10734-022-00822-y"}, {"year": "2019", "title": "Entrepreneurial Activism? Platform Cooperativism Between Subversion and Co-optation", "venue": "Critical Sociology", "doi": "10.1177/0896920519870577", "doi_url": "https://doi.org/10.1177/0896920519870577"}, {"year": "2021", "title": "The Class Ceiling: Why It Pays to Be Privileged", "venue": "Cultural Trends", "doi": "10.1080/09548963.2021.1950512", "doi_url": "https://doi.org/10.1080/09548963.2021.1950512"}, {"year": "2018", "title": "‘Talent-spotting’ or ‘social magic’? Inequality, cultural sorting and constructions of the ideal graduate in elite professions", "venue": "The Sociological Review", "doi": "10.1177/0038026118790949", "doi_url": "https://doi.org/10.1177/0038026118790949"}, {"year": "2021", "title": "Philanthrocapitalism and the Separation of Powers", "venue": "Annual Review of Law and Social Science", "doi": "10.1146/annurev-lawsocsci-120220-074323", "doi_url": "https://doi.org/10.1146/annurev-lawsocsci-120220-074323"}, {"year": "2019", "title": "Voicing lived-experience and anti-racism: podcasting as a space at the margins for subaltern counterpublics", "venue": "Popular Communication", "doi": "10.1080/15405702.2019.1622116", "doi_url": "https://doi.org/10.1080/15405702.2019.1622116"}, {"year": "2021", "title": "‘Ruined’ lives: Mediated white male victimhood", "venue": "European Journal of Cultural Studies", "doi": "10.1177/1367549420985840", "doi_url": "https://doi.org/10.1177/1367549420985840"}, {"year": "2021", "title": "The working classes and higher education: Meritocratic fallacies of upward mobility in the United Kingdom", "venue": "European Journal of Education", "doi": "10.1111/ejed.12438", "doi_url": "https://doi.org/10.1111/ejed.12438"}, {"year": "2019", "title": "The cruelty of hope: Emotional cultures of precarity in neoliberal Cairo", "venue": "Environment and Planning D Society and Space", "doi": "10.1177/0263775818825264", "doi_url": "https://doi.org/10.1177/0263775818825264"}, {"year": "2021", "title": "Epistemic injustice and epistemic positioning: towards an intersectional political economy", "venue": "Current Sociology", "doi": "10.1177/00113921211057609", "doi_url": "https://doi.org/10.1177/00113921211057609"}, {"year": "2022", "title": "Forms and scenes of attachment: A cultural geography of promises", "venue": "Dialogues in Human Geography", "doi": "10.1177/20438206221129205", "doi_url": "https://doi.org/10.1177/20438206221129205"}, {"year": "2018", "title": "Craft entrepreneurialism and sustainable scale: resistance to and disavowal of the creative industries as champions of capitalist growth", "venue": "Cultural Trends", "doi": "10.1080/09548963.2018.1534574", "doi_url": "https://doi.org/10.1080/09548963.2018.1534574"}, {"year": "2020", "title": "ENGINES OF SOCIAL MOBILITY? NAVIGATING MERITOCRATIC EDUCATION DISCOURSE IN AN UNEQUAL SOCIETY", "venue": "British Journal of Educational Studies", "doi": "10.1080/00071005.2019.1708863", "doi_url": "https://doi.org/10.1080/00071005.2019.1708863"}, {"year": "2020", "title": "The pedagogical limitations of inclusive education", "venue": "Educational Philosophy and Theory", "doi": "10.1080/00131857.2020.1723549", "doi_url": "https://doi.org/10.1080/00131857.2020.1723549"}, {"year": "2021", "title": "Against Game Studies", "venue": "Media and Communication", "doi": "10.17645/mac.v9i1.3315", "doi_url": "https://doi.org/10.17645/mac.v9i1.3315"}, {"year": "2023", "title": "The politics of vulnerability in the influencer economy", "venue": "European Journal of Cultural Studies", "doi": "10.1177/13675494231212346", "doi_url": "https://doi.org/10.1177/13675494231212346"}, {"year": "2020", "title": "“White Diversity”: Paradoxes of Deracializing Antidiscrimination", "venue": "Social Sciences", "doi": "10.3390/socsci9040050", "doi_url": "https://doi.org/10.3390/socsci9040050"}, {"year": "2021", "title": "Being watched and feeling judged on social media", "venue": "Feminist Media Studies", "doi": "10.1080/14680777.2021.1996427", "doi_url": "https://doi.org/10.1080/14680777.2021.1996427"}, {"year": "2021", "title": "Youth Attitudes Towards Their Future: the Role of Resources, Agency and Individualism in the UK", "venue": "Journal of Applied Youth Studies", "doi": "10.1007/s43151-021-00061-5", "doi_url": "https://doi.org/10.1007/s43151-021-00061-5"}, {"year": "2018", "title": "Imagining Africa", "venue": "Cambridge University Press eBooks", "doi": "10.1017/9781108652582", "doi_url": "https://doi.org/10.1017/9781108652582"}, {"year": "2020", "title": "Against the psychologization ofresilience: towards an onto-political theorization of the concept and its implications for higher education", "venue": "Studies in Higher Education", "doi": "10.1080/03075079.2019.1711048", "doi_url": "https://doi.org/10.1080/03075079.2019.1711048"}, {"year": "2020", "title": "The hyperopia of wealth: the cultural legitimation of economic inequalities by top earners", "venue": "Socio-Economic Review", "doi": "10.1093/ser/mwaa047", "doi_url": "https://doi.org/10.1093/ser/mwaa047"}, {"year": "2022", "title": "Talking the Talk of Social Mobility: The Political Performance of a Misguided Agenda", "venue": "Sociological Research Online", "doi": "10.1177/13607804211055493", "doi_url": "https://doi.org/10.1177/13607804211055493"}, {"year": "2022", "title": "The paradox of local inequality: Meritocratic beliefs in unequal localities", "venue": "British Journal of Sociology", "doi": "10.1111/1468-4446.12930", "doi_url": "https://doi.org/10.1111/1468-4446.12930"}, {"year": "2024", "title": "Maintaining the Meritocracy Myth: A critical discourse analytic study of leaders’ talk about merit and gender in academia", "venue": "Organization Studies", "doi": "10.1177/01708406241236610", "doi_url": "https://doi.org/10.1177/01708406241236610"}, {"year": "2021", "title": "Mérite", "venue": "Le Mot est faible", "doi": "10.3917/anamo.albuc.2021.01.0001", "doi_url": "https://doi.org/10.3917/anamo.albuc.2021.01.0001"}, {"year": "2020", "title": "Social justice leadership practice in unjust times: leading in highly disadvantaged contexts", "venue": "International Journal of Leadership in Education", "doi": "10.1080/13603124.2020.1770866", "doi_url": "https://doi.org/10.1080/13603124.2020.1770866"}, {"year": "2022", "title": "Solo‐living and childless professional women: Navigating the ‘balanced mother ideal’ over the fertile years", "venue": "Gender Work and Organization", "doi": "10.1111/gwao.12900", "doi_url": "https://doi.org/10.1111/gwao.12900"}, {"year": "2023", "title": "Paralympic cripvertising: On the gendered self-representations of Paralympic athletes on social media", "venue": "New Media & Society", "doi": "10.1177/14614448231173882", "doi_url": "https://doi.org/10.1177/14614448231173882"}, {"year": "2019", "title": "Celebrity, aspiration and contemporary youth: education and inequality in an era of austerity", "venue": "Celebrity Studies", "doi": "10.1080/19392397.2019.1601807", "doi_url": "https://doi.org/10.1080/19392397.2019.1601807"}, {"year": "2020", "title": "On the margins: young men’s mundane experiences of austerity in English coastal towns", "venue": "Social & Cultural Geography", "doi": "10.1080/14649365.2020.1795233", "doi_url": "https://doi.org/10.1080/14649365.2020.1795233"}, {"year": "2024", "title": "Addressing Economic Inequality through Management Education: Disrupting Student Attraction to the Myth of Neoliberal Meritocracy", "venue": "Academy of Management Learning and Education", "doi": "10.5465/amle.2023.0015", "doi_url": "https://doi.org/10.5465/amle.2023.0015"}, {"year": "2023", "title": "The limits of “no limits”: Young women's entrepreneurial performance and the gendered conquest of the self", "venue": "Ethos", "doi": "10.1111/etho.12398", "doi_url": "https://doi.org/10.1111/etho.12398"}, {"year": "2022", "title": "Precarious employment, precarious life? A qualitative study exploring the perspective of temporary agency workers and their households", "venue": "Work", "doi": "10.3233/wor-220095", "doi_url": "https://doi.org/10.3233/wor-220095"}, {"year": "2025", "title": "Emotional Labor as a Situated Social Practice: Investigating the Performance of Emotional Labor by Women Migrant Workers in China’s Platform-based Gig Economy", "venue": "Gender & Society", "doi": "10.1177/08912432251317160", "doi_url": "https://doi.org/10.1177/08912432251317160"}, {"year": "2024", "title": "Im/Perceptible Boyhood in a Post-Andrew Tate World", "venue": "Australian Feminist Studies", "doi": "10.1080/08164649.2025.2460822", "doi_url": "https://doi.org/10.1080/08164649.2025.2460822"}, {"year": "2024", "title": "Merit and Inequality: Confucian and Communitarian Perspectives on Singapore’s Meritocracy", "venue": "유교문화연구 (중국어판)", "doi": "10.22916/jcpc.2024..41.29", "doi_url": "https://doi.org/10.22916/jcpc.2024..41.29"}, {"year": "2018", "title": "Resisting resilience: disrupting discourses of self-efficacy", "venue": "Pedagogy Culture and Society", "doi": "10.1080/14681366.2018.1534261", "doi_url": "https://doi.org/10.1080/14681366.2018.1534261"}, {"year": "2019", "title": "Evaluation and Decision Making in Higher Education", "venue": "Higher education", "doi": "10.1007/978-3-030-11743-6_8-1", "doi_url": "https://doi.org/10.1007/978-3-030-11743-6_8-1"}, {"year": "2020", "title": "Educational leadership and global crises; reimagining planetary futures through social practice", "venue": "International Journal of Leadership in Education", "doi": "10.1080/13603124.2020.1811900", "doi_url": "https://doi.org/10.1080/13603124.2020.1811900"}, {"year": "2022", "title": "Neoliberalism and the Ideological Construction of Equity Beliefs", "venue": "Perspectives on Psychological Science", "doi": "10.1177/17456916211053311", "doi_url": "https://doi.org/10.1177/17456916211053311"}, {"year": "2022", "title": "Diversity, media and racial capitalism: a case study on publishing", "venue": "Ethnic and Racial Studies", "doi": "10.1080/01419870.2022.2032250", "doi_url": "https://doi.org/10.1080/01419870.2022.2032250"}, {"year": "2021", "title": "Reconceptualising fair access to highly academically selective universities", "venue": "Higher Education", "doi": "10.1007/s10734-021-00755-y", "doi_url": "https://doi.org/10.1007/s10734-021-00755-y"}, {"year": "2021", "title": "Justifying inherited wealth: Between ‘the bank of mum and dad’ and the meritocratic ideal", "venue": "Economy and Society", "doi": "10.1080/03085147.2021.1932353", "doi_url": "https://doi.org/10.1080/03085147.2021.1932353"}, {"year": "2021", "title": "Education cleavages, or market society and the rise of authoritarian populism?", "venue": "Globalisation Societies and Education", "doi": "10.1080/14767724.2021.1955662", "doi_url": "https://doi.org/10.1080/14767724.2021.1955662"}, {"year": "2021", "title": "Geek entrepreneurs: the social network, Iron Man and the reconfiguration of hegemonic masculinity", "venue": "Journal of Gender Studies", "doi": "10.1080/09589236.2021.1981836", "doi_url": "https://doi.org/10.1080/09589236.2021.1981836"}, {"year": "2019", "title": "Trivializing inequality by narrating facts: a discourse analysis of contending storylines in Germany", "venue": "Critical Policy Studies", "doi": "10.1080/19460171.2019.1623056", "doi_url": "https://doi.org/10.1080/19460171.2019.1623056"}, {"year": "2021", "title": "Individualization and Individualism: Facets and Turning Points of the Entrepreneurial Self among Young People in Italy", "venue": "Sociology", "doi": "10.1177/00380385211037857", "doi_url": "https://doi.org/10.1177/00380385211037857"}, {"year": "2021", "title": "The conundrums of formal and informal meritocracy: dealing with gender segregation in the academy", "venue": "Higher Education", "doi": "10.1007/s10734-021-00719-2", "doi_url": "https://doi.org/10.1007/s10734-021-00719-2"}, {"year": "2021", "title": "Television and the “Honest” Woman: Mediating the Labor of Believability", "venue": "Television & New Media", "doi": "10.1177/15274764211045742", "doi_url": "https://doi.org/10.1177/15274764211045742"}, {"year": "2020", "title": "The corporate power of the British monarchy: Capital(ism), wealth and power in contemporary Britain", "venue": "The Sociological Review", "doi": "10.1177/0038026120916105", "doi_url": "https://doi.org/10.1177/0038026120916105"}, {"year": "2023", "title": "Mapping Feminist Politics on Tik Tok during the COVID-19 Pandemic: A Content Analysis of the Hashtags #Feminismo and #Antifeminismo", "venue": "Journalism and Media", "doi": "10.3390/journalmedia4010017", "doi_url": "https://doi.org/10.3390/journalmedia4010017"}, {"year": "2020", "title": "Evaluation and Decision Making in Higher Education", "venue": "Higher education", "doi": "10.1007/978-3-030-31365-4_8", "doi_url": "https://doi.org/10.1007/978-3-030-31365-4_8"}, {"year": "2024", "title": "Exploring how mumpreneurs use digital platforms' algorithms and mechanisms to generate different types of value", "venue": "Information Systems Journal", "doi": "10.1111/isj.12518", "doi_url": "https://doi.org/10.1111/isj.12518"}, {"year": "2019", "title": "QUESTIONING the SUPER-RICH", "venue": "Cultural Politics an International Journal", "doi": "10.1215/17432197-7289444", "doi_url": "https://doi.org/10.1215/17432197-7289444"}, {"year": "2020", "title": "Invited Commentary: Societal Constraints and Individual Agency: Navigating Educational Transitions for Upward Mobility", "venue": "Journal of Youth and Adolescence", "doi": "10.1007/s10964-020-01311-0", "doi_url": "https://doi.org/10.1007/s10964-020-01311-0"}, {"year": "2023", "title": "Bounded Agency in Policy and Action: Empowerment, Agency and Belonging", "venue": "Palgrave studies in adult education and lifelong learning", "doi": "10.1007/978-3-031-14109-6_2", "doi_url": "https://doi.org/10.1007/978-3-031-14109-6_2"}, {"year": "2022", "title": "‘The more things change the more they stay the same’: The continuing relevance of Bourdieu and Passeron’s <i>Reproduction in Education, Society and Culture</i>", "venue": "Revista Española de Sociología", "doi": "10.22325/fes/res.2022.116", "doi_url": "https://doi.org/10.22325/fes/res.2022.116"}, {"year": "2022", "title": "Toward a non-individualistic analysis of neoliberalism: the stay-fit maternity trend in Taiwan", "venue": "Ethnography", "doi": "10.1177/14661381211054027", "doi_url": "https://doi.org/10.1177/14661381211054027"}, {"year": "2022", "title": "Back to the Theory: Re-Considering Social Policies as Egalitarian Pre-Conditions of the Liberal Meritocracy", "venue": "Çalışma ve Toplum", "doi": "10.54752/ct.1097161", "doi_url": "https://doi.org/10.54752/ct.1097161"}, {"year": "2024", "title": "The importance of being privileged: Digital entrepreneurship as a class project", "venue": "Journal of Professions and Organization", "doi": "10.1093/jpo/joae001", "doi_url": "https://doi.org/10.1093/jpo/joae001"}, {"year": "2024", "title": "Meritocracy seen through the eyes of its champions: a comparative study of educational elites", "venue": "British Journal of Sociology of Education", "doi": "10.1080/01425692.2024.2418097", "doi_url": "https://doi.org/10.1080/01425692.2024.2418097"}, {"year": "2024", "title": "Examining the Meaning of “Violence” Through Machine Learning Techniques", "venue": "Journal of Interpersonal Violence", "doi": "10.1177/08862605241301793", "doi_url": "https://doi.org/10.1177/08862605241301793"}, {"year": "2023", "title": "Inheriting a dynasty: Family succession dramas and the moral economy ofDownton Abbey", "venue": "European Journal of Cultural Studies", "doi": "10.1177/13675494231187475", "doi_url": "https://doi.org/10.1177/13675494231187475"}, {"year": "2024", "title": "The illusion of meritocracy", "venue": "Social Science Information", "doi": "10.1177/05390184241230406", "doi_url": "https://doi.org/10.1177/05390184241230406"}, {"year": "2024", "title": "Barriers in the Transition From School to Work: How Student Financial Adversity Predicts Deprioritizing Jobs With the Best Long‐Term Career Progression", "venue": "Journal of Social Issues", "doi": "10.1111/josi.12658", "doi_url": "https://doi.org/10.1111/josi.12658"}, {"year": "2021", "title": "Contradiction as Injustice: How Senses of Inequality Differ across National Contexts", "venue": "Sociology", "doi": "10.1177/00380385211056212", "doi_url": "https://doi.org/10.1177/00380385211056212"}, {"year": "2024", "title": "How Elites Mobilize the Vernacular: A Case Study of Australian Prime Ministers' Use of ‘Fair Go’ Rhetoric", "venue": "Government and Opposition", "doi": "10.1017/gov.2024.2", "doi_url": "https://doi.org/10.1017/gov.2024.2"}, {"year": "2024", "title": "Ceremonial Economics: A Social-Institutional Analysis of Universities, Disciplines, and Academic Positioning", "venue": "Journal of Economic Issues", "doi": "10.1080/00213624.2024.2343246", "doi_url": "https://doi.org/10.1080/00213624.2024.2343246"}, {"year": "2023", "title": "Canary in the mine: what white working-class underachievement reveals about processes of marginalisation in English secondary education", "venue": "International Studies in Sociology of Education", "doi": "10.1080/09620214.2023.2274612", "doi_url": "https://doi.org/10.1080/09620214.2023.2274612"}, {"year": "2023", "title": "In pursuit of (post-)bureaucratic promises: Analyzing the logics of career self-management discourse at a privatized company", "venue": "Scandinavian Journal of Management", "doi": "10.1016/j.scaman.2023.101318", "doi_url": "https://doi.org/10.1016/j.scaman.2023.101318"}, {"year": "2024", "title": "Moral market compliance: How a logic of activism is used to ‘fem wash’ market violence against women in the user-generated pornography market", "venue": "Marketing Theory", "doi": "10.1177/14705931241279268", "doi_url": "https://doi.org/10.1177/14705931241279268"}, {"year": "2024", "title": "Social reproduction, interrupted? Motherly labour, educational aspirations, and the work for another life", "venue": "Critique of Anthropology", "doi": "10.1177/0308275x241311678", "doi_url": "https://doi.org/10.1177/0308275x241311678"}, {"year": "2025", "title": "Polygenic Associations With Educational Attainment in East Versus West Germany: Differences Emerge After Reunification", "venue": "Psychological Science", "doi": "10.1177/09567976251350965", "doi_url": "https://doi.org/10.1177/09567976251350965"}, {"year": "2024", "title": "Networks revisited: Social media, inequality and network culture in the independent television production sector", "venue": "European Journal of Cultural Studies", "doi": "10.1177/13675494241236613", "doi_url": "https://doi.org/10.1177/13675494241236613"}, {"year": "2024", "title": "The Chinese idea of a university in flux: academic freedom and institutional autonomy under entrepreneurial reforms in the GBA", "venue": "Studies in Higher Education", "doi": "10.1080/03075079.2024.2415381", "doi_url": "https://doi.org/10.1080/03075079.2024.2415381"}, {"year": "2024", "title": "Return to innocence? Diaspora screen media and “New Ethnicities” in the moment of diversity", "venue": "Journal of Postcolonial Writing", "doi": "10.1080/17449855.2024.2312360", "doi_url": "https://doi.org/10.1080/17449855.2024.2312360"}, {"year": "2025", "title": "Retaining a focus on absolute change: a generational shift in the working-class transitions to university in the UK", "venue": "International Studies in Sociology of Education", "doi": "10.1080/09620214.2025.2461714", "doi_url": "https://doi.org/10.1080/09620214.2025.2461714"}, {"year": "2025", "title": "Lying Flat in Taiwan: Young People’s Alternative Life Choices in a Post-developmentalist Era", "venue": "Critical Asian Studies", "doi": "10.1080/14672715.2025.2474510", "doi_url": "https://doi.org/10.1080/14672715.2025.2474510"}, {"year": "2025", "title": "The Sociology of Self-Employment: A Typology and Reconciliation", "venue": "Sociology", "doi": "10.1177/00380385251324563", "doi_url": "https://doi.org/10.1177/00380385251324563"}, {"year": "2025", "title": "The meritocracy trap: Early childhood education policies promote individual achievement far more than social cohesion", "venue": "PLoS ONE", "doi": "10.1371/journal.pone.0326021", "doi_url": "https://doi.org/10.1371/journal.pone.0326021"}, {"year": "2025", "title": "“China’s ‘Bad Students’”: Structural Harm and Silenced Voices in the Educational System", "venue": "Chinese Education & Society", "doi": "10.1080/10611932.2025.2516451", "doi_url": "https://doi.org/10.1080/10611932.2025.2516451"}, {"year": "2025", "title": "Single mothers as ‘imperfect-resilient’ subjects and their entrepreneurial narratives on TikTok", "venue": "Continuum", "doi": "10.1080/10304312.2025.2545526", "doi_url": "https://doi.org/10.1080/10304312.2025.2545526"}, {"year": "2025", "title": "De Rationibus caporali: justification and denial in emerging social representations and ideologies of caporali in migrant agricultural exploitation", "venue": "Social Semiotics", "doi": "10.1080/10350330.2025.2604726", "doi_url": "https://doi.org/10.1080/10350330.2025.2604726"}, {"year": "2019", "title": "Ireland Inc.: The corporatization of affective life in post-Celtic Tiger Ireland", "venue": "International Journal of Cultural Studies", "doi": "10.1177/1367877919882437", "doi_url": "https://doi.org/10.1177/1367877919882437"}, {"year": "2019", "title": "Practices of hope: care, narrative and cultural democracy", "venue": "International Journal of Cultural Policy", "doi": "10.1080/10286632.2019.1702032", "doi_url": "https://doi.org/10.1080/10286632.2019.1702032"}, {"year": "2020", "title": "Keep crafting and carry on: Nostalgia and domestic cultures in the crisis", "venue": "European Journal of Cultural Studies", "doi": "10.1177/1367549420958718", "doi_url": "https://doi.org/10.1177/1367549420958718"}, {"year": "2021", "title": "The Illusion of Merit and the Demons of Economic Meritocracy: Which are the Legitimate Expectations of the Market?", "venue": "Journal of Business Ethics", "doi": "10.1007/s10551-020-04727-7", "doi_url": "https://doi.org/10.1007/s10551-020-04727-7"}, {"year": "2018", "title": "‘I’m Not a Bloody Slave, I Get Paid and if I Don’t Get Paid Then Nothing Happens’: Sarah’s Experience of Being a Student Sex Worker", "venue": "Work Employment and Society", "doi": "10.1177/0950017018809888", "doi_url": "https://doi.org/10.1177/0950017018809888"}, {"year": "2020", "title": "Talents and distributive justice: some tensions", "venue": "Educational Philosophy and Theory", "doi": "10.1080/00131857.2020.1808021", "doi_url": "https://doi.org/10.1080/00131857.2020.1808021"}, {"year": "2021", "title": "Organisational Social Mobility Programmes as Mechanisms of Power and Control", "venue": "Work Employment and Society", "doi": "10.1177/0950017021990550", "doi_url": "https://doi.org/10.1177/0950017021990550"}, {"year": "2021", "title": "A comparative perspective on social class inequalities in parental involvement in education: structural dynamics, institutional design, and cultural factors", "venue": "Educational Review", "doi": "10.1080/00131911.2021.1974347", "doi_url": "https://doi.org/10.1080/00131911.2021.1974347"}, {"year": "2022", "title": "Richness, Insecurity and the Welfare State", "venue": "Journal of Social Policy", "doi": "10.1017/s0047279422000617", "doi_url": "https://doi.org/10.1017/s0047279422000617"}, {"year": "2022", "title": "UK higher education, neoliberal meritocracy, and the culture of the new capitalism: A computational‐linguistics analysis", "venue": "Sociology Compass", "doi": "10.1111/soc4.13020", "doi_url": "https://doi.org/10.1111/soc4.13020"}, {"year": "2023", "title": "Towards a new (or rearticulated) philosophy of mental health nursing: A dialogue‐on‐dialogue", "venue": "Nursing Philosophy", "doi": "10.1111/nup.12433", "doi_url": "https://doi.org/10.1111/nup.12433"}, {"year": "2021", "title": "Understanding issues of ‘justice’ in ‘free higher education’: policy, legislation, and implications in the Philippines", "venue": "Policy Reviews in Higher Education", "doi": "10.1080/23322969.2021.2012242", "doi_url": "https://doi.org/10.1080/23322969.2021.2012242"}, {"year": "2022", "title": "Contributive Justice and Self-Actualizing Systems", "venue": "IEEE Technology and Society Magazine", "doi": "10.1109/mts.2022.3220803", "doi_url": "https://doi.org/10.1109/mts.2022.3220803"}, {"year": "2022", "title": "‘Less Dick Jokes’: Women-Only Comedy Line-Ups, Audience Expectations and Negotiating Stereotypes", "venue": "Palgrave studies in comedy", "doi": "10.1007/978-3-030-97351-3_11", "doi_url": "https://doi.org/10.1007/978-3-030-97351-3_11"}, {"year": "2022", "title": "MERİTOKRASİ", "venue": "Ankara Hacı Bayram Veli Üniversitesi Hukuk Fakültesi Dergisi", "doi": "10.34246/ahbvuhfd.1174035", "doi_url": "https://doi.org/10.34246/ahbvuhfd.1174035"}, {"year": "2023", "title": "#MournHub and @GrieveWatch: Mediating monarchy and mourning in the digital age", "venue": "International Journal of Cultural Studies", "doi": "10.1177/13678779231213990", "doi_url": "https://doi.org/10.1177/13678779231213990"}, {"year": "2024", "title": "Backlash, white privilege and anger: Resistance to the equality, diversity and inclusion agenda in the British television industry", "venue": "European Journal of Cultural Studies", "doi": "10.1177/13675494241261812", "doi_url": "https://doi.org/10.1177/13675494241261812"}, {"year": "2020", "title": "‘Our students do not get that equal chance’: teachers’ perspectives of meritocracy", "venue": "Cambridge Journal of Education", "doi": "10.1080/0305764x.2020.1796927", "doi_url": "https://doi.org/10.1080/0305764x.2020.1796927"}, {"year": "2020", "title": "Politics, preoccupations, pragmatics: a race/ethnicityreduxfor social work research", "venue": "European Journal of Social Work", "doi": "10.1080/13691457.2020.1751590", "doi_url": "https://doi.org/10.1080/13691457.2020.1751590"}, {"year": "2019", "title": "Gambling, Status Anxiety and Inter-Generational Social Mobility: Findings from the Mass Observation Archive", "venue": "Sociology", "doi": "10.1177/0038038519874981", "doi_url": "https://doi.org/10.1177/0038038519874981"}, {"year": "2019", "title": "Funky Days Are (Not) Back Again: Cool Britannia and the Rise and Fall of British South Asian Cultural Production", "venue": "Journal of British Cinema and Television", "doi": "10.3366/jbctv.2020.0505", "doi_url": "https://doi.org/10.3366/jbctv.2020.0505"}, {"year": "2021", "title": "The feminist politics of Meghan Markle: Brexit, femininity and the nation in crisis", "venue": "European Journal of Cultural Studies", "doi": "10.1177/1367549420980010", "doi_url": "https://doi.org/10.1177/1367549420980010"}, {"year": "2022", "title": "The rationality of qualified lotteries", "venue": "European Management Review", "doi": "10.1111/emre.12550", "doi_url": "https://doi.org/10.1111/emre.12550"}, {"year": "2020", "title": "The University of Nonstop Society: Campus Planning, Lounge Space, and Incessant Productivity", "venue": "Architecture and Culture", "doi": "10.1080/20507828.2020.1766300", "doi_url": "https://doi.org/10.1080/20507828.2020.1766300"}, {"year": "2021", "title": "How should liberal arts education evolve in the twenty first century? An exploration of universities in China and beyond1", "venue": "Educational Philosophy and Theory", "doi": "10.1080/00131857.2021.1984228", "doi_url": "https://doi.org/10.1080/00131857.2021.1984228"}, {"year": "2021", "title": "Jack Monroe and the cultural politics of the austerity celebrity", "venue": "European Journal of Cultural Studies", "doi": "10.1177/13675494211030938", "doi_url": "https://doi.org/10.1177/13675494211030938"}, {"year": "2023", "title": "Elizabeth Holmes: Silicon Valley, unicorns, and the limits of visibility", "venue": "Feminist Media Studies", "doi": "10.1080/14680777.2023.2245979", "doi_url": "https://doi.org/10.1080/14680777.2023.2245979"}, {"year": "2018", "title": "Do egalitarians always help the disadvantaged more than the advantaged? Testing a value‐norm conflict hypothesis in Malaysia", "venue": "Asian Journal Of Social Psychology", "doi": "10.1111/ajsp.12351", "doi_url": "https://doi.org/10.1111/ajsp.12351"}, {"year": "2022", "title": "Exclusionary attitudes toward immigrants: Globalization and configurations of ascribed and achieved status across 14 European countries", "venue": "International Journal of Comparative Sociology", "doi": "10.1177/00207152221094562", "doi_url": "https://doi.org/10.1177/00207152221094562"}, {"year": "2022", "title": "Secondary Education and Class Stratification: Understanding the Hierarchy of Sexuality Education in a Chinese Vocational High School", "venue": "Children", "doi": "10.3390/children9101524", "doi_url": "https://doi.org/10.3390/children9101524"}, {"year": "2022", "title": "Politics of Emancipation: A Feminist Defense of Randomly Selected Political Representatives", "venue": "Critical Policy Studies", "doi": "10.1080/19460171.2022.2154235", "doi_url": "https://doi.org/10.1080/19460171.2022.2154235"}, {"year": "2023", "title": "Learning to labour in the gym: Training to fight to reimagine the self and work under neoliberalism", "venue": "Sociology Compass", "doi": "10.1111/soc4.13150", "doi_url": "https://doi.org/10.1111/soc4.13150"}, {"year": "2022", "title": "There is high, and there is low: a qualitative examination of framings of inequality that Chinese people apply", "venue": "Socio-Economic Review", "doi": "10.1093/ser/mwac048", "doi_url": "https://doi.org/10.1093/ser/mwac048"}, {"year": "2022", "title": "Knowledge, culture and the curriculum in Britain, 1944 to the present", "venue": "London Review of Education", "doi": "10.14324/lre.20.1.34", "doi_url": "https://doi.org/10.14324/lre.20.1.34"}, {"year": "2023", "title": "The Idea of Merit: Delineation and Challenges", "venue": "Philosophia", "doi": "10.1007/s11406-023-00628-x", "doi_url": "https://doi.org/10.1007/s11406-023-00628-x"}, {"year": "2023", "title": "‘You just need to work harder’: Misalignments between the rhetoric of social mobility and education for social justice", "venue": "Power and Education", "doi": "10.1177/17577438231163047", "doi_url": "https://doi.org/10.1177/17577438231163047"}, {"year": "2023", "title": "On joining the editorial team ofEuropean Journal of Cultural Studiesin its 25th year", "venue": "European Journal of Cultural Studies", "doi": "10.1177/13675494231173502", "doi_url": "https://doi.org/10.1177/13675494231173502"}, {"year": "2021", "title": "Promotion to leadership, not just merit, but insider knowledge: What do school principals say?", "venue": "Journal of Educational Leadership Policy and Practice", "doi": "10.21307/jelpp-2021-001", "doi_url": "https://doi.org/10.21307/jelpp-2021-001"}, {"year": "2019", "title": "IS CONTEMPORARY LUXURY MORALLY ACCEPTABLE?", "venue": "Cultural Politics an International Journal", "doi": "10.1215/17432197-7289486", "doi_url": "https://doi.org/10.1215/17432197-7289486"}, {"year": "2022", "title": "The trouble with merit", "venue": "Theory and Research in Education", "doi": "10.1177/14778785221108844", "doi_url": "https://doi.org/10.1177/14778785221108844"}, {"year": "2021", "title": "Politiques de la diversité : perspectives transnationales", "venue": "SociologieS", "doi": "10.4000/sociologies.10671", "doi_url": "https://doi.org/10.4000/sociologies.10671"}, {"year": "2021", "title": "BB see: Transparency legislation and public discussions of wage inequality", "venue": "Canadian Review of Sociology/Revue canadienne de sociologie", "doi": "10.1111/cars.12326", "doi_url": "https://doi.org/10.1111/cars.12326"}, {"year": "2021", "title": "The Loss of the Popular: Reconstructing Fifty Years of Studying Popular Culture", "venue": "Media and Communication", "doi": "10.17645/mac.v9i3.4218", "doi_url": "https://doi.org/10.17645/mac.v9i3.4218"}, {"year": "2021", "title": "Introduction: Hope, labour, disconnection", "venue": "Environment and Planning D Society and Space", "doi": "10.1177/02637758211040884", "doi_url": "https://doi.org/10.1177/02637758211040884"}, {"year": "2022", "title": "More Critical, Less Managerial: Addressing the Managerialist Ideology in Academic Libraries", "venue": "Partnership The Canadian Journal of Library and Information Practice and Research", "doi": "10.21083/partnership.v16i2.6354", "doi_url": "https://doi.org/10.21083/partnership.v16i2.6354"}, {"year": "2022", "title": "Tracing networked images of gendered entrepreneurship online", "venue": "Gender Work and Organization", "doi": "10.1111/gwao.12877", "doi_url": "https://doi.org/10.1111/gwao.12877"}, {"year": "2022", "title": "Inequality and fairness with heterogeneous endowments", "venue": "PLoS ONE", "doi": "10.1371/journal.pone.0276864", "doi_url": "https://doi.org/10.1371/journal.pone.0276864"}, {"year": "2023", "title": "Challenging university complicity and majoritarian narratives: counter-storytelling from black working-class students", "venue": "Critical Studies in Education", "doi": "10.1080/17508487.2023.2209125", "doi_url": "https://doi.org/10.1080/17508487.2023.2209125"}, {"year": "2023", "title": "Meritocracy and Representation", "venue": "Journal of Economic Literature", "doi": "10.1257/jel.20221707", "doi_url": "https://doi.org/10.1257/jel.20221707"}, {"year": "2020", "title": "Re-thinking the Creative Economy Through Informality and Social Inclusion: Changing Policy Directions from Latin America", "venue": "Unknown", "doi": "10.1007/978-3-030-49384-4_7", "doi_url": "https://doi.org/10.1007/978-3-030-49384-4_7"}, {"year": "2020", "title": "The Enactment of a “Postfeminist Sensibility”: A Critical Discourse Analysis of Teens’ Constructions of Dating Abuse Among Their Peers", "venue": "Affilia", "doi": "10.1177/0886109920978558", "doi_url": "https://doi.org/10.1177/0886109920978558"}, {"year": "2020", "title": "‘This is a tale of friendship, a story of togetherness’: the British monarchy, Grenfell Tower, and inequalities in the Royal Borough of Kensington and Chelsea", "venue": "Cultural Studies", "doi": "10.1080/09502386.2020.1863997", "doi_url": "https://doi.org/10.1080/09502386.2020.1863997"}, {"year": "2021", "title": "Girls and activism in a neoliberal time: How teen girls from Toronto negotiate care, activism, and extraordinary girlhood", "venue": "Global Studies of Childhood", "doi": "10.1177/20436106211027341", "doi_url": "https://doi.org/10.1177/20436106211027341"}, {"year": "2022", "title": "Highs, Lows and Turning Points in Marginalised Transitions and Experiences of Noncompletion amongst Pushed Dropouts in South African Higher Education", "venue": "Education Sciences", "doi": "10.3390/educsci12090608", "doi_url": "https://doi.org/10.3390/educsci12090608"}, {"year": "2023", "title": "(Tiny) spaces of hope: Reclaiming, maintaining, and reframing housing in the tiny house movement", "venue": "Environment and Planning D Society and Space", "doi": "10.1177/02637758231165295", "doi_url": "https://doi.org/10.1177/02637758231165295"}, {"year": "2023", "title": "Neoliberal feminism and intergenerational relations at work: an analysis of media representations of feminist mentorship in popular culture", "venue": "Feminist Media Studies", "doi": "10.1080/14680777.2023.2258300", "doi_url": "https://doi.org/10.1080/14680777.2023.2258300"}, {"year": "2024", "title": "In search of a global community: a multivocal critique of UNESCO’s education commons discourse", "venue": "Journal of Education Policy", "doi": "10.1080/02680939.2024.2339914", "doi_url": "https://doi.org/10.1080/02680939.2024.2339914"}, {"year": "2021", "title": "Cracking up:Jokerand the mediatisation of the arse-end of the world", "venue": "New Review of Film and Television Studies", "doi": "10.1080/17400309.2020.1861882", "doi_url": "https://doi.org/10.1080/17400309.2020.1861882"}, {"year": "2018", "title": "Afropolitanism and the White-Western Incorporation of Africa", "venue": "Cambridge University Press eBooks", "doi": "10.1017/9781108652582.006", "doi_url": "https://doi.org/10.1017/9781108652582.006"}, {"year": "2022", "title": "Other spaces for young women’s identity work in physics: Resources accessed through university-adjacent informal physics learning contexts in Sweden", "venue": "Physical Review Physics Education Research", "doi": "10.1103/physrevphyseducres.18.020118", "doi_url": "https://doi.org/10.1103/physrevphyseducres.18.020118"}, {"year": "2023", "title": "Welcome to the shopping revolution! Commodifying selfhood and rearticulating consumer capitalism at the Metro Centre, Gateshead", "venue": "The Sociological Review", "doi": "10.1177/00380261231194504", "doi_url": "https://doi.org/10.1177/00380261231194504"}, {"year": "2023", "title": "Male youth’s self-narrative and the discourse of meritocracy in South Korea", "venue": "Cultural Studies", "doi": "10.1080/09502386.2023.2261967", "doi_url": "https://doi.org/10.1080/09502386.2023.2261967"}, {"year": "2024", "title": "Internalised Individualism: Young People, Welfare Conditionality, and the Psychological Framing of Employment Aspirations", "venue": "Social Policy and Society", "doi": "10.1017/s1474746424000320", "doi_url": "https://doi.org/10.1017/s1474746424000320"}, {"year": "2024", "title": "Education evaluation policy in Chile: experience at a multigrade rural school as a contribution to social justice", "venue": "Educational Assessment Evaluation and Accountability", "doi": "10.1007/s11092-024-09446-5", "doi_url": "https://doi.org/10.1007/s11092-024-09446-5"}, {"year": "2025", "title": "Cruel Meritocracy in 21st-Century U.S. Literary Narratives: An Introduction", "venue": "Revista Alicantina de Estudios Ingleses", "doi": "10.14198/raei.30486", "doi_url": "https://doi.org/10.14198/raei.30486"}, {"year": "2019", "title": "Why becoming a national treasure matters: Elite celebrity status and inequality in the United Kingdom", "venue": "European Journal of Cultural Studies", "doi": "10.1177/1367549419861630", "doi_url": "https://doi.org/10.1177/1367549419861630"}, {"year": "2019", "title": "Occupying the intersection: RuPaul’s celebration of meritocracy", "venue": "Critical Studies in Television The International Journal of Television Studies", "doi": "10.1177/1749602019875864", "doi_url": "https://doi.org/10.1177/1749602019875864"}, {"year": "2021", "title": "De Michael Sandel a César Rendueles: ¿es posible criticar la meritocracia en nombre del bien común?", "venue": "Isegoría", "doi": "10.3989/isegoria.2021.65.12", "doi_url": "https://doi.org/10.3989/isegoria.2021.65.12"}, {"year": "2021", "title": "Reflexive practice, the “turn to care” and accounting for feeling", "venue": "Alphaville Journal of Film and Screen Media", "doi": "10.33178/alpha.20.09", "doi_url": "https://doi.org/10.33178/alpha.20.09"}, {"year": "2024", "title": "Problematising teachers' accounts of privilege in elite high schools", "venue": "British Educational Research Journal", "doi": "10.1002/berj.3972", "doi_url": "https://doi.org/10.1002/berj.3972"}, {"year": "2022", "title": "Educación Superior, CTI y desigualdad: límites y contradicciones sistémicas en tiempos de COVID-19", "venue": "Revista del Núcleo de Estudios e Investigaciones en Educación Superior del Mercosur/Integración y conocimiento", "doi": "10.61203/2347-0658.v11.n1.36521", "doi_url": "https://doi.org/10.61203/2347-0658.v11.n1.36521"}, {"year": "2019", "title": "Beyond the Mainstream: Diversity Leadership and Leading Diversity", "venue": "Unknown", "doi": "10.1007/978-3-030-25052-2_4", "doi_url": "https://doi.org/10.1007/978-3-030-25052-2_4"}, {"year": "2019", "title": "Use and the University", "venue": "Unknown", "doi": "10.1215/9781478007210-005", "doi_url": "https://doi.org/10.1215/9781478007210-005"}, {"year": "2022", "title": "The Texture and History of Singapore’s Education Meritocracy", "venue": "Education in the Asia-Pacific region", "doi": "10.1007/978-981-16-9982-5_9", "doi_url": "https://doi.org/10.1007/978-981-16-9982-5_9"}, {"year": "2022", "title": "‘I can live without you’: Self-branding as individuation in young Chinese women’s transnational mobilities", "venue": "European Journal of Cultural Studies", "doi": "10.1177/13675494221126545", "doi_url": "https://doi.org/10.1177/13675494221126545"}, {"year": "2022", "title": "Imagining diversity", "venue": "Alphaville Journal of Film and Screen Media", "doi": "10.33178/alpha.24.02", "doi_url": "https://doi.org/10.33178/alpha.24.02"}, {"year": "2023", "title": "Improving but not equalising opportunity: the objective and effect of regulating fair access to higher education in England, and their implications for understanding higher education policy", "venue": "Oxford Review of Education", "doi": "10.1080/03054985.2023.2211255", "doi_url": "https://doi.org/10.1080/03054985.2023.2211255"}, {"year": "2023", "title": "Board Games as Social Media: Toward an Enchanted Inquiry of Digital Capitalism", "venue": "South Atlantic Quarterly", "doi": "10.1215/00382876-10779388", "doi_url": "https://doi.org/10.1215/00382876-10779388"}, {"year": "2024", "title": "Televising Talent: Musicality, Meritocracy, and the Aesthetics of Exclusion", "venue": "Journal of the Society for American Music", "doi": "10.1017/s1752196323000421", "doi_url": "https://doi.org/10.1017/s1752196323000421"}, {"year": "2024", "title": "Opportunity or burden? Shifting femininities and women’s experiences in a pre-professional business leadership setting", "venue": "European Journal of Women s Studies", "doi": "10.1177/13505068241233393", "doi_url": "https://doi.org/10.1177/13505068241233393"}, {"year": "2024", "title": "Tensions in the pursuit of equal opportunities: A case study of an innovative secondary school", "venue": "British Educational Research Journal", "doi": "10.1002/berj.4019", "doi_url": "https://doi.org/10.1002/berj.4019"}, {"year": "2024", "title": "O acesso ao Ensino Médio Integrado e o direito à educação básica", "venue": "Revista Brasileira da Educação Profissional e Tecnológica", "doi": "10.15628/rbept.2024.14903", "doi_url": "https://doi.org/10.15628/rbept.2024.14903"}, {"year": "2018", "title": "Analyzing Zombie Dystopia as Neoliberal Scenario: An Exercise in Emancipatory Catastrophism", "venue": "Frontiers in Sociology", "doi": "10.3389/fsoc.2018.00020", "doi_url": "https://doi.org/10.3389/fsoc.2018.00020"}, {"year": "2018", "title": "Entrepreneurship in Music and the Goldilocks Principle: “Highway to Hell” or “Together Forever”?", "venue": "Unknown", "doi": "10.1007/978-3-319-77350-6_22", "doi_url": "https://doi.org/10.1007/978-3-319-77350-6_22"}, {"year": "2021", "title": "Las trampas de la meritocracia. Un recorrido por los problemas más significativos que esconde el merecimiento", "venue": "Revista de Estudios Políticos", "doi": "10.18042/cepc/rep.191.03", "doi_url": "https://doi.org/10.18042/cepc/rep.191.03"}, {"year": "2022", "title": "The Crisis of the Meritocracy: Britain’s transition to mass education since the Second World War", "venue": "British Journal of Sociology of Education", "doi": "10.1080/01425692.2022.2105476", "doi_url": "https://doi.org/10.1080/01425692.2022.2105476"}, {"year": "2018", "title": "Whiteness, the Western Gaze and Africa", "venue": "Cambridge University Press eBooks", "doi": "10.1017/9781108652582.001", "doi_url": "https://doi.org/10.1017/9781108652582.001"}, {"year": "2020", "title": "The (RE)Production of Meritocracy: Challenges from the Romanian Higher Education System Under Neoliberalism", "venue": "Studia Universitatis Babeş-Bolyai. Sociologia", "doi": "10.2478/subbs-2020-0003", "doi_url": "https://doi.org/10.2478/subbs-2020-0003"}, {"year": "2020", "title": "Creativity in the Service of Economic Recovery and “National Salvation”: Dispatches from the Greek Crisis Social Factory", "venue": "Science, technology and innovation studies", "doi": "10.1007/978-3-030-53164-5_7", "doi_url": "https://doi.org/10.1007/978-3-030-53164-5_7"}, {"year": "2020", "title": "Working Royals, Megxit and Prince Andrew’s disastrous BBC interview", "venue": "Journal of Language and Politics", "doi": "10.1075/jlp.20020.chi", "doi_url": "https://doi.org/10.1075/jlp.20020.chi"}, {"year": "2021", "title": "TheRupaulParadox: Freedom and Stricture in a Competition Reality TV Show", "venue": "Javnost - The Public", "doi": "10.1080/13183222.2021.1924541", "doi_url": "https://doi.org/10.1080/13183222.2021.1924541"}, {"year": "2021", "title": "O impacto da meritocracia em empresas de logística durante crises econômicas", "venue": "Revista de Administração da UFSM", "doi": "10.5902/1983465953208", "doi_url": "https://doi.org/10.5902/1983465953208"}, {"year": "2022", "title": "Meritocracy: The Keyword of Market Populism", "venue": "Contributions to political science", "doi": "10.1007/978-3-031-10808-2_8", "doi_url": "https://doi.org/10.1007/978-3-031-10808-2_8"}, {"year": "2022", "title": "Makeover welfare: Mary, Queen of Charity Shops and the cultural politics of second-hand under austerity", "venue": "JOMEC Journal", "doi": "10.18573/jomec.233", "doi_url": "https://doi.org/10.18573/jomec.233"}, {"year": "2023", "title": "Loving cultural work at Southbank Centre: Evolutions of emotional, embodied, collaborative labour", "venue": "European Journal of Cultural Studies", "doi": "10.1177/13675494231152895", "doi_url": "https://doi.org/10.1177/13675494231152895"}, {"year": "2023", "title": "Review of Kathryn Paige Harden (2021). The Genetic Lottery: Why DNA Matters for Social Equality", "venue": "Postdigital Science and Education", "doi": "10.1007/s42438-023-00399-4", "doi_url": "https://doi.org/10.1007/s42438-023-00399-4"}, {"year": "2023", "title": "Discrimination, Diversity and Inclusion", "venue": "Research portal (Tilburg University)", "doi": "10.1007/978-3-031-37932-1_9", "doi_url": "https://doi.org/10.1007/978-3-031-37932-1_9"}, {"year": "2023", "title": "Cristianismo y pobreza: una aproximación teórico-metodológica", "venue": "Cultura y religión", "doi": "10.4067/s0718-47272023000100208", "doi_url": "https://doi.org/10.4067/s0718-47272023000100208"}, {"year": "2024", "title": "The Power of the Powerless: Constructions of Self‐Employment in Czechia", "venue": "Social Inclusion", "doi": "10.17645/si.7820", "doi_url": "https://doi.org/10.17645/si.7820"}, {"year": "2019", "title": "Interviewing and Hiring Practices in Brazilian Academia: Proposals Towards Improvement", "venue": "Societies", "doi": "10.3390/soc9030057", "doi_url": "https://doi.org/10.3390/soc9030057"}, {"year": "2021", "title": "Setting Aside Settings: On the Contradictory Dynamics of “Flat Earth,” “Ordinalization,” and “Cold Spot” Education Governing Projects", "venue": "Knowledge and space", "doi": "10.1007/978-3-030-78597-0_10", "doi_url": "https://doi.org/10.1007/978-3-030-78597-0_10"}, {"year": "2024", "title": "Differences in polygenic associations with educational attainment between West and East Germany before and after reunification", "venue": "bioRxiv", "doi": "10.1101/2024.03.21.585839", "doi_url": "https://doi.org/10.1101/2024.03.21.585839"}, {"year": "2018", "title": "Gendering the Screenwriter", "venue": "Unknown", "doi": "10.1007/978-3-319-95732-6_2", "doi_url": "https://doi.org/10.1007/978-3-319-95732-6_2"}, {"year": "2020", "title": "‘New Italians’ and intercultural citizenship: Challenging hegemonic visions of migration, childhood and identity through fiction", "venue": "European Journal of Cultural Studies", "doi": "10.1177/1367549420902807", "doi_url": "https://doi.org/10.1177/1367549420902807"}, {"year": "2020", "title": "Girly Swots and Meritocracy", "venue": "Women a Cultural Review", "doi": "10.1080/09574042.2020.1723336", "doi_url": "https://doi.org/10.1080/09574042.2020.1723336"}, {"year": "2020", "title": "‘Well-Behaved Women Seldom Make History’: Transgressive Speech, Gender and Communicative Injustice", "venue": "Unknown", "doi": "10.1007/978-3-030-47287-0_4", "doi_url": "https://doi.org/10.1007/978-3-030-47287-0_4"}, {"year": "2020", "title": "Out of Place: Women as Linguistic Interlopers in Mediated Political Speech", "venue": "Unknown", "doi": "10.1007/978-3-030-47287-0_7", "doi_url": "https://doi.org/10.1007/978-3-030-47287-0_7"}, {"year": "2020", "title": "Feminism and Communicative Injustice", "venue": "Unknown", "doi": "10.1007/978-3-030-47287-0_1", "doi_url": "https://doi.org/10.1007/978-3-030-47287-0_1"}, {"year": "2020", "title": "Monopoly, sakk vagy póker? A kapitalizmus (félre)reprezentációja a nyilvánosságban", "venue": "JEL-KÉP", "doi": "10.20520/jel-kep.2020.2.145", "doi_url": "https://doi.org/10.20520/jel-kep.2020.2.145"}, {"year": "2000", "title": "Trailblazing Transformation: Pioneering Transformative Peacebuilding in Academic Labor Conflicts", "venue": "PDXScholar  (Portland State University)", "doi": "10.15760/etd.7443", "doi_url": "https://doi.org/10.15760/etd.7443"}, {"year": "2020", "title": "Return of the Oppressed: Complex Identification in A Separation", "venue": "Global cinema", "doi": "10.1007/978-3-030-61006-7_4", "doi_url": "https://doi.org/10.1007/978-3-030-61006-7_4"}, {"year": "2021", "title": "Book Review: Orian Brook, Dave O’Brien and Mark Taylor,Culture Is Bad for You: Inequality in the Cultural and Creative Industries", "venue": "European Journal of Cultural Studies", "doi": "10.1177/13675494211003576", "doi_url": "https://doi.org/10.1177/13675494211003576"}, {"year": "2018", "title": "The Age of Capricorn", "venue": "Cambridge University Press eBooks", "doi": "10.1017/9781108652582.005", "doi_url": "https://doi.org/10.1017/9781108652582.005"}, {"year": "2021", "title": "Vom Ausbleiben des Aufstiegs und der Krise als Dauer: Szenen sozialer Im/Mobilität im postmeritokratischen Kino der Gegenwart", "venue": "GENDER – Zeitschrift für Geschlecht Kultur und Gesellschaft", "doi": "10.3224/gender.v13i3.06", "doi_url": "https://doi.org/10.3224/gender.v13i3.06"}, {"year": "2021", "title": "D like Day- and Dream-Job. Eine explorative Untersuchung zu ambivalenten Aushandlungsprozessen sozialer Mobilität auf Instagram", "venue": "GENDER – Zeitschrift für Geschlecht Kultur und Gesellschaft", "doi": "10.3224/gender.v13i3.04", "doi_url": "https://doi.org/10.3224/gender.v13i3.04"}, {"year": "2019", "title": "Queer Use", "venue": "Unknown", "doi": "10.1215/9781478007210-006", "doi_url": "https://doi.org/10.1215/9781478007210-006"}, {"year": "2019", "title": "Using Things", "venue": "Unknown", "doi": "10.1215/9781478007210-002", "doi_url": "https://doi.org/10.1215/9781478007210-002"}, {"year": "2019", "title": "A Useful Archive", "venue": "Unknown", "doi": "10.1215/9781478007210-001", "doi_url": "https://doi.org/10.1215/9781478007210-001"}, {"year": "2019", "title": "Use as Technique", "venue": "Unknown", "doi": "10.1215/9781478007210-004", "doi_url": "https://doi.org/10.1215/9781478007210-004"}, {"year": "2018", "title": "Bibliography", "venue": "Unknown", "doi": "10.1108/978-1-78743-710-420181012", "doi_url": "https://doi.org/10.1108/978-1-78743-710-420181012"}, {"year": "2019", "title": "References", "venue": "Unknown", "doi": "10.1215/9781478007210-008", "doi_url": "https://doi.org/10.1215/9781478007210-008"}, {"year": "2019", "title": "The Biology of Use and Disuse", "venue": "Unknown", "doi": "10.1215/9781478007210-003", "doi_url": "https://doi.org/10.1215/9781478007210-003"}, {"year": "2019", "title": "Notes", "venue": "Unknown", "doi": "10.1215/9781478007210-007", "doi_url": "https://doi.org/10.1215/9781478007210-007"}, {"year": "2018", "title": "Independent Creativity", "venue": "Unknown", "doi": "10.1007/978-3-319-71670-1_7", "doi_url": "https://doi.org/10.1007/978-3-319-71670-1_7"}, {"year": "2022", "title": "La variante léxica pelucón en Ecuador: Un análisis del discurso mediado por computadora", "venue": "URU Revista de Comunicación y Cultura", "doi": "10.32719/26312514.2022.5.10", "doi_url": "https://doi.org/10.32719/26312514.2022.5.10"}, {"year": "2018", "title": "Finding Anti-Civilisation in Africa", "venue": "Cambridge University Press eBooks", "doi": "10.1017/9781108652582.002", "doi_url": "https://doi.org/10.1017/9781108652582.002"}, {"year": "2018", "title": "Making Whiteness Strange", "venue": "Cambridge University Press eBooks", "doi": "10.1017/9781108652582.008", "doi_url": "https://doi.org/10.1017/9781108652582.008"}, {"year": "2018", "title": "Native Rights in Colonial Kenya: The Symbolism of Harry Thuku", "venue": "Cambridge University Press eBooks", "doi": "10.1017/9781108652582.003", "doi_url": "https://doi.org/10.1017/9781108652582.003"}, {"year": "2018", "title": "References", "venue": "Cambridge University Press eBooks", "doi": "10.1017/9781108652582.009", "doi_url": "https://doi.org/10.1017/9781108652582.009"}, {"year": "2018", "title": "‘Exploding Africa’", "venue": "Cambridge University Press eBooks", "doi": "10.1017/9781108652582.004", "doi_url": "https://doi.org/10.1017/9781108652582.004"}, {"year": "2018", "title": "Index", "venue": "Cambridge University Press eBooks", "doi": "10.1017/9781108652582.010", "doi_url": "https://doi.org/10.1017/9781108652582.010"}, {"year": "2018", "title": "Africa Rising, Whiteness Falling", "venue": "Cambridge University Press eBooks", "doi": "10.1017/9781108652582.007", "doi_url": "https://doi.org/10.1017/9781108652582.007"}, {"year": "2022", "title": "Muggle-class values: Why does television’s take on fantasy classics look so much like John Lewis?", "venue": "The Sociological Review Magazine", "doi": "10.51428/tsr.cdis4773", "doi_url": "https://doi.org/10.51428/tsr.cdis4773"}, {"year": "2022", "title": "Diversity, Equity, and Belonging in Community Development Block Grants (CDBG)", "venue": "Unknown", "doi": "10.46569/20.500.12680/j3860f05g", "doi_url": "https://doi.org/10.46569/20.500.12680/j3860f05g"}, {"year": "2023", "title": "Angela McRobbie,Feminism and the Politics of Resilience: Essays on Gender, Media and the End of Welfare", "venue": "International Sociology", "doi": "10.1177/02685809231158884a", "doi_url": "https://doi.org/10.1177/02685809231158884a"}, {"year": "2023", "title": "Political Engagement [Audio podcast episode]", "venue": "The Sociological Review Magazine", "doi": "10.51428/tsr.ymrh4796", "doi_url": "https://doi.org/10.51428/tsr.ymrh4796"}, {"year": "2023", "title": "Love", "venue": "Palgrave studies in victims and victimology", "doi": "10.1007/978-3-031-24715-6_4", "doi_url": "https://doi.org/10.1007/978-3-031-24715-6_4"}, {"year": "2023", "title": "Development of the Self: Recognising Harm", "venue": "Palgrave studies in victims and victimology", "doi": "10.1007/978-3-031-24715-6_3", "doi_url": "https://doi.org/10.1007/978-3-031-24715-6_3"}, {"year": "2023", "title": "Esteem", "venue": "Palgrave studies in victims and victimology", "doi": "10.1007/978-3-031-24715-6_5", "doi_url": "https://doi.org/10.1007/978-3-031-24715-6_5"}, {"year": "2023", "title": "Academic precarity and its Helvetic discontents: autoethnographic insights into the Swiss poetics of precarity", "venue": "Globalisation Societies and Education", "doi": "10.1080/14767724.2023.2225421", "doi_url": "https://doi.org/10.1080/14767724.2023.2225421"}, {"year": "2023", "title": "Book review: The tyranny of merit: What’s become the common good?", "venue": "Brock Education Journal", "doi": "10.26522/brocked.v32i2.1001", "doi_url": "https://doi.org/10.26522/brocked.v32i2.1001"}, {"year": "2023", "title": "Careocracy or isocracy? A feminist alternative to the neoliberal meritocratic discourse", "venue": "Humanities and Social Sciences Communications", "doi": "10.1057/s41599-023-02029-7", "doi_url": "https://doi.org/10.1057/s41599-023-02029-7"}, {"year": "2023", "title": "Polityka kulturalna wobec wyzwań nowoczesnego społeczeństwa rynkowego: kultura – kreatywność – życie codzienne. Między polityką kulturalną a ekonomią kultury", "venue": "Silesian Digital Library (Silesian Library)", "doi": "10.22367/uekat.9788378758624", "doi_url": "https://doi.org/10.22367/uekat.9788378758624"}, {"year": "2023", "title": "A reflection on the teacher education curriculum and the decolonizing agenda in England", "venue": "Journal of Philosophy of Education", "doi": "10.1093/jopedu/qhad080", "doi_url": "https://doi.org/10.1093/jopedu/qhad080"}, {"year": "2023", "title": "Conclusion: The Condition of Para-Stardom", "venue": "Unknown", "doi": "10.1007/978-3-031-15798-1_9", "doi_url": "https://doi.org/10.1007/978-3-031-15798-1_9"}, {"year": "2023", "title": "Mission, Macrocosms and Mothering—Rachael’s Story", "venue": "Educational leadership theory", "doi": "10.1007/978-3-031-47616-7_5", "doi_url": "https://doi.org/10.1007/978-3-031-47616-7_5"}, {"year": "2023", "title": "Socially Just Principals in Unjust Times? A Discussion", "venue": "Educational leadership theory", "doi": "10.1007/978-3-031-47616-7_8", "doi_url": "https://doi.org/10.1007/978-3-031-47616-7_8"}, {"year": "2024", "title": "One rule, three tips, five reasons: Gendered entrepreneurial learning and the construction of online advice", "venue": "Management Learning", "doi": "10.1177/13505076231219668", "doi_url": "https://doi.org/10.1177/13505076231219668"}, {"year": "2023", "title": "The Rise of the Meritocracy: The Genealogy of an Idea", "venue": "Unknown", "doi": "10.1007/978-3-319-52269-2_7-1", "doi_url": "https://doi.org/10.1007/978-3-319-52269-2_7-1"}, {"year": "2024", "title": "Remembering the Recession: Marketplace and Status Quo Journalism", "venue": "Journal of Communication Inquiry", "doi": "10.1177/01968599241235217", "doi_url": "https://doi.org/10.1177/01968599241235217"}, {"year": "2024", "title": "La juventud valenciana y su heterogeneidad ante la cuarta ola feminista. Discursos sobre cuestiones de género e igualdad", "venue": "Revista Española de Investigaciones Sociológicas", "doi": "10.5477/cis/reis.186.65-82", "doi_url": "https://doi.org/10.5477/cis/reis.186.65-82"}, {"year": "2024", "title": "Leistung, Leistungsgerechtigkeit und Meritokratie", "venue": "Unknown", "doi": "10.1007/978-3-658-39759-3_13-1", "doi_url": "https://doi.org/10.1007/978-3-658-39759-3_13-1"}, {"year": "2024", "title": "Exploring Inequality in Comedy in the East Midlands and Challenging Inequality", "venue": "Palgrave studies in comedy", "doi": "10.1007/978-3-031-55932-7_3", "doi_url": "https://doi.org/10.1007/978-3-031-55932-7_3"}, {"year": "2024", "title": "Cosplaying Agency", "venue": "Game studies", "doi": "10.14361/9783839467978-011", "doi_url": "https://doi.org/10.14361/9783839467978-011"}, {"year": "2023", "title": "Predictors of Consumer Aggression Toward Inclusive Brands: A Mixed Methods Investigation", "venue": "Timisoara Journal of Economics and Business", "doi": "10.2478/tjeb-2023-0009", "doi_url": "https://doi.org/10.2478/tjeb-2023-0009"}, {"year": "2024", "title": "The Rise of the Meritocracy: The Genealogy of an Idea", "venue": "Unknown", "doi": "10.1007/978-3-031-55897-9_7", "doi_url": "https://doi.org/10.1007/978-3-031-55897-9_7"}, {"year": "2024", "title": "Narrating Migrant Enterprise and Experience in the Australian Cultural and Creative Industries", "venue": "Palgrave studies in mediating kinship, representation, and difference.", "doi": "10.1007/978-3-031-60754-7_9", "doi_url": "https://doi.org/10.1007/978-3-031-60754-7_9"}, {"year": "2024", "title": "Exklusive Organisationen: Von Berufsvertretern zu wahren Freunden", "venue": "Organisationssoziologie", "doi": "10.1007/978-3-658-45259-9_8", "doi_url": "https://doi.org/10.1007/978-3-658-45259-9_8"}, {"year": "2024", "title": "Supporting and Humiliating Dignity with Biometric Technologies: An Affordance Perspective", "venue": "Journal of Business Ethics", "doi": "10.1007/s10551-024-05889-4", "doi_url": "https://doi.org/10.1007/s10551-024-05889-4"}, {"year": "2024", "title": "Tiyatro Oyuncuları Arasında Sınıfsal Eşitsizliğin Yeniden Üretiminde Sosyal Sermayenin Rolü", "venue": "Selçuk Üniversitesi Edebiyat Fakültesi Dergisi", "doi": "10.21497/sefad.1453499", "doi_url": "https://doi.org/10.21497/sefad.1453499"}, {"year": "2024", "title": "Seleção de diretores escolares no estado de São Paulo: o concurso público e as credenciais meritocráticas do candidato", "venue": "Revista Tempos e Espaços em Educação", "doi": "10.20952/revtee.v17i36.21335", "doi_url": "https://doi.org/10.20952/revtee.v17i36.21335"}, {"year": "2025", "title": "In Brexit’s wake: The birth of the left behind", "venue": "Organization", "doi": "10.1177/13505084241306677", "doi_url": "https://doi.org/10.1177/13505084241306677"}, {"year": "2025", "title": "Neoliberal values and the workplace: a way forward through capabilities and care", "venue": "Las Torres de Lucca International Journal of Political Philosophy", "doi": "10.5209/ltdl.93247", "doi_url": "https://doi.org/10.5209/ltdl.93247"}, {"year": "2019", "title": "Faculty Characteristics and Program Budgets: Academic Capitalist Influences on Physical Therapy Graduate Outcomes", "venue": "Unknown", "doi": "10.12794/metadc1538718", "doi_url": "https://doi.org/10.12794/metadc1538718"}, {"year": "2025", "title": "‘The standard is the standard’: constructing meritocratic student selves through sense-making on academic writing", "venue": "British Journal of Sociology of Education", "doi": "10.1080/01425692.2025.2461183", "doi_url": "https://doi.org/10.1080/01425692.2025.2461183"}, {"year": "2025", "title": "Elite Status‐Seeking and Class Reproduction in Civil Society: An Analysis of Corporate Elite Appointments to Charity Boards", "venue": "British Journal of Sociology", "doi": "10.1111/1468-4446.13201", "doi_url": "https://doi.org/10.1111/1468-4446.13201"}, {"year": "2025", "title": "From fashion blogger to media professional: networked blogfriends, proximity privilege and making a media career from the North American fashion blogipelago", "venue": "Journal of Cultural Economy", "doi": "10.1080/17530350.2025.2465555", "doi_url": "https://doi.org/10.1080/17530350.2025.2465555"}, {"year": "2025", "title": "Digital intimacies: Queer men and smartphones in times of crisis: A roundtable discussion HakimJamieCummingsJamesYoungIngrid, Digital Intimacies: Queer Men and Smartphones in Times of Crisis, Bloomsbury Academic: London, UK, 2024, 230 pp.: ISBN: 978-1350381742", "venue": "Sexualities", "doi": "10.1177/13634607251314694", "doi_url": "https://doi.org/10.1177/13634607251314694"}, {"year": "2025", "title": "‘A self-launch to work…’: Exploring students’ use of university clubs in competitive labour markets", "venue": "Journal of sociology", "doi": "10.1177/14407833251332004", "doi_url": "https://doi.org/10.1177/14407833251332004"}, {"year": "2025", "title": "What kind of society does the resilient subject need? Exploring the role of resilience interventions in education", "venue": "Critical Studies in Education", "doi": "10.1080/17508487.2025.2523419", "doi_url": "https://doi.org/10.1080/17508487.2025.2523419"}, {"year": "2025", "title": "MERİTOKRASİ YANILSAMASI: LİYAKATİN LABİRENTİNDE BİR İNCELEME", "venue": "Akademik Yaklaşımlar Dergisi", "doi": "10.54688/ayd.1464687", "doi_url": "https://doi.org/10.54688/ayd.1464687"}, {"year": "2025", "title": "36. Storying the silences of social mobility", "venue": "Open Book Publishers", "doi": "10.11647/obp.0462.36", "doi_url": "https://doi.org/10.11647/obp.0462.36"}, {"year": "2025", "title": "Introduction", "venue": "Unknown", "doi": "10.1007/978-3-031-93684-5_1", "doi_url": "https://doi.org/10.1007/978-3-031-93684-5_1"}, {"year": "2025", "title": "Not Only the Score: A Promoter-Based Merit Negotiation in Elite College Admission Battle", "venue": "Unknown", "doi": "10.31235/osf.io/qadnt_v1", "doi_url": "https://doi.org/10.31235/osf.io/qadnt_v1"}, {"year": "2025", "title": "Justice for grasshoppers: reassessing the effort principle in distributive justice", "venue": "Synthese", "doi": "10.1007/s11229-025-05108-1", "doi_url": "https://doi.org/10.1007/s11229-025-05108-1"}, {"year": "2025", "title": "The Spectral Afterlives of Slavery and the Fallacious U.S. Meritocracy in Jesmyn Ward’s and Quntos KunQuest’s Narratives of Prison", "venue": "Revista Alicantina de Estudios Ingleses", "doi": "10.14198/raei.29081", "doi_url": "https://doi.org/10.14198/raei.29081"}, {"year": "2025", "title": "“I’ll Show You”: K/DA and the Role of the Virtual Popstar in the Games Industry", "venue": "Palgrave games in context", "doi": "10.1007/978-3-031-87507-6_14", "doi_url": "https://doi.org/10.1007/978-3-031-87507-6_14"}, {"year": "2025", "title": "The hidden curriculum of the Amazon future engineer educational program", "venue": "Frontiers in Education", "doi": "10.3389/feduc.2025.1611252", "doi_url": "https://doi.org/10.3389/feduc.2025.1611252"}, {"year": "2025", "title": "Between the Devil and the Deep Blue Sea", "venue": "Politeja", "doi": "10.12797/politeja.22.2025.97.10", "doi_url": "https://doi.org/10.12797/politeja.22.2025.97.10"}, {"year": "2025", "title": "Leadership in neoliberal organizations: Theory and empirical illustrations", "venue": "Leadership", "doi": "10.1177/17427150251376099", "doi_url": "https://doi.org/10.1177/17427150251376099"}, {"year": "2025", "title": "The Etons of the East End: the ambiguities of educational urgency and the neoliberal fantasy", "venue": "British Journal of Sociology of Education", "doi": "10.1080/01425692.2025.2556833", "doi_url": "https://doi.org/10.1080/01425692.2025.2556833"}, {"year": "2025", "title": "Meritocracy as Seen by Young People Living in Poverty in Quebec, Canada", "venue": "Canadian Review of Sociology/Revue canadienne de sociologie", "doi": "10.1111/cars.70019", "doi_url": "https://doi.org/10.1111/cars.70019"}, {"year": "2025", "title": "Crisis, conflict and the affective politics of celebrity failure: Britney Spears, Meghan Markle and the spectacle of (misplaced) feminine fame", "venue": "Celebrity Studies", "doi": "10.1080/19392397.2025.2575679", "doi_url": "https://doi.org/10.1080/19392397.2025.2575679"}, {"year": "2025", "title": "Dialogical Self Theory: History, Applications, Challenges, and Perspectives", "venue": "Unknown", "doi": "10.1007/978-3-031-70581-6_496-1", "doi_url": "https://doi.org/10.1007/978-3-031-70581-6_496-1"}, {"year": "2025", "title": "From the figure of the obscene rich to the fantasy of its destruction: onSuccession, schadenfreude and the godlike power of the super-rich on screen", "venue": "New Review of Film and Television Studies", "doi": "10.1080/17400309.2025.2518810", "doi_url": "https://doi.org/10.1080/17400309.2025.2518810"}, {"year": "2025", "title": "When laughing at disablism meets barriers: the complex reality of disabled comedians in stand-up comedy", "venue": "Disability & Society", "doi": "10.1080/09687599.2025.2579088", "doi_url": "https://doi.org/10.1080/09687599.2025.2579088"}, {"year": "2025", "title": "Meritocracy, Recognition and Double Consciousness: Why Black and Muslim Italians Move to (and Sometimes Leave) Post‐Brexit Britain", "venue": "British Journal of Sociology", "doi": "10.1111/1468-4446.70064", "doi_url": "https://doi.org/10.1111/1468-4446.70064"}, {"year": "2021", "title": "Adult Students in Community Colleges and Economic Justice", "venue": "Unknown", "doi": "10.1108/978-1-64802-697-320251014", "doi_url": "https://doi.org/10.1108/978-1-64802-697-320251014"}, {"year": "2025", "title": "Subjective evaluation of income (un)fairness: Contrasting principles of justice?", "venue": "Papers Revista de Sociologia", "doi": "10.5565/rev/papers.3409", "doi_url": "https://doi.org/10.5565/rev/papers.3409"}, {"year": "2025", "title": "Teachers’ Perspectives on Private Education: Meritocratic (In)Equality of Opportunity in the Context of Neoliberalism", "venue": "Sociologija Mintis ir veiksmas", "doi": "10.15388/socmintvei.2024.55.5", "doi_url": "https://doi.org/10.15388/socmintvei.2024.55.5"}, {"year": "2025", "title": "Luck-based versus merit-based income shifts fairness perceptions and promotes cooperation in a public goods game", "venue": "Oxford Economic Papers", "doi": "10.1093/oep/gpaf033", "doi_url": "https://doi.org/10.1093/oep/gpaf033"}, {"year": "2025", "title": "Vivências periféricas generificadas", "venue": "RUA", "doi": "10.20396/rua.v31i2.8681771", "doi_url": "https://doi.org/10.20396/rua.v31i2.8681771"}, {"year": "2026", "title": "The Dog That Barks Loudly. A Critical Perspective on Leadership in Organizations", "venue": "SSRN Electronic Journal", "doi": "10.2139/ssrn.6035133", "doi_url": "https://doi.org/10.2139/ssrn.6035133"}, {"year": "2026", "title": "The Dog That Barks Loudly. A Critical Perspective on Leadership in Organizations", "venue": "SSRN Electronic Journal", "doi": "10.2139/ssrn.6035132", "doi_url": "https://doi.org/10.2139/ssrn.6035132"}, {"year": "2026", "title": "Meritocracy", "venue": "Unknown", "doi": "10.1007/978-3-030-95454-3_339-1", "doi_url": "https://doi.org/10.1007/978-3-030-95454-3_339-1"}, {"year": "2026", "title": "Female celebrity academics – who are they and what do they signify for higher education?", "venue": "Gender and Education", "doi": "10.1080/09540253.2026.2617570", "doi_url": "https://doi.org/10.1080/09540253.2026.2617570"}, {"year": "2026", "title": "What Do We Know About Class in Television Studies?", "venue": "Journal of British Cinema and Television", "doi": "10.3366/jbctv.2026.0800", "doi_url": "https://doi.org/10.3366/jbctv.2026.0800"}, {"year": "2026", "title": "The neoliberal framing of ‘race’ equality initiatives in British sport", "venue": "International Journal of Sport Policy and Politics", "doi": "10.1080/19406940.2026.2633121", "doi_url": "https://doi.org/10.1080/19406940.2026.2633121"}, {"year": "2026", "title": "Situated Assessments: Centering Positionalities To Ground a Critical Human Rights Education", "venue": "Human Rights Review", "doi": "10.1007/s12142-026-00755-4", "doi_url": "https://doi.org/10.1007/s12142-026-00755-4"}, {"year": "2026", "title": "The Meritocratic Glass Ceiling: Students' Perception of Meritocracy in Two Highly Selective Study Programs With Opposing Gender Compositions", "venue": "British Journal of Sociology", "doi": "10.1111/1468-4446.70094", "doi_url": "https://doi.org/10.1111/1468-4446.70094"}, {"year": "2026", "title": "“Wish You Were Here”? Postcard Mapping the Complexities of Doctoral Mentorship", "venue": "Teachers College Record The Voice of Scholarship in Education", "doi": "10.1177/01614681261424569", "doi_url": "https://doi.org/10.1177/01614681261424569"}, {"year": "2026", "title": "Nurturing merit: the role of alternative pathways to university", "venue": "Studies in Higher Education", "doi": "10.1080/03075079.2026.2634879", "doi_url": "https://doi.org/10.1080/03075079.2026.2634879"}, {"year": "2026", "title": "From collective struggle to individual hustle: gig work and neoliberal feminism inWorking Mothermagazine", "venue": "Feminist Media Studies", "doi": "10.1080/14680777.2026.2637163", "doi_url": "https://doi.org/10.1080/14680777.2026.2637163"}, {"year": "2026", "title": "Epistemic exclusion in higher Education: navigating racialised gatekeeping in Australia", "venue": "Whiteness and Education", "doi": "10.1080/23793406.2026.2630315", "doi_url": "https://doi.org/10.1080/23793406.2026.2630315"}, {"year": "2025", "title": "Whose Excellence in Art Education? Interrogating Ableism in Neoliberal Rebranding of “Inclusive Excellence”", "venue": "Art Education", "doi": "10.1080/00043125.2025.2573606", "doi_url": "https://doi.org/10.1080/00043125.2025.2573606"}, {"year": "2026", "title": "Decolonizing Academia: Epistemic Gatekeeping and Revisiting “Womanhood” in Global South Studies", "venue": "Sociological Forum", "doi": "10.1111/socf.70063", "doi_url": "https://doi.org/10.1111/socf.70063"}, {"year": "2026", "title": "The fallacy of meritocracy in the real-life social order", "venue": "Frontiers in Sociology", "doi": "10.3389/fsoc.2026.1766088", "doi_url": "https://doi.org/10.3389/fsoc.2026.1766088"}, {"year": "2026", "title": "Educational meritocracy and the psychosocial burden of failure", "venue": "Equity in Education & Society", "doi": "10.1177/27526461261434016", "doi_url": "https://doi.org/10.1177/27526461261434016"}, {"year": "2026", "title": "‘I’d like to thank the academy’ – Social mobility, education and literary form", "venue": "European Journal of Cultural Studies", "doi": "10.1177/13675494261426790", "doi_url": "https://doi.org/10.1177/13675494261426790"}, {"year": "2026", "title": "Does the Discrepancy Between Educational Aspiration and Educational Attainment Affect Life Satisfaction? Evidence from Japan", "venue": "Social Indicators Research", "doi": "10.1007/s11205-026-03832-w", "doi_url": "https://doi.org/10.1007/s11205-026-03832-w"}, {"year": "2026", "title": "Self-reflective counter-narrative in Melissa Lucashenko’s indigenous young adult novel Too Much Lip", "venue": "Humanities and Social Sciences Communications", "doi": "10.1057/s41599-026-07067-5", "doi_url": "https://doi.org/10.1057/s41599-026-07067-5"}];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+<script>
+(function() {
+  var doi = "info:doi:10.4324/9781315712802";
+  // Real API: metrics-api.operas-eu.org/events (confirmed via network inspection)
+  var url = 'https://metrics-api.operas-eu.org/events?filter=work_uri:' + doi;
+  var container = document.getElementById('dl-sparkline-container');
+  if (!container) return;
+
+  fetch(url, {headers: {Accept: 'application/json'}})
+    .then(function(r) { return r.json(); })
+    .then(function(resp) {
+      var data = resp.data;
+      if (!data || !data.length) return;
+
+      // Aggregate values by year-month (timestamp = "2020-05-01T00:00:00+0000")
+      var byMonth = {};
+      data.forEach(function(d) {
+        var ym = (d.timestamp || '').slice(0, 7); // "YYYY-MM"
+        var v  = parseFloat(d.value || 0);
+        if (ym && v > 0) byMonth[ym] = (byMonth[ym] || 0) + v;
+      });
+      var months = Object.keys(byMonth).sort();
+      var values = months.map(function(m) { return byMonth[m]; });
+      if (values.length < 2) return;
+
+      var W = 120, H = 36, mx = Math.max.apply(null, values), n = values.length;
+      var pts = values.map(function(v, i) {
+        return (i / (n - 1) * W).toFixed(1) + ',' + (H - (v / mx) * (H - 4) - 2).toFixed(1);
+      });
+      var area = 'M' + pts[0] + ' ' + pts.slice(1).map(function(p) { return 'L' + p; }).join(' ')
+               + ' L' + W + ',' + H + ' L0,' + H + ' Z';
+      var yr0 = months[0].slice(0, 4);
+      var yr1 = months[months.length - 1].slice(0, 4);
+
+      container.innerHTML =
+        '<div class="im-spark">' +
+        '<svg viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" ' +
+        'xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:visible;">' +
+        '<path d="' + area + '" fill="#dbeafe" opacity="0.6"/>' +
+        '<polyline points="' + pts.join(' ') + '" fill="none" stroke="#2563eb" ' +
+        'stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>' +
+        '</svg>' +
+        '<div class="im-spark-range">' + yr0 + (yr0 !== yr1 ? '–' + yr1 : '') + '</div>' +
+        '</div>';
+    })
+    .catch(function() { /* API unavailable — card still shows total */ });
+})();
+</script>
+
+<script>
+(function() {
+  var DATA = [];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  var doi = "info:doi:10.4324/9781315712802";
+  // Real API: metrics-api.operas-eu.org/events (confirmed via network inspection)
+  var url = 'https://metrics-api.operas-eu.org/events?filter=work_uri:' + doi;
+  var container = document.getElementById('dl-sparkline-container');
+  if (!container) return;
+
+  fetch(url, {headers: {Accept: 'application/json'}})
+    .then(function(r) { return r.json(); })
+    .then(function(resp) {
+      var data = resp.data;
+      if (!data || !data.length) return;
+
+      // Aggregate values by year-month (timestamp = "2020-05-01T00:00:00+0000")
+      var byMonth = {};
+      data.forEach(function(d) {
+        var ym = (d.timestamp || '').slice(0, 7); // "YYYY-MM"
+        var v  = parseFloat(d.value || 0);
+        if (ym && v > 0) byMonth[ym] = (byMonth[ym] || 0) + v;
+      });
+      var months = Object.keys(byMonth).sort();
+      var values = months.map(function(m) { return byMonth[m]; });
+      if (values.length < 2) return;
+
+      var W = 120, H = 36, mx = Math.max.apply(null, values), n = values.length;
+      var pts = values.map(function(v, i) {
+        return (i / (n - 1) * W).toFixed(1) + ',' + (H - (v / mx) * (H - 4) - 2).toFixed(1);
+      });
+      var area = 'M' + pts[0] + ' ' + pts.slice(1).map(function(p) { return 'L' + p; }).join(' ')
+               + ' L' + W + ',' + H + ' L0,' + H + ' Z';
+      var yr0 = months[0].slice(0, 4);
+      var yr1 = months[months.length - 1].slice(0, 4);
+
+      container.innerHTML =
+        '<div class="im-spark">' +
+        '<svg viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" ' +
+        'xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:visible;">' +
+        '<path d="' + area + '" fill="#dbeafe" opacity="0.6"/>' +
+        '<polyline points="' + pts.join(' ') + '" fill="none" stroke="#2563eb" ' +
+        'stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>' +
+        '</svg>' +
+        '<div class="im-spark-range">' + yr0 + (yr0 !== yr1 ? '–' + yr1 : '') + '</div>' +
+        '</div>';
+    })
+    .catch(function() { /* API unavailable — card still shows total */ });
+})();
+</script>
+</body>
+</html>
