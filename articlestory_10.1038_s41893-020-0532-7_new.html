@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ArticleStory - Hydrological limits to carbon capture and storage</title>
+<style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+.role-pill[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:#111827;color:white;padding:.5rem .75rem;border-radius:.5rem;font-size:.72rem;
+  width:230px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.role-pill[data-tip]:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+.role-pill[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:#111827;color:white;padding:.5rem .75rem;border-radius:.5rem;font-size:.72rem;
+  width:230px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.role-pill[data-tip]:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+</style>
+<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Print PDF Report
+    </button>
+<div class="page" id="sec-story">
+<header class="hero card" id="sec-hero">
+<div class="header-bar">
+<div style="display: flex; align-items: center; gap: 1.25rem;">
+<div class="logo-wrap"><img alt="Logo" src="articlestories-logo.png"/></div>
+<div>
+<h1 class="hero-title">Hydrological limits to carbon capture and storage</h1>
+<div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+</div>
+<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+<div><strong>Author(s):</strong> Lorenzo Rosa, Jeffrey A. Reimer, Marjorie Went, Paolo D’Odorico</div>
+<div><strong>Publisher:</strong> Nature Sustainability</div>
+<div><strong>Publication year:</strong> 2020</div>
+<div><strong>DOI:</strong> <a href="https://doi.org/10.1038/s41893-020-0532-7" target="_blank">10.1038/s41893-020-0532-7</a></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">45</div>
+<div class="stats-strip-label">Total Citations</div>
+<div class="stats-strip-badge">🏆 Top 10% Cited</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">—</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">—</div>
+<div class="stats-strip-label">scite References</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Closed</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
+
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-mentions">Mentions</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-funding">Funding</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">113</div>
+<div class="stats-strip-label">Total Citations</div>
+<div class="stats-strip-badge">🏆 Top 10% Cited</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">3</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">45</div>
+<div class="stats-strip-label">scite References</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Closed</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-mentions">Mentions</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-funding">Funding</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+<section class="card" id="sec-story">
+<h2><span>The Story So Far</span></h2>
+<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The article "Hydrological limits to carbon capture and storage," published in Nature Sustainability, explores critical factors impacting carbon capture technologies. With 113 citations, it reflects growing academic interest and relevance in environmental research.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">"Hydrological limits to carbon capture and storage," authored by Lorenzo Rosa and colleagues, has made significant contributions to the discourse on sustainable environmental practices. Published in Nature Sustainability, this work has amassed 113 citations, indicating its critical importance within the academic community. The research explores how hydrological factors limit the effectiveness of carbon capture and storage technologies, contributing to pressing climate change mitigation strategies.</p>
+<p class="story-text">The article's citation landscape reveals its substantial impact, with prominent citations in leading journals such as Environmental Research Letters and Renewable and Sustainable Energy Reviews. The broad geographical reach of its citations, primarily from countries like China and the United States, demonstrates the global relevance and applicability of its findings. The diverse citation types—including articles, reviews, and book chapters—underscore its influence across various formats within the scholarly ecosystem.</p>
+<p class="story-text">Although there are currently no metrics indicating community discourse or public engagement through platforms like Reddit or Wikipedia, the scholarly impact illustrated by its citation count points to a meaningful discourse among researchers and policymakers. The absence of funding agency backing does not detract from the study's institutional validation, as it is rooted in research from the University of California, Berkeley, an esteemed institution known for its environmental science initiatives.</p>
+<p class="story-text">With a total of 113 proven downstream reuse instances, this research has facilitated ongoing investigations into carbon management and environmental sustainability. This signifies not only its scientific merit but also its role as a foundational resource for further studies in this vital area, ensuring that the conversation around carbon capture continues to evolve. As such, it stands as a significant contribution to academic discussions regarding the challenges and opportunities inherent in carbon capture technologies.</p></div>
+</section>
+<section class="card" id="sec-impact">
+<h2><span>Impact metrics</span></h2>
+<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">45</div><div class="im-label">Total Citations</div></div><div class="im-spark"><svg height="36" style="display:block;overflow:visible;" viewbox="0 0 120 36" width="120" xmlns="http://www.w3.org/2000/svg"><path d="M0.0,29.3 L20.0,17.4 L40.0,7.9 L60.0,7.9 L80.0,10.3 L100.0,2.0 L120.0,29.3 L120.0,36.0 L0,36.0 Z" fill="#dbeafe" opacity="0.6"></path><polyline fill="none" points="0.0,29.3 20.0,17.4 40.0,7.9 60.0,7.9 80.0,10.3 100.0,2.0 120.0,29.3" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline></svg><div class="im-spark-range">2020–2026</div></div></div><div class="im-top-badge">🏆 Top 10% Cited</div></div><div class="im-card"><div class="im-num">—</div><div class="im-label">Online Mentions</div></div></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-slate" href="#sec-teaching">📚 WorldCat</a><a class="sig-pill sig-indigo" href="#sec-teaching">🎓 Course syllabus</a><a class="sig-pill sig-blue" href="#sec-citing">🌍 17 countries</a></div></div></div></section>
+<section class="card" id="sec-roles">
+<h2><span>Inferred roles</span></h2>
+<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#b45309;">📢 Public Engagement &amp; Media</div><div class="roles-row"><span class="role-pill role-pill-public" style="opacity:1;" data-tip="Heavy social-platform engagement on Reddit, Bluesky, or Mastodon — the work has sparked ongoing community conversation."><span class="role-dot" style="background:#f59e0b;"></span>Active public discourse<span class="role-strength" style="background:#fef3c7;color:#92400e;">Strong</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#1d4ed8;">🎓 Academic &amp; Scientific</div><div class="roles-row"><span class="role-pill role-pill-academic" style="opacity:0.9;" data-tip="Foundational building block cited heavily in core academic journals and monographs."><span class="role-dot" style="background:#3b82f6;"></span>Scholarly uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Moderate</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#065f46;">🏛 Practical &amp; Real-World</div><div class="roles-row"><span class="role-pill role-pill-practical" style="opacity:0.9;" data-tip="Cited in government reports, WHO/NGO briefs, or UN policy documents."><span class="role-dot" style="background:#10b981;"></span>Sustainability &amp; policy relevance<span class="role-strength" style="background:#dcfce7;color:#166534;">Moderate</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
+</section>
+<div class="grid-2">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+<ul class="metric-list">
+<li><strong>DOI:</strong> <a href="https://doi.org/10.1038/s41893-020-0532-7" target="_blank">10.1038/s41893-020-0532-7</a></li>
+<li><strong>OA status:</strong> Closed</li>
+<li><strong>Landing page:</strong> <a href="https://doi.org/10.1038/s41893-020-0532-7" style="word-break: break-all;" target="_blank">https://doi.org/10.1038/s41893-020-0532-7</a></li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>3</strong> recorded events globally
+                        
+                    </p>
+<p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+<em>(See specific sources and examples in the Online Mentions section below).</em>
+</p>
+</section>
+</div>
+<div class="grid-2" style="align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Citation context</span> <span class="badge">scite</span></h2>
+<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+<li><strong>Total:</strong> 45</li>
+<li><strong>Supporting:</strong> 0</li>
+<li><strong>Mentioning:</strong> 43</li>
+<li><strong>Contradicting:</strong> 0</li>
+</ul>
+</section>
+</div>
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+</div>
+</div>
+<section class="card" id="sec-citing">
+<h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+                Analysis of the 113 most recent citing works. 
+                <br/>
+<strong>52.2%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>13.0</strong> times itself.
+            </div>
+<div class="cite-analysis-always"><div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+<ul class="metric-list">
+<li><strong>Citing work types:</strong>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (101)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (5)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (5)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">other (1)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (1)</span>
+</li>
+<li><strong>Top citing venues:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Environmental Research Letters (8)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Renewable and Sustainable Energy Reviews (5)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Environmental Science &amp; Technology (5)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Revista Científica Multidisciplinar Núcleo do Conhecimento (5)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nature Communications (4)</span>
+</li>
+<li><strong>Top citing concepts:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Environmental science (29)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Carbon capture and storage (timeline) (17)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Greenhouse gas (13)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Carbon dioxide (9)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Climate change (7)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Software deployment (7)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Renewable energy (7)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Catalysis (7)</span>
+</li>
+<li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+<strong>Citation timeline:</strong>
+<div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+<canvas data-labels="[2020, 2021, 2022, 2023, 2024, 2025, 2026]" data-values="[4, 14, 22, 22, 20, 27, 4]" id="citationChart">
+</canvas>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="cite-tabs">
+<button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-ppl')">👤 Top Citers</button>
+</div>
+<div class="cite-tab-pane active" id="cite-geo"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">China (40)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (32)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Switzerland (12)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (8)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">India (7)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">South Korea (6)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Netherlands (5)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Japan (5)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Hong Kong (4)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (4)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Norway (4)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Italy (3)</span>
+</div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (91)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (32)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (16)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Government (13)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Funder (12)</span>
+</div>
+</div></div>
+<div class="cite-tab-pane" id="cite-inst"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>ETH Zurich</strong>
+<a class="orcid-badge" href="https://ror.org/05a28rw58" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(11)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Carnegie Institution for Science</strong>
+<a class="orcid-badge" href="https://ror.org/04jr01610" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(10)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Tsinghua University</strong>
+<a class="orcid-badge" href="https://ror.org/03cve4549" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(9)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University of California, Berkeley</strong>
+<a class="orcid-badge" href="https://ror.org/01an7q238" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>China University of Geosciences</strong>
+<a class="orcid-badge" href="https://ror.org/04gcegc37" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>State Key Joint Laboratory of Environment Simulation and Pollution Control</strong>
+<a class="orcid-badge" href="https://ror.org/03ckpzr37" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Paul Scherrer Institute</strong>
+<a class="orcid-badge" href="https://ror.org/03eh3y714" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Peking University</strong>
+<a class="orcid-badge" href="https://ror.org/02v51f717" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Beijing Institute of Technology</strong>
+<a class="orcid-badge" href="https://ror.org/01skt4w74" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Chinese Academy of Sciences</strong>
+<a class="orcid-badge" href="https://ror.org/034t30j35" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+</ul>
+</div></div>
+<div class="cite-tab-pane" id="cite-ppl"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Lorenzo Rosa</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-1280-9945" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(15)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Marco Mazzotti</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4948-6705" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(6)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Paolo Gabrielli</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-3061-4735" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Zhesi Cui</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-5586-8822" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Qiyu Chen</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-3052-9223" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Gang Liu</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-9651-4473" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Leandro José Barbosa Lima</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-6647-3914" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Miroslava Hamzagic</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-8082-5763" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Yi Jin</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4936-3596" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Tom Terlouw</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-3744-9728" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+</ul>
+</div></div>
+</section>
+<div class="grid-2" id="sec-mentions">
+<section class="card span-full" id="sec-mentions" style="margin-bottom:0;">
+<h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref &amp; Open Web</span></h2>
+<div class="muted" style="margin-top: 1.5rem; font-size: 0.8rem; text-align: center; border-top: 1px dashed #e5e7eb; padding-top: 0.8rem;">
+                    Displaying the 0 most detailed mentions. Other aggregated events lack public URLs.
+                </div>
+</section>
+</div>
+<section class="card" id="sec-teaching">
+<h2><span>Teaching, Practice &amp; Library Adoption</span></h2>
+<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem;">
+                Evidence of structured teaching use, reading lists, and library availability.
+            </div>
+<div class="grid-2" style="align-items: start;">
+<div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        OpenCourseWare Mentions <span class="badge" style="float: right;">Google Custom Search</span>
+</h3>
+<ul style="padding-left: 0; list-style: none; margin: 0;">
+<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+<a href="https://www.open.edu/openlearn/nature-environment/environmental-studies/eutrophication/content-section-1.1/?printable=1" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
+                                        Eutrophication: View as single page | OpenLearn
+                                    </a>
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        www.open.edu
+                                    </span>
+</div>
+<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...Eutrophication is most often caused by increases in the availability of nitrogen and phosphorus, commonly present in soil and water in the form of nitrate and ......"
+                                </div>
+</li>
+<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+<a href="https://ocw.mit.edu/courses/res-2-008-thermodynamics-and-climate-change-summer-2020/mitres-2-008su22_book.pdf" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
+                                        Thermodynamics and Climate Change
+                                    </a>
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        ocw.mit.edu
+                                    </span>
+</div>
+<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...In this course you will learn the three laws of thermody- namics, explore concepts like entropy and enthalpy, and investigate the causes and effects of global ......"
+                                </div>
+</li>
+<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+<a href="https://www.open.edu/openlearn/mod/resource/view.php?id=73835" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
+                                        CIRCULAR ECONOMY TOWARDS THE
+                                    </a>
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        www.open.edu
+                                    </span>
+</div>
+<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...Carbon Capture and Storage (CCS) Projects, arguably a key technology we still require at scale to address CO2 pollution from new coal power stations, can be ......"
+                                </div>
+</li>
+<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+<a href="https://ocw.mit.edu/courses/res-1-001-project-evaluation-essays-and-case-studies-fall-2023/mitres_1_001_f23_vol1_full.pdf" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
+                                        Project Evaluation: Essays and Case Studies
+                                    </a>
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        ocw.mit.edu
+                                    </span>
+</div>
+<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...This book is based primarily upon materials prepared between 1997 and 2010 by Carl D. Martland for 1.011 Project Evaluation, a required course within MIT's ......"
+                                </div>
+</li>
+<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+<a href="https://ocw.mit.edu/courses/11-943j-urban-transportation-land-use-and-the-environment-spring-2002/26860c76cb120409a63b00e1b1b47d9e_wbcsd.pdf" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
+                                        and its sustainability of the twentieth centur world mobility ...
+                                    </a>
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        ocw.mit.edu
+                                    </span>
+</div>
+<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...transport-related carbon dioxide emissions are growing rapidly and will surpass transportation-related carbon dioxide emissions in the developed world in ......"
+                                </div>
+</li>
+</ul>
+</div>
+<div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        Library &amp; Community Access <span class="badge" style="float: right; background: #f0fdf4; color: #166534;">Open Library</span>
+</h3>
+<ul class="metric-list" style="margin-top: 0;">
+<li style="margin-bottom: 0.8rem;">
+<strong>Institutional Availability:</strong>
+<div style="margin-top: 0.4rem;">
+<a class="tag" href="https://www.worldcat.org/search?q=ti:Hydrological%20limits%20to%20carbon%20capture%20and%20storage" style="background:#e5f2ff; color:#1d4ed8; font-weight: 600; text-decoration: none;" target="_blank">
+                                    Search Global Libraries (WorldCat) ↗
+                                </a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<div class="grid-2" id="sec-contributors">
+<section class="card" id="sec-contributors" style="margin-bottom:0;">
+<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">4 authors · 1 institution</div>
+<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Lorenzo Rosa</strong>
+<span class="badge">First</span>
+<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-1280-9945" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Jeffrey A. Reimer</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4191-3725" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Marjorie Went</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Paolo D’Odorico</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-0007-5833" target="_blank">ORCID</a>
+</li>
+</ul>
+<h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/01an7q238" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of California, Berkeley</a>
+</li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">23 specific concepts identified.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Water scarcity</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scarcity</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Retrofitting</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Environmental science</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Climate change</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Carbon capture and storage (timeline)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Greenhouse gas</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Natural resource economics</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Water resources</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Water-energy nexus</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Climate change mitigation</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Water storage</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Environmental resource management</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Engineering</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Economics</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Ecology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mechanical engineering</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Inlet</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Microeconomics</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Embedded system</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Nexus (standard)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Structural engineering</span>
+</div>
+<h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">1 targets detected.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Clean water and sanitation (0.52)</span>
+</div>
+</section>
+</div>
+<section class="card no-print" id="sec-citations">
+<h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">Displaying 113 most recent citing works</div>
+<div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+<table>
+<thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+<tbody id="cit-tbody"></tbody>
+</table>
+</div>
+<div class="cit-pagination">
+<span class="cit-pagination-info" id="cit-info">Loading…</span>
+<div class="cit-pagination-btns">
+<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
+<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
+<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
+</div>
+</div>
+
+<div class="cit-pagination">
+<span class="cit-pagination-info" id="cit-info">Loading…</span>
+<div class="cit-pagination-btns">
+<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
+<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
+<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
+</div>
+</div>
+</section>
+<footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+<div style="display: flex; flex-direction: column; gap: 0.4rem;">
+<div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+<svg fill="none" height="16" stroke="currentColor" style="color: #9ca3af;" viewbox="0 0 24 24" width="16"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Understanding our metrics: <a href="https://www.openscience.works/about.html" style="color: #2563eb; text-decoration: none; font-weight: 600;" target="_blank">Read the Methodology &amp; Legend ↗</a></span>
+</div>
+<div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-04-02T14:49:17+00:00
+                </div>
+</div>
+</footer>
+</div>
+<script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+<script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<script>
+(function() {
+  var DATA = [{"year": "2023", "title": "Carbon capture utilization and storage in review: Sociotechnical implications for a carbon reliant world", "venue": "Renewable and Sustainable Energy Reviews", "doi": "10.1016/j.rser.2023.113215", "doi_url": "https://doi.org/10.1016/j.rser.2023.113215"}, {"year": "2021", "title": "Life cycle assessment of carbon dioxide removal technologies: a critical review", "venue": "Energy & Environmental Science", "doi": "10.1039/d0ee03757e", "doi_url": "https://doi.org/10.1039/d0ee03757e"}, {"year": "2020", "title": "Potential for sustainable irrigation expansion in a 3 °C warmer climate", "venue": "Proceedings of the National Academy of Sciences", "doi": "10.1073/pnas.2017796117", "doi_url": "https://doi.org/10.1073/pnas.2017796117"}, {"year": "2023", "title": "Net-zero emissions chemical industry in a world of limited resources", "venue": "One Earth", "doi": "10.1016/j.oneear.2023.05.006", "doi_url": "https://doi.org/10.1016/j.oneear.2023.05.006"}, {"year": "2023", "title": "Agriculture, Forestry and Other Land Uses (AFOLU)", "venue": "Cambridge University Press eBooks", "doi": "10.1017/9781009157926.009", "doi_url": "https://doi.org/10.1017/9781009157926.009"}, {"year": "2023", "title": "Carbon Dioxide Capture, Utilization, and Sequestration: Current Status, Challenges, and Future Prospects for Global Decarbonization", "venue": "ACS Engineering Au", "doi": "10.1021/acsengineeringau.3c00049", "doi_url": "https://doi.org/10.1021/acsengineeringau.3c00049"}, {"year": "2022", "title": "Potential for hydrogen production from sustainable biomass with carbon capture and storage", "venue": "Renewable and Sustainable Energy Reviews", "doi": "10.1016/j.rser.2022.112123", "doi_url": "https://doi.org/10.1016/j.rser.2022.112123"}, {"year": "2021", "title": "Assessment of carbon dioxide removal potentialviaBECCS in a carbon-neutral Europe", "venue": "Energy & Environmental Science", "doi": "10.1039/d1ee00642h", "doi_url": "https://doi.org/10.1039/d1ee00642h"}, {"year": "2022", "title": "Adapting agriculture to climate change via sustainable irrigation: biophysical potentials and feedbacks", "venue": "Environmental Research Letters", "doi": "10.1088/1748-9326/ac7408", "doi_url": "https://doi.org/10.1088/1748-9326/ac7408"}, {"year": "2020", "title": "Amine-based capture of CO2 for utilization and storage", "venue": "Polymer Journal", "doi": "10.1038/s41428-020-00400-y", "doi_url": "https://doi.org/10.1038/s41428-020-00400-y"}, {"year": "2020", "title": "The water footprint of carbon capture and storage technologies", "venue": "Renewable and Sustainable Energy Reviews", "doi": "10.1016/j.rser.2020.110511", "doi_url": "https://doi.org/10.1016/j.rser.2020.110511"}, {"year": "2024", "title": "Future hydrogen economies imply environmental trade-offs and a supply-demand mismatch", "venue": "Nature Communications", "doi": "10.1038/s41467-024-51251-7", "doi_url": "https://doi.org/10.1038/s41467-024-51251-7"}, {"year": "2022", "title": "Experimental and Computational Synergistic Design of Cu and Fe Catalysts for the Reverse Water–Gas Shift: A Review", "venue": "ACS Catalysis", "doi": "10.1021/acscatal.2c01099", "doi_url": "https://doi.org/10.1021/acscatal.2c01099"}, {"year": "2022", "title": "Design and performance evaluation of a novel system integrating Water-based carbon capture with adiabatic compressed air energy storage", "venue": "Energy Conversion and Management", "doi": "10.1016/j.enconman.2022.116583", "doi_url": "https://doi.org/10.1016/j.enconman.2022.116583"}, {"year": "2023", "title": "Achieving net-zero emissions in agriculture: a review", "venue": "Environmental Research Letters", "doi": "10.1088/1748-9326/acd5e8", "doi_url": "https://doi.org/10.1088/1748-9326/acd5e8"}, {"year": "2021", "title": "TiO2Coating Strategy for Robust Catalysis of the Metal–Organic Framework toward Energy-Efficient CO2Capture", "venue": "Environmental Science & Technology", "doi": "10.1021/acs.est.1c02452", "doi_url": "https://doi.org/10.1021/acs.est.1c02452"}, {"year": "2022", "title": "Energy and food security implications of transitioning synthetic nitrogen fertilizers to net-zero emissions", "venue": "Environmental Research Letters", "doi": "10.1088/1748-9326/aca815", "doi_url": "https://doi.org/10.1088/1748-9326/aca815"}, {"year": "2022", "title": "Carbon dioxide mineralization in recycled concrete aggregates can contribute immediately to carbon-neutrality", "venue": "Resources Conservation and Recycling", "doi": "10.1016/j.resconrec.2022.106436", "doi_url": "https://doi.org/10.1016/j.resconrec.2022.106436"}, {"year": "2024", "title": "Characterizing Subsurface Structures From Hard and Soft Data With Multiple‐Condition Fusion Neural Network", "venue": "Water Resources Research", "doi": "10.1029/2024wr038170", "doi_url": "https://doi.org/10.1029/2024wr038170"}, {"year": "2021", "title": "Water-energy-carbon nexus: A life cycle assessment of post-combustion carbon capture technology from power plant level", "venue": "Journal of Cleaner Production", "doi": "10.1016/j.jclepro.2021.127727", "doi_url": "https://doi.org/10.1016/j.jclepro.2021.127727"}, {"year": "2023", "title": "Solutions to agricultural green water scarcity under climate change", "venue": "PNAS Nexus", "doi": "10.1093/pnasnexus/pgad117", "doi_url": "https://doi.org/10.1093/pnasnexus/pgad117"}, {"year": "2022", "title": "Feasibility of gasifying mixed plastic waste for hydrogen production and carbon capture and storage", "venue": "Communications Earth & Environment", "doi": "10.1038/s43247-022-00632-1", "doi_url": "https://doi.org/10.1038/s43247-022-00632-1"}, {"year": "2021", "title": "A facile direct spray-coating of Pebax® 1657: Towards large-scale thin-film composite membranes for efficient CO2/N2 separation", "venue": "Journal of Membrane Science", "doi": "10.1016/j.memsci.2021.119708", "doi_url": "https://doi.org/10.1016/j.memsci.2021.119708"}, {"year": "2021", "title": "Cost reductions in renewables can substantially erode the value of carbon capture and storage in mitigation pathways", "venue": "One Earth", "doi": "10.1016/j.oneear.2021.10.024", "doi_url": "https://doi.org/10.1016/j.oneear.2021.10.024"}, {"year": "2024", "title": "The carbon-energy-water nexus of the carbon capture, utilization, and storage technology deployment schemes: A case study in China's cement industry", "venue": "Applied Energy", "doi": "10.1016/j.apenergy.2024.122991", "doi_url": "https://doi.org/10.1016/j.apenergy.2024.122991"}, {"year": "2021", "title": "Formalizing an integrated decision-making model for the risk assessment of carbon capture, utilization, and storage projects: From a sustainability perspective", "venue": "Applied Energy", "doi": "10.1016/j.apenergy.2021.117624", "doi_url": "https://doi.org/10.1016/j.apenergy.2021.117624"}, {"year": "2022", "title": "A scalable solid-state nanoporous network with atomic-level interaction design for carbon dioxide capture", "venue": "Science Advances", "doi": "10.1126/sciadv.abo6849", "doi_url": "https://doi.org/10.1126/sciadv.abo6849"}, {"year": "2023", "title": "Embedded Mo/Mn Atomic Regulation for Durable Acidity-Reinforced HZSM-5 Catalyst toward Energy-Efficient Amine Regeneration", "venue": "Environmental Science & Technology", "doi": "10.1021/acs.est.3c04916", "doi_url": "https://doi.org/10.1021/acs.est.3c04916"}, {"year": "2022", "title": "Prospects for Simultaneously Capturing Carbon Dioxide and Harvesting Water from Air", "venue": "Advanced Materials", "doi": "10.1002/adma.202204277", "doi_url": "https://doi.org/10.1002/adma.202204277"}, {"year": "2023", "title": "The Future of Process Industry: A Cyber–Physical–Social System Perspective", "venue": "IEEE Transactions on Cybernetics", "doi": "10.1109/tcyb.2023.3298838", "doi_url": "https://doi.org/10.1109/tcyb.2023.3298838"}, {"year": "2021", "title": "Technological Demonstration and Life Cycle Assessment of a Negative Emission Value Chain in the Swiss Concrete Sector", "venue": "Frontiers in Climate", "doi": "10.3389/fclim.2021.729259", "doi_url": "https://doi.org/10.3389/fclim.2021.729259"}, {"year": "2022", "title": "Carbon intensity of global existing and future hydropower reservoirs", "venue": "Renewable and Sustainable Energy Reviews", "doi": "10.1016/j.rser.2022.112433", "doi_url": "https://doi.org/10.1016/j.rser.2022.112433"}, {"year": "2022", "title": "Land‐based climate solutions for the United States", "venue": "Global Change Biology", "doi": "10.1111/gcb.16267", "doi_url": "https://doi.org/10.1111/gcb.16267"}, {"year": "2024", "title": "Cost-effectiveness uncertainty may bias the decision of coal power transitions in China", "venue": "Nature Communications", "doi": "10.1038/s41467-024-46549-5", "doi_url": "https://doi.org/10.1038/s41467-024-46549-5"}, {"year": "2021", "title": "The energy-water nexus of China’s interprovincial and seasonal electric power transmission", "venue": "Applied Energy", "doi": "10.1016/j.apenergy.2021.116493", "doi_url": "https://doi.org/10.1016/j.apenergy.2021.116493"}, {"year": "2021", "title": "Regional emission pathways, energy transition paths and cost analysis under various effort-sharing approaches for meeting Paris Agreement goals", "venue": "Energy", "doi": "10.1016/j.energy.2021.121024", "doi_url": "https://doi.org/10.1016/j.energy.2021.121024"}, {"year": "2023", "title": "Enhanced CO2 capture in partially interpenetrated MOFs: Synergistic effects from functional group, pore size, and steric-hindrance", "venue": "Journal of Colloid and Interface Science", "doi": "10.1016/j.jcis.2023.07.058", "doi_url": "https://doi.org/10.1016/j.jcis.2023.07.058"}, {"year": "2021", "title": "Carbon capture using membrane-based materials and its utilization pathways", "venue": "Chemical Papers", "doi": "10.1007/s11696-021-01674-z", "doi_url": "https://doi.org/10.1007/s11696-021-01674-z"}, {"year": "2024", "title": "Global biomethane and carbon dioxide removal potential through anaerobic digestion of waste biomass", "venue": "Environmental Research Letters", "doi": "10.1088/1748-9326/ad1e81", "doi_url": "https://doi.org/10.1088/1748-9326/ad1e81"}, {"year": "2025", "title": "High‐Performance Bi‐Based Catalysts for CO₂ Reduction: In Situ Formation of Bi/Bi₂O₂CO₃ and Enhanced Formate Production", "venue": "Advanced Science", "doi": "10.1002/advs.202415616", "doi_url": "https://doi.org/10.1002/advs.202415616"}, {"year": "2023", "title": "Energy-water nexus in low-carbon electric power systems: A simulation-based inexact optimization model", "venue": "Journal of Environmental Management", "doi": "10.1016/j.jenvman.2023.117744", "doi_url": "https://doi.org/10.1016/j.jenvman.2023.117744"}, {"year": "2024", "title": "SA‐RelayGANs: A Novel Framework for the Characterization of Complex Hydrological Structures Based on GANs and Self‐Attention Mechanism", "venue": "Water Resources Research", "doi": "10.1029/2023wr035932", "doi_url": "https://doi.org/10.1029/2023wr035932"}, {"year": "2024", "title": "Smart predictive viscosity mixing of CO2–N2 using optimized dendritic neural networks to implicate for carbon capture utilization and storage", "venue": "Journal of environmental chemical engineering", "doi": "10.1016/j.jece.2024.112210", "doi_url": "https://doi.org/10.1016/j.jece.2024.112210"}, {"year": "2025", "title": "Long-term transformation in China’s steel sector for carbon capture and storage technology deployment", "venue": "Nature Communications", "doi": "10.1038/s41467-025-59205-3", "doi_url": "https://doi.org/10.1038/s41467-025-59205-3"}, {"year": "2025", "title": "Uneven renewable energy supply constrains the decarbonization effects of excessively deployed hydrogen-based DRI technology", "venue": "Nature Communications", "doi": "10.1038/s41467-025-59730-1", "doi_url": "https://doi.org/10.1038/s41467-025-59730-1"}, {"year": "2025", "title": "Assessing the prospects, costs, and risks of carbon capture and storage implementation in Germany", "venue": "Carbon Capture Science & Technology", "doi": "10.1016/j.ccst.2025.100418", "doi_url": "https://doi.org/10.1016/j.ccst.2025.100418"}, {"year": "2025", "title": "Global energy, costs, and emissions from reverse osmosis desalination under future water scarcity", "venue": "Water Research", "doi": "10.1016/j.watres.2025.124825", "doi_url": "https://doi.org/10.1016/j.watres.2025.124825"}, {"year": "2025", "title": "Cation Crossover Limits Accessible Current Densities for Zero-Gap Alkaline CO2Reduction to Ethylene", "venue": "ACS Sustainable Chemistry & Engineering", "doi": "10.1021/acssuschemeng.4c06744", "doi_url": "https://doi.org/10.1021/acssuschemeng.4c06744"}, {"year": "2025", "title": "Catalytic conversion of carbon dioxide over atomically precise metal clusters toward fine chemicals", "venue": "Coordination Chemistry Reviews", "doi": "10.1016/j.ccr.2025.216922", "doi_url": "https://doi.org/10.1016/j.ccr.2025.216922"}, {"year": "2025", "title": "Rate and growth limits for carbon capture and storage", "venue": "Environmental Research Letters", "doi": "10.1088/1748-9326/add9af", "doi_url": "https://doi.org/10.1088/1748-9326/add9af"}, {"year": "2021", "title": "Long-term transition of China's power sector under carbon neutrality target and water withdrawal constraint", "venue": "Journal of Cleaner Production", "doi": "10.1016/j.jclepro.2021.129765", "doi_url": "https://doi.org/10.1016/j.jclepro.2021.129765"}, {"year": "2022", "title": "Climate change and CCS increase the water vulnerability of China's thermoelectric power fleet", "venue": "Energy", "doi": "10.1016/j.energy.2022.123339", "doi_url": "https://doi.org/10.1016/j.energy.2022.123339"}, {"year": "2023", "title": "Water consumption from electrolytic hydrogen in a carbon-neutral US energy system", "venue": "Cleaner Production Letters", "doi": "10.1016/j.clpl.2023.100037", "doi_url": "https://doi.org/10.1016/j.clpl.2023.100037"}, {"year": "2023", "title": "A two-stage downscaling hydrological modeling approach via convolutional conditional neural process and geostatistical bias correction", "venue": "Journal of Hydrology", "doi": "10.1016/j.jhydrol.2023.129498", "doi_url": "https://doi.org/10.1016/j.jhydrol.2023.129498"}, {"year": "2023", "title": "Estimating the dynamic environmental footprints of the global finance and business sector towards sustainable development goals", "venue": "Sustainable Development", "doi": "10.1002/sd.2617", "doi_url": "https://doi.org/10.1002/sd.2617"}, {"year": "2023", "title": "Dynamic optimization of carbon capture technology deployment targeting carbon neutrality, cost efficiency and water stress: Evidence from China's electric power sector", "venue": "Energy Economics", "doi": "10.1016/j.eneco.2023.106871", "doi_url": "https://doi.org/10.1016/j.eneco.2023.106871"}, {"year": "2020", "title": "Net-Negative Emissions through Molten Sorbents and Bioenergy with Carbon Capture and Storage", "venue": "Industrial & Engineering Chemistry Research", "doi": "10.1021/acs.iecr.0c04512", "doi_url": "https://doi.org/10.1021/acs.iecr.0c04512"}, {"year": "2021", "title": "Assessing the Role of Carbon Capture and Storage in Mitigation Pathways of Developing Economies", "venue": "Energies", "doi": "10.3390/en14071879", "doi_url": "https://doi.org/10.3390/en14071879"}, {"year": "2022", "title": "Biodiversity Loss from Freshwater Use for China’s Electricity Generation", "venue": "Environmental Science & Technology", "doi": "10.1021/acs.est.1c07155", "doi_url": "https://doi.org/10.1021/acs.est.1c07155"}, {"year": "2023", "title": "The sequence matters: Expert opinions on policy mechanisms for bioenergy with carbon capture and storage", "venue": "Energy Research & Social Science", "doi": "10.1016/j.erss.2023.103215", "doi_url": "https://doi.org/10.1016/j.erss.2023.103215"}, {"year": "2023", "title": "Going beyond carbon: An \"Earth system impact\" score to better capture corporate and investment impacts on the earth system", "venue": "Journal of Cleaner Production", "doi": "10.1016/j.jclepro.2023.139523", "doi_url": "https://doi.org/10.1016/j.jclepro.2023.139523"}, {"year": "2023", "title": "Plasma-engineered graphene quantum dot-based nanocomposites as smart CO2-philic membranes with extremely high separation performance", "venue": "Chemical Engineering Journal", "doi": "10.1016/j.cej.2023.146547", "doi_url": "https://doi.org/10.1016/j.cej.2023.146547"}, {"year": "2022", "title": "A novel cryogenic technology for low-cost carbon capture from NGCC power plants for climate change mitigation", "venue": "Thermal Science and Engineering Progress", "doi": "10.1016/j.tsep.2022.101495", "doi_url": "https://doi.org/10.1016/j.tsep.2022.101495"}, {"year": "2024", "title": "Heavy metals and PAHs adsorption characteristics of bio-asphalt in road runoff", "venue": "Journal of Cleaner Production", "doi": "10.1016/j.jclepro.2024.141923", "doi_url": "https://doi.org/10.1016/j.jclepro.2024.141923"}, {"year": "2022", "title": "A MULTIMOORA-Based Risk Evaluation Approach for CCUS Projects by Utilizing D Numbers Theory", "venue": "Axioms", "doi": "10.3390/axioms11050204", "doi_url": "https://doi.org/10.3390/axioms11050204"}, {"year": "2021", "title": "SDG implications of water-energy system transitions in India, for NDC, 2 °C, and well below 2 °C scenarios", "venue": "Environmental Research Letters", "doi": "10.1088/1748-9326/ac08bf", "doi_url": "https://doi.org/10.1088/1748-9326/ac08bf"}, {"year": "2024", "title": "Modelling carbon capture from power plants with low energy and water consumption using a novel cryogenic technology", "venue": "Applied Thermal Engineering", "doi": "10.1016/j.applthermaleng.2024.124315", "doi_url": "https://doi.org/10.1016/j.applthermaleng.2024.124315"}, {"year": "2025", "title": "Multidimensional sustainability implications of alternative iron and steel industry decarbonization strategies in China", "venue": "Resources Conservation and Recycling", "doi": "10.1016/j.resconrec.2025.108136", "doi_url": "https://doi.org/10.1016/j.resconrec.2025.108136"}, {"year": "2024", "title": "Exploring the Effects of Urmia Lake’s Variability on Adjacent Cities and Villages", "venue": "Journal of the Indian Society of Remote Sensing", "doi": "10.1007/s12524-024-01886-2", "doi_url": "https://doi.org/10.1007/s12524-024-01886-2"}, {"year": "2025", "title": "Virtual water transfer through physical power transmission and its driving factors in China during 2006–2022: A bottom-up approach", "venue": "Energy", "doi": "10.1016/j.energy.2025.136514", "doi_url": "https://doi.org/10.1016/j.energy.2025.136514"}, {"year": "2024", "title": "Carbon Capture and Storage (CCS) in Nigeria: A Review of Challenges and Opportunities", "venue": "British Journal of Multidisciplinary and Advanced Studies", "doi": "10.37745/bjmas.2022.04148", "doi_url": "https://doi.org/10.37745/bjmas.2022.04148"}, {"year": "2024", "title": "Production of Sustainable Adsorbents for CO2 Capture Applications from Food Biowastes", "venue": "Energies", "doi": "10.3390/en17051205", "doi_url": "https://doi.org/10.3390/en17051205"}, {"year": "2025", "title": "Wastewater as a resource for carbon capture: A comprehensive overview and perspective", "venue": "Journal of Environmental Management", "doi": "10.1016/j.jenvman.2025.124608", "doi_url": "https://doi.org/10.1016/j.jenvman.2025.124608"}, {"year": "2023", "title": "Assessing the symmetric and asymmetric impact of technological innovations environmental quality in Qatar", "venue": "Environment Development and Sustainability", "doi": "10.1007/s10668-023-03909-3", "doi_url": "https://doi.org/10.1007/s10668-023-03909-3"}, {"year": "2025", "title": "Cost-competitive plant-by-plant strategy for spatially resolved CCUS deployment toward carbon neutrality in global key industries", "venue": "One Earth", "doi": "10.1016/j.oneear.2025.101378", "doi_url": "https://doi.org/10.1016/j.oneear.2025.101378"}, {"year": "2025", "title": "Creating a Microenvironment in an Amine Solution for Integrated CO2Capture and Electroreduction", "venue": "ACS Catalysis", "doi": "10.1021/acscatal.5c05334", "doi_url": "https://doi.org/10.1021/acscatal.5c05334"}, {"year": "2026", "title": "Accelerating widespread adoption of direct air capture based on system perspective: Thermodynamic limits, geographical deployment, and clean energy integration", "venue": "Renewable and Sustainable Energy Reviews", "doi": "10.1016/j.rser.2026.116702", "doi_url": "https://doi.org/10.1016/j.rser.2026.116702"}, {"year": "2025", "title": "Characterization of Reservoir Structures With Knowledge-Informed Neural Network", "venue": "SPE Journal", "doi": "10.2118/228279-pa", "doi_url": "https://doi.org/10.2118/228279-pa"}, {"year": "2025", "title": "Environmental impacts of carbon dioxide storage leakage: Research progress and challenges in the last decade", "venue": "Journal of environmental chemical engineering", "doi": "10.1016/j.jece.2025.118591", "doi_url": "https://doi.org/10.1016/j.jece.2025.118591"}, {"year": "2025", "title": "Water Scarcity Risks in Ammonia Fertilizer Production Pose a Threat to Global Food Security", "venue": "Environmental Science & Technology", "doi": "10.1021/acs.est.5c14489", "doi_url": "https://doi.org/10.1021/acs.est.5c14489"}, {"year": "2025", "title": "Integrated urban water management for climate resilience: strategies for sustainable supply and flood risk mitigation", "venue": "Green Technology Resilience and Sustainability", "doi": "10.1007/s44173-025-00025-5", "doi_url": "https://doi.org/10.1007/s44173-025-00025-5"}, {"year": "2023", "title": "Carbon-neutral conversion of methane supported by Ni-(Rh, Co) bimetallic catalysts for low-temperature proton-conducting ceramic fuel cells", "venue": "Chemical Engineering Journal", "doi": "10.1016/j.cej.2023.142334", "doi_url": "https://doi.org/10.1016/j.cej.2023.142334"}, {"year": "2024", "title": "Bioenergy in Europe is unlikely to make a timely contribution to climate change targets", "venue": "Environmental Research Letters", "doi": "10.1088/1748-9326/ad2d11", "doi_url": "https://doi.org/10.1088/1748-9326/ad2d11"}, {"year": "2024", "title": "Alignment of energy transition and water resources under the carbon neutrality target in China", "venue": "Journal of Integrative Environmental Sciences", "doi": "10.1080/1943815x.2024.2389072", "doi_url": "https://doi.org/10.1080/1943815x.2024.2389072"}, {"year": "2024", "title": "A diagnostic framework to reveal future clean water scarcity in a changing climate", "venue": "Journal of Hydrology Regional Studies", "doi": "10.1016/j.ejrh.2024.102040", "doi_url": "https://doi.org/10.1016/j.ejrh.2024.102040"}, {"year": "2024", "title": "Water availability may not restrict the implementation of carbon capture utilization and storage technology: Evidence from China's electric power sector", "venue": "Resources Conservation and Recycling", "doi": "10.1016/j.resconrec.2024.107779", "doi_url": "https://doi.org/10.1016/j.resconrec.2024.107779"}, {"year": "2022", "title": "CO2-driven surface reconstruction in quaternary ammonium ionic liquid-propanol solutions", "venue": "Journal of Ionic Liquids", "doi": "10.1016/j.jil.2022.100018", "doi_url": "https://doi.org/10.1016/j.jil.2022.100018"}, {"year": "2022", "title": "Estratégias para a transição energética: revisão de literatura", "venue": "Revista Científica Multidisciplinar Núcleo do Conhecimento", "doi": "10.32749/nucleodoconhecimento.com.br/engenharia-ambiental/transicao-energetica", "doi_url": "https://doi.org/10.32749/nucleodoconhecimento.com.br/engenharia-ambiental/transicao-energetica"}, {"year": "2022", "title": "Strategies for the energy transition: literature review", "venue": "Revista Científica Multidisciplinar Núcleo do Conhecimento", "doi": "10.32749/nucleodoconhecimento.com.br/environmental-engineering-en/energy-transition", "doi_url": "https://doi.org/10.32749/nucleodoconhecimento.com.br/environmental-engineering-en/energy-transition"}, {"year": "2023", "title": "WITHDRAWN: Two three-dimensional robust hydrogen-bonded organic frameworks for ultra-high CO2 uptake", "venue": "Chem", "doi": "10.1016/j.chempr.2023.03.003", "doi_url": "https://doi.org/10.1016/j.chempr.2023.03.003"}, {"year": "2022", "title": "Estratégias para a transição energética: revisão de literatura", "venue": "Revista Científica Multidisciplinar Núcleo do Conhecimento", "doi": "10.32749/nucleodoconhecimento.com.br/sem-categoria/transicao-energetica", "doi_url": "https://doi.org/10.32749/nucleodoconhecimento.com.br/sem-categoria/transicao-energetica"}, {"year": "2023", "title": "Water Provisioning Services", "venue": "Unknown", "doi": "10.1007/978-3-031-35692-6_4", "doi_url": "https://doi.org/10.1007/978-3-031-35692-6_4"}, {"year": "2024", "title": "Exploring Water’s Role in Sustainable Electricity Generation for Power in Future", "venue": "Water science and technology library", "doi": "10.1007/978-3-031-62079-9_26", "doi_url": "https://doi.org/10.1007/978-3-031-62079-9_26"}, {"year": "2024", "title": "Assessing the undesired impacts on water sustainability from climate change mitigation technologies in fossil-based power generation", "venue": "Environmental Science Water Research & Technology", "doi": "10.1039/d4ew00122b", "doi_url": "https://doi.org/10.1039/d4ew00122b"}, {"year": "2024", "title": "What are we aiming for? Addressing the knowledge gap of a long-term sustainable society", "venue": "Environmental Science & Policy", "doi": "10.1016/j.envsci.2024.103895", "doi_url": "https://doi.org/10.1016/j.envsci.2024.103895"}, {"year": "2023", "title": "Going beyond carbon: An \"Earth System Impact\" score to better capture corporate and investment impacts on the Earth system", "venue": "SSRN Electronic Journal", "doi": "10.2139/ssrn.4495331", "doi_url": "https://doi.org/10.2139/ssrn.4495331"}, {"year": "2022", "title": "Decarbonization of the Fossil Fuel Sector", "venue": "Unknown", "doi": "10.1002/9783527831425.ch7", "doi_url": "https://doi.org/10.1002/9783527831425.ch7"}, {"year": "2022", "title": "Estrategias para la transición energética: revisión de la literatura", "venue": "Revista Científica Multidisciplinar Núcleo do Conhecimento", "doi": "10.32749/nucleodoconhecimento.com.br/ingenieria-ambiental-es/transicion-energetica", "doi_url": "https://doi.org/10.32749/nucleodoconhecimento.com.br/ingenieria-ambiental-es/transicion-energetica"}, {"year": "2022", "title": "Strategies for the energy transition: literature review", "venue": "Revista Científica Multidisciplinar Núcleo do Conhecimento", "doi": "10.32749/nucleodoconhecimento.com.br/uncategorized/energy-transition", "doi_url": "https://doi.org/10.32749/nucleodoconhecimento.com.br/uncategorized/energy-transition"}, {"year": "2024", "title": "Modelling Carbon Capture from Power Plants with Low Energy and Water Consumption Using a Novel Cryogenic Capture Technology", "venue": "SSRN Electronic Journal", "doi": "10.2139/ssrn.4805520", "doi_url": "https://doi.org/10.2139/ssrn.4805520"}, {"year": "2025", "title": "Expert projections on the development and application of bioenergy with carbon capture and storage technologies", "venue": "Environmental Research Letters", "doi": "10.1088/1748-9326/ada16f", "doi_url": "https://doi.org/10.1088/1748-9326/ada16f"}, {"year": "2025", "title": "References", "venue": "Elsevier eBooks", "doi": "10.1016/b978-0-12-824365-7.10000-6", "doi_url": "https://doi.org/10.1016/b978-0-12-824365-7.10000-6"}, {"year": "2025", "title": "Global solutions to the climate crisis: Our friends with cobenefits", "venue": "Elsevier eBooks", "doi": "10.1016/b978-0-12-824365-7.00003-x", "doi_url": "https://doi.org/10.1016/b978-0-12-824365-7.00003-x"}, {"year": "2025", "title": "Interpretable deep learning-based characterization of hydrogeological structures with self-representation learning", "venue": "Journal of Hydrology", "doi": "10.1016/j.jhydrol.2025.133943", "doi_url": "https://doi.org/10.1016/j.jhydrol.2025.133943"}, {"year": "2025", "title": "How Climate Ambition and Technology Choices Shape Water Use in the Power Generation Sector", "venue": "Climate", "doi": "10.3390/cli13090174", "doi_url": "https://doi.org/10.3390/cli13090174"}, {"year": "2025", "title": "Integrated pathways for sustainable energy-water nexus management in resource-dependent cities: A scenario-based assessment of Tangshan, China", "venue": "Energy", "doi": "10.1016/j.energy.2025.138627", "doi_url": "https://doi.org/10.1016/j.energy.2025.138627"}, {"year": "2025", "title": "Solvent-free mechanochemical conversion of CO2into mesoporous SiC: a green route to high-performance catalysts", "venue": "RSC Mechanochemistry", "doi": "10.1039/d5mr00091b", "doi_url": "https://doi.org/10.1039/d5mr00091b"}, {"year": "2025", "title": "Optimization Path of Facility Transformation for Key Industrial Sectors in China Considering Geological Storage Resource Constraints of CCUS", "venue": "Journal of Energy and Climate Change", "doi": "10.3724/j.issn.2097-4981.jecc-2025-0058", "doi_url": "https://doi.org/10.3724/j.issn.2097-4981.jecc-2025-0058"}, {"year": "2025", "title": "Spatiotemporal patterns of PAHs contamination in Shanxi expressway runoff", "venue": "Journal of Water Process Engineering", "doi": "10.1016/j.jwpe.2025.109187", "doi_url": "https://doi.org/10.1016/j.jwpe.2025.109187"}, {"year": "2025", "title": "Systemic Risks of Excessive CCS Deployment in Power-Sector Decarbonization", "venue": "Environmental Science & Technology", "doi": "10.1021/acs.est.5c10957", "doi_url": "https://doi.org/10.1021/acs.est.5c10957"}, {"year": "2026", "title": "Life cycle water footprint assessment of modern coal chemical industry coupled with CCUS technology", "venue": "Sustainable Energy Technologies and Assessments", "doi": "10.1016/j.seta.2025.104808", "doi_url": "https://doi.org/10.1016/j.seta.2025.104808"}, {"year": "2026", "title": "How can we improve the co-benefits of climate finance – an integrative review", "venue": "Journal of economic and administrative sciences.", "doi": "10.1108/jeas-01-2025-0031", "doi_url": "https://doi.org/10.1108/jeas-01-2025-0031"}, {"year": "2026", "title": "Interfacial P‐Band Modulation in Bismuth for Electrocatalytic CO2Reduction Over Wide pH Ranges", "venue": "Carbon Neutralization", "doi": "10.1002/cnl2.70148", "doi_url": "https://doi.org/10.1002/cnl2.70148"}];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  var DATA = [];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</body>
+</html>

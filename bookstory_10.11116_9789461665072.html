@@ -98,7 +98,7 @@
   margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
 .roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
 
-.role-pill{display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
   border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
   position:relative;transition:opacity .15s;}
 .role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
@@ -108,12 +108,12 @@
 .role-pill:hover{opacity:1!important;}
 
 /* CSS tooltip for role descriptions */
-.role-pill[title]:hover::after{
-  content:attr(title);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+.role-pill[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
   background:#111827;color:white;padding:.5rem .75rem;border-radius:.5rem;font-size:.72rem;
   width:230px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
   pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
-.role-pill[title]:hover::before{
+.role-pill[data-tip]:hover::before{
   content:'';position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);
   border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
 
@@ -178,11 +178,49 @@
 .sig-teal  {background:#ccfbf1;color:#0f766e;}
 .sig-amber {background:#fef3c7;color:#b45309;}
 .sig-blue  {background:#dbeafe;color:#1d4ed8;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
 </style>
 <link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div class="site-nav-links">
+    <a href="index.html">← All stories</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
 <button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
 <svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
         Print PDF Report
@@ -266,7 +304,7 @@
 <div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">4</div><div class="im-label">Total Citations</div></div><div class="im-spark"><svg height="36" style="display:block;overflow:visible;" viewbox="0 0 120 36" width="120" xmlns="http://www.w3.org/2000/svg"><path d="M0.0,2.0 L60.0,18.0 L120.0,18.0 L120.0,36.0 L0,36.0 Z" fill="#dbeafe" opacity="0.6"></path><polyline fill="none" points="0.0,2.0 60.0,18.0 120.0,18.0" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline></svg><div class="im-spark-range">2024–2026</div></div></div><div class="im-top-badge">🏆 Top 10% Cited</div></div><div class="im-card"><div class="im-num">2</div><div class="im-label">Online Mentions</div></div><a class="im-card im-card-dl" href="#operas-metrics-card"><div class="im-card-top"><div><div class="im-num">2295</div><div class="im-label">Downloads (OAPEN)</div></div><div id="dl-sparkline-container"></div></div><div class="im-card-hint">📊 View full timeline ↓</div></a></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-amber" href="#sec-funding">💰 3 grants</a><a class="sig-pill sig-blue" href="#sec-citing">🌍 17 countries</a><a class="sig-pill sig-blue" href="#operas-metrics-card">📊 OPERAS downloads</a></div></div></div></section>
 <section class="card" id="sec-roles">
 <h2><span>Inferred roles</span></h2>
-<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#065f46;">🏛 Practical &amp; Real-World</div><div class="roles-row"><span class="role-pill role-pill-practical" style="opacity:1;" title="Present on Amazon, Goodreads, or in patents — commercial or consumer crossover."><span class="role-dot" style="background:#10b981;"></span>Commercial linkage<span class="role-strength" style="background:#dcfce7;color:#166534;">Strong</span></span><span class="role-pill role-pill-practical" style="opacity:0.9;" title="Cited in government reports, WHO/NGO briefs, or UN policy documents."><span class="role-dot" style="background:#10b981;"></span>Sustainability &amp; policy relevance<span class="role-strength" style="background:#dcfce7;color:#166534;">Moderate</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#b45309;">📢 Public Engagement &amp; Media</div><div class="roles-row"><span class="role-pill role-pill-public" style="opacity:0.9;" title="Heavy social-platform engagement — the work has sparked ongoing community conversation."><span class="role-dot" style="background:#f59e0b;"></span>Active public discourse<span class="role-strength" style="background:#fef3c7;color:#92400e;">Moderate</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#1d4ed8;">🎓 Academic &amp; Scientific</div><div class="roles-row"><span class="role-pill role-pill-academic" style="opacity:0.75;" title="Foundational building block cited heavily in core academic journals and monographs."><span class="role-dot" style="background:#3b82f6;"></span>Scholarly uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Emerging</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
+<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#065f46;">🏛 Practical &amp; Real-World</div><div class="roles-row"><span class="role-pill role-pill-practical" style="opacity:1;" data-tip="Present on Amazon, Goodreads, or in patents — commercial or consumer crossover."><span class="role-dot" style="background:#10b981;"></span>Commercial linkage<span class="role-strength" style="background:#dcfce7;color:#166534;">Strong</span></span><span class="role-pill role-pill-practical" style="opacity:0.9;" data-tip="Cited in government reports, WHO/NGO briefs, or UN policy documents."><span class="role-dot" style="background:#10b981;"></span>Sustainability &amp; policy relevance<span class="role-strength" style="background:#dcfce7;color:#166534;">Moderate</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#b45309;">📢 Public Engagement &amp; Media</div><div class="roles-row"><span class="role-pill role-pill-public" style="opacity:0.9;" data-tip="Heavy social-platform engagement on Reddit, Bluesky, or Mastodon — the work has sparked ongoing community conversation."><span class="role-dot" style="background:#f59e0b;"></span>Active public discourse<span class="role-strength" style="background:#fef3c7;color:#92400e;">Moderate</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#1d4ed8;">🎓 Academic &amp; Scientific</div><div class="roles-row"><span class="role-pill role-pill-academic" style="opacity:0.75;" data-tip="Foundational building block cited heavily in core academic journals and monographs."><span class="role-dot" style="background:#3b82f6;"></span>Scholarly uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Emerging</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
 
 </section>
 <div class="grid-2" id="sec-access">

@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ArticleStory - Teachers’ Competencies</title>
+<style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+.role-pill[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:#111827;color:white;padding:.5rem .75rem;border-radius:.5rem;font-size:.72rem;
+  width:230px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.role-pill[data-tip]:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+.role-pill[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:#111827;color:white;padding:.5rem .75rem;border-radius:.5rem;font-size:.72rem;
+  width:230px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.role-pill[data-tip]:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+</style>
+<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Print PDF Report
+    </button>
+<div class="page" id="sec-story">
+<header class="hero card" id="sec-hero">
+<div class="header-bar">
+<div style="display: flex; align-items: center; gap: 1.25rem;">
+<div class="logo-wrap"><img alt="Logo" src="articlestories-logo.png"/></div>
+<div>
+<h1 class="hero-title">Teachers’ Competencies</h1>
+<div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+<span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em;" title="scite found more citations supporting than contrasting this work's methodology">
+<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                    Methodologically Supported
+                                <span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· scite</span><span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· scite</span></span>
+</div>
+<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+<div><strong>Author(s):</strong> K. Selvi, Peter Lang</div>
+<div><strong>Publisher:</strong> Cultura</div>
+<div><strong>Publication year:</strong> 2010</div>
+<div><strong>DOI:</strong> <a href="https://doi.org/10.5840/cultura20107133" target="_blank">10.5840/cultura20107133</a></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">153</div>
+<div class="stats-strip-label">Total Citations</div>
+<div class="stats-strip-badge">🏆 Top 10% Cited</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">—</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">—</div>
+<div class="stats-strip-label">scite References</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Diamond</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
+
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-mentions">Mentions</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-funding">Funding</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">257</div>
+<div class="stats-strip-label">Total Citations</div>
+<div class="stats-strip-badge">🏆 Top 10% Cited</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">0</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">153</div>
+<div class="stats-strip-label">scite References</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Diamond</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-mentions">Mentions</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-funding">Funding</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+<section class="card" id="sec-story">
+<h2><span>The Story So Far</span></h2>
+<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The article "Teachers’ Competencies," authored by K. Selvi and Peter Lang, has garnered significant academic attention with a total of 257 citations. Its influence spans various disciplines, evidenced by its citations in notable venues such as the International Journal of Learning Teaching and Educational Research and SAGE Open.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">"Teachers’ Competencies" has established itself as a vital contribution to educational research, shown by its robust citation record of 257. This suggests that the work resonates deeply within the academic community, particularly in contexts related to teaching and learning methodologies. Its citations in respected journals like the International Journal of Learning Teaching and Educational Research and Procedia - Social and Behavioral Sciences further amplify its reach and significance in advancing educational practices.</p>
+<p class="story-text">The geographic diversity of the citing authors highlights the article's global relevance, with notable citations emerging from countries such as Indonesia, Turkey, and the Philippines. This pattern indicates a widespread acknowledgment of the work's contributions to the pedagogical discourse in these regions, which may reflect varied educational challenges and strategies employed globally. The international acknowledgment suggests that the competencies discussed have implications that transcend local educational frameworks.</p>
+<p class="story-text">Moreover, the versatility of the article is underscored by the diversity of citation types, which includes journal articles, book chapters, and dissertations. Such a breadth of engagement points to the article's foundational role in both academic inquiry and practical application. By being cited in varied formats, it informs a wide array of educational settings, enhancing its impact across multiple layers of educational research and policy implementation.</p>
+<p class="story-text">In conclusion, the standout success of "Teachers’ Competencies" invites ongoing discourse related to educational excellence. Given its citation count and the breadth of its influence across numerous academic platforms, this work has undoubtedly paved the way for future research initiatives aimed at enhancing teaching competencies in a variety of educational contexts.</p></div>
+</section>
+<section class="card" id="sec-impact">
+<h2><span>Impact metrics</span></h2>
+<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">153</div><div class="im-label">Total Citations</div></div><div class="im-spark"><svg height="36" style="display:block;overflow:visible;" viewbox="0 0 120 36" width="120" xmlns="http://www.w3.org/2000/svg"><path d="M0.0,33.3 L7.5,32.6 L15.0,33.3 L22.5,29.2 L30.0,29.9 L37.5,32.0 L45.0,31.3 L52.5,29.2 L60.0,24.5 L67.5,22.4 L75.0,11.5 L82.5,7.4 L90.0,8.8 L97.5,2.0 L105.0,19.7 L112.5,23.1 L120.0,32.6 L120.0,36.0 L0,36.0 Z" fill="#dbeafe" opacity="0.6"></path><polyline fill="none" points="0.0,33.3 7.5,32.6 15.0,33.3 22.5,29.2 30.0,29.9 37.5,32.0 45.0,31.3 52.5,29.2 60.0,24.5 67.5,22.4 75.0,11.5 82.5,7.4 90.0,8.8 97.5,2.0 105.0,19.7 112.5,23.1 120.0,32.6" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline></svg><div class="im-spark-range">2010–2026</div></div></div><div class="im-top-badge">🏆 Top 10% Cited</div></div><div class="im-card"><div class="im-num">—</div><div class="im-label">Online Mentions</div></div></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-blue" href="#sec-citing">🌍 17 countries</a></div></div></div></section>
+<section class="card" id="sec-roles">
+<h2><span>Inferred roles</span></h2>
+<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#1d4ed8;">🎓 Academic &amp; Scientific</div><div class="roles-row"><span class="role-pill role-pill-academic" style="opacity:1;" data-tip="Foundational building block cited heavily in core academic journals and monographs."><span class="role-dot" style="background:#3b82f6;"></span>Scholarly uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Strong</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
+</section>
+<div class="grid-2">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+<ul class="metric-list">
+<li><strong>DOI:</strong> <a href="https://doi.org/10.5840/cultura20107133" target="_blank">10.5840/cultura20107133</a></li>
+<li><strong>OA status:</strong> Diamond</li>
+<li><strong>Landing page:</strong> <a href="https://doi.org/10.5840/cultura20107133" style="word-break: break-all;" target="_blank">https://doi.org/10.5840/cultura20107133</a></li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>0</strong> recorded events globally
+                        
+                    </p>
+<p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+<em>(See specific sources and examples in the Online Mentions section below).</em>
+</p>
+</section>
+</div>
+<div class="grid-2" style="align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Citation context</span> <span class="badge">scite</span></h2>
+<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+<li><strong>Total:</strong> 153</li>
+<li><strong>Supporting:</strong> 4</li>
+<li><strong>Mentioning:</strong> 112</li>
+<li><strong>Contradicting:</strong> 0</li>
+</ul>
+</section>
+</div>
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+</div>
+</div>
+<section class="card" id="sec-citing">
+<h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+                Analysis of the 257 most recent citing works. 
+                <br/>
+<strong>16.0%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>2.0</strong> times itself.
+            </div>
+<div class="cite-analysis-always"><div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+<ul class="metric-list">
+<li><strong>Citing work types:</strong>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (225)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (14)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (4)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book (4)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">dissertation (4)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">paratext (3)</span>
+</li>
+<li><strong>Top citing venues:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Unknown (12)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">International Journal of Learning Teaching and Educational Research (5)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">SAGE Open (4)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">International Journal of Instruction (4)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Procedia - Social and Behavioral Sciences (4)</span>
+</li>
+<li><strong>Top citing concepts:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Psychology (102)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Mathematics education (49)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Competence (human resources) (49)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Humanities (34)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Professional development (19)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Computer science (18)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Pedagogy (17)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Curriculum (16)</span>
+</li>
+<li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+<strong>Citation timeline:</strong>
+<div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+<canvas data-labels="[2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]" data-values="[1, 2, 1, 7, 6, 3, 4, 7, 14, 17, 33, 39, 37, 47, 21, 16, 2]" id="citationChart">
+</canvas>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="cite-tabs">
+<button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-ppl')">👤 Top Citers</button>
+</div>
+<div class="cite-tab-pane active" id="cite-geo"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Indonesia (65)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Turkey (16)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Philippines (13)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">China (11)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (7)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Malaysia (7)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Thailand (7)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Vietnam (7)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Iran (6)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Spain (5)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Russia (5)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Norway (4)</span>
+</div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (215)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (8)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Healthcare (4)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Company (4)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Government (4)</span>
+</div>
+</div></div>
+<div class="cite-tab-pane" id="cite-inst"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Yogyakarta State University</strong>
+<a class="orcid-badge" href="https://ror.org/05fryw881" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(8)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Indonesia University of Education</strong>
+<a class="orcid-badge" href="https://ror.org/044b0xj37" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(6)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Bukidnon State University</strong>
+<a class="orcid-badge" href="https://ror.org/04knmnr48" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Thai Nguyen University Of Education</strong>
+<a class="orcid-badge" href="https://ror.org/044deqz63" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Thai Nguyen University</strong>
+<a class="orcid-badge" href="https://ror.org/02128gy91" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Universitas Muhammadiyah Jember</strong>
+<a class="orcid-badge" href="https://ror.org/021p32893" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Riau University</strong>
+<a class="orcid-badge" href="https://ror.org/00nk7p507" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>State University of Malang</strong>
+<a class="orcid-badge" href="https://ror.org/00ypgyy34" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Ferdowsi University of Mashhad</strong>
+<a class="orcid-badge" href="https://ror.org/00g6ka752" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Anadolu University</strong>
+<a class="orcid-badge" href="https://ror.org/05nz37n09" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+</ul>
+</div></div>
+<div class="cite-tab-pane" id="cite-ppl"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Manuel Caingcoy</strong>
+<a class="orcid-badge" href="https://openalex.org/A5113918272" target="_blank">Profile</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Anikó Kálmán</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-0225-7921" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Albert Efendi Pohan</strong>
+<a class="orcid-badge" href="https://openalex.org/A5063745902" target="_blank">Profile</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>K. Selvi</strong>
+<a class="orcid-badge" href="https://orcid.org/0009-0006-5389-7538" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Mirna Vidaković</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-8986-7505" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Universitas Sangga Buana</strong>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Upit Yulianti</strong>
+<a class="orcid-badge" href="https://openalex.org/A5019995296" target="_blank">Profile</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>P. Ramesh</strong>
+<a class="orcid-badge" href="https://openalex.org/A5102007367" target="_blank">Profile</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>P. Krishnan</strong>
+<a class="orcid-badge" href="https://openalex.org/A5110540675" target="_blank">Profile</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Sharon Moynihan</strong>
+<a class="orcid-badge" href="https://openalex.org/A5000290563" target="_blank">Profile</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+</ul>
+</div></div>
+</section>
+<div class="grid-2">
+</div>
+<div class="grid-2" id="sec-contributors">
+<section class="card" id="sec-contributors" style="margin-bottom:0;">
+<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">2 authors · 0 institutions</div>
+<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+<li style="margin-bottom: 0.4rem;">
+<strong>K. Selvi</strong>
+<span class="badge">First</span>
+<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+<a class="orcid-badge" href="https://orcid.org/0009-0006-5389-7538" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Peter Lang</strong>
+</li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">4 specific concepts identified.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Psychology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Linguistics</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sociology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Philosophy</span>
+</div>
+</section>
+</div>
+<section class="card no-print" id="sec-citations">
+<h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">Displaying 257 most recent citing works</div>
+<div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+<table>
+<thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+<tbody id="cit-tbody"></tbody>
+</table>
+</div>
+<div class="cit-pagination">
+<span class="cit-pagination-info" id="cit-info">Loading…</span>
+<div class="cit-pagination-btns">
+<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
+<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
+<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
+</div>
+</div>
+
+<div class="cit-pagination">
+<span class="cit-pagination-info" id="cit-info">Loading…</span>
+<div class="cit-pagination-btns">
+<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
+<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
+<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
+</div>
+</div>
+</section>
+<footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+<div style="display: flex; flex-direction: column; gap: 0.4rem;">
+<div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+<svg fill="none" height="16" stroke="currentColor" style="color: #9ca3af;" viewbox="0 0 24 24" width="16"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Understanding our metrics: <a href="https://www.openscience.works/about.html" style="color: #2563eb; text-decoration: none; font-weight: 600;" target="_blank">Read the Methodology &amp; Legend ↗</a></span>
+</div>
+<div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-05-19T11:20:32+00:00
+                </div>
+</div>
+</footer>
+</div>
+<script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+<script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<script>
+(function() {
+  var DATA = [{"year": "2023", "title": "Exploring the AI competencies of elementary school teachers in South Korea", "venue": "Computers and Education Artificial Intelligence", "doi": "10.1016/j.caeai.2023.100137", "doi_url": "https://doi.org/10.1016/j.caeai.2023.100137"}, {"year": "2022", "title": "Digital era 4.0", "venue": "Linguistics and Culture Review", "doi": "10.21744/lingcure.v6ns3.2064", "doi_url": "https://doi.org/10.21744/lingcure.v6ns3.2064"}, {"year": "2019", "title": "Teacher Key Competencies for Inclusive Education: Tapping Pragmatic Realities of Zimbabwean Special Needs Education Teachers", "venue": "SAGE Open", "doi": "10.1177/2158244018823455", "doi_url": "https://doi.org/10.1177/2158244018823455"}, {"year": "2018", "title": "OIDDE Learning Model: Improving Higher Order Thinking Skills of Biology Teacher Candidates", "venue": "International Journal of Instruction", "doi": "10.12973/iji.2018.11217a", "doi_url": "https://doi.org/10.12973/iji.2018.11217a"}, {"year": "2016", "title": "Pedagogical Content Knowledge-Guided Lesson Study: Effects on Teacher Competence and Students’ Achievement in Chemistry", "venue": "Education Research International", "doi": "10.1155/2016/6068930", "doi_url": "https://doi.org/10.1155/2016/6068930"}, {"year": "2014", "title": "Secondary School Teachers’ Beliefs on Character Education Competency", "venue": "Procedia - Social and Behavioral Sciences", "doi": "10.1016/j.sbspro.2014.04.145", "doi_url": "https://doi.org/10.1016/j.sbspro.2014.04.145"}, {"year": "2022", "title": "A review of research on teacher competencies in higher education", "venue": "Quality Assurance in Education", "doi": "10.1108/qae-08-2021-0126", "doi_url": "https://doi.org/10.1108/qae-08-2021-0126"}, {"year": "2018", "title": "Kompetensi Guru Matematika Dalam Mengembangkan Kompetensi Matematis Siswa", "venue": "Scholaria Jurnal Pendidikan dan Kebudayaan", "doi": "10.24246/j.js.2018.v8.i2.p157-166", "doi_url": "https://doi.org/10.24246/j.js.2018.v8.i2.p157-166"}, {"year": "2021", "title": "Analisis Profesionalisme Guru dalam Pelaksanaan Pembelajaran Daring di Masa Pandemi Covid-19", "venue": "Jurnal Basicedu", "doi": "10.31004/basicedu.v6i1.1961", "doi_url": "https://doi.org/10.31004/basicedu.v6i1.1961"}, {"year": "2021", "title": "Teachers’ Key Competencies for Innovative Teaching", "venue": "International Journal of Cognitive Research in Science Engineering and Education", "doi": "10.23947/2334-8496-2021-9-3-331-345", "doi_url": "https://doi.org/10.23947/2334-8496-2021-9-3-331-345"}, {"year": "2020", "title": "Competencies and professional development needs of kindergarten teachers", "venue": "International Journal on Integrated Education", "doi": "10.31149/ijie.v3i7.491", "doi_url": "https://doi.org/10.31149/ijie.v3i7.491"}, {"year": "2023", "title": "Career Advancement, Job Satisfaction, Career Retention, and Other Related Dimensions for Sustainability: A Perception Study of Qatari Public School Teachers", "venue": "Sustainability", "doi": "10.3390/su15054370", "doi_url": "https://doi.org/10.3390/su15054370"}, {"year": "2022", "title": "21st Century Teaching Skills and Teaching Standards Competence Level of Teacher", "venue": "International Journal of Learning Teaching and Educational Research", "doi": "10.26803/ijlter.21.5.12", "doi_url": "https://doi.org/10.26803/ijlter.21.5.12"}, {"year": "2020", "title": "Professional Competence of Teachers in Indian Higher Agricultural Education", "venue": "Current Science", "doi": "10.18520/cs/v118/i3/356-361", "doi_url": "https://doi.org/10.18520/cs/v118/i3/356-361"}, {"year": "2015", "title": "Teacher Competencies in Health Education: Results of a Delphi Study", "venue": "PLoS ONE", "doi": "10.1371/journal.pone.0143703", "doi_url": "https://doi.org/10.1371/journal.pone.0143703"}, {"year": "2016", "title": "Ghanaian teachers: competencies perceived as important for inclusive education", "venue": "International Journal of Inclusive Education", "doi": "10.1080/13603116.2016.1145261", "doi_url": "https://doi.org/10.1080/13603116.2016.1145261"}, {"year": "2014", "title": "Evaluation of Digital Didactic Skills in Massive Open Online Courses: a Contribution to the Latin American Movement", "venue": "Comunicar", "doi": "10.3916/c44-2015-09", "doi_url": "https://doi.org/10.3916/c44-2015-09"}, {"year": "2018", "title": "Learning to Be: Teachers’ Competences and Practical Solutions: A Step Towards Sustainable Development", "venue": "Journal of Teacher Education for Sustainability", "doi": "10.2478/jtes-2018-0002", "doi_url": "https://doi.org/10.2478/jtes-2018-0002"}, {"year": "2020", "title": "Pengaruh Pelatihan Terhadap Kompetensi Pedagogik Guru Matematika", "venue": "Jurnal Cendekia Jurnal Pendidikan Matematika", "doi": "10.31004/cendekia.v4i1.207", "doi_url": "https://doi.org/10.31004/cendekia.v4i1.207"}, {"year": "2020", "title": "A Novel Improvement Strategy of Competency for Education for Sustainable Development (ESD) of University Teachers Based on Data Mining", "venue": "Sustainability", "doi": "10.3390/su12072679", "doi_url": "https://doi.org/10.3390/su12072679"}, {"year": "2013", "title": "Meanings of criteria and norms: Analyses and comparisons of ICT literacy competencies of middle school students", "venue": "Computers & Education", "doi": "10.1016/j.compedu.2012.12.018", "doi_url": "https://doi.org/10.1016/j.compedu.2012.12.018"}, {"year": "2018", "title": "Modelo de integración de la competencia digital del docente universitario para su desarrollo profesional en la enseñanza de la matemática – Universidad Tecnológica Equinoccial de Ecuador", "venue": "EDMETIC", "doi": "10.21071/edmetic.v7i1.6910", "doi_url": "https://doi.org/10.21071/edmetic.v7i1.6910"}, {"year": "2020", "title": "EĞİTİM PROGRAMI OKURYAZARLIĞI KAVRAMININ KAVRAMSAL YÖNDEN ANALİZİ: BİR ÖLÇEK GELİŞTİRME ÇALIŞMASI", "venue": "Elektronik Sosyal Bilimler Dergisi", "doi": "10.17755/esosder.554205", "doi_url": "https://doi.org/10.17755/esosder.554205"}, {"year": "2018", "title": "Students' perceptions about online teaching effectiveness: A bottom-up approach for identifying online instructors’ roles", "venue": "Australasian Journal of Educational Technology", "doi": "10.14742/ajet.3437", "doi_url": "https://doi.org/10.14742/ajet.3437"}, {"year": "2017", "title": "Student Voices on the Roles of Instructors in Asynchronous Learning Environments in the 21st Century", "venue": "The International Review of Research in Open and Distributed Learning", "doi": "10.19173/irrodl.v18i2.2891", "doi_url": "https://doi.org/10.19173/irrodl.v18i2.2891"}, {"year": "2023", "title": "The regression models for lifelong learning competencies for teacher trainers", "venue": "Heliyon", "doi": "10.1016/j.heliyon.2023.e13749", "doi_url": "https://doi.org/10.1016/j.heliyon.2023.e13749"}, {"year": "2015", "title": "A Suggested Model for Developing and Assessing Competence of Prospective Teachers in Faculties of Education", "venue": "World Journal of Education", "doi": "10.5430/wje.v5n6p65", "doi_url": "https://doi.org/10.5430/wje.v5n6p65"}, {"year": "2020", "title": "Peningkatan Kompetensi Melalui Kolaborasi : Suatu Tinjauan Teoritis Terhadap Guru", "venue": "Equilibrium Jurnal Pendidikan", "doi": "10.26618/equilibrium.v8i2.3377", "doi_url": "https://doi.org/10.26618/equilibrium.v8i2.3377"}, {"year": "2019", "title": "Perception of teaching competencies by administrators, faculty and students of Indian agricultural universities: an assessment of faculty training needs", "venue": "The Journal of Agricultural Education and Extension", "doi": "10.1080/1389224x.2019.1609997", "doi_url": "https://doi.org/10.1080/1389224x.2019.1609997"}, {"year": "2022", "title": "Analisis Kompetensi Pedagogik Guru pada Pelaksanaan Blended Learning", "venue": "Jurnal Basicedu", "doi": "10.31004/basicedu.v6i2.2164", "doi_url": "https://doi.org/10.31004/basicedu.v6i2.2164"}, {"year": "2022", "title": "Developing Arabic Language Teachersâ€™ Competence and Performance through Teacher Profession Education", "venue": "Jurnal Pendidikan Islam", "doi": "10.15575/jpi.v8i1.18243", "doi_url": "https://doi.org/10.15575/jpi.v8i1.18243"}, {"year": "2020", "title": "Teacher Professional Competencies in Education for Sustainable Development", "venue": "IntechOpen eBooks", "doi": "10.5772/intechopen.94991", "doi_url": "https://doi.org/10.5772/intechopen.94991"}, {"year": "2021", "title": "How to Prepare Disaster Mitigation Knowledge for Prospective Teachers in Elementary School?", "venue": "AL-ISHLAH Jurnal Pendidikan", "doi": "10.35445/alishlah.v13i2.496", "doi_url": "https://doi.org/10.35445/alishlah.v13i2.496"}, {"year": "2023", "title": "Competences of Physical Education Teachers in Education Supported by Digital Technology", "venue": "International Journal of Cognitive Research in Science Engineering and Education", "doi": "10.23947/2334-8496-2023-11-2-331-341", "doi_url": "https://doi.org/10.23947/2334-8496-2023-11-2-331-341"}, {"year": "2021", "title": "Developing Core Competencies for Islamic Higher Education in Indonesia in the Era of Industrial Revolution 4.0", "venue": "Jurnal Pendidikan Islam Indonesia", "doi": "10.35316/jpii.v5i2.279", "doi_url": "https://doi.org/10.35316/jpii.v5i2.279"}, {"year": "2021", "title": "Inclusive Pedagogical Practice as a Predictor of Quality Early Childhood Education", "venue": "European Journal of Educational Research", "doi": "10.12973/eu-jer.10.4.1711", "doi_url": "https://doi.org/10.12973/eu-jer.10.4.1711"}, {"year": "2022", "title": "Strengthening 21st-Century Education Themes in ELT Material for ESP Students", "venue": "Voices of English Language Education Society", "doi": "10.29408/veles.v6i1.4979", "doi_url": "https://doi.org/10.29408/veles.v6i1.4979"}, {"year": "2023", "title": "MENGEMBANGKAN POTENSI GURU YANG PROFESIONAL DALAM PROSES BELAJAR MENGAJAR", "venue": "Didaktik Jurnal Ilmiah PGSD STKIP Subang", "doi": "10.36989/didaktik.v9i2.990", "doi_url": "https://doi.org/10.36989/didaktik.v9i2.990"}, {"year": "2020", "title": "Senior High School Teachers’ Research Competence and Satisfaction with Facilities and Resources", "venue": "International Journal of English Language Studies", "doi": "10.32996/ijels.2020.2.3.1", "doi_url": "https://doi.org/10.32996/ijels.2020.2.3.1"}, {"year": "2023", "title": "Application of the FUCOM-FUZZY MAIRCA Model in Human Resource Management", "venue": "Acta Polytechnica Hungarica", "doi": "10.12700/aph.20.3.2023.3.14", "doi_url": "https://doi.org/10.12700/aph.20.3.2023.3.14"}, {"year": "2023", "title": "Handbook of Teaching Competency Development in Higher Education", "venue": "Unknown", "doi": "10.1007/978-981-99-6273-0", "doi_url": "https://doi.org/10.1007/978-981-99-6273-0"}, {"year": "2021", "title": "Exploring EFL Teachers’ Classroom Management Approaches and Students Responses to Male and Female Teachers", "venue": "Al-Lisan", "doi": "10.30603/al.v6i1.1857", "doi_url": "https://doi.org/10.30603/al.v6i1.1857"}, {"year": "2023", "title": "The mediating role of teacher self-efficacy in predicting teachers’ research attitudes", "venue": "Teacher Development", "doi": "10.1080/13664530.2023.2201579", "doi_url": "https://doi.org/10.1080/13664530.2023.2201579"}, {"year": "2025", "title": "A conceptual ethical framework to preserve natural human presence in the use of AI systems in education", "venue": "Frontiers in Artificial Intelligence", "doi": "10.3389/frai.2024.1377938", "doi_url": "https://doi.org/10.3389/frai.2024.1377938"}, {"year": "2018", "title": "Continuous Enhancement of Science Teachers’ Knowledge and Skills through Scientific Lecturing", "venue": "Frontiers in Public Health", "doi": "10.3389/fpubh.2018.00041", "doi_url": "https://doi.org/10.3389/fpubh.2018.00041"}, {"year": "2018", "title": "Penggunaan Media Audio, Visual, Audiovisual, dalam Meningkatkan Pembelajaran kepada Guru-guru", "venue": "Jurnal PkM (Pengabdian kepada Masyarakat)", "doi": "10.30998/jurnalpkm.v1i01.2361", "doi_url": "https://doi.org/10.30998/jurnalpkm.v1i01.2361"}, {"year": "2020", "title": "REALITAS KOMPETENSI GURU PASCA SERTIFIKASI", "venue": "SCIENTIFIC JOURNAL OF REFLECTION Economic Accounting Management and Business", "doi": "10.37481/sjr.v3i4.229", "doi_url": "https://doi.org/10.37481/sjr.v3i4.229"}, {"year": "2020", "title": "THE EXPLORATION OF TEACHERS' EFFICACY IN TEACHING: COMPARATIVE STUDY IN INDONESIA AND MALAYSIA", "venue": "Jurnal Cakrawala Pendidikan", "doi": "10.21831/cp.v39i2.30012", "doi_url": "https://doi.org/10.21831/cp.v39i2.30012"}, {"year": "2021", "title": "Learning Strategies for Mobile-Assisted Seamless Learning: A Students’ Initial Perceptions", "venue": "Advances in Social Science, Education and Humanities Research/Advances in social science, education and humanities research", "doi": "10.2991/assehr.k.210312.089", "doi_url": "https://doi.org/10.2991/assehr.k.210312.089"}, {"year": "2021", "title": "Indonesian pre-service teachers’ mindfulness, social emotional competence, and academic achievement", "venue": "International Journal of Evaluation and Research in Education (IJERE)", "doi": "10.11591/ijere.v10i4.21272", "doi_url": "https://doi.org/10.11591/ijere.v10i4.21272"}, {"year": "2021", "title": "Botswana teachers: competencies perceived as important for inclusive education", "venue": "International Journal of Inclusive Education", "doi": "10.1080/13603116.2021.1988156", "doi_url": "https://doi.org/10.1080/13603116.2021.1988156"}, {"year": "2017", "title": "PENGARUH KOMPETENSI PROFESIONAL DAN KOMPETENSI PEDAGOGIK TERHADAP KINERJA GURU EKONOMI SMA NEGERI DI KOTA BANDUNG", "venue": "Jurnal Ilmiah Manajemen dan Bisnis", "doi": "10.30596/jimb.v18i2.1503", "doi_url": "https://doi.org/10.30596/jimb.v18i2.1503"}, {"year": "2021", "title": "The Impact of Distance Learning Implementation in Early Childhood Education Teacher Profesional Competence", "venue": "Jurnal Obsesi Jurnal Pendidikan Anak Usia Dini", "doi": "10.31004/obsesi.v5i2.1009", "doi_url": "https://doi.org/10.31004/obsesi.v5i2.1009"}, {"year": "2019", "title": "University Teacher Professional Development in the Digital World", "venue": "Advances in intelligent systems and computing", "doi": "10.1007/978-3-030-11935-5_49", "doi_url": "https://doi.org/10.1007/978-3-030-11935-5_49"}, {"year": "2020", "title": "Sustainable Organizations - Models, Applications, and New Perspectives", "venue": "IntechOpen eBooks", "doi": "10.5772/intechopen.91607", "doi_url": "https://doi.org/10.5772/intechopen.91607"}, {"year": "2021", "title": "EFFECT OF HEAD MANAGEMENT COMPETENCE ON TEACHER PERFORMANCE IN SMA NUSANTARA PLUS", "venue": "AL-TANZIM JURNAL MANAJEMEN PENDIDIKAN ISLAM", "doi": "10.33650/al-tanzim.v5i2.2177", "doi_url": "https://doi.org/10.33650/al-tanzim.v5i2.2177"}, {"year": "2022", "title": "Eight Javanese teaching issues and its possible solutions: A systematic literature review", "venue": "Journal of Innovation in Educational and Cultural Research", "doi": "10.46843/jiecr.v3i2.78", "doi_url": "https://doi.org/10.46843/jiecr.v3i2.78"}, {"year": "2022", "title": "ANALISIS KEMAMPUAN TECHNOLOGICAL PEDAGOGICAL CONTENT KNOWLEDGE (TPACK) MAHASISWA PROGRAM STUDI PENDIDIKAN MATEMATIKA PADA MATA KULIAH MICROTEACHING DI MASA PANDEMI COVID 19", "venue": "FIBONACCI Jurnal Pendidikan Matematika dan Matematika", "doi": "10.24853/fbc.8.1.73-84", "doi_url": "https://doi.org/10.24853/fbc.8.1.73-84"}, {"year": "2024", "title": "Development of professional-pedagogical competence in future English language teachers", "venue": "International Journal of Innovative Research and Scientific Studies", "doi": "10.53894/ijirss.v7i3.3009", "doi_url": "https://doi.org/10.53894/ijirss.v7i3.3009"}, {"year": "2022", "title": "Teaching Situation and Instructors’ Key-Competencies at the College of Maritime Education (CME): Evaluation of the Marine Engineering Students", "venue": "TransNav the International Journal on Marine Navigation and Safety of Sea Transportation", "doi": "10.12716/1001.16.02.06", "doi_url": "https://doi.org/10.12716/1001.16.02.06"}, {"year": "2023", "title": "Intercultural sensitivity of expatriate human resource managers towards training practices in their host countries", "venue": "Human Resource Development International", "doi": "10.1080/13678868.2023.2193808", "doi_url": "https://doi.org/10.1080/13678868.2023.2193808"}, {"year": "2023", "title": "Physical Education Learning Design with Augmented Reality for Special Needs Students", "venue": "International journal of human movement and sports sciences", "doi": "10.13189/saj.2023.110515", "doi_url": "https://doi.org/10.13189/saj.2023.110515"}, {"year": "2020", "title": "Factors Contributing to Low Teachers Competencies Score", "venue": "Jurnal Pendidikan Teori Penelitian dan Pengembangan", "doi": "10.17977/jptpp.v5i8.13906", "doi_url": "https://doi.org/10.17977/jptpp.v5i8.13906"}, {"year": "2021", "title": "Desafíos educativos en ambientes virtuales: escuelas rurales y urbanas", "venue": "Propósitos y Representaciones", "doi": "10.20511/pyr2021.v9n3.1333", "doi_url": "https://doi.org/10.20511/pyr2021.v9n3.1333"}, {"year": "2023", "title": "Developing an Educational and Cognitive Competence Model for Future Teacher’s for Independent Work – The Case of Indonesia", "venue": "International Journal of Instruction", "doi": "10.29333/iji.2023.1639a", "doi_url": "https://doi.org/10.29333/iji.2023.1639a"}, {"year": "2023", "title": "Sobriété numérique et acteurs de l’éducation : analyse croisée de leur sentiment de compétence et de leurs usages déclarés", "venue": "Distances et médiations des savoirs", "doi": "10.4000/dms.9259", "doi_url": "https://doi.org/10.4000/dms.9259"}, {"year": "2018", "title": "O QUE É SER UM BOM PROFESSOR? ANÁLISE DAS COMPETÊNCIAS DOCENTES PELA ÓTICA DISCENTE", "venue": "Revista Mineira de Contabilidade", "doi": "10.21714/2446-9114rmc2018v19n3t02", "doi_url": "https://doi.org/10.21714/2446-9114rmc2018v19n3t02"}, {"year": "2021", "title": "Optimizing Placement of Field Experience Program: An Integration of MOORA and Rule-Based Decision Making", "venue": "Pertanika journal of science & technology", "doi": "10.47836/pjst.29.2.11", "doi_url": "https://doi.org/10.47836/pjst.29.2.11"}, {"year": "2024", "title": "A Q-methodology study to identify Slovak and Czech secondary school teachers’ prioritised features of the sustainable development goals", "venue": "Environmental Education Research", "doi": "10.1080/13504622.2024.2335632", "doi_url": "https://doi.org/10.1080/13504622.2024.2335632"}, {"year": "2025", "title": "Exploring the effect of altruism on social entrepreneurship characteristics: the mediating role of social intelligence", "venue": "Humanities and Social Sciences Communications", "doi": "10.1057/s41599-025-04501-y", "doi_url": "https://doi.org/10.1057/s41599-025-04501-y"}, {"year": "2020", "title": "Managing the development of pedagogical competences", "venue": "Školski vjesnik", "doi": "10.38003/sv.69.2.3", "doi_url": "https://doi.org/10.38003/sv.69.2.3"}, {"year": "2022", "title": "Developing A Teacher Performance Model: The Impact Of Principal Support On Teacher Performance By Mediating Organizational Commitment, Teacher Competence, And Teacher Attitudes", "venue": "EdArXiv (OSF Preprints)", "doi": "10.35542/osf.io/6gz3x", "doi_url": "https://doi.org/10.35542/osf.io/6gz3x"}, {"year": "2023", "title": "Rasch Analysis for Standards-Setting Appraisal of Competency Level-Based Performance on the Part of Instructors in Higher Education", "venue": "Pertanika journal of social science & humanities", "doi": "10.47836/pjssh.31.1.17", "doi_url": "https://doi.org/10.47836/pjssh.31.1.17"}, {"year": "2021", "title": "Self-Confidence As A Part Of Concious Leadership In Pedagogical Communities", "venue": "The European Proceedings of Social & Behavioural Sciences", "doi": "10.15405/epsbs.2021.07.02.18", "doi_url": "https://doi.org/10.15405/epsbs.2021.07.02.18"}, {"year": "2023", "title": "Mentoring Approach for the Development of Beginning Early Childhood Teachers' Competencies in Selected Lower Basic Schools in Lagos, Nigeria", "venue": "Shodh Sari-An International Multidisciplinary Journal", "doi": "10.59231/sari7599", "doi_url": "https://doi.org/10.59231/sari7599"}, {"year": "2025", "title": "Determination of Integrated STEM Teacher Competencies: A Modified Delphi Method", "venue": "European Journal of STEM Education", "doi": "10.20897/ejsteme/16497", "doi_url": "https://doi.org/10.20897/ejsteme/16497"}, {"year": "2023", "title": "THE DEVELOPMENT OF 21ST CENTURY SKILLS TO SECONDARY SCHOOL STUDENTS IN TANZANIA: HOW COMPETENT ARE THE TEACHERS FOR THE TASK?", "venue": "International Journal of Education and Social Science Research", "doi": "10.37500/ijessr.2023.6109", "doi_url": "https://doi.org/10.37500/ijessr.2023.6109"}, {"year": "2023", "title": "Examining Merits and Demerits of Master's Virtual Programs of English from Students’ Perspectives in light of Motivation and Self-Efficacy", "venue": "Journal of Contemporary Language Research", "doi": "10.58803/jclr.v2i2.25", "doi_url": "https://doi.org/10.58803/jclr.v2i2.25"}, {"year": "2024", "title": "Professional Competence of Teachers and School Climate: A Conceptual Perspective", "venue": "UMT Education Review", "doi": "10.32350/uer.71.01", "doi_url": "https://doi.org/10.32350/uer.71.01"}, {"year": "2025", "title": "Looking for an agreed-upon definition of teachers’ intercultural competence in a divided society", "venue": "International Journal of Intercultural Relations", "doi": "10.1016/j.ijintrel.2025.102223", "doi_url": "https://doi.org/10.1016/j.ijintrel.2025.102223"}, {"year": "2025", "title": "Core-Competence Educational Policies Versus the Practical Realities of Rural Area-Based Language Teachers: Pathways to Better Policy Implementation", "venue": "SAGE Open", "doi": "10.1177/21582440251360144", "doi_url": "https://doi.org/10.1177/21582440251360144"}, {"year": "2018", "title": "Developing a Professional Performance Evaluation System for Pre-Service Automobile Repair Vocational High School Teachers in Taiwan", "venue": "Sustainability", "doi": "10.3390/su10103537", "doi_url": "https://doi.org/10.3390/su10103537"}, {"year": "2019", "title": "Outstanding Teachers: The Steps In Acquiring Them", "venue": "International Journal for Educational and Vocational Studies", "doi": "10.29103/ijevs.v1i5.1528", "doi_url": "https://doi.org/10.29103/ijevs.v1i5.1528"}, {"year": "2020", "title": "Öğretmenlerin ve Öğretmen Adaylarının Öğretmenlik Mesleği Genel Yeterliklerine İlişkin Öz Değerlendirmeleri", "venue": "Cumhuriyet International Journal of Education", "doi": "10.30703/cije.651639", "doi_url": "https://doi.org/10.30703/cije.651639"}, {"year": "2017", "title": "PENGEMBANGAN KETERAMPILAN SOSIAL ANAK USIA DINI Analisis Psikologi Pendidikan Islam", "venue": "Al-Manar", "doi": "10.36668/jal.v6i2.11", "doi_url": "https://doi.org/10.36668/jal.v6i2.11"}, {"year": "2021", "title": "Pedagogical reflections of Muslim-Filipino Madrasah teachers: A phenomenological study", "venue": "Journal Of Research Policy & Practice of Teachers & Teacher Education", "doi": "10.37134/jrpptte.vol11.1.3.2021", "doi_url": "https://doi.org/10.37134/jrpptte.vol11.1.3.2021"}, {"year": "2019", "title": "Learning difficulties in microteaching class: A case study", "venue": "AIP conference proceedings", "doi": "10.1063/1.5139803", "doi_url": "https://doi.org/10.1063/1.5139803"}, {"year": "2020", "title": "PEMBELAJARAN PENDIDIKAN AGAMA ISLAM DI SEKOLAH DASAR: ANALISIS TERHADAP KOMPETENSI GURU, STRATEGI DAN KUALITAS HASIL", "venue": "Ruhama Islamic Education Journal", "doi": "10.31869/ruhama.v3i2.2221", "doi_url": "https://doi.org/10.31869/ruhama.v3i2.2221"}, {"year": "2021", "title": "The importance of developing creativity and communication skills for teacher: Prospective teacher students perspective", "venue": "AIP conference proceedings", "doi": "10.1063/5.0043157", "doi_url": "https://doi.org/10.1063/5.0043157"}, {"year": "2013", "title": "Personalized Learning Environment (PLE): Need analysis in Malaysian's secondary school", "venue": "Unknown", "doi": "10.1109/ic3e.2013.6735970", "doi_url": "https://doi.org/10.1109/ic3e.2013.6735970"}, {"year": "2022", "title": "Teachers’ Professional Development in Bangladesh: Issues and Way Forward", "venue": "The UWS Academic Portal (University of the West of Scotland)", "doi": "10.1007/978-981-16-9785-2_45", "doi_url": "https://doi.org/10.1007/978-981-16-9785-2_45"}, {"year": "2022", "title": "TVET Trainers Understanding of Engaging Instruction: Supportive Learning Environment for Work Integrated Learning", "venue": "UMT Education Review", "doi": "10.32350/uer.51.01", "doi_url": "https://doi.org/10.32350/uer.51.01"}, {"year": "2021", "title": "Improving Teachers’ Professionalism Through Blended-Based Training in Indonesia's Remote Area", "venue": "London Journal of Social Sciences", "doi": "10.31039/ljss.2021.1.43", "doi_url": "https://doi.org/10.31039/ljss.2021.1.43"}, {"year": "2022", "title": "The role of Pre-service teacher’s preparation programs in improving the teaching performance of early career mathematics teachers", "venue": "World Journal on Educational Technology Current Issues", "doi": "10.18844/wjet.v14i6.7811", "doi_url": "https://doi.org/10.18844/wjet.v14i6.7811"}, {"year": "2023", "title": "Sociological Understanding of Muslim Education in Multicultural Philippines", "venue": "DINAMIKA ILMU", "doi": "10.21093/di.v23i1.6255", "doi_url": "https://doi.org/10.21093/di.v23i1.6255"}, {"year": "2021", "title": "University professor’s assessment in the conditions of digital transformation", "venue": "E3S Web of Conferences", "doi": "10.1051/e3sconf/202127312078", "doi_url": "https://doi.org/10.1051/e3sconf/202127312078"}, {"year": "2015", "title": "Information and communication technology competencies of class teachers", "venue": "International Journal of Innovative Research in Education", "doi": "10.18844/ijire.v1i1.120", "doi_url": "https://doi.org/10.18844/ijire.v1i1.120"}, {"year": "2013", "title": "O valor das competências docentes no ensino da Administração", "venue": "Revista de Administração", "doi": "10.5700/rausp1121", "doi_url": "https://doi.org/10.5700/rausp1121"}, {"year": "2016", "title": "Practical Tools for Content Development: Pre-Service Teachers` Experiences and Perceptions", "venue": "International Journal of Instruction", "doi": "10.12973/iji.2016.922a", "doi_url": "https://doi.org/10.12973/iji.2016.922a"}, {"year": "2017", "title": "English Language Teachers’ Perceptions of Using ICT in Teaching in Cycle Three in the United Arab Emirates", "venue": "US-China Foreign Language", "doi": "10.17265/1539-8080/2017.06.001", "doi_url": "https://doi.org/10.17265/1539-8080/2017.06.001"}, {"year": "2018", "title": "Construct validity pedagogy competency instrument of teaching and learning practice program (TLPP) students: Unidimensional confirmatory factor analysis", "venue": "International Journal of ADVANCED AND APPLIED SCIENCES", "doi": "10.21833/ijaas.2018.08.004", "doi_url": "https://doi.org/10.21833/ijaas.2018.08.004"}, {"year": "2019", "title": "Model digitalnog nastavnog okruženja za strani jezik struke", "venue": "Inovacije u nastavi", "doi": "10.5937/inovacije1902106r", "doi_url": "https://doi.org/10.5937/inovacije1902106r"}, {"year": "2019", "title": "Research on Teacher Teaching Competence (TTC) Model Under Smart Education", "venue": "2019 International Joint Conference on Information, Media and Engineering (IJCIME)", "doi": "10.1109/ijcime49369.2019.00017", "doi_url": "https://doi.org/10.1109/ijcime49369.2019.00017"}, {"year": "2018", "title": "Inhibiting Factor of Primary School Teacher Competence in Indonesia: Pedagogic and Professionalism", "venue": "Asian Social Science", "doi": "10.5539/ass.v14n6p30", "doi_url": "https://doi.org/10.5539/ass.v14n6p30"}, {"year": "2019", "title": "Norwegian and Croatian Students of Undergraduate Kindergarten Teacher Education Programs on Their Professional Development and Conditions for It", "venue": "Universal Journal of Educational Research", "doi": "10.13189/ujer.2019.071302", "doi_url": "https://doi.org/10.13189/ujer.2019.071302"}, {"year": "2022", "title": "Development of primary school teachers` skills to accompany pupils in projects and research", "venue": "Perspectives of science and education", "doi": "10.32744/pse.2022.2.35", "doi_url": "https://doi.org/10.32744/pse.2022.2.35"}, {"year": "2022", "title": "EVALUASI PROGRAM PEMBELAJARAN SEJARAH DARING DENGAN MODEL CIPP", "venue": "Jurnal Evaluasi Pendidikan", "doi": "10.21009/jep.v13i2.27456", "doi_url": "https://doi.org/10.21009/jep.v13i2.27456"}, {"year": "2014", "title": "Health Education in the Context of Performance Driven Education: Challenges and Opportunities", "venue": "Unknown", "doi": "10.1007/978-94-017-9171-7_10", "doi_url": "https://doi.org/10.1007/978-94-017-9171-7_10"}, {"year": "2019", "title": "Impacts of Distance Education System on Teacher Competency of Remote Schools in Lower Northern Thailand", "venue": "Mediterranean Journal of Social Sciences", "doi": "10.2478/mjss-2019-0040", "doi_url": "https://doi.org/10.2478/mjss-2019-0040"}, {"year": "2021", "title": "Learning Designing for Establishment Physics Content and Teacher Pedagogic Aspects Through Lesson Study-based In-House Training", "venue": "Jurnal Penelitian & Pengembangan Pendidikan Fisika", "doi": "10.21009/1.07206", "doi_url": "https://doi.org/10.21009/1.07206"}, {"year": "2022", "title": "ÖĞRETMEN YETERLİKLERİ BAĞLAMINDA TÜRKÇE ÖĞRETMENLERİNİN MESLEKİ GELİŞİM ETKİNLİKLERİNİN İNCELENMESİ", "venue": "Uludağ Üniversitesi Eğitim Fakültesi Dergisi", "doi": "10.19171/uefad.1039264", "doi_url": "https://doi.org/10.19171/uefad.1039264"}, {"year": "2022", "title": "Academic Qualification and Teaching Competences; A Comparative Study of Primary School Teachers", "venue": "Pakistan Journal of Humanities and Social Sciences", "doi": "10.52131/pjhss.2022.1001.0191", "doi_url": "https://doi.org/10.52131/pjhss.2022.1001.0191"}, {"year": "2022", "title": "The Effect of HSSC Program to Improve Communication Skill on Kindergarten Students", "venue": "QALAMUNA Jurnal Pendidikan Sosial dan Agama", "doi": "10.37680/qalamuna.v14i2.1664", "doi_url": "https://doi.org/10.37680/qalamuna.v14i2.1664"}, {"year": "2022", "title": "DOMESTIC AND INTERNATIONAL EXPERIENCE IN ORGANIZING THE PROCESS OF PROFESSIONAL COMPETENCE DEVELOPMENT OF TEACHERS", "venue": "Bulletin of Toraighyrov University Pedagogics Series", "doi": "10.48081/jbrv7653", "doi_url": "https://doi.org/10.48081/jbrv7653"}, {"year": "2013", "title": "Educational Paradigm Shift Towards Phenomenological Pedagogy", "venue": "Unknown", "doi": "10.1007/978-3-319-02015-0_20", "doi_url": "https://doi.org/10.1007/978-3-319-02015-0_20"}, {"year": "2019", "title": "PROFESSIONAL COMPETENCES OF MUSIC TEACHER: ATTITUDE OF STUDENTS", "venue": "International conference on education", "doi": "10.17501/24246700.2018.4213", "doi_url": "https://doi.org/10.17501/24246700.2018.4213"}, {"year": "2020", "title": "How Does the Digital Transformation Affect the Job of University Teachers?", "venue": "Advances in educational technologies and instructional design book series", "doi": "10.4018/978-1-7998-4972-8.ch011", "doi_url": "https://doi.org/10.4018/978-1-7998-4972-8.ch011"}, {"year": "2021", "title": "Academic Supervision of School Principals, Principal Transformational Leadership, and School Climate on Senior High School Teachers' Competence", "venue": "AL-ISHLAH Jurnal Pendidikan", "doi": "10.35445/alishlah.v13i3.825", "doi_url": "https://doi.org/10.35445/alishlah.v13i3.825"}, {"year": "2022", "title": "Araştırmacı Olarak Öğretmenler: Araştırma Yeterlikleri, Engelleri, Algıları ve Araştırmadan Bekledikleri Yararlar", "venue": "IBAD Sosyal Bilimler Dergisi", "doi": "10.21733/ibad.1061432", "doi_url": "https://doi.org/10.21733/ibad.1061432"}, {"year": "2022", "title": "PRIMARY TEACHERS' READINESS OF TEACHING STEM - A STUDY AT THE NORTH MOUNTAINOUS IN VIETNAM", "venue": "International Journal of Education and Social Science Research", "doi": "10.37500/ijessr.2022.5318", "doi_url": "https://doi.org/10.37500/ijessr.2022.5318"}, {"year": "2020", "title": "Preparation of Teachers and of Teaching Specialisation Students for the Implementation of School Health Education – a Review of Research", "venue": "Przegląd Badań Edukacyjnych", "doi": "10.12775/pbe.2020.009", "doi_url": "https://doi.org/10.12775/pbe.2020.009"}, {"year": "2020", "title": "PEMBELAJARAN MATEMATIKA: STRATEGI PEMBELAJARAN ‘BLACK TEA’ DALAM MEMINIMALISIR LEARNING OBSTACLE SISWA", "venue": "Gema Wiralodra", "doi": "10.31943/gemawiralodra.v11i2.125", "doi_url": "https://doi.org/10.31943/gemawiralodra.v11i2.125"}, {"year": "2021", "title": "COMPETENCIES AND CHALLENGES OF DEPED TEACHERS IN THE K TO 12 SCIENCE CURRICULUM IMPLEMENTATION", "venue": "EPRA International Journal of Environmental Economics Commerce and Educational Management", "doi": "10.36713/epra6744", "doi_url": "https://doi.org/10.36713/epra6744"}, {"year": "2022", "title": "Problematic Factors on Students’ Learning in Higher Education", "venue": "Psycho-Educational Research Reviews", "doi": "10.52963/perr_biruni_v11.n1.13", "doi_url": "https://doi.org/10.52963/perr_biruni_v11.n1.13"}, {"year": "2022", "title": "TEACHING COMPETENCIES OF UNDERGRADUATE STUDENTS IN EDUCATIONAL PRACTICE PROGRAM AS TEACHER CANDIDATES", "venue": "Lentera Pendidikan Jurnal Ilmu Tarbiyah dan Keguruan", "doi": "10.24252/lp.2022v25n1i3", "doi_url": "https://doi.org/10.24252/lp.2022v25n1i3"}, {"year": "2023", "title": "Factors Influencing Ethnic Minority Students’ Programme Development Capacity: Case Study at Pedagogical Universities in Vietnam", "venue": "International Journal of Learning Teaching and Educational Research", "doi": "10.26803/ijlter.22.8.17", "doi_url": "https://doi.org/10.26803/ijlter.22.8.17"}, {"year": "2024", "title": "A Model Framework for Enhancing Twenty-First Century Competencies in Primary School Teachers within Northeastern Thailand's Sub-Area", "venue": "International Journal of Learning Teaching and Educational Research", "doi": "10.26803/ijlter.23.1.6", "doi_url": "https://doi.org/10.26803/ijlter.23.1.6"}, {"year": "2024", "title": "Integration of Intrinsic and Extrinsic Motivation in Second Language Acquisition: Magnetism as a Proposed Theory", "venue": "World Journal of English Language", "doi": "10.5430/wjel.v14n4p76", "doi_url": "https://doi.org/10.5430/wjel.v14n4p76"}, {"year": "2019", "title": "The teacher’s main competencies in modern higher education", "venue": "EUROPEAN HUMANITIES STUDIES State and Society", "doi": "10.38014/ehs-ss.2019.3-i.03", "doi_url": "https://doi.org/10.38014/ehs-ss.2019.3-i.03"}, {"year": "2020", "title": "Identification of Competencies and Teaching Models for the Governance of Smart Sustainable Cities in the South American Context", "venue": "Lecture notes in computer science", "doi": "10.1007/978-3-030-57599-1_30", "doi_url": "https://doi.org/10.1007/978-3-030-57599-1_30"}, {"year": "2019", "title": "Modified Bottle Cap for Improving Children’s Arithmetic Ability", "venue": "JPUD - Jurnal Pendidikan Usia Dini", "doi": "10.21009/jpud.132.04", "doi_url": "https://doi.org/10.21009/jpud.132.04"}, {"year": "2019", "title": "Primary School Teachers in 21st Century in Bangladesh: Some Potential Aspects for Professional Development Identified from Relevant Literatures", "venue": "International Journal of Education", "doi": "10.5296/ije.v11i4.15433", "doi_url": "https://doi.org/10.5296/ije.v11i4.15433"}, {"year": "2021", "title": "Pragmatic Sentiments and Coping Strategies of Out-Of-Field English Teachers in Public Senior High Schools", "venue": "International Journal of Qualitative Research", "doi": "10.47540/ijqr.v1i2.355", "doi_url": "https://doi.org/10.47540/ijqr.v1i2.355"}, {"year": "2023", "title": "Teaching Beliefs as a Dominant Factor Affecting English Instructors’ Choice of Techniques to Teach Young Language Learners", "venue": "International Journal of Instruction", "doi": "10.29333/iji.2023.16331a", "doi_url": "https://doi.org/10.29333/iji.2023.16331a"}, {"year": "2022", "title": "Pengaruh Motivasi Kerja Dan Kepuasan Kerja Terhadap Kinerja Guru Dengan Kompetensi Kerja Sebagai Variabel Intervening Pada Guru Madrasah Aliyah Swasta Terakreditasi A Di Kabupaten Lumajang", "venue": "SIRAJUDDIN Jurnal Penelitian dan Kajian Pendidikan Islam", "doi": "10.55120/sirajuddin.v1i1.417", "doi_url": "https://doi.org/10.55120/sirajuddin.v1i1.417"}, {"year": "2024", "title": "Provision of Coaching and Mentoring Experiences: Narratives of Public Elementary School Teachers", "venue": "International Journal of Innovative Science and Research Technology (IJISRT)", "doi": "10.38124/ijisrt/ijisrt24may223", "doi_url": "https://doi.org/10.38124/ijisrt/ijisrt24may223"}, {"year": "2019", "title": "Training PhD students for teaching of engineering disciplines: Study of Russian Universities Experience", "venue": "Balkan Region Conference on Engineering and Business Education", "doi": "10.2478/cplbu-2020-0022", "doi_url": "https://doi.org/10.2478/cplbu-2020-0022"}, {"year": "2023", "title": "Curriculum Development Competency of Pedagogical Students: An Exploratory Study from Vietnam", "venue": "International Journal of Learning Teaching and Educational Research", "doi": "10.26803/ijlter.22.5.23", "doi_url": "https://doi.org/10.26803/ijlter.22.5.23"}, {"year": "2023", "title": "Metodología para la Evaluación del Software Educativo: Una Visión desde la Formación a la Praxis", "venue": "Revista Scientific", "doi": "10.29394/scientific.issn.2542-2987.2023.8.27.3.62-80", "doi_url": "https://doi.org/10.29394/scientific.issn.2542-2987.2023.8.27.3.62-80"}, {"year": "2023", "title": "Foreign language teacher preparation in Slovakia and Poland from skills to competences", "venue": "Glottodidactica", "doi": "10.14746/gl.2023.50.2.3", "doi_url": "https://doi.org/10.14746/gl.2023.50.2.3"}, {"year": "2023", "title": "The perception of future teachers on the competencies and roles of teachers", "venue": "Analele Universității din Craiova seria Psihologie-Pedagogie/Annals of the University of Craiova Series Psychology- Pedagogy", "doi": "10.52846/aucpp.2023.2.03", "doi_url": "https://doi.org/10.52846/aucpp.2023.2.03"}, {"year": "2024", "title": "Realities of developing the research competence of teachers-philologists in wartime", "venue": "EDUWEB", "doi": "10.46502/issn.1856-7576/2024.18.01.16", "doi_url": "https://doi.org/10.46502/issn.1856-7576/2024.18.01.16"}, {"year": "2024", "title": "Unlocking Vital Professional Skills of EFL Educators to Cultivate Student English Core Competencies in the Digital Era", "venue": "Journal of Electrical Systems", "doi": "10.52783/jes.1636", "doi_url": "https://doi.org/10.52783/jes.1636"}, {"year": "2024", "title": "Yükseköğretimde Program Yetkinliği: Bir Ölçek Geliştirme Çalışması", "venue": "Journal of Higher Education and Science", "doi": "10.5961/higheredusci.1478671", "doi_url": "https://doi.org/10.5961/higheredusci.1478671"}, {"year": "2025", "title": "Perspective Chapter: Creating a Peaceful School Climate – The Contribution of Peace Educators through Peacefulness Pedagogy", "venue": "Education and human development", "doi": "10.5772/intechopen.1009550", "doi_url": "https://doi.org/10.5772/intechopen.1009550"}, {"year": "2010", "title": "Preparing E-Excellent Teachers For The World Of E-Education: Potential Strategies", "venue": "i-manager’s Journal on Educational Psychology", "doi": "10.26634/jet.7.3.1340", "doi_url": "https://doi.org/10.26634/jet.7.3.1340"}, {"year": "2012", "title": "Identifying measures to foster teachers' competence for personal learning environment conceived teaching scenarios", "venue": "Unknown", "doi": "10.1145/2380552.2380592", "doi_url": "https://doi.org/10.1145/2380552.2380592"}, {"year": "2020", "title": "Motivasi Tenaga Pengajar Di Pedalaman Papua Dalam Mengajar dan Melanjutkan Studi pada Jurusan Pendidikan Guru Sekolah Dasar (Sebuah Kajian Fenomenologis)", "venue": "Sekolah Dasar Kajian Teori dan Praktik Pendidikan", "doi": "10.17977/um009v29i12020p051", "doi_url": "https://doi.org/10.17977/um009v29i12020p051"}, {"year": "2019", "title": "A Sociopsychological Study of Professional Competencies of a 21st Century EFL Teacher", "venue": "Iranian Evolutionary Educational Psychology Journal", "doi": "10.29252/ieepj.1.4.1", "doi_url": "https://doi.org/10.29252/ieepj.1.4.1"}, {"year": "2020", "title": "Needs for Consultancy of Vietnam high school students", "venue": "Archives of Business Research", "doi": "10.14738/abr.83.7874", "doi_url": "https://doi.org/10.14738/abr.83.7874"}, {"year": "2020", "title": "Upravljanje razvojem pedagoških kompetencija", "venue": "Školski vjesnik", "doi": "10.38003/sv.69.2.10", "doi_url": "https://doi.org/10.38003/sv.69.2.10"}, {"year": "2020", "title": "Students Mathematics Learning Achievement from Mathematics Teacher Performance and Principal Managerial Competencies Point of View", "venue": "Indonesian Journal of Mathematics Education", "doi": "10.31002/ijome.v3i2.3375", "doi_url": "https://doi.org/10.31002/ijome.v3i2.3375"}, {"year": "2021", "title": "The Effectiveness of Blended-Based Training on Teachers Competence in Padang Lawas District", "venue": "JPPM (Jurnal Pendidikan dan Pemberdayaan Masyarakat)", "doi": "10.21831/jppm.v8i2.43092", "doi_url": "https://doi.org/10.21831/jppm.v8i2.43092"}, {"year": "2021", "title": "PENGUATAN PROFESIONALISME GURU MELALUI PELATIHAN BERBASIS BLENDED DI KABUPATEN PADANG LAWAS", "venue": "MINDA BAHARU", "doi": "10.33373/jmb.v5i2.3424", "doi_url": "https://doi.org/10.33373/jmb.v5i2.3424"}, {"year": "2016", "title": "Pre-service Home Economics Teachers' Attitudes on Selected Aspects of Practical Teaching", "venue": "Center for Educational Policy Studies Journal", "doi": "10.26529/cepsj.67", "doi_url": "https://doi.org/10.26529/cepsj.67"}, {"year": "2014", "title": "Competences of Special Pedagogue and Their Improvement Opportunities from the Point of View of Pedagogues", "venue": "Pedagogika", "doi": "10.15823/p.2014.032", "doi_url": "https://doi.org/10.15823/p.2014.032"}, {"year": "2014", "title": "Objeto de aprendizaje para la formación docente orientado al desarrollo de competencias de comunicación", "venue": "Education in the Knowledge Society (EKS)", "doi": "10.14201/eks.11889", "doi_url": "https://doi.org/10.14201/eks.11889"}, {"year": "2013", "title": "An Evaluation of Competency Perceptions of Non-native English Instructors", "venue": "Procedia - Social and Behavioral Sciences", "doi": "10.1016/j.sbspro.2013.01.172", "doi_url": "https://doi.org/10.1016/j.sbspro.2013.01.172"}, {"year": "2014", "title": "Holistic Teaching Competence Aspects: Study Analysis In State Senior High School Of Makassar City Indonesia", "venue": "International Journal for Innovation Education and Research", "doi": "10.31686/ijier.vol2.iss11.267", "doi_url": "https://doi.org/10.31686/ijier.vol2.iss11.267"}, {"year": "2018", "title": "Relationship Pattern of Pedagogic Competence with Moderating Structural Equation Modeling Score Factor (MSEM-SF)", "venue": "Journal of Economics Business and Accountancy Ventura", "doi": "10.14414/jebav.v20i3.932", "doi_url": "https://doi.org/10.14414/jebav.v20i3.932"}, {"year": "2020", "title": "The Teachers’ Necessity in Developing Their Competences Through Learning Process in University", "venue": "Jurnal Ilmiah Iqra", "doi": "10.30984/jii.v14i1.1071", "doi_url": "https://doi.org/10.30984/jii.v14i1.1071"}, {"year": "2020", "title": "Construction and Validation of Next Generation Teacher Educator Competency Scale [NGTECS]", "venue": "Universal Journal of Educational Research", "doi": "10.13189/ujer.2020.080835", "doi_url": "https://doi.org/10.13189/ujer.2020.080835"}, {"year": "2021", "title": "Developing Teacher Professional Competency Under the Integration of Russian Universities into the World Academic Area", "venue": "Advances in intelligent systems and computing", "doi": "10.1007/978-3-030-68201-9_83", "doi_url": "https://doi.org/10.1007/978-3-030-68201-9_83"}, {"year": "2021", "title": "Analisis Konsepsi Manajerial dan Kompetensi Kepala Sekolah Berlatar Belakang Guru Olahraga Se-Kota Banda Aceh", "venue": "Journal Coaching Education Sports", "doi": "10.31599/jces.v2i1.529", "doi_url": "https://doi.org/10.31599/jces.v2i1.529"}, {"year": "2021", "title": "Information-communications Competencies of Teachers as a Requirement of Contemporary Teaching and the Lifelong Learning Concept", "venue": "Društvene i humanističke studije", "doi": "10.51558/2490-3647.2021.6.2.273", "doi_url": "https://doi.org/10.51558/2490-3647.2021.6.2.273"}, {"year": "2021", "title": "A PROPOSAL FOR PROFESSIONAL DEVELOPMENT OF BUSINESS ENGLISH TEACHERS IN SERBIA – OVERVIEW OF THE RESEARCH", "venue": "Journal of Teaching English for Specific and Academic Purposes", "doi": "10.22190/jtesap2103389v", "doi_url": "https://doi.org/10.22190/jtesap2103389v"}, {"year": "2021", "title": "ICT portal for the development of mathematic teachers competence: The development and the feasibility", "venue": "INVOTEK Jurnal Inovasi Vokasional dan Teknologi", "doi": "10.24036/invotek.v21i2.902", "doi_url": "https://doi.org/10.24036/invotek.v21i2.902"}, {"year": "2021", "title": "Professional Competence Development of Social Studies Teacher in Thailand Education Sandbox", "venue": "Journal of Education and Learning", "doi": "10.5539/jel.v10n6p112", "doi_url": "https://doi.org/10.5539/jel.v10n6p112"}, {"year": "2022", "title": "Online Learning Collaboration with Assisted Learning Models in Technical Drawing Subjects for Vocational Students", "venue": "Advances in Social Science, Education and Humanities Research/Advances in social science, education and humanities research", "doi": "10.2991/assehr.k.220129.012", "doi_url": "https://doi.org/10.2991/assehr.k.220129.012"}, {"year": "2022", "title": "Teacher Competencies in Facing Limited Face-to-face Learning in the New Normal Era", "venue": "Unknown", "doi": "10.17758/dirpub11.dir0522419", "doi_url": "https://doi.org/10.17758/dirpub11.dir0522419"}, {"year": "2022", "title": "ÖĞRETMEN ALGILARINA GÖRE MESLEKİ BAĞLILIKLARI İLE MESLEKİ YETERLİKLERİ ARASINDAKİ İLİŞKİ", "venue": "International Journal of Social Humanities Sciences Research (JSHSR)", "doi": "10.26450/jshsr.3350", "doi_url": "https://doi.org/10.26450/jshsr.3350"}, {"year": "2022", "title": "Contribution of pedagogical and professional competence of teachers in special regions to students interest and attitude toward science concepts", "venue": "AIP conference proceedings", "doi": "10.1063/5.0102798", "doi_url": "https://doi.org/10.1063/5.0102798"}, {"year": "2023", "title": "Relationships between the perceptions of lifelong learning, lifelong learning competencies and learning strategies by teacher trainers in Myanmar", "venue": "International Review of Education", "doi": "10.1007/s11159-023-10029-7", "doi_url": "https://doi.org/10.1007/s11159-023-10029-7"}, {"year": "2023", "title": "The Readiness of EFL Teachers on Implemented of IKM of 2022 National Curriculum in Senior High School", "venue": "PPSDP International Journal of Education", "doi": "10.59175/pijed.v2i2.127", "doi_url": "https://doi.org/10.59175/pijed.v2i2.127"}, {"year": "2024", "title": "The effects of trainers’ competence on employability of government polytechnic college graduates in Dire Dawa City, east-central Ethiopia", "venue": "Journal of Teaching and Learning for Graduate Employability", "doi": "10.21153/jtlge2024vol15no1art1750", "doi_url": "https://doi.org/10.21153/jtlge2024vol15no1art1750"}, {"year": "2021", "title": "Teacher Professional Development Case Studies: K-12, TVET, and Tertiary Education", "venue": "Theseus (Ammattikorkeakoulujen)", "doi": "10.22617/spr210293", "doi_url": "https://doi.org/10.22617/spr210293"}, {"year": "2023", "title": "Ki vagyok én nektek? Pedagógus identitás és szereplehetőségek, tanár-diák kapcsolat és személyesség, egy pályakezdő tanár önreflexiói alapján", "venue": "ELTE Digital Institutional Repository (EDIT) (Eötvös Loránd University)", "doi": "10.15476/elte.2022.163", "doi_url": "https://doi.org/10.15476/elte.2022.163"}, {"year": "2021", "title": "Variance in Multidimensional Competencies and Professional Development Needs of Kindergarten Teachers", "venue": "SSRN Electronic Journal", "doi": "10.2139/ssrn.4148582", "doi_url": "https://doi.org/10.2139/ssrn.4148582"}, {"year": "2024", "title": "<a href=\"https://www.neliti.com/publications/334115/competencies-and-professional-development-needs-of-kindergarten-teachers\" rel=\"nofollow\">Competencies and Professional Development Needs of Kindergarten Teachers</a>", "venue": "SSRN Electronic Journal", "doi": "10.2139/ssrn.4857964", "doi_url": "https://doi.org/10.2139/ssrn.4857964"}, {"year": "2013", "title": "Teaching to Learn ~ Learning to Teach Classroom Research Tools for Second Language Learning: A Case Study Based on English as a Foreign Language (EFL) and Spanish as a Foreign Language (SFL) in a Secondary School and a University in Ontario, Canada", "venue": "UVaDOC UVaDOC University of Valladolid Documentary Repository (University of Valladolid)", "doi": "10.35376/10324/3579", "doi_url": "https://doi.org/10.35376/10324/3579"}, {"year": "2011", "title": "Validation of the teacher education center capabilities to train qualified teachers in the field of teaching from the perspective of academic experts", "venue": "Procedia - Social and Behavioral Sciences", "doi": "10.1016/j.sbspro.2011.03.096", "doi_url": "https://doi.org/10.1016/j.sbspro.2011.03.096"}, {"year": "2013", "title": "The Importance of Teacher Competencies to the Formation of Students National Identity", "venue": "Pedagogika", "doi": "10.15823/p.2013.1830", "doi_url": "https://doi.org/10.15823/p.2013.1830"}, {"year": "2017", "title": "Pre-Service Teachers and Educators Perception toward Use of Technology in Education-Challenge and Reforms for West Azerbaijan Iran", "venue": "Journal of Social Sciences", "doi": "10.3844/jssp.2017.53.63", "doi_url": "https://doi.org/10.3844/jssp.2017.53.63"}, {"year": "2017", "title": "Motivation, Attitude and Belief Competency toward Teaching Programming", "venue": "International Journal of Academic Research in Business and Social Sciences", "doi": "10.6007/ijarbss/v7-i6/2999", "doi_url": "https://doi.org/10.6007/ijarbss/v7-i6/2999"}, {"year": "2018", "title": "Mathematics Teachers' Pedagogical Competence: How is the Attitude of the Mathematics Teachers in Teaching?", "venue": "Unknown", "doi": "10.2991/miseic-18.2018.55", "doi_url": "https://doi.org/10.2991/miseic-18.2018.55"}, {"year": "2018", "title": "Business English teachers' professional development: The teachers' perspective", "venue": "Nastava i vaspitanje", "doi": "10.5937/nasvas1802311v", "doi_url": "https://doi.org/10.5937/nasvas1802311v"}, {"year": "2019", "title": "Competency of Zimbabwean Teachers Who Completed In-Service Teachers Training Program in Inclusive Education", "venue": "Journal of Education and Vocational Research", "doi": "10.22610/jevr.v10i1(v).2961", "doi_url": "https://doi.org/10.22610/jevr.v10i1(v).2961"}, {"year": "2019", "title": "Professional development: Perspective of Business English teachers in vocational high schools in Serbia", "venue": "Zbornik radova Filozofskog fakulteta u Pristini", "doi": "10.5937/zrffp49-24062", "doi_url": "https://doi.org/10.5937/zrffp49-24062"}, {"year": "2020", "title": "What Do Teachers Need to Become a Peace Educator?", "venue": "Advances in early childhood and K-12 education", "doi": "10.4018/978-1-7998-2827-3.ch008", "doi_url": "https://doi.org/10.4018/978-1-7998-2827-3.ch008"}, {"year": "2020", "title": "PENINGKATAN KEGIATAN BELAJAR PESERTA DIDIK MATA PELAJARAN PENDIDIKAN AGAMA ISLAM MELALUI IMPLEMENTASI MANAJEMEN KELAS", "venue": "Al-Tarbawi Al-Haditsah Jurnal Pendidikan Islam", "doi": "10.24235/tarbawi.v5i1.6526", "doi_url": "https://doi.org/10.24235/tarbawi.v5i1.6526"}, {"year": "2020", "title": "Tema-Tema Penelitian Pendidikan: Inspirasi dan Motivasi Bagi Guru Madrasah Ibtidaiyah", "venue": "Madrasah Jurnal Pendidikan dan Pembelajaran Dasar", "doi": "10.18860/mad.v12i2.9440", "doi_url": "https://doi.org/10.18860/mad.v12i2.9440"}, {"year": "2020", "title": "KONTRIBUSI TINGKAT PEMAHAMAN PERUMUSAN PANCASILA TERHADAP KOMPETENSI GURU SD NEGERI DI KECAMATAN MEDAN HELVETIA", "venue": "ELEMENTARY SCHOOL JOURNAL PGSD FIP UNIMED", "doi": "10.24114/esjpgsd.v10i1.19285", "doi_url": "https://doi.org/10.24114/esjpgsd.v10i1.19285"}, {"year": "2020", "title": "Efficiency Predictive Factors for Professional Ability of Ramkhamhaeng University Lecturers for ASEAN Socio-Cultural Community", "venue": "Asian Journal of Education and Training", "doi": "10.20448/journal.522.2020.63.536.540", "doi_url": "https://doi.org/10.20448/journal.522.2020.63.536.540"}, {"year": "2020", "title": "برنامج مقترح قائم على مدخل اللغة عبر المنهج لتنمية بعض کفايات التواصل اللغوي في النصوص الجغرافية والتاريخية ومهارات التفکير المتشعب لدى الطلاب المعلمين شعبة الدراسات الاجتماعية", "venue": "المجلة التربوية لکلية التربية بسوهاج", "doi": "10.21608/edusohag.2020.120164", "doi_url": "https://doi.org/10.21608/edusohag.2020.120164"}, {"year": "2021", "title": "Principal’s Leadership In Developing The Competencies Of Physical Education Teachers In Muhammadiyah Nitikan Elementary School Yogyakarta", "venue": "Kinestetik Jurnal Ilmiah Pendidikan Jasmani", "doi": "10.33369/jk.v5i1.14251", "doi_url": "https://doi.org/10.33369/jk.v5i1.14251"}, {"year": "2020", "title": "Presenting a Model for Promoting the Professional Competency among EFL Teachers: A Grounded Theory Approach", "venue": "Iranian Journal of Educational Sociology", "doi": "10.52547/ijes.3.4.127", "doi_url": "https://doi.org/10.52547/ijes.3.4.127"}, {"year": "2021", "title": "IMPROVING METHODIC COMPETENCE OF PRIMARY SCHOOL MATHEMATICS TEACHERS ON SELF-DIRECTED LEARNING IN LATVIA", "venue": "SOCIETY INTEGRATION EDUCATION Proceedings of the International Scientific Conference", "doi": "10.17770/sie2021vol2.6361", "doi_url": "https://doi.org/10.17770/sie2021vol2.6361"}, {"year": "2021", "title": "Teaching Indonesian Language Interestingly", "venue": "Unknown", "doi": "10.4108/eai.30-12-2020.2311240", "doi_url": "https://doi.org/10.4108/eai.30-12-2020.2311240"}, {"year": "2021", "title": "الخصائص السيکومترية لمقياس الکفايات الأدائية للطلاب المعلمين بقسم اضطراب التوحد بکلية علوم ذوي الاحتياجات الخاصة", "venue": "مجلة کلیة علوم ذوی الاحتیاجات الخاصة", "doi": "10.21608/jshm.2021.79687.1114", "doi_url": "https://doi.org/10.21608/jshm.2021.79687.1114"}, {"year": "2021", "title": "„Uważnić”* głos dzieci i młodzieży ze środowisk przymusowych migrantów. Wybrane aspekty etyczne i metodologiczne badania doświadczeń udziału w szkolnej edukacji", "venue": "Acta Universitatis Nicolai Copernici Pedagogika", "doi": "10.12775/aunc_ped.2020.006", "doi_url": "https://doi.org/10.12775/aunc_ped.2020.006"}, {"year": "2021", "title": "FAKTOR-FAKTOR YANG MEMPENGARUHI KINERJA GURU SMA/SMK KECAMATAN TALEGONG GARUT", "venue": "Unknown", "doi": "10.32897/sobat3.2021.5", "doi_url": "https://doi.org/10.32897/sobat3.2021.5"}, {"year": "2022", "title": "Next-Generation Teacher Competencies", "venue": "Advances in educational technologies and instructional design book series", "doi": "10.4018/978-1-7998-9542-8.ch014", "doi_url": "https://doi.org/10.4018/978-1-7998-9542-8.ch014"}, {"year": "2022", "title": "Assessment of Teacher Competencies BYs Stakeholders of Education: A Literature Review", "venue": "International Journal of Advanced Research in Science Communication and Technology", "doi": "10.48175/ijarsct-2644", "doi_url": "https://doi.org/10.48175/ijarsct-2644"}, {"year": "2020", "title": "برنامج مقترح قائم على مدخل اللغة عبر المنهج لتنمیة بعض کفایات التواصل اللغوی فی النصوص الجغرافیة والتاریخیة ومهارات التفکیر المتشعب لدى الطلاب المعلمین شعبة الدراسات الاجتماعیة", "venue": "مجلة الجمعية التربوية للدراسات الاجتماعية", "doi": "10.21608/pjas.2020.132588", "doi_url": "https://doi.org/10.21608/pjas.2020.132588"}, {"year": "2011", "title": "Validation of the teacher education center capabilities to train qualified teachers in the field of teaching from the perspective of academic experts", "venue": "Procedia - Social and Behavioral Sciences", "doi": "10.1016/j.sbspro.2011.03.097", "doi_url": "https://doi.org/10.1016/j.sbspro.2011.03.097"}, {"year": "2022", "title": "TEACHER SKILLS AND PARENTS SUPPORT ON LEARNERS’ ABILITY IN PRIVATE SCHOOLS IN PILA, LAGUNA", "venue": "International Journal of Research Publications", "doi": "10.47119/ijrp1001051720223663", "doi_url": "https://doi.org/10.47119/ijrp1001051720223663"}, {"year": "2021", "title": "Implementing an Online-Based Kallimni Program to Improve Maharah Kalam in the Pandemic of Covid-19", "venue": "ALSINATUNA", "doi": "10.28918/alsinatuna.v7i1.4467", "doi_url": "https://doi.org/10.28918/alsinatuna.v7i1.4467"}, {"year": "2022", "title": "A Competência Social de Professores segundo Mães e Pais por Ciclo do Ensino Fundamental", "venue": "Estudos e Pesquisas em Psicologia", "doi": "10.12957/epp.2022.70270", "doi_url": "https://doi.org/10.12957/epp.2022.70270"}, {"year": "2022", "title": "AD ALTA: 12/02-XXX.", "venue": "AD ALTA Journal of Interdisciplinary Research", "doi": "10.33543/120230", "doi_url": "https://doi.org/10.33543/120230"}, {"year": "2022", "title": "", "venue": "Bulletin of Toraighyrov University Pedagogics Series", "doi": "10.48081/ywjc7662", "doi_url": "https://doi.org/10.48081/ywjc7662"}, {"year": "2022", "title": "The Effects of Online Learning on Students' Anxiety and Motivation.", "venue": "ISU Red - Research and eData (Illinois State University)", "doi": "10.30707/etd2022.20230207065834315045.999993", "doi_url": "https://doi.org/10.30707/etd2022.20230207065834315045.999993"}, {"year": "2022", "title": "PROFESSIONAL COMPETENCY PROFILE OF PEDAGOGICAL STUDENTS MAJOR IN PRIMARY EDUCATION - AN EMPLOYERS' VIEW", "venue": "International Journal of Education and Social Science Research", "doi": "10.37500/ijessr.2022.5625", "doi_url": "https://doi.org/10.37500/ijessr.2022.5625"}, {"year": "2023", "title": "Il ruolo della formazione sulla gratificazione professionale dei docenti", "venue": "Qwerty", "doi": "10.30557/qw000070", "doi_url": "https://doi.org/10.30557/qw000070"}, {"year": "2022", "title": "Identifying leadership skills as a characteristic of successful educators", "venue": "Bulletin of the Karaganda University Pedagogy series", "doi": "10.31489/2022ped3/7-13", "doi_url": "https://doi.org/10.31489/2022ped3/7-13"}, {"year": "2023", "title": "Idiosyncratic Special Education Teacher's Endgame and the Rise of Amicable Minds of the Twenty-First Century", "venue": "Unknown", "doi": "10.1108/s1479-363620230000020002", "doi_url": "https://doi.org/10.1108/s1479-363620230000020002"}, {"year": "2023", "title": "EVALUASI PROGRAM PENINGKATAN KESEJAHTERAAN TENAGA PENDIDIK NON PNS MELALUI KONTRAK KERJA INDIVIDU DI SEKOLAH DASAR NEGERI KECAMATAN JOHAR BARU JAKARTA PUSAT", "venue": "Jurnal Penelitian dan Penilaian Pendidikan", "doi": "10.22236/jppp.v5i1.11533", "doi_url": "https://doi.org/10.22236/jppp.v5i1.11533"}, {"year": "2023", "title": "Weighing research competencies of department of English language education graduates at UIN Ar-Raniry Banda Aceh", "venue": "Englisia Journal of language education and humanities", "doi": "10.22373/ej.v10i2.17226", "doi_url": "https://doi.org/10.22373/ej.v10i2.17226"}, {"year": "2023", "title": "Analysis of student and parent satisfaction with the class teacher", "venue": "Perspectives of science and education", "doi": "10.32744/pse.2023.3.44", "doi_url": "https://doi.org/10.32744/pse.2023.3.44"}, {"year": "2023", "title": "Assessment of Adkar-based Character Development Management on Social Competence and Teacher Productivity", "venue": "Asian Journal of Education and Social Studies", "doi": "10.9734/ajess/2023/v48i21061", "doi_url": "https://doi.org/10.9734/ajess/2023/v48i21061"}, {"year": "2023", "title": "Teachers’ Desirable Competences and their Effects on Adult Learners’ Motivation in Online Foreign Language Learning", "venue": "Unknown", "doi": "10.1145/3606094.3606114", "doi_url": "https://doi.org/10.1145/3606094.3606114"}, {"year": "2023", "title": "Competencies and Professional Development Needs of Kindergarten Teachers", "venue": "OSF Preprints (OSF Preprints)", "doi": "10.31219/osf.io/eh367", "doi_url": "https://doi.org/10.31219/osf.io/eh367"}, {"year": "2023", "title": "Öğretmenler için İçsel Motivasyon Faktörleri: Motivasyon 3.0 Ölçeğinin Geliştirilmesi, Geçerlilik ve Güvenilirlik Çalışması", "venue": "İktisadi İdari ve Siyasal Araştırmalar Dergisi", "doi": "10.25204/iktisad.1347647", "doi_url": "https://doi.org/10.25204/iktisad.1347647"}, {"year": "2023", "title": "TPACK Based: A Need Analysis for ELT Materials Development", "venue": "ELSYA Journal of English Language Studies", "doi": "10.31849/elsya.v5i3.14733", "doi_url": "https://doi.org/10.31849/elsya.v5i3.14733"}, {"year": "2023", "title": "Standards Framework and Evaluation Instruments", "venue": "Unknown", "doi": "10.1007/978-981-99-6273-0_3", "doi_url": "https://doi.org/10.1007/978-981-99-6273-0_3"}, {"year": "2023", "title": "Beden Eğitimi ve Spor Öğretmenlerinin Pedagojik Yeterlik Algılarının Sınıf Yönetim Stilleri ve İletişim Becerileri Açısından İncelenmesi", "venue": "Özgür Yayınları eBooks", "doi": "10.58830/ozgur.pub328", "doi_url": "https://doi.org/10.58830/ozgur.pub328"}, {"year": "2023", "title": "EXPLORING THE COMPETENCIES OF ENGLISH TEACHERS IN RURAL BALOCHISTAN", "venue": "Gomal University Journal of Research", "doi": "10.51380/gujr-39-04-07", "doi_url": "https://doi.org/10.51380/gujr-39-04-07"}, {"year": "2023", "title": "Teacher Information Literacy for Inclusive Early Childhood Education (ECE) to Provide Literacy and Numeracy for Special Needs Children in Central Java-Indonesia", "venue": "International Journal of Learning Teaching and Educational Research", "doi": "10.26803/ijlter.22.12.13", "doi_url": "https://doi.org/10.26803/ijlter.22.12.13"}, {"year": "2023", "title": "Beyond the ABCS: Exploring Grade 3 Teachers' Competence in Teaching English First Additional Language", "venue": "Journal of Educational Studies", "doi": "10.59915/jes.2023.22.3.2", "doi_url": "https://doi.org/10.59915/jes.2023.22.3.2"}, {"year": "2023", "title": "", "venue": "Analele Universității din Craiova seria Psihologie-Pedagogie/Annals of the University of Craiova Series Psychology- Pedagogy", "doi": "10.52846/aucpp.2023.2", "doi_url": "https://doi.org/10.52846/aucpp.2023.2"}, {"year": "2023", "title": "مدى توافر الكفايات لدى معلمي الطلبة الموهوبين والمتفوقين والمبدعين ومعلماتهم في المدارس الحكومية في دولة فلسطين", "venue": "مجلة العلوم التربوية و النفسية", "doi": "10.26389/ajsrp.f220623", "doi_url": "https://doi.org/10.26389/ajsrp.f220623"}, {"year": "2023", "title": "تمكين الطالب المعلم من الكفايات المستدامة لمواكبة نظام التعليم الجديد وتحقيق رؤية مصر2030.", "venue": "العلوم التربوية", "doi": "10.21608/ssj.2023.344717", "doi_url": "https://doi.org/10.21608/ssj.2023.344717"}, {"year": "2023", "title": "A Closer Look at Teachers' Professional Competencies", "venue": "English Education Journal", "doi": "10.24815/eej.v14i3.32810", "doi_url": "https://doi.org/10.24815/eej.v14i3.32810"}, {"year": "2024", "title": "Frankofon Afrika Ülkelerinde Görev Yapan Öğretmenlerin Eğitim Gereksinimlerinin Analizi", "venue": "Buca eğitim fakültesi dergisi (Online)/Buca Eğitim Fakültesi dergisi", "doi": "10.53444/deubefd.1352373", "doi_url": "https://doi.org/10.53444/deubefd.1352373"}, {"year": "2024", "title": "Virtual Exchange in Teacher Training and the Foreign Language Classroom", "venue": "Advances in educational technologies and instructional design book series", "doi": "10.4018/978-1-6684-7813-4.ch010", "doi_url": "https://doi.org/10.4018/978-1-6684-7813-4.ch010"}, {"year": "2024", "title": "A Teacher Competence Model and Measurement Based on Smart Education", "venue": "Revista de Gestão Social e Ambiental", "doi": "10.24857/rgsa.v18n1-111", "doi_url": "https://doi.org/10.24857/rgsa.v18n1-111"}, {"year": "2023", "title": "Innovation and Core Competencies in Higher Education the Case of Mohamed V University", "venue": "International Journal of Science and Research (IJSR)", "doi": "10.21275/sr23119182525", "doi_url": "https://doi.org/10.21275/sr23119182525"}, {"year": "2023", "title": "Proceso de la ideación y reflexión en el acto de diseño", "venue": "Repositorio Institucional Zaloamati (Universidad Autónoma Metropolitana)", "doi": "10.24275/uama.5813.10360", "doi_url": "https://doi.org/10.24275/uama.5813.10360"}, {"year": "2024", "title": "The Role of the Training Program “Making Learning Visible” in Developing Creative Teaching Competencies of Bahrain Teachers College Faculty Members in the University of Bahrain", "venue": "Higher Education Studies", "doi": "10.5539/hes.v14n3p60", "doi_url": "https://doi.org/10.5539/hes.v14n3p60"}, {"year": "2024", "title": "The Moderating Effect of Age and Length in Service on Information Communication Technology Competencies and Instructional Performance", "venue": "International Journal of Research Publications", "doi": "10.47119/ijrp1001521720246901", "doi_url": "https://doi.org/10.47119/ijrp1001521720246901"}, {"year": "2024", "title": "Influences on teacher trainers’ lifelong learning competencies", "venue": "Opus et Educatio", "doi": "10.3311/ope.620", "doi_url": "https://doi.org/10.3311/ope.620"}, {"year": "2024", "title": "The Impact of English Teachers’ Professional Competence on Students’ Performances of the Second Grade at SMA Swasta Santu Xaverius Gunungsitoli in 2023/2024", "venue": "Tuhenori Jurnal Ilmiah Multidisiplin", "doi": "10.62138/tuhenori.v2i3.68", "doi_url": "https://doi.org/10.62138/tuhenori.v2i3.68"}, {"year": "2024", "title": "Tanítójelöltek pályával kapcsolatos kompetenciaérzetének vizsgálata", "venue": "Gyermeknevelés Tudományos Folyóirat", "doi": "10.31074/gyntf.2024.3.92.109", "doi_url": "https://doi.org/10.31074/gyntf.2024.3.92.109"}, {"year": "2024", "title": "Comparison of Professional Competencies of Students Preparing for the Profession of Preschool and Early Childhood Education Teacher Under Different Forms of Study", "venue": "Lubelski Rocznik Pedagogiczny", "doi": "10.17951/lrp.2024.43.3.101-117", "doi_url": "https://doi.org/10.17951/lrp.2024.43.3.101-117"}, {"year": "2024", "title": "Socialization and Education of Mount Sinabung’s Cold Lava Flood Disaster Mitigation, Karo District, North Sumatra Province", "venue": "ULIL ALBAB Jurnal Ilmiah Multidisiplin", "doi": "10.56799/jim.v3i2.2936", "doi_url": "https://doi.org/10.56799/jim.v3i2.2936"}, {"year": "2025", "title": "Job Satisfaction and Turnover Intentions of Expatriate Non-Native English-Speaking Teachers in China", "venue": "Российский психологический журнал", "doi": "10.21702/vqbxf898", "doi_url": "https://doi.org/10.21702/vqbxf898"}, {"year": "2025", "title": "Unveiling Public School Teachers’ Motivations and Challenges in Action Research Making: Basis for Project ReCREATe", "venue": "Psychology and Education A Multidisciplinary Journal", "doi": "10.70838/pemj.400304", "doi_url": "https://doi.org/10.70838/pemj.400304"}, {"year": "2025", "title": "Development and Validation of the Pre-service Teacher Competency Scale in an Online Learning Environment Using the Scenario Method", "venue": "SAGE Open", "doi": "10.1177/21582440251344753", "doi_url": "https://doi.org/10.1177/21582440251344753"}, {"year": "2025", "title": "Research Writing Competence of Master Teachers and School Heads and its Implications to Research Management", "venue": "International Journal of Multidisciplinary Applied Business and Education Research", "doi": "10.11594/ijmaber.06.08.19", "doi_url": "https://doi.org/10.11594/ijmaber.06.08.19"}, {"year": "2025", "title": "STEM Conceptions and Competencies: Diagnostic Analysis of In-service Teachers in Intermediate Urban Settings", "venue": "European Journal of STEM Education", "doi": "10.20897/ejsteme/17166", "doi_url": "https://doi.org/10.20897/ejsteme/17166"}, {"year": "2025", "title": "21st Century Attributes and Professional Skills of Elementary School Teachers", "venue": "Psychology and Education A Multidisciplinary Journal", "doi": "10.70838/pemj.470709", "doi_url": "https://doi.org/10.70838/pemj.470709"}, {"year": "2025", "title": "The Influence of School Culture on the Performance of Senior High School Teachers", "venue": "Didaktika Jurnal Kependidikan", "doi": "10.58230/27454312.2725", "doi_url": "https://doi.org/10.58230/27454312.2725"}, {"year": "2025", "title": "‘The mediation role of transactional learning: the relationship between students' perceived lecturer competency, learning readiness, and academic resilience’", "venue": "International Journal of Adolescence and Youth", "doi": "10.1080/02673843.2025.2596657", "doi_url": "https://doi.org/10.1080/02673843.2025.2596657"}, {"year": "2025", "title": "PERCEPTIONS OF EMPLOYABILITY SKILLS AMONG PROSPECTIVE TEACHERS BASED ON DEMOGRAPHIC VARIABLES", "venue": "Journal of Multidisciplinary Knowledge", "doi": "10.36676/jmk.v5.i2.89", "doi_url": "https://doi.org/10.36676/jmk.v5.i2.89"}, {"year": "2026", "title": "Psychological and professional predictors of help-seeking attitudes in Vietnamese pre-service teachers", "venue": "Discover Mental Health", "doi": "10.1007/s44192-026-00381-z", "doi_url": "https://doi.org/10.1007/s44192-026-00381-z"}, {"year": "2026", "title": "Measuring Secondary School English Teachers’ Professional Competencies: Scale Development and Validation", "venue": "SAGE Open", "doi": "10.1177/21582440251412777", "doi_url": "https://doi.org/10.1177/21582440251412777"}, {"year": "2017", "title": "One classroom many languages", "venue": "Universidad de Colima eBooks", "doi": "10.53897/li.2017.0007.ucol", "doi_url": "https://doi.org/10.53897/li.2017.0007.ucol"}, {"year": "2025", "title": "Ketika Setiap Anak Berbeda: Tantangan dan Strategi Guru dalam Mengelola Kelas Anak Usia Dini", "venue": "Jurnal Pendidikan Anak Usia Dini", "doi": "10.47134/paud.v3i1.1922", "doi_url": "https://doi.org/10.47134/paud.v3i1.1922"}];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  var DATA = [];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</body>
+</html>

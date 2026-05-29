@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ArticleStory - An updated catalogue of split-GAL4 driver lines for descending neurons in Drosophila melanogaster</title>
+<style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+
+        /* ═══════════════════════════════════════════════════════════
+           UX Enhancements — stats strip, sticky nav, collapsibles,
+           cite tabs, inferred roles, impact metrics, signal pills
+           ═══════════════════════════════════════════════════════════ */
+        /* ── UX Enhancements ── */
+
+        /* Stats strip */
+        .stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+          box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+        .stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+        .stats-strip-item:last-child{border-right:none;}
+        .stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+        .stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+        .stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+          border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+        @media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+        /* Sticky nav */
+        .sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+          box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+          white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+        .sticky-nav::-webkit-scrollbar{display:none;}
+        .sticky-nav-inner{display:flex;padding:0 .5rem;}
+        .sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+          color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+          transition:color .15s,border-color .15s;white-space:nowrap;}
+        .sticky-nav a:hover{color:#111827;}
+        .sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+        @media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+        /* Collapsible cards */
+        .card-collapsible > h2{
+          cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+        .card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+          flex-shrink:0;transition:transform .2s;display:inline-block;}
+        .card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+        /* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+        .card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+          transition:max-height .35s ease,opacity .28s ease;}
+        .card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+        /* Who is citing — sub-tabs */
+        .cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+        .cite-tabs::-webkit-scrollbar{display:none;}
+        .cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+          color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+          white-space:nowrap;transition:all .15s;}
+        .cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+        .cite-tab-pane{display:none;}
+        .cite-tab-pane.active{display:block;}
+        /* cite-analysis-always: inner div already carries the border-top inline style */
+        .cite-analysis-always{margin-top:1rem;}
+
+        /* ── Inferred Roles ── */
+        .roles-domain{margin-bottom:.85rem;}
+        .roles-domain:last-of-type{margin-bottom:0;}
+        .roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+          margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+        .roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+        .role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+          border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+          position:relative;transition:opacity .15s;}
+        .role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+        .role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+        .role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+        .role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+        .role-pill:hover{opacity:1!important;}
+
+        /* CSS tooltip for role descriptions */
+        .role-pill[data-tip]:hover::after{
+          content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+          background:#111827;color:white;padding:.5rem .75rem;border-radius:.5rem;font-size:.72rem;
+          width:230px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+          pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+        .role-pill[data-tip]:hover::before{
+          content:'';position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);
+          border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+        .role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+        .role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+        .roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+          padding-top:.65rem;border-top:1px solid #f3f4f6;}
+        .roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+        .roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+        /* Citation pagination */
+        .cit-pagination{display:flex;align-items:center;justify-content:space-between;
+          padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+        .cit-pagination-info{color:#6b7280;}
+        .cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+        .cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+          color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+        .cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+        .cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+        .cit-btn:disabled{opacity:.4;cursor:default;}
+
+        /* ── Impact Metrics enrichment ── */
+        .im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+        .im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+        @media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+        .im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+        .im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+        .im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+        .im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+        .im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+        .im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+          color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+        .im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+        .im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+        .im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+        .im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+        .im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+        .im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+        .im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+        .im-scite-via{font-weight:400;color:#9ca3af;}
+        .im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+        .im-scite-seg{height:100%;}
+        .im-scite-sup{background:#22c55e;}
+        .im-scite-men{background:#94a3b8;}
+        .im-scite-con{background:#f87171;}
+        .im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+        .im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+        .im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+        .im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+        .im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+        .im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+        .sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+          font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+        .sig-pill:hover{opacity:.75;}
+        .sig-red   {background:#fee2e2;color:#b91c1c;}
+        .sig-slate {background:#f1f5f9;color:#475569;}
+        .sig-indigo{background:#e0e7ff;color:#4338ca;}
+        .sig-teal  {background:#ccfbf1;color:#0f766e;}
+        .sig-amber {background:#fef3c7;color:#b45309;}
+        .sig-blue  {background:#dbeafe;color:#1d4ed8;}
+    
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+.role-pill[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:#111827;color:white;padding:.5rem .75rem;border-radius:.5rem;font-size:.72rem;
+  width:230px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.role-pill[data-tip]:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+.role-pill[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:#111827;color:white;padding:.5rem .75rem;border-radius:.5rem;font-size:.72rem;
+  width:230px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.role-pill[data-tip]:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+</style>
+<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Print PDF Report
+    </button>
+<div class="page" id="sec-story">
+<header class="hero card" id="sec-hero">
+<div class="header-bar">
+<div style="display: flex; align-items: center; gap: 1.25rem;">
+<div class="logo-wrap"><img alt="Logo" src="articlestories-logo.png"/></div>
+<div>
+<h1 class="hero-title">An updated catalogue of split-GAL4 driver lines for descending neurons in Drosophila melanogaster</h1>
+<div class="discipline-badge" style="background:#fef08a; color:#854d0e; border-color:#fde047; font-weight:600; margin-top: 0.5rem; margin-bottom: 0;" title="Immediate free access with an open licence — published in a fully OA venue"><svg fill="none" stroke="currentColor" style="width:14px; height:14px; display:inline; vertical-align:middle; margin-right:4px;" viewbox="0 0 24 24"><path d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg><span style="opacity:0.58;font-size:0.72em;font-weight:500;margin-right:0.25em;text-transform:uppercase;letter-spacing:0.04em;vertical-align:middle;">Access:</span><span style="vertical-align:middle;">Access:Open Access (Gold)</span></div>
+<div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+</div>
+
+                        &lt;<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+<div><strong>Author(s):</strong> 
+                                
+                                    Jessica L. Zung, Shigehiro Namiki, Geoffrey W Meissner, Han SJ Cheong, Marta Costa, Katharina Eichler, Tomke Stürner, Gregory S.X.E. Jefferis, Claire Managan, FlyLight Project Team, Wyatt Korff, Gwyneth M Card
+                                
+                            </div>
+<div><strong>Publisher:</strong> 
+                                
+                                    eLife
+                                
+                            </div>
+<div><strong>Publication year:</strong> 
+                                
+                                    2025
+                                
+                            </div>
+<div><strong>DOI:</strong>
+<a href="https://doi.org/10.7554/eLife.107450" target="_blank">
+                                    10.7554/eLife.107450
+                                </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">0</div>
+<div class="stats-strip-label">Total Citations</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">—</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">—</div>
+<div class="stats-strip-label">scite References</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Gold</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
+
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-mentions">Mentions</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-funding">Funding</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">0</div>
+<div class="stats-strip-label">Total Citations</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">0</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">0</div>
+<div class="stats-strip-label">scite References</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Gold</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-mentions">Mentions</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-funding">Funding</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+<section class="card" id="sec-story">
+<h2><span>The Story So Far</span></h2>
+<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">This article presents an updated catalogue of split-GAL4 driver lines for descending neurons in Drosophila melanogaster, contributing to a deeper understanding of neural circuits and their functionality in a key model organism.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The publication of an updated catalogue of split-GAL4 driver lines for descending neurons in Drosophila melanogaster represents a significant advancement in the field of neuroscience. By providing a comprehensive resource, this catalogue aims to facilitate research into the functional mapping of neural pathways, thus enhancing our understanding of complex behavioral outputs in this model organism. The work, set to appear in the esteemed journal eLife, is backed by collaboration among key institutions, including West Virginia University, University of Cambridge, Leipzig University, Janelia Research Campus, and Howard Hughes Medical Institute.</p>
+<p class="story-text">This catalogue serves as a foundational research output that underscores the importance of detailed and accessible resources in neuroscience. Although no metrics for online mentions or social media discussions are currently available, the intrinsic value of the work lies in its potential utility for researchers in related fields, fostering further discourse and exploration of descending neuronal circuits in Drosophila.</p>
+<p class="story-text">Despite the lack of community engagement statistics, the assembly of such driver lines is crucial for experimental biology, enabling a variety of applications ranging from gene expression studies to behavioral analyses. This work exemplifies a commitment to transparency and openness in scientific research, addressing the growing demand for replicable and accessible research tools that can accelerate discoveries in neural sciences.</p>
+<p class="story-text">In conclusion, the importance of this catalogue reaches beyond its immediate scholarly context, as it has the potential to unify efforts across various research groups and inspire collaborative projects focused on the intricate neuronal architecture of Drosophila. Researchers are encouraged to leverage this resource as they delve into the functional implications of neural circuitry, thereby enriching the ongoing dialogue in neuroscience research.</p></div>
+</section>
+<section class="card" id="sec-impact">
+<h2><span>Impact metrics</span></h2>
+<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">0</div><div class="im-label">Total Citations</div></div></div></div><div class="im-card"><div class="im-num">—</div><div class="im-label">Online Mentions</div></div></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-slate" href="#sec-teaching">📚 WorldCat</a><a class="sig-pill sig-indigo" href="#sec-teaching">🎓 Course syllabus</a></div></div></div></section>
+<div class="grid-2">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+<ul class="metric-list">
+<li><strong>DOI:</strong> <a href="https://doi.org/10.7554/eLife.107450" target="_blank">10.7554/eLife.107450</a></li>
+<li><strong>OA status:</strong> Gold</li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>0</strong> recorded events globally
+                        
+                    </p>
+<p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+<em>(See specific sources and examples in the Online Mentions section below).</em>
+</p>
+</section>
+</div>
+<div class="grid-2" style="align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Citation context</span> <span class="badge">scite</span></h2>
+<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+<li><strong>Total:</strong> 0</li>
+<li><strong>Supporting:</strong> 0</li>
+<li><strong>Mentioning:</strong> 0</li>
+<li><strong>Contradicting:</strong> 0</li>
+</ul>
+</section>
+</div>
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+</div>
+</div>
+<div class="grid-2">
+</div>
+<section class="card" id="sec-teaching">
+<h2><span>Teaching, Practice &amp; Library Adoption</span></h2>
+<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem;">
+                Evidence of structured teaching use, reading lists, and library availability.
+            </div>
+<div class="grid-2" style="align-items: start;">
+<div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        OpenCourseWare Mentions <span class="badge" style="float: right;">Google Custom Search</span>
+</h3>
+<ul style="padding-left: 0; list-style: none; margin: 0;">
+<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+<a href="https://elifesciences.org/reviewed-preprints/107450" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
+                                        An updated catalogue of split-GAL4 driver lines for ...
+                                    </a>
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        elifesciences.org
+                                    </span>
+</div>
+<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...An updated catalogue of split-GAL4 driver lines for descending neurons in Drosophila melanogaster. Jessica L Zung; Shigehiro Namiki; Geoffrey W ......"
+                                </div>
+</li>
+<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+<a href="https://www.biorxiv.org/content/10.1101/2025.02.22.639679v1" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
+                                        An updated catalogue of split-GAL4 driver lines for ...
+                                    </a>
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        www.biorxiv.org
+                                    </span>
+</div>
+<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...An updated catalogue of split-GAL4 driver lines for descending neurons in Drosophila melanogaster. View ORCID ProfileJessica L. Zung, View ......"
+                                </div>
+</li>
+<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+<a href="https://www.biorxiv.org/content/10.1101/2025.02.22.639679.full.pdf" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
+                                        An updated catalogue of split-GAL4 driver lines for ...
+                                    </a>
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        www.biorxiv.org
+                                    </span>
+</div>
+<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...Abstract. Descending neurons (DNs) occupy a key position in the sensorimotor hierarchy, conveying signals from...."
+                                </div>
+</li>
+<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+<a href="https://www.researchgate.net/publication/389302780_An_updated_catalogue_of_split-GAL4_driver_lines_for_descending_neurons_in_Drosophila_melanogaster" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
+                                        (PDF) An updated catalogue of split-GAL4 driver lines for ...
+                                    </a>
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        www.researchgate.net
+                                    </span>
+</div>
+<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...An updated catalogue of split-GAL4 driver lines for descending neurons in Drosophila melanogaster. February 2025. DOI:10.1101/2025.02 ......"
+                                </div>
+</li>
+<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+<a href="https://www.researchgate.net/publication/395666642_An_updated_catalogue_of_split-GAL4_driver_lines_for_descending_neurons_in_Drosophila_melanogaster" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
+                                        An updated catalogue of split-GAL4 driver lines for ...
+                                    </a>
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        www.researchgate.net
+                                    </span>
+</div>
+<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...An updated catalogue of split-GAL4 driver lines for descending neurons in Drosophila melanogaster ; Jessica L Zung ; Geoffrey W Meissner ; Han SJ Cheong...."
+                                </div>
+</li>
+<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+<a href="https://www.researchgate.net/publication/382719980_A_split-GAL4_driver_line_resource_for_Drosophila_neuron_types" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
+                                        A split-GAL4 driver line resource for Drosophila neuron types
+                                    </a>
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        www.researchgate.net
+                                    </span>
+</div>
+<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...... An updated catalogue of split-GAL4 driver lines for descending neurons in Drosophila melanogaster. Preprint. Full-text available. Feb 2025...."
+                                </div>
+</li>
+</ul>
+</div>
+<div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        Library &amp; Community Access <span class="badge" style="float: right; background: #f0fdf4; color: #166534;">Open Library</span>
+</h3>
+<ul class="metric-list" style="margin-top: 0;">
+<li style="margin-bottom: 0.8rem;">
+<strong>Institutional Availability:</strong>
+<div style="margin-top: 0.4rem;">
+<a class="tag" href="https://www.worldcat.org/search?q=ti:An%20updated%20catalogue%20of%20split-GAL4%20driver%20lines%20for%20descending%20neurons%20in%20Drosophila%20melanogaster" style="background:#e5f2ff; color:#1d4ed8; font-weight: 600; text-decoration: none;" target="_blank">
+                                    Search Global Libraries (WorldCat) ↗
+                                </a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<div class="grid-2" id="sec-contributors">
+<section class="card" id="sec-contributors" style="margin-bottom:0;">
+<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">12 authors · 6 institutions</div>
+<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Jessica L. Zung</strong>
+<span class="badge">First</span>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-2361-5775" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Shigehiro Namiki</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-1559-799X" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Geoffrey W Meissner</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-0369-9788" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Han SJ Cheong</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-5233-3438" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Marta Costa</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-5948-3092" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Katharina Eichler</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-7833-8621" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Tomke Stürner</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-4054-0784" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Gregory S.X.E. Jefferis</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-0587-9355" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Claire Managan</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-9510-6443" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>FlyLight Project Team</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Wyatt Korff</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-8396-1533" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Gwyneth M Card</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-7679-3639" target="_blank">ORCID</a>
+</li>
+</ul>
+<h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/006w34k90" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Howard Hughes Medical Institute</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/013sk6x84" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Janelia Research Campus</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/011vxgd24" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">West Virginia University</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/013meh722" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Cambridge</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/03s7gtk40" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Leipzig University</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/00tw3jy02" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">MRC Laboratory of Molecular Biology</a>
+</li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">18 specific concepts identified.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Drosophila melanogaster</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Melanogaster</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Drosophila (subgenus)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell type</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Position (finance)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Drosophilidae</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Schneider 2 cells</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Key (lock)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computational biology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Rest (music)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neuroscience</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell biology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell culture</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Morphology (biology)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Genetics</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Evolutionary biology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Type (biology)</span>
+</div>
+</section>
+</div>
+<footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+<div style="display: flex; flex-direction: column; gap: 0.4rem;">
+<div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+<svg fill="none" height="16" stroke="currentColor" style="color: #9ca3af;" viewbox="0 0 24 24" width="16"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Understanding our metrics: <a href="https://www.openscience.works/about.html" style="color: #2563eb; text-decoration: none; font-weight: 600;" target="_blank">Read the Methodology &amp; Legend ↗</a></span>
+</div>
+<div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-05-28T13:33:09+00:00
+                </div>
+</div>
+</footer>
+</div>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+<script>
+    /* ── UX: Collapsible section cards ── */
+    (function() {
+      function initCollapsibles() {
+        document.querySelectorAll('section.card, .card').forEach(function(card) {
+          if (card.tagName === 'HEADER') return;
+          var h2 = null;
+          for (var i = 0; i < card.children.length; i++) {
+            if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+          }
+          if (!h2) return;
+          card.classList.add('card-collapsible');
+          var chev = document.createElement('span');
+          chev.className = 'chevron';
+          chev.setAttribute('aria-hidden', 'true');
+          chev.textContent = '▾';
+          h2.appendChild(chev);
+          var wrap = document.createElement('div');
+          wrap.className = 'card-body-wrap';
+          var kids = Array.from(card.children), after = false;
+          kids.forEach(function(c) { if (c === h2) { after = true; return; } if (after) wrap.appendChild(c); });
+          card.appendChild(wrap);
+          h2.addEventListener('click', function() { card.classList.toggle('is-collapsed'); });
+        });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initCollapsibles);
+      else initCollapsibles();
+    })();
+
+    /* ── UX: Sticky nav active state ── */
+    (function() {
+      function initNav() {
+        var nav = document.getElementById('sticky-nav');
+        if (!nav) return;
+        var links = Array.from(nav.querySelectorAll('a'));
+        var targets = links.map(function(l) {
+          return { el: document.getElementById(l.getAttribute('href').slice(1)), link: l };
+        }).filter(function(t) { return t.el; });
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting) {
+              links.forEach(function(l) { l.classList.remove('snav-active'); });
+              var m = links.find(function(l) { return l.getAttribute('href') === '#' + e.target.id; });
+              if (m) m.classList.add('snav-active');
+            }
+          });
+        }, { rootMargin: '-5% 0px -80% 0px', threshold: 0 });
+        targets.forEach(function(t) { obs.observe(t.el); });
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initNav);
+      else initNav();
+    })();
+
+    /* ── UX: Who-is-citing tab switcher ── */
+    function citeSwitchTab(btn, tabId) {
+      var tabsEl = btn.closest('.cite-tabs');
+      if (!tabsEl) return;
+      var parent = tabsEl.parentElement;
+      parent.querySelectorAll('.cite-tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      parent.querySelectorAll('.cite-tab-pane').forEach(function(p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      var pane = document.getElementById(tabId);
+      if (pane) pane.classList.add('active');
+    }
+    </script>
+<script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<script>
+(function() {
+  var DATA = [];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  var DATA = [];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</body>
+</html>

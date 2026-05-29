@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ArticleStory - Rethinking Impact Factors: New Pathways in Journal Metrics</title>
+<style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+.role-pill[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:#111827;color:white;padding:.5rem .75rem;border-radius:.5rem;font-size:.72rem;
+  width:230px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.role-pill[data-tip]:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+.role-pill[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:#111827;color:white;padding:.5rem .75rem;border-radius:.5rem;font-size:.72rem;
+  width:230px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.role-pill[data-tip]:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+</style>
+<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Print PDF Report
+    </button>
+<div class="page" id="sec-story">
+<header class="hero card" id="sec-hero">
+<div class="header-bar">
+<div style="display: flex; align-items: center; gap: 1.25rem;">
+<div class="logo-wrap"><img alt="Logo" src="articlestories-logo.png"/></div>
+<div>
+<h1 class="hero-title">Rethinking Impact Factors: New Pathways in Journal Metrics</h1>
+<div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+</div>
+<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+<div><strong>Author(s):</strong> Cassidy R. Sugimoto, Liz Allen, Jeroen Bosman, Tindaro Cicero, Stephen Curry, Sarah de Rijcke, Annette Flanagin, Michele S. Garfinkel, Michael Hill, Vincent Larivière, Jennifer Lin, Marco Malgarini, Ben R. Martin, Marie McVeigh, Alexis-Michel Mugabushaka, Dakota Murray, Renato H. L. Pedrosa, Andrew Plume, James Pringle, Bernd Pulverer, Martijn Roelandse, Fei Shu, James T. Walker, Ludo Waltman, Paul Wouters</div>
+<div><strong>Publisher:</strong> Faculty of 1000 Research Ltd</div>
+<div><strong>Publication year:</strong> 2019</div>
+<div><strong>DOI:</strong> <a href="https://doi.org/10.7490/f1000research.1116751.1" target="_blank">10.7490/f1000research.1116751.1</a></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">3</div>
+<div class="stats-strip-label">Total Citations</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">—</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">—</div>
+<div class="stats-strip-label">scite References</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Green</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
+
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-mentions">Mentions</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-funding">Funding</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">8</div>
+<div class="stats-strip-label">Total Citations</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">1</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">3</div>
+<div class="stats-strip-label">scite References</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Green</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-mentions">Mentions</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-funding">Funding</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+<section class="card" id="sec-story">
+<h2><span>The Story So Far</span></h2>
+<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">"Rethinking Impact Factors: New Pathways in Journal Metrics" by Cassidy R. Sugimoto et al. has made a significant mark in academic discourse, with eight citations demonstrating its influence across various scholarly venues.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The article "Rethinking Impact Factors: New Pathways in Journal Metrics," authored by Cassidy R. Sugimoto and colleagues, has garnered notable academic attention since its publication. With eight citations cataloged in OpenAlex, this work contributes to a growing dialogue on the relevance and evaluation of journal metrics. Notably, it has been cited in prominent venues, including F1000Research and Nature, indicating its resonance within the academic community.</p>
+<p class="story-text">This work stands out not only for its academic achievements but also for its potential societal importance, as evidenced by its presence within scholarly discussions across multiple countries, including the United States, Israel, and Germany. This geographic diversity of citations enhances the work's visibility and demonstrates its relevance across different research landscapes.</p>
+<p class="story-text">The article has sparked engagement among scholars, with citations including both articles and preprints, showcasing its influence at the cutting edge of research in journal metrics. The presence of preprints represents an active discourse among researchers who are eager to explore and validate the concepts presented in Sugimoto et al.'s work.</p>
+<p class="story-text">Furthermore, the proven downstream reuse of its findings—evidenced by eight instances of reuse—demonstrates that the concepts and methodologies developed in this work are being integrated into further research. Such impacts exemplify a commitment to advancing the scholarly conversation around journal metrics and enhance its standing as a pivotal contribution to the field.</p></div>
+</section>
+<section class="card" id="sec-impact">
+<h2><span>Impact metrics</span></h2>
+<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">3</div><div class="im-label">Total Citations</div></div><div class="im-spark"><svg height="36" style="display:block;overflow:visible;" viewbox="0 0 120 36" width="120" xmlns="http://www.w3.org/2000/svg"><path d="M0.0,18.0 L24.0,2.0 L48.0,18.0 L72.0,18.0 L96.0,2.0 L120.0,18.0 L120.0,36.0 L0,36.0 Z" fill="#dbeafe" opacity="0.6"></path><polyline fill="none" points="0.0,18.0 24.0,2.0 48.0,18.0 72.0,18.0 96.0,2.0 120.0,18.0" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline></svg><div class="im-spark-range">2019–2024</div></div></div></div><div class="im-card"><div class="im-num">—</div><div class="im-label">Online Mentions</div></div></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-blue" href="#sec-citing">🌍 14 countries</a></div></div></div></section>
+<section class="card" id="sec-roles">
+<h2><span>Inferred roles</span></h2>
+<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#b45309;">📢 Public Engagement &amp; Media</div><div class="roles-row"><span class="role-pill role-pill-public" style="opacity:1;" data-tip="Mentioned in mainstream news, broadsheets, or high-impact professional media."><span class="role-dot" style="background:#f59e0b;"></span>High-visibility uptake<span class="role-strength" style="background:#fef3c7;color:#92400e;">Strong</span></span><span class="role-pill role-pill-public" style="opacity:0.75;" data-tip="Heavy social-platform engagement on Reddit, Bluesky, or Mastodon — the work has sparked ongoing community conversation."><span class="role-dot" style="background:#f59e0b;"></span>Active public discourse<span class="role-strength" style="background:#fef3c7;color:#92400e;">Emerging</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
+</section>
+<div class="grid-2">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+<ul class="metric-list">
+<li><strong>DOI:</strong> <a href="https://doi.org/10.7490/f1000research.1116751.1" target="_blank">10.7490/f1000research.1116751.1</a></li>
+<li><strong>OA status:</strong> Green</li>
+<li><strong>Landing page:</strong> <a href="https://doi.org/10.7490/f1000research.1116751.1" style="word-break: break-all;" target="_blank">https://doi.org/10.7490/f1000research.1116751.1</a></li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>1</strong> recorded events globally
+                        
+                    </p>
+<p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+<em>(See specific sources and examples in the Online Mentions section below).</em>
+</p>
+</section>
+</div>
+<div class="grid-2" style="align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Citation context</span> <span class="badge">scite</span></h2>
+<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+<li><strong>Total:</strong> 3</li>
+<li><strong>Supporting:</strong> 0</li>
+<li><strong>Mentioning:</strong> 2</li>
+<li><strong>Contradicting:</strong> 0</li>
+</ul>
+</section>
+</div>
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+</div>
+</div>
+<section class="card" id="sec-citing">
+<h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+                Analysis of the 8 most recent citing works. 
+                <br/>
+<strong>137.5%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>7.5</strong> times itself.
+            </div>
+<div class="cite-analysis-always"><div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+<ul class="metric-list">
+<li><strong>Citing work types:</strong>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (5)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (3)</span>
+</li>
+<li><strong>Top citing venues:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">F1000Research (2)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nature (1)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Learned Publishing (1)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">CIN Computers Informatics Nursing (1)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">College &amp; Research Libraries (1)</span>
+</li>
+<li><strong>Top citing concepts:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Political science (6)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Publishing (3)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Public relations (2)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Incentive (2)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Social science (2)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Suite (1)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Novelty (1)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Extant taxon (1)</span>
+</li>
+<li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+<strong>Citation timeline:</strong>
+<div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+<canvas data-labels="[2019, 2020, 2021, 2022, 2023, 2024]" data-values="[1, 2, 1, 1, 2, 1]" id="citationChart">
+</canvas>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="cite-tabs">
+<button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-ppl')">👤 Top Citers</button>
+</div>
+<div class="cite-tab-pane active" id="cite-geo"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (2)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Israel (2)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (1)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Netherlands (1)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Canada (1)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (1)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">France (1)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Italy (1)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Brazil (1)</span>
+</div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (5)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Company (3)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (2)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (2)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Healthcare (1)</span>
+</div>
+</div></div>
+<div class="cite-tab-pane" id="cite-inst"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Taylor and Francis (United Kingdom)</strong>
+<a class="orcid-badge" href="https://ror.org/04bd6je18" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Clarivate (United States)</strong>
+<a class="orcid-badge" href="https://ror.org/04fce1c40" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(1)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Mount Saint Vincent University</strong>
+<a class="orcid-badge" href="https://ror.org/03g3p3b82" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(1)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>African Studies Centre</strong>
+<a class="orcid-badge" href="https://ror.org/00ma2r948" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(1)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Indiana University Bloomington</strong>
+<a class="orcid-badge" href="https://ror.org/02k40bc56" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(1)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>European Molecular Biology Organization</strong>
+<a class="orcid-badge" href="https://ror.org/04wfr2810" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(1)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Leiden University</strong>
+<a class="orcid-badge" href="https://ror.org/027bh9e22" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(1)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Newbury College</strong>
+<a class="orcid-badge" href="https://ror.org/01g4a4162" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(1)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>International Office for Water</strong>
+<a class="orcid-badge" href="https://ror.org/04aptxm88" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(1)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Organic Research Centre</strong>
+<a class="orcid-badge" href="https://ror.org/04b8gx121" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(1)</span>
+</li>
+</ul>
+</div></div>
+<div class="cite-tab-pane" id="cite-ppl"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Shlomit Hadad</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-2099-3217" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Andrew Kelly</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-5785-4782" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Victoria Gardner</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-8519-6377" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Anna C. Gilbert</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-9627-9274" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Paul Wouters</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4324-5732" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(1)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Cassidy R. Sugimoto</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-8608-3203" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(1)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Vincent Larivière</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-2733-0689" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(1)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Marie McVeigh</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-0590-0537" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(1)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Bernd Pulverer</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-2219-5841" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(1)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Sarah de Rijcke</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-4652-0362" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(1)</span>
+</li>
+</ul>
+</div></div>
+</section>
+<div class="grid-2" id="sec-mentions">
+<section class="card span-full" id="sec-mentions" style="margin-bottom:0;">
+<h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref &amp; Open Web</span></h2>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin-top: 1.5rem; margin-bottom: 1.5rem;">
+<li style="margin-bottom: 0.6rem;">
+<a href="http://retractionwatch.com/2019/05/18/weekend-reads-fraud-in-generic-drugs-a-university-stonewalls-after-a-data-breach-involving-hiv-data-behind-fertility-app-retracted/" style="color: #2563eb; text-decoration: none; font-weight: 500;" target="_blank">
+                            Weekend reads: Fraud in generic drugs; a university stonewalls after a data breach involving HIV; data behind fertility app retracted
+                        </a>
+<span class="badge" style="background: #f3f4f6; color: #4b5563; font-size: 0.65rem; text-transform: uppercase; margin-left: 0.4rem;">newsfeed</span>
+</li>
+</ul>
+</section>
+</div>
+<div class="grid-2" id="sec-contributors">
+<section class="card" id="sec-contributors" style="margin-bottom:0;">
+<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">25 authors · 0 institutions</div>
+<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Cassidy R. Sugimoto</strong>
+<span class="badge">First</span>
+<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-8608-3203" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Liz Allen</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-9298-3168" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Jeroen Bosman</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-5796-2727" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Tindaro Cicero</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-1926-8317" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Stephen Curry</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-0552-8870" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Sarah de Rijcke</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-4652-0362" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Annette Flanagin</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-9114-6221" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Michele S. Garfinkel</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-8946-7907" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Michael Hill</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Vincent Larivière</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-2733-0689" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Jennifer Lin</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-9680-2328" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Marco Malgarini</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-9553-5435" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Ben R. Martin</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-5186-0903" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Marie McVeigh</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-0590-0537" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Alexis-Michel Mugabushaka</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-4624-568X" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Dakota Murray</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-7119-0169" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Renato H. L. Pedrosa</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-1622-9964" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Andrew Plume</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4942-1426" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>James Pringle</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-5121-6504" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Bernd Pulverer</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-2219-5841" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Martijn Roelandse</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-5596-8084" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Fei Shu</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-1946-5065" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>James T. Walker</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-3477-0236" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Ludo Waltman</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-8249-1752" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Paul Wouters</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4324-5732" target="_blank">ORCID</a>
+</li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">23 specific concepts identified.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Impact factor</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Citation</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scrutiny</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Context (archaeology)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Library science</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Citation index</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Quality (philosophy)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Political science</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Public relations</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Audience measurement</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Publication</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Citation impact</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Publishing</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Collection development</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Conversation</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sociology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">History</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Law</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Epistemology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Philosophy</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Communication</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Archaeology</span>
+</div>
+</section>
+</div>
+<section class="card no-print" id="sec-citations">
+<h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">Displaying 8 most recent citing works</div>
+<div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+<table>
+<thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+<tbody id="cit-tbody"></tbody>
+</table>
+</div>
+<div class="cit-pagination">
+<span class="cit-pagination-info" id="cit-info">Loading…</span>
+<div class="cit-pagination-btns">
+<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
+<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
+<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
+</div>
+</div>
+
+<div class="cit-pagination">
+<span class="cit-pagination-info" id="cit-info">Loading…</span>
+<div class="cit-pagination-btns">
+<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
+<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
+<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
+</div>
+</div>
+</section>
+<footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+<div style="display: flex; flex-direction: column; gap: 0.4rem;">
+<div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+<svg fill="none" height="16" stroke="currentColor" style="color: #9ca3af;" viewbox="0 0 24 24" width="16"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Understanding our metrics: <a href="https://www.openscience.works/about.html" style="color: #2563eb; text-decoration: none; font-weight: 600;" target="_blank">Read the Methodology &amp; Legend ↗</a></span>
+</div>
+<div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-03-31T13:49:02+00:00
+                </div>
+</div>
+</footer>
+</div>
+<script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+<script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<script>
+(function() {
+  var DATA = [{"year": "2019", "title": "Rethinking impact factors: better ways to judge a journal", "venue": "Nature", "doi": "10.1038/d41586-019-01643-3", "doi_url": "https://doi.org/10.1038/d41586-019-01643-3"}, {"year": "2020", "title": "The changed – and changing – landscape of serials publishing: Review of the literature on emerging models", "venue": "Learned Publishing", "doi": "10.1002/leap.1288", "doi_url": "https://doi.org/10.1002/leap.1288"}, {"year": "2020", "title": "Mobile Health in Adherence to Oral Anticancer Drugs", "venue": "CIN Computers Informatics Nursing", "doi": "10.1097/cin.0000000000000643", "doi_url": "https://doi.org/10.1097/cin.0000000000000643"}, {"year": "2024", "title": "Librarians and Academic Libraries’ Role in Promoting Open Access: What Needs to Change?", "venue": "College & Research Libraries", "doi": "10.5860/crl.85.4.464", "doi_url": "https://doi.org/10.5860/crl.85.4.464"}, {"year": "2021", "title": "Limites dos indicadores bibliométricos de bases de dados internacionais para avaliação da Pós-Graduação brasileira: a cobertura da Web of Science nas diferentes áreas do conhecimento", "venue": "Transinformação", "doi": "10.1590/2318-0889202133e200071", "doi_url": "https://doi.org/10.1590/2318-0889202133e200071"}, {"year": "2023", "title": "Librarians and Academic Libraries’ Role in Promoting Open Access: What Needs to Change?", "venue": "SocArXiv (OSF Preprints)", "doi": "10.31235/osf.io/shqnv", "doi_url": "https://doi.org/10.31235/osf.io/shqnv"}, {"year": "2022", "title": "The disconnect between researcher ambitions and reality in achieving impact in the Earth & Environmental Sciences – author survey", "venue": "F1000Research", "doi": "10.12688/f1000research.28324.2", "doi_url": "https://doi.org/10.12688/f1000research.28324.2"}, {"year": "2023", "title": "The disconnect between researcher ambitions and reality in achieving impact in the Earth & Environmental Sciences – author survey", "venue": "F1000Research", "doi": "10.12688/f1000research.28324.3", "doi_url": "https://doi.org/10.12688/f1000research.28324.3"}];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  var DATA = [];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</body>
+</html>

@@ -106,7 +106,7 @@
           margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
         .roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
 
-        .role-pill{display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+        .role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
           border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
           position:relative;transition:opacity .15s;}
         .role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
@@ -116,12 +116,12 @@
         .role-pill:hover{opacity:1!important;}
 
         /* CSS tooltip for role descriptions */
-        .role-pill[title]:hover::after{
-          content:attr(title);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+        .role-pill[data-tip]:hover::after{
+          content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
           background:#111827;color:white;padding:.5rem .75rem;border-radius:.5rem;font-size:.72rem;
           width:230px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
           pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
-        .role-pill[title]:hover::before{
+        .role-pill[data-tip]:hover::before{
           content:'';position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);
           border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
 
@@ -185,11 +185,49 @@
         .sig-teal  {background:#ccfbf1;color:#0f766e;}
         .sig-amber {background:#fef3c7;color:#b45309;}
         .sig-blue  {background:#dbeafe;color:#1d4ed8;}
-    </style>
+    
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+</style>
     <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div class="site-nav-links">
+    <a href="index.html">← All stories</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
     <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
         <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
         Print PDF Report

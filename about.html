@@ -2,467 +2,630 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>openscience.works - about</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — openscience.works</title>
+  <meta name="description" content="openscience.works turns fragmented research signals into structured impact narratives. Built on 25+ open data sources, transparent methods, and open infrastructure.">
   <style>
-    * { box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --bg:            #f3f4f6;
+      --surface:       #ffffff;
+      --border:        #e5e7eb;
+      --text:          #111827;
+      --muted:         #6b7280;
+      --accent:        #2E4563;
+      --accent-light:  #e8edf3;
+      --fold:          #F2C94C;
+      --c-article:     #3C5A7F;
+      --c-book:        #B34444;
+      --c-data:        #34675A;
+      --c-software:    #6A4FA3;
+      --radius:        0.9rem;
+      --shadow:        0 4px 24px rgba(15,23,42,0.08);
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Montserrat, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f3f4f6;
-      color: #111827;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Montserrat, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0; padding: 0;
       line-height: 1.6;
     }
-    .page {
-      max-width: 900px;
-      margin: 2.5rem auto;
-      padding: 0 1.25rem 3rem;
-    }
-    header.hero { margin-bottom: 1rem; }
-    .hero-title {
-      font-size: 2.1rem;
-      font-weight: 700;
-      margin: 0;
-      color: #111827;
-    }
-    .card {
-      background: #ffffff;
-      border-radius: 0.9rem;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-      padding: 2rem 2.25rem;
-      margin-bottom: 1.75rem;
-    }
-    .card h2 {
-      margin-top: 0;
-      font-size: 1.1rem;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      color: #6b7280;
-      border-bottom: 2px solid #f3f4f6;
-      padding-bottom: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-    .card h2 span {
-      color: #111827;
-      font-weight: 600;
-      text-transform: none;
-      font-size: 1.35rem;
-      letter-spacing: 0;
-    }
-    .card h3 {
-      font-size: 1.1rem;
-      color: #111827;
-      margin-top: 1.75rem;
-      margin-bottom: 0.75rem;
-    }
-    .story-text { 
-      font-size: 1rem; 
-      color: #374151; 
-      margin-bottom: 1rem;
-    }
-    .header-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.25rem;
-    }
-    .logo-title { display: flex; align-items: center; gap: 1.25rem; }
-    .logo-wrap img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      display: block;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .tag {
-      display: inline-block;
-      padding: 0.3rem 0.8rem;
-      border-radius: 999px;
-      background: #e5f2ff;
-      color: #1d4ed8;
-      font-size: 0.85rem;
-      font-weight: 500;
-      margin: 0.2rem 0.3rem 0.2rem 0;
-    }
-    ul.metric-list { 
-      padding-left: 1.5rem; 
-      margin: 0.5rem 0 1.5rem 0; 
-      color: #374151;
-    }
-    ul.metric-list li { 
-      margin-bottom: 0.6rem; 
-    }
-    footer.page-footer {
-      margin-top: 2rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: #9ca3af;
-    }
-    footer.page-footer a {
-      color: #6b7280;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    footer.page-footer a:hover {
-      text-decoration: underline;
-    }
-    /* Inferred Role Icon Layout */
-    .role-grid { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1rem; }
-    .role-card { display: flex; align-items: flex-start; gap: 1.25rem; background: #ffffff; border: 1px solid #f3f4f6; padding: 1.25rem; border-radius: 0.75rem; transition: box-shadow 0.2s; }
-    .role-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-    .role-icon { flex-shrink: 0; width: 48px; height: 48px; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; }
-    .role-icon svg { width: 24px; height: 24px; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
-    .role-content h4 { margin: 0 0 0.25rem 0; font-size: 1.05rem; color: #111827; }
-    .role-content p { margin: 0; font-size: 0.9rem; color: #4b5563; line-height: 1.5; }
 
-    /* The Color Spectrum */
-    .theme-blue { background: #dbeafe; color: #2563eb; }
-    .theme-teal { background: #ccfbf1; color: #0d9488; }
-    .theme-purple { background: #f3e8ff; color: #9333ea; }
-    .theme-amber { background: #fef3c7; color: #d97706; }
-    .theme-orange { background: #ffedd5; color: #ea580c; }
-    .theme-red { background: #fee2e2; color: #dc2626; }
-    .theme-rose { background: #ffe4e6; color: #e11d48; }
+    /* ── SITE NAV ─────────────────────────────────────────── */
+    .site-nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0.6rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.6rem;
+      text-decoration: none; color: var(--text);
+      font-weight: 700; font-size: 1rem;
+    }
+    .site-nav-brand img { width: 32px; height: 32px; object-fit: contain; }
+    .brand-dot { color: var(--fold); }
+    .site-nav-links { display: flex; gap: 0.25rem; }
+    .site-nav-links a {
+      padding: 0.4rem 0.85rem; border-radius: 0.4rem;
+      font-size: 0.88rem; font-weight: 500;
+      text-decoration: none; color: var(--muted);
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: var(--bg); color: var(--text); }
+    .site-nav-links a.active { background: var(--accent-light); color: var(--accent); }
+
+    /* ── HERO ─────────────────────────────────────────────── */
+    .hero {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2.5rem;
+    }
+    .hero-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: auto 1fr;
+      gap: 2.25rem; align-items: center;
+    }
+    @media (max-width: 600px) { .hero-inner { grid-template-columns: 1fr; } }
+    .hero-logo { width: 110px; height: 110px; object-fit: contain; }
+    .hero-text h1 { font-size: 2rem; font-weight: 800; margin: 0 0 0.3rem; letter-spacing: -0.02em; }
+    .hero-text h1 .dot { color: var(--fold); }
+    .hero-tagline { font-size: 1.05rem; color: var(--muted); margin: 0 0 1.25rem; }
+    .hero-stats { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .stat-pill {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 999px; padding: 0.3rem 0.9rem;
+      font-size: 0.88rem; font-weight: 600;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .stat-pill .num { color: var(--c-article); font-size: 1rem; font-weight: 700; }
+    .hero-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      padding: 0.5rem 1.1rem; border-radius: 0.5rem;
+      font-size: 0.9rem; font-weight: 600;
+      text-decoration: none; transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.82; }
+    .btn-primary { background: var(--c-article); color: #fff; }
+    .btn-outline { background: transparent; color: var(--c-article); border: 1.5px solid var(--c-article); }
+
+    /* ── LAYOUT ───────────────────────────────────────────── */
+    .page { max-width: 1100px; margin: 2rem auto; padding: 0 1.25rem 4rem; }
+
+    .section-label {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--muted); margin: 2.5rem 0 0.75rem;
+    }
+
+    /* ── CARDS ────────────────────────────────────────────── */
+    .card {
+      background: var(--surface); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 2rem 2.25rem; margin-bottom: 1.75rem;
+    }
+    .card > h2:first-child {
+      margin-top: 0; font-size: 1.35rem; font-weight: 700;
+      color: var(--text); border-bottom: 2px solid var(--bg);
+      padding-bottom: 0.75rem; margin-bottom: 1.25rem;
+    }
+    .card h3 { font-size: 1.05rem; color: var(--text); margin: 1.75rem 0 0.75rem; }
+    .card p  { color: #374151; margin-bottom: 0.9rem; }
+    .card ul { padding-left: 1.4rem; color: #374151; }
+    .card ul li { margin-bottom: 0.5rem; }
+
+    /* ── STORY TYPE GRID ──────────────────────────────────── */
+    .story-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+    @media (max-width: 768px) { .story-grid { grid-template-columns: 1fr 1fr; } }
+    .story-card {
+      border-radius: 0.75rem; padding: 1.25rem 1.1rem;
+      display: flex; flex-direction: column; gap: 0.4rem;
+      text-decoration: none; transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .story-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+    .story-card-icon { width: 72px; height: 72px; border-radius: 0.75rem; overflow: hidden; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center; }
+    .story-card-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .story-card h3 { margin: 0; font-size: 1rem; font-weight: 700; }
+    .story-card p  { margin: 0; font-size: 0.82rem; line-height: 1.45; }
+    .story-card .bullets { margin: 0.4rem 0 0; padding-left: 1rem; font-size: 0.79rem; }
+    .story-card .bullets li { margin-bottom: 0.2rem; }
+    .sc-article  { background: #ebf0f7; color: var(--c-article); }
+    
+    .sc-book     { background: #f7ebeb; color: var(--c-book); }
+    
+    .sc-data     { background: #e8f2ef; color: var(--c-data); }
+    
+    .sc-software { background: #f0ecf9; color: var(--c-software); }
+    
+
+    /* ── PIPELINE ─────────────────────────────────────────── */
+    .pipeline {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 1px;
+      background: var(--border); border-radius: var(--radius); overflow: hidden;
+    }
+    @media (max-width: 700px) { .pipeline { grid-template-columns: 1fr 1fr; } }
+    .pipeline-step { background: var(--surface); padding: 1.4rem 1.25rem; }
+    .pipeline-num {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.35rem;
+    }
+    .pipeline-step h3 { margin: 0 0 0.4rem; font-size: 1rem; color: var(--text); }
+    .pipeline-step p  { margin: 0 0 0.75rem; font-size: 0.82rem; color: #4b5563; line-height: 1.5; }
+    .pipeline-details { display: flex; flex-direction: column; gap: 0.18rem; }
+    .pipeline-details span { font-size: 0.76rem; color: var(--muted); }
+    .pipeline-details span::before { content: "· "; }
+
+    /* ── DATA SOURCES ─────────────────────────────────────── */
+    .sources-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+    @media (max-width: 768px) { .sources-grid { grid-template-columns: 1fr 1fr; } }
+    .source-cat { background: var(--bg); border-radius: 0.75rem; padding: 1.1rem; }
+    .source-cat-label {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.4rem;
+    }
+    .source-cat-title { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; }
+    .source-cat-desc  { font-size: 0.8rem; color: #4b5563; margin-bottom: 0.6rem; line-height: 1.4; }
+    .source-names { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .source-chip {
+      font-size: 0.74rem; font-weight: 500;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 999px; padding: 0.15rem 0.55rem; color: var(--text);
+    }
+
+    /* ── ROLES ────────────────────────────────────────────── */
+    .roles-domain { margin-bottom: 1.75rem; }
+    .roles-domain-header {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 1rem; font-weight: 700;
+      margin-bottom: 0.75rem; padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--bg);
+    }
+    .roles-domain-icon {
+      width: 28px; height: 28px; border-radius: 0.4rem;
+      display: flex; align-items: center; justify-content: center; font-size: 0.95rem;
+    }
+    .roles-items { display: flex; flex-direction: column; gap: 0.6rem; }
+    .role-item {
+      display: flex; align-items: flex-start; gap: 0.9rem;
+      padding: 0.85rem 1rem; border-radius: 0.6rem; background: var(--bg);
+    }
+    .role-icon {
+      flex-shrink: 0; width: 36px; height: 36px; border-radius: 0.4rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .role-icon svg { width: 18px; height: 18px; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .role-text h4 { margin: 0 0 0.2rem; font-size: 0.95rem; color: var(--text); }
+    .role-text p  { margin: 0; font-size: 0.82rem; color: #4b5563; line-height: 1.45; }
+
+    /* ── BADGES ───────────────────────────────────────────── */
+    .badges-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; }
+    @media (max-width: 640px) { .badges-grid { grid-template-columns: 1fr; } }
+    .badge-item {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 0.75rem 0.9rem; border-radius: 0.6rem; background: var(--bg);
+    }
+    .badge-chip {
+      flex-shrink: 0; padding: 0.2rem 0.6rem; border-radius: 999px;
+      font-size: 0.72rem; font-weight: 700; white-space: nowrap;
+    }
+    .badge-desc { font-size: 0.82rem; color: #4b5563; line-height: 1.4; }
+
+    /* ── PERSON ───────────────────────────────────────────── */
+    .person-card { display: flex; gap: 1.75rem; align-items: flex-start; }
+    @media (max-width: 640px) { .person-card { flex-direction: column; } }
+    .person-avatar {
+      flex-shrink: 0; width: 90px; height: 90px; border-radius: 50%;
+      background: var(--accent-light); display: flex;
+      align-items: center; justify-content: center; font-size: 2.2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .person-name  { font-size: 1.15rem; font-weight: 700; margin: 0 0 0.15rem; }
+    .person-title { font-size: 0.88rem; color: var(--muted); margin: 0 0 0.75rem; }
+    .person-bio   { font-size: 0.9rem; color: #374151; line-height: 1.65; margin-bottom: 0.75rem; }
+    .person-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .person-link  {
+      font-size: 0.83rem; font-weight: 500; color: var(--c-article);
+      text-decoration: none; display: flex; align-items: center; gap: 0.3rem;
+    }
+    .person-link:hover { text-decoration: underline; }
+
+    /* ── FOOTER ───────────────────────────────────────────── */
+    footer { text-align: center; padding: 2rem 1rem 3rem; font-size: 0.85rem; color: var(--muted); }
+    footer a { color: #6b7280; text-decoration: none; font-weight: 500; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
+
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div class="site-nav-links">
+    <a href="index.html">Browse stories</a>
+    <a href="about.html" class="active">About</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <img class="hero-logo" src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works logo">
+    <div class="hero-text">
+      <h1><b>openscience</b><span class="dot">.</span><span style="font-weight:400;">works</span></h1>
+      <p class="hero-tagline">Turning data into impact narratives.</p>
+      <div class="hero-stats">
+        <div class="stat-pill"><span class="num">25+</span>&nbsp;data sources</div>
+        <div class="stat-pill"><span class="num">4</span>&nbsp;story types</div>
+        <div class="stat-pill"><span class="num">247</span>&nbsp;impact stories</div>
+        <div class="stat-pill"><span class="num">100%</span>&nbsp;open infrastructure</div>
+      </div>
+      <div class="hero-links">
+        <a class="btn btn-primary" href="index.html">Browse stories ↓</a>
+        <a class="btn btn-outline" href="mailto:martijn.roelandse@openscience.works">Get in touch</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="page">
 
-  <header class="hero">
-    <div class="header-bar">
-      <div class="logo-title">
-        <div class="logo-wrap">
-          <img src="Openscienceworks - tranparant.png" alt="openscience.works logo" style="cursor: pointer;" onclick="document.location.href='index.html';">
-        </div>
-        <div>
-          <h1 class="hero-title">About us</h1>
-          <p style="color: #6b7280; margin: 0.25rem 0 0 0; font-size: 1.05rem;">Turning data into impact narratives.</p>
-        </div>
-      </div>
-    </div>  
-  </header>
+  <!-- Mission -->
+  <div class="section-label">Our mission</div>
+  <div class="card">
+    <h2>About <b>openscience</b>.works</h2>
+    <p><b>openscience.works</b> builds open, reusable services that help researchers, libraries, and publishers understand how open scholarly works are used, shared, and discussed across the research ecosystem. Drawing on open data and transparent methods, the platform turns diverse signals into clear, <em>contextual impact narratives — not opaque scores</em>.</p>
+    <p>Research impact has always been fragmented: usage, citations, reviews, repositories, library holdings, and online discussion are spread across dozens of disconnected platforms. Instead of asking users to chase these signals themselves, openscience.works connects them into a single, readable story for every work — from journal articles and monographs to datasets and software.</p>
+    <p style="margin-bottom:0;">Built on transparent sources, open infrastructure, and reproducible methods, every data point in every story is traceable back to its origin.</p>
+  </div>
 
-  <section class="card">
-    <h2><span>About <b>openscience</b>.works</span></h2>
-    <p class="story-text"><b>openscience</b>.works builds open, reusable services that help researchers, libraries, and publishers understand how open scholarly works are used, shared, and discussed across the research ecosystem. Drawing on open data and transparent methods, the platform turns diverse signals into clear, <i>contextual impact narratives rather than opaque scores</i>.</p> 
-    <p class="story-text">Instead of reducing research to single metrics, <b>openscience</b>.works focuses on helping organisations tell richer, evidence-based stories about the reach and value of open scholarship. The services are designed to support responsible, discipline-sensitive interpretation and to make every data source transparent and inspectable.</p> 
-    
-    <div style="margin-top: 1.5rem;">
-      <span class="tag">BookStories</span>
-      <span class="tag">ArticleStories</span>
-      <span class="tag">DataStories</span>
-      <span class="tag">SoftwareStories</span>
+  <!-- Story types -->
+  <div class="section-label">What we cover</div>
+  <div class="card">
+    <h2>Four Story Types</h2>
+    <p style="color:var(--muted);margin-bottom:1.25rem;">Unified intelligence across books, articles, datasets, and software.</p>
+    <div class="story-grid">
+      <a class="story-card sc-article" href="index.html">
+        <div class="story-card-icon"><img src="openscience.works%20logos/Articlestories%20new%20logo.png" alt="ArticleStory"></div>
+        <h3>ArticleStories</h3>
+        <p>Connecting journal articles to policy, public discussion, and broader research visibility.</p>
+        <ul class="bullets"><li>Citation context (scite)</li><li>Policy &amp; media impact</li><li>Open access tracking</li></ul>
+      </a>
+      <a class="story-card sc-book" href="index.html">
+        <div class="story-card-icon"><img src="openscience.works%20logos/Bookstories%20new%20logo.png" alt="BookStory"></div>
+        <h3>BookStories</h3>
+        <p>Tracking monographs, chapters, and edited volumes across usage, citations, and teaching.</p>
+        <ul class="bullets"><li>OAPEN download timelines</li><li>Library holdings</li><li>Educational uptake</li></ul>
+      </a>
+      <a class="story-card sc-data" href="index.html">
+        <div class="story-card-icon"><img src="openscience.works%20logos/Datastories%20new%20logo.png" alt="DataStory"></div>
+        <h3>DataStories</h3>
+        <p>Making datasets discoverable, reusable, and connected to the scholarly record.</p>
+        <ul class="bullets"><li>Dataset reuse &amp; citations</li><li>Repository linkage</li><li>FAIR dissemination</li></ul>
+      </a>
+      <a class="story-card sc-software" href="index.html">
+        <div class="story-card-icon"><img src="openscience.works%20logos/Softwarestories%20new%20logo.png" alt="SoftwareStory"></div>
+        <h3>SoftwareStories</h3>
+        <p>Tracking scientific software and code adoption across the research ecosystem.</p>
+        <ul class="bullets"><li>GitHub integration</li><li>Dependencies &amp; forks</li><li>Research reuse</li></ul>
+      </a>
     </div>
-  </section>
+  </div>
 
-  <section class="card">
-    <h2><span>Methodology & Data Sources</span></h2>
-    
-    <h3>How do we calculate impact?</h3>
-    <p class="story-text">We believe that citations alone do not tell the full story of a piece of research. This engine looks at a variety of signals to determine the impact of a work, resulting in what we call <strong>Inferred Roles</strong>.</p>
-
-    <section class="card">
-      <h2><span>Inferred Roles & Classification</span></h2>
-      <p class="story-text">Our pipeline goes beyond simple citation counts. By analyzing the composition of a work's attention, usage, and citing landscape, we dynamically assign "Inferred Roles" across four major impact domains:</p>
-  
-      <h3 style="margin-top: 2rem; color: #1e3a8a; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem;">1. Academic & Scientific Impact</h3>
-      <div class="role-grid">
-          <div class="role-card">
-              <div class="role-icon theme-blue">
-                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-              </div>
-              <div class="role-content">
-                  <h4>Scholarly Uptake</h4>
-                  <p>High citation density within core academic journals and monographs. The work serves as a foundational building block for further research.</p>
-              </div>
-          </div>
-  
-          <div class="role-card">
-              <div class="role-icon theme-blue">
-                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-              </div>
-              <div class="role-content">
-                  <h4>Rapid Uptake</h4>
-                  <p>The work has accumulated a high volume of citations or downloads in an unusually short period since publication, indicating immediate relevance and urgency within the field.</p>
-              </div>
-          </div>
-  
-          <div class="role-card">
-              <div class="role-icon theme-blue">
-                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-              </div>
-              <div class="role-content">
-                  <h4>Reference Point for Synthesis</h4>
-                  <p>Frequently cited in literature reviews, meta-analyses, or encyclopedic entries, serving as a "shorthand" for a specific finding or historical overview.</p>
-              </div>
-          </div>
-  
-          <div class="role-card">
-              <div class="role-icon theme-teal">
-                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
-              </div>
-              <div class="role-content">
-                  <h4>Methodological Anchor</h4>
-                  <p>The work serves as a standard protocol, framework, or software tool utilized by other researchers (triggered by specific citation contexts or high usage in datasets and software).</p>
-              </div>
-          </div>
-  
-          <div class="role-card">
-              <div class="role-icon theme-teal">
-                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
-              </div>
-              <div class="role-content">
-                  <h4>Evidence-Bearing Reference</h4>
-                  <p>The work is explicitly applied as hard data or methodology (triggered by high "supporting" citation tallies via scite or links to registered clinical trials).</p>
-              </div>
-          </div>
-      </div>
-  
-      <h3 style="margin-top: 2.5rem; color: #6b21a8; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem;">2. Readership & Educational Impact</h3>
-      <div class="role-grid">
-          <div class="role-card">
-              <div class="role-icon theme-purple">
-                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-              </div>
-              <div class="role-content">
-                  <h4>Usage-Driven Uptake</h4>
-                  <p>The work demonstrates immense value through direct consumption rather than formal citation (triggered by high download counts on platforms like OAPEN/OPERAS, massive HTML views, or heavy library holdings).</p>
-              </div>
-          </div>
-  
-          <div class="role-card">
-              <div class="role-icon theme-purple">
-                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
-              </div>
-              <div class="role-content">
-                  <h4>Pedagogical Anchor</h4>
-                  <p>The work has been widely adopted for teaching and training (triggered by inclusion in Open Educational Resources (OER) syllabi, reading lists, or textbook citations).</p>
-              </div>
-          </div>
-      </div>
-  
-      <h3 style="margin-top: 2.5rem; color: #9a3412; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem;">3. Public Engagement & Media</h3>
-      <div class="role-grid">
-          <div class="role-card">
-              <div class="role-icon theme-amber">
-                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
-              </div>
-              <div class="role-content">
-                  <h4>Active Public Discourse</h4>
-                  <p>High, fast-moving engagement in community spaces; the work has sparked conversation (triggered by heavy activity on X/Twitter, Reddit, Facebook, or community blogs).</p>
-              </div>
-          </div>
-  
-          <div class="role-card">
-              <div class="role-icon theme-amber">
-                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-              </div>
-              <div class="role-content">
-                  <h4>Public Visibility & Knowledge Base</h4>
-                  <p>The work serves as a trusted reference for the general public, establishing a lasting public record (triggered by citations in Wikipedia, Stack Exchange, or non-academic wikis).</p>
-              </div>
-          </div>
-  
-          <div class="role-card">
-              <div class="role-icon theme-orange">
-                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2.5 2.5 0 00-2.5-2.5H14"></path></svg>
-              </div>
-              <div class="role-content">
-                  <h4>High-Visibility Uptake (Media)</h4>
-                  <p>The work has "broken out" into mainstream awareness (triggered by mentions in prestigious global news outlets, broadsheet newspapers, or high-impact professional magazines).</p>
-              </div>
-          </div>
-      </div>
-  
-      <h3 style="margin-top: 2.5rem; color: #9f1239; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem;">4. Practical & Real-World Application</h3>
-      <div class="role-grid">
-          <div class="role-card">
-              <div class="role-icon theme-red">
-                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-              </div>
-              <div class="role-content">
-                  <h4>Sustainability & Policy Relevance</h4>
-                  <p>Direct influence on governance and societal frameworks (triggered by citations in government white papers, WHO reports, NGO briefs, or UN policy documents).</p>
-              </div>
-          </div>
-  
-          <div class="role-card">
-              <div class="role-icon theme-rose">
-                  <svg stroke="currentColor" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-              </div>
-              <div class="role-content">
-                  <h4>Commercial Linkage</h4>
-                  <p>The work crosses over into the retail or commercial sphere, indicating consumer interest or industry application (triggered by strong presence on Amazon, Goodreads, or patents).</p>
-              </div>
-          </div>
-      </div>
-  </section>
-
-  <section class="card">
-    <h2 style="margin-top: 2.5rem;"><span>Intelligence Markers & Badges</span></h2>
-    <p class="story-text" style="margin-bottom: 1.5rem;">Our reports use dynamic visual chips and status badges in the header to provide an immediate census of a work's output type, integrity, and real-world application.</p>
-
-    <div class="card" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid #e5e7eb; box-shadow: none;">
-        <div style="background: #e0e7ff; color: #2563eb; padding: 0.8rem; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+  <!-- How it works -->
+  <div class="section-label">Under the hood</div>
+  <div class="card">
+    <h2>How It Works</h2>
+    <p style="color:var(--muted);margin-bottom:1.25rem;">Aggregating, normalising, and contextualising research signals across the open ecosystem.</p>
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <div class="pipeline-num">01 · Connect</div>
+        <h3>Aggregate</h3>
+        <p>Ingest metadata and signals from 25+ trusted open APIs and repositories in real time.</p>
+        <div class="pipeline-details">
+          <span>OpenAlex, Crossref, DataCite</span>
+          <span>OAPEN, DOAB, Europe PMC</span>
+          <span>Zenodo, Figshare, Dryad</span>
+          <span>Public web &amp; social platforms</span>
         </div>
-        <div>
-            <h3 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: #111827;">Work Type & Access</h3>
-            <p class="story-text" style="margin-top: 0; margin-bottom: 1rem; color: #4b5563;">Defines the specific form and availability of the scholarly contribution:</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.8rem;">
-                <span class="badge" style="background: #f9fafb; color: #374151; border: 1px solid #d1d5db; font-weight: normal; padding: 0.3rem 0.8rem;">Article</span>
-                <span class="badge" style="background: #f9fafb; color: #374151; border: 1px solid #d1d5db; font-weight: normal; padding: 0.3rem 0.8rem;">Preprint</span>
-                <span class="badge" style="background: #f9fafb; color: #374151; border: 1px solid #d1d5db; font-weight: normal; padding: 0.3rem 0.8rem;">Dataset</span>
-                <span class="badge" style="background: #f9fafb; color: #374151; border: 1px solid #d1d5db; font-weight: normal; padding: 0.3rem 0.8rem;">Software</span>
-                <span class="badge" style="background: #f9fafb; color: #374151; border: 1px solid #d1d5db; font-weight: normal; padding: 0.3rem 0.8rem;">Chapter</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                <div style="display:inline-block; background:#fef08a; color:#854d0e; border: 1px solid #fde047; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; font-weight:600;">
-                    <svg style="width:14px; height:14px; display:inline; vertical-align:middle; margin-right:4px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg> Open Access (Gold)
-                </div>
-                <span class="muted" style="font-size: 0.85rem;">Verified via Unpaywall, DOAB, or Thoth.</span>
-            </div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-num">02 · Normalise</div>
+        <h3>Resolve</h3>
+        <p>Clean and harmonise raw signals — resolving identifiers, contributors, affiliations, and duplicates.</p>
+        <div class="pipeline-details">
+          <span>Author disambiguation</span>
+          <span>Identifier harmonisation</span>
+          <span>Affiliation resolution</span>
+          <span>Output relationship mapping</span>
         </div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-num">03 · Contextualise</div>
+        <h3>Analyse</h3>
+        <p>Move beyond raw counts to understand how a work is used, taught, discussed, and cited.</p>
+        <div class="pipeline-details">
+          <span>Inferred role detection</span>
+          <span>Educational uptake signals</span>
+          <span>Policy relevance indicators</span>
+          <span>Citation context (scite)</span>
+        </div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-num">04 · Generate</div>
+        <h3>Narrate</h3>
+        <p>Produce readable impact stories, portfolio dashboards, and API-accessible outputs.</p>
+        <div class="pipeline-details">
+          <span>Author-facing story pages</span>
+          <span>Portfolio intelligence</span>
+          <span>API endpoints</span>
+          <span>Reusable reporting workflows</span>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="card" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid #e5e7eb; box-shadow: none;">
-        <div style="background: #d1fae5; color: #059669; padding: 0.8rem; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+  <!-- Data sources -->
+  <div class="section-label">Data provenance</div>
+  <div class="card">
+    <h2>Data Sources &amp; Integrations</h2>
+    <p style="color:var(--muted);margin-bottom:1.25rem;">Traditional academic metrics only tell a fraction of the story. openscience.works aggregates signals from 25+ trusted open sources across six dimensions.</p>
+    <div class="sources-grid">
+      <div class="source-cat">
+        <div class="source-cat-label">🎓 Academic Impact</div>
+        <div class="source-cat-title">Core Metadata &amp; Citations</div>
+        <div class="source-cat-desc">Global citation networks, affiliations, and persistent identifiers.</div>
+        <div class="source-names">
+          <span class="source-chip">OpenAlex</span>
+          <span class="source-chip">Crossref</span>
+          <span class="source-chip">DataCite</span>
         </div>
-        <div>
-            <h3 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: #111827;">Status & Integrity Badges</h3>
-            <p class="story-text" style="margin-top: 0; margin-bottom: 1.2rem; color: #4b5563;">Dynamic tags that signal publication maturity and research integrity:</p>
-            
-            <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
-                <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.5rem;">
-                    <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; margin-top: 0.1rem;">
-                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        Peer-Reviewed & Published ↗
-                    </span>
-                    <span style="color: #111827; font-size: 0.9rem;">Identifies a preprint that has successfully passed peer review and been formally published.</span>
-                </li>
-                <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.5rem;">
-                    <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1px solid #fde68a; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; margin-top: 0.1rem;">
-                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Early Sharing / Preprint ↗
-                    </span>
-                    <span style="color: #111827; font-size: 0.9rem;">Links a published journal article back to its original preprint version.</span>
-                </li>
-                <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.5rem;">
-                    <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef08a; color: #854d0e; border: 1px solid #fde047; white-space: nowrap; margin-top: 0.1rem;">
-                        Published Correction
-                    </span>
-                    <span style="color: #111827; font-size: 0.9rem;">Highlights official publisher updates, errata, or addenda tracked natively via Crossmark.</span>
-                </li>
-                <li style="margin-bottom: 0; display: flex; align-items: flex-start; gap: 0.5rem;">
-                    <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef2f2; color: #dc2626; border: 1px solid #fca5a5; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; margin-top: 0.1rem;">
-                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                        Retracted
-                    </span>
-                    <span style="color: #111827; font-size: 0.9rem;">Signals severe issues detected via the <strong>Retraction Watch</strong> database.</span>
-                </li>
-            </ul>
+      </div>
+      <div class="source-cat">
+        <div class="source-cat-label">🔓 Open Access &amp; Usage</div>
+        <div class="source-cat-title">OA Verification &amp; Downloads</div>
+        <div class="source-cat-desc">Verifying OA status and aggregating download and usage metrics.</div>
+        <div class="source-names">
+          <span class="source-chip">Thoth</span>
+          <span class="source-chip">DOAB</span>
+          <span class="source-chip">OAPEN</span>
+          <span class="source-chip">OPERAS</span>
         </div>
+      </div>
+      <div class="source-cat">
+        <div class="source-cat-label">🔬 Stewardship</div>
+        <div class="source-cat-title">Linked Data &amp; Reproducibility</div>
+        <div class="source-cat-desc">Linked datasets, software repositories, clinical trials, and funding.</div>
+        <div class="source-names">
+          <span class="source-chip">Europe PMC</span>
+          <span class="source-chip">Zenodo</span>
+          <span class="source-chip">Figshare</span>
+          <span class="source-chip">Dryad</span>
+        </div>
+      </div>
+      <div class="source-cat">
+        <div class="source-cat-label">📖 Teaching &amp; Education</div>
+        <div class="source-cat-title">Pedagogical Adoption</div>
+        <div class="source-cat-desc">Syllabi citations, reading lists, library holdings, and lecture mentions.</div>
+        <div class="source-names">
+          <span class="source-chip">Open Library</span>
+          <span class="source-chip">WorldCat</span>
+          <span class="source-chip">YouTube</span>
+          <span class="source-chip">OpenCourseWare</span>
+        </div>
+      </div>
+      <div class="source-cat">
+        <div class="source-cat-label">📢 Public Discourse</div>
+        <div class="source-cat-title">Altmetrics &amp; Social</div>
+        <div class="source-cat-desc">Monitoring organic mentions and conversations across the open web.</div>
+        <div class="source-names">
+          <span class="source-chip">Wikipedia</span>
+          <span class="source-chip">Reddit</span>
+          <span class="source-chip">Bluesky</span>
+          <span class="source-chip">StackExchange</span>
+        </div>
+      </div>
+      <div class="source-cat">
+        <div class="source-cat-label">🛡️ Research Integrity</div>
+        <div class="source-cat-title">Integrity &amp; Citation Context</div>
+        <div class="source-cat-desc">Flagging retractions and corrections; classifying citation intent via scite.ai.</div>
+        <div class="source-names">
+          <span class="source-chip">Retraction Watch</span>
+          <span class="source-chip">PubPeer</span>
+          <span class="source-chip">Crossmark</span>
+          <span class="source-chip">scite.ai</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inferred roles -->
+  <div class="section-label">Classification methodology</div>
+  <div class="card">
+    <h2>Inferred Roles</h2>
+    <p>Our pipeline goes beyond citation counts. By analysing the composition of a work's attention, usage, and citing landscape, we dynamically assign <strong>Inferred Roles</strong> across four impact domains. These are heuristic signals — not ground truth — always shown with their confidence score and a link to this page.</p>
+
+    <!-- Academic -->
+    <div class="roles-domain">
+      <div class="roles-domain-header">
+        <div class="roles-domain-icon" style="background:#dbeafe;color:#2563eb;">🎓</div>
+        Academic &amp; Scientific Impact
+      </div>
+      <div class="roles-items">
+        <div class="role-item">
+          <div class="role-icon" style="background:#dbeafe;color:#2563eb;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg></div>
+          <div class="role-text"><h4>Scholarly Uptake</h4><p>Foundational building block cited heavily in core academic journals and monographs.</p></div>
+        </div>
+        <div class="role-item">
+          <div class="role-icon" style="background:#dbeafe;color:#2563eb;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
+          <div class="role-text"><h4>Rapid Uptake</h4><p>Accumulated high citations or downloads in an unusually short period — indicating immediate relevance in the field.</p></div>
+        </div>
+        <div class="role-item">
+          <div class="role-icon" style="background:#dbeafe;color:#2563eb;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
+          <div class="role-text"><h4>Reference Point for Synthesis</h4><p>Frequently cited in literature reviews and meta-analyses as a shorthand reference for a specific finding or framework.</p></div>
+        </div>
+        <div class="role-item">
+          <div class="role-icon" style="background:#dbeafe;color:#2563eb;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
+          <div class="role-text"><h4>Methodological Anchor</h4><p>A standard protocol or tool used by other researchers — triggered by high supporting citation tallies via scite.ai.</p></div>
+        </div>
+        <div class="role-item">
+          <div class="role-icon" style="background:#dbeafe;color:#2563eb;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg></div>
+          <div class="role-text"><h4>Evidence-Based Anchor</h4><p>Explicitly applied as hard data or methodology — recognised through high "supporting" citation tallies indicating direct replication or use.</p></div>
+        </div>
+        <div class="role-item">
+          <div class="role-icon" style="background:#dbeafe;color:#2563eb;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg></div>
+          <div class="role-text"><h4>Active Discussion Signal</h4><p>Work is generating ongoing conversation among researchers — a heuristic signal based on citation and usage patterns suggesting emerging salience.</p></div>
+        </div>
+      </div>
     </div>
 
-    <div class="card" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem; border: 1px solid #e5e7eb; box-shadow: none;">
-        <div style="background: #f3e8ff; color: #a21caf; padding: 0.8rem; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+    <!-- Readership -->
+    <div class="roles-domain">
+      <div class="roles-domain-header">
+        <div class="roles-domain-icon" style="background:#ede9fe;color:#7c3aed;">📚</div>
+        Readership &amp; Educational Impact
+      </div>
+      <div class="roles-items">
+        <div class="role-item">
+          <div class="role-icon" style="background:#ede9fe;color:#7c3aed;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg></div>
+          <div class="role-text"><h4>Usage-Driven Uptake</h4><p>Value through direct consumption: high downloads, HTML views, or library holdings rather than formal citation.</p></div>
         </div>
-        <div>
-            <h3 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: #111827;">Impact & Context Badges</h3>
-            <p class="story-text" style="margin-top: 0; margin-bottom: 1.2rem; color: #4b5563;">Badges that track how research data is shared, applied, and discussed globally:</p>
-            
-            <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.8;">
-                <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.5rem;">
-                    <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; margin-top: 0.1rem;">
-                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Methodologically Supported
-                    </span>
-                    <span style="color: #111827; font-size: 0.9rem;">Powered by <strong>scite.ai</strong>, indicates the work is frequently cited for its methods or foundational frameworks.</span>
-                </li>
-                
-                <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.5rem;">
-                    <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; margin-top: 0.1rem;">
-                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
-                        Linked to Data
-                    </span>
-                    <span style="color: #111827; font-size: 0.9rem;">Highlights linked datasets and software repositories (Zenodo, Figshare, Dryad).</span>
-                </li>
-                
-                <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.5rem;">
-                    <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #faf5ff; color: #86198f; border: 1px solid #e9d5ff; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; margin-top: 0.1rem;">
-                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
-                        Proven Reuse
-                    </span>
-                    <span style="color: #111827; font-size: 0.9rem;">Tracks downstream reuse of datasets and software by other publications.</span>
-                </li>
-
-                <li style="margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.5rem;">
-                    <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fdf2f8; color: #be185d; border: 1px solid #fbcfe8; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; margin-top: 0.1rem;">
-                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-                        Clinical Trial
-                    </span>
-                    <span style="color: #111827; font-size: 0.9rem;">Links the publication to a registered clinical trial found via Europe PMC.</span>
-                </li>
-                
-                <li style="margin-bottom: 0; display: flex; align-items: flex-start; gap: 0.5rem;">
-                    <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fffbeb; color: #d97706; border: 1px solid #fde68a; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; margin-top: 0.1rem;">
-                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
-                        Community Commentary
-                    </span>
-                    <span style="color: #111827; font-size: 0.9rem;">Highlights active post-publication peer review and methodological discussions via <strong>PubPeer</strong>.</span>
-                </li>
-            </ul>
+        <div class="role-item">
+          <div class="role-icon" style="background:#ede9fe;color:#7c3aed;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg></div>
+          <div class="role-text"><h4>Pedagogical Anchor</h4><p>Widely adopted for teaching — found in OER syllabi, reading lists, or open textbooks via Open Library, WorldCat, and OCW.</p></div>
         </div>
+      </div>
     </div>
-  
-  </section>
-  
-  
-  <section class="card">
-    <h2><span>Data Sources & Integrations</span></h2>
-    <p class="story-text">Traditional academic metrics only tell a fraction of the story. To build a comprehensive picture of a work's true impact, OpenScience.works aggregates real-time data from a diverse ecosystem of global APIs, repositories, and custom heuristic engines:</p>
-    
-    <ul class="metric-list">
-        <li style="margin-bottom: 0.8rem;">
-            <strong>Academic Impact & Core Metadata:</strong> Powered natively by <strong>OpenAlex</strong>, <strong>Crossref</strong>, and <strong>DataCite</strong> to capture global citation networks, geographic distribution, institutional affiliations, and UN Sustainable Development Goal alignment.
-        </li>
-        <li style="margin-bottom: 0.8rem;">
-            <strong>Educational & Teaching Adoption:</strong> We query <strong>Open Library</strong> and <strong>WorldCat</strong> for community reading lists, scan <strong>OpenCourseWare</strong> and the <strong>Open Textbook Library</strong> for formal syllabi, and actively mine <strong>YouTube</strong> transcripts to verify when a work is assigned in recorded university lectures and symposiums.
-        </li>
-        <li style="margin-bottom: 0.8rem;">
-            <strong>Research Integrity & Scrutiny:</strong> We surface severe breaches via the <strong>Retraction Watch Database</strong>, track active post-publication peer review through <strong>PubPeer</strong>, and utilize Crossref's <strong>Crossmark</strong> data to highlight routine scientific self-correction (official errata, corrigenda, and addenda).
-        </li>
-        <li style="margin-bottom: 0.8rem;">
-            <strong>Stewardship & Reproducibility:</strong> Through <strong>Europe PMC</strong> and <strong>DataCite</strong>, we deep-mine full-text literature to find linked data repositories (Zenodo, Figshare, Dryad), funding grants, Research Resource Identifiers (RRIDs), and registered Clinical Trials. We also surface community peer reviews for preprints via <strong>Sciety</strong>.
-        </li>
-        <li style="margin-bottom: 0.8rem;">
-            <strong>Open Access & Usage:</strong> We cross-reference platforms like <strong>Thoth Open Metadata</strong> and <strong>DOAB</strong> for OA verification. Download metrics are captured via the <strong>OPERAS Metrics API</strong> and <strong>OAPEN</strong>, while commercial readership is assessed through Google Books, Goodreads, and Amazon.
-        </li>
-        <li style="margin-bottom: 0.8rem;">
-            <strong>Public Discourse & Altmetrics:</strong> To measure how research permeates society, we track organic mentions across the open web. We are actively migrating to direct API fetchers to capture discussions on <strong>Wikipedia</strong>, mainstream news outlets, scientific blogs, <strong>Reddit</strong>, <strong>Bluesky</strong>, <strong>StackExchange</strong>, and open web annotations via <strong>Hypothesis</strong>.
-        </li>
-        <li style="margin-bottom: 0.8rem;">
-            <strong>Citation Context:</strong> We integrate with <strong>scite.ai</strong> to look beyond simple citation counts, analyzing the full text of citing papers to determine whether a work is being "mentioned," "supported," or "contrasted."
-        </li>
-    </ul>
 
-    <h3 style="font-size: 1.05rem; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #111827;">How We Calculate Confidence</h3>
-    <p class="story-text" style="margin-top: 0;">Because some of our metrics rely on text-mining rather than strict DOI matching (such as our YouTube lecture tracker or OpenCourseWare scanner), we employ an <strong>AI Academic Confidence Score</strong>. This score evaluates the context of a mention—for example, verifying if a YouTube channel belongs to an academic institution and checking the transcript for specific educational keywords—ensuring we filter out casual mentions and noise.</p>
-</section>
+    <!-- Public -->
+    <div class="roles-domain">
+      <div class="roles-domain-header">
+        <div class="roles-domain-icon" style="background:#fef3c7;color:#b45309;">📢</div>
+        Public Engagement &amp; Media
+      </div>
+      <div class="roles-items">
+        <div class="role-item">
+          <div class="role-icon" style="background:#fef3c7;color:#b45309;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg></div>
+          <div class="role-text"><h4>Active Public Discourse</h4><p>Heavy engagement on Reddit, Bluesky, or Mastodon — the work has sparked ongoing community conversation.</p></div>
+        </div>
+        <div class="role-item">
+          <div class="role-icon" style="background:#fef3c7;color:#b45309;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"></path></svg></div>
+          <div class="role-text"><h4>High-Visibility Uptake</h4><p>Mentioned in mainstream news or broadsheets — the work has reached beyond academia into public awareness.</p></div>
+        </div>
+        <div class="role-item">
+          <div class="role-icon" style="background:#fef3c7;color:#b45309;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg></div>
+          <div class="role-text"><h4>Public Visibility (Open Knowledge)</h4><p>Cited on Wikipedia, Stack Exchange, or non-academic wikis — the work has been integrated into the trusted public knowledge base.</p></div>
+        </div>
+      </div>
+    </div>
 
-  <section class="card">
-    <h2><span>About Martijn Roelandse</span></h2>
-    <p class="story-text">Martijn has more than 20 years of experience in scholarly publishing and biomedical research. After completing his PhD in Basel, he built a career at the intersection of publishing, technology, and open science, with a particular focus on books and journals.</p> 
-    <p class="story-text">In 2014 he was co-founder of Bookmetrix, a Springer–Altmetric initiative that pioneered book- and chapter-level metrics by aggregating multiple signals of reach, attention, and use. Through this work, Martijn gained first-hand experience in the opportunities and limitations of impact reporting, including the <i>importance of transparent data provenance and discipline-sensitive interpretation</i>, especially in the humanities and social sciences.</p> 
-    <p class="story-text" style="margin-bottom: 0;">A seasoned editor and publishing professional, Martijn brings deep knowledge of the scholarly communication ecosystem and specialises in building bridges between startups, publishers, libraries, and research organisations. At openscience.works, he focuses on partnerships, product direction, and ensuring that tools are aligned with real-world publishing and library workflows.</p> 
-  </section>
+    <!-- Practical -->
+    <div class="roles-domain" style="margin-bottom:0;">
+      <div class="roles-domain-header">
+        <div class="roles-domain-icon" style="background:#dcfce7;color:#065f46;">🏛</div>
+        Practical &amp; Real-World Application
+      </div>
+      <div class="roles-items">
+        <div class="role-item">
+          <div class="role-icon" style="background:#dcfce7;color:#065f46;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg></div>
+          <div class="role-text"><h4>Sustainability &amp; Policy Relevance</h4><p>Cited in government reports, WHO/NGO briefs, or UN policy documents — direct influence on governance frameworks.</p></div>
+        </div>
+        <div class="role-item">
+          <div class="role-icon" style="background:#dcfce7;color:#065f46;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg></div>
+          <div class="role-text"><h4>Commercial Linkage</h4><p>Present on Amazon, Goodreads, or in patents — indicating consumer interest or industry application.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <footer class="page-footer">
-    &copy; 2026 openscience.works - All rights reserved | <a href="index.html">Home</a>
-  </footer>
+  <!-- Intelligence markers -->
+  <div class="section-label">Signal vocabulary</div>
+  <div class="card">
+    <h2>Intelligence Markers &amp; Badges</h2>
+    <p>Every story page uses visual chips and badges in the header to give an immediate read on a work's status and key signals. Hover any badge on a story page for a full explanation of its source and meaning.</p>
+
+    <h3>Work Type &amp; Access</h3>
+    <div class="badges-grid">
+      <div class="badge-item">
+        <span class="badge-chip" style="background:#fef08a;color:#854d0e;border:1px solid #fde047;">Access: Open Access (Gold)</span>
+        <span class="badge-desc">Immediate free access with an open licence — published in a fully OA venue.</span>
+      </div>
+      <div class="badge-item">
+        <span class="badge-chip" style="background:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;">Access: Open Access (Hybrid)</span>
+        <span class="badge-desc">Free to read in a subscription journal; OA paid by author or institution.</span>
+      </div>
+      <div class="badge-item">
+        <span class="badge-chip" style="background:#dcfce7;color:#166534;border:1px solid #bbf7d0;">Access: Open Access (Green)</span>
+        <span class="badge-desc">Available free via an institutional or subject repository (self-archiving).</span>
+      </div>
+      <div class="badge-item">
+        <span class="badge-chip" style="background:#f3f4f6;color:#374151;border:1px solid #e5e7eb;">Field: STEM / Humanities / Social Sciences</span>
+        <span class="badge-desc">Broad disciplinary classification from OpenAlex field-of-study data.</span>
+      </div>
+    </div>
+
+    <h3>Status &amp; Integrity</h3>
+    <div class="badges-grid">
+      <div class="badge-item">
+        <span class="badge-chip" style="background:#fef08a;color:#854d0e;border:1px solid #fde047;">Correction Published · notice</span>
+        <span class="badge-desc">An official correction or erratum has been published — tracked via Crossmark.</span>
+      </div>
+      <div class="badge-item">
+        <span class="badge-chip" style="background:#fee2e2;color:#dc2626;border:1px solid #fca5a5;">Retracted · notice</span>
+        <span class="badge-desc">Work has been retracted — sourced from the Retraction Watch database.</span>
+      </div>
+      <div class="badge-item">
+        <span class="badge-chip" style="background:#dcfce7;color:#166534;border:1px solid #bbf7d0;">Peer-Reviewed &amp; Published · journal</span>
+        <span class="badge-desc">Published in a peer-reviewed academic journal (links to publisher DOI).</span>
+      </div>
+      <div class="badge-item">
+        <span class="badge-chip" style="background:#fdf2f8;color:#be185d;border:1px solid #fbcfe8;">Clinical Trial · registered</span>
+        <span class="badge-desc">Linked to a registered clinical trial via Europe PMC.</span>
+      </div>
+    </div>
+
+    <h3>Impact &amp; Context</h3>
+    <div class="badges-grid">
+      <div class="badge-item">
+        <span class="badge-chip" style="background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;">Methodologically Supported · scite</span>
+        <span class="badge-desc">scite.ai found more citations supporting than contrasting this work's methodology.</span>
+      </div>
+      <div class="badge-item">
+        <span class="badge-chip" style="background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;">Linked to Data · DataCite</span>
+        <span class="badge-desc">Linked research datasets are registered via DataCite or a similar registry.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Martijn -->
+  <div class="section-label">The team</div>
+  <div class="card">
+    <h2>About Martijn Roelandse</h2>
+    <div class="person-card">
+      <div class="person-avatar"><img src="martijnroelandse.dev-logo.png" alt="Martijn Roelandse" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div>
+      <div>
+        <div class="person-name">Martijn Roelandse, PhD</div>
+        <div class="person-title">Founder · Amsterdam, NL · Founded 2026</div>
+        <p class="person-bio">Martijn has more than 20 years of experience in scholarly publishing and biomedical research. After completing his PhD in Basel, he built a career at the intersection of publishing, technology, and open science, with a particular focus on books and journals.</p>
+        <p class="person-bio">In 2014 he was co-founder of <strong>Bookmetrix</strong>, a Springer–Altmetric initiative that pioneered book- and chapter-level metrics by aggregating multiple signals of reach, attention, and use. Through this work, Martijn gained first-hand experience in the opportunities and limitations of impact reporting — including the importance of transparent data provenance and discipline-sensitive interpretation, especially in the humanities and social sciences.</p>
+        <p class="person-bio" style="margin-bottom:0.5rem;">At openscience.works, he leads partnerships and product direction — building the open infrastructure for a more transparent research ecosystem.</p>
+        <div class="person-links">
+          <a class="person-link" href="mailto:martijn.roelandse@openscience.works">✉ martijn.roelandse@openscience.works</a>
+          <a class="person-link" href="https://www.openscience.works" target="_blank">🌐 openscience.works</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
+
+<footer>
+  <p><a href="index.html">openscience.works</a> · Built on open data · <a href="mailto:martijn.roelandse@openscience.works">Contact</a></p>
+</footer>
+
 </body>
 </html>

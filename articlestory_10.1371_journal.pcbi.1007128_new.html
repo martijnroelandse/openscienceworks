@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ArticleStory - Open collaborative writing with Manubot</title>
+<style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+.role-pill[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:#111827;color:white;padding:.5rem .75rem;border-radius:.5rem;font-size:.72rem;
+  width:230px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.role-pill[data-tip]:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+.role-pill[data-tip]:hover::after{
+  content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:#111827;color:white;padding:.5rem .75rem;border-radius:.5rem;font-size:.72rem;
+  width:230px;line-height:1.5;white-space:normal;font-weight:400;z-index:200;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);}
+.role-pill[data-tip]:hover::before{
+  content:'';position:absolute;bottom:calc(100% + 3px);left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:#111827;z-index:201;pointer-events:none;}
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+</style>
+<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Print PDF Report
+    </button>
+<div class="page" id="sec-story">
+<header class="hero card" id="sec-hero">
+<div class="header-bar">
+<div style="display: flex; align-items: center; gap: 1.25rem;">
+<div class="logo-wrap"><img alt="Logo" src="articlestories-logo.png"/></div>
+<div>
+<h1 class="hero-title">Open collaborative writing with Manubot</h1>
+<div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+<span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-transform: uppercase; letter-spacing: 0.05em;" title="Linked research datasets are registered via DataCite or a similar registry">
+<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                    Linked to Data
+                                <span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· DataCite</span><span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· DataCite</span></span>
+</div>
+<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+<div><strong>Author(s):</strong> Daniel Himmelstein, Vincent Rubinetti, David R. Slochower, Dongbo Hu, Venkat S. Malladi, Casey S. Greene, Anthony Gitter</div>
+<div><strong>Publisher:</strong> PLoS Computational Biology</div>
+<div><strong>Publication year:</strong> 2019</div>
+<div><strong>DOI:</strong> <a href="https://doi.org/10.1371/journal.pcbi.1007128" target="_blank">10.1371/journal.pcbi.1007128</a></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">66</div>
+<div class="stats-strip-label">Total Citations</div>
+<div class="stats-strip-badge">🏆 Top 1% Cited</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">—</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">—</div>
+<div class="stats-strip-label">scite References</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Gold</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
+
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-mentions">Mentions</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-funding">Funding</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">83</div>
+<div class="stats-strip-label">Total Citations</div>
+<div class="stats-strip-badge">🏆 Top 1% Cited</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">0</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">66</div>
+<div class="stats-strip-label">scite References</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Gold</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-mentions">Mentions</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-funding">Funding</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+<section class="card" id="sec-story">
+<h2><span>The Story So Far</span></h2>
+<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The research titled "Open collaborative writing with Manubot" has garnered significant academic attention, reflected in its 83 citations across various platforms. Supported by key institutions like the University of Wisconsin–Madison and funded by organizations such as the Cancer Prevention and Research Institute of Texas, this work emphasizes the importance of collaborative writing tools in the scientific community, showcasing their impact on research productivity and accessibility.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The article "Open collaborative writing with Manubot," authored by Daniel Himmelstein and colleagues, is a noteworthy contribution to the evolving landscape of collaborative research practices. With 83 citations recorded in OpenAlex, this work highlights its relevance and influence in academic circles, demonstrating the growing recognition of the importance of collaborative writing software in fostering scientific innovation.</p>
+<p class="story-text">Institutions backing this research include notable names such as the University of Wisconsin–Madison and the University of Pennsylvania, reflecting a strong collaborative effort across esteemed organizations. This diverse institutional engagement not only broadens the work's academic reach but also facilitates the sharing of expertise and resources necessary for advancing collaborative writing methodologies in research.</p>
+<p class="story-text">Financial support from reputable funding agencies, including the Gordon and Betty Moore Foundation and the Alfred P. Sloan Foundation, underscores the significance attributed to collaborative writing as a strategic area of investment in scientific communication. This funding boosts the work’s credibility and emphasizes the commitment to improving research dissemination practices through innovative tools like Manubot.</p>
+<p class="story-text">Furthermore, the mention of data repositories such as Figshare, GitLab, and GitHub indicates a strong commitment to open data and transparency in the research process. By utilizing these platforms, the authors facilitate greater accessibility to their contributions, supporting the open science movement and enabling downstream reuse of their materials, as evidenced by the 87 instances of active reuse recorded. This focus on openness not only enhances the work's impact but also aligns with contemporary trends towards greater scientific collaboration and transparency.</p></div>
+</section>
+<section class="card" id="sec-impact">
+<h2><span>Impact metrics</span></h2>
+<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">66</div><div class="im-label">Total Citations</div></div><div class="im-spark"><svg height="36" style="display:block;overflow:visible;" viewbox="0 0 120 36" width="120" xmlns="http://www.w3.org/2000/svg"><path d="M0.0,32.3 L17.1,25.6 L34.3,18.8 L51.4,2.0 L68.6,12.1 L85.7,2.0 L102.9,13.8 L120.0,28.9 L120.0,36.0 L0,36.0 Z" fill="#dbeafe" opacity="0.6"></path><polyline fill="none" points="0.0,32.3 17.1,25.6 34.3,18.8 51.4,2.0 68.6,12.1 85.7,2.0 102.9,13.8 120.0,28.9" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline></svg><div class="im-spark-range">2018–2025</div></div></div><div class="im-top-badge">🏆 Top 1% Cited</div></div><div class="im-card"><div class="im-num">—</div><div class="im-label">Online Mentions</div></div><div class="im-card"><div class="im-num">66</div><div class="im-label">Downloads</div></div></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-amber" href="#sec-funding">💰 3 grants</a><a class="sig-pill sig-blue" href="#sec-citing">🌍 17 countries</a></div></div></div></section>
+<section class="card" id="sec-roles">
+<h2><span>Inferred roles</span></h2>
+<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#b45309;">📢 Public Engagement &amp; Media</div><div class="roles-row"><span class="role-pill role-pill-public" style="opacity:1;" data-tip="Heavy social-platform engagement on Reddit, Bluesky, or Mastodon — the work has sparked ongoing community conversation."><span class="role-dot" style="background:#f59e0b;"></span>Active public discourse<span class="role-strength" style="background:#fef3c7;color:#92400e;">Strong</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#1d4ed8;">🎓 Academic &amp; Scientific</div><div class="roles-row"><span class="role-pill role-pill-academic" style="opacity:0.9;" data-tip="Accumulated high citations or downloads unusually fast after publication."><span class="role-dot" style="background:#3b82f6;"></span>Rapid uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Moderate</span></span><span class="role-pill role-pill-academic" style="opacity:0.9;" data-tip="Foundational building block cited heavily in core academic journals and monographs."><span class="role-dot" style="background:#3b82f6;"></span>Scholarly uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Moderate</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#065f46;">🏛 Practical &amp; Real-World</div><div class="roles-row"><span class="role-pill role-pill-practical" style="opacity:0.9;" data-tip="Cited in government reports, WHO/NGO briefs, or UN policy documents."><span class="role-dot" style="background:#10b981;"></span>Sustainability &amp; policy relevance<span class="role-strength" style="background:#dcfce7;color:#166534;">Moderate</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
+</section>
+<div class="grid-2">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+<ul class="metric-list">
+<li><strong>DOI:</strong> <a href="https://doi.org/10.1371/journal.pcbi.1007128" target="_blank">10.1371/journal.pcbi.1007128</a></li>
+<li><strong>OA status:</strong> Gold</li>
+<li><strong>Landing page:</strong> <a href="https://doi.org/10.1371/journal.pcbi.1007128" style="word-break: break-all;" target="_blank">https://doi.org/10.1371/journal.pcbi.1007128</a></li>
+<li><strong>Best OA PDF:</strong> <a href="https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1007128&amp;type=printable" style="word-break: break-all;" target="_blank">https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1007128&amp;type=printable</a></li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>0</strong> recorded events globally
+                        
+                    </p>
+<p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+<em>(See specific sources and examples in the Online Mentions section below).</em>
+</p>
+</section>
+</div>
+<div class="grid-2" style="align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Citation context</span> <span class="badge">scite</span></h2>
+<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+<li><strong>Total:</strong> 66</li>
+<li><strong>Supporting:</strong> 0</li>
+<li><strong>Mentioning:</strong> 65</li>
+<li><strong>Contradicting:</strong> 0</li>
+</ul>
+</section>
+</div>
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Associated data repositories and clinical trials.</p>
+<h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Data Repositories &amp; Code</h3>
+<div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom: 1rem; max-height: 250px; overflow-y: auto;">
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/greenelab/meta-review" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/manubot/manubot" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://gitlab.com/manubot/manubot" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitLab Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/manubot/rootstock" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://gitlab.com/manubot/rootstock" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitLab Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/greenelab/deep-review" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/greenelab/deep-review/graphs/contributors" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/citation-style-language/schema" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/xlcnd/isbnlib" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/manubot/try-manubot" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/greenelab/scihub-manuscript" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/bitcoinbook/bitcoinbook" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/ethereumbook/ethereumbook" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/cboettig/knitcitations" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/ewanmellor/gh-publisher" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/mfenner/jekyll-travis" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://10.6084/m9.figshare.5346577" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">Figshare</a>
+<a href="datastory_https:__10.6084_m9.figshare.5346577.html" style="font-size: 0.75rem; color: #6b7280; text-decoration: underline; display: inline-flex; align-items: center; gap: 0.2rem;" title="Run 'python3 -m bookstories.cli https://10.6084/m9.figshare.5346577' to generate this dashboard!">
+<svg fill="none" height="12" stroke="currentColor" viewbox="0 0 24 24" width="12"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                                    View DataStory
+                                                </a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://10.6084/m9.figshare.7946192.v2" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">Figshare</a>
+<a href="datastory_https:__10.6084_m9.figshare.7946192.v2.html" style="font-size: 0.75rem; color: #6b7280; text-decoration: underline; display: inline-flex; align-items: center; gap: 0.2rem;" title="Run 'python3 -m bookstories.cli https://10.6084/m9.figshare.7946192.v2' to generate this dashboard!">
+<svg fill="none" height="12" stroke="currentColor" viewbox="0 0 24 24" width="12"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                                    View DataStory
+                                                </a>
+</div>
+</div>
+</section>
+</div>
+</div>
+<section class="card" id="sec-citing">
+<h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+                Analysis of the 83 most recent citing works. 
+                <br/>
+<strong>103.7%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>6.0</strong> times itself.
+            </div>
+<div class="cite-analysis-always"><div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+<ul class="metric-list">
+<li><strong>Citing work types:</strong>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (45)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (32)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">peer-review (3)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (1)</span>
+</li>
+<li><strong>Top citing venues:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">bioRxiv (23)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">eLife (6)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Unknown (6)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">GigaScience (4)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nature Communications (2)</span>
+</li>
+<li><strong>Top citing concepts:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Computer science (32)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Biology (9)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Computational biology (9)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Workflow (8)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Data science (6)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Medicine (5)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Journalism (5)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Publishing (5)</span>
+</li>
+<li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+<strong>Citation timeline:</strong>
+<div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+<canvas data-labels="[2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]" data-values="[1, 5, 9, 19, 13, 19, 12, 3]" id="citationChart">
+</canvas>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="cite-tabs">
+<button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-ppl')">👤 Top Citers</button>
+</div>
+<div class="cite-tab-pane active" id="cite-geo"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (50)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (21)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Switzerland (18)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (10)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Netherlands (7)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Canada (6)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Turkey (6)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Australia (6)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Sweden (5)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Czechia (4)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">India (4)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Denmark (4)</span>
+</div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (69)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (32)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (16)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Company (16)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Healthcare (14)</span>
+</div>
+</div></div>
+<div class="cite-tab-pane" id="cite-inst"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Pennsylvania</strong>
+<a class="orcid-badge" href="https://ror.org/00b30xv10" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(18)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Colorado Denver</strong>
+<a class="orcid-badge" href="https://ror.org/02hh7en24" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(17)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Translational Therapeutics (United States)</strong>
+<a class="orcid-badge" href="https://ror.org/02z3rcy16" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(9)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Bern</strong>
+<a class="orcid-badge" href="https://ror.org/02k7v4d05" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(9)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Harvard University</strong>
+<a class="orcid-badge" href="https://ror.org/03vek6s52" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(6)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Maastricht University</strong>
+<a class="orcid-badge" href="https://ror.org/02jz4aj89" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Minnesota</strong>
+<a class="orcid-badge" href="https://ror.org/017zqws13" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Arizona</strong>
+<a class="orcid-badge" href="https://ror.org/03m2x1q45" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Clinical Orthopaedics and Related Research</strong>
+<a class="orcid-badge" href="https://ror.org/00ky71f04" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Pittsburgh</strong>
+<a class="orcid-badge" href="https://ror.org/01an3r305" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+</ul>
+</div></div>
+<div class="cite-tab-pane" id="cite-ppl"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Casey S. Greene</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-8713-9213" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(22)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Daniel Himmelstein</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-3012-7446" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(9)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Michael Zietz</strong>
+<a class="orcid-badge" href="https://openalex.org/A5037563245" target="_blank">Profile</a>
+<span class="muted" style="margin-left: 0.2rem;">(6)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Egon Willighagen</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-7542-0286" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>David Haberthür</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-3388-9187" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Natalie R. Davidson</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-1745-8072" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Jake Crawford</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-6207-0782" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Maria Chikina</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-2550-5403" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Trang T. Le</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-3737-6565" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Adriano Rutz</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-0443-9902" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+</ul>
+</div></div>
+</section>
+<div class="grid-2">
+</div>
+<div class="grid-2" id="sec-contributors">
+<section class="card" id="sec-contributors" style="margin-bottom:0;">
+<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">7 authors · 5 institutions</div>
+<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Daniel Himmelstein</strong>
+<span class="badge">First</span>
+<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-3012-7446" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Vincent Rubinetti</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4655-3773" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>David R. Slochower</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-3928-5050" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Dongbo Hu</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-7870-8242" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Venkat S. Malladi</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-0144-0564" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Casey S. Greene</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-8713-9213" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Anthony Gitter</strong>
+<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-5324-9833" target="_blank">ORCID</a>
+</li>
+</ul>
+<h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/00b30xv10" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Pennsylvania</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/02z3rcy16" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Translational Therapeutics (United States)</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/0168r3w48" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of California, San Diego</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/05byvp690" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">The University of Texas Southwestern Medical Center</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/01y2jtd41" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Wisconsin–Madison</a>
+</li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">21 specific concepts identified.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">World Wide Web</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Identifier</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Workflow</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Metadata</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Citation</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Process (computing)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Software</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scholarly communication</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cloud computing</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Publishing</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Service (business)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Information retrieval</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Data science</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Database</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Programming language</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Economy</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Economics</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Law</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Operating system</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Political science</span>
+</div>
+<h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">1 targets detected.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Quality Education (0.60)</span>
+</div>
+</section>
+</div>
+<section class="card" id="sec-funding">
+<h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">3 financial grants and sponsors detected.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>Cancer Prevention and Research Institute of Texas</strong>
+<span style="opacity: 0.8; font-weight: normal;">(RP150596)</span>
+</span>
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>Gordon and Betty Moore Foundation</strong>
+<span style="opacity: 0.8; font-weight: normal;">(GBMF4552)</span>
+</span>
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>Alfred P. Sloan Foundation</strong>
+<span style="opacity: 0.8; font-weight: normal;">(G-2018-11163)</span>
+</span>
+</div>
+</section>
+<section class="card no-print" id="sec-citations">
+<h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">Displaying 81 most recent citing works</div>
+<div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+<table>
+<thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+<tbody id="cit-tbody"></tbody>
+</table>
+</div>
+<div class="cit-pagination">
+<span class="cit-pagination-info" id="cit-info">Loading…</span>
+<div class="cit-pagination-btns">
+<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
+<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
+<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
+</div>
+</div>
+
+<div class="cit-pagination">
+<span class="cit-pagination-info" id="cit-info">Loading…</span>
+<div class="cit-pagination-btns">
+<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
+<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
+<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
+</div>
+</div>
+</section>
+<footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+<div style="display: flex; flex-direction: column; gap: 0.4rem;">
+<div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+<svg fill="none" height="16" stroke="currentColor" style="color: #9ca3af;" viewbox="0 0 24 24" width="16"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Understanding our metrics: <a href="https://www.openscience.works/about.html" style="color: #2563eb; text-decoration: none; font-weight: 600;" target="_blank">Read the Methodology &amp; Legend ↗</a></span>
+</div>
+<div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-04-02T15:13:45+00:00
+                </div>
+</div>
+</footer>
+</div>
+<script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+<script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<script>
+(function() {
+  var DATA = [{"year": "2020", "title": "Associations between blood type and COVID-19 infection, intubation, and death", "venue": "Nature Communications", "doi": "10.1038/s41467-020-19623-x", "doi_url": "https://doi.org/10.1038/s41467-020-19623-x"}, {"year": "2019", "title": "Scaling tree-based automated machine learning to biomedical big data with a feature set selector", "venue": "Bioinformatics", "doi": "10.1093/bioinformatics/btz470", "doi_url": "https://doi.org/10.1093/bioinformatics/btz470"}, {"year": "2022", "title": "The LOTUS initiative for open knowledge management in natural products research", "venue": "eLife", "doi": "10.7554/elife.70780", "doi_url": "https://doi.org/10.7554/elife.70780"}, {"year": "2024", "title": "Comprehensive Overview of Bottom-Up Proteomics Using Mass Spectrometry", "venue": "ACS Measurement Science Au", "doi": "10.1021/acsmeasuresciau.3c00068", "doi_url": "https://doi.org/10.1021/acsmeasuresciau.3c00068"}, {"year": "2021", "title": "sPlotOpen – An environmentally balanced, open‐access, global dataset of vegetation plots", "venue": "Global Ecology and Biogeography", "doi": "10.1111/geb.13346", "doi_url": "https://doi.org/10.1111/geb.13346"}, {"year": "2021", "title": "From Open Data to Open Science", "venue": "Earth and Space Science", "doi": "10.1029/2020ea001562", "doi_url": "https://doi.org/10.1029/2020ea001562"}, {"year": "2023", "title": "OpenPBTA: The Open Pediatric Brain Tumor Atlas", "venue": "Cell Genomics", "doi": "10.1016/j.xgen.2023.100340", "doi_url": "https://doi.org/10.1016/j.xgen.2023.100340"}, {"year": "2021", "title": "Streamlining data-intensive biology with workflow systems", "venue": "GigaScience", "doi": "10.1093/gigascience/giaa140", "doi_url": "https://doi.org/10.1093/gigascience/giaa140"}, {"year": "2023", "title": "Not just for programmers: HowGitHubcan accelerate collaborative and reproducible research in ecology and evolution", "venue": "Methods in Ecology and Evolution", "doi": "10.1111/2041-210x.14108", "doi_url": "https://doi.org/10.1111/2041-210x.14108"}, {"year": "2023", "title": "Morphofunctional changes at the active zone during synaptic vesicle exocytosis", "venue": "EMBO Reports", "doi": "10.15252/embr.202255719", "doi_url": "https://doi.org/10.15252/embr.202255719"}, {"year": "2025", "title": "GitHub enables collaborative and reproducible laboratory research", "venue": "PLoS Biology", "doi": "10.1371/journal.pbio.3003029", "doi_url": "https://doi.org/10.1371/journal.pbio.3003029"}, {"year": "2019", "title": "Bitcoin for the biological literature", "venue": "Nature", "doi": "10.1038/d41586-019-00447-9", "doi_url": "https://doi.org/10.1038/d41586-019-00447-9"}, {"year": "2022", "title": "Unifying the identification of biomedical entities with the Bioregistry", "venue": "Scientific Data", "doi": "10.1038/s41597-022-01807-3", "doi_url": "https://doi.org/10.1038/s41597-022-01807-3"}, {"year": "2022", "title": "Defocus Corrected Large Area Cryo-EM (DeCo-LACE) for label-free detection of molecules across entire cell sections", "venue": "eLife", "doi": "10.7554/elife.80980", "doi_url": "https://doi.org/10.7554/elife.80980"}, {"year": "2024", "title": "A publishing infrastructure for Artificial Intelligence (AI)-assisted academic authoring", "venue": "Journal of the American Medical Informatics Association", "doi": "10.1093/jamia/ocae139", "doi_url": "https://doi.org/10.1093/jamia/ocae139"}, {"year": "2024", "title": "The probability of edge existence due to node degree: a baseline for network-based predictions", "venue": "GigaScience", "doi": "10.1093/gigascience/giae001", "doi_url": "https://doi.org/10.1093/gigascience/giae001"}, {"year": "2021", "title": "Analysis of scientific society honors reveals disparities", "venue": "Cell Systems", "doi": "10.1016/j.cels.2021.07.007", "doi_url": "https://doi.org/10.1016/j.cels.2021.07.007"}, {"year": "2022", "title": "Modeling chromatin state from sequence across angiosperms using recurrent convolutional neural networks", "venue": "The Plant Genome", "doi": "10.1002/tpg2.20249", "doi_url": "https://doi.org/10.1002/tpg2.20249"}, {"year": "2025", "title": "UV-induced reorganization of 3D genome mediates DNA damage response", "venue": "Nature Communications", "doi": "10.1038/s41467-024-55724-7", "doi_url": "https://doi.org/10.1038/s41467-024-55724-7"}, {"year": "2021", "title": "Pulmonary acini exhibit complex changes during postnatal rat lung development", "venue": "PLoS ONE", "doi": "10.1371/journal.pone.0257349", "doi_url": "https://doi.org/10.1371/journal.pone.0257349"}, {"year": "2024", "title": "CryoVesNet: A dedicated framework for synaptic vesicle segmentation in cryo-electron tomograms", "venue": "The Journal of Cell Biology", "doi": "10.1083/jcb.202402169", "doi_url": "https://doi.org/10.1083/jcb.202402169"}, {"year": "2024", "title": "Analysis of science journalism reveals gender and regional disparities in coverage", "venue": "eLife", "doi": "10.7554/elife.84855.3", "doi_url": "https://doi.org/10.7554/elife.84855.3"}, {"year": "2021", "title": "Reproducible, portable, and efficient ancient genome reconstruction with nf-core/eager", "venue": "Zurich Open Repository and Archive (University of Zurich)", "doi": "10.5167/uzh-202801", "doi_url": "https://doi.org/10.5167/uzh-202801"}, {"year": "2022", "title": "Hetnet connectivity search provides rapid insights into how biomedical entities are related", "venue": "GigaScience", "doi": "10.1093/gigascience/giad047", "doi_url": "https://doi.org/10.1093/gigascience/giad047"}, {"year": "2024", "title": "MMV_Im2Im: an open-source microscopy machine vision toolbox for image-to-image transformation", "venue": "GigaScience", "doi": "10.1093/gigascience/giad120", "doi_url": "https://doi.org/10.1093/gigascience/giad120"}, {"year": "2022", "title": "Not just for programmers: How GitHub can accelerate collaborative and reproducible research in ecology and evolution", "venue": "Duo Research Archive (University of Oslo)", "doi": "10.31222/osf.io/x3p2q", "doi_url": "https://doi.org/10.31222/osf.io/x3p2q"}, {"year": "2020", "title": "Introducing Massively Open Online Papers (MOOPs)", "venue": "KULA knowledge creation dissemination and preservation studies", "doi": "10.5334/kula.63", "doi_url": "https://doi.org/10.5334/kula.63"}, {"year": "2021", "title": "Comparative analyses of two primate species diverged by more than 60 million years show different rates but similar distribution of genome-wide UV repair events", "venue": "BMC Genomics", "doi": "10.1186/s12864-021-07898-3", "doi_url": "https://doi.org/10.1186/s12864-021-07898-3"}, {"year": "2019", "title": "Plasmids for Independently Tunable, Low-Noise Expression of Two Genes", "venue": "mSphere", "doi": "10.1128/msphere.00340-19", "doi_url": "https://doi.org/10.1128/msphere.00340-19"}, {"year": "2022", "title": "Widespread redundancy in -omics profiles of cancer mutation states", "venue": "Genome biology", "doi": "10.1186/s13059-022-02705-y", "doi_url": "https://doi.org/10.1186/s13059-022-02705-y"}, {"year": "2021", "title": "The role of metadata in reproducible computational research", "venue": "Patterns", "doi": "10.1016/j.patter.2021.100322", "doi_url": "https://doi.org/10.1016/j.patter.2021.100322"}, {"year": "2023", "title": "Amending the literature through version control", "venue": "Biology Letters", "doi": "10.1098/rsbl.2022.0463", "doi_url": "https://doi.org/10.1098/rsbl.2022.0463"}, {"year": "2023", "title": "Living Papers: A Language Toolkit for Augmented Scholarly Communication", "venue": "Unknown", "doi": "10.1145/3586183.3606791", "doi_url": "https://doi.org/10.1145/3586183.3606791"}, {"year": "2024", "title": "Supporting Collaborative Writing Tasks in Large-Scale Distance Education", "venue": "IEEE Transactions on Learning Technologies", "doi": "10.1109/tlt.2024.3355791", "doi_url": "https://doi.org/10.1109/tlt.2024.3355791"}, {"year": "2020", "title": "Ten simple rules for typographically appealing scientific texts", "venue": "PLoS Computational Biology", "doi": "10.1371/journal.pcbi.1008458", "doi_url": "https://doi.org/10.1371/journal.pcbi.1008458"}, {"year": "2021", "title": "Challenges in Scholarly Communication and Scientific Publication – Present Scenario and Opportunities through Blockchain Solutions", "venue": "The 5th International Conference on Future Networks & Distributed Systems", "doi": "10.1145/3508072.3508174", "doi_url": "https://doi.org/10.1145/3508072.3508174"}, {"year": "2024", "title": "Optimizer’s dilemma: optimization strongly influences model selection in transcriptomic prediction", "venue": "Bioinformatics Advances", "doi": "10.1093/bioadv/vbae004", "doi_url": "https://doi.org/10.1093/bioadv/vbae004"}, {"year": "2021", "title": "Open Collaborative Writing", "venue": "Proceedings of the ACM on Human-Computer Interaction", "doi": "10.1145/3449211", "doi_url": "https://doi.org/10.1145/3449211"}, {"year": "2020", "title": "New Technology and Tools to Enhance Collaborative Video Analysis in Live ‘Data Sessions’", "venue": "VBN Forskningsportal (Aalborg Universitet)", "doi": "10.31235/osf.io/eu7yw", "doi_url": "https://doi.org/10.31235/osf.io/eu7yw"}, {"year": "2023", "title": "Analysis of science journalism reveals gender and regional disparities in coverage", "venue": "eLife", "doi": "10.7554/elife.84855", "doi_url": "https://doi.org/10.7554/elife.84855"}, {"year": "2023", "title": "Escritura e identidad en contextos de investigación: escritura e identidad", "venue": "Literatura y lingüística", "doi": "10.29344/0717621x.46.3157", "doi_url": "https://doi.org/10.29344/0717621x.46.3157"}, {"year": "2023", "title": "Microtomographic investigation of a large corpus of cichlids", "venue": "PLoS ONE", "doi": "10.1371/journal.pone.0291003", "doi_url": "https://doi.org/10.1371/journal.pone.0291003"}, {"year": "2024", "title": "Best holdout assessment is sufficient for cancer transcriptomic model selection", "venue": "Patterns", "doi": "10.1016/j.patter.2024.101115", "doi_url": "https://doi.org/10.1016/j.patter.2024.101115"}, {"year": "2025", "title": "MicroCT-based vascular imaging in bone and peri-implant tissues", "venue": "Tomography of Materials and Structures", "doi": "10.1016/j.tmater.2025.100074", "doi_url": "https://doi.org/10.1016/j.tmater.2025.100074"}, {"year": "2020", "title": "Facilitating reproducible research through direct connection of data analysis with manuscript preparation: StatTag for connecting statistical software to Microsoft Word", "venue": "JAMIA Open", "doi": "10.1093/jamiaopen/ooaa043", "doi_url": "https://doi.org/10.1093/jamiaopen/ooaa043"}, {"year": "2021", "title": "Open scientist in the wonderland: advocating for blockchain-based decentralized applications for science", "venue": "Unknown", "doi": "10.5753/opensciense.2021.17143", "doi_url": "https://doi.org/10.5753/opensciense.2021.17143"}, {"year": "2020", "title": "Testing the association between blood type and COVID-19 infection, intubation, and death", "venue": "bioRxiv", "doi": "10.1101/2020.04.08.20058073", "doi_url": "https://doi.org/10.1101/2020.04.08.20058073"}, {"year": "2021", "title": "The LOTUS Initiative for Open Natural Products Research: Knowledge Management through Wikidata", "venue": "bioRxiv", "doi": "10.1101/2021.02.28.433265", "doi_url": "https://doi.org/10.1101/2021.02.28.433265"}, {"year": "2023", "title": "A publishing infrastructure for AI-assisted academic authoring", "venue": "bioRxiv", "doi": "10.1101/2023.01.21.525030", "doi_url": "https://doi.org/10.1101/2023.01.21.525030"}, {"year": "2020", "title": "Reproducible, portable, and efficient ancient genome reconstruction with nf-core/eager", "venue": "bioRxiv", "doi": "10.1101/2020.06.11.145615", "doi_url": "https://doi.org/10.1101/2020.06.11.145615"}, {"year": "2020", "title": "Analysis of ISCB honorees and keynotes reveals disparities", "venue": "bioRxiv", "doi": "10.1101/2020.04.14.927251", "doi_url": "https://doi.org/10.1101/2020.04.14.927251"}, {"year": "2021", "title": "Analysis of science journalism reveals gender and regional disparities in coverage", "venue": "bioRxiv", "doi": "10.1101/2021.06.21.449261", "doi_url": "https://doi.org/10.1101/2021.06.21.449261"}, {"year": "2022", "title": "Morphofunctional changes at the active zone during synaptic vesicle exocytosis", "venue": "bioRxiv", "doi": "10.1101/2022.03.07.483217", "doi_url": "https://doi.org/10.1101/2022.03.07.483217"}, {"year": "2023", "title": "Comprehensive Overview of Bottom-up Proteomics using Mass Spectrometry", "venue": "PubMed", "doi": "10.48550/arxiv.2311.07791", "doi_url": "https://doi.org/10.48550/arxiv.2311.07791"}, {"year": "2022", "title": "OpenPBTA: An Open Pediatric Brain Tumor Atlas", "venue": "bioRxiv", "doi": "10.1101/2022.09.13.507832", "doi_url": "https://doi.org/10.1101/2022.09.13.507832"}, {"year": "2024", "title": "CryoVesNet: A Dedicated Framework for Synaptic Vesicle Segmentation in Cryo Electron Tomograms", "venue": "bioRxiv", "doi": "10.1101/2024.02.26.582080", "doi_url": "https://doi.org/10.1101/2024.02.26.582080"}, {"year": "2018", "title": "Scaling tree-based automated machine learning to biomedical big data with a dataset selector", "venue": "bioRxiv", "doi": "10.1101/502484", "doi_url": "https://doi.org/10.1101/502484"}, {"year": "2019", "title": "Two real use cases of FAIR maturity indicators in the life sciences", "venue": "bioRxiv", "doi": "10.1101/739334", "doi_url": "https://doi.org/10.1101/739334"}, {"year": "2023", "title": "The probability of edge existence due to node degree: a baseline for network-based predictions", "venue": "bioRxiv", "doi": "10.1101/2023.01.05.522939", "doi_url": "https://doi.org/10.1101/2023.01.05.522939"}, {"year": "2020", "title": "Comparative analyses of two primate species diverged by more than 60 million years show different rates but similar distribution of genome-wide UV repair events", "venue": "bioRxiv", "doi": "10.1101/2020.04.06.027201", "doi_url": "https://doi.org/10.1101/2020.04.06.027201"}, {"year": "2021", "title": "Widespread redundancy in -omics profiles of cancer mutation states", "venue": "bioRxiv", "doi": "10.1101/2021.10.27.466140", "doi_url": "https://doi.org/10.1101/2021.10.27.466140"}, {"year": "2023", "title": "MicroCT-Based Imaging of Microvasculature in Bone and Peri-Implant Tissues", "venue": "bioRxiv", "doi": "10.1101/2023.03.08.531678", "doi_url": "https://doi.org/10.1101/2023.03.08.531678"}, {"year": "2019", "title": "Plasmids for independently tunable, low-noise expression of two genes", "venue": "bioRxiv", "doi": "10.1101/515940", "doi_url": "https://doi.org/10.1101/515940"}, {"year": "2021", "title": "Modeling chromatin state from sequence across angiosperms using recurrent convolutional neural networks", "venue": "bioRxiv", "doi": "10.1101/2021.11.11.468292", "doi_url": "https://doi.org/10.1101/2021.11.11.468292"}, {"year": "2022", "title": "Unifying the Identification of Biomedical Entities with the Bioregistry", "venue": "bioRxiv", "doi": "10.1101/2022.07.08.499378", "doi_url": "https://doi.org/10.1101/2022.07.08.499378"}, {"year": "2021", "title": "An Open-Publishing Response to the COVID-19 Infodemic", "venue": "PubMed", "doi": "10.48550/arxiv.2109.08633", "doi_url": "https://doi.org/10.48550/arxiv.2109.08633"}, {"year": "2023", "title": "Optimizer’s dilemma: optimization strongly influences model selection in transcriptomic prediction", "venue": "bioRxiv", "doi": "10.1101/2023.06.26.546586", "doi_url": "https://doi.org/10.1101/2023.06.26.546586"}, {"year": "2024", "title": "UV-induced reorganization of 3D genome mediates DNA damage response", "venue": "bioRxiv", "doi": "10.1101/2024.05.27.595922", "doi_url": "https://doi.org/10.1101/2024.05.27.595922"}, {"year": "2022", "title": "Ten quick tips for deep learning in biology", "venue": "PLoS Computational Biology", "doi": "10.1371/journal.pcbi.1009803", "doi_url": "https://doi.org/10.1371/journal.pcbi.1009803"}, {"year": "2023", "title": "Hetnet connectivity search provides rapid insights into how two biomedical entities are related", "venue": "bioRxiv", "doi": "10.1101/2023.01.05.522941", "doi_url": "https://doi.org/10.1101/2023.01.05.522941"}, {"year": "2021", "title": "Peer Review #1 of \"Reproducible, portable, and efficient ancient genome reconstruction with nf-core/eager (v0.1)\"", "venue": "Unknown", "doi": "10.7287/peerj.10947v0.1/reviews/1", "doi_url": "https://doi.org/10.7287/peerj.10947v0.1/reviews/1"}, {"year": "2021", "title": "Peer Review #3 of \"Reproducible, portable, and efficient ancient genome reconstruction with nf-core/eager (v0.1)\"", "venue": "Unknown", "doi": "10.7287/peerj.10947v0.1/reviews/3", "doi_url": "https://doi.org/10.7287/peerj.10947v0.1/reviews/3"}, {"year": "2021", "title": "Peer Review #2 of \"Reproducible, portable, and efficient ancient genome reconstruction with nf-core/eager (v0.1)\"", "venue": "Unknown", "doi": "10.7287/peerj.10947v0.1/reviews/2", "doi_url": "https://doi.org/10.7287/peerj.10947v0.1/reviews/2"}, {"year": "2022", "title": "Defocus Corrected Large Area Cryo-EM (DeCo-LACE) for Label-Free Detection of Molecules across Entire Cell Sections", "venue": "bioRxiv", "doi": "10.1101/2022.06.13.495969", "doi_url": "https://doi.org/10.1101/2022.06.13.495969"}, {"year": "2022", "title": "Git going with LEGO", "venue": "The Journal of Play in Adulthood", "doi": "10.5920/jpa.1030", "doi_url": "https://doi.org/10.5920/jpa.1030"}, {"year": "2023", "title": "Analysis of science journalism reveals gender and regional disparities in coverage", "venue": "eLife", "doi": "10.7554/elife.84855.1", "doi_url": "https://doi.org/10.7554/elife.84855.1"}, {"year": "2023", "title": "Microtomographic investigation of a large corpus of cichlids", "venue": "bioRxiv", "doi": "10.1101/2023.03.30.534917", "doi_url": "https://doi.org/10.1101/2023.03.30.534917"}, {"year": "2023", "title": "Supporting collaborative writing tasks in large-scale distance education", "venue": "Unknown", "doi": "10.36227/techrxiv.24466321", "doi_url": "https://doi.org/10.36227/techrxiv.24466321"}, {"year": "2023", "title": "Supporting collaborative writing tasks in large-scale distance education", "venue": "Figshare", "doi": "10.36227/techrxiv.24466321.v1", "doi_url": "https://doi.org/10.36227/techrxiv.24466321.v1"}, {"year": "2023", "title": "Tracking E-Orange Press Workflow Menggunakan Automatic Notification System", "venue": "Reputasi Jurnal Rekayasa Perangkat Lunak", "doi": "10.31294/reputasi.v4i2.2270", "doi_url": "https://doi.org/10.31294/reputasi.v4i2.2270"}, {"year": "2024", "title": "Analysis of science journalism reveals gender and regional disparities in coverage", "venue": "eLife", "doi": "10.7554/elife.84855.2", "doi_url": "https://doi.org/10.7554/elife.84855.2"}];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  var DATA = [];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</body>
+</html>

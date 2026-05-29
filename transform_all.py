@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 openscience.works — Bulk UX Transformer
-Applies UX improvements to all articlestory_*.html and bookstory_*.html files.
+Applies UX improvements to all articlestory_*.html, bookstory_*.html,
+datastory_*.html, and softwarestory_*.html files.
 
 Usage:
   python3 transform_all.py                  # process all files
@@ -38,17 +39,30 @@ book_files = sorted(
     f for f in FOLDER.glob("bookstory_*.html")
     if "_new" not in f.name
 )
+data_files = sorted(
+    f for f in FOLDER.glob("datastory_*.html")
+    if "_new" not in f.name and "_orig" not in f.name
+)
+software_files = sorted(
+    f for f in FOLDER.glob("softwarestory_*.html")
+    if "_new" not in f.name and "_orig" not in f.name
+)
 
 if LIMIT:
-    article_files = article_files[:LIMIT]
-    book_files    = book_files[:LIMIT]
+    article_files  = article_files[:LIMIT]
+    book_files     = book_files[:LIMIT]
+    data_files     = data_files[:LIMIT]
+    software_files = software_files[:LIMIT]
 
 print(f"Found {len(article_files)} article story files")
 print(f"Found {len(book_files)} book story files")
-print(f"Total: {len(article_files) + len(book_files)} files to process")
+print(f"Found {len(data_files)} data story files")
+print(f"Found {len(software_files)} software story files")
+all_files = article_files + book_files + data_files + software_files
+print(f"Total: {len(all_files)} files to process")
 if DRY_RUN:
     print("\n[DRY RUN] Files that would be processed:")
-    for f in article_files + book_files:
+    for f in all_files:
         dst = f.with_name(f.stem + "_new.html")
         status = "EXISTS" if dst.exists() else "NEW"
         skip   = "SKIP" if dst.exists() and not OVERWRITE else ""
@@ -78,8 +92,13 @@ def strip_src_dst_lines(code: str) -> str:
             out.append(line)
     return "".join(out)
 
-article_code = strip_src_dst_lines(article_script_src)
-book_code    = strip_src_dst_lines(book_script_src)
+data_script_src     = (HERE / "transform_datastory.py").read_text("utf-8")
+software_script_src = (HERE / "transform_datastory.py").read_text("utf-8")  # same script handles both
+
+article_code  = strip_src_dst_lines(article_script_src)
+book_code     = strip_src_dst_lines(book_script_src)
+data_code     = strip_src_dst_lines(data_script_src)
+software_code = strip_src_dst_lines(software_script_src)
 
 # ── Process helper ─────────────────────────────────────────────────────────────
 def process_file(src: Path, code: str, label: str) -> bool:
@@ -137,6 +156,44 @@ for i, src in enumerate(book_files, 1):
     print(f"  [{i:>3}/{len(book_files)}] Processing {src.name} …", end="", flush=True)
     t1 = time.time()
     ok = process_file(src, book_code, "bookstory")
+    elapsed = time.time() - t1
+    if ok:
+        new_size = dst.stat().st_size // 1024
+        print(f" ✓  ({elapsed:.1f}s, {new_size} KB)")
+        ok_count += 1
+    else:
+        print(f" ✗")
+        err_count += 1
+
+print("\n── Data stories ─────────────────────────────────────────────────────────")
+for i, src in enumerate(data_files, 1):
+    dst = src.with_name(src.stem + "_new.html")
+    if dst.exists() and not OVERWRITE:
+        print(f"  [{i:>3}/{len(data_files)}] SKIP  {src.name}")
+        skip_count += 1
+        continue
+    print(f"  [{i:>3}/{len(data_files)}] Processing {src.name} …", end="", flush=True)
+    t1 = time.time()
+    ok = process_file(src, data_code, "datastory")
+    elapsed = time.time() - t1
+    if ok:
+        new_size = dst.stat().st_size // 1024
+        print(f" ✓  ({elapsed:.1f}s, {new_size} KB)")
+        ok_count += 1
+    else:
+        print(f" ✗")
+        err_count += 1
+
+print("\n── Software stories ─────────────────────────────────────────────────────")
+for i, src in enumerate(software_files, 1):
+    dst = src.with_name(src.stem + "_new.html")
+    if dst.exists() and not OVERWRITE:
+        print(f"  [{i:>3}/{len(software_files)}] SKIP  {src.name}")
+        skip_count += 1
+        continue
+    print(f"  [{i:>3}/{len(software_files)}] Processing {src.name} …", end="", flush=True)
+    t1 = time.time()
+    ok = process_file(src, software_code, "datastory")
     elapsed = time.time() - t1
     if ok:
         new_size = dst.stat().st_size // 1024
