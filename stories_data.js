@@ -8,7 +8,7 @@ window.STORIES_DATA = [
 "year": 2021,
 "venue": "Nature",
 "venue_name": "Nature",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Protein structure prediction",
 "Computer science",
@@ -21,30 +21,26 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Scholarly uptake",
-"Active public discourse",
 "High-visibility uptake",
 "Active discussion signal"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 43001,
+"citation_count": 44520,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
-"ta_youtube": 5,
+"ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary The research article titled \"Highly accurate protein structure prediction with AlphaFold,\" published in Nature, has amassed over 43,000 citations, indicating its significant impac…",
+"excerpt": "Short impact summary The highly regarded study on protein structure prediction with AlphaFold, published in Nature in 2021, has received an impressive 44,520 citations, indicating its profound influen…",
 "cover_url": "",
-"authors": "John Jumper, Richard Evans, Alexander Pritzel et al.",
-"institutions": [
-"Google DeepMind (United Kingdom)",
-"Seoul National University"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -64,26 +60,24 @@ window.STORIES_DATA = [
 "Artificial intelligence"
 ],
 "roles": [
-"Active public discourse",
 "Commercial linkage",
 "Reference Point for Synthesis",
-"Evidence-Bearing Reference",
-"Public Visibility & Knowledge Base"
+"Evidence-Bearing Reference"
 ],
 "is_oa": null,
 "oa_status": "",
-"citation_count": 11435,
+"citation_count": 11609,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 5,
+"ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 1,
-"ta_otl": true,
+"ta_ol_holdings": 4,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"An Introduction to Statistical Learning,\" published by Springer New York in 2013, is a significant reference point in the field of statistical learning, having garnered over 11,4…",
+"excerpt": "Short impact summary \"An Introduction to Statistical Learning,\" published by Springer New York in 2013, has established itself as a reference point in the field of statistical learning, amassing over …",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-1-4614-7138-7",
 "authors": "Gareth James, Daniela Witten, Trevor Hastie et al.",
 "institutions": [
@@ -94,6 +88,50 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
+"file": "articlestory_10.1056_NEJMoa2021436.html",
+"title": "Dexamethasone in Hospitalized Patients with Covid-19",
+"type": "ArticleStory",
+"doi": "10.1056/NEJMoa2021436",
+"year": 2020,
+"venue": "New England Journal of Medicine",
+"venue_name": "New England Journal of Medicine",
+"publisher": "Massachusetts Medical Society",
+"concepts": [
+"Medicine",
+"Dexamethasone",
+"Randomization",
+"Mechanical ventilation",
+"Randomized controlled trial",
+"Internal medicine",
+"Clinical trial",
+"Respiratory failure"
+],
+"roles": [
+"Scholarly uptake",
+"High-visibility uptake",
+"Reference point for synthesis",
+"Active discussion signal"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 10910,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": true,
+"has_reuse": true,
+"excerpt": "Short impact summary The study titled \"Dexamethasone in Hospitalized Patients with Covid-19\" published in the New England Journal of Medicine has made a significant impact on the treatment of COVID-19…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
 "file": "articlestory_10.1016_j.physletb.2012.08.020.html",
 "title": "Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC",
 "type": "ArticleStory",
@@ -101,7 +139,7 @@ window.STORIES_DATA = [
 "year": 2012,
 "venue": "Physics Letters B",
 "venue_name": "Physics Letters B",
-"publisher": "Elsevier BV",
+"publisher": "Elsevier",
 "concepts": [
 "Physics",
 "Particle physics",
@@ -113,37 +151,25 @@ window.STORIES_DATA = [
 "Atlas (anatomy)"
 ],
 "roles": [
-"Scholarly uptake",
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 10397,
+"citation_count": 10685,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
-"ta_youtube": 5,
+"ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The observation of a new particle in the search for the Standard Model Higgs boson, as reported by G.",
+"excerpt": "Short impact summary The 2012 observation of a new particle in the pursuit of the Standard Model Higgs boson using the ATLAS detector at the LHC represents a significant contribution to the field of p…",
 "cover_url": "",
-"authors": "G. Aad, T. Abajyan, B. Abbott et al.",
-"institutions": [
-"University of Freiburg",
-"University of Bonn",
-"University of Oklahoma",
-"Universitat Autònoma de Barcelona",
-"Université Paris-Sud",
-"University of Geneva",
-"Azerbaijan National Academy of Sciences",
-"Amsterdam University of the Arts",
-"Oklahoma State University",
-"Michigan State University"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -174,7 +200,7 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 7675,
+"citation_count": 7716,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -187,7 +213,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary The research article \"Remdesivir for the Treatment of Covid-19 — Final Report,\" published in the New England Journal of Medicine, underscores the efficacy of Remdesivir in treatin…",
+"excerpt": "Short impact summary The final report on Remdesivir for the treatment of COVID-19, published in the New England Journal of Medicine, has significantly influenced both academic discourse and public awa…",
 "cover_url": "",
 "authors": "John H. Beigel, Kay M Tomashek, Lori E. Dodd et al.",
 "institutions": [
@@ -216,79 +242,84 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Scholarly uptake",
-"Active public discourse",
 "High-visibility uptake",
 "Sustainability & Policy relevance",
-"Reference point for synthesis"
+"Reference point for synthesis",
+"Active discussion signal"
 ],
 "is_oa": true,
 "oa_status": "bronze",
-"citation_count": 3061,
+"citation_count": 2915,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
-"ta_youtube": 4,
+"ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The randomized prostate cancer screening trial, published in the New England Journal of Medicine by a team from esteemed institutions including the University of Toronto and the N…",
+"excerpt": "Short impact summary The randomized prostate-cancer screening trial led by prominent institutions, including the National Institutes of Health, has made a significant impact in the field of oncology, …",
 "cover_url": "",
 "authors": "Gerald L. Andriole, E. David Crawford, Robert L. Grubb et al.",
 "institutions": [
 "National Institutes of Health",
-"University of Colorado Denver",
-"Huntsman Cancer Institute",
-"University of Alabama at Birmingham",
-"Henry Ford Health System",
-"University of Pittsburgh Medical Center",
-"Pacific Health Research and Education Institute",
-"Westat (United States)",
-"Information Management Services",
-"Office of Disease Prevention"
+"3M (United States)"
 ],
 "download_count": 0
 },
 {
-"file": "articlestory_10.1162_anti.5czb.html",
-"title": "What Is Intelligence?",
-"type": "ArticleStory",
-"doi": "10.1162/anti.5czb",
-"year": 2025,
-"venue": "Unknown",
-"venue_name": "Unknown",
-"publisher": "",
+"file": "softwarestory_10.5281_zenodo.1174508.html",
+"title": "Cantera: An Object-oriented Software Toolkit for Chemical Kinetics, Thermodynamics, and Transport Processes",
+"type": "SoftwareStory",
+"doi": "10.5281/zenodo.1174508",
+"year": 2018,
+"venue": "Figshare",
+"venue_name": "Figshare",
+"publisher": "Figshare (United Kingdom)",
 "concepts": [
-"Psychology",
-"Computer science"
+"Kinetics",
+"Thermodynamics",
+"Software",
+"Object (grammar)",
+"Computer science",
+"Physics",
+"Artificial intelligence",
+"Programming language"
 ],
 "roles": [
-"Scholarly uptake"
+"Software method anchor",
+"Scholarly uptake",
+"High-visibility uptake",
+"Sustainability & policy relevance"
 ],
-"is_oa": false,
-"oa_status": "closed",
-"citation_count": 1644,
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 1738,
 "event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
+"has_sdgs": true,
+"sdg_ids": [
+"Industry, innovation and infrastructure"
+],
+"has_teaching": false,
 "ta_ocw": 0,
-"ta_youtube": 4,
+"ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary Blaise Agüera y Arcas's article \"What Is Intelligence?\" has made a significant impact in the academic community, as evidenced by its citation count of 1,644, reflecting a strong i…",
+"excerpt": "Short impact summary The software toolkit \"Cantera,\" developed by a team of researchers from prestigious institutions such as the Massachusetts Institute of Technology and Sandia National Laboratories…",
 "cover_url": "",
-"authors": "Blaise Agüera y Arcas",
+"authors": "David G. Goodwin, Raymond L. Speth, Harry K. Moffat et al.",
 "institutions": [
-"Google (United States)"
+"California Institute of Technology",
+"Massachusetts Institute of Technology",
+"Sandia National Laboratories"
 ],
-"download_count": 0
+"download_count": 1602
 },
 {
 "file": "articlestory_10.1038_nature11543.html",
@@ -311,24 +342,23 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Scholarly uptake",
-"Active public discourse",
 "Reference point for synthesis",
 "Active discussion signal"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 1502,
+"citation_count": 1503,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
-"ta_youtube": 1,
+"ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The comprehensive assembly of the barley genome presented in this study has garnered significant academic attention, evidenced by over 1,500 citations from a diverse range of jour…",
+"excerpt": "Short impact summary The publication \"A physical, genetic and functional sequence assembly of the barley genome\" has garnered significant recognition within the scientific community, as evidenced by i…",
 "cover_url": "",
 "authors": "Heidrun Gundlach, Matthias Pfeifer, Thomas Nussbaumer et al.",
 "institutions": [
@@ -347,6 +377,54 @@ window.STORIES_DATA = [
 },
 {
 "file": "articlestory_10.1056_NEJMoa2007621.html",
+"title": "RETRACTED: Cardiovascular Disease, Drug Therapy, and Mortality in Covid-19",
+"type": "ArticleStory",
+"doi": "10.1056/NEJMoa2007621",
+"year": 2020,
+"venue": "New England Journal of Medicine",
+"venue_name": "New England Journal of Medicine",
+"publisher": "Massachusetts Medical Society",
+"concepts": [
+"Coronavirus disease 2019 (COVID-19)",
+"Disease",
+"Medicine",
+"Drug",
+"Pharmacotherapy",
+"Intensive care medicine",
+"Virology",
+"Internal medicine"
+],
+"roles": [
+"Scholarly uptake",
+"Reference point for synthesis",
+"Sustainability & Policy relevance",
+"Active discussion signal"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 1495,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article \"Cardiovascular Disease, Drug Therapy, and Mortality in Covid-19\" has garnered significant attention since its retraction, highlighting the ongoing debates in the fiel…",
+"cover_url": "",
+"authors": "Mandeep R. Mehra, Sapan S. Desai, SreyRam Kuy et al.",
+"institutions": [
+"Brigham and Women's Hospital"
+],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1056_NEJMoa2007621_.html",
 "title": "Cardiovascular Disease, Drug Therapy, and Mortality in Covid-19",
 "type": "ArticleStory",
 "doi": "10.1056/NEJMoa2007621",
@@ -379,19 +457,148 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
-"ta_youtube": 2,
+"ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The article \"Cardiovascular Disease, Drug Therapy, and Mortality in Covid-19,\" published in the New England Journal of Medicine, has generated substantial academic interest, evide…",
+"excerpt": "Short impact summary The article \"Cardiovascular Disease, Drug Therapy, and Mortality in Covid-19,\" published in the New England Journal of Medicine, has garnered significant attention, accumulating 1…",
 "cover_url": "",
 "authors": "Mandeep R. Mehra, Sapan S. Desai, SreyRam Kuy et al.",
 "institutions": [
 "Brigham and Women's Hospital"
 ],
+"download_count": 0
+},
+{
+"file": "softwarestory_10.5281_zenodo.11813.html",
+"title": "LMFIT: Non-Linear Least-Square Minimization and Curve-Fitting for Python",
+"type": "SoftwareStory",
+"doi": "10.5281/zenodo.11813",
+"year": 2014,
+"venue": "Zenodo (CERN European Organization for Nuclear Research)",
+"venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
+"publisher": "",
+"concepts": [
+"Curve fitting",
+"Mathematics",
+"Minification",
+"Applied mathematics",
+"Statistics",
+"Mathematical optimization"
+],
+"roles": [
+"Software method anchor",
+"Scholarly uptake",
+"High-visibility uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 1346,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary LMFIT, a software tool for non-linear least-square minimization and curve-fitting, has made significant contributions to various fields, garnering 1,346 citations and facilitating…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 3100
+},
+{
+"file": "bookstory_10.7551_mitpress_11805.001.0001.html",
+"title": "Data Feminism",
+"type": "BookStory",
+"doi": "10.7551/mitpress/11805.001.0001",
+"year": 2020,
+"venue": "The MIT Press",
+"venue_name": "",
+"publisher": "The MIT Press",
+"concepts": [
+"Feminism",
+"Big data",
+"Injustice",
+"Sociology",
+"Engineering ethics",
+"Computer science",
+"Psychology",
+"Gender studies"
+],
+"roles": [
+"Commercial linkage",
+"Reference Point for Synthesis"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 1000,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 4,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The book \"Data Feminism,\" published by The MIT Press in 2020, has emerged as a significant reference point for synthesizing discussions around feminist data studies.",
+"cover_url": "",
+"authors": "Catherine D'Ignazio, Lauren F. Klein",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "bookstory_10.4159_9780674369542.html",
+"title": "Capital in the Twenty-First Century",
+"type": "BookStory",
+"doi": "10.4159/9780674369542",
+"year": 2014,
+"venue": "Harvard University Press",
+"venue_name": "",
+"publisher": "Harvard University Press",
+"concepts": [
+"Inequality",
+"Capital (architecture)",
+"Democracy",
+"Work (physics)",
+"Economics",
+"Neoclassical economics",
+"Set (abstract data type)",
+"Development economics"
+],
+"roles": [
+"Commercial linkage",
+"Reference Point for Synthesis",
+"Evidence-Bearing Reference",
+"Sustainability & Policy relevance"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 999,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"No poverty"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 19,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary \"Capital in the Twenty-First Century\" has established itself as a significant reference point within the academic community, evidenced by nearly 999 citations.",
+"cover_url": "",
+"authors": "Thomas Piketty",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -420,7 +627,7 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 532,
+"citation_count": 540,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -428,12 +635,12 @@ window.STORIES_DATA = [
 ],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 1,
-"ta_ol_holdings": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 6,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The book, \"Human Pose Estimation via Convolutional Part Heatmap Regression,\" published by Springer in 2016, serves as a pivotal reference point in the field of human pose estimati…",
+"excerpt": "Short impact summary Despite being published in 2016, \"Human Pose Estimation via Convolutional Part Heatmap Regression\" has established itself as a significant reference point in its field, evidenced …",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-319-46478-7_44",
 "authors": "Adrian Bulat, Georgios Tzimiropoulos",
 "institutions": [
@@ -442,52 +649,272 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
-"file": "articlestory_10.1101_2020.02.10.942185.html",
-"title": "Structural modeling of 2019-novel coronavirus (nCoV) spike protein reveals a proteolytically-sensitive activation loop as a distinguishing feature compared to SARS-CoV and related SARS-like coronaviruses",
-"type": "ArticleStory",
-"doi": "10.1101/2020.02.10.942185",
-"year": 2020,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
+"file": "softwarestory_10.5281_zenodo.19690618.html",
+"title": "PyPSA: Python for Power System Analysis",
+"type": "SoftwareStory",
+"doi": "10.5281/zenodo.19690618",
+"year": 2026,
+"venue": "Open MIND",
+"venue_name": "Open MIND",
+"publisher": "",
 "concepts": [
-"Coronavirus",
-"Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
-"Biology",
-"Virology",
-"Coronavirus disease 2019 (COVID-19)",
-"Betacoronavirus",
-"Glycoprotein",
-"Lipid bilayer fusion"
+"Computer science",
+"Python (programming language)",
+"Toolbox",
+"Software",
+"Electric power system",
+"Renewable energy",
+"Operating system",
+"Electrical engineering"
 ],
 "roles": [
+"Software method anchor",
 "Scholarly uptake",
-"Active public discourse",
-"Sustainability & Policy relevance"
+"Sustainability & policy relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 511,
+"citation_count": 528,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
-"Good health and well-being"
+"Affordable and clean energy"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
-"ta_youtube": 1,
+"ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The study of the 2019-novel coronavirus (nCoV) spike protein by Jaimes et al.",
+"excerpt": "Short impact summary PyPSA, a software tool for power system analysis, has garnered significant academic attention, evidenced by its 528 citations.",
 "cover_url": "",
-"authors": "Javier A. Jaimes, Nicole M. André, Jean K. Millet et al.",
+"authors": "Brown, Tom, Jonas Hörsch, David Schlachtberger",
 "institutions": [
-"Cornell University",
-"Université Paris-Saclay"
+"Frankfurt Institute for Advanced Studies"
 ],
+"download_count": 981
+},
+{
+"file": "datastory_10.5281_zenodo.5571936.html",
+"title": "ESA WorldCover 10 m 2020 v100",
+"type": "DataStory",
+"doi": "10.5281/zenodo.5571936",
+"year": 2021,
+"venue": "Socio-Environmental Systems Modeling",
+"venue_name": "Socio-Environmental Systems Modeling",
+"publisher": "",
+"concepts": [
+"Computer science"
+],
+"roles": [
+"Dataset reference backbone",
+"Scholarly uptake",
+"Infrastructure dataset",
+"High-visibility uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 512,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The ESA WorldCover 10 m 2020 dataset, developed by a team of experts from prestigious institutions including the European Space Agency and Wageningen University & Research, has ga…",
+"cover_url": "",
+"authors": "Daniele Zanaga, Ruben Van De Kerchove, Wanda De Keersmaecker et al.",
+"institutions": [
+"Brockmann Consult (Germany)",
+"Gamma Remote Sensing (Switzerland)",
+"International Institute for Applied Systems Analysis",
+"Wageningen University & Research",
+"European Space Agency"
+],
+"download_count": 160063
+},
+{
+"file": "articlestory_10.5061_dryad.234_1.html",
+"title": "Global Wood Density Database",
+"type": "DataStory",
+"doi": "10.5061/dryad.234/1",
+"year": 2009,
+"venue": "Open MIND",
+"venue_name": "Open MIND",
+"publisher": "",
+"concepts": [
+"Database",
+"Geography",
+"Computer science"
+],
+"roles": [
+"Dataset reference backbone",
+"Scholarly uptake",
+"Infrastructure dataset",
+"High-visibility uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 457,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The Global Wood Density Database (2009) has become a significant resource within the ecological and forestry research community, garnering 457 citations, demonstrating its substan…",
+"cover_url": "",
+"authors": "AE Zanne, Gabriela López‐González, David A. Coomes et al.",
+"institutions": [],
 "download_count": 0
+},
+{
+"file": "datastory_10.6084_m9.figshare.7504448.v3.html",
+"title": "Global Aridity Index and Potential Evapotranspiration (ET0) Climate Database v2",
+"type": "DataStory",
+"doi": "10.6084/m9.figshare.7504448.v3",
+"year": 2019,
+"venue": "Figshare",
+"venue_name": "Figshare",
+"publisher": "",
+"concepts": [
+"Aridity index",
+"Evapotranspiration",
+"Index (typography)",
+"Arid",
+"Environmental science",
+"Climatology",
+"Database",
+"Physical geography"
+],
+"roles": [
+"Dataset reference backbone",
+"Scholarly uptake",
+"Infrastructure dataset",
+"High-visibility uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 336,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The Global Aridity Index and Potential Evapotranspiration (ET0) Climate Database v2 has established itself as a valuable dataset within the climate research community, evidenced b…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 1195
+},
+{
+"file": "datastory_10.5281_zenodo.1188976.html",
+"title": "The Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS)",
+"type": "DataStory",
+"doi": "10.5281/zenodo.1188976",
+"year": 2018,
+"venue": "Zenodo (CERN European Organization for Nuclear Research)",
+"venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
+"publisher": "European Organization for Nuclear Research",
+"concepts": [
+"Audio visual",
+"Computer science",
+"Speech recognition",
+"Database",
+"Communication",
+"Psychology",
+"Multimedia"
+],
+"roles": [
+"Dataset reference backbone",
+"Scholarly uptake",
+"Infrastructure dataset",
+"High-visibility uptake",
+"Sustainability & policy relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 329,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Gender equality"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS) has made a significant mark in the academic and research community, with 329 citations highlighting its im…",
+"cover_url": "",
+"authors": "Steven R. Livingstone, Frank Russo",
+"institutions": [
+"University of Wisconsin–River Falls",
+"Toronto Metropolitan University"
+],
+"download_count": 1265541
+},
+{
+"file": "softwarestory_10.5281_zenodo.1480624.html",
+"title": "Effsize - a package for efficient effect size computation",
+"type": "SoftwareStory",
+"doi": "10.5281/zenodo.1480624",
+"year": 2016,
+"venue": "Zenodo (CERN European Organization for Nuclear Research)",
+"venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
+"publisher": "European Organization for Nuclear Research",
+"concepts": [
+"Computer science",
+"Computation",
+"Econometrics",
+"Mathematics",
+"Algorithm"
+],
+"roles": [
+"Software method anchor",
+"Scholarly uptake",
+"High-visibility uptake",
+"Sustainability & policy relevance",
+"Rapid uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 320,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Affordable and clean energy"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The software tool Effsize, authored by Marco Torchiano and made available through Zenodo, has garnered significant academic attention, reflected in its 320 citations.",
+"cover_url": "",
+"authors": "Marco Torchiano",
+"institutions": [
+"Polytechnic University of Turin"
+],
+"download_count": 355
 },
 {
 "file": "bookstory_10.4324_9781315712802.html",
@@ -504,30 +931,27 @@ window.STORIES_DATA = [
 "Law"
 ],
 "roles": [
-"Active public discourse",
 "Commercial linkage",
 "Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "gold",
-"citation_count": 298,
+"citation_count": 306,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 1,
-"ta_ol_holdings": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 5,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Against Meritocracy,\" published by Routledge in 2017, functions as a significant reference point within discussions about meritocratic systems, influencing 298 academic citations…",
-"cover_url": "",
+"excerpt": "Short impact summary Despite its publication in 2017, the book \"Against Meritocracy\" has established itself as a significant reference point, receiving an impressive 306 citations in academic literatu…",
+"cover_url": "http://images.tandf.co.uk/common/jackets/crclarge/978131571/9781315712802.jpg",
 "authors": "Jo Littler",
-"institutions": [
-"Roskilde University"
-],
-"download_count": 9692
+"institutions": [],
+"download_count": 9966
 },
 {
 "file": "articlestory_10.1038_nature03124.html",
@@ -550,10 +974,10 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Reference point for synthesis",
-"Active public discourse",
 "Scholarly uptake",
 "High-visibility uptake",
-"Sustainability & Policy relevance"
+"Sustainability & Policy relevance",
+"Active discussion signal"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -570,7 +994,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The article titled \"A FADD-dependent innate immune mechanism in mammalian cells\" has garnered significant academic attention, as evidenced by its 286 citations across various rese…",
+"excerpt": "Short impact summary The research article titled \"A FADD-dependent innate immune mechanism in mammalian cells\" has garnered significant academic attention, as evidenced by its 286 citations.",
 "cover_url": "",
 "authors": "Siddharth Balachandran, Emmanuel Thomas, Glen N. Barber",
 "institutions": [
@@ -610,7 +1034,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The article \"Teachers’ Competencies,\" authored by K.",
+"excerpt": "Short impact summary The work titled \"Teachers’ Competencies,\" authored by K.",
 "cover_url": "",
 "authors": "K. Selvi, Peter Lang",
 "institutions": [],
@@ -636,13 +1060,12 @@ window.STORIES_DATA = [
 "Galaxy formation and evolution"
 ],
 "roles": [
-"Active public discourse",
 "Scholarly uptake",
 "High-visibility uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 244,
+"citation_count": 253,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
@@ -653,7 +1076,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research on a massive, quiescent galaxy at a redshift of 3.717 has garnered significant academic attention, as evidenced by its 244 citations across prominent journals.",
+"excerpt": "Short impact summary The publication titled \"A massive, quiescent galaxy at a redshift of 3.717,\" authored by an international team including Karl Glazebrook and Ivo Labbé, has garnered significant ac…",
 "cover_url": "",
 "authors": "Karl Glazebrook, C. Schreiber, Ivo Labbé et al.",
 "institutions": [
@@ -665,6 +1088,235 @@ window.STORIES_DATA = [
 "Max Planck Institute for Astronomy",
 "Australian National University"
 ],
+"download_count": 0
+},
+{
+"file": "datastory_10.5281_zenodo.3757476.html",
+"title": "COVID-19 CT Lung and Infection Segmentation Dataset",
+"type": "DataStory",
+"doi": "10.5281/zenodo.3757476",
+"year": 2020,
+"venue": "Zenodo (CERN European Organization for Nuclear Research)",
+"venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
+"publisher": "European Organization for Nuclear Research",
+"concepts": [
+"Coronavirus disease 2019 (COVID-19)",
+"Lung infection",
+"Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
+"2019-20 coronavirus outbreak",
+"Lung",
+"Segmentation",
+"Virology",
+"Medicine"
+],
+"roles": [
+"Dataset reference backbone",
+"Infrastructure dataset",
+"Scholarly uptake",
+"High-visibility uptake",
+"Sustainability & policy relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 238,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Zero hunger"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The COVID-19 CT Lung and Infection Segmentation Dataset, hosted on Zenodo, has emerged as a significant resource for researchers, amassing 238 citations and enabling 243 subsequen…",
+"cover_url": "",
+"authors": "Jun Ma, Cheng Ge, Yixin Wang et al.",
+"institutions": [
+"Nanjing University of Science and Technology",
+"Jiangsu University of Technology",
+"Institute of Computing Technology",
+"Shanghai University",
+"Fudan University",
+"Chongqing University of Posts and Telecommunications",
+"China Pharmaceutical University",
+"Central South University",
+"Zhengzhou University",
+"Tongji University"
+],
+"download_count": 47981
+},
+{
+"file": "datastory_10.5281_zenodo.4743746.html",
+"title": "IoT-23: A labeled dataset with malicious and benign IoT network traffic",
+"type": "DataStory",
+"doi": "10.5281/zenodo.4743746",
+"year": 2020,
+"venue": "Zenodo (CERN European Organization for Nuclear Research)",
+"venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
+"publisher": "European Organization for Nuclear Research",
+"concepts": [
+"Internet of Things",
+"Computer science",
+"Computer network",
+"Computer security"
+],
+"roles": [
+"Dataset reference backbone",
+"Infrastructure dataset",
+"Scholarly uptake",
+"High-visibility uptake",
+"Benchmark resource"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 228,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The dataset titled \"IoT-23: A labeled dataset with malicious and benign IoT network traffic,\" hosted on Zenodo, has emerged as a valuable resource for both academic research and p…",
+"cover_url": "",
+"authors": "Sebastián García, Agustin Parmisano, María José Erquiaga",
+"institutions": [
+"Czech Technical University in Prague"
+],
+"download_count": 10012
+},
+{
+"file": "softwarestory_10.6084_m9.figshare.1164194.v13.html",
+"title": "The graph-tool python library",
+"type": "SoftwareStory",
+"doi": "10.6084/m9.figshare.1164194.v13",
+"year": 2015,
+"venue": "Figshare",
+"venue_name": "Figshare",
+"publisher": "",
+"concepts": [
+"Python (programming language)",
+"Computer science",
+"Programming language",
+"Graph",
+"Theoretical computer science"
+],
+"roles": [
+"Software method anchor",
+"Scholarly uptake",
+"High-visibility uptake",
+"Rapid uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 225,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The graph-tool Python library, released in 2015, has established a significant academic footprint with 225 citations, predominantly from research venues such as arXiv and bioRxiv.",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "datastory_10.6084_m9.figshare.1008029.v1.html",
+"title": "TNO Image Fusion Dataset",
+"type": "DataStory",
+"doi": "10.6084/m9.figshare.1008029.v1",
+"year": 2014,
+"venue": "Figshare",
+"venue_name": "Figshare",
+"publisher": "",
+"concepts": [
+"Image fusion",
+"Artificial intelligence",
+"Fusion",
+"Computer science",
+"Image (mathematics)",
+"Computer vision",
+"Linguistics",
+"Philosophy"
+],
+"roles": [
+"Dataset reference backbone",
+"Infrastructure dataset",
+"Scholarly uptake",
+"Benchmark resource"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 202,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The TNO Image Fusion Dataset (2014), hosted on Figshare, has been cited 202 times, demonstrating its significance within the fields of imaging and data fusion.",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 37
+},
+{
+"file": "softwarestory_10.6084_m9.figshare.1092508.v6.html",
+"title": "PIVlab - Time-Resolved Digital Particle Image Velocimetry Tool for MATLAB",
+"type": "SoftwareStory",
+"doi": "10.6084/m9.figshare.1092508.v6",
+"year": 2015,
+"venue": "Figshare",
+"venue_name": "Figshare",
+"publisher": "",
+"concepts": [
+"Particle image velocimetry",
+"Particle tracking velocimetry",
+"Computer science",
+"MATLAB",
+"Velocimetry",
+"Computer graphics (images)",
+"Computer vision",
+"Digital image analysis"
+],
+"roles": [
+"Software method anchor",
+"High-visibility uptake",
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 191,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The software tool PIVlab, designed for time-resolved digital particle image velocimetry in MATLAB, has garnered 191 citations since its release in 2015, indicating significant aca…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -687,14 +1339,13 @@ window.STORIES_DATA = [
 "Economic geography"
 ],
 "roles": [
-"Active public discourse",
 "Scholarly uptake",
 "Sustainability & Policy relevance",
 "Reference point for synthesis"
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 180,
+"citation_count": 189,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -707,22 +1358,96 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research titled \"Global urban environmental change drives adaptation in white clover\" has garnered significant attention within the academic community, demonstrated by its cit…",
+"excerpt": "Short impact summary The article titled \"Global urban environmental change drives adaptation in white clover,\" published in Science , has garnered significant scholarly attention, as evidenced by its …",
 "cover_url": "",
-"authors": "James S. Santangelo, Rob W. Ness, Beata Cohan et al.",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "bookstory_10.3998_mpub.15472.html",
+"title": "Measurement of Nontariff Barriers",
+"type": "BookStory",
+"doi": "10.3998/mpub.15472",
+"year": 1998,
+"venue": "University of Michigan Press",
+"venue_name": "",
+"publisher": "University of Michigan Press",
+"concepts": [
+"Technical barriers to trade",
+"Subsidy",
+"Government procurement",
+"European union",
+"International trade",
+"International economics",
+"Government (linguistics)",
+"Order (exchange)"
+],
+"roles": [
+"Commercial linkage",
+"Reference Point for Synthesis",
+"Sustainability & Policy relevance"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 163,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Partnerships for the goals"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 1,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary \"Measurement of Nontariff Barriers,\" published by the University of Michigan Press in 1998, serves as a vital reference point for scholars and policymakers in the field of interna…",
+"cover_url": "https://www.fulcrum.org/image-service/2v23vv25r1541084731/full/286,/0/default.png",
+"authors": "Alan Deardorff, Robert Stern",
 "institutions": [
-"University of Toronto",
-"University of North Carolina at Chapel Hill",
-"Concordia University",
-"DePaul University",
-"DePauw University",
-"University of Washington",
-"Universidad San Francisco de Quito",
-"Uppsala University",
-"Hokkaido University",
-"University of New England"
+"University of Michigan–Ann Arbor"
 ],
 "download_count": 0
+},
+{
+"file": "bookstory_10.1007_978-3-319-00026-8.html",
+"title": "Opening Science",
+"type": "BookStory",
+"doi": "10.1007/978-3-319-00026-8",
+"year": 2014,
+"venue": "Springer International Publishing",
+"venue_name": "",
+"publisher": "Springer International Publishing",
+"concepts": [
+"Computer science"
+],
+"roles": [
+"Commercial linkage",
+"Reference Point for Synthesis"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 160,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite its publication in 2014, \"Opening Science\" has yet to garner citations or community discourse, suggesting limited immediate impact or engagement within academic circles or…",
+"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-319-00026-8",
+"authors": "Sönke Bartling, Sascha Friesike",
+"institutions": [
+"German Cancer Research Center",
+"Alexander von Humboldt Institute for Internet and Society"
+],
+"download_count": 12848
 },
 {
 "file": "bookstory_10.3998_mpub.11927713.html",
@@ -744,13 +1469,12 @@ window.STORIES_DATA = [
 "Public administration"
 ],
 "roles": [
-"Active public discourse",
 "Commercial linkage",
 "Reference Point for Synthesis",
 "Sustainability & Policy relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "citation_count": 159,
 "event_count": 0,
 "has_sdgs": true,
@@ -759,60 +1483,97 @@ window.STORIES_DATA = [
 ],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 3,
+"ta_youtube": 0,
 "ta_ol_holdings": 3,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Published by the University of Michigan Press in 2021, \"Coronavirus Politics\" has emerged as a reference point within academic discourse, demonstrating notable relevance to sustai…",
+"excerpt": "Short impact summary Despite the absence of traditional metrics such as citations or community discourse, \"Coronavirus Politics\" published by the University of Michigan Press in 2021 serves as a signi…",
 "cover_url": "",
 "authors": "Scott Greer, Elizabeth King, Elize Fonseca et al.",
-"institutions": [
-"Kyushu University",
-"Jichi Medical University",
-"Ritsumeikan University"
-],
-"download_count": 9112
+"institutions": [],
+"download_count": 9318
 },
 {
-"file": "bookstory_10.1007_978-3-319-00026-8.html",
-"title": "Opening Science",
-"type": "BookStory",
-"doi": "10.1007/978-3-319-00026-8",
-"year": 2014,
-"venue": "Springer International Publishing",
-"venue_name": "",
-"publisher": "Springer International Publishing",
+"file": "articlestory_10.1038_nrd.2016.136.html",
+"title": "Parsing clinical success rates",
+"type": "ArticleStory",
+"doi": "10.1038/nrd.2016.136",
+"year": 2016,
+"venue": "Nature Reviews Drug Discovery",
+"venue_name": "Nature Reviews Drug Discovery",
+"publisher": "Nature Portfolio",
 "concepts": [
-"Computer science"
+"Parsing",
+"Medicine",
+"Computer science",
+"Intensive care medicine",
+"Natural language processing"
 ],
 "roles": [
-"Active public discourse",
-"Commercial linkage",
-"Reference Point for Synthesis",
-"Public Visibility & Knowledge Base"
+"Scholarly uptake",
+"Reference point for synthesis"
 ],
 "is_oa": true,
-"oa_status": "gold",
+"oa_status": "bronze",
 "citation_count": 157,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 1,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary Asher Mullard's 2016 article, published in Nature Reviews Drug Discovery , has garnered significant academic recognition, reflected in its 157 citations to date.",
+"cover_url": "",
+"authors": "Asher Mullard",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "bookstory_10.3998_mpub.17144.html",
+"title": "Quantifying the Impact of Technical Barriers to Trade",
+"type": "BookStory",
+"doi": "10.3998/mpub.17144",
+"year": 2001,
+"venue": "University of Michigan Press",
+"venue_name": "",
+"publisher": "University of Michigan Press",
+"concepts": [
+"International trade",
+"Economic geography",
+"Business",
+"Geology",
+"Economics"
+],
+"roles": [
+"Commercial linkage",
+"Reference Point for Synthesis",
+"Sustainability & Policy relevance"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 153,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Partnerships for the goals"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 1,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The book \"Opening Science,\" published by Springer International Publishing in 2014, has emerged as a significant reference point in the discourse surrounding scientific openness a…",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-319-00026-8",
-"authors": "Sönke Bartling, Sascha Friesike",
-"institutions": [
-"German Cancer Research Center",
-"Alexander von Humboldt Institute for Internet and Society"
-],
-"download_count": 12669
+"excerpt": "Short impact summary \"Quantifying the Impact of Technical Barriers to Trade,\" published by the University of Michigan Press in 2001, serves as a significant reference point in discussions of trade pol…",
+"cover_url": "https://www.fulcrum.org/image-service/qr46r420k1752564628/full/286,/0/default.png",
+"authors": "Keith Maskus, John Wilson, John Wilson",
+"institutions": [],
+"download_count": 0
 },
 {
 "file": "articlestory_10.7554_eLife.80660.html",
@@ -822,7 +1583,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "",
+"publisher": "eLife Sciences Publications, Ltd",
 "concepts": [
 "Key (lock)",
 "Drosophila (subgenus)",
@@ -846,17 +1607,65 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 9,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary This dataset provides a searchable resource of Drosophila GAL4 driver expression patterns at a single neuron resolution, contributing significantly to the understanding of neurona…",
+"excerpt": "Short impact summary The dataset titled \"A searchable image resource of Drosophila GAL4 driver expression patterns with single neuron resolution,\" published in eLife, has made significant strides in t…",
 "cover_url": "",
 "authors": "",
 "institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1182_blood.2023022222.html",
+"title": "Causes and consequences of clonal hematopoiesis",
+"type": "ArticleStory",
+"doi": "10.1182/blood.2023022222",
+"year": 2023,
+"venue": "Blood",
+"venue_name": "Blood",
+"publisher": "Elsevier BV",
+"concepts": [
+"Haematopoiesis",
+"Biology",
+"Immunology",
+"Medicine",
+"Genetics",
+"Stem cell"
+],
+"roles": [
+"High-visibility uptake",
+"Scholarly uptake",
+"Reference point for synthesis",
+"Sustainability & Policy relevance",
+"Active discussion signal"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 148,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article \"Causes and consequences of clonal hematopoiesis,\" authored by Lachelle D.",
+"cover_url": "",
+"authors": "Lachelle D. Weeks, Benjamin L. Ebert",
+"institutions": [
+"Harvard University",
+"Howard Hughes Medical Institute"
+],
 "download_count": 0
 },
 {
@@ -910,54 +1719,6 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
-"file": "articlestory_10.1182_blood.2023022222.html",
-"title": "Causes and consequences of clonal hematopoiesis",
-"type": "ArticleStory",
-"doi": "10.1182/blood.2023022222",
-"year": 2023,
-"venue": "Blood",
-"venue_name": "Blood",
-"publisher": "Elsevier BV",
-"concepts": [
-"Haematopoiesis",
-"Biology",
-"Immunology",
-"Medicine",
-"Genetics",
-"Stem cell"
-],
-"roles": [
-"Active public discourse",
-"High-visibility uptake",
-"Scholarly uptake",
-"Reference point for synthesis",
-"Sustainability & Policy relevance"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 131,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Good health and well-being"
-],
-"has_teaching": true,
-"ta_ocw": 1,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The article \"Causes and consequences of clonal hematopoiesis\" by Lachelle D.",
-"cover_url": "",
-"authors": "Lachelle D. Weeks, Benjamin L. Ebert",
-"institutions": [
-"Harvard University",
-"Howard Hughes Medical Institute"
-],
-"download_count": 0
-},
-{
 "file": "articlestory_10.1038_s41557-023-01379-8.html",
 "title": "Proteolysis-targeting chimeras with reduced off-targets",
 "type": "ArticleStory",
@@ -965,7 +1726,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "Nature Chemistry",
 "venue_name": "Nature Chemistry",
-"publisher": "Nature Portfolio",
+"publisher": "",
 "concepts": [
 "Chemistry",
 "Pomalidomide",
@@ -978,12 +1739,11 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Scholarly uptake",
-"Active public discourse",
 "Reference point for synthesis"
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 123,
+"citation_count": 129,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
@@ -994,13 +1754,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research on proteolysis-targeting chimeras (PROTACs) with reduced off-target effects has garnered significant academic attention, evidenced by 123 citations since its release …",
+"excerpt": "Short impact summary The research on proteolysis-targeting chimeras with reduced off-targets, published in Nature Chemistry, has already garnered significant academic interest with 129 citations, refl…",
 "cover_url": "",
-"authors": "Tuan M. Nguyen, Vedagopuram Sreekanth, Arghya Deb et al.",
-"institutions": [
-"Broad Institute",
-"Harvard University"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -1068,26 +1825,25 @@ window.STORIES_DATA = [
 "Natural resource economics"
 ],
 "roles": [
-"Active public discourse",
 "Scholarly uptake",
 "Sustainability & Policy relevance"
 ],
-"is_oa": false,
-"oa_status": "closed",
-"citation_count": 113,
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 114,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
 "Clean water and sanitation"
 ],
-"has_teaching": true,
-"ta_ocw": 5,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The article \"Hydrological limits to carbon capture and storage,\" published in Nature Sustainability, explores critical factors impacting carbon capture technologies.",
+"excerpt": "Short impact summary The article \"Hydrological limits to carbon capture and storage,\" published in Nature Sustainability, has garnered significant academic attention, reflected in its 114 citations fr…",
 "cover_url": "",
 "authors": "Lorenzo Rosa, Jeffrey A. Reimer, Marjorie Went et al.",
 "institutions": [
@@ -1143,6 +1899,52 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
+"file": "articlestory_10.7554_elife.79714.html",
+"title": "Stable population structure in Europe since the Iron Age, despite high mobility",
+"type": "ArticleStory",
+"doi": "10.7554/elife.79714",
+"year": 2023,
+"venue": "eLife",
+"venue_name": "eLife",
+"publisher": "eLife Sciences Publications, Ltd",
+"concepts": [
+"Biological dispersal",
+"Population",
+"Demographic history",
+"Geography",
+"Prehistory",
+"Ancient DNA",
+"Period (music)",
+"Human migration"
+],
+"roles": [
+"High-visibility uptake",
+"Scholarly uptake",
+"Sustainability & Policy relevance",
+"Rapid uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 93,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Decent work and economic growth"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": true,
+"has_reuse": true,
+"excerpt": "Short impact summary The article \"Stable population structure in Europe since the Iron Age, despite high mobility\" published in eLife has generated notable academic interest, evidenced by 93 citations…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
 "file": "articlestory_10.1038_s41588-023-01603-8.html",
 "title": "The BAF chromatin remodeler synergizes with RNA polymerase II and transcription factors to evict nucleosomes",
 "type": "ArticleStory",
@@ -1164,13 +1966,12 @@ window.STORIES_DATA = [
 "roles": [
 "High-visibility uptake",
 "Scholarly uptake",
-"Active public discourse",
 "Rapid uptake",
 "Reference point for synthesis"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 87,
+"citation_count": 90,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
@@ -1181,7 +1982,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary This research published in Nature Genetics by Sandipan Brahma and Steven Henikoff explores the collaborative dynamics of the BAF chromatin remodeler with RNA polymerase II and tra…",
+"excerpt": "Short impact summary The 2023 study titled \"The BAF chromatin remodeler synergizes with RNA polymerase II and transcription factors to evict nucleosomes\" has garnered significant attention with 90 cit…",
 "cover_url": "",
 "authors": "Sandipan Brahma, Steven Henikoff",
 "institutions": [
@@ -1191,30 +1992,30 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
-"file": "articlestory_10.7554_elife.79714.html",
-"title": "Stable population structure in Europe since the Iron Age, despite high mobility",
+"file": "articlestory_10.1371_journal.pbio.3002916.html",
+"title": "Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance",
 "type": "ArticleStory",
-"doi": "10.7554/elife.79714",
-"year": 2023,
-"venue": "eLife",
-"venue_name": "eLife",
-"publisher": "eLife Sciences Publications Ltd",
+"doi": "10.1371/journal.pbio.3002916",
+"year": 2024,
+"venue": "PLoS Biology",
+"venue_name": "PLoS Biology",
+"publisher": "Public Library of Science",
 "concepts": [
-"Biological dispersal",
-"Population",
-"Demographic history",
-"Geography",
-"Prehistory",
-"Ancient DNA",
-"Period (music)",
-"Human migration"
+"Biology",
+"Hemagglutinin (influenza)",
+"Virology",
+"Virus",
+"Mutation",
+"Influenza A virus",
+"Neutralization",
+"Phenotype"
 ],
 "roles": [
-"Active public discourse",
 "High-visibility uptake",
 "Scholarly uptake",
 "Sustainability & Policy relevance",
-"Rapid uptake"
+"Rapid uptake",
+"Reference point for synthesis"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -1222,29 +2023,27 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
-"Decent work and economic growth"
+"Good health and well-being"
 ],
-"has_teaching": true,
-"ta_ocw": 5,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
-"has_peer_review": true,
+"has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research article, “Stable population structure in Europe since the Iron Age, despite high mobility,” has garnered significant academic attention, as demonstrated by its 85 cit…",
+"excerpt": "Short impact summary The study titled \"Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance\" has garnered significant attention, evidenced by its 85 citations in various…",
 "cover_url": "",
-"authors": "Margaret L. Antonio, Clemens L. Weiß, Ziyue Gao et al.",
+"authors": "Bernadeta Dadonaite, Jenny Ahn, Jordan T. Ort et al.",
 "institutions": [
-"Stanford University",
+"Fred Hutch Cancer Center",
+"University of Washington",
 "University of Pennsylvania",
-"University of Vienna",
-"University of Chicago",
-"Utrecht University",
-"Sapienza University of Rome",
-"Archaeological Museum in Zagreb",
-"University of Sciences and Technology Houari Boumediene",
-"Institute of Archaeology and Ethnography",
-"Institut National de Recherches Archéologiques Préventives"
+"Imperial College London",
+"National Animal Disease Center",
+"St. Jude Children's Research Hospital",
+"The Pirbright Institute",
+"Howard Hughes Medical Institute"
 ],
 "download_count": 0
 },
@@ -1370,7 +2169,6 @@ window.STORIES_DATA = [
 "Software"
 ],
 "roles": [
-"Active public discourse",
 "Rapid uptake",
 "Scholarly uptake",
 "Sustainability & Policy relevance"
@@ -1390,13 +2188,12 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research titled \"Open collaborative writing with Manubot\" has garnered significant academic attention, reflected in its 83 citations across various platforms.",
+"excerpt": "Short impact summary The article \"Open collaborative writing with Manubot,\" published in PLoS Computational Biology, showcases a robust commitment to open collaboration, evidenced by its significant c…",
 "cover_url": "",
 "authors": "Daniel Himmelstein, Vincent Rubinetti, David R. Slochower et al.",
 "institutions": [
-"University of Pennsylvania",
 "Translational Therapeutics (United States)",
-"University of California, San Diego",
+"University of California San Diego",
 "The University of Texas Southwestern Medical Center",
 "University of Wisconsin–Madison"
 ],
@@ -1422,14 +2219,13 @@ window.STORIES_DATA = [
 "Artificial neural network"
 ],
 "roles": [
-"Active public discourse",
 "Scholarly uptake",
 "Sustainability & Policy relevance",
 "Reference point for synthesis"
 ],
 "is_oa": true,
 "oa_status": "gold",
-"citation_count": 80,
+"citation_count": 81,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -1442,68 +2238,12 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The article \"A Comparison of Machine Learning Methods for the Prediction of Traffic Speed in Urban Places\" has garnered significant academic attention, evidenced by its 80 citatio…",
+"excerpt": "Short impact summary This article has received significant recognition, with a total of 81 citations, indicating its influence in the field of traffic speed prediction using machine learning methods.",
 "cover_url": "",
 "authors": "Charalampos Bratsas, Kleanthis Koupidis, Josep Maria Salanova Grau et al.",
 "institutions": [
-"Hellenic Open University",
 "Aristotle University of Thessaloniki",
 "Centre for Research and Technology Hellas"
-],
-"download_count": 0
-},
-{
-"file": "articlestory_10.1371_journal.pbio.3002916.html",
-"title": "Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance",
-"type": "ArticleStory",
-"doi": "10.1371/journal.pbio.3002916",
-"year": 2024,
-"venue": "PLoS Biology",
-"venue_name": "PLoS Biology",
-"publisher": "Public Library of Science",
-"concepts": [
-"Biology",
-"Hemagglutinin (influenza)",
-"Virology",
-"Virus",
-"Mutation",
-"Influenza A virus",
-"Neutralization",
-"Phenotype"
-],
-"roles": [
-"High-visibility uptake",
-"Scholarly uptake",
-"Sustainability & Policy relevance",
-"Rapid uptake",
-"Active public discourse"
-],
-"is_oa": true,
-"oa_status": "gold",
-"citation_count": 79,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Good health and well-being"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The study \"Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance\" has garnered significant attention, with 79 citations since publication.",
-"cover_url": "",
-"authors": "Bernadeta Dadonaite, Jenny Ahn, Jordan T. Ort et al.",
-"institutions": [
-"Fred Hutch Cancer Center",
-"University of Washington",
-"University of Pennsylvania",
-"Imperial College London",
-"National Animal Disease Center",
-"St. Jude Children's Research Hospital",
-"Howard Hughes Medical Institute"
 ],
 "download_count": 0
 },
@@ -1515,7 +2255,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "Developmental Cell",
 "venue_name": "Developmental Cell",
-"publisher": "Elsevier BV",
+"publisher": "Elsevier",
 "concepts": [
 "Gyrification",
 "Biology",
@@ -1525,15 +2265,15 @@ window.STORIES_DATA = [
 "Human brain"
 ],
 "roles": [
-"Active public discourse",
 "High-visibility uptake",
 "Scholarly uptake",
 "Reference point for synthesis",
-"Sustainability & Policy relevance"
+"Sustainability & Policy relevance",
+"Rapid uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 73,
+"citation_count": 78,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -1546,12 +2286,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The article titled \"Shaping the brain: The emergence of cortical structure and folding,\" published in Developmental Cell, has achieved significant academic traction, evidenced by …",
+"excerpt": "Short impact summary The research article titled \"Shaping the brain: The emergence of cortical structure and folding\" published in Developmental Cell has garnered significant academic attention, as ev…",
 "cover_url": "",
-"authors": "Shyam K. Akula, David Exposito-Alonso, Christopher A. Walsh",
-"institutions": [
-"Boston Children's Hospital"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -1575,14 +2313,13 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Reference point for synthesis",
-"Active public discourse",
 "High-visibility uptake",
 "Scholarly uptake",
 "Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "bronze",
-"citation_count": 73,
+"citation_count": 74,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -1595,21 +2332,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The study “Vaccine breakthrough hypoxemic COVID-19 pneumonia in patients with auto-Abs neutralizing type I IFNs” has generated significant academic interest, as indicated by its 7…",
+"excerpt": "Short impact summary The article titled \"Vaccine breakthrough hypoxemic COVID-19 pneumonia in patients with auto-Abs neutralizing type I IFNs,\" published in Science Immunology, has garnered significan…",
 "cover_url": "",
-"authors": "Paul Bastard, Sara E. Vazquez, Jamin Liu et al.",
-"institutions": [
-"Inserm",
-"University of California, San Francisco",
-"Chan Zuckerberg Initiative (United States)",
-"Hôpital Foch",
-"Paris-Est Sup",
-"National Institute of Allergy and Infectious Diseases",
-"Academy of Athens",
-"Sotiria General Hospital",
-"Innsbruck Medical University",
-"Institute of public health of Republic of Macedonia"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -1620,7 +2346,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "Nature",
 "venue_name": "Nature",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Retrotransposon",
 "Biology",
@@ -1632,15 +2358,15 @@ window.STORIES_DATA = [
 "Alu element"
 ],
 "roles": [
-"Active public discourse",
 "High-visibility uptake",
 "Scholarly uptake",
 "Sustainability & Policy relevance",
-"Rapid uptake"
+"Rapid uptake",
+"Reference point for synthesis"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 67,
+"citation_count": 70,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -1653,12 +2379,99 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research detailed in the article titled \"Template and target-site recognition by human LINE-1 in retrotransposition,\" published in *Nature*, has garnered significant academic …",
+"excerpt": "Short impact summary The article titled \"Template and target-site recognition by human LINE-1 in retrotransposition\" published in Nature showcases significant contributions to the understanding of ret…",
 "cover_url": "",
-"authors": "Akanksha Thawani, Alfredo Jose Florez Ariza, Eva Nogales et al.",
-"institutions": [
-"QB3"
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1016_j.molcel.2023.10.045.html",
+"title": "Epigenetic pioneering by SWI/SNF family remodelers",
+"type": "ArticleStory",
+"doi": "10.1016/j.molcel.2023.10.045",
+"year": 2023,
+"venue": "Molecular Cell",
+"venue_name": "Molecular Cell",
+"publisher": "Elsevier BV",
+"concepts": [
+"Biology",
+"SWI/SNF",
+"Nucleosome",
+"Chromatin",
+"RNA polymerase II",
+"Enhancer",
+"Genetics",
+"Promoter"
 ],
+"roles": [
+"Scholarly uptake",
+"Reference point for synthesis",
+"Active discussion signal"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 67,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article \"Epigenetic pioneering by SWI/SNF family remodelers,\" published in Molecular Cell, has garnered a significant academic response, evidenced by 67 citations.",
+"cover_url": "",
+"authors": "Kami Ahmad, Sandipan Brahma, Steven Henikoff",
+"institutions": [
+"Fred Hutch Cancer Center",
+"University of Nebraska Medical Center",
+"Howard Hughes Medical Institute"
+],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1038_s41598-021-90639-z.html",
+"title": "Seven day pre-analytical stability of serum and plasma neurofilament light chain",
+"type": "ArticleStory",
+"doi": "10.1038/s41598-021-90639-z",
+"year": 2021,
+"venue": "Scientific Reports",
+"venue_name": "Scientific Reports",
+"publisher": "Springer Nature",
+"concepts": [
+"Intraclass correlation",
+"Biomarker",
+"Repeatability",
+"Coefficient of variation",
+"Chemistry",
+"Medicine",
+"Blood plasma",
+"Chromatography"
+],
+"roles": [
+"Scholarly uptake",
+"Reference point for synthesis"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 67,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study titled \"Seven day pre-analytical stability of serum and plasma neurofilament light chain,\" published in Scientific Reports in 2021, has garnered significant attention wi…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -1710,101 +2523,6 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
-"file": "articlestory_10.1016_j.molcel.2023.10.045.html",
-"title": "Epigenetic pioneering by SWI/SNF family remodelers",
-"type": "ArticleStory",
-"doi": "10.1016/j.molcel.2023.10.045",
-"year": 2023,
-"venue": "Molecular Cell",
-"venue_name": "Molecular Cell",
-"publisher": "Elsevier BV",
-"concepts": [
-"Biology",
-"SWI/SNF",
-"Nucleosome",
-"Chromatin",
-"RNA polymerase II",
-"Enhancer",
-"Genetics",
-"Promoter"
-],
-"roles": [
-"Scholarly uptake",
-"Reference point for synthesis",
-"Active public discourse",
-"Active discussion signal"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 65,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 1,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The research on epigenetic pioneering by SWI/SNF family remodelers, conducted by Kami Ahmad, Sandipan Brahma, and Steven Henikoff, has garnered significant citations, with 65 refe…",
-"cover_url": "",
-"authors": "Kami Ahmad, Sandipan Brahma, Steven Henikoff",
-"institutions": [
-"Fred Hutch Cancer Center",
-"University of Nebraska Medical Center",
-"Howard Hughes Medical Institute"
-],
-"download_count": 0
-},
-{
-"file": "articlestory_10.1038_s41598-021-90639-z.html",
-"title": "Seven day pre-analytical stability of serum and plasma neurofilament light chain",
-"type": "ArticleStory",
-"doi": "10.1038/s41598-021-90639-z",
-"year": 2021,
-"venue": "Scientific Reports",
-"venue_name": "Scientific Reports",
-"publisher": "Nature Portfolio",
-"concepts": [
-"Intraclass correlation",
-"Biomarker",
-"Repeatability",
-"Coefficient of variation",
-"Chemistry",
-"Medicine",
-"Blood plasma",
-"Chromatography"
-],
-"roles": [
-"Active public discourse",
-"Scholarly uptake",
-"Reference point for synthesis"
-],
-"is_oa": true,
-"oa_status": "gold",
-"citation_count": 64,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The study on the seven-day pre-analytical stability of serum and plasma neurofilament light chain has garnered significant attention, being cited 64 times across various disciplin…",
-"cover_url": "",
-"authors": "Patrick Altmann, Markus Ponleitner, Paulus Rommer et al.",
-"institutions": [
-"Medical University of Vienna",
-"National Hospital for Neurology and Neurosurgery",
-"Sahlgrenska University Hospital"
-],
-"download_count": 0
-},
-{
 "file": "articlestory_10.7554_eLife.79042.html",
 "title": "Hierarchical architecture of dopaminergic circuits enables second-order conditioning in Drosophila",
 "type": "ArticleStory",
@@ -1837,14 +2555,14 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Quality Education"
 ],
-"has_teaching": true,
-"ta_ocw": 9,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary The study titled \"Hierarchical architecture of dopaminergic circuits enables second-order conditioning in Drosophila,\" published in eLife, has been effectively disseminated in the…",
+"excerpt": "Short impact summary The study titled \"Hierarchical architecture of dopaminergic circuits enables second-order conditioning in Drosophila,\" published in eLife in 2023, demonstrates a significant advan…",
 "cover_url": "",
 "authors": "Daichi Yamada, Daniel Bushey, Feng Li et al.",
 "institutions": [
@@ -1879,18 +2597,18 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 58,
+"citation_count": 59,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 1,
+"ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
+"ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Beyond Provenance: New Approaches to Interpreting the Chemistry of Archaeological Copper Alloys\" is a notable scholarly output published by Leuven University Press in 2018.",
+"excerpt": "Short impact summary \"Beyond Provenance: New Approaches to Interpreting the Chemistry of Archaeological Copper Alloys\" has established a substantial scholarly footprint, evidenced by its significant c…",
 "cover_url": "",
 "authors": "Mark Pollard",
 "institutions": [],
@@ -1904,7 +2622,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "Nature Neuroscience",
 "venue_name": "Nature Neuroscience",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Brain–computer interface",
 "Decoding methods",
@@ -1918,13 +2636,12 @@ window.STORIES_DATA = [
 "roles": [
 "Scholarly uptake",
 "Sustainability & Policy relevance",
-"Active public discourse",
 "Rapid uptake",
 "Reference point for synthesis"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 54,
+"citation_count": 57,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -1937,13 +2654,104 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research article titled \"Decoding motor plans using a closed-loop ultrasonic brain–machine interface,\" co-authored by a multidisciplinary team from the California Institute of…",
+"excerpt": "Short impact summary The research titled \"Decoding motor plans using a closed-loop ultrasonic brain–machine interface,\" published in Nature Neuroscience , has garnered significant engagement with 57 c…",
 "cover_url": "",
-"authors": "Whitney S. Griggs, Sumner L. Norman, Thomas Deffieux et al.",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1126_scitranslmed.add0499.html",
+"title": "Enhanced mTORC1 signaling and protein synthesis in pathologic α-synuclein cellular and animal models of Parkinson’s disease",
+"type": "ArticleStory",
+"doi": "10.1126/scitranslmed.add0499",
+"year": 2023,
+"venue": "Science Translational Medicine",
+"venue_name": "Science Translational Medicine",
+"publisher": "American Association for the Advancement of Science",
+"concepts": [
+"mTORC1",
+"Parkinson's disease",
+"Disease",
+"Neuroscience",
+"Alpha-synuclein",
+"Medicine",
+"Animal model",
+"Biology"
+],
+"roles": [
+"Scholarly uptake",
+"Reference point for synthesis",
+"Sustainability & Policy relevance"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 56,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research titled \"Enhanced mTORC1 signaling and protein synthesis in pathologic α-synuclein cellular and animal models of Parkinson’s disease,\" published in 2023 in Science Tra…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1016_j.cell.2023.11.010.html",
+"title": "Temporally multiplexed imaging of dynamic signaling networks in living cells",
+"type": "ArticleStory",
+"doi": "10.1016/j.cell.2023.11.010",
+"year": 2023,
+"venue": "Cell",
+"venue_name": "Cell",
+"publisher": "Cell Press",
+"concepts": [
+"Biology",
+"Fluorophore",
+"Fluorescence",
+"Multiplexing",
+"Live cell imaging",
+"Signal transduction",
+"Fluorescence microscope",
+"SIGNAL (programming language)"
+],
+"roles": [
+"High-visibility uptake",
+"Scholarly uptake",
+"Reference point for synthesis",
+"Reproducibility standard",
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 54,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Life in Land"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study titled \"Temporally multiplexed imaging of dynamic signaling networks in living cells,\" published in Cell , has garnered significant attention, evidenced by its 54 citati…",
+"cover_url": "",
+"authors": "Yong Qian, Orhan T. Celiker, Zeguan Wang et al.",
 "institutions": [
-"California Institute of Technology",
-"Centre National de la Recherche Scientifique",
-"University of California, Riverside"
+"McGovern Institute for Brain Research",
+"Howard Hughes Medical Institute"
 ],
 "download_count": 0
 },
@@ -1967,7 +2775,6 @@ window.STORIES_DATA = [
 "Politics"
 ],
 "roles": [
-"Active public discourse",
 "Commercial linkage",
 "Scholarly uptake"
 ],
@@ -1977,18 +2784,64 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
-"ta_youtube": 1,
-"ta_ol_holdings": 2,
-"ta_otl": true,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite its publication in 2020, \"A European Public Investment Outlook\" is yet to achieve significant academic traction, reflected in its current citation metrics.",
-"cover_url": "",
+"excerpt": "Short impact summary Despite being published in 2020, \"A European Public Investment Outlook\" by Open Book Publishers has shown a promising scholarly uptake, garnering 54 citations, indicating its sign…",
+"cover_url": "https://library.oapen.org/rest/bitstreams/2a1dd993-99da-405e-b14c-5a0522f96b50/retrieve",
 "authors": "Floriana Cerniglia, Francesco Saraceno",
 "institutions": [],
-"download_count": 38984
+"download_count": 39838
+},
+{
+"file": "articlestory_10.1016_j.cell.2023.11.036.html",
+"title": "Human inherited CCR2 deficiency underlies progressive polycystic lung disease",
+"type": "ArticleStory",
+"doi": "10.1016/j.cell.2023.11.036",
+"year": 2023,
+"venue": "Cell",
+"venue_name": "Cell",
+"publisher": "Elsevier",
+"concepts": [
+"Biology",
+"Disease",
+"Lung",
+"Lung disease",
+"Genetics",
+"Internal medicine",
+"Medicine"
+],
+"roles": [
+"Methodological anchor",
+"High-visibility uptake",
+"Reference point for synthesis",
+"Scholarly uptake",
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 53,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research article titled \"Human inherited CCR2 deficiency underlies progressive polycystic lung disease,\" published in Cell , has achieved significant academic traction, amassi…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
 },
 {
 "file": "articlestory_10.1523_jneurosci.2872-04.2004.html",
@@ -2036,120 +2889,14 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
-"file": "articlestory_10.1016_j.cell.2023.11.036.html",
-"title": "Human inherited CCR2 deficiency underlies progressive polycystic lung disease",
-"type": "ArticleStory",
-"doi": "10.1016/j.cell.2023.11.036",
-"year": 2023,
-"venue": "Cell",
-"venue_name": "Cell",
-"publisher": "Cell Press",
-"concepts": [
-"Biology",
-"Disease",
-"Lung",
-"Lung disease",
-"Genetics",
-"Internal medicine",
-"Medicine"
-],
-"roles": [
-"Methodological anchor",
-"High-visibility uptake",
-"Reference point for synthesis",
-"Scholarly uptake",
-"Active public discourse"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 51,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Good health and well-being"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The study led by Neehus et al.",
-"cover_url": "",
-"authors": "Anna‐Lena Neehus, Brenna Carey, Marija Landekic et al.",
-"institutions": [
-"Inserm",
-"Cincinnati Children's Hospital Medical Center",
-"McGill University",
-"University of Washington",
-"Rockefeller University",
-"University of Tehran",
-"Universal Scientific Education and Research Network",
-"Child Health and Development Institute",
-"Jackson Laboratory",
-"Délégation Paris 5"
-],
-"download_count": 0
-},
-{
-"file": "articlestory_10.1126_scitranslmed.add0499.html",
-"title": "Enhanced mTORC1 signaling and protein synthesis in pathologic α-synuclein cellular and animal models of Parkinson’s disease",
-"type": "ArticleStory",
-"doi": "10.1126/scitranslmed.add0499",
-"year": 2023,
-"venue": "Science Translational Medicine",
-"venue_name": "Science Translational Medicine",
-"publisher": "American Association for the Advancement of Science",
-"concepts": [
-"mTORC1",
-"Parkinson's disease",
-"Disease",
-"Neuroscience",
-"Alpha-synuclein",
-"Medicine",
-"Animal model",
-"Biology"
-],
-"roles": [
-"Reference point for synthesis",
-"Scholarly uptake",
-"Sustainability & Policy relevance",
-"Active public discourse"
-],
-"is_oa": false,
-"oa_status": "closed",
-"citation_count": 51,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Good health and well-being"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary This research, published in Science Translational Medicine by Khan et al., examines enhanced mTORC1 signaling and protein synthesis in models of Parkinson's disease.",
-"cover_url": "",
-"authors": "Mohammed Repon Khan, Xiling Yin, Sung-Ung Kang et al.",
-"institutions": [
-"Johns Hopkins University",
-"Howard Hughes Medical Institute"
-],
-"download_count": 0
-},
-{
 "file": "articlestory_10.1101_2023.12.12.571235.html",
 "title": "Age-dependent heterogeneity in the antigenic effects of mutations to influenza hemagglutinin",
 "type": "ArticleStory",
 "doi": "10.1101/2023.12.12.571235",
 "year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
 "concepts": [
 "Hemagglutinin (influenza)",
 "Antigenic drift",
@@ -2162,12 +2909,11 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Scholarly uptake",
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 50,
+"citation_count": 52,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -2180,18 +2926,51 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research on age-dependent heterogeneity in antigenic effects of influenza hemagglutinin has garnered notable attention within the academic community, achieving 50 citations an…",
+"excerpt": "Short impact summary The preprint titled \"Age-dependent heterogeneity in the antigenic effects of mutations to influenza hemagglutinin,\" housed on bioRxiv, has generated significant academic engagemen…",
 "cover_url": "",
-"authors": "Frances C. Welsh, Rachel Eguia, Juhye Lee et al.",
-"institutions": [
-"University of Washington",
-"Howard Hughes Medical Institute",
-"Fred Hutch Cancer Center",
-"Oxford University Clinical Research Unit",
-"National Institute Of Hygiene And Epidemiology",
-"University of Oxford",
-"Pennsylvania State University"
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1101_2022.02.22.481540.html",
+"title": "Uncovering circuit mechanisms of current sinks and sources with biophysical simulations of primary visual cortex",
+"type": "ArticleStory",
+"doi": "10.1101/2022.02.22.481540",
+"year": 2022,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Neuroscience",
+"Visual cortex",
+"Local field potential",
+"Computer science",
+"Dissociation (chemistry)",
+"Biology",
+"Chemistry",
+"Physical chemistry"
 ],
+"roles": [
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 50,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The 2022 study titled \"Uncovering circuit mechanisms of current sinks and sources with biophysical simulations of primary visual cortex,\" first released as a preprint on bioRxiv, …",
+"cover_url": "",
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -2214,12 +2993,12 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Rapid uptake",
-"Active public discourse",
+"Scholarly uptake",
 "Reference point for synthesis"
 ],
 "is_oa": true,
 "oa_status": "gold",
-"citation_count": 49,
+"citation_count": 50,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
@@ -2230,7 +3009,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary The research article titled \"Uncovering circuit mechanisms of current sinks and sources with biophysical simulations of primary visual cortex\" has made notable contributions to th…",
+"excerpt": "Short impact summary The study \"Uncovering circuit mechanisms of current sinks and sources with biophysical simulations of primary visual cortex\" has emerged as a significant contribution to the under…",
 "cover_url": "",
 "authors": "Atle E. Rimehaug, A. Stasik, Espen Hagen et al.",
 "institutions": [
@@ -2240,38 +3019,36 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
-"file": "articlestory_10.1016_j.cell.2023.11.010.html",
-"title": "Temporally multiplexed imaging of dynamic signaling networks in living cells",
+"file": "articlestory_10.1126_scitranslmed.adh4529.html",
+"title": "T cell responses to SARS-CoV-2 infection and vaccination are elevated in B cell deficiency and reduce risk of severe COVID-19",
 "type": "ArticleStory",
-"doi": "10.1016/j.cell.2023.11.010",
+"doi": "10.1126/scitranslmed.adh4529",
 "year": 2023,
-"venue": "Cell",
-"venue_name": "Cell",
-"publisher": "Cell Press",
+"venue": "Science Translational Medicine",
+"venue_name": "Science Translational Medicine",
+"publisher": "American Association for the Advancement of Science",
 "concepts": [
-"Biology",
-"Fluorophore",
-"Fluorescence",
-"Multiplexing",
-"Live cell imaging",
-"Signal transduction",
-"Fluorescence microscope",
-"SIGNAL (programming language)"
+"Immunology",
+"Vaccination",
+"CD8",
+"Immune system",
+"Medicine",
+"Immunity",
+"Cytotoxic T cell",
+"T cell"
 ],
 "roles": [
-"Active public discourse",
-"High-visibility uptake",
-"Reference point for synthesis",
-"Reproducibility standard",
-"Sustainability & Policy relevance"
+"Methodological anchor",
+"Sustainability & Policy relevance",
+"Reference point for synthesis"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 47,
+"oa_status": "green",
+"citation_count": 48,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
-"Life in Land"
+"Good health and well-being"
 ],
 "has_teaching": false,
 "ta_ocw": 0,
@@ -2280,13 +3057,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The groundbreaking work titled \"Temporally multiplexed imaging of dynamic signaling networks in living cells,\" published in Cell, has garnered significant academic attention, as e…",
+"excerpt": "Short impact summary This 2023 study published in Science Translational Medicine explores the enhanced T cell responses to SARS-CoV-2 infection and vaccination in individuals with B cell deficiency.",
 "cover_url": "",
-"authors": "Yong Qian, Orhan T. Celiker, Zeguan Wang et al.",
-"institutions": [
-"McGovern Institute for Brain Research",
-"Howard Hughes Medical Institute"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -2335,71 +3109,17 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
-"file": "articlestory_10.1126_scitranslmed.adh4529.html",
-"title": "T cell responses to SARS-CoV-2 infection and vaccination are elevated in B cell deficiency and reduce risk of severe COVID-19",
-"type": "ArticleStory",
-"doi": "10.1126/scitranslmed.adh4529",
-"year": 2023,
-"venue": "Science Translational Medicine",
-"venue_name": "Science Translational Medicine",
-"publisher": "American Association for the Advancement of Science",
-"concepts": [
-"Immunology",
-"Vaccination",
-"CD8",
-"Immune system",
-"Medicine",
-"Immunity",
-"Cytotoxic T cell",
-"T cell"
-],
-"roles": [
-"Active public discourse",
-"Methodological anchor",
-"Sustainability & Policy relevance",
-"Reference point for synthesis"
-],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 46,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Good health and well-being"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary This study investigates T cell responses in individuals with B cell deficiency in the context of SARS-CoV-2 infection and vaccination.",
-"cover_url": "",
-"authors": "Reza Zonozi, Lucy C. Walters, Aaron Shulkin et al.",
-"institutions": [
-"Massachusetts General Hospital",
-"Ragon Institute of MGH, MIT and Harvard",
-"Centre for the AIDS Programme of Research in South Africa",
-"Brigham and Women's Hospital",
-"Broad Institute"
-],
-"download_count": 0
-},
-{
-"file": "bookstory_10.11116_9789461662507.html",
-"title": "Logic of Experimentation: Rethinking Music Performance Through Artistic Research",
+"file": "bookstory_10.11116_VP_PLU.html",
+"title": "Virtues for the People",
 "type": "BookStory",
-"doi": "10.11116/9789461662507",
-"year": 2018,
+"doi": "10.11116/VP_PLU",
+"year": 2011,
 "venue": "Leuven University Press",
 "venue_name": "",
 "publisher": "Leuven University Press",
 "concepts": [
-"Visual arts",
-"Aesthetics",
-"Art",
-"Computer science"
+"Sociology",
+"Psychology"
 ],
 "roles": [
 "Commercial linkage",
@@ -2407,24 +3127,67 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 42,
+"citation_count": 46,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 5,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Logic of Experimentation: Rethinking Music Performance Through Artistic Research,\" published by Leuven University Press in 2018, navigates the intersection of artistic practice a…",
+"excerpt": "Short impact summary \"Virtues for the People\" published by Leuven University Press in 2011 has a notable scholarly uptake, evidenced by 46 citations, indicating an increasing engagement within the aca…",
 "cover_url": "",
-"authors": "Paulo De Assis",
-"institutions": [
-"Princeton University"
+"authors": "Geert Roskam",
+"institutions": [],
+"download_count": 3641
+},
+{
+"file": "bookstory_10.3998_mpub.16284.html",
+"title": "Institutions and Investments",
+"type": "BookStory",
+"doi": "10.3998/mpub.16284",
+"year": 2000,
+"venue": "University of Michigan Press",
+"venue_name": "",
+"publisher": "University of Michigan Press",
+"concepts": [
+"China",
+"Foreign direct investment",
+"Scholarship",
+"Politics",
+"Investment (military)",
+"Political science",
+"Economics",
+"Institutional economics"
 ],
-"download_count": 4933
+"roles": [
+"Commercial linkage",
+"Scholarly uptake",
+"Sustainability & Policy relevance"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 43,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Partnerships for the goals"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite its publication over two decades ago in 2000, \"Institutions and Investments\" continues to hold significance within its field, garnering a notable scholarly uptake with 43 …",
+"cover_url": "https://www.fulcrum.org/image-service/br86b44011542298568/full/286,/0/default.png",
+"authors": "Jun Fu",
+"institutions": [],
+"download_count": 0
 },
 {
 "file": "bookstory_10.3998_mpub.11649332.html",
@@ -2442,13 +3205,12 @@ window.STORIES_DATA = [
 "Literature"
 ],
 "roles": [
-"Active public discourse",
 "Commercial linkage",
 "Scholarly uptake",
 "Sustainability & Policy relevance"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": true,
+"oa_status": "green",
 "citation_count": 41,
 "event_count": 0,
 "has_sdgs": true,
@@ -2457,12 +3219,12 @@ window.STORIES_DATA = [
 ],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 5,
+"ta_youtube": 0,
 "ta_ol_holdings": 1,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Elizabeth Bishop and the Literary Archive\" published in 2020 by Lever Press, has contributed to the scholarly discourse surrounding the literary works of Elizabeth Bishop, demons…",
+"excerpt": "Short impact summary Despite being published in 2020, \"Elizabeth Bishop and the Literary Archive\" has begun to make its mark within academic circles, evidenced by a growing citation count and publishi…",
 "cover_url": "",
 "authors": "Bethany Hicok",
 "institutions": [],
@@ -2491,17 +3253,112 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 1,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The scholarly work \"Glass Making in the Greco-Roman World: Results of the ARCHGLASS project,\" published by Leuven University Press in 2015, reflects a solid engagement with the fi…",
+"cover_url": "https://lup.be/wp-content/uploads/2024/01/66353_jpg_rgb_original.jpg",
+"authors": "Patrick Degryse",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "bookstory_10.3998_mpub.17801.html",
+"title": "The Role of the Judge in International Trade Regulation",
+"type": "BookStory",
+"doi": "10.3998/mpub.17801",
+"year": 2003,
+"venue": "University of Michigan Press",
+"venue_name": "",
+"publisher": "University of Michigan Press",
+"concepts": [
+"Adjudication",
+"Context (archaeology)",
+"Political science",
+"Globalization",
+"Convergence (economics)",
+"Democracy",
+"Politics",
+"Democratic deficit"
+],
+"roles": [
+"Commercial linkage",
+"Scholarly uptake",
+"Sustainability & Policy relevance"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 40,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Partnerships for the goals"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Published by the University of Michigan Press in 2003, \"The Role of the Judge in International Trade Regulation\" has made a significant scholarly impact, garnering up to 40 citati…",
+"cover_url": "https://www.fulcrum.org/image-service/r494vk9901591082261/full/286,/0/default.png",
+"authors": "Thomas Cottier, Petros Mavroidis, Patrick Blatter",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1016_j.tcb.2023.10.013.html",
+"title": "Metabolic immunity against microbes",
+"type": "ArticleStory",
+"doi": "10.1016/j.tcb.2023.10.013",
+"year": 2023,
+"venue": "Trends in Cell Biology",
+"venue_name": "Trends in Cell Biology",
+"publisher": "Elsevier BV",
+"concepts": [
+"Biology",
+"Host (biology)",
+"Immunity",
+"Pathogen",
+"Domestication",
+"Ecology",
+"Immune system",
+"Microbiology"
+],
+"roles": [
+"High-visibility uptake",
+"Sustainability & Policy relevance",
+"Reference point for synthesis",
+"Rapid uptake",
+"Active discussion signal"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 39,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Zero hunger"
+],
 "has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_reuse": false,
-"excerpt": "Short impact summary The publication \"Glass Making in the Greco-Roman World: Results of the ARCHGLASS project\" serves as a significant scholarly resource elucidating the complexities of ancient glass …",
+"has_reuse": true,
+"excerpt": "Short impact summary The article \"Metabolic immunity against microbes,\" authored by Sebastian Kreimendahl and Lena Pernas and published in Trends in Cell Biology, has made significant strides in showc…",
 "cover_url": "",
-"authors": "Patrick Degryse",
-"institutions": [],
+"authors": "Sebastian Kreimendahl, Lena Pernas",
+"institutions": [
+"Max Planck Institute for Biology of Ageing",
+"Howard Hughes Medical Institute"
+],
 "download_count": 0
 },
 {
@@ -2557,9 +3414,9 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1101/2023.11.29.569241",
 "year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
 "concepts": [
 "Drosophila (subgenus)",
 "Center (category theory)",
@@ -2571,7 +3428,6 @@ window.STORIES_DATA = [
 "Artificial intelligence"
 ],
 "roles": [
-"Active public discourse",
 "Rapid uptake"
 ],
 "is_oa": true,
@@ -2587,14 +3443,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The work titled \"Connectomic reconstruction predicts the functional organization of visual inputs to the navigation center of the Drosophila brain\" has made notable contributions …",
+"excerpt": "Short impact summary The preprint \"Connectomic reconstruction predicts the functional organization of visual inputs to the navigation center of the Drosophila brain\" has garnered significant scholarly…",
 "cover_url": "",
-"authors": "Dustin Garner, Emil Kind, Aljoscha Nern et al.",
-"institutions": [
-"University of California, Santa Barbara",
-"Freie Universität Berlin",
-"Howard Hughes Medical Institute"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -2605,7 +3457,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "",
+"publisher": "eLife Sciences Publications, Ltd",
 "concepts": [
 "Biology",
 "Mating",
@@ -2630,14 +3482,14 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Zero hunger"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
-"ta_youtube": 1,
+"ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary The research titled \"Mating activates neuroendocrine pathways signaling hunger in Drosophila females,\" published in eLife, investigates significant neuroendocrine changes in fruit…",
+"excerpt": "Short impact summary This study explores how mating activates neuroendocrine pathways that signal hunger in female Drosophila, providing insights into the interplay between reproductive and metabolic …",
 "cover_url": "",
 "authors": "",
 "institutions": [],
@@ -2670,14 +3522,14 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 4,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary The study titled \"Neural circuit mechanisms for transforming learned olfactory valences into wind-oriented movement\" published in eLife has garnered significant academic interest,…",
+"excerpt": "Short impact summary The research presented in \"Neural circuit mechanisms for transforming learned olfactory valences into wind-oriented movement,\" published in eLife in 2023, has generated significan…",
 "cover_url": "",
 "authors": "Yoshinori Aso, Daichi Yamada, Daniel Bushey et al.",
 "institutions": [
@@ -2687,75 +3539,31 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
-"file": "articlestory_10.1016_j.tcb.2023.10.013.html",
-"title": "Metabolic immunity against microbes",
+"file": "articlestory_10.1101_2024.04.04.588111.html",
+"title": "The impact of package selection and versioning on single-cell RNA-seq analysis",
 "type": "ArticleStory",
-"doi": "10.1016/j.tcb.2023.10.013",
-"year": 2023,
-"venue": "Trends in Cell Biology",
-"venue_name": "Trends in Cell Biology",
-"publisher": "Elsevier BV",
+"doi": "10.1101/2024.04.04.588111",
+"year": 2024,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
 "concepts": [
-"Biology",
-"Host (biology)",
-"Immunity",
-"Pathogen",
-"Domestication",
-"Ecology",
-"Immune system",
-"Microbiology"
+"Consistency (knowledge bases)",
+"Workflow",
+"Computer science",
+"Software",
+"RNA-Seq",
+"Benchmarking",
+"Cluster analysis",
+"Transparency (behavior)"
 ],
 "roles": [
-"High-visibility uptake",
-"Sustainability & Policy relevance",
-"Reference point for synthesis",
-"Active public discourse",
-"Rapid uptake"
+"Rapid uptake",
+"Reference point for synthesis"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "green",
 "citation_count": 35,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Zero hunger"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The work \"Metabolic immunity against microbes\" by Sebastian Kreimendahl and Lena Pernas has garnered increasing attention within the academic community, reflected by its 35 citati…",
-"cover_url": "",
-"authors": "Sebastian Kreimendahl, Lena Pernas",
-"institutions": [
-"Max Planck Institute for Biology of Ageing",
-"Howard Hughes Medical Institute"
-],
-"download_count": 0
-},
-{
-"file": "bookstory_10.11116_VP_PLU.html",
-"title": "Virtues for the People",
-"type": "BookStory",
-"doi": "10.11116/VP_PLU",
-"year": 2011,
-"venue": "Leuven University Press",
-"venue_name": "",
-"publisher": "Leuven University Press",
-"concepts": [
-"Sociology",
-"Psychology"
-],
-"roles": [
-"Commercial linkage",
-"Scholarly uptake"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 33,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
@@ -2765,12 +3573,57 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_reuse": false,
-"excerpt": "Short impact summary Despite being published in 2011, \"Virtues for the People\" has garnered attention in the academic community, evidenced by its 33 citations.",
+"has_reuse": true,
+"excerpt": "Short impact summary The preprint titled \"The impact of package selection and versioning on single-cell RNA-seq analysis\" has rapidly emerged as a significant contribution to the field, evidenced by 3…",
 "cover_url": "",
-"authors": "Geert Roskam",
+"authors": "",
 "institutions": [],
-"download_count": 3530
+"download_count": 0
+},
+{
+"file": "bookstory_10.3998_mpub.16818.html",
+"title": "Social Dimensions of U.S. Trade Policies",
+"type": "BookStory",
+"doi": "10.3998/mpub.16818",
+"year": 2000,
+"venue": "University of Michigan Press",
+"venue_name": "",
+"publisher": "University of Michigan Press",
+"concepts": [
+"Stern",
+"Immigration",
+"Economics",
+"Commercial policy",
+"Wage",
+"George (robot)",
+"Wage inequality",
+"Free trade"
+],
+"roles": [
+"Commercial linkage",
+"Scholarly uptake",
+"Sustainability & Policy relevance"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 35,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Decent work and economic growth"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 1,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite its publication over two decades ago, \"Social Dimensions of U.S.",
+"cover_url": "https://www.fulcrum.org/image-service/37720d52t1540994888/full/286,/0/default.png",
+"authors": "Alan Deardorff, Robert Stern",
+"institutions": [],
+"download_count": 0
 },
 {
 "file": "articlestory_10.1101_2023.11.30.23299240.html",
@@ -2780,7 +3633,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "medRxiv",
 "venue_name": "medRxiv",
-"publisher": "",
+"publisher": "openRxiv",
 "concepts": [
 "Term (time)",
 "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
@@ -2797,7 +3650,7 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 32,
+"citation_count": 34,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -2810,14 +3663,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The study by Abousamra et al.",
+"excerpt": "Short impact summary This study highlights the efficacy of fitness models in accurately forecasting the frequency of SARS-CoV-2 variants.",
 "cover_url": "",
-"authors": "Eslam Abousamra, Marlin D Figgins, Trevor Bedford",
-"institutions": [
-"University of Washington",
-"Fred Hutch Cancer Center",
-"Howard Hughes Medical Institute"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -2840,7 +3689,6 @@ window.STORIES_DATA = [
 "Economics"
 ],
 "roles": [
-"Active public discourse",
 "Commercial linkage",
 "Scholarly uptake"
 ],
@@ -2857,11 +3705,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Trade Unions in the European Union\" reflects an emerging scholarly interest in the evolving landscape of labor representation.",
-"cover_url": "",
+"excerpt": "Short impact summary Despite its recent publication in 2023 by Peter Lang Verlag, \"Trade Unions in the European Union\" is already being recognized for its scholarly contribution, reflecting a strong f…",
+"cover_url": "https://library.oapen.org/rest/bitstreams/8986f0fa-736b-4b6f-8dca-4c082b63207f/retrieve",
 "authors": "Jeremy Waddington, Torsten Müller, Kurt Vandaele",
 "institutions": [],
-"download_count": 2153
+"download_count": 2384
 },
 {
 "file": "articlestory_10.1016_j.cub.2023.11.025.html",
@@ -2886,12 +3734,11 @@ window.STORIES_DATA = [
 "High-visibility uptake",
 "Rapid uptake",
 "Sustainability & Policy relevance",
-"Active public discourse",
 "Reference point for synthesis"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 30,
+"citation_count": 31,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -2904,13 +3751,57 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research article \"Transcriptional and post-transcriptional control of odorant receptor choice in ants,\" published in Current Biology, presents significant findings in the area…",
+"excerpt": "Short impact summary The article titled \"Transcriptional and post-transcriptional control of odorant receptor choice in ants,\" published in Current Biology in 2023, has garnered notable academic atten…",
 "cover_url": "",
 "authors": "Anindita Brahma, Dominic D. Frank, P. Daniel H. Pastor et al.",
 "institutions": [
 "Rockefeller University",
 "Howard Hughes Medical Institute"
 ],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1101_2023.12.01.568979.html",
+"title": "Structure, interaction, and nervous connectivity of beta cell primary cilia",
+"type": "ArticleStory",
+"doi": "10.1101/2023.12.01.568979",
+"year": 2023,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Cilium",
+"Axoneme",
+"Cell biology",
+"Islet",
+"Paracrine signalling",
+"Beta cell",
+"Intraflagellar transport",
+"Biology"
+],
+"roles": [
+"Sustainability & Policy relevance",
+"Reference point for synthesis"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 30,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article titled \"Structure, interaction, and nervous connectivity of beta cell primary cilia,\" recently released on bioRxiv, has already garnered significant academic attention…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -2921,7 +3812,7 @@ window.STORIES_DATA = [
 "year": 2020,
 "venue": "EMBO Molecular Medicine",
 "venue_name": "EMBO Molecular Medicine",
-"publisher": "Springer Nature",
+"publisher": "EMBO Press",
 "concepts": [
 "Antibody",
 "Immunoglobulin G",
@@ -2932,13 +3823,12 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Sustainability & Policy relevance",
-"Active public discourse",
 "Reference point for synthesis",
 "Rapid uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
-"citation_count": 29,
+"citation_count": 30,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -2953,13 +3843,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary The study conducted by Assunta Senatore and colleagues, published in EMBO Molecular Medicine, explores the presence of protective anti-prion antibodies within human immunoglobulin…",
+"excerpt": "Short impact summary The article titled \"Protective anti‐prion antibodies in human immunoglobulin repertoires,\" published in EMBO Molecular Medicine, has made notable contributions to the field, evide…",
 "cover_url": "",
-"authors": "Assunta Senatore, Karl Frontzek, Marc Emmenegger et al.",
-"institutions": [
-"University of Zurich",
-"Novartis (Switzerland)"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -2970,7 +3857,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "",
+"publisher": "eLife Sciences Publications, Ltd",
 "concepts": [
 "Drosophila (subgenus)",
 "Resource (disambiguation)",
@@ -2995,18 +3882,59 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Life in Land"
 ],
-"has_teaching": true,
-"ta_ocw": 9,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary This article presents a valuable resource in the form of a split-GAL4 driver line for specific Drosophila neuron types, supported by a robust set of 24 Research Resource Identifie…",
+"excerpt": "Short impact summary The research article titled \"A split-GAL4 driver line resource for Drosophila neuron types,\" published in eLife, presents a vital resource for the Drosophila neuroscience communit…",
 "cover_url": "",
 "authors": "",
 "institutions": [],
 "download_count": 0
+},
+{
+"file": "bookstory_10.11116_9789461664327.html",
+"title": "Theory into practice",
+"type": "BookStory",
+"doi": "10.11116/9789461664327",
+"year": 2021,
+"venue": "Leuven University Press",
+"venue_name": "",
+"publisher": "Leuven University Press",
+"concepts": [
+"Active listening",
+"Composition (language)",
+"Psychology",
+"Sociology",
+"Linguistics",
+"Communication",
+"Philosophy"
+],
+"roles": [
+"Commercial linkage",
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 29,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite its recent publication in 2021, \"Theory into Practice\" has yet to gain significant traction in terms of academic citations or public discourse, with indicators showing no …",
+"cover_url": "",
+"authors": "Nicholas Cook, Peter Johnson, Hans Zender",
+"institutions": [],
+"download_count": 719
 },
 {
 "file": "articlestory_10.1371_journal.pone.0000000.html",
@@ -3024,7 +3952,6 @@ window.STORIES_DATA = [
 "Library science"
 ],
 "roles": [
-"Active public discourse",
 "Sustainability & Policy relevance"
 ],
 "is_oa": true,
@@ -3042,7 +3969,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The article \"PLoS Journals Sandbox: A Place to Learn and Play\" has garnered a total of 28 citations, primarily from scholarly venues such as the Journal of Biomedical Nanotechnolo…",
+"excerpt": "Short impact summary The article \"PLoS Journals Sandbox: A Place to Learn and Play\" has made a notable contribution to the academic discourse, evidenced by its 28 citations across various journals.",
 "cover_url": "",
 "authors": "Mike Baehr, Richard Cave, Eddie Dickey et al.",
 "institutions": [
@@ -3051,36 +3978,34 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
-"file": "articlestory_10.1101_2023.12.01.568979.html",
-"title": "Structure, interaction, and nervous connectivity of beta cell primary cilia",
+"file": "articlestory_10.1101_2023.12.08.570828.html",
+"title": "Electrostatic encoding of genome organization principles within single native nucleosomes",
 "type": "ArticleStory",
-"doi": "10.1101/2023.12.01.568979",
+"doi": "10.1101/2023.12.08.570828",
 "year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
 "concepts": [
-"Cilium",
-"Axoneme",
+"Nucleosome",
+"Chromatin",
+"Euchromatin",
+"Histone",
+"Biology",
+"Genome",
 "Cell biology",
-"Islet",
-"Paracrine signalling",
-"Beta cell",
-"Intraflagellar transport",
-"Biology"
+"Genetics"
 ],
 "roles": [
-"Sustainability & Policy relevance",
-"Active public discourse",
-"Reference point for synthesis"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 26,
+"citation_count": 27,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
-"Good health and well-being"
+"Life in Land"
 ],
 "has_teaching": false,
 "ta_ocw": 0,
@@ -3089,16 +4014,138 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The preprint titled \"Structure, interaction, and nervous connectivity of beta cell primary cilia,\" authored by Andreas Müller and colleagues, has made significant contributions to…",
+"excerpt": "Short impact summary The preprint titled \"Electrostatic encoding of genome organization principles within single native nucleosomes\" has already garnered significant attention within the academic comm…",
 "cover_url": "",
-"authors": "Andreas Müller, Nikolai Klena, Song Pang et al.",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1101_2023.11.29.569289.html",
+"title": "A fluorogenic complementation tool kit for interrogating lipid droplet-organelle interaction",
+"type": "ArticleStory",
+"doi": "10.1101/2023.11.29.569289",
+"year": 2023,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Organelle",
+"Endoplasmic reticulum",
+"Lipid droplet",
+"Chemistry",
+"Biogenesis",
+"Biophysics",
+"Membrane contact site",
+"Cell biology"
+],
+"roles": [
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 26,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Affordable and clean energy"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article titled \"A fluorogenic complementation tool kit for interrogating lipid droplet-organelle interaction\" has made a notable impact in the field since its initial release …",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1101_2023.12.07.565988.html",
+"title": "Permanent deconstruction of intracellular primary cilia in differentiating granule cell neurons",
+"type": "ArticleStory",
+"doi": "10.1101/2023.12.07.565988",
+"year": 2023,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Cilium",
+"Cell biology",
+"Granule cell",
+"Granule (geology)",
+"Biology",
+"Centriole",
+"Progenitor cell",
+"Sonic hedgehog"
+],
+"roles": [
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 26,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary This research, titled \"Permanent deconstruction of intracellular primary cilia in differentiating granule cell neurons,\" has made significant academic strides with 26 citations si…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.2196_37324.html",
+"title": "Establishing Institutional Scores With the Rigor and Transparency Index: Large-scale Analysis of Scientific Reporting Quality",
+"type": "ArticleStory",
+"doi": "10.2196/37324",
+"year": 2022,
+"venue": "Journal of Medical Internet Research",
+"venue_name": "Journal of Medical Internet Research",
+"publisher": "JMIR Publications",
+"concepts": [
+"Transparency (behavior)",
+"Scale (ratio)",
+"Index (typography)",
+"Quality (philosophy)",
+"Data quality",
+"Data science",
+"Computer science",
+"Psychology"
+],
+"roles": [
+"Reproducibility standard",
+"Reference point for synthesis",
+"Active discussion signal"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 26,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The work titled \"Establishing Institutional Scores With the Rigor and Transparency Index\" has garnered attention within the scholarly community, reflected in its 26 citations acro…",
+"cover_url": "",
+"authors": "Joseph Menke, Peter Eckmann, İbrahim Burak Özyurt et al.",
 "institutions": [
-"Deutsches Diabetes-Zentrum e.V.",
-"Human Technopole",
-"Howard Hughes Medical Institute",
-"Center for Systems Biology Dresden",
-"University Hospital Carl Gustav Carus",
-"Max Delbrück Center"
+"University of California San Diego"
 ],
 "download_count": 0
 },
@@ -3110,7 +4157,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "",
+"publisher": "eLife Sciences Publications, Ltd",
 "concepts": [
 "Mushroom bodies",
 "Neuroscience",
@@ -3138,154 +4185,51 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The study on driver lines for exploring associative learning in Drosophila showcases significant academic engagement, with 26 citations and a prominent foundation in esteemed inst…",
+"excerpt": "Short impact summary The article \"Driver lines for studying associative learning in Drosophila,\" published in eLife, represents a significant contribution to the field of neurobiology, particularly in…",
 "cover_url": "",
 "authors": "",
 "institutions": [],
 "download_count": 0
 },
 {
-"file": "articlestory_10.1101_2023.11.29.569289.html",
-"title": "A fluorogenic complementation tool kit for interrogating lipid droplet-organelle interaction",
-"type": "ArticleStory",
-"doi": "10.1101/2023.11.29.569289",
-"year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
+"file": "bookstory_10.3368_HNAL9672.html",
+"title": "Farm Boys: Lives of Gay Men from the Rural Midwest",
+"type": "BookStory",
+"doi": "10.3368/HNAL9672",
+"year": 1998,
+"venue": "The University of Wisconsin Press",
+"venue_name": "",
+"publisher": "The University of Wisconsin Press",
 "concepts": [
-"Organelle",
-"Endoplasmic reticulum",
-"Lipid droplet",
-"Chemistry",
-"Biogenesis",
-"Biophysics",
-"Membrane contact site",
-"Cell biology"
+"Geography",
+"Gender studies",
+"Sociology"
 ],
 "roles": [
-"Active public discourse",
+"Commercial linkage",
+"Scholarly uptake",
 "Sustainability & Policy relevance"
-],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 25,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Affordable and clean energy"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The study presents a fluorogenic complementation toolkit designed for investigating lipid droplet-organelle interactions, signaling its potential to advance understanding in cellu…",
-"cover_url": "",
-"authors": "Xiao Li, Rico Gamuyao, Ming-Lun Wu et al.",
-"institutions": [
-"St. Jude Children's Research Hospital",
-"Howard Hughes Medical Institute"
-],
-"download_count": 0
-},
-{
-"file": "articlestory_10.1101_2023.12.08.570828.html",
-"title": "Electrostatic encoding of genome organization principles within single native nucleosomes",
-"type": "ArticleStory",
-"doi": "10.1101/2023.12.08.570828",
-"year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
-"concepts": [
-"Nucleosome",
-"Chromatin",
-"Euchromatin",
-"Histone",
-"Biology",
-"Genome",
-"Cell biology",
-"Genetics"
-],
-"roles": [
-"Sustainability & Policy relevance"
-],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 25,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Life in Land"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The study titled \"Electrostatic encoding of genome organization principles within single native nucleosomes\" has garnered a noteworthy academic response, amassing 25 citations sin…",
-"cover_url": "",
-"authors": "Sangwoo Park, Advait Athreya, Gustavo Carrizo et al.",
-"institutions": [
-"Johns Hopkins University",
-"IIT@MIT",
-"Bloomberg (United States)",
-"Princeton University",
-"Washington University in St. Louis",
-"Boston Children's Hospital"
-],
-"download_count": 0
-},
-{
-"file": "articlestory_10.2196_37324.html",
-"title": "Establishing Institutional Scores With the Rigor and Transparency Index: Large-scale Analysis of Scientific Reporting Quality",
-"type": "ArticleStory",
-"doi": "10.2196/37324",
-"year": 2022,
-"venue": "Journal of Medical Internet Research",
-"venue_name": "Journal of Medical Internet Research",
-"publisher": "JMIR Publications",
-"concepts": [
-"Transparency (behavior)",
-"Scale (ratio)",
-"Index (typography)",
-"Quality (philosophy)",
-"Data quality",
-"Data science",
-"Computer science",
-"Psychology"
-],
-"roles": [
-"Reproducibility standard",
-"Active public discourse",
-"Reference point for synthesis",
-"Active discussion signal"
 ],
 "is_oa": true,
 "oa_status": "gold",
-"citation_count": 25,
+"citation_count": 26,
 "event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
+"has_sdgs": true,
+"sdg_ids": [
+"Gender equality"
+],
 "has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The analysis presented in the article \"Establishing Institutional Scores With the Rigor and Transparency Index\" underscores a significant commitment to enhancing scientific report…",
-"cover_url": "",
-"authors": "Joseph Menke, Peter Eckmann, İbrahim Burak Özyurt et al.",
-"institutions": [
-"University of California San Diego"
-],
-"download_count": 0
+"has_reuse": false,
+"excerpt": "Short impact summary \"Farm Boys: Lives of Gay Men from the Rural Midwest,\" published by The University of Wisconsin Press in 1998, has established a notable scholarly uptake with 26 citations, reflect…",
+"cover_url": "https://library.oapen.org/rest/bitstreams/9648ddf0-a35a-48a1-896f-fead2f43b02e/retrieve",
+"authors": "Will Fellows",
+"institutions": [],
+"download_count": 9555
 },
 {
 "file": "articlestory_10.2196_preprints.37324.html",
@@ -3331,143 +4275,14 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
-"file": "bookstory_10.3368_HNAL9672.html",
-"title": "Farm Boys: Lives of Gay Men from the Rural Midwest",
-"type": "BookStory",
-"doi": "10.3368/HNAL9672",
-"year": 1998,
-"venue": "The University of Wisconsin Press",
-"venue_name": "",
-"publisher": "The University of Wisconsin Press",
-"concepts": [
-"Geography",
-"Gender studies",
-"Sociology"
-],
-"roles": [
-"Commercial linkage",
-"Active public discourse",
-"Scholarly uptake",
-"Sustainability & Policy relevance"
-],
-"is_oa": true,
-"oa_status": "gold",
-"citation_count": 25,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Gender equality"
-],
-"has_teaching": true,
-"ta_ocw": 2,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": false,
-"excerpt": "Short impact summary \"Farm Boys: Lives of Gay Men from the Rural Midwest\" has made notable contributions to both scholarly inquiry and public awareness about LGBTQ+ lives in rural settings, as evidenc…",
-"cover_url": "https://library.oapen.org/rest/bitstreams/9648ddf0-a35a-48a1-896f-fead2f43b02e/retrieve",
-"authors": "Will Fellows",
-"institutions": [],
-"download_count": 9175
-},
-{
-"file": "articlestory_10.1101_2023.12.07.565988.html",
-"title": "Permanent deconstruction of intracellular primary cilia in differentiating granule cell neurons",
-"type": "ArticleStory",
-"doi": "10.1101/2023.12.07.565988",
-"year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
-"concepts": [
-"Cilium",
-"Cell biology",
-"Granule cell",
-"Granule (geology)",
-"Biology",
-"Centriole",
-"Progenitor cell",
-"Sonic hedgehog"
-],
-"roles": [
-"Scholarly uptake"
-],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 24,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The research on the permanent deconstruction of intracellular primary cilia in differentiating granule cell neurons has made a significant academic impact, accumulating 24 citatio…",
-"cover_url": "",
-"authors": "Carolyn M. Ott, Sandii Constable, Tri Nguyen et al.",
-"institutions": [
-"Howard Hughes Medical Institute",
-"The University of Texas Southwestern Medical Center",
-"Harvard University",
-"Boston Children's Hospital"
-],
-"download_count": 0
-},
-{
-"file": "bookstory_10.11116_9789461662811.html",
-"title": "Images of Immigrants and Refugees",
-"type": "BookStory",
-"doi": "10.11116/9789461662811",
-"year": 2019,
-"venue": "Leuven University Press",
-"venue_name": "",
-"publisher": "Leuven University Press",
-"concepts": [
-"Refugee",
-"Immigration",
-"Political science",
-"Psychology",
-"Law"
-],
-"roles": [
-"Commercial linkage",
-"Scholarly uptake",
-"Sustainability & Policy relevance"
-],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 24,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Reduced inequalities"
-],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 1,
-"ta_otl": true,
-"has_peer_review": false,
-"has_reuse": false,
-"excerpt": "Short impact summary The book \"Images of Immigrants and Refugees,\" published by Leuven University Press in 2019, demonstrates a significant scholarly uptake in discussions surrounding the portrayal of…",
-"cover_url": "",
-"authors": "Leen d’Haenens, Willem Joris, François Heinderyckx",
-"institutions": [],
-"download_count": 10741
-},
-{
 "file": "articlestory_10.1101_2023.12.12.571160.html",
 "title": "A broadly generalizable stabilization strategy for sarbecovirus fusion machinery vaccines",
 "type": "ArticleStory",
 "doi": "10.1101/2023.12.12.571160",
 "year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
 "concepts": [
 "Antigenicity",
 "Virology",
@@ -3479,12 +4294,11 @@ window.STORIES_DATA = [
 "Immune system"
 ],
 "roles": [
-"Active public discourse",
 "Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 23,
+"citation_count": 24,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -3497,15 +4311,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The preprint titled \"A broadly generalizable stabilization strategy for sarbecovirus fusion machinery vaccines\" has generated significant academic interest, as evidenced by 23 cit…",
+"excerpt": "Short impact summary The preprint \"A broadly generalizable stabilization strategy for sarbecovirus fusion machinery vaccines\" has garnered significant attention, with 24 citations recorded on OpenAlex…",
 "cover_url": "",
-"authors": "Jimin Lee, Cameron Stewart, Alexandra Schaefer et al.",
-"institutions": [
-"University of Washington",
-"University of North Carolina at Chapel Hill",
-"Howard Hughes Medical Institute",
-"Vir Biotechnology (Switzerland)"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -3526,7 +4335,6 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Commercial linkage",
-"Active public discourse",
 "Scholarly uptake"
 ],
 "is_oa": null,
@@ -3538,11 +4346,11 @@ window.STORIES_DATA = [
 "has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_ol_holdings": 9,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Advances in Knowledge Discovery and Data Mining,\" published by Springer International Publishing in 2020, presents a significant contribution to the fields of knowledge discovery…",
+"excerpt": "Short impact summary The book \"Advances in Knowledge Discovery and Data Mining,\" published by Springer International Publishing in 2020, has gained noteworthy citations, reflecting its scholarly uptak…",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-030-47436-2",
 "authors": "Hady W. Lauw, Raymond Chi-Wing Wong, Alexandros Ntoulas et al.",
 "institutions": [
@@ -3560,9 +4368,9 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1101/2023.12.19.572369",
 "year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
 "concepts": [
 "Wavefront",
 "Adaptive optics",
@@ -3574,11 +4382,11 @@ window.STORIES_DATA = [
 "Root mean square"
 ],
 "roles": [
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 21,
+"citation_count": 22,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
@@ -3589,15 +4397,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research presented in \"Phase diversity-based wavefront sensing for fluorescence microscopy\" has garnered meaningful academic attention, receiving 21 citations as a preprint an…",
+"excerpt": "Short impact summary The preprint titled \"Phase diversity-based wavefront sensing for fluorescence microscopy\" has garnered attention within the academic community, receiving 22 citations since its av…",
 "cover_url": "",
-"authors": "Courtney Johnson, Min Guo, Magdalena C. Schneider et al.",
-"institutions": [
-"Howard Hughes Medical Institute",
-"National Institutes of Health",
-"University of Chicago",
-"Marine Biological Laboratory"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -3606,9 +4409,9 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.7554/eLife.96084",
 "year": 2024,
-"venue": "",
-"venue_name": "",
-"publisher": "",
+"venue": "eLife",
+"venue_name": "eLife",
+"publisher": "eLife Sciences Publications, Ltd",
 "concepts": [
 "Ventral nerve cord",
 "Neuroscience",
@@ -3629,14 +4432,14 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 1,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary This study on the Drosophila Male Adult Nerve Cord connectome has received significant academic attention, with 21 citations across various reputable venues such as eLife and Curr…",
+"excerpt": "Short impact summary The research titled \"Transforming descending input into motor output: An analysis of the Drosophila Male Adult Nerve Cord connectome\" has reached an impressive citation count of 2…",
 "cover_url": "",
 "authors": "",
 "institutions": [],
@@ -3670,14 +4473,14 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 10,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research conducted by Tanya Wolff and colleagues at prominent institutions, including the Howard Hughes Medical Institute and California State University System, focuses on ce…",
+"excerpt": "Short impact summary The research on cell type-specific driver lines in Drosophila has generated a significant academic footprint, with 20 citations thus far, underscoring its relevance to neuropeptid…",
 "cover_url": "",
 "authors": "Tanya Wolff, Mark Eddison, Nan Chen et al.",
 "institutions": [
@@ -3694,7 +4497,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications Ltd",
+"publisher": "eLife Sciences Publications, Ltd",
 "concepts": [
 "Biology",
 "Dosage compensation",
@@ -3706,7 +4509,6 @@ window.STORIES_DATA = [
 "X chromosome"
 ],
 "roles": [
-"Active public discourse",
 "Reproducibility standard"
 ],
 "is_oa": true,
@@ -3722,12 +4524,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary The research article titled \"Chromosome-specific maturation of the epigenome in the Drosophila male germline\" has garnered significant academic traction, evidenced by its 20 citat…",
+"excerpt": "Short impact summary The research article titled \"Chromosome-specific maturation of the epigenome in the Drosophila male germline,\" published in eLife in 2023, has garnered significant academic attent…",
 "cover_url": "",
-"authors": "James T. Anderson, Steven Henikoff, Kami Ahmad",
-"institutions": [
-"Cape Town HVTN Immunology Laboratory / Hutchinson Centre Research Institute of South Africa"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -3753,12 +4553,11 @@ window.STORIES_DATA = [
 "Reference point for synthesis",
 "High-visibility uptake",
 "Sustainability & Policy relevance",
-"Active discussion signal",
-"Active public discourse"
+"Active discussion signal"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 18,
+"citation_count": 19,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -3771,7 +4570,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary Ruxolitinib has emerged as a promising therapeutic agent, demonstrating potential in mitigating multicentric organ autoimmunity in patients diagnosed with autoimmune polyglandular…",
+"excerpt": "Short impact summary The study titled \"Ruxolitinib Rescues Multiorgan Clinical Autoimmunity in Patients with APS-1,\" published in the Journal of Clinical Immunology, represents a significant advanceme…",
 "cover_url": "",
 "authors": "Romain Lévy, Agathe Escudier, Paul Bastard et al.",
 "institutions": [
@@ -3790,7 +4589,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "Nature Methods",
 "venue_name": "Nature Methods",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Fluidics",
 "Multiplexing",
@@ -3802,12 +4601,11 @@ window.STORIES_DATA = [
 "Materials science"
 ],
 "roles": [
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 18,
+"citation_count": 19,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -3820,13 +4618,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research on \"Thermal-plex: fluidic-free, rapid sequential multiplexed imaging with DNA-encoded thermal channels,\" published in Nature Methods , reveals a novel approach in ima…",
+"excerpt": "Short impact summary The study titled \"Thermal-plex: fluidic-free, rapid sequential multiplexed imaging with DNA-encoded thermal channels\" has emerged as a significant contribution to the field of ima…",
 "cover_url": "",
-"authors": "Hong Fan, Jocelyn Y. Kishi, Ryan N. Delgado et al.",
-"institutions": [
-"Harvard University",
-"Howard Hughes Medical Institute"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -3849,28 +4644,75 @@ window.STORIES_DATA = [
 "Literature"
 ],
 "roles": [
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 18,
+"citation_count": 19,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 3,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary Christopher Marsh's work on the best-selling ballads and their imagery in seventeenth-century England has garnered notable academic attention, as evidenced by its 18 citations in …",
+"excerpt": "Short impact summary Christopher Marsh's work, \"Best-Selling Ballads and their Pictures in Seventeenth-Century England,\" published in Past & Present , has garnered significant academic interest, refle…",
 "cover_url": "",
 "authors": "Christopher Marsh",
 "institutions": [
 "Queen's University Belfast"
 ],
 "download_count": 0
+},
+{
+"file": "bookstory_10.11116_9789461662545.html",
+"title": "Brokers of Modernity",
+"type": "BookStory",
+"doi": "10.11116/9789461662545",
+"year": 2019,
+"venue": "Leuven University Press",
+"venue_name": "",
+"publisher": "Leuven University Press",
+"concepts": [
+"Modernity",
+"Modernism (music)",
+"Internationalism (politics)",
+"Architecture",
+"East-Central Europe",
+"Aesthetics",
+"Art history",
+"History"
+],
+"roles": [
+"Commercial linkage",
+"Scholarly uptake",
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 16,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Sustainable cities and communities"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite its lack of citations and online mentions, \"Brokers of Modernity,\" published by Leuven University Press in 2019, has begun to carve out a niche in scholarly discourse, as …",
+"cover_url": "",
+"authors": "Martin Kohlrausch",
+"institutions": [
+"KU Leuven"
+],
+"download_count": 4248
 },
 {
 "file": "bookstory_10.3998_mpub.9853855.html",
@@ -3886,7 +4728,6 @@ window.STORIES_DATA = [
 "Art"
 ],
 "roles": [
-"Active public discourse",
 "Commercial linkage",
 "Scholarly uptake"
 ],
@@ -3898,16 +4739,59 @@ window.STORIES_DATA = [
 "sdg_ids": [],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 2,
-"ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_youtube": 0,
+"ta_ol_holdings": 5,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The book \"Music on the Move,\" published by the University of Michigan Press in 2020, has begun to establish its presence within academic discourse, evidenced by its scholarly upta…",
-"cover_url": "",
+"excerpt": "Short impact summary Despite being published by the University of Michigan Press in 2020, 'Music on the Move' has yet to gain traction within academic and public discourse as evidenced by its zero cit…",
+"cover_url": "https://library.oapen.org/rest/bitstreams/48e1f3ca-07b5-40b7-995f-3289290aca4b/retrieve",
 "authors": "Danielle Fosler-Lussier",
 "institutions": [],
-"download_count": 1157
+"download_count": 1198
+},
+{
+"file": "articlestory_10.1101_2023.12.07.565993.html",
+"title": "Programmed withdrawal of cilia maintenance followed by centriole capping leads to permanent cilia loss during cerebellar granule cell neurogenesis",
+"type": "ArticleStory",
+"doi": "10.1101/2023.12.07.565993",
+"year": 2023,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Cilium",
+"Centriole",
+"Cell biology",
+"Neurogenesis",
+"Intraflagellar transport",
+"Biology",
+"Sonic hedgehog",
+"Ciliogenesis"
+],
+"roles": [
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 15,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary This preprint, subsequently published in a leading journal, investigates the role of cilia maintenance in cerebellar granule cell neurogenesis, with significant implications for o…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
 },
 {
 "file": "articlestory_10.1371_journal.pone.0003059.html",
@@ -3964,7 +4848,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications Ltd",
+"publisher": "eLife Sciences Publications, Ltd",
 "concepts": [
 "In vivo",
 "Computational biology",
@@ -3978,8 +4862,7 @@ window.STORIES_DATA = [
 "roles": [
 "High-visibility uptake",
 "Reference point for synthesis",
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -3996,13 +4879,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary The article titled \"Baited reconstruction with 2D template matching for high-resolution structure determination in vitro and in vivo without template bias\" by Bronwyn A.",
+"excerpt": "Short impact summary The article titled \"Baited reconstruction with 2D template matching for high-resolution structure determination in vitro and in vivo without template bias,\" published in eLife, ha…",
 "cover_url": "",
-"authors": "Bronwyn A. Lucas, Benjamin A. Himes, Nikolaus Grigorieff",
-"institutions": [
-"University of Massachusetts Chan Medical School",
-"Howard Hughes Medical Institute"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -4027,8 +4907,7 @@ window.STORIES_DATA = [
 "roles": [
 "Commercial linkage",
 "Scholarly uptake",
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -4038,20 +4917,20 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Reduced inequalities"
 ],
-"has_teaching": true,
-"ta_ocw": 1,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite its publication in 2021, \"The Global Horizon\" has yet to establish a measurable academic and public impact, with no recorded citations or community discourse.",
+"excerpt": "Short impact summary Despite its recent publication in 2021 by Leuven University Press, \"The Global Horizon\" has observed relatively low engagement metrics, with no citations reported.",
 "cover_url": "",
 "authors": "Knut Graw, Samuli Schielke",
 "institutions": [
-"University of Amsterdam"
+"Société Française d'Allergologie"
 ],
-"download_count": 856
+"download_count": 1019
 },
 {
 "file": "articlestory_10.1101_2023.12.06.570341.html",
@@ -4059,9 +4938,9 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1101/2023.12.06.570341",
 "year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
 "concepts": [
 "Neural coding",
 "Macaque",
@@ -4075,8 +4954,7 @@ window.STORIES_DATA = [
 "roles": [
 "Rapid uptake",
 "High-visibility uptake",
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -4094,14 +4972,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The preprint titled \"Rapid, concerted switching of the neural code in inferotemporal cortex\" by Yuelin Shi et al.",
+"excerpt": "Short impact summary The preprint titled \"Rapid, concerted switching of the neural code in inferotemporal cortex\" has garnered a notable academic footprint with 14 citations, reflecting its influence …",
 "cover_url": "",
-"authors": "Yuelin Shi, Dasheng Bi, Janis K. Hesse et al.",
-"institutions": [
-"California Institute of Technology",
-"University of California, Berkeley",
-"Howard Hughes Medical Institute"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -4110,9 +4984,9 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.7554/eLife.93659",
 "year": 2024,
-"venue": "",
-"venue_name": "",
-"publisher": "",
+"venue": "eLife",
+"venue_name": "eLife",
+"publisher": "eLife Sciences Publications, Ltd",
 "concepts": [
 "Neuroscience",
 "Biology",
@@ -4134,63 +5008,17 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Life below water"
 ],
-"has_teaching": true,
-"ta_ocw": 5,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": true,
-"has_reuse": true,
-"excerpt": "Short impact summary This research presents a comprehensive neuroanatomical survey of Drosophila Lobula Plate Tangential Neurons, contributing to our understanding of their optic flow sensitivity.",
-"cover_url": "",
-"authors": "",
-"institutions": [],
-"download_count": 0
-},
-{
-"file": "articlestory_10.1101_2023.12.07.565993.html",
-"title": "Programmed withdrawal of cilia maintenance followed by centriole capping leads to permanent cilia loss during cerebellar granule cell neurogenesis",
-"type": "ArticleStory",
-"doi": "10.1101/2023.12.07.565993",
-"year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
-"concepts": [
-"Cilium",
-"Centriole",
-"Cell biology",
-"Neurogenesis",
-"Intraflagellar transport",
-"Biology",
-"Sonic hedgehog",
-"Ciliogenesis"
-],
-"roles": [
-"Sustainability & Policy relevance"
-],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 13,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Good health and well-being"
-],
 "has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
-"has_peer_review": false,
+"has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary This research presents significant findings on the programmed withdrawal of cilia maintenance, unveiling critical mechanisms leading to permanent cilia loss during the neurogenesi…",
+"excerpt": "Short impact summary This comprehensive neuroanatomical survey of the Drosophila Lobula Plate Tangential Neurons is contributing to the understanding of optic flow sensitivity in the field of neurobio…",
 "cover_url": "",
-"authors": "Sandii Constable, Carolyn M. Ott, Andrew L. Lemire et al.",
-"institutions": [
-"The University of Texas Southwestern Medical Center",
-"Howard Hughes Medical Institute"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -4216,18 +5044,107 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite the absence of public discourse and limited scholarly engagement, \"Essays on Plato’s Epistemology\" has shown some promise with a moderate citation count, indicating an eme…",
+"excerpt": "Short impact summary Despite the absence of citations or public discourse, \"Essays on Plato's Epistemology\" by Leuven University Press remains a significant scholarly contribution within its field, sh…",
 "cover_url": "",
 "authors": "Franco Trabattoni",
 "institutions": [],
-"download_count": 12176
+"download_count": 12375
+},
+{
+"file": "articlestory_10.1073_pnas.2316466120.html",
+"title": "Mechanism of eukaryotic origin unwinding is a dual helicase DNA shearing process",
+"type": "ArticleStory",
+"doi": "10.1073/pnas.2316466120",
+"year": 2023,
+"venue": "Proceedings of the National Academy of Sciences",
+"venue_name": "Proceedings of the National Academy of Sciences",
+"publisher": "National Academy of Sciences",
+"concepts": [
+"Processivity",
+"Helicase",
+"Eukaryotic DNA replication",
+"DNA replication",
+"Biology",
+"DNA",
+"Cell biology",
+"Duplex (building)"
+],
+"roles": [
+"Reference point for synthesis"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 12,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research titled \"Mechanism of eukaryotic origin unwinding is a dual helicase DNA shearing process,\" published in the Proceedings of the National Academy of Sciences, has garne…",
+"cover_url": "",
+"authors": "Lance D. Langston, Roxana E. Georgescu, Mike O’Donnell",
+"institutions": [
+"Rockefeller University"
+],
+"download_count": 0
+},
+{
+"file": "bookstory_10.11116_9789461664655.html",
+"title": "The Elemental Analysis of Glass Beads",
+"type": "BookStory",
+"doi": "10.11116/9789461664655",
+"year": 2022,
+"venue": "Leuven University Press",
+"venue_name": "",
+"publisher": "Leuven University Press",
+"concepts": [
+"Bead",
+"TRACE (psycholinguistics)",
+"Materials science",
+"Archaeology",
+"History",
+"Philosophy",
+"Linguistics"
+],
+"roles": [
+"Commercial linkage",
+"Scholarly uptake",
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 12,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Life below water"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The book \"The Elemental Analysis of Glass Beads,\" published by Leuven University Press in 2022, contributes significantly to the field by demonstrating robust scholarly uptake and…",
+"cover_url": "",
+"authors": "Laure Dussubieux, Heather Walder",
+"institutions": [
+"Rega Institute for Medical Research"
+],
+"download_count": 3567
 },
 {
 "file": "bookstory_10.11116_9789461665058.html",
@@ -4268,11 +5185,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Building Collaborative Governance in Times of Uncertainty\" is a significant scholarly work that explores the dynamics of governance amidst unpredictable challenges.",
+"excerpt": "Short impact summary The book \"Building Collaborative Governance in Times of Uncertainty,\" published by Leuven University Press in 2023, demonstrates a strong inclination towards scholarly uptake, evi…",
 "cover_url": "",
 "authors": "Geert Bouckaert",
 "institutions": [],
-"download_count": 1884
+"download_count": 2017
 },
 {
 "file": "bookstory_10.4018_978-1-5225-2788-6.html",
@@ -4305,12 +5222,12 @@ window.STORIES_DATA = [
 ],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 1,
+"ta_youtube": 0,
 "ta_ol_holdings": 4,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The book \"Research-Based Perspectives on the Psychophysiology of Yoga,\" published by IGI Global in 2018, plays a significant role in bridging academic research and practical appli…",
+"excerpt": "Short impact summary The book titled \"Research-Based Perspectives on the Psychophysiology of Yoga,\" published by IGI Global in 2018, has generated a noteworthy scholarly uptake, with 12 citations reco…",
 "cover_url": "",
 "authors": "Shirley Telles, Nilkamal Singh",
 "institutions": [
@@ -4319,34 +5236,36 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
-"file": "articlestory_10.1073_pnas.2316466120.html",
-"title": "Mechanism of eukaryotic origin unwinding is a dual helicase DNA shearing process",
+"file": "articlestory_10.1038_s41591-026-04206-y.html",
+"title": "Predicting onset of symptomatic Alzheimerʼs disease with plasma p-tau217 clocks",
 "type": "ArticleStory",
-"doi": "10.1073/pnas.2316466120",
-"year": 2023,
-"venue": "Proceedings of the National Academy of Sciences",
-"venue_name": "Proceedings of the National Academy of Sciences",
-"publisher": "National Academy of Sciences",
+"doi": "10.1038/s41591-026-04206-y",
+"year": 2026,
+"venue": "Nature Medicine",
+"venue_name": "Nature Medicine",
+"publisher": "Springer Nature",
 "concepts": [
-"Processivity",
-"Helicase",
-"Eukaryotic DNA replication",
-"DNA replication",
-"Biology",
-"DNA",
-"Cell biology",
-"Duplex (building)"
+"Medicine",
+"Internal medicine",
+"Disease",
+"Oncology",
+"Positron emission tomography",
+"Biomarker",
+"Clinical trial",
+"Cardiology"
 ],
 "roles": [
-"Reference point for synthesis",
-"Active public discourse"
+"High-visibility uptake",
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
 "citation_count": 11,
 "event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
 "has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
@@ -4354,12 +5273,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research article titled \"Mechanism of eukaryotic origin unwinding is a dual helicase DNA shearing process\" authored by Lance D.",
+"excerpt": "Short impact summary The research titled \"Predicting onset of symptomatic Alzheimer's disease with plasma p-tau217 clocks,\" published in Nature Medicine , leverages innovative methodologies to predict…",
 "cover_url": "",
-"authors": "Lance D. Langston, Roxana E. Georgescu, Mike O’Donnell",
-"institutions": [
-"Rockefeller University"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -4368,9 +5285,9 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1101/2023.12.09.570606",
 "year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
 "concepts": [
 "Replication protein A",
 "DNA",
@@ -4397,16 +5314,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The preprint titled \"Rapid long-distance migration of RPA on single stranded DNA occurs through intersegmental transfer utilizing multivalent interactions\" has successfully passed…",
+"excerpt": "Short impact summary The study titled \"Rapid long-distance migration of RPA on single stranded DNA occurs through intersegmental transfer utilizing multivalent interactions,\" published on bioRxiv, sho…",
 "cover_url": "",
-"authors": "Sushil Pangeni, Gargi Biswas, Vikas Kaushik et al.",
-"institutions": [
-"Boston Children's Hospital",
-"Weizmann Institute of Science",
-"Saint Louis University",
-"Johns Hopkins University",
-"Ashoka University"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -4429,7 +5340,7 @@ window.STORIES_DATA = [
 "Quantum state"
 ],
 "roles": [
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -4444,57 +5355,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary Markus Aspelmeyer's work, published in Nature Physics, has garnered significant academic attention, as evidenced by its 10 citations across reputable journals such as Optics Commu…",
+"excerpt": "Short impact summary The 2009 article \"Measured Measurement\" by Markus Aspelmeyer has garnered an academic footprint with 10 citations, predominantly from notable physics venues such as Optics Communi…",
 "cover_url": "",
 "authors": "Markus Aspelmeyer",
 "institutions": [
 "Institute for Quantum Optics and Quantum Information Innsbruck"
-],
-"download_count": 0
-},
-{
-"file": "articlestory_10.1056_NEJMimc1109704.html",
-"title": "A Startling Decline",
-"type": "ArticleStory",
-"doi": "10.1056/NEJMimc1109704",
-"year": 2012,
-"venue": "New England Journal of Medicine",
-"venue_name": "New England Journal of Medicine",
-"publisher": "Massachusetts Medical Society",
-"concepts": [
-"Medicine",
-"Personality",
-"Cognition",
-"Cognitive decline",
-"Cognitive psychology",
-"Psychiatry",
-"Psychoanalysis",
-"Dementia"
-],
-"roles": [
-"High-visibility uptake",
-"Sustainability & Policy relevance"
-],
-"is_oa": false,
-"oa_status": "closed",
-"citation_count": 10,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"No poverty"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The study, published in the esteemed New England Journal of Medicine by Anand Vaidya and colleagues, has gained notable traction within the academic community, evidenced by 10 cit…",
-"cover_url": "",
-"authors": "Anand Vaidya, Brigid M. Dolan, Brian L. Edlow et al.",
-"institutions": [
-"General Department of Preventive Medicine"
 ],
 "download_count": 0
 },
@@ -4518,8 +5383,7 @@ window.STORIES_DATA = [
 "Epitope mapping"
 ],
 "roles": [
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -4536,15 +5400,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research article titled \"Protective human antibodies against a conserved epitope in pre- and postfusion influenza hemagglutinin\" has garnered a meaningful academic footprint, …",
+"excerpt": "Short impact summary The study published in the Proceedings of the National Academy of Sciences investigates protective human antibodies targeting a conserved epitope in influenza hemagglutinin, revea…",
 "cover_url": "",
-"authors": "Joel Finney, Annie Park Moseman, Susan Kong et al.",
-"institutions": [
-"Boston Children's Hospital",
-"Duke University",
-"Harvard University",
-"University of Pittsburgh"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -4553,9 +5412,9 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1101/2023.12.15.571964",
 "year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
 "concepts": [
 "Zebrafish",
 "Larva",
@@ -4567,7 +5426,7 @@ window.STORIES_DATA = [
 "Gene"
 ],
 "roles": [
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -4582,61 +5441,52 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary This study, led by Zeguan Wang and colleagues, explores innovative imaging techniques to visualize neuron voltage across entire brains of larval zebrafish, achieving significant a…",
+"excerpt": "Short impact summary The preprint titled \"Imaging the voltage of neurons distributed across entire brains of larval zebrafish\" has made a noteworthy impact on the academic community, as evidenced by i…",
 "cover_url": "",
-"authors": "Zeguan Wang, Jie Zhang, Panagiotis Symvoulidis et al.",
-"institutions": [
-"McGovern Institute for Brain Research",
-"Howard Hughes Medical Institute"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
-"file": "bookstory_10.11116_9789461664655.html",
-"title": "The Elemental Analysis of Glass Beads",
-"type": "BookStory",
-"doi": "10.11116/9789461664655",
-"year": 2022,
-"venue": "Leuven University Press",
-"venue_name": "",
-"publisher": "Leuven University Press",
+"file": "articlestory_10.1101_2023.12.22.23300468.html",
+"title": "A cell type-aware framework for nominating non-coding variants in Mendelian regulatory disorders",
+"type": "ArticleStory",
+"doi": "10.1101/2023.12.22.23300468",
+"year": 2023,
+"venue": "medRxiv",
+"venue_name": "medRxiv",
+"publisher": "openRxiv",
 "concepts": [
-"Bead",
-"TRACE (psycholinguistics)",
-"Materials science",
-"Archaeology",
-"History",
-"Philosophy",
-"Linguistics"
+"Enhancer",
+"Biology",
+"Epigenomics",
+"Gene",
+"Genetics",
+"Mendelian inheritance",
+"Epigenetics",
+"Computational biology"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake",
-"Sustainability & Policy relevance",
-"Active public discourse"
+"High-visibility uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
 "citation_count": 10,
 "event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Life below water"
-],
+"has_sdgs": false,
+"sdg_ids": [],
 "has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_reuse": false,
-"excerpt": "Short impact summary Despite the absence of formal citations and community discourse, \"The Elemental Analysis of Glass Beads\" represents a significant scholarly resource in its field, potentially cont…",
+"has_reuse": true,
+"excerpt": "Short impact summary This research presents a novel cell type-aware framework aimed at identifying non-coding variants implicated in Mendelian regulatory disorders.",
 "cover_url": "",
-"authors": "Laure Dussubieux, Heather Walder",
-"institutions": [
-"Rega Institute for Medical Research"
-],
-"download_count": 3363
+"authors": "",
+"institutions": [],
+"download_count": 0
 },
 {
 "file": "articlestory_10.1007_s00180-017-0762-y.html",
@@ -4658,7 +5508,7 @@ window.STORIES_DATA = [
 "Maximum likelihood"
 ],
 "roles": [
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -4673,7 +5523,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The article \"Sample selection models for count data in R\" by Karol Wyszynski and Giampiero Marra showcases a significant academic footprint with 9 citations, indicating its releva…",
+"excerpt": "Short impact summary The article \"Sample selection models for count data in R\" has garnered nine citations, showing its relevance and adoption within the academic community, particularly in statistics…",
 "cover_url": "",
 "authors": "Karol Wyszynski, Giampiero Marra",
 "institutions": [
@@ -4682,29 +5532,29 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
-"file": "articlestory_10.1101_2023.12.22.23300468.html",
-"title": "A cell type-aware framework for nominating non-coding variants in Mendelian regulatory disorders",
+"file": "articlestory_10.1038_s41556-025-01828-1.html",
+"title": "Interphase chromosome conformation is specified by distinct folding programmes inherited through mitotic chromosomes or the cytoplasm",
 "type": "ArticleStory",
-"doi": "10.1101/2023.12.22.23300468",
-"year": 2023,
-"venue": "medRxiv",
-"venue_name": "medRxiv",
-"publisher": "",
+"doi": "10.1038/s41556-025-01828-1",
+"year": 2025,
+"venue": "Nature Cell Biology",
+"venue_name": "Nature Cell Biology",
+"publisher": "Nature Portfolio",
 "concepts": [
-"Enhancer",
+"Interphase",
+"Cytoplasm",
+"Cell biology",
+"Mitosis",
+"Telophase",
+"Chromatin",
 "Biology",
-"Epigenomics",
-"Gene",
-"Genetics",
-"Mendelian inheritance",
-"Epigenetics",
-"Computational biology"
+"Folding (DSP implementation)"
 ],
 "roles": [
-"High-visibility uptake"
+"Scholarly uptake"
 ],
 "is_oa": true,
-"oa_status": "green",
+"oa_status": "hybrid",
 "citation_count": 9,
 "event_count": 0,
 "has_sdgs": false,
@@ -4716,14 +5566,195 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary This study introduces a cell type-aware framework designed to nominate non-coding variants in Mendelian regulatory disorders.",
+"excerpt": "Short impact summary The research article titled \"Interphase chromosome conformation is specified by distinct folding programmes inherited through mitotic chromosomes or the cytoplasm,\" published in N…",
 "cover_url": "",
-"authors": "Arthur S. Lee, Lauren J. Ayers, Michael Kosicki et al.",
+"authors": "Allana Schooley, Sergey V. Venev, Vasilisa Aksenova et al.",
 "institutions": [
-"Broad Institute",
-"Boston Children's Hospital",
-"Lawrence Berkeley National Laboratory"
+"University of Massachusetts Chan Medical School",
+"Howard Hughes Medical Institute",
+"National Institute of Child Health",
+"Massachusetts Institute of Technology"
 ],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1038_s41572-025-00674-7.html",
+"title": "COVID-19-associated neurological and psychological manifestations",
+"type": "ArticleStory",
+"doi": "10.1038/s41572-025-00674-7",
+"year": 2025,
+"venue": "Nature Reviews Disease Primers",
+"venue_name": "Nature Reviews Disease Primers",
+"publisher": "Nature Portfolio",
+"concepts": [
+"Medicine",
+"Intensive care medicine",
+"Incidence (geometry)",
+"Affect (linguistics)",
+"Psychiatry",
+"Depression (economics)",
+"Coronavirus disease 2019 (COVID-19)",
+"Pathophysiology"
+],
+"roles": [
+"Sustainability & Policy relevance"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 9,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article titled \"COVID-19-associated neurological and psychological manifestations,\" published in Nature Reviews Disease Primers, explores significant neurological and psycholo…",
+"cover_url": "",
+"authors": "Jo Ellen Wilson, Deepti Gurdasani, Raimund Helbok et al.",
+"institutions": [
+"VA Tennessee Valley Healthcare System",
+"Johannes Kepler University of Linz",
+"Selçuk University",
+"Western University",
+"University of Belgrade",
+"University of California, San Francisco",
+"Howard Hughes Medical Institute",
+"Universidade Estadual de Campinas (UNICAMP)",
+"University of Milan",
+"Imperial College London"
+],
+"download_count": 0
+},
+{
+"file": "bookstory_10.5117_9789462989504.html",
+"title": "Digital Media Practices in Households",
+"type": "BookStory",
+"doi": "10.5117/9789462989504",
+"year": 2025,
+"venue": "Routledge",
+"venue_name": "",
+"publisher": "Routledge",
+"concepts": [
+"Digital media",
+"Tracking (education)",
+"Dynamics (music)",
+"Sociology",
+"Media studies",
+"Geography",
+"Political science",
+"Law"
+],
+"roles": [
+"Commercial linkage",
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 9,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The forthcoming book, \"Digital Media Practices in Households,\" published by Routledge in 2025, is positioned to attract scholarly interest in the area of digital media and its imp…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789462989504&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Larissa Hjorth, Kana Ohashi, Jolynna Sinanan et al.",
+"institutions": [],
+"download_count": 96
+},
+{
+"file": "articlestory_10.1038_s42003-023-05579-3.html",
+"title": "Structural and biochemical investigations of a HEAT-repeat protein involved in the cytosolic iron-sulfur cluster assembly pathway",
+"type": "ArticleStory",
+"doi": "10.1038/s42003-023-05579-3",
+"year": 2023,
+"venue": "Communications Biology",
+"venue_name": "Communications Biology",
+"publisher": "Springer Nature",
+"concepts": [
+"Iron–sulfur cluster",
+"Cytosol",
+"Biochemistry",
+"Sulfur",
+"Saccharomyces cerevisiae",
+"Cluster (spacecraft)",
+"Chemistry",
+"Biophysics"
+],
+"roles": [
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 8,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary This research published in *Communications Biology* explores the structural and biochemical characteristics of a HEAT-repeat protein involved in the cytosolic iron-sulfur cluster …",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1093_nar_gkad1207.html",
+"title": "A phage-encoded RNA-binding protein inhibits the antiviral activity of a toxin–antitoxin system",
+"type": "ArticleStory",
+"doi": "10.1093/nar/gkad1207",
+"year": 2023,
+"venue": "Nucleic Acids Research",
+"venue_name": "Nucleic Acids Research",
+"publisher": "Oxford University Press",
+"concepts": [
+"Biology",
+"Antitoxin",
+"Endoribonuclease",
+"RNA",
+"Ribonucleoprotein",
+"RNase P",
+"Toxin",
+"RNA-binding protein"
+],
+"roles": [
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 8,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Life below water"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study titled \"A phage-encoded RNA-binding protein inhibits the antiviral activity of a toxin–antitoxin system,\" published in Nucleic Acids Research in 2023, presents significa…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -4746,7 +5777,7 @@ window.STORIES_DATA = [
 "Enterobacteriaceae"
 ],
 "roles": [
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -4761,7 +5792,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research article titled \"Divergent genetic landscapes drive lower levels of AmpC induction and stable de-repression in Serratia marcescens compared to Enterobacter cloacae \" h…",
+"excerpt": "Short impact summary The study conducted by Lazarus et al.",
 "cover_url": "",
 "authors": "Jacob E. Lazarus, Yin Wang, Matthew K. Waldor et al.",
 "institutions": [
@@ -4841,18 +5872,18 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 1,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite a lack of citations and online mentions, the book \"European Perspectives for Public Administration\" has secured commercial linkages, demonstrating its availability on plat…",
+"excerpt": "Short impact summary Despite its publication in 2019 by Leuven University Press, \"European Perspectives for Public Administration\" has not yet gained traction in academic citations or public discourse…",
 "cover_url": "",
 "authors": "Geert Bouckaert, Werner Jann",
 "institutions": [],
-"download_count": 6916
+"download_count": 7100
 },
 {
 "file": "bookstory_10.3726_b21634.html",
@@ -4879,15 +5910,15 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
-"ta_youtube": 1,
+"ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Streaming the Formula 1 Rivalry,\" published by Peter Lang Verlag in 2024, explores the dynamics of competition within the motorsport arena, emphasizing cultural and media narrati…",
-"cover_url": "",
+"excerpt": "Short impact summary \"Streaming the Formula 1 Rivalry,\" set to be published by Peter Lang Verlag in 2024, highlights the commercial landscape of Formula 1, indicating a strong linkage to commercial pl…",
+"cover_url": "https://cdn.openpublishing.com/thumbnail/products/1376330/large.webp",
 "authors": "Raymond Boyle, Richard Haynes",
 "institutions": [],
 "download_count": 0
@@ -4919,42 +5950,42 @@ window.STORIES_DATA = [
 "Industry, innovation and infrastructure"
 ],
 "has_teaching": true,
-"ta_ocw": 3,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 3,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Virtual Innovation and Support Networks,\" published by Peter Lang Verlag in 2024, signals a significant contribution to understanding the dynamics of contemporary networking in i…",
+"excerpt": "Short impact summary The forthcoming publication, \"Virtual Innovation and Support Networks,\" by Peter Lang Verlag, is poised to contribute to the critical discourse surrounding digital collaboration a…",
 "cover_url": "https://library.oapen.org/rest/bitstreams/cf1e9397-a9c2-45d4-be83-1d2bcdcc458a/retrieve",
 "authors": "Robert O'Dowd, Margarita Vinagre",
 "institutions": [],
 "download_count": 502
 },
 {
-"file": "articlestory_10.1038_s42003-023-05579-3.html",
-"title": "Structural and biochemical investigations of a HEAT-repeat protein involved in the cytosolic iron-sulfur cluster assembly pathway",
+"file": "articlestory_10.1038_s41556-025-01834-3.html",
+"title": "The G3BP stress-granule proteins reinforce the integrated stress response translation programme",
 "type": "ArticleStory",
-"doi": "10.1038/s42003-023-05579-3",
-"year": 2023,
-"venue": "Communications Biology",
-"venue_name": "Communications Biology",
+"doi": "10.1038/s41556-025-01834-3",
+"year": 2025,
+"venue": "Nature Cell Biology",
+"venue_name": "Nature Cell Biology",
 "publisher": "Nature Portfolio",
 "concepts": [
-"Iron–sulfur cluster",
-"Cytosol",
-"Biochemistry",
-"Sulfur",
-"Saccharomyces cerevisiae",
-"Cluster (spacecraft)",
-"Chemistry",
-"Biophysics"
+"Translation (biology)",
+"Stress granule",
+"Integrated stress response",
+"Ribosome profiling",
+"Eukaryotic translation",
+"Cell biology",
+"Protein biosynthesis",
+"Ribosome"
 ],
 "roles": [
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
-"oa_status": "gold",
+"oa_status": "hybrid",
 "citation_count": 7,
 "event_count": 0,
 "has_sdgs": false,
@@ -4966,14 +5997,55 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The article titled \"Structural and biochemical investigations of a HEAT-repeat protein involved in the cytosolic iron-sulfur cluster assembly pathway,\" published in Communications…",
+"excerpt": "Short impact summary The article \"The G3BP stress-granule proteins reinforce the integrated stress response translation programme,\" authored by Jarrett Smith and David P.",
 "cover_url": "",
-"authors": "Sheena Vasquez, Melissa D. Marquez, Edward J. Brignole et al.",
+"authors": "Jarrett Smith, David P. Bartel",
 "institutions": [
-"Massachusetts Institute of Technology",
-"Boston University",
 "Howard Hughes Medical Institute"
 ],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1101_2023.12.30.572255.html",
+"title": "Pronounced early differentiation underlies zebra finch gonadal germ cell development",
+"type": "ArticleStory",
+"doi": "10.1101/2023.12.30.572255",
+"year": 2023,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Zebra finch",
+"Biology",
+"Germ cell",
+"Germ plasm",
+"Songbird",
+"Finch",
+"Egg cell",
+"Developmental biology"
+],
+"roles": [
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 7,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Life in Land"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The preprint titled \"Pronounced early differentiation underlies zebra finch gonadal germ cell development\" has garnered attention, accumulating 7 citations since its release on bi…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -5003,48 +6075,89 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The upcoming scholarly volume, \"Educational Agency and Activism in Linguistic Landscape Studies,\" published by Peter Lang Verlag, has yet to generate academic citations or public …",
+"excerpt": "Short impact summary \"Educational Agency and Activism in Linguistic Landscape Studies,\" published by Peter Lang Verlag in 2024, is positioned to contribute to ongoing discussions in linguistic studies…",
 "cover_url": "https://library.oapen.org/rest/bitstreams/3b7451a4-beea-4bed-ab42-db539fe8988d/retrieve",
 "authors": "Durk Gorter, Edina Krompák",
 "institutions": [],
 "download_count": 345
 },
 {
-"file": "articlestory_10.1093_nar_gkad1207.html",
-"title": "A phage-encoded RNA-binding protein inhibits the antiviral activity of a toxin–antitoxin system",
+"file": "articlestory_10.1038_s41592-025-02965-z.html",
+"title": "Glutamate indicators with increased sensitivity and tailored deactivation rates",
 "type": "ArticleStory",
-"doi": "10.1093/nar/gkad1207",
-"year": 2023,
-"venue": "Nucleic Acids Research",
-"venue_name": "Nucleic Acids Research",
-"publisher": "Oxford University Press",
+"doi": "10.1038/s41592-025-02965-z",
+"year": 2025,
+"venue": "Nature Methods",
+"venue_name": "Nature Methods",
+"publisher": "Springer Nature",
 "concepts": [
+"Glutamate receptor",
+"Neurotransmission",
+"Neuroscience",
+"Sensitivity (control systems)",
+"Hippocampal formation",
+"Chemistry",
+"Computer science",
+"Neural activity"
+],
+"roles": [
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 6,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study, titled \"Glutamate indicators with increased sensitivity and tailored deactivation rates,\" presents innovative advancements in glutamate sensing technologies that enhanc…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1101_2020.02.10.942185.html",
+"title": "Structural modeling of 2019-novel coronavirus (nCoV) spike protein reveals a proteolytically-sensitive activation loop as a distinguishing feature compared to SARS-CoV and related SARS-like coronaviruses",
+"type": "ArticleStory",
+"doi": "10.1101/2020.02.10.942185",
+"year": 2020,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Coronavirus",
+"Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
 "Biology",
-"Antitoxin",
-"Endoribonuclease",
-"RNA",
-"Ribonucleoprotein",
-"RNase P",
-"Toxin",
-"RNA-binding protein"
+"Virology",
+"Coronavirus disease 2019 (COVID-19)",
+"Betacoronavirus",
+"Glycoprotein",
+"Lipid bilayer fusion"
 ],
 "roles": [
 "Sustainability & Policy relevance"
 ],
 "is_oa": true,
-"oa_status": "gold",
+"oa_status": "green",
 "citation_count": 6,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
-"Life below water"
+"Good health and well-being"
 ],
 "has_teaching": false,
 "ta_ocw": 0,
@@ -5053,14 +6166,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary This research presents findings on a phage-encoded RNA-binding protein that inhibits the antiviral activity of a toxin-antitoxin system.",
+"excerpt": "Short impact summary This preprint presents a structural model of the 2019-novel coronavirus spike protein, revealing a unique proteolytically-sensitive activation loop that distinguishes it from SARS…",
 "cover_url": "",
-"authors": "Chantal K. Guegler, Gabriella I. C. Teodoro, Sriram Srikant et al.",
-"institutions": [
-"Harvard University",
-"Massachusetts Institute of Technology",
-"Howard Hughes Medical Institute"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -5069,9 +6178,9 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1101/2023.12.07.570640",
 "year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
 "concepts": [
 "Biology",
 "Expression quantitative trait loci",
@@ -5083,7 +6192,7 @@ window.STORIES_DATA = [
 "Locus (genetics)"
 ],
 "roles": [
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -5098,12 +6207,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary The preprint titled \"Single-cell eQTL mapping in yeast reveals a tradeoff between growth and reproduction\" by Boocock et al.",
+"excerpt": "Short impact summary The 2023 preprint titled \"Single-cell eQTL mapping in yeast reveals a tradeoff between growth and reproduction\" has garnered notable attention in the academic community, with six …",
 "cover_url": "",
-"authors": "James Boocock, Noah Alexander, Leslie Alamo Tapia et al.",
-"institutions": [
-"Howard Hughes Medical Institute"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -5112,9 +6219,9 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1101/2023.12.29.573681",
 "year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
 "concepts": [
 "Epigenetics",
 "Resistance (ecology)",
@@ -5143,66 +6250,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The preprint titled \"KMT2A oncoproteins induce epigenetic resistance to targeted therapies\" by Derek H.",
+"excerpt": "Short impact summary The preprint titled \"KMT2A oncoproteins induce epigenetic resistance to targeted therapies\" presents significant findings that have garnered attention in the academic community, w…",
 "cover_url": "",
-"authors": "Derek H. Janssens, M. Durán, Dominik J. Otto et al.",
-"institutions": [
-"Fred Hutch Cancer Center",
-"Cape Town HVTN Immunology Laboratory / Hutchinson Centre Research Institute of South Africa",
-"Howard Hughes Medical Institute",
-"Seattle Children's Hospital",
-"St. Jude Children's Research Hospital",
-"Baylor College of Medicine"
-],
-"download_count": 0
-},
-{
-"file": "articlestory_10.1101_2023.12.30.572255.html",
-"title": "Pronounced early differentiation underlies zebra finch gonadal germ cell development",
-"type": "ArticleStory",
-"doi": "10.1101/2023.12.30.572255",
-"year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
-"concepts": [
-"Zebra finch",
-"Biology",
-"Germ cell",
-"Germ plasm",
-"Songbird",
-"Finch",
-"Egg cell",
-"Developmental biology"
-],
-"roles": [
-"Sustainability & Policy relevance"
-],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 6,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Life in Land"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The study titled \"Pronounced early differentiation underlies zebra finch gonadal germ cell development\" highlights significant advancements in understanding the developmental biol…",
-"cover_url": "",
-"authors": "Matthew T. Biegler, Kirubel Belay, Wei Wang et al.",
-"institutions": [
-"Rockefeller University",
-"Cornell University",
-"Harvard University Press",
-"New York University",
-"Howard Hughes Medical Institute"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -5225,7 +6276,6 @@ window.STORIES_DATA = [
 "Genetics"
 ],
 "roles": [
-"Active public discourse",
 "Sustainability & Policy relevance"
 ],
 "is_oa": true,
@@ -5243,15 +6293,59 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research titled \"High-capacity sample multiplexing for single cell chromatin accessibility profiling\" has gained traction in the academic community, securing 6 citations since…",
+"excerpt": "Short impact summary The research article titled \"High-capacity sample multiplexing for single cell chromatin accessibility profiling\" represents a significant advancement in genomic analysis, particu…",
 "cover_url": "",
 "authors": "Gregory T. Booth, Riza M. Daza, Sanjay Srivatsan et al.",
 "institutions": [
 "University of Washington",
-"Brotman Baty Institute",
-"Fred Hutch Cancer Center"
+"Howard Hughes Medical Institute"
 ],
 "download_count": 0
+},
+{
+"file": "bookstory_10.1007_978-3-031-38294-9.html",
+"title": "The Wheat Genome",
+"type": "BookStory",
+"doi": "10.1007/978-3-031-38294-9",
+"year": 2024,
+"venue": "Springer International Publishing",
+"venue_name": "",
+"publisher": "Springer International Publishing",
+"concepts": [
+"Genome",
+"Computational biology",
+"Biology",
+"Sequence (biology)",
+"Whole genome sequencing",
+"Genetics",
+"Gene"
+],
+"roles": [
+"Commercial linkage",
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 6,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The Wheat Genome represents an important scholarly work published by Springer International Publishing in 2024.",
+"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-031-38294-9",
+"authors": "Rudi Appels, Kellye Eversole, Catherine Feuillet et al.",
+"institutions": [
+"La Trobe University",
+"Inari Agriculture (United States)",
+"Link Consulting"
+],
+"download_count": 1336
 },
 {
 "file": "bookstory_10.11116_9789461662514.html",
@@ -5281,14 +6375,14 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Reduced inequalities"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
+"ta_ol_holdings": 1,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite its publication in 2018 and a lack of citations to date, \"Powers of Divergence: An Experimental Approach to Music Performance\" by Leuven University Press has demonstrated …",
+"excerpt": "Short impact summary Despite the absence of citation and community discourse metrics, \"Powers of Divergence: An Experimental Approach to Music Performance\" has potential insights within academic circl…",
 "cover_url": "",
 "authors": "Lucia D'Errico",
 "institutions": [
@@ -5317,8 +6411,7 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Commercial linkage",
-"Scholarly uptake",
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -5327,13 +6420,13 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 5,
+"ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_ol_holdings": 1,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite the lack of formal citations and mentions in social discourse, \"Virtual Works – Actual Things,\" published by Leuven University Press in 2018, exhibits a commendable degree…",
+"excerpt": "Short impact summary The book \"Virtual Works – Actual Things,\" published by Leuven University Press in 2018, presents a unique exploration of the intersection between digital and physical realities.",
 "cover_url": "",
 "authors": "Paulo de Assis",
 "institutions": [],
@@ -5356,8 +6449,6 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Commercial linkage",
-"Public Visibility & Knowledge Base",
-"Active public discourse",
 "Scholarly uptake"
 ],
 "is_oa": true,
@@ -5367,19 +6458,19 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 3,
+"ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
+"ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite the absence of citations, \"Performing Hysteria\" has potential visibility through platforms like Amazon and Goodreads, indicating commercial interest that may enhance its p…",
+"excerpt": "Short impact summary \"Performing Hysteria,\" published by Leuven University Press in 2020, has yet to generate significant citations or online discourse, indicating a nascent footprint within both acad…",
 "cover_url": "",
 "authors": "Johanna Braun",
 "institutions": [
 "Imagination Technologies (United Kingdom)"
 ],
-"download_count": 7006
+"download_count": 7224
 },
 {
 "file": "bookstory_10.11116_9789461663634.html",
@@ -5406,18 +6497,194 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Public Administration in Ethiopia,\" published by Leuven University Press in 2020, has begun to establish its scholarly presence, showing promising signs with a citation count of …",
+"excerpt": "Short impact summary Despite having recorded no public engagement or citation metrics, \"Public Administration in Ethiopia,\" published by Leuven University Press in 2020, offers a specialized explorati…",
 "cover_url": "",
 "authors": "Bacha Kebede Debela, Geert Bouckaert, Meheret Ayenew Warota et al.",
 "institutions": [],
-"download_count": 14392
+"download_count": 14600
+},
+{
+"file": "bookstory_10.5117_9789462983663.html",
+"title": "Adaptation in the Age of Media Convergence",
+"type": "BookStory",
+"doi": "10.5117/9789462983663",
+"year": 2025,
+"venue": "Routledge",
+"venue_name": "",
+"publisher": "Routledge",
+"concepts": [
+"Technological convergence",
+"Negotiation",
+"Adaptation (eye)",
+"Convergence (economics)",
+"Perspective (graphical)",
+"Citizen journalism",
+"Cover (algebra)",
+"Sociology"
+],
+"roles": [
+"Commercial linkage",
+"Sustainability & Policy relevance",
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 6,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Peace, Justice and strong institutions"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite being pre-publication, \"Adaptation in the Age of Media Convergence\" has garnered notable attention, indicating its potential influence in the field of media studies.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789462983663&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Johannes Fehrle, Werner Schäfke-Zell",
+"institutions": [
+"Convergence",
+"University of Graz"
+],
+"download_count": 3364
+},
+{
+"file": "articlestory_10.1016_j.cell.2025.11.030.html",
+"title": "Mapping cellular targets of covalent cancer drugs in the entire mammalian body",
+"type": "ArticleStory",
+"doi": "10.1016/j.cell.2025.11.030",
+"year": 2025,
+"venue": "Cell",
+"venue_name": "Cell",
+"publisher": "Elsevier",
+"concepts": [
+"Biology",
+"Computational biology",
+"In vivo",
+"Click chemistry",
+"Homogeneous",
+"Molecular imaging",
+"Drug discovery",
+"Cancer"
+],
+"roles": [
+"Methodological anchor",
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 5,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary This groundbreaking study published in Cell examines the cellular targets of covalent cancer drugs across the entire mammalian body, showcasing robust institutional backing and a …",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1038_s41467-025-67869-0.html",
+"title": "Deep Mutational Scanning of FDX1 Identifies Key Structural Determinants of Lipoylation and Cuproptosis",
+"type": "ArticleStory",
+"doi": "10.1038/s41467-025-67869-0",
+"year": 2025,
+"venue": "Nature Communications",
+"venue_name": "Nature Communications",
+"publisher": "Springer Nature",
+"concepts": [
+"Protein subunit",
+"Computational biology",
+"Helix (gastropod)",
+"Biology",
+"Key (lock)",
+"Computer science",
+"Cell biology",
+"Protein structure"
+],
+"roles": [
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 5,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study titled \"Deep Mutational Scanning of FDX1 Identifies Key Structural Determinants of Lipoylation and Cuproptosis,\" published in Nature Communications in 2025, explores cri…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1038_s41597-023-02782-z.html",
+"title": "Chromosome-level genome assembly of chub mackerel (Scomber japonicus) from the Indo-Pacific Ocean",
+"type": "ArticleStory",
+"doi": "10.1038/s41597-023-02782-z",
+"year": 2023,
+"venue": "Scientific Data",
+"venue_name": "Scientific Data",
+"publisher": "Springer Nature",
+"concepts": [
+"Scomber",
+"Indo-Pacific",
+"Fishery",
+"Mackerel",
+"Biology",
+"Chromosome",
+"Oceanography",
+"Gene"
+],
+"roles": [
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 5,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Life below water"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The chromosome-level genome assembly of chub mackerel (Scomber japonicus) represents a significant contribution to marine genomics, supported by a robust institutional framework a…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
 },
 {
 "file": "articlestory_10.1101_2023.11.30.569486.html",
@@ -5425,9 +6692,9 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1101/2023.11.30.569486",
 "year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
 "concepts": [
 "Bioorthogonal chemistry",
 "Fluorescence",
@@ -5439,7 +6706,7 @@ window.STORIES_DATA = [
 "Protein subunit"
 ],
 "roles": [
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -5454,12 +6721,51 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research titled \"Bioorthogonal labeling enables in situ fluorescence imaging of expressed gas vesicle nanostructures,\" authored by Erik Schrunk and colleagues, presents signif…",
+"excerpt": "Short impact summary The preprint titled \"Bioorthogonal labeling enables in situ fluorescence imaging of expressed gas vesicle nanostructures\" has garnered attention within the academic community, acc…",
 "cover_url": "",
-"authors": "Erik Schrunk, Przemysław Dutka, Robert C. Hurt et al.",
-"institutions": [
-"Pasadena City College"
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1136_bmj.a186.html",
+"title": "How to Read a Paper: The Basics of Evidence-Based Medicine",
+"type": "ArticleStory",
+"doi": "10.1136/bmj.a186",
+"year": 2008,
+"venue": "BMJ",
+"venue_name": "BMJ",
+"publisher": "BMJ Publishing Group",
+"concepts": [
+"Jargon",
+"Subject (documents)",
+"Subject matter",
+"Jungle",
+"Protocol (science)",
+"Evidence-based medicine",
+"Alternative medicine",
+"Psychology"
 ],
+"roles": [
+"Reference point for synthesis"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 5,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary David Warriner's article, \"How to Read a Paper: The Basics of Evidence-Based Medicine,\" published in the BMJ in 2008, has been cited 5 times, indicating its relevance in the field…",
+"cover_url": "",
+"authors": "David Warriner",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -5482,8 +6788,7 @@ window.STORIES_DATA = [
 "Engineering"
 ],
 "roles": [
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -5500,7 +6805,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary This study, published in Frontiers in Education , explores various models of classroom assessment specifically tailored for course-based research experiences.",
+"excerpt": "Short impact summary The article \"Models of classroom assessment for course-based research experiences,\" published in Frontiers in Education, has received notable scholarly attention, accumulating fiv…",
 "cover_url": "",
 "authors": "David I. Hanauer, Tong Zhang, Mark Graham et al.",
 "institutions": [
@@ -5512,7 +6817,7 @@ window.STORIES_DATA = [
 "Illinois Wesleyan University",
 "University of North Texas",
 "Howard University",
-"Southern California Earthquake Center",
+"University of Southern California",
 "University of North Carolina at Charlotte"
 ],
 "download_count": 0
@@ -5547,14 +6852,14 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Quality Education"
 ],
-"has_teaching": true,
-"ta_ocw": 2,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary François Massion’s article, \"Terminology in the Age of AI: The Transformation of Terminology Theory and Practice,\" published in the Journal of Translation Studies, has achieved no…",
+"excerpt": "Short impact summary François Massion's article, \"Terminology in the Age of AI: The Transformation of Terminology Theory and Practice,\" published in the Journal of Translation Studies, has garnered at…",
 "cover_url": "",
 "authors": "François Massion",
 "institutions": [],
@@ -5568,7 +6873,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "",
+"publisher": "eLife Sciences Publications, Ltd",
 "concepts": [
 "Publishing",
 "Psychological intervention",
@@ -5597,16 +6902,53 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary This study, titled \"Gender differences in submission behavior exacerbate publication disparities in elite journals,\" highlights the critical impact of gender dynamics on academic …",
+"excerpt": "Short impact summary The article \"Gender differences in submission behavior exacerbate publication disparities in elite journals,\" published in eLife in 2023, explores critical gender disparities in a…",
 "cover_url": "",
 "authors": "",
 "institutions": [],
 "download_count": 0
 },
 {
+"file": "bookstory_10.11116_9789461662507.html",
+"title": "Logic of Experimentation: Rethinking Music Performance Through Artistic Research",
+"type": "BookStory",
+"doi": "10.11116/9789461662507",
+"year": 2018,
+"venue": "Leuven University Press",
+"venue_name": "",
+"publisher": "Leuven University Press",
+"concepts": [
+"Computer science",
+"Visual arts",
+"Art"
+],
+"roles": [
+"Commercial linkage",
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 5,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 1,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The book \"Logic of Experimentation: Rethinking Music Performance Through Artistic Research,\" published by Leuven University Press in 2018, offers a fresh perspective on music perf…",
+"cover_url": "",
+"authors": "Paulo De Assis",
+"institutions": [],
+"download_count": 5095
+},
+{
 "file": "bookstory_10.11116_9789461662835.html",
 "title": "Mapping Landscapes in Transformation",
-"type": "BookStory",
+"type": "ArticleStory",
 "doi": "10.11116/9789461662835",
 "year": 2019,
 "venue": "Leuven University Press",
@@ -5621,29 +6963,27 @@ window.STORIES_DATA = [
 "Gene"
 ],
 "roles": [
-"Active public discourse",
 "Commercial linkage",
-"Public Visibility & Knowledge Base",
 "Scholarly uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "citation_count": 5,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The book \"Mapping Landscapes in Transformation,\" published by Leuven University Press in 2019, has established its presence in the academic discourse, albeit with limited visibili…",
+"excerpt": "Short impact summary Despite its publication in 2019 not garnering any recorded citations or social media mentions, \"Mapping Landscapes in Transformation\" by Leuven University Press stands as a work o…",
 "cover_url": "",
 "authors": "Thomas Coomans, Bieke Cattoor, Krista De Jonge",
 "institutions": [],
-"download_count": 1944
+"download_count": 2007
 },
 {
 "file": "bookstory_10.11116_9789461663443.html",
@@ -5681,14 +7021,14 @@ window.STORIES_DATA = [
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 2,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite being published in 2020 by Leuven University Press, \"Migration at Work\" has not achieved citation or online engagement metrics indicative of broad scholarly or societal im…",
+"excerpt": "Short impact summary Despite the absence of citations or broad public discourse at the time of its publication, \"Migration at Work\" offers valuable insights into the intersections of migration and lab…",
 "cover_url": "",
 "authors": "Fiona-Katharina Seiger, Christiane Timmerman, Noel B. Salazar et al.",
 "institutions": [],
-"download_count": 2690
+"download_count": 2746
 },
 {
 "file": "bookstory_10.11116_9789461664914.html",
@@ -5726,11 +7066,53 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Published by Leuven University Press in 2022, \"Unfinished Histories\" shows promise in scholarly uptake, particularly noted by an engagement score indicating a strong commercial li…",
+"excerpt": "Short impact summary Published by Leuven University Press in 2022, \"Unfinished Histories\" presents a scholarly exploration of historical narratives.",
 "cover_url": "",
 "authors": "Pierre-Philippe Fraiture",
 "institutions": [],
-"download_count": 3954
+"download_count": 4353
+},
+{
+"file": "bookstory_10.11116_9789461665218.html",
+"title": "The Leopard, the Lion, and the Cock",
+"type": "BookStory",
+"doi": "10.11116/9789461665218",
+"year": 2023,
+"venue": "Leuven University Press",
+"venue_name": "",
+"publisher": "Leuven University Press",
+"concepts": [
+"Leopard",
+"Colonialism",
+"Geography",
+"Archaeology",
+"Art",
+"Ancient history",
+"Cartography",
+"History"
+],
+"roles": [
+"Commercial linkage",
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 5,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Published in 2023 by Leuven University Press, \"The Leopard, the Lion, and the Cock\" is a notable work that highlights the author's scholarly contribution, evidenced by its emergin…",
+"cover_url": "",
+"authors": "Matthew Stanard",
+"institutions": [],
+"download_count": 3112
 },
 {
 "file": "bookstory_10.11116_GCME_KAD.html",
@@ -5763,20 +7145,64 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Gender equality"
 ],
-"has_teaching": true,
-"ta_ocw": 5,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Gender and Christianity in Modern Europe, published by Leuven University Press in 2012, explores the intersection of gender and religious frameworks within Europe, contributing to…",
+"excerpt": "Short impact summary Despite its publication in 2012 and a current citation count of five, \"Gender and Christianity in Modern Europe\" has demonstrated its relevance within academic circles, particular…",
 "cover_url": "",
 "authors": "Patrick Pasture",
 "institutions": [
 "Royal Dutch Athletics Federation"
 ],
-"download_count": 3655
+"download_count": 3876
+},
+{
+"file": "articlestory_10.1084_jem.20251584.html",
+"title": "Transcription of HIV-1 is heterogenous among authentic latent CD4+ T cell clones",
+"type": "ArticleStory",
+"doi": "10.1084/jem.20251584",
+"year": 2025,
+"venue": "The Journal of Experimental Medicine",
+"venue_name": "The Journal of Experimental Medicine",
+"publisher": "Rockefeller University Press",
+"concepts": [
+"clone (Java method)",
+"Biology",
+"Gene",
+"Transcription (linguistics)",
+"Genetics",
+"Compartment (ship)",
+"T cell",
+"Cell"
+],
+"roles": [
+"High-visibility uptake",
+"Sustainability & Policy relevance"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 4,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research titled \"Transcription of HIV-1 is heterogenous among authentic latent CD4+ T cell clones\" published in The Journal of Experimental Medicine has garnered significant s…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.05.570183.html",
@@ -5784,9 +7210,9 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1101/2023.12.05.570183",
 "year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
 "concepts": [
 "Very low-density lipoprotein",
 "Apolipoprotein B",
@@ -5798,7 +7224,7 @@ window.STORIES_DATA = [
 "Chemistry"
 ],
 "roles": [
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -5813,20 +7239,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The study titled \"FITM2 deficiency results in ER lipid accumulation, ER stress, reduced apolipoprotein B lipidation, and VLDL triglyceride secretion in vitro and in mouse liver\" h…",
+"excerpt": "Short impact summary The preprint titled \"FITM2 deficiency results in ER lipid accumulation, ER stress, reduced apolipoprotein B lipidation, and VLDL triglyceride secretion in vitro and in mouse liver…",
 "cover_url": "",
-"authors": "Haizhen Wang, Cyrus Nikain, Jaime Amengual et al.",
-"institutions": [
-"Yunnan Agricultural University",
-"Memorial Sloan Kettering Cancer Center",
-"University of Illinois Urbana-Champaign",
-"Baylor College of Medicine",
-"Howard Hughes Medical Institute",
-"University of Alberta",
-"Albert Einstein College of Medicine",
-"New York University",
-"University of Pittsburgh"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -5835,9 +7251,9 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1101/2023.12.08.570796",
 "year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
 "concepts": [
 "CTCF",
 "Mitosis",
@@ -5850,8 +7266,7 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "High-visibility uptake",
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -5868,13 +7283,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The preprint \"Mitotic chromosomes harbor cell type and species-specific structural features within a universal looping architecture\" by authors from Boston University and the Cent…",
+"excerpt": "Short impact summary The preprint entitled \"Mitotic chromosomes harbor cell type and species-specific structural features within a universal looping architecture\" has garnered attention within the aca…",
 "cover_url": "",
-"authors": "Marlies E. Oomen, A. Nicole Fox, Inma González et al.",
-"institutions": [
-"Boston University",
-"Centre National de la Recherche Scientifique"
-],
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -5912,12 +7324,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary The study titled \"Chromosome-specific maturation of the epigenome in the Drosophila male germline\" by James T.",
+"excerpt": "Short impact summary The study titled \"Chromosome-specific maturation of the epigenome in the Drosophila male germline,\" published in eLife, has begun to establish its presence in the academic landsca…",
 "cover_url": "",
 "authors": "James T. Anderson, Steven Henikoff, Kami Ahmad",
 "institutions": [
-"Fred Hutch Cancer Center",
-"Howard Hughes Medical Institute",
 "Cape Town HVTN Immunology Laboratory / Hutchinson Centre Research Institute of South Africa"
 ],
 "download_count": 0
@@ -5954,14 +7364,55 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite the absence of online discourse and citation activity, \"Migratie in België in 21 vragen en antwoorden\" published by Leuven University Press in 2018 demonstrates solid attr…",
+"excerpt": "Short impact summary The book \"Migratie in België in 21 vragen en antwoorden,\" published by Leuven University Press in 2018, serves as a significant resource for understanding migration issues in Belg…",
 "cover_url": "",
 "authors": "Jean-Michel Lafleur, Abdeslam Marfouk",
 "institutions": [
 "L’Institut Wallon de l’Évaluation, de la Prospective et de la Statistique",
 "Leman University"
 ],
-"download_count": 0
+"download_count": 52
+},
+{
+"file": "bookstory_10.11116_9789461662811.html",
+"title": "Images of Immigrants and Refugees",
+"type": "ArticleStory",
+"doi": "10.11116/9789461662811",
+"year": 2019,
+"venue": "Leuven University Press",
+"venue_name": "",
+"publisher": "Leuven University Press",
+"concepts": [
+"Geography",
+"Political science",
+"Regional science",
+"Economic geography"
+],
+"roles": [
+"Commercial linkage",
+"Sustainability & Policy relevance",
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 4,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Gender equality"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 1,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite limited citations and community discourse, \"Images of Immigrants and Refugees\" offers valuable insights into the portrayal of immigration and refugee issues, showcasing a …",
+"cover_url": "",
+"authors": "Leen d’Haenens, Willem Joris, François Heinderyckx",
+"institutions": [],
+"download_count": 10860
 },
 {
 "file": "bookstory_10.11116_9789461663092.html",
@@ -5996,11 +7447,56 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Oil Wealth and Development in Uganda and Beyond,\" published by Leuven University Press in 2019, explores the intertwined relationship between oil resources and development polici…",
+"excerpt": "Short impact summary The book \"Oil Wealth and Development in Uganda and Beyond,\" published by Leuven University Press in 2019, highlights the complex relationship between oil wealth and socioeconomic …",
 "cover_url": "",
 "authors": "Arnim Langer, Ukoha Ukiwo",
 "institutions": [],
-"download_count": 5052
+"download_count": 5201
+},
+{
+"file": "bookstory_10.11116_9789461663542.html",
+"title": "Revival After the Great War",
+"type": "BookStory",
+"doi": "10.11116/9789461663542",
+"year": 2021,
+"venue": "Leuven University Press",
+"venue_name": "",
+"publisher": "Leuven University Press",
+"concepts": [
+"Politics",
+"Scope (computer science)",
+"Political science",
+"Spanish Civil War",
+"World War II",
+"Economic history",
+"Political economy",
+"Economy"
+],
+"roles": [
+"Commercial linkage",
+"Sustainability & Policy relevance",
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 4,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Sustainable cities and communities"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary \"Revival After the Great War,\" published by Leuven University Press in 2021, demonstrates a significant commercial linkage, indicating strong engagement from platforms such as Ama…",
+"cover_url": "",
+"authors": "Luc Verpoest, Leen Engelen, Rajesh Heynickx et al.",
+"institutions": [],
+"download_count": 3477
 },
 {
 "file": "bookstory_10.11116_9789461664280.html",
@@ -6024,7 +7520,6 @@ window.STORIES_DATA = [
 "roles": [
 "Commercial linkage",
 "Sustainability & Policy relevance",
-"Active public discourse",
 "Scholarly uptake"
 ],
 "is_oa": true,
@@ -6035,20 +7530,20 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Gender equality"
 ],
-"has_teaching": true,
-"ta_ocw": 1,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Published by Leuven University Press in 2021, \"Christian Masculinity\" is beginning to carve its niche with a moderate scholarly uptake, evident through reported citations.",
+"excerpt": "Short impact summary \"Christian Masculinity,\" published by Leuven University Press in 2021, explores the nuances of masculinity within Christian contexts.",
 "cover_url": "",
 "authors": "Yvonne Maria Werner",
 "institutions": [
 "Instituto de Historia"
 ],
-"download_count": 2851
+"download_count": 3036
 },
 {
 "file": "bookstory_10.11116_9789461664778.html",
@@ -6070,9 +7565,7 @@ window.STORIES_DATA = [
 "Epistemology"
 ],
 "roles": [
-"Active public discourse",
 "Commercial linkage",
-"Public Visibility & Knowledge Base",
 "Sustainability & Policy relevance",
 "Scholarly uptake"
 ],
@@ -6091,11 +7584,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Published by Leuven University Press in 2022, \"Homo Mimeticus\" exhibits signs of commercial linkage, being available via platforms like Amazon and Goodreads.",
+"excerpt": "Short impact summary Despite its recent publication in 2022, the book \"Homo Mimeticus\" has yet to generate significant academic citations or community discourse.",
 "cover_url": "",
 "authors": "Nidesh Lawtoo",
 "institutions": [],
-"download_count": 4404
+"download_count": 4675
 },
 {
 "file": "bookstory_10.11116_9789461665072.html",
@@ -6119,7 +7612,6 @@ window.STORIES_DATA = [
 "roles": [
 "Commercial linkage",
 "Sustainability & Policy relevance",
-"Active public discourse",
 "Scholarly uptake"
 ],
 "is_oa": true,
@@ -6137,44 +7629,42 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Silver Empowerment\" is positioned at the intersection of scholarly discourse and public interest within its domain.",
+"excerpt": "Short impact summary Despite its recent publication in 2023, \"Silver Empowerment\" stands as a pivotal resource within its field, demonstrating substantial commercial linkage through its availability o…",
 "cover_url": "",
 "authors": "Jasper De Witte, Tine Van Regenmortel",
 "institutions": [
-"KU Leuven"
+"Tilburg University"
 ],
-"download_count": 2295
+"download_count": 2448
 },
 {
-"file": "articlestory_10.1038_s41597-023-02782-z.html",
-"title": "Chromosome-level genome assembly of chub mackerel (Scomber japonicus) from the Indo-Pacific Ocean",
-"type": "ArticleStory",
-"doi": "10.1038/s41597-023-02782-z",
-"year": 2023,
-"venue": "Scientific Data",
-"venue_name": "Scientific Data",
-"publisher": "Nature Portfolio",
+"file": "datastory_10.5281_zenodo.3727291.html",
+"title": "COVID-19 Open Research Dataset (CORD-19)",
+"type": "DataStory",
+"doi": "10.5281/zenodo.3727291",
+"year": 2020,
+"venue": "Zenodo (CERN European Organization for Nuclear Research)",
+"venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
+"publisher": "European Organization for Nuclear Research",
 "concepts": [
-"Scomber",
-"Indo-Pacific",
-"Fishery",
-"Mackerel",
+"Coronavirus disease 2019 (COVID-19)",
+"Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
+"2019-20 coronavirus outbreak",
+"Virology",
+"Computer science",
 "Biology",
-"Chromosome",
-"Oceanography",
-"Gene"
+"Medicine",
+"Internal medicine"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Scholarly uptake"
 ],
 "is_oa": true,
-"oa_status": "gold",
-"citation_count": 3,
+"oa_status": "green",
+"citation_count": 4,
 "event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Life below water"
-],
+"has_sdgs": false,
+"sdg_ids": [],
 "has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
@@ -6182,19 +7672,13 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The chromosome-level genome assembly of chub mackerel (Scomber japonicus) represents a significant contribution to marine genomics, backed by reputable institutions such as Pukyon…",
+"excerpt": "Short impact summary The COVID-19 Open Research Dataset (CORD-19), hosted on Zenodo, serves as a vital resource for the scientific community, accruing 2,909 views and 2,771 downloads, underscoring its…",
 "cover_url": "",
-"authors": "Young Ho Lee, Linelle Abueg, Jin‐Koo Kim et al.",
+"authors": "Sebastian Kohlmeier, Kyle Lo, Lucy Lu Wang et al.",
 "institutions": [
-"Seoul National University",
-"Rockefeller University",
-"Pukyong National University",
-"Wellcome Sanger Institute",
-"National Institutes of Health",
-"National Institute of Fisheries Science",
-"Howard Hughes Medical Institute"
+"Allen Institute"
 ],
-"download_count": 0
+"download_count": 16310
 },
 {
 "file": "articlestory_10.1101_2024.01.15.575636.html",
@@ -6326,7 +7810,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The study by Russell et al.",
+"excerpt": "Short impact summary The research conducted by Russell et al.",
 "cover_url": "",
 "authors": "Magdalena L Russell, Carolyn S. Fish, Sara Drescher et al.",
 "institutions": [
@@ -6346,7 +7830,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "",
+"publisher": "eLife Sciences Publications, Ltd",
 "concepts": [
 "Neuroscience",
 "Order (exchange)",
@@ -6366,14 +7850,14 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 3,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research titled \"Molecular characterization of gustatory second-order neurons reveals integrative mechanisms of gustatory and metabolic information,\" recently shared as a prep…",
+"excerpt": "Short impact summary The research titled \"Molecular characterization of gustatory second-order neurons reveals integrative mechanisms of gustatory and metabolic information,\" published in eLife , demo…",
 "cover_url": "",
 "authors": "",
 "institutions": [],
@@ -6404,14 +7888,14 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 5,
+"ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_ol_holdings": 2,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The book \"Experimental Affinities in Music,\" published by Leuven University Press in 2015, presents a unique exploration of musical relationships, although it has not yet gained s…",
-"cover_url": "",
+"excerpt": "Short impact summary Despite its publication in 2015 and the absence of citations or social media mentions, \"Experimental Affinities in Music\" presents a noteworthy avenue for exploration within its a…",
+"cover_url": "https://lup.be/wp-content/uploads/2024/01/default_cover.png",
 "authors": "Paulo De Assis",
 "institutions": [],
 "download_count": 0
@@ -6438,14 +7922,14 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
+"ta_ol_holdings": 1,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Transpositions,\" published by Leuven University Press in 2018, has garnered a modest academic footprint, indicated by its citation count of 3.",
+"excerpt": "Short impact summary Despite its release in 2018 through Leuven University Press, \"Transpositions\" has yet to garner significant academic engagement, as evidenced by the absence of citations and onlin…",
 "cover_url": "",
 "authors": "Michael Schwab",
 "institutions": [
@@ -6477,17 +7961,17 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 1,
+"ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_ol_holdings": 2,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Across Anthropology, published by Leuven University Press in 2020, has witnessed a modest citation count, indicating potential scholarly engagement.",
+"excerpt": "Short impact summary Despite its publication in 2020, \"Across Anthropology\" has yet to gain significant traction within academic circles, recorded with zero citations.",
 "cover_url": "",
 "authors": "Margareta von Oswald, Jonas Tinius",
 "institutions": [],
-"download_count": 10029
+"download_count": 10212
 },
 {
 "file": "bookstory_10.11116_9789461663801.html",
@@ -6511,7 +7995,6 @@ window.STORIES_DATA = [
 "roles": [
 "Commercial linkage",
 "Sustainability & Policy relevance",
-"Active public discourse",
 "Scholarly uptake"
 ],
 "is_oa": true,
@@ -6522,20 +8005,20 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Sustainable cities and communities"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite being published in 2021, \"The Tacit Dimension\" has not yet garnered citations, indicating a nascent stage in its academic uptake.",
+"excerpt": "Short impact summary Despite having no recorded citations or online discussions, \"The Tacit Dimension\" published by Leuven University Press in 2021 shows evidence of a strong commercial linkage, sugge…",
 "cover_url": "",
 "authors": "Lara Schrijver",
 "institutions": [
 "KU Leuven"
 ],
-"download_count": 5918
+"download_count": 6345
 },
 {
 "file": "bookstory_10.11116_9789461663962.html",
@@ -6575,11 +8058,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Living with History, 1914-1964\" published by Leuven University Press in 2021, showcases an academic exploration of historical contexts, although it currently has not gained signi…",
+"excerpt": "Short impact summary \"Living with History, 1914-1964,\" published by Leuven University Press in 2021, reflects a significant scholarly output in its field, although it has not yet garnered citations or…",
 "cover_url": "",
 "authors": "Nicholas Bullock, Luc Verpoest",
 "institutions": [],
-"download_count": 1422
+"download_count": 1637
 },
 {
 "file": "bookstory_10.11116_9789461664082.html",
@@ -6603,8 +8086,7 @@ window.STORIES_DATA = [
 "roles": [
 "Commercial linkage",
 "Sustainability & Policy relevance",
-"Scholarly uptake",
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -6614,18 +8096,18 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Sustainable cities and communities"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite being a recent publication in 2021, \"Making Home(s) in Displacement\" has yet to garner citations or significant online discourse.",
+"excerpt": "Short impact summary \"Making Home(s) in Displacement,\" published by Leuven University Press in 2021, addresses critical themes of home and belonging amidst forced displacement.",
 "cover_url": "",
 "authors": "Luce Beeckmans, Alessandra Gola, Ashika Singh et al.",
 "institutions": [],
-"download_count": 3152
+"download_count": 3323
 },
 {
 "file": "bookstory_10.11116_9789461664112.html",
@@ -6649,8 +8131,7 @@ window.STORIES_DATA = [
 "roles": [
 "Commercial linkage",
 "Sustainability & Policy relevance",
-"Scholarly uptake",
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -6660,18 +8141,18 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Peace, Justice and strong institutions"
 ],
-"has_teaching": true,
-"ta_ocw": 2,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The book \"Translation Policies in Legal and Institutional Settings,\" published by Leuven University Press in 2021, explores crucial aspects of translation policy within legal fram…",
+"excerpt": "Short impact summary Despite its recent publication year of 2021, \"Translation Policies in Legal and Institutional Settings\" has not yet garnered formal citations or online discourse.",
 "cover_url": "",
 "authors": "Marie Bourguignon, Bieke Nouws, Heleen van Gerwen",
 "institutions": [],
-"download_count": 3233
+"download_count": 3415
 },
 {
 "file": "bookstory_10.11116_9789461664693.html",
@@ -6694,8 +8175,7 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Commercial linkage",
-"Scholarly uptake",
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -6703,18 +8183,105 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 1,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Absent Presences in the Colonial Archive,\" published by Leuven University Press in 2022, has begun to make its mark within academic circles, though it currently lacks broad publi…",
+"excerpt": "Short impact summary \"Absent Presences in the Colonial Archive,\" published by Leuven University Press in 2022, explores themes critical to understanding colonial legacies and their contemporary implic…",
 "cover_url": "",
 "authors": "Irene Hilden",
 "institutions": [],
-"download_count": 1747
+"download_count": 1945
+},
+{
+"file": "bookstory_10.11116_9789461665249.html",
+"title": "Newcomers Navigating the Welfare State",
+"type": "BookStory",
+"doi": "10.11116/9789461665249",
+"year": 2023,
+"venue": "Leuven University Press",
+"venue_name": "",
+"publisher": "Leuven University Press",
+"concepts": [
+"Bureaucracy",
+"Welfare state",
+"Welfare",
+"Social Welfare",
+"Social work",
+"Public relations",
+"Diversity (politics)",
+"Immigration"
+],
+"roles": [
+"Commercial linkage",
+"Sustainability & Policy relevance",
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 3,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Reduced inequalities"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The work titled \"Newcomers Navigating the Welfare State,\" published in 2023 by Leuven University Press, addresses critical elements related to the welfare state and its navigation…",
+"cover_url": "",
+"authors": "Hanne Vandermeerschen, Elsa Mescoli, Jean-Michel Lafleur et al.",
+"institutions": [],
+"download_count": 1213
+},
+{
+"file": "bookstory_10.3726_b11422.html",
+"title": "Austerity and the Implementation of the Europe 2020 Strategy in Spain",
+"type": "BookStory",
+"doi": "10.3726/b11422",
+"year": 2017,
+"venue": "Peter Lang B",
+"venue_name": "",
+"publisher": "Peter Lang B",
+"concepts": [
+"Austerity",
+"Political science",
+"Geography",
+"Law",
+"Politics"
+],
+"roles": [
+"Commercial linkage",
+"Sustainability & Policy relevance",
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 3,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Partnerships for the goals"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 4,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The book \"Austerity and the Implementation of the Europe 2020 Strategy in Spain,\" published in 2017 by Peter Lang B, addresses the intersection of economic policy and social welfa…",
+"cover_url": "https://cdn.openpublishing.com/thumbnail/products/1113360/large.webp",
+"authors": "Javier Ramos, Esther del Campo",
+"institutions": [],
+"download_count": 0
 },
 {
 "file": "datastory_10.5061_dryad.585t4.html",
@@ -6722,9 +8289,9 @@ window.STORIES_DATA = [
 "type": "DataStory",
 "doi": "10.5061/dryad.585t4",
 "year": 2011,
-"venue": "Open MIND",
-"venue_name": "Open MIND",
-"publisher": "",
+"venue": "Dryad",
+"venue_name": "Dryad",
+"publisher": "Dryad",
 "concepts": [
 "Medicine",
 "Medical emergency",
@@ -6753,7 +8320,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The dataset, titled \"Medical-device recalls in the UK and the device-regulation process,\" has engaged the academic community with a total of 3 citations from diverse fields.",
+"excerpt": "Short impact summary This dataset explores the landscape of medical-device recalls in the UK, highlighting its significance with 4,631 views and 3,224 downloads, evidencing robust community interest a…",
 "cover_url": "",
 "authors": "Heneghan, C, Thompson, M, Billingsley, M et al.",
 "institutions": [],
@@ -6767,7 +8334,7 @@ window.STORIES_DATA = [
 "year": 2018,
 "venue": "Clinical Orthopaedics and Related Research",
 "venue_name": "Clinical Orthopaedics and Related Research",
-"publisher": "Lippincott Williams & Wilkins",
+"publisher": "Wolters Kluwer",
 "concepts": [
 "Medicine",
 "Carpal tunnel release",
@@ -6779,7 +8346,7 @@ window.STORIES_DATA = [
 "Surgery"
 ],
 "roles": [
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -6794,11 +8361,55 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary Ana‐Maria Vranceanu's research published in Clinical Orthopaedics and Related Research explores the critical link between preoperative pain sensitization and postoperative pillar …",
+"excerpt": "Short impact summary The study titled \"Preoperative Pain Sensitization Is Associated With Postoperative Pillar Pain After Open Carpal Tunnel Release,\" published in Clinical Orthopaedics and Related Re…",
 "cover_url": "",
-"authors": "Ana‐Maria Vranceanu",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1056_NEJMimc1109704.html",
+"title": "A Startling Decline",
+"type": "ArticleStory",
+"doi": "10.1056/NEJMimc1109704",
+"year": 2012,
+"venue": "New England Journal of Medicine",
+"venue_name": "New England Journal of Medicine",
+"publisher": "Massachusetts Medical Society",
+"concepts": [
+"Medicine",
+"Personality",
+"Cognition",
+"Cognitive decline",
+"Cognitive psychology",
+"Psychiatry",
+"Psychoanalysis",
+"Dementia"
+],
+"roles": [
+"High-visibility uptake",
+"Sustainability & Policy relevance"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 2,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"No poverty"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary Published in the prestigious New England Journal of Medicine, the article \"A Startling Decline\" by Anand Vaidya et al.",
+"cover_url": "",
+"authors": "Anand Vaidya, Brigid M. Dolan, Brian L. Edlow et al.",
 "institutions": [
-"Harvard University"
+"General Department of Preventive Medicine"
 ],
 "download_count": 0
 },
@@ -6839,7 +8450,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research article \"Carnivorous plant evolution: is a killer defense always the best option?\" by Carl Procko and Joanne Chory is published in the Journal of Experimental Botany,…",
+"excerpt": "Short impact summary The article titled \"Carnivorous plant evolution: is a killer defense always the best option?\" by Carl Procko and Joanne Chory, published in 2023 in the Journal of Experimental Bot…",
 "cover_url": "",
 "authors": "Carl Procko, Joanne Chory",
 "institutions": [
@@ -6855,7 +8466,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "medRxiv",
 "venue_name": "medRxiv",
-"publisher": "",
+"publisher": "openRxiv",
 "concepts": [
 "Asymptomatic",
 "Immunology",
@@ -6884,20 +8495,55 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary This research investigates the relationship between human leukocyte antigen (HLA) types and asymptomatic SARS-CoV-2 infection, contributing to the understanding of host factors in…",
+"excerpt": "Short impact summary The scholarly article titled \"Lack of association between HLA and asymptomatic SARS-CoV-2 infection\" contributes important insights into the intersection of immunology and infecti…",
 "cover_url": "",
-"authors": "Astrid Marchal, Elizabeth T. Cirulli, Iva Neveux et al.",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.11116_9789461664419.html",
+"title": "Islamic Glass in the Making",
+"type": "ArticleStory",
+"doi": "10.11116/9789461664419",
+"year": 2022,
+"venue": "Leuven University Press eBooks",
+"venue_name": "Leuven University Press eBooks",
+"publisher": "Leuven University Press",
+"concepts": [
+"Islam",
+"Mesopotamia",
+"Context (archaeology)",
+"Consumption (sociology)",
+"Ancient history",
+"History",
+"Archaeology",
+"Geography"
+],
+"roles": [
+"Sustainability & Policy relevance",
+"Active public discourse"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 2,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Peace, Justice and strong institutions"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Nadine Schibille's work, *Islamic Glass in the Making*, published by Leuven University Press eBooks, has begun to carve a niche within the academic community, evidenced by two cit…",
+"cover_url": "",
+"authors": "Nadine Schibille",
 "institutions": [
-"Inserm",
-"Helix (United States)",
-"University of Nevada, Reno",
-"Imperial College London",
-"National Institute of Allergy and Infectious Diseases",
-"hVIVO (United Kingdom)",
-"Garvan Institute of Medical Research",
-"Utrecht University",
-"Leidos (United States)",
-"Université Claude Bernard Lyon 1"
+"Institut de Recherche sur les ArchéoMATériaux"
 ],
 "download_count": 0
 },
@@ -6945,6 +8591,47 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
+"file": "articlestory_10.64898_2025.12.30.696949.html",
+"title": "Template-based RNA structure prediction advanced through a blind code competition",
+"type": "ArticleStory",
+"doi": "10.64898/2025.12.30.696949",
+"year": 2025,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Pipeline (software)",
+"Computer science",
+"Competition (biology)",
+"Code (set theory)",
+"Computational biology",
+"Artificial intelligence",
+"Source code",
+"Sequence (biology)"
+],
+"roles": [
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 2,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary This preprint presents a novel approach to RNA structure prediction, leveraging a competitive framework that enhances template-based methodologies.",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
 "file": "bookstory_10.11116_9789461662880.html",
 "title": "Participatiegolven",
 "type": "BookStory",
@@ -6977,13 +8664,53 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite being published by Leuven University Press in 2019, \"Participatiegolven\" has not garnered citations, online mentions, or community discussions; hence, its immediate academ…",
+"excerpt": "Short impact summary \"Participatiegolven,\" published by Leuven University Press in 2019, explores significant themes surrounding participation in various contexts.",
 "cover_url": "",
 "authors": "Annette Kuhk, Hilde Heynen, Liesbeth Huybrechts et al.",
 "institutions": [
 "Universitair Ziekenhuis Leuven"
 ],
-"download_count": 1928
+"download_count": 2061
+},
+{
+"file": "bookstory_10.11116_9789461663610.html",
+"title": "Mongameli Mabona",
+"type": "BookStory",
+"doi": "10.11116/9789461663610",
+"year": 2021,
+"venue": "Leuven University Press",
+"venue_name": "",
+"publisher": "Leuven University Press",
+"concepts": [
+"Work (physics)",
+"Engineering",
+"Mechanical engineering"
+],
+"roles": [
+"Commercial linkage",
+"Sustainability & Policy relevance",
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 2,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Gender equality"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite the absence of citation and community discourse metrics, \"Mongameli Mabona,\" published by Leuven University Press in 2021, demonstrates commercial potential and relevance …",
+"cover_url": "",
+"authors": "Ernst Wolff",
+"institutions": [],
+"download_count": 1562
 },
 {
 "file": "bookstory_10.11116_9789461663900.html",
@@ -7007,8 +8734,7 @@ window.STORIES_DATA = [
 "roles": [
 "Commercial linkage",
 "Sustainability & Policy relevance",
-"Scholarly uptake",
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -7018,18 +8744,60 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Industry, innovation and infrastructure"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The book \"Evolving as a Digital Scholar,\" published by Leuven University Press in 2021, signifies a relevant contribution to the evolving landscape of digital scholarship, garneri…",
+"excerpt": "Short impact summary Published in 2021 by Leuven University Press, \"Evolving as a Digital Scholar\" addresses the contemporary transitions and methodologies within digital scholarship.",
 "cover_url": "",
 "authors": "Wim Van Petegem, JP Bosman, Miné De Klerk et al.",
 "institutions": [],
-"download_count": 4970
+"download_count": 5052
+},
+{
+"file": "bookstory_10.11116_9789461664174.html",
+"title": "A Dark Trace",
+"type": "BookStory",
+"doi": "10.11116/9789461664174",
+"year": 2021,
+"venue": "Leuven University Press",
+"venue_name": "",
+"publisher": "Leuven University Press",
+"concepts": [
+"TRACE (psycholinguistics)",
+"Psychoanalytic theory",
+"Relation (database)",
+"Mythology",
+"Psychoanalysis",
+"Freudian slip",
+"Philosophy",
+"Reading (process)"
+],
+"roles": [
+"Commercial linkage",
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 2,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Published in 2021 by Leuven University Press, \"A Dark Trace\" currently has a small but significant scholarly uptake, with two recorded citations.",
+"cover_url": "",
+"authors": "Herman Westerink",
+"institutions": [],
+"download_count": 22750
 },
 {
 "file": "bookstory_10.11116_9789461664389.html",
@@ -7050,8 +8818,7 @@ window.STORIES_DATA = [
 "roles": [
 "Commercial linkage",
 "Sustainability & Policy relevance",
-"Scholarly uptake",
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -7061,18 +8828,18 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Sustainable cities and communities"
 ],
-"has_teaching": true,
-"ta_ocw": 1,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Published by Leuven University Press in 2022, \"At Home in Renaissance Bruges\" has yet to generate significant academic citations or public discourse.",
+"excerpt": "Short impact summary \"At Home in Renaissance Bruges,\" published by Leuven University Press in 2022, explores significant themes related to the cultural and social dynamics of Renaissance Bruges.",
 "cover_url": "",
 "authors": "Julie De Groot",
 "institutions": [],
-"download_count": 4687
+"download_count": 4918
 },
 {
 "file": "bookstory_10.11116_9789461664419.html",
@@ -7096,8 +8863,7 @@ window.STORIES_DATA = [
 "roles": [
 "Commercial linkage",
 "Sustainability & Policy relevance",
-"Scholarly uptake",
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -7107,20 +8873,67 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Peace, Justice and strong institutions"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Islamic Glass in the Making,\" published by Leuven University Press in 2022, represents a significant contribution to the understanding of Islamic art and history.",
+"excerpt": "Short impact summary \"Islamic Glass in the Making\" published by Leuven University Press in 2022, stands at the intersection of academic rigor and commercial linkage, indicating its relevance in both s…",
 "cover_url": "",
 "authors": "Nadine Schibille",
 "institutions": [
-"Institut de Recherche sur les ArchéoMATériaux"
+"Université d'Orléans"
 ],
-"download_count": 1854
+"download_count": 1965
+},
+{
+"file": "bookstory_10.11116_9789461664556.html",
+"title": "The Hybrid Practitioner",
+"type": "BookStory",
+"doi": "10.11116/9789461664556",
+"year": 2022,
+"venue": "Leuven University Press",
+"venue_name": "",
+"publisher": "Leuven University Press",
+"concepts": [
+"Appeal",
+"Audience measurement",
+"Engineering ethics",
+"Publishing",
+"Realm",
+"Sociology",
+"Architecture",
+"Engineering"
+],
+"roles": [
+"Commercial linkage",
+"Sustainability & Policy relevance",
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 2,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Sustainable cities and communities"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite the absence of citations and public discourse metrics indicating its reach, \"The Hybrid Practitioner,\" published by Leuven University Press in 2022, reflects a solid engag…",
+"cover_url": "",
+"authors": "Caroline Voet, Eireen Schreurs Schreurs, Helen Thomas",
+"institutions": [
+"École Nationale Supérieure d'Architecture de Paris-La Villette"
+],
+"download_count": 4029
 },
 {
 "file": "bookstory_10.11116_9789461664679.html",
@@ -7158,13 +8971,13 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The \"Handbook for Ethiopian Public Administration Program Accreditation\" serves as an essential resource for advancing public administration in Ethiopia, reflecting scholarly enga…",
+"excerpt": "Short impact summary Published in 2022, the \"Handbook for Ethiopian Public Administration Program Accreditation\" by Leuven University Press has laid a foundational text aimed at enhancing the standard…",
 "cover_url": "",
 "authors": "Bacha Kebede Debela, Geert Bouckaert, Berhanu Temesgen Eshetu et al.",
 "institutions": [
 "University of Potsdam"
 ],
-"download_count": 2051
+"download_count": 2167
 },
 {
 "file": "bookstory_10.11116_9789461664884.html",
@@ -7188,8 +9001,7 @@ window.STORIES_DATA = [
 "roles": [
 "Commercial linkage",
 "Sustainability & Policy relevance",
-"Scholarly uptake",
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -7210,7 +9022,7 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Franziska van Buren",
 "institutions": [],
-"download_count": 1866
+"download_count": 2098
 },
 {
 "file": "bookstory_10.11116_9789461665140.html",
@@ -7244,66 +9056,20 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Sustainable cities and communities"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite being newly published in 2023, \"Contested Legacies\" has the potential to engage with contemporary discussions in its field, as suggested by its commercial linkage presence…",
+"excerpt": "Short impact summary Despite the absence of external citations or online mentions, \"Contested Legacies,\" published by Leuven University Press in 2023, hints at promising engagement in academic discour…",
 "cover_url": "",
 "authors": "Andrea Migotto, Martino Tattara",
 "institutions": [
 "Department of Land Resource Management"
 ],
-"download_count": 1040
-},
-{
-"file": "bookstory_10.11116_9789461665249.html",
-"title": "Newcomers Navigating the Welfare State",
-"type": "BookStory",
-"doi": "10.11116/9789461665249",
-"year": 2023,
-"venue": "Leuven University Press",
-"venue_name": "",
-"publisher": "Leuven University Press",
-"concepts": [
-"Bureaucracy",
-"Welfare state",
-"Welfare",
-"Social Welfare",
-"Social work",
-"Public relations",
-"Diversity (politics)",
-"Immigration"
-],
-"roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake",
-"Active public discourse"
-],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 2,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Reduced inequalities"
-],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": true,
-"has_peer_review": false,
-"has_reuse": false,
-"excerpt": "Short impact summary \"Newcomers Navigating the Welfare State\" emerges as a significant contribution to understanding the intersection of social policy and community dynamics, with an emphasis on relev…",
-"cover_url": "",
-"authors": "Hanne Vandermeerschen, Elsa Mescoli, Jean-Michel Lafleur et al.",
-"institutions": [],
-"download_count": 1133
+"download_count": 1230
 },
 {
 "file": "bookstory_10.11116_SNTSWW.html",
@@ -7325,9 +9091,7 @@ window.STORIES_DATA = [
 "Law"
 ],
 "roles": [
-"Active public discourse",
 "Commercial linkage",
-"Public Visibility & Knowledge Base",
 "Scholarly uptake"
 ],
 "is_oa": true,
@@ -7336,20 +9100,62 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite being published in 2013, \"A Small Nation in the Turmoil of the Second World War\" has not generated significant citations or mentions across common public discourse platfor…",
+"excerpt": "Short impact summary Despite limited citations and online discourse, \"A Small Nation in the Turmoil of the Second World War\" published by Leuven University Press in 2013, demonstrates a considerable c…",
 "cover_url": "",
 "authors": "Herman Van der Wee",
 "institutions": [
 "Stanford University"
 ],
-"download_count": 2675
+"download_count": 2902
+},
+{
+"file": "bookstory_10.5117_9789463723336.html",
+"title": "Human Trafficking in Medieval Europe",
+"type": "BookStory",
+"doi": "10.5117/9789463723336",
+"year": 2025,
+"venue": "Routledge",
+"venue_name": "",
+"publisher": "Routledge",
+"concepts": [
+"Human trafficking",
+"Entitlement (fair division)",
+"Vulnerability (computing)",
+"Criminology",
+"Poverty",
+"Political science",
+"Language change",
+"History"
+],
+"roles": [
+"Commercial linkage",
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 2,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The forthcoming book \"Human Trafficking in Medieval Europe,\" set for publication by Routledge in 2025, explores a critical yet under-researched area of historical scholarship.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789463723336&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Christopher Paolella",
+"institutions": [],
+"download_count": 3766
 },
 {
 "file": "datastory_10.5281_zenodo.15423474.html",
@@ -7379,18 +9185,152 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 2,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary This dataset, titled \"Open Access Publishing Patterns 2015–2024: Global Article Output and Modal Shifts,\" showcases significant insights into publishing trends, with 764 views and…",
+"excerpt": "Short impact summary The dataset titled \"Open Access Publishing Patterns 2015–2024: Global Article Output and Modal Shifts\" has garnered significant attention, with 768 views and 1,004 downloads on Ze…",
 "cover_url": "",
 "authors": "Herb, Ulrich",
 "institutions": [],
-"download_count": 1003
+"download_count": 1004
+},
+{
+"file": "articlestory_10.1016_j.cell.2025.11.041.html",
+"title": "Mechanisms of HSV-1 helicase-primase inhibition and replication fork complex assembly",
+"type": "ArticleStory",
+"doi": "10.1016/j.cell.2025.11.041",
+"year": 2025,
+"venue": "Cell",
+"venue_name": "Cell",
+"publisher": "Cell Press",
+"concepts": [
+"Biology",
+"Replisome",
+"DNA replication",
+"Polymerase",
+"Cell biology",
+"Viral replication",
+"Minichromosome maintenance",
+"Genetics"
+],
+"roles": [
+"Methodological anchor"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study \"Mechanisms of HSV-1 helicase-primase inhibition and replication fork complex assembly,\" published in 2025 in the journal Cell , delves into the intricate mechanisms und…",
+"cover_url": "",
+"authors": "Zishuo Yu, Pradeep Sathyanarayana, Cong Liu et al.",
+"institutions": [
+"Harvard University",
+"Broad Institute",
+"Dana-Farber Cancer Institute",
+"University of Connecticut"
+],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1016_j.gde.2025.102424.html",
+"title": "Probing neuropsychiatric disorders through in vivo CRISPR screening",
+"type": "ArticleStory",
+"doi": "10.1016/j.gde.2025.102424",
+"year": 2025,
+"venue": "Current Opinion in Genetics & Development",
+"venue_name": "Current Opinion in Genetics & Development",
+"publisher": "Elsevier",
+"concepts": [
+"Biology",
+"In vivo",
+"CRISPR",
+"Schizophrenia (object-oriented programming)",
+"Allele",
+"Bipolar disorder",
+"Disease",
+"Genetics"
+],
+"roles": [
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article \"Probing neuropsychiatric disorders through in vivo CRISPR screening,\" published in Current Opinion in Genetics & Development in 2025, showcases significant research i…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1016_j.jinorgbio.2025.113204.html",
+"title": "The cobalamin-binding domain of cobalamin-dependent radical S-adenosylmethionine enzymes: Familiarity in unfamiliar places",
+"type": "ArticleStory",
+"doi": "10.1016/j.jinorgbio.2025.113204",
+"year": 2025,
+"venue": "Journal of Inorganic Biochemistry",
+"venue_name": "Journal of Inorganic Biochemistry",
+"publisher": "Elsevier BV",
+"concepts": [
+"Chemistry",
+"Enzyme",
+"Cofactor",
+"Stereochemistry",
+"Corrinoid",
+"Domain (mathematical analysis)",
+"Ring (chemistry)",
+"Biochemistry"
+],
+"roles": [
+"High-visibility uptake",
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Zero hunger"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article explores the cobalamin-binding domain within cobalamin-dependent radical S-adenosylmethionine enzymes, showcasing a unique intersection of biochemistry and inorganic c…",
+"cover_url": "",
+"authors": "Dante M. Avalos, Catherine L. Drennan",
+"institutions": [
+"Harvard Bioscience (United States)",
+"Massachusetts Institute of Technology"
+],
+"download_count": 0
 },
 {
 "file": "articlestory_10.1080_19392397.2013.791060.html",
@@ -7429,7 +9369,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary Chris Rojek's work, titled \" Fame attack: the inflation of celebrity and its consequences \", has been recognized within academic circles, with its citation by the \"PHILANTHROPY Jo…",
+"excerpt": "Short impact summary Chris Rojek's article, \"Fame attack: the inflation of celebrity and its consequences,\" published in 2013 in the journal Celebrity Studies, has generated notable scholarly impact w…",
 "cover_url": "",
 "authors": "Barry King",
 "institutions": [
@@ -7438,14 +9378,219 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
+"file": "articlestory_10.1162_anti.5czb.html",
+"title": "What Is Intelligence?",
+"type": "ArticleStory",
+"doi": "10.1162/anti.5czb",
+"year": 2025,
+"venue": "Nature Chemistry",
+"venue_name": "Nature Chemistry",
+"publisher": "Springer Nature",
+"concepts": [
+"Psychology",
+"Computer science"
+],
+"roles": [
+"Scholarly uptake"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary Blaise Agüera y Arcas's work, \"What Is Intelligence?\" has appeared in 1 open citation, indicating an early stage of academic engagement.",
+"cover_url": "",
+"authors": "Blaise Agüera y Arcas",
+"institutions": [
+"Google (United States)"
+],
+"download_count": 0
+},
+{
+"file": "articlestory_10.64898_2025.12.22.696041.html",
+"title": "Stomatal setpoints and environmental responsiveness are sculpted by developmental trajectories",
+"type": "ArticleStory",
+"doi": "10.64898/2025.12.22.696041",
+"year": 2025,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Biology",
+"Phenotypic plasticity",
+"Arabidopsis",
+"Developmental plasticity",
+"Arabidopsis thaliana",
+"Ecology",
+"Developmental biology",
+"Evolutionary biology"
+],
+"roles": [
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Clean water and sanitation"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The preprint titled \"Stomatal setpoints and environmental responsiveness are sculpted by developmental trajectories\" has garnered initial academic traction, evidenced by a citatio…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.64898_2025.12.22.696097.html",
+"title": "The organization of visual pathways in the <i>Drosophila</i> brain",
+"type": "ArticleStory",
+"doi": "10.64898/2025.12.22.696097",
+"year": 2025,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Visual system",
+"Neuroscience",
+"Feature (linguistics)",
+"Vision for perception and vision for action",
+"Computer science",
+"Visual processing",
+"Visual perception",
+"Visual cortex"
+],
+"roles": [
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The preprint titled \"The organization of visual pathways in the Drosophila brain,\" hosted on bioRxiv, showcases contributions from researchers at Janelia Research Campus, Howard H…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.64898_2025.12.23.696258.html",
+"title": "Coevolutionary constraints of Zika virus nonstructural protein 5 replication and interferon antagonism activities",
+"type": "ArticleStory",
+"doi": "10.64898/2025.12.23.696258",
+"year": 2025,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Biology",
+"Antagonism",
+"STAT2",
+"Flavivirus",
+"Zika virus",
+"Virology",
+"Interferon",
+"Viral replication"
+],
+"roles": [
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study titled \"Coevolutionary constraints of Zika virus nonstructural protein 5 replication and interferon antagonism activities,\" published as a preprint on bioRxiv, has made …",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.64898_2025.12.30.697072.html",
+"title": "Extracellular matrix regulates lineage plasticity in prostate cancer through YAP/TEAD",
+"type": "ArticleStory",
+"doi": "10.64898/2025.12.30.697072",
+"year": 2025,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Lineage (genetic)",
+"Biology",
+"Cell biology",
+"Transcription factor",
+"Cancer research",
+"Prostate cancer",
+"Extracellular matrix",
+"Extracellular"
+],
+"roles": [
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The preprint titled \"Extracellular matrix regulates lineage plasticity in prostate cancer through YAP/TEAD\" has been shared on bioRxiv, reflecting growing academic interest in the…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
 "file": "articlestory_10.7554_eLife.102345.html",
 "title": "A brainstem circuit controls cough-like airway defensive behaviors in mice",
 "type": "ArticleStory",
 "doi": "10.7554/eLife.102345",
 "year": 2024,
-"venue": "",
-"venue_name": "",
-"publisher": "",
+"venue": "eLife",
+"venue_name": "eLife",
+"publisher": "eLife Sciences Publications, Ltd",
 "concepts": [
 "Brainstem",
 "Neuroscience",
@@ -7472,10 +9617,55 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary This research explores a brainstem circuit that governs cough-like airway defensive behaviors in mice, providing valuable insights that may deepen our understanding of respiratory…",
+"excerpt": "Short impact summary This study provides insights into a brainstem circuit that regulates cough-like airway defensive behaviors in mice, contributing to our understanding of respiratory reflexes and p…",
 "cover_url": "",
 "authors": "",
 "institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.7554_elife.107141.html",
+"title": "Biophysical basis for brain folding and misfolding patterns in ferrets and humans",
+"type": "ArticleStory",
+"doi": "10.7554/elife.107141",
+"year": 2025,
+"venue": "eLife",
+"venue_name": "eLife",
+"publisher": "eLife Sciences Publications Ltd",
+"concepts": [
+"Folding (DSP implementation)",
+"Neuroscience",
+"Protein folding",
+"Biology",
+"Computational biology",
+"Cell biology",
+"Engineering",
+"Electrical engineering"
+],
+"roles": [
+"Scholarly uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article titled \"Biophysical basis for brain folding and misfolding patterns in ferrets and humans,\" published in eLife, marks a significant contribution to neuroscience.",
+"cover_url": "",
+"authors": "Gary P. T. Choi, Chunzi Liu, Sifan Yin et al.",
+"institutions": [
+"Chinese University of Hong Kong",
+"Harvard University",
+"Boston Children's Hospital"
+],
 "download_count": 0
 },
 {
@@ -7498,8 +9688,6 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Commercial linkage",
-"High-Visibility Media Uptake",
-"Active public discourse",
 "Scholarly uptake"
 ],
 "is_oa": null,
@@ -7508,49 +9696,6 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 1,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": false,
-"excerpt": "Short impact summary The book \"Smelly Shoes—An Opportunity for Shoe Rack Re-Design,\" published by Springer Nature Singapore in 2022, demonstrates considerable promise for practical applications in sho…",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-981-16-2229-8_33",
-"authors": "Vikash Kumar, Sarthak Mittal",
-"institutions": [
-"Shiv Nadar University"
-],
-"download_count": 0
-},
-{
-"file": "bookstory_10.11116_9789461662545.html",
-"title": "Brokers of Modernity",
-"type": "BookStory",
-"doi": "10.11116/9789461662545",
-"year": 2019,
-"venue": "Leuven University Press",
-"venue_name": "",
-"publisher": "Leuven University Press",
-"concepts": [
-"Modernity",
-"Business",
-"Philosophy",
-"Epistemology"
-],
-"roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 1,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Decent work and economic growth"
-],
 "has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
@@ -7558,11 +9703,13 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite limited visibility in academic and public discourse, \"Brokers of Modernity,\" published by Leuven University Press in 2019, reflects scholarly interest, notably through its…",
-"cover_url": "",
-"authors": "Martin Kohlrausch",
-"institutions": [],
-"download_count": 4126
+"excerpt": "Short impact summary The publication titled Smelly Shoes—An Opportunity for Shoe Rack Re-Design addresses a practical issue in everyday life, focusing on a unique re-design opportunity.",
+"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-981-16-2229-8_33",
+"authors": "Vikash Kumar, Sarthak Mittal",
+"institutions": [
+"Shiv Nadar University"
+],
+"download_count": 0
 },
 {
 "file": "bookstory_10.11116_9789461662965.html",
@@ -7579,8 +9726,7 @@ window.STORIES_DATA = [
 "roles": [
 "Commercial linkage",
 "Sustainability & Policy relevance",
-"Scholarly uptake",
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -7590,18 +9736,18 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Zero hunger"
 ],
-"has_teaching": true,
-"ta_ocw": 1,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite the absence of citations and online discourse, \"Tracheal Transplantation,\" published by Leuven University Press in 2019, demonstrates a strong commercial linkage, being av…",
-"cover_url": "",
+"excerpt": "Short impact summary The book \"Tracheal Transplantation,\" published by Leuven University Press in 2019, focuses on a niche yet critical area within medical science.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789461662965&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Pierre Delaere",
 "institutions": [],
-"download_count": 15
+"download_count": 49
 },
 {
 "file": "bookstory_10.11116_9789461663009.html",
@@ -7633,19 +9779,19 @@ window.STORIES_DATA = [
 "Decent work and economic growth"
 ],
 "has_teaching": true,
-"ta_ocw": 5,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 1,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Although \"Financing Quality Education for All\" has not received significant citations or online visibility, its inferred roles suggest a meaningful contribution to discussions sur…",
+"excerpt": "Short impact summary Despite being published in 2019, \"Financing Quality Education for All\" showcases strong potential for sustainability and policy relevance in the field of educational finance, refl…",
 "cover_url": "",
 "authors": "Kristof De Witte, Vitezslav Titl, Oliver Holz et al.",
 "institutions": [
 "KU Leuven"
 ],
-"download_count": 1358
+"download_count": 1410
 },
 {
 "file": "bookstory_10.11116_9789461663245.html",
@@ -7660,9 +9806,7 @@ window.STORIES_DATA = [
 "Geography"
 ],
 "roles": [
-"Active public discourse",
 "Commercial linkage",
-"Public Visibility & Knowledge Base",
 "Scholarly uptake"
 ],
 "is_oa": true,
@@ -7675,14 +9819,14 @@ window.STORIES_DATA = [
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 2,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Although \"Arrival Cities\" has yet to achieve significant citation metrics or online visibility, it holds strong potential for future scholarly and public engagement, evidenced by …",
+"excerpt": "Short impact summary Despite its release in 2020, \"Arrival Cities\" has yet to receive citations or public engagement on platforms such as Wikipedia and Reddit.",
 "cover_url": "",
 "authors": "Burcu Dogramaci, Mareike Hetschold, Laura Karp Lugo et al.",
 "institutions": [],
-"download_count": 3774
+"download_count": 4119
 },
 {
 "file": "bookstory_10.11116_9789461663481.html",
@@ -7718,30 +9862,33 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite its publication by Leuven University Press in 2020, \"Dialogen over België\" has not yet generated academic citations or community discourse across major social platforms.",
+"excerpt": "Short impact summary \"Dialogen over België,\" published by Leuven University Press in 2020, navigates the complex socio-political landscape of Belgium.",
 "cover_url": "",
 "authors": "Elke Brems, Marnix Beyen, Ariane Bazan et al.",
 "institutions": [],
-"download_count": 1175
+"download_count": 1282
 },
 {
-"file": "bookstory_10.11116_9789461663542.html",
-"title": "Revival After the Great War",
+"file": "bookstory_10.11116_9789461663504.html",
+"title": "Strategic Imaginations",
 "type": "BookStory",
-"doi": "10.11116/9789461663542",
-"year": 2021,
+"doi": "10.11116/9789461663504",
+"year": 2020,
 "venue": "Leuven University Press",
 "venue_name": "",
 "publisher": "Leuven University Press",
 "concepts": [
-"History",
-"Political science",
-"Ancient history"
+"Presidency",
+"Power (physics)",
+"Democracy",
+"Politics",
+"German",
+"Art",
+"Gender studies",
+"Period (music)"
 ],
 "roles": [
-"Active public discourse",
 "Commercial linkage",
-"Public Visibility & Knowledge Base",
 "Sustainability & Policy relevance",
 "Scholarly uptake"
 ],
@@ -7751,63 +9898,20 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
-"Sustainable cities and communities"
+"Reduced inequalities"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Revival After the Great War,\" published in 2021 by Leuven University Press, showcases strong commercial linkage with notable mentions on platforms such as Amazon and Goodreads, i…",
+"excerpt": "Short impact summary Despite its publication in 2020, \"Strategic Imaginations\" has shown limited scholarly uptake, with no recorded citations or mentions across high-fidelity social platforms.",
 "cover_url": "",
-"authors": "Luc Verpoest, Leen Engelen, Rajesh Heynickx et al.",
+"authors": "Anke Gilleir, Aude Defurne",
 "institutions": [],
-"download_count": 3231
-},
-{
-"file": "bookstory_10.11116_9789461664174.html",
-"title": "A Dark Trace",
-"type": "BookStory",
-"doi": "10.11116/9789461664174",
-"year": 2021,
-"venue": "Leuven University Press",
-"venue_name": "",
-"publisher": "Leuven University Press",
-"concepts": [
-"TRACE (psycholinguistics)",
-"Psychoanalytic theory",
-"Relation (database)",
-"Mythology",
-"Psychoanalysis",
-"Freudian slip",
-"Philosophy",
-"Reading (process)"
-],
-"roles": [
-"Commercial linkage",
-"Active public discourse",
-"Scholarly uptake"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 1,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": true,
-"has_peer_review": false,
-"has_reuse": false,
-"excerpt": "Short impact summary Despite the absence of citations and online mentions, \"A Dark Trace,\" published in 2021 by Leuven University Press, indicates potential scholarly interest with a notable commercia…",
-"cover_url": "",
-"authors": "Herman Westerink",
-"institutions": [],
-"download_count": 19927
+"download_count": 2144
 },
 {
 "file": "bookstory_10.11116_9789461664242.html",
@@ -7830,7 +9934,6 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Commercial linkage",
-"Active public discourse",
 "Scholarly uptake"
 ],
 "is_oa": true,
@@ -7839,18 +9942,18 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 1,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Working Through Colonial Collections,\" published by Leuven University Press in 2022, demonstrates a compelling engagement with the topic of colonial legacies in museum collection…",
+"excerpt": "Short impact summary The scholarly work titled \"Working Through Colonial Collections,\" published by Leuven University Press in 2022, explores significant themes related to colonial collections, contri…",
 "cover_url": "",
 "authors": "Margareta von Oswald",
 "institutions": [],
-"download_count": 3048
+"download_count": 3338
 },
 {
 "file": "bookstory_10.11116_9789461664440.html",
@@ -7886,11 +9989,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Comunidad, pertenencia, extrenjería,\" published by Leuven University Press in 2022, explores significant themes around community and belonging.",
+"excerpt": "Short impact summary Although \"Comunidad, pertenencia, extrenjería\" has not generated formal citations or online discussions as of yet, it appears to have established a strong commercial linkage, bein…",
 "cover_url": "",
 "authors": "Eleonora Poggio",
 "institutions": [],
-"download_count": 832
+"download_count": 926
 },
 {
 "file": "bookstory_10.11116_9789461664518.html",
@@ -7914,8 +10017,7 @@ window.STORIES_DATA = [
 "roles": [
 "Commercial linkage",
 "Sustainability & Policy relevance",
-"Scholarly uptake",
-"Active public discourse"
+"Scholarly uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -7932,59 +10034,52 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite being published in 2022, Plutarch’s Cosmological Ethics has not yet garnered significant citations or public mentions, indicating a limited initial footprint in both acade…",
+"excerpt": "Short impact summary Published in 2022 by Leuven University Press, \"Plutarch’s Cosmological Ethics\" has yet to gain measurable traction within academic discourse, evidenced by its current citation cou…",
 "cover_url": "",
 "authors": "Bram Demulder",
 "institutions": [],
-"download_count": 1347
+"download_count": 1492
 },
 {
-"file": "bookstory_10.11116_9789461664556.html",
-"title": "The Hybrid Practitioner",
+"file": "bookstory_10.11116_9789461664532.html",
+"title": "Portraits and Poses",
 "type": "BookStory",
-"doi": "10.11116/9789461664556",
+"doi": "10.11116/9789461664532",
 "year": 2022,
 "venue": "Leuven University Press",
 "venue_name": "",
 "publisher": "Leuven University Press",
 "concepts": [
-"Appeal",
-"Audience measurement",
-"Engineering ethics",
-"Publishing",
-"Realm",
-"Sociology",
-"Architecture",
-"Engineering"
+"Portrait",
+"Art",
+"Computer science",
+"Art history"
 ],
 "roles": [
 "Commercial linkage",
 "Sustainability & Policy relevance",
-"Active public discourse",
 "Scholarly uptake"
 ],
 "is_oa": true,
-"oa_status": "green",
+"oa_status": "hybrid",
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
-"Sustainable cities and communities"
+"Gender equality"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite the absence of citations and online discourse metrics, \"The Hybrid Practitioner,\" published by Leuven University Press in 2022, shows a noteworthy commercial presence on p…",
+"excerpt": "Short impact summary \"Portraits and Poses,\" published by Leuven University Press in 2022, is a notable academic contribution, enriched by a commercial linkage evidenced by its availability on platform…",
 "cover_url": "",
-"authors": "Caroline Voet, Eireen Schreurs Schreurs, Helen Thomas",
-"institutions": [
-"École Nationale Supérieure d'Architecture de Paris-La Villette"
-],
-"download_count": 3713
+"authors": "Beatrijs Vanacker, Lieke van Deinsen",
+"institutions": [],
+"download_count": 3409
 },
 {
 "file": "bookstory_10.11116_9789461664990.html",
@@ -8018,11 +10113,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Tot de bodem\" is a significant scholarly work published by Leuven University Press in 2023, demonstrating potential scholarly uptake.",
+"excerpt": "Short impact summary Published by Leuven University Press in 2023, \"Tot de bodem\" has yet to make a significant mark in terms of citations and community discourse.",
 "cover_url": "",
 "authors": "Maïka De Keyzer",
 "institutions": [],
-"download_count": 3908
+"download_count": 3997
 },
 {
 "file": "bookstory_10.11116_9789461665119.html",
@@ -8049,7 +10144,7 @@ window.STORIES_DATA = [
 "Scholarly uptake"
 ],
 "is_oa": true,
-"oa_status": "gold",
+"oa_status": "green",
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -8063,11 +10158,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The publication \"The Belgian Photonovel, 1954-1985\" marks a significant scholarly contribution to the understanding of the photonovel genre, highlighting its cultural and artistic…",
+"excerpt": "Short impact summary Although \"The Belgian Photonovel, 1954-1985\" has not yet reported any citations or mentions across various platforms, its association with commercial linkage through outlets like …",
 "cover_url": "",
 "authors": "Clarissa Colangelo",
 "institutions": [],
-"download_count": 604
+"download_count": 744
 },
 {
 "file": "bookstory_10.11116_9789461665256.html",
@@ -8103,11 +10198,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Documenting Ancient Sagalassos,\" published by Leuven University Press in 2023, reflects an emerging interest in archaeological documentation, underscoring its potential significa…",
+"excerpt": "Short impact summary \"Documenting Ancient Sagalassos,\" published by Leuven University Press in 2023, demonstrates a significant scholarly effort focused on the archaeological site of Sagalassos.",
 "cover_url": "",
 "authors": "Jeroen Poblome",
 "institutions": [],
-"download_count": 2145
+"download_count": 2366
 },
 {
 "file": "bookstory_10.11116_9789461665515.html",
@@ -8141,18 +10236,18 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Sustainable cities and communities"
 ],
-"has_teaching": true,
-"ta_ocw": 5,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Between Conventional and Experimental\" is a scholarly work published by Leuven University Press in 2024.",
-"cover_url": "",
+"excerpt": "Short impact summary The upcoming publication titled \"Between Conventional and Experimental,\" set to release in 2024 by Leuven University Press, showcases the intersection of traditional and innovativ…",
+"cover_url": "https://lup.be/wp-content/uploads/2024/12/jpg_rgb_original-1-scaled.jpg",
 "authors": "Regine Hess, Inbal Ben-Asher Gitler, Tzafrir Fainholtz et al.",
 "institutions": [],
-"download_count": 1243
+"download_count": 1472
 },
 {
 "file": "bookstory_10.11116_9789461665522.html",
@@ -8186,18 +10281,18 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Sustainable cities and communities"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Architectures of Resistance,\" published by Leuven University Press in 2024, embodies a compelling exploration of resistance within various frameworks.",
+"excerpt": "Short impact summary Despite being a forthcoming title with no current citations or online mentions, \"Architectures of Resistance\" by Leuven University Press is positioned within a landscape of commer…",
 "cover_url": "",
 "authors": "Angeliki Sioli, Nishat Awan, Kristopher Palagi",
 "institutions": [],
-"download_count": 1321
+"download_count": 1623
 },
 {
 "file": "bookstory_10.11116_9789461665607.html",
@@ -8235,11 +10330,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The forthcoming book, \"Pietro Pomponazzi and the Renaissance Theory of the Elements,\" published by Leuven University Press in 2024, delves into a significant historical figure and…",
+"excerpt": "Short impact summary Despite being newly published in 2024, \"Pietro Pomponazzi and the Renaissance Theory of the Elements\" showcases significant scholarly potential, indicated by a strong commercial l…",
 "cover_url": "",
 "authors": "Luca Burzelli",
 "institutions": [],
-"download_count": 369
+"download_count": 448
 },
 {
 "file": "bookstory_10.11116_9789461665621.html",
@@ -8273,8 +10368,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite its recent publication, \"The Romero Memory\" demonstrates significant commercial linkage, evidenced by its presence on platforms such as Amazon and Goodreads.",
-"cover_url": "",
+"excerpt": "Short impact summary Despite the recent publication of \"The Romero Memory\" by Leuven University Press in 2024, the work's visibility remains nascent, with no recorded citations or mentions in digital …",
+"cover_url": "https://lup.be/wp-content/uploads/2024/04/jpg_rgb_original-10-scaled.jpg",
 "authors": "Judith Gruber, Jonas Van Mulder, Kim Christiaens et al.",
 "institutions": [],
 "download_count": 0
@@ -8311,64 +10406,108 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Reduced inequalities"
 ],
-"has_teaching": true,
-"ta_ocw": 5,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The book \"New Multicultural Identities in Europe,\" published by Leuven University Press in 2014, explores the evolving cultural landscape in Europe.",
+"excerpt": "Short impact summary Despite being published in 2014, \"New Multicultural Identities in Europe\" by Leuven University Press appears to lack significant academic engagement and public discourse, with no …",
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 2139
+"download_count": 2334
 },
 {
-"file": "bookstory_10.3998_mpub.14414299.html",
-"title": "Urban Fantasy",
+"file": "bookstory_10.5117_9789462981102.html",
+"title": "List Cultures",
 "type": "BookStory",
-"doi": "10.3998/mpub.14414299",
-"year": 2024,
-"venue": "Lever Press",
+"doi": "10.5117/9789462981102",
+"year": 2025,
+"venue": "Routledge",
 "venue_name": "",
-"publisher": "Lever Press",
+"publisher": "Routledge",
 "concepts": [
-"Modernity",
-"Fantasy",
-"MAGIC (telescope)",
-"Art",
+"German",
+"Materialism",
+"Key (lock)",
+"Sociology",
+"Media studies",
 "Aesthetics",
-"Literature",
-"Philosophy",
+"History",
 "Epistemology"
 ],
 "roles": [
-"Active public discourse",
 "Commercial linkage",
 "Sustainability & Policy relevance",
 "Scholarly uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
-"Sustainable cities and communities"
+"Quality Education"
 ],
-"has_teaching": true,
-"ta_ocw": 1,
-"ta_youtube": 4,
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The forthcoming book \"Urban Fantasy,\" published by Lever Press in 2024, reflects a growing interest in urban themes within the fantasy genre, indicating a significant commercial l…",
-"cover_url": "",
-"authors": "Stefan Ekman",
+"excerpt": "Short impact summary Although \"List Cultures\" has yet to receive citations or engage with public discourse through platforms such as Wikipedia or Reddit, it demonstrates potential through its commerci…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789462981102&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Liam Young",
 "institutions": [],
-"download_count": 197
+"download_count": 0
+},
+{
+"file": "bookstory_10.5117_9789463721745.html",
+"title": "Exceptional Bodies in Early Modern Culture",
+"type": "BookStory",
+"doi": "10.5117/9789463721745",
+"year": 2025,
+"venue": "Routledge",
+"venue_name": "",
+"publisher": "Routledge",
+"concepts": [
+"Repertoire",
+"Natural (archaeology)",
+"Visual culture",
+"Perspective (graphical)",
+"Literature",
+"Period (music)",
+"History",
+"Sociology"
+],
+"roles": [
+"Commercial linkage",
+"Sustainability & Policy relevance",
+"Scholarly uptake"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The upcoming publication, \"Exceptional Bodies in Early Modern Culture,\" published by Routledge in 2025, aims to contribute meaningfully to scholarly discourse, with initial signs …",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789463721745&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Maja Bondestam",
+"institutions": [],
+"download_count": 0
 },
 {
 "file": "datastory_10.5061_dryad.mq8r2.html",
@@ -8376,9 +10515,9 @@ window.STORIES_DATA = [
 "type": "DataStory",
 "doi": "10.5061/dryad.mq8r2",
 "year": 2015,
-"venue": "DRYAD",
-"venue_name": "DRYAD",
-"publisher": "",
+"venue": "Dryad",
+"venue_name": "Dryad",
+"publisher": "Dryad",
 "concepts": [
 "Carnivore",
 "Occupancy",
@@ -8400,20 +10539,231 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Life in Land"
 ],
-"has_teaching": true,
-"ta_ocw": 1,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The dataset titled \"Hunting, exotic carnivores, and habitat loss: anthropogenic effects on a native carnivore community, Madagascar,\" provides valuable insights into the impact of…",
+"excerpt": "Short impact summary This dataset, published in 2015 on the DRYAD repository by a team from Virginia Tech, investigates the effects of hunting and habitat loss on native carnivore communities in Madag…",
 "cover_url": "",
 "authors": "Farris, Zach J., Golden, Christopher D., Karpanty, Sarah et al.",
 "institutions": [
 "Virginia Tech"
 ],
 "download_count": 70
+},
+{
+"file": "articlestory_10.1002_ange.202519203.html",
+"title": "Surface Avidity of Anionic Polypeptide Coatings on Layer‐by‐Layer Nanoparticles Target Cancer‐Associated Amino Acid Transporters",
+"type": "ArticleStory",
+"doi": "10.1002/ange.202519203",
+"year": 2025,
+"venue": "Angewandte Chemie",
+"venue_name": "Angewandte Chemie",
+"publisher": "Wiley-VCH",
+"concepts": [
+"Avidity",
+"Chemistry",
+"Transporter",
+"Amino acid",
+"Cancer cell",
+"Biochemistry",
+"Drug delivery",
+"In vitro"
+],
+"roles": [
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The forthcoming article titled \"Surface Avidity of Anionic Polypeptide Coatings on Layer‐by‐Layer Nanoparticles Target Cancer‐Associated Amino Acid Transporters\" in Angewandte Che…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1002_anie.202519203.html",
+"title": "Surface Avidity of Anionic Polypeptide Coatings on Layer‐by‐Layer Nanoparticles Target Cancer‐Associated Amino Acid Transporters",
+"type": "ArticleStory",
+"doi": "10.1002/anie.202519203",
+"year": 2025,
+"venue": "Angewandte Chemie International Edition",
+"venue_name": "Angewandte Chemie International Edition",
+"publisher": "Wiley-VCH",
+"concepts": [
+"Avidity",
+"Chemistry",
+"Transporter",
+"Amino acid",
+"Biochemistry",
+"Cancer cell",
+"Amino acid transporter",
+"In vitro"
+],
+"roles": [
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research on the surface avidity of anionic polypeptide coatings on layer‐by‐layer nanoparticles targeting cancer-associated amino acid transporters demonstrates significant po…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1007_s10722-026-02786-9.html",
+"title": "Retraction Note: Characterization of brown rust resistance in bread wheat using yield related morphological indices",
+"type": "ArticleStory",
+"doi": "10.1007/s10722-026-02786-9",
+"year": 2026,
+"venue": "Genetic Resources and Crop Evolution",
+"venue_name": "Genetic Resources and Crop Evolution",
+"publisher": "Springer",
+"concepts": [
+"Biology",
+"Yield (engineering)",
+"Rust (programming language)",
+"Resistance (ecology)",
+"Horticulture",
+"Agronomy",
+"Agriculture",
+"Stripe rust"
+],
+"roles": [
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "bronze",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Zero hunger"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary This retraction note addresses the publication titled \"Characterization of brown rust resistance in bread wheat using yield related morphological indices,\" originally published in…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1016_j.celrep.2025.116739.html",
+"title": "A ribosome-bound pseudoknot in the HCV coding region stimulates viral growth by tuning viral translation",
+"type": "ArticleStory",
+"doi": "10.1016/j.celrep.2025.116739",
+"year": 2025,
+"venue": "Cell Reports",
+"venue_name": "Cell Reports",
+"publisher": "Cell Press",
+"concepts": [
+"Pseudoknot",
+"Biology",
+"RNA",
+"Translation (biology)",
+"Computational biology",
+"Open reading frame",
+"Coding region",
+"Genetics"
+],
+"roles": [
+"Reproducibility standard"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary This study elucidates the role of a ribosome-bound pseudoknot in the HCV coding region, demonstrating its function in enhancing viral growth by modulating viral translation.",
+"cover_url": "",
+"authors": "Han Wan, Harim Jang, Ling Xu et al.",
+"institutions": [
+"Yale University"
+],
+"download_count": 0
+},
+{
+"file": "articlestory_10.1101_2025.09.08.674753.html",
+"title": "Generative genomics accurately predicts future experimental results",
+"type": "ArticleStory",
+"doi": "10.1101/2025.09.08.674753",
+"year": 2025,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Generative grammar",
+"Genomics",
+"Computer science",
+"Artificial intelligence",
+"Generative model",
+"Transformative learning",
+"Expression (computer science)",
+"Machine learning"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research titled \"Generative genomics accurately predicts future experimental results\" represents a significant step in the field of genomics, potentially enhancing experimenta…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
 },
 {
 "file": "articlestory_10.1101_pdb.ip28.html",
@@ -8712,6 +11062,248 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
+"file": "articlestory_10.64898_2025.12.16.694733.html",
+"title": "Ectopic engraftment of nociceptive neurons derived from hPSCs for pain relief and joint homeostasis",
+"type": "ArticleStory",
+"doi": "10.64898/2025.12.16.694733",
+"year": 2025,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Nociceptor",
+"Nociception",
+"Medicine",
+"Osteoarthritis",
+"Chronic pain",
+"Induced pluripotent stem cell",
+"Neuroscience",
+"Transplantation"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research on ectopic engraftment of nociceptive neurons derived from human pluripotent stem cells (hPSCs) presents a novel approach to mitigating pain and promoting joint homeo…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.64898_2025.12.23.696259.html",
+"title": "Mechanisms of HSV-1 helicase–primase inhibition and replication fork complex assembly",
+"type": "ArticleStory",
+"doi": "10.64898/2025.12.23.696259",
+"year": 2025,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Replisome",
+"DNA replication",
+"Polymerase",
+"Biology",
+"Cell biology",
+"DNA polymerase",
+"DNA",
+"Viral replication"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The preprint titled \"Mechanisms of HSV-1 helicase–primase inhibition and replication fork complex assembly,\" hosted on bioRxiv, presents significant insights into the viral replic…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.64898_2025.12.23.696279.html",
+"title": "<i>Vibrio cholerae</i> serotype impacts pathogenicity",
+"type": "ArticleStory",
+"doi": "10.64898/2025.12.23.696279",
+"year": 2025,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Serotype",
+"Microbiology",
+"Biology",
+"Infectivity",
+"Virology",
+"Outbreak",
+"Pathogenicity",
+"Pathogen"
+],
+"roles": [
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study titled Vibrio cholerae serotype impacts pathogenicity, hosted on bioRxiv in 2025, explores the relationship between specific serotypes of Vibrio cholerae and their patho…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.64898_2025.12.24.696395.html",
+"title": "Chromatin profiling for everyone: FFPE-CUTAC for the theory and practice of modern molecular biology",
+"type": "ArticleStory",
+"doi": "10.64898/2025.12.24.696395",
+"year": 2025,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Computational biology",
+"Profiling (computer programming)",
+"Internship",
+"Genomics",
+"Biology",
+"Chromatin",
+"Data science",
+"Computer science"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The upcoming article, \"Chromatin profiling for everyone: FFPE-CUTAC for the theory and practice of modern molecular biology,\" represents a significant contribution from leading in…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.64898_2025.12.27.696673.html",
+"title": "TMPO promotes cellular dissemination and metastasis in circulating tumor cells",
+"type": "ArticleStory",
+"doi": "10.64898/2025.12.27.696673",
+"year": 2025,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Circulating tumor cell",
+"Metastasis",
+"Prostate cancer",
+"Phenotype",
+"Cancer research",
+"Organoid",
+"Biology",
+"Prostate"
+],
+"roles": [
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research titled \"TMPO promotes cellular dissemination and metastasis in circulating tumor cells\" explores critical mechanisms involved in cancer progression.",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.64898_2025.12.31.697091.html",
+"title": "Mitochondrial depolarization stabilizes the vitamin B12 chaperone MMADHC in the cytosol to increase MTR activity",
+"type": "ArticleStory",
+"doi": "10.64898/2025.12.31.697091",
+"year": 2025,
+"venue": "bioRxiv",
+"venue_name": "bioRxiv",
+"publisher": "openRxiv",
+"concepts": [
+"Cytosol",
+"Mitochondrion",
+"Chaperone (clinical)",
+"Cell biology",
+"Compartmentalization (fire protection)",
+"Biology",
+"Mitochondrial carrier",
+"Depolarization"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research elucidates how mitochondrial depolarization affects the stability of the vitamin B12 chaperone MMADHC in the cytosol, thereby enhancing MTR activity.",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
 "file": "articlestory_10.7554_eLife.103118.html",
 "title": "Age-dependent H3K9 trimethylation by dSetdb1 impairs mitochondrial UPR leading to degeneration of olfactory neurons and loss of olfactory function in Drosophila",
 "type": "ArticleStory",
@@ -8719,7 +11311,7 @@ window.STORIES_DATA = [
 "year": 2026,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "",
+"publisher": "eLife Sciences Publications, Ltd",
 "concepts": [
 "Neurodegeneration",
 "Biology",
@@ -8741,14 +11333,14 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Life in Land"
 ],
-"has_teaching": true,
-"ta_ocw": 6,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary This study explores the role of age-dependent H3K9 trimethylation by dSetdb1 in impairing mitochondrial unfolded protein response (UPR) in Drosophila, leading to the degeneration …",
+"excerpt": "Short impact summary The research article titled \"Age-dependent H3K9 trimethylation by dSetdb1 impairs mitochondrial UPR leading to degeneration of olfactory neurons and loss of olfactory function in …",
 "cover_url": "",
 "authors": "",
 "institutions": [],
@@ -8762,7 +11354,7 @@ window.STORIES_DATA = [
 "year": 2025,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "",
+"publisher": "eLife Sciences Publications, Ltd",
 "concepts": [
 "Drosophila melanogaster",
 "Melanogaster",
@@ -8780,14 +11372,14 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 6,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary This article presents an updated catalogue of split-GAL4 driver lines for descending neurons in Drosophila melanogaster, contributing to a deeper understanding of neural circuits …",
+"excerpt": "Short impact summary This article presents an updated catalogue of split-GAL4 driver lines specifically targeting descending neurons in the model organism Drosophila melanogaster.",
 "cover_url": "",
 "authors": "",
 "institutions": [],
@@ -8801,7 +11393,7 @@ window.STORIES_DATA = [
 "year": 2025,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "",
+"publisher": "eLife Sciences Publications, Ltd",
 "concepts": [
 "Fusobacterium nucleatum",
 "Cytotoxicity",
@@ -8826,7 +11418,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary This study explores how RadD from Fusobacterium nucleatum interacts with the NKp46 receptor to enhance antitumor cytotoxicity, representing a novel approach in cancer immunotherap…",
+"excerpt": "Short impact summary This study elucidates how RadD from Fusobacterium nucleatum engages NKp46, shedding light on its potential role in enhancing antitumor cytotoxicity.",
 "cover_url": "",
 "authors": "",
 "institutions": [],
@@ -8840,7 +11432,7 @@ window.STORIES_DATA = [
 "year": 2026,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "",
+"publisher": "eLife Sciences Publications, Ltd",
 "concepts": [
 "Political science",
 "Engineering ethics",
@@ -8858,17 +11450,58 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 10,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The article titled \"Rethinking how research is reviewed and published\" published in eLife presents a timely exploration of research dissemination practices in the academic landsca…",
+"excerpt": "Short impact summary This article, titled \"Rethinking how research is reviewed and published,\" will be featured in eLife in 2026, signaling a significant contribution to the discourse surrounding acad…",
 "cover_url": "",
 "authors": "",
 "institutions": [],
+"download_count": 0
+},
+{
+"file": "articlestory_10.7554_elife.107467.html",
+"title": "G-protein-coupled receptor diversity and evolution in the closest living relatives of metazoa",
+"type": "ArticleStory",
+"doi": "10.7554/elife.107467",
+"year": 2025,
+"venue": "eLife",
+"venue_name": "eLife",
+"publisher": "eLife Sciences Publications Ltd",
+"concepts": [
+"Diversity (politics)",
+"Evolutionary biology",
+"G protein-coupled receptor",
+"Biology",
+"Receptor",
+"Computational biology",
+"Genetics",
+"Sociology"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The forthcoming article, titled \"G-protein-coupled receptor diversity and evolution in the closest living relatives of metazoa,\" showcases significant research supported by the Hu…",
+"cover_url": "",
+"authors": "Alain Garcia De Las Bayonas, Nicole King",
+"institutions": [
+"Howard Hughes Medical Institute"
+],
 "download_count": 0
 },
 {
@@ -8907,7 +11540,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite the apparent lack of citations or online discourse, Plutarch's Science of Natural Problems by Leuven University Press reflects a critical engagement with natural philosoph…",
+"excerpt": "Short impact summary \"Plutarch's Science of Natural Problems\" has been positioned as a notable scholarly contribution since its publication by Leuven University Press in 2017.",
 "cover_url": "",
 "authors": "Michiel Meeusen",
 "institutions": [],
@@ -8938,17 +11571,17 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 2,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 1,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary As German as Kafka, published by Leuven University Press in 2019, showcases a significant scholarly engagement with the works of Franz Kafka, though it has yet to generate measura…",
+"excerpt": "Short impact summary As German as Kafka, published by Leuven University Press in 2019, has not yet generated academic citations or community discourse, highlighting the need for further engagement wit…",
 "cover_url": "",
 "authors": "Lene Rock",
 "institutions": [],
-"download_count": 2993
+"download_count": 3161
 },
 {
 "file": "bookstory_10.11116_9789461663023.html",
@@ -8979,18 +11612,18 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Gender equality"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
+"ta_ol_holdings": 1,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite its publication in 2019 by Leuven University Press, \"Militant Jihadism\" has not yet garnered significant academic citations or social discourse, indicating a limited prese…",
+"excerpt": "Short impact summary Despite the lack of traditional metrics such as citations or online mentions, \"Militant Jihadism,\" published by Leuven University Press in 2019, presents a significant narrative w…",
 "cover_url": "",
 "authors": "Serafettin Pektas, Johan Leman",
 "institutions": [],
-"download_count": 3216
+"download_count": 3330
 },
 {
 "file": "bookstory_10.11116_9789461663221.html",
@@ -9014,17 +11647,17 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 5,
+"ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_ol_holdings": 2,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite being published in 2020 by Leuven University Press, \"The Figure of Knowledge\" has not yet garnered citations or widespread discourse in social or academic platforms.",
+"excerpt": "Short impact summary Despite a lack of citations and online discourse, \"The Figure of Knowledge\" remains an exceptional resource within STEM, showcasing its academic integrity through strong commercia…",
 "cover_url": "",
 "authors": "Sebastiaan Loosen, Rajesh Heynickx, Hilde Heynen",
 "institutions": [],
-"download_count": 2601
+"download_count": 2817
 },
 {
 "file": "bookstory_10.11116_9789461663283.html",
@@ -9043,9 +11676,7 @@ window.STORIES_DATA = [
 "Law"
 ],
 "roles": [
-"Active public discourse",
-"Commercial linkage",
-"Public Visibility & Knowledge Base"
+"Commercial linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9060,11 +11691,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite the absence of citations or online mentions, \"Japan’s Book Donation to the University of Louvain\" has successfully established itself within an active public discourse as …",
+"excerpt": "Short impact summary Japan’s Book Donation to the University of Louvain, published by Leuven University Press in 2020, stands as a significant contribution to academic discourse, despite having no rec…",
 "cover_url": "",
 "authors": "Jan Schmidt, Willy Vande Walle",
 "institutions": [],
-"download_count": 3562
+"download_count": 3926
 },
 {
 "file": "bookstory_10.11116_9789461663412.html",
@@ -9095,61 +11726,17 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 2,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The book \"Turkish German Muslims and Comedy Entertainment,\" published by Leuven University Press in 2020, explores the intersection of cultural identity and humor within the Turki…",
+"excerpt": "Short impact summary Despite being published in 2020 by Leuven University Press, \"Turkish German Muslims and Comedy Entertainment\" has not yet garnered citations or public discourse across various pla…",
 "cover_url": "",
 "authors": "Benjamin Nickl",
 "institutions": [],
-"download_count": 3944
-},
-{
-"file": "bookstory_10.11116_9789461663504.html",
-"title": "Strategic Imaginations",
-"type": "BookStory",
-"doi": "10.11116/9789461663504",
-"year": 2020,
-"venue": "Leuven University Press",
-"venue_name": "",
-"publisher": "Leuven University Press",
-"concepts": [
-"Presidency",
-"Power (physics)",
-"Democracy",
-"Politics",
-"German",
-"Art",
-"Gender studies",
-"Period (music)"
-],
-"roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 0,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Reduced inequalities"
-],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": true,
-"has_peer_review": false,
-"has_reuse": false,
-"excerpt": "Short impact summary Despite its 2020 publication, \"Strategic Imaginations\" has yet to garner citations or online discussions across major platforms, limiting its immediate visibility and impact withi…",
-"cover_url": "",
-"authors": "Anke Gilleir, Aude Defurne",
-"institutions": [],
-"download_count": 1972
+"download_count": 4085
 },
 {
 "file": "bookstory_10.11116_9789461663573.html",
@@ -9164,43 +11751,6 @@ window.STORIES_DATA = [
 "Computer science",
 "Geology",
 "Materials science"
-],
-"roles": [
-"Commercial linkage",
-"Active public discourse"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 0,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": true,
-"has_peer_review": false,
-"has_reuse": false,
-"excerpt": "Short impact summary Despite not having garnered citations or specific public discourse metrics, \"Contact Zones\" by Leuven University Press has established a notable presence in the academic community…",
-"cover_url": "",
-"authors": "Justin Carville, Sigrid Lien",
-"institutions": [
-"Rega Institute for Medical Research"
-],
-"download_count": 1980
-},
-{
-"file": "bookstory_10.11116_9789461663610.html",
-"title": "Mongameli Mabona",
-"type": "BookStory",
-"doi": "10.11116/9789461663610",
-"year": 2021,
-"venue": "Leuven University Press",
-"venue_name": "",
-"publisher": "Leuven University Press",
-"concepts": [
-"Computer science"
 ],
 "roles": [
 "Commercial linkage"
@@ -9218,11 +11768,13 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The work \"Mongameli Mabona,\" published by Leuven University Press in 2021, reflects a scholarly contribution with a strong commercial linkage, being available through platforms li…",
+"excerpt": "Short impact summary Despite generating no recorded citations or online mentions, the book \"Contact Zones,\" published by Leuven University Press in 2020, serves as a pivotal contribution in its field.",
 "cover_url": "",
-"authors": "Ernst Wolff",
-"institutions": [],
-"download_count": 1475
+"authors": "Justin Carville, Sigrid Lien",
+"institutions": [
+"Rega Institute for Medical Research"
+],
+"download_count": 2077
 },
 {
 "file": "bookstory_10.11116_9789461663788.html",
@@ -9239,8 +11791,6 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Commercial linkage",
-"Active public discourse",
-"Public Visibility & Knowledge Base",
 "Sustainability & Policy relevance"
 ],
 "is_oa": true,
@@ -9258,11 +11808,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite the absence of citations or high-visibility platform mentions, the book \"Fake news in oorlogstijd,\" published by Leuven University Press in 2021, is positioned within a br…",
+"excerpt": "Short impact summary The book \"Fake news in oorlogstijd,\" published by Leuven University Press in 2021, addresses the critical implications and challenges posed by fake news during wartime, reflecting…",
 "cover_url": "",
 "authors": "Bruno Yammine",
 "institutions": [],
-"download_count": 1511
+"download_count": 1620
 },
 {
 "file": "bookstory_10.11116_9789461663832.html",
@@ -9275,20 +11825,17 @@ window.STORIES_DATA = [
 "publisher": "Leuven University Press",
 "concepts": [
 "Colonialism",
+"French",
 "History",
-"Narrative",
-"Geography",
-"Media studies",
-"Sociology",
-"Literature",
-"Art"
+"Art",
+"Humanities",
+"Archaeology"
 ],
 "roles": [
-"Commercial linkage",
-"Active public discourse"
+"Commercial linkage"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -9300,11 +11847,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite its publication in 2021, \"Spatial Boundaries, Abounding Spaces\" has yet to capture significant academic or public discourse, with no recorded citations or online mentions.",
+"excerpt": "Short impact summary Despite the absence of online mentions or community engagement, the book \"Spatial Boundaries, Abounding Spaces\" reflects a solid conceptual foundation in its exploration of spatia…",
 "cover_url": "",
 "authors": "Mohit Chandna",
 "institutions": [],
-"download_count": 1412
+"download_count": 1502
 },
 {
 "file": "bookstory_10.11116_9789461663948.html",
@@ -9326,9 +11873,7 @@ window.STORIES_DATA = [
 "Blueprint"
 ],
 "roles": [
-"Active public discourse",
 "Commercial linkage",
-"Public Visibility & Knowledge Base",
 "Sustainability & Policy relevance"
 ],
 "is_oa": true,
@@ -9339,18 +11884,18 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Sustainable cities and communities"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
+"ta_ol_holdings": 1,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Since its publication in 2021, Congoville has been positioned as a significant academic contribution, reflecting active public discourse alongside commercial engagement.",
+"excerpt": "Short impact summary Despite its relatively recent publication in 2021 by Leuven University Press, \"Congoville\" has not gained substantial public or academic attention, as indicated by the absence of …",
 "cover_url": "",
 "authors": "Pieter Boons, Sandrine Colard",
 "institutions": [],
-"download_count": 1434
+"download_count": 1613
 },
 {
 "file": "bookstory_10.11116_9789461663955.html",
@@ -9384,11 +11929,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite the absence of citations or public discourse surrounding the book \"Congoville,\" released by Leuven University Press in 2021, it indicates a strong commercial linkage throu…",
-"cover_url": "",
+"excerpt": "Short impact summary Despite the absence of citations and community discussions, \"Congoville\" demonstrates potential for commercial engagement through platforms like Amazon and Goodreads.",
+"cover_url": "https://lup.be/wp-content/uploads/2024/01/default_cover.png",
 "authors": "Pieter Boons, Sandrine Colard",
 "institutions": [],
-"download_count": 683
+"download_count": 790
 },
 {
 "file": "bookstory_10.11116_9789461663979.html",
@@ -9421,15 +11966,15 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The book \"Cold War Triangle,\" published by Leuven University Press in 2021, has maintained a commercial presence with listings on platforms such as Amazon and Goodreads.",
-"cover_url": "",
+"excerpt": "Short impact summary Despite the absence of citations and online discourse for the book \"Cold War Triangle,\" it stands out due to its strong commercial linkage, appearing on platforms like Amazon and …",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789461663979&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Renilde Loeckx",
 "institutions": [],
 "download_count": 20
@@ -9453,8 +11998,7 @@ window.STORIES_DATA = [
 "Literature"
 ],
 "roles": [
-"Commercial linkage",
-"Active public discourse"
+"Commercial linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9462,18 +12006,18 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 5,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite the absence of citations or mentions across prominent platforms, \"Ubiquity\" reflects potential engagement and commercial relevance in the scholarly landscape through its l…",
+"excerpt": "Short impact summary Despite its recent publication in 2021 by Leuven University Press, the book \"Ubiquity\" has not yet received academic citations or public discourse across major platforms.",
 "cover_url": "",
 "authors": "Jacob W. Lewis, Kyle Parry",
 "institutions": [],
-"download_count": 3293
+"download_count": 3549
 },
 {
 "file": "bookstory_10.11116_9789461664037.html",
@@ -9495,9 +12039,7 @@ window.STORIES_DATA = [
 "Art"
 ],
 "roles": [
-"Active public discourse",
-"Commercial linkage",
-"Public Visibility & Knowledge Base"
+"Commercial linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9505,20 +12047,20 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Although \"Protagonists of War\" published by Leuven University Press in 2021 has not garnered academic citations or online mentions to date, its commercial presence on platforms su…",
+"excerpt": "Short impact summary Despite being published in 2021 by Leuven University Press, \"Protagonists of War\" has yet to garner external citations or significant public mentions, indicating a limited visibil…",
 "cover_url": "",
 "authors": "Raymond Fagel",
 "institutions": [
-"Universidad de Cádiz"
+"La Cambre"
 ],
-"download_count": 2288
+"download_count": 2470
 },
 {
 "file": "bookstory_10.11116_9789461664051.html",
@@ -9534,8 +12076,7 @@ window.STORIES_DATA = [
 "Art"
 ],
 "roles": [
-"Commercial linkage",
-"Active public discourse"
+"Commercial linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9550,8 +12091,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Published in 2021 by Leuven University Press, \"De stad op de berg\" has yet to attract significant citations or public discourse across major platforms.",
-"cover_url": "",
+"excerpt": "Short impact summary Despite the absence of citations and community discourse, \"De stad op de berg,\" published by Leuven University Press in 2021, indicates potential for future recognition given its …",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789461664051&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Jo Tollebeek, Liesbet Nys",
 "institutions": [],
 "download_count": 0
@@ -9576,8 +12117,7 @@ window.STORIES_DATA = [
 "Gender studies"
 ],
 "roles": [
-"Commercial linkage",
-"Active public discourse"
+"Commercial linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9592,11 +12132,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Character Constellations,\" published by Leuven University Press in 2021, reflects a significant scholarly effort; however, it has not yet established a prominent footprint in pub…",
+"excerpt": "Short impact summary Since its publication in 2021, \"Character Constellations\" has not yet recorded any formal citations, indicating a nascent stage in its academic visibility.",
 "cover_url": "",
 "authors": "Roel Smeets",
 "institutions": [],
-"download_count": 1540
+"download_count": 1663
 },
 {
 "file": "bookstory_10.11116_9789461664143.html",
@@ -9619,8 +12159,7 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Commercial linkage",
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9637,11 +12176,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite lacking widespread citations or online community discourse, \"Martin Versfeld,\" published by Leuven University Press in 2021, demonstrates a notable strength in commercial …",
+"excerpt": "Short impact summary The book \"Martin Versfeld,\" published by Leuven University Press in 2021, exemplifies a significant scholarly contribution within its domain, despite a noticeable absence of citat…",
 "cover_url": "",
 "authors": "Ernst Wolff",
 "institutions": [],
-"download_count": 761
+"download_count": 877
 },
 {
 "file": "bookstory_10.11116_9789461664297.html",
@@ -9681,11 +12220,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Although \"A Constellation of Courts\" has not yet amassed citations or community discussions, its commercial presence on platforms like Amazon and Goodreads suggests a level of int…",
+"excerpt": "Short impact summary Despite the absence of quantitative engagement metrics, \"A Constellation of Courts,\" published by Leuven University Press in 2021, demonstrates a notable commitment to research in…",
 "cover_url": "",
 "authors": "René Vermeir, Dries Raeymaekers, José Eloy Hortal Muñoz",
 "institutions": [],
-"download_count": 2852
+"download_count": 2902
 },
 {
 "file": "bookstory_10.11116_9789461664303.html",
@@ -9703,8 +12242,7 @@ window.STORIES_DATA = [
 "Philosophy"
 ],
 "roles": [
-"Commercial linkage",
-"Active public discourse"
+"Commercial linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9719,11 +12257,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite its absence from high-visibility platforms and citation metrics, \"Dies irae,\" published by Leuven University Press in 2021, reflects a distinct potential for engagement th…",
+"excerpt": "Short impact summary The book *Dies irae*, published by Leuven University Press in 2021, currently lacks documented citations and online discourse, indicating a limited academic reach at this time.",
 "cover_url": "",
 "authors": "Pieter Bergé",
 "institutions": [],
-"download_count": 1511
+"download_count": 1614
 },
 {
 "file": "bookstory_10.11116_9789461664310.html",
@@ -9745,8 +12283,7 @@ window.STORIES_DATA = [
 "History"
 ],
 "roles": [
-"Commercial linkage",
-"Active public discourse"
+"Commercial linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9754,60 +12291,18 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 5,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": true,
-"has_peer_review": false,
-"has_reuse": false,
-"excerpt": "Short impact summary \"Predicting the Past,\" published by Leuven University Press in 2021, illustrates a significant intersection of commercial interest and academic discourse, despite having no record…",
-"cover_url": "",
-"authors": "Michael Boyden",
-"institutions": [],
-"download_count": 480
-},
-{
-"file": "bookstory_10.11116_9789461664327.html",
-"title": "Theory into practice",
-"type": "BookStory",
-"doi": "10.11116/9789461664327",
-"year": 2021,
-"venue": "Leuven University Press",
-"venue_name": "",
-"publisher": "Leuven University Press",
-"concepts": [
-"Active listening",
-"Theme (computing)",
-"Intentionality",
-"Composition (language)",
-"Performance practice",
-"Musical",
-"Literature",
-"Epistemology"
-],
-"roles": [
-"Commercial linkage",
-"Active public discourse"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 0,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Since its publication in 2021 by Leuven University Press, \"Theory into Practice\" has not yet garnered academic citations, indicating a nascent trajectory in scholarly engagement.",
+"excerpt": "Short impact summary Despite being published by Leuven University Press in 2021, \"Predicting the Past\" remains without citations or online discourse, indicating that it has not yet garnered significan…",
 "cover_url": "",
-"authors": "Nicholas Cook, Peter Johnson, Hans Zender",
+"authors": "Michael Boyden",
 "institutions": [],
-"download_count": 615
+"download_count": 568
 },
 {
 "file": "bookstory_10.11116_9789461664495.html",
@@ -9830,8 +12325,7 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Commercial linkage",
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9841,60 +12335,18 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Reduced inequalities"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Leaving Spain,\" published by Leuven University Press in 2022, has not yet accrued citations or public discussions across platforms.",
+"excerpt": "Short impact summary The book \"Leaving Spain,\" published by Leuven University Press in 2022, demonstrates notable commercial reach as evidenced by its presence on platforms such as Amazon and Goodread…",
 "cover_url": "",
 "authors": "Me-Linh Hannah Riemann",
 "institutions": [],
-"download_count": 1333
-},
-{
-"file": "bookstory_10.11116_9789461664532.html",
-"title": "Portraits and Poses",
-"type": "BookStory",
-"doi": "10.11116/9789461664532",
-"year": 2022,
-"venue": "Leuven University Press",
-"venue_name": "",
-"publisher": "Leuven University Press",
-"concepts": [
-"Portrait",
-"Art",
-"Computer science",
-"Art history"
-],
-"roles": [
-"Commercial linkage",
-"Public Visibility & Knowledge Base",
-"Sustainability & Policy relevance",
-"Active public discourse"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 0,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Gender equality"
-],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": true,
-"has_peer_review": false,
-"has_reuse": false,
-"excerpt": "Short impact summary \"Portraits and Poses,\" published by Leuven University Press in 2022, is a noteworthy academic contribution that has yet to gain significant visibility in public and scholarly disc…",
-"cover_url": "",
-"authors": "Beatrijs Vanacker, Lieke van Deinsen",
-"institutions": [],
-"download_count": 3060
+"download_count": 1453
 },
 {
 "file": "bookstory_10.11116_9789461664570.html",
@@ -9914,8 +12366,7 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Commercial linkage",
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -9932,11 +12383,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The publication \"Europees burgerschap in de klas,\" released by Leuven University Press in 2022, has not yet recorded any citations or public discourse, indicating an initial perio…",
+"excerpt": "Short impact summary Despite the absence of online discourse or citations, the book titled \"Europees burgerschap in de klas\" published by Leuven University Press in 2022 demonstrates significant comme…",
 "cover_url": "",
 "authors": "Griet Galle, Kris Grimonprez",
 "institutions": [],
-"download_count": 1884
+"download_count": 1994
 },
 {
 "file": "bookstory_10.11116_9789461664631.html",
@@ -9976,11 +12427,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Black Matrilineage, Photography, and Representation\" contributes significantly to the discourse on representation and identity within the framework of Black matrilineage.",
-"cover_url": "",
+"excerpt": "Short impact summary \"Black Matrilineage, Photography, and Representation,\" published by Leuven University Press in 2022, represents a significant contribution to the discourse surrounding race, gende…",
+"cover_url": "https://lup.be/wp-content/uploads/2024/01/default_cover.png",
 "authors": "Lesly Deschler Canossi, Zoraida Lopez-Diago",
 "institutions": [],
-"download_count": 2194
+"download_count": 2437
 },
 {
 "file": "bookstory_10.11116_9789461664792.html",
@@ -10015,11 +12466,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Published by Leuven University Press in 2022, \"Stilte in de klas\" provides a detailed exploration of silence in the classroom environment, highlighting pedagogical implications.",
-"cover_url": "",
+"excerpt": "Short impact summary \"Stilte in de klas,\" published by Leuven University Press in 2022, focuses on the significance of silence in educational environments.",
+"cover_url": "https://lup.be/wp-content/uploads/2024/01/jpg_rgb_original-347-scaled.jpg",
 "authors": "Pieter Verstraete",
 "institutions": [],
-"download_count": 2556
+"download_count": 2627
 },
 {
 "file": "bookstory_10.11116_9789461664815.html",
@@ -10042,8 +12493,7 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Commercial linkage",
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -10060,11 +12510,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Exploring the Transnational Neighbourhood,\" published by Leuven University Press in 2022, presents a nuanced examination of transnational relationships within urban contexts.",
+"excerpt": "Short impact summary \"Exploring the Transnational Neighbourhood\" published by Leuven University Press in 2022, demonstrates a significant potential for commercialization, with evidence of listings on …",
 "cover_url": "",
 "authors": "Stephan Ehrig, Britta C. Jung, Gad Schaffer",
 "institutions": [],
-"download_count": 1655
+"download_count": 1957
 },
 {
 "file": "bookstory_10.11116_9789461664952.html",
@@ -10104,11 +12554,13 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The scholarly work titled Mobs and Microbes has been published by Leuven University Press in 2023.",
+"excerpt": "Short impact summary Despite the recent publication of \"Mobs and Microbes\" by Leuven University Press in 2023 and its current lack of citations and online discussions, its commercial linkage suggests …",
 "cover_url": "",
 "authors": "Leila Marie Farah, Samantha L. Martin",
-"institutions": [],
-"download_count": 824
+"institutions": [
+"Toronto Metropolitan University"
+],
+"download_count": 1020
 },
 {
 "file": "bookstory_10.11116_9789461664976.html",
@@ -10148,13 +12600,13 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Published in 2023 by Leuven University Press, \"Sugar, Spice, and the Not So Nice\" is set to explore themes that are yet to capture significant online discussions or citations, ind…",
+"excerpt": "Short impact summary The publication \"Sugar, Spice, and the Not So Nice\" by Leuven University Press showcases a commitment to meaningful research, reflecting its commercial linkages through platforms …",
 "cover_url": "",
 "authors": "Dona Pursall, Eva Van de Wiele",
 "institutions": [
 "Université Sorbonne Nouvelle"
 ],
-"download_count": 1969
+"download_count": 2240
 },
 {
 "file": "bookstory_10.11116_9789461665096.html",
@@ -10166,28 +12618,24 @@ window.STORIES_DATA = [
 "venue_name": "",
 "publisher": "Leuven University Press",
 "concepts": [
+"Right wing",
 "Islamophobia",
-"Resistance (ecology)",
+"Portuguese",
 "Political science",
-"Ethnography",
-"Scope (computer science)",
 "Media studies",
+"History",
 "Sociology",
-"Civil society"
+"Law"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Commercial linkage"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "citation_count": 0,
 "event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Peace, Justice and strong institutions"
-],
+"has_sdgs": false,
+"sdg_ids": [],
 "has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
@@ -10195,13 +12643,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Islamophobia as a Form of Radicalisation,\" published by Leuven University Press in 2023, explores the intersections between radicalization processes and Islamophobia.",
+"excerpt": "Short impact summary The book \"Islamophobia as a Form of Radicalisation,\" published by Leuven University Press in 2023, embarks on a critical exploration of how Islamophobia may function as a catalyst…",
 "cover_url": "",
 "authors": "Leen d’Haenens, Abdelwahed Mekki-Berrada",
-"institutions": [
-"Université Laval"
-],
-"download_count": 1810
+"institutions": [],
+"download_count": 2035
 },
 {
 "file": "bookstory_10.11116_9789461665171.html",
@@ -10226,23 +12672,23 @@ window.STORIES_DATA = [
 "Commercial linkage"
 ],
 "is_oa": true,
-"oa_status": "gold",
+"oa_status": "green",
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Landscapes of Liberation,\" published by Leuven University Press in 2023, represents a significant contribution to scholarly discourse.",
+"excerpt": "Short impact summary \"Landscapes of Liberation,\" published by Leuven University Press in 2023, marks a significant contribution to its field, primarily through its commercial presence noted on platfor…",
 "cover_url": "",
 "authors": "Noah Oehri",
 "institutions": [],
-"download_count": 495
+"download_count": 616
 },
 {
 "file": "bookstory_10.11116_9789461665195.html",
@@ -10268,65 +12714,20 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": true,
-"has_peer_review": false,
-"has_reuse": false,
-"excerpt": "Short impact summary \"Watching, Waiting,\" published by Leuven University Press in 2023, is a significant scholarly work reflecting contemporary themes.",
-"cover_url": "",
-"authors": "Sandra Križić Roban, Ana Šverko",
-"institutions": [
-"Aarhus School of Architecture"
-],
-"download_count": 1378
-},
-{
-"file": "bookstory_10.11116_9789461665218.html",
-"title": "The Leopard, the Lion, and the Cock",
-"type": "BookStory",
-"doi": "10.11116/9789461665218",
-"year": 2023,
-"venue": "Leuven University Press",
-"venue_name": "",
-"publisher": "Leuven University Press",
-"concepts": [
-"Colonialism",
-"Empire",
-"Independence (probability theory)",
-"History",
-"Veneration",
-"Decolonization",
-"Ancient history",
-"Ethnology"
-],
-"roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Active public discourse"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 0,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Sustainable cities and communities"
-],
-"has_teaching": true,
-"ta_ocw": 2,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The publication of \"The Leopard, the Lion, and the Cock\" in 2023 has attracted early interest, evidenced by its commercial accessibility through platforms such as Amazon and Goodr…",
+"excerpt": "Short impact summary \"Watching, Waiting,\" published by Leuven University Press in 2023, presents a unique exploration that has yet to generate substantial formal citations or community discourse.",
 "cover_url": "",
-"authors": "Matthew Stanard",
-"institutions": [],
-"download_count": 2828
+"authors": "Sandra Križić Roban, Ana Šverko",
+"institutions": [
+"Aarhus School of Architecture"
+],
+"download_count": 1660
 },
 {
 "file": "bookstory_10.11116_9789461665232.html",
@@ -10359,18 +12760,18 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Quality Education"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The book \"Modern Etruscans,\" published by Leuven University Press in 2023, showcases the vibrant intersection of Etruscan studies and contemporary discourse.",
+"excerpt": "Short impact summary The book \"Modern Etruscans,\" published by Leuven University Press in 2023, represents a significant contribution to the understanding of Etruscan culture.",
 "cover_url": "",
 "authors": "Chiara Zampieri, Martina Piperno, Bart Van den Bossche",
 "institutions": [],
-"download_count": 918
+"download_count": 1093
 },
 {
 "file": "bookstory_10.11116_9789461665263.html",
@@ -10392,8 +12793,7 @@ window.STORIES_DATA = [
 "Politics"
 ],
 "roles": [
-"Commercial linkage",
-"Active public discourse"
+"Commercial linkage"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -10401,18 +12801,18 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Building a White Nation,\" published by Leuven University Press in 2023, engages with critical discourses around national identity and racial dynamics in contemporary societies.",
+"excerpt": "Short impact summary \"Building a White Nation,\" published by Leuven University Press in 2023, offers a critical exploration of the socio-political dynamics surrounding racial identity.",
 "cover_url": "",
 "authors": "Katharina Jörder",
 "institutions": [],
-"download_count": 1027
+"download_count": 1305
 },
 {
 "file": "bookstory_10.11116_9789461665270.html",
@@ -10449,11 +12849,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Comics of the New Europe,\" published by Leuven University Press in 2023, is poised to influence both academic and public discussions surrounding the evolving landscape of comics …",
+"excerpt": "Short impact summary The book, \"Comics of the New Europe,\" published by Leuven University Press in 2023, explores the cultural and artistic dimensions of comic art in the European context, representin…",
 "cover_url": "",
 "authors": "Martha Kuhlman, José Alaniz",
 "institutions": [],
-"download_count": 1921
+"download_count": 2249
 },
 {
 "file": "bookstory_10.11116_9789461665324.html",
@@ -10487,11 +12887,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The forthcoming book \"Alles verandert altijd - Herziene editie,\" published by Leuven University Press in 2024, embodies a significant contribution to its field.",
-"cover_url": "",
+"excerpt": "Short impact summary \"Alles verandert altijd - Herziene editie,\" published by Leuven University Press in 2024, emerges as a compelling narrative within its discipline.",
+"cover_url": "https://lup.be/wp-content/uploads/2024/01/jpg_rgb_original-37-scaled.jpg",
 "authors": "Lieven D'hulst, Chris Van de Poel",
 "institutions": [],
-"download_count": 1034
+"download_count": 1206
 },
 {
 "file": "bookstory_10.11116_9789461665355.html",
@@ -10514,11 +12914,10 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Commercial linkage",
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
-"oa_status": "gold",
+"oa_status": "green",
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -10532,11 +12931,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"An Opaque Mirror For Trajan\" is set to contribute to scholarly discourse through its publication by Leuven University Press in 2024.",
+"excerpt": "Short impact summary The forthcoming book \"An Opaque Mirror For Trajan,\" set to be published by Leuven University Press in 2024, is anticipated to contribute to the scholarly discourse surrounding cla…",
 "cover_url": "",
 "authors": "Laurens van der Wiel",
 "institutions": [],
-"download_count": 862
+"download_count": 962
 },
 {
 "file": "bookstory_10.11116_9789461665409.html",
@@ -10559,8 +12958,7 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Commercial linkage",
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -10570,18 +12968,18 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Sustainable cities and communities"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite its upcoming release in 2024, \"Collecting Asian Art\" is positioned to attract significant academic and public interest, as evidenced by its commercial linkage through plat…",
+"excerpt": "Short impact summary \"Collecting Asian Art,\" set to be published by Leuven University Press in 2024, indicates a strong commercial potential based on its presence on major retail and review platforms …",
 "cover_url": "",
 "authors": "Markéta Hánová, Yuka Kadoi, Simone Wille",
 "institutions": [],
-"download_count": 1405
+"download_count": 1733
 },
 {
 "file": "bookstory_10.11116_9789461665416.html",
@@ -10621,13 +13019,13 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite its recent publication in 2023 and lack of citations or online discourse, \"Francis Alÿs.",
+"excerpt": "Short impact summary The book \"Francis Alÿs.",
 "cover_url": "",
 "authors": "Gerard-Jan Claes, Stéphane Symons",
 "institutions": [
 "Royal Society"
 ],
-"download_count": 1336
+"download_count": 1489
 },
 {
 "file": "bookstory_10.11116_9789461665423.html",
@@ -10650,29 +13048,28 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Commercial linkage",
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
-"oa_status": "green",
+"oa_status": "gold",
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
 "Gender equality"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The scholarly work titled \"Muslim Marriage and Non-Marriage,\" published by Leuven University Press in 2023, seeks to illuminate the dynamics of marriage and non-marriage within co…",
+"excerpt": "Short impact summary \"Muslim Marriage and Non-Marriage,\" published by Leuven University Press in 2023, delves into critical aspects of marital and non-marital experiences within Muslim communities, ad…",
 "cover_url": "",
 "authors": "Julie McBrien, Annelies Moors",
 "institutions": [],
-"download_count": 1571
+"download_count": 1772
 },
 {
 "file": "bookstory_10.11116_9789461665478.html",
@@ -10695,9 +13092,7 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Commercial linkage",
-"Public Visibility & Knowledge Base",
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -10714,11 +13109,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The forthcoming publication, \"The Legacy of Elise Hall,\" by Leuven University Press is poised to contribute to a significant discourse within its academic and commercial realms.",
+"excerpt": "Short impact summary The forthcoming book, \"The Legacy of Elise Hall,\" published by Leuven University Press in 2024, represents a significant addition to the academic discourse, although it currently …",
 "cover_url": "",
 "authors": "Kurt Bertels, Adrianne Honnold",
 "institutions": [],
-"download_count": 1948
+"download_count": 2132
 },
 {
 "file": "bookstory_10.11116_9789461665553.html",
@@ -10752,11 +13147,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"La Monarquía Indiana de Carlos II en la encrujiada,\" published by Leuven University Press in 2024, represents a significant scholarly contribution to the study of historical mona…",
-"cover_url": "",
+"excerpt": "Short impact summary La Monarquía Indiana de Carlos II en la encrujiada is a forthcoming scholarly work published by Leuven University Press in 2024.",
+"cover_url": "https://lup.be/wp-content/uploads/2024/12/jpg_rgb_original-4.jpg",
 "authors": "Juan Jiménez Castillo Jiménez Castillo",
 "institutions": [],
-"download_count": 379
+"download_count": 468
 },
 {
 "file": "bookstory_10.11116_9789461665591.html",
@@ -10778,8 +13173,7 @@ window.STORIES_DATA = [
 "Art"
 ],
 "roles": [
-"Commercial linkage",
-"Active public discourse"
+"Commercial linkage"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -10787,18 +13181,18 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite its recent release and current status with no recorded citations or community discourse, \"Performing by the Book?\" published by Leuven University Press, shows promising in…",
+"excerpt": "Short impact summary \"Performing by the Book?\" is set to be published by Leuven University Press in 2024, marking a significant contribution to its field.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/52cb54a3-d251-47f6-9b96-79ceb5399b02/retrieve",
 "authors": "Bruno Forment",
 "institutions": [],
-"download_count": 1080
+"download_count": 1404
 },
 {
 "file": "bookstory_10.11116_9789461665690.html",
@@ -10831,18 +13225,18 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Reduced inequalities"
 ],
-"has_teaching": true,
-"ta_ocw": 5,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Re-Imagining Class,\" published by Leuven University Press in 2024, explores contemporary socio-economic classifications and their impacts on society.",
+"excerpt": "Short impact summary \"Re-Imagining Class,\" published by Leuven University Press in 2024, represents a significant scholarly contribution to the discourse on social class, although it currently lacks m…",
 "cover_url": "",
 "authors": "Liesbeth François, Michiel Rys",
 "institutions": [],
-"download_count": 1103
+"download_count": 1277
 },
 {
 "file": "bookstory_10.11116_9789461665706.html",
@@ -10865,8 +13259,7 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Commercial linkage",
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -10883,11 +13276,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Plutarch and Rhetoric, published by Leuven University Press in 2024, is recognized for its commercial potential, reflecting a strong interest in its subject matter.",
+"excerpt": "Short impact summary The forthcoming book, \"Plutarch and Rhetoric,\" published by Leuven University Press in 2024, is poised to contribute significantly to the discourse surrounding the intersection of…",
 "cover_url": "",
 "authors": "Theofanis Tsiampokalos",
 "institutions": [],
-"download_count": 877
+"download_count": 981
 },
 {
 "file": "bookstory_10.11116_MITA_CII.html",
@@ -10914,20 +13307,20 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Modern Islamic Thinking and Activism,\" published by Leuven University Press in 2014, represents a scholarly contribution to the discourse surrounding modern Islamic thought.",
+"excerpt": "Short impact summary Despite a lack of community discourse and citations, \"Modern Islamic Thinking and Activism\" serves as a significant mark in the academic exploration of contemporary Islamic though…",
 "cover_url": "",
 "authors": "Erkan Toguslu",
 "institutions": [
 "University of Denver"
 ],
-"download_count": 3222
+"download_count": 3350
 },
 {
 "file": "bookstory_10.11647_obp.0173.html",
@@ -10962,6 +13355,126 @@ window.STORIES_DATA = [
 "download_count": 0
 },
 {
+"file": "bookstory_10.2307_j.ctt1v2xsqn.html",
+"title": "Poverty and Survival in Early Modern Europe",
+"type": "BookStory",
+"doi": "10.2307/j.ctt1v2xsqn",
+"year": 2019,
+"venue": "Amsterdam University Press",
+"venue_name": "",
+"publisher": "Amsterdam University Press",
+"concepts": [
+"Raising (metalworking)",
+"Big data",
+"Work (physics)",
+"Politics",
+"Engineering ethics",
+"Sociology",
+"Management science",
+"Computer science"
+],
+"roles": [
+"Commercial linkage"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The absence of citations, community discourse, and platform presence signifies a nascent stage for the book, indicating potential for growth in visibility and impact within its ac…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "bookstory_10.2307_j.ctt45kfbw.html",
+"title": "Untitled Book",
+"type": "BookStory",
+"doi": "10.2307/j.ctt45kfbw",
+"year": null,
+"venue": "Amsterdam University Press",
+"venue_name": "",
+"publisher": "Amsterdam University Press",
+"concepts": [
+"Restructuring",
+"Social policy",
+"Social Welfare",
+"Political science",
+"Welfare system",
+"Resistance (ecology)",
+"Welfare",
+"Welfare state"
+],
+"roles": [
+"Commercial linkage"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The absence of publicly reported metrics indicates that the untitled book has not yet achieved measurable engagement or impact within scholarly or public spheres.",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "bookstory_10.2307_j.ctv12sdvgj.html",
+"title": "Body, Capital, and Screens",
+"type": "BookStory",
+"doi": "10.2307/j.ctv12sdvgj",
+"year": 2020,
+"venue": "Amsterdam University Press",
+"venue_name": "",
+"publisher": "Amsterdam University Press",
+"concepts": [
+"Capital (architecture)",
+"Art",
+"Visual arts"
+],
+"roles": [
+"Commercial linkage"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite the absence of citations and mentions in public discourse platforms, \"Body, Capital, and Screens,\" published by Amsterdam University Press in 2020, may serve as a foundati…",
+"cover_url": "",
+"authors": "Christian Bonah, Anja Laukötter",
+"institutions": [
+"Instituto de Estudos Avançados da Universidade de São Paulo"
+],
+"download_count": 1956
+},
+{
 "file": "bookstory_10.3726_978-3-653-02684-9.html",
 "title": "Militär und Gesellschaft in Preußen – Quellen zur Militärsozialisation 1713–1806",
 "type": "BookStory",
@@ -10991,11 +13504,424 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The book \"Militär und Gesellschaft in Preußen – Quellen zur Militärsozialisation 1713–1806\" published by Peter Lang in 2014 serves as an important scholarly contribution to the un…",
-"cover_url": "",
+"excerpt": "Short impact summary Despite the comprehensive exploration of military socialization from 1713 to 1806 in Preußen, the work has yet to gain public or academic traction, reflected in the absence of cit…",
+"cover_url": "https://library.oapen.org/rest/bitstreams/81f8b02f-c67b-4cfb-aeac-9eff4ebb4ddb/retrieve",
 "authors": "Jürgen Kloosterhuis, Bernhard R. Kroener, Klaus Neitmann et al.",
 "institutions": [],
-"download_count": 1936
+"download_count": 1986
+},
+{
+"file": "bookstory_10.3726_b17114.html",
+"title": "Les défis de la diversité culturelle dans le monde du travail au XXIe siècle",
+"type": "BookStory",
+"doi": "10.3726/b17114",
+"year": 2020,
+"venue": "Peter Lang B",
+"venue_name": "",
+"publisher": "Peter Lang B",
+"concepts": [
+"Art"
+],
+"roles": [
+"Commercial linkage",
+"Sustainability & Policy relevance"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Reduced inequalities"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 4,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The book \"Les défis de la diversité culturelle dans le monde du travail au XXIe siècle,\" published by Peter Lang B in 2020, addresses the complex challenges of cultural diversity …",
+"cover_url": "https://cdn.openpublishing.com/thumbnail/products/1057947/large.webp",
+"authors": "Ariane Le Moing, Saïd Ouaked, Christèle Le Bihan",
+"institutions": [
+"Les Afriques dans le Monde"
+],
+"download_count": 0
+},
+{
+"file": "bookstory_10.3726_b21088.html",
+"title": "Christian Democracy and Labour after World War II",
+"type": "BookStory",
+"doi": "10.3726/b21088",
+"year": 2023,
+"venue": "Peter Lang Verlag",
+"venue_name": "",
+"publisher": "Peter Lang Verlag",
+"concepts": [
+"Democracy",
+"Political science",
+"Civil society",
+"Relation (database)",
+"Social change",
+"Political economy",
+"Development economics",
+"Sociology"
+],
+"roles": [
+"Commercial linkage",
+"Sustainability & Policy relevance"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Decent work and economic growth"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 3,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Although the book \"Christian Democracy and Labour after World War II\" has not yet garnered citations or mentions across social platforms, it represents an important scholarly cont…",
+"cover_url": "https://cdn.openpublishing.com/thumbnail/products/1313443/large.webp",
+"authors": "Andrea Maria Locatelli, Cecilia Maria Bravi",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "bookstory_10.3726_b21787.html",
+"title": "Knowledge and practical knowledge",
+"type": "BookStory",
+"doi": "10.3726/b21787",
+"year": 2024,
+"venue": "Peter Lang Verlag",
+"venue_name": "",
+"publisher": "Peter Lang Verlag",
+"concepts": [
+"Knowledge management",
+"Construct (python library)",
+"Action (physics)",
+"Affect (linguistics)",
+"Social knowledge",
+"Knowledge value chain",
+"Weaving",
+"Knowledge worker"
+],
+"roles": [
+"Commercial linkage"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 3,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite being set to publish in 2024, \"Knowledge and Practical Knowledge\" shows promise for future discourse in its field, supported by commercial linkages via platforms such as A…",
+"cover_url": "https://cdn.openpublishing.com/thumbnail/products/1438907/large.webp",
+"authors": "Silvia Carbone",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "bookstory_10.3998_mpub.14414299.html",
+"title": "Urban Fantasy",
+"type": "BookStory",
+"doi": "10.3998/mpub.14414299",
+"year": 2024,
+"venue": "Lever Press",
+"venue_name": "",
+"publisher": "Lever Press",
+"concepts": [
+"Modernity",
+"Fantasy",
+"MAGIC (telescope)",
+"Art",
+"Aesthetics",
+"Literature",
+"Philosophy",
+"Epistemology"
+],
+"roles": [
+"Commercial linkage",
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Sustainable cities and communities"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 1,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The upcoming book Urban Fantasy , published by Lever Press in 2024, stands at the intersection of scholarly discourse and commercial engagement, reflecting a strong potential for …",
+"cover_url": "",
+"authors": "Stefan Ekman",
+"institutions": [],
+"download_count": 325
+},
+{
+"file": "bookstory_10.5117_9789048512270.html",
+"title": "Untitled Book",
+"type": "BookStory",
+"doi": "10.5117/9789048512270",
+"year": null,
+"venue": "Amsterdam University Press",
+"venue_name": "Amsterdam University Press",
+"publisher": "Amsterdam University Press",
+"concepts": [],
+"roles": [
+"Commercial linkage"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Currently, the untitled book has not garnered any measurable academic or public engagement indicators such as citations or mentions across various platforms.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789048512270&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "bookstory_10.5117_9789048524518.html",
+"title": "Untitled Book",
+"type": "BookStory",
+"doi": "10.5117/9789048524518",
+"year": null,
+"venue": "Amsterdam University Press",
+"venue_name": "Amsterdam University Press",
+"publisher": "Amsterdam University Press",
+"concepts": [],
+"roles": [
+"Commercial linkage"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The book, despite lacking explicit metrics reflecting its reach or citation impact, is positioned within the commercial linkage landscape through its association with platforms su…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789048524518&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "bookstory_10.5117_9789048551774.html",
+"title": "Untitled Book",
+"type": "BookStory",
+"doi": "10.5117/9789048551774",
+"year": null,
+"venue": "Amsterdam University Press",
+"venue_name": "Amsterdam University Press",
+"publisher": "Amsterdam University Press",
+"concepts": [],
+"roles": [
+"Commercial linkage"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The Untitled Book has yet to realize public or academic citations or discourse.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789048551774&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "bookstory_10.5117_9789048568284.html",
+"title": "Untitled Book",
+"type": "BookStory",
+"doi": "10.5117/9789048568284",
+"year": null,
+"venue": "Amsterdam University Press",
+"venue_name": "Amsterdam University Press",
+"publisher": "Amsterdam University Press",
+"concepts": [
+"Art",
+"Art history",
+"Medicine",
+"Dissection (medical)",
+"Anatomy",
+"Work (physics)",
+"Guild",
+"History"
+],
+"roles": [
+"Commercial linkage"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary While the Untitled Book currently lacks external citations and online mentions, its inferred strong commercial linkage suggests potential market interest and relevance within its …",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789048568284&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "",
+"institutions": [],
+"download_count": 251
+},
+{
+"file": "bookstory_10.5117_9789089647191.html",
+"title": "Women in the Silent Cinema",
+"type": "BookStory",
+"doi": "10.5117/9789089647191",
+"year": 2017,
+"venue": "Amsterdam University Press",
+"venue_name": "",
+"publisher": "Amsterdam University Press",
+"concepts": [],
+"roles": [
+"Commercial linkage"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite the absence of measurable public discourse and citation activity, \"Women in the Silent Cinema\" published by Amsterdam University Press in 2017 serves as a significant refe…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789089647191&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Annette Förster",
+"institutions": [],
+"download_count": 1654
+},
+{
+"file": "bookstory_10.5117_9789462986206.html",
+"title": "Zootechnologies",
+"type": "BookStory",
+"doi": "10.5117/9789462986206",
+"year": 2025,
+"venue": "Routledge",
+"venue_name": "",
+"publisher": "Routledge",
+"concepts": [
+"Metaphor",
+"Swarm behaviour",
+"Performative utterance",
+"Computer science",
+"Collective intelligence",
+"Data science",
+"Human–computer interaction",
+"Swarming (honey bee)"
+],
+"roles": [
+"Commercial linkage",
+"Sustainability & Policy relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Life below water"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The forthcoming book, \"Zootechnologies,\" published by Routledge in 2025, presents a novel exploration of the intersection between technology and animal husbandry.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789462986206&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Sebastian Vehlken",
+"institutions": [],
+"download_count": 503
+},
+{
+"file": "bookstory_10.5117_9789463724012.html",
+"title": "Islam in a Secular State",
+"type": "BookStory",
+"doi": "10.5117/9789463724012",
+"year": 2025,
+"venue": "Routledge",
+"venue_name": "",
+"publisher": "Routledge",
+"concepts": [],
+"roles": [
+"Commercial linkage"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The book \"Islam in a Secular State,\" set to be published by Routledge in 2025, aims to explore the interplay between Islamic practices and secular governance.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789463724012&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Walid Jumblatt Abdullah",
+"institutions": [],
+"download_count": 0
 },
 {
 "file": "bookstory_10.5703_1288284317628.html",
@@ -11029,13 +13955,13 @@ window.STORIES_DATA = [
 "Gender equality"
 ],
 "has_teaching": true,
-"ta_ocw": 10,
-"ta_youtube": 1,
+"ta_ocw": 0,
+"ta_youtube": 0,
 "ta_ol_holdings": 5,
-"ta_otl": true,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary While \"Sisters in Science,\" published by Purdue University in 2006, has not garnered external citations or public discourse, its potential relevance is supported by its commercial…",
+"excerpt": "Short impact summary Published by Purdue University in 2006, \"Sisters in Science\" has not yet garnered citations or public discourse in high-fidelity social media platforms.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/d618778c-cb80-4296-bbc4-14f15cdc3052/retrieve",
 "authors": "Diann Jordan",
 "institutions": [],
@@ -11052,8 +13978,7 @@ window.STORIES_DATA = [
 "publisher": "Manchester University Press",
 "concepts": [],
 "roles": [
-"Commercial linkage",
-"Active public discourse"
+"Commercial linkage"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -11064,15 +13989,15 @@ window.STORIES_DATA = [
 "has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": true,
+"ta_ol_holdings": 10,
+"ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite its lack of citations and online discourse, \"The International Politics of the Middle East\" published by Manchester University Press in 2018 demonstrates significant comme…",
+"excerpt": "Short impact summary Despite the publication year being 2018, \"The International Politics of the Middle East\" has yet to generate notable academic citations or public discourse in online platforms.",
 "cover_url": "",
 "authors": "Raymond Hinnebusch",
 "institutions": [],
-"download_count": 202
+"download_count": 414
 },
 {
 "file": "datastory_10.23640_07243.5259502.v1.html",
@@ -11115,48 +14040,9 @@ window.STORIES_DATA = [
 "type": "DataStory",
 "doi": "10.25378/janelia.23816295",
 "year": 2023,
-"venue": "Janelia Research Repository",
-"venue_name": "Janelia Research Repository",
-"publisher": "",
-"concepts": [
-"Neuroscience",
-"Biology",
-"Computer science",
-"Neuron",
-"Artificial intelligence",
-"Computational biology",
-"Key (lock)",
-"Cell type"
-],
-"roles": [],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 0,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 2,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary This dataset, titled \"Drosophila GAL4 brain imagery,\" has been curated by the Janelia Research Campus and is available in the Janelia Research Repository.",
-"cover_url": "",
-"authors": "",
-"institutions": [],
-"download_count": 0
-},
-{
-"file": "datastory_10.25378_janelia.23816295.v1.html",
-"title": "Drosophila GAL4 brain imagery",
-"type": "DataStory",
-"doi": "10.25378/janelia.23816295.v1",
-"year": 2023,
 "venue": "Figshare",
 "venue_name": "Figshare",
-"publisher": "Figshare (United Kingdom)",
+"publisher": "Digital Science",
 "concepts": [
 "Neuroscience",
 "Biology",
@@ -11181,12 +14067,49 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The dataset titled \"Drosophila GAL4 brain imagery\" showcases valuable contributions to the field of neuroscience, produced by researchers from the Janelia Research Campus.",
+"excerpt": "Short impact summary The dataset titled \"Drosophila GAL4 brain imagery\" from the Janelia Research Repository provides foundational insights into Drosophila neurobiology and serves as a crucial resourc…",
 "cover_url": "",
-"authors": "Meissner, Geoffrey, Nern, Aljoscha, Dorman, Zachary et al.",
-"institutions": [
-"Janelia Research Campus"
+"authors": "",
+"institutions": [],
+"download_count": 0
+},
+{
+"file": "datastory_10.25378_janelia.23816295.v1.html",
+"title": "Drosophila GAL4 brain imagery",
+"type": "DataStory",
+"doi": "10.25378/janelia.23816295.v1",
+"year": 2023,
+"venue": "Figshare",
+"venue_name": "Figshare",
+"publisher": "Digital Science",
+"concepts": [
+"Neuroscience",
+"Biology",
+"Computer science",
+"Neuron",
+"Artificial intelligence",
+"Computational biology",
+"Key (lock)",
+"Cell type"
 ],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The dataset titled \"Drosophila GAL4 brain imagery\" represents a significant contribution to the field of neurobiology and genetic research, hosted on Figshare.",
+"cover_url": "",
+"authors": "",
+"institutions": [],
 "download_count": 0
 },
 {
@@ -11195,9 +14118,9 @@ window.STORIES_DATA = [
 "type": "DataStory",
 "doi": "10.5281/zenodo.10875062",
 "year": 2024,
-"venue": "Zenodo (CERN European Organization for Nuclear Research)",
-"venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
-"publisher": "",
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "European Organization For Nuclear Research and OpenAIRE",
 "concepts": [
 "Segmentation",
 "Artificial intelligence",
@@ -11215,18 +14138,57 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 9,
-"ta_youtube": 1,
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The FISBe dataset represents a significant step forward in the study of long-range thin filamentous structures, with a notable usage evidenced by 1,082 downloads.",
+"excerpt": "Short impact summary The FISBe dataset represents a significant advancement in the instance segmentation of long-range thin filamentous structures.",
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 1082
+"download_count": 1084
+},
+{
+"file": "datastory_10.5281_zenodo.11472834.html",
+"title": "American University of Nigeria, Adamawa State Post-U.T.M.E Admission Form for 2024/2025 is out call 09125210477 For More Details On How to Apply And Register Online.Also Sales Of I.J.M.B Form,J.U.P.E.B Form,Predegree Form,Change Of Institution Form,Transfer Form Is still Ongoing Contact office of the admin On 09125210477 For more information on how to purchase the form and register online,for admission assistance and payment of school fee [TUITION FEE AND ACCEPTANCE FEE].",
+"type": "DataStory",
+"doi": "10.5281/zenodo.11472834",
+"year": 2024,
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "European Organization For Nuclear Research and OpenAIRE",
+"concepts": [
+"Nucleofection",
+"Gestational period",
+"TSG101",
+"Liquation",
+"Diafiltration",
+"Dysgeusia",
+"Emperipolesis",
+"Hyporeflexia"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The American University of Nigeria's announcement regarding the 2024/2025 Post-U.T.M.E Admission Form highlights its ongoing commitment to supporting prospective students through …",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0
 },
 {
 "file": "datastory_10.5281_zenodo.17442025.html",
@@ -11261,13 +14223,13 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary This dataset, titled \"Classification of research publications based on data from OpenAlex,\" serves as a foundational research output hosted on Zenodo.",
+"excerpt": "Short impact summary The dataset titled \"Classification of research publications based on data from OpenAlex\" serves as a significant research output shared on Zenodo.",
 "cover_url": "",
 "authors": "Van Eck, Nees Jan",
 "institutions": [
 "Leiden University"
 ],
-"download_count": 73
+"download_count": 557
 },
 {
 "file": "datastory_10.5281_zenodo.7821611.html",
@@ -11277,15 +14239,13 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "Zenodo (CERN European Organization for Nuclear Research)",
 "venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
-"publisher": "",
+"publisher": "European Organization for Nuclear Research",
 "concepts": [
 "Computer science"
 ],
-"roles": [
-"Active public discourse"
-],
+"roles": [],
 "is_oa": true,
-"oa_status": "gold",
+"oa_status": "green",
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -11297,7 +14257,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The CORDA dataset, hosted by Zenodo and authored by a collaborative team including Marta Alesina and Carlo Alberto Barbano, has garnered significant views and downloads, reflectin…",
+"excerpt": "Short impact summary The CORDA dataset, hosted on Zenodo and authored by a collaborative team from leading cardiology institutions, has garnered attention with 762 views and 351 downloads, indicating …",
 "cover_url": "",
 "authors": "Marta Alesina, Carlo Alberto Barbano, Claudio Berzovini et al.",
 "institutions": [
@@ -11309,7 +14269,46 @@ window.STORIES_DATA = [
 "Ospedale di Parma",
 "Ospedale San Luigi Gonzaga"
 ],
-"download_count": 307
+"download_count": 450
+},
+{
+"file": "datastory_10.5281_zenodo.7842938.html",
+"title": "Nosophora parvipunctalis Hampson 1896",
+"type": "DataStory",
+"doi": "10.5281/zenodo.7842938",
+"year": 2022,
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "European Organization For Nuclear Research and OpenAIRE",
+"concepts": [
+"Table (database)",
+"Ancient history",
+"History",
+"Geography",
+"South asia",
+"Natural (archaeology)",
+"Interpretation (philosophy)",
+"Theology"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The dataset titled \"Nosophora parvipunctalis Hampson 1896 (2022)\" available on Zenodo has garnered significant attention, with 50 views and 24 downloads, indicating an emerging in…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 24
 },
 {
 "file": "softwarestory_10.5281_zenodo.3559815.html",
@@ -11330,9 +14329,7 @@ window.STORIES_DATA = [
 "Relation (database)",
 "Engineering drawing"
 ],
-"roles": [
-"Active public discourse"
-],
+"roles": [],
 "is_oa": true,
 "oa_status": "green",
 "citation_count": 0,
@@ -11346,13 +14343,13 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The software tool developed by Benjamin Stocker, titled \"stineb/rpmodel,\" showcases a significant effort in the field of scientific computing, spotlighted through its contribution…",
+"excerpt": "Short impact summary The software tool \"stineb/rpmodel,\" developed by Benjamin Stocker at ETH Zurich, represents a valuable contribution to the field, demonstrating interest with 54 views and 3 downlo…",
 "cover_url": "",
 "authors": "Stocker, Benjamin",
 "institutions": [
 "ETH Zurich"
 ],
-"download_count": 3
+"download_count": 222
 }
 ];
-window.STORIES_STATS = {"total": 256, "total_articles": 119, "total_books": 127, "total_data": 9, "total_software": 1, "total_oa": 238, "pct_oa": 93, "total_citations": 86751, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 335, "total_articles": 157, "total_books": 152, "total_data": 19, "total_software": 7, "total_oa": 299, "pct_oa": 89, "total_citations": 108473, "num_disciplines": 30};
