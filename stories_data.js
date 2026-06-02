@@ -20,9 +20,9 @@ window.STORIES_DATA = [
 "Structural bioinformatics"
 ],
 "roles": [
-"Scholarly uptake",
-"High-visibility uptake",
-"Active discussion signal"
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -63,9 +63,9 @@ window.STORIES_DATA = [
 "Artificial intelligence"
 ],
 "roles": [
-"Commercial linkage",
+"Commercial Linkage",
 "Reference Point for Synthesis",
-"Evidence-Bearing Reference"
+"Evidence-bearing Reference"
 ],
 "is_oa": null,
 "oa_status": "",
@@ -113,10 +113,10 @@ window.STORIES_DATA = [
 "Respiratory failure"
 ],
 "roles": [
-"Scholarly uptake",
-"High-visibility uptake",
-"Reference point for synthesis",
-"Active discussion signal"
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Reference Point for Synthesis",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -160,7 +160,7 @@ window.STORIES_DATA = [
 "Atlas (anatomy)"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -204,11 +204,11 @@ window.STORIES_DATA = [
 "Infectious disease (medical specialty)"
 ],
 "roles": [
-"Scholarly uptake",
-"High-visibility uptake",
-"Sustainability & Policy relevance",
-"Reference point for synthesis",
-"Active discussion signal"
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance",
+"Reference Point for Synthesis",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -256,11 +256,11 @@ window.STORIES_DATA = [
 "Internal medicine"
 ],
 "roles": [
-"Scholarly uptake",
-"High-visibility uptake",
-"Sustainability & Policy relevance",
-"Reference point for synthesis",
-"Active discussion signal"
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance",
+"Reference Point for Synthesis",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "bronze",
@@ -309,10 +309,10 @@ window.STORIES_DATA = [
 "Programming language"
 ],
 "roles": [
-"Software method anchor",
-"Scholarly uptake",
-"High-visibility uptake",
-"Sustainability & policy relevance"
+"Software Method Anchor",
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -362,9 +362,9 @@ window.STORIES_DATA = [
 "Gene"
 ],
 "roles": [
-"Scholarly uptake",
-"Reference point for synthesis",
-"Active discussion signal"
+"Scholarly Uptake",
+"Reference Point for Synthesis",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -419,10 +419,10 @@ window.STORIES_DATA = [
 "Internal medicine"
 ],
 "roles": [
-"Scholarly uptake",
-"Reference point for synthesis",
-"Sustainability & Policy relevance",
-"Active discussion signal"
+"Scholarly Uptake",
+"Reference Point for Synthesis",
+"Sustainability & Policy Relevance",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -470,11 +470,10 @@ window.STORIES_DATA = [
 "Internal medicine"
 ],
 "roles": [
-"Scholarly uptake",
-"Active public discourse",
-"Reference point for synthesis",
-"Sustainability & Policy relevance",
-"Active discussion signal"
+"Scholarly Uptake",
+"Active Public Discourse",
+"Reference Point for Synthesis",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -520,9 +519,9 @@ window.STORIES_DATA = [
 "Mathematical optimization"
 ],
 "roles": [
-"Software method anchor",
-"Scholarly uptake",
-"High-visibility uptake"
+"Software Method Anchor",
+"Scholarly Uptake",
+"High-Visibility Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -566,7 +565,7 @@ window.STORIES_DATA = [
 "Gender studies"
 ],
 "roles": [
-"Commercial linkage",
+"Commercial Linkage",
 "Reference Point for Synthesis"
 ],
 "is_oa": null,
@@ -611,10 +610,10 @@ window.STORIES_DATA = [
 "Development economics"
 ],
 "roles": [
-"Commercial linkage",
+"Commercial Linkage",
 "Reference Point for Synthesis",
-"Evidence-Bearing Reference",
-"Sustainability & Policy relevance"
+"Evidence-bearing Reference",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": null,
 "oa_status": "",
@@ -660,9 +659,9 @@ window.STORIES_DATA = [
 "Regression analysis"
 ],
 "roles": [
-"Commercial linkage",
+"Commercial Linkage",
 "Reference Point for Synthesis",
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -710,9 +709,9 @@ window.STORIES_DATA = [
 "Electrical engineering"
 ],
 "roles": [
-"Software method anchor",
-"Scholarly uptake",
-"Sustainability & policy relevance"
+"Software Method Anchor",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -753,10 +752,10 @@ window.STORIES_DATA = [
 "Computer science"
 ],
 "roles": [
-"Dataset reference backbone",
-"Scholarly uptake",
-"Infrastructure dataset",
-"High-visibility uptake"
+"Dataset Reference Backbone",
+"Scholarly Uptake",
+"Infrastructure Dataset",
+"High-Visibility Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -801,10 +800,10 @@ window.STORIES_DATA = [
 "Computer science"
 ],
 "roles": [
-"Dataset reference backbone",
-"Scholarly uptake",
-"Infrastructure dataset",
-"High-visibility uptake"
+"Dataset Reference Backbone",
+"Scholarly Uptake",
+"Infrastructure Dataset",
+"High-Visibility Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -848,10 +847,10 @@ window.STORIES_DATA = [
 "Physical geography"
 ],
 "roles": [
-"Dataset reference backbone",
-"Scholarly uptake",
-"Infrastructure dataset",
-"High-visibility uptake"
+"Dataset Reference Backbone",
+"Scholarly Uptake",
+"Infrastructure Dataset",
+"High-Visibility Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -894,11 +893,11 @@ window.STORIES_DATA = [
 "Multimedia"
 ],
 "roles": [
-"Dataset reference backbone",
-"Scholarly uptake",
-"Infrastructure dataset",
-"High-visibility uptake",
-"Sustainability & policy relevance"
+"Dataset Reference Backbone",
+"Scholarly Uptake",
+"Infrastructure Dataset",
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -944,11 +943,11 @@ window.STORIES_DATA = [
 "Algorithm"
 ],
 "roles": [
-"Software method anchor",
-"Scholarly uptake",
-"High-visibility uptake",
-"Sustainability & policy relevance",
-"Rapid uptake"
+"Software Method Anchor",
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance",
+"Rapid Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -991,7 +990,7 @@ window.STORIES_DATA = [
 "Law"
 ],
 "roles": [
-"Commercial linkage",
+"Commercial Linkage",
 "Reference Point for Synthesis"
 ],
 "is_oa": true,
@@ -1036,11 +1035,11 @@ window.STORIES_DATA = [
 "Signal transduction"
 ],
 "roles": [
-"Reference point for synthesis",
-"Scholarly uptake",
-"High-visibility uptake",
-"Sustainability & Policy relevance",
-"Active discussion signal"
+"Reference Point for Synthesis",
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance",
+"Active Public Discourse"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -1085,7 +1084,7 @@ window.STORIES_DATA = [
 "Philosophy"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "diamond",
@@ -1129,8 +1128,8 @@ window.STORIES_DATA = [
 "Galaxy formation and evolution"
 ],
 "roles": [
-"Scholarly uptake",
-"High-visibility uptake"
+"Scholarly Uptake",
+"High-Visibility Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -1182,11 +1181,11 @@ window.STORIES_DATA = [
 "Medicine"
 ],
 "roles": [
-"Dataset reference backbone",
-"Infrastructure dataset",
-"Scholarly uptake",
-"High-visibility uptake",
-"Sustainability & policy relevance"
+"Dataset Reference Backbone",
+"Infrastructure Dataset",
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -1239,11 +1238,11 @@ window.STORIES_DATA = [
 "Computer security"
 ],
 "roles": [
-"Dataset reference backbone",
-"Infrastructure dataset",
-"Scholarly uptake",
-"High-visibility uptake",
-"Benchmark resource"
+"Dataset Reference Backbone",
+"Infrastructure Dataset",
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Benchmark Resource"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -1286,10 +1285,10 @@ window.STORIES_DATA = [
 "Theoretical computer science"
 ],
 "roles": [
-"Software method anchor",
-"Scholarly uptake",
-"High-visibility uptake",
-"Rapid uptake"
+"Software Method Anchor",
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Rapid Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -1333,10 +1332,10 @@ window.STORIES_DATA = [
 "Philosophy"
 ],
 "roles": [
-"Dataset reference backbone",
-"Infrastructure dataset",
-"Scholarly uptake",
-"Benchmark resource"
+"Dataset Reference Backbone",
+"Infrastructure Dataset",
+"Scholarly Uptake",
+"Benchmark Resource"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -1380,9 +1379,9 @@ window.STORIES_DATA = [
 "Digital image analysis"
 ],
 "roles": [
-"Software method anchor",
-"High-visibility uptake",
-"Scholarly uptake"
+"Software Method Anchor",
+"High-Visibility Uptake",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -1426,9 +1425,9 @@ window.STORIES_DATA = [
 "Economic geography"
 ],
 "roles": [
-"Scholarly uptake",
-"Sustainability & Policy relevance",
-"Reference point for synthesis"
+"Scholarly Uptake",
+"Sustainability & Policy Relevance",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -1474,9 +1473,9 @@ window.STORIES_DATA = [
 "Order (exchange)"
 ],
 "roles": [
-"Commercial linkage",
+"Commercial Linkage",
 "Reference Point for Synthesis",
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -1517,7 +1516,7 @@ window.STORIES_DATA = [
 "Computer science"
 ],
 "roles": [
-"Commercial linkage",
+"Commercial Linkage",
 "Reference Point for Synthesis"
 ],
 "is_oa": true,
@@ -1565,9 +1564,9 @@ window.STORIES_DATA = [
 "Public administration"
 ],
 "roles": [
-"Commercial linkage",
+"Commercial Linkage",
 "Reference Point for Synthesis",
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -1610,8 +1609,8 @@ window.STORIES_DATA = [
 "Natural language processing"
 ],
 "roles": [
-"Scholarly uptake",
-"Reference point for synthesis"
+"Scholarly Uptake",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "bronze",
@@ -1652,9 +1651,9 @@ window.STORIES_DATA = [
 "Economics"
 ],
 "roles": [
-"Commercial linkage",
+"Commercial Linkage",
 "Reference Point for Synthesis",
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -1700,11 +1699,11 @@ window.STORIES_DATA = [
 "Neuroscience"
 ],
 "roles": [
-"Methodological anchor",
-"High-visibility uptake",
-"Scholarly uptake",
-"Rapid uptake",
-"Reference point for synthesis"
+"Methodological Anchor",
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Rapid Uptake",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -1746,11 +1745,11 @@ window.STORIES_DATA = [
 "Stem cell"
 ],
 "roles": [
-"High-visibility uptake",
-"Scholarly uptake",
-"Reference point for synthesis",
-"Sustainability & Policy relevance",
-"Active discussion signal"
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Reference Point for Synthesis",
+"Sustainability & Policy Relevance",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -1799,7 +1798,7 @@ window.STORIES_DATA = [
 "Web resource"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -1852,8 +1851,8 @@ window.STORIES_DATA = [
 "Ubiquitin"
 ],
 "roles": [
-"Scholarly uptake",
-"Reference point for synthesis"
+"Scholarly Uptake",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -1897,9 +1896,9 @@ window.STORIES_DATA = [
 "Dendrite (mathematics)"
 ],
 "roles": [
-"Scholarly uptake",
-"Reference point for synthesis",
-"Active public discourse"
+"Scholarly Uptake",
+"Reference Point for Synthesis",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -1945,8 +1944,8 @@ window.STORIES_DATA = [
 "Natural resource economics"
 ],
 "roles": [
-"Scholarly uptake",
-"Sustainability & Policy relevance"
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -1994,9 +1993,9 @@ window.STORIES_DATA = [
 "Computer science"
 ],
 "roles": [
-"High-visibility uptake",
-"Scholarly uptake",
-"Active public discourse"
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -2044,10 +2043,10 @@ window.STORIES_DATA = [
 "Human migration"
 ],
 "roles": [
-"High-visibility uptake",
-"Scholarly uptake",
-"Sustainability & Policy relevance",
-"Rapid uptake"
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance",
+"Rapid Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -2093,10 +2092,10 @@ window.STORIES_DATA = [
 "SWI/SNF"
 ],
 "roles": [
-"High-visibility uptake",
-"Scholarly uptake",
-"Rapid uptake",
-"Reference point for synthesis"
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Rapid Uptake",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -2143,11 +2142,11 @@ window.STORIES_DATA = [
 "Phenotype"
 ],
 "roles": [
-"High-visibility uptake",
-"Scholarly uptake",
-"Sustainability & Policy relevance",
-"Rapid uptake",
-"Reference point for synthesis"
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance",
+"Rapid Uptake",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -2202,11 +2201,11 @@ window.STORIES_DATA = [
 "Computer science"
 ],
 "roles": [
-"Active public discourse",
-"Scholarly uptake",
-"Reproducibility standard",
-"Sustainability & Policy relevance",
-"Rapid uptake"
+"Active Public Discourse",
+"Scholarly Uptake",
+"Computational Reproducibility Enabler",
+"Sustainability & Policy Relevance",
+"Rapid Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -2254,10 +2253,9 @@ window.STORIES_DATA = [
 "Engineering"
 ],
 "roles": [
-"Scholarly uptake",
-"Sustainability & Policy relevance",
-"Active public discourse",
-"Active discussion signal"
+"Scholarly Uptake",
+"Sustainability & Policy Relevance",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -2310,9 +2308,9 @@ window.STORIES_DATA = [
 "Software"
 ],
 "roles": [
-"Rapid uptake",
-"Scholarly uptake",
-"Sustainability & Policy relevance"
+"Rapid Uptake",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -2363,9 +2361,9 @@ window.STORIES_DATA = [
 "Artificial neural network"
 ],
 "roles": [
-"Scholarly uptake",
-"Sustainability & Policy relevance",
-"Reference point for synthesis"
+"Scholarly Uptake",
+"Sustainability & Policy Relevance",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -2412,11 +2410,11 @@ window.STORIES_DATA = [
 "Human brain"
 ],
 "roles": [
-"High-visibility uptake",
-"Scholarly uptake",
-"Reference point for synthesis",
-"Sustainability & Policy relevance",
-"Rapid uptake"
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Reference Point for Synthesis",
+"Sustainability & Policy Relevance",
+"Rapid Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -2462,10 +2460,10 @@ window.STORIES_DATA = [
 "Biology"
 ],
 "roles": [
-"Reference point for synthesis",
-"High-visibility uptake",
-"Scholarly uptake",
-"Sustainability & Policy relevance"
+"Reference Point for Synthesis",
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "bronze",
@@ -2511,11 +2509,11 @@ window.STORIES_DATA = [
 "Alu element"
 ],
 "roles": [
-"High-visibility uptake",
-"Scholarly uptake",
-"Sustainability & Policy relevance",
-"Rapid uptake",
-"Reference point for synthesis"
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance",
+"Rapid Uptake",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -2561,9 +2559,9 @@ window.STORIES_DATA = [
 "Promoter"
 ],
 "roles": [
-"Scholarly uptake",
-"Reference point for synthesis",
-"Active discussion signal"
+"Scholarly Uptake",
+"Reference Point for Synthesis",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -2611,8 +2609,8 @@ window.STORIES_DATA = [
 "Chromatography"
 ],
 "roles": [
-"Scholarly uptake",
-"Reference point for synthesis"
+"Scholarly Uptake",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -2656,8 +2654,8 @@ window.STORIES_DATA = [
 "Neurotransmission"
 ],
 "roles": [
-"Scholarly uptake",
-"Reference point for synthesis"
+"Scholarly Uptake",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -2707,10 +2705,10 @@ window.STORIES_DATA = [
 "Optogenetics"
 ],
 "roles": [
-"Scholarly uptake",
-"Rapid uptake",
-"Sustainability & Policy relevance",
-"Reference point for synthesis"
+"Scholarly Uptake",
+"Rapid Uptake",
+"Sustainability & Policy Relevance",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -2760,8 +2758,8 @@ window.STORIES_DATA = [
 "Metal"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -2805,10 +2803,10 @@ window.STORIES_DATA = [
 "Motor cortex"
 ],
 "roles": [
-"Scholarly uptake",
-"Sustainability & Policy relevance",
-"Rapid uptake",
-"Reference point for synthesis"
+"Scholarly Uptake",
+"Sustainability & Policy Relevance",
+"Rapid Uptake",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -2854,9 +2852,9 @@ window.STORIES_DATA = [
 "Biology"
 ],
 "roles": [
-"Scholarly uptake",
-"Reference point for synthesis",
-"Sustainability & Policy relevance"
+"Scholarly Uptake",
+"Reference Point for Synthesis",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -2902,11 +2900,11 @@ window.STORIES_DATA = [
 "SIGNAL (programming language)"
 ],
 "roles": [
-"High-visibility uptake",
-"Scholarly uptake",
-"Reference point for synthesis",
-"Reproducibility standard",
-"Sustainability & Policy relevance"
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Reference Point for Synthesis",
+"Computational Reproducibility Enabler",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -2955,8 +2953,8 @@ window.STORIES_DATA = [
 "Politics"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "diamond",
@@ -2999,11 +2997,11 @@ window.STORIES_DATA = [
 "Medicine"
 ],
 "roles": [
-"Methodological anchor",
-"High-visibility uptake",
-"Reference point for synthesis",
-"Scholarly uptake",
-"Sustainability & Policy relevance"
+"Methodological Anchor",
+"High-Visibility Uptake",
+"Reference Point for Synthesis",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -3049,9 +3047,9 @@ window.STORIES_DATA = [
 "Neurotransmission"
 ],
 "roles": [
-"Reference point for synthesis",
-"Scholarly uptake",
-"Active public discourse"
+"Reference Point for Synthesis",
+"Scholarly Uptake",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "bronze",
@@ -3097,8 +3095,8 @@ window.STORIES_DATA = [
 "Influenza A virus"
 ],
 "roles": [
-"Scholarly uptake",
-"Sustainability & Policy relevance"
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -3144,7 +3142,7 @@ window.STORIES_DATA = [
 "Physical chemistry"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -3187,9 +3185,9 @@ window.STORIES_DATA = [
 "Electrical engineering"
 ],
 "roles": [
-"Rapid uptake",
-"Scholarly uptake",
-"Reference point for synthesis"
+"Rapid Uptake",
+"Scholarly Uptake",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -3236,9 +3234,9 @@ window.STORIES_DATA = [
 "T cell"
 ],
 "roles": [
-"Methodological anchor",
-"Sustainability & Policy relevance",
-"Reference point for synthesis"
+"Methodological Anchor",
+"Sustainability & Policy Relevance",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -3284,7 +3282,7 @@ window.STORIES_DATA = [
 "Synapse"
 ],
 "roles": [
-"Reference point for synthesis"
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "bronze",
@@ -3326,8 +3324,8 @@ window.STORIES_DATA = [
 "Psychology"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -3371,9 +3369,9 @@ window.STORIES_DATA = [
 "Institutional economics"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -3415,9 +3413,9 @@ window.STORIES_DATA = [
 "Literature"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -3457,8 +3455,8 @@ window.STORIES_DATA = [
 "History"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -3502,9 +3500,9 @@ window.STORIES_DATA = [
 "Democratic deficit"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -3550,11 +3548,11 @@ window.STORIES_DATA = [
 "Microbiology"
 ],
 "roles": [
-"High-visibility uptake",
-"Sustainability & Policy relevance",
-"Reference point for synthesis",
-"Rapid uptake",
-"Active discussion signal"
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance",
+"Reference Point for Synthesis",
+"Rapid Uptake",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -3603,9 +3601,9 @@ window.STORIES_DATA = [
 "Hippocampal formation"
 ],
 "roles": [
-"Sustainability & Policy relevance",
-"Active public discourse",
-"Reference point for synthesis"
+"Sustainability & Policy Relevance",
+"Active Public Discourse",
+"Reference Point for Synthesis"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -3653,7 +3651,7 @@ window.STORIES_DATA = [
 "Artificial intelligence"
 ],
 "roles": [
-"Rapid uptake"
+"Rapid Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -3697,10 +3695,10 @@ window.STORIES_DATA = [
 "Gene"
 ],
 "roles": [
-"Methodological anchor",
-"High-visibility uptake",
-"Rapid uptake",
-"Sustainability & Policy relevance"
+"Methodological Anchor",
+"High-Visibility Uptake",
+"Rapid Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -3744,8 +3742,8 @@ window.STORIES_DATA = [
 "Psychology"
 ],
 "roles": [
-"Methodological anchor",
-"Rapid uptake"
+"Methodological Anchor",
+"Rapid Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -3792,8 +3790,8 @@ window.STORIES_DATA = [
 "Transparency (behavior)"
 ],
 "roles": [
-"Rapid uptake",
-"Reference point for synthesis"
+"Rapid Uptake",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -3837,9 +3835,9 @@ window.STORIES_DATA = [
 "Free trade"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -3885,8 +3883,8 @@ window.STORIES_DATA = [
 "Virology"
 ],
 "roles": [
-"High-visibility uptake",
-"Sustainability & Policy relevance"
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -3932,8 +3930,8 @@ window.STORIES_DATA = [
 "Economics"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -3977,10 +3975,10 @@ window.STORIES_DATA = [
 "Genetics"
 ],
 "roles": [
-"High-visibility uptake",
-"Rapid uptake",
-"Sustainability & Policy relevance",
-"Reference point for synthesis"
+"High-Visibility Uptake",
+"Rapid Uptake",
+"Sustainability & Policy Relevance",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -4029,8 +4027,8 @@ window.STORIES_DATA = [
 "Biology"
 ],
 "roles": [
-"Sustainability & Policy relevance",
-"Reference point for synthesis"
+"Sustainability & Policy Relevance",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -4074,9 +4072,9 @@ window.STORIES_DATA = [
 "Biology"
 ],
 "roles": [
-"Sustainability & Policy relevance",
-"Reference point for synthesis",
-"Rapid uptake"
+"Sustainability & Policy Relevance",
+"Reference Point for Synthesis",
+"Rapid Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -4124,10 +4122,10 @@ window.STORIES_DATA = [
 "Gene"
 ],
 "roles": [
-"Methodological anchor",
-"High-visibility uptake",
-"Sustainability & Policy relevance",
-"Rapid uptake"
+"Methodological Anchor",
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance",
+"Rapid Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -4172,8 +4170,8 @@ window.STORIES_DATA = [
 "Philosophy"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -4213,7 +4211,7 @@ window.STORIES_DATA = [
 "Library science"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -4261,7 +4259,7 @@ window.STORIES_DATA = [
 "Genetics"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -4307,7 +4305,7 @@ window.STORIES_DATA = [
 "Cell biology"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -4353,7 +4351,7 @@ window.STORIES_DATA = [
 "Sonic hedgehog"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -4397,9 +4395,9 @@ window.STORIES_DATA = [
 "Psychology"
 ],
 "roles": [
-"Reproducibility standard",
-"Reference point for synthesis",
-"Active discussion signal"
+"Computational Reproducibility Enabler",
+"Reference Point for Synthesis",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -4445,8 +4443,8 @@ window.STORIES_DATA = [
 "Associative learning"
 ],
 "roles": [
-"Methodological anchor",
-"Rapid uptake"
+"Methodological Anchor",
+"Rapid Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -4485,9 +4483,9 @@ window.STORIES_DATA = [
 "Sociology"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -4533,7 +4531,7 @@ window.STORIES_DATA = [
 "Political science"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -4579,7 +4577,7 @@ window.STORIES_DATA = [
 "Immune system"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -4622,8 +4620,8 @@ window.STORIES_DATA = [
 "Information retrieval"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": null,
 "oa_status": "",
@@ -4673,7 +4671,7 @@ window.STORIES_DATA = [
 "Root mean square"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -4717,8 +4715,8 @@ window.STORIES_DATA = [
 "Biological neural network"
 ],
 "roles": [
-"High-visibility uptake",
-"Reference point for synthesis"
+"High-Visibility Uptake",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -4762,7 +4760,7 @@ window.STORIES_DATA = [
 "Genetics"
 ],
 "roles": [
-"Reproducibility standard"
+"Computational Reproducibility Enabler"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -4809,7 +4807,7 @@ window.STORIES_DATA = [
 "X chromosome"
 ],
 "roles": [
-"Reproducibility standard"
+"Computational Reproducibility Enabler"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -4853,10 +4851,10 @@ window.STORIES_DATA = [
 "Hepatitis"
 ],
 "roles": [
-"Reference point for synthesis",
-"High-visibility uptake",
-"Sustainability & Policy relevance",
-"Active discussion signal"
+"Reference Point for Synthesis",
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -4907,7 +4905,7 @@ window.STORIES_DATA = [
 "Materials science"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -4953,7 +4951,7 @@ window.STORIES_DATA = [
 "Literature"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -4999,9 +4997,9 @@ window.STORIES_DATA = [
 "History"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -5043,8 +5041,8 @@ window.STORIES_DATA = [
 "Art"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -5088,7 +5086,7 @@ window.STORIES_DATA = [
 "Ciliogenesis"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -5134,8 +5132,8 @@ window.STORIES_DATA = [
 "Neuroscience"
 ],
 "roles": [
-"Active public discourse",
-"Reference point for synthesis"
+"Active Public Discourse",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -5184,9 +5182,9 @@ window.STORIES_DATA = [
 "Nanotechnology"
 ],
 "roles": [
-"High-visibility uptake",
-"Reference point for synthesis",
-"Sustainability & Policy relevance"
+"High-Visibility Uptake",
+"Reference Point for Synthesis",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -5232,9 +5230,9 @@ window.STORIES_DATA = [
 "Migration studies"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -5282,9 +5280,9 @@ window.STORIES_DATA = [
 "Neural ensemble"
 ],
 "roles": [
-"Rapid uptake",
-"High-visibility uptake",
-"Sustainability & Policy relevance"
+"Rapid Uptake",
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -5331,7 +5329,7 @@ window.STORIES_DATA = [
 "Anatomy"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -5371,8 +5369,8 @@ window.STORIES_DATA = [
 "Epistemology"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -5416,7 +5414,7 @@ window.STORIES_DATA = [
 "Duplex (building)"
 ],
 "roles": [
-"Reference point for synthesis"
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -5461,9 +5459,9 @@ window.STORIES_DATA = [
 "Linguistics"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -5511,9 +5509,9 @@ window.STORIES_DATA = [
 "Equity (law)"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -5556,9 +5554,9 @@ window.STORIES_DATA = [
 "Neuroscience"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": null,
 "oa_status": "",
@@ -5606,8 +5604,8 @@ window.STORIES_DATA = [
 "Cardiology"
 ],
 "roles": [
-"High-visibility uptake",
-"Sustainability & Policy relevance"
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -5653,7 +5651,7 @@ window.STORIES_DATA = [
 "DNA-binding protein"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -5697,7 +5695,7 @@ window.STORIES_DATA = [
 "Quantum state"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -5743,7 +5741,7 @@ window.STORIES_DATA = [
 "Epitope mapping"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -5789,7 +5787,7 @@ window.STORIES_DATA = [
 "Gene"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -5833,7 +5831,7 @@ window.STORIES_DATA = [
 "Computational biology"
 ],
 "roles": [
-"High-visibility uptake"
+"High-Visibility Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -5877,7 +5875,7 @@ window.STORIES_DATA = [
 "Maximum likelihood"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -5923,7 +5921,7 @@ window.STORIES_DATA = [
 "Folding (DSP implementation)"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -5972,7 +5970,7 @@ window.STORIES_DATA = [
 "Pathophysiology"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -6029,8 +6027,8 @@ window.STORIES_DATA = [
 "Law"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -6074,7 +6072,7 @@ window.STORIES_DATA = [
 "Biophysics"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -6118,7 +6116,7 @@ window.STORIES_DATA = [
 "RNA-binding protein"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -6164,7 +6162,7 @@ window.STORIES_DATA = [
 "Enterobacteriaceae"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -6211,8 +6209,8 @@ window.STORIES_DATA = [
 "Political science"
 ],
 "roles": [
-"High-visibility uptake",
-"Active public discourse"
+"High-Visibility Uptake",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -6256,8 +6254,8 @@ window.STORIES_DATA = [
 "Focus (optics)"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -6297,8 +6295,8 @@ window.STORIES_DATA = [
 "Microeconomics"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -6336,9 +6334,9 @@ window.STORIES_DATA = [
 "Business"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -6384,7 +6382,7 @@ window.STORIES_DATA = [
 "Ribosome"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -6430,7 +6428,7 @@ window.STORIES_DATA = [
 "Developmental biology"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -6474,8 +6472,8 @@ window.STORIES_DATA = [
 "Philosophy"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -6519,7 +6517,7 @@ window.STORIES_DATA = [
 "Neural activity"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -6563,7 +6561,7 @@ window.STORIES_DATA = [
 "Lipid bilayer fusion"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -6609,7 +6607,7 @@ window.STORIES_DATA = [
 "Locus (genetics)"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -6653,7 +6651,7 @@ window.STORIES_DATA = [
 "Gene"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -6699,7 +6697,7 @@ window.STORIES_DATA = [
 "Genetics"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -6747,8 +6745,8 @@ window.STORIES_DATA = [
 "Gene"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -6792,9 +6790,9 @@ window.STORIES_DATA = [
 "Philosophy"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -6842,8 +6840,8 @@ window.STORIES_DATA = [
 "Art history"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -6883,8 +6881,8 @@ window.STORIES_DATA = [
 "Philosophy"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -6926,8 +6924,8 @@ window.STORIES_DATA = [
 "Law"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -6971,9 +6969,9 @@ window.STORIES_DATA = [
 "Sociology"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -7022,8 +7020,8 @@ window.STORIES_DATA = [
 "Cancer"
 ],
 "roles": [
-"Methodological anchor",
-"Sustainability & Policy relevance"
+"Methodological Anchor",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -7069,7 +7067,7 @@ window.STORIES_DATA = [
 "Protein structure"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -7113,7 +7111,7 @@ window.STORIES_DATA = [
 "Gene"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -7159,7 +7157,7 @@ window.STORIES_DATA = [
 "Protein subunit"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -7203,7 +7201,7 @@ window.STORIES_DATA = [
 "Psychology"
 ],
 "roles": [
-"Reference point for synthesis"
+"Reference Point for Synthesis"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -7247,7 +7245,7 @@ window.STORIES_DATA = [
 "Engineering"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -7304,7 +7302,7 @@ window.STORIES_DATA = [
 "Chemistry"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -7350,7 +7348,7 @@ window.STORIES_DATA = [
 "Quality (philosophy)"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -7391,8 +7389,8 @@ window.STORIES_DATA = [
 "Art"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -7434,8 +7432,8 @@ window.STORIES_DATA = [
 "Gene"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -7479,9 +7477,9 @@ window.STORIES_DATA = [
 "Pedagogy"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -7527,8 +7525,8 @@ window.STORIES_DATA = [
 "Period (music)"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -7572,8 +7570,8 @@ window.STORIES_DATA = [
 "History"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -7616,9 +7614,9 @@ window.STORIES_DATA = [
 "Philosophy"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -7666,8 +7664,8 @@ window.STORIES_DATA = [
 "Cell"
 ],
 "roles": [
-"High-visibility uptake",
-"Sustainability & Policy relevance"
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -7713,7 +7711,7 @@ window.STORIES_DATA = [
 "Chemistry"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -7757,8 +7755,8 @@ window.STORIES_DATA = [
 "Genetics"
 ],
 "roles": [
-"High-visibility uptake",
-"Sustainability & Policy relevance"
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -7804,7 +7802,7 @@ window.STORIES_DATA = [
 "X chromosome"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -7843,9 +7841,9 @@ window.STORIES_DATA = [
 "Philosophy"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "bronze",
@@ -7890,9 +7888,9 @@ window.STORIES_DATA = [
 "Economic geography"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -7932,9 +7930,9 @@ window.STORIES_DATA = [
 "Business"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -7980,9 +7978,9 @@ window.STORIES_DATA = [
 "Economy"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -8028,9 +8026,9 @@ window.STORIES_DATA = [
 "Gender studies"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -8078,9 +8076,9 @@ window.STORIES_DATA = [
 "Epistemology"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -8126,9 +8124,9 @@ window.STORIES_DATA = [
 "Inclusion (mineral)"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -8176,7 +8174,7 @@ window.STORIES_DATA = [
 "Internal medicine"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -8222,8 +8220,8 @@ window.STORIES_DATA = [
 "History"
 ],
 "roles": [
-"Reproducibility standard",
-"Active public discourse"
+"Computational Reproducibility Enabler",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -8276,7 +8274,7 @@ window.STORIES_DATA = [
 "Chemistry"
 ],
 "roles": [
-"High-visibility uptake"
+"High-Visibility Uptake"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -8320,8 +8318,8 @@ window.STORIES_DATA = [
 "Statistics"
 ],
 "roles": [
-"Reproducibility standard",
-"Sustainability & Policy relevance"
+"Computational Reproducibility Enabler",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -8373,7 +8371,7 @@ window.STORIES_DATA = [
 "Materials science"
 ],
 "roles": [
-"Reproducibility standard"
+"Computational Reproducibility Enabler"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -8412,8 +8410,8 @@ window.STORIES_DATA = [
 "Biochemistry"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -8450,8 +8448,8 @@ window.STORIES_DATA = [
 "Computer science"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -8491,8 +8489,8 @@ window.STORIES_DATA = [
 "Sociology"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -8536,9 +8534,9 @@ window.STORIES_DATA = [
 "Computer science"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -8585,9 +8583,9 @@ window.STORIES_DATA = [
 "Archaeology"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -8633,9 +8631,9 @@ window.STORIES_DATA = [
 "Perspective (graphical)"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -8681,9 +8679,9 @@ window.STORIES_DATA = [
 "Legal translation"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -8729,8 +8727,8 @@ window.STORIES_DATA = [
 "Institution"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -8774,9 +8772,9 @@ window.STORIES_DATA = [
 "Immigration"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -8819,9 +8817,9 @@ window.STORIES_DATA = [
 "Politics"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -8867,7 +8865,7 @@ window.STORIES_DATA = [
 "Occupational safety and health"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -8913,7 +8911,7 @@ window.STORIES_DATA = [
 "Surgery"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -8957,8 +8955,8 @@ window.STORIES_DATA = [
 "Dementia"
 ],
 "roles": [
-"High-visibility uptake",
-"Sustainability & Policy relevance"
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -9006,7 +9004,7 @@ window.STORIES_DATA = [
 "Genetics"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9054,7 +9052,7 @@ window.STORIES_DATA = [
 "Human leukocyte antigen"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -9100,8 +9098,8 @@ window.STORIES_DATA = [
 "Geography"
 ],
 "roles": [
-"Sustainability & Policy relevance",
-"Active public discourse"
+"Sustainability & Policy Relevance",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9149,7 +9147,7 @@ window.STORIES_DATA = [
 "Engineering ethics"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -9195,7 +9193,7 @@ window.STORIES_DATA = [
 "Sequence (biology)"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -9233,9 +9231,9 @@ window.STORIES_DATA = [
 "Humanities"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9278,9 +9276,9 @@ window.STORIES_DATA = [
 "Mechanical engineering"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -9326,9 +9324,9 @@ window.STORIES_DATA = [
 "Computer science"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9374,8 +9372,8 @@ window.STORIES_DATA = [
 "Reading (process)"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9416,9 +9414,9 @@ window.STORIES_DATA = [
 "Art history"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9464,9 +9462,9 @@ window.STORIES_DATA = [
 "Geography"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9514,9 +9512,9 @@ window.STORIES_DATA = [
 "Engineering"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -9564,8 +9562,8 @@ window.STORIES_DATA = [
 "Quality (philosophy)"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -9611,9 +9609,9 @@ window.STORIES_DATA = [
 "Literature"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9659,9 +9657,9 @@ window.STORIES_DATA = [
 "Political science"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -9709,8 +9707,8 @@ window.STORIES_DATA = [
 "Law"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9756,8 +9754,8 @@ window.STORIES_DATA = [
 "History"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -9801,7 +9799,7 @@ window.STORIES_DATA = [
 "Regional science"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -9845,7 +9843,7 @@ window.STORIES_DATA = [
 "Genetics"
 ],
 "roles": [
-"Methodological anchor"
+"Methodological Anchor"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9894,7 +9892,7 @@ window.STORIES_DATA = [
 "Genetics"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9938,8 +9936,8 @@ window.STORIES_DATA = [
 "Biochemistry"
 ],
 "roles": [
-"High-visibility uptake",
-"Sustainability & Policy relevance"
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -9988,7 +9986,7 @@ window.STORIES_DATA = [
 "Mathematics"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -10030,7 +10028,7 @@ window.STORIES_DATA = [
 "Computer science"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -10076,7 +10074,7 @@ window.STORIES_DATA = [
 "Evolutionary biology"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -10122,7 +10120,7 @@ window.STORIES_DATA = [
 "Visual cortex"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -10166,7 +10164,7 @@ window.STORIES_DATA = [
 "Viral replication"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -10210,7 +10208,7 @@ window.STORIES_DATA = [
 "Extracellular"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -10256,7 +10254,7 @@ window.STORIES_DATA = [
 "Parabrachial Nucleus"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -10300,7 +10298,7 @@ window.STORIES_DATA = [
 "Electrical engineering"
 ],
 "roles": [
-"Scholarly uptake"
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -10347,8 +10345,8 @@ window.STORIES_DATA = [
 "Archaeology"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": null,
 "oa_status": "",
@@ -10387,9 +10385,9 @@ window.STORIES_DATA = [
 "Medicine"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -10432,9 +10430,9 @@ window.STORIES_DATA = [
 "Epistemology"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -10475,8 +10473,8 @@ window.STORIES_DATA = [
 "Geography"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -10515,9 +10513,9 @@ window.STORIES_DATA = [
 "Political science"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -10563,9 +10561,9 @@ window.STORIES_DATA = [
 "Period (music)"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -10611,8 +10609,8 @@ window.STORIES_DATA = [
 "Media studies"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -10651,9 +10649,9 @@ window.STORIES_DATA = [
 "Philosophy"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -10699,9 +10697,9 @@ window.STORIES_DATA = [
 "Psychology"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -10743,9 +10741,9 @@ window.STORIES_DATA = [
 "Art history"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -10787,8 +10785,8 @@ window.STORIES_DATA = [
 "Philosophy"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -10832,9 +10830,9 @@ window.STORIES_DATA = [
 "Political science"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -10878,8 +10876,8 @@ window.STORIES_DATA = [
 "Social psychology"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -10923,9 +10921,9 @@ window.STORIES_DATA = [
 "Engineering"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -10971,9 +10969,9 @@ window.STORIES_DATA = [
 "Sociology"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -11019,8 +11017,8 @@ window.STORIES_DATA = [
 "History"
 ],
 "roles": [
-"Commercial linkage",
-"Scholarly uptake"
+"Commercial Linkage",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -11057,9 +11055,9 @@ window.STORIES_DATA = [
 "Computer science"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -11105,9 +11103,9 @@ window.STORIES_DATA = [
 "Media studies"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -11153,9 +11151,9 @@ window.STORIES_DATA = [
 "Epistemology"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -11201,9 +11199,9 @@ window.STORIES_DATA = [
 "Sociology"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance",
-"Scholarly uptake"
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
 ],
 "is_oa": null,
 "oa_status": "",
@@ -11249,7 +11247,7 @@ window.STORIES_DATA = [
 "Wildlife conservation"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -11297,7 +11295,7 @@ window.STORIES_DATA = [
 "In vitro"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -11343,7 +11341,7 @@ window.STORIES_DATA = [
 "In vitro"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -11389,7 +11387,7 @@ window.STORIES_DATA = [
 "Stripe rust"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "bronze",
@@ -11435,7 +11433,7 @@ window.STORIES_DATA = [
 "Genetics"
 ],
 "roles": [
-"Reproducibility standard"
+"Computational Reproducibility Enabler"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -11565,7 +11563,7 @@ window.STORIES_DATA = [
 "Geography"
 ],
 "roles": [
-"Methodological anchor"
+"Methodological Anchor"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -11661,7 +11659,7 @@ window.STORIES_DATA = [
 "Law"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "diamond",
@@ -11924,7 +11922,7 @@ window.STORIES_DATA = [
 "Pathogen"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -12012,7 +12010,7 @@ window.STORIES_DATA = [
 "Prostate"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -12100,7 +12098,7 @@ window.STORIES_DATA = [
 "Neuroscience"
 ],
 "roles": [
-"Sustainability & Policy relevance"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -12314,8 +12312,8 @@ window.STORIES_DATA = [
 "Archaeology"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -12357,7 +12355,7 @@ window.STORIES_DATA = [
 "Linguistics"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -12399,8 +12397,8 @@ window.STORIES_DATA = [
 "Ideology"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -12439,7 +12437,7 @@ window.STORIES_DATA = [
 "Computer science"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -12480,7 +12478,7 @@ window.STORIES_DATA = [
 "Law"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -12524,7 +12522,7 @@ window.STORIES_DATA = [
 "Visual arts"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -12563,7 +12561,7 @@ window.STORIES_DATA = [
 "Materials science"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -12603,8 +12601,8 @@ window.STORIES_DATA = [
 "Humanities"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -12648,7 +12646,7 @@ window.STORIES_DATA = [
 "Archaeology"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -12692,8 +12690,8 @@ window.STORIES_DATA = [
 "Blueprint"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -12733,8 +12731,8 @@ window.STORIES_DATA = [
 "Art"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -12780,8 +12778,8 @@ window.STORIES_DATA = [
 "Environmental ethics"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -12826,7 +12824,7 @@ window.STORIES_DATA = [
 "Literature"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -12870,7 +12868,7 @@ window.STORIES_DATA = [
 "Art"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -12910,7 +12908,7 @@ window.STORIES_DATA = [
 "Art"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -12954,7 +12952,7 @@ window.STORIES_DATA = [
 "Gender studies"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -12998,8 +12996,8 @@ window.STORIES_DATA = [
 "Aesthetics"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -13045,8 +13043,8 @@ window.STORIES_DATA = [
 "Law"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -13088,7 +13086,7 @@ window.STORIES_DATA = [
 "Philosophy"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -13132,7 +13130,7 @@ window.STORIES_DATA = [
 "History"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -13176,8 +13174,8 @@ window.STORIES_DATA = [
 "Geography"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -13220,8 +13218,8 @@ window.STORIES_DATA = [
 "Philosophy"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -13267,8 +13265,8 @@ window.STORIES_DATA = [
 "Pleasure"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -13309,8 +13307,8 @@ window.STORIES_DATA = [
 "Philosophy"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -13356,8 +13354,8 @@ window.STORIES_DATA = [
 "Economic geography"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -13403,8 +13401,8 @@ window.STORIES_DATA = [
 "Economy"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -13452,8 +13450,8 @@ window.STORIES_DATA = [
 "Sociology"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -13501,7 +13499,7 @@ window.STORIES_DATA = [
 "Law"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -13545,7 +13543,7 @@ window.STORIES_DATA = [
 "Geopolitics"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -13582,8 +13580,8 @@ window.STORIES_DATA = [
 "Computer science"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -13631,8 +13629,8 @@ window.STORIES_DATA = [
 "Natural (archaeology)"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -13678,7 +13676,7 @@ window.STORIES_DATA = [
 "Politics"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -13722,7 +13720,7 @@ window.STORIES_DATA = [
 "Media studies"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -13760,8 +13758,8 @@ window.STORIES_DATA = [
 "Art"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -13807,8 +13805,8 @@ window.STORIES_DATA = [
 "Period (music)"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -13854,8 +13852,8 @@ window.STORIES_DATA = [
 "Art history"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -13901,8 +13899,8 @@ window.STORIES_DATA = [
 "Sociology"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -13950,8 +13948,8 @@ window.STORIES_DATA = [
 "Muslim community"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -13997,8 +13995,8 @@ window.STORIES_DATA = [
 "Sociology"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -14038,8 +14036,8 @@ window.STORIES_DATA = [
 "Art"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -14085,7 +14083,7 @@ window.STORIES_DATA = [
 "Art"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -14129,8 +14127,8 @@ window.STORIES_DATA = [
 "Situated"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -14176,8 +14174,8 @@ window.STORIES_DATA = [
 "Literature"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -14220,7 +14218,7 @@ window.STORIES_DATA = [
 "Archaeology"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -14257,7 +14255,7 @@ window.STORIES_DATA = [
 "publisher": "",
 "concepts": [],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": null,
 "oa_status": "",
@@ -14301,7 +14299,7 @@ window.STORIES_DATA = [
 "Computer science"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": null,
 "oa_status": "",
@@ -14345,7 +14343,7 @@ window.STORIES_DATA = [
 "Welfare state"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": null,
 "oa_status": "",
@@ -14384,7 +14382,7 @@ window.STORIES_DATA = [
 "Visual arts"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -14425,7 +14423,7 @@ window.STORIES_DATA = [
 "Philosophy"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -14462,8 +14460,8 @@ window.STORIES_DATA = [
 "Art"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": null,
 "oa_status": "",
@@ -14511,8 +14509,8 @@ window.STORIES_DATA = [
 "Sociology"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": null,
 "oa_status": "",
@@ -14558,7 +14556,7 @@ window.STORIES_DATA = [
 "Knowledge worker"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": null,
 "oa_status": "",
@@ -14602,8 +14600,8 @@ window.STORIES_DATA = [
 "Epistemology"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -14640,7 +14638,7 @@ window.STORIES_DATA = [
 "publisher": "Amsterdam University Press",
 "concepts": [],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": null,
 "oa_status": "",
@@ -14675,7 +14673,7 @@ window.STORIES_DATA = [
 "publisher": "Amsterdam University Press",
 "concepts": [],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": null,
 "oa_status": "",
@@ -14710,7 +14708,7 @@ window.STORIES_DATA = [
 "publisher": "Amsterdam University Press",
 "concepts": [],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": null,
 "oa_status": "",
@@ -14754,7 +14752,7 @@ window.STORIES_DATA = [
 "History"
 ],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -14789,7 +14787,7 @@ window.STORIES_DATA = [
 "publisher": "Amsterdam University Press",
 "concepts": [],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -14833,8 +14831,8 @@ window.STORIES_DATA = [
 "Swarming (honey bee)"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -14871,7 +14869,7 @@ window.STORIES_DATA = [
 "publisher": "Routledge",
 "concepts": [],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": null,
 "oa_status": "",
@@ -14915,8 +14913,8 @@ window.STORIES_DATA = [
 "Political science"
 ],
 "roles": [
-"Commercial linkage",
-"Sustainability & Policy relevance"
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -14953,7 +14951,7 @@ window.STORIES_DATA = [
 "publisher": "Manchester University Press",
 "concepts": [],
 "roles": [
-"Commercial linkage"
+"Commercial Linkage"
 ],
 "is_oa": true,
 "oa_status": "gold",

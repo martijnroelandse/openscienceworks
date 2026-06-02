@@ -92,6 +92,78 @@ def extract_series_fields(d, signals):
 
     return series_name, series_id, belongs_to_series
 
+# Canonical inferred-role labels (about.html — Inferred Roles)
+ROLE_CANONICAL_BY_ID = {
+    "scholarly_uptake": "Scholarly Uptake",
+    "rapid_uptake": "Rapid Uptake",
+    "reference_point": "Reference Point for Synthesis",
+    "methodological_anchor": "Methodological Anchor",
+    "evidence_bearing": "Evidence-bearing Reference",
+    "public_visibility": "Public Visibility & Knowledge Base",
+    "usage_driven": "Usage-Driven Uptake",
+    "pedagogical": "Pedagogical Anchor",
+    "pedagogical_anchor": "Pedagogical Anchor",
+    "discussion_signal": "Active Public Discourse",
+    "active_public_discourse": "Active Public Discourse",
+    "high_visibility_uptake": "High-Visibility Uptake",
+    "policy_sustainability": "Sustainability & Policy Relevance",
+    "sustainability_policy_relevance": "Sustainability & Policy Relevance",
+    "commercial_linkage": "Commercial Linkage",
+    "dataset_reference_backbone": "Dataset Reference Backbone",
+    "benchmark_resource": "Benchmark Resource",
+    "infrastructure_dataset": "Infrastructure Dataset",
+    "software_method_anchor": "Software Method Anchor",
+    "reproducibility_standard": "Computational Reproducibility Enabler",
+    "computational_reproducibility": "Computational Reproducibility Enabler",
+    "community_tooling": "Community Tooling Uptake",
+    "community_tooling_uptake": "Community Tooling Uptake",
+}
+
+ROLE_LABEL_ALIASES = {
+    "scholarly uptake": "Scholarly Uptake",
+    "rapid uptake": "Rapid Uptake",
+    "reference point for synthesis": "Reference Point for Synthesis",
+    "methodological anchor": "Methodological Anchor",
+    "evidence-bearing reference": "Evidence-bearing Reference",
+    "evidence bearing reference": "Evidence-bearing Reference",
+    "public visibility & knowledge base": "Public Visibility & Knowledge Base",
+    "usage-driven uptake": "Usage-Driven Uptake",
+    "usage driven uptake": "Usage-Driven Uptake",
+    "pedagogical anchor": "Pedagogical Anchor",
+    "active public discourse": "Active Public Discourse",
+    "active discussion signal": "Active Public Discourse",
+    "high-visibility uptake": "High-Visibility Uptake",
+    "high visibility uptake": "High-Visibility Uptake",
+    "sustainability & policy relevance": "Sustainability & Policy Relevance",
+    "commercial linkage": "Commercial Linkage",
+    "dataset reference backbone": "Dataset Reference Backbone",
+    "benchmark resource": "Benchmark Resource",
+    "infrastructure dataset": "Infrastructure Dataset",
+    "software method anchor": "Software Method Anchor",
+    "reproducibility standard": "Computational Reproducibility Enabler",
+    "computational reproducibility enabler": "Computational Reproducibility Enabler",
+    "community tooling uptake": "Community Tooling Uptake",
+}
+
+def normalize_role_label(role):
+    """Map role id / legacy label to the canonical About-page label."""
+    if isinstance(role, dict):
+        rid = (role.get("id") or "").strip()
+        if rid in ROLE_CANONICAL_BY_ID:
+            return ROLE_CANONICAL_BY_ID[rid]
+        raw = role.get("label") or ""
+    elif isinstance(role, str):
+        raw = role
+    else:
+        return None
+    raw = str(raw).strip()
+    if not raw:
+        return None
+    key = raw.lower().replace("&amp;", "&")
+    if key in ROLE_LABEL_ALIASES:
+        return ROLE_LABEL_ALIASES[key]
+    return raw
+
 # ── extract one story ─────────────────────────────────────────────────────────
 
 def extract(filepath):
@@ -193,17 +265,12 @@ def extract(filepath):
             concepts.append(name)
     concepts = concepts[:8]  # keep top 8
 
-    # ── roles ──
+    # ── roles (canonical labels for sidebar / filters) ──
     roles = []
     for r in d.get("roles", []):
-        if isinstance(r, dict):
-            label = r.get("label", "")
-            if label and label not in roles:
-                roles.append(label)
-        elif isinstance(r, str):
-            roles.append(r)
-    # Normalise casing
-    roles = [r for r in roles if r]
+        label = normalize_role_label(r)
+        if label and label not in roles:
+            roles.append(label)
 
     # ── OA ──
     is_oa = signals.get("is_oa")

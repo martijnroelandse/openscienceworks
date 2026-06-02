@@ -202,6 +202,13 @@
     }
     .facet-group.collapsed h3 .caret { transform: rotate(-90deg); }
     .facet-group.collapsed .facet-options { display: none; }
+    .facet-empty {
+      margin: 0;
+      padding: 0.35rem 0 0.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
 
     .facet-options { display: flex; flex-direction: column; gap: 0.1rem; }
     .facet-options.overflow { max-height: 180px; overflow-y: auto; }
@@ -717,6 +724,12 @@
       <div class="facet-options" id="fo-type"></div>
     </div>
 
+    <!-- Book series -->
+    <div class="facet-group" id="fg-series">
+      <h3 onclick="toggleFacet('fg-series')">Book series <span class="caret">▾</span></h3>
+      <div class="facet-options overflow" id="fo-series"></div>
+    </div>
+
     <!-- Role / signal -->
     <div class="facet-group" id="fg-role">
       <h3 onclick="toggleFacet('fg-role')">Impact signal <span class="caret">▾</span></h3>
@@ -751,12 +764,6 @@
     <div class="facet-group collapsed" id="fg-venue">
       <h3 onclick="toggleFacet('fg-venue')">Publisher / venue <span class="caret">▾</span></h3>
       <div class="facet-options overflow" id="fo-venue"></div>
-    </div>
-
-    <!-- Book series -->
-    <div class="facet-group collapsed" id="fg-series">
-      <h3 onclick="toggleFacet('fg-series')">Book series <span class="caret">▾</span></h3>
-      <div class="facet-options overflow" id="fo-series"></div>
     </div>
 
     <!-- Year -->
@@ -848,6 +855,40 @@ function typeLogo(t) {
     DataStory:     "openscience.works%20logos/Datastories%20icon.png",
     SoftwareStory: "openscience.works%20logos/Softwarestories%20icon.png",
   }[t] || "";
+}
+
+// Canonical inferred-role labels (about.html — Inferred Roles)
+const ROLE_ORDER = [
+  "Scholarly Uptake",
+  "Rapid Uptake",
+  "Reference Point for Synthesis",
+  "Methodological Anchor",
+  "Evidence-bearing Reference",
+  "Public Visibility & Knowledge Base",
+  "Usage-Driven Uptake",
+  "Pedagogical Anchor",
+  "Active Public Discourse",
+  "High-Visibility Uptake",
+  "Sustainability & Policy Relevance",
+  "Commercial Linkage",
+  "Dataset Reference Backbone",
+  "Benchmark Resource",
+  "Infrastructure Dataset",
+  "Software Method Anchor",
+  "Computational Reproducibility Enabler",
+  "Community Tooling Uptake",
+];
+
+function orderedRoles(counts) {
+  const seen = new Set();
+  const keys = [];
+  for (const k of ROLE_ORDER) {
+    if (counts[k]) { keys.push(k); seen.add(k); }
+  }
+  for (const [k, n] of Object.entries(counts).sort((a, b) => b[1] - a[1])) {
+    if (!seen.has(k)) keys.push(k);
+  }
+  return keys;
 }
 
 // ── build facet counts ────────────────────────────────────────────────────
@@ -1009,7 +1050,7 @@ function renderFacets(allStories, filtered) {
   const topConcepts = Object.entries(allC.concept).sort((a,b)=>b[1]-a[1]).slice(0,30).map(([k])=>k);
   renderFacetGroup("fo-concept", "concept", allC.concept, filtC.concept, k => esc(k), topConcepts);
 
-  const topRoles = Object.entries(allC.role).sort((a,b)=>b[1]-a[1]).map(([k])=>k);
+  const topRoles = orderedRoles(allC.role);
   renderFacetGroup("fo-role", "role", allC.role, filtC.role, k => esc(k), topRoles);
 
   const topInst = Object.entries(allC.institution).sort((a,b)=>b[1]-a[1]).slice(0,40).map(([k])=>k);
@@ -1019,8 +1060,12 @@ function renderFacets(allStories, filtered) {
   renderFacetGroup("fo-venue", "venue", allC.venue, filtC.venue, k => esc(k), topVenues);
 
   const topSeries = Object.entries(allC.series).sort((a,b)=>b[1]-a[1]).slice(0,30).map(([k])=>k);
-  renderFacetGroup("fo-series", "series", allC.series, filtC.series, k => esc(k), topSeries);
-  document.getElementById("fg-series").style.display = topSeries.length ? "" : "none";
+  const seriesEl = document.getElementById("fo-series");
+  if (topSeries.length) {
+    renderFacetGroup("fo-series", "series", allC.series, filtC.series, k => esc(k), topSeries);
+  } else {
+    seriesEl.innerHTML = '<p class="facet-empty">No book series in the index yet. Run <code>python3 build_index.py</code> after updating book JSON.</p>';
+  }
 
   const years = Object.keys(allC.year).map(Number).sort((a,b)=>b-a);
   renderFacetGroup("fo-year", "year", allC.year, filtC.year, k => k, years);
