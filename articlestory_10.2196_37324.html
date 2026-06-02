@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 
+
+
+
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>ArticleStory - Establishing Institutional Scores With the Rigor and Transparency Index: Large-scale Analysis of Scientific Reporting Quality</title>
-<style>
+    <meta charset="utf-8">
+    <title>ArticleStory - Establishing Institutional Scores With the Rigor and Transparency Index: Large-scale Analysis of Scientific Reporting Quality</title>
+    <style>
+
         * { box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
         .page { max-width: 1000px; margin: auto; }
@@ -13,7 +17,7 @@
         .span-full { grid-column: 1 / -1; }
         .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
         .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
-        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
         .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
         .tag-soft { background: #f3f4f6; color: #4b5563; }
         .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
@@ -36,6 +40,8 @@
             * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
             .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
             .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
             table { page-break-inside: auto !important; width: 100% !important; }
             tr { page-break-inside: avoid !important; page-break-after: auto !important; }
             thead { display: table-header-group !important; }
@@ -44,16 +50,6 @@
 
 /* ── UX Enhancements ── */
 
-/* Stats strip */
-.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
-  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
-.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
-.stats-strip-item:last-child{border-right:none;}
-.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
-.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
-.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
-  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
-@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
 
 /* Sticky nav */
 .sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
@@ -66,7 +62,7 @@
   transition:color .15s,border-color .15s;white-space:nowrap;}
 .sticky-nav a:hover{color:#111827;}
 .sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
-@media print{.sticky-nav,.stats-strip{display:none!important;}}
+@media print{.sticky-nav{display:none!important;}}
 
 /* Collapsible cards */
 .card-collapsible > h2{
@@ -107,7 +103,9 @@
 .role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
 .role-pill:hover{opacity:1!important;}
 
-/* CSS tooltip for role descriptions */
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
 
 
 .role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
@@ -140,14 +138,26 @@
 .im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
 .im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
   color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
-.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
-.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
 .im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
 .im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
 .im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
 
-.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
-.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
 .im-scite-via{font-weight:400;color:#9ca3af;}
 .im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
 .im-scite-seg{height:100%;}
@@ -161,8 +171,9 @@
 .im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
 .im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
 .im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
-.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
   font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
 .sig-pill:hover{opacity:.75;}
 .sig-red   {background:#fee2e2;color:#b91c1c;}
 .sig-slate {background:#f1f5f9;color:#475569;}
@@ -170,6 +181,7 @@
 .sig-teal  {background:#ccfbf1;color:#0f766e;}
 .sig-amber {background:#fef3c7;color:#b45309;}
 .sig-blue  {background:#dbeafe;color:#1d4ed8;}
+.sig-green {background:#dcfce7;color:#166534;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -196,9 +208,10 @@
     }
     .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
 
-</style>
-<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <!-- Site nav -->
@@ -207,512 +220,1400 @@
     <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
     <span>openscience<span class="brand-dot">.</span>works</span>
   </a>
-  <div class="site-nav-links">
-    <a href="index.html">← All stories</a>
-    <a href="about.html">About</a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
   </div>
 </nav>
+    
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">Establishing Institutional Scores With the Rigor and Transparency Index: Large-scale Analysis of Scientific Reporting Quality</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
 
-<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
-<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-        Print PDF Report
-    </button>
-<div class="page" id="sec-story">
-<header class="hero card" id="sec-hero">
-<div class="header-bar">
-<div style="display: flex; align-items: center; gap: 1.25rem;">
-<div class="logo-wrap"><img alt="Logo" src="articlestories-logo.png"/></div>
-<div>
-<h1 class="hero-title">Establishing Institutional Scores With the Rigor and Transparency Index: Large-scale Analysis of Scientific Reporting Quality</h1>
-<div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
-<span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-transform: uppercase; letter-spacing: 0.05em;" title="Linked research datasets are registered via DataCite or a similar registry">
-<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
                                     Linked to Data
-                                <span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· DataCite</span></span>
-<a href="https://doi.org/10.2196/preprints.37324" style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1px solid #fde68a; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s;" target="_blank">
-<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                </span>
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+                                <a href="https://doi.org/10.2196/preprints.37324" target="_blank" style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1px solid #fde68a; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                     Early Sharing / Preprint ↗
                                 </a>
-</div>
-<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
-<div><strong>Author(s):</strong> Joseph Menke, Peter Eckmann, İbrahim Burak Özyurt, Martijn Roelandse, Nathan Anderson, Jeffrey S. Grethe, Anthony Gamst, Anita Bandrowski</div>
-<div><strong>Publisher:</strong> Journal of Medical Internet Research</div>
-<div><strong>Publication year:</strong> 2022</div>
-<div><strong>DOI:</strong> <a href="https://doi.org/10.2196/37324" target="_blank">10.2196/37324</a></div>
-</div>
-</div>
-</div>
-</div>
-</header>
-<div class="stats-strip no-print">
-<div class="stats-strip-item">
-<div class="stats-strip-num">25</div>
-<div class="stats-strip-label">Total Citations</div>
-<div class="stats-strip-badge">🏆 Top 10% Cited</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num">1</div>
-<div class="stats-strip-label">Online Mentions</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num">23</div>
-<div class="stats-strip-label">scite References</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Gold</div>
-<div class="stats-strip-label">Open Access Status</div>
-</div>
-</div>
+                            
 
-<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
-<div class="sticky-nav-inner">
-<a href="#sec-hero">Overview</a>
-<a href="#sec-story">Story</a>
-<a href="#sec-impact">Impact</a>
-<a href="#sec-roles">Roles</a>
-<a href="#sec-citing">Who's Citing</a>
-<a href="#sec-mentions">Mentions</a>
-<a href="#sec-teaching">Teaching</a>
-<a href="#sec-contributors">Contributors</a>
-<a href="#sec-funding">Funding</a>
-<a href="#sec-citations">All Citations</a>
-</div>
-</nav>
+                        </div>
 
-<section class="card" id="sec-story">
-<h2><span>The Story So Far</span></h2>
-<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">The analysis presented in the article "Establishing Institutional Scores With the Rigor and Transparency Index" underscores a significant commitment to enhancing scientific reporting quality, receiving attention from 25 citations across various reputable journals. This work also includes Research Resource Identifiers, emphasizing its reproducibility and fostering trust in its findings.</p>
-<h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">The research article, penned by Joseph Menke and colleagues, explores the implementation of the Rigor and Transparency Index to systematically evaluate scientific reporting quality. With 25 citations recorded in OpenAlex, the authors have established a noteworthy presence in the academic landscape, reflecting the relevance and significance of their findings to the field of medical internet research.</p>
-<p class="story-text">A strength of this study is its inclusion of four Research Resource Identifiers (RRIDs), which underscores the authors' commitment to technical reproducibility. By employing these identifiers, the study facilitates easier verification of experimental findings and resources, thereby enhancing the reliability of subsequent research efforts that build on their work.</p>
-<p class="story-text">Moreover, the financial backing from prominent institutions such as NIGMS NIH HHS and NIDA NIH HHS underscores the institutional investment in this area of research. This kind of support not only validates the importance of the work but also signals to the scientific community the value of improving rigor and transparency in scientific reporting.</p>
-<p class="story-text">The commitment to open science is further exemplified by the early sharing of the work as a preprint. Although specific metrics on downloads and citations from the preprint are not available, the very act of disseminating findings prior to formal publication indicates an active engagement with the research community, anticipating early feedback and dialogue. This practice aligns well with the principles of transparency and community involvement in academic research.</p>
-<p class="story-text">Overall, the study’s outputs, as demonstrated by its citations in diverse journals including PLoS ONE and Scientific African, showcase the significance of the authors' work in promoting high-quality scientific reporting. Such impactful contributions not only inform current practices but also lay the groundwork for future advancements in the field.</p></div>
-</section>
-<section class="card" id="sec-impact">
-<h2><span>Impact metrics</span></h2>
-
-<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">25</div><div class="im-label">Total Citations</div></div><div class="im-spark"><svg height="36" style="display:block;overflow:visible;" viewbox="0 0 120 36" width="120" xmlns="http://www.w3.org/2000/svg"><path d="M0.0,2.0 L30.0,2.0 L60.0,11.1 L90.0,20.3 L120.0,20.3 L120.0,36.0 L0,36.0 Z" fill="#dbeafe" opacity="0.6"></path><polyline fill="none" points="0.0,2.0 30.0,2.0 60.0,11.1 90.0,20.3 120.0,20.3" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline></svg><div class="im-spark-range">2022–2026</div></div></div><div class="im-top-badge">🏆 Top 10% Cited</div></div><div class="im-card"><div class="im-num">1</div><div class="im-label">Online Mentions</div></div><div class="im-card"><div class="im-num">25</div><div class="im-label">Downloads</div></div></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-teal" href="#sec-teaching">🗂 Dataset · 1 repo</a><a class="sig-pill sig-amber" href="#sec-funding">💰 5 grants</a><a class="sig-pill sig-blue" href="#sec-citing">🌍 34 countries</a></div></div></div></section>
-<section class="card" id="sec-roles">
-<h2><span>Inferred roles</span></h2>
-<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#1d4ed8;">🎓 Academic &amp; Scientific</div><div class="roles-row"><span class="role-pill role-pill-academic" style="opacity:0.9;" data-tip="Heuristic role based on citation and usage signals from the literature."><span class="role-dot" style="background:#3b82f6;"></span>Reproducibility standard<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Moderate</span></span><span class="role-pill role-pill-academic" style="opacity:0.75;" data-tip="Frequently cited in literature reviews and meta-analyses as a shorthand reference."><span class="role-dot" style="background:#3b82f6;"></span>Reference point for synthesis<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Emerging</span></span><span class="role-pill role-pill-academic" style="opacity:0.75;" data-tip="Heuristic role based on citation and usage signals from the literature."><span class="role-dot" style="background:#3b82f6;"></span>Active discussion signal<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Emerging</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#b45309;">📢 Public Engagement &amp; Media</div><div class="roles-row"><span class="role-pill role-pill-public" style="opacity:0.9;" data-tip="Heavy social-platform engagement on Reddit, Bluesky, or Mastodon — the work has sparked ongoing community conversation."><span class="role-dot" style="background:#f59e0b;"></span>Active public discourse<span class="role-strength" style="background:#fef3c7;color:#92400e;">Moderate</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
-
-</section>
-<div class="grid-2">
-<section class="card" style="margin-bottom:0;">
-<h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
-<ul class="metric-list">
-<li><strong>DOI:</strong> <a href="https://doi.org/10.2196/37324" target="_blank">10.2196/37324</a></li>
-<li><strong>OA status:</strong> Gold</li>
-<li><strong>Landing page:</strong> <a href="https://doi.org/10.2196/37324" style="word-break: break-all;" target="_blank">https://doi.org/10.2196/37324</a></li>
-<li><strong>Best OA PDF:</strong> <a href="https://www.jmir.org/2022/6/e37324/PDF" style="word-break: break-all;" target="_blank">https://www.jmir.org/2022/6/e37324/PDF</a></li>
-</ul>
-</section>
-<section class="card" style="margin-bottom:0;">
-<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
-<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
-                        This work has <strong>1</strong> recorded events globally
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> 
+                                
+                                    Joseph Menke, Peter Eckmann, İbrahim Burak Özyurt, Martijn Roelandse, Nathan Anderson, Jeffrey S. Grethe, Anthony Gamst, Anita Bandrowski
+                                
+                            </div>
                         
-                        <span style="font-weight:normal;">(combined from the published article and preprint).</span>
-</p>
-<p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
-<em>(See specific sources and examples in the Online Mentions section below).</em>
-</p>
-</section>
-</div>
-<div class="grid-2" style="align-items: start;">
-<div style="display: flex; flex-direction: column; gap: 1.5rem;">
-<section class="card" style="margin-bottom:0; height: 100%;">
-<h2><span>Resource Identifiers</span> <span class="badge">Europe PMC</span></h2>
-<p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;"><strong>4</strong> unique RRIDs detected.</p>
-<div style="max-height: 400px; overflow-y: auto;">
-<div style="margin-top: 0.8rem;">
-<h3 style="margin: 0 0 0.4rem; font-size: 0.95rem;">SCR <span class="muted" style="font-weight:normal;">(4)</span></h3>
-<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-<a class="tag" href="https://scicrunch.org/resolver/RRID:SCR_003735" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" target="_blank">RRID:SCR_003735</a><a class="tag" href="https://scicrunch.org/resolver/RRID:SCR_004166" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" target="_blank">RRID:SCR_004166</a><a class="tag" href="https://scicrunch.org/resolver/RRID:SCR_002577" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" target="_blank">RRID:SCR_002577</a><a class="tag" href="https://scicrunch.org/resolver/RRID:SCR_016251" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" target="_blank">RRID:SCR_016251</a>
-</div>
-</div>
-</div>
-</section>
-</div>
-<div style="display: flex; flex-direction: column; gap: 1.5rem;">
-<section class="card" style="margin-bottom:0;">
-<h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite</span></h2>
-<p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Associated data repositories and clinical trials.</p>
-<h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Data Repositories &amp; Code</h3>
-<div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom: 1rem; max-height: 250px; overflow-y: auto;">
-<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-<a class="tag" href="https://figshare.com/articles/dataset/ROR_Data_Dump_7_1_March_2021_/14273357" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">Figshare</a>
-<a href="datastory_https:__figshare.com_articles_dataset_ROR_Data_Dump_7_1_March_2021__14273357.html" style="font-size: 0.75rem; color: #6b7280; text-decoration: underline; display: inline-flex; align-items: center; gap: 0.2rem;" title="Run 'python3 -m bookstories.cli https://figshare.com/articles/dataset/ROR_Data_Dump_7_1_March_2021_/14273357' to generate this dashboard!">
-<svg fill="none" height="12" stroke="currentColor" viewbox="0 0 24 24" width="12"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                            
+                        
+                            
+                            
+                            <div><strong>Journal:</strong> 
+                                Journal of Medical Internet Research
+                            </div>
+                            
+                        
+                            <div><strong>Publisher:</strong> 
+                                
+                                    JMIR Publications
+                                
+                            </div>
+                        
+                            <div><strong>Publication year:</strong> 
+                                
+                                    2022
+                                
+                            </div>
+                        
+                            <div><strong>DOI:</strong> 
+                                <a href="https://doi.org/10.2196/37324" target="_blank">
+                                    10.2196/37324
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        <!-- Sticky nav -->
+        <nav aria-label="Page sections" class="sticky-nav no-print">
+            <div class="sticky-nav-inner">
+                <a href="#sec-hero">Overview</a>
+                <a href="#sec-story">Story</a>
+                <a href="#sec-impact">Impact</a>
+                <a href="#sec-roles">Roles</a>
+                <a href="#sec-access">Access</a>
+                <a href="#sec-citing">Who's Citing</a>
+                <a href="#sec-mentions">Mentions</a>
+            </div>
+        </nav>
+
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The work titled "Establishing Institutional Scores With the Rigor and Transparency Index" has garnered attention within the scholarly community, reflected in its 26 citations across various esteemed journals, including PLoS ONE and Nucleic Acids Research. It showcases a robust commitment to reproducibility with 4 Research Resource Identifiers. The collaboration among key institutions, including the University of California San Diego, signifies an institutional investment in enhancing scientific reporting quality.</p>
+
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">Published in the Journal of Medical Internet Research in 2022, the article "Establishing Institutional Scores With the Rigor and Transparency Index" presents a large-scale analysis of scientific reporting quality. The study has achieved a notable impact in the academic community with 26 citations, highlighting its relevance and influence on ongoing discussions in medical and scientific reporting.</p>
+
+<p class="story-text">The authors, including Joseph Menke and Peter Eckmann from the University of California San Diego, underline a strong emphasis on transparency and reproducibility in scientific research. The inclusion of 4 Research Resource Identifiers (RRIDs) underscores their commitment to ensuring that other researchers can reliably reproduce the findings and methodologies presented in their work. This dedication to reproducibility is increasingly critical in establishing trust in scientific outputs.</p>
+
+<p class="story-text">The article has been embraced by a range of citing works including research articles, reviews, and editorials, clearly indicating its role as a foundational work in its field. With a notable geographic footprint, the citations emanate from various countries, predominantly the United States, Germany, and the United Kingdom, which reflects a broad interest and application of its findings in diverse academic contexts.</p>
+
+<p class="story-text">Additionally, this publication indicates a substantial institutional investment in research integrity, being funded by respected agencies such as NIH. Such funding not only validates the importance of this research but also strengthens the credibility of the findings presented. The work also exemplifies an active engagement with open science principles through its early sharing as a preprint, promoting immediate community discourse long before formal publication.</p></div>
+        </section>
+        
+
+        
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+            <div class="im-wrapper">
+                
+                
+                
+                
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">26</div>
+                                <div class="im-label">Total Citations</div>
+                                
+                                <div class="im-top-badge">⭐ Top 10% Cited</div>
+                                
+                            </div>
+                            
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2022, 2023, 2024, 2025, 2026]"
+                                        data-values="[7, 7, 5, 3, 4]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2022–2026</div>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="im-provenance">
+                            Includes <strong>26</strong> from the published article and <strong>0</strong> from its <a href="https://doi.org/10.2196/preprints.37324" target="_blank">early preprint version</a>.
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+                    
+                    <div class="im-card">
+                        <div class="im-num">1</div>
+                        <div class="im-label">Online Mentions</div>
+                        
+                        <div class="im-provenance">
+                            Includes <strong>1</strong> from the published article and <strong>0</strong> from the <a href="https://doi.org/10.2196/preprints.37324" target="_blank">preprint</a>.
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+                    
+                    <!-- scite (only when references exist) -->
+                    
+                    <div class="im-card">
+                        <div class="im-num">23</div>
+                        <div class="im-label">scite References</div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="im-scite-compact">
+                            <div class="im-scite-title">Citation context <span class="im-scite-via">via scite</span></div>
+                            <div class="im-scite-bar">
+                                <div class="im-scite-seg im-scite-sup" data-w="0"></div>
+                                <div class="im-scite-seg im-scite-men" data-w="100"></div>
+                                <div class="im-scite-seg im-scite-con" data-w="0"></div>
+                            </div>
+                            <div class="im-scite-leg">
+                                <span><span class="im-scite-dot" style="background:#22c55e;"></span>0</span>
+                                <span><span class="im-scite-dot" style="background:#94a3b8;"></span>23</span>
+                                <span><span class="im-scite-dot" style="background:#f87171;"></span>0</span>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+
+                
+                
+                
+                
+                
+
+                
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+                        <span class="sig-pill sig-blue">🦋 Bluesky · 1</span>
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <span class="sig-pill sig-teal">🔬 4 RRIDs</span>
+                        
+
+                        
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 15 countries</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+            
+            
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="0.9"
+                              data-tip="Reproducibility standard — heuristic signal (score 0.65)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Reproducibility standard
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Moderate</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="0.75"
+                              data-tip="Reference point for synthesis — heuristic signal (score 0.46)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Reference point for synthesis
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Emerging</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#b45309">📢 Public Engagement & Media</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-public" data-opacity="0.75"
+                              data-tip="Public visibility & knowledge base — heuristic signal (score 0.46)">
+                            <span class="role-dot" data-bg="#f59e0b"></span>
+                            Public visibility & knowledge base
+                            <span class="role-strength" data-bg="#fef3c7" data-color="#92400e">Emerging</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.2196/37324" target="_blank">10.2196/37324</a></li>
+                    <li><strong>OA status:</strong> Unknown</li>
+                    
+                    
+                    
+                    
+                </ul>
+            </section>
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.6rem;">
+                        This work has <strong>1</strong> recorded events globally.
+                    </p>
+                    
+                    <div class="im-provenance" style="margin-bottom:1rem;">
+                        Includes <strong>1</strong> from the published article and <strong>0</strong> from the <a href="https://doi.org/10.2196/preprints.37324" target="_blank">preprint</a>.
+                    </div>
+                    
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0; height: 100%;">
+                            <h2><span>Resource Identifiers</span> <span class="badge">Europe PMC</span></h2>
+                            <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;"><strong>4</strong> unique RRIDs detected.</p>
+                            
+                            <div style="max-height: 400px; overflow-y: auto;">
+                                
+                                
+                                    
+                                    
+                                        
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+                                    
+                                    
+                                    
+                                
+
+                                
+                                <div style="margin-top: 0.8rem;">
+                                    <h3 style="margin: 0 0 0.4rem; font-size: 0.95rem;">SCR <span class="muted" style="font-weight:normal;">(4)</span></h3>
+                                    <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                                        <a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:SCR_003735" target="_blank">RRID:SCR_003735</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:SCR_004166" target="_blank">RRID:SCR_004166</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:SCR_002577" target="_blank">RRID:SCR_002577</a><a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:SCR_016251" target="_blank">RRID:SCR_016251</a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite / Crossref</span></h2>
+                            
+                            
+                                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Associated data repositories and clinical trials.</p>
+                                
+                                
+                                <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Data Repositories & Code</h3>
+                                <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom: 1rem; max-height: 250px; overflow-y: auto;">
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://figshare.com/articles/dataset/ROR_Data_Dump_7_1_March_2021_/14273357" target="_blank">Figshare</a>
+                                            
+                                            
+                                                
+                                                
+                                                <a href="datastory_https:__figshare.com_articles_dataset_ROR_Data_Dump_7_1_March_2021__14273357.html" style="font-size: 0.75rem; color: #6b7280; text-decoration: underline; display: inline-flex; align-items: center; gap: 0.2rem;" title="Run 'python3 -m bookstories.cli https://figshare.com/articles/dataset/ROR_Data_Dump_7_1_March_2021_/14273357' to generate this dashboard!">
+                                                    <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                                     View DataStory
                                                 </a>
-</div>
-<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-<a class="tag" href="https://figshare.com/articles/dataset/ROR_Data_Dump_7_1_March" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">Figshare</a>
-<a href="datastory_https:__figshare.com_articles_dataset_ROR_Data_Dump_7_1_March.html" style="font-size: 0.75rem; color: #6b7280; text-decoration: underline; display: inline-flex; align-items: center; gap: 0.2rem;" title="Run 'python3 -m bookstories.cli https://figshare.com/articles/dataset/ROR_Data_Dump_7_1_March' to generate this dashboard!">
-<svg fill="none" height="12" stroke="currentColor" viewbox="0 0 24 24" width="12"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://figshare.com/articles/dataset/ROR_Data_Dump_7_1_March" target="_blank">Figshare</a>
+                                            
+                                            
+                                                
+                                                
+                                                <a href="datastory_https:__figshare.com_articles_dataset_ROR_Data_Dump_7_1_March.html" style="font-size: 0.75rem; color: #6b7280; text-decoration: underline; display: inline-flex; align-items: center; gap: 0.2rem;" title="Run 'python3 -m bookstories.cli https://figshare.com/articles/dataset/ROR_Data_Dump_7_1_March' to generate this dashboard!">
+                                                    <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                                     View DataStory
                                                 </a>
-</div>
-<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-<a class="tag" href="https://github.com/ror-community/ror-api" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
-</div>
-<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-<a class="tag" href="https://github.com/PeterEckmann1/fast-ror-disambiguator" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
-</div>
-<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-<a class="tag" href="https://github.com/SciCrunch/resource_disambiguator" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
-</div>
-</div>
-</section>
-<section class="card" style="margin-bottom:0;">
-<h2><span>Citation context</span> <span class="badge">scite</span></h2>
-<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
-<li><strong>Total:</strong> 23</li>
-<li><strong>Supporting:</strong> 0</li>
-<li><strong>Mentioning:</strong> 23</li>
-<li><strong>Contradicting:</strong> 0</li>
-</ul>
-</section>
-</div>
-</div>
-<section class="card" id="sec-citing">
-<h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
-                Analysis of the 25 most recent citing works. 
-                <br/>
-<strong>104.0%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>3.0</strong> times itself.
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/ror-community/ror-api" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/PeterEckmann1/fast-ror-disambiguator" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/SciCrunch/resource_disambiguator" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                </div>
+                                
+
+                                
+
+                                
+
+                                
+                            
+                        </section>
+                    
+
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 23</li>
+                                <li><strong>Supporting:</strong> 0</li>
+                                <li><strong>Mentioning:</strong> 23</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+            
+        </div>
+
+        
+        
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>26</strong> citing works.
+                        <strong>36.6%</strong> come from the Top 10 institutions.
+                        Median citing paper cited <strong>3.0</strong> times itself.
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (15)</span><span class="tag tag-soft" style="font-size:.75rem;">review (4)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (4)</span><span class="tag tag-soft" style="font-size:.75rem;">editorial (3)</span>
+                        <span class="tag" style="font-size:.75rem;">PLoS ONE</span><span class="tag" style="font-size:.75rem;">Scientific African</span><span class="tag" style="font-size:.75rem;">Nucleic Acids Research</span>
+                    </div>
+                </div>
             </div>
 
-<div class="cite-analysis-always"><div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
-<ul class="metric-list">
-<li><strong>Citing work types:</strong>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (14)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (4)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (4)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">editorial (3)</span>
-</li>
-<li><strong>Top citing venues:</strong>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">PLoS ONE (3)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Scientific African (1)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nucleic Acids Research (1)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">PLoS Biology (1)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">PsyArXiv (OSF Preprints) (1)</span>
-</li>
-<li><strong>Top citing concepts:</strong>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Computer science (10)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Citation (4)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Transparency (behavior) (4)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Systematic review (2)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Limiting (2)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Identifier (2)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Reuse (2)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Baseline (sea) (2)</span>
-</li>
-<li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
-<strong>Citation timeline:</strong>
-<div style="height: 180px; width: 100%; margin-top: 0.5rem;">
-<canvas data-labels="[2022, 2023, 2024, 2025, 2026]" data-values="[7, 7, 5, 3, 3]" id="citationChart">
-</canvas>
-</div>
-</li>
-</ul>
-</div></div>
-<div class="cite-tabs">
-<button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
-<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
-<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-ppl')">👤 Top Citers</button>
-</div>
-<div class="cite-tab-pane active" id="cite-geo"><div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
-<div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (17)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (7)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (4)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Australia (3)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Netherlands (3)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Italy (3)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Canada (2)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">France (2)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Kenya (1)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Brazil (1)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Switzerland (1)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Denmark (1)</span>
-</div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
-<div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (18)</span>
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (9)</span>
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (6)</span>
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Healthcare (5)</span>
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Government (5)</span>
-</div>
-</div></div>
-<div class="cite-tab-pane" id="cite-inst"><div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
-<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
-<li style="margin-bottom: 0.4rem;">
-<strong>University of California San Diego</strong>
-<a class="orcid-badge" href="https://ror.org/0168r3w48" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Berlin Institute of Health at Charité - Universitätsmedizin Berlin</strong>
-<a class="orcid-badge" href="https://ror.org/0493xsw21" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>University of California, San Diego</strong>
-<a class="orcid-badge" href="https://ror.org/0168r3w48" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>University of California, Davis</strong>
-<a class="orcid-badge" href="https://ror.org/05rrcem69" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Stanford University</strong>
-<a class="orcid-badge" href="https://ror.org/00f54p054" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(2)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>National Institute of Neurological Disorders and Stroke</strong>
-<a class="orcid-badge" href="https://ror.org/01s5ya894" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(2)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>National Institutes of Health</strong>
-<a class="orcid-badge" href="https://ror.org/01cwqze88" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(2)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>University of Illinois Urbana-Champaign</strong>
-<a class="orcid-badge" href="https://ror.org/047426m28" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(2)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Federation of American Societies for Experimental Biology</strong>
-<a class="orcid-badge" href="https://ror.org/01mh1c318" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(2)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Marine Biological Laboratory</strong>
-<a class="orcid-badge" href="https://ror.org/046dg4z72" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(2)</span>
-</li>
-</ul>
-</div></div>
-<div class="cite-tab-pane" id="cite-ppl"><div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
-<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
-<li style="margin-bottom: 0.4rem;">
-<strong>Anita Bandrowski</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-5497-0243" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(8)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Martijn Roelandse</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0001-5596-8084" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Agata Piękniewska</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0001-8061-1335" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Jeffrey S. Grethe</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0001-5212-7052" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Peter Eckmann</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-5388-9451" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(2)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Maryann E. Martone</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-8406-3871" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(2)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Kaitlyn Hair</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0003-0180-7343" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(2)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Emma Wilson</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-8100-7508" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(2)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Charis Wong</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-8488-037X" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(2)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Anthony Tsang</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-2735-7515" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(2)</span>
-</li>
-</ul>
-</div></div>
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2022, 2023, 2024, 2025, 2026]"
+                    data-values="[7, 7, 5, 3, 4]">
+                </canvas>
+            </div>
 
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
 
-</section>
-<div class="grid-2" id="sec-mentions">
-<section class="card span-full" id="sec-mentions" style="margin-bottom:0;">
-<h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref &amp; Open Web</span></h2>
-<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin-top: 1.5rem; margin-bottom: 1.5rem;">
-<li style="margin-bottom: 0.6rem;">
-<a href="https://www.news-medical.net/news/20220725/Improving-rigor-and-transparency-measures-could-help-enhance-reproducibility-across-scientific-literature.aspx" style="color: #2563eb; text-decoration: none; font-weight: 500;" target="_blank">
-                            Improving rigor and transparency measures could help enhance reproducibility across scientific literature
-                        </a>
-<span class="badge" style="background: #f3f4f6; color: #4b5563; font-size: 0.65rem; text-transform: uppercase; margin-left: 0.4rem;">newsfeed</span>
-</li>
-</ul>
-</section>
-</div>
-<div class="grid-2" id="sec-contributors">
-<section class="card" id="sec-contributors" style="margin-bottom:0;">
-<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">8 authors · 1 institution</div>
-<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
-<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
-<li style="margin-bottom: 0.4rem;">
-<strong>Joseph Menke</strong>
-<span class="badge">First</span>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-7374-7549" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Peter Eckmann</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-5388-9451" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>İbrahim Burak Özyurt</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0003-3944-1893" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Martijn Roelandse</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0001-5596-8084" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Nathan Anderson</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0001-5408-5095" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Jeffrey S. Grethe</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0001-5212-7052" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Anthony Gamst</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-6811-7649" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Anita Bandrowski</strong>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-5497-0243" target="_blank">ORCID</a>
-</li>
-</ul>
-<h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
-<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
-<li style="margin-bottom: 0.4rem;">
-<a href="https://ror.org/0168r3w48" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of California San Diego</a>
-</li>
-</ul>
-</section>
-<section class="card" style="margin-bottom:0;">
-<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">17 specific concepts identified.</div>
-<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Transparency (behavior)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scale (ratio)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Index (typography)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Quality (philosophy)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Data quality</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Data science</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Psychology</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">World Wide Web</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer security</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Engineering</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Geography</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Operations management</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Epistemology</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cartography</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Metric (unit)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Philosophy</span>
-</div>
-</section>
-</div>
-<section class="card" id="sec-funding">
-<h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">5 financial grants and sponsors detected.</div>
-<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>NIGMS NIH HHS</strong>
-<span style="opacity: 0.8; font-weight: normal;">(R24 GM144308)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>NIDA NIH HHS</strong>
-<span style="opacity: 0.8; font-weight: normal;">(U24 DA039832)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>NIDDK NIH HHS</strong>
-<span style="opacity: 0.8; font-weight: normal;">(U24 DK097771)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>NIH HHS</strong>
-<span style="opacity: 0.8; font-weight: normal;">(R43 OD024432)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>NIMH NIH HHS</strong>
-<span style="opacity: 0.8; font-weight: normal;">(R44 MH119094)</span>
-</span>
-</div>
-</section>
-<section class="card no-print" id="sec-citations">
-<h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">Displaying 25 most recent citing works</div>
-<div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
-<table>
-<thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
-<tbody id="cit-tbody"></tbody>
-</table>
-</div>
-<div class="cit-pagination">
-<span class="cit-pagination-info" id="cit-info">Loading…</span>
-<div class="cit-pagination-btns">
-<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
-<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
-<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
-</div>
-</div>
-
-</section>
-<footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
-<div style="display: flex; flex-direction: column; gap: 0.4rem;">
-<div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
-<svg fill="none" height="16" stroke="currentColor" style="color: #9ca3af;" viewbox="0 0 24 24" width="16"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<span>Understanding our metrics: <a href="https://www.openscience.works/about.html" style="color: #2563eb; text-decoration: none; font-weight: 600;" target="_blank">Read the Methodology &amp; Legend ↗</a></span>
-</div>
-<div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-03-31T13:49:18+00:00
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (17)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Germany (7)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Australia (3)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Netherlands (3)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Italy (3)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">France (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Canada (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Kenya (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Brazil (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Denmark (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Switzerland (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Jordan (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Saudi Arabia (1)</span>
+                    
                 </div>
-</div>
-</footer>
-</div>
-<script>
-        (function() {
-            const canvas = document.getElementById('citationChart');
-            if(!canvas) return;
-            const labels = JSON.parse(canvas.getAttribute('data-labels'));
-            const data = JSON.parse(canvas.getAttribute('data-values'));
-            const ctx = canvas.getContext('2d');
-            new Chart(ctx, {
+                
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (20)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (9)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (6)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (5)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (5)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Healthcare (5)</span>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of California San Diego</strong>
+                        <a href="https://ror.org/0168r3w48" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.5992063492063497)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Federation of American Societies for Experimental Biology</strong>
+                        <a href="https://ror.org/01mh1c318" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.25)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Jordan</strong>
+                        <a href="https://ror.org/05k89ew48" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Foggia</strong>
+                        <a href="https://ror.org/01xtv3204" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Medical University of South Carolina</strong>
+                        <a href="https://ror.org/012jban78" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>National Institutes of Health</strong>
+                        <a href="https://ror.org/01cwqze88" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(0.7)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Berlin Institute of Health at Charité - Universitätsmedizin Berlin</strong>
+                        <a href="https://ror.org/0493xsw21" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(0.638095238095238)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>National Institute of Neurological Disorders and Stroke</strong>
+                        <a href="https://ror.org/01s5ya894" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(0.5285714285714286)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Mott MacDonald (United Kingdom)</strong>
+                        <a href="https://ror.org/054vpsz16" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(0.4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>MRC Centre for Regenerative Medicine</strong>
+                        <a href="https://ror.org/01x802g65" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(0.4)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Anita Bandrowski</strong>
+                        <a href="https://orcid.org/0000-0002-5497-0243" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(8)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Martijn Roelandse</strong>
+                        <a href="https://orcid.org/0000-0001-5596-8084" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Agata Piękniewska</strong>
+                        <a href="https://orcid.org/0000-0001-8061-1335" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kaitlyn Hair</strong>
+                        <a href="https://orcid.org/0000-0003-0180-7343" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Peter Eckmann</strong>
+                        <a href="https://orcid.org/0000-0002-5388-9451" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(2)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jeffrey S. Grethe</strong>
+                        <a href="https://orcid.org/0000-0001-5212-7052" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(2)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Maryann E. Martone</strong>
+                        <a href="https://orcid.org/0000-0002-8406-3871" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(2)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Emma Wilson</strong>
+                        <a href="https://orcid.org/0000-0002-8100-7508" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(2)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Charis Wong</strong>
+                        <a href="https://orcid.org/0000-0002-8488-037X" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(2)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Anthony Tsang</strong>
+                        <a href="https://orcid.org/0000-0002-2735-7515" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(2)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+            <section class="card span-full" style="margin-bottom:0;">
+                <h2><span>Online mentions & activity</span> <span class="badge">Crossref & Open Web</span></h2>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+                
+                
+                <h3 style="margin-top: 1.5rem; font-size: 1.1rem; color: #1f2937;">
+                    Community Engagement & Discourse
+                </h3>
+                
+                
+                
+                
+
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; border-bottom: 2px solid #e5e7eb; margin-bottom: 1.5rem; margin-top: 1rem;">
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    <button onclick="openSocialTab(event, 'soc-bsky')" class="soc-tab-btn soc-tab-active">
+                        Bluesky <span style="background: #e0f2fe; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.75rem; margin-left: 0.3rem;">1</span>
+                    </button>
+                    
+
+                    
+                    
+                </div>
+
+                <div style="position: relative; border-left: 2px solid #e2e8f0; padding-left: 1.5rem; margin-top: 1rem;">
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+
+                    
+                    
+
+                    
+                    
+                    <div id="soc-bsky" class="soc-tab-content" style="display: block; animation: fadeIn 0.3s;">
+                        
+                        <div style="position: relative; margin-bottom: 1.5rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #0ea5e9; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span class="badge" style="background: #e0f2fe; color: #0369a1; font-size: 0.65rem; text-transform: uppercase;">Bluesky Post</span>
+                                <span class="muted" style="font-size: 0.7rem;">2024-12-05</span>
+                            </div>
+                            <div style="font-size: 0.85rem; line-height: 1.5; color: #334155; font-style: italic; background: #f8fafc; padding: 0.75rem; border-radius: 8px; border: 1px solid #f1f5f9; margin-bottom: 0.3rem;">
+                                "And here: doi.org/10.2196/37324" — <span style="font-weight: 600;">@martijnroelandse.dev</span>
+                            </div>
+                            <a href="https://bsky.app/profile/martijnroelandse.dev/post/3lckxwgsjhs2u" target="_blank" style="font-size: 0.75rem; color: #0369a1; text-decoration: none; font-weight: 500;">View Thread ↗</a>
+                        </div>
+                        
+                    </div>
+                    
+
+                    
+                    
+                </div>
+                
+                
+                
+                
+                
+                
+            </section>
+            
+        </div>
+
+        
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>8 authors · 0 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Joseph Menke</strong> 
+                        <span class="badge">First</span>
+                        
+                        <a class="orcid-badge" href="0000-0002-7374-7549" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Peter Eckmann</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-5388-9451" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>İbrahim Burak Özyurt</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0003-3944-1893" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Martijn Roelandse</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-5596-8084" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Nathan Anderson</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-5408-5095" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Jeffrey S. Grethe</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-5212-7052" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Anthony Gamst</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-6811-7649" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Anita Bandrowski</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0002-5497-0243" target="_blank">ORCID</a>
+                    </li>
+                    
+                </ul>
+
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>17 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Transparency (behavior)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scale (ratio)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Index (typography)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Quality (philosophy)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Data quality</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Data science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Psychology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">World Wide Web</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer security</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Engineering</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Geography</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Operations management</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Epistemology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cartography</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Metric (unit)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Philosophy</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
+        <section class="card">
+            <h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>5 financial grants and sponsors detected.</div>
+            
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIGMS NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R24 GM144308)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIDA NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(U24 DA039832)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIDDK NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(U24 DK097771)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R43 OD024432)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIMH NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R44 MH119094)</span>
+                    </span>
+                
+            </div>
+        </section>
+        
+
+
+
+        
+        
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.75rem;"
+                 data-total="26">
+                26 citing works (most recent first)
+            </div>
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Bias and ethics of AI systems applied in auditing - A systematic review</td>
+                        <td>Scientific African</td>
+                        <td><a href="https://doi.org/10.1016/j.sciaf.2024.e02281" target="_blank" style="word-break: break-all;">10.1016/j.sciaf.2024.e02281</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>The Antibody Registry: ten years of registering antibodies</td>
+                        <td>Nucleic Acids Research</td>
+                        <td><a href="https://doi.org/10.1093/nar/gkac927" target="_blank" style="word-break: break-all;">10.1093/nar/gkac927</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Open Science 2.0: Towards a truly collaborative research ecosystem</td>
+                        <td>PLoS Biology</td>
+                        <td><a href="https://doi.org/10.1371/journal.pbio.3002362" target="_blank" style="word-break: break-all;">10.1371/journal.pbio.3002362</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Responsible Research Assessment I: Implementing DORA and CoARA for hiring and promotion in psychology</td>
+                        <td>MPG.PuRe (Max Planck Society)</td>
+                        <td><a href="https://doi.org/10.31234/osf.io/rgh5b" target="_blank" style="word-break: break-all;">10.31234/osf.io/rgh5b</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Systematic online living evidence summaries: emerging tools to accelerate evidence synthesis</td>
+                        <td>Clinical Science</td>
+                        <td><a href="https://doi.org/10.1042/cs20220494" target="_blank" style="word-break: break-all;">10.1042/cs20220494</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Patient engagement in designing, conducting, and disseminating clinical pain research: IMMPACT recommended considerations</td>
+                        <td>Pain</td>
+                        <td><a href="https://doi.org/10.1097/j.pain.0000000000003121" target="_blank" style="word-break: break-all;">10.1097/j.pain.0000000000003121</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>An analysis of the effects of sharing research data, code, and preprints on citations</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0311493" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0311493</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Evolution of Research Reporting Standards: Adapting to the Influence of Artificial Intelligence, Statistics Software, and Writing Tools</td>
+                        <td>Journal of Korean Medical Science</td>
+                        <td><a href="https://doi.org/10.3346/jkms.2024.39.e231" target="_blank" style="word-break: break-all;">10.3346/jkms.2024.39.e231</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>From Methods to Monographs: Fostering a Culture of Research Quality</td>
+                        <td>eNeuro</td>
+                        <td><a href="https://doi.org/10.1523/eneuro.0247-23.2023" target="_blank" style="word-break: break-all;">10.1523/eneuro.0247-23.2023</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Artificial Intelligence for Personalized Genetics and New Drug Development: Benefits and Cautions</td>
+                        <td>Bioengineering</td>
+                        <td><a href="https://doi.org/10.3390/bioengineering10050613" target="_blank" style="word-break: break-all;">10.3390/bioengineering10050613</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Deciphering the future of electric vehicles amid emissions and adoption drivers</td>
+                        <td>AMBIO</td>
+                        <td><a href="https://doi.org/10.1007/s13280-024-02026-3" target="_blank" style="word-break: break-all;">10.1007/s13280-024-02026-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A decade of <i>GigaScience</i>: What can be learned from half a million RRIDs in the scientific literature?</td>
+                        <td>GigaScience</td>
+                        <td><a href="https://doi.org/10.1093/gigascience/giac058" target="_blank" style="word-break: break-all;">10.1093/gigascience/giac058</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>SciScore, a tool that can measure rigor criteria presence or absence in a biomedical study</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.14293/s2199-1006.1.sor-.pppxbqn6.v1" target="_blank" style="word-break: break-all;">10.14293/s2199-1006.1.sor-.pppxbqn6.v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Systematic Online Living Evidence Summaries: emerging tools to accelerate evidence synthesis</td>
+                        <td>Edinburgh Research Explorer (University of Edinburgh)</td>
+                        <td><a href="https://doi.org/10.31222/osf.io/nbe5q" target="_blank" style="word-break: break-all;">10.31222/osf.io/nbe5q</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Establishing an early indicator for data sharing and reuse</td>
+                        <td>Learned Publishing</td>
+                        <td><a href="https://doi.org/10.1002/leap.1586" target="_blank" style="word-break: break-all;">10.1002/leap.1586</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Transparency of research practices in cardiovascular literature</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.81051" target="_blank" style="word-break: break-all;">10.7554/elife.81051</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Editorial: Methods and protocols in neurotoxicology</td>
+                        <td>Frontiers in Toxicology</td>
+                        <td><a href="https://doi.org/10.3389/ftox.2022.1031667" target="_blank" style="word-break: break-all;">10.3389/ftox.2022.1031667</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Establishing an Early Indicator for Data Sharing and Reuse</td>
+                        <td>OSF Preprints (OSF Preprints)</td>
+                        <td><a href="https://doi.org/10.31219/osf.io/ryxg2" target="_blank" style="word-break: break-all;">10.31219/osf.io/ryxg2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Do organisms need an impact factor? Citations of key biological resources including model organisms reveal usage patterns and impact</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.01.15.575636" target="_blank" style="word-break: break-all;">10.1101/2024.01.15.575636</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Meeting the need for trusted information in a changing world</td>
+                        <td>Journal of the American Academy of Dermatology</td>
+                        <td><a href="https://doi.org/10.1016/j.jaad.2022.07.034" target="_blank" style="word-break: break-all;">10.1016/j.jaad.2022.07.034</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Do organisms need an impact factor? Citations of key biological resources including model organisms reveal usage patterns and impact</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0327344" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0327344</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Publishing gold standard science</td>
+                        <td>Journal of Clinical Investigation</td>
+                        <td><a href="https://doi.org/10.1172/jci201281" target="_blank" style="word-break: break-all;">10.1172/jci201281</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Rigor and Transparency in two neurotrauma-publishing journals: editorial policies improve transparent reporting</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.01.16.699952" target="_blank" style="word-break: break-all;">10.64898/2026.01.16.699952</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Use as directed? A comparison of software tools intended to check rigor and transparency of published work</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0342225" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0342225</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Future of Scientific Publishing: Scoping Review with ☸SAIMSARA</td>
+                        <td>SAIMSARA Journal</td>
+                        <td><a href="https://doi.org/10.62487/saimsarada26548b" target="_blank" style="word-break: break-all;">10.62487/saimsarada26548b</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Quality, reliability, and transparency of late-life depression videos on Chinese social media: a cross-sectional study of Douyin, Rednotes, and BiliBili</td>
+                        <td>Frontiers in Psychiatry</td>
+                        <td><a href="https://doi.org/10.3389/fpsyt.2026.1817890" target="_blank" style="word-break: break-all;">10.3389/fpsyt.2026.1817890</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-06-02T09:32:40+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
                 type: 'bar',
                 data: {
                     labels: labels,
@@ -737,9 +1638,97 @@
                     }
                 }
             });
-        })();
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' citing works (most recent first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
     </script>
-<style>
+    <style>
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(5px); }
             to { opacity: 1; transform: translateY(0); }
@@ -763,7 +1752,8 @@
             color: #111827;
         }
     </style>
-<script>
+    
+    <script>
         function openSocialTab(evt, tabId) {
             // Hide all tab content
             var contents = document.getElementsByClassName("soc-tab-content");
@@ -780,161 +1770,6 @@
             evt.currentTarget.classList.add("soc-tab-active");
         }
     </script>
-
-<script>
-(function() {
-  var DATA = [{"year": "2024", "title": "Bias and ethics of AI systems applied in auditing - A systematic review", "venue": "Scientific African", "doi": "10.1016/j.sciaf.2024.e02281", "doi_url": "https://doi.org/10.1016/j.sciaf.2024.e02281"}, {"year": "2022", "title": "The Antibody Registry: ten years of registering antibodies", "venue": "Nucleic Acids Research", "doi": "10.1093/nar/gkac927", "doi_url": "https://doi.org/10.1093/nar/gkac927"}, {"year": "2023", "title": "Open Science 2.0: Towards a truly collaborative research ecosystem", "venue": "PLoS Biology", "doi": "10.1371/journal.pbio.3002362", "doi_url": "https://doi.org/10.1371/journal.pbio.3002362"}, {"year": "2022", "title": "Responsible Research Assessment I: Implementing DORA and CoARA for hiring and promotion in psychology", "venue": "PsyArXiv (OSF Preprints)", "doi": "10.31234/osf.io/rgh5b", "doi_url": "https://doi.org/10.31234/osf.io/rgh5b"}, {"year": "2023", "title": "Systematic online living evidence summaries: emerging tools to accelerate evidence synthesis", "venue": "Clinical Science", "doi": "10.1042/cs20220494", "doi_url": "https://doi.org/10.1042/cs20220494"}, {"year": "2023", "title": "Patient engagement in designing, conducting, and disseminating clinical pain research: IMMPACT recommended considerations", "venue": "Pain", "doi": "10.1097/j.pain.0000000000003121", "doi_url": "https://doi.org/10.1097/j.pain.0000000000003121"}, {"year": "2023", "title": "From Methods to Monographs: Fostering a Culture of Research Quality", "venue": "eNeuro", "doi": "10.1523/eneuro.0247-23.2023", "doi_url": "https://doi.org/10.1523/eneuro.0247-23.2023"}, {"year": "2024", "title": "An analysis of the effects of sharing research data, code, and preprints on citations", "venue": "PLoS ONE", "doi": "10.1371/journal.pone.0311493", "doi_url": "https://doi.org/10.1371/journal.pone.0311493"}, {"year": "2023", "title": "Artificial Intelligence for Personalized Genetics and New Drug Development: Benefits and Cautions", "venue": "Bioengineering", "doi": "10.3390/bioengineering10050613", "doi_url": "https://doi.org/10.3390/bioengineering10050613"}, {"year": "2024", "title": "Evolution of Research Reporting Standards: Adapting to the Influence of Artificial Intelligence, Statistics Software, and Writing Tools", "venue": "Journal of Korean Medical Science", "doi": "10.3346/jkms.2024.39.e231", "doi_url": "https://doi.org/10.3346/jkms.2024.39.e231"}, {"year": "2024", "title": "Deciphering the future of electric vehicles amid emissions and adoption drivers", "venue": "AMBIO", "doi": "10.1007/s13280-024-02026-3", "doi_url": "https://doi.org/10.1007/s13280-024-02026-3"}, {"year": "2022", "title": "A decade ofGigaScience: What can be learned from half a million RRIDs in the scientific literature?", "venue": "GigaScience", "doi": "10.1093/gigascience/giac058", "doi_url": "https://doi.org/10.1093/gigascience/giac058"}, {"year": "2022", "title": "SciScore, a tool that can measure rigor criteria presence or absence in a biomedical study", "venue": "Unknown", "doi": "10.14293/s2199-1006.1.sor-.pppxbqn6.v1", "doi_url": "https://doi.org/10.14293/s2199-1006.1.sor-.pppxbqn6.v1"}, {"year": "2022", "title": "Systematic Online Living Evidence Summaries: emerging tools to accelerate evidence synthesis", "venue": "Edinburgh Research Explorer (University of Edinburgh)", "doi": "10.31222/osf.io/nbe5q", "doi_url": "https://doi.org/10.31222/osf.io/nbe5q"}, {"year": "2023", "title": "Establishing an early indicator for data sharing and reuse", "venue": "Learned Publishing", "doi": "10.1002/leap.1586", "doi_url": "https://doi.org/10.1002/leap.1586"}, {"year": "2025", "title": "Transparency of research practices in cardiovascular literature", "venue": "eLife", "doi": "10.7554/elife.81051", "doi_url": "https://doi.org/10.7554/elife.81051"}, {"year": "2022", "title": "Editorial: Methods and protocols in neurotoxicology", "venue": "Frontiers in Toxicology", "doi": "10.3389/ftox.2022.1031667", "doi_url": "https://doi.org/10.3389/ftox.2022.1031667"}, {"year": "2023", "title": "Establishing an Early Indicator for Data Sharing and Reuse", "venue": "OSF Preprints (OSF Preprints)", "doi": "10.31219/osf.io/ryxg2", "doi_url": "https://doi.org/10.31219/osf.io/ryxg2"}, {"year": "2024", "title": "Do organisms need an impact factor? Citations of key biological resources including model organisms reveal usage patterns and impact", "venue": "bioRxiv", "doi": "10.1101/2024.01.15.575636", "doi_url": "https://doi.org/10.1101/2024.01.15.575636"}, {"year": "2022", "title": "Meeting the need for trusted information in a changing world", "venue": "Journal of the American Academy of Dermatology", "doi": "10.1016/j.jaad.2022.07.034", "doi_url": "https://doi.org/10.1016/j.jaad.2022.07.034"}, {"year": "2025", "title": "Do organisms need an impact factor? Citations of key biological resources including model organisms reveal usage patterns and impact", "venue": "PLoS ONE", "doi": "10.1371/journal.pone.0327344", "doi_url": "https://doi.org/10.1371/journal.pone.0327344"}, {"year": "2025", "title": "Publishing gold standard science", "venue": "Journal of Clinical Investigation", "doi": "10.1172/jci201281", "doi_url": "https://doi.org/10.1172/jci201281"}, {"year": "2026", "title": "Rigor and Transparency in two neurotrauma-publishing journals: editorial policies improve transparent reporting", "venue": "bioRxiv (Cold Spring Harbor Laboratory)", "doi": "10.64898/2026.01.16.699952", "doi_url": "https://doi.org/10.64898/2026.01.16.699952"}, {"year": "2026", "title": "Use as directed? A comparison of software tools intended to check rigor and transparency of published work", "venue": "PLoS ONE", "doi": "10.1371/journal.pone.0342225", "doi_url": "https://doi.org/10.1371/journal.pone.0342225"}, {"year": "2026", "title": "Future of Scientific Publishing: Scoping Review with ☸SAIMSARA", "venue": "SAIMSARA Journal", "doi": "10.62487/saimsarada26548b", "doi_url": "https://doi.org/10.62487/saimsarada26548b"}];
-  var PER  = 25;
-  var _p   = 1;
-  var _tot = Math.ceil(DATA.length / PER);
-
-  function esc(s) {
-    return String(s)
-      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
-      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-
-  function render(page) {
-    _p = page;
-    var tbody  = document.getElementById('cit-tbody');
-    var info   = document.getElementById('cit-info');
-    var prev   = document.getElementById('cit-prev');
-    var next   = document.getElementById('cit-next');
-    var nums   = document.getElementById('cit-page-nums');
-    if (!tbody) return;
-
-    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
-    for (var i=s; i<e; i++) {
-      var r = DATA[i];
-      var d = r.doi_url
-        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
-        : esc(r.doi||'');
-      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
-    }
-    tbody.innerHTML = rows;
-    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
-    if (prev) prev.disabled = (page===1);
-    if (next) next.disabled = (page===_tot);
-
-    if (nums) {
-      var shown = [], html = '', prev2 = null;
-      for (var p=1; p<=_tot; p++) {
-        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
-      }
-      for (var i=0; i<shown.length; i++) {
-        var p=shown[i];
-        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
-        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
-        prev2=p;
-      }
-      nums.innerHTML = html;
-    }
-  }
-
-  window.citGoTo = function(p) {
-    if(p<1||p>_tot) return;
-    render(p);
-    var sec=document.getElementById('sec-citations');
-    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
-  };
-  window.citPrev = function() { window.citGoTo(_p-1); };
-  window.citNext = function() { window.citGoTo(_p+1); };
-
-  if(document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded',function(){render(1);});
-  else render(1);
-})();
-</script>
-
-<script>
-function citeSwitchTab(btn, tabId) {
-  var card = btn.closest('section, .card') || btn.parentElement;
-  // Find tab buttons and panes in surrounding context
-  var tabsEl = btn.closest('.cite-tabs');
-  if (!tabsEl) return;
-  var parent = tabsEl.parentElement;
-  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
-  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
-  btn.classList.add('active');
-  var pane = document.getElementById(tabId);
-  if (pane) pane.classList.add('active');
-}
-</script>
-
-<script>
-(function() {
-  function init() {
-    document.querySelectorAll('section.card, .card').forEach(function(card) {
-      // Skip the hero header
-      if (card.tagName === 'HEADER') return;
-      var h2 = null;
-      for (var i=0; i<card.children.length; i++) {
-        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
-      }
-      if (!h2) return;
-
-      card.classList.add('card-collapsible');
-
-      // Add chevron span
-      var chev = document.createElement('span');
-      chev.className = 'chevron';
-      chev.setAttribute('aria-hidden','true');
-      chev.textContent = '▾';
-      h2.appendChild(chev);
-
-      // Wrap siblings after h2
-      var wrap = document.createElement('div');
-      wrap.className = 'card-body-wrap';
-      var kids = Array.from(card.children), after = false;
-      kids.forEach(function(c) {
-        if (c===h2){after=true;return;}
-        if (after) wrap.appendChild(c);
-      });
-      card.appendChild(wrap);
-      // CSS handles open state with max-height:9999px — safe for async-loaded content
-
-      h2.addEventListener('click', function() {
-        card.classList.toggle('is-collapsed');
-      });
-    });
-  }
-  if (document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded', init);
-  else init();
-})();
-</script>
-
-<script>
-(function() {
-  function init() {
-    var nav = document.getElementById('sticky-nav');
-    if (!nav) return;
-    var links = Array.from(nav.querySelectorAll('a'));
-    var targets = links.map(function(l) {
-      var id = l.getAttribute('href').slice(1);
-      return {el: document.getElementById(id), link: l};
-    }).filter(function(t){return t.el;});
-
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          links.forEach(function(l){l.classList.remove('snav-active');});
-          var match = links.find(function(l){
-            return l.getAttribute('href')==='#'+e.target.id;
-          });
-          if (match) match.classList.add('snav-active');
-        }
-      });
-    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
-
-    targets.forEach(function(t){obs.observe(t.el);});
-  }
-  if (document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded', init);
-  else init();
-})();
-</script>
-
 <div id="role-tooltip" style="
   position:fixed;display:none;z-index:9999;
   background:#111827;color:white;padding:.5rem .75rem;
@@ -945,7 +1780,7 @@ function citeSwitchTab(btn, tabId) {
 <script>
 (function(){
   var tip = document.getElementById('role-tooltip');
-  document.querySelectorAll('.role-pill[data-tip]').forEach(function(pill){
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
     pill.addEventListener('mouseenter', function(){
       tip.textContent = pill.getAttribute('data-tip');
       tip.style.top = '-9999px'; tip.style.display = 'block';
@@ -965,6 +1800,15 @@ function citeSwitchTab(btn, tabId) {
   });
 })();
 </script>
-
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
 </body>
 </html>

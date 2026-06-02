@@ -1,0 +1,3046 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DataStory - IoT-23: A labeled dataset with malicious and benign IoT network traffic</title>
+    <style>
+
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
+
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+.sig-green {background:#dcfce7;color:#166534;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+    
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="datastories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">IoT-23: A labeled dataset with malicious and benign IoT network traffic</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                                    Linked to Data
+                                </span>
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #faf5ff; color: #86198f; border: 1px solid #e9d5ff; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                                    Proven Reuse
+                                </span>
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> 
+                                
+                                    Sebastián García, Agustin Parmisano, María José Erquiaga
+                                
+                            </div>
+                        
+                            
+                        
+                            
+                            
+                            <div><strong>Source:</strong> 
+                                Zenodo (CERN European Organization for Nuclear Research)
+                            </div>
+                            
+                        
+                            <div><strong>Provider:</strong> 
+                                
+                                    European Organization for Nuclear Research
+                                
+                            </div>
+                        
+                            <div><strong>Publication year:</strong> 
+                                
+                                    2020
+                                
+                            </div>
+                        
+                            <div><strong>DOI:</strong> 
+                                <a href="https://doi.org/10.5281/zenodo.4743746" target="_blank">
+                                    10.5281/zenodo.4743746
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        <!-- Sticky nav -->
+        <nav aria-label="Page sections" class="sticky-nav no-print">
+            <div class="sticky-nav-inner">
+                <a href="#sec-hero">Overview</a>
+                <a href="#sec-story">Story</a>
+                <a href="#sec-impact">Impact</a>
+                <a href="#sec-roles">Roles</a>
+                <a href="#sec-access">Access</a>
+                <a href="#sec-citing">Who's Citing</a>
+                <a href="#sec-mentions">Mentions</a>
+            </div>
+        </nav>
+
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The dataset titled "IoT-23: A labeled dataset with malicious and benign IoT network traffic," hosted on Zenodo, has emerged as a valuable resource for both academic research and practical applications in the field of cybersecurity. With 228 citations and over 10,000 downloads, this dataset has demonstrated significant impact and utility in understanding and mitigating IoT threats.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The "IoT-23" dataset, developed by researchers Sebastián García, Agustin Parmisano, and María José Erquiaga from the Czech Technical University in Prague, provides critical insights into the behavior of both malicious and benign Internet of Things (IoT) network traffic. Since its release in 2020, the dataset has garnered considerable academic attention, evident in its 228 citations, reflecting its utility in advancing cybersecurity research, particularly regarding IoT devices.</p>
+<p class="story-text">Notably, the dataset has been extensively reused in subsequent studies, with a proven downstream reuse metric of 231. This high level of reuse underscores its role as a foundational resource that supports ongoing research in identifying and addressing security vulnerabilities within IoT environments. The dataset's accessibility on Zenodo further enhances its reach, allowing researchers and practitioners easy access to high-quality data.</p>
+<p class="story-text">The academic impact of "IoT-23" is further illustrated by its broad citation base, with notable referencing in leading venues such as IEEE Access and Computer Networks. The dataset serves as a foundational tool aiding scholars from various countries, including the United States, India, and China, in conducting cutting-edge research into IoT security challenges.</p>
+<p class="story-text">The dataset's open access nature, while not explicitly stated, suggests a commitment to transparency and data sharing, which aligns with best practices in research stewardship. As the landscape of IoT technology continues to evolve, the insights derived from the "IoT-23" dataset are likely to play a crucial role in the fields of cybersecurity and technology risk management, fostering improved methodologies for securing IoT networks.</p></div>
+        </section>
+        
+
+        
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+            <div class="im-wrapper">
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">228</div>
+                                <div class="im-label">Total Citations</div>
+                                
+                            </div>
+                            
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2021, 2022, 2023, 2024, 2025, 2026]"
+                                        data-values="[6, 38, 50, 76, 54, 4]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2021–2026</div>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+                    
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+                    
+                    
+                    
+                    <div class="im-card">
+                        <div class="im-num">10,012</div>
+                        <div class="im-label">Downloads</div>
+                        <div class="im-provenance">Repository usage (DataCite / native provider)</div>
+                    </div>
+                    
+                    
+                    <div class="im-card">
+                        <div class="im-num">17,476</div>
+                        <div class="im-label">Views</div>
+                        <div class="im-provenance">Repository usage (DataCite / native provider)</div>
+                    </div>
+                    
+                    
+                    <!-- scite (only when references exist) -->
+                    
+                    <div class="im-card">
+                        <div class="im-num">29</div>
+                        <div class="im-label">scite References</div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="im-scite-compact">
+                            <div class="im-scite-title">Citation context <span class="im-scite-via">via scite</span></div>
+                            <div class="im-scite-bar">
+                                <div class="im-scite-seg im-scite-sup" data-w="0"></div>
+                                <div class="im-scite-seg im-scite-men" data-w="100"></div>
+                                <div class="im-scite-seg im-scite-con" data-w="0"></div>
+                            </div>
+                            <div class="im-scite-leg">
+                                <span><span class="im-scite-dot" style="background:#22c55e;"></span>0</span>
+                                <span><span class="im-scite-dot" style="background:#94a3b8;"></span>29</span>
+                                <span><span class="im-scite-dot" style="background:#f87171;"></span>0</span>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+
+                
+                
+                
+                
+                
+                <div class="muted" style="margin-top:.7rem; font-size:.8rem;">
+                    Some signals aren’t recorded for this volume yet (online mentions) — these typically accrue after publication.
+                </div>
+                
+
+                
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+                        <span class="sig-pill sig-teal">🔗 Data citations · 50</span>
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 15 countries</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+            
+            
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Dataset reference backbone — heuristic signal (score 1.00)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Dataset reference backbone
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Scholarly uptake — heuristic signal (score 0.88)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Scholarly uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="High-visibility uptake — heuristic signal (score 0.85)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            High-visibility uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Benchmark resource — heuristic signal (score 0.80)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Benchmark resource
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#065f46">🏛 Practical & Real-World</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-practical" data-opacity="1"
+                              data-tip="Infrastructure dataset — heuristic signal (score 0.95)">
+                            <span class="role-dot" data-bg="#10b981"></span>
+                            Infrastructure dataset
+                            <span class="role-strength" data-bg="#dcfce7" data-color="#166534">Strong</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access & Visibility</span> <span class="badge" style="background:#f0fdf4; color:#15803d; border:1px solid #bbf7d0;">DataCite</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.4743746" target="_blank">10.5281/zenodo.4743746</a></li>
+                    <li><strong>Resource Type:</strong> Dataset</li>
+                    <li><strong>Total Views:</strong> 17,476</li>
+                    <li><strong>Total Downloads:</strong> 10,012</li>
+                </ul>
+            </section>
+            
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.6rem;">
+                        This work has <strong>0</strong> recorded events globally.
+                    </p>
+                    
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 29</li>
+                                <li><strong>Supporting:</strong> 0</li>
+                                <li><strong>Mentioning:</strong> 29</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite / Crossref</span></h2>
+                            
+                            
+                                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Tracking downstream reuse and integration.</p>
+                                <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Reused in 231 related works:</h3>
+                                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom: 1rem;">
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">176 Articles</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">29 Book-Chapters</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">13 Preprints</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">8 Reviews</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">1 Paratexts</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">1 Dissertations</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">3 Biomedical Article Mentions (Europe Pmc)s</span>
+                                    
+                                </div>
+                                
+                                
+                                    <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Known Links:</h3>
+                                    <div style="display:flex; flex-direction:column; gap:0.3rem; max-height: 150px; overflow-y: auto;">
+                                        
+                                            <a href="https://doi.org/10.5281/zenodo.4743745" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Zenodo Dataset &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1016/j.dib.2025.112167" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.3390/s24237534" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.3390/s21248231" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                    </div>
+                                
+
+                            
+                        </section>
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+        
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>228</strong> citing works.
+                        <strong>12.4%</strong> come from the Top 10 institutions.
+                        Median citing paper cited <strong>5.0</strong> times itself.
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (176)</span><span class="tag tag-soft" style="font-size:.75rem;">book-chapter (29)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (13)</span><span class="tag tag-soft" style="font-size:.75rem;">review (8)</span><span class="tag tag-soft" style="font-size:.75rem;">paratext (1)</span>
+                        <span class="tag" style="font-size:.75rem;">Unknown</span><span class="tag" style="font-size:.75rem;">IEEE Access</span><span class="tag" style="font-size:.75rem;">Computer Networks</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2021, 2022, 2023, 2024, 2025, 2026]"
+                    data-values="[6, 38, 50, 76, 54, 4]">
+                </canvas>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
+
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (29)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">India (23)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (21)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (17)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Saudi Arabia (14)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Spain (11)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">South Korea (10)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Portugal (10)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Canada (9)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Poland (9)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Italy (9)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Turkey (8)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Brazil (8)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Jordan (7)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">France (7)</span>
+                    
+                </div>
+                
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (207)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (18)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (16)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (15)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (12)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Other (9)</span>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Polytechnic Institute of Porto</strong>
+                        <a href="https://ror.org/04988re48" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(6.583333333333333)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Bradford</strong>
+                        <a href="https://ror.org/00vs8d940" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(4.333333333333334)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Koya University</strong>
+                        <a href="https://ror.org/017pq0w72" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Universidad de Murcia</strong>
+                        <a href="https://ror.org/03p3aeb86" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.25)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ontario Tech University</strong>
+                        <a href="https://ror.org/016zre027" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Delhi Technological University</strong>
+                        <a href="https://ror.org/01ztcvt22" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Beijing University of Technology</strong>
+                        <a href="https://ror.org/037b1pp87" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Naples Federico II</strong>
+                        <a href="https://ror.org/05290cv24" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Universidade Federal de Uberlândia</strong>
+                        <a href="https://ror.org/04x3wvr31" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Høyskolen Kristiania</strong>
+                        <a href="https://ror.org/03gss5916" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Isabel Praça</strong>
+                        <a href="https://orcid.org/0000-0002-2519-9859" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(7)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>João Vitorino</strong>
+                        <a href="https://orcid.org/0000-0002-4968-3653" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Antonio Pescapè</strong>
+                        <a href="https://orcid.org/0000-0002-0221-7444" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Moemedi Lefoane</strong>
+                        <a href="https://orcid.org/0000-0002-1057-1726" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ibrahim Ghafir</strong>
+                        <a href="https://orcid.org/0000-0003-3702-3866" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Sohag Kabir</strong>
+                        <a href="https://orcid.org/0000-0001-7483-9974" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Irfan‐Ullah Awan</strong>
+                        <a href="https://openalex.org/A5113145252" target="_blank" class="orcid-badge">Profile</a>
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Eva Maia</strong>
+                        <a href="https://orcid.org/0000-0002-8075-531X" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Giampaolo Bovenzi</strong>
+                        <a href="https://orcid.org/0000-0002-0997-9724" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Valerio Persico</strong>
+                        <a href="https://orcid.org/0000-0002-7477-1452" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+        </div>
+
+        
+        
+        
+        
+            
+        
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>3 authors · 0 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Sebastián García</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0001-6238-9910" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Agustin Parmisano</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>María José Erquiaga</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                </ul>
+
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>4 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Internet of Things</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer network</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer security</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
+
+
+
+        
+        
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.75rem;"
+                 data-total="228">
+                228 citing works (most recent first)
+            </div>
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Decentralized Federated Learning: Fundamentals, State of the Art, Frameworks, Trends, and Challenges</td>
+                        <td>IEEE Communications Surveys & Tutorials</td>
+                        <td><a href="https://doi.org/10.1109/comst.2023.3315746" target="_blank" style="word-break: break-all;">10.1109/comst.2023.3315746</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Explainable Artificial Intelligence Applications in Cyber Security: State-of-the-Art in Research</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2022.3204051" target="_blank" style="word-break: break-all;">10.1109/access.2022.3204051</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Design and Development of RNN Anomaly Detection Model for IoT Networks</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2022.3176317" target="_blank" style="word-break: break-all;">10.1109/access.2022.3176317</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Deep learning enabled intrusion detection system for Industrial IOT environment</td>
+                        <td>Expert Systems with Applications</td>
+                        <td><a href="https://doi.org/10.1016/j.eswa.2024.123808" target="_blank" style="word-break: break-all;">10.1016/j.eswa.2024.123808</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Fed-ANIDS: Federated learning for anomaly-based network intrusion detection systems</td>
+                        <td>Expert Systems with Applications</td>
+                        <td><a href="https://doi.org/10.1016/j.eswa.2023.121000" target="_blank" style="word-break: break-all;">10.1016/j.eswa.2023.121000</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Zero-day attack detection: a systematic literature review</td>
+                        <td>Artificial Intelligence Review</td>
+                        <td><a href="https://doi.org/10.1007/s10462-023-10437-z" target="_blank" style="word-break: break-all;">10.1007/s10462-023-10437-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Machine learning for encrypted malicious traffic detection: Approaches, datasets and comparative study</td>
+                        <td>Computers & Security</td>
+                        <td><a href="https://doi.org/10.1016/j.cose.2021.102542" target="_blank" style="word-break: break-all;">10.1016/j.cose.2021.102542</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Machine Learning-Enabled IoT Security: Open Issues and Challenges Under Advanced Persistent Threats</td>
+                        <td>ACM Computing Surveys</td>
+                        <td><a href="https://doi.org/10.1145/3530812" target="_blank" style="word-break: break-all;">10.1145/3530812</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Light-weight federated learning-based anomaly detection for time-series data in industrial control systems</td>
+                        <td>Computers in Industry</td>
+                        <td><a href="https://doi.org/10.1016/j.compind.2022.103692" target="_blank" style="word-break: break-all;">10.1016/j.compind.2022.103692</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A Comprehensive Survey of Generative Adversarial Networks (GANs) in Cybersecurity Intrusion Detection</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2023.3296707" target="_blank" style="word-break: break-all;">10.1109/access.2023.3296707</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Adversarial machine learning for network intrusion detection: A comparative study</td>
+                        <td>Computer Networks</td>
+                        <td><a href="https://doi.org/10.1016/j.comnet.2022.109073" target="_blank" style="word-break: break-all;">10.1016/j.comnet.2022.109073</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>lIDS-SIoEL: intrusion detection framework for IoT-based smart environments security using ensemble learning</td>
+                        <td>Cluster Computing</td>
+                        <td><a href="https://doi.org/10.1007/s10586-022-03810-0" target="_blank" style="word-break: break-all;">10.1007/s10586-022-03810-0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>A Framework for Anomaly Detection in IoT Networks Using Conditional Generative Adversarial Networks</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2021.3132127" target="_blank" style="word-break: break-all;">10.1109/access.2021.3132127</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Comprehensive Review of the State-of-the-Art on Security and Privacy Issues in Healthcare</td>
+                        <td>ACM Computing Surveys</td>
+                        <td><a href="https://doi.org/10.1145/3571156" target="_blank" style="word-break: break-all;">10.1145/3571156</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>AI techniques for IoT-based DDoS attack detection: Taxonomies, comprehensive review and research challenges</td>
+                        <td>Computer Science Review</td>
+                        <td><a href="https://doi.org/10.1016/j.cosrev.2024.100631" target="_blank" style="word-break: break-all;">10.1016/j.cosrev.2024.100631</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Collaborative threat intelligence: Enhancing IoT security through blockchain and machine learning integration</td>
+                        <td>Journal of King Saud University - Computer and Information Sciences</td>
+                        <td><a href="https://doi.org/10.1016/j.jksuci.2024.101939" target="_blank" style="word-break: break-all;">10.1016/j.jksuci.2024.101939</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Network anomaly detection methods in IoT environments via deep learning: A Fair comparison of performance and robustness</td>
+                        <td>Computers & Security</td>
+                        <td><a href="https://doi.org/10.1016/j.cose.2023.103167" target="_blank" style="word-break: break-all;">10.1016/j.cose.2023.103167</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A novel deep learning-based intrusion detection system for IoT DDoS security</td>
+                        <td>Internet of Things</td>
+                        <td><a href="https://doi.org/10.1016/j.iot.2024.101336" target="_blank" style="word-break: break-all;">10.1016/j.iot.2024.101336</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Quantum deep learning-based anomaly detection for enhanced network security</td>
+                        <td>Quantum Machine Intelligence</td>
+                        <td><a href="https://doi.org/10.1007/s42484-024-00163-2" target="_blank" style="word-break: break-all;">10.1007/s42484-024-00163-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A Survey of Public IoT Datasets for Network Security Research</td>
+                        <td>IEEE Communications Surveys & Tutorials</td>
+                        <td><a href="https://doi.org/10.1109/comst.2023.3288942" target="_blank" style="word-break: break-all;">10.1109/comst.2023.3288942</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Toward Enhancing Privacy Preservation of a Federated Learning CNN Intrusion Detection System in IoT: Method and Empirical Study</td>
+                        <td>ACM Transactions on Software Engineering and Methodology</td>
+                        <td><a href="https://doi.org/10.1145/3695998" target="_blank" style="word-break: break-all;">10.1145/3695998</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Effective Multitask Deep Learning for IoT Malware Detection and Identification Using Behavioral Traffic Analysis</td>
+                        <td>IEEE Transactions on Network and Service Management</td>
+                        <td><a href="https://doi.org/10.1109/tnsm.2022.3200741" target="_blank" style="word-break: break-all;">10.1109/tnsm.2022.3200741</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Intelligent Techniques for Detecting Network Attacks: Review and Research Directions</td>
+                        <td>Sensors</td>
+                        <td><a href="https://doi.org/10.3390/s21217070" target="_blank" style="word-break: break-all;">10.3390/s21217070</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Survey of Smart Home IoT Device Classification Using Machine Learning-Based Network Traffic Analysis</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2022.3205023" target="_blank" style="word-break: break-all;">10.1109/access.2022.3205023</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Stochastic gradient descent classifier-based lightweight intrusion detection systems using the efficient feature subsets of datasets</td>
+                        <td>Expert Systems with Applications</td>
+                        <td><a href="https://doi.org/10.1016/j.eswa.2023.121493" target="_blank" style="word-break: break-all;">10.1016/j.eswa.2023.121493</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Intrusion detection and prevention in fog based IoT environments: A systematic literature review</td>
+                        <td>Computer Networks</td>
+                        <td><a href="https://doi.org/10.1016/j.comnet.2022.109154" target="_blank" style="word-break: break-all;">10.1016/j.comnet.2022.109154</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A Comprehensive Survey for IoT Security Datasets Taxonomy, Classification and Machine Learning Mechanisms</td>
+                        <td>Computers & Security</td>
+                        <td><a href="https://doi.org/10.1016/j.cose.2023.103283" target="_blank" style="word-break: break-all;">10.1016/j.cose.2023.103283</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Unsupervised Learning for Feature Selection: A Proposed Solution for Botnet Detection in 5G Networks</td>
+                        <td>IEEE Transactions on Industrial Informatics</td>
+                        <td><a href="https://doi.org/10.1109/tii.2022.3192044" target="_blank" style="word-break: break-all;">10.1109/tii.2022.3192044</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Anomaly detection model based on gradient boosting and decision tree for IoT environments security</td>
+                        <td>Journal of Reliable Intelligent Environments</td>
+                        <td><a href="https://doi.org/10.1007/s40860-022-00184-3" target="_blank" style="word-break: break-all;">10.1007/s40860-022-00184-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Online Self-Supervised Deep Learning for Intrusion Detection Systems</td>
+                        <td>IEEE Transactions on Information Forensics and Security</td>
+                        <td><a href="https://doi.org/10.1109/tifs.2024.3402148" target="_blank" style="word-break: break-all;">10.1109/tifs.2024.3402148</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Comparative Analysis of Machine Learning Techniques for IoT Intrusion Detection</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-08147-7_13" target="_blank" style="word-break: break-all;">10.1007/978-3-031-08147-7_13</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A survey on blockchain, SDN and NFV for the smart-home security</td>
+                        <td>Internet of Things</td>
+                        <td><a href="https://doi.org/10.1016/j.iot.2022.100588" target="_blank" style="word-break: break-all;">10.1016/j.iot.2022.100588</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Adaptative Perturbation Patterns: Realistic Adversarial Learning for Robust Intrusion Detection</td>
+                        <td>Future Internet</td>
+                        <td><a href="https://doi.org/10.3390/fi14040108" target="_blank" style="word-break: break-all;">10.3390/fi14040108</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Intrusion Detection Based on Federated Learning: A Systematic Review</td>
+                        <td>ACM Computing Surveys</td>
+                        <td><a href="https://doi.org/10.1145/3731596" target="_blank" style="word-break: break-all;">10.1145/3731596</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Towards adversarial realism and robust learning for IoT intrusion detection and classification</td>
+                        <td>Annals of Telecommunications</td>
+                        <td><a href="https://doi.org/10.1007/s12243-023-00953-y" target="_blank" style="word-break: break-all;">10.1007/s12243-023-00953-y</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Ensemble learning based anomaly detection for IoT cybersecurity via Bayesian hyperparameters sensitivity analysis</td>
+                        <td>Cybersecurity</td>
+                        <td><a href="https://doi.org/10.1186/s42400-024-00238-4" target="_blank" style="word-break: break-all;">10.1186/s42400-024-00238-4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Deep learning hybridization for improved malware detection in smart Internet of Things</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-024-57864-8" target="_blank" style="word-break: break-all;">10.1038/s41598-024-57864-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>SIM-FED: Secure IoT malware detection model with federated learning</td>
+                        <td>Computers & Electrical Engineering</td>
+                        <td><a href="https://doi.org/10.1016/j.compeleceng.2024.109139" target="_blank" style="word-break: break-all;">10.1016/j.compeleceng.2024.109139</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A Comparative Analysis of Anomaly Detection Methods in IoT Networks: An Experimental Study</td>
+                        <td>Applied Sciences</td>
+                        <td><a href="https://doi.org/10.3390/app142411545" target="_blank" style="word-break: break-all;">10.3390/app142411545</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Detecting Compromised IoT Devices Through XGBoost</td>
+                        <td>IEEE Transactions on Intelligent Transportation Systems</td>
+                        <td><a href="https://doi.org/10.1109/tits.2022.3187252" target="_blank" style="word-break: break-all;">10.1109/tits.2022.3187252</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Multilevel Intrusion Detection Based on Transformer and Wavelet Transform for IoT Data Security</td>
+                        <td>IEEE Internet of Things Journal</td>
+                        <td><a href="https://doi.org/10.1109/jiot.2024.3369034" target="_blank" style="word-break: break-all;">10.1109/jiot.2024.3369034</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Robust Intrusion Detection System Using an Improved Hybrid Deep Learning Model for Binary and Multi-Class Classification in IoT Networks</td>
+                        <td>Technologies</td>
+                        <td><a href="https://doi.org/10.3390/technologies13030102" target="_blank" style="word-break: break-all;">10.3390/technologies13030102</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Evaluating and enhancing intrusion detection systems in IoMT: The importance of domain-specific datasets</td>
+                        <td>Internet of Things</td>
+                        <td><a href="https://doi.org/10.1016/j.iot.2025.101631" target="_blank" style="word-break: break-all;">10.1016/j.iot.2025.101631</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Taking Advantage of the Mistakes: Rethinking Clustered Federated Learning for IoT Anomaly Detection</td>
+                        <td>IEEE Transactions on Parallel and Distributed Systems</td>
+                        <td><a href="https://doi.org/10.1109/tpds.2024.3379905" target="_blank" style="word-break: break-all;">10.1109/tpds.2024.3379905</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A comprehensive survey of Federated Intrusion Detection Systems: Techniques, challenges and solutions</td>
+                        <td>Computer Science Review</td>
+                        <td><a href="https://doi.org/10.1016/j.cosrev.2024.100717" target="_blank" style="word-break: break-all;">10.1016/j.cosrev.2024.100717</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A Survey of Using Machine Learning in IoT Security and the Challenges Faced by Researchers</td>
+                        <td>Informatica</td>
+                        <td><a href="https://doi.org/10.31449/inf.v47i6.4635" target="_blank" style="word-break: break-all;">10.31449/inf.v47i6.4635</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Comparison and Investigation of AI-Based Approaches for Cyberattack Detection in Cyber-Physical Systems</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2024.3370436" target="_blank" style="word-break: break-all;">10.1109/access.2024.3370436</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Constraining Adversarial Attacks on Network Intrusion Detection Systems: Transferability and Defense Analysis</td>
+                        <td>IEEE Transactions on Network and Service Management</td>
+                        <td><a href="https://doi.org/10.1109/tnsm.2024.3357316" target="_blank" style="word-break: break-all;">10.1109/tnsm.2024.3357316</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>NetTiSA: Extended IP flow with time-series features for universal bandwidth-constrained high-speed network traffic classification</td>
+                        <td>Computer Networks</td>
+                        <td><a href="https://doi.org/10.1016/j.comnet.2023.110147" target="_blank" style="word-break: break-all;">10.1016/j.comnet.2023.110147</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>TFKAN: Transformer based on Kolmogorov–Arnold Networks for Intrusion Detection in IoT environment</td>
+                        <td>Egyptian Informatics Journal</td>
+                        <td><a href="https://doi.org/10.1016/j.eij.2025.100666" target="_blank" style="word-break: break-all;">10.1016/j.eij.2025.100666</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A survey on performance evaluation of artificial intelligence algorithms for improving IoT security systems</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-023-46640-9" target="_blank" style="word-break: break-all;">10.1038/s41598-023-46640-9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Classifying attack traffic in IoT environments via few-shot learning</td>
+                        <td>Journal of Information Security and Applications</td>
+                        <td><a href="https://doi.org/10.1016/j.jisa.2024.103762" target="_blank" style="word-break: break-all;">10.1016/j.jisa.2024.103762</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A deep learning ensemble approach for malware detection in Internet of Things utilizing Explainable Artificial Intelligence</td>
+                        <td>Engineering Applications of Artificial Intelligence</td>
+                        <td><a href="https://doi.org/10.1016/j.engappai.2024.109560" target="_blank" style="word-break: break-all;">10.1016/j.engappai.2024.109560</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>ACNN-BOT: An Ant Colony Inspired Feature Selection Approach for ANN Based Botnet Detection</td>
+                        <td>Wireless Personal Communications</td>
+                        <td><a href="https://doi.org/10.1007/s11277-023-10695-8" target="_blank" style="word-break: break-all;">10.1007/s11277-023-10695-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Temporal Convolutional Network Approach to Secure Open Charge Point Protocol (OCPP) in Electric Vehicle Charging</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2025.3529526" target="_blank" style="word-break: break-all;">10.1109/access.2025.3529526</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Explainable artificial intelligence models in intrusion detection systems</td>
+                        <td>Engineering Applications of Artificial Intelligence</td>
+                        <td><a href="https://doi.org/10.1016/j.engappai.2025.110145" target="_blank" style="word-break: break-all;">10.1016/j.engappai.2025.110145</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A review on intrusion detection datasets: tools, processes, and features</td>
+                        <td>Computer Networks</td>
+                        <td><a href="https://doi.org/10.1016/j.comnet.2025.111177" target="_blank" style="word-break: break-all;">10.1016/j.comnet.2025.111177</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Advanced IDS: a comparative study of datasets and machine learning algorithms for network flow-based intrusion detection systems</td>
+                        <td>Applied Intelligence</td>
+                        <td><a href="https://doi.org/10.1007/s10489-025-06422-4" target="_blank" style="word-break: break-all;">10.1007/s10489-025-06422-4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Internet of Things botnets: A survey on Artificial Intelligence based detection techniques</td>
+                        <td>Journal of Network and Computer Applications</td>
+                        <td><a href="https://doi.org/10.1016/j.jnca.2025.104110" target="_blank" style="word-break: break-all;">10.1016/j.jnca.2025.104110</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Cutting-edge approaches in intrusion detection systems: a systematic review of deep learning, reinforcement learning, and ensemble techniques</td>
+                        <td>Iran Journal of Computer Science</td>
+                        <td><a href="https://doi.org/10.1007/s42044-025-00246-8" target="_blank" style="word-break: break-all;">10.1007/s42044-025-00246-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Choir-IDS: A federated learning framework for fidelity-calibrated explainable intrusion detection system for edge-IoT networks</td>
+                        <td>Information Fusion</td>
+                        <td><a href="https://doi.org/10.1016/j.inffus.2025.103473" target="_blank" style="word-break: break-all;">10.1016/j.inffus.2025.103473</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Comparative Analysis of Machine Learning Techniques for Handling Imbalance in IoT-23 Dataset for Intrusion Detection Systems</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/iotsms62296.2024.10710296" target="_blank" style="word-break: break-all;">10.1109/iotsms62296.2024.10710296</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Enhancing Network Traffic Classification with Large Language Models</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/bigdata62323.2024.10825308" target="_blank" style="word-break: break-all;">10.1109/bigdata62323.2024.10825308</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>An Anomaly Detection Model for IoT Networks based on Flow and Flag Features using a Feed-Forward Neural Network</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/ccnc49033.2022.9700597" target="_blank" style="word-break: break-all;">10.1109/ccnc49033.2022.9700597</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Machine Learning for Botnet Detection: An Optimized Feature Selection Approach</td>
+                        <td>The 5th International Conference on Future Networks &amp; Distributed Systems</td>
+                        <td><a href="https://doi.org/10.1145/3508072.3508102" target="_blank" style="word-break: break-all;">10.1145/3508072.3508102</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Intrusion Detection System in Software-Defined Networks Using Machine Learning and Deep Learning Techniques --A Comprehensive Survey</td>
+                        <td>Figshare</td>
+                        <td><a href="https://doi.org/10.36227/techrxiv.17153213.v1" target="_blank" style="word-break: break-all;">10.36227/techrxiv.17153213.v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Botnet Detection in IoT Devices Using Random Forest Classifier with Independent Component Analysis</td>
+                        <td>Journal of Information and Communication Technology</td>
+                        <td><a href="https://doi.org/10.32890/jict2022.21.2.3" target="_blank" style="word-break: break-all;">10.32890/jict2022.21.2.3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>BOTA: Explainable IoT Malware Detection in Large Networks</td>
+                        <td>IEEE Internet of Things Journal</td>
+                        <td><a href="https://doi.org/10.1109/jiot.2022.3228816" target="_blank" style="word-break: break-all;">10.1109/jiot.2022.3228816</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Meta-Learner-Based Approach for Detecting Attacks on Internet of Things Networks</td>
+                        <td>Sensors</td>
+                        <td><a href="https://doi.org/10.3390/s23198191" target="_blank" style="word-break: break-all;">10.3390/s23198191</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Examination of Traditional Botnet Detection on IoT-Based Bots</td>
+                        <td>Sensors</td>
+                        <td><a href="https://doi.org/10.3390/s24031027" target="_blank" style="word-break: break-all;">10.3390/s24031027</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>FamilyGuard: A Security Architecture for Anomaly Detection in Home Networks</td>
+                        <td>Sensors</td>
+                        <td><a href="https://doi.org/10.3390/s22082895" target="_blank" style="word-break: break-all;">10.3390/s22082895</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Lightweight DNN-based IDS for Detecting IoT Cyberattacks in Edge Computing</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/atc55345.2022.9943049" target="_blank" style="word-break: break-all;">10.1109/atc55345.2022.9943049</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Network Traffic Classification Based on Single Flow Time Series Analysis</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.23919/cnsm59352.2023.10327876" target="_blank" style="word-break: break-all;">10.23919/cnsm59352.2023.10327876</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A fault detection model for edge computing security using imbalanced classification</td>
+                        <td>Journal of Systems Architecture</td>
+                        <td><a href="https://doi.org/10.1016/j.sysarc.2022.102779" target="_blank" style="word-break: break-all;">10.1016/j.sysarc.2022.102779</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Fortifying IoT against crimpling cyber-attacks: a systematic review</td>
+                        <td>Karbala International Journal of Modern Science</td>
+                        <td><a href="https://doi.org/10.33640/2405-609x.3329" target="_blank" style="word-break: break-all;">10.33640/2405-609x.3329</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Smart Intrusion Detection in IoT Edge Computing Using Federated Learning</td>
+                        <td>Revue d intelligence artificielle</td>
+                        <td><a href="https://doi.org/10.18280/ria.370505" target="_blank" style="word-break: break-all;">10.18280/ria.370505</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Advancements in Machine Learning-Based Intrusion Detection in IoT: Research Trends and Challenges</td>
+                        <td>Algorithms</td>
+                        <td><a href="https://doi.org/10.3390/a18040209" target="_blank" style="word-break: break-all;">10.3390/a18040209</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Few-Shot Learning-Based Malicious IoT Traffic Detection with Prototypical Graph Neural Networks</td>
+                        <td>IEICE Transactions on Information and Systems</td>
+                        <td><a href="https://doi.org/10.1587/transinf.2022ofp0004" target="_blank" style="word-break: break-all;">10.1587/transinf.2022ofp0004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Enhancing IoT Security With Trust Management Using Ensemble XGBoost and AdaBoost Techniques</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2024.3413600" target="_blank" style="word-break: break-all;">10.1109/access.2024.3413600</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Farm-flow dataset: Intrusion detection in smart agriculture based on network flows</td>
+                        <td>Computers & Electrical Engineering</td>
+                        <td><a href="https://doi.org/10.1016/j.compeleceng.2024.109892" target="_blank" style="word-break: break-all;">10.1016/j.compeleceng.2024.109892</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>An Intelligent Intrusion Detection System for Internet of Things Attack Detection and Identification Using Machine Learning</td>
+                        <td>ARO-The Scientific Journal of Koya University</td>
+                        <td><a href="https://doi.org/10.14500/aro.11124" target="_blank" style="word-break: break-all;">10.14500/aro.11124</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>PS-IPS: Deploying Intrusion Prevention System with machine learning on programmable switch</td>
+                        <td>Future Generation Computer Systems</td>
+                        <td><a href="https://doi.org/10.1016/j.future.2023.11.011" target="_blank" style="word-break: break-all;">10.1016/j.future.2023.11.011</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Reinforcement Q-Learning-Based Adaptive Encryption Model for Cyberthreat Mitigation in Wireless Sensor Networks</td>
+                        <td>Sensors</td>
+                        <td><a href="https://doi.org/10.3390/s25072056" target="_blank" style="word-break: break-all;">10.3390/s25072056</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Modern NetFlow network dataset with labeled attacks and detection methods</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1145/3600160.3605094" target="_blank" style="word-break: break-all;">10.1145/3600160.3605094</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>GateKeeper: An UltraLite malicious traffic identification method with dual-aspect optimization strategies on IoT gateways</td>
+                        <td>Computer Networks</td>
+                        <td><a href="https://doi.org/10.1016/j.comnet.2024.110556" target="_blank" style="word-break: break-all;">10.1016/j.comnet.2024.110556</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Comparing Malware Attack Detection using Machine Learning Techniques in IoT Network Traffic</td>
+                        <td>International Journal of Innovative Computing</td>
+                        <td><a href="https://doi.org/10.11113/ijic.v13n1.384" target="_blank" style="word-break: break-all;">10.11113/ijic.v13n1.384</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>SecureIoT: Novel Machine Learning Algorithms for Detecting and Preventing Attacks on IoT Devices</td>
+                        <td>Journal of Electrical Systems</td>
+                        <td><a href="https://doi.org/10.52783/jes.641" target="_blank" style="word-break: break-all;">10.52783/jes.641</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Towards Resource-Efficient DDoS Detection in IoT: Leveraging Feature Engineering of System and Network Usage Metrics</td>
+                        <td>Journal of Network and Systems Management</td>
+                        <td><a href="https://doi.org/10.1007/s10922-024-09848-2" target="_blank" style="word-break: break-all;">10.1007/s10922-024-09848-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Machine Learning-Based Methodologies for Cyber-Attacks and Network Traffic Monitoring: A Review and Insights</td>
+                        <td>Information</td>
+                        <td><a href="https://doi.org/10.3390/info15110741" target="_blank" style="word-break: break-all;">10.3390/info15110741</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Machine Learning based IoT-BotNet Attack Detection Using Real-time Heterogeneous Data</td>
+                        <td>2022 International Conference on Electrical, Computer and Energy Technologies (ICECET)</td>
+                        <td><a href="https://doi.org/10.1109/icecet55527.2022.9872817" target="_blank" style="word-break: break-all;">10.1109/icecet55527.2022.9872817</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Anomaly Detection in Smart Agriculture Systems on Network Edge Using Deep Learning Technique</td>
+                        <td>Sustainable Machine Intelligence Journal</td>
+                        <td><a href="https://doi.org/10.61185/smij.2023.33104" target="_blank" style="word-break: break-all;">10.61185/smij.2023.33104</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Investigating the impact of feature selection on adversarial transferability in intrusion detection system</td>
+                        <td>Computers & Security</td>
+                        <td><a href="https://doi.org/10.1016/j.cose.2025.104327" target="_blank" style="word-break: break-all;">10.1016/j.cose.2025.104327</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>IoT Botnet-Traffic Classification Using Few-Shot Learning</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/bigdata59044.2023.10386602" target="_blank" style="word-break: break-all;">10.1109/bigdata59044.2023.10386602</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Latent Semantic Analysis and Graph Theory for Alert Correlation: A Proposed Approach for IoT Botnet Detection</td>
+                        <td>IEEE Open Journal of the Communications Society</td>
+                        <td><a href="https://doi.org/10.1109/ojcoms.2024.3419570" target="_blank" style="word-break: break-all;">10.1109/ojcoms.2024.3419570</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>ACI-IoT-2023: A Robust Dataset for Internet of Things Network Security Analysis</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/milcom61039.2024.10773916" target="_blank" style="word-break: break-all;">10.1109/milcom61039.2024.10773916</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Attack-adaptive network intrusion detection systems for IoT networks through class incremental learning</td>
+                        <td>Computer Networks</td>
+                        <td><a href="https://doi.org/10.1016/j.comnet.2025.111228" target="_blank" style="word-break: break-all;">10.1016/j.comnet.2025.111228</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Efficient IoT Traffic Inference: From Multi-view Classification to Progressive Monitoring</td>
+                        <td>ACM Transactions on Internet of Things</td>
+                        <td><a href="https://doi.org/10.1145/3625306" target="_blank" style="word-break: break-all;">10.1145/3625306</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Machine Learning Algorithms for Intrusion Detection in IoT-enabled Smart Homes</td>
+                        <td>Procedia Computer Science</td>
+                        <td><a href="https://doi.org/10.1016/j.procs.2024.08.059" target="_blank" style="word-break: break-all;">10.1016/j.procs.2024.08.059</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td><scp>RF</scp> ‐ <scp>FLIDS</scp> : A Novel Hybrid Intrusion Detection Model for Enhanced Anomaly Detection in <scp>IoT</scp> Networks</td>
+                        <td>Security and Privacy</td>
+                        <td><a href="https://doi.org/10.1002/spy2.70041" target="_blank" style="word-break: break-all;">10.1002/spy2.70041</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Improving Intrusion Detection Systems for IoT Devices using Automated Feature Generation based on ToN_IoT dataset</td>
+                        <td>Kocaeli Üniversitesi - AVESİS</td>
+                        <td><a href="https://doi.org/10.1109/ubmk59864.2023.10286655" target="_blank" style="word-break: break-all;">10.1109/ubmk59864.2023.10286655</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>P4-Assisted Slowloris DDoS attack detection in IoT environments by using ML and DL</td>
+                        <td>Computer Networks</td>
+                        <td><a href="https://doi.org/10.1016/j.comnet.2025.111364" target="_blank" style="word-break: break-all;">10.1016/j.comnet.2025.111364</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Interpretability and Complexity Reduction in Iot Network Anomaly Detection Via XAI</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icasspw62465.2024.10626031" target="_blank" style="word-break: break-all;">10.1109/icasspw62465.2024.10626031</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Enhancing IoT Resilience: Machine Learning Techniques for Autonomous Anomaly Detection and Threat Mitigation</td>
+                        <td>Procedia Computer Science</td>
+                        <td><a href="https://doi.org/10.1016/j.procs.2025.02.065" target="_blank" style="word-break: break-all;">10.1016/j.procs.2025.02.065</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Impact of Dataset Composition on Machine Learning Performance for Anomaly Detection in Smart Home Cybersecurity</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/isncc62547.2024.10759024" target="_blank" style="word-break: break-all;">10.1109/isncc62547.2024.10759024</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Exploring the Role of Artificial Intelligence in Enhancing Security Operations: A Systematic Review</td>
+                        <td>ACM Computing Surveys</td>
+                        <td><a href="https://doi.org/10.1145/3747587" target="_blank" style="word-break: break-all;">10.1145/3747587</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Enhancing Embedded IoT Systems for Intrusion Detection Using a Hybrid Model</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-57452-8_15" target="_blank" style="word-break: break-all;">10.1007/978-3-031-57452-8_15</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>An analytics-driven framework for securing industrial IoT-Enabled Supply Chain Management Systems</td>
+                        <td>Supply Chain Analytics</td>
+                        <td><a href="https://doi.org/10.1016/j.sca.2025.100128" target="_blank" style="word-break: break-all;">10.1016/j.sca.2025.100128</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>PRAU-GIN: GIN-based android malware classification with traffic refinement and node augmentation</td>
+                        <td>International Journal of Information Security</td>
+                        <td><a href="https://doi.org/10.1007/s10207-025-01110-3" target="_blank" style="word-break: break-all;">10.1007/s10207-025-01110-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Towards Zero-Shot Flow-Based Cyber-Security Anomaly Detection Framework</td>
+                        <td>Applied Sciences</td>
+                        <td><a href="https://doi.org/10.3390/app12199636" target="_blank" style="word-break: break-all;">10.3390/app12199636</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A Multi-Perspective Feature Approach to Few-Shot Classification of IoT Traffic</td>
+                        <td>IEEE Transactions on Green Communications and Networking</td>
+                        <td><a href="https://doi.org/10.1109/tgcn.2023.3269842" target="_blank" style="word-break: break-all;">10.1109/tgcn.2023.3269842</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>CMFTC: Cross Modality Fusion Efficient Multitask Encrypt Traffic Classification for Efficient Management of IIoT</td>
+                        <td>IEEE Transactions on Network Science and Engineering</td>
+                        <td><a href="https://doi.org/10.1109/tnse.2023.3279427" target="_blank" style="word-break: break-all;">10.1109/tnse.2023.3279427</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Network traffic analysis through deep learning for detection of an army of bots in health IoT network</td>
+                        <td>International Journal of Pervasive Computing and Communications</td>
+                        <td><a href="https://doi.org/10.1108/ijpcc-10-2021-0259" target="_blank" style="word-break: break-all;">10.1108/ijpcc-10-2021-0259</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>IoT Security Using Machine Learning Methods with Features Correlation</td>
+                        <td>Journal of Computing Theories and Applications</td>
+                        <td><a href="https://doi.org/10.62411/jcta.11179" target="_blank" style="word-break: break-all;">10.62411/jcta.11179</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Anomaly traffic detection based on feature fluctuation for secure industrial internet of things</td>
+                        <td>Peer-to-Peer Networking and Applications</td>
+                        <td><a href="https://doi.org/10.1007/s12083-023-01482-0" target="_blank" style="word-break: break-all;">10.1007/s12083-023-01482-0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>An Evaluation of AI-Based Network Intrusion Detection in Resource-Constrained Environments</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/uemcon59035.2023.10315971" target="_blank" style="word-break: break-all;">10.1109/uemcon59035.2023.10315971</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Latent Dirichlet Allocation for the Detection of Multi-Stage Attacks</td>
+                        <td>Bradford Scholars (University of Bradford)</td>
+                        <td><a href="https://doi.org/10.1109/acit58888.2023.10453849" target="_blank" style="word-break: break-all;">10.1109/acit58888.2023.10453849</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>IoT botnet detection using deep learning</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/iwcmc58020.2023.10182422" target="_blank" style="word-break: break-all;">10.1109/iwcmc58020.2023.10182422</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Novel Approach to Identifying DDoS Traffic in the Smart Home Network via Exploratory Data Analysis</td>
+                        <td>Communications in computer and information science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-24801-6_34" target="_blank" style="word-break: break-all;">10.1007/978-3-031-24801-6_34</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A SURVEY ON PROMISING DATASETS AND RECENT MACHINE LEARNING APPROACHES FOR THE CLASSIFICATION OF ATTACKS IN INTERNET OF THINGS</td>
+                        <td>Journal of Information Technology and Computing</td>
+                        <td><a href="https://doi.org/10.48185/jitc.v4i2.890" target="_blank" style="word-break: break-all;">10.48185/jitc.v4i2.890</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>LSPR23: A novel IDS dataset from the largest live-fire cybersecurity exercise</td>
+                        <td>Journal of Information Security and Applications</td>
+                        <td><a href="https://doi.org/10.1016/j.jisa.2024.103847" target="_blank" style="word-break: break-all;">10.1016/j.jisa.2024.103847</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>FIGS: A Realistic Intrusion-Detection Framework for Highly Imbalanced IoT Environments</td>
+                        <td>Electronics</td>
+                        <td><a href="https://doi.org/10.3390/electronics14142917" target="_blank" style="word-break: break-all;">10.3390/electronics14142917</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Diving Deep With BotLab-DS1: A Novel Ground Truth-Empowered Botnet Dataset</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2024.3367122" target="_blank" style="word-break: break-all;">10.1109/access.2024.3367122</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Distributed Reinforcement Learning for IoT Security in Heterogeneous and Distributed Networks</td>
+                        <td>Computing&AI Connect</td>
+                        <td><a href="https://doi.org/10.69709/caic.2024.100109" target="_blank" style="word-break: break-all;">10.69709/caic.2024.100109</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>SDN-based solutions for malware analysis and detection: State-of-the-art, open issues and research challenges</td>
+                        <td>Journal of Information Security and Applications</td>
+                        <td><a href="https://doi.org/10.1016/j.jisa.2025.104145" target="_blank" style="word-break: break-all;">10.1016/j.jisa.2025.104145</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Comprehensive Evaluation of XBNet for Multi-Class IoT Attack Detection</td>
+                        <td>International Journal of Cloud Applications and Computing</td>
+                        <td><a href="https://doi.org/10.4018/ijcac.386134" target="_blank" style="word-break: break-all;">10.4018/ijcac.386134</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>One-class Classification Using Autoencoder Feature Residuals for Improved IoT Network Intrusion Detection</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icccn58024.2023.10230187" target="_blank" style="word-break: break-all;">10.1109/icccn58024.2023.10230187</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Classify Me Correctly if You Can: Evaluating Adversarial Machine Learning Threats in NIDS</td>
+                        <td>Lecture notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-64948-6_1" target="_blank" style="word-break: break-all;">10.1007/978-3-031-64948-6_1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>RBD24 : A labelled dataset with risk activities using log application data</td>
+                        <td>Computers & Security</td>
+                        <td><a href="https://doi.org/10.1016/j.cose.2024.104290" target="_blank" style="word-break: break-all;">10.1016/j.cose.2024.104290</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Performance Analysis of LSTM, SVM, CNN, and CNN-LSTM Algorithms for Malware Detection in IoT Dataset</td>
+                        <td>WSEAS TRANSACTIONS ON COMPUTER RESEARCH</td>
+                        <td><a href="https://doi.org/10.37394/232018.2025.13.27" target="_blank" style="word-break: break-all;">10.37394/232018.2025.13.27</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>SecMa: A Novel Multimodal Autoencoder Framework for Encrypted IoT Traffic Analysis and Attack Detection</td>
+                        <td>Engineering Technology & Applied Science Research</td>
+                        <td><a href="https://doi.org/10.48084/etasr.10336" target="_blank" style="word-break: break-all;">10.48084/etasr.10336</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A hybrid stacked sparse autoencoder and LightGBM framework for high-performance intrusion detection in IoT networks</td>
+                        <td>Iran Journal of Computer Science</td>
+                        <td><a href="https://doi.org/10.1007/s42044-025-00309-w" target="_blank" style="word-break: break-all;">10.1007/s42044-025-00309-w</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Accuracy Improvement Method for Malicious Domain Detection Using Machine Learning</td>
+                        <td>Institutional Repositories DataBase (IRDB)</td>
+                        <td><a href="https://doi.org/10.1109/ccnc51664.2024.10454674" target="_blank" style="word-break: break-all;">10.1109/ccnc51664.2024.10454674</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Enhancing IoT Security and Malware Detection Based on Machine Learning</td>
+                        <td>Lecture notes in networks and systems</td>
+                        <td><a href="https://doi.org/10.1007/978-981-96-6435-1_44" target="_blank" style="word-break: break-all;">10.1007/978-981-96-6435-1_44</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A Survey of Network Intrusion Detection Systems (NIDS) Based on Machine Learning Algorithms for Industrial Internet of Things (IIoT)</td>
+                        <td>Lecture notes in networks and systems</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-96631-6_16" target="_blank" style="word-break: break-all;">10.1007/978-3-031-96631-6_16</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Prediction Models to Effectively Detect Malware Patterns in the IoT Systems</td>
+                        <td>International Journal of Advanced Computer Science and Applications</td>
+                        <td><a href="https://doi.org/10.14569/ijacsa.2022.0130744" target="_blank" style="word-break: break-all;">10.14569/ijacsa.2022.0130744</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>One-Class Models for Intrusion Detection at ISP Customer Networks</td>
+                        <td>IFIP advances in information and communication technology</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-34107-6_3" target="_blank" style="word-break: break-all;">10.1007/978-3-031-34107-6_3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Is There a Trojan! : Literature Survey and Critical Evaluation of the Latest ML Based Modern Intrusion Detection Systems in IoT Environments</td>
+                        <td>International Journal on Cybernetics & Informatics</td>
+                        <td><a href="https://doi.org/10.5121/ijci.2023.120306" target="_blank" style="word-break: break-all;">10.5121/ijci.2023.120306</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Botnet Detection Through Flow-Based Deep Feature Extraction and Ensemble Classification</td>
+                        <td>Journal of The Institution of Engineers (India) Series B</td>
+                        <td><a href="https://doi.org/10.1007/s40031-025-01221-4" target="_blank" style="word-break: break-all;">10.1007/s40031-025-01221-4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Intrusion Detection Systems for IoT Attack Detection and Identification Using Intelligent Techniques</td>
+                        <td>International Journal of Computer Networks And Applications</td>
+                        <td><a href="https://doi.org/10.22247/ijcna/2023/218517" target="_blank" style="word-break: break-all;">10.22247/ijcna/2023/218517</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Evaluation of one-class algorithms for anomaly detection in home networks</td>
+                        <td>2021 IEEE 33rd International Conference on Tools with Artificial Intelligence (ICTAI)</td>
+                        <td><a href="https://doi.org/10.1109/ictai52525.2021.00108" target="_blank" style="word-break: break-all;">10.1109/ictai52525.2021.00108</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Anomaly Detection of Network Traffic Based on Intuitionistic Fuzzy Set Ensemble</td>
+                        <td>IEICE Transactions on Communications</td>
+                        <td><a href="https://doi.org/10.1587/transcom.2022ebp3147" target="_blank" style="word-break: break-all;">10.1587/transcom.2022ebp3147</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>CICADA: Cloud-based Intelligent Classification and Active Defense Approach for IoT Security</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/infocomwkshps57453.2023.10225954" target="_blank" style="word-break: break-all;">10.1109/infocomwkshps57453.2023.10225954</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Impact of Training Set Size on Resource Usage of Machine Learning Models for IoT Network Intrusion Detection</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/dcoss-iot58021.2023.00061" target="_blank" style="word-break: break-all;">10.1109/dcoss-iot58021.2023.00061</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Cybersecurity Threat Detection in the Behavior of IoT Devices: Analysis of Data Mining Competition Results</td>
+                        <td>Annals of Computer Science and Information Systems</td>
+                        <td><a href="https://doi.org/10.15439/2023f3089" target="_blank" style="word-break: break-all;">10.15439/2023f3089</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Predição de Ataques DDoS pela Correlação de Séries Temporais via Padrões Ordinais</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.5753/sbseg.2023.233476" target="_blank" style="word-break: break-all;">10.5753/sbseg.2023.233476</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>MalBuster: Scalable, Real-Time, and Concept Drift-Adaptive Malware Detection for Smart Environments</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/ccnc51664.2024.10454849" target="_blank" style="word-break: break-all;">10.1109/ccnc51664.2024.10454849</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Hifoots: A Highly Efficient DDoS Attack Detection Scheme Deployed in Smart IoT Homes</td>
+                        <td>IEEE Transactions on Cognitive Communications and Networking</td>
+                        <td><a href="https://doi.org/10.1109/tccn.2024.3424888" target="_blank" style="word-break: break-all;">10.1109/tccn.2024.3424888</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Predicting Malicious Software in IoT Environment Based on Machine Learning and Data Mining Techniques</td>
+                        <td>International Journal of Advanced Computer Science and Applications</td>
+                        <td><a href="https://doi.org/10.14569/ijacsa.2022.0130857" target="_blank" style="word-break: break-all;">10.14569/ijacsa.2022.0130857</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Application of Machine Learning in Malicious IoT Classification and Detection on Fog-IoT Architecture</td>
+                        <td>Annals of Computer Science and Information Systems</td>
+                        <td><a href="https://doi.org/10.15439/2022r39" target="_blank" style="word-break: break-all;">10.15439/2022r39</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Intrusion detection with Machine Learning in Internet of Things and Fog Computing: problems, solutions and research</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.5753/sbc.12043.1.3" target="_blank" style="word-break: break-all;">10.5753/sbc.12043.1.3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Lightweight Malicious Packet Classifier for IoT Networks</td>
+                        <td>Lecture notes in electrical engineering</td>
+                        <td><a href="https://doi.org/10.1007/978-981-99-5091-1_11" target="_blank" style="word-break: break-all;">10.1007/978-981-99-5091-1_11</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Machine Learning Techniques Evaluation with SMOTE on IoT-23 Dataset</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/iec57380.2023.10438809" target="_blank" style="word-break: break-all;">10.1109/iec57380.2023.10438809</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Enhancing Security and Reliability in Industrial IoT Networks through Machine Learning</td>
+                        <td>Journal of Electrical Systems</td>
+                        <td><a href="https://doi.org/10.52783/jes.771" target="_blank" style="word-break: break-all;">10.52783/jes.771</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Evaluation of Lightweight Machine Learning-Based NIDS Techniques for Industrial IoT</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-61486-6_15" target="_blank" style="word-break: break-all;">10.1007/978-3-031-61486-6_15</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Multifaceted DDoS Attack Prediction by Multivariate Time Series and Ordinal Patterns</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/iccworkshops59551.2024.10615918" target="_blank" style="word-break: break-all;">10.1109/iccworkshops59551.2024.10615918</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>An Intrusion Detection System Based on HiTar-2024 Dataset Generation from LOG Files for Smart Industrial Internet-of-Things Environment</td>
+                        <td>Computers, materials & continua/Computers, materials & continua (Print)</td>
+                        <td><a href="https://doi.org/10.32604/cmc.2025.060935" target="_blank" style="word-break: break-all;">10.32604/cmc.2025.060935</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>One-Shot Detection of Malicious TLS Traffic</td>
+                        <td>2022 IEEE 25th International Conference on Computer Supported Cooperative Work in Design (CSCWD)</td>
+                        <td><a href="https://doi.org/10.1109/cscwd54268.2022.9776236" target="_blank" style="word-break: break-all;">10.1109/cscwd54268.2022.9776236</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Análise de Tráfego de Rede com Machine Learning para Identificação de Ameaças a Dispositivos IoT</td>
+                        <td>Anais do XL Simpósio Brasileiro de Telecomunicações e Processamento de Sinais</td>
+                        <td><a href="https://doi.org/10.14209/sbrt.2022.1570824939" target="_blank" style="word-break: break-all;">10.14209/sbrt.2022.1570824939</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A New Data Model for Behavioral Based Anomaly Detection in IoT Device Monitoring</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-50959-9_41" target="_blank" style="word-break: break-all;">10.1007/978-3-031-50959-9_41</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>GAN-Based Privacy Abuse Attack on Federated Learning in IoT Networks</td>
+                        <td>Bristol Research (University of Bristol)</td>
+                        <td><a href="https://doi.org/10.1109/infocomwkshps61880.2024.10620772" target="_blank" style="word-break: break-all;">10.1109/infocomwkshps61880.2024.10620772</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Ransomware Detection in the Internet of Things (IoT): Challenges and Emerging Solutions</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/wids-psu61003.2024.00046" target="_blank" style="word-break: break-all;">10.1109/wids-psu61003.2024.00046</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Intelligent botnet detection in IoT networks using parallel CNN‐LSTM fusion</td>
+                        <td>Concurrency and Computation Practice and Experience</td>
+                        <td><a href="https://doi.org/10.1002/cpe.8258" target="_blank" style="word-break: break-all;">10.1002/cpe.8258</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Evaluating the cost of classifier discrimination choices for IoT sensor attack detection</td>
+                        <td>International Journal of Computers and Applications</td>
+                        <td><a href="https://doi.org/10.1080/1206212x.2024.2401069" target="_blank" style="word-break: break-all;">10.1080/1206212x.2024.2401069</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Pushing Network Forensic Readiness to the Edge: A Resource Constrained Artificial Intelligence Based Methodology</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/cyber-rci60769.2024.10939120" target="_blank" style="word-break: break-all;">10.1109/cyber-rci60769.2024.10939120</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>IoTGeM: Generalizable models for behaviour-based IoT attack detection</td>
+                        <td>Computer Networks</td>
+                        <td><a href="https://doi.org/10.1016/j.comnet.2025.111550" target="_blank" style="word-break: break-all;">10.1016/j.comnet.2025.111550</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A hybrid intrusion detection system model integrated explainable AI and multi expert systems to adapt edge computing</td>
+                        <td>Cluster Computing</td>
+                        <td><a href="https://doi.org/10.1007/s10586-025-05480-0" target="_blank" style="word-break: break-all;">10.1007/s10586-025-05480-0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Network Traffic Monitor for IDS in IoT</td>
+                        <td>Communications in computer and information science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-14599-5_4" target="_blank" style="word-break: break-all;">10.1007/978-3-031-14599-5_4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>LEMMAS: a secured and trusted Local Energy Market simulation system</td>
+                        <td>2022 18th International Conference on the European Energy Market (EEM)</td>
+                        <td><a href="https://doi.org/10.1109/eem54602.2022.9921159" target="_blank" style="word-break: break-all;">10.1109/eem54602.2022.9921159</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>An IDS-Based DNN Utilized Linear Discriminant Analysis Method to Detect IoT Attacks in Edge Computing</td>
+                        <td>Lecture notes on data engineering and communications technologies</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-46749-3_31" target="_blank" style="word-break: break-all;">10.1007/978-3-031-46749-3_31</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A Comparison of Neural Network-Based Intrusion Detection Against Signature-Based Detection in IoT Networks</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.36227/techrxiv.170751744.48685929/v1" target="_blank" style="word-break: break-all;">10.36227/techrxiv.170751744.48685929/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Log anomaly detection method based on CNN and LSTM fusion</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1117/12.3024645" target="_blank" style="word-break: break-all;">10.1117/12.3024645</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A novel framework for analyzing internet of things datasets for machine learning and deep learning-based intrusion detection systems</td>
+                        <td>IAES International Journal of Artificial Intelligence</td>
+                        <td><a href="https://doi.org/10.11591/ijai.v13.i2.pp1574-1584" target="_blank" style="word-break: break-all;">10.11591/ijai.v13.i2.pp1574-1584</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Optimization of Lightweight Malware Detection Models for AIoT Devices</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/wf-iot58464.2023.10539588" target="_blank" style="word-break: break-all;">10.1109/wf-iot58464.2023.10539588</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Evaluating the Impact of Flow Length on the Performance of In-Switch Inference Solutions</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/infocomwkshps61880.2024.10620832" target="_blank" style="word-break: break-all;">10.1109/infocomwkshps61880.2024.10620832</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Decentralized Federated Learning: Fundamentals, State of the Art, Frameworks, Trends, and Challenges</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2211.08413" target="_blank" style="word-break: break-all;">10.48550/arxiv.2211.08413</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Detection of IoT Botnet using Machine learning and Deep Learning Techniques</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-2630988/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-2630988/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>DEIGASe: Deep Extraction and Information Gain for an Optimal Anomaly Detection in IoT-based Smart Cities</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-2141835/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-2141835/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Online Self-Supervised Deep Learning for Intrusion Detection Systems</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2306.13030" target="_blank" style="word-break: break-all;">10.48550/arxiv.2306.13030</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Machine learning-based methodologies for cyber-attacks and network traffic monitoring</td>
+                        <td>Preprints.org</td>
+                        <td><a href="https://doi.org/10.20944/preprints202407.0029.v1" target="_blank" style="word-break: break-all;">10.20944/preprints202407.0029.v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>International Journal on Cybernetics &amp; Informatics</td>
+                        <td>International Journal on Cybernetics & Informatics</td>
+                        <td><a href="https://doi.org/10.5121/ijci" target="_blank" style="word-break: break-all;">10.5121/ijci</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Machine Learning for Control Systems Security of Industrial Robots: a Post-covid-19 Overview</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-2022709/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-2022709/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Edge Computing-Based Intrusion Detection System for Wireless Sensor Networks Utilizing Deep Learning Algorithms</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.5038712" target="_blank" style="word-break: break-all;">10.2139/ssrn.5038712</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Comparative Analysis of IoT Botnet Datasets</td>
+                        <td>Computer Science</td>
+                        <td><a href="https://doi.org/10.53070/bbd.1173687" target="_blank" style="word-break: break-all;">10.53070/bbd.1173687</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>FamilyGuard: uma arquitetura de segurança para detecção de anomalias em redes domésticas</td>
+                        <td>LA Referencia (Red Federada de Repositorios Institucionales de Publicaciones Científicas)</td>
+                        <td><a href="https://doi.org/10.14393/ufu.te.2022.587" target="_blank" style="word-break: break-all;">10.14393/ufu.te.2022.587</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A Case Study for Cyber-Attack Detection using Quantum Variational Circuits</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-2421990/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-2421990/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Machine Learning for IoT Devices Security Reinforcement</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-59933-0_1" target="_blank" style="word-break: break-all;">10.1007/978-3-031-59933-0_1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Enhancing IoT Security Through Resource-Efficient Feature Engineering</td>
+                        <td>White Rose Research Online (University of Leeds, The University of Sheffield, University of York)</td>
+                        <td><a href="https://doi.org/10.1109/giis59465.2024.10449909" target="_blank" style="word-break: break-all;">10.1109/giis59465.2024.10449909</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Improved IoT Network Malicious Traffic Detection Method Based on Extreme Value Theory</td>
+                        <td>Advances in transdisciplinary engineering</td>
+                        <td><a href="https://doi.org/10.3233/atde240122" target="_blank" style="word-break: break-all;">10.3233/atde240122</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A Construction of IoT Malicious Traffic Dataset and Its Applications</td>
+                        <td>Communications in computer and information science</td>
+                        <td><a href="https://doi.org/10.1007/978-981-97-1277-9_23" target="_blank" style="word-break: break-all;">10.1007/978-981-97-1277-9_23</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>DEML: Data-Enhanced Meta-Learning Method for IoT APT Traffic Detection</td>
+                        <td>Lecture notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-56580-9_13" target="_blank" style="word-break: break-all;">10.1007/978-3-031-56580-9_13</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Towards Resource-Efficient DDoS Detection in IoT: Leveraging Feature Engineering of System and Network Usage Metrics</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-4258871/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-4258871/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Lightweight Dataset for Decoy Development to Improve IoT Security</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.5121/csit.2024.141410" target="_blank" style="word-break: break-all;">10.5121/csit.2024.141410</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Intrusion Detection and Analysis in IoT Devices Using Machine Learning Models</td>
+                        <td>Advances in computational intelligence and robotics book series</td>
+                        <td><a href="https://doi.org/10.4018/979-8-3693-3860-5.ch012" target="_blank" style="word-break: break-all;">10.4018/979-8-3693-3860-5.ch012</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Hybrid Efficient IDS Against Adversarial Attacks in IoT Networks</td>
+                        <td>IFIP advances in information and communication technology</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-69986-3_7" target="_blank" style="word-break: break-all;">10.1007/978-3-031-69986-3_7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Detecção de malware em ambientes IoT habilitados por SDN</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.5753/wpeif.2024.2594" target="_blank" style="word-break: break-all;">10.5753/wpeif.2024.2594</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>SG-RSRNN - Score Guided Robust Subspace Recovery-based Neural Network for Network Intrusion Detection</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/ijcnn60899.2024.10650391" target="_blank" style="word-break: break-all;">10.1109/ijcnn60899.2024.10650391</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Avaliação de algoritmos de machine learning para detecção de malware IoT no dataset IoT-23</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.5753/sbseg.2024.241472" target="_blank" style="word-break: break-all;">10.5753/sbseg.2024.241472</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Log File Anomaly Detection Using Knowledge Graph Completion</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1145/3695719.3695726" target="_blank" style="word-break: break-all;">10.1145/3695719.3695726</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Beyond Data Sharing: Enhancing Iot Intrusion Detection with Blockchain-Enabled Federated Learning</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.5046693" target="_blank" style="word-break: break-all;">10.2139/ssrn.5046693</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>CNI-VIF: Enhanced Feature Selection for Graph Databases by Integrating Composite Node Information in VIF</td>
+                        <td>International Journal of Electrical and Electronics Engineering</td>
+                        <td><a href="https://doi.org/10.14445/23488379/ijeee-v11i11p111" target="_blank" style="word-break: break-all;">10.14445/23488379/ijeee-v11i11p111</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Enhancing Attack Detection on IoT Devices Using Hybrid Deep Learning Model</td>
+                        <td>Lecture notes in networks and systems</td>
+                        <td><a href="https://doi.org/10.1007/978-981-97-7710-5_1" target="_blank" style="word-break: break-all;">10.1007/978-981-97-7710-5_1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Large Language Models to Enhance Malware Detection in Edge Computing</td>
+                        <td>IrInSubria (University of Insubria)</td>
+                        <td><a href="https://doi.org/10.1109/tps-isa62245.2024.00011" target="_blank" style="word-break: break-all;">10.1109/tps-isa62245.2024.00011</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Cost-Efficient Hybrid Filter-Based Parameter Selection Scheme for Intrusion Detection System in IoT</td>
+                        <td>Electronics</td>
+                        <td><a href="https://doi.org/10.3390/electronics14040726" target="_blank" style="word-break: break-all;">10.3390/electronics14040726</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Efficient Network Traffic Feature Sets for IoT Intrusion Detection</td>
+                        <td>Lecture notes in networks and systems</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-76459-2_1" target="_blank" style="word-break: break-all;">10.1007/978-3-031-76459-2_1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>IoT Architecture and Machine Learning-Based Model for Network Traffic Classification</td>
+                        <td>Lecture notes in electrical engineering</td>
+                        <td><a href="https://doi.org/10.1007/978-981-97-9507-9_20" target="_blank" style="word-break: break-all;">10.1007/978-981-97-9507-9_20</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A case study for cyber-attack detection using quantum variational circuits</td>
+                        <td>Quantum Machine Intelligence</td>
+                        <td><a href="https://doi.org/10.1007/s42484-025-00277-1" target="_blank" style="word-break: break-all;">10.1007/s42484-025-00277-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Penerapan Deep Learning untuk Deteksi Anomali dalam Jaringan Keamanan Siber Menggunakan Recurrent Neural Networks (RNNs)</td>
+                        <td>Blend Sains Jurnal Teknik</td>
+                        <td><a href="https://doi.org/10.56211/blendsains.v3i4.800" target="_blank" style="word-break: break-all;">10.56211/blendsains.v3i4.800</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Malware Detection in Network Traffic Data for Internet of Things</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/inmic64792.2024.11004366" target="_blank" style="word-break: break-all;">10.1109/inmic64792.2024.11004366</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Aplicando Privacidade Diferencial contra Ataques de Associação em Internet das Coisas</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.5753/sbrc.2025.6445" target="_blank" style="word-break: break-all;">10.5753/sbrc.2025.6445</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>MARIA: Monitoramento e Análise para Resposta Imediata a Ataques à Rede 5G no Contexto da IoT</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.5753/sbrc.2025.5948" target="_blank" style="word-break: break-all;">10.5753/sbrc.2025.5948</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>IoTDSCreator: A Framework to Create Labeled Datasets for IoT Intrusion Detection Systems</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1145/3714393.3726004" target="_blank" style="word-break: break-all;">10.1145/3714393.3726004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Enhancing trust and privacy in cybersecurity: a transparent malware detection model with quality explanation metrics</td>
+                        <td>Cyber-Physical Systems</td>
+                        <td><a href="https://doi.org/10.1080/23335777.2025.2510423" target="_blank" style="word-break: break-all;">10.1080/23335777.2025.2510423</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Two Heads are Better than One: A Network Attack Detection Model Based on Multimodal and Multimedia Retrieval</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1145/3731715.3733457" target="_blank" style="word-break: break-all;">10.1145/3731715.3733457</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Avaliação das CGANs na Robustez de Modelos de Classificação de Ataques em IoT</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.5753/wgrs.2025.7536" target="_blank" style="word-break: break-all;">10.5753/wgrs.2025.7536</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Systematic Approach for Malware Detection in IoT Devices: Enhancing Security and Performance</td>
+                        <td>International Journal of Computational Intelligence Systems</td>
+                        <td><a href="https://doi.org/10.1007/s44196-025-00939-9" target="_blank" style="word-break: break-all;">10.1007/s44196-025-00939-9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Machine Learning for Industrial Iot Cybersecurity: A Systematic Review</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.5388573" target="_blank" style="word-break: break-all;">10.2139/ssrn.5388573</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>C2 Beaconing Detection via AI-Based Time-Series Analysis</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-032-00627-1_20" target="_blank" style="word-break: break-all;">10.1007/978-3-032-00627-1_20</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Are Trees Really Green? A Detection Approach of IoT Malware Attacks</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-032-00630-1_14" target="_blank" style="word-break: break-all;">10.1007/978-3-032-00630-1_14</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Extensive Log Analysis Using Small Language Models in Minimal Resource Environments</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/i2cacis65476.2025.11100950" target="_blank" style="word-break: break-all;">10.1109/i2cacis65476.2025.11100950</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Leveraging Machine Learning for Robust IoT Security: A Focus on Anomaly Detection Systems</td>
+                        <td>Lecture notes in networks and systems</td>
+                        <td><a href="https://doi.org/10.1007/978-981-96-6063-6_4" target="_blank" style="word-break: break-all;">10.1007/978-981-96-6063-6_4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>MGNN-IDS: a multi-graph neural network approach for robust intrusion detection in the internet of things</td>
+                        <td>Telecommunication Systems</td>
+                        <td><a href="https://doi.org/10.1007/s11235-025-01352-5" target="_blank" style="word-break: break-all;">10.1007/s11235-025-01352-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Rebalancing IoT Data: A Comparative Analysis</td>
+                        <td>Lecture notes in networks and systems</td>
+                        <td><a href="https://doi.org/10.1007/978-981-96-9248-4_26" target="_blank" style="word-break: break-all;">10.1007/978-981-96-9248-4_26</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Strategies for Improved Data Transmission in LoRa IoT Systems: Evaluating Adaptive Data Rate and Shannon-Based Approaches</td>
+                        <td>Lecture notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering</td>
+                        <td><a href="https://doi.org/10.1007/978-3-032-00218-1_4" target="_blank" style="word-break: break-all;">10.1007/978-3-032-00218-1_4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Fortifying Cybersecurity: A Deep Learning Paradigm for Comprehensive Threat Defense</td>
+                        <td>Lecture notes in electrical engineering</td>
+                        <td><a href="https://doi.org/10.1007/978-981-95-0269-1_72" target="_blank" style="word-break: break-all;">10.1007/978-981-95-0269-1_72</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Algorithmic Data Minimization for Machine Learning over Internet-of-Things Data Streams</td>
+                        <td>Proceedings of the VLDB Endowment</td>
+                        <td><a href="https://doi.org/10.14778/3773731.3773740" target="_blank" style="word-break: break-all;">10.14778/3773731.3773740</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>EdgeTraffic: An EdgeAI Dataset Integrating Road Traffic Dynamics with System Telemetry</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1145/3802513.3803482" target="_blank" style="word-break: break-all;">10.1145/3802513.3803482</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>TRUSTLab dataset: a real-world CICFlowMeter dataset for IoT/edge intrusion detection</td>
+                        <td>Frontiers in Computer Science</td>
+                        <td><a href="https://doi.org/10.3389/fcomp.2026.1803271" target="_blank" style="word-break: break-all;">10.3389/fcomp.2026.1803271</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>SPATA: Systematic Pattern Analysis for Detailed and Transparent Data Cards</td>
+                        <td>Communications in computer and information science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-032-19102-1_22" target="_blank" style="word-break: break-all;">10.1007/978-3-032-19102-1_22</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-06-02T10:56:00+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' citing works (most recent first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+    
+    <script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
+</body>
+</html>

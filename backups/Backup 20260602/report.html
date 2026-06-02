@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+{% set display_type = story_type %}
+{% set display_logo = logo_file %}
+{% if story_type == 'ArticleStory' and story.signals.datacite %}
+    {% if 'Dataset' in story.signals.datacite.resource_type %}
+        {% set display_type = 'DataStory' %}
+        {% set display_logo = 'datastories-logo.png' %}
+    {% elif 'Software' in story.signals.datacite.resource_type %}
+        {% set display_type = 'SoftwareStory' %}
+        {% set display_logo = 'softwarestories-logo.png' %}
+    {% endif %}
+{% endif %}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ display_type }} - {{ story.title }}</title>
+    <style>
+
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+    
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="{{ display_logo }}" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">{{ story.title }}</h1>
+                        {% if story.access and story.access.is_oa %}
+                            <div class="discipline-badge" style="background:#fef08a; color:#854d0e; border-color:#fde047; font-weight:600; margin-top: 0.5rem; margin-bottom: 0;">
+                                <svg style="width:14px; height:14px; display:inline; vertical-align:middle; margin-right:4px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                                Open Access ({{ story.access.oa_status | capitalize }})
+                            </div>
+                        {% endif %}             
+                        {% if story_type == 'BookStory' and (story.doab or story.signals.oapen_record or story.signals.thoth_url or story.signals.is_oa) %}
+                            <div class="discipline-badge" style="background:#fef08a; color:#854d0e; border-color:#fde047; font-weight:600;">
+                                <svg style="width:14px; height:14px; display:inline; vertical-align:middle; margin-right:4px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                                Open Access ({{ story.signals.oa_status | default('Gold') | capitalize }})
+                            </div>
+                        {% endif %}
+                        {% if discipline %}<div class="discipline-badge">{{ discipline }}</div>{% endif %}                        
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            {% if story.signals.risk_layer and story.signals.risk_layer.is_retracted %}
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef2f2; color: #dc2626; border: 1px solid #fca5a5; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                    Retracted
+                                </span>
+                            {% endif %}
+
+                            {% if story.signals.risk_layer and story.signals.risk_layer.expression_of_concern %}
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fffbeb; color: #d97706; border: 1px solid #fde68a; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                    Expression of Concern
+                                </span>
+                            {% endif %}
+
+                            {% if story.signals.risk_layer and story.signals.risk_layer.corrections %}
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef08a; color: #854d0e; border: 1px solid #fde047; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                                    Correction Published
+                                </span>
+                            {% endif %}
+
+                            {% if story.signals.risk_layer and story.signals.risk_layer.pubpeer_threads > 0 %}
+                                <a href="{{ story.signals.risk_layer.pubpeer_url }}" target="_blank" style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fffbeb; color: #d97706; border: 1px solid #fde68a; text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.2s;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
+                                    Community Commentary
+                                </a>
+                            {% endif %}
+
+                            {% if story.impact.scite and story.impact.scite.supporting > 0 %}
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    Methodologically Supported
+                                </span>
+                            {% endif %}
+
+                            {% if story.signals.stewardship and story.signals.stewardship.data_links and story.signals.stewardship.data_links|length > 0 %}
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                                    Linked to Data
+                                </span>
+                            {% endif %}
+
+                            {% if story.signals.datacite and story.signals.datacite.resource_type in ['Dataset', 'Software'] and story.signals.reuse_graph and story.signals.reuse_graph.reused_by_count > 0 %}
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #faf5ff; color: #86198f; border: 1px solid #e9d5ff; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                                    Proven Reuse
+                                </span>
+                            {% endif %}
+
+                            {% if story.signals.stewardship and story.signals.stewardship.clinical_trials and story.signals.stewardship.clinical_trials|length > 0 %}
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fdf2f8; color: #be185d; border: 1px solid #fbcfe8; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                                    Clinical Trial
+                                </span>
+                            {% endif %}
+
+                            {% if story.signals.published_metrics %}
+                                <a href="https://doi.org/{{ story.signals.published_metrics.doi }}" target="_blank" style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Peer-Reviewed & Published ↗
+                                </a>
+                            {% endif %}
+                            
+                            {% if story.signals.preprint_metrics %}
+                                <a href="https://doi.org/{{ story.signals.preprint_metrics.doi }}" target="_blank" style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1px solid #fde68a; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    Early Sharing / Preprint ↗
+                                </a>
+                            {% endif %}
+
+                        </div>
+
+                        <<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> 
+                                {% if story.signals is defined and story.signals.template_authors %}
+                                    {% for a in story.signals.template_authors %}{{ a.name }}{% if not loop.last %}, {% endif %}{% endfor %}
+                                {% else %}
+                                    {% for a in story.authors %}{{ a.name if a.name is defined else a.get('name','') }}{% if not loop.last %}, {% endif %}{% endfor %}
+                                {% endif %}
+                            </div>
+                        
+                            <div><strong>Publisher:</strong> 
+                                {% if story.venue is defined and story.venue.name %}
+                                    {{ story.venue.name }}
+                                {% elif story.publisher is defined %}
+                                    {{ story.publisher }}
+                                {% else %}
+                                    {{ story.get('publisher', 'Unknown Publisher') }}
+                                {% endif %}
+                            </div>
+                        
+                            <div><strong>Publication year:</strong> 
+                                {% if story.identifiers is defined and story.identifiers.pub_year %}
+                                    {{ story.identifiers.pub_year }}
+                                {% elif story.publication_year is defined %}
+                                    {{ story.publication_year }}
+                                {% else %}
+                                    {{ story.get('publication_year', 'Unknown Year') }}
+                                {% endif %}
+                            </div>
+                        
+                            <div><strong>DOI:</strong> 
+                                <a href="https://doi.org/{{ story.doi | default(story.book_id) | default(story.get('doi')) | default(story.get('book_id')) }}" target="_blank">
+                                    {{ story.doi | default(story.book_id) | default(story.get('doi')) | default(story.get('book_id')) }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                {% if story_type == 'BookStory' %}
+                <div class="cover-wrap">
+                    {% if story.signals.cover_url %}
+                    <img src="{{ story.signals.cover_url }}" alt="Cover" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+                    {% else %}
+                    <div style="width: 110px; height: 155px; background: #f3f4f6; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; text-align: center; color: #9ca3af; font-size: 0.85rem; font-weight: 500; border: 1px dashed #d1d5db; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05);">
+                        No Cover <br> Available
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </header>
+
+        <!-- Stats strip -->
+        {% set _cit = story.citations.citation_count if story.citations and story.citations.citation_count else (story.signals.citing_landscape.total_citing_works if story.signals.citing_landscape else 0) %}
+        {% set _men = story.signals.attention_summary.total_mentions | default(0) %}
+        {% set _sc  = story.impact.scite.total if story.impact and story.impact.scite else 0 %}
+        {% set _oa  = story.access.oa_status | default(story.signals.oa_status) | default('Unknown') | title %}
+        <div class="stats-strip no-print">
+            <div class="stats-strip-item">
+                <div class="stats-strip-num">{{ "{:,}".format(_cit) if _cit else "—" }}</div>
+                <div class="stats-strip-label">Total Citations</div>
+                {% if story.signals.percentiles and story.signals.percentiles.is_in_top_1_percent %}
+                <div class="stats-strip-badge">🏆 Top 1% Cited</div>
+                {% elif story.signals.percentiles and story.signals.percentiles.is_in_top_10_percent %}
+                <div class="stats-strip-badge">⭐ Top 10% Cited</div>
+                {% endif %}
+            </div>
+            <div class="stats-strip-item">
+                <div class="stats-strip-num">{{ "{:,}".format(_men) if _men and _men != "API Timeout" else "—" }}</div>
+                <div class="stats-strip-label">Online Mentions</div>
+            </div>
+            <div class="stats-strip-item">
+                <div class="stats-strip-num">{{ "{:,}".format(_sc) if _sc else "—" }}</div>
+                <div class="stats-strip-label">scite References</div>
+            </div>
+            <div class="stats-strip-item">
+                <div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">{{ _oa }}</div>
+                <div class="stats-strip-label">Open Access Status</div>
+            </div>
+        </div>
+
+        <!-- Sticky nav -->
+        <nav aria-label="Page sections" class="sticky-nav no-print">
+            <div class="sticky-nav-inner">
+                <a href="#sec-hero">Overview</a>
+                {% if story.narrative %}<a href="#sec-story">Story</a>{% endif %}
+                <a href="#sec-impact">Impact</a>
+                {% if story.roles %}<a href="#sec-roles">Roles</a>{% endif %}
+                <a href="#sec-access">Access</a>
+                <a href="#sec-citing">Who's Citing</a>
+                <a href="#sec-mentions">Mentions</a>
+            </div>
+        </nav>
+
+
+        {% if story.signals.risk_layer.is_retracted or story.signals.risk_layer.pubpeer_threads > 0 or story.signals.risk_layer.expression_of_concern or story.signals.retraction_watch or story.signals.risk_layer.corrections %}
+        <section class="card" style="border: 1px solid #fecaca; background:#fff5f5; margin-bottom: 1.75rem;">
+            <h2><span>Credibility & Risk Signals</span> <span class="badge" style="background:#fee2e2; color:#dc2626;">Alerts</span></h2>
+            <ul class="metric-list" style="line-height: 1.8; margin-top: 0.5rem;">
+                
+                {% if story.signals.retraction_watch %}
+                    <li style="margin-bottom: 0.5rem;">
+                        <span class="badge" style="background:#fef2f2; color:#ef4444; border:1px solid #fecaca; padding:0.1rem 0.4rem; margin-right:0.4rem; text-transform:uppercase;">
+                            {{ story.signals.retraction_watch.nature }}
+                        </span> 
+                        <span style="color: #7f1d1d;">{{ story.signals.retraction_watch.reason }}</span>
+                        {% if story.signals.retraction_watch.date %}
+                        <span class="muted" style="margin-left: 0.3rem; font-size: 0.8rem;">
+                            (Flagged: {{ story.signals.retraction_watch.date | truncate(10, True, '') }})
+                        </span>
+                        {% endif %}
+                    </li>
+                {% endif %}
+
+                {% if story.signals.risk_layer.is_retracted and not story.signals.retraction_watch %}
+                    <li style="margin-bottom: 0.5rem;">
+                        <span class="badge" style="background:#fef2f2; color:#ef4444; border:1px solid #fecaca; padding:0.1rem 0.4rem; margin-right:0.4rem; text-transform:uppercase;">
+                            RETRACTED
+                        </span> 
+                        <strong style="color: #7f1d1d;">This work has been formally retracted by the journal.</strong>
+                    </li>
+                {% endif %}
+                
+                {% if story.signals.risk_layer.expression_of_concern %}
+                    <li style="margin-bottom: 0.5rem;">
+                        <span class="badge" style="background:#fffbeb; color:#d97706; border:1px solid #fde68a; padding:0.1rem 0.4rem; margin-right:0.4rem; text-transform:uppercase;">
+                            EXPRESSION OF CONCERN
+                        </span> 
+                        <strong style="color: #92400e;">An Expression of Concern has been issued for this work.</strong>
+                    </li>
+                {% endif %}
+
+                {% if story.signals.risk_layer.pubpeer_threads > 0 %}
+                    <li style="margin-bottom: 0.5rem;">
+                        <span class="badge" style="background:#fef2f2; color:#ef4444; border:1px solid #fecaca; padding:0.1rem 0.4rem; margin-right:0.4rem;">
+                            PubPeer ({{ story.signals.risk_layer.pubpeer_threads }} threads)
+                        </span> 
+                        <span style="color: #7f1d1d;">Community scrutiny detected.</span> 
+                        <a href="{{ story.signals.risk_layer.pubpeer_url }}" target="_blank" style="color: #dc2626; text-decoration: underline; margin-left: 0.3rem;">Read Discussions ↗</a>
+                    </li>
+                {% endif %}
+
+                {% if story.signals.risk_layer.corrections %}
+                    {% for correction in story.signals.risk_layer.corrections %}
+                        <li style="margin-bottom: 0.4rem;">
+                            <span class="badge" style="background:#fef08a; color:#854d0e; border:1px solid #fde047; padding:0.1rem 0.4rem; margin-right:0.4rem;">{{ correction.type | title }}</span> 
+                            <strong style="color: #854d0e;">Update issued by publisher</strong> 
+                            <a href="https://doi.org/{{ correction.updated_by_doi }}" target="_blank" style="color: #ca8a04; text-decoration: underline; margin-left: 0.3rem;">View Correction ↗</a>
+                        </li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        </section>
+        {% endif %}
+        
+        {% if story.narrative %}
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text">{{ story.narrative | safe }}</div>
+        </section>
+        {% endif %}
+
+        {% if story.signals.elife_assessment %}
+        <section class="card" style="border-left: 4px solid #0d9488; background: #f0fdfa; margin-bottom: 1.75rem;">
+            <h2 style="margin-top: 0; border-bottom: none; padding-bottom: 0; display: flex; justify-content: space-between; align-items: center;">
+                <span style="color: #115e59;">eLife Assessment</span> 
+                <span class="badge" style="background:#14b8a6; color:#ffffff; font-weight: 600; padding: 0.3rem 0.8rem; font-size: 0.8rem;">Editorial Evaluation</span>
+            </h2>
+            <p class="muted" style="margin-top:0.2rem; margin-bottom:1.5rem; color: #134e4a; font-size: 0.9rem;">
+                This article has been peer reviewed and curated under eLife's open science Publish, Review, Curate (PRC) model.
+            </p>
+            
+            <div class="grid-2" style="margin-bottom: 0; gap: 1.5rem;">
+                <div style="background: white; padding: 1.25rem 1.5rem; border-radius: 0.6rem; border: 1px solid #ccfbf1; box-shadow: 0 4px 6px rgba(13, 148, 136, 0.05);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                        <svg width="18" height="18" fill="none" stroke="#0d9488" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; color: #0f766e;">
+                            Significance of findings
+                        </div>
+                    </div>
+                    <span style="font-size: 1.5rem; font-weight: 800; color: #111827;">
+                        {{ story.signals.elife_assessment.significance }}
+                    </span>
+                </div>
+                
+                <div style="background: white; padding: 1.25rem 1.5rem; border-radius: 0.6rem; border: 1px solid #ccfbf1; box-shadow: 0 4px 6px rgba(13, 148, 136, 0.05);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                        <svg width="18" height="18" fill="none" stroke="#0d9488" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        <div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; color: #0f766e;">
+                            Strength of evidence
+                        </div>
+                    </div>
+                    <span style="font-size: 1.5rem; font-weight: 800; color: #111827;">
+                        {{ story.signals.elife_assessment.strength }}
+                    </span>
+                </div>
+            </div>
+
+            {% if story.signals.elife_assessment.summary %}
+            <div style="margin-top: 1.5rem; padding: 1.25rem; background: #ffffff; border-radius: 0.5rem; border-left: 3px solid #0d9488; font-size: 0.9rem; line-height: 1.6; color: #374151; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
+                <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; color: #0f766e; margin-bottom: 0.4rem;">
+                    Editor's Consensus Summary
+                </div>
+                <span style="font-style: italic; color: #1f2937;">"{{ story.signals.elife_assessment.summary }}"</span>
+            </div>
+            {% endif %}
+            
+            <div style="margin-top: 1.25rem; text-align: right; border-top: 1px dashed #99f6e4; padding-top: 0.75rem;">
+                <a href="{{ story.signals.elife_assessment.url }}" target="_blank" style="font-size: 0.85rem; color: #0f766e; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
+                    Read Full Peer Reviews 
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+        </section>
+        {% endif %}
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+            <div class="im-wrapper">
+                {% set _cit = story.citations.citation_count if story.citations and story.citations.citation_count else (story.signals.citing_landscape.total_citing_works if story.signals.citing_landscape else 0) %}
+                {% set _men = story.signals.attention_summary.total_mentions | default(0) %}
+                {% set _sc  = story.impact.scite.total if story.impact and story.impact.scite else 0 %}
+                {% set _cby = story.signals.citing_landscape.citations_by_year if story.signals.citing_landscape else [] %}
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">{{ "{:,}".format(_cit) if _cit else "—" }}</div>
+                                <div class="im-label">Total Citations</div>
+                                {% if story.signals.percentiles and story.signals.percentiles.is_in_top_1_percent %}
+                                <div class="im-top-badge">🏆 Top 1% Cited</div>
+                                {% elif story.signals.percentiles and story.signals.percentiles.is_in_top_10_percent %}
+                                <div class="im-top-badge">⭐ Top 10% Cited</div>
+                                {% endif %}
+                            </div>
+                            {% if _cby %}
+                            <div class="im-spark">
+                                <canvas id="impactSparkline"
+                                    data-labels="{{ _cby | map(attribute='year') | list | tojson | forceescape }}"
+                                    data-values="{{ _cby | map(attribute='count') | list | tojson | forceescape }}"
+                                    style="width:120px;height:48px;"></canvas>
+                                <div class="im-spark-range">{{ _cby[0].year }}–{{ _cby[-1].year }}</div>
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% if story.signals.preprint_metrics and story.signals.journal_citations is defined %}
+                        <div class="im-card-hint">Includes preprint + published article citations</div>
+                        {% endif %}
+                    </div>
+                    <!-- Mentions -->
+                    <div class="im-card">
+                        <div class="im-num">{{ "{:,}".format(_men) if _men and _men != "API Timeout" else "—" }}</div>
+                        <div class="im-label">Online Mentions</div>
+                        {% if story_type == 'BookStory' and story.signals.usage_landscape %}
+                        <div class="im-card-hint">Downloads: {{ story.signals.usage_landscape.downloads_total }}</div>
+                        {% endif %}
+                    </div>
+                    <!-- scite -->
+                    <div class="im-card">
+                        <div class="im-num">{{ "{:,}".format(_sc) if _sc else "—" }}</div>
+                        <div class="im-label">scite References</div>
+                        {% if story.impact.scite and story.impact.scite.supporting > 0 %}
+                        <div class="im-scite" style="margin-top:.6rem;">
+                            <div class="im-scite-title">Citation context <span class="im-scite-via">via scite</span></div>
+                            {% set _sup = story.impact.scite.supporting | default(0) %}
+                            {% set _men2 = story.impact.scite.mentioning | default(0) %}
+                            {% set _con = story.impact.scite.contrasting | default(0) %}
+                            {% set _tot = _sup + _men2 + _con %}
+                            {% if _tot > 0 %}
+                            <div class="im-scite-bar">
+                                <div class="im-scite-seg im-scite-sup" style="width:{{ ((_sup/_tot)*100)|round|int }}%;"></div>
+                                <div class="im-scite-seg im-scite-men" style="width:{{ ((_men2/_tot)*100)|round|int }}%;"></div>
+                                <div class="im-scite-seg im-scite-con" style="width:{{ ((_con/_tot)*100)|round|int }}%;"></div>
+                            </div>
+                            <div class="im-scite-leg">
+                                <span><span class="im-scite-dot" style="background:#22c55e;"></span>Supporting {{ _sup }}</span>
+                                <span><span class="im-scite-dot" style="background:#94a3b8;"></span>Mentioning {{ _men2 }}</span>
+                                <span><span class="im-scite-dot" style="background:#f87171;"></span>Contrasting {{ _con }}</span>
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+                        {% if story.signals.teaching and story.signals.teaching.youtube_count > 0 %}
+                        <span class="sig-pill sig-red">▶ YouTube · {{ story.signals.teaching.youtube_count }} video{{ 's' if story.signals.teaching.youtube_count > 1 else '' }}</span>
+                        {% endif %}
+                        {% if story.signals.teaching and story.signals.teaching.worldcat_count > 0 %}
+                        <span class="sig-pill sig-slate">📚 WorldCat</span>
+                        {% endif %}
+                        {% if story.signals.teaching and story.signals.teaching.has_syllabus %}
+                        <span class="sig-pill sig-indigo">🎓 Course syllabus</span>
+                        {% endif %}
+                        {% if story.signals.stewardship and story.signals.stewardship.clinical_trials %}
+                        {% for ct in story.signals.stewardship.clinical_trials[:1] %}
+                        <span class="sig-pill sig-teal">🧪 {{ ct.nct_id }}</span>
+                        {% endfor %}
+                        {% endif %}
+                        {% if story.signals.stewardship and story.signals.stewardship.grant_count > 0 %}
+                        <span class="sig-pill sig-amber">💰 {{ story.signals.stewardship.grant_count }} grant{{ 's' if story.signals.stewardship.grant_count > 1 else '' }}</span>
+                        {% endif %}
+                        {% if story.signals.citing_landscape and story.signals.citing_landscape.countries %}
+                        <span class="sig-pill sig-blue">🌍 {{ story.signals.citing_landscape.countries | length }} countr{{ 'ies' if story.signals.citing_landscape.countries | length > 1 else 'y' }}</span>
+                        {% endif %}
+                        {% if story.signals.rrids and story.signals.rrids.europepmc.count > 0 %}
+                        <span class="sig-pill sig-teal">🔬 {{ story.signals.rrids.europepmc.count }} RRID{{ 's' if story.signals.rrids.europepmc.count > 1 else '' }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% if story.roles %}
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+            {% set _role_map = {
+                'scholarly':'academic','rapid_uptake':'academic','rapid uptake':'academic',
+                'synthesis':'academic','methodological':'academic','evidence':'academic',
+                'usage_driven':'readership','usage-driven':'readership','pedagogical':'readership',
+                'public_discourse':'public','public discourse':'public',
+                'public_visibility':'public','public visibility':'public','high_visibility':'public','high-visibility':'public',
+                'sustainability':'practical','policy':'practical','commercial':'practical'
+            } %}
+            {% set _dom_info = {
+                'academic':   {'label':'Academic & Scientific',    'icon':'🎓','lbl_c':'#1d4ed8','pill':'role-pill-academic',  'dot':'#3b82f6','str_bg':'#dbeafe','str_c':'#1d4ed8'},
+                'readership': {'label':'Readership & Educational', 'icon':'📚','lbl_c':'#7c3aed','pill':'role-pill-readership','dot':'#8b5cf6','str_bg':'#ede9fe','str_c':'#6d28d9'},
+                'public':     {'label':'Public Engagement & Media','icon':'📢','lbl_c':'#b45309','pill':'role-pill-public',    'dot':'#f59e0b','str_bg':'#fef3c7','str_c':'#92400e'},
+                'practical':  {'label':'Practical & Real-World',  'icon':'🏛','lbl_c':'#065f46','pill':'role-pill-practical', 'dot':'#10b981','str_bg':'#dcfce7','str_c':'#166534'}
+            } %}
+            {% set _dom_order = ['academic','readership','public','practical'] %}
+            {% for _dom in _dom_order %}
+                {% set _d = _dom_info[_dom] %}
+                {% set _pills_in_dom = [] %}
+                {% for r, score in story.roles.items() %}
+                    {% set _rkey = r | replace(' ','_') | lower %}
+                    {% if _role_map.get(_rkey, _role_map.get(r | lower, 'academic')) == _dom %}
+                        {% set _ = _pills_in_dom.append((r, score)) %}
+                    {% endif %}
+                {% endfor %}
+                {% if _pills_in_dom %}
+                <div class="roles-domain">
+                    <div class="roles-domain-label" style="color:{{ _d.lbl_c }};">{{ _d.icon }} {{ _d.label }}</div>
+                    <div class="roles-row">
+                        {% for r, score in _pills_in_dom | sort(attribute=1, reverse=True) %}
+                        {% set _str = 'Strong' if score >= 0.80 else ('Moderate' if score >= 0.50 else 'Emerging') %}
+                        <span class="role-pill {{ _d.pill }}" style="opacity:{{ '1' if score >= 0.80 else ('0.9' if score >= 0.50 else '0.75') }};"
+                              data-tip="{{ r | replace('_',' ') | capitalize }} — heuristic signal (score {{ '%.2f'|format(score) }})">
+                            <span class="role-dot" style="background:{{ _d.dot }};"></span>
+                            {{ r | replace('_',' ') | capitalize }}
+                            <span class="role-strength" style="background:{{ _d.str_bg }};color:{{ _d.str_c }};">{{ _str }}</span>
+                        </span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+        {% endif %}
+
+        <div class="grid-2">
+            
+            {% if story_type == 'ArticleStory' and story.signals.datacite %}
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access & Visibility</span> <span class="badge" style="background:#f0fdf4; color:#15803d; border:1px solid #bbf7d0;">DataCite</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/{{ story.doi }}" target="_blank">{{ story.doi }}</a></li>
+                    <li><strong>Resource Type:</strong> {{ story.signals.datacite.resource_type }}</li>
+                    <li><strong>Total Views:</strong> {{ story.signals.datacite.views }}</li>
+                    <li><strong>Total Downloads:</strong> {{ story.signals.datacite.downloads }}</li>
+                </ul>
+            </section>
+            
+            {% elif story_type == 'BookStory' %}
+            <section class="card" style="margin-bottom:0;">
+                <h2 style="margin-top:0;"><span>Access</span> <span class="badge" style="background:#f3f4f6; color:#4b5563;">Availability</span></h2>
+                <ul class="metric-list" style="line-height: 1.8;">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/{{ story.book_id | default(story.doi) }}" target="_blank" style="word-break: break-all;">https://doi.org/{{ story.book_id | default(story.doi) }}</a></li>
+                    
+                    <li><strong>OA status:</strong> 
+                        {% if story.signals.is_oa or story.signals.thoth_url or story.signals.oapen_record or (story.doab and story.doab.url) %}
+                            {{ story.signals.oa_status | default('gold') | capitalize }}
+                        {% else %}
+                            <span class="muted">Closed / Unknown</span>
+                        {% endif %}
+                    </li>
+
+                    {% if story.signals.thoth_url %}
+                        <li><strong>Landing page:</strong> <a href="{{ story.signals.thoth_url }}" target="_blank" style="word-break: break-all;">{{ story.signals.thoth_url }}</a></li>
+                    {% elif story.signals.oa_url %}
+                        <li><strong>Landing page:</strong> <a href="{{ story.signals.oa_url }}" target="_blank" style="word-break: break-all;">{{ story.signals.oa_url }}</a></li>
+                    {% endif %}
+                    
+                    {% if story.signals.oapen_record %}
+                        <li><strong>OAPEN Library:</strong> <a href="{{ story.signals.oapen_record.url }}" target="_blank" style="word-break: break-all;">{{ story.signals.oapen_record.url }}</a></li>
+                    {% endif %}
+                    
+                    {% if story.doab and story.doab.url %}
+                        <li><strong>DOAB:</strong> <a href="{{ story.doab.url }}" target="_blank" style="word-break: break-all;">{{ story.doab.url }}</a></li>
+                    {% endif %}
+                </ul>
+            </section>
+
+            {% else %}
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/{{ story.doi or story.book_id }}" target="_blank">{{ story.doi or story.book_id }}</a></li>
+                    <li><strong>OA status:</strong> {{ story.access.oa_status | default('Unknown') | title }}</li>
+                    {% set landing_url = story.access.landing_page_url or (story.access.best_oa_location and story.access.best_oa_location.url) %}
+                    {% if landing_url %}<li><strong>Landing page:</strong> <a href="{{ landing_url }}" target="_blank" style="word-break: break-all;">{{ landing_url }}</a></li>{% endif %}
+                    {% set pdf_url = story.access.best_oa_location and story.access.best_oa_location.pdf_url %}
+                    {% if pdf_url %}<li><strong>Best OA PDF:</strong> <a href="{{ pdf_url }}" target="_blank" style="word-break: break-all;">{{ pdf_url }}</a></li>{% endif %}
+                </ul>
+            </section>
+            {% endif %}
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                {% if story.signals.attention_summary.total_mentions == 'API Timeout' %}
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">Data temporarily unavailable (API Timeout).</p>
+                {% else %}
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>{{ story.signals.attention_summary.total_mentions | default(0) }}</strong> recorded events globally
+                        {% if story.signals.preprint_metrics %}
+                        <span style="font-weight:normal;">(combined from the published article and preprint).</span>
+                        {% endif %}
+                    </p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                {% endif %}
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            {% if story_type == 'BookStory' %}
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+                <ul class="metric-list">
+                    
+                    {% if story.signals.book_reviews and story.signals.book_reviews.review_count > 0 %}
+                        <li style="margin-bottom: 0.8rem; padding-bottom: 0.8rem; border-bottom: 1px solid #f3f4f6;">
+                            <strong>Formal Book Reviews:</strong> <span class="badge" style="background: #fdf2f8; color: #be185d;">{{ story.signals.book_reviews.review_count }} Reviews</span>
+                            <ul style="margin-top: 0.4rem; padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.4;">
+                                {% for review in story.signals.book_reviews.top_reviews %}
+                                <li style="margin-bottom: 0.3rem;">
+                                    <em>{{ review.venue }}</em>: <br>
+                                    <a href="https://doi.org/{{ review.doi }}" target="_blank" style="color: #2563eb; text-decoration: none;">{{ review.title }}</a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        {% endif %}
+
+                    {% if story.signals.reader_reception and story.signals.reader_reception.google_books %}
+                    <li style="margin-bottom: 0.6rem;">
+                        <strong>Google Books:</strong> <a href="{{ story.signals.reader_reception.google_books.url }}" target="_blank" style="color: #2563eb; text-decoration: none;">View listing ↗</a>
+                    </li>
+                    {% endif %}
+                    
+                    {% if story.signals.reader_reception and (story.signals.reader_reception.amazon or story.signals.reader_reception.goodreads) %}
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Commercial:</strong> 
+                        {% if story.signals.reader_reception.amazon %}<a href="{{ story.signals.reader_reception.amazon.url }}" target="_blank" style="color: #2563eb; text-decoration: none;">Amazon</a>{% endif %}
+                        {% if story.signals.reader_reception.amazon and story.signals.reader_reception.goodreads %} · {% endif %}
+                        {% if story.signals.reader_reception.goodreads %}<a href="{{ story.signals.reader_reception.goodreads.url }}" target="_blank" style="color: #2563eb; text-decoration: none;">Goodreads</a>{% endif %}
+                    </li>
+                    {% else %}
+                    <li class="muted" style="margin-bottom: 0.4rem;">No commercial links found.</li>
+                    {% endif %}
+                    
+                </ul>
+            </section>
+
+                <section class="card" style="margin-bottom:0;">
+                    <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                    {% if story.impact.scite %}
+                    <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                        <li><strong>Total:</strong> {{ story.impact.scite.total }}</li>
+                        <li><strong>Supporting:</strong> {{ story.impact.scite.supporting }}</li>
+                        <li><strong>Mentioning:</strong> {{ story.impact.scite.mentioning }}</li>
+                        <li><strong>Contradicting:</strong> {{ story.impact.scite.contradicting }}</li>
+                    </ul>
+                    {% else %}<p class="muted">Not available.</p>{% endif %}
+                </section>
+
+            {% else %}
+                {% set stew = story.signals.stewardship %}
+                {% set rrid_data = story.signals.rrids.europepmc.rrids if story.signals.rrids and story.signals.rrids.europepmc else [] %}
+                {% set is_data_story = (story.signals.datacite and story.signals.datacite.resource_type in ['Dataset', 'Software']) %}
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    {% if rrid_data %}
+                        <section class="card" style="margin-bottom:0; height: 100%;">
+                            <h2><span>Resource Identifiers</span> <span class="badge">Europe PMC</span></h2>
+                            <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;"><strong>{{ rrid_data|length }}</strong> unique RRIDs detected.</p>
+                            
+                            <div style="max-height: 400px; overflow-y: auto;">
+                                {% set ns = namespace(grouped={}) %}
+                                {% for r in rrid_data %}
+                                    {% set prefix = r.rrid.split('_')[0] | replace('RRID:', '') %}
+                                    {% if prefix not in ns.grouped %}
+                                        {% set _ = ns.grouped.update({prefix: []}) %}
+                                    {% endif %}
+                                    {% set _ = ns.grouped[prefix].append(r) %}
+                                {% endfor %}
+
+                                {% for prefix, items in ns.grouped.items() %}
+                                <div style="margin-top: 0.8rem;">
+                                    <h3 style="margin: 0 0 0.4rem; font-size: 0.95rem;">{{ prefix }} <span class="muted" style="font-weight:normal;">({{ items|length }})</span></h3>
+                                    <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                                        {% for r in items %}<a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/{{ r.rrid }}" target="_blank">{{ r.rrid }}</a>{% endfor %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </section>
+                    {% else %}
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            {% if story.impact.scite %}
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> {{ story.impact.scite.total }}</li>
+                                <li><strong>Supporting:</strong> {{ story.impact.scite.supporting }}</li>
+                                <li><strong>Mentioning:</strong> {{ story.impact.scite.mentioning }}</li>
+                                <li><strong>Contradicting:</strong> {{ story.impact.scite.contradicting }}</li>
+                            </ul>
+                            {% else %}
+                            <p class="muted">Not available.</p>
+                            {% endif %}
+                        </section>
+                    {% endif %}
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    {% if is_data_story or (stew and (stew.data_links or stew.clinical_trials)) %}
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite</span></h2>
+                            
+                            {% if is_data_story %}
+                                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Tracking downstream reuse and integration.</p>
+                                <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Reused in {{ story.signals.reuse_graph.reused_by_count | default(0) }} related works:</h3>
+                                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom: 1rem;">
+                                    {% for type, count in story.signals.reuse_graph.reused_by_breakdown.items() %}
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">{{ count }} {{ type | title }}s</span>
+                                    {% endfor %}
+                                </div>
+                                
+                                {% if story.signals.reuse_graph.reused_by_links %}
+                                    <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Known Links:</h3>
+                                    <div style="display:flex; flex-direction:column; gap:0.3rem; max-height: 150px; overflow-y: auto;">
+                                        {% for link in story.signals.reuse_graph.reused_by_links %}
+                                            <a href="{{ link.url }}" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">{{ link.label }} &#8594;</a>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+
+                            {% else %}
+                                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Associated data repositories and clinical trials.</p>
+                                
+                                {% if stew.data_links %}
+                                <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Data Repositories & Code</h3>
+                                <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom: 1rem; max-height: 250px; overflow-y: auto;">
+                                    {% for db in stew.data_links %}
+                                        {% set url = db.url if db is mapping else db %}
+                                        {% set label = db.label if db is mapping else 'Dataset / Repo' %}
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="{{ url }}" target="_blank">{{ label }}</a>
+                                            
+                                            {% if 'doi.org/' in url or 'zenodo' in url.lower() or 'figshare' in url.lower() %}
+                                                {% set clean_doi = url.split('doi.org/')[-1] if 'doi.org/' in url else url.split('zenodo.org/record/')[-1] %}
+                                                {% set datastory_filename = "datastory_" + clean_doi.replace('/', '_') + ".html" %}
+                                                <a href="{{ datastory_filename }}" style="font-size: 0.75rem; color: #6b7280; text-decoration: underline; display: inline-flex; align-items: center; gap: 0.2rem;" title="Run 'python3 -m bookstories.cli {{ clean_doi }}' to generate this dashboard!">
+                                                    <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                                    View DataStory
+                                                </a>
+                                            {% endif %}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+
+                                {% if stew.clinical_trials %}
+                                <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Clinical Trials</h3>
+                                <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                                    {% for trial in stew.clinical_trials %}
+                                        <a class="tag" style="background:#fce7f3; color:#be185d; border:1px solid #fbcfe8; text-decoration:none;" href="{{ trial.url }}" target="_blank">{{ trial.label }}</a>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                            {% endif %}
+                        </section>
+                    {% endif %}
+
+                    {% if rrid_data %}
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            {% if story.impact.scite %}
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> {{ story.impact.scite.total }}</li>
+                                <li><strong>Supporting:</strong> {{ story.impact.scite.supporting }}</li>
+                                <li><strong>Mentioning:</strong> {{ story.impact.scite.mentioning }}</li>
+                                <li><strong>Contradicting:</strong> {{ story.impact.scite.contradicting }}</li>
+                            </ul>
+                            {% else %}
+                            <p class="muted">Not available.</p>
+                            {% endif %}
+                        </section>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+
+        {% set cl = story.signals.citing_landscape %}
+        {% if cl and (citation_total > 1 or cl.total_citing_works > 1) %}
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>{{ cl.total_citing_works }}</strong> citing works.
+                        <strong>{{ cl.inst_concentration }}%</strong> come from the Top 10 institutions.
+                        Median citing paper cited <strong>{{ cl.median_cites }}</strong> times itself.
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        {% for t in cl.work_types[:5] %}<span class="tag tag-soft" style="font-size:.75rem;">{{ t.label }} ({{ t.count }})</span>{% endfor %}
+                        {% for v in cl.top_venues[:3] %}<span class="tag" style="font-size:.75rem;">{{ v.label }}</span>{% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="{{ cl.citations_by_year | map(attribute='year') | list | tojson | forceescape }}"
+                    data-values="{{ cl.citations_by_year | map(attribute='count') | list | tojson | forceescape }}">
+                </canvas>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
+
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+                    {% for c in cl.countries[:15] %}
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">{{ c.label }} ({{ c.count }})</span>
+                    {% endfor %}
+                </div>
+                {% if cl.sectors %}
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+                        {% for s in cl.sectors[:6] %}
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">{{ s.label }} ({{ s.count }})</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    {% for inst in cl.top_institutions %}
+                    <li style="margin-bottom:.4rem;">
+                        <strong>{{ inst.label }}</strong>
+                        {% if inst.url %}<a href="{{ inst.url }}" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">{{ inst.badge }}</a>{% endif %}
+                        <span class="muted">({{ inst.count }})</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    {% for auth in cl.top_authors %}
+                    <li style="margin-bottom:.4rem;">
+                        <strong>{{ auth.label }}</strong>
+                        {% if auth.url %}<a href="{{ auth.url }}" target="_blank" class="orcid-badge">{{ auth.badge }}</a>{% endif %}
+                        <span class="muted">({{ auth.count }})</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+
+        <div class="grid-2">
+            {% if story_type == 'ArticleStory' and story.signals.peer_reviews %}
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Open Peer Review</span> <span class="badge">Crossref</span></h2>
+                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Public referee reports and author responses.</p>
+                
+                <div style="display:flex; flex-direction:column; gap:0.6rem;">
+                    {% for review in story.signals.peer_reviews %}
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:0.4rem;">
+                        <div>
+                            <span class="tag" style="background:#fce7f3; color:#be185d; border:1px solid #fbcfe8; margin-right:0.4rem;">{{ review.type }}</span>
+                            <strong>{{ review.publisher }}</strong>
+                        </div>
+                        <a href="{{ review.url }}" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500; font-size:0.85rem;">Read report &rarr;</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+            {% endif %}
+
+            {% set attn = story.signals.get('attention_summary', {}) %}
+            {% set total_m = attn.get('total_mentions', 0) %}
+            
+            {% if total_m != "API Timeout" and total_m > 0 %}
+            <section class="card {% if not story.signals.peer_reviews %}span-full{% endif %}" style="margin-bottom:0;">
+                <h2><span>Online mentions & activity</span> <span class="badge">Crossref & Open Web</span></h2>
+                
+                {% set raw_events = story.signals.get('raw_events', {}) %}
+                {% set raw_legacy = raw_events.get('examples', []) if raw_events is mapping else (raw_events.examples if raw_events else []) %}
+                {% set ns_legacy = namespace(filtered=[]) %}
+                
+                {# Filter out the sources that our custom tabs already handle perfectly #}
+                {% for ev in raw_legacy %}
+                    {% set src = (ev.source_id if ev.source_id else (ev.source if ev.source else "")) | string | lower %}
+                    {% if src not in ['wikipedia', 'reddit', 'reddit-links', 'hypothesis', 'bluesky'] %}
+                        {% set ns_legacy.filtered = ns_legacy.filtered + [ev] %}
+                    {% endif %}
+                {% endfor %}
+                
+                {% if ns_legacy.filtered %}
+                <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                    {% for ev in ns_legacy.filtered[:5] %}
+                    <li style="margin-bottom: 0.6rem;">
+                        <a href="{{ ev.url }}" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 500;">
+                            {{ ev.title or ev.url }}
+                        </a>
+                        <span class="badge" style="background: #f3f4f6; color: #4b5563; font-size: 0.65rem; text-transform: uppercase; margin-left: 0.4rem;">{{ ev.source_id or ev.source }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% set social = story.signals.get('social_mentions', {}) %}
+                {% if social.wikipedia or social.bluesky or social.hypothesis or social.reddit or story.signals.public_discourse.stackexchange %}
+                
+                {# Add a top border only if Legacy CED links are rendered above this #}
+                {% if ns_legacy.filtered %}
+                <h3 style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; font-size: 1.1rem; color: #1f2937;">
+                    Community Engagement & Discourse
+                </h3>
+                {% else %}
+                <h3 style="margin-top: 1.5rem; font-size: 1.1rem; color: #1f2937;">
+                    Community Engagement & Discourse
+                </h3>
+                {% endif %}
+                
+                {# Determine which tab should be active by default #}
+                {% set active_tab = 'wiki' if social.wikipedia else ('bsky' if social.bluesky else ('reddit' if social.reddit else 'hyp')) %}
+
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; border-bottom: 2px solid #e5e7eb; margin-bottom: 1.5rem; margin-top: 1rem;">
+                    {# 1. STACK EXCHANGE #}
+                    {% if story.signals.public_discourse.stackexchange %}
+                    <button onclick="openSocialTab(event, 'soc-stack')" class="soc-tab-btn soc-tab-active">
+                        Technical Q&A <span style="background: #fef3c7; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.75rem; margin-left: 0.3rem;">{{ story.signals.public_discourse.stackexchange|length }}</span>
+                    </button>
+                    {% endif %}
+                
+                    {# 2. WIKIPEDIA #}
+                    {% if story.signals.social_mentions.wikipedia %}
+                    <button onclick="openSocialTab(event, 'soc-wiki')" class="soc-tab-btn {% if not story.signals.public_discourse.stackexchange %}soc-tab-active{% endif %}">
+                        Wikipedia <span style="background: #f1f5f9; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.75rem; margin-left: 0.3rem;">{{ story.signals.social_mentions.wikipedia|length }}</span>
+                    </button>
+                    {% endif %}
+                
+                    {# 3. HYPOTHESIS #}
+                    {% if story.signals.social_mentions.hypothesis %}
+                    <button onclick="openSocialTab(event, 'soc-hyp')" class="soc-tab-btn {% if not story.signals.public_discourse.stackexchange and not story.signals.social_mentions.wikipedia %}soc-tab-active{% endif %}">
+                        Expert Annotations <span style="background: #fce7f3; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.75rem; margin-left: 0.3rem;">{{ story.signals.social_mentions.hypothesis|length }}</span>
+                    </button>
+                    {% endif %}
+                    
+                    {# 4. REDDIT #}
+                    {% if story.signals.social_mentions.reddit %}
+                    <button onclick="openSocialTab(event, 'soc-reddit')" class="soc-tab-btn {% if not story.signals.public_discourse.stackexchange and not story.signals.social_mentions.wikipedia and not story.signals.social_mentions.hypothesis %}soc-tab-active{% endif %}">
+                        Reddit <span style="background: #ffedd5; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.75rem; margin-left: 0.3rem;">{{ story.signals.social_mentions.reddit|length }}</span>
+                    </button>
+                    {% endif %}
+                
+                    {# 5. BLUESKY #}
+                    {% if story.signals.social_mentions.bluesky %}
+                    <button onclick="openSocialTab(event, 'soc-bsky')" class="soc-tab-btn {% if not story.signals.public_discourse.stackexchange and not story.signals.social_mentions.wikipedia and not story.signals.social_mentions.hypothesis and not story.signals.social_mentions.reddit %}soc-tab-active{% endif %}">
+                        Bluesky <span style="background: #e0f2fe; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.75rem; margin-left: 0.3rem;">{{ story.signals.social_mentions.bluesky|length }}</span>
+                    </button>
+                    {% endif %}
+                </div>
+
+                <div style="position: relative; border-left: 2px solid #e2e8f0; padding-left: 1.5rem; margin-top: 1rem;">
+                    
+                    {# STACK EXCHANGE PANE (NATIVE) #}
+                    {% if story.signals.public_discourse.stackexchange %}
+                    <div id="soc-stack" class="soc-tab-content" style="display: block; animation: fadeIn 0.3s;">
+                        {% for item in story.signals.public_discourse.stackexchange %}
+                        <div style="position: relative; margin-bottom: 1.5rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #facc15; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span class="badge" style="background: #fffbeb; color: #854d0e; font-size: 0.65rem; text-transform: uppercase;">{{ item.source }}</span>
+                                <span class="muted" style="font-size: 0.7rem;">{{ item.date }}</span>
+                            </div>
+                            <div style="font-weight: 600; font-size: 0.95rem; color: #1e293b; margin-bottom: 0.2rem;">{{ item.title | safe }}</div>
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.7rem;">Score: {{ item.score }}</span>
+                                {% if item.is_answered %}<span style="font-size: 0.75rem; color: #16a34a; font-weight: 600;">✓ Accepted Answer</span>{% endif %}
+                                <a href="{{ item.url }}" target="_blank" style="font-size: 0.75rem; color: #2563eb; text-decoration: none; font-weight: 500;">View Discussion ↗</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    
+                    {# WIKIPEDIA PANE #}
+                    {% if social.wikipedia %}
+                    <div id="soc-wiki" class="soc-tab-content" {% if active_tab == 'wiki' %}style="display: block; animation: fadeIn 0.3s;"{% else %}style="display: none;"{% endif %}>
+                        {% for item in social.wikipedia %}
+                        <div style="position: relative; margin-bottom: 1.25rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #64748b; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+                                <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.65rem; text-transform: uppercase;">Wikipedia ({{ item.wiki_lang }})</span>
+                            </div>
+                            <a href="{{ item.page_url }}" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.95rem;">{{ item.page_title }}</a>
+                            <p class="muted" style="font-size: 0.8rem; margin: 0.1rem 0 0 0;">Work cited as a foundational reference in this encyclopedic entry.</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    {# HYPOTHESIS PANE #}
+                    {% if social.hypothesis %}
+                    <div id="soc-hyp" class="soc-tab-content" {% if active_tab == 'hyp' %}style="display: block; animation: fadeIn 0.3s;"{% else %}style="display: none;"{% endif %}>
+                        {% for item in social.hypothesis[:5] %}
+                        <div style="position: relative; margin-bottom: 1.5rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #db2777; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span class="badge" style="background: #fdf2f8; color: #9d174d; font-size: 0.65rem; text-transform: uppercase;">Expert Annotation</span>
+                                <span class="muted" style="font-size: 0.7rem;">{{ item.date }}</span>
+                            </div>
+                            <div style="font-size: 0.85rem; color: #334155; line-height: 1.5; border-left: 3px solid #fce7f3; padding-left: 0.75rem;">
+                                {{ item.text[:250] }}...
+                            </div>
+                            <a href="{{ item.url }}" target="_blank" style="display: inline-block; margin-top: 0.4rem; font-size: 0.75rem; color: #9d174d; text-decoration: none; font-weight: 500;">View context on PDF ↗</a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    {# REDDIT PANE #}
+                    {% if social.reddit %}
+                    <div id="soc-reddit" class="soc-tab-content" {% if active_tab == 'reddit' %}style="display: block; animation: fadeIn 0.3s;"{% else %}style="display: none;"{% endif %}>
+                        {% for item in social.reddit[:5] %}
+                        <div style="position: relative; margin-bottom: 1.5rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #f97316; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span class="badge" style="background: #fff7ed; color: #c2410c; font-size: 0.65rem; text-transform: uppercase;">Reddit: r/{{ item.subreddit }}</span>
+                                <span class="muted" style="font-size: 0.7rem;">{{ item.date }}</span>
+                            </div>
+                            <div style="font-weight: 600; font-size: 0.9rem; color: #1e293b; margin-bottom: 0.2rem; line-height: 1.4;">{{ item.title }}</div>
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <span class="muted" style="font-size: 0.75rem;">⬆ {{ item.upvotes }} upvotes</span>
+                                <a href="{{ item.url }}" target="_blank" style="font-size: 0.75rem; color: #c2410c; text-decoration: none; font-weight: 500;">Join Discussion ↗</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    {# BLUESKY PANE #}
+                    {% if social.bluesky %}
+                    <div id="soc-bsky" class="soc-tab-content" {% if active_tab == 'bsky' %}style="display: block; animation: fadeIn 0.3s;"{% else %}style="display: none;"{% endif %}>
+                        {% for item in social.bluesky[:5] %}
+                        <div style="position: relative; margin-bottom: 1.5rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #0ea5e9; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span class="badge" style="background: #e0f2fe; color: #0369a1; font-size: 0.65rem; text-transform: uppercase;">Bluesky Post</span>
+                                <span class="muted" style="font-size: 0.7rem;">{{ item.date }}</span>
+                            </div>
+                            <div style="font-size: 0.85rem; line-height: 1.5; color: #334155; font-style: italic; background: #f8fafc; padding: 0.75rem; border-radius: 8px; border: 1px solid #f1f5f9; margin-bottom: 0.3rem;">
+                                "{{ item.text }}" — <span style="font-weight: 600;">@{{ item.author }}</span>
+                            </div>
+                            <a href="{{ item.url }}" target="_blank" style="font-size: 0.75rem; color: #0369a1; text-decoration: none; font-weight: 500;">View Thread ↗</a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+                
+                {# Optional: A tiny note if total events > displayed events to explain the math discrepancy #}
+                {% set total_rendered = ns_legacy.filtered|length + (social.wikipedia|length if social.wikipedia else 0) + (social.bluesky|length if social.bluesky else 0) + (social.reddit|length if social.reddit else 0) + (social.hypothesis|length if social.hypothesis else 0) %}
+                {% if total_m > total_rendered %}
+                <div class="muted" style="margin-top: 1.5rem; font-size: 0.8rem; text-align: center; border-top: 1px dashed #e5e7eb; padding-top: 0.8rem;">
+                    Displaying the {{ total_rendered }} most detailed mentions. Other aggregated events lack public URLs.
+                </div>
+                {% endif %}
+                
+            </section>
+            {% endif %}
+        </div>
+
+        {% if story.signals.teaching_adoption and (story.signals.teaching_adoption.ocw or story.signals.teaching_adoption.holdings.ol_holdings | default(0) | int > 0 or story.signals.teaching_adoption.youtube) %}
+        <section class="card">
+            <h2><span>Teaching, Practice & Library Adoption</span></h2>
+            <div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem;">
+                Evidence of structured teaching use, reading lists, and library availability.
+            </div>
+            
+            <div class="grid-2" style="align-items: start;">
+                
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        OpenCourseWare Mentions <span class="badge" style="float: right;">Google Custom Search</span>
+                    </h3>
+                    {% if story.signals.teaching_adoption.ocw %}
+                        <ul style="padding-left: 0; list-style: none; margin: 0;">
+                            {% for item in story.signals.teaching_adoption.ocw %}
+                            <li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                                    <a href="{{ item.url }}" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;">
+                                        {{ item.title }}
+                                    </a>
+                                    <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        {{ item.source }}
+                                    </span>
+                                </div>
+                                <div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...{{ item.snippet }}..."
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p class="muted" style="font-size: 0.85rem; font-style: italic;">No verified course syllabi found in open university repositories.</p>
+                    {% endif %}
+                    {% if story.signals.teaching_adoption.youtube %}
+                    <h3 style="font-size: 0.95rem; margin-top: 1.5rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem; display: flex; justify-content: space-between; align-items: baseline;">
+                        Video Lectures & Presentations
+                        <span class="badge" style="background: #fef2f2; color: #dc2626; border: 1px solid #fecaca;">YouTube Transcripts</span>
+                    </h3>
+                    
+                    <ul style="padding-left: 0; list-style: none; margin: 0;">
+                        {% for vid in story.signals.teaching_adoption.youtube %}
+                        <li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                                <a href="{{ vid.url }}" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;">
+                                    {{ vid.title }}
+                                </a>
+                                <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                    {{ vid.channel }}
+                                </span>
+                            </div>
+                            
+                            <div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #fecaca;">
+                                "...{{ vid.snippet }}..."
+                            </div>
+                            
+                            <div class="muted" style="font-size: 0.7rem; margin-top: 0.4rem; text-align: right;">
+                                AI Academic Confidence: <strong>{{ vid.confidence }}%</strong>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        Library & Community Access <span class="badge" style="float: right; background: #f0fdf4; color: #166534;">Open Library</span>
+                    </h3>
+                    
+                    <ul class="metric-list" style="margin-top: 0;">
+                        {% if story.signals.teaching_adoption.holdings.ol_holdings and story.signals.teaching_adoption.holdings.ol_holdings > 0 %}
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Community Reach:</strong> 
+                            <a href="https://openlibrary.org/search?title={{ story.title|urlencode }}" target="_blank" class="badge" style="background:#fef2f2; color:#dc2626; text-decoration: none; display: inline-flex; align-items: center; gap: 0.2rem;">
+                                {{ story.signals.teaching_adoption.holdings.ol_holdings }} logs/editions ↗
+                            </a>
+                            <div class="muted" style="font-size: 0.8rem; margin-top: 0.2rem;">Tracked across Open Library community reading lists and catalog editions.</div>
+                        </li>
+                        {% endif %}
+                        
+                        {% if story.signals.teaching_adoption.holdings.worldcat_url %}
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Institutional Availability:</strong>
+                            <div style="margin-top: 0.4rem;">
+                                <a href="{{ story.signals.teaching_adoption.holdings.worldcat_url }}" target="_blank" class="tag" style="background:#e5f2ff; color:#1d4ed8; font-weight: 600; text-decoration: none;">
+                                    Search Global Libraries (WorldCat) ↗
+                                </a>
+                            </div>
+                        </li>
+                        {% endif %}
+
+                        {% if story.signals.teaching_adoption.holdings.library_subjects %}
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Library Classification Subjects:</strong>
+                            <div style="display:flex; flex-wrap:wrap; gap:0.3rem; margin-top: 0.4rem;">
+                                {% for sub in story.signals.teaching_adoption.holdings.library_subjects %}
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">{{ sub }}</span>
+                                {% endfor %}
+                            </div>
+                        </li>
+                        {% endif %}
+
+                        {% if story.oer_listings and story.oer_listings|length > 0 %}
+                        <li style="margin-bottom: 0.8rem; padding-top: 0.8rem; border-top: 1px dashed #e5e7eb;">
+                            <strong>Educational Adoption:</strong> 
+                            <span class="badge" style="background: #fef9c3; color: #b45309; border: 1px solid #fef08a;">
+                                {{ story.oer_listings|length }} OER listing(s)
+                            </span>
+                        </li>
+                        {% endif %}
+
+                        {% if story.signals.teaching_adoption.otl %}
+                        <li style="margin-top: 1.2rem; padding-top: 1rem; border-top: 1px dashed #e5e7eb;">
+                            <strong>Open Educational Resource (OER):</strong>
+                            <div style="margin-top: 0.5rem;">
+                                <a href="{{ story.signals.teaching_adoption.otl.url }}" target="_blank" style="display: inline-flex; align-items: center; gap: 0.4rem; background:#f0fdf4; color:#166534; border: 1px solid #bbf7d0; padding: 0.3rem 0.6rem; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 0.85rem;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477-4.5 1.253"></path></svg>
+                                    View in Open Textbook Library ↗
+                                </a>
+                            </div>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                
+            </div>
+        </section>
+        {% endif %}
+        
+        {% set ns_aff = namespace(affils={}) %}
+        {% for a in story.signals.template_authors %}
+            {% for inst in a.institutions %}
+                {% if inst.display_name and inst.display_name not in ns_aff.affils %}
+                    {% set _ = ns_aff.affils.update({inst.display_name: inst.ror}) %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>{{ story.signals.template_authors|length }} author{% if story.signals.template_authors|length != 1 %}s{% endif %} · {{ ns_aff.affils|length }} institution{% if ns_aff.affils|length != 1 %}s{% endif %}</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                {% if story.signals.volume_footprint and story.signals.volume_footprint.is_edited_volume %}
+                <h3 style="margin:1rem 0 0.25rem; color: #b45309;">Chapter Contributors Network</h3>
+                <div class="muted" style="margin-bottom:0.75rem;">{{ story.signals.volume_footprint.network_size }} distinct authors contributed to chapters within this volume.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1rem;">
+                    {% for author in story.signals.volume_footprint.core_network_authors %}
+                    <span class="tag tag-soft" style="font-size: 0.8rem;">{{ author }}</span>
+                    {% endfor %}
+                    {% if story.signals.volume_footprint.network_size > 10 %}
+                    <span class="tag tag-soft" style="font-size: 0.8rem; background: transparent; border: 1px dashed #d1d5db;">+ {{ story.signals.volume_footprint.network_size - 10 }} more</span>
+                    {% endif %}
+                </div>
+                {% endif %}
+                
+                    {% for a in story.signals.template_authors %}
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>{{ a.name }}</strong> 
+                        {% if loop.first %}<span class="badge">First</span>{% endif %}
+                        {% if a.is_corresponding %}<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>{% endif %}
+                        {% if a.orcid %}<a class="orcid-badge" href="{{ a.orcid }}" target="_blank">ORCID</a>{% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                {% if ns_aff.affils|length > 0 %}
+                <h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+                    {% for affil_name, affil_url in ns_aff.affils.items() %}
+                    <li style="margin-bottom: 0.4rem;">
+                        {% if affil_url %}
+                            <a href="{{ affil_url }}" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">{{ affil_name }}</a>
+                        {% else %}
+                            {{ affil_name }}
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>{{ concepts|length if concepts else 0 }} specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    {% for c in concepts %}
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">{{ c.display_name if c is mapping else c }}</span>
+                    {% endfor %}
+                    {% if not concepts %}<span class="muted">Not available.</span>{% endif %}
+                </div>
+                
+                {% if story.signals.sdgs and story.signals.sdgs|length > 0 %}
+                <h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>{{ story.signals.sdgs|length }} targets detected.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    {% for sdg in story.signals.sdgs %}
+                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">{{ sdg.display_name }} ({{ "%.2f"|format(sdg.score) }})</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </section>
+        </div>
+
+        {% if story.signals.funding %}
+        <section class="card">
+            <h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>{{ story.signals.funding|length }} financial grants and sponsors detected.</div>
+            
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                {% for grant in story.signals.funding %}
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>{{ grant.funder }}</strong> 
+                        {% if grant.award %}<span style="opacity: 0.8; font-weight: normal;">({{ grant.award }})</span>{% endif %}
+                    </span>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
+
+{% if story_type == 'BookStory' %}
+        
+        <section class="card" id="operas-metrics-card">
+            <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
+            <div id="metrics-widget"></div>
+            <script type="application/json" id="operas-metrics-config">{{ operas_config|safe }}</script>
+            <script src="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js" async></script>
+        </section>
+
+{% endif %}
+
+        {% set render_citations = story.impact.citations if story.impact and story.impact.citations else citations %}
+        {% if render_citations and citation_total > 0 %}
+        <section class="card no-print">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>Displaying {{ render_citations|length }} most recent citing works</div>
+            <div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+                <table>
+                    <thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    {% for c in render_citations %}
+                    <tr>
+                        <td>{{ c.year }}</td>
+                        <td>{{ c.title }}</td>
+                        <td>{{ c.venue }}</td>
+                        <td>{% if c.doi %}<a href="https://doi.org/{{ c.doi }}" target="_blank" style="word-break: break-all;">{{ c.doi }}</a>{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        {% endif %}
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on {{ generated_at if generated_at else '2026-03-24 13:16:07 UTC' }}
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    {% if story.signals.citing_landscape and story.signals.citing_landscape.citations_by_year %}
+    <script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+    {% endif %}
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+    
+    <script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('.role-pill[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 
+
+
+
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>ArticleStory - Age-dependent H3K9 trimethylation by dSetdb1 impairs mitochondrial UPR leading to degeneration of olfactory neurons and loss of olfactory function in Drosophila</title>
-<style>
+    <meta charset="utf-8">
+    <title>ArticleStory - Age-dependent H3K9 trimethylation by dSetdb1 impairs mitochondrial UPR leading to degeneration of olfactory neurons and loss of olfactory function in Drosophila</title>
+    <style>
+
         * { box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
         .page { max-width: 1000px; margin: auto; }
@@ -13,7 +17,7 @@
         .span-full { grid-column: 1 / -1; }
         .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
         .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
-        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
         .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
         .tag-soft { background: #f3f4f6; color: #4b5563; }
         .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
@@ -36,6 +40,8 @@
             * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
             .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
             .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
             table { page-break-inside: auto !important; width: 100% !important; }
             tr { page-break-inside: avoid !important; page-break-after: auto !important; }
             thead { display: table-header-group !important; }
@@ -44,16 +50,6 @@
 
 /* ── UX Enhancements ── */
 
-/* Stats strip */
-.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
-  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
-.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
-.stats-strip-item:last-child{border-right:none;}
-.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
-.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
-.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
-  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
-@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
 
 /* Sticky nav */
 .sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
@@ -66,7 +62,7 @@
   transition:color .15s,border-color .15s;white-space:nowrap;}
 .sticky-nav a:hover{color:#111827;}
 .sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
-@media print{.sticky-nav,.stats-strip{display:none!important;}}
+@media print{.sticky-nav{display:none!important;}}
 
 /* Collapsible cards */
 .card-collapsible > h2{
@@ -107,7 +103,9 @@
 .role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
 .role-pill:hover{opacity:1!important;}
 
-/* CSS tooltip for role descriptions */
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
 
 
 .role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
@@ -140,14 +138,26 @@
 .im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
 .im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
   color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
-.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
-.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
 .im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
 .im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
 .im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
 
-.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
-.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
 .im-scite-via{font-weight:400;color:#9ca3af;}
 .im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
 .im-scite-seg{height:100%;}
@@ -161,8 +171,9 @@
 .im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
 .im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
 .im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
-.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
   font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
 .sig-pill:hover{opacity:.75;}
 .sig-red   {background:#fee2e2;color:#b91c1c;}
 .sig-slate {background:#f1f5f9;color:#475569;}
@@ -170,6 +181,7 @@
 .sig-teal  {background:#ccfbf1;color:#0f766e;}
 .sig-amber {background:#fef3c7;color:#b45309;}
 .sig-blue  {background:#dbeafe;color:#1d4ed8;}
+.sig-green {background:#dcfce7;color:#166534;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -196,9 +208,10 @@
     }
     .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
 
-</style>
-<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <!-- Site nav -->
@@ -207,417 +220,851 @@
     <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
     <span>openscience<span class="brand-dot">.</span>works</span>
   </a>
-  <div class="site-nav-links">
-    <a href="index.html">← All stories</a>
-    <a href="about.html">About</a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
   </div>
 </nav>
+    
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">Age-dependent H3K9 trimethylation by dSetdb1 impairs mitochondrial UPR leading to degeneration of olfactory neurons and loss of olfactory function in Drosophila</h1>
+                        
+                            <div class="discipline-badge" style="background:#fef08a; color:#854d0e; border-color:#fde047; font-weight:600; margin-top: 0.5rem; margin-bottom: 0;">
+                                <svg style="width:14px; height:14px; display:inline; vertical-align:middle; margin-right:4px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                                Open Access (Gold)
+                            </div>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
 
-<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
-<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-        Print PDF Report
-    </button>
-<div class="page" id="sec-story">
-<header class="hero card" id="sec-hero">
-<div class="header-bar">
-<div style="display: flex; align-items: center; gap: 1.25rem;">
-<div class="logo-wrap"><img alt="Logo" src="articlestories-logo.png"/></div>
-<div>
-<h1 class="hero-title">Age-dependent H3K9 trimethylation by dSetdb1 impairs mitochondrial UPR leading to degeneration of olfactory neurons and loss of olfactory function in Drosophila</h1>
-<div class="discipline-badge" style="background:#fef08a; color:#854d0e; border-color:#fde047; font-weight:600; margin-top: 0.5rem; margin-bottom: 0;" title="Immediate free access with an open licence — published in a fully OA venue"><svg fill="none" stroke="currentColor" style="width:14px; height:14px; display:inline; vertical-align:middle; margin-right:4px;" viewbox="0 0 24 24"><path d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg><span style="opacity:0.58;font-size:0.72em;font-weight:500;margin-right:0.25em;text-transform:uppercase;letter-spacing:0.04em;vertical-align:middle;">Access:</span><span style="vertical-align:middle;">Open Access (Gold)</span></div>
-<div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
-<a href="https://doi.org/10.1101/2024.06.17.599276" style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1px solid #fde68a; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s;" target="_blank">
-<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+                                <a href="https://doi.org/10.1101/2024.06.17.599276" target="_blank" style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1px solid #fde68a; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                     Early Sharing / Preprint ↗
                                 </a>
-</div>
-<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
-<div><strong>Author(s):</strong> Francisco Muñoz-Carvajal, Nicole Sanhueza, Mario Sanhueza, Felipe A. Court</div>
-<div><strong>Publisher:</strong> eLife</div>
-<div><strong>Publication year:</strong> 2026</div>
-<div><strong>DOI:</strong> <a href="https://doi.org/10.7554/eLife.103118" target="_blank">10.7554/eLife.103118</a></div>
-</div>
-</div>
-</div>
-</div>
-</header>
-<div class="stats-strip no-print">
-<div class="stats-strip-item">
-<div class="stats-strip-num">0</div>
-<div class="stats-strip-label">Total Citations</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num">0</div>
-<div class="stats-strip-label">Online Mentions</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num">0</div>
-<div class="stats-strip-label">scite References</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Gold</div>
-<div class="stats-strip-label">Open Access Status</div>
-</div>
-</div>
+                            
 
-<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
-<div class="sticky-nav-inner">
-<a href="#sec-hero">Overview</a>
-<a href="#sec-story">Story</a>
-<a href="#sec-impact">Impact</a>
-<a href="#sec-roles">Roles</a>
-<a href="#sec-citing">Who's Citing</a>
-<a href="#sec-mentions">Mentions</a>
-<a href="#sec-teaching">Teaching</a>
-<a href="#sec-contributors">Contributors</a>
-<a href="#sec-funding">Funding</a>
-<a href="#sec-citations">All Citations</a>
-</div>
-</nav>
+                        </div>
 
-<section class="card" id="sec-story">
-<h2><span>The Story So Far</span></h2>
-<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This study explores the role of age-dependent H3K9 trimethylation by dSetdb1 in impairing mitochondrial unfolded protein response (UPR) in Drosophila, leading to the degeneration of olfactory neurons and loss of olfactory function. Funded by several national agencies, the research emphasizes the importance of epigenetic regulation in neurodegeneration.</p>
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> 
+                                
+                                    Francisco Muñoz-Carvajal, Nicole Sanhueza, Mario Sanhueza, Felipe A. Court
+                                
+                            </div>
+                        
+                            
+                        
+                            
+                            
+                            <div><strong>Journal:</strong> 
+                                eLife
+                            </div>
+                            
+                        
+                            <div><strong>Publisher:</strong> 
+                                
+                                    eLife Sciences Publications, Ltd
+                                
+                            </div>
+                        
+                            <div><strong>Publication year:</strong> 
+                                
+                                    2026
+                                
+                            </div>
+                        
+                            <div><strong>DOI:</strong> 
+                                <a href="https://doi.org/10.7554/eLife.103118" target="_blank">
+                                    10.7554/eLife.103118
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        <!-- Sticky nav -->
+        <nav aria-label="Page sections" class="sticky-nav no-print">
+            <div class="sticky-nav-inner">
+                <a href="#sec-hero">Overview</a>
+                <a href="#sec-story">Story</a>
+                <a href="#sec-impact">Impact</a>
+                <a href="#sec-roles">Roles</a>
+                <a href="#sec-access">Access</a>
+                <a href="#sec-citing">Who's Citing</a>
+                <a href="#sec-mentions">Mentions</a>
+            </div>
+        </nav>
+
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The research article titled "Age-dependent H3K9 trimethylation by dSetdb1 impairs mitochondrial UPR leading to degeneration of olfactory neurons and loss of olfactory function in Drosophila" explores critical mechanisms of neuronal degeneration and sensory loss. Funded by multiple prestigious agencies including Fondo Nacional de Desarrollo Científico y Tecnológico and ANID Fondo Subvencion a la Instalacion Academia, this study has been made available as a preprint, showcasing the authors’ commitment to open science, although it has yet to achieve formal citations or mentions in public forums.</p>
+
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">The recent study published in eLife investigates the impact of H3K9 trimethylation mediated by dSetdb1, revealing critical age-dependent changes that contribute to neurodegeneration in Drosophila. This research sheds light on the mechanisms behind the loss of olfactory function, an area that remains pivotal for understanding sensory deficits associated with aging. The implications of these findings extend beyond basic biology, touching on broader neurological health issues as populations age and experience cognitive decline.</p>
-<p class="story-text">The authors received substantial financial backing from a range of prestigious funding agencies, including the Fondo Nacional de Desarrollo Científico y Tecnológico and ANID Fondo Subvencion a la Instalacion Academia. Such funding underscores the significance of this research field and highlights its relevance to ongoing discussions about epigenetic effects on age-related diseases. Institutional support from key universities, including Universidad Mayor de San Andrés and Universidad Mayor, further reinforces the credibility and potential impact of the findings.</p>
-<p class="story-text">The transparent peer review process, with three open peer reviews conducted, strengthens the scientific discourse surrounding this work. It showcases a commitment to quality and transparency in research, as peer review reports are made available for public scrutiny. This openness ensures that the findings can be viewed critically by the broader academic community, facilitating ongoing discussions about the results and their implications.</p>
-<p class="story-text">Additionally, while the preprint version of this article has not yet accrued formal citations, it stands as a testament to the authors' commitment to open science. Sharing early research findings can catalyze engagement and constructive critique within the scientific community, promoting faster dissemination of knowledge. As this study continues to be discussed and examined, it holds promise for influencing future research focused on epigenetic regulation and neurodegenerative processes.</p></div>
-</section>
-<section class="card" style="border-left: 4px solid #0d9488; background: #f0fdfa; margin-bottom: 1.75rem;">
-<h2 style="margin-top: 0; border-bottom: none; padding-bottom: 0; display: flex; justify-content: space-between; align-items: center;">
-<span style="color: #115e59;">eLife Assessment</span>
-<span class="badge" style="background:#14b8a6; color:#ffffff; font-weight: 600; padding: 0.3rem 0.8rem; font-size: 0.8rem;">Editorial Evaluation</span>
-</h2>
-<p class="muted" style="margin-top:0.2rem; margin-bottom:1.5rem; color: #134e4a; font-size: 0.9rem;">
+<p class="story-text">This study presents significant findings on how age-dependent modifications in histone methylation, specifically H3K9 trimethylation mediated by dSetdb1, contribute to the impairment of mitochondrial unfolded protein response (UPR) in Drosophila. As olfactory neurons are pivotal for sensory perception, understanding these underlying mechanisms is crucial for addressing age-related sensory decline. The findings have profound implications, particularly as they open avenues for exploring therapeutic interventions in neurodegenerative diseases.</p>
+
+<p class="story-text">The authors have made strides in promoting an open research culture by sharing their findings in the form of a preprint, demonstrating an eagerness to engage with the scientific community prior to formal peer review. This early sharing allows for immediate community engagement, potentially influencing ongoing research in the field. However, the preprint at this stage has not yet garnered citations, indicating that its impact may still be developing.</p>
+
+<p class="story-text">The research is supported by robust institutional backing from esteemed institutions such as Universidad Mayor and Universidad Mayor de San Andrés. Such affiliations enhance the credibility and reach of the study, suggesting that it is a product of serious academic inquiry and investment. The funding from key agencies like Fondo Nacional de Desarrollo Científico y Tecnológico reflects a significant institutional commitment to advancing knowledge in neurological and sensory research.</p>
+
+<p class="story-text">Moreover, the transparent peer review process, evidenced by the presence of three open peer reviews, enriches the discussion surrounding the results and supports the validity of the authors' claims, fostering a more informed dialogue in the scientific community. Overall, while the article awaits broader recognition, the commitment to open science and the importance of the research actively position it for future academic discourse and application.</p></div>
+        </section>
+        
+
+        
+        <section class="card" style="border-left: 4px solid #0d9488; background: #f0fdfa; margin-bottom: 1.75rem;">
+            <h2 style="margin-top: 0; border-bottom: none; padding-bottom: 0; display: flex; justify-content: space-between; align-items: center;">
+                <span style="color: #115e59;">eLife Assessment</span> 
+                <span class="badge" style="background:#14b8a6; color:#ffffff; font-weight: 600; padding: 0.3rem 0.8rem; font-size: 0.8rem;">Editorial Evaluation</span>
+            </h2>
+            <p class="muted" style="margin-top:0.2rem; margin-bottom:1.5rem; color: #134e4a; font-size: 0.9rem;">
                 This article has been peer reviewed and curated under eLife's open science Publish, Review, Curate (PRC) model.
             </p>
-<div class="grid-2" style="margin-bottom: 0; gap: 1.5rem;">
-<div style="background: white; padding: 1.25rem 1.5rem; border-radius: 0.6rem; border: 1px solid #ccfbf1; box-shadow: 0 4px 6px rgba(13, 148, 136, 0.05);">
-<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
-<svg fill="none" height="18" stroke="#0d9488" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-<div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; color: #0f766e;">
+            
+            <div class="grid-2" style="margin-bottom: 0; gap: 1.5rem;">
+                <div style="background: white; padding: 1.25rem 1.5rem; border-radius: 0.6rem; border: 1px solid #ccfbf1; box-shadow: 0 4px 6px rgba(13, 148, 136, 0.05);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                        <svg width="18" height="18" fill="none" stroke="#0d9488" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; color: #0f766e;">
                             Significance of findings
                         </div>
-</div>
-<span style="font-size: 1.5rem; font-weight: 800; color: #111827;">
+                    </div>
+                    <span style="font-size: 1.5rem; font-weight: 800; color: #111827;">
                         Landmark
                     </span>
-</div>
-<div style="background: white; padding: 1.25rem 1.5rem; border-radius: 0.6rem; border: 1px solid #ccfbf1; box-shadow: 0 4px 6px rgba(13, 148, 136, 0.05);">
-<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
-<svg fill="none" height="18" stroke="#0d9488" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-<div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; color: #0f766e;">
+                </div>
+                
+                <div style="background: white; padding: 1.25rem 1.5rem; border-radius: 0.6rem; border: 1px solid #ccfbf1; box-shadow: 0 4px 6px rgba(13, 148, 136, 0.05);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                        <svg width="18" height="18" fill="none" stroke="#0d9488" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        <div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; color: #0f766e;">
                             Strength of evidence
                         </div>
-</div>
-<span style="font-size: 1.5rem; font-weight: 800; color: #111827;">
+                    </div>
+                    <span style="font-size: 1.5rem; font-weight: 800; color: #111827;">
                         Convincing
                     </span>
-</div>
-</div>
-<div style="margin-top: 1.5rem; padding: 1.25rem; background: #ffffff; border-radius: 0.5rem; border-left: 3px solid #0d9488; font-size: 0.9rem; line-height: 1.6; color: #374151; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
-<div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; color: #0f766e; margin-bottom: 0.4rem;">
+                </div>
+            </div>
+
+            
+            <div style="margin-top: 1.5rem; padding: 1.25rem; background: #ffffff; border-radius: 0.5rem; border-left: 3px solid #0d9488; font-size: 0.9rem; line-height: 1.6; color: #374151; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
+                <div style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; color: #0f766e; margin-bottom: 0.4rem;">
                     Editor's Consensus Summary
                 </div>
-<span style="font-style: italic; color: #1f2937;">"An age-dependent epigenetic regulation of mitochondrial stress responses drives neuronal degeneration and sensory decline."</span>
-</div>
-<div style="margin-top: 1.25rem; text-align: right; border-top: 1px dashed #99f6e4; padding-top: 0.75rem;">
-<a href="https://elifesciences.org/articles/103118" style="font-size: 0.85rem; color: #0f766e; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;" target="_blank">
-                    Read Full Peer Reviews 
-                    <svg fill="none" height="14" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="14"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-</a>
-</div>
-</section>
-<section class="card" id="sec-impact">
-<h2><span>Impact metrics</span></h2>
-
-<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">0</div><div class="im-label">Total Citations</div></div></div></div><div class="im-card"><div class="im-num">0</div><div class="im-label">Online Mentions</div></div><div class="im-card"><div class="im-num">0</div><div class="im-label">scite References</div></div></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-slate" href="#sec-teaching">📚 WorldCat</a><a class="sig-pill sig-indigo" href="#sec-teaching">🎓 Course syllabus</a><a class="sig-pill sig-amber" href="#sec-funding">💰 6 grants</a></div></div></div></section>
-<section class="card" id="sec-roles">
-<h2><span>Inferred roles</span></h2>
-<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#065f46;">🏛 Practical &amp; Real-World</div><div class="roles-row"><span class="role-pill role-pill-practical" style="opacity:0.9;" data-tip="Cited in government reports, WHO/NGO briefs, or UN policy documents."><span class="role-dot" style="background:#10b981;"></span>Sustainability &amp; policy relevance<span class="role-strength" style="background:#dcfce7;color:#166534;">Moderate</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
-
-</section>
-<div class="grid-2">
-<section class="card" style="margin-bottom:0;">
-<h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
-<ul class="metric-list">
-<li><strong>DOI:</strong> <a href="https://doi.org/10.7554/eLife.103118" target="_blank">10.7554/eLife.103118</a></li>
-<li><strong>OA status:</strong> Gold</li>
-</ul>
-</section>
-<section class="card" style="margin-bottom:0;">
-<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
-<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
-                        This work has <strong>0</strong> recorded events globally
-                        
-                        <span style="font-weight:normal;">(combined from the published article and preprint).</span>
-</p>
-<p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
-<em>(See specific sources and examples in the Online Mentions section below).</em>
-</p>
-</section>
-</div>
-<div class="grid-2" style="align-items: start;">
-<div style="display: flex; flex-direction: column; gap: 1.5rem;">
-<section class="card" style="margin-bottom:0;">
-<h2><span>Citation context</span> <span class="badge">scite</span></h2>
-<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
-<li><strong>Total:</strong> 0</li>
-<li><strong>Supporting:</strong> 0</li>
-<li><strong>Mentioning:</strong> 0</li>
-<li><strong>Contradicting:</strong> 0</li>
-</ul>
-</section>
-</div>
-<div style="display: flex; flex-direction: column; gap: 1.5rem;">
-</div>
-</div>
-<div class="grid-2">
-<section class="card" style="margin-bottom:0;">
-<h2><span>Open Peer Review</span> <span class="badge">Crossref</span></h2>
-<p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Public referee reports and author responses.</p>
-<div style="display:flex; flex-direction:column; gap:0.6rem;">
-<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:0.4rem;">
-<div>
-<span class="tag" style="background:#fce7f3; color:#be185d; border:1px solid #fbcfe8; margin-right:0.4rem;">Peer Review</span>
-<strong>eLife Sciences Publications, Ltd</strong>
-</div>
-<a href="https://doi.org/10.7554/elife.103118.sa1" style="text-decoration:none; color:#2563eb; font-weight:500; font-size:0.85rem;" target="_blank">Read report →</a>
-</div>
-<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:0.4rem;">
-<div>
-<span class="tag" style="background:#fce7f3; color:#be185d; border:1px solid #fbcfe8; margin-right:0.4rem;">Peer Review</span>
-<strong>eLife Sciences Publications, Ltd</strong>
-</div>
-<a href="https://doi.org/10.7554/elife.103118.sa0" style="text-decoration:none; color:#2563eb; font-weight:500; font-size:0.85rem;" target="_blank">Read report →</a>
-</div>
-<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:0.4rem;">
-<div>
-<span class="tag" style="background:#fce7f3; color:#be185d; border:1px solid #fbcfe8; margin-right:0.4rem;">Peer Review</span>
-<strong>eLife Sciences Publications, Ltd</strong>
-</div>
-<a href="https://doi.org/10.7554/elife.103118.sa2" style="text-decoration:none; color:#2563eb; font-weight:500; font-size:0.85rem;" target="_blank">Read report →</a>
-</div>
-</div>
-</section>
-</div>
-<section class="card" id="sec-teaching">
-<h2><span>Teaching, Practice &amp; Library Adoption</span></h2>
-<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem;">
-                Evidence of structured teaching use, reading lists, and library availability.
+                <span style="font-style: italic; color: #1f2937;">"An age-dependent epigenetic regulation of mitochondrial stress responses drives neuronal degeneration and sensory decline."</span>
             </div>
-<div class="grid-2" style="align-items: start;">
-<div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
-                        OpenCourseWare Mentions <span class="badge" style="float: right;">Google Custom Search</span>
-</h3>
-<ul style="padding-left: 0; list-style: none; margin: 0;">
-<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
-<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
-<a href="https://www.biorxiv.org/content/10.1101/2024.06.17.599276v1" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
-                                        Age-dependent H3K9 trimethylation by dSetdb1 impairs ...
-                                    </a>
-<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
-                                        www.biorxiv.org
-                                    </span>
-</div>
-<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
-                                    "...Using Drosophila, we demonstrate that an age-dependent increase in H3K9 trimethylation by the methyltransferase dSetdb1 reduces the activation ......"
-                                </div>
-</li>
-<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
-<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
-<a href="https://pubmed.ncbi.nlm.nih.gov/41885373/?utm_source=FeedFetcher&amp;utm_medium=rss&amp;utm_campaign=pubmed-2&amp;utm_content=1bGVAOyPwMu3IKQ-I6MVTBFCe0XM0qzMsnmVivsWnh5VFlzQFh&amp;fc=20240908202841&amp;ff=20260402053512&amp;v=2.19.0.post6+133c1fe" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
-                                        Age-dependent H3K9 trimethylation by dSetdb1 impairs ...
-                                    </a>
-<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
-                                        pubmed.ncbi.nlm.nih.gov
-                                    </span>
-</div>
-<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
-                                    "...Using Drosophila, we demonstrate that an age-dependent increase in H3K9 trimethylation by the methyltransferase dSetdb1 reduces the activation ......"
-                                </div>
-</li>
-<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
-<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
-<a href="https://www.researchgate.net/publication/403181273_Age-dependent_H3K9_trimethylation_by_dSetdb1_impairs_mitochondrial_UPR_leading_to_degeneration_of_olfactory_neurons_and_loss_of_olfactory_function_in_Drosophila" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
-                                        Age-dependent H3K9 trimethylation by dSetdb1 impairs ...
-                                    </a>
-<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
-                                        www.researchgate.net
-                                    </span>
-</div>
-<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
-                                    "...... Age-dependent H3K9 trimethylation by dSetdb1 impairs mitochondrial UPR leading to degeneration of olfactory neurons and loss of olfactory function in Drosophila...."
-                                </div>
-</li>
-<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
-<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
-<a href="https://biofactoid.org/document/78e7a40d-0315-4cf6-a9f1-ddcf8fa0db46" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
-                                        Age-dependent H3K9 trimethylation by dSetdb1 impairs ...
-                                    </a>
-<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
-                                        biofactoid.org
-                                    </span>
-</div>
-<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
-                                    "...... Age-dependent H3K9 trimethylation by dSetdb1 impairs mitochondrial UPR leading to degeneration of olfactory neurons and loss of olfactory function in Drosophila ......"
-                                </div>
-</li>
-<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
-<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
-<a href="https://www.researchgate.net/publication/353584065_Olfactory_dysfunction_in_aging_and_neurodegenerative_diseases" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
-                                        Olfactory dysfunction in aging and neurodegenerative ...
-                                    </a>
-<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
-                                        www.researchgate.net
-                                    </span>
-</div>
-<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
-                                    "...... Age-dependent H3K9 trimethylation by dSetdb1 impairs mitochondrial UPR leading to degeneration of olfactory neurons and loss of olfactory function in Drosophila...."
-                                </div>
-</li>
-<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
-<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
-<a href="https://life-ai.net/zh/news/74296" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
-                                        Age-dependent H3K9 trimethylation by dSetdb1 ... - Life AI Net
-                                    </a>
-<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
-                                        life-ai.net
-                                    </span>
-</div>
-<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
-                                    "...Age-dependent H3K9 trimethylation by dSetdb1 impairs mitochondrial UPR leading to degeneration of olfactory neurons and loss of olfactory ......"
-                                </div>
-</li>
-</ul>
-</div>
-<div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
-                        Library &amp; Community Access <span class="badge" style="float: right; background: #f0fdf4; color: #166534;">Open Library</span>
-</h3>
-<ul class="metric-list" style="margin-top: 0;">
-<li style="margin-bottom: 0.8rem;">
-<strong>Institutional Availability:</strong>
-<div style="margin-top: 0.4rem;">
-<a class="tag" href="https://www.worldcat.org/search?q=ti:Age-dependent%20H3K9%20trimethylation%20by%20dSetdb1%20impairs%20mitochondrial%20UPR%20leading%20to%20degeneration%20of%20olfactory%20neurons%20and%20loss%20of%20olfactory%20function%20in%20Drosophila" style="background:#e5f2ff; color:#1d4ed8; font-weight: 600; text-decoration: none;" target="_blank">
-                                    Search Global Libraries (WorldCat) ↗
-                                </a>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</section>
-<div class="grid-2" id="sec-contributors">
-<section class="card" id="sec-contributors" style="margin-bottom:0;">
-<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">4 authors · 2 institutions</div>
-<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
-<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
-<li style="margin-bottom: 0.4rem;">
-<strong>Francisco Muñoz-Carvajal</strong>
-<span class="badge">First</span>
-<a class="orcid-badge" href="https://orcid.org/0009-0003-6650-0374" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Nicole Sanhueza</strong>
-<a class="orcid-badge" href="https://orcid.org/0009-0001-5173-0471" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Mario Sanhueza</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-0125-0154" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Felipe A. Court</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-9394-7601" target="_blank">ORCID</a>
-</li>
-</ul>
-<h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
-<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
-<li style="margin-bottom: 0.4rem;">
-<a href="https://ror.org/00pn44t17" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Universidad Mayor</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<a href="https://ror.org/00k4v9x79" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Universidad Mayor de San Andrés</a>
-</li>
-</ul>
-</section>
-<section class="card" style="margin-bottom:0;">
-<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">18 specific concepts identified.</div>
-<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neurodegeneration</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell biology</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mitochondrion</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Olfactory system</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Histone</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Epigenetics</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neuroscience</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Olfactory memory</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Chromatin</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Olfaction</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Unfolded protein response</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Drosophila melanogaster</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Context (archaeology)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Degeneration (medical)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Oxidative stress</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Gene knockdown</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Gene silencing</span>
-</div>
-<h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">1 targets detected.</div>
-<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
-<span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Life in Land (0.50)</span>
-</div>
-</section>
-</div>
-<section class="card" id="sec-funding">
-<h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">6 financial grants and sponsors detected.</div>
-<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>Fondo Nacional de Desarrollo Científico y Tecnológico</strong>
-<span style="opacity: 0.8; font-weight: normal;">(1150766)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>Fondo Nacional de Desarrollo Científico y Tecnológico</strong>
-<span style="opacity: 0.8; font-weight: normal;">(11200981)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>Fondo de Financiamiento de Centros de Investigación en Áreas Prioritarias</strong>
-<span style="opacity: 0.8; font-weight: normal;">(15150012)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>ANID Fondo Subvencion a la Instalacion Academia</strong>
-<span style="opacity: 0.8; font-weight: normal;">(PAI77180059)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>Fondo Nacional de Desarrollo Científico y Tecnológico</strong>
-<span style="opacity: 0.8; font-weight: normal;">(1231432)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>Financiamiento Basal para Centros Científicos y Tecnológicos de Excelencia Centro Ciencia and Vida</strong>
-<span style="opacity: 0.8; font-weight: normal;">(FB210008)</span>
-</span>
-</div>
-</section>
-<footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
-<div style="display: flex; flex-direction: column; gap: 0.4rem;">
-<div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
-<svg fill="none" height="16" stroke="currentColor" style="color: #9ca3af;" viewbox="0 0 24 24" width="16"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<span>Understanding our metrics: <a href="https://www.openscience.works/about.html" style="color: #2563eb; text-decoration: none; font-weight: 600;" target="_blank">Read the Methodology &amp; Legend ↗</a></span>
-</div>
-<div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-05-28T11:49:50+00:00
+            
+            
+            <div style="margin-top: 1.25rem; text-align: right; border-top: 1px dashed #99f6e4; padding-top: 0.75rem;">
+                <a href="https://elifesciences.org/articles/103118" target="_blank" style="font-size: 0.85rem; color: #0f766e; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem;">
+                    Read Full Peer Reviews 
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+        </section>
+        
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+            <div class="im-wrapper">
+                
+                
+                
+                
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">—</div>
+                                <div class="im-label">Total Citations</div>
+                                
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="im-provenance">
+                            Includes <strong>0</strong> from the published article and <strong>0</strong> from its <a href="https://doi.org/10.1101/2024.06.17.599276" target="_blank">early preprint version</a>.
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+                    
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+                    
+                    <!-- scite (only when references exist) -->
+                    
                 </div>
-</div>
-</footer>
-</div>
-<style>
+
+                
+                
+                
+                
+                
+                <div class="muted" style="margin-top:.7rem; font-size:.8rem;">
+                    Some signals aren’t recorded for this volume yet (online mentions, scite citation context) — these typically accrue after publication.
+                </div>
+                
+
+                
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <span class="sig-pill sig-green" title="Open access: Gold">
+                            <svg class="sig-oa-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="5" y="11" width="14" height="10" rx="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 9.5-2.2"/>
+                                <path d="M16.5 4.8V11"/>
+                            </svg>
+                            Gold
+                        </span>
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+            
+            
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#065f46">🏛 Practical & Real-World</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-practical" data-opacity="0.9"
+                              data-tip="Sustainability & policy relevance — heuristic signal (score 0.55)">
+                            <span class="role-dot" data-bg="#10b981"></span>
+                            Sustainability & policy relevance
+                            <span class="role-strength" data-bg="#dcfce7" data-color="#166534">Moderate</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.7554/eLife.103118" target="_blank">10.7554/eLife.103118</a></li>
+                    <li><strong>OA status:</strong> Gold</li>
+                    
+                    
+                    
+                    
+                </ul>
+            </section>
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.6rem;">
+                        This work has <strong>0</strong> recorded events globally.
+                    </p>
+                    
+                    <div class="im-provenance" style="margin-bottom:1rem;">
+                        Includes <strong>0</strong> from the published article and <strong>0</strong> from the <a href="https://doi.org/10.1101/2024.06.17.599276" target="_blank">preprint</a>.
+                    </div>
+                    
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 0</li>
+                                <li><strong>Supporting:</strong> 0</li>
+                                <li><strong>Mentioning:</strong> 0</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+        
+
+        <div class="grid-2">
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Open Peer Review</span> <span class="badge">Crossref</span></h2>
+                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Public referee reports and author responses.</p>
+                
+                <div style="display:flex; flex-direction:column; gap:0.6rem;">
+                    
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:0.4rem;">
+                        <div>
+                            <span class="tag" style="background:#fce7f3; color:#be185d; border:1px solid #fbcfe8; margin-right:0.4rem;">Peer Review</span>
+                            <strong>eLife Sciences Publications, Ltd</strong>
+                        </div>
+                        <a href="https://doi.org/10.7554/elife.103118.sa1" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500; font-size:0.85rem;">Read report &rarr;</a>
+                    </div>
+                    
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:0.4rem;">
+                        <div>
+                            <span class="tag" style="background:#fce7f3; color:#be185d; border:1px solid #fbcfe8; margin-right:0.4rem;">Peer Review</span>
+                            <strong>eLife Sciences Publications, Ltd</strong>
+                        </div>
+                        <a href="https://doi.org/10.7554/elife.103118.sa0" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500; font-size:0.85rem;">Read report &rarr;</a>
+                    </div>
+                    
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:0.4rem;">
+                        <div>
+                            <span class="tag" style="background:#fce7f3; color:#be185d; border:1px solid #fbcfe8; margin-right:0.4rem;">Peer Review</span>
+                            <strong>eLife Sciences Publications, Ltd</strong>
+                        </div>
+                        <a href="https://doi.org/10.7554/elife.103118.sa2" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500; font-size:0.85rem;">Read report &rarr;</a>
+                    </div>
+                    
+                </div>
+            </section>
+            
+
+            
+            
+            
+            
+        </div>
+
+        
+        
+        
+        
+            
+                
+                    
+                
+            
+        
+            
+                
+            
+        
+            
+                
+                    
+                
+            
+        
+            
+                
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>4 authors · 2 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Francisco Muñoz-Carvajal</strong> 
+                        <span class="badge">First</span>
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0009-0003-6650-0374" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Nicole Sanhueza</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0009-0001-5173-0471" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Mario Sanhueza</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-0125-0154" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Felipe A. Court</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-9394-7601" target="_blank">ORCID</a>
+                    </li>
+                    
+                </ul>
+
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/00pn44t17" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Universidad Mayor</a>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/00k4v9x79" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Universidad Mayor de San Andrés</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>18 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neurodegeneration</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell biology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mitochondrion</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Olfactory system</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Histone</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Epigenetics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neuroscience</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Olfactory memory</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Chromatin</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Olfaction</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Unfolded protein response</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Drosophila melanogaster</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Context (archaeology)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Degeneration (medical)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Oxidative stress</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Gene knockdown</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Gene silencing</span>
+                    
+                    
+                </div>
+                
+                
+                <h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 targets detected.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Life in Land (0.50)</span>
+                    
+                </div>
+                
+            </section>
+        </div>
+
+        
+        <section class="card">
+            <h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>6 financial grants and sponsors detected.</div>
+            
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Fondo Nacional de Desarrollo Científico y Tecnológico</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(1150766)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Fondo Nacional de Desarrollo Científico y Tecnológico</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(11200981)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Fondo de Financiamiento de Centros de Investigación en Áreas Prioritarias</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(15150012)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>ANID Fondo Subvencion a la Instalacion Academia</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(PAI77180059)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Fondo Nacional de Desarrollo Científico y Tecnológico</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(1231432)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Financiamiento Basal para Centros Científicos y Tecnológicos de Excelencia Centro Ciencia and Vida</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(FB210008)</span>
+                    </span>
+                
+            </div>
+        </section>
+        
+
+
+
+        
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-06-02T09:32:41+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' citing works (most recent first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
+    </script>
+    <style>
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(5px); }
             to { opacity: 1; transform: translateY(0); }
@@ -641,7 +1088,8 @@
             color: #111827;
         }
     </style>
-<script>
+    
+    <script>
         function openSocialTab(evt, tabId) {
             // Hide all tab content
             var contents = document.getElementsByClassName("soc-tab-content");
@@ -658,161 +1106,6 @@
             evt.currentTarget.classList.add("soc-tab-active");
         }
     </script>
-
-<script>
-(function() {
-  var DATA = [];
-  var PER  = 25;
-  var _p   = 1;
-  var _tot = Math.ceil(DATA.length / PER);
-
-  function esc(s) {
-    return String(s)
-      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
-      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-
-  function render(page) {
-    _p = page;
-    var tbody  = document.getElementById('cit-tbody');
-    var info   = document.getElementById('cit-info');
-    var prev   = document.getElementById('cit-prev');
-    var next   = document.getElementById('cit-next');
-    var nums   = document.getElementById('cit-page-nums');
-    if (!tbody) return;
-
-    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
-    for (var i=s; i<e; i++) {
-      var r = DATA[i];
-      var d = r.doi_url
-        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
-        : esc(r.doi||'');
-      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
-    }
-    tbody.innerHTML = rows;
-    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
-    if (prev) prev.disabled = (page===1);
-    if (next) next.disabled = (page===_tot);
-
-    if (nums) {
-      var shown = [], html = '', prev2 = null;
-      for (var p=1; p<=_tot; p++) {
-        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
-      }
-      for (var i=0; i<shown.length; i++) {
-        var p=shown[i];
-        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
-        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
-        prev2=p;
-      }
-      nums.innerHTML = html;
-    }
-  }
-
-  window.citGoTo = function(p) {
-    if(p<1||p>_tot) return;
-    render(p);
-    var sec=document.getElementById('sec-citations');
-    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
-  };
-  window.citPrev = function() { window.citGoTo(_p-1); };
-  window.citNext = function() { window.citGoTo(_p+1); };
-
-  if(document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded',function(){render(1);});
-  else render(1);
-})();
-</script>
-
-<script>
-function citeSwitchTab(btn, tabId) {
-  var card = btn.closest('section, .card') || btn.parentElement;
-  // Find tab buttons and panes in surrounding context
-  var tabsEl = btn.closest('.cite-tabs');
-  if (!tabsEl) return;
-  var parent = tabsEl.parentElement;
-  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
-  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
-  btn.classList.add('active');
-  var pane = document.getElementById(tabId);
-  if (pane) pane.classList.add('active');
-}
-</script>
-
-<script>
-(function() {
-  function init() {
-    document.querySelectorAll('section.card, .card').forEach(function(card) {
-      // Skip the hero header
-      if (card.tagName === 'HEADER') return;
-      var h2 = null;
-      for (var i=0; i<card.children.length; i++) {
-        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
-      }
-      if (!h2) return;
-
-      card.classList.add('card-collapsible');
-
-      // Add chevron span
-      var chev = document.createElement('span');
-      chev.className = 'chevron';
-      chev.setAttribute('aria-hidden','true');
-      chev.textContent = '▾';
-      h2.appendChild(chev);
-
-      // Wrap siblings after h2
-      var wrap = document.createElement('div');
-      wrap.className = 'card-body-wrap';
-      var kids = Array.from(card.children), after = false;
-      kids.forEach(function(c) {
-        if (c===h2){after=true;return;}
-        if (after) wrap.appendChild(c);
-      });
-      card.appendChild(wrap);
-      // CSS handles open state with max-height:9999px — safe for async-loaded content
-
-      h2.addEventListener('click', function() {
-        card.classList.toggle('is-collapsed');
-      });
-    });
-  }
-  if (document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded', init);
-  else init();
-})();
-</script>
-
-<script>
-(function() {
-  function init() {
-    var nav = document.getElementById('sticky-nav');
-    if (!nav) return;
-    var links = Array.from(nav.querySelectorAll('a'));
-    var targets = links.map(function(l) {
-      var id = l.getAttribute('href').slice(1);
-      return {el: document.getElementById(id), link: l};
-    }).filter(function(t){return t.el;});
-
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          links.forEach(function(l){l.classList.remove('snav-active');});
-          var match = links.find(function(l){
-            return l.getAttribute('href')==='#'+e.target.id;
-          });
-          if (match) match.classList.add('snav-active');
-        }
-      });
-    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
-
-    targets.forEach(function(t){obs.observe(t.el);});
-  }
-  if (document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded', init);
-  else init();
-})();
-</script>
-
 <div id="role-tooltip" style="
   position:fixed;display:none;z-index:9999;
   background:#111827;color:white;padding:.5rem .75rem;
@@ -823,7 +1116,7 @@ function citeSwitchTab(btn, tabId) {
 <script>
 (function(){
   var tip = document.getElementById('role-tooltip');
-  document.querySelectorAll('.role-pill[data-tip]').forEach(function(pill){
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
     pill.addEventListener('mouseenter', function(){
       tip.textContent = pill.getAttribute('data-tip');
       tip.style.top = '-9999px'; tip.style.display = 'block';
@@ -843,6 +1136,15 @@ function citeSwitchTab(btn, tabId) {
   });
 })();
 </script>
-
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
 </body>
 </html>

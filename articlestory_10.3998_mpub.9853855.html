@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ArticleStory - Music on the Move</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print PDF Report
+    </button>
+    
+    <div class="page">
+        <header class="hero card">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo"></div>
+                    <div>
+                        <h1 class="hero-title">Music on the Move</h1>
+                        
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> Danielle Fosler‐Lussier</div>
+                            <div><strong>Publisher:</strong> University of Michigan Press eBooks</div>
+                            <div><strong>Publication year:</strong> 2019</div>
+                            <div><strong>DOI:</strong> <a href="https://doi.org/10.3998/mpub.9853855" target="_blank">10.3998/mpub.9853855</a></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">Danielle Fosler‐Lussier's work, "Music on the Move," has achieved notable visibility in academic spaces, evidenced by 16 citations and 23 online mentions. These metrics suggest that the research resonates with both scholars and wider audiences, contributing to discussions in musicology and related fields.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">"Music on the Move" by Danielle Fosler‐Lussier stands as a significant contribution to the discourse surrounding music and its societal implications. With a citation count of 16, the work has secured a foothold in various scholarly conversations. It has been referenced in diverse venues, including the *Austrian History Yearbook* and *MUSICultures*, highlighting its interdisciplinary appeal and relevance across different academic domains.</p>
+<p class="story-text">Notably, the research garnered 23 online mentions, indicating its resonance beyond traditional academic circles and reflecting its societal implications. This public engagement underscores the potential for academic work to impact wider societal discussions, particularly within the fields of cultural and music studies.</p>
+<p class="story-text">The diversity of scholarly outputs citing this work, comprising 12 articles, 3 book chapters, and a book, illustrates its versatility and the various ways in which it is being integrated into ongoing research. The engagement across multiple formats may enhance its accessibility to a broader audience and reinforce its thematic relevance in contemporary music discourse.</p>
+<p class="story-text">While there are no metrics indicating funding or the inclusion of Research Resource Identifiers, the existing citation landscape demonstrates a solid foundation for continued dialogue and exploration. As scholarship continues to reflect upon the intersections of music with culture, the contributions made by Fosler‐Lussier offer a compelling starting point for future investigations in this rich area of study.</p></div>
+        </section>
+        
+
+        <section class="card">
+            <h2><span>Impact metrics</span></h2>
+            <ul class="metric-list">
+                
+                    <li><strong>Citations (OpenAlex):</strong> 16</li>
+                    <li><strong>Online mentions (Crossref Event Data):</strong> 23</li>
+                
+                
+                
+                
+                <li><strong>Citation context (scite):</strong> 0</li>
+                
+                
+            </ul>
+        </section>
+
+        
+        <section class="card">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.8rem;">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Active public discourse (0.86)</span>
+                
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.3998/mpub.9853855" target="_blank">10.3998/mpub.9853855</a></li>
+                    <li><strong>OA status:</strong> Hybrid</li>
+                    
+                    <li><strong>Landing page:</strong> <a href="https://doi.org/10.3998/mpub.9853855" target="_blank" style="word-break: break-all;">https://doi.org/10.3998/mpub.9853855</a></li>
+                    
+                    
+                </ul>
+            </section>
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>23</strong> recorded events globally.
+                    </p>
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific network sources and examples below in the Community section).</em>
+                    </p>
+                
+            </section>
+        </div>
+
+        <div class="grid-2">
+            
+                
+                
+                
+                
+                <section class="card span-full" style="margin-bottom:0;">
+                    <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                    
+                    <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                        <li><strong>Total:</strong> 0</li>
+                        <li><strong>Supporting:</strong> 0</li>
+                        <li><strong>Mentioning:</strong> 0</li>
+                        <li><strong>Contradicting:</strong> 0</li>
+                    </ul>
+                    
+                </section>
+
+                
+            
+        </div>
+
+        
+        
+        <section class="card">
+            <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
+            <ul class="metric-list">
+                <li><strong>Total citing works (OpenAlex):</strong> 16 <span class="muted" style="font-weight:normal;">(Landscape analysis & tables limited to 1000 most recent works to optimize speed)</span></li>
+                
+                <li><strong>Top citing venues:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Unknown (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Austrian History Yearbook (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">MUSICultures (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">International Journal of Academic Research in Business and Social Sciences (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Interdisciplinary Studies in Musicology (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">New Global Studies (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">KnE Social Sciences (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">SSRN Electronic Journal (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Türkbilig (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Journal of Central and Eastern European African Studies (1)</span> </li>
+                
+                
+                <li><strong>Citing work types:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (12)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book (1)</span> </li>
+                
+                
+                
+                <li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+                    <strong>Citation timeline:</strong>
+                    <div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+                        <canvas id="citationChart" data-labels="[&#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;]" data-values="[1, 1, 5, 3, 6]"></canvas>
+                    </div>
+                </li>
+                
+            </ul>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            <section class="card span-full" style="margin-bottom:0;">
+                <h2><span>Online mentions & activity</span> <span class="badge">Crossref Event Data</span></h2>
+                
+                
+                    
+                    
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        Detailed breakdown of the <strong>23</strong> recorded events.
+                    </p>
+                    
+                    <ul style="list-style:none; padding-left:0; margin-bottom:1.5rem;">
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                        
+                    </ul>
+                    
+                    <h3 style="margin-top:0;">Selected examples</h3>
+                    <ul style="list-style:none; padding-left:0;">
+                        
+                        
+                        
+                        <li style="margin-bottom:1.2rem;">
+                            <div style="margin-bottom:0.4rem;">
+                                <span class="tag" style="background:#e5f2ff; color:#1d4ed8; margin:0;">Wikipedia</span>
+                            </div>
+                            <a href="https://en.wikipedia.org/w/index.php?title=Galina_Ustvolskaya&oldid=1260877345" target="_blank" style="word-break: break-word; font-weight:500; text-decoration:none; color:#2563eb; display:block; margin-bottom:0.2rem; line-height:1.4;">
+                                Galina Ustvolskaya
+                            </a>
+                            <span class="muted"></span>
+                        </li>
+                        
+                        
+                        
+                        <li style="margin-bottom:1.2rem;">
+                            <div style="margin-bottom:0.4rem;">
+                                <span class="tag" style="background:#e5f2ff; color:#1d4ed8; margin:0;">WordPress.com</span>
+                            </div>
+                            <a href="https://profgarnerenglishcomp.wordpress.com/2020/11/20/disillusionment-and-the-vietnam-war-reflections-within-music/" target="_blank" style="word-break: break-word; font-weight:500; text-decoration:none; color:#2563eb; display:block; margin-bottom:0.2rem; line-height:1.4;">
+                                Disillusionment and The Vietnam War: Reflections Within Music
+                            </a>
+                            <span class="muted"></span>
+                        </li>
+                        
+                        
+                        
+                        <li style="margin-bottom:1.2rem;">
+                            <div style="margin-bottom:0.4rem;">
+                                <span class="tag" style="background:#e5f2ff; color:#1d4ed8; margin:0;">WordPress.com</span>
+                            </div>
+                            <a href="https://musicindustry966563459.wordpress.com/bibliography/" target="_blank" style="word-break: break-word; font-weight:500; text-decoration:none; color:#2563eb; display:block; margin-bottom:0.2rem; line-height:1.4;">
+                                Bibliography
+                            </a>
+                            <span class="muted"></span>
+                        </li>
+                        
+                        
+                        
+                        <li style="margin-bottom:1.2rem;">
+                            <div style="margin-bottom:0.4rem;">
+                                <span class="tag" style="background:#e5f2ff; color:#1d4ed8; margin:0;">WordPress.com</span>
+                            </div>
+                            <a href="https://declansteelehalloran.wordpress.com/2020/12/17/a-call-to-my-music-friends/" target="_blank" style="word-break: break-word; font-weight:500; text-decoration:none; color:#2563eb; display:block; margin-bottom:0.2rem; line-height:1.4;">
+                                A Call To My Music Friends
+                            </a>
+                            <span class="muted"></span>
+                        </li>
+                        
+                    </ul>
+                
+            </section>
+        </div>
+
+        
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 author · 0 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Danielle Fosler‐Lussier</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-1253-5497" target="_blank">ORCID</a>
+                    </li>
+                    
+                </ul>
+
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Visual arts</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Art</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
+
+        
+
+        
+        
+        <section class="card print-breakable">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>Displaying 16 most recent citing works</div>
+            <div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+                <table>
+                    <thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Encounters with Music in Rudolf II's Prague</td>
+                        <td>Austrian History Yearbook</td>
+                        <td><a href="https://doi.org/10.1017/s0067237821000126" target="_blank" style="word-break: break-all;">10.1017/s0067237821000126</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Ethnicize and Historicize: Thoughts on Anti-Racist Pedagogy and Post-Secondary Music History</td>
+                        <td>MUSICultures</td>
+                        <td><a href="https://doi.org/10.7202/1110011ar" target="_blank" style="word-break: break-all;">10.7202/1110011ar</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Exploring Blockchain-Based Applications for Digital Copyright Protection</td>
+                        <td>International Journal of Academic Research in Business and Social Sciences</td>
+                        <td><a href="https://doi.org/10.6007/ijarbss/v13-i8/17799" target="_blank" style="word-break: break-all;">10.6007/ijarbss/v13-i8/17799</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Virtual Authenticity: On Reinvention, Transformation and Functionality of Traditional Dancing during COVID-19</td>
+                        <td>Interdisciplinary Studies in Musicology</td>
+                        <td><a href="https://doi.org/10.14746/ism.2022.22.6" target="_blank" style="word-break: break-all;">10.14746/ism.2022.22.6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Infrastructures of Musical Globalization, 1850–2000: Introduction</td>
+                        <td>New Global Studies</td>
+                        <td><a href="https://doi.org/10.1515/ngs-2025-0003" target="_blank" style="word-break: break-all;">10.1515/ngs-2025-0003</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>The Dominance of Gamelan in South Korea in a Discursive Perspective</td>
+                        <td>KnE Social Sciences</td>
+                        <td><a href="https://doi.org/10.18502/kss.v8i15.13904" target="_blank" style="word-break: break-all;">10.18502/kss.v8i15.13904</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Coke Studio: A Strategic Tool for Pakistan’s Cultural Diplomacy</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.4622050" target="_blank" style="word-break: break-all;">10.2139/ssrn.4622050</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>TÜRK HALK MÜZİĞİ VE MEDYA İLİŞKİSİ İÇERİSİNDE ŞEKİLLENEN ARABULUCU BİR TÜR: BAĞLAMA ETÜTLERİ</td>
+                        <td>Türkbilig</td>
+                        <td><a href="https://doi.org/10.59257/turkbilig.1506825" target="_blank" style="word-break: break-all;">10.59257/turkbilig.1506825</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Music and Memory</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-93789-8_10-1" target="_blank" style="word-break: break-all;">10.1007/978-3-030-93789-8_10-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Egypt’s Geopolitical Alignment via the Digital Humanities</td>
+                        <td>Journal of Central and Eastern European African Studies</td>
+                        <td><a href="https://doi.org/10.59569/jceeas.2023.3.2.172" target="_blank" style="word-break: break-all;">10.59569/jceeas.2023.3.2.172</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>‘Repeat play’: Musical Minimalism in the Processes of Samuel Beckett’s Late Drama</td>
+                        <td>Journal of Beckett Studies</td>
+                        <td><a href="https://doi.org/10.3366/jobs.2024.0432" target="_blank" style="word-break: break-all;">10.3366/jobs.2024.0432</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>An Ethnomusicological Approach to Culture in Culturally Relevant Pedagogies and Curricula</td>
+                        <td>IGI Global eBooks</td>
+                        <td><a href="https://doi.org/10.4018/979-8-3373-2955-0.ch019" target="_blank" style="word-break: break-all;">10.4018/979-8-3373-2955-0.ch019</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Afro Hip Hop Culture and Youth Resistance of Gerontocracy in Africa</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1108/978-1-83708-222-320251006" target="_blank" style="word-break: break-all;">10.1108/978-1-83708-222-320251006</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Aineeton kulttuuriperintö: Käsite, käytäntö, politiikka</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.21435/tl.296" target="_blank" style="word-break: break-all;">10.21435/tl.296</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Music and Song: Tom Munnelly’s View of Ownership</td>
+                        <td>Genealogy</td>
+                        <td><a href="https://doi.org/10.3390/genealogy9040102" target="_blank" style="word-break: break-all;">10.3390/genealogy9040102</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Falsehood Flies! Music's Copyright Coup</td>
+                        <td>Socialism and Democracy</td>
+                        <td><a href="https://doi.org/10.1080/08854300.2025.2580834" target="_blank" style="word-break: break-all;">10.1080/08854300.2025.2580834</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+
+        <footer class="muted" style="text-align: right; margin-top: 2rem;">Generated on 2026-03-16T15:45:41+00:00</footer>
+    </div>
+
+    
+    <script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+    
+</body>
+</html>

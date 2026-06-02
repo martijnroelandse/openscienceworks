@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio Comparison</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1200px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.5rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .span-full { grid-column: 1 / -1; }
+        .integrity-border-risk { border-left: 4px solid #ef4444; }
+        .integrity-border-ok { border-left: 4px solid #10b981; }
+        
+        h1 { font-size: 2rem; margin: 0 0 0.25rem 0; line-height: 1.2; }
+        h2 { font-size: 1.25rem; margin: 0 0 1rem 0; color: #111827; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.75rem; }
+        
+        .color-a { color: #2563eb; } /* Blue */
+        .color-b { color: #0d9488; } /* Teal */
+        
+        .compare-row { display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 0; border-bottom: 1px solid #f3f4f6; }
+        .compare-row:last-child { border-bottom: none; padding-bottom: 0.25rem; }
+        
+        .stat-val-container { width: 25%; text-align: center; }
+        .stat-label-container { width: 50%; text-align: center; }
+        /* Reduced font size so numbers like 23,347 don't wrap */
+        .stat-number { font-size: 1.7rem; font-weight: 700; line-height: 1; } 
+        .stat-label { font-size: 0.85rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+        
+        .list-row { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f3f4f6; padding:0.4rem 0; font-size: 0.85rem; }
+        .list-row:last-child { border-bottom: none; }
+        
+        /* Fixed truncation: display inline-block is required for text-overflow to work */
+        .truncate { display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 85%; vertical-align: middle; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        Print PDF Comparison
+    </button>
+
+    <div class="page">
+        <header class="card" style="display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem;">
+            <div style="flex: 1;">
+                <h1 class="color-a" style="font-size: 1.75rem; font-weight: 700; margin: 0 0 0.5rem 0; line-height: 1.2;">Peter Lang — Travail et Société / Work and Society</h1>
+                <div style="margin-bottom: 0.5rem;"><span class="muted" style="font-size: 0.95rem; color: #4b5563;">Analysis of <strong>5</strong> works:</span></div>
+                <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                    
+                    <span style="display: inline-block; background: #f3f4f6; color: #374151; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; border: 1px solid #e5e7eb;">5 Books</span>
+                    
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; padding: 0 2rem;">
+                <img src="openscience-logo.png" alt="OpenScience Works Logo" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
+            </div>
+            <div style="flex: 1; text-align: right;">
+                <h1 class="color-b" style="font-size: 1.75rem; font-weight: 700; margin: 0 0 0.5rem 0; line-height: 1.2;">Michigan — Studies in International Economics</h1>
+                <div style="margin-bottom: 0.5rem;"><span class="muted" style="font-size: 0.95rem; color: #4b5563;">Analysis of <strong>5</strong> works:</span></div>
+                <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: flex-end;">
+                    
+                    <span style="display: inline-block; background: #f3f4f6; color: #374151; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; border: 1px solid #e5e7eb;">5 Books</span>
+                    
+                </div>
+            </div>
+        </header>
+
+        <div class="grid-2">
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <section class="card">
+                    <h2><span>Open Science Adoption</span></h2>
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">40%</span></div><div class="stat-label-container"><span class="stat-label">Open Access</span></div><div class="stat-val-container"><span class="stat-number color-b">0%</span></div></div>
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0%</span></div><div class="stat-label-container"><span class="stat-label">Preprints Linked</span></div><div class="stat-val-container"><span class="stat-number color-b">0%</span></div></div>
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0%</span></div><div class="stat-label-container"><span class="stat-label">Open Data / Code</span></div><div class="stat-val-container"><span class="stat-number color-b">0%</span></div></div>
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0%</span></div><div class="stat-label-container"><span class="stat-label">Open Peer Review</span></div><div class="stat-val-container"><span class="stat-number color-b">0%</span></div></div>
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0%</span></div><div class="stat-label-container"><span class="stat-label">Contains RRIDs</span></div><div class="stat-val-container"><span class="stat-number color-b">0%</span></div></div>
+                </section>
+
+                <section class="card">
+                    <h2><span>Volume & Reach</span></h2>
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">35</span></div><div class="stat-label-container"><span class="stat-label">Total Citations</span></div><div class="stat-val-container"><span class="stat-number color-b">434</span></div></div>
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">4</span></div><div class="stat-label-container"><span class="stat-label">Online Mentions</span></div><div class="stat-val-container"><span class="stat-number color-b">0</span></div></div>
+                    
+                    
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0%</span></div><div class="stat-label-container"><span class="stat-label">🏆 In Top 1% Cited</span></div><div class="stat-val-container"><span class="stat-number color-b">0%</span></div></div>
+                    
+                    <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">20%</span></div><div class="stat-label-container"><span class="stat-label">⭐ In Top 10% Cited</span></div><div class="stat-val-container"><span class="stat-number color-b">60%</span></div></div>
+                    
+                </section>
+            </div>
+            
+            <section class="card">
+                <h2><span>Impact Footprint (Roles)</span></h2>
+                <div style="height: 480px; width: 100%;">
+                    <canvas id="radarChart"></canvas>
+                </div>
+            </section>
+        </div>
+        
+        <section class="card span-full integrity-border-ok">
+            <h2><span>Status & Integrity Alerts</span></h2>
+            
+            
+                <div style="display:flex; align-items:center; justify-content:center; padding: 1.5rem 0; color: #10b981; font-weight: 600; font-size: 1.1rem; gap: 0.5rem;">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    No retractions or integrity alerts detected in either portfolio.
+                </div>
+            
+        </section>
+
+        
+        <div class="grid-2">
+            <section class="card">
+                <h2 style="margin-bottom: 0.5rem;"><span>Community Engagement</span></h2>
+                <div class='muted' style='margin-bottom:1rem;'>Volume of active public discourse.</div>
+                <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">4</span></div><div class="stat-label-container"><span class="stat-label">Wikipedia</span></div><div class="stat-val-container"><span class="stat-number color-b">0</span></div></div>
+                <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0</span></div><div class="stat-label-container"><span class="stat-label">Reddit</span></div><div class="stat-val-container"><span class="stat-number color-b">0</span></div></div>
+                <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0</span></div><div class="stat-label-container"><span class="stat-label">Bluesky</span></div><div class="stat-val-container"><span class="stat-number color-b">0</span></div></div>
+                <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0</span></div><div class="stat-label-container"><span class="stat-label">StackExchange</span></div><div class="stat-val-container"><span class="stat-number color-b">0</span></div></div>
+                <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0</span></div><div class="stat-label-container"><span class="stat-label">Expert Annotations</span></div><div class="stat-val-container"><span class="stat-number color-b">0</span></div></div>
+                <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0</span></div><div class="stat-label-container"><span class="stat-label">News Media</span></div><div class="stat-val-container"><span class="stat-number color-b">0</span></div></div>
+            </section>
+
+            <section class="card" style="background: #f8fafc; border: 1px solid #e2e8f0;">                <h2 style="border-bottom-color: #e2e8f0; margin-bottom: 0.5rem;"><span>Teaching & Practice</span></h2>
+                <div class='muted' style='margin-bottom:1rem;'>Educational adoption & library integration.</div>
+                <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">17</span></div><div class="stat-label-container"><span class="stat-label">Library Holdings</span></div><div class="stat-val-container"><span class="stat-number color-b">7</span></div></div>
+                <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">17</span></div><div class="stat-label-container"><span class="stat-label">Syllabi / OCW</span></div><div class="stat-val-container"><span class="stat-number color-b">13</span></div></div>
+                <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0</span></div><div class="stat-label-container"><span class="stat-label">Edu Video Lectures</span></div><div class="stat-val-container"><span class="stat-number color-b">0</span></div></div>
+                <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0</span></div><div class="stat-label-container"><span class="stat-label">OER / Open Texts</span></div><div class="stat-val-container"><span class="stat-number color-b">0</span></div></div>
+                <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0</span></div><div class="stat-label-container"><span class="stat-label">Formal Reviews</span></div><div class="stat-val-container"><span class="stat-number color-b">0</span></div></div>
+                <div class="compare-row"><div class="stat-val-container"><span class="stat-number color-a">0</span></div><div class="stat-label-container"><span class="stat-label">Chapter Cites</span></div><div class="stat-val-container"><span class="stat-number color-b">0</span></div></div>
+            </section>
+        </div>
+        
+        
+        <div class="grid-2">
+            <section class="card">
+                <h2><span>Citing Work Types</span></h2>
+                <div style="height: 250px; width: 100%;"><canvas id="typeChart"></canvas></div>
+            </section>
+            <section class="card">
+                <h2><span>Citing Sectors</span></h2>
+                <div style="height: 250px; width: 100%;"><canvas id="sectorChart"></canvas></div>
+            </section>
+        </div>
+
+        <section class="card span-full">
+            <h2><span>Citation Context (scite.ai)</span></h2>
+            
+                <div class="grid-2" style="gap: 4rem; margin-top: 1rem;">
+                    <div>
+                        <h3 class="color-a" style="font-size: 1rem; margin: 0 0 1rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Peter Lang — Travail et Société / Work and Society</h3>
+                        <div class="compare-row" style="padding: 0.5rem 0;">
+                            <span class="stat-label">Supporting</span>
+                            <span class="stat-number" style="font-size: 1.5rem; color: #16a34a;">0%</span>
+                        </div>
+                        <div class="compare-row" style="padding: 0.5rem 0;">
+                            <span class="stat-label">Contradicting</span>
+                            <span class="stat-number" style="font-size: 1.5rem; color: #dc2626;">0%</span>
+                        </div>
+                        <div class="compare-row" style="padding: 0.5rem 0;">
+                            <span class="stat-label">Mentioning</span>
+                            <span class="stat-number" style="font-size: 1.5rem; color: #6b7280;">0%</span>
+                        </div>
+                        <div class="muted" style="font-size: 0.8rem; margin-top: 0.75rem; text-align: right;">Based on <strong>0</strong> typed citations</div>
+                    </div>
+
+                    <div>
+                        <h3 class="color-b" style="font-size: 1rem; margin: 0 0 1rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Michigan — Studies in International Economics</h3>
+                        <div class="compare-row" style="padding: 0.5rem 0;">
+                            <span class="stat-label">Supporting</span>
+                            <span class="stat-number" style="font-size: 1.5rem; color: #16a34a;">0.0%</span>
+                        </div>
+                        <div class="compare-row" style="padding: 0.5rem 0;">
+                            <span class="stat-label">Contradicting</span>
+                            <span class="stat-number" style="font-size: 1.5rem; color: #dc2626;">0.0%</span>
+                        </div>
+                        <div class="compare-row" style="padding: 0.5rem 0;">
+                            <span class="stat-label">Mentioning</span>
+                            <span class="stat-number" style="font-size: 1.5rem; color: #6b7280;">100.0%</span>
+                        </div>
+                        <div class="muted" style="font-size: 0.8rem; margin-top: 0.75rem; text-align: right;">Based on <strong>3</strong> typed citations</div>
+                    </div>
+                </div>
+            
+        </section>
+
+        <div class="grid-2">
+            <section class="card span-full">
+                <h2><span>Dominant Concepts</span></h2>
+                <div class="grid-2" style="gap: 4rem; margin-top: 1rem;">
+                    <div>
+                        <h3 class="color-a" style="font-size: 1rem; margin: 0 0 0.5rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Peter Lang — Travail et Société / Work and Society</h3>
+                        <div class="list-row"><span class="truncate" style="color: #374151;" title="Political science">Political science</span> <span style="color: #9ca3af; font-weight: 600;">1.6</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Austerity">Austerity</span> <span style="color: #9ca3af; font-weight: 600;">1.0</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Political economy">Political economy</span> <span style="color: #9ca3af; font-weight: 600;">0.8</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Democracy">Democracy</span> <span style="color: #9ca3af; font-weight: 600;">0.8</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Knowledge management">Knowledge management</span> <span style="color: #9ca3af; font-weight: 600;">0.7</span></div>
+                    </div>
+                    <div>
+                        <h3 class="color-b" style="font-size: 1rem; margin: 0 0 0.5rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Michigan — Studies in International Economics</h3>
+                        <div class="list-row"><span class="truncate" style="color: #374151;" title="Economics">Economics</span> <span style="color: #9ca3af; font-weight: 600;">1.8</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Political science">Political science</span> <span style="color: #9ca3af; font-weight: 600;">1.6</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="International trade">International trade</span> <span style="color: #9ca3af; font-weight: 600;">1.1</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Politics">Politics</span> <span style="color: #9ca3af; font-weight: 600;">1.1</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Commercial policy">Commercial policy</span> <span style="color: #9ca3af; font-weight: 600;">0.9</span></div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="card span-full">
+                <h2><span>Top Citing Venues</span></h2>
+                <div class="grid-2" style="gap: 4rem; margin-top: 1rem;">
+                    <div>
+                        <h3 class="color-a" style="font-size: 1rem; margin: 0 0 0.5rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Peter Lang — Travail et Société / Work and Society</h3>
+                        <div class="list-row"><span class="truncate" style="color: #374151;" title="Transfer European Review of Labour and Research">Transfer European Review of Labour and Research</span> <span style="color: #9ca3af; font-weight: 600;">6</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="British Journal of Industrial Relations">British Journal of Industrial Relations</span> <span style="color: #9ca3af; font-weight: 600;">2</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Social Policy and Administration">Social Policy and Administration</span> <span style="color: #9ca3af; font-weight: 600;">1</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Critical Social Policy">Critical Social Policy</span> <span style="color: #9ca3af; font-weight: 600;">1</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Democratization">Democratization</span> <span style="color: #9ca3af; font-weight: 600;">1</span></div>
+                    </div>
+                    <div>
+                        <h3 class="color-b" style="font-size: 1rem; margin: 0 0 0.5rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Michigan — Studies in International Economics</h3>
+                        <div class="list-row"><span class="truncate" style="color: #374151;" title="Cambridge University Press eBooks">Cambridge University Press eBooks</span> <span style="color: #9ca3af; font-weight: 600;">49</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="SSRN Electronic Journal">SSRN Electronic Journal</span> <span style="color: #9ca3af; font-weight: 600;">32</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="World Economy">World Economy</span> <span style="color: #9ca3af; font-weight: 600;">9</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="American Journal of Agricultural Economics">American Journal of Agricultural Economics</span> <span style="color: #9ca3af; font-weight: 600;">8</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="RePEc: Research Papers in Economics">RePEc: Research Papers in Economics</span> <span style="color: #9ca3af; font-weight: 600;">8</span></div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="card span-full">
+                <h2><span>Top Citing Institutions</span></h2>
+                <div class="grid-2" style="gap: 4rem; margin-top: 1rem;">
+                    <div>
+                        <h3 class="color-a" style="font-size: 1rem; margin: 0 0 0.5rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Peter Lang — Travail et Société / Work and Society</h3>
+                        <div class="list-row"><span class="truncate" style="color: #374151;" title="European Trade Union Institute">European Trade Union Institute</span> <span style="color: #9ca3af; font-weight: 600;">2.5</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Stockholm School of Economics">Stockholm School of Economics</span> <span style="color: #9ca3af; font-weight: 600;">1.5</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="SGH Warsaw School of Economics">SGH Warsaw School of Economics</span> <span style="color: #9ca3af; font-weight: 600;">1.5</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="University of Silesia in Katowice">University of Silesia in Katowice</span> <span style="color: #9ca3af; font-weight: 600;">1.5</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="West University of Timişoara">West University of Timişoara</span> <span style="color: #9ca3af; font-weight: 600;">1.1</span></div>
+                    </div>
+                    <div>
+                        <h3 class="color-b" style="font-size: 1rem; margin: 0 0 0.5rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Michigan — Studies in International Economics</h3>
+                        <div class="list-row"><span class="truncate" style="color: #374151;" title="Massachusetts Institute of Technology">Massachusetts Institute of Technology</span> <span style="color: #9ca3af; font-weight: 600;">11.0</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Graduate Institute of International and Development Studies">Graduate Institute of International and Development Studies</span> <span style="color: #9ca3af; font-weight: 600;">10.4</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Iowa State University">Iowa State University</span> <span style="color: #9ca3af; font-weight: 600;">8.0</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="University of Malaya">University of Malaya</span> <span style="color: #9ca3af; font-weight: 600;">5.0</span></div><div class="list-row"><span class="truncate" style="color: #374151;" title="Providence College">Providence College</span> <span style="color: #9ca3af; font-weight: 600;">5.0</span></div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="card span-full">
+                <h2><span>Top Funders</span></h2>
+                <div class="grid-2" style="gap: 4rem; margin-top: 1rem;">
+                    <div>
+                        <h3 class="color-a" style="font-size: 1rem; margin: 0 0 0.5rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Peter Lang — Travail et Société / Work and Society</h3>
+                        
+                    </div>
+                    <div>
+                        <h3 class="color-b" style="font-size: 1rem; margin: 0 0 0.5rem 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.25rem;">Michigan — Studies in International Economics</h3>
+                        
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">Generated on 2026-06-01 12:52:21 UTC</div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const colorA = 'rgba(37, 99, 235, 0.25)'; const borderA = 'rgba(37, 99, 235, 1)';
+        const colorB = 'rgba(13, 148, 136, 0.4)'; const borderB = 'rgba(13, 148, 136, 1)';
+        
+        const commonOptions = { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, grid: { color: '#f3f4f6' }, border: { display: false } }, x: { grid: { display: false }, border: { display: false } } }, plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20 } } } };
+
+        new Chart(document.getElementById('radarChart'), { type: 'radar', data: { labels: JSON.parse('["Commercial Linkage", "Reference Point For Synthesis", "Scholarly Uptake", "Sustainability & Policy Relevance"]'), datasets: [ { label: 'Peter Lang — Travail et Société / Work and Society', data: JSON.parse('[4.5, 0, 1.05, 1.6500000000000001]'), backgroundColor: colorA, borderColor: borderA, pointBackgroundColor: borderA, borderWidth: 2 }, { label: 'Michigan — Studies in International Economics', data: JSON.parse('[4.5, 1.8, 1.7999999999999998, 2.75]'), backgroundColor: colorB, borderColor: borderB, pointBackgroundColor: borderB, borderWidth: 2 } ] }, options: { responsive: true, maintainAspectRatio: false, layout: { padding: 30 }, scales: { r: { angleLines: { display: true, color: '#f3f4f6' }, grid: { color: '#f3f4f6' }, suggestedMin: 0, ticks: { display: false }, pointLabels: { font: { size: 10, family: 'system-ui' }, color: '#4b5563' } } }, plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20 } } } } });
+        new Chart(document.getElementById('typeChart'), { type: 'bar', data: { labels: JSON.parse('["Article", "Book", "Book-Chapter", "Dissertation", "Other", "Paratext", "Preprint", "Report", "Review"]'), datasets: [ { label: 'Peter Lang — Travail et Société / Work and Society', data: JSON.parse('[30, 1, 3, 0, 0, 0, 1, 0, 0]'), backgroundColor: borderA, borderRadius: 2 }, { label: 'Michigan — Studies in International Economics', data: JSON.parse('[252, 21, 114, 9, 9, 1, 20, 6, 2]'), backgroundColor: borderB, borderRadius: 2 } ] }, options: commonOptions });
+        new Chart(document.getElementById('sectorChart'), { type: 'bar', data: { labels: JSON.parse('["Company", "Education", "Facility", "Funder", "Government", "Healthcare", "Nonprofit", "Other"]'), datasets: [ { label: 'Peter Lang — Travail et Société / Work and Society', data: JSON.parse('[0, 28, 2, 1, 2, 1, 6, 1]'), backgroundColor: borderA, borderRadius: 2 }, { label: 'Michigan — Studies in International Economics', data: JSON.parse('[6, 265, 22, 6, 17, 0, 33, 15]'), backgroundColor: borderB, borderRadius: 2 } ] }, options: commonOptions });
+        
+    </script>
+</body>
+</html>

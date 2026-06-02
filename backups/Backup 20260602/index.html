@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>openscience.works</title>
+  <meta name="description" content="Turning open scholarly works into contextual impact narratives. Browse ArticleStories, BookStories, DataStories and more.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --bg: #f3f4f6;
+      --surface: #ffffff;
+      --border: #e5e7eb;
+      --text: #111827;
+      --muted: #6b7280;
+      --accent: #2E4563;       /* Articlestories navy – primary accent */
+      --accent-light: #e8edf3;
+      --fold: #F2C94C;         /* Brand yellow fold */
+      --c-article:  #3C5A7F;
+      --c-book:     #B34444;
+      --c-data:     #34675A;
+      --c-software: #6A4FA3;
+      --radius: 0.9rem;
+      --shadow: 0 4px 24px rgba(15,23,42,0.08);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Montserrat, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+    }
+
+    /* ── HERO ─────────────────────────────────────────────────────────── */
+    .hero {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 2rem 2rem;
+    }
+    .hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .hero-logo {
+      width: 130px;
+      height: 130px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .hero-text h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 0 0 0.35rem 0;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .hero-text h1 b { color: var(--text); font-weight: 800; }
+    .hero-text h1 .dot { color: var(--fold); }
+    .hero-text h1 .works { font-weight: 400; color: var(--text); }
+    .hero-tagline {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin: 0 0 1.25rem 0;
+    }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .stat-pill {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.35rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .stat-pill span.num { color: var(--c-article); font-size: 1rem; font-weight: 700; }
+    .hero-about {
+      margin-top: 1.5rem;
+      max-width: 680px;
+      font-size: 0.95rem;
+      color: #374151;
+      line-height: 1.65;
+    }
+    .hero-links { margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.5rem 1.1rem;
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-primary { background: var(--c-article); color: #fff; }
+    .btn-outline { background: transparent; color: var(--c-article); border: 1.5px solid var(--c-article); }
+
+    /* ── SHELL ────────────────────────────────────────────────────────── */
+    .shell {
+      max-width: 1180px;
+      margin: 1.75rem auto;
+      padding: 0 1.25rem 3rem;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    /* ── SIDEBAR ──────────────────────────────────────────────────────── */
+    .sidebar {
+      position: sticky;
+      top: 1rem;
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.25rem 1.25rem 1.5rem;
+      max-height: calc(100vh - 2rem);
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+    .sidebar h2 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 0 0 0.75rem 0;
+    }
+
+    .search-wrap {
+      position: relative;
+      margin-bottom: 1.25rem;
+    }
+    .search-wrap input {
+      width: 100%;
+      padding: 0.55rem 0.75rem 0.55rem 2.1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--bg);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .search-wrap input:focus { border-color: var(--c-article); }
+    .search-wrap svg {
+      position: absolute;
+      left: 0.6rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      stroke: var(--muted);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      pointer-events: none;
+    }
+
+    .facet-group {
+      margin-bottom: 1.25rem;
+    }
+    .facet-group h3 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin: 0 0 0.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+    .facet-group h3 .caret {
+      font-size: 0.65rem;
+      transition: transform 0.2s;
+      display: inline-block;
+    }
+    .facet-group.collapsed h3 .caret { transform: rotate(-90deg); }
+    .facet-group.collapsed .facet-options { display: none; }
+
+    .facet-options { display: flex; flex-direction: column; gap: 0.1rem; }
+    .facet-options.overflow { max-height: 180px; overflow-y: auto; }
+    .facet-opt {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.35rem;
+      border-radius: 0.35rem;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--text);
+      transition: background 0.1s;
+      user-select: none;
+    }
+    .facet-opt:hover { background: var(--bg); }
+    .facet-opt input[type=checkbox] { accent-color: var(--c-article); cursor: pointer; }
+    .facet-opt .count {
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: var(--muted);
+      background: var(--bg);
+      padding: 0.05rem 0.4rem;
+      border-radius: 999px;
+    }
+    .facet-opt .oa-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+
+    .sort-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .sort-row select {
+      flex: 1;
+      padding: 0.45rem 0.6rem;
+      border: 1.5px solid var(--border);
+      border-radius: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text);
+      background: var(--bg);
+      cursor: pointer;
+    }
+
+    .clear-btn {
+      width: 100%;
+      padding: 0.5rem;
+      background: none;
+      border: 1.5px solid var(--border);
+      border-radius: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      cursor: pointer;
+      margin-bottom: 0.75rem;
+      transition: all 0.15s;
+    }
+    .clear-btn:hover { border-color: #dc2626; color: #dc2626; }
+
+    /* ── MAIN AREA ────────────────────────────────────────────────────── */
+    .main-area {}
+    .results-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .results-header .count {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .view-toggle {
+      display: flex;
+      gap: 0.25rem;
+      background: var(--border);
+      padding: 0.2rem;
+      border-radius: 8px;
+    }
+    .view-btn {
+      background: transparent;
+      border: none;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: var(--muted);
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .view-btn.active {
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    /* ── aggregation / portfolio view ─────────────────────────── */
+    .agg-view { display: none; }
+    .agg-view.visible { display: block; }
+
+    /* portfolio summary card */
+    .pf-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+    .pf-card-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .pf-stats-row {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+    .pf-stat { text-align: center; min-width: 70px; }
+    .pf-stat .pf-num {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.1;
+    }
+    .pf-stat .pf-lbl {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+      white-space: nowrap;
+    }
+    .pf-divider { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+
+    /* type mix bar */
+    .pf-section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .type-mix-bar {
+      display: flex;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      gap: 1px;
+      margin-bottom: 0.5rem;
+    }
+    .type-mix-seg { height: 100%; transition: width 0.3s; }
+    .type-mix-seg.article  { background: var(--c-article); }
+    .type-mix-seg.book     { background: var(--c-book); }
+    .type-mix-seg.data     { background: var(--c-data); }
+    .type-mix-seg.software { background: var(--c-software); }
+    .type-mix-legend {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      font-size: 0.75rem; color: var(--muted);
+    }
+    .type-mix-legend span { display: flex; align-items: center; gap: 0.3rem; }
+    .tml-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+    /* open science signals */
+    .signal-pills {
+      display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.4rem;
+    }
+    .signal-pill {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      padding: 0.25rem 0.65rem;
+      background: var(--accent-light);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--c-article);
+    }
+    .signal-pill .sp-n {
+      background: var(--c-article);
+      color: #fff;
+      border-radius: 999px;
+      padding: 0 0.4rem;
+      font-size: 0.72rem;
+      line-height: 1.5;
+    }
+
+    /* concept cloud */
+    .concept-cloud {
+      display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: baseline;
+      margin-top: 0.4rem;
+    }
+    .cc-tag {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      cursor: default;
+      transition: background 0.15s;
+    }
+    .cc-tag:hover { background: var(--accent-light); }
+
+    /* groups table */
+    .agg-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .agg-table th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 2px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+    }
+    .agg-table th:hover { color: var(--text); }
+    .agg-table th.sort-asc::after  { content: " ▲"; }
+    .agg-table th.sort-desc::after { content: " ▼"; }
+    .agg-table td {
+      padding: 0.55rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .agg-table tr:hover td { background: var(--accent-light); }
+    .agg-name {
+      font-weight: 600;
+      color: var(--text);
+      max-width: 260px;
+    }
+    .agg-name-inner {
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .agg-name-link {
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 220px;
+      display: block;
+    }
+    .agg-name-link:hover { text-decoration: underline; color: var(--c-article); }
+    .agg-type-dots { display: flex; gap: 2px; flex-shrink: 0; }
+    .atd { width: 6px; height: 6px; border-radius: 50%; }
+    .atd.article  { background: var(--c-article); }
+    .atd.book     { background: var(--c-book); }
+    .atd.data     { background: var(--c-data); }
+    .atd.software { background: var(--c-software); }
+    .agg-bar-wrap {
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .agg-bar {
+      height: 6px; background: var(--c-article);
+      border-radius: 3px; flex-shrink: 0;
+    }
+    .agg-num { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .agg-oa-badge {
+      display: inline-block; padding: 0.1rem 0.4rem;
+      border-radius: 4px; font-size: 0.75rem; font-weight: 600;
+    }
+    .agg-oa-badge.high { background: #d4f0e4; color: #1a6640; }
+    .agg-oa-badge.mid  { background: #fff3cd; color: #856404; }
+    .agg-oa-badge.low  { background: #fde8e8; color: #7d1111; }
+    .agg-concepts { display: flex; gap: 0.25rem; flex-wrap: wrap; }
+    .agg-concept-pill {
+      font-size: 0.68rem; padding: 0.1rem 0.4rem;
+      border-radius: 999px; background: var(--bg);
+      border: 1px solid var(--border); color: var(--muted);
+      white-space: nowrap;
+    }
+    .active-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .af-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: var(--accent-light);
+      color: var(--c-article);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .af-tag:hover { opacity: 0.75; }
+    .af-tag .x { font-size: 0.9rem; font-weight: 700; }
+
+    /* ── CARDS GRID ───────────────────────────────────────────────────── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .story-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.25rem 1.4rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      transition: box-shadow 0.2s, transform 0.15s;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Yellow fold accent — echoes the brand icon corner detail */
+    .story-card::after {
+      content: "";
+      position: absolute;
+      top: 0; right: 0;
+      width: 28px; height: 28px;
+      background: linear-gradient(225deg, var(--fold) 50%, transparent 50%);
+      border-radius: 0 var(--radius) 0 0;
+      opacity: 0.85;
+    }
+    .story-card:hover {
+      box-shadow: 0 8px 32px rgba(15,23,42,0.13);
+      transform: translateY(-2px);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .type-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+    .type-article  { background: #3C5A7F; color: #fff; }
+    .type-book     { background: #B34444; color: #fff; }
+    .type-data     { background: #34675A; color: #fff; }
+    .type-software { background: #6A4FA3; color: #fff; }
+
+    .oa-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+    .oa-gold   { background: #fef3c7; color: #92400e; }
+    .oa-hybrid { background: #e0f2fe; color: #0369a1; }
+    .oa-green  { background: #dcfce7; color: #166534; }
+    .oa-bronze { background: #ffedd5; color: #9a3412; }
+    .oa-closed { background: #f3f4f6; color: #6b7280; }
+
+    .card-title {
+      font-size: 0.97rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+      margin: 0;
+    }
+    .card-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .card-meta .sep { color: #d1d5db; }
+
+    .card-excerpt {
+      font-size: 0.82rem;
+      color: #4b5563;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: auto;
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 500;
+    }
+    .tag-concept { background: #f3f4f6; color: #374151; }
+    .tag-role    { background: #fef3c7; color: #92400e; }
+    .tag-sdg     { background: #dcfce7; color: #166534; }
+    .tag-teach   { background: #e0f2fe; color: #0369a1; }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--muted);
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border);
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .cit-count { font-weight: 600; color: var(--text); }
+
+    /* ── NO RESULTS ───────────────────────────────────────────────────── */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--muted);
+    }
+    .no-results h3 { margin: 0 0 0.5rem; font-size: 1.1rem; color: var(--text); }
+
+    /* ── FOOTER ───────────────────────────────────────────────────────── */
+    .page-footer {
+      max-width: 1180px;
+      margin: 0 auto 2rem;
+      padding: 0 1.25rem;
+      text-align: right;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+    .page-footer a { color: #9ca3af; text-decoration: none; }
+    .page-footer a:hover { text-decoration: underline; }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────────────── */
+    @media (max-width: 840px) {
+      .shell { grid-template-columns: 1fr; }
+      .hero-inner { grid-template-columns: 1fr; gap: 1rem; }
+      .hero-logo { width: 72px; height: 72px; }
+      .sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HERO ══════════════════════════════════════════════════════════════════ -->
+<header class="hero">
+  <div class="hero-inner">
+    <img src="openscience.works%20logos/openscience.works%20logo.png" alt="openscience.works" class="hero-logo">
+    <div class="hero-text">
+      <h1><b>openscience</b><span class="dot">.</span><span class="works">works</span></h1>
+      <p class="hero-tagline">The home of research signals.</p>
+      <div class="hero-stats" id="heroStats"><!-- filled by JS --></div>
+      <p class="hero-about">
+        <strong>openscience.works</strong> builds open, reusable services that help researchers, libraries, and publishers understand how open scholarly works are used, shared, and discussed across the research ecosystem. Instead of reducing research to single metrics, we focus on helping organisations tell richer, evidence-based stories about the reach and value of open scholarship &mdash; every data source transparent and inspectable.
+      </p>
+      <div class="hero-links">
+        <a href="#explorer" class="btn btn-primary" onclick="document.getElementById('explorer').scrollIntoView({behavior:'smooth'}); return false;" style="background:#F2C94C;color:#111827;">Browse stories ↓</a>
+        <a href="about.html" class="btn btn-outline">About us</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══ EXPLORER ══════════════════════════════════════════════════════════════ -->
+<div class="shell" id="explorer">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <h2>Filter &amp; explore</h2>
+
+    <!-- Search -->
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="searchInput" placeholder="Search titles, authors…" autocomplete="off">
+    </div>
+
+    <button class="clear-btn" id="clearBtn" onclick="clearAll()">Clear all filters</button>
+
+    <!-- Sort -->
+    <div class="sort-row">
+      <select id="sortSelect">
+        <option value="citations">Sort: most cited</option>
+        <option value="recent">Sort: most recent</option>
+        <option value="events">Sort: most attention</option>
+        <option value="downloads">Sort: most downloaded</option>
+        <option value="alpha">Sort: A → Z</option>
+      </select>
+    </div>
+
+    <!-- Story type -->
+    <div class="facet-group" id="fg-type">
+      <h3 onclick="toggleFacet('fg-type')">Story type <span class="caret">▾</span></h3>
+      <div class="facet-options" id="fo-type"></div>
+    </div>
+
+    <!-- Role / signal -->
+    <div class="facet-group" id="fg-role">
+      <h3 onclick="toggleFacet('fg-role')">Impact signal <span class="caret">▾</span></h3>
+      <div class="facet-options overflow" id="fo-role"></div>
+    </div>
+
+    <!-- Open science signals -->
+    <div class="facet-group" id="fg-features">
+      <h3 onclick="toggleFacet('fg-features')">Open science signals <span class="caret">▾</span></h3>
+      <div class="facet-options" id="fo-features"></div>
+    </div>
+
+    <!-- OA Status -->
+    <div class="facet-group" id="fg-oa">
+      <h3 onclick="toggleFacet('fg-oa')">Open access <span class="caret">▾</span></h3>
+      <div class="facet-options" id="fo-oa"></div>
+    </div>
+
+    <!-- Discipline / concept (OpenAlex) -->
+    <div class="facet-group" id="fg-concept">
+      <h3 onclick="toggleFacet('fg-concept')">Discipline <span class="caret">▾</span></h3>
+      <div class="facet-options overflow" id="fo-concept"></div>
+    </div>
+
+    <!-- Institution -->
+    <div class="facet-group collapsed" id="fg-inst">
+      <h3 onclick="toggleFacet('fg-inst')">Institution <span class="caret">▾</span></h3>
+      <div class="facet-options overflow" id="fo-inst"></div>
+    </div>
+
+    <!-- Publisher / venue -->
+    <div class="facet-group collapsed" id="fg-venue">
+      <h3 onclick="toggleFacet('fg-venue')">Publisher / venue <span class="caret">▾</span></h3>
+      <div class="facet-options overflow" id="fo-venue"></div>
+    </div>
+
+    <!-- Year -->
+    <div class="facet-group collapsed" id="fg-year">
+      <h3 onclick="toggleFacet('fg-year')">Year <span class="caret">▾</span></h3>
+      <div class="facet-options overflow" id="fo-year"></div>
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-area">
+    <div class="results-header">
+      <span class="count" id="resultsCount">Loading…</span>
+      <div class="view-toggle">
+        <button class="view-btn active" id="vbtn-stories"       onclick="setView('stories')">Stories</button>
+        <button class="view-btn"        id="vbtn-institution"   onclick="setView('institution')">By institution</button>
+        <button class="view-btn"        id="vbtn-publisher"     onclick="setView('publisher')">By publisher</button>
+      </div>
+      <div class="active-filters" id="activeFilters"></div>
+    </div>
+    <div class="cards-grid" id="cardsGrid"></div>
+    <div class="agg-view" id="aggView"></div>
+  </main>
+</div>
+
+<footer class="page-footer">
+  &copy; 2026 openscience.works — All rights reserved | <a href="about.html">About us</a>
+</footer>
+
+<script src="stories_data.js"></script>
+<script>
+// ── state ─────────────────────────────────────────────────────────────────
+const state = {
+  query: "",
+  sort: "citations",
+  view: "stories",   // "stories" | "institution" | "publisher"
+  aggSort: { key: "stories", dir: "desc" },
+  filters: {
+    type: new Set(),
+    role: new Set(),
+    features: new Set(),
+    oa: new Set(),
+    concept: new Set(),
+    institution: new Set(),
+    venue: new Set(),
+    year: new Set(),
+  }
+};
+
+// ── helpers ───────────────────────────────────────────────────────────────
+function fmt(n) {
+  if (n >= 1000000) return (n/1000000).toFixed(1)+"M";
+  if (n >= 1000) return (n/1000).toFixed(1)+"k";
+  return n.toString();
+}
+
+function oaLabel(s) {
+  const m = { gold:"Gold OA", hybrid:"Hybrid OA", green:"Green OA", bronze:"Bronze OA", closed:"Closed", "":"Unknown" };
+  return m[s] || (s ? s.charAt(0).toUpperCase()+s.slice(1) : "Unknown");
+}
+function oaClass(s) {
+  const m = { gold:"oa-gold", hybrid:"oa-hybrid", green:"oa-green", bronze:"oa-bronze", closed:"oa-closed" };
+  return m[s] || "oa-closed";
+}
+function oaColor(s) {
+  const m = { gold:"#f59e0b", hybrid:"#0ea5e9", green:"#22c55e", bronze:"#f97316", closed:"#9ca3af" };
+  return m[s] || "#9ca3af";
+}
+function typeClass(t) {
+  if (t==="ArticleStory") return "type-article";
+  if (t==="BookStory") return "type-book";
+  if (t==="DataStory") return "type-data";
+  if (t==="SoftwareStory") return "type-software";
+  return "type-article";
+}
+function typeLabel(t) {
+  return { ArticleStory:"Articlestory", BookStory:"Bookstory", DataStory:"Datastory", SoftwareStory:"Softwarestory" }[t] || t;
+}
+function typeColor(t) {
+  return { ArticleStory:"#3C5A7F", BookStory:"#B34444", DataStory:"#34675A", SoftwareStory:"#6A4FA3" }[t] || "#374151";
+}
+function typeLogo(t) {
+  return {
+    ArticleStory:  "openscience.works%20logos/Articlestories%20icon.png",
+    BookStory:     "openscience.works%20logos/Bookstories%20icon.png",
+    DataStory:     "openscience.works%20logos/Datastories%20icon.png",
+    SoftwareStory: "openscience.works%20logos/Softwarestories%20icon.png",
+  }[t] || "";
+}
+
+// ── build facet counts ────────────────────────────────────────────────────
+function buildFacetCounts(stories) {
+  const counts = { type:{}, oa:{}, concept:{}, role:{}, institution:{}, venue:{}, year:{}, features:{} };
+  for (const s of stories) {
+    counts.type[s.type] = (counts.type[s.type]||0)+1;
+    const oaKey = s.oa_status || (s.is_oa===true?"oa":"closed");
+    counts.oa[oaKey] = (counts.oa[oaKey]||0)+1;
+    for (const c of s.concepts) counts.concept[c] = (counts.concept[c]||0)+1;
+    for (const r of s.roles) counts.role[r] = (counts.role[r]||0)+1;
+    if (s.venue) counts.venue[s.venue] = (counts.venue[s.venue]||0)+1;
+    if (s.year) counts.year[s.year] = (counts.year[s.year]||0)+1;
+    if (s.has_sdgs)              counts.features["SDG-linked"]          = (counts.features["SDG-linked"]||0)+1;
+    if (s.has_peer_review)       counts.features["Peer reviewed"]       = (counts.features["Peer reviewed"]||0)+1;
+    if (s.has_reuse)             counts.features["Data / code linked"]  = (counts.features["Data / code linked"]||0)+1;
+    if ((s.download_count||0)>0) counts.features["Has downloads"]       = (counts.features["Has downloads"]||0)+1;
+    if ((s.ta_ocw||0)>0)         counts.features["OCW / syllabi"]       = (counts.features["OCW / syllabi"]||0)+1;
+    if ((s.ta_youtube||0)>0)     counts.features["Video lectures"]      = (counts.features["Video lectures"]||0)+1;
+    if ((s.ta_ol_holdings||0)>0) counts.features["Library holdings"]    = (counts.features["Library holdings"]||0)+1;
+    if (s.ta_otl)                counts.features["Open textbook (OTL)"] = (counts.features["Open textbook (OTL)"]||0)+1;
+    for (const inst of (s.institutions||[])) counts.institution[inst] = (counts.institution[inst]||0)+1;
+  }
+  return counts;
+}
+
+// ── filter ────────────────────────────────────────────────────────────────
+function filterStories(stories) {
+  return stories.filter(s => {
+    if (state.query) {
+      const haystack = [s.title, s.authors, s.venue, s.excerpt, ...s.concepts, ...s.roles].join(" ").toLowerCase();
+      if (!haystack.includes(state.query)) return false;
+    }
+    if (state.filters.type.size && !state.filters.type.has(s.type)) return false;
+    if (state.filters.oa.size) {
+      const oaKey = s.oa_status || (s.is_oa===true?"oa":"closed");
+      if (!state.filters.oa.has(oaKey)) return false;
+    }
+    // AND within each multi-value facet: story must carry ALL selected values
+    if (state.filters.role.size && ![...state.filters.role].every(r => s.roles.includes(r))) return false;
+    if (state.filters.concept.size && ![...state.filters.concept].every(c => s.concepts.includes(c))) return false;
+    if (state.filters.institution.size && ![...state.filters.institution].every(i => (s.institutions||[]).includes(i))) return false;
+    if (state.filters.features.size) {
+      const feats = new Set();
+      if (s.has_sdgs)              feats.add("SDG-linked");
+      if (s.has_peer_review)       feats.add("Peer reviewed");
+      if (s.has_reuse)             feats.add("Data / code linked");
+      if ((s.download_count||0)>0) feats.add("Has downloads");
+      if ((s.ta_ocw||0)>0)         feats.add("OCW / syllabi");
+      if ((s.ta_youtube||0)>0)     feats.add("Video lectures");
+      if ((s.ta_ol_holdings||0)>0) feats.add("Library holdings");
+      if (s.ta_otl)                feats.add("Open textbook (OTL)");
+      if (![...state.filters.features].every(f => feats.has(f))) return false;
+    }
+    if (state.filters.venue.size && !state.filters.venue.has(s.venue)) return false;
+    if (state.filters.year.size && !state.filters.year.has(s.year)) return false;
+    return true;
+  });
+}
+
+function sortStories(stories) {
+  return [...stories].sort((a, b) => {
+    if (state.sort==="citations")  return b.citation_count - a.citation_count;
+    if (state.sort==="recent")     return ((b.year||0) - (a.year||0)) || (b.citation_count - a.citation_count);
+    if (state.sort==="events")     return b.event_count - a.event_count;
+    if (state.sort==="downloads")  return (b.download_count||0) - (a.download_count||0);
+    if (state.sort==="alpha")      return a.title.localeCompare(b.title);
+    return 0;
+  });
+}
+
+// ── render cards ──────────────────────────────────────────────────────────
+function esc(str) {
+  if (!str) return "";
+  return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+function renderCards(stories) {
+  const grid = document.getElementById("cardsGrid");
+  if (!stories.length) {
+    grid.innerHTML = `<div class="no-results"><h3>No stories match your filters</h3><p>Try broadening your search or clearing some filters.</p></div>`;
+    return;
+  }
+  grid.innerHTML = stories.map(s => {
+    const metaParts = [];
+    if (s.venue)   metaParts.push(`<span>${esc(s.venue)}</span>`);
+    if (s.year)    metaParts.push(`<span>${s.year}</span>`);
+    if (s.authors) metaParts.push(`<span>${esc(s.authors)}</span>`);
+    const meta = metaParts.join(`<span class="sep">·</span>`);
+
+    const conceptTags = s.concepts.slice(0,4).map(c => `<span class="tag tag-concept">${esc(c)}</span>`).join("");
+    const roleTags    = s.roles.slice(0,2).map(r => `<span class="tag tag-role">${esc(r)}</span>`).join("");
+    const extraTags   = [
+      s.has_sdgs     ? `<span class="tag tag-sdg">SDGs</span>` : "",
+      s.has_teaching ? `<span class="tag tag-teach">Teaching</span>` : "",
+    ].join("");
+
+    const excerpt = s.excerpt ? `<p class="card-excerpt">${esc(s.excerpt)}</p>` : "";
+    const attn    = s.event_count > 0 ? `<span>${fmt(s.event_count)} attention events</span>` : "";
+
+    return `<a class="story-card" href="${s.file}">
+      <div class="card-top">
+        <span class="type-badge ${typeClass(s.type)}">${typeLabel(s.type)}</span>
+        <span class="oa-badge ${oaClass(s.oa_status)}">${oaLabel(s.oa_status)}</span>
+      </div>
+      <h3 class="card-title">${esc(s.title)}</h3>
+      <div class="card-meta">${meta}</div>
+      ${excerpt}
+      <div class="card-tags">${conceptTags}${roleTags}${extraTags}</div>
+      <div class="card-footer">
+        <span><span class="cit-count">${fmt(s.citation_count)}</span> citations</span>
+        ${(s.download_count||0) > 0 ? `<span><span class="cit-count">${fmt(s.download_count)}</span> downloads</span>` : attn}
+      </div>
+    </a>`;
+  }).join("");
+}
+
+// ── render facets ─────────────────────────────────────────────────────────
+function renderFacetGroup(elId, facetKey, allCounts, filtCounts, labelFn, keys) {
+  const el = document.getElementById(elId);
+  const activeSet = state.filters[facetKey];
+  el.innerHTML = keys.map(k => {
+    const total = allCounts[k] || 0;
+    const filt  = filtCounts[k] || 0;
+    const checked = activeSet.has(k) ? "checked" : "";
+    const dim = !filt && !activeSet.has(k) ? `style="opacity:0.4"` : "";
+    const safeK = String(k).replace(/\\/g,"\\\\").replace(/'/g,"\\'");
+    return `<label class="facet-opt" ${dim}>
+      <input type="checkbox" ${checked} onchange="toggleFilter('${facetKey}','${safeK}',this.checked)">
+      <span>${labelFn(k)}</span>
+      <span class="count">${activeSet.has(k) ? total : filt||total}</span>
+    </label>`;
+  }).join("");
+}
+
+function renderFacets(allStories, filtered) {
+  const allC  = buildFacetCounts(allStories);
+  const filtC = buildFacetCounts(filtered);
+
+  renderFacetGroup("fo-type", "type", allC.type, filtC.type,
+    k => `<span style="display:inline-flex;align-items:center;gap:0.5rem">
+      <img src="${typeLogo(k)}" style="width:20px;height:20px;object-fit:contain;border-radius:4px;flex-shrink:0">
+      <span style="font-size:0.85rem;font-weight:600;color:${typeColor(k)}">${typeLabel(k)}</span>
+    </span>`,
+    Object.keys(allC.type).sort()
+  );
+
+  const oaOrder = ["gold","hybrid","green","bronze","closed",""];
+  renderFacetGroup("fo-oa", "oa", allC.oa, filtC.oa,
+    k => `<span class="oa-dot" style="background:${oaColor(k)}"></span>${oaLabel(k)}`,
+    oaOrder.filter(k => allC.oa[k])
+  );
+
+  const topConcepts = Object.entries(allC.concept).sort((a,b)=>b[1]-a[1]).slice(0,30).map(([k])=>k);
+  renderFacetGroup("fo-concept", "concept", allC.concept, filtC.concept, k => esc(k), topConcepts);
+
+  const topRoles = Object.entries(allC.role).sort((a,b)=>b[1]-a[1]).map(([k])=>k);
+  renderFacetGroup("fo-role", "role", allC.role, filtC.role, k => esc(k), topRoles);
+
+  const topInst = Object.entries(allC.institution).sort((a,b)=>b[1]-a[1]).slice(0,40).map(([k])=>k);
+  renderFacetGroup("fo-inst", "institution", allC.institution, filtC.institution, k => esc(k), topInst);
+
+  const topVenues = Object.entries(allC.venue).sort((a,b)=>b[1]-a[1]).slice(0,25).map(([k])=>k);
+  renderFacetGroup("fo-venue", "venue", allC.venue, filtC.venue, k => esc(k), topVenues);
+
+  const years = Object.keys(allC.year).map(Number).sort((a,b)=>b-a);
+  renderFacetGroup("fo-year", "year", allC.year, filtC.year, k => k, years);
+
+  // Signals grouped: scholarly integrity first, then teaching/adoption
+  const featOrder = [
+    "SDG-linked", "Peer reviewed", "Data / code linked", "Has downloads",
+    "OCW / syllabi", "Video lectures", "Library holdings", "Open textbook (OTL)",
+  ];
+  renderFacetGroup("fo-features", "features", allC.features, filtC.features,
+    k => esc(k),
+    featOrder.filter(k => allC.features[k])
+  );
+}
+
+function renderActiveFilters() {
+  const af = document.getElementById("activeFilters");
+  const tags = [];
+  for (const [facet, set] of Object.entries(state.filters)) {
+    for (const val of set) {
+      const label = facet==="type" ? typeLabel(val) : facet==="oa" ? oaLabel(val) : val;
+      const safeF = facet.replace(/'/g,"\\'");
+      const safeV = String(val).replace(/\\/g,"\\\\").replace(/'/g,"\\'");
+      tags.push(`<span class="af-tag" onclick="toggleFilter('${safeF}','${safeV}',false)">
+        <span>${esc(String(label))}</span><span class="x">×</span>
+      </span>`);
+    }
+  }
+  af.innerHTML = tags.join("");
+}
+
+function renderResultsCount(n, total) {
+  document.getElementById("resultsCount").textContent =
+    n === total ? `${total} stories` : `${n} of ${total} stories`;
+}
+
+// ── hero stats ────────────────────────────────────────────────────────────
+function renderHeroStats() {
+  const st = window.STORIES_STATS;
+  document.getElementById("heroStats").innerHTML = [
+    `<span class="stat-pill"><span class="num">${fmt(st.total)}</span> stories</span>`,
+    `<span class="stat-pill"><span class="num">${fmt(st.total_citations)}</span> citations</span>`,
+    `<span class="stat-pill"><span class="num">${st.pct_oa}%</span> open access</span>`,
+    `<span class="stat-pill"><span class="num">${st.num_disciplines}+</span> disciplines</span>`,
+  ].join("");
+}
+
+// ── aggregation view ─────────────────────────────────────────────────────
+function sortAggGroups(groups) {
+  const { key, dir } = state.aggSort;
+  const mul = dir === "desc" ? -1 : 1;
+  return [...groups].sort((a, b) => {
+    let va = a[key] ?? 0, vb = b[key] ?? 0;
+    if (key === "name") { va = a.name.toLowerCase(); vb = b.name.toLowerCase(); return mul * va.localeCompare(vb); }
+    if (key === "pct_oa") { va = a.count ? a.oa / a.count : 0; vb = b.count ? b.oa / b.count : 0; }
+    if (key === "avg_cit") { va = a.count ? a.citations / a.count : 0; vb = b.count ? b.citations / b.count : 0; }
+    return mul * (vb - va);
+  });
+}
+
+// Global lookup so drill-in doesn't need to escape names in onclick attrs
+const _aggDrillMap = {};
+
+// ── portfolio summary helpers ─────────────────────────────────────────────
+
+function computePortfolioSummary(stories) {
+  const byType = { ArticleStory: 0, BookStory: 0, DataStory: 0, SoftwareStory: 0 };
+  let totalCit = 0, totalDl = 0, oaCount = 0;
+  let sdgCount = 0, teachCount = 0, prCount = 0, reuseCount = 0;
+  let ocwCount = 0, ytCount = 0, olCount = 0, otlCount = 0;
+  const conceptFreq = {};
+  let minYear = 9999, maxYear = 0;
+
+  for (const s of stories) {
+    byType[s.type] = (byType[s.type] || 0) + 1;
+    totalCit += s.citation_count || 0;
+    totalDl  += s.download_count || 0;
+    if (s.is_oa)           oaCount++;
+    if (s.has_sdgs)        sdgCount++;
+    if (s.has_teaching)    teachCount++;
+    if (s.has_peer_review) prCount++;
+    if (s.has_reuse)       reuseCount++;
+    ocwCount += s.ta_ocw          || 0;
+    ytCount  += s.ta_youtube      || 0;
+    olCount  += s.ta_ol_holdings  || 0;
+    if (s.ta_otl) otlCount++;
+    for (const c of (s.concepts || []))
+      conceptFreq[c] = (conceptFreq[c] || 0) + 1;
+    if (s.year) {
+      if (s.year < minYear) minYear = s.year;
+      if (s.year > maxYear) maxYear = s.year;
+    }
+  }
+  const topConcepts = Object.entries(conceptFreq)
+    .sort((a, b) => b[1] - a[1]).slice(0, 20);
+  return {
+    total: stories.length, byType, totalCit, totalDl, oaCount,
+    sdgCount, teachCount, prCount, reuseCount,
+    ocwCount, ytCount, olCount, otlCount,
+    topConcepts,
+    minYear: minYear === 9999 ? null : minYear,
+    maxYear: maxYear === 0   ? null : maxYear,
+  };
+}
+
+function renderPortfolioCard(p, groupLabel) {
+  const { total, byType, totalCit, totalDl, oaCount,
+          sdgCount, teachCount, prCount, reuseCount,
+          ocwCount, ytCount, olCount, otlCount,
+          topConcepts, minYear, maxYear } = p;
+  const pctOA = total ? Math.round(100 * oaCount / total) : 0;
+
+  // ── stats row ──
+  const yearRange = (minYear && maxYear)
+    ? (minYear === maxYear ? `${minYear}` : `${minYear}–${maxYear}`)
+    : "–";
+  const statsHtml = [
+    { n: fmt(totalCit),      l: "total citations" },
+    { n: pctOA + "%",        l: "open access" },
+    ...(totalDl > 0 ? [{ n: fmt(totalDl), l: "downloads" }] : []),
+    { n: yearRange,          l: "year range" },
+  ].map(s =>
+    `<div class="pf-stat"><span class="pf-num">${s.n}</span><span class="pf-lbl">${s.l}</span></div>`
+  ).join("");
+
+  // ── type mix bar ──
+  const typeMap = [
+    { key: "ArticleStory",  cls: "article",  label: "Articles" },
+    { key: "BookStory",     cls: "book",     label: "Books" },
+    { key: "DataStory",     cls: "data",     label: "Datasets" },
+    { key: "SoftwareStory", cls: "software", label: "Software" },
+  ];
+  const mixSegs = typeMap
+    .filter(t => (byType[t.key] || 0) > 0)
+    .map(t => {
+      const pct = Math.round(100 * byType[t.key] / total);
+      return `<div class="type-mix-seg ${t.cls}" style="width:${pct}%" title="${byType[t.key]} ${t.label}"></div>`;
+    }).join("");
+  const mixLegend = typeMap
+    .filter(t => (byType[t.key] || 0) > 0)
+    .map(t => `<span><span class="tml-dot ${t.cls}"></span>${byType[t.key]} ${t.label}</span>`).join("");
+
+  // ── open science signals — two rows ──
+  // Row 1: scholarly / integrity signals
+  const scholSignals = [
+    { n: sdgCount,   l: "SDG-linked" },
+    { n: prCount,    l: "Peer reviewed" },
+    { n: reuseCount, l: "Data / code reuse" },
+  ].filter(s => s.n > 0);
+
+  // Row 2: teaching & adoption signals (richer breakdown)
+  const teachSignals = [
+    ...(ocwCount > 0 ? [{ n: ocwCount,  l: "OCW mentions" }]      : []),
+    ...(ytCount  > 0 ? [{ n: ytCount,   l: "Video lectures" }]     : []),
+    ...(olCount  > 0 ? [{ n: olCount,   l: "Library holdings" }]   : []),
+    ...(otlCount > 0 ? [{ n: otlCount,  l: "Open textbooks" }]     : []),
+  ];
+
+  const allSignals = [...scholSignals, ...teachSignals];
+  const signalsHtml = allSignals.length
+    ? allSignals.map(s =>
+        `<span class="signal-pill"><span class="sp-n">${s.n}</span>${s.l}</span>`
+      ).join("")
+    : `<span style="font-size:0.8rem;color:var(--muted)">No signals recorded</span>`;
+
+  // ── concept cloud ──
+  const maxFreq = topConcepts.length ? topConcepts[0][1] : 1;
+  const cloudHtml = topConcepts.map(([name, freq]) => {
+    const size = 0.72 + 0.45 * (freq / maxFreq);
+    return `<span class="cc-tag" style="font-size:${size.toFixed(2)}rem">${escHtml(name)}</span>`;
+  }).join("");
+
+  return `
+    <div class="pf-card">
+      <div class="pf-card-title">Portfolio overview — ${escHtml(groupLabel)}</div>
+      <div class="pf-stats-row">${statsHtml}</div>
+      <hr class="pf-divider">
+      <div class="pf-section-label">Work type</div>
+      <div class="type-mix-bar">${mixSegs}</div>
+      <div class="type-mix-legend">${mixLegend}</div>
+      ${allSignals.length ? `
+      <hr class="pf-divider">
+      <div class="pf-section-label">Open science &amp; teaching signals</div>
+      <div class="signal-pills">${signalsHtml}</div>` : ""}
+      ${topConcepts.length ? `
+      <hr class="pf-divider">
+      <div class="pf-section-label">Dominant concepts</div>
+      <div class="concept-cloud">${cloudHtml}</div>` : ""}
+    </div>`;
+}
+
+// Also extend buildAggGroups to track types + top concepts per group
+function buildAggGroups(stories, groupKey) {
+  const map = {};
+  for (const s of stories) {
+    let keys = [];
+    if (groupKey === "institution") {
+      keys = (s.institutions || []).filter(Boolean);
+      if (!keys.length) keys = ["(no institution)"];
+    } else {
+      const k = s.publisher || s.venue || "(no publisher)";
+      keys = [k];
+    }
+    for (const k of keys) {
+      if (!map[k]) map[k] = {
+        name: k, count: 0, citations: 0, downloads: 0, oa: 0,
+        byType: {}, concepts: {},
+        minYear: 9999, maxYear: 0,
+      };
+      const g = map[k];
+      g.count++;
+      g.citations += s.citation_count || 0;
+      g.downloads += s.download_count || 0;
+      if (s.is_oa) g.oa++;
+      g.byType[s.type] = (g.byType[s.type] || 0) + 1;
+      for (const c of (s.concepts || []))
+        g.concepts[c] = (g.concepts[c] || 0) + 1;
+      if (s.year) {
+        if (s.year < g.minYear) g.minYear = s.year;
+        if (s.year > g.maxYear) g.maxYear = s.year;
+      }
+    }
+  }
+  // Compute topConcepts per group
+  for (const g of Object.values(map)) {
+    g.topConcepts = Object.entries(g.concepts).sort((a,b) => b[1]-a[1]).slice(0,3).map(([c])=>c);
+    if (g.minYear === 9999) g.minYear = null;
+    if (g.maxYear === 0)    g.maxYear = null;
+  }
+  return Object.values(map);
+}
+
+function renderAgg(stories, groupKey) {
+  const groups   = sortAggGroups(buildAggGroups(stories, groupKey));
+  const maxCit   = Math.max(...groups.map(g => g.citations), 1);
+  const hasDl    = groups.some(g => g.downloads > 0);
+  const facetKey = groupKey === "institution" ? "institution" : "venue";
+  const label    = groupKey === "institution" ? "all institutions" : "all publishers";
+
+  // Refresh drill-map
+  Object.keys(_aggDrillMap).forEach(k => delete _aggDrillMap[k]);
+  groups.forEach((g, i) => { _aggDrillMap[i] = g.name; });
+
+  // Portfolio summary for the full filtered set
+  const pSummary = computePortfolioSummary(stories);
+  const pfCard   = renderPortfolioCard(pSummary, label);
+
+  function th(lbl, sortKey, title="") {
+    const active = state.aggSort.key === sortKey;
+    const cls = active ? (state.aggSort.dir === "desc" ? "sort-desc" : "sort-asc") : "";
+    return `<th class="${cls}" onclick="setAggSort('${sortKey}')" title="${title}">${lbl}</th>`;
+  }
+
+  const typeIcons = { ArticleStory: "article", BookStory: "book", DataStory: "data", SoftwareStory: "software" };
+  const rows = groups.map((g, i) => {
+    const pct    = g.count ? Math.round(100 * g.oa / g.count) : 0;
+    const barCit = Math.round(150 * g.citations / maxCit);
+    const oaCls  = pct >= 80 ? "high" : pct >= 40 ? "mid" : "low";
+    const avgCit = g.count ? Math.round(g.citations / g.count).toLocaleString() : "0";
+    const dots   = Object.entries(g.byType).map(([t]) =>
+      `<span class="atd ${typeIcons[t]||""}" title="${t.replace("Story","")}"></span>`).join("");
+    const cPills = g.topConcepts.map(c =>
+      `<span class="agg-concept-pill">${escHtml(c)}</span>`).join("");
+    const yr = (g.minYear && g.maxYear)
+      ? (g.minYear === g.maxYear ? g.minYear : `${g.minYear}–${g.maxYear}`)
+      : "–";
+
+    return `<tr>
+      <td class="agg-name" title="${escHtml(g.name)}">
+        <div class="agg-name-inner">
+          <div class="agg-type-dots">${dots}</div>
+          <a class="agg-name-link" onclick="drillInto('${facetKey}',${i})">${escHtml(g.name)}</a>
+        </div>
+        <div class="agg-concepts" style="margin-top:0.2rem;margin-left:1rem">${cPills}</div>
+      </td>
+      <td class="agg-num">${g.count}</td>
+      <td>
+        <div class="agg-bar-wrap">
+          <div class="agg-bar" style="width:${barCit}px"></div>
+          <span>${fmt(g.citations)}</span>
+        </div>
+      </td>
+      <td class="agg-num">${avgCit}</td>
+      <td><span class="agg-oa-badge ${oaCls}">${pct}%</span></td>
+      ${hasDl ? `<td class="agg-num">${g.downloads > 0 ? fmt(g.downloads) : "—"}</td>` : ""}
+      <td class="agg-num">${yr}</td>
+    </tr>`;
+  }).join("");
+
+  const groupWord = groupKey === "institution" ? "institution" : "publisher";
+  document.getElementById("aggView").innerHTML = pfCard + `
+    <div class="pf-section-label" style="margin-bottom:0.5rem">
+      Breakdown by ${groupWord} — ${groups.length} groups · click a name to filter stories
+    </div>
+    <table class="agg-table">
+      <thead><tr>
+        ${th("Name", "name")}
+        ${th("Stories", "count")}
+        ${th("Total citations", "citations")}
+        ${th("Avg citations", "avg_cit")}
+        ${th("Open access", "pct_oa", "% of stories that are OA")}
+        ${hasDl ? th("Downloads", "downloads") : ""}
+        ${th("Years", "stories")}
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+}
+
+function escHtml(s) {
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+function setAggSort(key) {
+  if (state.aggSort.key === key) {
+    state.aggSort.dir = state.aggSort.dir === "desc" ? "asc" : "desc";
+  } else {
+    state.aggSort.key = key;
+    state.aggSort.dir = key === "name" ? "asc" : "desc";
+  }
+  update();
+}
+
+function setView(v) {
+  state.view = v;
+  document.querySelectorAll(".view-btn").forEach(b => b.classList.remove("active"));
+  document.getElementById("vbtn-" + v).classList.add("active");
+  update();
+}
+
+function drillInto(facetKey, idx) {
+  const val = _aggDrillMap[idx];
+  if (!val) return;
+  setView("stories");
+  state.filters[facetKey].clear();
+  state.filters[facetKey].add(val);
+  update();
+}
+
+// ── interactions ──────────────────────────────────────────────────────────
+function toggleFacet(id) {
+  document.getElementById(id).classList.toggle("collapsed");
+}
+
+function toggleFilter(facet, val, checked) {
+  const key = facet==="year" ? Number(val) : val;
+  if (checked) state.filters[facet].add(key);
+  else         state.filters[facet].delete(key);
+  update();
+}
+
+function clearAll() {
+  state.query = "";
+  document.getElementById("searchInput").value = "";
+  for (const s of Object.values(state.filters)) s.clear();
+  update();
+}
+
+function update() {
+  const all      = window.STORIES_DATA;
+  const filtered = filterStories(all);
+  const sorted   = sortStories(filtered);
+
+  const isAgg = state.view !== "stories";
+  document.getElementById("cardsGrid").style.display = isAgg ? "none" : "";
+  document.getElementById("sortSelect").parentElement.style.opacity = isAgg ? "0.4" : "";
+  document.getElementById("sortSelect").disabled = isAgg;
+
+  const aggEl = document.getElementById("aggView");
+  if (isAgg) {
+    aggEl.classList.add("visible");
+    renderAgg(filtered, state.view);
+  } else {
+    aggEl.classList.remove("visible");
+    renderCards(sorted);
+  }
+
+  renderFacets(all, filtered);
+  renderActiveFilters();
+  renderResultsCount(filtered.length, all.length);
+}
+
+// ── events ────────────────────────────────────────────────────────────────
+document.getElementById("searchInput").addEventListener("input", e => {
+  state.query = e.target.value.toLowerCase().trim();
+  update();
+});
+document.getElementById("sortSelect").addEventListener("change", e => {
+  state.sort = e.target.value;
+  update();
+});
+
+// ── init ──────────────────────────────────────────────────────────────────
+renderHeroStats();
+update();
+</script>
+</body>
+</html>

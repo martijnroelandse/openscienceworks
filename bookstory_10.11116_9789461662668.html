@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 
+
+
+
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>BookStory - Beyond Provenance: New Approaches to Interpreting the Chemistry of Archaeological Copper Alloys</title>
-<style>
+    <meta charset="utf-8">
+    <title>BookStory - Beyond Provenance: New Approaches to Interpreting the Chemistry of Archaeological Copper Alloys</title>
+    <style>
+
         * { box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
         .page { max-width: 1000px; margin: auto; }
@@ -13,7 +17,7 @@
         .span-full { grid-column: 1 / -1; }
         .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
         .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
-        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
         .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
         .tag-soft { background: #f3f4f6; color: #4b5563; }
         .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
@@ -36,6 +40,8 @@
             * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
             .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
             .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
             table { page-break-inside: auto !important; width: 100% !important; }
             tr { page-break-inside: avoid !important; page-break-after: auto !important; }
             thead { display: table-header-group !important; }
@@ -44,16 +50,6 @@
 
 /* ── UX Enhancements ── */
 
-/* Stats strip */
-.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
-  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
-.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
-.stats-strip-item:last-child{border-right:none;}
-.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
-.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
-.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
-  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
-@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
 
 /* Sticky nav */
 .sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
@@ -66,7 +62,7 @@
   transition:color .15s,border-color .15s;white-space:nowrap;}
 .sticky-nav a:hover{color:#111827;}
 .sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
-@media print{.sticky-nav,.stats-strip{display:none!important;}}
+@media print{.sticky-nav{display:none!important;}}
 
 /* Collapsible cards */
 .card-collapsible > h2{
@@ -107,7 +103,9 @@
 .role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
 .role-pill:hover{opacity:1!important;}
 
-/* CSS tooltip for role descriptions */
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
 
 
 .role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
@@ -140,15 +138,26 @@
 .im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
 .im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
   color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
-.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
-.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
 .im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
 .im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
 .im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
-.im-card-dl{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
 
-.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
-.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
 .im-scite-via{font-weight:400;color:#9ca3af;}
 .im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
 .im-scite-seg{height:100%;}
@@ -162,8 +171,9 @@
 .im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
 .im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
 .im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
-.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
   font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
 .sig-pill:hover{opacity:.75;}
 .sig-red   {background:#fee2e2;color:#b91c1c;}
 .sig-slate {background:#f1f5f9;color:#475569;}
@@ -171,6 +181,18 @@
 .sig-teal  {background:#ccfbf1;color:#0f766e;}
 .sig-amber {background:#fef3c7;color:#b45309;}
 .sig-blue  {background:#dbeafe;color:#1d4ed8;}
+.sig-green {background:#dcfce7;color:#166534;}
+.cover-fallback{
+  width:110px;height:155px;border-radius:.55rem;
+  border:1px solid #dbe7f3;
+  box-shadow:0 4px 10px rgba(15,23,42,.08);
+  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:.55rem;gap:.35rem;
+}
+.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
+.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
+.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -197,9 +219,10 @@
     }
     .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
 
-</style>
-<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <!-- Site nav -->
@@ -208,460 +231,1365 @@
     <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
     <span>openscience<span class="brand-dot">.</span>works</span>
   </a>
-  <div class="site-nav-links">
-    <a href="index.html">← All stories</a>
-    <a href="about.html">About</a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
   </div>
 </nav>
+    
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="bookstories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">Beyond Provenance: New Approaches to Interpreting the Chemistry of Archaeological Copper Alloys</h1>
+                        
+                            <div class="discipline-badge" style="background:#fef08a; color:#854d0e; border-color:#fde047; font-weight:600; margin-top: 0.5rem; margin-bottom: 0;">
+                                <svg style="width:14px; height:14px; display:inline; vertical-align:middle; margin-right:4px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                                Open Access (Hybrid)
+                            </div>
+                        
+                        <div class="discipline-badge">Humanities</div>                        
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
 
-<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
-<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-        Print PDF Report
-    </button>
-<div class="page" id="sec-story">
-<header class="hero card" id="sec-hero">
-<div class="header-bar">
-<div style="display: flex; align-items: center; gap: 1.25rem;">
-<div class="logo-wrap"><img alt="Logo" src="bookstories-logo.png"/></div>
-<div>
-<h1 class="hero-title">Beyond Provenance: New Approaches to Interpreting the Chemistry of Archaeological Copper Alloys</h1>
-<div class="discipline-badge" style="background:#fef08a; color:#854d0e; border-color:#fde047; font-weight:600;" title="Free to read in a subscription journal; OA enabled by author or institution payment"><svg fill="none" stroke="currentColor" style="width:14px; height:14px; display:inline; vertical-align:middle; margin-right:4px;" viewbox="0 0 24 24"><path d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg><span style="opacity:0.58;font-size:0.72em;font-weight:500;margin-right:0.25em;text-transform:uppercase;letter-spacing:0.04em;vertical-align:middle;">Access:</span><span style="vertical-align:middle;">Open Access (Hybrid)</span></div>
-<div class="discipline-badge" title="Classified in Humanities disciplines (literature, philosophy, history, arts, etc.)"><span style="opacity:0.58;font-size:0.72em;font-weight:500;margin-right:0.25em;text-transform:uppercase;letter-spacing:0.04em;vertical-align:middle;">Field:</span><span style="vertical-align:middle;">Humanities</span></div>
-<div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
-</div>
-<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
-<div><strong>Author(s):</strong> Mark Pollard</div>
-<div><strong>Publisher:</strong> Leuven University Press</div>
-<div><strong>Publication year:</strong> 2018</div>
-<div><strong>DOI:</strong> <a href="https://doi.org/10.11116/9789461662668" target="_blank">10.11116/9789461662668</a></div>
-</div>
-</div>
-</div>
-<div class="cover-wrap">
-<div style="width: 110px; height: 155px; background: #f3f4f6; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; text-align: center; color: #9ca3af; font-size: 0.85rem; font-weight: 500; border: 1px dashed #d1d5db; box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05);">
-                        No Cover <br/> Available
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> 
+                                
+                                    Mark Pollard
+                                
+                            </div>
+                        
+                            
+                            <div><strong>Series:</strong> 
+                                Studies in Archaeological Sciences
+                                
+                                
+                            </div>
+                            
+                        
+                            
+                            
+                        
+                            <div><strong>Publisher:</strong> 
+                                
+                                    Leuven University Press
+                                
+                            </div>
+                        
+                            <div><strong>Publication year:</strong> 
+                                
+                                    2018
+                                
+                            </div>
+                        
+                            <div><strong>DOI:</strong> 
+                                <a href="https://doi.org/10.11116/9789461662668" target="_blank">
+                                    10.11116/9789461662668
+                                </a>
+                            </div>
+                        </div>
                     </div>
-</div>
-</div>
-</header>
-<div class="stats-strip no-print">
-<div class="stats-strip-item">
-<div class="stats-strip-num">58</div>
-<div class="stats-strip-label">Total Citations</div>
-<div class="stats-strip-badge">🏆 Top 10% Cited</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num">0</div>
-<div class="stats-strip-label">Online Mentions</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num">0</div>
-<div class="stats-strip-label">Downloads</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Hybrid</div>
-<div class="stats-strip-label">Open Access Status</div>
-</div>
-</div>
+                </div>
+                
+                
+                <div class="cover-wrap">
+                    
+                    <div class="cover-fallback" aria-label="Cover unavailable">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                            <path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3V4z"></path>
+                            <path d="M8 20h11"></path>
+                            <path d="M8 8h7M8 12h7"></path>
+                        </svg>
+                        <div class="cover-fallback-title">Cover pending</div>
+                        <div class="cover-fallback-sub">Image not yet available</div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </header>
 
-<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
-<div class="sticky-nav-inner">
-<a href="#sec-hero">Overview</a>
-<a href="#sec-story">Story</a>
-<a href="#sec-impact">Impact</a>
-<a href="#sec-roles">Roles</a>
-<a href="#sec-access">Access</a>
-<a href="#sec-attention">Attention</a>
-<a href="#sec-reader">Reader</a>
-<a href="#sec-citing">Who's Citing</a>
-<a href="#sec-teaching">Teaching</a>
-<a href="#sec-contributors">Contributors</a>
-<a href="#sec-operas">OPERAS</a>
-<a href="#sec-citations">All Citations</a>
-</div>
-</nav>
+        <!-- Sticky nav -->
+        <nav aria-label="Page sections" class="sticky-nav no-print">
+            <div class="sticky-nav-inner">
+                <a href="#sec-hero">Overview</a>
+                <a href="#sec-story">Story</a>
+                <a href="#sec-impact">Impact</a>
+                <a href="#sec-roles">Roles</a>
+                <a href="#sec-access">Access</a>
+                <a href="#sec-citing">Who's Citing</a>
+                <a href="#sec-mentions">Mentions</a>
+            </div>
+        </nav>
 
-<section class="card" id="sec-story">
-<h2><span>The Story So Far</span></h2>
-<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">"Beyond Provenance: New Approaches to Interpreting the Chemistry of Archaeological Copper Alloys" is a notable scholarly output published by Leuven University Press in 2018. Although it currently has no recorded citations, its scholarly uptake is indicated by its presence on platforms such as Amazon and Goodreads, suggesting a stable commercial linkage.</p>
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">"Beyond Provenance: New Approaches to Interpreting the Chemistry of Archaeological Copper Alloys" has established a substantial scholarly footprint, evidenced by its significant citation count of 59. The perceived strength of the work, coupled with its availability on platforms like Amazon and Goodreads, indicates a noteworthy level of commercial linkage, suggesting that it has garnered interest both within academic circles and outside them.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">"Beyond Provenance" provides a fresh perspective on the intricate chemistry of archaeological copper alloys, delving into new methodologies for understanding their provenance and use in historical contexts. Published in 2018 by Leuven University Press, this work reflects a commitment to advancing knowledge in materials science and archaeology, aligning with contemporary scholarly inquiry. Despite having no citations recorded through OpenAlex, the book's inferred scholarly uptake, evidenced by its presence on commercial platforms like Amazon and Goodreads, highlights a substantial interest among academic and non-academic audiences alike.</p>
-<p class="story-text">While the work has not gained traction in terms of online mentions across forums such as Wikipedia or Reddit, its absence of active discourse does not detract from its value as a scholarly contribution. The lack of community engagement might suggest a functional niche appeal, characteristic of specialized research that often resonates within select academic circles. Nevertheless, the book’s utility in understanding copper alloys marks a specific contribution to the field, potentially serving as a reference point for future studies.</p>
-<p class="story-text">The work stands out as a foundational research output focusing on archaeological material analysis. This attention to copper alloys is critical for interpreting historical technological advancements and trade dynamics. As scholars continue to explore the implications of material culture through chemical analysis, works like "Beyond Provenance" pave the way for interdisciplinary research and dialogue.</p>
-<p class="story-text">In conclusion, "Beyond Provenance" exemplifies the significant threads of connection between material science and the study of history. Although it shows minimal immediate impact offline, the work's strong commercial linkage suggests an underlying value yet to be fully realized in broader scientific discourse. As the academic community continues to evolve, the methodologies herein may yet find their way into more prominent discussions, providing necessary insights into the interpretation of archaeological finds.</p></div>
-</section>
-<section class="card" id="sec-impact">
-<h2><span>Impact metrics</span></h2>
+<p class="story-text">Published in 2018 by Leuven University Press, "Beyond Provenance" explores innovative dimensions in the study of archaeological copper alloys. This work is particularly valuable, as it draws on a combination of interdisciplinary approaches that reflect the complexities of cultural heritage and materials science. With a citation count of 59, it is clear that this scholarly output is not only respected but also serves as a vital resource for ongoing research within the field.</p>
+<p class="story-text">The commercial linkage associated with the book, evidenced by listings on platforms like Amazon and Goodreads, suggests that it has reached audiences beyond academia. This aspect highlights its relevance to broader societal discussions surrounding heritage and archaeology, emphasizing the importance of accessible scholarship in enhancing public understanding of material culture.</p>
+<p class="story-text">Although there are no indications of community discussions on platforms such as Reddit or Wikipedia, the substantial number of citations serves as a surrogate measure of engagement within the scholarly community. The work's insights are actively contributing to further research and discourse, underscoring the authors' commitment to addressing nuanced questions in the analysis of copper alloys.</p>
+<p class="story-text">As the field of archaeological chemistry continues to evolve, the methodologies and frameworks presented in "Beyond Provenance" stand out as foundational elements for future studies. The high citation count reinforces the work's significance, making it an important reference point for scholars looking to expand on its themes of provenance and materiality in archaeological contexts.</p></div>
+        </section>
+        
 
-<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">58</div><div class="im-label">Total Citations</div></div><div class="im-spark"><svg height="36" style="display:block;overflow:visible;" viewbox="0 0 120 36" width="120" xmlns="http://www.w3.org/2000/svg"><path d="M0.0,28.2 L17.1,13.6 L34.3,2.0 L51.4,2.0 L68.6,7.8 L85.7,7.8 L102.9,19.5 L120.0,28.2 L120.0,36.0 L0,36.0 Z" fill="#dbeafe" opacity="0.6"></path><polyline fill="none" points="0.0,28.2 17.1,13.6 34.3,2.0 51.4,2.0 68.6,7.8 85.7,7.8 102.9,19.5 120.0,28.2" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline></svg><div class="im-spark-range">2019–2026</div></div></div><div class="im-top-badge">🏆 Top 10% Cited</div></div><div class="im-card"><div class="im-num">0</div><div class="im-label">Online Mentions</div></div><a class="im-card im-card-dl" href="#operas-metrics-card"><div class="im-card-top"><div><div class="im-num">0</div><div class="im-label">Downloads (OAPEN)</div></div><div id="dl-sparkline-container"></div></div><div class="im-card-hint">📊 View full timeline ↓</div></a></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-slate" href="#sec-teaching">📚 WorldCat</a><a class="sig-pill sig-indigo" href="#sec-teaching">🎓 Course syllabus</a><a class="sig-pill sig-blue" href="#sec-citing">🌍 33 countries</a><a class="sig-pill sig-blue" href="#operas-metrics-card">📊 OPERAS downloads</a></div></div></div></section>
-<section class="card" id="sec-roles">
-<h2><span>Inferred roles</span></h2>
-<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#065f46;">🏛 Practical &amp; Real-World</div><div class="roles-row"><span class="role-pill role-pill-practical" style="opacity:1;" data-tip="Present on Amazon, Goodreads, or in patents — commercial or consumer crossover."><span class="role-dot" style="background:#10b981;"></span>Commercial linkage<span class="role-strength" style="background:#dcfce7;color:#166534;">Strong</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#1d4ed8;">🎓 Academic &amp; Scientific</div><div class="roles-row"><span class="role-pill role-pill-academic" style="opacity:0.9;" data-tip="Foundational building block cited heavily in core academic journals and monographs."><span class="role-dot" style="background:#3b82f6;"></span>Scholarly uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Moderate</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
+        
 
-</section>
-<div class="grid-2" id="sec-access">
-<section class="card" id="sec-access" style="margin-bottom:0;">
-<h2 style="margin-top:0;"><span>Access</span> <span class="badge" style="background:#f3f4f6; color:#4b5563;">Availability</span></h2>
-<ul class="metric-list" style="line-height: 1.8;">
-<li><strong>DOI:</strong> <a href="https://doi.org/10.11116/9789461662668" style="word-break: break-all;" target="_blank">https://doi.org/10.11116/9789461662668</a></li>
-<li><strong>OA status:</strong> 
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+            <div class="im-wrapper">
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">59</div>
+                                <div class="im-label">Total Citations</div>
+                                
+                                <div class="im-top-badge">⭐ Top 10% Cited</div>
+                                
+                            </div>
+                            
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]"
+                                        data-values="[2, 7, 11, 11, 9, 9, 5, 3]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2019–2026</div>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+                    
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+                    
+                    
+                    <!-- scite (only when references exist) -->
+                    
+                </div>
+
+                
+                
+                
+                
+                
+                <div class="muted" style="margin-top:.7rem; font-size:.8rem;">
+                    Some signals aren’t recorded for this volume yet (online mentions, scite citation context) — these typically accrue after publication.
+                </div>
+                
+
+                
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="https://www.worldcat.org/search?q=bn:9789461662668" target="_blank" style="text-decoration:none;">📚 WorldCat · 2</a>
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <span class="sig-pill sig-green" title="Open access: Hybrid">
+                            <svg class="sig-oa-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="5" y="11" width="14" height="10" rx="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 9.5-2.2"/>
+                                <path d="M16.5 4.8V11"/>
+                            </svg>
+                            Hybrid
+                        </span>
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 15 countries</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="card">
+            <h2><span>Book Series Benchmarking Context</span> <span class="badge" style="background:#fef3c7; color:#b45309;">Competitive Analytics</span></h2>
+            <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">
+                Contextualizing this volume's relative performance alongside peers published inside <strong>Studies in Archaeological Sciences</strong>.
+            </p>
+            
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Publication Title</th>
+                        <th>Year</th>
+                        <th>Author / Editor</th>
+                        <th style="text-align:right;" data-tip="Citations recorded by OpenAlex.">Citations</th>
+                        <th style="text-align:right;" data-tip="Downloads aggregated via OAPEN / OPERAS Metrics.">Downloads</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: #f0fdf4; font-weight: 600;">
+                        <td>Beyond Provenance: New Approaches to Interpreting the Chemistry of Archaeological Copper Alloys <br><span class="muted" style="color:#166534;">[This Volume]</span></td>
+                        <td>2018</td>
+                        <td>Mark Pollard</td>
+                        <td style="text-align:right;">59</td>
+                        <td style="text-align:right;">—</td>
+                    </tr>
+                    
+                        <tr><td colspan="5" class="muted" style="text-align:center; padding:1rem;">No sibling volumes detected on index registries.</td></tr>
+                    
+                </tbody>
+            </table>
+            <p class="muted" style="margin-top:0.75rem; font-size:0.78rem;">
+                Metrics shown where available per source; “—” indicates a metric isn't yet tracked for that volume. More metrics will be added as the benchmarking database grows.
+            </p>
+        </section>
+        
+
+        
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+            
+            
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="0.9"
+                              data-tip="Scholarly uptake — heuristic signal (score 0.75)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Scholarly uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Moderate</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#065f46">🏛 Practical & Real-World</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-practical" data-opacity="1"
+                              data-tip="Commercial linkage — heuristic signal (score 0.90)">
+                            <span class="role-dot" data-bg="#10b981"></span>
+                            Commercial linkage
+                            <span class="role-strength" data-bg="#dcfce7" data-color="#166534">Strong</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2 style="margin-top:0;"><span>Access</span> <span class="badge" style="background:#f3f4f6; color:#4b5563;">Availability</span></h2>
+                <ul class="metric-list" style="line-height: 1.8;">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.11116/9789461662668" target="_blank" style="word-break: break-all;">https://doi.org/10.11116/9789461662668</a></li>
+                    
+                    <li><strong>OA status:</strong> 
                         
                             Hybrid
                         
                     </li>
-<li><strong>Landing page:</strong> <a href="https://chooser.crossref.org/?doi=10.11116%2F9789461662668" style="word-break: break-all;" target="_blank">https://chooser.crossref.org/?doi=10.11116%2F9789461662668</a></li>
-<li><strong>DOAB:</strong> <a href="https://directory.doabooks.org/handle/20.500.12854/117040" style="word-break: break-all;" target="_blank">https://directory.doabooks.org/handle/20.500.12854/117040</a></li>
-</ul>
-</section>
-<section class="card" id="sec-attention" style="margin-bottom:0;">
-<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
-<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
-                        This work has <strong>0</strong> recorded events globally
-                        
+
+                    
+                        <li><strong>Landing page:</strong> <a href="https://chooser.crossref.org/?doi=10.11116%2F9789461662668" target="_blank" style="word-break: break-all;">https://chooser.crossref.org/?doi=10.11116%2F9789461662668</a></li>
+                    
+                    
+                    
+                    
+                    
+                        <li><strong>DOAB:</strong> <a href="https://directory.doabooks.org/handle/20.500.12854/117040" target="_blank" style="word-break: break-all;">https://directory.doabooks.org/handle/20.500.12854/117040</a></li>
+                    
+                </ul>
+            </section>
+
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.6rem;">
+                        This work has <strong>0</strong> recorded events globally.
                     </p>
-<p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
-<em>(See specific sources and examples in the Online Mentions section below).</em>
-</p>
-</section>
-</div>
-<div class="grid-2" id="sec-reader" style="align-items: start;">
-<section class="card" id="sec-reader" style="margin-bottom:0;">
-<h2><span>Reader reception</span> <span class="badge">Books</span></h2>
-<ul class="metric-list">
-<li style="margin-bottom: 0.6rem;">
-<strong>Google Books:</strong> <a href="" style="color: #2563eb; text-decoration: none;" target="_blank">View listing ↗</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Commercial:</strong>
-<a href="https://www.amazon.com/s?k=9789461662668" style="color: #2563eb; text-decoration: none;" target="_blank">Amazon</a>
+                    
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+                <ul class="metric-list">
+                    
+                    
+
+                    
+                    
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Commercial:</strong> 
+                        <a href="https://www.amazon.com/s?k=9789461662668" target="_blank" style="color: #2563eb; text-decoration: none;">Amazon</a>
                          · 
-                        <a href="https://www.goodreads.com/search?q=9789461662668" style="color: #2563eb; text-decoration: none;" target="_blank">Goodreads</a>
-</li>
-</ul>
-</section>
-<section class="card" id="sec-scite" style="margin-bottom:0;">
-<h2><span>Citation context</span> <span class="badge">scite</span></h2>
-<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
-<li><strong>Total:</strong> 0</li>
-<li><strong>Supporting:</strong> 0</li>
-<li><strong>Mentioning:</strong> 0</li>
-<li><strong>Contradicting:</strong> 0</li>
-</ul>
-</section>
-</div>
-<section class="card" id="sec-citing">
-<h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
-                Analysis of the 58 most recent citing works. 
-                <br/>
-<strong>103.6%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>4.5</strong> times itself.
+                        <a href="https://www.goodreads.com/search?q=9789461662668" target="_blank" style="color: #2563eb; text-decoration: none;">Goodreads</a>
+                    </li>
+                    
+                    
+                </ul>
+            </section>
+
+                <section class="card" style="margin-bottom:0;">
+                    <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                    
+                    <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                        <li><strong>Total:</strong> 0</li>
+                        <li><strong>Supporting:</strong> 0</li>
+                        <li><strong>Mentioning:</strong> 0</li>
+                        <li><strong>Contradicting:</strong> 0</li>
+                    </ul>
+                    
+                </section>
+
+                
+                
+                
+
+            
+        </div>
+
+        
+        
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>59</strong> citing works.
+                        <strong>35.2%</strong> come from the Top 10 institutions.
+                        Median citing paper cited <strong>5.0</strong> times itself.
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (52)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (3)</span><span class="tag tag-soft" style="font-size:.75rem;">dataset (2)</span>
+                        <span class="tag" style="font-size:.75rem;">Archaeological and Anthropological Sciences</span><span class="tag" style="font-size:.75rem;">Heritage Science</span><span class="tag" style="font-size:.75rem;">Journal of Archaeological Science</span>
+                    </div>
+                </div>
             </div>
 
-<div class="cite-analysis-always"><div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
-<ul class="metric-list">
-<li><strong>Citing work types:</strong>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (51)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (3)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">dataset (2)</span>
-</li>
-<li><strong>Top citing venues:</strong>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Heritage Science (7)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Archaeological and Anthropological Sciences (7)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Journal of Archaeological Science (5)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Archaeometry (5)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Journal of Archaeological Science Reports (3)</span>
-</li>
-<li><strong>Top citing concepts:</strong>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Bronze (19)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Archaeology (13)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Bronze Age (11)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">China (10)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Geology (7)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Provenance (5)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Ancient history (5)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Period (music) (5)</span>
-</li>
-<li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
-<strong>Citation timeline:</strong>
-<div style="height: 180px; width: 100%; margin-top: 0.5rem;">
-<canvas data-labels="[2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]" data-values="[2, 7, 11, 11, 9, 9, 5, 2]" id="citationChart">
-</canvas>
-</div>
-</li>
-</ul>
-</div></div>
-<div class="cite-tabs">
-<button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
-<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
-<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-ppl')">👤 Top Citers</button>
-</div>
-<div class="cite-tab-pane active" id="cite-geo"><div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
-<div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">China (25)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (19)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (6)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Spain (6)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Lithuania (4)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">France (4)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Denmark (2)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Belgium (2)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Portugal (2)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">India (2)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Netherlands (1)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Italy (1)</span>
-</div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
-<div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (50)</span>
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (24)</span>
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Archive (20)</span>
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (11)</span>
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Government (11)</span>
-</div>
-</div></div>
-<div class="cite-tab-pane" id="cite-inst"><div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
-<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
-<li style="margin-bottom: 0.4rem;">
-<strong>University of Oxford</strong>
-<a class="orcid-badge" href="https://ror.org/052gg0110" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(10)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>University of Chinese Academy of Sciences</strong>
-<a class="orcid-badge" href="https://ror.org/05qbk4x57" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(8)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Oxford Archaeology</strong>
-<a class="orcid-badge" href="https://ror.org/045f8jj92" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(7)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>British Museum</strong>
-<a class="orcid-badge" href="https://ror.org/00pbh0a34" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(6)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Sichuan University</strong>
-<a class="orcid-badge" href="https://ror.org/011ashp19" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(5)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Peking University</strong>
-<a class="orcid-badge" href="https://ror.org/02v51f717" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(5)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Institute of Vertebrate Paleontology and Paleoanthropology</strong>
-<a class="orcid-badge" href="https://ror.org/0000pmw59" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(5)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Chinese Academy of Sciences</strong>
-<a class="orcid-badge" href="https://ror.org/034t30j35" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Instituto de Historia</strong>
-<a class="orcid-badge" href="https://ror.org/01jsenc11" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Klaipėda University</strong>
-<a class="orcid-badge" href="https://ror.org/027sdcz20" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-</ul>
-</div></div>
-<div class="cite-tab-pane" id="cite-ppl"><div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
-<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
-<li style="margin-bottom: 0.4rem;">
-<strong>Ruiliang Liu</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0001-7745-5933" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(7)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Wugan Luo</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-4893-8853" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(7)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>A. Mark Pollard</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0003-3757-4668" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(6)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Ding Ma</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-3341-2998" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(6)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Haichao Li</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-2715-5075" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(5)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Jianfeng Cui</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-6067-4416" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Jun Yang</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0001-6740-4358" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Ignacio Montero Ruíz</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0003-0897-1031" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Yongbin Yu</strong>
-<a class="orcid-badge" href="https://openalex.org/A5049466104" target="_blank">Profile</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Audronė Bliujienė</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0001-5526-3885" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-</ul>
-</div></div>
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]"
+                    data-values="[2, 7, 11, 11, 9, 9, 5, 3]">
+                </canvas>
+            </div>
 
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
 
-</section>
-<div class="grid-2">
-</div>
-<section class="card" id="sec-teaching">
-<h2><span>Teaching, Practice &amp; Library Adoption</span></h2>
-<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem;">
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (25)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (19)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Germany (7)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Spain (6)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">France (4)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Lithuania (4)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Denmark (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Belgium (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Portugal (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">India (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Netherlands (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Italy (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">MN (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">South Korea (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Russia (1)</span>
+                    
+                </div>
+                
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (51)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (24)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Archive (20)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (16)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (11)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Healthcare (4)</span>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Klaipėda University</strong>
+                        <a href="https://ror.org/027sdcz20" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Oxford</strong>
+                        <a href="https://ror.org/052gg0110" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.9436936936936937)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Chinese Academy of Sciences</strong>
+                        <a href="https://ror.org/05qbk4x57" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.887171954563259)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Peking University</strong>
+                        <a href="https://ror.org/02v51f717" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Oxford Archaeology</strong>
+                        <a href="https://ror.org/045f8jj92" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.1666666666666665)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Sichuan University</strong>
+                        <a href="https://ror.org/011ashp19" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.833333333333333)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>British Museum</strong>
+                        <a href="https://ror.org/00pbh0a34" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.5833333333333333)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Instituto de Historia</strong>
+                        <a href="https://ror.org/01jsenc11" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.1428571428571428)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of the Basque Country</strong>
+                        <a href="https://ror.org/000xsnr85" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Cranfield University</strong>
+                        <a href="https://ror.org/05cncd958" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.0)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ruiliang Liu</strong>
+                        <a href="https://orcid.org/0000-0001-7745-5933" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(7)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Wugan Luo</strong>
+                        <a href="https://orcid.org/0000-0002-4893-8853" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(7)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>A. Mark Pollard</strong>
+                        <a href="https://orcid.org/0000-0003-3757-4668" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ding Ma</strong>
+                        <a href="https://orcid.org/0000-0002-3341-2998" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Haichao Li</strong>
+                        <a href="https://orcid.org/0000-0002-2715-5075" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jianfeng Cui</strong>
+                        <a href="https://orcid.org/0000-0002-6067-4416" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jun Yang</strong>
+                        <a href="https://orcid.org/0000-0001-6740-4358" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ignacio Montero Ruíz</strong>
+                        <a href="https://orcid.org/0000-0003-0897-1031" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Yongbin Yu</strong>
+                        <a href="https://openalex.org/A5049466104" target="_blank" class="orcid-badge">Profile</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Audronė Bliujienė</strong>
+                        <a href="https://orcid.org/0000-0001-5526-3885" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+        </div>
+
+        
+        <section class="card">
+            <h2><span>Teaching, Practice & Library Adoption</span></h2>
+            <div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem;">
                 Evidence of structured teaching use, reading lists, and library availability.
             </div>
-<div class="grid-2" style="align-items: start;">
-<div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+            
+            <div class="grid-2" style="align-items: start;">
+                
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
                         OpenCourseWare Mentions <span class="badge" style="float: right;">Google Custom Search</span>
-</h3>
-<ul style="padding-left: 0; list-style: none; margin: 0;">
-<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
-<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
-<a href="https://ocw.mit.edu/courses/24-914-language-variation-and-change-spring-2019/8a6470ebb4308a0cc874f73fe24d7b61_CelexLemmasInTranscription-DISC.txt" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
-                                        file 954 kB
-                                    </a>
-<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
-                                        ocw.mit.edu
-                                    </span>
-</div>
-<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
-                                    "...... archaeological #k7lQ_IkP 1931 2 archaeologically #k7lQ_Ik@lI 1932 71 ... beyond bIjQnd 3840 2588 beyond bIjQnd 3844 2 Bhutan but#n 3847 183 bias b2@s ......"
-                                </div>
-</li>
-</ul>
-</div>
-<div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
-                        Library &amp; Community Access <span class="badge" style="float: right; background: #f0fdf4; color: #166534;">Open Library</span>
-</h3>
-<ul class="metric-list" style="margin-top: 0;">
-<li style="margin-bottom: 0.8rem;">
-<strong>Institutional Availability:</strong>
-<div style="margin-top: 0.4rem;">
-<a class="tag" href="https://www.worldcat.org/search?q=bn:9789461662668" style="background:#e5f2ff; color:#1d4ed8; font-weight: 600; text-decoration: none;" target="_blank">
+                    </h3>
+                    
+                        <p class="muted" style="font-size: 0.85rem; font-style: italic;">No verified course syllabi found in open university repositories.</p>
+                    
+                    
+
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        Library & Community Access <span class="badge" style="float: right; background: #f0fdf4; color: #166534;">Open Library</span>
+                    </h3>
+                    
+                    <ul class="metric-list" style="margin-top: 0;">
+                        
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Community Reach:</strong> 
+                            <a href="https://openlibrary.org/search?title=Beyond%20Provenance%3A%20New%20Approaches%20to%20Interpreting%20the%20Chemistry%20of%20Archaeological%20Copper%20Alloys" target="_blank" class="badge" style="background:#fef2f2; color:#dc2626; text-decoration: none; display: inline-flex; align-items: center; gap: 0.2rem;">
+                                2 logs/editions ↗
+                            </a>
+                            <div class="muted" style="font-size: 0.8rem; margin-top: 0.2rem;">Tracked across Open Library community reading lists and catalog editions.</div>
+                        </li>
+                        
+                        
+                        
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Institutional Availability:</strong>
+                            <div style="margin-top: 0.4rem;">
+                                <a href="https://www.worldcat.org/search?q=bn:9789461662668" target="_blank" class="tag" style="background:#e5f2ff; color:#1d4ed8; font-weight: 600; text-decoration: none;">
                                     Search Global Libraries (WorldCat) ↗
                                 </a>
-</div>
-</li>
-<li style="margin-bottom: 0.8rem;">
-<strong>Library Classification Subjects:</strong>
-<div style="display:flex; flex-wrap:wrap; gap:0.3rem; margin-top: 0.4rem;">
-<span class="tag tag-soft" style="font-size: 0.75rem;">Archaeological science, methodology &amp; techniques</span>
-<span class="tag tag-soft" style="font-size: 0.75rem;">Copper alloys</span>
-<span class="tag tag-soft" style="font-size: 0.75rem;">Archaeology, methodology</span>
-<span class="tag tag-soft" style="font-size: 0.75rem;">Archaeological chemistry</span>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</section>
-<div class="grid-2" id="sec-contributors">
-<section class="card" id="sec-contributors" style="margin-bottom:0;">
-<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">1 author · 0 institutions</div>
-<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
-<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
-<li style="margin-bottom: 0.4rem;">
-<strong>Mark Pollard</strong>
-<span class="badge">First</span>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-</li>
-</ul>
-</section>
-<section class="card" id="sec-concepts" style="margin-bottom:0;">
-<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">9 specific concepts identified.</div>
-<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Precious metal</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Chemistry</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Archaeology</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">German</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Art</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">History</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Ancient history</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Metal</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Organic chemistry</span>
-</div>
-</section>
-</div>
-<section class="card" id="operas-metrics-card">
-<h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
-<div id="metrics-widget"></div>
-<script id="operas-metrics-config" type="application/json">{"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "tab1", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN \u00b7 downloads", "works": ["info:doi:10.11116/9789461662668"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}}, "graphs": [{"id": "g1", "type": "line", "title": "Downloads over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}</script>
-<script async="" src="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js"></script>
-</section>
-<section class="card no-print" id="sec-citations">
-<h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">Displaying 56 most recent citing works</div>
-<div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
-<table>
-<thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
-<tbody id="cit-tbody"></tbody>
-</table>
-</div>
-<div class="cit-pagination">
-<span class="cit-pagination-info" id="cit-info">Loading…</span>
-<div class="cit-pagination-btns">
-<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
-<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
-<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
-</div>
-</div>
+                            </div>
+                        </li>
+                        
 
-</section>
-<footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
-<div style="display: flex; flex-direction: column; gap: 0.4rem;">
-<div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
-<svg fill="none" height="16" stroke="currentColor" style="color: #9ca3af;" viewbox="0 0 24 24" width="16"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<span>Understanding our metrics: <a href="https://www.openscience.works/about.html" style="color: #2563eb; text-decoration: none; font-weight: 600;" target="_blank">Read the Methodology &amp; Legend ↗</a></span>
-</div>
-<div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-03-31T12:20:18+00:00
+                        
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Library Classification Subjects:</strong>
+                            <div style="display:flex; flex-wrap:wrap; gap:0.3rem; margin-top: 0.4rem;">
+                                
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Archaeological science, methodology & techniques</span>
+                                
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Copper alloys</span>
+                                
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Archaeology, methodology</span>
+                                
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Archaeological chemistry</span>
+                                
+                            </div>
+                        </li>
+                        
+
+                        
+
+                        
+                    </ul>
                 </div>
-</div>
-</footer>
-</div>
-<script>
-        (function() {
-            const canvas = document.getElementById('citationChart');
-            if(!canvas) return;
-            const labels = JSON.parse(canvas.getAttribute('data-labels'));
-            const data = JSON.parse(canvas.getAttribute('data-values'));
-            const ctx = canvas.getContext('2d');
-            new Chart(ctx, {
+                
+            </div>
+        </section>
+        
+        
+        
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 author · 0 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Mark Pollard</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        
+                    </li>
+                    
+                </ul>
+
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>9 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Precious metal</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Chemistry</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Archaeology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">German</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Art</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">History</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Ancient history</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Metal</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Organic chemistry</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
+
+
+        
+        <section class="card" id="operas-metrics-card">
+            <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
+            <div id="metrics-widget"></div>
+            <script type="application/json" id="operas-metrics-config">{"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "tab1", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN \u00b7 downloads", "works": ["info:doi:10.11116/9789461662668"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}}, "graphs": [{"id": "g1", "type": "line", "title": "Downloads over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}</script>
+            <script src="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js" async></script>
+        </section>
+
+
+
+        
+        
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.75rem;"
+                 data-total="57">
+                57 citing works (most recent first)
+            </div>
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Production and circulation of bronzes among the regional states in the Western Zhou Dynasty</td>
+                        <td>Journal of Archaeological Science</td>
+                        <td><a href="https://doi.org/10.1016/j.jas.2020.105191" target="_blank" style="word-break: break-all;">10.1016/j.jas.2020.105191</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>IBERLID: A lead isotope database and tool for metal provenance and ore deposits research</td>
+                        <td>Ore Geology Reviews</td>
+                        <td><a href="https://doi.org/10.1016/j.oregeorev.2021.104279" target="_blank" style="word-break: break-all;">10.1016/j.oregeorev.2021.104279</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Shifting networks and mixing metals: Changing metal trade routes to Scandinavia correlate with Neolithic and Bronze Age transformations</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0252376" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0252376</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Panlongcheng, Zhengzhou and the Movement of Metal in Early Bronze Age China</td>
+                        <td>Journal of World Prehistory</td>
+                        <td><a href="https://doi.org/10.1007/s10963-019-09137-w" target="_blank" style="word-break: break-all;">10.1007/s10963-019-09137-w</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Social hierarchy and the choice of metal recycling at Anyang, the last capital of Bronze Age Shang China</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-020-75920-x" target="_blank" style="word-break: break-all;">10.1038/s41598-020-75920-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Copper alloy production in the Warring States period (475-221 BCE) of the Shu state: a metallurgical study on copper alloy objects of the Baishoulu cemetery in Chengdu, China</td>
+                        <td>Heritage Science</td>
+                        <td><a href="https://doi.org/10.1186/s40494-020-00412-0" target="_blank" style="word-break: break-all;">10.1186/s40494-020-00412-0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>A ‘match–no match‘ numerical and graphical kernel density approach to interpreting lead isotope signatures of ancient artefacts</td>
+                        <td>Archaeometry</td>
+                        <td><a href="https://doi.org/10.1111/arcm.12552" target="_blank" style="word-break: break-all;">10.1111/arcm.12552</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Sources of Western Zhou lead: a new understanding of Chinese Bronze Age supply networks</td>
+                        <td>Archaeological and Anthropological Sciences</td>
+                        <td><a href="https://doi.org/10.1007/s12520-021-01279-3" target="_blank" style="word-break: break-all;">10.1007/s12520-021-01279-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A glimpse into the monetary supply network of the Tang empire in the seventh century CE: archaeometallurgical study of Kaiyuan Tongbao coins from Lafu Queke cemetery, Xinjiang, Northwest China</td>
+                        <td>Heritage Science</td>
+                        <td><a href="https://doi.org/10.1186/s40494-022-00809-z" target="_blank" style="word-break: break-all;">10.1186/s40494-022-00809-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Squeezing mind out of metal: combining textual evidence with scientific data for metallurgy in early dynastic China</td>
+                        <td>Archaeological and Anthropological Sciences</td>
+                        <td><a href="https://doi.org/10.1007/s12520-022-01578-3" target="_blank" style="word-break: break-all;">10.1007/s12520-022-01578-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>How the metal supply for mintage shifts in the transforming monetary system of the Han Empire: Archaeometallurgical study of the Wuzhu coins from the Guanghuacun cemetery, Chengdu, Southwest China</td>
+                        <td>Journal of Archaeological Science Reports</td>
+                        <td><a href="https://doi.org/10.1016/j.jasrep.2023.104341" target="_blank" style="word-break: break-all;">10.1016/j.jasrep.2023.104341</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Exactly how free? Constrained choices and product ranges of medieval copper-alloy objects found between the Meuse and Loire rivers (9th–16th centuries CE)</td>
+                        <td>Heritage Science</td>
+                        <td><a href="https://doi.org/10.1186/s40494-023-00915-6" target="_blank" style="word-break: break-all;">10.1186/s40494-023-00915-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Heterogeneous metal sources for mintage in the early Han empire, second century BCE: archaeometallurgical study of the Banliang coins from the Guanghuacun cemetery, Chengdu, Southwest China</td>
+                        <td>Archaeological and Anthropological Sciences</td>
+                        <td><a href="https://doi.org/10.1007/s12520-024-01949-y" target="_blank" style="word-break: break-all;">10.1007/s12520-024-01949-y</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>The production of bronze weapons in the Chu state: a case study of bronze arrowheads excavated from the Yuwan cemetery in Hubei, China</td>
+                        <td>Archaeological and Anthropological Sciences</td>
+                        <td><a href="https://doi.org/10.1007/s12520-024-02061-x" target="_blank" style="word-break: break-all;">10.1007/s12520-024-02061-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>50 years of bronze provenance studies: A perspective from China</td>
+                        <td>Journal of Archaeological Science</td>
+                        <td><a href="https://doi.org/10.1016/j.jas.2025.106272" target="_blank" style="word-break: break-all;">10.1016/j.jas.2025.106272</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Metallurgical and corrosion characterization of warring states period bronzes excavated from Pujiang, Chengdu, China</td>
+                        <td>Heritage Science</td>
+                        <td><a href="https://doi.org/10.1186/s40494-022-00674-w" target="_blank" style="word-break: break-all;">10.1186/s40494-022-00674-w</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Chemical studies of Chinese coinage II: from Qin to Yuan (221 BCE–1368 CE)</td>
+                        <td>Heritage Science</td>
+                        <td><a href="https://doi.org/10.1186/s40494-021-00530-3" target="_blank" style="word-break: break-all;">10.1186/s40494-021-00530-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Multivariate Approach to Investigate Metallurgical Technology: The Case of the Chinese Ritual Bronzes</td>
+                        <td>Journal of Archaeological Method and Theory</td>
+                        <td><a href="https://doi.org/10.1007/s10816-022-09572-8" target="_blank" style="word-break: break-all;">10.1007/s10816-022-09572-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Bronze Alloying Practice in ancient China - Evidence from Pre-Qin Coin Analyses</td>
+                        <td>Journal of Archaeological Science</td>
+                        <td><a href="https://doi.org/10.1016/j.jas.2020.105322" target="_blank" style="word-break: break-all;">10.1016/j.jas.2020.105322</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Technological rejection in regions of early gold innovation revealed by geospatial analysis</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-021-98514-7" target="_blank" style="word-break: break-all;">10.1038/s41598-021-98514-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Mapping archaeometallurgical data of the Iberian Copper Age: Different ways to look at a big picture</td>
+                        <td>Journal of Archaeological Science</td>
+                        <td><a href="https://doi.org/10.1016/j.jas.2020.105165" target="_blank" style="word-break: break-all;">10.1016/j.jas.2020.105165</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Copper Supply Networks in the Early Bronze Age of South-east Spain: New Evidence from the Lower Segura Valley</td>
+                        <td>Interdisciplinaria Archaeologica - Natural Sciences in Archaeology</td>
+                        <td><a href="https://doi.org/10.24916/iansa.2022.2.3" target="_blank" style="word-break: break-all;">10.24916/iansa.2022.2.3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Islamic copper-based metal artefacts from the Garb al-Andalus. A multidisciplinary approach on the Alcáçova of Mārtulah (Mértola, South of Portugal)</td>
+                        <td>Heritage Science</td>
+                        <td><a href="https://doi.org/10.1186/s40494-022-00736-z" target="_blank" style="word-break: break-all;">10.1186/s40494-022-00736-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Revisiting the addition of tin and lead in Chinese bronzes: A statistical perspective</td>
+                        <td>Advances in Archaeomaterials</td>
+                        <td><a href="https://doi.org/10.1016/j.aia.2023.05.001" target="_blank" style="word-break: break-all;">10.1016/j.aia.2023.05.001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Beneath the Waves: Tracing Contraband Bronze Rings in Nanhai No. I Shipwreck</td>
+                        <td>Journal of Maritime Archaeology</td>
+                        <td><a href="https://doi.org/10.1007/s11457-024-09390-x" target="_blank" style="word-break: break-all;">10.1007/s11457-024-09390-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Metallurgical technology and resources mobility in the El Argar culture: An archaeometallurgical study at Laderas del Castillo (Callosa de Segura, Alicante)</td>
+                        <td>Archaeological and Anthropological Sciences</td>
+                        <td><a href="https://doi.org/10.1007/s12520-024-02109-y" target="_blank" style="word-break: break-all;">10.1007/s12520-024-02109-y</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Tracing glass production in urban centers along the Silk Roads in the early Islamic period</td>
+                        <td>iScience</td>
+                        <td><a href="https://doi.org/10.1016/j.isci.2025.111845" target="_blank" style="word-break: break-all;">10.1016/j.isci.2025.111845</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Sourcing celadons with EDXRF and LA-ICP-MS from the Xunyang city burial complex, 202 B.C–907 A.D.</td>
+                        <td>Heritage Science</td>
+                        <td><a href="https://doi.org/10.1186/s40494-023-00871-1" target="_blank" style="word-break: break-all;">10.1186/s40494-023-00871-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Early Iron Age metal trade networks of the workshop of Cabeço Redondo (southern Portugal). Tracing the origin of lead of ternary bronzes</td>
+                        <td>Journal of Archaeological Science Reports</td>
+                        <td><a href="https://doi.org/10.1016/j.jasrep.2025.105045" target="_blank" style="word-break: break-all;">10.1016/j.jasrep.2025.105045</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>An integrated approach between neutron diffraction and elemental imaging through neutron resonance transmission imaging: preliminary results on Chinese bimetallic sword fragments</td>
+                        <td>Journal of Analytical Atomic Spectrometry</td>
+                        <td><a href="https://doi.org/10.1039/c9ja00300b" target="_blank" style="word-break: break-all;">10.1039/c9ja00300b</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>A new perspective towards the debate on highly radiogenic lead in Chinese archaeometallurgy</td>
+                        <td>Archaeological and Anthropological Sciences</td>
+                        <td><a href="https://doi.org/10.1007/s12520-021-01280-w" target="_blank" style="word-break: break-all;">10.1007/s12520-021-01280-w</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Archaeometallurgical research on the bronze coins of Song Dynasty (960–1279AD) from Nanhai No. Ⅰ shipwreck, the south China sea</td>
+                        <td>Journal of Archaeological Science Reports</td>
+                        <td><a href="https://doi.org/10.1016/j.jasrep.2022.103581" target="_blank" style="word-break: break-all;">10.1016/j.jasrep.2022.103581</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Essential changes in the composition of copper alloys reveal technological diversities in the transition from the Earliest Iron Age to the Early Roman period in Lithuania</td>
+                        <td>Archaeologia BALTICA</td>
+                        <td><a href="https://doi.org/10.15181/ab.v28i0.2281" target="_blank" style="word-break: break-all;">10.15181/ab.v28i0.2281</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Estudio de un conjunto de anillos votivos del santuario periurbano de Tútugi (Cerro del Castillo, Galera, Granada)</td>
+                        <td>Archivo Español de Arqueología</td>
+                        <td><a href="https://doi.org/10.3989/aespa.097.024.716" target="_blank" style="word-break: break-all;">10.3989/aespa.097.024.716</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Evaluating accuracy and inter-laboratory reproducibility of the compositional analysis of ancient bronzes</td>
+                        <td>Advances in Archaeomaterials</td>
+                        <td><a href="https://doi.org/10.1016/j.aia.2023.100027" target="_blank" style="word-break: break-all;">10.1016/j.aia.2023.100027</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Late Bronze Age archaeometallurgical hoards surveys from France (1350 to 800 BCE)</td>
+                        <td>Materials and Manufacturing Processes</td>
+                        <td><a href="https://doi.org/10.1080/10426914.2020.1734618" target="_blank" style="word-break: break-all;">10.1080/10426914.2020.1734618</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>The implication of the technology and chronology reflected in the metal assemblage from the middle‐class Xiongnu burials at Tamiryn Ulaan Khoshuu, Mongolia</td>
+                        <td>Archaeometry</td>
+                        <td><a href="https://doi.org/10.1111/arcm.12942" target="_blank" style="word-break: break-all;">10.1111/arcm.12942</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>High-precision chronology and scientific analysis of Panchi mirrors reveal the state policy impact in early Imperial China</td>
+                        <td>Journal of Archaeological Science</td>
+                        <td><a href="https://doi.org/10.1016/j.jas.2025.106310" target="_blank" style="word-break: break-all;">10.1016/j.jas.2025.106310</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Tracing copper mixing in the atlantic bronze age: A bayesian interpretation of lead isotope data</td>
+                        <td>Archaeological and Anthropological Sciences</td>
+                        <td><a href="https://doi.org/10.1007/s12520-025-02327-y" target="_blank" style="word-break: break-all;">10.1007/s12520-025-02327-y</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Probable Sources of Metal of the Sosnovo-Mazinsky Hoard of the Late Bronze Age by the Lead Isotopic Composition</td>
+                        <td>Nanotechnologies in Russia</td>
+                        <td><a href="https://doi.org/10.1134/s1995078020050134" target="_blank" style="word-break: break-all;">10.1134/s1995078020050134</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>1600 BC: Fårdrup and Valsømagle-Type Axes and the First Evidence of Southern Alpine Metal</td>
+                        <td>Acta Archaeologica</td>
+                        <td><a href="https://doi.org/10.1163/16000390-20210036" target="_blank" style="word-break: break-all;">10.1163/16000390-20210036</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Analysis of cultural heritage reference materials by portable and energy dispersive X-ray fluorescence measuring methods : results reliability assessment</td>
+                        <td>Archaeologia BALTICA</td>
+                        <td><a href="https://doi.org/10.15181/ab.v30i0.2562" target="_blank" style="word-break: break-all;">10.15181/ab.v30i0.2562</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Determination of PGE and Re in archaeological bronzes: New ways to determine the origin of archaeological copper alloys*</td>
+                        <td>Archaeometry</td>
+                        <td><a href="https://doi.org/10.1111/arcm.12669" target="_blank" style="word-break: break-all;">10.1111/arcm.12669</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Aprovechamiento e intercambio de metal: datos analíticos de piezas metálicas de los yacimientos protohistóricos tarraconenses</td>
+                        <td>Pyrenae</td>
+                        <td><a href="https://doi.org/10.1344/pyrenae2021.vol52num2.1" target="_blank" style="word-break: break-all;">10.1344/pyrenae2021.vol52num2.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>THE FOURTH BASTION OF SEVASTOPOL: ARCHAEOLOGICAL DISCOVERY OF 2019</td>
+                        <td>Краткие сообщения Института археологии (КСИА)</td>
+                        <td><a href="https://doi.org/10.25681/iaras.0130-2620.262.79-94" target="_blank" style="word-break: break-all;">10.25681/iaras.0130-2620.262.79-94</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Mapping Metal Rich Roman Cyprus: The Case for Object-Centred Approaches</td>
+                        <td>Études et Travaux</td>
+                        <td><a href="https://doi.org/10.12775/etudtrav.34.008" target="_blank" style="word-break: break-all;">10.12775/etudtrav.34.008</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Sourcing the Accompanying Celadons from the Burial Complex of Ancient Xunyang City Site using EDXRF and LA-ICP-MS</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-2142331/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-2142331/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>New evidence of metal exchange in Southeast Asia during the Iron Age: based on the scientific analysis of excavated bronze in Vilabouly, Laos</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-2897838/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-2897838/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Chemometric Discrimination of Ancient Philippine Swivel Cannons Based on Compositional Analysis Using Portable X-Ray Fluorescence Spectrometry</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.4575835" target="_blank" style="word-break: break-all;">10.2139/ssrn.4575835</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Additional file 1 of A glimpse into the monetary supply network of the Tang empire in the seventh century CE: archaeometallurgical study of Kaiyuan Tongbao coins from Lafu Queke cemetery, Xinjiang, Northwest China</td>
+                        <td>Figshare</td>
+                        <td><a href="https://doi.org/10.6084/m9.figshare.21443605" target="_blank" style="word-break: break-all;">10.6084/m9.figshare.21443605</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Additional file 1 of Sourcing celadons with EDXRF and LA-ICP-MS from the Xunyang city burial complex, 202 B.C–907 A.D.</td>
+                        <td>Open MIND</td>
+                        <td><a href="https://doi.org/10.6084/m9.figshare.22613678" target="_blank" style="word-break: break-all;">10.6084/m9.figshare.22613678</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Noves dades arqueometal·lúrgiques de la fase del Bronze final i primera Edat del Ferro a la cova de Can Sadurní (Begues, Baix Llobregat)</td>
+                        <td>Pyrenae</td>
+                        <td><a href="https://doi.org/10.1344/pyrenae2024.vol55num2.1" target="_blank" style="word-break: break-all;">10.1344/pyrenae2024.vol55num2.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Lead isotopes in the context of the provenance of copper alloys and mutability processes in Lithuania from the second half of the 1st century to the 13th century AD</td>
+                        <td>Archaeologia BALTICA</td>
+                        <td><a href="https://doi.org/10.15181/ab.v31i0.2667" target="_blank" style="word-break: break-all;">10.15181/ab.v31i0.2667</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Study on the glazed tiles of the Wenjiangduo site, Tibet, China (7th–9th centuries CE)</td>
+                        <td>Archaeometry</td>
+                        <td><a href="https://doi.org/10.1111/arcm.13061" target="_blank" style="word-break: break-all;">10.1111/arcm.13061</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Evidence from Liao dynasty tombs: an empirical analysis of song greenish-white porcelain trade</td>
+                        <td>npj Heritage Science</td>
+                        <td><a href="https://doi.org/10.1038/s40494-026-02328-7" target="_blank" style="word-break: break-all;">10.1038/s40494-026-02328-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>A Hoard of Cu‐Alloy Viking Age Penannular Brooches From a Wetland Site in Lithuania—Explored With Portable X‐Ray Fluorescence Spectrometry</td>
+                        <td>Archaeometry</td>
+                        <td><a href="https://doi.org/10.1111/arcm.70124" target="_blank" style="word-break: break-all;">10.1111/arcm.70124</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Treating death as life: an archaeometallurgical analysis of coffin ornaments of the Eastern Han dynasty excavated from the Maba cemetery, Chengdu, Sichuan, China</td>
+                        <td>Archaeological and Anthropological Sciences</td>
+                        <td><a href="https://doi.org/10.1007/s12520-026-02493-7" target="_blank" style="word-break: break-all;">10.1007/s12520-026-02493-7</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-06-02T14:35:27+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
                 type: 'bar',
                 data: {
                     labels: labels,
@@ -686,9 +1614,97 @@
                     }
                 }
             });
-        })();
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' citing works (most recent first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
     </script>
-<style>
+    <style>
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(5px); }
             to { opacity: 1; transform: translateY(0); }
@@ -712,7 +1728,8 @@
             color: #111827;
         }
     </style>
-<script>
+    
+    <script>
         function openSocialTab(evt, tabId) {
             // Hide all tab content
             var contents = document.getElementsByClassName("soc-tab-content");
@@ -729,210 +1746,6 @@
             evt.currentTarget.classList.add("soc-tab-active");
         }
     </script>
-
-<script>
-(function() {
-  var DATA = [{"year": "2021", "title": "Shifting networks and mixing metals: Changing metal trade routes to Scandinavia correlate with Neolithic and Bronze Age transformations", "venue": "PLoS ONE", "doi": "10.1371/journal.pone.0252376", "doi_url": "https://doi.org/10.1371/journal.pone.0252376"}, {"year": "2020", "title": "Production and circulation of bronzes among the regional states in the Western Zhou Dynasty", "venue": "Journal of Archaeological Science", "doi": "10.1016/j.jas.2020.105191", "doi_url": "https://doi.org/10.1016/j.jas.2020.105191"}, {"year": "2021", "title": "IBERLID: A lead isotope database and tool for metal provenance and ore deposits research", "venue": "Ore Geology Reviews", "doi": "10.1016/j.oregeorev.2021.104279", "doi_url": "https://doi.org/10.1016/j.oregeorev.2021.104279"}, {"year": "2019", "title": "Panlongcheng, Zhengzhou and the Movement of Metal in Early Bronze Age China", "venue": "Journal of World Prehistory", "doi": "10.1007/s10963-019-09137-w", "doi_url": "https://doi.org/10.1007/s10963-019-09137-w"}, {"year": "2020", "title": "Social hierarchy and the choice of metal recycling at Anyang, the last capital of Bronze Age Shang China", "venue": "Scientific Reports", "doi": "10.1038/s41598-020-75920-x", "doi_url": "https://doi.org/10.1038/s41598-020-75920-x"}, {"year": "2020", "title": "Copper alloy production in the Warring States period (475-221 BCE) of the Shu state: a metallurgical study on copper alloy objects of the Baishoulu cemetery in Chengdu, China", "venue": "Heritage Science", "doi": "10.1186/s40494-020-00412-0", "doi_url": "https://doi.org/10.1186/s40494-020-00412-0"}, {"year": "2020", "title": "A ‘match–no match‘ numerical and graphical kernel density approach to interpreting lead isotope signatures of ancient artefacts", "venue": "Archaeometry", "doi": "10.1111/arcm.12552", "doi_url": "https://doi.org/10.1111/arcm.12552"}, {"year": "2021", "title": "Sources of Western Zhou lead: a new understanding of Chinese Bronze Age supply networks", "venue": "Archaeological and Anthropological Sciences", "doi": "10.1007/s12520-021-01279-3", "doi_url": "https://doi.org/10.1007/s12520-021-01279-3"}, {"year": "2022", "title": "A Multivariate Approach to Investigate Metallurgical Technology: The Case of the Chinese Ritual Bronzes", "venue": "Journal of Archaeological Method and Theory", "doi": "10.1007/s10816-022-09572-8", "doi_url": "https://doi.org/10.1007/s10816-022-09572-8"}, {"year": "2022", "title": "A glimpse into the monetary supply network of the Tang empire in the seventh century CE: archaeometallurgical study of Kaiyuan Tongbao coins from Lafu Queke cemetery, Xinjiang, Northwest China", "venue": "Heritage Science", "doi": "10.1186/s40494-022-00809-z", "doi_url": "https://doi.org/10.1186/s40494-022-00809-z"}, {"year": "2022", "title": "Squeezing mind out of metal: combining textual evidence with scientific data for metallurgy in early dynastic China", "venue": "Archaeological and Anthropological Sciences", "doi": "10.1007/s12520-022-01578-3", "doi_url": "https://doi.org/10.1007/s12520-022-01578-3"}, {"year": "2024", "title": "Heterogeneous metal sources for mintage in the early Han empire, second century BCE: archaeometallurgical study of the Banliang coins from the Guanghuacun cemetery, Chengdu, Southwest China", "venue": "Archaeological and Anthropological Sciences", "doi": "10.1007/s12520-024-01949-y", "doi_url": "https://doi.org/10.1007/s12520-024-01949-y"}, {"year": "2024", "title": "The production of bronze weapons in the Chu state: a case study of bronze arrowheads excavated from the Yuwan cemetery in Hubei, China", "venue": "Archaeological and Anthropological Sciences", "doi": "10.1007/s12520-024-02061-x", "doi_url": "https://doi.org/10.1007/s12520-024-02061-x"}, {"year": "2023", "title": "How the metal supply for mintage shifts in the transforming monetary system of the Han Empire: Archaeometallurgical study of the Wuzhu coins from the Guanghuacun cemetery, Chengdu, Southwest China", "venue": "Journal of Archaeological Science Reports", "doi": "10.1016/j.jasrep.2023.104341", "doi_url": "https://doi.org/10.1016/j.jasrep.2023.104341"}, {"year": "2024", "title": "Metallurgical technology and resources mobility in the El Argar culture: An archaeometallurgical study at Laderas del Castillo (Callosa de Segura, Alicante)", "venue": "Archaeological and Anthropological Sciences", "doi": "10.1007/s12520-024-02109-y", "doi_url": "https://doi.org/10.1007/s12520-024-02109-y"}, {"year": "2025", "title": "50 years of bronze provenance studies: A perspective from China", "venue": "Journal of Archaeological Science", "doi": "10.1016/j.jas.2025.106272", "doi_url": "https://doi.org/10.1016/j.jas.2025.106272"}, {"year": "2023", "title": "Sourcing celadons with EDXRF and LA-ICP-MS from the Xunyang city burial complex, 202 B.C–907 A.D.", "venue": "Heritage Science", "doi": "10.1186/s40494-023-00871-1", "doi_url": "https://doi.org/10.1186/s40494-023-00871-1"}, {"year": "2022", "title": "Metallurgical and corrosion characterization of warring states period bronzes excavated from Pujiang, Chengdu, China", "venue": "Heritage Science", "doi": "10.1186/s40494-022-00674-w", "doi_url": "https://doi.org/10.1186/s40494-022-00674-w"}, {"year": "2021", "title": "Bronze Alloying Practice in ancient China - Evidence from Pre-Qin Coin Analyses", "venue": "Journal of Archaeological Science", "doi": "10.1016/j.jas.2020.105322", "doi_url": "https://doi.org/10.1016/j.jas.2020.105322"}, {"year": "2020", "title": "Mapping archaeometallurgical data of the Iberian Copper Age: Different ways to look at a big picture", "venue": "Journal of Archaeological Science", "doi": "10.1016/j.jas.2020.105165", "doi_url": "https://doi.org/10.1016/j.jas.2020.105165"}, {"year": "2022", "title": "Copper Supply Networks in the Early Bronze Age of South-east Spain: New Evidence from the Lower Segura Valley", "venue": "Interdisciplinaria Archaeologica - Natural Sciences in Archaeology", "doi": "10.24916/iansa.2022.2.3", "doi_url": "https://doi.org/10.24916/iansa.2022.2.3"}, {"year": "2024", "title": "Beneath the Waves: Tracing Contraband Bronze Rings in Nanhai No. I Shipwreck", "venue": "Journal of Maritime Archaeology", "doi": "10.1007/s11457-024-09390-x", "doi_url": "https://doi.org/10.1007/s11457-024-09390-x"}, {"year": "2019", "title": "An integrated approach between neutron diffraction and elemental imaging through neutron resonance transmission imaging: preliminary results on Chinese bimetallic sword fragments", "venue": "Journal of Analytical Atomic Spectrometry", "doi": "10.1039/c9ja00300b", "doi_url": "https://doi.org/10.1039/c9ja00300b"}, {"year": "2021", "title": "Chemical studies of Chinese coinage II: from Qin to Yuan (221 BCE–1368 CE)", "venue": "Heritage Science", "doi": "10.1186/s40494-021-00530-3", "doi_url": "https://doi.org/10.1186/s40494-021-00530-3"}, {"year": "2021", "title": "Technological rejection in regions of early gold innovation revealed by geospatial analysis", "venue": "Scientific Reports", "doi": "10.1038/s41598-021-98514-7", "doi_url": "https://doi.org/10.1038/s41598-021-98514-7"}, {"year": "2021", "title": "A new perspective towards the debate on highly radiogenic lead in Chinese archaeometallurgy", "venue": "Archaeological and Anthropological Sciences", "doi": "10.1007/s12520-021-01280-w", "doi_url": "https://doi.org/10.1007/s12520-021-01280-w"}, {"year": "2022", "title": "Archaeometallurgical research on the bronze coins of Song Dynasty (960–1279AD) from Nanhai No. Ⅰ shipwreck, the south China sea", "venue": "Journal of Archaeological Science Reports", "doi": "10.1016/j.jasrep.2022.103581", "doi_url": "https://doi.org/10.1016/j.jasrep.2022.103581"}, {"year": "2021", "title": "Essential changes in the composition of copper alloys reveal technological diversities in the transition from the Earliest Iron Age to the Early Roman period in Lithuania", "venue": "Archaeologia BALTICA", "doi": "10.15181/ab.v28i0.2281", "doi_url": "https://doi.org/10.15181/ab.v28i0.2281"}, {"year": "2022", "title": "Islamic copper-based metal artefacts from the Garb al-Andalus. A multidisciplinary approach on the Alcáçova of Mārtulah (Mértola, South of Portugal)", "venue": "Heritage Science", "doi": "10.1186/s40494-022-00736-z", "doi_url": "https://doi.org/10.1186/s40494-022-00736-z"}, {"year": "2022", "title": "Revisiting the addition of tin and lead in Chinese bronzes: A statistical perspective", "venue": "Advances in Archaeomaterials", "doi": "10.1016/j.aia.2023.05.001", "doi_url": "https://doi.org/10.1016/j.aia.2023.05.001"}, {"year": "2023", "title": "Exactly how free? Constrained choices and product ranges of medieval copper-alloy objects found between the Meuse and Loire rivers (9th–16th centuries CE)", "venue": "Heritage Science", "doi": "10.1186/s40494-023-00915-6", "doi_url": "https://doi.org/10.1186/s40494-023-00915-6"}, {"year": "2024", "title": "Estudio de un conjunto de anillos votivos del santuario periurbano de Tútugi (Cerro del Castillo, Galera, Granada)", "venue": "Archivo Español de Arqueología", "doi": "10.3989/aespa.097.024.716", "doi_url": "https://doi.org/10.3989/aespa.097.024.716"}, {"year": "2025", "title": "Tracing glass production in urban centers along the Silk Roads in the early Islamic period", "venue": "iScience", "doi": "10.1016/j.isci.2025.111845", "doi_url": "https://doi.org/10.1016/j.isci.2025.111845"}, {"year": "2023", "title": "Evaluating accuracy and inter-laboratory reproducibility of the compositional analysis of ancient bronzes", "venue": "Advances in Archaeomaterials", "doi": "10.1016/j.aia.2023.100027", "doi_url": "https://doi.org/10.1016/j.aia.2023.100027"}, {"year": "2020", "title": "Late Bronze Age archaeometallurgical hoards surveys from France (1350 to 800 BCE)", "venue": "Materials and Manufacturing Processes", "doi": "10.1080/10426914.2020.1734618", "doi_url": "https://doi.org/10.1080/10426914.2020.1734618"}, {"year": "2024", "title": "The implication of the technology and chronology reflected in the metal assemblage from the middle‐class Xiongnu burials at Tamiryn Ulaan Khoshuu, Mongolia", "venue": "Archaeometry", "doi": "10.1111/arcm.12942", "doi_url": "https://doi.org/10.1111/arcm.12942"}, {"year": "2025", "title": "High-precision chronology and scientific analysis of Panchi mirrors reveal the state policy impact in early Imperial China", "venue": "Journal of Archaeological Science", "doi": "10.1016/j.jas.2025.106310", "doi_url": "https://doi.org/10.1016/j.jas.2025.106310"}, {"year": "2025", "title": "Tracing copper mixing in the atlantic bronze age: A bayesian interpretation of lead isotope data", "venue": "Archaeological and Anthropological Sciences", "doi": "10.1007/s12520-025-02327-y", "doi_url": "https://doi.org/10.1007/s12520-025-02327-y"}, {"year": "2020", "title": "Probable Sources of Metal of the Sosnovo-Mazinsky Hoard of the Late Bronze Age by the Lead Isotopic Composition", "venue": "Nanotechnologies in Russia", "doi": "10.1134/s1995078020050134", "doi_url": "https://doi.org/10.1134/s1995078020050134"}, {"year": "2023", "title": "1600 BC: Fårdrup and Valsømagle-Type Axes and the First Evidence of Southern Alpine Metal", "venue": "Acta Archaeologica", "doi": "10.1163/16000390-20210036", "doi_url": "https://doi.org/10.1163/16000390-20210036"}, {"year": "2023", "title": "Analysis of cultural heritage reference materials by portable and energy dispersive X-ray fluorescence measuring methods : results reliability assessment", "venue": "Archaeologia BALTICA", "doi": "10.15181/ab.v30i0.2562", "doi_url": "https://doi.org/10.15181/ab.v30i0.2562"}, {"year": "2021", "title": "Determination of PGE and Re in archaeological bronzes: New ways to determine the origin of archaeological copper alloys*", "venue": "Archaeometry", "doi": "10.1111/arcm.12669", "doi_url": "https://doi.org/10.1111/arcm.12669"}, {"year": "2021", "title": "Aprovechamiento e intercambio de metal: datos analíticos de piezas metálicas de los yacimientos protohistóricos tarraconenses", "venue": "Pyrenae", "doi": "10.1344/pyrenae2021.vol52num2.1", "doi_url": "https://doi.org/10.1344/pyrenae2021.vol52num2.1"}, {"year": "2021", "title": "THE FOURTH BASTION OF SEVASTOPOL: ARCHAEOLOGICAL DISCOVERY OF 2019", "venue": "Краткие сообщения Института археологии (КСИА)", "doi": "10.25681/iaras.0130-2620.262.79-94", "doi_url": "https://doi.org/10.25681/iaras.0130-2620.262.79-94"}, {"year": "2022", "title": "Mapping Metal Rich Roman Cyprus: The Case for Object-Centred Approaches", "venue": "Études et Travaux", "doi": "10.12775/etudtrav.34.008", "doi_url": "https://doi.org/10.12775/etudtrav.34.008"}, {"year": "2022", "title": "Sourcing the Accompanying Celadons from the Burial Complex of Ancient Xunyang City Site using EDXRF and LA-ICP-MS", "venue": "Research Square", "doi": "10.21203/rs.3.rs-2142331/v1", "doi_url": "https://doi.org/10.21203/rs.3.rs-2142331/v1"}, {"year": "2023", "title": "New evidence of metal exchange in Southeast Asia during the Iron Age: based on the scientific analysis of excavated bronze in Vilabouly, Laos", "venue": "Research Square", "doi": "10.21203/rs.3.rs-2897838/v1", "doi_url": "https://doi.org/10.21203/rs.3.rs-2897838/v1"}, {"year": "2023", "title": "Chemometric Discrimination of Ancient Philippine Swivel Cannons Based on Compositional Analysis Using Portable X-Ray Fluorescence Spectrometry", "venue": "SSRN Electronic Journal", "doi": "10.2139/ssrn.4575835", "doi_url": "https://doi.org/10.2139/ssrn.4575835"}, {"year": "2022", "title": "Additional file 1 of A glimpse into the monetary supply network of the Tang empire in the seventh century CE: archaeometallurgical study of Kaiyuan Tongbao coins from Lafu Queke cemetery, Xinjiang, Northwest China", "venue": "Figshare", "doi": "10.6084/m9.figshare.21443605", "doi_url": "https://doi.org/10.6084/m9.figshare.21443605"}, {"year": "2023", "title": "Additional file 1 of Sourcing celadons with EDXRF and LA-ICP-MS from the Xunyang city burial complex, 202 B.C–907 A.D.", "venue": "Figshare", "doi": "10.6084/m9.figshare.22613678", "doi_url": "https://doi.org/10.6084/m9.figshare.22613678"}, {"year": "2024", "title": "Noves dades arqueometal·lúrgiques de la fase del Bronze final i primera Edat del Ferro a la cova de Can Sadurní (Begues, Baix Llobregat)", "venue": "Pyrenae", "doi": "10.1344/pyrenae2024.vol55num2.1", "doi_url": "https://doi.org/10.1344/pyrenae2024.vol55num2.1"}, {"year": "2024", "title": "Lead isotopes in the context of the provenance of copper alloys and mutability processes in Lithuania from the second half of the 1st century to the 13th century AD", "venue": "Archaeologia BALTICA", "doi": "10.15181/ab.v31i0.2667", "doi_url": "https://doi.org/10.15181/ab.v31i0.2667"}, {"year": "2024", "title": "Study on the glazed tiles of the Wenjiangduo site, Tibet, China (7th–9th centuries CE)", "venue": "Archaeometry", "doi": "10.1111/arcm.13061", "doi_url": "https://doi.org/10.1111/arcm.13061"}, {"year": "2025", "title": "Early Iron Age metal trade networks of the workshop of Cabeço Redondo (southern Portugal). Tracing the origin of lead of ternary bronzes", "venue": "Journal of Archaeological Science Reports", "doi": "10.1016/j.jasrep.2025.105045", "doi_url": "https://doi.org/10.1016/j.jasrep.2025.105045"}, {"year": "2026", "title": "Evidence from Liao dynasty tombs: an empirical analysis of song greenish-white porcelain trade", "venue": "npj Heritage Science", "doi": "10.1038/s40494-026-02328-7", "doi_url": "https://doi.org/10.1038/s40494-026-02328-7"}, {"year": "2026", "title": "A Hoard of Cu‐Alloy Viking Age Penannular Brooches From a Wetland Site in Lithuania—Explored With Portable X‐Ray Fluorescence Spectrometry", "venue": "Archaeometry", "doi": "10.1111/arcm.70124", "doi_url": "https://doi.org/10.1111/arcm.70124"}];
-  var PER  = 25;
-  var _p   = 1;
-  var _tot = Math.ceil(DATA.length / PER);
-
-  function esc(s) {
-    return String(s)
-      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
-      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-
-  function render(page) {
-    _p = page;
-    var tbody  = document.getElementById('cit-tbody');
-    var info   = document.getElementById('cit-info');
-    var prev   = document.getElementById('cit-prev');
-    var next   = document.getElementById('cit-next');
-    var nums   = document.getElementById('cit-page-nums');
-    if (!tbody) return;
-
-    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
-    for (var i=s; i<e; i++) {
-      var r = DATA[i];
-      var d = r.doi_url
-        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
-        : esc(r.doi||'');
-      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
-    }
-    tbody.innerHTML = rows;
-    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
-    if (prev) prev.disabled = (page===1);
-    if (next) next.disabled = (page===_tot);
-
-    if (nums) {
-      var shown = [], html = '', prev2 = null;
-      for (var p=1; p<=_tot; p++) {
-        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
-      }
-      for (var i=0; i<shown.length; i++) {
-        var p=shown[i];
-        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
-        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
-        prev2=p;
-      }
-      nums.innerHTML = html;
-    }
-  }
-
-  window.citGoTo = function(p) {
-    if(p<1||p>_tot) return;
-    render(p);
-    var sec=document.getElementById('sec-citations');
-    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
-  };
-  window.citPrev = function() { window.citGoTo(_p-1); };
-  window.citNext = function() { window.citGoTo(_p+1); };
-
-  if(document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded',function(){render(1);});
-  else render(1);
-})();
-</script>
-
-<script>
-function citeSwitchTab(btn, tabId) {
-  var card = btn.closest('section, .card') || btn.parentElement;
-  // Find tab buttons and panes in surrounding context
-  var tabsEl = btn.closest('.cite-tabs');
-  if (!tabsEl) return;
-  var parent = tabsEl.parentElement;
-  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
-  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
-  btn.classList.add('active');
-  var pane = document.getElementById(tabId);
-  if (pane) pane.classList.add('active');
-}
-</script>
-
-<script>
-(function() {
-  function init() {
-    document.querySelectorAll('section.card, .card').forEach(function(card) {
-      // Skip the hero header
-      if (card.tagName === 'HEADER') return;
-      var h2 = null;
-      for (var i=0; i<card.children.length; i++) {
-        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
-      }
-      if (!h2) return;
-
-      card.classList.add('card-collapsible');
-
-      // Add chevron span
-      var chev = document.createElement('span');
-      chev.className = 'chevron';
-      chev.setAttribute('aria-hidden','true');
-      chev.textContent = '▾';
-      h2.appendChild(chev);
-
-      // Wrap siblings after h2
-      var wrap = document.createElement('div');
-      wrap.className = 'card-body-wrap';
-      var kids = Array.from(card.children), after = false;
-      kids.forEach(function(c) {
-        if (c===h2){after=true;return;}
-        if (after) wrap.appendChild(c);
-      });
-      card.appendChild(wrap);
-      // CSS handles open state with max-height:9999px — safe for async-loaded content
-
-      h2.addEventListener('click', function() {
-        card.classList.toggle('is-collapsed');
-      });
-    });
-  }
-  if (document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded', init);
-  else init();
-})();
-</script>
-
-<script>
-(function() {
-  function init() {
-    var nav = document.getElementById('sticky-nav');
-    if (!nav) return;
-    var links = Array.from(nav.querySelectorAll('a'));
-    var targets = links.map(function(l) {
-      var id = l.getAttribute('href').slice(1);
-      return {el: document.getElementById(id), link: l};
-    }).filter(function(t){return t.el;});
-
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          links.forEach(function(l){l.classList.remove('snav-active');});
-          var match = links.find(function(l){
-            return l.getAttribute('href')==='#'+e.target.id;
-          });
-          if (match) match.classList.add('snav-active');
-        }
-      });
-    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
-
-    targets.forEach(function(t){obs.observe(t.el);});
-  }
-  if (document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded', init);
-  else init();
-})();
-</script>
-
-<script>
-(function() {
-  var doi = "info:doi:10.11116/9789461662668";
-  // Real API: metrics-api.operas-eu.org/events (confirmed via network inspection)
-  var url = 'https://metrics-api.operas-eu.org/events?filter=work_uri:' + doi;
-  var container = document.getElementById('dl-sparkline-container');
-  if (!container) return;
-
-  fetch(url, {headers: {Accept: 'application/json'}})
-    .then(function(r) { return r.json(); })
-    .then(function(resp) {
-      var data = resp.data;
-      if (!data || !data.length) return;
-
-      // Aggregate values by year-month (timestamp = "2020-05-01T00:00:00+0000")
-      var byMonth = {};
-      data.forEach(function(d) {
-        var ym = (d.timestamp || '').slice(0, 7); // "YYYY-MM"
-        var v  = parseFloat(d.value || 0);
-        if (ym && v > 0) byMonth[ym] = (byMonth[ym] || 0) + v;
-      });
-      var months = Object.keys(byMonth).sort();
-      var values = months.map(function(m) { return byMonth[m]; });
-      if (values.length < 2) return;
-
-      var W = 120, H = 36, mx = Math.max.apply(null, values), n = values.length;
-      var pts = values.map(function(v, i) {
-        return (i / (n - 1) * W).toFixed(1) + ',' + (H - (v / mx) * (H - 4) - 2).toFixed(1);
-      });
-      var area = 'M' + pts[0] + ' ' + pts.slice(1).map(function(p) { return 'L' + p; }).join(' ')
-               + ' L' + W + ',' + H + ' L0,' + H + ' Z';
-      var yr0 = months[0].slice(0, 4);
-      var yr1 = months[months.length - 1].slice(0, 4);
-
-      container.innerHTML =
-        '<div class="im-spark">' +
-        '<svg viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" ' +
-        'xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:visible;">' +
-        '<path d="' + area + '" fill="#dbeafe" opacity="0.6"/>' +
-        '<polyline points="' + pts.join(' ') + '" fill="none" stroke="#2563eb" ' +
-        'stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>' +
-        '</svg>' +
-        '<div class="im-spark-range">' + yr0 + (yr0 !== yr1 ? '–' + yr1 : '') + '</div>' +
-        '</div>';
-    })
-    .catch(function() { /* API unavailable — card still shows total */ });
-})();
-</script>
-
 <div id="role-tooltip" style="
   position:fixed;display:none;z-index:9999;
   background:#111827;color:white;padding:.5rem .75rem;
@@ -943,7 +1756,7 @@ function citeSwitchTab(btn, tabId) {
 <script>
 (function(){
   var tip = document.getElementById('role-tooltip');
-  document.querySelectorAll('.role-pill[data-tip]').forEach(function(pill){
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
     pill.addEventListener('mouseenter', function(){
       tip.textContent = pill.getAttribute('data-tip');
       tip.style.top = '-9999px'; tip.style.display = 'block';
@@ -963,6 +1776,15 @@ function citeSwitchTab(btn, tabId) {
   });
 })();
 </script>
-
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
 </body>
 </html>

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>ArticleStory - Assessing the potential of LLM-assisted annotation for corpus-based pragmatics and discourse analysis</title>
-<style>
+    <meta charset="utf-8">
+    <title>ArticleStory - Assessing the potential of LLM-assisted annotation for corpus-based pragmatics and discourse analysis</title>
+    <style>
         * { box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
         .page { max-width: 1000px; margin: auto; }
@@ -70,400 +69,762 @@
             tr { page-break-inside: avoid !important; page-break-after: auto !important; }
             thead { display: table-header-group !important; }
         }
-    
-
-/* ── UX Enhancements ── */
-
-/* Stats strip */
-.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
-  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
-.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
-.stats-strip-item:last-child{border-right:none;}
-.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
-.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
-.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
-  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
-@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
-
-/* Sticky nav */
-.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
-  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
-  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
-.sticky-nav::-webkit-scrollbar{display:none;}
-.sticky-nav-inner{display:flex;padding:0 .5rem;}
-.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
-  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
-  transition:color .15s,border-color .15s;white-space:nowrap;}
-.sticky-nav a:hover{color:#111827;}
-.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
-@media print{.sticky-nav,.stats-strip{display:none!important;}}
-
-/* Collapsible cards */
-.card-collapsible > h2{
-  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
-.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
-  flex-shrink:0;transition:transform .2s;display:inline-block;}
-.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
-/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
-.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
-  transition:max-height .35s ease,opacity .28s ease;}
-.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
-
-/* Who is citing — sub-tabs */
-.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
-.cite-tabs::-webkit-scrollbar{display:none;}
-.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
-  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
-  white-space:nowrap;transition:all .15s;}
-.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
-.cite-tab-pane{display:none;}
-.cite-tab-pane.active{display:block;}
-/* cite-analysis-always: inner div already carries the border-top inline style */
-.cite-analysis-always{margin-top:1rem;}
-
-/* ── Inferred Roles ── */
-.roles-domain{margin-bottom:.85rem;}
-.roles-domain:last-of-type{margin-bottom:0;}
-.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
-  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
-.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
-
-.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
-  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
-  position:relative;transition:opacity .15s;}
-.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
-.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
-.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
-.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
-.role-pill:hover{opacity:1!important;}
-
-/* CSS tooltip for role descriptions */
-
-
-.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
-.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
-
-.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
-  padding-top:.65rem;border-top:1px solid #f3f4f6;}
-.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
-.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
-
-/* Citation pagination */
-.cit-pagination{display:flex;align-items:center;justify-content:space-between;
-  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
-.cit-pagination-info{color:#6b7280;}
-.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
-.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
-  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
-.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
-.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
-.cit-btn:disabled{opacity:.4;cursor:default;}
-
-/* ── Impact Metrics enrichment ── */
-.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
-.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
-@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
-.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
-.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
-.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
-.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
-.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
-.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
-  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
-.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
-.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
-.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
-.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
-.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
-
-.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
-.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
-.im-scite-via{font-weight:400;color:#9ca3af;}
-.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
-.im-scite-seg{height:100%;}
-.im-scite-sup{background:#22c55e;}
-.im-scite-men{background:#94a3b8;}
-.im-scite-con{background:#f87171;}
-.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
-.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
-.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
-
-.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
-.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
-.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
-.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
-  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
-.sig-pill:hover{opacity:.75;}
-.sig-red   {background:#fee2e2;color:#b91c1c;}
-.sig-slate {background:#f1f5f9;color:#475569;}
-.sig-indigo{background:#e0e7ff;color:#4338ca;}
-.sig-teal  {background:#ccfbf1;color:#0f766e;}
-.sig-amber {background:#fef3c7;color:#b45309;}
-.sig-blue  {background:#dbeafe;color:#1d4ed8;}
-
-    /* ── Site nav ──────────────────────────────────────────── */
-    .site-nav {
-      background: #fff;
-      border-bottom: 1px solid #e5e7eb;
-      padding: 0.55rem 1.5rem;
-      display: flex; align-items: center; justify-content: space-between;
-      position: sticky; top: 0; z-index: 200;
-      margin: -2rem -2rem 1.5rem -2rem;
-    }
-    .site-nav-brand {
-      display: flex; align-items: center; gap: 0.55rem;
-      text-decoration: none; color: #111827;
-      font-weight: 700; font-size: 0.95rem;
-    }
-    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
-    .brand-dot { color: #F2C94C; }
-    .site-nav-links { display: flex; gap: 0.2rem; }
-    .site-nav-links a {
-      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
-      font-size: 0.85rem; font-weight: 500;
-      text-decoration: none; color: #6b7280;
-      transition: background 0.15s, color 0.15s;
-    }
-    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
-
-</style>
-<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-<!-- Site nav -->
-<nav class="site-nav">
-  <a class="site-nav-brand" href="index.html">
-    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
-    <span>openscience<span class="brand-dot">.</span>works</span>
-  </a>
-  <div class="site-nav-links">
-    <a href="index.html">← All stories</a>
-    <a href="about.html">About</a>
-  </div>
-</nav>
-
-<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
-<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
         Print PDF Report
     </button>
-<div class="page" id="sec-story">
-<header class="hero card" id="sec-hero">
-<div class="header-bar">
-<div style="display: flex; align-items: center; gap: 1.25rem;">
-<div class="logo-wrap"><img alt="Logo" src="articlestories-logo.png"/></div>
-<div>
-<h1 class="hero-title">Assessing the potential of LLM-assisted annotation for corpus-based pragmatics and discourse analysis</h1>
-<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
-<div><strong>Author(s):</strong> Danni Yu, Luyang Li, Hang Su, Matteo Fuoli</div>
-<div><strong>Publisher:</strong> International Journal of Corpus Linguistics</div>
-<div><strong>Publication year:</strong> 2024</div>
-<div><strong>DOI:</strong> <a href="https://doi.org/10.1075/ijcl.23087.yu" target="_blank">10.1075/ijcl.23087.yu</a></div>
-</div>
-</div>
-</div>
-</div>
-</header>
-<div class="stats-strip no-print">
-<div class="stats-strip-item">
-<div class="stats-strip-num">—</div>
-<div class="stats-strip-label">Total Citations</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num">—</div>
-<div class="stats-strip-label">Online Mentions</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num">17</div>
-<div class="stats-strip-label">scite References</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Green</div>
-<div class="stats-strip-label">Open Access Status</div>
-</div>
-</div>
+    <div class="page">
+        <header class="hero card">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo"></div>
+                    <div>
+                        <h1 class="hero-title">Assessing the potential of LLM-assisted annotation for corpus-based pragmatics and discourse analysis</h1>
+                        
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> Danni Yu, Luyang Li, Hang Su, Matteo Fuoli</div>
+                            <div><strong>Publisher:</strong> International Journal of Corpus Linguistics</div>
+                            <div><strong>Publication year:</strong> 2024</div>
+                            <div><strong>DOI:</strong> <a href="https://doi.org/10.1075/ijcl.23087.yu" target="_blank">10.1075/ijcl.23087.yu</a></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
 
-<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
-<div class="sticky-nav-inner">
-<a href="#sec-hero">Overview</a>
-<a href="#sec-story">Story</a>
-<a href="#sec-impact">Impact</a>
-<a href="#sec-roles">Roles</a>
-<a href="#sec-citing">Who's Citing</a>
-<a href="#sec-mentions">Mentions</a>
-<a href="#sec-teaching">Teaching</a>
-<a href="#sec-contributors">Contributors</a>
-<a href="#sec-funding">Funding</a>
-<a href="#sec-citations">All Citations</a>
-</div>
-</nav>
-
-<section class="card" id="sec-story">
-<h2><span>The Story So Far</span></h2>
-<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
 <p class="story-text">The article titled "Assessing the potential of LLM-assisted annotation for corpus-based pragmatics and discourse analysis," published in the International Journal of Corpus Linguistics, has garnered 61 citations, indicating its substantial academic influence.</p>
 <h3 class="story-subheading">Full narrative</h3>
 <p class="story-text">The research conducted by Danni Yu, Luyang Li, Hang Su, and Matteo Fuoli focuses on the innovative use of Large Language Model (LLM)-assisted annotation, a topic that has proven to resonate within the academic community, as evidenced by its 61 citations. This work appears prominently in leading venues such as Studies in Corpus Linguistics, where it has been cited 21 times, reflecting a strong impact on the field of corpus linguistics.</p>
 <p class="story-text">The article's insights are particularly relevant to researchers affiliated with key institutions including the University of Birmingham and Beijing Foreign Studies University, suggesting that the discourse generated by this publication has implications that extend across geographical boundaries. The collaboration among various esteemed institutions enhances its credibility and influence within the academic sphere.</p>
 <p class="story-text">In addition to its academic citations, the work's implications for corpus-based pragmatics and discourse analysis indicate a broader relevance to ongoing discussions in linguistics and artificial intelligence. The work highlights the potential for LLMs to improve annotation practices, a vital aspect of qualitative research methodologies.</p>
 <p class="story-text">Furthermore, the citation landscape reveals diverse citing work types, with 30 articles, 20 book chapters, and several preprints referencing the study. This breadth of engagement underscores the article's role in shaping contemporary research dialogues, particularly at the intersection of corpus linguistics and technology. Overall, the research represents a significant convergence of technological advancement and linguistic analysis, marking it as a pivotal contribution to the field.</p></div>
-</section>
-<section class="card" id="sec-impact">
-<h2><span>Impact metrics</span></h2>
+        </section>
+        
 
-<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">—</div><div class="im-label">Total Citations</div></div><div class="im-spark"><svg height="36" style="display:block;overflow:visible;" viewbox="0 0 120 36" width="120" xmlns="http://www.w3.org/2000/svg"><path d="M0.0,33.3 L40.0,30.7 L80.0,2.0 L120.0,30.1 L120.0,36.0 L0,36.0 Z" fill="#dbeafe" opacity="0.6"></path><polyline fill="none" points="0.0,33.3 40.0,30.7 80.0,2.0 120.0,30.1" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline></svg><div class="im-spark-range">2013–2026</div></div></div></div><div class="im-card"><div class="im-num">—</div><div class="im-label">Online Mentions</div></div><div class="im-card"><div class="im-num">17</div><div class="im-label">scite References</div></div></div></div></section>
-<section class="card" id="sec-roles">
-<h2><span>Inferred roles</span></h2>
-<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#1d4ed8;">🎓 Academic &amp; Scientific</div><div class="roles-row"><span class="role-pill role-pill-academic" style="opacity:0.9;" data-tip="Foundational building block cited heavily in core academic journals and monographs."><span class="role-dot" style="background:#3b82f6;"></span>Scholarly uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Moderate</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#065f46;">🏛 Practical &amp; Real-World</div><div class="roles-row"><span class="role-pill role-pill-practical" style="opacity:0.9;" data-tip="Cited in government reports, WHO/NGO briefs, or UN policy documents."><span class="role-dot" style="background:#10b981;"></span>Sustainability &amp; policy relevance<span class="role-strength" style="background:#dcfce7;color:#166534;">Moderate</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#b45309;">📢 Public Engagement &amp; Media</div><div class="roles-row"><span class="role-pill role-pill-public" style="opacity:0.75;" data-tip="Heavy social-platform engagement on Reddit, Bluesky, or Mastodon — the work has sparked ongoing community conversation."><span class="role-dot" style="background:#f59e0b;"></span>Active public discourse<span class="role-strength" style="background:#fef3c7;color:#92400e;">Emerging</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
+        <section class="card">
+            <h2><span>Impact metrics</span></h2>
+            <ul class="metric-list">
+                <li><strong>Citations (OpenAlex):</strong> 61</li>
+                
+                <li><strong>Online mentions (Crossref Event Data):</strong> 1</li>
+                <li><strong>Citation context (scite):</strong> 17</li>
+                
+            </ul>
+        </section>
 
-</section>
-<div class="grid-2">
-<section class="card" style="margin-bottom:0;">
-<h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
-<ul class="metric-list">
-<li><strong>DOI:</strong> <a href="https://doi.org/10.1075/ijcl.23087.yu" target="_blank">10.1075/ijcl.23087.yu</a></li>
-<li><strong>OA status:</strong> Green</li>
-<li><strong>Landing page:</strong> <a href="https://doi.org/10.1075/ijcl.23087.yu" style="word-break: break-all;" target="_blank">https://doi.org/10.1075/ijcl.23087.yu</a></li>
-<li><strong>Best OA PDF:</strong> <a href="https://pure-oai.bham.ac.uk/ws/files/214684856/Yu-Li-Su-Fuoli_Assessing_the_potential_of_LLM-assisted_annotation_for_corpus-based_pragmatics_and_discourse_analysis.pdf" style="word-break: break-all;" target="_blank">https://pure-oai.bham.ac.uk/ws/files/214684856/Yu-Li-Su-Fuoli_Assessing_the_potential_of_LLM-assisted_annotation_for_corpus-based_pragmatics_and_discourse_analysis.pdf</a></li>
-</ul>
-</section>
-<section class="card" style="margin-bottom:0;">
-<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
-<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+        
+        <section class="card">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.8rem;">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scholarly uptake (0.71)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sustainability & policy relevance (0.55)</span>
+                
+                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Active public discourse (0.42)</span>
+                
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1075/ijcl.23087.yu" target="_blank">10.1075/ijcl.23087.yu</a></li>
+                    <li><strong>OA status:</strong> Green</li>
+                    
+                    <li><strong>Landing page:</strong> <a href="https://doi.org/10.1075/ijcl.23087.yu" target="_blank" style="word-break: break-all;">https://doi.org/10.1075/ijcl.23087.yu</a></li>
+                    
+                    <li><strong>Best OA PDF:</strong> <a href="https://pure-oai.bham.ac.uk/ws/files/214684856/Yu-Li-Su-Fuoli_Assessing_the_potential_of_LLM-assisted_annotation_for_corpus-based_pragmatics_and_discourse_analysis.pdf" target="_blank" style="word-break: break-all;">https://pure-oai.bham.ac.uk/ws/files/214684856/Yu-Li-Su-Fuoli_Assessing_the_potential_of_LLM-assisted_annotation_for_corpus-based_pragmatics_and_discourse_analysis.pdf</a></li>
+                </ul>
+            </section>
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
                         This work has <strong>1</strong> recorded events.
                     </p>
+                
+                </ul>
+            </section>
+        </div>
 
-</section>
-</div>
-<div class="grid-2">
-<section class="card" style="margin-bottom:0;">
-<h2><span>Citation context</span> <span class="badge">scite</span></h2>
-<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
-<li><strong>Total:</strong> 17</li>
-<li><strong>Supporting:</strong> 3</li>
-<li><strong>Mentioning:</strong> 14</li>
-<li><strong>Contradicting:</strong> 0</li>
-</ul>
-</section>
-</div>
-<section class="card">
-<h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
-<ul class="metric-list">
-<li><strong>Total citing works captured:</strong> 61</li>
-<li><strong>Top citing venues:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Studies in corpus linguistics (21)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Unknown (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Lingua (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Corpus Pragmatics (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Research Methods in Applied Linguistics (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">SSRN Electronic Journal (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Journal of Pragmatics (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">EPJ Data Science (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">English for Specific Purposes (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Annual Review of Applied Linguistics (1)</span> </li>
-<li><strong>Citing work types:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (30)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (20)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (6)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">paratext (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book (1)</span> </li>
-<li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
-<strong>Citation timeline:</strong>
-<div style="height: 180px; width: 100%; margin-top: 0.5rem;">
-<canvas data-labels='["2013", "2024", "2025", "2026"]' data-values="[1, 5, 49, 6]" id="citationChart"></canvas>
-</div>
-</li>
-</ul>
-</section>
-<section class="card" id="sec-contributors">
-<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">4 authors · 3 institutions</div>
-<div class="grid-2" style="margin-bottom:0;">
-<div>
-<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
-<ul style="max-height: 250px; overflow-y: auto; padding-left: 1.2rem;">
-<li style="margin-bottom: 0.6rem;">
-<strong>Danni Yu</strong>
-<span class="badge">First</span>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-1868-109X" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.6rem;">
-<strong>Luyang Li</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-0980-5046" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.6rem;">
-<strong>Hang Su</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-9186-5805" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.6rem;">
-<strong>Matteo Fuoli</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0003-3544-1095" target="_blank">ORCID</a>
-</li>
-</ul>
-</div>
-<div>
-<h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
-<ul style="max-height: 250px; overflow-y: auto; padding-left: 1.2rem;">
-<li style="margin-bottom: 0.6rem;">
-<a href="https://ror.org/00jdr0662" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Beijing Foreign Studies University</a>
-</li>
-<li style="margin-bottom: 0.6rem;">
-<a href="https://ror.org/036pm0w06" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Sichuan International Studies University</a>
-</li>
-<li style="margin-bottom: 0.6rem;">
-<a href="https://ror.org/03angcq70" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Birmingham</a>
-</li>
-</ul>
-</div>
-</div>
-</section>
-<div class="grid-2" id="sec-mentions">
-<section class="card" id="sec-mentions" style="margin-bottom:0;">
-<h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref Event Data</span></h2>
-<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                
+                <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                    <li><strong>Total:</strong> 17</li>
+                    <li><strong>Supporting:</strong> 3</li>
+                    <li><strong>Mentioning:</strong> 14</li>
+                    <li><strong>Contradicting:</strong> 0</li>
+                </ul>
+                
+            </section>
+
+            
+                
+                
+            
+        </div>
+
+        
+        
+        <section class="card">
+            <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
+            <ul class="metric-list">
+                <li><strong>Total citing works captured:</strong> 61</li>
+                <li><strong>Top citing venues:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Studies in corpus linguistics (21)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Unknown (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Lingua (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Corpus Pragmatics (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Research Methods in Applied Linguistics (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">SSRN Electronic Journal (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Journal of Pragmatics (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">EPJ Data Science (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">English for Specific Purposes (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Annual Review of Applied Linguistics (1)</span> </li>
+                <li><strong>Citing work types:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (30)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (20)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (6)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">paratext (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book (1)</span> </li>
+                
+                
+                <li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+                    <strong>Citation timeline:</strong>
+                    <div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+                        <canvas id="citationChart" data-labels="[&#34;2013&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[1, 5, 49, 6]"></canvas>
+                    </div>
+                </li>
+                
+
+            </ul>
+        </section>
+        
+
+        
+        
+        
+        
+
+        
+        
+            
+                
+            
+        
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+        <section class="card">
+            <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>4 authors · 3 institutions</div>
+            
+            <div class="grid-2" style="margin-bottom:0;">
+                <div>
+                    <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                    <ul style="max-height: 250px; overflow-y: auto; padding-left: 1.2rem;">
+                        
+                        <li style="margin-bottom: 0.6rem;">
+                            <strong>Danni Yu</strong> 
+                            <span class="badge">First</span>
+                            <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                            <a class="orcid-badge" href="https://orcid.org/0000-0002-1868-109X" target="_blank">ORCID</a>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.6rem;">
+                            <strong>Luyang Li</strong> 
+                            
+                            
+                            <a class="orcid-badge" href="https://orcid.org/0000-0002-0980-5046" target="_blank">ORCID</a>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.6rem;">
+                            <strong>Hang Su</strong> 
+                            
+                            
+                            <a class="orcid-badge" href="https://orcid.org/0000-0002-9186-5805" target="_blank">ORCID</a>
+                        </li>
+                        
+                        <li style="margin-bottom: 0.6rem;">
+                            <strong>Matteo Fuoli</strong> 
+                            
+                            
+                            <a class="orcid-badge" href="https://orcid.org/0000-0003-3544-1095" target="_blank">ORCID</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+                    <ul style="max-height: 250px; overflow-y: auto; padding-left: 1.2rem;">
+                        
+                        <li style="margin-bottom: 0.6rem;">
+                            
+                                <a href="https://ror.org/00jdr0662" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Beijing Foreign Studies University</a>
+                            
+                        </li>
+                        
+                        <li style="margin-bottom: 0.6rem;">
+                            
+                                <a href="https://ror.org/036pm0w06" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Sichuan International Studies University</a>
+                            
+                        </li>
+                        
+                        <li style="margin-bottom: 0.6rem;">
+                            
+                                <a href="https://ror.org/03angcq70" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">University of Birmingham</a>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </section>
+
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Online mentions & activity</span> <span class="badge">Crossref Event Data</span></h2>
+                
+                
+                    
+                    
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
                         This work has <strong>1</strong> recorded events.
                     </p>
-<ul style="list-style:none; padding-left:0; margin-bottom:2rem;">
-</ul>
-<h3 style="margin-top:0;">Selected examples</h3>
-<ul style="list-style:none; padding-left:0;">
-<li style="margin-bottom:1.2rem;">
-<div style="margin-bottom:0.4rem;">
-<span class="tag" style="background:#e5f2ff; color:#1d4ed8; margin:0;">Datacite</span>
-</div>
-<a href="https://doi.org/10.48550/arxiv.2305.08339" style="word-break: break-word; font-weight:500; text-decoration:none; color:#2563eb; display:block; margin-bottom:0.2rem; line-height:1.4;" target="_blank">
+                    
+                    <ul style="list-style:none; padding-left:0; margin-bottom:2rem;">
+                        
+                        
+                        
+                            
+                                
+                            
+                        
+                    </ul>
+                    
+                    <h3 style="margin-top:0;">Selected examples</h3>
+                    <ul style="list-style:none; padding-left:0;">
+                        
+                        
+                        
+                        <li style="margin-bottom:1.2rem;">
+                            <div style="margin-bottom:0.4rem;">
+                                <span class="tag" style="background:#e5f2ff; color:#1d4ed8; margin:0;">Datacite</span>
+                            </div>
+                            <a href="https://doi.org/10.48550/arxiv.2305.08339" target="_blank" style="word-break: break-word; font-weight:500; text-decoration:none; color:#2563eb; display:block; margin-bottom:0.2rem; line-height:1.4;">
                                 https://doi.org/10.48550/arxiv.2305.08339
                             </a>
-<span class="muted"></span>
-</li>
-</ul>
-</section>
-<section class="card" style="margin-bottom:0;">
-<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
-<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Pragmatics</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Linguistics</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Annotation</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Corpus linguistics</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Natural language processing</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Artificial intelligence</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Philosophy</span>
-</div>
-<h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
-<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
-<span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Quality Education (0.81)</span>
-</div>
-</section>
-</div>
-<section class="card print-breakable" id="sec-citations">
-<h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">61 citing works</div>
-<div class="table-scroll-wrapper">
-<table>
-<thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
-<tbody id="cit-tbody"></tbody>
-</table>
-</div>
-<div class="cit-pagination">
-<span class="cit-pagination-info" id="cit-info">Loading…</span>
-<div class="cit-pagination-btns">
-<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
-<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
-<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
-</div>
-</div>
+                            <span class="muted"></span>
+                        </li>
+                        
+                    </ul>
+                
+            </section>
 
-</section>
-<footer class="muted" style="text-align: right; margin-top: 2rem;">Generated on 2026-03-12T12:50:28+00:00</footer>
-</div>
-<script>
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Pragmatics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Linguistics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Annotation</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Corpus linguistics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Natural language processing</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Artificial intelligence</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Philosophy</span>
+                    
+                    
+                </div>
+                
+                
+                <h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Quality Education (0.81)</span>
+                    
+                </div>
+                
+            </section>
+            
+            
+            
+        </div>
+
+        
+
+        
+        <section class="card print-breakable">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>61 citing works</div>
+            
+            <div class="table-scroll-wrapper">
+                <table>
+                    <thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Scaling hermeneutics: a guide to qualitative coding with LLMs for reflexive content analysis</td>
+                        <td>EPJ Data Science</td>
+                        <td><a href="https://doi.org/10.1140/epjds/s13688-025-00548-8" target="_blank">10.1140/epjds/s13688-025-00548-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Developing local grammars of speech acts in Italian: The case of apology</td>
+                        <td>Lingua</td>
+                        <td><a href="https://doi.org/10.1016/j.lingua.2024.103672" target="_blank">10.1016/j.lingua.2024.103672</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Towards LLM-assisted move annotation: Leveraging ChatGPT-4 to analyse the genre structure of CEO statements in corporate social responsibility reports</td>
+                        <td>English for Specific Purposes</td>
+                        <td><a href="https://doi.org/10.1016/j.esp.2024.11.003" target="_blank">10.1016/j.esp.2024.11.003</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A question of alignment – AI, GenAI and applied linguistics</td>
+                        <td>Annual Review of Applied Linguistics</td>
+                        <td><a href="https://doi.org/10.1017/s0267190525000017" target="_blank">10.1017/s0267190525000017</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Large Language Models for Automating Fine-grained Speech Act Annotation: A Critical Evaluation of GPT-4o and DeepSeek</td>
+                        <td>Corpus Pragmatics</td>
+                        <td><a href="https://doi.org/10.1007/s41701-025-00200-w" target="_blank">10.1007/s41701-025-00200-w</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Large corpora and large language models: a replicable method for automating grammatical annotation</td>
+                        <td>Linguistics Vanguard</td>
+                        <td><a href="https://doi.org/10.1515/lingvan-2024-0228" target="_blank">10.1515/lingvan-2024-0228</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Local Grammar Approaches to Speech Act Studies</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123" target="_blank">10.1075/scl.123</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Automated vs. manual linguistic annotation for assessing pragmatic competence in English classes</td>
+                        <td>Research Methods in Applied Linguistics</td>
+                        <td><a href="https://doi.org/10.1016/j.rmal.2025.100253" target="_blank">10.1016/j.rmal.2025.100253</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Can GPT-4 learn to analyse moves in research article abstracts?</td>
+                        <td>Applied Linguistics</td>
+                        <td><a href="https://doi.org/10.1093/applin/amae071" target="_blank">10.1093/applin/amae071</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Deploying large language models for discourse studies: An exploration of automated analysis of media attitudes</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0313932" target="_blank">10.1371/journal.pone.0313932</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>"My Very Subjective Human Interpretation": Domain Expert Perspectives on Navigating the Text Analysis Loop for Topic Models</td>
+                        <td>Proceedings of the ACM on Human-Computer Interaction</td>
+                        <td><a href="https://doi.org/10.1145/3701201" target="_blank">10.1145/3701201</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>How humans and machines identify discourse topics: A methodological triangulation</td>
+                        <td>Applied Corpus Linguistics</td>
+                        <td><a href="https://doi.org/10.1016/j.acorp.2025.100121" target="_blank">10.1016/j.acorp.2025.100121</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>The Language of Nuance: Exploring the Limits of Large Language Models in Handling Ambiguity</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-86193-2_12" target="_blank">10.1007/978-3-031-86193-2_12</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Toward Integrating ChatGPT Into Satellite Image Annotation Workflows: A Comparison of Label Quality and Costs of Human and Automated Annotators</td>
+                        <td>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</td>
+                        <td><a href="https://doi.org/10.1109/jstars.2025.3528192" target="_blank">10.1109/jstars.2025.3528192</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Communication with Disabled Fans at Sports Events: Approaches, Challenges, and Opportunities</td>
+                        <td>Societies</td>
+                        <td><a href="https://doi.org/10.3390/soc15020031" target="_blank">10.3390/soc15020031</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Non-standard morphosyntactic variation in L2 English varieties world-wide: a corpus-based study</td>
+                        <td>Lingua</td>
+                        <td><a href="https://doi.org/10.1016/j.lingua.2025.103948" target="_blank">10.1016/j.lingua.2025.103948</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Exploring Conversations between a Practitioner and a Person with Dementia</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1145/3663548.3688523" target="_blank">10.1145/3663548.3688523</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>What About Emotions? Guiding Fine-Grained Emotion Extraction from Mobile App Reviews</td>
+                        <td>ArXiv.org</td>
+                        <td><a href="https://doi.org/10.1109/re63999.2025.00012" target="_blank">10.1109/re63999.2025.00012</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2013</td>
+                        <td>Studies in Corpus Linguistics</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl" target="_blank">10.1075/scl</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Özür Dileme Stratejileri ve Dindarlık Üzerine Ampirik Bir Araştırma</td>
+                        <td>Marmara Üniversitesi İlahiyat Fakültesi Dergisi</td>
+                        <td><a href="https://doi.org/10.15370/maruifd.1565092" target="_blank">10.15370/maruifd.1565092</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Collaborative Growth: When Large Language Models Meet Sociolinguistics</td>
+                        <td>Language and Linguistics Compass</td>
+                        <td><a href="https://doi.org/10.1111/lnc3.70010" target="_blank">10.1111/lnc3.70010</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Daniela Landert, Daria Dayter, Thomas C. Messerli and Miriam A. Locher, Corpus pragmatics (Cambridge Elements in Pragmatics). Cambridge: Cambridge University Press, 2023. Pp. 86. ISBN 9781009095082.</td>
+                        <td>English Language and Linguistics</td>
+                        <td><a href="https://doi.org/10.1017/s1360674325000012" target="_blank">10.1017/s1360674325000012</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Efficient Aspect-Based Sentiment Analysis for Conversational Recommendation Based on a Distilled TinyBERT Model</td>
+                        <td>Lecture notes in networks and systems</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-88653-9_63" target="_blank">10.1007/978-3-031-88653-9_63</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of Meyer (2023): English corpus linguistics: An introduction</td>
+                        <td>International Journal of Corpus Linguistics</td>
+                        <td><a href="https://doi.org/10.1075/ijcl.00062.hua" target="_blank">10.1075/ijcl.00062.hua</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Co‐Coding Classroom Dialogue: A Single Researcher Case Study of <scp>ChatGPT</scp>‐Assisted Analysis in Science Education</td>
+                        <td>Journal of Computer Assisted Learning</td>
+                        <td><a href="https://doi.org/10.1111/jcal.70089" target="_blank">10.1111/jcal.70089</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Corpus linguistics with AI copilots: Large language models as first-pass filters in data annotation</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.31219/osf.io/rcmun_v1" target="_blank">10.31219/osf.io/rcmun_v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Subject index</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.si" target="_blank">10.1075/scl.123.si</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Name index</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.ni" target="_blank">10.1075/scl.123.ni</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Appendix 2.  </td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.app2" target="_blank">10.1075/scl.123.app2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A local grammar approach to contrastive speech act analysis</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.c7" target="_blank">10.1075/scl.123.c7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>List of tables</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.lot" target="_blank">10.1075/scl.123.lot</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Developing local grammars of speech acts</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.c4" target="_blank">10.1075/scl.123.c4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Table of contents</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.toc" target="_blank">10.1075/scl.123.toc</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>References</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.refs" target="_blank">10.1075/scl.123.refs</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Appendix 1.  </td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.app1" target="_blank">10.1075/scl.123.app1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Conclusion</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.c8" target="_blank">10.1075/scl.123.c8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A local grammar approach to speech act annotation</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.c3" target="_blank">10.1075/scl.123.c3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Introduction</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.c1" target="_blank">10.1075/scl.123.c1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Preface and acknowledgements</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.pre" target="_blank">10.1075/scl.123.pre</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Local grammar</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.c2" target="_blank">10.1075/scl.123.c2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Prelim pages</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.prelim" target="_blank">10.1075/scl.123.prelim</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Dedication</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.dedication" target="_blank">10.1075/scl.123.dedication</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>List of figures</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.lof" target="_blank">10.1075/scl.123.lof</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A local grammar approach to identifying speech act constructions</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.c5" target="_blank">10.1075/scl.123.c5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A local grammar approach to diachronic speech act analysis</td>
+                        <td>Studies in corpus linguistics</td>
+                        <td><a href="https://doi.org/10.1075/scl.123.c6" target="_blank">10.1075/scl.123.c6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>“Voilà un film original!”: A local grammar of evaluation in French film reviews</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.5413906" target="_blank">10.2139/ssrn.5413906</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Evaluating an LLM’s Performance in Annotating Discourse Strategies</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-7246876/v1" target="_blank">10.21203/rs.3.rs-7246876/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Two decades of research on ELT textbook content: A bibliometric and content analysis</td>
+                        <td>Studies in Second Language Learning and Teaching</td>
+                        <td><a href="https://doi.org/10.14746/ssllt.39278" target="_blank">10.14746/ssllt.39278</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Does ChatGPT get it? LLM-driven annotation of Humor</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.5500673" target="_blank">10.2139/ssrn.5500673</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Analyzing player reviews with natural language processing to identify ecogames for education and research</td>
+                        <td>Computers in Human Behavior Reports</td>
+                        <td><a href="https://doi.org/10.1016/j.chbr.2025.100850" target="_blank">10.1016/j.chbr.2025.100850</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Cross-genre comparison and pattern extraction for the features of utterances of story characters</td>
+                        <td>Journal of the Japanese Association for Digital Humanities</td>
+                        <td><a href="https://doi.org/10.17928/jjadh.8.1_1" target="_blank">10.17928/jjadh.8.1_1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>The affective meanings of bowing in a web corpus of Japanese</td>
+                        <td>Journal of Pragmatics</td>
+                        <td><a href="https://doi.org/10.1016/j.pragma.2025.11.002" target="_blank">10.1016/j.pragma.2025.11.002</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Assessing the potential of using large language models for pragmatic annotation of historical texts</td>
+                        <td>Journal of Historical Pragmatics</td>
+                        <td><a href="https://doi.org/10.1075/jhp.25011.hua" target="_blank">10.1075/jhp.25011.hua</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>“Voilà un film original!”: A local grammar of evaluation in French film reviews</td>
+                        <td>Journal of Pragmatics</td>
+                        <td><a href="https://doi.org/10.1016/j.pragma.2025.12.001" target="_blank">10.1016/j.pragma.2025.12.001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Investigating user perception of underground public space from a temporal perspective: A framework using social media data and combining LLMs and BERT models</td>
+                        <td>Tunnelling and Underground Space Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.tust.2025.107390" target="_blank">10.1016/j.tust.2025.107390</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Generative artificial intelligence tools</td>
+                        <td>Research methods in applied linguistics</td>
+                        <td><a href="https://doi.org/10.1075/rmal.15.17xu" target="_blank">10.1075/rmal.15.17xu</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Evaluating an LLM’s Performance in Annotating Discourse Strategies</td>
+                        <td>Corpus Pragmatics</td>
+                        <td><a href="https://doi.org/10.1007/s41701-025-00224-2" target="_blank">10.1007/s41701-025-00224-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Intersubjectivity as the distinguishing feature or common ground: A contrastive study between human-written abstracts and LLM-generated abstracts</td>
+                        <td>Research Methods in Applied Linguistics</td>
+                        <td><a href="https://doi.org/10.1016/j.rmal.2026.100297" target="_blank">10.1016/j.rmal.2026.100297</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Assessing the potential of LLM-assisted annotation for corpus pragmatics: the case of humor</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-8559781/v1" target="_blank">10.21203/rs.3.rs-8559781/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Corpus Linguistics and Discourse Analysis</td>
+                        <td>Elsevier eBooks</td>
+                        <td><a href="https://doi.org/10.1016/b978-0-323-95504-1.01325-9" target="_blank">10.1016/b978-0-323-95504-1.01325-9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Large language models as first-pass filters for corpus annotation: semantic disambiguation of Galician <i>pobo</i></td>
+                        <td>Open Linguistics</td>
+                        <td><a href="https://doi.org/10.1515/opli-2025-0078" target="_blank">10.1515/opli-2025-0078</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+
+        <footer class="muted" style="text-align: right; margin-top: 2rem;">Generated on 2026-03-12T12:50:28+00:00</footer>
+    </div>
+
+    <script>
         (function() {
             const canvas = document.getElementById('citationChart');
             const labels = JSON.parse(canvas.getAttribute('data-labels'));
@@ -496,191 +857,6 @@
             });
         })();
     </script>
-
-<script>
-(function() {
-  var DATA = [{"year": "2025", "title": "Scaling hermeneutics: a guide to qualitative coding with LLMs for reflexive content analysis", "venue": "EPJ Data Science", "doi": "10.1140/epjds/s13688-025-00548-8", "doi_url": "https://doi.org/10.1140/epjds/s13688-025-00548-8"}, {"year": "2024", "title": "Developing local grammars of speech acts in Italian: The case of apology", "venue": "Lingua", "doi": "10.1016/j.lingua.2024.103672", "doi_url": "https://doi.org/10.1016/j.lingua.2024.103672"}, {"year": "2024", "title": "Towards LLM-assisted move annotation: Leveraging ChatGPT-4 to analyse the genre structure of CEO statements in corporate social responsibility reports", "venue": "English for Specific Purposes", "doi": "10.1016/j.esp.2024.11.003", "doi_url": "https://doi.org/10.1016/j.esp.2024.11.003"}, {"year": "2025", "title": "A question of alignment – AI, GenAI and applied linguistics", "venue": "Annual Review of Applied Linguistics", "doi": "10.1017/s0267190525000017", "doi_url": "https://doi.org/10.1017/s0267190525000017"}, {"year": "2025", "title": "Large Language Models for Automating Fine-grained Speech Act Annotation: A Critical Evaluation of GPT-4o and DeepSeek", "venue": "Corpus Pragmatics", "doi": "10.1007/s41701-025-00200-w", "doi_url": "https://doi.org/10.1007/s41701-025-00200-w"}, {"year": "2025", "title": "Large corpora and large language models: a replicable method for automating grammatical annotation", "venue": "Linguistics Vanguard", "doi": "10.1515/lingvan-2024-0228", "doi_url": "https://doi.org/10.1515/lingvan-2024-0228"}, {"year": "2025", "title": "Local Grammar Approaches to Speech Act Studies", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123", "doi_url": "https://doi.org/10.1075/scl.123"}, {"year": "2025", "title": "Automated vs. manual linguistic annotation for assessing pragmatic competence in English classes", "venue": "Research Methods in Applied Linguistics", "doi": "10.1016/j.rmal.2025.100253", "doi_url": "https://doi.org/10.1016/j.rmal.2025.100253"}, {"year": "2024", "title": "Can GPT-4 learn to analyse moves in research article abstracts?", "venue": "Applied Linguistics", "doi": "10.1093/applin/amae071", "doi_url": "https://doi.org/10.1093/applin/amae071"}, {"year": "2025", "title": "Deploying large language models for discourse studies: An exploration of automated analysis of media attitudes", "venue": "PLoS ONE", "doi": "10.1371/journal.pone.0313932", "doi_url": "https://doi.org/10.1371/journal.pone.0313932"}, {"year": "2025", "title": "\"My Very Subjective Human Interpretation\": Domain Expert Perspectives on Navigating the Text Analysis Loop for Topic Models", "venue": "Proceedings of the ACM on Human-Computer Interaction", "doi": "10.1145/3701201", "doi_url": "https://doi.org/10.1145/3701201"}, {"year": "2025", "title": "How humans and machines identify discourse topics: A methodological triangulation", "venue": "Applied Corpus Linguistics", "doi": "10.1016/j.acorp.2025.100121", "doi_url": "https://doi.org/10.1016/j.acorp.2025.100121"}, {"year": "2025", "title": "The Language of Nuance: Exploring the Limits of Large Language Models in Handling Ambiguity", "venue": "Lecture notes in computer science", "doi": "10.1007/978-3-031-86193-2_12", "doi_url": "https://doi.org/10.1007/978-3-031-86193-2_12"}, {"year": "2025", "title": "Toward Integrating ChatGPT Into Satellite Image Annotation Workflows: A Comparison of Label Quality and Costs of Human and Automated Annotators", "venue": "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing", "doi": "10.1109/jstars.2025.3528192", "doi_url": "https://doi.org/10.1109/jstars.2025.3528192"}, {"year": "2025", "title": "Communication with Disabled Fans at Sports Events: Approaches, Challenges, and Opportunities", "venue": "Societies", "doi": "10.3390/soc15020031", "doi_url": "https://doi.org/10.3390/soc15020031"}, {"year": "2025", "title": "Non-standard morphosyntactic variation in L2 English varieties world-wide: a corpus-based study", "venue": "Lingua", "doi": "10.1016/j.lingua.2025.103948", "doi_url": "https://doi.org/10.1016/j.lingua.2025.103948"}, {"year": "2024", "title": "Exploring Conversations between a Practitioner and a Person with Dementia", "venue": "Unknown", "doi": "10.1145/3663548.3688523", "doi_url": "https://doi.org/10.1145/3663548.3688523"}, {"year": "2025", "title": "What About Emotions? Guiding Fine-Grained Emotion Extraction from Mobile App Reviews", "venue": "ArXiv.org", "doi": "10.1109/re63999.2025.00012", "doi_url": "https://doi.org/10.1109/re63999.2025.00012"}, {"year": "2013", "title": "Studies in Corpus Linguistics", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl", "doi_url": "https://doi.org/10.1075/scl"}, {"year": "2024", "title": "Özür Dileme Stratejileri ve Dindarlık Üzerine Ampirik Bir Araştırma", "venue": "Marmara Üniversitesi İlahiyat Fakültesi Dergisi", "doi": "10.15370/maruifd.1565092", "doi_url": "https://doi.org/10.15370/maruifd.1565092"}, {"year": "2025", "title": "Collaborative Growth: When Large Language Models Meet Sociolinguistics", "venue": "Language and Linguistics Compass", "doi": "10.1111/lnc3.70010", "doi_url": "https://doi.org/10.1111/lnc3.70010"}, {"year": "2025", "title": "Daniela Landert, Daria Dayter, Thomas C. Messerli and Miriam A. Locher, Corpus pragmatics (Cambridge Elements in Pragmatics). Cambridge: Cambridge University Press, 2023. Pp. 86. ISBN 9781009095082.", "venue": "English Language and Linguistics", "doi": "10.1017/s1360674325000012", "doi_url": "https://doi.org/10.1017/s1360674325000012"}, {"year": "2025", "title": "Efficient Aspect-Based Sentiment Analysis for Conversational Recommendation Based on a Distilled TinyBERT Model", "venue": "Lecture notes in networks and systems", "doi": "10.1007/978-3-031-88653-9_63", "doi_url": "https://doi.org/10.1007/978-3-031-88653-9_63"}, {"year": "2025", "title": "Review of Meyer (2023): English corpus linguistics: An introduction", "venue": "International Journal of Corpus Linguistics", "doi": "10.1075/ijcl.00062.hua", "doi_url": "https://doi.org/10.1075/ijcl.00062.hua"}, {"year": "2025", "title": "Co‐Coding Classroom Dialogue: A Single Researcher Case Study ofChatGPT‐Assisted Analysis in Science Education", "venue": "Journal of Computer Assisted Learning", "doi": "10.1111/jcal.70089", "doi_url": "https://doi.org/10.1111/jcal.70089"}, {"year": "2025", "title": "Corpus linguistics with AI copilots: Large language models as first-pass filters in data annotation", "venue": "Unknown", "doi": "10.31219/osf.io/rcmun_v1", "doi_url": "https://doi.org/10.31219/osf.io/rcmun_v1"}, {"year": "2025", "title": "Subject index", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.si", "doi_url": "https://doi.org/10.1075/scl.123.si"}, {"year": "2025", "title": "Name index", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.ni", "doi_url": "https://doi.org/10.1075/scl.123.ni"}, {"year": "2025", "title": "Appendix 2.", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.app2", "doi_url": "https://doi.org/10.1075/scl.123.app2"}, {"year": "2025", "title": "A local grammar approach to contrastive speech act analysis", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.c7", "doi_url": "https://doi.org/10.1075/scl.123.c7"}, {"year": "2025", "title": "List of tables", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.lot", "doi_url": "https://doi.org/10.1075/scl.123.lot"}, {"year": "2025", "title": "Developing local grammars of speech acts", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.c4", "doi_url": "https://doi.org/10.1075/scl.123.c4"}, {"year": "2025", "title": "Table of contents", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.toc", "doi_url": "https://doi.org/10.1075/scl.123.toc"}, {"year": "2025", "title": "References", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.refs", "doi_url": "https://doi.org/10.1075/scl.123.refs"}, {"year": "2025", "title": "Appendix 1.", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.app1", "doi_url": "https://doi.org/10.1075/scl.123.app1"}, {"year": "2025", "title": "Conclusion", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.c8", "doi_url": "https://doi.org/10.1075/scl.123.c8"}, {"year": "2025", "title": "A local grammar approach to speech act annotation", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.c3", "doi_url": "https://doi.org/10.1075/scl.123.c3"}, {"year": "2025", "title": "Introduction", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.c1", "doi_url": "https://doi.org/10.1075/scl.123.c1"}, {"year": "2025", "title": "Preface and acknowledgements", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.pre", "doi_url": "https://doi.org/10.1075/scl.123.pre"}, {"year": "2025", "title": "Local grammar", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.c2", "doi_url": "https://doi.org/10.1075/scl.123.c2"}, {"year": "2025", "title": "Prelim pages", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.prelim", "doi_url": "https://doi.org/10.1075/scl.123.prelim"}, {"year": "2025", "title": "Dedication", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.dedication", "doi_url": "https://doi.org/10.1075/scl.123.dedication"}, {"year": "2025", "title": "List of figures", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.lof", "doi_url": "https://doi.org/10.1075/scl.123.lof"}, {"year": "2025", "title": "A local grammar approach to identifying speech act constructions", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.c5", "doi_url": "https://doi.org/10.1075/scl.123.c5"}, {"year": "2025", "title": "A local grammar approach to diachronic speech act analysis", "venue": "Studies in corpus linguistics", "doi": "10.1075/scl.123.c6", "doi_url": "https://doi.org/10.1075/scl.123.c6"}, {"year": "2025", "title": "“Voilà un film original!”: A local grammar of evaluation in French film reviews", "venue": "SSRN Electronic Journal", "doi": "10.2139/ssrn.5413906", "doi_url": "https://doi.org/10.2139/ssrn.5413906"}, {"year": "2025", "title": "Evaluating an LLM’s Performance in Annotating Discourse Strategies", "venue": "Unknown", "doi": "10.21203/rs.3.rs-7246876/v1", "doi_url": "https://doi.org/10.21203/rs.3.rs-7246876/v1"}, {"year": "2025", "title": "Two decades of research on ELT textbook content: A bibliometric and content analysis", "venue": "Studies in Second Language Learning and Teaching", "doi": "10.14746/ssllt.39278", "doi_url": "https://doi.org/10.14746/ssllt.39278"}, {"year": "2025", "title": "Does ChatGPT get it? LLM-driven annotation of Humor", "venue": "SSRN Electronic Journal", "doi": "10.2139/ssrn.5500673", "doi_url": "https://doi.org/10.2139/ssrn.5500673"}, {"year": "2025", "title": "Analyzing player reviews with natural language processing to identify ecogames for education and research", "venue": "Computers in Human Behavior Reports", "doi": "10.1016/j.chbr.2025.100850", "doi_url": "https://doi.org/10.1016/j.chbr.2025.100850"}, {"year": "2025", "title": "Cross-genre comparison and pattern extraction for the features of utterances of story characters", "venue": "Journal of the Japanese Association for Digital Humanities", "doi": "10.17928/jjadh.8.1_1", "doi_url": "https://doi.org/10.17928/jjadh.8.1_1"}, {"year": "2025", "title": "The affective meanings of bowing in a web corpus of Japanese", "venue": "Journal of Pragmatics", "doi": "10.1016/j.pragma.2025.11.002", "doi_url": "https://doi.org/10.1016/j.pragma.2025.11.002"}, {"year": "2025", "title": "Assessing the potential of using large language models for pragmatic annotation of historical texts", "venue": "Journal of Historical Pragmatics", "doi": "10.1075/jhp.25011.hua", "doi_url": "https://doi.org/10.1075/jhp.25011.hua"}, {"year": "2025", "title": "“Voilà un film original!”: A local grammar of evaluation in French film reviews", "venue": "Journal of Pragmatics", "doi": "10.1016/j.pragma.2025.12.001", "doi_url": "https://doi.org/10.1016/j.pragma.2025.12.001"}, {"year": "2025", "title": "Investigating user perception of underground public space from a temporal perspective: A framework using social media data and combining LLMs and BERT models", "venue": "Tunnelling and Underground Space Technology", "doi": "10.1016/j.tust.2025.107390", "doi_url": "https://doi.org/10.1016/j.tust.2025.107390"}, {"year": "2026", "title": "Generative artificial intelligence tools", "venue": "Research methods in applied linguistics", "doi": "10.1075/rmal.15.17xu", "doi_url": "https://doi.org/10.1075/rmal.15.17xu"}, {"year": "2026", "title": "Evaluating an LLM’s Performance in Annotating Discourse Strategies", "venue": "Corpus Pragmatics", "doi": "10.1007/s41701-025-00224-2", "doi_url": "https://doi.org/10.1007/s41701-025-00224-2"}, {"year": "2026", "title": "Intersubjectivity as the distinguishing feature or common ground: A contrastive study between human-written abstracts and LLM-generated abstracts", "venue": "Research Methods in Applied Linguistics", "doi": "10.1016/j.rmal.2026.100297", "doi_url": "https://doi.org/10.1016/j.rmal.2026.100297"}, {"year": "2026", "title": "Assessing the potential of LLM-assisted annotation for corpus pragmatics: the case of humor", "venue": "Unknown", "doi": "10.21203/rs.3.rs-8559781/v1", "doi_url": "https://doi.org/10.21203/rs.3.rs-8559781/v1"}, {"year": "2026", "title": "Corpus Linguistics and Discourse Analysis", "venue": "Elsevier eBooks", "doi": "10.1016/b978-0-323-95504-1.01325-9", "doi_url": "https://doi.org/10.1016/b978-0-323-95504-1.01325-9"}, {"year": "2026", "title": "Large language models as first-pass filters for corpus annotation: semantic disambiguation of Galicianpobo", "venue": "Open Linguistics", "doi": "10.1515/opli-2025-0078", "doi_url": "https://doi.org/10.1515/opli-2025-0078"}];
-  var PER  = 25;
-  var _p   = 1;
-  var _tot = Math.ceil(DATA.length / PER);
-
-  function esc(s) {
-    return String(s)
-      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
-      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-
-  function render(page) {
-    _p = page;
-    var tbody  = document.getElementById('cit-tbody');
-    var info   = document.getElementById('cit-info');
-    var prev   = document.getElementById('cit-prev');
-    var next   = document.getElementById('cit-next');
-    var nums   = document.getElementById('cit-page-nums');
-    if (!tbody) return;
-
-    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
-    for (var i=s; i<e; i++) {
-      var r = DATA[i];
-      var d = r.doi_url
-        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
-        : esc(r.doi||'');
-      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
-    }
-    tbody.innerHTML = rows;
-    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
-    if (prev) prev.disabled = (page===1);
-    if (next) next.disabled = (page===_tot);
-
-    if (nums) {
-      var shown = [], html = '', prev2 = null;
-      for (var p=1; p<=_tot; p++) {
-        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
-      }
-      for (var i=0; i<shown.length; i++) {
-        var p=shown[i];
-        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
-        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
-        prev2=p;
-      }
-      nums.innerHTML = html;
-    }
-  }
-
-  window.citGoTo = function(p) {
-    if(p<1||p>_tot) return;
-    render(p);
-    var sec=document.getElementById('sec-citations');
-    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
-  };
-  window.citPrev = function() { window.citGoTo(_p-1); };
-  window.citNext = function() { window.citGoTo(_p+1); };
-
-  if(document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded',function(){render(1);});
-  else render(1);
-})();
-</script>
-
-<script>
-function citeSwitchTab(btn, tabId) {
-  var card = btn.closest('section, .card') || btn.parentElement;
-  // Find tab buttons and panes in surrounding context
-  var tabsEl = btn.closest('.cite-tabs');
-  if (!tabsEl) return;
-  var parent = tabsEl.parentElement;
-  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
-  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
-  btn.classList.add('active');
-  var pane = document.getElementById(tabId);
-  if (pane) pane.classList.add('active');
-}
-</script>
-
-<script>
-(function() {
-  function init() {
-    document.querySelectorAll('section.card, .card').forEach(function(card) {
-      // Skip the hero header
-      if (card.tagName === 'HEADER') return;
-      var h2 = null;
-      for (var i=0; i<card.children.length; i++) {
-        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
-      }
-      if (!h2) return;
-
-      card.classList.add('card-collapsible');
-
-      // Add chevron span
-      var chev = document.createElement('span');
-      chev.className = 'chevron';
-      chev.setAttribute('aria-hidden','true');
-      chev.textContent = '▾';
-      h2.appendChild(chev);
-
-      // Wrap siblings after h2
-      var wrap = document.createElement('div');
-      wrap.className = 'card-body-wrap';
-      var kids = Array.from(card.children), after = false;
-      kids.forEach(function(c) {
-        if (c===h2){after=true;return;}
-        if (after) wrap.appendChild(c);
-      });
-      card.appendChild(wrap);
-      // CSS handles open state with max-height:9999px — safe for async-loaded content
-
-      h2.addEventListener('click', function() {
-        card.classList.toggle('is-collapsed');
-      });
-    });
-  }
-  if (document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded', init);
-  else init();
-})();
-</script>
-
-<script>
-(function() {
-  function init() {
-    var nav = document.getElementById('sticky-nav');
-    if (!nav) return;
-    var links = Array.from(nav.querySelectorAll('a'));
-    var targets = links.map(function(l) {
-      var id = l.getAttribute('href').slice(1);
-      return {el: document.getElementById(id), link: l};
-    }).filter(function(t){return t.el;});
-
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          links.forEach(function(l){l.classList.remove('snav-active');});
-          var match = links.find(function(l){
-            return l.getAttribute('href')==='#'+e.target.id;
-          });
-          if (match) match.classList.add('snav-active');
-        }
-      });
-    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
-
-    targets.forEach(function(t){obs.observe(t.el);});
-  }
-  if (document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded', init);
-  else init();
-})();
-</script>
-
-<div id="role-tooltip" style="
-  position:fixed;display:none;z-index:9999;
-  background:#111827;color:white;padding:.5rem .75rem;
-  border-radius:.5rem;font-size:.72rem;width:240px;
-  line-height:1.5;white-space:normal;font-weight:400;
-  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
-"></div>
-<script>
-(function(){
-  var tip = document.getElementById('role-tooltip');
-  document.querySelectorAll('.role-pill[data-tip]').forEach(function(pill){
-    pill.addEventListener('mouseenter', function(){
-      tip.textContent = pill.getAttribute('data-tip');
-      tip.style.top = '-9999px'; tip.style.display = 'block';
-      var r   = pill.getBoundingClientRect();
-      var th  = tip.offsetHeight;
-      var top = (window.innerHeight - r.bottom > th + 16)
-                ? r.bottom + 8          /* open downward */
-                : r.top - th - 8;       /* flip upward   */
-      var left = Math.min(r.left, window.innerWidth - 252);
-      left = Math.max(left, 8);
-      tip.style.top  = top  + 'px';
-      tip.style.left = left + 'px';
-    });
-    pill.addEventListener('mouseleave', function(){
-      tip.style.display = 'none';
-    });
-  });
-})();
-</script>
-
+    
 </body>
 </html>

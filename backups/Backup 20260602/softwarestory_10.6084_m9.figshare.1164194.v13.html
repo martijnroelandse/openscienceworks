@@ -1,0 +1,2958 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SoftwareStory - The graph-tool python library</title>
+    <style>
+
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
+
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+.sig-green {background:#dcfce7;color:#166534;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+    
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="softwarestories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">The graph-tool python library</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #faf5ff; color: #86198f; border: 1px solid #e9d5ff; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                                    Proven Reuse
+                                </span>
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> 
+                                
+                                    Tiago P. Peixoto
+                                
+                            </div>
+                        
+                            
+                        
+                            
+                            
+                            <div><strong>Source:</strong> 
+                                Figshare
+                            </div>
+                            
+                        
+                            <div><strong>Provider:</strong> 
+                                
+                                    Unknown
+                                
+                            </div>
+                        
+                            <div><strong>Publication year:</strong> 
+                                
+                                    2015
+                                
+                            </div>
+                        
+                            <div><strong>DOI:</strong> 
+                                <a href="https://doi.org/10.6084/m9.figshare.1164194.v13" target="_blank">
+                                    10.6084/m9.figshare.1164194.v13
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        <!-- Sticky nav -->
+        <nav aria-label="Page sections" class="sticky-nav no-print">
+            <div class="sticky-nav-inner">
+                <a href="#sec-hero">Overview</a>
+                <a href="#sec-story">Story</a>
+                <a href="#sec-impact">Impact</a>
+                <a href="#sec-roles">Roles</a>
+                <a href="#sec-access">Access</a>
+                <a href="#sec-citing">Who's Citing</a>
+                <a href="#sec-mentions">Mentions</a>
+            </div>
+        </nav>
+
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The graph-tool Python library, released in 2015, has established a significant academic footprint with 225 citations, predominantly from research venues such as arXiv and bioRxiv. This software tool is notable for its broad influence across various disciplines, illustrating its status as a foundational resource for researchers.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">Since its inception in 2015, the graph-tool Python library has garnered substantial attention within the academic community, evidenced by its 225 citations across diverse research outputs. The tool has been referenced in various contexts, with notable impact in high-profile venues such as arXiv and bioRxiv. This suggests that the library is not only serving as a practical tool but also influencing cutting-edge research.</p>
+<p class="story-text">Although specific details on online mentions and community discourse are absent, the academic citations indicate a solid foundation of interest and integration into research projects. The citations from top countries like the United States, United Kingdom, and Germany highlight its international reach. This geographic footprint signifies its utility and relevance across global academic institutions.</p>
+<p class="story-text">The lack of community discourse metrics on popular platforms such as Wikipedia, Reddit, and Bluesky does not detract from its academic recognition. Instead, the tool's impact is primarily encapsulated in its academic citations, suggesting that it is predominantly utilized within scholarly circles rather than being a widely known public resource.</p>
+<p class="story-text">Importantly, the graph-tool library has demonstrated profound utility through proven downstream reuse, with 247 instances of subsequent research leveraging its capabilities. This not only emphasizes the software tool's functionality but also highlights its role as a vital resource for ongoing research endeavors. Such reuse points to a broader acceptance and trust in this tool among researchers working on complex graph-related problems.</p></div>
+        </section>
+        
+
+        
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+            <div class="im-wrapper">
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">225</div>
+                                <div class="im-label">Total Citations</div>
+                                
+                            </div>
+                            
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]"
+                                        data-values="[1, 9, 18, 16, 21, 31, 35, 39, 16, 19, 14, 5]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2014–2025</div>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+                    
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+                    
+                    
+                    <!-- scite (only when references exist) -->
+                    
+                </div>
+
+                
+                
+                
+                
+                
+                <div class="muted" style="margin-top:.7rem; font-size:.8rem;">
+                    Some signals aren’t recorded for this volume yet (online mentions, scite citation context) — these typically accrue after publication.
+                </div>
+                
+
+                
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 15 countries</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+            
+            
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Software method anchor — heuristic signal (score 1.00)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Software method anchor
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Scholarly uptake — heuristic signal (score 0.88)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Scholarly uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="High-visibility uptake — heuristic signal (score 0.85)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            High-visibility uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="0.75"
+                              data-tip="Rapid uptake — heuristic signal (score 0.47)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Rapid uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Emerging</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access & Visibility</span> <span class="badge" style="background:#f0fdf4; color:#15803d; border:1px solid #bbf7d0;">DataCite</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.6084/m9.figshare.1164194.v13" target="_blank">10.6084/m9.figshare.1164194.v13</a></li>
+                    <li><strong>Resource Type:</strong> Software</li>
+                    <li><strong>Total Views:</strong> 0</li>
+                    <li><strong>Total Downloads:</strong> 0</li>
+                </ul>
+            </section>
+            
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.6rem;">
+                        This work has <strong>0</strong> recorded events globally.
+                    </p>
+                    
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 0</li>
+                                <li><strong>Supporting:</strong> 0</li>
+                                <li><strong>Mentioning:</strong> 0</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite / Crossref</span></h2>
+                            
+                            
+                                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Tracking downstream reuse and integration.</p>
+                                <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Reused in 247 related works:</h3>
+                                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom: 1rem;">
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">144 Articles</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">53 Preprints</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">12 Book-Chapters</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">6 Dissertations</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">4 Peer-Reviews</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">3 Reviews</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">1 Books</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">1 Paratexts</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">1 Others</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">1 Reports</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">22 Biomedical Article Mentions (Europe Pmc)s</span>
+                                    
+                                </div>
+                                
+                                
+                                    <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Known Links:</h3>
+                                    <div style="display:flex; flex-direction:column; gap:0.3rem; max-height: 150px; overflow-y: auto;">
+                                        
+                                            <a href="https://doi.org/10.1093/pnasnexus/pgaf402" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1055/a-2297-9267" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1093/gbe/evag072" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1038/s41598-024-68113-3" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1037/dev0002121" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1038/s41598-025-19273-3" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1681/asn.0000000889" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1037/cep0000355" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1098/rsos.230505" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1038/s41598-024-67896-9" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1371/journal.pone.0296185" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1093/nargab/lqaf049" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1016/j.bpsgos.2025.100472" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1017/ehs.2023.9" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1038/s41598-020-71426-8" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1371/journal.pcbi.1012300" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1038/s41598-022-19769-2" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1111/ele.13954" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1371/journal.pone.0245067" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1093/brain/awad199" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1126/sciadv.adn3268" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1371/journal.pone.0263001" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                    </div>
+                                
+
+                            
+                        </section>
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+        
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>225</strong> citing works.
+                        <strong>11.6%</strong> come from the Top 10 institutions.
+                        Median citing paper cited <strong>6.0</strong> times itself.
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (144)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (53)</span><span class="tag tag-soft" style="font-size:.75rem;">book-chapter (12)</span><span class="tag tag-soft" style="font-size:.75rem;">dissertation (6)</span><span class="tag tag-soft" style="font-size:.75rem;">peer-review (4)</span>
+                        <span class="tag" style="font-size:.75rem;">arXiv (Cornell University)</span><span class="tag" style="font-size:.75rem;">Unknown</span><span class="tag" style="font-size:.75rem;">bioRxiv</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]"
+                    data-values="[1, 9, 18, 16, 21, 31, 35, 39, 16, 19, 14, 5]">
+                </canvas>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
+
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (72)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (34)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Germany (28)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Italy (15)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">France (13)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (12)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Australia (12)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Austria (9)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Canada (9)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Japan (9)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Spain (8)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Sweden (7)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Brazil (6)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Netherlands (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Finland (5)</span>
+                    
+                </div>
+                
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (191)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (68)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (19)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (16)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (12)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Healthcare (9)</span>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Stuttgart</strong>
+                        <a href="https://ror.org/04vnq7t77" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(5.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Cambridge</strong>
+                        <a href="https://ror.org/013meh722" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.1)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Michigan State University</strong>
+                        <a href="https://ror.org/05hs6h993" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Bath</strong>
+                        <a href="https://ror.org/002h8g185" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.333333333333333)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Technical University of Munich</strong>
+                        <a href="https://ror.org/02kkvpp62" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.333333333333333)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of California, Davis</strong>
+                        <a href="https://ror.org/05rrcem69" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.25)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Central European University</strong>
+                        <a href="https://ror.org/02zx40v98" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.2261904761904763)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Chan Zuckerberg Initiative (United States)</strong>
+                        <a href="https://ror.org/02qenvm24" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Turin</strong>
+                        <a href="https://ror.org/048tbm396" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Florida</strong>
+                        <a href="https://ror.org/02y3ad647" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Tiago P. Peixoto</strong>
+                        <a href="https://orcid.org/0000-0002-4505-0517" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jonathan Falk</strong>
+                        <a href="https://orcid.org/0000-0002-9551-5618" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Frank Dürr</strong>
+                        <a href="https://orcid.org/0000-0002-3470-7712" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kurt Rothermel</strong>
+                        <a href="https://orcid.org/0000-0001-8986-8241" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>R Behera</strong>
+                        
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>S Rath</strong>
+                        
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>D Naik</strong>
+                        
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Stephen R. Quake</strong>
+                        <a href="https://orcid.org/0000-0002-1613-0809" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kwan‐Liu Ma</strong>
+                        <a href="https://orcid.org/0000-0001-8086-0366" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Georgios Tzounas</strong>
+                        <a href="https://orcid.org/0000-0002-1464-3600" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+        </div>
+
+        
+        
+        
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 author · 0 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Tiago P. Peixoto</strong> 
+                        <span class="badge">First</span>
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0002-4505-0517" target="_blank">ORCID</a>
+                    </li>
+                    
+                </ul>
+
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>5 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Python (programming language)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Programming language</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Graph</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Theoretical computer science</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
+
+
+
+        
+        
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.75rem;"
+                 data-total="226">
+                226 citing works (most recent first)
+            </div>
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Pathways for horizontal gene transfer in bacteria revealed by a global map of their plasmids</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-020-17278-2" target="_blank" style="word-break: break-all;">10.1038/s41467-020-17278-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>From diversity to complexity: Microbial networks in soils</td>
+                        <td>Soil Biology and Biochemistry</td>
+                        <td><a href="https://doi.org/10.1016/j.soilbio.2022.108604" target="_blank" style="word-break: break-all;">10.1016/j.soilbio.2022.108604</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Apico-basal forces exerted by apoptotic cells drive epithelium folding</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/nature14152" target="_blank" style="word-break: break-all;">10.1038/nature14152</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Exploring the SARS-CoV-2 virus-host-drug interactome for drug repurposing</td>
+                        <td>University of Southern Denmark Research Portal (University of Southern Denmark)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>The community atmospheric chemistry box model CAABA/MECCA-4.0</td>
+                        <td>Geoscientific model development</td>
+                        <td><a href="https://doi.org/10.5194/gmd-12-1365-2019" target="_blank" style="word-break: break-all;">10.5194/gmd-12-1365-2019</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Named Entity Recognition and Relation Detection for Biomedical Information Extraction</td>
+                        <td>Frontiers in Cell and Developmental Biology</td>
+                        <td><a href="https://doi.org/10.3389/fcell.2020.00673" target="_blank" style="word-break: break-all;">10.3389/fcell.2020.00673</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Large-scale network analysis reveals the sequence space architecture of antibody repertoires</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-019-09278-8" target="_blank" style="word-break: break-all;">10.1038/s41467-019-09278-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>NetLSD</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.1145/3219819.3219991" target="_blank" style="word-break: break-all;">10.1145/3219819.3219991</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Pump up the Volume</td>
+                        <td>Zenodo (CERN European Organization for Nuclear Research)</td>
+                        <td><a href="https://doi.org/10.1145/3243734.3243864" target="_blank" style="word-break: break-all;">10.1145/3243734.3243864</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Exploring Practical Limitations of Joint Routing and Scheduling for TSN with ILP</td>
+                        <td>Fachbereich Informatik (University of Stuttgart)</td>
+                        <td><a href="https://doi.org/10.1109/rtcsa.2018.00025" target="_blank" style="word-break: break-all;">10.1109/rtcsa.2018.00025</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Biophysical prediction of protein–peptide interactions and signaling networks using machine learning</td>
+                        <td>Nature Methods</td>
+                        <td><a href="https://doi.org/10.1038/s41592-019-0687-1" target="_blank" style="word-break: break-all;">10.1038/s41592-019-0687-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>A graph-based network for predicting chemical reaction pathways in solid-state materials synthesis</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-021-23339-x" target="_blank" style="word-break: break-all;">10.1038/s41467-021-23339-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Self-assembling manifolds in single-cell RNA sequencing data</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.48994" target="_blank" style="word-break: break-all;">10.7554/elife.48994</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>What Would a Graph Look Like in this Layout? A Machine Learning Approach to Large Graph Visualization</td>
+                        <td>IEEE Transactions on Visualization and Computer Graphics</td>
+                        <td><a href="https://doi.org/10.1109/tvcg.2017.2743858" target="_blank" style="word-break: break-all;">10.1109/tvcg.2017.2743858</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Associations between dynamic functional connectivity and age, metabolic risk, and cognitive performance</td>
+                        <td>Neurobiology of Aging</td>
+                        <td><a href="https://doi.org/10.1016/j.neurobiolaging.2017.08.003" target="_blank" style="word-break: break-all;">10.1016/j.neurobiolaging.2017.08.003</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Statistical inference of assortative community structures</td>
+                        <td>Physical Review Research</td>
+                        <td><a href="https://doi.org/10.1103/physrevresearch.2.043271" target="_blank" style="word-break: break-all;">10.1103/physrevresearch.2.043271</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>EoN (Epidemics on Networks): a fast, flexible Python package for simulation, analytic approximation, and analysis of epidemics on networks</td>
+                        <td>The Journal of Open Source Software</td>
+                        <td><a href="https://doi.org/10.21105/joss.01731" target="_blank" style="word-break: break-all;">10.21105/joss.01731</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Honey-bee–associated prokaryotic viral communities reveal wide viral diversity and a profound metabolic coding potential</td>
+                        <td>Proceedings of the National Academy of Sciences</td>
+                        <td><a href="https://doi.org/10.1073/pnas.1921859117" target="_blank" style="word-break: break-all;">10.1073/pnas.1921859117</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Centrality in Networks: Finding the Most Important Nodes</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-06222-4_8" target="_blank" style="word-break: break-all;">10.1007/978-3-030-06222-4_8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Psychological factors shaping public responses to COVID-19 digital contact tracing technologies in Germany</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-021-98249-5" target="_blank" style="word-break: break-all;">10.1038/s41598-021-98249-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Collective dynamics of stock market efficiency</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-020-78707-2" target="_blank" style="word-break: break-all;">10.1038/s41598-020-78707-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Carrier localization in the vicinity of dislocations in InGaN</td>
+                        <td>Journal of Applied Physics</td>
+                        <td><a href="https://doi.org/10.1063/1.4973278" target="_blank" style="word-break: break-all;">10.1063/1.4973278</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>On the limits of active module identification</td>
+                        <td>Briefings in Bioinformatics</td>
+                        <td><a href="https://doi.org/10.1093/bib/bbab066" target="_blank" style="word-break: break-all;">10.1093/bib/bbab066</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Spatial and network characteristics of Irish cattle movements</td>
+                        <td>Preventive Veterinary Medicine</td>
+                        <td><a href="https://doi.org/10.1016/j.prevetmed.2020.105095" target="_blank" style="word-break: break-all;">10.1016/j.prevetmed.2020.105095</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Hypergraphx: a library for higher-order network analysis</td>
+                        <td>Journal of Complex Networks</td>
+                        <td><a href="https://doi.org/10.1093/comnet/cnad019" target="_blank" style="word-break: break-all;">10.1093/comnet/cnad019</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>BABD: A Bitcoin Address Behavior Dataset for Pattern Analysis</td>
+                        <td>IEEE Transactions on Information Forensics and Security</td>
+                        <td><a href="https://doi.org/10.1109/tifs.2023.3347894" target="_blank" style="word-break: break-all;">10.1109/tifs.2023.3347894</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Intraseasonal synchronization of extreme rainfall between North India and the Sahel</td>
+                        <td>Quarterly Journal of the Royal Meteorological Society</td>
+                        <td><a href="https://doi.org/10.1002/qj.4946" target="_blank" style="word-break: break-all;">10.1002/qj.4946</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>A Deep Generative Model for Graph Layout</td>
+                        <td>IEEE Transactions on Visualization and Computer Graphics</td>
+                        <td><a href="https://doi.org/10.1109/tvcg.2019.2934396" target="_blank" style="word-break: break-all;">10.1109/tvcg.2019.2934396</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>D-Map: Visual analysis of ego-centric information diffusion patterns in social media</td>
+                        <td>UTS ePRESS (University of Technology Sydney)</td>
+                        <td><a href="https://doi.org/10.1109/vast.2016.7883510" target="_blank" style="word-break: break-all;">10.1109/vast.2016.7883510</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Link prediction with hyperbolic geometry</td>
+                        <td>Physical Review Research</td>
+                        <td><a href="https://doi.org/10.1103/physrevresearch.2.043113" target="_blank" style="word-break: break-all;">10.1103/physrevresearch.2.043113</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>The phase stability network of all inorganic materials</td>
+                        <td>Science Advances</td>
+                        <td><a href="https://doi.org/10.1126/sciadv.aay5606" target="_blank" style="word-break: break-all;">10.1126/sciadv.aay5606</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Modal Participation Factors of Algebraic Variables</td>
+                        <td>IEEE Transactions on Power Systems</td>
+                        <td><a href="https://doi.org/10.1109/tpwrs.2019.2931965" target="_blank" style="word-break: break-all;">10.1109/tpwrs.2019.2931965</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Predicting effective thermal conductivity in sands using an artificial neural network with multiscale microstructural parameters</td>
+                        <td>International Journal of Heat and Mass Transfer</td>
+                        <td><a href="https://doi.org/10.1016/j.ijheatmasstransfer.2021.120997" target="_blank" style="word-break: break-all;">10.1016/j.ijheatmasstransfer.2021.120997</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Merge-split Markov chain Monte Carlo for community detection</td>
+                        <td>Physical review. E</td>
+                        <td><a href="https://doi.org/10.1103/physreve.102.012305" target="_blank" style="word-break: break-all;">10.1103/physreve.102.012305</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Community detection in bipartite networks with stochastic block models</td>
+                        <td>Physical review. E</td>
+                        <td><a href="https://doi.org/10.1103/physreve.102.032309" target="_blank" style="word-break: break-all;">10.1103/physreve.102.032309</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Core–periphery structure in directed networks</td>
+                        <td>Proceedings of the Royal Society A Mathematical Physical and Engineering Sciences</td>
+                        <td><a href="https://doi.org/10.1098/rspa.2019.0783" target="_blank" style="word-break: break-all;">10.1098/rspa.2019.0783</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>CellVGAE: an unsupervised scRNA-seq analysis workflow with graph attention networks</td>
+                        <td>Bioinformatics</td>
+                        <td><a href="https://doi.org/10.1093/bioinformatics/btab804" target="_blank" style="word-break: break-all;">10.1093/bioinformatics/btab804</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Towards automation of chemical process route selection based on data mining</td>
+                        <td>Green Chemistry</td>
+                        <td><a href="https://doi.org/10.1039/c6gc02482c" target="_blank" style="word-break: break-all;">10.1039/c6gc02482c</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Biomolecule and Bioentity Interaction Databases in Systems Biology: A Comprehensive Review</td>
+                        <td>Biomolecules</td>
+                        <td><a href="https://doi.org/10.3390/biom11081245" target="_blank" style="word-break: break-all;">10.3390/biom11081245</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Disentangling Homophily, Community Structure, and Triadic Closure in Networks</td>
+                        <td>Physical Review X</td>
+                        <td><a href="https://doi.org/10.1103/physrevx.12.011004" target="_blank" style="word-break: break-all;">10.1103/physrevx.12.011004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>A Topic Modeling Analysis of TCGA Breast and Lung Cancer Transcriptomic Data</td>
+                        <td>Cancers</td>
+                        <td><a href="https://doi.org/10.3390/cancers12123799" target="_blank" style="word-break: break-all;">10.3390/cancers12123799</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Correlation of Metabolic Profiles of Plasma and Cerebrospinal Fluid of High-Grade Glioma Patients</td>
+                        <td>Metabolites</td>
+                        <td><a href="https://doi.org/10.3390/metabo11030133" target="_blank" style="word-break: break-all;">10.3390/metabo11030133</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Time-Triggered Traffic Planning for Data Networks with Conflict Graphs</td>
+                        <td>Fachbereich Informatik (University of Stuttgart)</td>
+                        <td><a href="https://doi.org/10.1109/rtas48715.2020.00-12" target="_blank" style="word-break: break-all;">10.1109/rtas48715.2020.00-12</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Change point detection in social networks—Critical review with experiments</td>
+                        <td>Computer Science Review</td>
+                        <td><a href="https://doi.org/10.1016/j.cosrev.2018.05.001" target="_blank" style="word-break: break-all;">10.1016/j.cosrev.2018.05.001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Decentralized proof of location in vehicular Ad Hoc networks</td>
+                        <td>Computer Communications</td>
+                        <td><a href="https://doi.org/10.1016/j.comcom.2019.07.024" target="_blank" style="word-break: break-all;">10.1016/j.comcom.2019.07.024</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Epidemic management and control through risk-dependent individual contact interventions</td>
+                        <td>PLoS Computational Biology</td>
+                        <td><a href="https://doi.org/10.1371/journal.pcbi.1010171" target="_blank" style="word-break: break-all;">10.1371/journal.pcbi.1010171</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Dynamic QoS-Aware Traffic Planning for Time-Triggered Flows in the Real-Time Data Plane</td>
+                        <td>IEEE Transactions on Network and Service Management</td>
+                        <td><a href="https://doi.org/10.1109/tnsm.2022.3150664" target="_blank" style="word-break: break-all;">10.1109/tnsm.2022.3150664</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Invited Paper: CircuitOps: An ML Infrastructure Enabling Generative AI for VLSI Circuit Optimization</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/iccad57390.2023.10323611" target="_blank" style="word-break: break-all;">10.1109/iccad57390.2023.10323611</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>D-Map+</td>
+                        <td>ACM Transactions on Intelligent Systems and Technology</td>
+                        <td><a href="https://doi.org/10.1145/3183347" target="_blank" style="word-break: break-all;">10.1145/3183347</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A comprehensive survey of complex brain network representation</td>
+                        <td>Meta-Radiology</td>
+                        <td><a href="https://doi.org/10.1016/j.metrad.2023.100046" target="_blank" style="word-break: break-all;">10.1016/j.metrad.2023.100046</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Stress Knowledge Map: A knowledge graph resource for systems biology analysis of plant stress responses</td>
+                        <td>Plant Communications</td>
+                        <td><a href="https://doi.org/10.1016/j.xplc.2024.100920" target="_blank" style="word-break: break-all;">10.1016/j.xplc.2024.100920</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Challenging the Trustworthiness of PGP: Is the Web-of-Trust Tear-Proof?</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-319-24174-6_22" target="_blank" style="word-break: break-all;">10.1007/978-3-319-24174-6_22</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Deep forecasting of translational impact in medical research</td>
+                        <td>Patterns</td>
+                        <td><a href="https://doi.org/10.1016/j.patter.2022.100483" target="_blank" style="word-break: break-all;">10.1016/j.patter.2022.100483</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>The cityseer Python package for pedestrian-scale network-based urban analysis</td>
+                        <td>Environment and Planning B Urban Analytics and City Science</td>
+                        <td><a href="https://doi.org/10.1177/23998083221133827" target="_blank" style="word-break: break-all;">10.1177/23998083221133827</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Network cartography of university students’ knowledge landscapes about the history of science: landmarks and thematic communities</td>
+                        <td>Applied Network Science</td>
+                        <td><a href="https://doi.org/10.1007/s41109-019-0113-8" target="_blank" style="word-break: break-all;">10.1007/s41109-019-0113-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Deep Learning on Graphs</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108924184" target="_blank" style="word-break: break-all;">10.1017/9781108924184</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Frugal: Building Degree-Constrained Overlay Topology from Social Graphs</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icfec.2017.19" target="_blank" style="word-break: break-all;">10.1109/icfec.2017.19</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Force-Directed Graph Layouts Revisited: A New Force Based on the T-Distribution</td>
+                        <td>IEEE Transactions on Visualization and Computer Graphics</td>
+                        <td><a href="https://doi.org/10.1109/tvcg.2023.3238821" target="_blank" style="word-break: break-all;">10.1109/tvcg.2023.3238821</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Cortical Network Disruption Is Minimal in Early Stages of Psychosis</td>
+                        <td>Schizophrenia Bulletin Open</td>
+                        <td><a href="https://doi.org/10.1093/schizbullopen/sgae010" target="_blank" style="word-break: break-all;">10.1093/schizbullopen/sgae010</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Efficient Generation and Processing of Word Co-occurrence Networks Using corpus2graph</td>
+                        <td>HAL (Le Centre pour la Communication Scientifique Directe)</td>
+                        <td><a href="https://doi.org/10.18653/v1/w18-1702" target="_blank" style="word-break: break-all;">10.18653/v1/w18-1702</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A graph-theory based directed network feature for thermal anisotropy</td>
+                        <td>International Journal of Heat and Mass Transfer</td>
+                        <td><a href="https://doi.org/10.1016/j.ijheatmasstransfer.2022.122987" target="_blank" style="word-break: break-all;">10.1016/j.ijheatmasstransfer.2022.122987</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>BeSnake: A Routing Algorithm for Scalable Spin-Qubit Architectures</td>
+                        <td>IEEE Transactions on Quantum Engineering</td>
+                        <td><a href="https://doi.org/10.1109/tqe.2024.3429451" target="_blank" style="word-break: break-all;">10.1109/tqe.2024.3429451</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>An Empirical Assessment of the Complexity and Realism of Synthetic Social Contact Networks</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.1109/bigdata.2018.8622199" target="_blank" style="word-break: break-all;">10.1109/bigdata.2018.8622199</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Retrieval Augmented Docking Using Hierarchical Navigable Small Worlds</td>
+                        <td>Journal of Chemical Information and Modeling</td>
+                        <td><a href="https://doi.org/10.1021/acs.jcim.4c00683" target="_blank" style="word-break: break-all;">10.1021/acs.jcim.4c00683</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>The Topology of Communicating Across Cities of Increasing Sizes, or the Complex Task of “Reaching Out” in Larger Cities</td>
+                        <td>Lecture notes in morphogenesis</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-36656-8_6" target="_blank" style="word-break: break-all;">10.1007/978-3-030-36656-8_6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Social media discussions anticipates financial market volumes</td>
+                        <td>Physica A Statistical Mechanics and its Applications</td>
+                        <td><a href="https://doi.org/10.1016/j.physa.2025.130388" target="_blank" style="word-break: break-all;">10.1016/j.physa.2025.130388</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Exploiting Anonymity in Approximate Linear Programming: Scaling to Large Multiagent MDPs</td>
+                        <td>Proceedings of the AAAI Conference on Artificial Intelligence</td>
+                        <td><a href="https://doi.org/10.1609/aaai.v30i1.10133" target="_blank" style="word-break: break-all;">10.1609/aaai.v30i1.10133</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Stochastic block model reveals maps of citation patterns and their evolution in time</td>
+                        <td>Journal of Informetrics</td>
+                        <td><a href="https://doi.org/10.1016/j.joi.2018.05.004" target="_blank" style="word-break: break-all;">10.1016/j.joi.2018.05.004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Flexibility Due to Abstraction and Decomposition</td>
+                        <td>Systems Engineering</td>
+                        <td><a href="https://doi.org/10.1002/sys.21381" target="_blank" style="word-break: break-all;">10.1002/sys.21381</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Ligand-Induced Conformational Dynamics of A Tyramine Receptor from Sitophilus oryzae</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-019-52478-x" target="_blank" style="word-break: break-all;">10.1038/s41598-019-52478-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Analytical Results on the BFS vs. DFS Algorithm Selection Problem. Part I: Tree Search</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-319-26350-2_14" target="_blank" style="word-break: break-all;">10.1007/978-3-319-26350-2_14</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Simultaneous tomographic reconstruction and segmentation with class priors</td>
+                        <td>Inverse Problems in Science and Engineering</td>
+                        <td><a href="https://doi.org/10.1080/17415977.2015.1124428" target="_blank" style="word-break: break-all;">10.1080/17415977.2015.1124428</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Barrier coverage in energy harvesting sensor networks</td>
+                        <td>Ad Hoc Networks</td>
+                        <td><a href="https://doi.org/10.1016/j.adhoc.2016.11.014" target="_blank" style="word-break: break-all;">10.1016/j.adhoc.2016.11.014</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Hybrid Mixed-Membership Blockmodel for Inference on Realistic Network Interactions</td>
+                        <td>IEEE Transactions on Network Science and Engineering</td>
+                        <td><a href="https://doi.org/10.1109/tnse.2018.2823324" target="_blank" style="word-break: break-all;">10.1109/tnse.2018.2823324</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Lowering tomography costs in quantum simulation with a symmetry projected operator basis</td>
+                        <td>Physical review. A/Physical review, A</td>
+                        <td><a href="https://doi.org/10.1103/physreva.103.012420" target="_blank" style="word-break: break-all;">10.1103/physreva.103.012420</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>A graph-based modelling framework for vulnerability analysis of critical sequences of events in power systems</td>
+                        <td>International Journal of Electrical Power & Energy Systems</td>
+                        <td><a href="https://doi.org/10.1016/j.ijepes.2020.106408" target="_blank" style="word-break: break-all;">10.1016/j.ijepes.2020.106408</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Simultaneous task allocation and motion scheduling for complex tasks executed by multiple robots</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icra40945.2020.9197103" target="_blank" style="word-break: break-all;">10.1109/icra40945.2020.9197103</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Efficient Solution of Enterprise-Wide Optimization Problems Using Nested Stochastic Blockmodeling</td>
+                        <td>Industrial & Engineering Chemistry Research</td>
+                        <td><a href="https://doi.org/10.1021/acs.iecr.1c01570" target="_blank" style="word-break: break-all;">10.1021/acs.iecr.1c01570</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Out-of-Oblivion Cage Molecules and Their Porous Crystalline Phases</td>
+                        <td>Crystal Growth & Design</td>
+                        <td><a href="https://doi.org/10.1021/acs.cgd.7b01095" target="_blank" style="word-break: break-all;">10.1021/acs.cgd.7b01095</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>The problematization of ‘star architecture’ in architecture research</td>
+                        <td>European Planning Studies</td>
+                        <td><a href="https://doi.org/10.1080/09654313.2021.1889476" target="_blank" style="word-break: break-all;">10.1080/09654313.2021.1889476</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>In silico identification of bacterial seaweed-degrading bioplastic producers</td>
+                        <td>Microbial Genomics</td>
+                        <td><a href="https://doi.org/10.1099/mgen.0.000866" target="_blank" style="word-break: break-all;">10.1099/mgen.0.000866</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Formation and morphology of closed and porous films grown from grains seeded on substrates: Two-dimensional simulations</td>
+                        <td>Acta Materialia</td>
+                        <td><a href="https://doi.org/10.1016/j.actamat.2021.117555" target="_blank" style="word-break: break-all;">10.1016/j.actamat.2021.117555</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Mechine Learning Approach for Botnet Detection Using LightGBM</td>
+                        <td>2022 3rd International Conference on Computer Vision, Image and Deep Learning &amp; International Conference on Computer Engineering and Applications (CVIDL &amp; ICCEA)</td>
+                        <td><a href="https://doi.org/10.1109/cvidliccea56201.2022.9824033" target="_blank" style="word-break: break-all;">10.1109/cvidliccea56201.2022.9824033</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>CGRA Tool Flow for Fast Run-Time Reconfiguration</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-319-78890-6_53" target="_blank" style="word-break: break-all;">10.1007/978-3-319-78890-6_53</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Graph-Assisted Visualization of Microvascular Networks</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/visual.2019.8933682" target="_blank" style="word-break: break-all;">10.1109/visual.2019.8933682</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>ABCDE: Approximating Betweenness-Centrality ranking with progressive-DropEdge</td>
+                        <td>PeerJ Computer Science</td>
+                        <td><a href="https://doi.org/10.7717/peerj-cs.699" target="_blank" style="word-break: break-all;">10.7717/peerj-cs.699</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>The wireless network jamming problem subject to protocol interference</td>
+                        <td>Networks</td>
+                        <td><a href="https://doi.org/10.1002/net.21664" target="_blank" style="word-break: break-all;">10.1002/net.21664</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Finite-size analysis of the detectability limit of the stochastic block model</td>
+                        <td>Physical review. E</td>
+                        <td><a href="https://doi.org/10.1103/physreve.95.062304" target="_blank" style="word-break: break-all;">10.1103/physreve.95.062304</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Two pathways in vocabulary development: Large-scale differences in noun and verb semantic structure</td>
+                        <td>Cognitive Psychology</td>
+                        <td><a href="https://doi.org/10.1016/j.cogpsych.2023.101574" target="_blank" style="word-break: break-all;">10.1016/j.cogpsych.2023.101574</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>SplineCam: Exact Visualization and Characterization of Deep Network Geometry and Decision Boundaries</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/cvpr52729.2023.00369" target="_blank" style="word-break: break-all;">10.1109/cvpr52729.2023.00369</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Graph Neural Networks in Natural Language Processing</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108924184.015" target="_blank" style="word-break: break-all;">10.1017/9781108924184.015</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Modularity of food-sharing networks minimises the risk for individual and group starvation in hunter-gatherer societies</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0272733" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0272733</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Weisfeiler and Lehman Go Paths: Learning Topological Features via Path Complexes</td>
+                        <td>Proceedings of the AAAI Conference on Artificial Intelligence</td>
+                        <td><a href="https://doi.org/10.1609/aaai.v38i14.29463" target="_blank" style="word-break: break-all;">10.1609/aaai.v38i14.29463</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Totally Asynchronous Primal-Dual Convex Optimization in Blocks</td>
+                        <td>IEEE Transactions on Control of Network Systems</td>
+                        <td><a href="https://doi.org/10.1109/tcns.2022.3203366" target="_blank" style="word-break: break-all;">10.1109/tcns.2022.3203366</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Modal propagation analysis with participation factors of complex frequency variables</td>
+                        <td>Electric Power Systems Research</td>
+                        <td><a href="https://doi.org/10.1016/j.epsr.2024.110295" target="_blank" style="word-break: break-all;">10.1016/j.epsr.2024.110295</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Computational limits to the legibility of the imaged human brain</td>
+                        <td>NeuroImage</td>
+                        <td><a href="https://doi.org/10.1016/j.neuroimage.2024.120600" target="_blank" style="word-break: break-all;">10.1016/j.neuroimage.2024.120600</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Network reconstruction problem for an epidemic reaction--diffusion system</td>
+                        <td>Journal of Complex Networks</td>
+                        <td><a href="https://doi.org/10.1093/comnet/cnac047" target="_blank" style="word-break: break-all;">10.1093/comnet/cnac047</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A graph-based superframework for mixture model estimation using EM: an analysis of US wholesale electricity markets</td>
+                        <td>Neural Computing and Applications</td>
+                        <td><a href="https://doi.org/10.1007/s00521-023-08468-2" target="_blank" style="word-break: break-all;">10.1007/s00521-023-08468-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Modeling Sense Structure in Word Usage Graphs with the Weighted Stochastic Block Model</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.18653/v1/2021.starsem-1.23" target="_blank" style="word-break: break-all;">10.18653/v1/2021.starsem-1.23</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Strong bounds and exact solutions to the minimum broadcast time problem</td>
+                        <td>International Transactions in Operational Research</td>
+                        <td><a href="https://doi.org/10.1111/itor.13304" target="_blank" style="word-break: break-all;">10.1111/itor.13304</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>A short-graph fourier transform via personalized pagerank vectors</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icassp.2016.7472590" target="_blank" style="word-break: break-all;">10.1109/icassp.2016.7472590</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Debiasing Graph Representations via Metadata-Orthogonal Training</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/asonam49781.2020.9381348" target="_blank" style="word-break: break-all;">10.1109/asonam49781.2020.9381348</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Understanding and Improving Graph Algorithm Performance</td>
+                        <td>eScholarship (California Digital Library)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>A Mathematical Analysis of an Example Delay Tolerant Network using the Theory of Sheaves</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/aero47225.2020.9172366" target="_blank" style="word-break: break-all;">10.1109/aero47225.2020.9172366</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Design and demonstration of a data model to integrate agent-based and field-based modelling</td>
+                        <td>Environmental Modelling & Software</td>
+                        <td><a href="https://doi.org/10.1016/j.envsoft.2016.11.016" target="_blank" style="word-break: break-all;">10.1016/j.envsoft.2016.11.016</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Latent Poisson models for networks with heterogeneous density</td>
+                        <td>Physical review. E</td>
+                        <td><a href="https://doi.org/10.1103/physreve.102.012309" target="_blank" style="word-break: break-all;">10.1103/physreve.102.012309</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Biological data questions the support of the self inhibition required for pattern generation in the half center model</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0238586" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0238586</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>RaftGP: Random Fast Graph Partitioning</td>
+                        <td>Rare & Special e-Zone (The Hong Kong University of Science and Technology)</td>
+                        <td><a href="https://doi.org/10.1109/hpec58863.2023.10363495" target="_blank" style="word-break: break-all;">10.1109/hpec58863.2023.10363495</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Character networks and book genre classification</td>
+                        <td>International Journal of Modern Physics C</td>
+                        <td><a href="https://doi.org/10.1142/s012918311950058x" target="_blank" style="word-break: break-all;">10.1142/s012918311950058x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Automatic Tool-Flow for Mapping Applications to an Application-Specific CGRA Architecture</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/ipdpsw.2019.00033" target="_blank" style="word-break: break-all;">10.1109/ipdpsw.2019.00033</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Comparison of Meta-Heuristics for the Planning of Meshed Power Systems</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.1109/energycon48941.2020.9236486" target="_blank" style="word-break: break-all;">10.1109/energycon48941.2020.9236486</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Discerning media bias within a network of political allies and opponents: Disruption by partisans</td>
+                        <td>Physica A Statistical Mechanics and its Applications</td>
+                        <td><a href="https://doi.org/10.1016/j.physa.2023.128958" target="_blank" style="word-break: break-all;">10.1016/j.physa.2023.128958</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Spectral clustering algorithms for the detection of clusters in block-cyclic and block-acyclic graphs</td>
+                        <td>Journal of Complex Networks</td>
+                        <td><a href="https://doi.org/10.1093/comnet/cny011" target="_blank" style="word-break: break-all;">10.1093/comnet/cny011</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Network analysis of the immune state of mice</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-021-83139-7" target="_blank" style="word-break: break-all;">10.1038/s41598-021-83139-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>On embeddability of modular robot designs</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icra.2015.7139448" target="_blank" style="word-break: break-all;">10.1109/icra.2015.7139448</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Golden Model-Free Hardware Trojan Detection by Classification of Netlist Module Graphs</td>
+                        <td>2022 Design, Automation &amp; Test in Europe Conference &amp; Exhibition (DATE)</td>
+                        <td><a href="https://doi.org/10.23919/date54114.2022.9774760" target="_blank" style="word-break: break-all;">10.23919/date54114.2022.9774760</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>A semantics-based exploratory game to enrich school classes with relevant historical facts</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/smap.2016.7753397" target="_blank" style="word-break: break-all;">10.1109/smap.2016.7753397</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Fitting networks models for functional brain connectivity</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/isbi.2017.7950573" target="_blank" style="word-break: break-all;">10.1109/isbi.2017.7950573</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>DecisionDroid: a supervised learning-based system to identify cloned Android applications</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1145/3106237.3121277" target="_blank" style="word-break: break-all;">10.1145/3106237.3121277</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>A Graph Layout Framework Combining t-Distributed Neighbor Retrieval Visualizer and Energy Models</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2019.2900358" target="_blank" style="word-break: break-all;">10.1109/access.2019.2900358</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td><b>missSBM</b>: An <i>R</i> Package for Handling Missing Values in the Stochastic Block Model</td>
+                        <td>Journal of Statistical Software</td>
+                        <td><a href="https://doi.org/10.18637/jss.v101.i12" target="_blank" style="word-break: break-all;">10.18637/jss.v101.i12</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Scale-free networks need not be fragile</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/asonam49781.2020.9381326" target="_blank" style="word-break: break-all;">10.1109/asonam49781.2020.9381326</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Internal control of brain networks via sparse feedback</td>
+                        <td>AIChE Journal</td>
+                        <td><a href="https://doi.org/10.1002/aic.18061" target="_blank" style="word-break: break-all;">10.1002/aic.18061</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Exact Distributed Stochastic Block Partitioning</td>
+                        <td>VTechWorks (Virginia Tech)</td>
+                        <td><a href="https://doi.org/10.1109/cluster52292.2023.00010" target="_blank" style="word-break: break-all;">10.1109/cluster52292.2023.00010</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>On the structural properties of social networks and their measurement-calibrated synthetic counterparts</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.1145/3341161.3343686" target="_blank" style="word-break: break-all;">10.1145/3341161.3343686</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>In‐depth characterization of genome‐scale network reconstructions for the in vitro synthesis in cell‐free systems</td>
+                        <td>Biotechnology and Bioengineering</td>
+                        <td><a href="https://doi.org/10.1002/bit.27249" target="_blank" style="word-break: break-all;">10.1002/bit.27249</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>PlasmoData.jl — A Julia framework for modeling and analyzing complex data as graphs</td>
+                        <td>Computers & Chemical Engineering</td>
+                        <td><a href="https://doi.org/10.1016/j.compchemeng.2024.108679" target="_blank" style="word-break: break-all;">10.1016/j.compchemeng.2024.108679</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Modeling the duality of content niches and user interactions on online social media platforms</td>
+                        <td>Social Networks</td>
+                        <td><a href="https://doi.org/10.1016/j.socnet.2025.05.001" target="_blank" style="word-break: break-all;">10.1016/j.socnet.2025.05.001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>UDEPLOY: User-Driven Learning for Occupancy Sensors DEPLOYment In Smart Buildings</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/percomw.2018.8480164" target="_blank" style="word-break: break-all;">10.1109/percomw.2018.8480164</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>An open-data, agent-based model of alcohol related crime</td>
+                        <td>ORCA Online Research @Cardiff (Cardiff University)</td>
+                        <td><a href="https://doi.org/10.1109/avss.2017.8078513" target="_blank" style="word-break: break-all;">10.1109/avss.2017.8078513</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Optimal routing and scheduling of complemental flows in converged networks</td>
+                        <td>Fachbereich Informatik (University of Stuttgart)</td>
+                        <td><a href="https://doi.org/10.1145/3356401.3356415" target="_blank" style="word-break: break-all;">10.1145/3356401.3356415</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Back to the Whiteboard: a Principled Approach for the Assessment and Design of Memory Forensic Techniques</td>
+                        <td>HAL (Le Centre pour la Communication Scientifique Directe)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Towards Visual Sociolinguistic Network Analysis</td>
+                        <td>KTH Publication Database DiVA (KTH Royal Institute of Technology)</td>
+                        <td><a href="https://doi.org/10.5220/0010328202480255" target="_blank" style="word-break: break-all;">10.5220/0010328202480255</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Domain‐topic models with chained dimensions: Charting an emergent domain of a major oncology conference</td>
+                        <td>HAL (Le Centre pour la Communication Scientifique Directe)</td>
+                        <td><a href="https://doi.org/10.1002/asi.24606" target="_blank" style="word-break: break-all;">10.1002/asi.24606</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A network approach to atomic spectra</td>
+                        <td>Journal of Physics Complexity</td>
+                        <td><a href="https://doi.org/10.1088/2632-072x/ace1c3" target="_blank" style="word-break: break-all;">10.1088/2632-072x/ace1c3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Inter-firm patent litigation networks: a study of network motif analysis</td>
+                        <td>Frontiers in Physics</td>
+                        <td><a href="https://doi.org/10.3389/fphy.2024.1331286" target="_blank" style="word-break: break-all;">10.3389/fphy.2024.1331286</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Network Evolution With Mesoscopic Delays</td>
+                        <td>Random Structures and Algorithms</td>
+                        <td><a href="https://doi.org/10.1002/rsa.70029" target="_blank" style="word-break: break-all;">10.1002/rsa.70029</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Using network motifs to characterize temporal network evolution leading to diffusion inhibition</td>
+                        <td>Social Network Analysis and Mining</td>
+                        <td><a href="https://doi.org/10.1007/s13278-019-0556-z" target="_blank" style="word-break: break-all;">10.1007/s13278-019-0556-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Prediction of Chemical Reactions Using Statistical Models of Chemical Knowledge</td>
+                        <td>ChemRxiv</td>
+                        <td><a href="https://doi.org/10.26434/chemrxiv.6954908.v1" target="_blank" style="word-break: break-all;">10.26434/chemrxiv.6954908.v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Network vulnerability in two-phase evolution</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/sibcon.2016.7491785" target="_blank" style="word-break: break-all;">10.1109/sibcon.2016.7491785</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Estimating Current-Flow Closeness Centrality with a Multigrid Laplacian Solver</td>
+                        <td>Society for Industrial and Applied Mathematics eBooks</td>
+                        <td><a href="https://doi.org/10.1137/1.9781611974690.ch1" target="_blank" style="word-break: break-all;">10.1137/1.9781611974690.ch1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Towards optimal decomposition of Boolean networks</td>
+                        <td>Open Repository and Bibliography (University of Luxembourg)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Classification of HIV data by constructing a social network with frequent itemsets</td>
+                        <td>2016 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM)</td>
+                        <td><a href="https://doi.org/10.1109/asonam.2016.7752354" target="_blank" style="word-break: break-all;">10.1109/asonam.2016.7752354</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>A branch-and-cut method for the Vehicle Relocation Problem in the One-Way Car-Sharing</td>
+                        <td>KTH Publication Database DiVA (KTH Royal Institute of Technology)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Mining and visualizing robust maximal association rules on highly variable textual data in entrepreneurship</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1145/3012071.3012097" target="_blank" style="word-break: break-all;">10.1145/3012071.3012097</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Integrating productivity-oriented programming languages with high-performance data structures</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/hpec.2017.8091068" target="_blank" style="word-break: break-all;">10.1109/hpec.2017.8091068</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>A Vertex-Centric Graph Simulation Algorithm for Large Graphs</td>
+                        <td>Communications in computer and information science</td>
+                        <td><a href="https://doi.org/10.1007/978-981-13-2922-7_16" target="_blank" style="word-break: break-all;">10.1007/978-981-13-2922-7_16</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Business Network Analytics: From Graphs to Supernetworks</td>
+                        <td>NOVA (University of Newcastle Australia)</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-06222-4_7" target="_blank" style="word-break: break-all;">10.1007/978-3-030-06222-4_7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Graph-based open-ended survey on concerns related to COVID-19</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0256212" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0256212</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Foundations of Deep Learning</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781108924184.006" target="_blank" style="word-break: break-all;">10.1017/9781108924184.006</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Production process networks: a trophic analysis</td>
+                        <td>Journal of Physics Complexity</td>
+                        <td><a href="https://doi.org/10.1088/2632-072x/acbd7c" target="_blank" style="word-break: break-all;">10.1088/2632-072x/acbd7c</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>WITHDRAWN: Visual analytics of multivariate networks with representation learning and composite variable construction</td>
+                        <td>Visual Informatics</td>
+                        <td><a href="https://doi.org/10.1016/j.visinf.2023.06.004" target="_blank" style="word-break: break-all;">10.1016/j.visinf.2023.06.004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Merging and validating heterogenous, multi-layered corpora with discoursegraphs</td>
+                        <td>LDV-Forum/Journal for language technology and computational linguistics</td>
+                        <td><a href="https://doi.org/10.21248/jlcl.31.2016.204" target="_blank" style="word-break: break-all;">10.21248/jlcl.31.2016.204</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>The Tabula Sapiens: a multiple organ single cell transcriptomic atlas of humans</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2021.07.19.452956" target="_blank" style="word-break: break-all;">10.1101/2021.07.19.452956</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>A scikit-based Python environment for performing multi-label classification</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.1702.01460" target="_blank" style="word-break: break-all;">10.48550/arxiv.1702.01460</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>None</td>
+                        <td>Modelling sequences and temporal networks with dynamic community structures</td>
+                        <td>RePEc: Research Papers in Economics</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Online Social Network Analysis: A Survey of Research Applications in Computer Science</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.1504.05655" target="_blank" style="word-break: break-all;">10.48550/arxiv.1504.05655</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Population diversity jeopardizes the efficacy of antibiotic cycling</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/082107" target="_blank" style="word-break: break-all;">10.1101/082107</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>GraSPy: Graph Statistics in Python</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.1904.05329" target="_blank" style="word-break: break-all;">10.48550/arxiv.1904.05329</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Learning to Identify High Betweenness Centrality Nodes from Scratch: A Novel Graph Neural Network Approach</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.1905.10418" target="_blank" style="word-break: break-all;">10.48550/arxiv.1905.10418</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>The fundamental principles of antibody repertoire architecture revealed by large-scale network analysis</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/124578" target="_blank" style="word-break: break-all;">10.1101/124578</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Tracking Temporal Evolution of Network Activity for Botnet Detection</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.1908.03443" target="_blank" style="word-break: break-all;">10.48550/arxiv.1908.03443</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Karate Club: An API Oriented Open-source Python Framework for Unsupervised Learning on Graphs</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2003.04819" target="_blank" style="word-break: break-all;">10.48550/arxiv.2003.04819</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>mGNN: Generalizing the Graph Neural Networks to the Multilayer Case</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2109.10119" target="_blank" style="word-break: break-all;">10.48550/arxiv.2109.10119</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>MONET: Debiasing Graph Embeddings via the Metadata-Orthogonal Training Unit</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.1909.11793" target="_blank" style="word-break: break-all;">10.48550/arxiv.1909.11793</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Large-scale network analysis captures biological features of bacterial plasmids</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/785212" target="_blank" style="word-break: break-all;">10.1101/785212</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Flow-based Algorithms for Improving Clusters: A Unifying Framework, Software, and Performance</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2004.09608" target="_blank" style="word-break: break-all;">10.48550/arxiv.2004.09608</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>None</td>
+                        <td>Finding Equilibria in the Traffic Assignment Problem with Primal-Dual Gradient Methods for Stable Dynamics Model and Beckmann Model</td>
+                        <td>RePEc: Research Papers in Economics</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Proceedings of the Twelfth Workshop on Graph-Based Methods for Natural Language Processing (TextGraphs-12)</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.18653/v1/w18-17" target="_blank" style="word-break: break-all;">10.18653/v1/w18-17</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Self-assembling Manifolds in Single-cell RNA Sequencing Data</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/364166" target="_blank" style="word-break: break-all;">10.1101/364166</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Understanding the Structure and Dynamics of Peptides and Proteins Through the Lens of Network Science</td>
+                        <td>Methods and principles in medicinal chemistry</td>
+                        <td><a href="https://doi.org/10.1002/9783527806836.ch6" target="_blank" style="word-break: break-all;">10.1002/9783527806836.ch6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>A topic modelling analysis of TCGA breast and lung cancer transcriptomic data</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2020.10.19.345694" target="_blank" style="word-break: break-all;">10.1101/2020.10.19.345694</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>An Explainable Artificial Intelligence Approach for Predicting Cardiovascular Outcomes using Electronic Health Records</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2021.07.21.21260474" target="_blank" style="word-break: break-all;">10.1101/2021.07.21.21260474</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Descriptive vs. inferential community detection: pitfalls, myths and half-truths.</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A comparison of node vaccination strategies to halt SIR epidemic spreading in real-world complex networks</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-1870717/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-1870717/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>A Topological Approach to Meta-heuristics: Analytical Results on the BFS vs. DFS Algorithm Selection Problem</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.1509.02709" target="_blank" style="word-break: break-all;">10.48550/arxiv.1509.02709</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Template-free detection and classification of heterogeneous membrane-bound complexes in cryo-electron tomograms</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/413484" target="_blank" style="word-break: break-all;">10.1101/413484</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Estimation of Membrane Curvature for Cryo-Electron Tomography</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/579060" target="_blank" style="word-break: break-all;">10.1101/579060</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>CellVGAE: An unsupervised scRNA-seq analysis workflow with graph attention networks</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2020.12.20.423645" target="_blank" style="word-break: break-all;">10.1101/2020.12.20.423645</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>The Atlas for the Aspiring Network Scientist</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2101.00863" target="_blank" style="word-break: break-all;">10.48550/arxiv.2101.00863</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Le raisonnement analogique en lexicographie, son informatisation et son application au Réseau Lexical du Français</td>
+                        <td>Publications Et Travaux Academiques de Lorraine (Universite de Lorraine)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Little Ball of Fur: A Python Library for Graph Sampling</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2006.04311" target="_blank" style="word-break: break-all;">10.48550/arxiv.2006.04311</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Scalable Recommendation of Wikipedia Articles to Editors Using Representation Learning</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2009.11771" target="_blank" style="word-break: break-all;">10.48550/arxiv.2009.11771</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Detecting labour submarkets from worker-mobility networks: a preliminary study</td>
+                        <td>RePEc: Research Papers in Economics</td>
+                        <td><a href="https://doi.org/10.1920/wp.ifs.2020.3020" target="_blank" style="word-break: break-all;">10.1920/wp.ifs.2020.3020</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Graph-Based Open-Ended Survey on Concerns Related to COVID-19</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-124312/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-124312/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Generative neural networks separate common and specific transcriptional responses</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2021.05.24.445440" target="_blank" style="word-break: break-all;">10.1101/2021.05.24.445440</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Private Graph Data Release: A Survey</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2107.04245" target="_blank" style="word-break: break-all;">10.48550/arxiv.2107.04245</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Partition and Code: learning how to compress graphs</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2107.01952" target="_blank" style="word-break: break-all;">10.48550/arxiv.2107.01952</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Reducing Network Cooling Cost Using Twin-Field Quantum Key Distribution</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2107.02665" target="_blank" style="word-break: break-all;">10.48550/arxiv.2107.02665</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Topology-Guided Sampling for Fast and Accurate Community Detection.</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Reconstruction and variability of tropical pollination networks in the Brazilian Atlantic Forest</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2021.11.22.469524" target="_blank" style="word-break: break-all;">10.1101/2021.11.22.469524</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>BABD: A Bitcoin Address Behavior Dataset for Pattern Analysis</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2204.05746" target="_blank" style="word-break: break-all;">10.48550/arxiv.2204.05746</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>A Distributed Method for Fast Force-Directed Layout of Large Scale-free Network Graphs</td>
+                        <td>Unknown</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Detectability of ranking hierarchies in directed networks.</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Runtime Template Instantiation for C++</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.1611.00947" target="_blank" style="word-break: break-all;">10.48550/arxiv.1611.00947</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Classification of HIV data by constructing a social network with frequent itemsets</td>
+                        <td>Advances in Social Networks Analysis and Mining</td>
+                        <td><a href="https://doi.org/10.5555/3192424.3192603" target="_blank" style="word-break: break-all;">10.5555/3192424.3192603</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Neutral network assortativity shapes whether selective pressure promotes or hinders robustness</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/ssci.2016.7850146" target="_blank" style="word-break: break-all;">10.1109/ssci.2016.7850146</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Resolution of ranking hierarchies in directed networks</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0191604" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0191604</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Shortest paths to success: Network indicators of performance in innovation ecosystems</td>
+                        <td>Queen Mary Research Online (Queen Mary University of London)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>A graph-based algorithm for RNA-seq data normalization</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/321471" target="_blank" style="word-break: break-all;">10.1101/321471</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Analyzing Centralities of Embedded Nodes</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icdmw.2018.00151" target="_blank" style="word-break: break-all;">10.1109/icdmw.2018.00151</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Immune state networks of wild and laboratory mice</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/638445" target="_blank" style="word-break: break-all;">10.1101/638445</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>On Estimating LON-Based Measures in Cyclic Assignment Problem in Non-permutational Flow Shop Scheduling Problem</td>
+                        <td>Studies in systems, decision and control</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-27652-2_4" target="_blank" style="word-break: break-all;">10.1007/978-3-030-27652-2_4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Nondiagonal Mixture of Dirichlet Network Distributions for Analyzing a Stock Ownership Network</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2009.04446" target="_blank" style="word-break: break-all;">10.48550/arxiv.2009.04446</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Social Contagion and Associative Diffusion in Multilayer Network</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2011.07746" target="_blank" style="word-break: break-all;">10.48550/arxiv.2011.07746</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Ecological and physiological implications of vascular structure and function in oaks</td>
+                        <td>University of Minnesota Digital Conservancy (University of Minnesota)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Nondiagonal Mixture of Dirichlet Network Distributions for Analyzing a Stock Ownership Network</td>
+                        <td>Studies in computational intelligence</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-65347-7_7" target="_blank" style="word-break: break-all;">10.1007/978-3-030-65347-7_7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Dynamic QoS-Aware Traffic Planning for Time-Triggered Flows with Conflict Graphs.</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Contribution of genome scale metabolic modeling to niche theory</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2021.07.21.453190" target="_blank" style="word-break: break-all;">10.1101/2021.07.21.453190</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Automated Generation of Stand-Alone Codes for Software Libraries</td>
+                        <td>EPiC series in computing</td>
+                        <td><a href="https://doi.org/10.29007/2kx6" target="_blank" style="word-break: break-all;">10.29007/2kx6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Small-Signal Stability Techniques for Power System Modal Analysis, Control, and Numerical Integration</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2111.01694" target="_blank" style="word-break: break-all;">10.48550/arxiv.2111.01694</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Peer Review #2 of "ABCDE: Approximating Betweenness-Centrality ranking with progressive-DropEdge (v0.1)"</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.7287/peerj-cs.699v0.1/reviews/2" target="_blank" style="word-break: break-all;">10.7287/peerj-cs.699v0.1/reviews/2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Peer Review #1 of "ABCDE: Approximating Betweenness-Centrality ranking with progressive-DropEdge (v0.2)"</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.7287/peerj-cs.699v0.2/reviews/1" target="_blank" style="word-break: break-all;">10.7287/peerj-cs.699v0.2/reviews/1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Peer Review #3 of "ABCDE: Approximating Betweenness-Centrality ranking with progressive-DropEdge (v0.1)"</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.7287/peerj-cs.699v0.1/reviews/3" target="_blank" style="word-break: break-all;">10.7287/peerj-cs.699v0.1/reviews/3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Peer Review #1 of "ABCDE: Approximating Betweenness-Centrality ranking with progressive-DropEdge (v0.1)"</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.7287/peerj-cs.699v0.1/reviews/1" target="_blank" style="word-break: break-all;">10.7287/peerj-cs.699v0.1/reviews/1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>The German modal particle <i>ja</i> and selected English lexical correlates in the Europarl corpus</td>
+                        <td>Studies in language companion series</td>
+                        <td><a href="https://doi.org/10.1075/slcs.224.05gas" target="_blank" style="word-break: break-all;">10.1075/slcs.224.05gas</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Deep Learning in Ecology: Data-driven Methods for Ecosystem Analysis</td>
+                        <td>RePEc: Research Papers in Economics</td>
+                        <td><a href="https://doi.org/10.31237/osf.io/bnm5w" target="_blank" style="word-break: break-all;">10.31237/osf.io/bnm5w</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Junet: A Julia Package For Network Research</td>
+                        <td>Proceedings of the International AAAI Conference on Web and Social Media</td>
+                        <td><a href="https://doi.org/10.1609/icwsm.v11i1.14864" target="_blank" style="word-break: break-all;">10.1609/icwsm.v11i1.14864</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Analyzing the Feasibility of Privacy-Respecting Automated Tracking of Devices Fleeing a Burglary</td>
+                        <td>Fraunhofer-Publica (Fraunhofer-Gesellschaft)</td>
+                        <td><a href="https://doi.org/10.1109/wimob58348.2023.10187747" target="_blank" style="word-break: break-all;">10.1109/wimob58348.2023.10187747</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Applying support vector machine with connectivity of primitive biochemical compound structure to identify target characteristics of molecules</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.58837/chula.the.2019.7" target="_blank" style="word-break: break-all;">10.58837/chula.the.2019.7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A generalized disjunctive programming model for the static bike sharing rebalancing problem with demand intervals</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-3993918/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-3993918/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Brand Network Booster: A new system for improving brand connectivity</td>
+                        <td>Computers & Industrial Engineering</td>
+                        <td><a href="https://doi.org/10.1016/j.cie.2024.110389" target="_blank" style="word-break: break-all;">10.1016/j.cie.2024.110389</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>The minimal computational substrate of fluid intelligence</td>
+                        <td>Cortex</td>
+                        <td><a href="https://doi.org/10.1016/j.cortex.2024.07.003" target="_blank" style="word-break: break-all;">10.1016/j.cortex.2024.07.003</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A stochastic model of discussion</td>
+                        <td>Physica A Statistical Mechanics and its Applications</td>
+                        <td><a href="https://doi.org/10.1016/j.physa.2024.130048" target="_blank" style="word-break: break-all;">10.1016/j.physa.2024.130048</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Percolação por camadas aperiódicas em redes hierárquicas</td>
+                        <td>LA Referencia (Red Federada de Repositorios Institucionales de Publicaciones Científicas)</td>
+                        <td><a href="https://doi.org/10.11606/d.43.2024.tde-19112024-112305" target="_blank" style="word-break: break-all;">10.11606/d.43.2024.tde-19112024-112305</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>TaGra: an open Python package for easily generating graphs from data tables through manifold learning</td>
+                        <td>PeerJ Computer Science</td>
+                        <td><a href="https://doi.org/10.7717/peerj-cs.2986" target="_blank" style="word-break: break-all;">10.7717/peerj-cs.2986</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-06-02T10:56:01+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' citing works (most recent first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+    
+    <script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
+</body>
+</html>

@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 
+
+
+
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>ArticleStory - Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance</title>
-<style>
+    <meta charset="utf-8">
+    <title>ArticleStory - Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance</title>
+    <style>
+
         * { box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
         .page { max-width: 1000px; margin: auto; }
@@ -13,7 +17,7 @@
         .span-full { grid-column: 1 / -1; }
         .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
         .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
-        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
         .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
         .tag-soft { background: #f3f4f6; color: #4b5563; }
         .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
@@ -36,6 +40,8 @@
             * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
             .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
             .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
             table { page-break-inside: auto !important; width: 100% !important; }
             tr { page-break-inside: avoid !important; page-break-after: auto !important; }
             thead { display: table-header-group !important; }
@@ -44,16 +50,6 @@
 
 /* ── UX Enhancements ── */
 
-/* Stats strip */
-.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
-  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
-.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
-.stats-strip-item:last-child{border-right:none;}
-.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
-.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
-.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
-  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
-@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
 
 /* Sticky nav */
 .sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
@@ -66,7 +62,7 @@
   transition:color .15s,border-color .15s;white-space:nowrap;}
 .sticky-nav a:hover{color:#111827;}
 .sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
-@media print{.sticky-nav,.stats-strip{display:none!important;}}
+@media print{.sticky-nav{display:none!important;}}
 
 /* Collapsible cards */
 .card-collapsible > h2{
@@ -107,7 +103,9 @@
 .role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
 .role-pill:hover{opacity:1!important;}
 
-/* CSS tooltip for role descriptions */
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
 
 
 .role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
@@ -140,14 +138,26 @@
 .im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
 .im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
   color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
-.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
-.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
 .im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
 .im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
 .im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
 
-.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
-.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
 .im-scite-via{font-weight:400;color:#9ca3af;}
 .im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
 .im-scite-seg{height:100%;}
@@ -161,8 +171,9 @@
 .im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
 .im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
 .im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
-.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
   font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
 .sig-pill:hover{opacity:.75;}
 .sig-red   {background:#fee2e2;color:#b91c1c;}
 .sig-slate {background:#f1f5f9;color:#475569;}
@@ -170,6 +181,7 @@
 .sig-teal  {background:#ccfbf1;color:#0f766e;}
 .sig-amber {background:#fef3c7;color:#b45309;}
 .sig-blue  {background:#dbeafe;color:#1d4ed8;}
+.sig-green {background:#dcfce7;color:#166534;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -196,9 +208,10 @@
     }
     .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
 
-</style>
-<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <!-- Site nav -->
@@ -207,641 +220,1906 @@
     <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
     <span>openscience<span class="brand-dot">.</span>works</span>
   </a>
-  <div class="site-nav-links">
-    <a href="index.html">← All stories</a>
-    <a href="about.html">About</a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
   </div>
 </nav>
+    
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
 
-<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
-<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-        Print PDF Report
-    </button>
-<div class="page" id="sec-story">
-<header class="hero card" id="sec-hero">
-<div class="header-bar">
-<div style="display: flex; align-items: center; gap: 1.25rem;">
-<div class="logo-wrap"><img alt="Logo" src="articlestories-logo.png"/></div>
-<div>
-<h1 class="hero-title">Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance</h1>
-<div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
-<span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em;" title="scite found more citations supporting than contrasting this work's methodology">
-<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef08a; color: #854d0e; border: 1px solid #fde047; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                                    Correction Published
+                                </span>
+                            
+
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                     Methodologically Supported
-                                <span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· scite</span></span>
-<span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-transform: uppercase; letter-spacing: 0.05em;" title="Linked research datasets are registered via DataCite or a similar registry">
-<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                </span>
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
                                     Linked to Data
-                                <span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· DataCite</span></span>
-<a href="https://doi.org/10.1101/2024.05.23.595634" style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1px solid #fde68a; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s;" target="_blank">
-<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                </span>
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+                                <a href="https://doi.org/10.1101/2024.05.23.595634" target="_blank" style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1px solid #fde68a; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                     Early Sharing / Preprint ↗
                                 </a>
-</div>
-<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
-<div><strong>Author(s):</strong> Bernadeta Dadonaite, Jenny Ahn, Jordan T. Ort, Yu Jin, Colleen Furey, Annie Dosey, William W. Hannon, Amy L. Vincent Baker, Richard J. Webby, Neil P. King, Yan Liu, Scott E. Hensley, Thomas P. Peacock, Louise H. Moncla, Jesse D. Bloom</div>
-<div><strong>Publisher:</strong> PLoS Biology</div>
-<div><strong>Publication year:</strong> 2024</div>
-<div><strong>DOI:</strong> <a href="https://doi.org/10.1371/journal.pbio.3002916" target="_blank">10.1371/journal.pbio.3002916</a></div>
-</div>
-</div>
-</div>
-</div>
-</header>
-<div class="stats-strip no-print">
-<div class="stats-strip-item">
-<div class="stats-strip-num">79</div>
-<div class="stats-strip-label">Total Citations</div>
-<div class="stats-strip-badge">🏆 Top 1% Cited</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num">2</div>
-<div class="stats-strip-label">Online Mentions</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num">19</div>
-<div class="stats-strip-label">scite References</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Gold</div>
-<div class="stats-strip-label">Open Access Status</div>
-</div>
-</div>
+                            
 
-<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
-<div class="sticky-nav-inner">
-<a href="#sec-hero">Overview</a>
-<a href="#sec-story">Story</a>
-<a href="#sec-impact">Impact</a>
-<a href="#sec-roles">Roles</a>
-<a href="#sec-citing">Who's Citing</a>
-<a href="#sec-mentions">Mentions</a>
-<a href="#sec-teaching">Teaching</a>
-<a href="#sec-contributors">Contributors</a>
-<a href="#sec-funding">Funding</a>
-<a href="#sec-citations">All Citations</a>
-</div>
-</nav>
+                        </div>
 
-<section class="card" id="sec-story">
-<h2><span>The Story So Far</span></h2>
-<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">The study "Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance" has garnered significant attention, with 79 citations since publication. The research is grounded in prominent institutions such as St. Jude Children's Research Hospital and the University of Washington, and has also received robust financial backing from entities like the NIH and the Biotechnology and Biological Sciences Research Council.</p>
-<h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">The research article titled "Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance" has emerged as a pivotal contribution to the field of virology, particularly in understanding influenza virus dynamics. Since its release, the study has received considerable academic acknowledgment, evidenced by a citation count of 79, indicating its relevance to ongoing conversations in the scientific community. The work was supported by esteemed institutions like St. Jude Children's Research Hospital, the University of Washington, and Howard Hughes Medical Institute, underscoring the collaborative efforts driving this vital research.</p>
-<p class="story-text">One of the hallmarks of this research is its commitment to open science practices, exemplified by the early dissemination of findings through a preprint version. This preprint effectively primed the community for subsequent discussion and engagement, accumulating 16 citations and generating four early sharing events. Such contributions reflect a proactive approach to science, facilitating immediate discourse and collaboration prior to formal publication in a peer-reviewed venue like PLoS Biology.</p>
-<p class="story-text">Furthermore, the work is reinforced by substantial financial investment from key funding agencies, including the National Institute of Health and the Biotechnology and Biological Sciences Research Council. This financial backing not only validates the significance of the research but also reflects a broader institutional interest in enhancing influenza surveillance methodologies. The multi-faceted support reveals an extensive commitment to advancing public health through sound scientific research.</p>
-<p class="story-text">In terms of community engagement, while the study has yet to generate significant online discussion on platforms like Wikipedia or Reddit, it has inspired dialogues within the academic sphere, with a noted presence in reputable venues such as bioRxiv and npj Viruses. This indicates the study's potential to influence ongoing research and discourse surrounding influenza virus surveillance. Additionally, the use of resources like Zenodo and GitHub for data sharing exemplifies the authors' commitment to enhancing the reproducibility and accessibility of their research, allowing fellow scientists to build upon their findings effectively.</p></div>
-</section>
-<section class="card" id="sec-impact">
-<h2><span>Impact metrics</span></h2>
-
-<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">79</div><div class="im-label">Total Citations</div></div><div class="im-spark"><svg height="36" style="display:block;overflow:visible;" viewbox="0 0 120 36" width="120" xmlns="http://www.w3.org/2000/svg"><path d="M0.0,25.8 L60.0,2.0 L120.0,27.3 L120.0,36.0 L0,36.0 Z" fill="#dbeafe" opacity="0.6"></path><polyline fill="none" points="0.0,25.8 60.0,2.0 120.0,27.3" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline></svg><div class="im-spark-range">2024–2026</div></div></div><div class="im-top-badge">🏆 Top 1% Cited</div></div><div class="im-card"><div class="im-num">2</div><div class="im-label">Online Mentions</div></div><div class="im-card"><div class="im-num">19</div><div class="im-label">scite References</div></div></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-amber" href="#sec-funding">💰 19 grants</a><a class="sig-pill sig-blue" href="#sec-citing">🌍 35 countries</a></div></div></div></section>
-<section class="card" id="sec-roles">
-<h2><span>Inferred roles</span></h2>
-<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#b45309;">📢 Public Engagement &amp; Media</div><div class="roles-row"><span class="role-pill role-pill-public" style="opacity:1;" data-tip="Mentioned in mainstream news, broadsheets, or high-impact professional media."><span class="role-dot" style="background:#f59e0b;"></span>High-visibility uptake<span class="role-strength" style="background:#fef3c7;color:#92400e;">Strong</span></span><span class="role-pill role-pill-public" style="opacity:0.75;" data-tip="Heavy social-platform engagement on Reddit, Bluesky, or Mastodon — the work has sparked ongoing community conversation."><span class="role-dot" style="background:#f59e0b;"></span>Active public discourse<span class="role-strength" style="background:#fef3c7;color:#92400e;">Emerging</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#1d4ed8;">🎓 Academic &amp; Scientific</div><div class="roles-row"><span class="role-pill role-pill-academic" style="opacity:0.9;" data-tip="Foundational building block cited heavily in core academic journals and monographs."><span class="role-dot" style="background:#3b82f6;"></span>Scholarly uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Moderate</span></span><span class="role-pill role-pill-academic" style="opacity:0.75;" data-tip="Accumulated high citations or downloads unusually fast after publication."><span class="role-dot" style="background:#3b82f6;"></span>Rapid uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Emerging</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#065f46;">🏛 Practical &amp; Real-World</div><div class="roles-row"><span class="role-pill role-pill-practical" style="opacity:0.9;" data-tip="Cited in government reports, WHO/NGO briefs, or UN policy documents."><span class="role-dot" style="background:#10b981;"></span>Sustainability &amp; policy relevance<span class="role-strength" style="background:#dcfce7;color:#166534;">Moderate</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
-
-</section>
-<div class="grid-2">
-<section class="card" style="margin-bottom:0;">
-<h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
-<ul class="metric-list">
-<li><strong>DOI:</strong> <a href="https://doi.org/10.1371/journal.pbio.3002916" target="_blank">10.1371/journal.pbio.3002916</a></li>
-<li><strong>OA status:</strong> Gold</li>
-<li><strong>Landing page:</strong> <a href="https://doi.org/10.1371/journal.pbio.3002916" style="word-break: break-all;" target="_blank">https://doi.org/10.1371/journal.pbio.3002916</a></li>
-<li><strong>Best OA PDF:</strong> <a href="https://journals.plos.org/plosbiology/article/file?id=10.1371/journal.pbio.3002916&amp;type=printable" style="word-break: break-all;" target="_blank">https://journals.plos.org/plosbiology/article/file?id=10.1371/journal.pbio.3002916&amp;type=printable</a></li>
-</ul>
-</section>
-<section class="card" style="margin-bottom:0;">
-<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
-<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
-                        This work has <strong>2</strong> recorded events globally
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> 
+                                
+                                    Bernadeta Dadonaite, Jenny Ahn, Jordan T. Ort, Yu Jin, Colleen Furey, Annie Dosey, William W. Hannon, Amy L. Vincent Baker, Richard J. Webby, Neil P. King, Yan Liu, Scott E. Hensley, Thomas P. Peacock, Louise H. Moncla, Jesse D. Bloom
+                                
+                            </div>
                         
-                        <span style="font-weight:normal;">(combined from the published article and preprint).</span>
-</p>
-<p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
-<em>(See specific sources and examples in the Online Mentions section below).</em>
-</p>
-</section>
-</div>
-<div class="grid-2" style="align-items: start;">
-<div style="display: flex; flex-direction: column; gap: 1.5rem;">
-<section class="card" style="margin-bottom:0;">
-<h2><span>Citation context</span> <span class="badge">scite</span></h2>
-<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
-<li><strong>Total:</strong> 19</li>
-<li><strong>Supporting:</strong> 1</li>
-<li><strong>Mentioning:</strong> 18</li>
-<li><strong>Contradicting:</strong> 0</li>
-</ul>
-</section>
-</div>
-<div style="display: flex; flex-direction: column; gap: 1.5rem;">
-<section class="card" style="margin-bottom:0;">
-<h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite</span></h2>
-<p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Associated data repositories and clinical trials.</p>
-<h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Data Repositories &amp; Code</h3>
-<div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom: 1rem; max-height: 250px; overflow-y: auto;">
-<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-<a class="tag" href="https://github.com/dms-vep/Flu_H5_American-Wigeon_South-Carolina_2021-H5N1_DMS" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
-</div>
-<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-<a class="tag" href="https://10.5281/zenodo.13993815" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">Zenodo</a>
-<a href="datastory_https:__10.5281_zenodo.13993815.html" style="font-size: 0.75rem; color: #6b7280; text-decoration: underline; display: inline-flex; align-items: center; gap: 0.2rem;" title="Run 'python3 -m bookstories.cli https://10.5281/zenodo.13993815' to generate this dashboard!">
-<svg fill="none" height="12" stroke="currentColor" viewbox="0 0 24 24" width="12"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                            
+                        
+                            
+                            
+                            <div><strong>Journal:</strong> 
+                                PLoS Biology
+                            </div>
+                            
+                        
+                            <div><strong>Publisher:</strong> 
+                                
+                                    Public Library of Science
+                                
+                            </div>
+                        
+                            <div><strong>Publication year:</strong> 
+                                
+                                    2024
+                                
+                            </div>
+                        
+                            <div><strong>DOI:</strong> 
+                                <a href="https://doi.org/10.1371/journal.pbio.3002916" target="_blank">
+                                    10.1371/journal.pbio.3002916
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        <!-- Sticky nav -->
+        <nav aria-label="Page sections" class="sticky-nav no-print">
+            <div class="sticky-nav-inner">
+                <a href="#sec-hero">Overview</a>
+                <a href="#sec-story">Story</a>
+                <a href="#sec-impact">Impact</a>
+                <a href="#sec-roles">Roles</a>
+                <a href="#sec-access">Access</a>
+                <a href="#sec-citing">Who's Citing</a>
+                <a href="#sec-mentions">Mentions</a>
+            </div>
+        </nav>
+
+
+        
+        <section class="card" style="border: 1px solid #fecaca; background:#fff5f5; margin-bottom: 1.75rem;">
+            <h2><span>Credibility & Risk Signals</span> <span class="badge" style="background:#fee2e2; color:#dc2626;">Alerts</span></h2>
+            <ul class="metric-list" style="line-height: 1.8; margin-top: 0.5rem;">
+                
+                
+
+                
+                
+                
+
+                
+
+                
+                    
+                        <li style="margin-bottom: 0.4rem;">
+                            <span class="badge" style="background:#fef08a; color:#854d0e; border:1px solid #fde047; padding:0.1rem 0.4rem; margin-right:0.4rem;">Update Of</span> 
+                            <strong style="color: #854d0e;">Update issued by publisher</strong> 
+                            <a href="https://doi.org/10.1101/2024.05.23.595634" target="_blank" style="color: #ca8a04; text-decoration: underline; margin-left: 0.3rem;">View Correction ↗</a>
+                        </li>
+                    
+                
+            </ul>
+        </section>
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The study titled "Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance" has garnered significant attention, evidenced by its 85 citations in various scholarly articles, including work in top venues such as bioRxiv and npj Viruses. Supported by a robust network of key institutions like the University of Pennsylvania and the National Animal Disease Center, the research demonstrates a strong institutional validation of its findings. It employs open science practices by sharing a preprint version that has already received 16 citations, indicating its immediate influence in the academic landscape.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The research conducted by Bernadeta Dadonaite and colleagues provides critical insights into H5 hemagglutinin and its implications for influenza virus surveillance. In addition to the academic impact, the work’s rapid uptake as evidenced by its 16 preprint citations signifies a proactive engagement with the scientific community, placing it at the forefront of ongoing discussions in virology and immunology. This alignment with current research trends showcases the authors' commitment to open science initiatives, as they made their early findings available through a preprint platform.</p>
+<p class="story-text">With funding from noted agencies including the National Institute of Allergy and Infectious Diseases (NIAID) and the Biotechnology and Biological Sciences Research Council, the study benefits from strong institutional backing. This financial support not only reinforces the credibility of the research but also underscores the significance of influenza surveillance in public health. The collaborative efforts among prestigious institutions such as the Howard Hughes Medical Institute and Imperial College London enhance the work's reliability and relevance in addressing global health challenges associated with influenza viruses.</p>
+<p class="story-text">Despite the lack of public discourse on platforms like Wikipedia or Reddit, the work's influence is primarily highlighted through academic citations from diverse geographic locations, with a notable concentration from the United States (44 citations). This geographical reach reflects the study's relevance to a wide audience of researchers and practitioners actively engaged in virology. Moreover, the absence of risk and credibility alerts related to the study suggests a solid standing within the academic community, allowing the authors to contribute confidently to ongoing inquiries in the field.</p>
+<p class="story-text">Additionally, the availability of data repositories such as GitHub and Zenodo demonstrates the authors' commitment to open data practices, which assists in fostering reproducibility and enabling further research. Although no Research Resource Identifiers are listed, the pronounced impact indicated by the proven downstream reuse of the findings—reported at 86 instances—highlight a significant level of engagement and application of the research in subsequent studies. As the study continues to progress through academic conversation, it stands as a crucial piece informing future influenza virus surveillance methodologies.</p></div>
+        </section>
+        
+
+        
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+            <div class="im-wrapper">
+                
+                
+                
+                
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">85</div>
+                                <div class="im-label">Total Citations</div>
+                                
+                                <div class="im-top-badge">🏆 Top 1% Cited</div>
+                                
+                            </div>
+                            
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2024, 2025, 2026]"
+                                        data-values="[11, 43, 15]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2024–2026</div>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="im-provenance">
+                            Includes <strong>69</strong> from the published article and <strong>16</strong> from its <a href="https://doi.org/10.1101/2024.05.23.595634" target="_blank">early preprint version</a>.
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+                    
+                    <div class="im-card">
+                        <div class="im-num">1</div>
+                        <div class="im-label">Online Mentions</div>
+                        
+                        <div class="im-provenance">
+                            Includes <strong>1</strong> from the published article and <strong>0</strong> from the <a href="https://doi.org/10.1101/2024.05.23.595634" target="_blank">preprint</a>.
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+                    
+                    <!-- scite (only when references exist) -->
+                    
+                    <div class="im-card">
+                        <div class="im-num">21</div>
+                        <div class="im-label">scite References</div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="im-scite-compact">
+                            <div class="im-scite-title">Citation context <span class="im-scite-via">via scite</span></div>
+                            <div class="im-scite-bar">
+                                <div class="im-scite-seg im-scite-sup" data-w="5"></div>
+                                <div class="im-scite-seg im-scite-men" data-w="95"></div>
+                                <div class="im-scite-seg im-scite-con" data-w="0"></div>
+                            </div>
+                            <div class="im-scite-leg">
+                                <span><span class="im-scite-dot" style="background:#22c55e;"></span>1</span>
+                                <span><span class="im-scite-dot" style="background:#94a3b8;"></span>20</span>
+                                <span><span class="im-scite-dot" style="background:#f87171;"></span>0</span>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+
+                
+                
+                
+                
+                
+
+                
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+                        <span class="sig-pill sig-blue">🦋 Bluesky · 1</span>
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 15 countries</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+            
+            
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="High-visibility uptake — heuristic signal (score 0.85)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            High-visibility uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="0.9"
+                              data-tip="Scholarly uptake — heuristic signal (score 0.73)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Scholarly uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Moderate</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="0.75"
+                              data-tip="Rapid uptake — heuristic signal (score 0.42)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Rapid uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Emerging</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="0.75"
+                              data-tip="Reference point for synthesis — heuristic signal (score 0.25)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Reference point for synthesis
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Emerging</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#065f46">🏛 Practical & Real-World</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-practical" data-opacity="0.9"
+                              data-tip="Sustainability & policy relevance — heuristic signal (score 0.55)">
+                            <span class="role-dot" data-bg="#10b981"></span>
+                            Sustainability & policy relevance
+                            <span class="role-strength" data-bg="#dcfce7" data-color="#166534">Moderate</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1371/journal.pbio.3002916" target="_blank">10.1371/journal.pbio.3002916</a></li>
+                    <li><strong>OA status:</strong> Unknown</li>
+                    
+                    
+                    
+                    
+                </ul>
+            </section>
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.6rem;">
+                        This work has <strong>1</strong> recorded events globally.
+                    </p>
+                    
+                    <div class="im-provenance" style="margin-bottom:1rem;">
+                        Includes <strong>1</strong> from the published article and <strong>0</strong> from the <a href="https://doi.org/10.1101/2024.05.23.595634" target="_blank">preprint</a>.
+                    </div>
+                    
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 21</li>
+                                <li><strong>Supporting:</strong> 1</li>
+                                <li><strong>Mentioning:</strong> 20</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite / Crossref</span></h2>
+                            
+                            
+                                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Associated data repositories and clinical trials.</p>
+                                
+                                
+                                <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Data Repositories & Code</h3>
+                                <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom: 1rem; max-height: 250px; overflow-y: auto;">
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/dms-vep/Flu_H5_American-Wigeon_South-Carolina_2021-H5N1_DMS" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://10.5281/zenodo.13993815" target="_blank">Zenodo</a>
+                                            
+                                            
+                                                
+                                                
+                                                <a href="datastory_https:__10.5281_zenodo.13993815.html" style="font-size: 0.75rem; color: #6b7280; text-decoration: underline; display: inline-flex; align-items: center; gap: 0.2rem;" title="Run 'python3 -m bookstories.cli https://10.5281/zenodo.13993815' to generate this dashboard!">
+                                                    <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                                     View DataStory
                                                 </a>
-</div>
-<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-<a class="tag" href="https://github.com/dms-vep/dms-vep-pipeline-3" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
-</div>
-<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-<a class="tag" href="https://github.com/moncla-lab/annotate-dms" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
-</div>
-<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-<a class="tag" href="https://github.com/dms-vep/Flu_H5_American-Wigeon_South-Carolina_2021-H5N1_DMS/tree/main/library_design/conditionally_replicative_virus_plasmids" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
-</div>
-<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-<a class="tag" href="https://doi.org/10.5281/zenodo.XXXXX" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">Zenodo</a>
-<a href="datastory_10.5281_zenodo.XXXXX.html" style="font-size: 0.75rem; color: #6b7280; text-decoration: underline; display: inline-flex; align-items: center; gap: 0.2rem;" title="Run 'python3 -m bookstories.cli 10.5281/zenodo.XXXXX' to generate this dashboard!">
-<svg fill="none" height="12" stroke="currentColor" viewbox="0 0 24 24" width="12"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/dms-vep/dms-vep-pipeline-3" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/moncla-lab/annotate-dms" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://github.com/dms-vep/Flu_H5_American-Wigeon_South-Carolina_2021-H5N1_DMS/tree/main/library_design/conditionally_replicative_virus_plasmids" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://doi.org/10.5281/zenodo.XXXXX" target="_blank">Zenodo</a>
+                                            
+                                            
+                                                
+                                                
+                                                <a href="datastory_10.5281_zenodo.XXXXX.html" style="font-size: 0.75rem; color: #6b7280; text-decoration: underline; display: inline-flex; align-items: center; gap: 0.2rem;" title="Run 'python3 -m bookstories.cli 10.5281/zenodo.XXXXX' to generate this dashboard!">
+                                                    <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                                     View DataStory
                                                 </a>
-</div>
-<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-<a class="tag" href="https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
-</div>
-</div>
-</section>
-</div>
-</div>
-<section class="card" id="sec-citing">
-<h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
-                Analysis of the 79 most recent citing works. 
-                <br/>
-<strong>101.6%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>1.0</strong> times itself.
+                                            
+                                        </div>
+                                    
+                                        
+                                        
+                                        
+                                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                                            <a class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" href="https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content" target="_blank">GitHub Repository</a>
+                                            
+                                            
+                                        </div>
+                                    
+                                </div>
+                                
+
+                                
+
+                                
+
+                                
+                            
+                        </section>
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+        
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>85</strong> citing works.
+                        <strong>35.1%</strong> come from the Top 10 institutions.
+                        Median citing paper cited <strong>1.0</strong> times itself.
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (40)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (18)</span><span class="tag tag-soft" style="font-size:.75rem;">review (7)</span><span class="tag tag-soft" style="font-size:.75rem;">letter (3)</span><span class="tag tag-soft" style="font-size:.75rem;">editorial (1)</span>
+                        <span class="tag" style="font-size:.75rem;">bioRxiv</span><span class="tag" style="font-size:.75rem;">bioRxiv (Cold Spring Harbor Laboratory)</span><span class="tag" style="font-size:.75rem;">npj Viruses</span>
+                    </div>
+                </div>
             </div>
 
-<div class="cite-analysis-always"><div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
-<ul class="metric-list">
-<li><strong>Citing work types:</strong>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (34)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (18)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (7)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">letter (3)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">editorial (1)</span>
-</li>
-<li><strong>Top citing venues:</strong>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">bioRxiv (17)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">bioRxiv (Cold Spring Harbor Laboratory) (5)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">npj Viruses (3)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nature (2)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nature Communications (2)</span>
-</li>
-<li><strong>Top citing concepts:</strong>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Virology (31)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Influenza A virus subtype H5N1 (26)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Biology (25)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Hemagglutinin (influenza) (14)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Computational biology (6)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Virus (4)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Clade (4)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Mutation (3)</span>
-</li>
-<li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
-<strong>Citation timeline:</strong>
-<div style="height: 180px; width: 100%; margin-top: 0.5rem;">
-<canvas data-labels="[2024, 2025, 2026]" data-values="[11, 43, 9]" id="citationChart">
-</canvas>
-</div>
-</li>
-</ul>
-</div></div>
-<div class="cite-tabs">
-<button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
-<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
-<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-ppl')">👤 Top Citers</button>
-</div>
-<div class="cite-tab-pane active" id="cite-geo"><div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
-<div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (40)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Canada (6)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Netherlands (6)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">South Africa (6)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">India (5)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (4)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Hong Kong (4)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">China (4)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Japan (3)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Switzerland (2)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Belgium (2)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Lithuania (1)</span>
-</div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
-<div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (53)</span>
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (24)</span>
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (22)</span>
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Healthcare (15)</span>
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Government (9)</span>
-</div>
-</div></div>
-<div class="cite-tab-pane" id="cite-inst"><div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
-<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
-<li style="margin-bottom: 0.4rem;">
-<strong>University of Washington</strong>
-<a class="orcid-badge" href="https://ror.org/00cvxb145" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(12)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Fred Hutch Cancer Center</strong>
-<a class="orcid-badge" href="https://ror.org/007ps6h72" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(12)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Howard Hughes Medical Institute</strong>
-<a class="orcid-badge" href="https://ror.org/006w34k90" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(10)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>University of Pennsylvania</strong>
-<a class="orcid-badge" href="https://ror.org/00b30xv10" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(5)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Utrecht University</strong>
-<a class="orcid-badge" href="https://ror.org/04pp8hn57" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(5)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Cape Town HVTN Immunology Laboratory / Hutchinson Centre Research Institute of South Africa</strong>
-<a class="orcid-badge" href="https://ror.org/00wdsp051" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(5)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Scripps Research Institute</strong>
-<a class="orcid-badge" href="https://ror.org/02dxx6824" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>University of Georgia</strong>
-<a class="orcid-badge" href="https://ror.org/00te3t702" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>University of Hong Kong</strong>
-<a class="orcid-badge" href="https://ror.org/02zhqgq86" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Centers for Disease Control and Prevention</strong>
-<a class="orcid-badge" href="https://ror.org/042twtr12" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-</ul>
-</div></div>
-<div class="cite-tab-pane" id="cite-ppl"><div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
-<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
-<li style="margin-bottom: 0.4rem;">
-<strong>Jesse D. Bloom</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0003-1267-3408" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(8)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Bernadeta Dadonaite</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0003-0908-6982" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(7)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Robert P. de Vries</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-1586-4464" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Geert‐Jan Boons</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0003-3111-5954" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Neil P. King</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-2978-4692" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Ting-Hui Lin</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-0937-9972" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Xueyong Zhu</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-6021-3740" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Ian A. Wilson</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-6469-2419" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Caelan E. Radford</strong>
-<a class="orcid-badge" href="https://openalex.org/A5051769783" target="_blank">Profile</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Timothy C. Yu</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0001-9972-038X" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-</ul>
-</div></div>
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2024, 2025, 2026]"
+                    data-values="[11, 43, 15]">
+                </canvas>
+            </div>
 
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
 
-</section>
-<div class="grid-2" id="sec-mentions">
-<section class="card span-full" id="sec-mentions" style="margin-bottom:0;">
-<h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref &amp; Open Web</span></h2>
-<h3 style="margin-top: 1.5rem; font-size: 1.1rem; color: #1f2937;">
-                    Community Engagement &amp; Discourse
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (44)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Canada (8)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Netherlands (8)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">South Africa (7)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">India (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Hong Kong (4)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (4)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Belgium (4)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Japan (3)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Lithuania (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Singapore (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Switzerland (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Germany (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Bangladesh (1)</span>
+                    
+                </div>
+                
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (60)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (29)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (28)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Healthcare (17)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (11)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Funder (7)</span>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Washington</strong>
+                        <a href="https://ror.org/00cvxb145" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(5.076190476190477)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Fred Hutch Cancer Center</strong>
+                        <a href="https://ror.org/007ps6h72" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.4190476190476193)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Howard Hughes Medical Institute</strong>
+                        <a href="https://ror.org/006w34k90" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.8357142857142854)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Utrecht University</strong>
+                        <a href="https://ror.org/04pp8hn57" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.2928571428571427)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of British Columbia</strong>
+                        <a href="https://ror.org/03rmrcq20" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.162037037037037)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of North Carolina at Charlotte</strong>
+                        <a href="https://ror.org/04dawnj30" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Scripps Research Institute</strong>
+                        <a href="https://ror.org/02dxx6824" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.987037037037037)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Colorado Anschutz Medical Campus</strong>
+                        <a href="https://ror.org/03wmf1y16" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Columbia University</strong>
+                        <a href="https://ror.org/00hj8s172" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Cape Town HVTN Immunology Laboratory / Hutchinson Centre Research Institute of South Africa</strong>
+                        <a href="https://ror.org/00wdsp051" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.4333333333333333)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jesse D. Bloom</strong>
+                        <a href="https://orcid.org/0000-0003-1267-3408" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(8)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Bernadeta Dadonaite</strong>
+                        <a href="https://orcid.org/0000-0003-0908-6982" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(8)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Robert P. de Vries</strong>
+                        <a href="https://orcid.org/0000-0002-1586-4464" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Geert‐Jan Boons</strong>
+                        <a href="https://orcid.org/0000-0003-3111-5954" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Caelan E. Radford</strong>
+                        <a href="https://openalex.org/A5051769783" target="_blank" class="orcid-badge">Profile</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Neil P. King</strong>
+                        <a href="https://orcid.org/0000-0002-2978-4692" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Timothy C. Yu</strong>
+                        <a href="https://orcid.org/0000-0001-9972-038X" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Thomas P. Peacock</strong>
+                        <a href="https://orcid.org/0000-0001-7077-2928" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ting-Hui Lin</strong>
+                        <a href="https://orcid.org/0000-0002-0937-9972" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Xueyong Zhu</strong>
+                        <a href="https://orcid.org/0000-0002-6021-3740" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+            <section class="card span-full" style="margin-bottom:0;">
+                <h2><span>Online mentions & activity</span> <span class="badge">Crossref & Open Web</span></h2>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+                
+                
+                <h3 style="margin-top: 1.5rem; font-size: 1.1rem; color: #1f2937;">
+                    Community Engagement & Discourse
                 </h3>
-<div style="display: flex; flex-wrap: wrap; gap: 0.5rem; border-bottom: 2px solid #e5e7eb; margin-bottom: 1.5rem; margin-top: 1rem;">
-<button class="soc-tab-btn soc-tab-active" onclick="openSocialTab(event, 'soc-bsky')">
-                        Bluesky <span style="background: #e0f2fe; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.75rem; margin-left: 0.3rem;">1</span>
-</button>
-</div>
-<div style="position: relative; border-left: 2px solid #e2e8f0; padding-left: 1.5rem; margin-top: 1rem;">
-<div class="soc-tab-content" id="soc-bsky" style="display: block; animation: fadeIn 0.3s;">
-<div style="position: relative; margin-bottom: 1.5rem;">
-<span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #0ea5e9; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
-<div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
-<span class="badge" style="background: #e0f2fe; color: #0369a1; font-size: 0.65rem; text-transform: uppercase;">Bluesky Post</span>
-<span class="muted" style="font-size: 0.7rem;">2024-11-22</span>
-</div>
-<div style="font-size: 0.85rem; line-height: 1.5; color: #334155; font-style: italic; background: #f8fafc; padding: 0.75rem; border-radius: 8px; border: 1px solid #f1f5f9; margin-bottom: 0.3rem;">
-                                "Pseudovirus deep mutational scanning reveals mutations in 2.3.4.4b H5 HA affect phenotype, e.g. binding to α2-6-linked sialic acids, HA stabilisation,..." — <span style="font-weight: 600;">@duckswabber.bsky.social</span>
-</div>
-<a href="https://bsky.app/profile/duckswabber.bsky.social/post/3lbkshgrcrk2b" style="font-size: 0.75rem; color: #0369a1; text-decoration: none; font-weight: 500;" target="_blank">View Thread ↗</a>
-</div>
-</div>
-</div>
-<div class="muted" style="margin-top: 1.5rem; font-size: 0.8rem; text-align: center; border-top: 1px dashed #e5e7eb; padding-top: 0.8rem;">
-                    Displaying the 1 most detailed mentions. Other aggregated events lack public URLs.
-                </div>
-</section>
-</div>
-<div class="grid-2" id="sec-contributors">
-<section class="card" id="sec-contributors" style="margin-bottom:0;">
-<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">15 authors · 7 institutions</div>
-<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
-<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
-<li style="margin-bottom: 0.4rem;">
-<strong>Bernadeta Dadonaite</strong>
-<span class="badge">First</span>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-<a class="orcid-badge" href="https://orcid.org/0000-0003-0908-6982" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Jenny Ahn</strong>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-<a class="orcid-badge" href="https://orcid.org/0009-0000-3912-7162" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Jordan T. Ort</strong>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-<a class="orcid-badge" href="https://orcid.org/0000-0001-6977-4168" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Yu Jin</strong>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-5429-1080" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Colleen Furey</strong>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-2846-5219" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Annie Dosey</strong>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-<a class="orcid-badge" href="https://orcid.org/0000-0001-6858-4725" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>William W. Hannon</strong>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-6014-4749" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Amy L. Vincent Baker</strong>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Richard J. Webby</strong>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Neil P. King</strong>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-2978-4692" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Yan Liu</strong>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-2566-6867" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Scott E. Hensley</strong>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-2928-7506" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Thomas P. Peacock</strong>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-<a class="orcid-badge" href="https://orcid.org/0000-0001-7077-2928" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Louise H. Moncla</strong>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-<a class="orcid-badge" href="https://orcid.org/0000-0001-5722-1988" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Jesse D. Bloom</strong>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-<a class="orcid-badge" href="https://orcid.org/0000-0003-1267-3408" target="_blank">ORCID</a>
-</li>
-</ul>
-<h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
-<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
-<li style="margin-bottom: 0.4rem;">
-<a href="https://ror.org/007ps6h72" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Fred Hutch Cancer Center</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<a href="https://ror.org/00cvxb145" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Washington</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<a href="https://ror.org/00b30xv10" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Pennsylvania</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<a href="https://ror.org/041kmwe10" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Imperial College London</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<a href="https://ror.org/04ky99h94" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">National Animal Disease Center</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<a href="https://ror.org/02r3e0967" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">St. Jude Children's Research Hospital</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<a href="https://ror.org/006w34k90" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Howard Hughes Medical Institute</a>
-</li>
-</ul>
-</section>
-<section class="card" style="margin-bottom:0;">
-<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">13 specific concepts identified.</div>
-<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Hemagglutinin (influenza)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Virology</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Virus</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mutation</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Influenza A virus</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neutralization</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Phenotype</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Antigenic drift</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mutagenesis</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sialic acid</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Gene</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Genetics</span>
-</div>
-<h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">1 targets detected.</div>
-<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
-<span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Good health and well-being (0.85)</span>
-</div>
-</section>
-</div>
-<section class="card" id="sec-funding">
-<h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">19 financial grants and sponsors detected.</div>
-<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>Biotechnology and Biological Sciences Research Council</strong>
-<span style="opacity: 0.8; font-weight: normal;">(BBS/E/PI/230002B)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>NIAID NIH HHS</strong>
-<span style="opacity: 0.8; font-weight: normal;">(R01 AI141707)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>National Institute of Health</strong>
-<span style="opacity: 0.8; font-weight: normal;">(S10-OD-020069)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>NIAID NIH HHS</strong>
-<span style="opacity: 0.8; font-weight: normal;">(75N93021C00015)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>Howard Hughes Medical Institute</strong>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>Division of Intramural Research, National Institute of Allergy and Infectious Diseases</strong>
-<span style="opacity: 0.8; font-weight: normal;">(AI47029)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>Biotechnology and Biological Sciences Research Council</strong>
-<span style="opacity: 0.8; font-weight: normal;">(BBS/E/PI/230002A; BBS/E/PI/230002B)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>Division of Intramural Research, National Institute of Allergy and Infectious Diseases</strong>
-<span style="opacity: 0.8; font-weight: normal;">(R01AI141707)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>NIH HHS</strong>
-<span style="opacity: 0.8; font-weight: normal;">(S10 OD028685)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>Biotechnology and Biological Sciences Research Council</strong>
-<span style="opacity: 0.8; font-weight: normal;">(BB/Y007298/1)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>Medical Research Council</strong>
-<span style="opacity: 0.8; font-weight: normal;">(MR/R010757/1)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>NIH HHS</strong>
-<span style="opacity: 0.8; font-weight: normal;">(S10 OD020069)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>Open Philanthropy Project</strong>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>NIAID NIH HHS</strong>
-<span style="opacity: 0.8; font-weight: normal;">(R00 AI147029)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>NIAID NIH HHS</strong>
-<span style="opacity: 0.8; font-weight: normal;">(R01 AI165821)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>Division of Intramural Research, National Institute of Allergy and Infectious Diseases</strong>
-<span style="opacity: 0.8; font-weight: normal;">(R01AI165821)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>Division of Intramural Research, National Institute of Allergy and Infectious Diseases</strong>
-<span style="opacity: 0.8; font-weight: normal;">(75N93021C00015)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>Medical Research Foundation</strong>
-<span style="opacity: 0.8; font-weight: normal;">(MR/Y03368X/1)</span>
-</span>
-<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
-<strong>National Institute of Health</strong>
-<span style="opacity: 0.8; font-weight: normal;">(S10-OD-028685)</span>
-</span>
-</div>
-</section>
-<section class="card no-print" id="sec-citations">
-<h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">Displaying 63 most recent citing works</div>
-<div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
-<table>
-<thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
-<tbody id="cit-tbody"></tbody>
-</table>
-</div>
-<div class="cit-pagination">
-<span class="cit-pagination-info" id="cit-info">Loading…</span>
-<div class="cit-pagination-btns">
-<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
-<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
-<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
-</div>
-</div>
+                
+                
+                
+                
 
-</section>
-<footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
-<div style="display: flex; flex-direction: column; gap: 0.4rem;">
-<div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
-<svg fill="none" height="16" stroke="currentColor" style="color: #9ca3af;" viewbox="0 0 24 24" width="16"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<span>Understanding our metrics: <a href="https://www.openscience.works/about.html" style="color: #2563eb; text-decoration: none; font-weight: 600;" target="_blank">Read the Methodology &amp; Legend ↗</a></span>
-</div>
-<div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-04-02T15:02:04+00:00
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; border-bottom: 2px solid #e5e7eb; margin-bottom: 1.5rem; margin-top: 1rem;">
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    <button onclick="openSocialTab(event, 'soc-bsky')" class="soc-tab-btn soc-tab-active">
+                        Bluesky <span style="background: #e0f2fe; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.75rem; margin-left: 0.3rem;">1</span>
+                    </button>
+                    
+
+                    
+                    
                 </div>
-</div>
-</footer>
-</div>
-<script>
-        (function() {
-            const canvas = document.getElementById('citationChart');
-            if(!canvas) return;
-            const labels = JSON.parse(canvas.getAttribute('data-labels'));
-            const data = JSON.parse(canvas.getAttribute('data-values'));
-            const ctx = canvas.getContext('2d');
-            new Chart(ctx, {
+
+                <div style="position: relative; border-left: 2px solid #e2e8f0; padding-left: 1.5rem; margin-top: 1rem;">
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+
+                    
+                    
+
+                    
+                    
+                    <div id="soc-bsky" class="soc-tab-content" style="display: block; animation: fadeIn 0.3s;">
+                        
+                        <div style="position: relative; margin-bottom: 1.5rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #0ea5e9; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span class="badge" style="background: #e0f2fe; color: #0369a1; font-size: 0.65rem; text-transform: uppercase;">Bluesky Post</span>
+                                <span class="muted" style="font-size: 0.7rem;">2024-11-22</span>
+                            </div>
+                            <div style="font-size: 0.85rem; line-height: 1.5; color: #334155; font-style: italic; background: #f8fafc; padding: 0.75rem; border-radius: 8px; border: 1px solid #f1f5f9; margin-bottom: 0.3rem;">
+                                "Pseudovirus deep mutational scanning reveals mutations in 2.3.4.4b H5 HA affect phenotype, e.g. binding to α2-6-linked sialic acids, HA stabilisation,..." — <span style="font-weight: 600;">@duckswabber.bsky.social</span>
+                            </div>
+                            <a href="https://bsky.app/profile/duckswabber.bsky.social/post/3lbkshgrcrk2b" target="_blank" style="font-size: 0.75rem; color: #0369a1; text-decoration: none; font-weight: 500;">View Thread ↗</a>
+                        </div>
+                        
+                    </div>
+                    
+
+                    
+                    
+                </div>
+                
+                
+                
+                
+                
+                
+            </section>
+            
+        </div>
+
+        
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>15 authors · 0 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Bernadeta Dadonaite</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0003-0908-6982" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Jenny Ahn</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0009-0000-3912-7162" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Jordan T. Ort</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0001-6977-4168" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Yu Jin</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0002-5429-1080" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Colleen Furey</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0002-2846-5219" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Annie Dosey</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0001-6858-4725" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>William W. Hannon</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0002-6014-4749" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Amy L. Vincent Baker</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Richard J. Webby</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Neil P. King</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0002-2978-4692" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Yan Liu</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0002-2566-6867" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Scott E. Hensley</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0002-2928-7506" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Thomas P. Peacock</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0001-7077-2928" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Louise H. Moncla</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0001-5722-1988" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Jesse D. Bloom</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0003-1267-3408" target="_blank">ORCID</a>
+                    </li>
+                    
+                </ul>
+
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>13 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Hemagglutinin (influenza)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Virology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Virus</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mutation</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Influenza A virus</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neutralization</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Phenotype</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Antigenic drift</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mutagenesis</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sialic acid</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Gene</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Genetics</span>
+                    
+                    
+                </div>
+                
+                
+                <h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 targets detected.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Good health and well-being (0.85)</span>
+                    
+                </div>
+                
+            </section>
+        </div>
+
+        
+        <section class="card">
+            <h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>19 financial grants and sponsors detected.</div>
+            
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Biotechnology and Biological Sciences Research Council</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(BBS/E/PI/230002B)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIAID NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R01 AI141707)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>National Institute of Health</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(S10-OD-020069)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIAID NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(75N93021C00015)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Howard Hughes Medical Institute</strong> 
+                        
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Division of Intramural Research, National Institute of Allergy and Infectious Diseases</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(AI47029)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Biotechnology and Biological Sciences Research Council</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(BBS/E/PI/230002A; BBS/E/PI/230002B)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Division of Intramural Research, National Institute of Allergy and Infectious Diseases</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R01AI141707)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(S10 OD028685)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Biotechnology and Biological Sciences Research Council</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(BB/Y007298/1)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Medical Research Council</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(MR/R010757/1)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(S10 OD020069)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Open Philanthropy Project</strong> 
+                        
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIAID NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R00 AI147029)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIAID NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R01 AI165821)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Division of Intramural Research, National Institute of Allergy and Infectious Diseases</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R01AI165821)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Division of Intramural Research, National Institute of Allergy and Infectious Diseases</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(75N93021C00015)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Medical Research Foundation</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(MR/Y03368X/1)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>National Institute of Health</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(S10-OD-028685)</span>
+                    </span>
+                
+            </div>
+        </section>
+        
+
+
+
+        
+        
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.75rem;"
+                 data-total="69">
+                69 citing works (most recent first)
+            </div>
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>The global H5N1 influenza panzootic in mammals</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/s41586-024-08054-z" target="_blank" style="word-break: break-all;">10.1038/s41586-024-08054-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A single mutation in bovine influenza H5N1 hemagglutinin switches specificity to human receptors</td>
+                        <td>Science</td>
+                        <td><a href="https://doi.org/10.1126/science.adt0180" target="_blank" style="word-break: break-all;">10.1126/science.adt0180</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Critical Illness in an Adolescent with Influenza A(H5N1) Virus Infection</td>
+                        <td>New England Journal of Medicine</td>
+                        <td><a href="https://doi.org/10.1056/nejmc2415890" target="_blank" style="word-break: break-all;">10.1056/nejmc2415890</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A single mutation in dairy cow-associated H5N1 viruses increases receptor binding breadth</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-024-54934-3" target="_blank" style="word-break: break-all;">10.1038/s41467-024-54934-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Receptor-binding specificity of a bovine influenza A virus</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/s41586-025-08822-5" target="_blank" style="word-break: break-all;">10.1038/s41586-025-08822-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>H5N1 2.3.4.4b: a review of mammalian adaptations and risk of pandemic emergence</td>
+                        <td>Journal of General Virology</td>
+                        <td><a href="https://doi.org/10.1099/jgv.0.002109" target="_blank" style="word-break: break-all;">10.1099/jgv.0.002109</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Multiplexed assays of variant effect for clinical variant interpretation</td>
+                        <td>Nature Reviews Genetics</td>
+                        <td><a href="https://doi.org/10.1038/s41576-025-00870-x" target="_blank" style="word-break: break-all;">10.1038/s41576-025-00870-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Strategies and efforts in circumventing the emergence of antiviral resistance against conventional antivirals</td>
+                        <td>npj Antimicrobials and Resistance</td>
+                        <td><a href="https://doi.org/10.1038/s44259-025-00125-z" target="_blank" style="word-break: break-all;">10.1038/s44259-025-00125-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Large-scale computational modelling of H5 influenza variants against HA1-neutralising antibodies</td>
+                        <td>EBioMedicine</td>
+                        <td><a href="https://doi.org/10.1016/j.ebiom.2025.105632" target="_blank" style="word-break: break-all;">10.1016/j.ebiom.2025.105632</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Structure of a zoonotic H5N1 hemagglutinin reveals a receptor-binding site occupied by an auto-glycan</td>
+                        <td>Structure</td>
+                        <td><a href="https://doi.org/10.1016/j.str.2025.01.001" target="_blank" style="word-break: break-all;">10.1016/j.str.2025.01.001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Attachment and replication of clade 2.3.4.4b influenza A (H5N1) viruses in human respiratory epithelium: an in-vitro study</td>
+                        <td>The Lancet Microbe</td>
+                        <td><a href="https://doi.org/10.1016/j.lanmic.2025.101230" target="_blank" style="word-break: break-all;">10.1016/j.lanmic.2025.101230</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Balancing stability and function: impact of the surface charge of SARS-CoV-2 Omicron spike protein</td>
+                        <td>npj Viruses</td>
+                        <td><a href="https://doi.org/10.1038/s44298-025-00104-1" target="_blank" style="word-break: break-all;">10.1038/s44298-025-00104-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>The Q226L mutation can convert a highly pathogenic H5 2.3.4.4e virus to bind human-type receptors</td>
+                        <td>Proceedings of the National Academy of Sciences</td>
+                        <td><a href="https://doi.org/10.1073/pnas.2419800122" target="_blank" style="word-break: break-all;">10.1073/pnas.2419800122</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Deep mutational scanning of rabies glycoprotein defines mutational constraint and antibody-escape mutations</td>
+                        <td>Cell Host & Microbe</td>
+                        <td><a href="https://doi.org/10.1016/j.chom.2025.04.018" target="_blank" style="word-break: break-all;">10.1016/j.chom.2025.04.018</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Cross-neutralizing and potent human monoclonal antibodies against historical and emerging H5Nx influenza viruses</td>
+                        <td>Nature Microbiology</td>
+                        <td><a href="https://doi.org/10.1038/s41564-025-02137-x" target="_blank" style="word-break: break-all;">10.1038/s41564-025-02137-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Pleiotropic mutational effects on function and stability constrain the antigenic evolution of influenza haemagglutinin</td>
+                        <td>Nature Ecology & Evolution</td>
+                        <td><a href="https://doi.org/10.1038/s41559-025-02895-1" target="_blank" style="word-break: break-all;">10.1038/s41559-025-02895-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Development of avian influenza A(H5) virus datasets for Nextclade enables rapid and accurate clade assignment</td>
+                        <td>Virus Evolution</td>
+                        <td><a href="https://doi.org/10.1093/ve/veaf058" target="_blank" style="word-break: break-all;">10.1093/ve/veaf058</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>The sweet side of H5N1 influenza virus infection</td>
+                        <td>PLoS Pathogens</td>
+                        <td><a href="https://doi.org/10.1371/journal.ppat.1012847" target="_blank" style="word-break: break-all;">10.1371/journal.ppat.1012847</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Mutations in the influenza virus, primarily H5N1, enhance the virus’s virulence, favor receptor interaction, and increase drug resistance</td>
+                        <td>International Journal of Surgery</td>
+                        <td><a href="https://doi.org/10.1097/js9.0000000000002403" target="_blank" style="word-break: break-all;">10.1097/js9.0000000000002403</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Impact of naturally occurring hemagglutinin substitutions on antigenicity and fitness of influenza A(H5N1) virus</td>
+                        <td>npj Viruses</td>
+                        <td><a href="https://doi.org/10.1038/s44298-025-00154-5" target="_blank" style="word-break: break-all;">10.1038/s44298-025-00154-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Host switching mutations in H5N1 influenza hemagglutinin suppress site-specific activation dynamics</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-025-66926-y" target="_blank" style="word-break: break-all;">10.1038/s41467-025-66926-y</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Management of critical illness in an adolescent caused by highly pathogenic avian influenza A(H5N1) virus infection in British Columbia, Canada</td>
+                        <td>The Lancet Infectious Diseases</td>
+                        <td><a href="https://doi.org/10.1016/s1473-3099(25)00773-x" target="_blank" style="word-break: break-all;">10.1016/s1473-3099(25)00773-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Pathogenesis of H5N1 Clade 2.3.4.4b in dry Jersey cows following intramammary inoculation shows within-host compartmentalization</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.03.04.709389" target="_blank" style="word-break: break-all;">10.64898/2026.03.04.709389</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>H5N1 2.3.4.4b HA E190D and Q226H mutations, picked up as minority variants in a patient, result in an inability to bind sialic acid</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.03.06.710037" target="_blank" style="word-break: break-all;">10.64898/2026.03.06.710037</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Analysis of the Monophyletic Lineage of Avian Influenza H5N1 Which Circulated in Venezuelan Birds During the 2022–2023 Outbreak</td>
+                        <td>Microorganisms</td>
+                        <td><a href="https://doi.org/10.3390/microorganisms12122519" target="_blank" style="word-break: break-all;">10.3390/microorganisms12122519</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Decoding non-human mammalian adaptive signatures of 2.3.4.4b H5N1 to assess its human adaptive potential</td>
+                        <td>Microbiology Spectrum</td>
+                        <td><a href="https://doi.org/10.1128/spectrum.00948-25" target="_blank" style="word-break: break-all;">10.1128/spectrum.00948-25</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Nonviral protein cages as tools to decipher and combat viral threats</td>
+                        <td>npj Viruses</td>
+                        <td><a href="https://doi.org/10.1038/s44298-025-00127-8" target="_blank" style="word-break: break-all;">10.1038/s44298-025-00127-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Risk assessment of 2024 cattle H5N1 using age-stratified serosurveillance data</td>
+                        <td>Emerging Microbes & Infections</td>
+                        <td><a href="https://doi.org/10.1080/22221751.2025.2497304" target="_blank" style="word-break: break-all;">10.1080/22221751.2025.2497304</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A review of the animal influenza viruses and their impact on human health</td>
+                        <td>Discover Public Health</td>
+                        <td><a href="https://doi.org/10.1186/s12982-025-00679-3" target="_blank" style="word-break: break-all;">10.1186/s12982-025-00679-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Receptor Binding Specificity of a Bovine A(H5N1) Influenza Virus</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.07.30.605893" target="_blank" style="word-break: break-all;">10.1101/2024.07.30.605893</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Susceptibility of bovine respiratory and mammary epithelial cells to avian and mammalian derived clade 2.3.4.4b H5N1 highly pathogenic avian influenza viruses</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.01.09.632235" target="_blank" style="word-break: break-all;">10.1101/2025.01.09.632235</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Pleiotropic mutational effects on function and stability constrain the antigenic evolution of influenza hemagglutinin</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.05.24.655919" target="_blank" style="word-break: break-all;">10.1101/2025.05.24.655919</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Deep mutational scanning of rabies glycoprotein defines mutational constraint and antibody-escape mutations</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.12.17.628970" target="_blank" style="word-break: break-all;">10.1101/2024.12.17.628970</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>H5N1 Influenza A is now promiscuous in host range and has improved replication in mammals</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.03.15.641219" target="_blank" style="word-break: break-all;">10.1101/2025.03.15.641219</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Evaluating variant effect prediction across viruses</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.08.04.668549" target="_blank" style="word-break: break-all;">10.1101/2025.08.04.668549</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>The Q226L mutation can convert a highly pathogenic H5 2.3.4.4e virus to bind human-type receptors</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.01.10.632119" target="_blank" style="word-break: break-all;">10.1101/2025.01.10.632119</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A Fine-tuned ProtGPT2 (transformer model) for Predicting more Virulent SARS-CoV-2 variants and understanding its virulence by biophysical methods</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.01.13.632691" target="_blank" style="word-break: break-all;">10.1101/2025.01.13.632691</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Seasonal influenza viruses show distinct adaptive dynamics during growth in chicken eggs</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.06.12.659400" target="_blank" style="word-break: break-all;">10.1101/2025.06.12.659400</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Structure of a zoonotic H5N1 hemagglutinin reveals a receptor-binding site occupied by an auto-glycan</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.12.06.626699" target="_blank" style="word-break: break-all;">10.1101/2024.12.06.626699</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>PLOS Biology and the life sciences in 2024</td>
+                        <td>PLoS Biology</td>
+                        <td><a href="https://doi.org/10.1371/journal.pbio.3002985" target="_blank" style="word-break: break-all;">10.1371/journal.pbio.3002985</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Risk assessment of 2024 cattle H5N1 using age-stratified serosurveillance data</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.12.23.24319580" target="_blank" style="word-break: break-all;">10.1101/2024.12.23.24319580</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Predictive Modeling of Respiratory Virus Evolution: Current Capabilities and Limitations</td>
+                        <td>Mathematical Biology and Bioinformatics</td>
+                        <td><a href="https://doi.org/10.17537/2024.19.579" target="_blank" style="word-break: break-all;">10.17537/2024.19.579</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Lengthy delays in H5N1 genome submissions to GISAID</td>
+                        <td>Nature Biotechnology</td>
+                        <td><a href="https://doi.org/10.1038/s41587-025-02636-6" target="_blank" style="word-break: break-all;">10.1038/s41587-025-02636-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Preclinical Evaluation of an mRNA Vaccine Developed from the First Human Isolate of Bovine H5N1</td>
+                        <td>Cell Reports Medicine</td>
+                        <td><a href="https://doi.org/10.1016/j.xcrm.2026.102702" target="_blank" style="word-break: break-all;">10.1016/j.xcrm.2026.102702</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Random mutagenesis of influenza hemagglutinin identifies new sites which modulate its acid-stability and cleavability</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.07.25.666873" target="_blank" style="word-break: break-all;">10.1101/2025.07.25.666873</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Stabilization of H5 highly pathogenic avian influenza hemagglutinin improves vaccine-elicited neutralizing antibody responses</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.07.30.667762" target="_blank" style="word-break: break-all;">10.1101/2025.07.30.667762</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Insights from deep mutational scanning in the context of an emerging pathogen</td>
+                        <td>Biochemical Society Transactions</td>
+                        <td><a href="https://doi.org/10.1042/bst20253033" target="_blank" style="word-break: break-all;">10.1042/bst20253033</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Host Switching Mutations in H5N1 Influenza Hemagglutinin Suppress Site-specific Activation Dynamics</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.10.06.680362" target="_blank" style="word-break: break-all;">10.1101/2025.10.06.680362</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Targeted tiled amplicon based protocol for sequencing the Hemagglutinin (HA) gene segment of seasonal influenza A and influenza B virus from wastewater at high depth of coverage</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.10.15.25338105" target="_blank" style="word-break: break-all;">10.1101/2025.10.15.25338105</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Functional and antigenic constraints on the Nipah virus fusion protein</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.10.15.682664" target="_blank" style="word-break: break-all;">10.1101/2025.10.15.682664</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Inverted H1 hemagglutinin nanoparticle vaccines protect mice against challenges with human H1N1 and bovine H5N1 influenza viruses</td>
+                        <td>npj Vaccines</td>
+                        <td><a href="https://doi.org/10.1038/s41541-025-01276-w" target="_blank" style="word-break: break-all;">10.1038/s41541-025-01276-w</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>AbAgym: a well-curated dataset for the mutational analysis of antibody–antigen complexes</td>
+                        <td>mAbs</td>
+                        <td><a href="https://doi.org/10.1080/19420862.2025.2592421" target="_blank" style="word-break: break-all;">10.1080/19420862.2025.2592421</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Mutational spectra reveal influenza virus transmission routes and adaptation</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.11.26.690773" target="_blank" style="word-break: break-all;">10.1101/2025.11.26.690773</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Learning a viral protein’s vocabulary</td>
+                        <td>Nature Ecology & Evolution</td>
+                        <td><a href="https://doi.org/10.1038/s41559-025-02928-9" target="_blank" style="word-break: break-all;">10.1038/s41559-025-02928-9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Hemagglutinin-displaying influenza nanovaccines: progress and promise</td>
+                        <td>Nanomedicine</td>
+                        <td><a href="https://doi.org/10.1080/17435889.2025.2598329" target="_blank" style="word-break: break-all;">10.1080/17435889.2025.2598329</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Immunological and virological questions for H5N1 pandemic emergence</td>
+                        <td>ImmunoHorizons</td>
+                        <td><a href="https://doi.org/10.1093/immhor/vlaf062" target="_blank" style="word-break: break-all;">10.1093/immhor/vlaf062</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Experimental and computational approaches to adaptive viral evolution: Linking molecular variation to phenotypic outcomes</td>
+                        <td>Journal of Microbiological Methods</td>
+                        <td><a href="https://doi.org/10.1016/j.mimet.2025.107379" target="_blank" style="word-break: break-all;">10.1016/j.mimet.2025.107379</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Influenza hemagglutinin subtypes have different sequence constraints despite sharing extremely similar structures</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.01.05.697808" target="_blank" style="word-break: break-all;">10.64898/2026.01.05.697808</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Loss of α2,3-linked sialoside in the receptor-binding site of a H5N1 influenza hemagglutinin identified in a human patient</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.01.19.700419" target="_blank" style="word-break: break-all;">10.64898/2026.01.19.700419</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Clonal interference and changing selective pressures shape the escape of SARS-CoV-2 from hundreds of antibodies</td>
+                        <td>Virus Evolution</td>
+                        <td><a href="https://doi.org/10.1093/ve/veaf104" target="_blank" style="word-break: break-all;">10.1093/ve/veaf104</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Functional and antigenic constraints on the Nipah virus fusion protein</td>
+                        <td>Proceedings of the National Academy of Sciences</td>
+                        <td><a href="https://doi.org/10.1073/pnas.2529505123" target="_blank" style="word-break: break-all;">10.1073/pnas.2529505123</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Stabilization of the H5 clade 2.3.4.4b hemagglutinin improves vaccine-elicited neutralizing antibody responses in mice</td>
+                        <td>Science Translational Medicine</td>
+                        <td><a href="https://doi.org/10.1126/scitranslmed.aea8770" target="_blank" style="word-break: break-all;">10.1126/scitranslmed.aea8770</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Evaluation of an H5 influenza virus mRNA-lipid nanoparticle (LNP) vaccine in lactating dairy cows</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.03.03.709308" target="_blank" style="word-break: break-all;">10.64898/2026.03.03.709308</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Influenza hemagglutinin subtypes have different sequence constraints despite sharing extremely similar structures</td>
+                        <td>Virus Evolution</td>
+                        <td><a href="https://doi.org/10.1093/ve/veag018" target="_blank" style="word-break: break-all;">10.1093/ve/veag018</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Computational Structural Analysis Predicts Host-Range Promiscuity and Antiviral Resistance in North American H5N1 Lineages</td>
+                        <td>Computational and Structural Biotechnology Journal</td>
+                        <td><a href="https://doi.org/10.34133/csbj.0066" target="_blank" style="word-break: break-all;">10.34133/csbj.0066</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>The emergence and molecular evolution of H5N1 influenza viruses in United States dairy cattle</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.03.30.713641" target="_blank" style="word-break: break-all;">10.64898/2026.03.30.713641</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>H5N1 2.3.4.4b HA E190D and Q226H mutations, picked up as minority variants in a patient, result in an inability to bind sialic acid</td>
+                        <td>Virology</td>
+                        <td><a href="https://doi.org/10.1016/j.virol.2026.110949" target="_blank" style="word-break: break-all;">10.1016/j.virol.2026.110949</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Concepts of RNA virus evolution for the design of better antiviral countermeasures</td>
+                        <td>Nature Reviews Microbiology</td>
+                        <td><a href="https://doi.org/10.1038/s41579-026-01316-9" target="_blank" style="word-break: break-all;">10.1038/s41579-026-01316-9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>The Q226H Mutation in Avian H5N1 Hemagglutinin Mediates a Path towards Structural Adaptation in Humans</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.05.21.726965" target="_blank" style="word-break: break-all;">10.64898/2026.05.21.726965</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-06-02T09:32:39+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
                 type: 'bar',
                 data: {
                     labels: labels,
@@ -866,9 +2144,97 @@
                     }
                 }
             });
-        })();
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' citing works (most recent first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
     </script>
-<style>
+    <style>
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(5px); }
             to { opacity: 1; transform: translateY(0); }
@@ -892,7 +2258,8 @@
             color: #111827;
         }
     </style>
-<script>
+    
+    <script>
         function openSocialTab(evt, tabId) {
             // Hide all tab content
             var contents = document.getElementsByClassName("soc-tab-content");
@@ -909,161 +2276,6 @@
             evt.currentTarget.classList.add("soc-tab-active");
         }
     </script>
-
-<script>
-(function() {
-  var DATA = [{"year": "2024", "title": "The global H5N1 influenza panzootic in mammals", "venue": "Nature", "doi": "10.1038/s41586-024-08054-z", "doi_url": "https://doi.org/10.1038/s41586-024-08054-z"}, {"year": "2024", "title": "A single mutation in bovine influenza H5N1 hemagglutinin switches specificity to human receptors", "venue": "Science", "doi": "10.1126/science.adt0180", "doi_url": "https://doi.org/10.1126/science.adt0180"}, {"year": "2024", "title": "Critical Illness in an Adolescent with Influenza A(H5N1) Virus Infection", "venue": "New England Journal of Medicine", "doi": "10.1056/nejmc2415890", "doi_url": "https://doi.org/10.1056/nejmc2415890"}, {"year": "2024", "title": "A single mutation in dairy cow-associated H5N1 viruses increases receptor binding breadth", "venue": "Nature Communications", "doi": "10.1038/s41467-024-54934-3", "doi_url": "https://doi.org/10.1038/s41467-024-54934-3"}, {"year": "2025", "title": "Receptor-binding specificity of a bovine influenza A virus", "venue": "Nature", "doi": "10.1038/s41586-025-08822-5", "doi_url": "https://doi.org/10.1038/s41586-025-08822-5"}, {"year": "2025", "title": "H5N1 2.3.4.4b: a review of mammalian adaptations and risk of pandemic emergence", "venue": "Journal of General Virology", "doi": "10.1099/jgv.0.002109", "doi_url": "https://doi.org/10.1099/jgv.0.002109"}, {"year": "2025", "title": "Multiplexed assays of variant effect for clinical variant interpretation", "venue": "Nature Reviews Genetics", "doi": "10.1038/s41576-025-00870-x", "doi_url": "https://doi.org/10.1038/s41576-025-00870-x"}, {"year": "2025", "title": "Large-scale computational modelling of H5 influenza variants against HA1-neutralising antibodies", "venue": "EBioMedicine", "doi": "10.1016/j.ebiom.2025.105632", "doi_url": "https://doi.org/10.1016/j.ebiom.2025.105632"}, {"year": "2025", "title": "Strategies and efforts in circumventing the emergence of antiviral resistance against conventional antivirals", "venue": "npj Antimicrobials and Resistance", "doi": "10.1038/s44259-025-00125-z", "doi_url": "https://doi.org/10.1038/s44259-025-00125-z"}, {"year": "2025", "title": "Structure of a zoonotic H5N1 hemagglutinin reveals a receptor-binding site occupied by an auto-glycan", "venue": "Structure", "doi": "10.1016/j.str.2025.01.001", "doi_url": "https://doi.org/10.1016/j.str.2025.01.001"}, {"year": "2025", "title": "Deep mutational scanning of rabies glycoprotein defines mutational constraint and antibody-escape mutations", "venue": "Cell Host & Microbe", "doi": "10.1016/j.chom.2025.04.018", "doi_url": "https://doi.org/10.1016/j.chom.2025.04.018"}, {"year": "2025", "title": "Pleiotropic mutational effects on function and stability constrain the antigenic evolution of influenza haemagglutinin", "venue": "Nature Ecology & Evolution", "doi": "10.1038/s41559-025-02895-1", "doi_url": "https://doi.org/10.1038/s41559-025-02895-1"}, {"year": "2025", "title": "Attachment and replication of clade 2.3.4.4b influenza A (H5N1) viruses in human respiratory epithelium: an in-vitro study", "venue": "The Lancet Microbe", "doi": "10.1016/j.lanmic.2025.101230", "doi_url": "https://doi.org/10.1016/j.lanmic.2025.101230"}, {"year": "2025", "title": "Balancing stability and function: impact of the surface charge of SARS-CoV-2 Omicron spike protein", "venue": "npj Viruses", "doi": "10.1038/s44298-025-00104-1", "doi_url": "https://doi.org/10.1038/s44298-025-00104-1"}, {"year": "2025", "title": "The sweet side of H5N1 influenza virus infection", "venue": "PLoS Pathogens", "doi": "10.1371/journal.ppat.1012847", "doi_url": "https://doi.org/10.1371/journal.ppat.1012847"}, {"year": "2025", "title": "The Q226L mutation can convert a highly pathogenic H5 2.3.4.4e virus to bind human-type receptors", "venue": "Proceedings of the National Academy of Sciences", "doi": "10.1073/pnas.2419800122", "doi_url": "https://doi.org/10.1073/pnas.2419800122"}, {"year": "2025", "title": "Cross-neutralizing and potent human monoclonal antibodies against historical and emerging H5Nx influenza viruses", "venue": "Nature Microbiology", "doi": "10.1038/s41564-025-02137-x", "doi_url": "https://doi.org/10.1038/s41564-025-02137-x"}, {"year": "2025", "title": "Mutations in the influenza virus, primarily H5N1, enhance the virus’s virulence, favor receptor interaction, and increase drug resistance", "venue": "International Journal of Surgery", "doi": "10.1097/js9.0000000000002403", "doi_url": "https://doi.org/10.1097/js9.0000000000002403"}, {"year": "2025", "title": "Impact of naturally occurring hemagglutinin substitutions on antigenicity and fitness of influenza A(H5N1) virus", "venue": "npj Viruses", "doi": "10.1038/s44298-025-00154-5", "doi_url": "https://doi.org/10.1038/s44298-025-00154-5"}, {"year": "2025", "title": "Development of avian influenza A(H5) virus datasets for Nextclade enables rapid and accurate clade assignment", "venue": "Virus Evolution", "doi": "10.1093/ve/veaf058", "doi_url": "https://doi.org/10.1093/ve/veaf058"}, {"year": "2026", "title": "Management of critical illness in an adolescent caused by highly pathogenic avian influenza A(H5N1) virus infection in British Columbia, Canada", "venue": "The Lancet Infectious Diseases", "doi": "10.1016/s1473-3099(25)00773-x", "doi_url": "https://doi.org/10.1016/s1473-3099(25)00773-x"}, {"year": "2026", "title": "Pathogenesis of H5N1 Clade 2.3.4.4b in dry Jersey cows following intramammary inoculation shows within-host compartmentalization", "venue": "bioRxiv (Cold Spring Harbor Laboratory)", "doi": "10.64898/2026.03.04.709389", "doi_url": "https://doi.org/10.64898/2026.03.04.709389"}, {"year": "2024", "title": "Analysis of the Monophyletic Lineage of Avian Influenza H5N1 Which Circulated in Venezuelan Birds During the 2022–2023 Outbreak", "venue": "Microorganisms", "doi": "10.3390/microorganisms12122519", "doi_url": "https://doi.org/10.3390/microorganisms12122519"}, {"year": "2025", "title": "Decoding non-human mammalian adaptive signatures of 2.3.4.4b H5N1 to assess its human adaptive potential", "venue": "Microbiology Spectrum", "doi": "10.1128/spectrum.00948-25", "doi_url": "https://doi.org/10.1128/spectrum.00948-25"}, {"year": "2025", "title": "Nonviral protein cages as tools to decipher and combat viral threats", "venue": "npj Viruses", "doi": "10.1038/s44298-025-00127-8", "doi_url": "https://doi.org/10.1038/s44298-025-00127-8"}, {"year": "2025", "title": "Risk assessment of 2024 cattle H5N1 using age-stratified serosurveillance data", "venue": "Emerging Microbes & Infections", "doi": "10.1080/22221751.2025.2497304", "doi_url": "https://doi.org/10.1080/22221751.2025.2497304"}, {"year": "2025", "title": "A review of the animal influenza viruses and their impact on human health", "venue": "Discover Public Health", "doi": "10.1186/s12982-025-00679-3", "doi_url": "https://doi.org/10.1186/s12982-025-00679-3"}, {"year": "2024", "title": "Receptor Binding Specificity of a Bovine A(H5N1) Influenza Virus", "venue": "bioRxiv", "doi": "10.1101/2024.07.30.605893", "doi_url": "https://doi.org/10.1101/2024.07.30.605893"}, {"year": "2025", "title": "Pleiotropic mutational effects on function and stability constrain the antigenic evolution of influenza hemagglutinin", "venue": "bioRxiv", "doi": "10.1101/2025.05.24.655919", "doi_url": "https://doi.org/10.1101/2025.05.24.655919"}, {"year": "2025", "title": "Susceptibility of bovine respiratory and mammary epithelial cells to avian and mammalian derived clade 2.3.4.4b H5N1 highly pathogenic avian influenza viruses", "venue": "bioRxiv", "doi": "10.1101/2025.01.09.632235", "doi_url": "https://doi.org/10.1101/2025.01.09.632235"}, {"year": "2024", "title": "Deep mutational scanning of rabies glycoprotein defines mutational constraint and antibody-escape mutations", "venue": "bioRxiv", "doi": "10.1101/2024.12.17.628970", "doi_url": "https://doi.org/10.1101/2024.12.17.628970"}, {"year": "2025", "title": "H5N1 Influenza A is now promiscuous in host range and has improved replication in mammals", "venue": "bioRxiv", "doi": "10.1101/2025.03.15.641219", "doi_url": "https://doi.org/10.1101/2025.03.15.641219"}, {"year": "2025", "title": "Evaluating variant effect prediction across viruses", "venue": "bioRxiv", "doi": "10.1101/2025.08.04.668549", "doi_url": "https://doi.org/10.1101/2025.08.04.668549"}, {"year": "2025", "title": "The Q226L mutation can convert a highly pathogenic H5 2.3.4.4e virus to bind human-type receptors", "venue": "bioRxiv", "doi": "10.1101/2025.01.10.632119", "doi_url": "https://doi.org/10.1101/2025.01.10.632119"}, {"year": "2025", "title": "Seasonal influenza viruses show distinct adaptive dynamics during growth in chicken eggs", "venue": "bioRxiv", "doi": "10.1101/2025.06.12.659400", "doi_url": "https://doi.org/10.1101/2025.06.12.659400"}, {"year": "2024", "title": "Structure of a zoonotic H5N1 hemagglutinin reveals a receptor-binding site occupied by an auto-glycan", "venue": "bioRxiv", "doi": "10.1101/2024.12.06.626699", "doi_url": "https://doi.org/10.1101/2024.12.06.626699"}, {"year": "2024", "title": "PLOS Biology and the life sciences in 2024", "venue": "PLoS Biology", "doi": "10.1371/journal.pbio.3002985", "doi_url": "https://doi.org/10.1371/journal.pbio.3002985"}, {"year": "2024", "title": "Risk assessment of 2024 cattle H5N1 using age-stratified serosurveillance data", "venue": "bioRxiv", "doi": "10.1101/2024.12.23.24319580", "doi_url": "https://doi.org/10.1101/2024.12.23.24319580"}, {"year": "2024", "title": "Predictive Modeling of Respiratory Virus Evolution: Current Capabilities and Limitations", "venue": "Mathematical Biology and Bioinformatics", "doi": "10.17537/2024.19.579", "doi_url": "https://doi.org/10.17537/2024.19.579"}, {"year": "2025", "title": "A Fine-tuned ProtGPT2 (transformer model) for Predicting more Virulent SARS-CoV-2 variants and understanding its virulence by biophysical methods", "venue": "bioRxiv", "doi": "10.1101/2025.01.13.632691", "doi_url": "https://doi.org/10.1101/2025.01.13.632691"}, {"year": "2025", "title": "Lengthy delays in H5N1 genome submissions to GISAID", "venue": "Nature Biotechnology", "doi": "10.1038/s41587-025-02636-6", "doi_url": "https://doi.org/10.1038/s41587-025-02636-6"}, {"year": "2025", "title": "Preclinical Evaluation of an mRNA Vaccine Developed from the First Human Isolate of Bovine H5N1", "venue": "SSRN Electronic Journal", "doi": "10.2139/ssrn.5353082", "doi_url": "https://doi.org/10.2139/ssrn.5353082"}, {"year": "2025", "title": "Random mutagenesis of influenza hemagglutinin identifies new sites which modulate its acid-stability and cleavability", "venue": "bioRxiv", "doi": "10.1101/2025.07.25.666873", "doi_url": "https://doi.org/10.1101/2025.07.25.666873"}, {"year": "2025", "title": "Stabilization of H5 highly pathogenic avian influenza hemagglutinin improves vaccine-elicited neutralizing antibody responses", "venue": "bioRxiv", "doi": "10.1101/2025.07.30.667762", "doi_url": "https://doi.org/10.1101/2025.07.30.667762"}, {"year": "2025", "title": "Insights from deep mutational scanning in the context of an emerging pathogen", "venue": "Biochemical Society Transactions", "doi": "10.1042/bst20253033", "doi_url": "https://doi.org/10.1042/bst20253033"}, {"year": "2025", "title": "Host Switching Mutations in H5N1 Influenza Hemagglutinin Suppress Site-specific Activation Dynamics", "venue": "bioRxiv", "doi": "10.1101/2025.10.06.680362", "doi_url": "https://doi.org/10.1101/2025.10.06.680362"}, {"year": "2025", "title": "Targeted tiled amplicon based protocol for sequencing the Hemagglutinin (HA) gene segment of seasonal influenza A and influenza B virus from wastewater at high depth of coverage", "venue": "bioRxiv", "doi": "10.1101/2025.10.15.25338105", "doi_url": "https://doi.org/10.1101/2025.10.15.25338105"}, {"year": "2025", "title": "Functional and antigenic constraints on the Nipah virus fusion protein", "venue": "bioRxiv", "doi": "10.1101/2025.10.15.682664", "doi_url": "https://doi.org/10.1101/2025.10.15.682664"}, {"year": "2025", "title": "Inverted H1 hemagglutinin nanoparticle vaccines protect mice against challenges with human H1N1 and bovine H5N1 influenza viruses", "venue": "npj Vaccines", "doi": "10.1038/s41541-025-01276-w", "doi_url": "https://doi.org/10.1038/s41541-025-01276-w"}, {"year": "2025", "title": "AbAgym: a well-curated dataset for the mutational analysis of antibody–antigen complexes", "venue": "mAbs", "doi": "10.1080/19420862.2025.2592421", "doi_url": "https://doi.org/10.1080/19420862.2025.2592421"}, {"year": "2025", "title": "Mutational spectra reveal influenza virus transmission routes and adaptation", "venue": "bioRxiv", "doi": "10.1101/2025.11.26.690773", "doi_url": "https://doi.org/10.1101/2025.11.26.690773"}, {"year": "2025", "title": "Learning a viral protein’s vocabulary", "venue": "Nature Ecology & Evolution", "doi": "10.1038/s41559-025-02928-9", "doi_url": "https://doi.org/10.1038/s41559-025-02928-9"}, {"year": "2025", "title": "Host switching mutations in H5N1 influenza hemagglutinin suppress site-specific activation dynamics", "venue": "Nature Communications", "doi": "10.1038/s41467-025-66926-y", "doi_url": "https://doi.org/10.1038/s41467-025-66926-y"}, {"year": "2025", "title": "Hemagglutinin-displaying influenza nanovaccines: progress and promise", "venue": "Nanomedicine", "doi": "10.1080/17435889.2025.2598329", "doi_url": "https://doi.org/10.1080/17435889.2025.2598329"}, {"year": "2025", "title": "Immunological and virological questions for H5N1 pandemic emergence", "venue": "ImmunoHorizons", "doi": "10.1093/immhor/vlaf062", "doi_url": "https://doi.org/10.1093/immhor/vlaf062"}, {"year": "2025", "title": "Experimental and computational approaches to adaptive viral evolution: Linking molecular variation to phenotypic outcomes", "venue": "Journal of Microbiological Methods", "doi": "10.1016/j.mimet.2025.107379", "doi_url": "https://doi.org/10.1016/j.mimet.2025.107379"}, {"year": "2026", "title": "Influenza hemagglutinin subtypes have different sequence constraints despite sharing extremely similar structures", "venue": "bioRxiv (Cold Spring Harbor Laboratory)", "doi": "10.64898/2026.01.05.697808", "doi_url": "https://doi.org/10.64898/2026.01.05.697808"}, {"year": "2026", "title": "Loss of α2,3-linked sialoside in the receptor-binding site of a H5N1 influenza hemagglutinin identified in a human patient", "venue": "bioRxiv (Cold Spring Harbor Laboratory)", "doi": "10.64898/2026.01.19.700419", "doi_url": "https://doi.org/10.64898/2026.01.19.700419"}, {"year": "2026", "title": "Clonal interference and changing selective pressures shape the escape of SARS-CoV-2 from hundreds of antibodies", "venue": "Virus Evolution", "doi": "10.1093/ve/veaf104", "doi_url": "https://doi.org/10.1093/ve/veaf104"}, {"year": "2026", "title": "Functional and antigenic constraints on the Nipah virus fusion protein", "venue": "Proceedings of the National Academy of Sciences", "doi": "10.1073/pnas.2529505123", "doi_url": "https://doi.org/10.1073/pnas.2529505123"}, {"year": "2026", "title": "Stabilization of the H5 clade 2.3.4.4b hemagglutinin improves vaccine-elicited neutralizing antibody responses in mice", "venue": "Science Translational Medicine", "doi": "10.1126/scitranslmed.aea8770", "doi_url": "https://doi.org/10.1126/scitranslmed.aea8770"}, {"year": "2026", "title": "Evaluation of an H5 influenza virus mRNA-lipid nanoparticle (LNP) vaccine in lactating dairy cows", "venue": "bioRxiv (Cold Spring Harbor Laboratory)", "doi": "10.64898/2026.03.03.709308", "doi_url": "https://doi.org/10.64898/2026.03.03.709308"}, {"year": "2026", "title": "H5N1 2.3.4.4b HA E190D and Q226H mutations, picked up as minority variants in a patient, result in an inability to bind sialic acid", "venue": "bioRxiv (Cold Spring Harbor Laboratory)", "doi": "10.64898/2026.03.06.710037", "doi_url": "https://doi.org/10.64898/2026.03.06.710037"}];
-  var PER  = 25;
-  var _p   = 1;
-  var _tot = Math.ceil(DATA.length / PER);
-
-  function esc(s) {
-    return String(s)
-      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
-      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-
-  function render(page) {
-    _p = page;
-    var tbody  = document.getElementById('cit-tbody');
-    var info   = document.getElementById('cit-info');
-    var prev   = document.getElementById('cit-prev');
-    var next   = document.getElementById('cit-next');
-    var nums   = document.getElementById('cit-page-nums');
-    if (!tbody) return;
-
-    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
-    for (var i=s; i<e; i++) {
-      var r = DATA[i];
-      var d = r.doi_url
-        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
-        : esc(r.doi||'');
-      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
-    }
-    tbody.innerHTML = rows;
-    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
-    if (prev) prev.disabled = (page===1);
-    if (next) next.disabled = (page===_tot);
-
-    if (nums) {
-      var shown = [], html = '', prev2 = null;
-      for (var p=1; p<=_tot; p++) {
-        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
-      }
-      for (var i=0; i<shown.length; i++) {
-        var p=shown[i];
-        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
-        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
-        prev2=p;
-      }
-      nums.innerHTML = html;
-    }
-  }
-
-  window.citGoTo = function(p) {
-    if(p<1||p>_tot) return;
-    render(p);
-    var sec=document.getElementById('sec-citations');
-    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
-  };
-  window.citPrev = function() { window.citGoTo(_p-1); };
-  window.citNext = function() { window.citGoTo(_p+1); };
-
-  if(document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded',function(){render(1);});
-  else render(1);
-})();
-</script>
-
-<script>
-function citeSwitchTab(btn, tabId) {
-  var card = btn.closest('section, .card') || btn.parentElement;
-  // Find tab buttons and panes in surrounding context
-  var tabsEl = btn.closest('.cite-tabs');
-  if (!tabsEl) return;
-  var parent = tabsEl.parentElement;
-  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
-  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
-  btn.classList.add('active');
-  var pane = document.getElementById(tabId);
-  if (pane) pane.classList.add('active');
-}
-</script>
-
-<script>
-(function() {
-  function init() {
-    document.querySelectorAll('section.card, .card').forEach(function(card) {
-      // Skip the hero header
-      if (card.tagName === 'HEADER') return;
-      var h2 = null;
-      for (var i=0; i<card.children.length; i++) {
-        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
-      }
-      if (!h2) return;
-
-      card.classList.add('card-collapsible');
-
-      // Add chevron span
-      var chev = document.createElement('span');
-      chev.className = 'chevron';
-      chev.setAttribute('aria-hidden','true');
-      chev.textContent = '▾';
-      h2.appendChild(chev);
-
-      // Wrap siblings after h2
-      var wrap = document.createElement('div');
-      wrap.className = 'card-body-wrap';
-      var kids = Array.from(card.children), after = false;
-      kids.forEach(function(c) {
-        if (c===h2){after=true;return;}
-        if (after) wrap.appendChild(c);
-      });
-      card.appendChild(wrap);
-      // CSS handles open state with max-height:9999px — safe for async-loaded content
-
-      h2.addEventListener('click', function() {
-        card.classList.toggle('is-collapsed');
-      });
-    });
-  }
-  if (document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded', init);
-  else init();
-})();
-</script>
-
-<script>
-(function() {
-  function init() {
-    var nav = document.getElementById('sticky-nav');
-    if (!nav) return;
-    var links = Array.from(nav.querySelectorAll('a'));
-    var targets = links.map(function(l) {
-      var id = l.getAttribute('href').slice(1);
-      return {el: document.getElementById(id), link: l};
-    }).filter(function(t){return t.el;});
-
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          links.forEach(function(l){l.classList.remove('snav-active');});
-          var match = links.find(function(l){
-            return l.getAttribute('href')==='#'+e.target.id;
-          });
-          if (match) match.classList.add('snav-active');
-        }
-      });
-    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
-
-    targets.forEach(function(t){obs.observe(t.el);});
-  }
-  if (document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded', init);
-  else init();
-})();
-</script>
-
 <div id="role-tooltip" style="
   position:fixed;display:none;z-index:9999;
   background:#111827;color:white;padding:.5rem .75rem;
@@ -1074,7 +2286,7 @@ function citeSwitchTab(btn, tabId) {
 <script>
 (function(){
   var tip = document.getElementById('role-tooltip');
-  document.querySelectorAll('.role-pill[data-tip]').forEach(function(pill){
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
     pill.addEventListener('mouseenter', function(){
       tip.textContent = pill.getAttribute('data-tip');
       tip.style.top = '-9999px'; tip.style.display = 'block';
@@ -1094,6 +2306,15 @@ function citeSwitchTab(btn, tabId) {
   });
 })();
 </script>
-
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
 </body>
 </html>

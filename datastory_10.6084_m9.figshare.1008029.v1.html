@@ -1,0 +1,2800 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DataStory - TNO Image Fusion Dataset</title>
+    <style>
+
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
+
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+.sig-green {background:#dcfce7;color:#166534;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+    
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="datastories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">TNO Image Fusion Dataset</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #faf5ff; color: #86198f; border: 1px solid #e9d5ff; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                                    Proven Reuse
+                                </span>
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> 
+                                
+                                    Alexander Toet
+                                
+                            </div>
+                        
+                            
+                        
+                            
+                            
+                            <div><strong>Source:</strong> 
+                                Figshare
+                            </div>
+                            
+                        
+                            <div><strong>Provider:</strong> 
+                                
+                                    Unknown
+                                
+                            </div>
+                        
+                            <div><strong>Publication year:</strong> 
+                                
+                                    2014
+                                
+                            </div>
+                        
+                            <div><strong>DOI:</strong> 
+                                <a href="https://doi.org/10.6084/m9.figshare.1008029.v1" target="_blank">
+                                    10.6084/m9.figshare.1008029.v1
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        <!-- Sticky nav -->
+        <nav aria-label="Page sections" class="sticky-nav no-print">
+            <div class="sticky-nav-inner">
+                <a href="#sec-hero">Overview</a>
+                <a href="#sec-story">Story</a>
+                <a href="#sec-impact">Impact</a>
+                <a href="#sec-roles">Roles</a>
+                <a href="#sec-access">Access</a>
+                <a href="#sec-citing">Who's Citing</a>
+                <a href="#sec-mentions">Mentions</a>
+            </div>
+        </nav>
+
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The TNO Image Fusion Dataset (2014), hosted on Figshare, has been cited 202 times, demonstrating its significance within the fields of imaging and data fusion. With 206 instances of subsequent research relying on its data, it showcases the dataset's substantial role as a foundational research output.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The TNO Image Fusion Dataset (2014) represents an essential dataset within the research community, having garnered 202 citations across various scholarly works. This impactful resource has not only facilitated inquiries in image processing but has also sparked the reuse of its data in 207 subsequent research projects, highlighting its enduring applicability.</p>
+<p class="story-text">The dataset has seen notable uptake in several key academic venues, with citations appearing in leading journals such as Infrared Physics & Technology and Information Fusion. Such recognition underscores the dataset's relevance in advancing knowledge and applications related to imaging technologies.</p>
+<p class="story-text">Despite a lack of online mentions in social and community discourse platforms, the dataset's utility in the academic domain cannot be understated. It serves as a reliable reference point for researchers pursuing investigations that leverage image fusion methodologies, further evidenced by its substantial view (106) and download (37) counts on Figshare.</p>
+<p class="story-text">The absence of funding agencies supporting this dataset does not undermine its credibility; rather, it positions the dataset as a product of dedicated research efforts within the community. Enabling access to high-quality data, the TNO Image Fusion Dataset stands as a testament to the potential for datasets to drive research innovation and development in computational imaging and related fields.</p></div>
+        </section>
+        
+
+        
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+            <div class="im-wrapper">
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">202</div>
+                                <div class="im-label">Total Citations</div>
+                                
+                            </div>
+                            
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]"
+                                        data-values="[2, 1, 4, 4, 6, 12, 13, 34, 31, 44, 37, 14]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2014–2025</div>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+                    
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+                    
+                    
+                    
+                    <div class="im-card">
+                        <div class="im-num">37</div>
+                        <div class="im-label">Downloads</div>
+                        <div class="im-provenance">Repository usage (DataCite / native provider)</div>
+                    </div>
+                    
+                    
+                    <div class="im-card">
+                        <div class="im-num">106</div>
+                        <div class="im-label">Views</div>
+                        <div class="im-provenance">Repository usage (DataCite / native provider)</div>
+                    </div>
+                    
+                    
+                    <!-- scite (only when references exist) -->
+                    
+                    <div class="im-card">
+                        <div class="im-num">10</div>
+                        <div class="im-label">scite References</div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="im-scite-compact">
+                            <div class="im-scite-title">Citation context <span class="im-scite-via">via scite</span></div>
+                            <div class="im-scite-bar">
+                                <div class="im-scite-seg im-scite-sup" data-w="0"></div>
+                                <div class="im-scite-seg im-scite-men" data-w="100"></div>
+                                <div class="im-scite-seg im-scite-con" data-w="0"></div>
+                            </div>
+                            <div class="im-scite-leg">
+                                <span><span class="im-scite-dot" style="background:#22c55e;"></span>0</span>
+                                <span><span class="im-scite-dot" style="background:#94a3b8;"></span>10</span>
+                                <span><span class="im-scite-dot" style="background:#f87171;"></span>0</span>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+
+                
+                
+                
+                
+                
+                <div class="muted" style="margin-top:.7rem; font-size:.8rem;">
+                    Some signals aren’t recorded for this volume yet (online mentions) — these typically accrue after publication.
+                </div>
+                
+
+                
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+                        <span class="sig-pill sig-teal">🔗 Data citations · 8</span>
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 15 countries</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+            
+            
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Dataset reference backbone — heuristic signal (score 1.00)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Dataset reference backbone
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Scholarly uptake — heuristic signal (score 0.85)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Scholarly uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Benchmark resource — heuristic signal (score 0.80)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Benchmark resource
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#065f46">🏛 Practical & Real-World</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-practical" data-opacity="1"
+                              data-tip="Infrastructure dataset — heuristic signal (score 0.95)">
+                            <span class="role-dot" data-bg="#10b981"></span>
+                            Infrastructure dataset
+                            <span class="role-strength" data-bg="#dcfce7" data-color="#166534">Strong</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access & Visibility</span> <span class="badge" style="background:#f0fdf4; color:#15803d; border:1px solid #bbf7d0;">DataCite</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.6084/m9.figshare.1008029.v1" target="_blank">10.6084/m9.figshare.1008029.v1</a></li>
+                    <li><strong>Resource Type:</strong> Dataset</li>
+                    <li><strong>Total Views:</strong> 106</li>
+                    <li><strong>Total Downloads:</strong> 37</li>
+                </ul>
+            </section>
+            
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.6rem;">
+                        This work has <strong>0</strong> recorded events globally.
+                    </p>
+                    
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 10</li>
+                                <li><strong>Supporting:</strong> 0</li>
+                                <li><strong>Mentioning:</strong> 10</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite / Crossref</span></h2>
+                            
+                            
+                                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Tracking downstream reuse and integration.</p>
+                                <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Reused in 207 related works:</h3>
+                                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom: 1rem;">
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">184 Articles</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">15 Preprints</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">2 Book-Chapters</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">1 Reviews</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">5 Biomedical Article Mentions (Europe Pmc)s</span>
+                                    
+                                </div>
+                                
+                                
+                                    <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Known Links:</h3>
+                                    <div style="display:flex; flex-direction:column; gap:0.3rem; max-height: 150px; overflow-y: auto;">
+                                        
+                                            <a href="https://doi.org/10.7717/peerj-cs.2569" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.3390/s24051514" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1371/journal.pone.0278055" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.3390/s24103077" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1038/s41598-024-63746-w" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                    </div>
+                                
+
+                            
+                        </section>
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+        
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>202</strong> citing works.
+                        <strong>24.7%</strong> come from the Top 10 institutions.
+                        Median citing paper cited <strong>8.0</strong> times itself.
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (184)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (15)</span><span class="tag tag-soft" style="font-size:.75rem;">book-chapter (2)</span><span class="tag tag-soft" style="font-size:.75rem;">review (1)</span>
+                        <span class="tag" style="font-size:.75rem;">Unknown</span><span class="tag" style="font-size:.75rem;">Infrared Physics & Technology</span><span class="tag" style="font-size:.75rem;">Information Fusion</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]"
+                    data-values="[2, 1, 4, 4, 6, 12, 13, 34, 31, 44, 37, 14]">
+                </canvas>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
+
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (156)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (13)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">India (9)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">South Korea (8)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (6)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Canada (4)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Norway (3)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">France (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Egypt (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Belgium (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Pakistan (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">IQ (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Netherlands (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Serbia (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Ecuador (1)</span>
+                    
+                </div>
+                
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (179)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (26)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (14)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (10)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Other (5)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Healthcare (4)</span>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jiangnan University</strong>
+                        <a href="https://ror.org/04mkzax54" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(13.333333333333334)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Wuhan University</strong>
+                        <a href="https://ror.org/033vjfk17" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(9.033333333333333)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>PLA Army Engineering University</strong>
+                        <a href="https://ror.org/05mgp8x93" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(4.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Nanjing University of Science and Technology</strong>
+                        <a href="https://ror.org/00xp9wg62" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.75)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Surrey</strong>
+                        <a href="https://ror.org/00ks66431" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Xi'an Jiaotong University</strong>
+                        <a href="https://ror.org/017zhmm22" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Changchun University of Science and Technology</strong>
+                        <a href="https://ror.org/007mntk44" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Chinese Academy of Sciences</strong>
+                        <a href="https://ror.org/034t30j35" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.1833333333333336)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Nanchang Hangkong University</strong>
+                        <a href="https://ror.org/0369pvp92" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Beijing Institute of Technology</strong>
+                        <a href="https://ror.org/01skt4w74" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.0)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Xiao‐Jun Wu</strong>
+                        <a href="https://orcid.org/0000-0002-0310-5778" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(18)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Hui Li</strong>
+                        <a href="https://orcid.org/0000-0003-4550-7879" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(11)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Josef Kittler</strong>
+                        <a href="https://orcid.org/0000-0002-8110-9205" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(9)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jiayi Ma</strong>
+                        <a href="https://orcid.org/0000-0003-3264-3265" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(9)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Tianyang Xu</strong>
+                        <a href="https://orcid.org/0000-0002-9015-3128" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(9)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Yu Fu</strong>
+                        <a href="https://orcid.org/0000-0002-5632-8158" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(7)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Zhishe Wang</strong>
+                        <a href="https://orcid.org/0000-0002-0763-5901" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Linfeng Tang</strong>
+                        <a href="https://orcid.org/0000-0002-8566-5743" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Gang Liu</strong>
+                        <a href="https://orcid.org/0000-0003-4143-828X" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Chunyang Cheng</strong>
+                        <a href="https://orcid.org/0000-0003-4603-3505" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+        </div>
+
+        
+        
+        
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 author · 0 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Alexander Toet</strong> 
+                        <span class="badge">First</span>
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0003-1051-5422" target="_blank">ORCID</a>
+                    </li>
+                    
+                </ul>
+
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>8 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Image fusion</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Artificial intelligence</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Fusion</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Image (mathematics)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer vision</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Linguistics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Philosophy</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
+
+
+
+        
+        
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.75rem;"
+                 data-total="202">
+                202 citing works (most recent first)
+            </div>
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>RFN-Nest: An end-to-end residual fusion network for infrared and visible images</td>
+                        <td>Information Fusion</td>
+                        <td><a href="https://doi.org/10.1016/j.inffus.2021.02.023" target="_blank" style="word-break: break-all;">10.1016/j.inffus.2021.02.023</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Image fusion in the loop of high-level vision tasks: A semantic-aware real-time infrared and visible image fusion network</td>
+                        <td>Information Fusion</td>
+                        <td><a href="https://doi.org/10.1016/j.inffus.2021.12.004" target="_blank" style="word-break: break-all;">10.1016/j.inffus.2021.12.004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>PIAFusion: A progressive infrared and visible image fusion network based on illumination aware</td>
+                        <td>Information Fusion</td>
+                        <td><a href="https://doi.org/10.1016/j.inffus.2022.03.007" target="_blank" style="word-break: break-all;">10.1016/j.inffus.2022.03.007</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>LLVIP: A Visible-infrared Paired Dataset for Low-light Vision</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/iccvw54120.2021.00389" target="_blank" style="word-break: break-all;">10.1109/iccvw54120.2021.00389</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>MDLatLRR: A Novel Decomposition Method for Infrared and Visible Image Fusion</td>
+                        <td>IEEE Transactions on Image Processing</td>
+                        <td><a href="https://doi.org/10.1109/tip.2020.2975984" target="_blank" style="word-break: break-all;">10.1109/tip.2020.2975984</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>STDFusionNet: An Infrared and Visible Image Fusion Network Based on Salient Target Detection</td>
+                        <td>IEEE Transactions on Instrumentation and Measurement</td>
+                        <td><a href="https://doi.org/10.1109/tim.2021.3075747" target="_blank" style="word-break: break-all;">10.1109/tim.2021.3075747</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>DIVFusion: Darkness-free infrared and visible image fusion</td>
+                        <td>Information Fusion</td>
+                        <td><a href="https://doi.org/10.1016/j.inffus.2022.10.034" target="_blank" style="word-break: break-all;">10.1016/j.inffus.2022.10.034</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>LRRNet: A Novel Representation Learning Guided Fusion Network for Infrared and Visible Images</td>
+                        <td>IEEE Transactions on Pattern Analysis and Machine Intelligence</td>
+                        <td><a href="https://doi.org/10.1109/tpami.2023.3268209" target="_blank" style="word-break: break-all;">10.1109/tpami.2023.3268209</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Infrared and visible image fusion with ResNet and zero-phase component analysis</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2019.103039" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2019.103039</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>CrossFuse: A novel cross attention mechanism based infrared and visible image fusion approach</td>
+                        <td>Information Fusion</td>
+                        <td><a href="https://doi.org/10.1016/j.inffus.2023.102147" target="_blank" style="word-break: break-all;">10.1016/j.inffus.2023.102147</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>VIF-Net: An Unsupervised Framework for Infrared and Visible Image Fusion</td>
+                        <td>IEEE Transactions on Computational Imaging</td>
+                        <td><a href="https://doi.org/10.1109/tci.2020.2965304" target="_blank" style="word-break: break-all;">10.1109/tci.2020.2965304</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>An infrared and visible image fusion method based on multi-scale transformation and norm optimization</td>
+                        <td>Information Fusion</td>
+                        <td><a href="https://doi.org/10.1016/j.inffus.2021.02.008" target="_blank" style="word-break: break-all;">10.1016/j.inffus.2021.02.008</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Efficient and Model-Based Infrared and Visible Image Fusion via Algorithm Unrolling</td>
+                        <td>IEEE Transactions on Circuits and Systems for Video Technology</td>
+                        <td><a href="https://doi.org/10.1109/tcsvt.2021.3075745" target="_blank" style="word-break: break-all;">10.1109/tcsvt.2021.3075745</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>MUFusion: A general unsupervised image fusion network based on memory unit</td>
+                        <td>Information Fusion</td>
+                        <td><a href="https://doi.org/10.1016/j.inffus.2022.11.010" target="_blank" style="word-break: break-all;">10.1016/j.inffus.2022.11.010</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>UNFusion: A Unified Multi-Scale Densely Connected Network for Infrared and Visible Image Fusion</td>
+                        <td>IEEE Transactions on Circuits and Systems for Video Technology</td>
+                        <td><a href="https://doi.org/10.1109/tcsvt.2021.3109895" target="_blank" style="word-break: break-all;">10.1109/tcsvt.2021.3109895</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Cross-Modal Transformers for Infrared and Visible Image Fusion</td>
+                        <td>IEEE Transactions on Circuits and Systems for Video Technology</td>
+                        <td><a href="https://doi.org/10.1109/tcsvt.2023.3289170" target="_blank" style="word-break: break-all;">10.1109/tcsvt.2023.3289170</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>SwinFuse: A Residual Swin Transformer Fusion Network for Infrared and Visible Images</td>
+                        <td>IEEE Transactions on Instrumentation and Measurement</td>
+                        <td><a href="https://doi.org/10.1109/tim.2022.3191664" target="_blank" style="word-break: break-all;">10.1109/tim.2022.3191664</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Bayesian fusion for infrared and visible images</td>
+                        <td>Signal Processing</td>
+                        <td><a href="https://doi.org/10.1016/j.sigpro.2020.107734" target="_blank" style="word-break: break-all;">10.1016/j.sigpro.2020.107734</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Fusion from Decomposition: A Self-Supervised Decomposition Approach for Image Fusion</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-19797-0_41" target="_blank" style="word-break: break-all;">10.1007/978-3-031-19797-0_41</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Image fusion based on generative adversarial network consistent with perception</td>
+                        <td>Information Fusion</td>
+                        <td><a href="https://doi.org/10.1016/j.inffus.2021.02.019" target="_blank" style="word-break: break-all;">10.1016/j.inffus.2021.02.019</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Coupled GAN With Relativistic Discriminators for Infrared and Visible Images Fusion</td>
+                        <td>IEEE Sensors Journal</td>
+                        <td><a href="https://doi.org/10.1109/jsen.2019.2921803" target="_blank" style="word-break: break-all;">10.1109/jsen.2019.2921803</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A Cross-Scale Iterative Attentional Adversarial Fusion Network for Infrared and Visible Images</td>
+                        <td>IEEE Transactions on Circuits and Systems for Video Technology</td>
+                        <td><a href="https://doi.org/10.1109/tcsvt.2023.3239627" target="_blank" style="word-break: break-all;">10.1109/tcsvt.2023.3239627</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>A Dual-Branch Network for Infrared and Visible Image Fusion</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icpr48806.2021.9412293" target="_blank" style="word-break: break-all;">10.1109/icpr48806.2021.9412293</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Res2Fusion: Infrared and Visible Image Fusion Based on Dense Res2net and Double Nonlocal Attention Models</td>
+                        <td>IEEE Transactions on Instrumentation and Measurement</td>
+                        <td><a href="https://doi.org/10.1109/tim.2021.3139654" target="_blank" style="word-break: break-all;">10.1109/tim.2021.3139654</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Laplacian Pyramid Fusion Network With Hierarchical Guidance for Infrared and Visible Image Fusion</td>
+                        <td>IEEE Transactions on Circuits and Systems for Video Technology</td>
+                        <td><a href="https://doi.org/10.1109/tcsvt.2023.3245607" target="_blank" style="word-break: break-all;">10.1109/tcsvt.2023.3245607</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>THFuse: An infrared and visible image fusion network using transformer and hybrid feature extractor</td>
+                        <td>Neurocomputing</td>
+                        <td><a href="https://doi.org/10.1016/j.neucom.2023.01.033" target="_blank" style="word-break: break-all;">10.1016/j.neucom.2023.01.033</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Infrared and Visible Image Fusion via Interactive Compensatory Attention Adversarial Learning</td>
+                        <td>IEEE Transactions on Multimedia</td>
+                        <td><a href="https://doi.org/10.1109/tmm.2022.3228685" target="_blank" style="word-break: break-all;">10.1109/tmm.2022.3228685</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>CAMF: An Interpretable Infrared and Visible Image Fusion Network Based on Class Activation Mapping</td>
+                        <td>IEEE Transactions on Multimedia</td>
+                        <td><a href="https://doi.org/10.1109/tmm.2023.3326296" target="_blank" style="word-break: break-all;">10.1109/tmm.2023.3326296</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>MdedFusion: A multi-level detail enhancement decomposition method for infrared and visible image fusion</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2022.104435" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2022.104435</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A multi-scale information integration framework for infrared and visible image fusion</td>
+                        <td>Neurocomputing</td>
+                        <td><a href="https://doi.org/10.1016/j.neucom.2024.128116" target="_blank" style="word-break: break-all;">10.1016/j.neucom.2024.128116</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>DDBFusion: An unified image decomposition and fusion framework based on dual decomposition and Bézier curves</td>
+                        <td>Information Fusion</td>
+                        <td><a href="https://doi.org/10.1016/j.inffus.2024.102655" target="_blank" style="word-break: break-all;">10.1016/j.inffus.2024.102655</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>LENFusion: A Joint Low-Light Enhancement and Fusion Network for Nighttime Infrared and Visible Image Fusion</td>
+                        <td>IEEE Transactions on Instrumentation and Measurement</td>
+                        <td><a href="https://doi.org/10.1109/tim.2024.3390194" target="_blank" style="word-break: break-all;">10.1109/tim.2024.3390194</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Real-time infrared and visible image fusion network using adaptive pixel weighting strategy</td>
+                        <td>Information Fusion</td>
+                        <td><a href="https://doi.org/10.1016/j.inffus.2023.101863" target="_blank" style="word-break: break-all;">10.1016/j.inffus.2023.101863</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>STFNet: Self-Supervised Transformer for Infrared and Visible Image Fusion</td>
+                        <td>IEEE Transactions on Emerging Topics in Computational Intelligence</td>
+                        <td><a href="https://doi.org/10.1109/tetci.2024.3352490" target="_blank" style="word-break: break-all;">10.1109/tetci.2024.3352490</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>CLF-Net: Contrastive Learning for Infrared and Visible Image Fusion Network</td>
+                        <td>IEEE Transactions on Instrumentation and Measurement</td>
+                        <td><a href="https://doi.org/10.1109/tim.2022.3203000" target="_blank" style="word-break: break-all;">10.1109/tim.2022.3203000</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>TextFusion: Unveiling the power of textual semantics for controllable image fusion</td>
+                        <td>Information Fusion</td>
+                        <td><a href="https://doi.org/10.1016/j.inffus.2024.102790" target="_blank" style="word-break: break-all;">10.1016/j.inffus.2024.102790</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Fusion of Infrared and Visible Images for Remote Detection of Low-Altitude Slow-Speed Small Targets</td>
+                        <td>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</td>
+                        <td><a href="https://doi.org/10.1109/jstars.2021.3061496" target="_blank" style="word-break: break-all;">10.1109/jstars.2021.3061496</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Infrared image stripe noise removing using least squares and gradient domain guided filtering</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2021.103968" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2021.103968</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>HitFusion: Infrared and Visible Image Fusion for High-Level Vision Tasks Using Transformer</td>
+                        <td>IEEE Transactions on Multimedia</td>
+                        <td><a href="https://doi.org/10.1109/tmm.2024.3405714" target="_blank" style="word-break: break-all;">10.1109/tmm.2024.3405714</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>FLFuse-Net: A fast and lightweight infrared and visible image fusion network via feature flow and edge compensation for salient information</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2022.104383" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2022.104383</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Bridging the Gap between Multi-focus and Multi-modal: A Focused Integration Framework for Multi-modal Image Fusion</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/wacv57701.2024.00165" target="_blank" style="word-break: break-all;">10.1109/wacv57701.2024.00165</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>MSCS: Multi-stage feature learning with channel-spatial attention mechanism for infrared and visible image fusion</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2024.105514" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2024.105514</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>ACFNet: An adaptive cross-fusion network for infrared and visible image fusion</td>
+                        <td>Pattern Recognition</td>
+                        <td><a href="https://doi.org/10.1016/j.patcog.2024.111098" target="_blank" style="word-break: break-all;">10.1016/j.patcog.2024.111098</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>DSAFusion: Detail-semantic-aware network for infrared and low-light visible image fusion</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2025.105804" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2025.105804</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>LEFuse: Joint low-light enhancement and image fusion for nighttime infrared and visible images</td>
+                        <td>Neurocomputing</td>
+                        <td><a href="https://doi.org/10.1016/j.neucom.2025.129592" target="_blank" style="word-break: break-all;">10.1016/j.neucom.2025.129592</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Exploring fusion domain: Advancing infrared and visible image fusion via IDFFN-GAN</td>
+                        <td>Neurocomputing</td>
+                        <td><a href="https://doi.org/10.1016/j.neucom.2024.128647" target="_blank" style="word-break: break-all;">10.1016/j.neucom.2024.128647</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>GrFormer: A novel Transformer on Grassmann manifold for infrared and visible image fusion</td>
+                        <td>Information Fusion</td>
+                        <td><a href="https://doi.org/10.1016/j.inffus.2025.103402" target="_blank" style="word-break: break-all;">10.1016/j.inffus.2025.103402</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>UNIFusion: A Lightweight Unified Image Fusion Network</td>
+                        <td>IEEE Transactions on Instrumentation and Measurement</td>
+                        <td><a href="https://doi.org/10.1109/tim.2021.3109379" target="_blank" style="word-break: break-all;">10.1109/tim.2021.3109379</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Learning Specific and General Realm Feature Representations for Image Fusion</td>
+                        <td>IEEE Transactions on Multimedia</td>
+                        <td><a href="https://doi.org/10.1109/tmm.2020.3016123" target="_blank" style="word-break: break-all;">10.1109/tmm.2020.3016123</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Two-stream network for infrared and visible images fusion</td>
+                        <td>Neurocomputing</td>
+                        <td><a href="https://doi.org/10.1016/j.neucom.2021.05.034" target="_blank" style="word-break: break-all;">10.1016/j.neucom.2021.05.034</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>IR-MSDNet: Infrared and Visible Image Fusion Based On Infrared Features and Multiscale Dense Network</td>
+                        <td>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</td>
+                        <td><a href="https://doi.org/10.1109/jstars.2021.3065121" target="_blank" style="word-break: break-all;">10.1109/jstars.2021.3065121</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>PFAF-Net: Pyramid Feature Network for Multimodal Fusion</td>
+                        <td>IEEE Sensors Letters</td>
+                        <td><a href="https://doi.org/10.1109/lsens.2020.3041585" target="_blank" style="word-break: break-all;">10.1109/lsens.2020.3041585</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Infrared and visual image fusion based on multi-scale feature decomposition</td>
+                        <td>Optik</td>
+                        <td><a href="https://doi.org/10.1016/j.ijleo.2019.163900" target="_blank" style="word-break: break-all;">10.1016/j.ijleo.2019.163900</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>TCPMFNet: An infrared and visible image fusion network with composite auto encoder and transformer–convolutional parallel mixed fusion strategy</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2022.104405" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2022.104405</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Visible and infrared image fusion based on Curvelet transform</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icsai.2014.7009399" target="_blank" style="word-break: break-all;">10.1109/icsai.2014.7009399</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Stripe non-uniformity correction of infrared images using parameter estimation</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2020.103313" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2020.103313</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Infrared and visible image fusion using multi-scale edge-preserving decomposition and multiple saliency features</td>
+                        <td>Optik</td>
+                        <td><a href="https://doi.org/10.1016/j.ijleo.2020.165775" target="_blank" style="word-break: break-all;">10.1016/j.ijleo.2020.165775</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>CMFA_Net: A cross-modal feature aggregation network for infrared-visible image fusion</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2021.103905" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2021.103905</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Infrared and visible image fusion based on dilated residual attention network</td>
+                        <td>Optik</td>
+                        <td><a href="https://doi.org/10.1016/j.ijleo.2020.165409" target="_blank" style="word-break: break-all;">10.1016/j.ijleo.2020.165409</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Image fusion based on guided filter and online robust dictionary learning</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2019.103171" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2019.103171</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Breaking Free From Fusion Rule: A Fully Semantic-Driven Infrared and Visible Image Fusion</td>
+                        <td>IEEE Signal Processing Letters</td>
+                        <td><a href="https://doi.org/10.1109/lsp.2023.3266980" target="_blank" style="word-break: break-all;">10.1109/lsp.2023.3266980</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>MSPIF: Multi-stage progressive visible and infrared image fusion with structures preservation</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2023.104848" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2023.104848</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Unsupervised densely attention network for infrared and visible image fusion</td>
+                        <td>Multimedia Tools and Applications</td>
+                        <td><a href="https://doi.org/10.1007/s11042-020-09301-x" target="_blank" style="word-break: break-all;">10.1007/s11042-020-09301-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Dual-Branch Structured De-Striping Convolution Network Using Parametric Noise Model</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2020.3019057" target="_blank" style="word-break: break-all;">10.1109/access.2020.3019057</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Image fusion using a multi-level image decomposition and fusion method</td>
+                        <td>Applied Optics</td>
+                        <td><a href="https://doi.org/10.1364/ao.432397" target="_blank" style="word-break: break-all;">10.1364/ao.432397</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Infrared and visible image fusion method based on principal component analysis network and multi-scale morphological gradient</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2023.104810" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2023.104810</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>GuideFuse: A Novel Guided Auto-Encoder Fusion Network for Infrared and Visible Images</td>
+                        <td>IEEE Transactions on Instrumentation and Measurement</td>
+                        <td><a href="https://doi.org/10.1109/tim.2023.3306537" target="_blank" style="word-break: break-all;">10.1109/tim.2023.3306537</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Correlation-Guided Discriminative Cross-Modality Features Network for Infrared and Visible Image Fusion</td>
+                        <td>IEEE Transactions on Instrumentation and Measurement</td>
+                        <td><a href="https://doi.org/10.1109/tim.2023.3341137" target="_blank" style="word-break: break-all;">10.1109/tim.2023.3341137</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>An improved fusion method for infrared and low-light level visible image</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/iccwamtip.2017.8301467" target="_blank" style="word-break: break-all;">10.1109/iccwamtip.2017.8301467</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>MOFA: A novel dataset for Multi-modal Image Fusion Applications</td>
+                        <td>Information Fusion</td>
+                        <td><a href="https://doi.org/10.1016/j.inffus.2023.03.012" target="_blank" style="word-break: break-all;">10.1016/j.inffus.2023.03.012</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>AcFusion: Infrared and Visible Image Fusion Based on Self-Attention and Convolution With Enhanced Information Extraction</td>
+                        <td>IEEE Transactions on Consumer Electronics</td>
+                        <td><a href="https://doi.org/10.1109/tce.2023.3341852" target="_blank" style="word-break: break-all;">10.1109/tce.2023.3341852</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Infrared and Visible Image Fusion Using Threshold Segmentation and Weight Optimization</td>
+                        <td>IEEE Sensors Journal</td>
+                        <td><a href="https://doi.org/10.1109/jsen.2023.3311872" target="_blank" style="word-break: break-all;">10.1109/jsen.2023.3311872</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Integration of Bi-dimensional Empirical Mode Decomposition With Two Streams Deep Learning Network for Infrared and Visible Image Fusion</td>
+                        <td>2022 30th European Signal Processing Conference (EUSIPCO)</td>
+                        <td><a href="https://doi.org/10.23919/eusipco55093.2022.9909631" target="_blank" style="word-break: break-all;">10.23919/eusipco55093.2022.9909631</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>SaReGAN: a salient regional generative adversarial network for visible and infrared image fusion</td>
+                        <td>Multimedia Tools and Applications</td>
+                        <td><a href="https://doi.org/10.1007/s11042-023-14393-2" target="_blank" style="word-break: break-all;">10.1007/s11042-023-14393-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Post-Distillation via Neural Resuscitation</td>
+                        <td>IEEE Transactions on Multimedia</td>
+                        <td><a href="https://doi.org/10.1109/tmm.2023.3306601" target="_blank" style="word-break: break-all;">10.1109/tmm.2023.3306601</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Edge Preserving Image Fusion using Intensity Variation Approach</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/tencon50793.2020.9293815" target="_blank" style="word-break: break-all;">10.1109/tencon50793.2020.9293815</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Retinex-MPCNN: A Retinex and Modified Pulse coupled Neural Network based method for low-illumination visible and infrared image fusion</td>
+                        <td>Signal Processing Image Communication</td>
+                        <td><a href="https://doi.org/10.1016/j.image.2023.116956" target="_blank" style="word-break: break-all;">10.1016/j.image.2023.116956</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>IFICI: Infrared and visible image fusion based on interactive compensation illumination</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2023.105078" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2023.105078</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>ShadowSense: Unsupervised Domain Adaptation and Feature Fusion for Shadow-Agnostic Tree Crown Detection from RGB-Thermal Drone Imagery</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/wacv57701.2024.00808" target="_blank" style="word-break: break-all;">10.1109/wacv57701.2024.00808</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A deep learning based relative clarity classification method for infrared and visible image fusion</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2024.105375" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2024.105375</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>CMFuse: Cross-Modal Features Mixing via Convolution and MLP for Infrared and Visible Image Fusion</td>
+                        <td>IEEE Sensors Journal</td>
+                        <td><a href="https://doi.org/10.1109/jsen.2024.3410387" target="_blank" style="word-break: break-all;">10.1109/jsen.2024.3410387</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>SCGAFusion: A skip-connecting group convolutional attention network for infrared and visible image fusion</td>
+                        <td>Applied Soft Computing</td>
+                        <td><a href="https://doi.org/10.1016/j.asoc.2024.111902" target="_blank" style="word-break: break-all;">10.1016/j.asoc.2024.111902</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Research on fractional wavelet transform combined with parameter adaptive PCNN for infrared and visible image fusion algorithm</td>
+                        <td>Optics Communications</td>
+                        <td><a href="https://doi.org/10.1016/j.optcom.2024.131026" target="_blank" style="word-break: break-all;">10.1016/j.optcom.2024.131026</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>MGFA : A multi-scale global feature autoencoder to fuse infrared and visible images</td>
+                        <td>Signal Processing Image Communication</td>
+                        <td><a href="https://doi.org/10.1016/j.image.2024.117168" target="_blank" style="word-break: break-all;">10.1016/j.image.2024.117168</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>ECAFusion: Infrared and visible image fusion via edge-preserving and cross-modal attention mechanism</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2025.106085" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2025.106085</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>MEFuse: end-to-end infrared and visible image fusion method based on multibranch encoder</td>
+                        <td>Journal of Electronic Imaging</td>
+                        <td><a href="https://doi.org/10.1117/1.jei.31.3.033043" target="_blank" style="word-break: break-all;">10.1117/1.jei.31.3.033043</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A comprehensive survey on image fusion: Which approach fits which need</td>
+                        <td>Information Fusion</td>
+                        <td><a href="https://doi.org/10.1016/j.inffus.2025.103594" target="_blank" style="word-break: break-all;">10.1016/j.inffus.2025.103594</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>SPFusion: A multi-task semantic perception infrared and visible light fusion method with quality assessment</td>
+                        <td>Displays</td>
+                        <td><a href="https://doi.org/10.1016/j.displa.2024.102903" target="_blank" style="word-break: break-all;">10.1016/j.displa.2024.102903</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Fusion of infrared and visible images: A novel approach using fuzzy PID control and least-squares detail enhancement</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2025.106059" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2025.106059</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>M2CNet: An Infrared and Visible Image Fusion Method Based on Dual Marginal Contrastive Learning</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/ccdc62350.2024.10587987" target="_blank" style="word-break: break-all;">10.1109/ccdc62350.2024.10587987</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Deep recursive up-down sampling networks for single image super-resolution</td>
+                        <td>Neurocomputing</td>
+                        <td><a href="https://doi.org/10.1016/j.neucom.2019.04.004" target="_blank" style="word-break: break-all;">10.1016/j.neucom.2019.04.004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Infrared and Visible Image Fusion Method Based on ResNet in a Nonsubsampled Contourlet Transform Domain</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2021.3086096" target="_blank" style="word-break: break-all;">10.1109/access.2021.3086096</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>PACCDU: Pyramid Attention Cross-Convolutional Dual UNet for Infrared and Visible Image Fusion</td>
+                        <td>IEEE Transactions on Instrumentation and Measurement</td>
+                        <td><a href="https://doi.org/10.1109/tim.2022.3216399" target="_blank" style="word-break: break-all;">10.1109/tim.2022.3216399</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Iterative guided image fusion</td>
+                        <td>PeerJ Computer Science</td>
+                        <td><a href="https://doi.org/10.7717/peerj-cs.80" target="_blank" style="word-break: break-all;">10.7717/peerj-cs.80</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>An Infrared and Visible Image Fusion Method Guided by Saliency and Gradient Information</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2021.3101639" target="_blank" style="word-break: break-all;">10.1109/access.2021.3101639</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Infrared Weak-Small Targets Fusion Based on Latent Low-Rank Representation and DWT</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2019.2934523" target="_blank" style="word-break: break-all;">10.1109/access.2019.2934523</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Multilevel Hybrid Transmission Network for Infrared and Visible Image Fusion</td>
+                        <td>IEEE Transactions on Instrumentation and Measurement</td>
+                        <td><a href="https://doi.org/10.1109/tim.2022.3186048" target="_blank" style="word-break: break-all;">10.1109/tim.2022.3186048</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>DAFuse: a fusion for infrared and visible images based on generative adversarial network</td>
+                        <td>Journal of Electronic Imaging</td>
+                        <td><a href="https://doi.org/10.1117/1.jei.31.4.043023" target="_blank" style="word-break: break-all;">10.1117/1.jei.31.4.043023</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>IR and Visible Video Fusion for Surveillance</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/wispnet.2018.8538720" target="_blank" style="word-break: break-all;">10.1109/wispnet.2018.8538720</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>GeFuNet: A knowledge-guided deep network for the infrared and visible image fusion</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2022.104417" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2022.104417</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>DAE-Nest: A depth information extraction and enhancement fusion network for infrared and visible images</td>
+                        <td>Optics Communications</td>
+                        <td><a href="https://doi.org/10.1016/j.optcom.2024.130441" target="_blank" style="word-break: break-all;">10.1016/j.optcom.2024.130441</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Multiscale Progressive Fusion of Infrared and Visible Images</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2022.3226564" target="_blank" style="word-break: break-all;">10.1109/access.2022.3226564</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Multispectral Invisible Coating: Laminated Visible-Thermal Physical Attack against Multispectral Object Detectors Using Transparent Low-E Films</td>
+                        <td>Proceedings of the AAAI Conference on Artificial Intelligence</td>
+                        <td><a href="https://doi.org/10.1609/aaai.v37i1.25197" target="_blank" style="word-break: break-all;">10.1609/aaai.v37i1.25197</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A Generative Adversarial Network for infrared and visible image fusion using adaptive dense generator and Markovian discriminator</td>
+                        <td>Optik</td>
+                        <td><a href="https://doi.org/10.1016/j.ijleo.2023.171139" target="_blank" style="word-break: break-all;">10.1016/j.ijleo.2023.171139</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A Target-Aware Fusion Framework for Infrared and Visible Images</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2023.3246481" target="_blank" style="word-break: break-all;">10.1109/access.2023.3246481</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>CMRFusion: A cross-domain multi-resolution fusion method for infrared and visible image fusion</td>
+                        <td>Optics and Lasers in Engineering</td>
+                        <td><a href="https://doi.org/10.1016/j.optlaseng.2023.107765" target="_blank" style="word-break: break-all;">10.1016/j.optlaseng.2023.107765</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A Visible and Infrared Image Fusion Framework Based on Dual-Path Encoder-Decoder and Multi-Scale Discrete Wavelet Transform</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icip49359.2023.10222863" target="_blank" style="word-break: break-all;">10.1109/icip49359.2023.10222863</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Smooth fusion of multi-spectral images via total variation minimization for traffic scene semantic segmentation</td>
+                        <td>Engineering Applications of Artificial Intelligence</td>
+                        <td><a href="https://doi.org/10.1016/j.engappai.2023.107741" target="_blank" style="word-break: break-all;">10.1016/j.engappai.2023.107741</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>DGFusion: An effective dynamic generalizable network for infrared and visible image fusion</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2024.105495" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2024.105495</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A dual-path residual attention fusion network for infrared and visible images</td>
+                        <td>Optik</td>
+                        <td><a href="https://doi.org/10.1016/j.ijleo.2023.171251" target="_blank" style="word-break: break-all;">10.1016/j.ijleo.2023.171251</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>An infrared and visible image fusion network based on multi‐scale feature cascades and non‐local attention</td>
+                        <td>IET Image Processing</td>
+                        <td><a href="https://doi.org/10.1049/ipr2.13088" target="_blank" style="word-break: break-all;">10.1049/ipr2.13088</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>The Deep Learning Methods for Fusion Infrared and Visible Images: A Survey</td>
+                        <td>Revue d intelligence artificielle</td>
+                        <td><a href="https://doi.org/10.18280/ria.380221" target="_blank" style="word-break: break-all;">10.18280/ria.380221</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>An infrared and visible light video fusion method based on chaos theory and PID control</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2024.105422" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2024.105422</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Infrared and visible image fusion via gradientlet filter and salience-combined map</td>
+                        <td>Multimedia Tools and Applications</td>
+                        <td><a href="https://doi.org/10.1007/s11042-023-17778-5" target="_blank" style="word-break: break-all;">10.1007/s11042-023-17778-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>红外与可见光图像交互自注意力融合方法</td>
+                        <td>ACTA PHOTONICA SINICA</td>
+                        <td><a href="https://doi.org/10.3788/gzxb20245306.0610003" target="_blank" style="word-break: break-all;">10.3788/gzxb20245306.0610003</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>The TRICLOBS Dynamic Multi-Band Image Data Set for the Development and Evaluation of Image Fusion Methods</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0165016" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0165016</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Multiscale image fusion through guided filtering</td>
+                        <td>Proceedings of SPIE, the International Society for Optical Engineering/Proceedings of SPIE</td>
+                        <td><a href="https://doi.org/10.1117/12.2239945" target="_blank" style="word-break: break-all;">10.1117/12.2239945</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Multispectral Image Fusion for Enhancing Situation Awareness: A Review</td>
+                        <td>IETE Technical Review</td>
+                        <td><a href="https://doi.org/10.1080/02564602.2014.968225" target="_blank" style="word-break: break-all;">10.1080/02564602.2014.968225</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Generation of enhanced information image using curvelet-transform-based image fusion for improving situation awareness of observer during surveillance</td>
+                        <td>International Journal of Image and Data Fusion</td>
+                        <td><a href="https://doi.org/10.1080/19479832.2018.1538170" target="_blank" style="word-break: break-all;">10.1080/19479832.2018.1538170</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Effect of Pre-processing on MST based Infrared and Visible Image Fusion</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icspc51351.2021.9451647" target="_blank" style="word-break: break-all;">10.1109/icspc51351.2021.9451647</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>A General Perceptual Infrared and Visible Image Fusion Framework Based on Linear Filter and Side Window Filtering Technology</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2019.2961626" target="_blank" style="word-break: break-all;">10.1109/access.2019.2961626</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Efficient DWT based Fusion Algorithm for Improving Contrast and Edge Preservation</td>
+                        <td>International Journal of Advanced Computer Science and Applications</td>
+                        <td><a href="https://doi.org/10.14569/ijacsa.2020.0111017" target="_blank" style="word-break: break-all;">10.14569/ijacsa.2020.0111017</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Infrared and Visible Image Fusion Based on Multiscale Network with Dual-channel Information Cross Fusion Block</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/ijcnn52387.2021.9533338" target="_blank" style="word-break: break-all;">10.1109/ijcnn52387.2021.9533338</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Latent low-rank representation with sparse consistency constraint for infrared and visible image fusion</td>
+                        <td>Optik</td>
+                        <td><a href="https://doi.org/10.1016/j.ijleo.2022.169102" target="_blank" style="word-break: break-all;">10.1016/j.ijleo.2022.169102</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Infrared and Visible Image Fusion by Using Multi-Scale Transformation and Fractional-Order Gradient Information</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icassp49357.2023.10096652" target="_blank" style="word-break: break-all;">10.1109/icassp49357.2023.10096652</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>The effect of multispectral image fusion enhancement on human efficiency</td>
+                        <td>Cognitive Research Principles and Implications</td>
+                        <td><a href="https://doi.org/10.1186/s41235-016-0045-0" target="_blank" style="word-break: break-all;">10.1186/s41235-016-0045-0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Fast Template Matching Scheme of Visible and Infrared Image Under Occluded Scenarios</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2022.3217235" target="_blank" style="word-break: break-all;">10.1109/access.2022.3217235</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>联合卷积神经网络和转换器的红外与可见光图像融合</td>
+                        <td>Laser & Optoelectronics Progress</td>
+                        <td><a href="https://doi.org/10.3788/lop222265" target="_blank" style="word-break: break-all;">10.3788/lop222265</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>LeGFusion: Locally Enhanced Global Learning for Multimodal Image Fusion</td>
+                        <td>IEEE Sensors Journal</td>
+                        <td><a href="https://doi.org/10.1109/jsen.2024.3371056" target="_blank" style="word-break: break-all;">10.1109/jsen.2024.3371056</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>SeACPFusion: An Adaptive Fusion Network for Infrared and Visible Images based on brightness perception</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2024.105541" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2024.105541</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Siam-AUnet: An end-to-end infrared and visible image fusion network based on gray histogram</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2024.105488" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2024.105488</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>HBANet: A hybrid boundary-aware attention network for infrared and visible image fusion</td>
+                        <td>Computer Vision and Image Understanding</td>
+                        <td><a href="https://doi.org/10.1016/j.cviu.2024.104161" target="_blank" style="word-break: break-all;">10.1016/j.cviu.2024.104161</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Brain Storm Optimization Algorithm for Thermal Image Fusion using DCT Coefficients</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/cec.2019.8790206" target="_blank" style="word-break: break-all;">10.1109/cec.2019.8790206</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>VMDM-fusion: a saliency feature representation method for infrared and visible image fusion</td>
+                        <td>Signal Image and Video Processing</td>
+                        <td><a href="https://doi.org/10.1007/s11760-021-01852-2" target="_blank" style="word-break: break-all;">10.1007/s11760-021-01852-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Effective method for fusing infrared and visible images</td>
+                        <td>Journal of Electronic Imaging</td>
+                        <td><a href="https://doi.org/10.1117/1.jei.30.3.033013" target="_blank" style="word-break: break-all;">10.1117/1.jei.30.3.033013</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Infrared and visible image fusion based on rolling guided filter and ResNet101</td>
+                        <td>2021 International Conference on Electronic Information Engineering and Computer Science (EIECS)</td>
+                        <td><a href="https://doi.org/10.1109/eiecs53707.2021.9588013" target="_blank" style="word-break: break-all;">10.1109/eiecs53707.2021.9588013</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Infrared and Visible Image Fusion Based on Modal Feature Fusion Network and Dual Visual Decision</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icme51207.2021.9428326" target="_blank" style="word-break: break-all;">10.1109/icme51207.2021.9428326</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>End to End Infrared and Visible Image Fusion With Texture Details and Contrast Information</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2022.3202974" target="_blank" style="word-break: break-all;">10.1109/access.2022.3202974</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>R2F-UGCGAN: a regional fusion factor-based union gradient and contrast generative adversarial network for infrared and visible image fusion</td>
+                        <td>Journal of Modern Optics</td>
+                        <td><a href="https://doi.org/10.1080/09500340.2023.2174358" target="_blank" style="word-break: break-all;">10.1080/09500340.2023.2174358</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>DBSD: DUAL branches network using semantic and detail information for infrared and visible image fusion</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2023.104769" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2023.104769</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Infrared and visible image fusion based on shiftable complex directional pyramid transform and SUSAN edge detector</td>
+                        <td>Ukrainian Journal of Physical Optics</td>
+                        <td><a href="https://doi.org/10.3116/16091833/19/4/199/2018" target="_blank" style="word-break: break-all;">10.3116/16091833/19/4/199/2018</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>A DWT Based Novel Multimodal Image Fusion Method</td>
+                        <td>Traitement du signal</td>
+                        <td><a href="https://doi.org/10.18280/ts.380308" target="_blank" style="word-break: break-all;">10.18280/ts.380308</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>W-shaped network: a lightweight network for real-time infrared and visible image fusion</td>
+                        <td>Journal of Electronic Imaging</td>
+                        <td><a href="https://doi.org/10.1117/1.jei.32.6.063005" target="_blank" style="word-break: break-all;">10.1117/1.jei.32.6.063005</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Infrared and visible image fusion via pre-fusion compensation and visual-gradient saliency detection</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2025.106000" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2025.106000</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Nonuniformity Correction Based on Adaptive Sparse Representation Using Joint Local and Global Constraints Based Learning Rate</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2018.2799606" target="_blank" style="word-break: break-all;">10.1109/access.2018.2799606</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Tiny Fusion: Tiny Deep Convolutional Neural Network for Real-time Image Fusion</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icicsp48821.2019.8958570" target="_blank" style="word-break: break-all;">10.1109/icicsp48821.2019.8958570</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Infrared and Visible Image Fusion in a Multilevel Low-Rank Decomposition Framework Based on Guided Filtering and Feature Extraction<a:math xmlns:a="http://www.w3.org/1998/Math/MathML" id="M1"> <a:mo>∗</a:mo> </a:math></td>
+                        <td>Journal of Sensors</td>
+                        <td><a href="https://doi.org/10.1155/2022/9669142" target="_blank" style="word-break: break-all;">10.1155/2022/9669142</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Application on the Loop of Multimodal Image Fusion: Trends on Deep-Learning Based Approaches</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icprs58416.2023.10179005" target="_blank" style="word-break: break-all;">10.1109/icprs58416.2023.10179005</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Low Light RGB and IR Image Fusion with Selective CNN-Transformer Network</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icip49359.2023.10222611" target="_blank" style="word-break: break-all;">10.1109/icip49359.2023.10222611</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Infrared and visible image fusion via mixed-frequency hierarchical guided learning</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2023.104926" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2023.104926</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>ASEMMS: The Adaptive Smart Environment Multi-Modal System</td>
+                        <td>Journal of System and Management Sciences</td>
+                        <td><a href="https://doi.org/10.33168/jsms.2022.0319" target="_blank" style="word-break: break-all;">10.33168/jsms.2022.0319</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>MSC-Fuse: An Unsupervised Multi-scale Convolutional Fusion Framework for Infrared and Visible Image</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-87355-4_4" target="_blank" style="word-break: break-all;">10.1007/978-3-030-87355-4_4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A two-stream deep neural network for infrared image enhancement</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1117/12.2642633" target="_blank" style="word-break: break-all;">10.1117/12.2642633</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>TVFusionGAN: Thermal-Visible Image Fusion Based on Multi-level Adversarial Network Strategy</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icra57147.2024.10611671" target="_blank" style="word-break: break-all;">10.1109/icra57147.2024.10611671</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>MVF: A Novel Infrared and Visible Image Fusion Approach Based on the Morphing Convolutional Structure and the Light-Weight Visual State Space Block</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2024.3488315" target="_blank" style="word-break: break-all;">10.1109/access.2024.3488315</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>LGMFuse: A Multi-modal Image Fusion Method Based on Local and Global Mamba</td>
+                        <td>Signal Image and Video Processing</td>
+                        <td><a href="https://doi.org/10.1007/s11760-025-04549-y" target="_blank" style="word-break: break-all;">10.1007/s11760-025-04549-y</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>STMFuse: spatiotemporal feature saliency change-driven mimic fusion for infrared and visible video</td>
+                        <td>Optics & Laser Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.optlastec.2025.113640" target="_blank" style="word-break: break-all;">10.1016/j.optlastec.2025.113640</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Image fusion algorithm based on gradient similarity filter</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/apsipa.2017.8282037" target="_blank" style="word-break: break-all;">10.1109/apsipa.2017.8282037</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Infrared and Visible Image Fusion via Multi-scale Edge-preserving Filtering and Pulse-couple Neural Network</td>
+                        <td>2021 7th International Conference on Computer and Communications (ICCC)</td>
+                        <td><a href="https://doi.org/10.1109/iccc54389.2021.9674474" target="_blank" style="word-break: break-all;">10.1109/iccc54389.2021.9674474</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Enhancing situation awareness by fusion of infrared and visible image using multiresolution transform</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/upcon.2015.7456748" target="_blank" style="word-break: break-all;">10.1109/upcon.2015.7456748</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Object-based multispectral image fusion method using deep learning</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1117/12.2532718" target="_blank" style="word-break: break-all;">10.1117/12.2532718</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Better and Faster Deep Image Fusion with Spatial Frequency</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/iccrd51685.2021.9386515" target="_blank" style="word-break: break-all;">10.1109/iccrd51685.2021.9386515</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>FSADFuse: A Novel Fusion Approach to Infrared and Visible Images</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2021.3119347" target="_blank" style="word-break: break-all;">10.1109/access.2021.3119347</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>DEDNet: an infrared and visible image fusion architecture based on dual-encoder and channel-picking/Gaussian-filtering models</td>
+                        <td>Eighth Symposium on Novel Photoelectronic Detection Technology and Applications</td>
+                        <td><a href="https://doi.org/10.1117/12.2624297" target="_blank" style="word-break: break-all;">10.1117/12.2624297</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Infrared and visual image fusion via iterative quadtree decomposition and Bézier interpolation</td>
+                        <td>Fourteenth International Conference on Digital Image Processing (ICDIP 2022)</td>
+                        <td><a href="https://doi.org/10.1117/12.2644270" target="_blank" style="word-break: break-all;">10.1117/12.2644270</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Fusion of infrared and visible sensor images based on anisotropic diffusion and fast guided filter</td>
+                        <td>Fourteenth International Conference on Digital Image Processing (ICDIP 2022)</td>
+                        <td><a href="https://doi.org/10.1117/12.2644537" target="_blank" style="word-break: break-all;">10.1117/12.2644537</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Infrared and visible image fusion based on dense connectivity and Transformer self-encoding</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/iccea58433.2023.10135474" target="_blank" style="word-break: break-all;">10.1109/iccea58433.2023.10135474</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>DSMGN: Dual-Supervised Mask Generation Network for Infrared and Visible Image Fusion</td>
+                        <td>IEEE Multimedia</td>
+                        <td><a href="https://doi.org/10.1109/mmul.2023.3312136" target="_blank" style="word-break: break-all;">10.1109/mmul.2023.3312136</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>OMOFuse: An Optimized Dual-Attention Mechanism Model for Infrared and Visible Image Fusion</td>
+                        <td>Mathematics</td>
+                        <td><a href="https://doi.org/10.3390/math11244902" target="_blank" style="word-break: break-all;">10.3390/math11244902</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>HFHFusion: A Heterogeneous Feature Highlighted method for infrared and visible image fusion</td>
+                        <td>Optics Communications</td>
+                        <td><a href="https://doi.org/10.1016/j.optcom.2024.130941" target="_blank" style="word-break: break-all;">10.1016/j.optcom.2024.130941</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>TaDFusion: Infrared and Visible Image Fusion Network Based on The Target Detection Task-driven Method</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/ijcnn60899.2024.10650096" target="_blank" style="word-break: break-all;">10.1109/ijcnn60899.2024.10650096</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Infrared and visible image fusion using Latent Low-Rank Representation</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.1804.08992" target="_blank" style="word-break: break-all;">10.48550/arxiv.1804.08992</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>PPT Fusion: Pyramid Patch Transformerfor a Case Study in Image Fusion</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2107.13967" target="_blank" style="word-break: break-all;">10.48550/arxiv.2107.13967</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Transfuse: A Unified Transformer-Based Image Fusion Framework Using Self-Supervised Learning</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.4130858" target="_blank" style="word-break: break-all;">10.2139/ssrn.4130858</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>LLVIP: A Visible-infrared Paired Dataset for Low-light Vision</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2108.10831" target="_blank" style="word-break: break-all;">10.48550/arxiv.2108.10831</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Fast and Efficient Zero-Learning Image Fusion</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.1905.03590" target="_blank" style="word-break: break-all;">10.48550/arxiv.1905.03590</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>A Dual-branch Network for Infrared and Visible Image Fusion</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2101.09643" target="_blank" style="word-break: break-all;">10.48550/arxiv.2101.09643</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Efficient and Model-Based Infrared and Visible Image Fusion Via Algorithm Unrolling</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2005.05896" target="_blank" style="word-break: break-all;">10.48550/arxiv.2005.05896</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>A Cross-Modal Image Fusion Theory Guided by Human Visual Characteristics.</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Deep Decomposition Network for Image Processing: A Case Study for Visible and Infrared Image Fusion</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2102.10526" target="_blank" style="word-break: break-all;">10.48550/arxiv.2102.10526</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Dynamic Image Restoration and Fusion Based on Dynamic Degradation</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2104.12347" target="_blank" style="word-break: break-all;">10.48550/arxiv.2104.12347</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Edafuse: A Encoder-Decoder with Atrous Spatial Pyramid Network for Infrared and Visible Image Fusion</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.3982278" target="_blank" style="word-break: break-all;">10.2139/ssrn.3982278</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Determining the number of classes on an image as a distribution space dimension</td>
+                        <td>2016 13th International Scientific-Technical Conference on Actual Problems of Electronics Instrument Engineering (APEIE)</td>
+                        <td><a href="https://doi.org/10.1109/apeie.2016.7806864" target="_blank" style="word-break: break-all;">10.1109/apeie.2016.7806864</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Wavelet packet based fusion of IR and gray image</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icecds.2017.8389859" target="_blank" style="word-break: break-all;">10.1109/icecds.2017.8389859</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Double-channel cascade-based generative adversarial network for power equipment infrared and visible image fusion</td>
+                        <td>ICST Transactions on Scalable Information Systems</td>
+                        <td><a href="https://doi.org/10.4108/eai.22-11-2021.172216" target="_blank" style="word-break: break-all;">10.4108/eai.22-11-2021.172216</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Infrared and Visible Image Fusion Based on Gradientlet Filter and Low-Rank Decomposition</td>
+                        <td>2022 5th International Conference on Pattern Recognition and Artificial Intelligence (PRAI)</td>
+                        <td><a href="https://doi.org/10.1109/prai55851.2022.9904118" target="_blank" style="word-break: break-all;">10.1109/prai55851.2022.9904118</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A NSST-based infrared and visible image fusion method focusing on luminance effect</td>
+                        <td>Fourteenth International Conference on Digital Image Processing (ICDIP 2022)</td>
+                        <td><a href="https://doi.org/10.1117/12.2644228" target="_blank" style="word-break: break-all;">10.1117/12.2644228</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>DeepThermal Outdoor: A first-person thermal imaging dataset</td>
+                        <td>Journal of Military Science and Technology</td>
+                        <td><a href="https://doi.org/10.54939/1859-1043.j.mst.csce6.2022.92-104" target="_blank" style="word-break: break-all;">10.54939/1859-1043.j.mst.csce6.2022.92-104</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Nrperson: A Non-Registered Multi-Modal Benchmark for Tiny Person Detection and Localization</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.4455953" target="_blank" style="word-break: break-all;">10.2139/ssrn.4455953</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>基于自适应特征增强和生成器路径交互的红外与可见光图像融合</td>
+                        <td>Laser & Optoelectronics Progress</td>
+                        <td><a href="https://doi.org/10.3788/lop222204" target="_blank" style="word-break: break-all;">10.3788/lop222204</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Image Fusion Approach Based on Heterogeneous Dense Network</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/iccsi58851.2023.10303896" target="_blank" style="word-break: break-all;">10.1109/iccsi58851.2023.10303896</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Colorization of Multispectral Image Fusion using Convolutional Neural Network approach</td>
+                        <td>International Journal on Recent and Innovation Trends in Computing and Communication</td>
+                        <td><a href="https://doi.org/10.17762/ijritcc.v11i1.10114" target="_blank" style="word-break: break-all;">10.17762/ijritcc.v11i1.10114</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Fusionfrfcm: An Image Fusion Approach  Driven by Non-Global Fuzzy Pre-Enhancement Framework</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.4752356" target="_blank" style="word-break: break-all;">10.2139/ssrn.4752356</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Infrared and Visible Image Fusion Via Pre-Fusion Compensation and Visual-Gradient Saliency Detection</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.4809903" target="_blank" style="word-break: break-all;">10.2139/ssrn.4809903</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Fusionngfpe: An Image Fusion Approach  Driven by Non-Global Fuzzy Pre-Enhancement Framework</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.4891282" target="_blank" style="word-break: break-all;">10.2139/ssrn.4891282</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A Multi-Scale Infrared and Visible Image Fusion Network Based on Context Perception</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/cscwd61410.2024.10580490" target="_blank" style="word-break: break-all;">10.1109/cscwd61410.2024.10580490</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>PEFusion: An infrared and visible light fusion method for enhanced representation of prominent targets and exposure errors</td>
+                        <td>Infrared Physics & Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.infrared.2024.105496" target="_blank" style="word-break: break-all;">10.1016/j.infrared.2024.105496</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>LGMFuse: A Multi-modal Image Fusion Method Based on Local and Global Mamba</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-6331691/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-6331691/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>An unsupervised fusion method for infrared and visible image under low-light condition based on Generative Adversarial Networks</td>
+                        <td>Signal Processing Image Communication</td>
+                        <td><a href="https://doi.org/10.1016/j.image.2025.117324" target="_blank" style="word-break: break-all;">10.1016/j.image.2025.117324</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>长短距离注意力协同的跨尺度池化嵌入图像融合算法</td>
+                        <td>Laser & Optoelectronics Progress</td>
+                        <td><a href="https://doi.org/10.3788/lop242159" target="_blank" style="word-break: break-all;">10.3788/lop242159</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Edge-Guided Dynamic Diffused Fusion for Infrared and Visible Images</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.5367516" target="_blank" style="word-break: break-all;">10.2139/ssrn.5367516</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>CPIGAN: Infrared and visible image fusion via cross-scale progressive interaction network with adversarial learning</td>
+                        <td>Computers & Electrical Engineering</td>
+                        <td><a href="https://doi.org/10.1016/j.compeleceng.2025.110672" target="_blank" style="word-break: break-all;">10.1016/j.compeleceng.2025.110672</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-06-02T10:56:00+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' citing works (most recent first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+    
+    <script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
+</body>
+</html>

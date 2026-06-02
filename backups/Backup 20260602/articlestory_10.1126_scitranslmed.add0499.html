@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ArticleStory - Enhanced mTORC1 signaling and protein synthesis in pathologic α-synuclein cellular and animal models of Parkinson’s disease</title>
+<style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+</style>
+<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div class="site-nav-links">
+    <a href="index.html">← All stories</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Print PDF Report
+    </button>
+<div class="page" id="sec-story">
+<header class="hero card" id="sec-hero">
+<div class="header-bar">
+<div style="display: flex; align-items: center; gap: 1.25rem;">
+<div class="logo-wrap"><img alt="Logo" src="articlestories-logo.png"/></div>
+<div>
+<h1 class="hero-title">Enhanced mTORC1 signaling and protein synthesis in pathologic α-synuclein cellular and animal models of Parkinson’s disease</h1>
+<div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+<span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-transform: uppercase; letter-spacing: 0.05em;" title="Linked research datasets are registered via DataCite or a similar registry">
+<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                    Linked to Data
+                                <span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· DataCite</span></span>
+</div>
+<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+<div><strong>Author(s):</strong> Mohammed Repon Khan, Xiling Yin, Sung-Ung Kang, Jaba Mitra, Hu Wang, Taekyung Ryu, Saurav Brahmachari, Senthilkumar S. Karuppagounder, Yasuyoshi Kimura, Aanishaa Jhaldiyal, Hyun Hee Kim, Hao Gu, Rong Chen, Javier Redding‐Ochoa, Juan C. Troncoso, Chan Hyun Na, Taekjip Ha, Valina L. Dawson, Ted M. Dawson</div>
+<div><strong>Publisher:</strong> Science Translational Medicine</div>
+<div><strong>Publication year:</strong> 2023</div>
+<div><strong>DOI:</strong> <a href="https://doi.org/10.1126/scitranslmed.add0499" target="_blank">10.1126/scitranslmed.add0499</a></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">51</div>
+<div class="stats-strip-label">Total Citations</div>
+<div class="stats-strip-badge">🏆 Top 10% Cited</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">0</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">9</div>
+<div class="stats-strip-label">scite References</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Closed</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
+
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-mentions">Mentions</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-funding">Funding</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+
+<section class="card" id="sec-story">
+<h2><span>The Story So Far</span></h2>
+<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">This research, published in <em>Science Translational Medicine</em> by Khan et al., examines enhanced mTORC1 signaling and protein synthesis in models of Parkinson's disease. With 51 citations, the study underlines its academic importance and lays the groundwork for future exploration of protein synthesis mechanisms in neurodegeneration.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The scholarly article titled "Enhanced mTORC1 signaling and protein synthesis in pathologic α-synuclein cellular and animal models of Parkinson’s disease," authored by Mohammed Repon Khan and colleagues from prestigious institutions like Johns Hopkins University and Howard Hughes Medical Institute, delves into critical neurobiological pathways implicated in Parkinson's disease. The work has garnered substantial academic attention, achieving 51 citations, indicating its relevance among peers as a significant contribution to the field of neurodegeneration.</p>
+<p class="story-text">One of the clear markers of this research's impact is its reach, noted by the diverse academic responses from various countries, including 16 citations from the United States and 13 from China. This geographic diversity reflects a global interest in the findings, which detail important mechanistic insights into mTORC1 signaling pathways and their role in disease pathology, bolstering discussions in journals such as Neuron and Molecular Neurobiology.</p>
+<p class="story-text">While the current analysis does not show public engagement metrics from platforms such as Wikipedia or Reddit, the consistent reuse of this work is illustrated through its proven downstream reuse count of 52. This figure signifies the research's foundational value, enabling subsequent studies to build upon the knowledge generated, suggesting that the methodologies or results may have catalyzed further investigation in related areas of neurobiology.</p>
+<p class="story-text">Moreover, the usage of a dataset from Dryad emphasizes the authors' commitment to data accessibility in scientific research. By making these resources available, the authors not only promote open science but also foster a culture of transparency that can facilitate reproducibility and validate future research endeavors in the area of Parkinson's disease. As this field continues to evolve, the insights from Khan et al. may serve as a pivotal reference point for ongoing studies aimed at unraveling complex neurodegenerative processes.</p></div>
+</section>
+<section class="card" id="sec-impact">
+<h2><span>Impact metrics</span></h2>
+
+<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">51</div><div class="im-label">Total Citations</div></div><div class="im-spark"><svg height="36" style="display:block;overflow:visible;" viewbox="0 0 120 36" width="120" xmlns="http://www.w3.org/2000/svg"><path d="M0.0,33.1 L40.0,26.7 L80.0,2.0 L120.0,27.6 L120.0,36.0 L0,36.0 Z" fill="#dbeafe" opacity="0.6"></path><polyline fill="none" points="0.0,33.1 40.0,26.7 80.0,2.0 120.0,27.6" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline></svg><div class="im-spark-range">2023–2026</div></div></div><div class="im-top-badge">🏆 Top 10% Cited</div></div><div class="im-card"><div class="im-num">0</div><div class="im-label">Online Mentions</div></div><div class="im-card"><div class="im-num">9</div><div class="im-label">scite References</div></div></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-teal" href="#sec-teaching">🗂 Datasets · 2 repos</a><a class="sig-pill sig-blue" href="#sec-citing">🌍 35 countries</a></div></div></div></section>
+<section class="card" id="sec-roles">
+<h2><span>Inferred roles</span></h2>
+<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#1d4ed8;">🎓 Academic &amp; Scientific</div><div class="roles-row"><span class="role-pill role-pill-academic" style="opacity:0.9;" data-tip="Frequently cited in literature reviews and meta-analyses as a shorthand reference."><span class="role-dot" style="background:#3b82f6;"></span>Reference point for synthesis<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Moderate</span></span><span class="role-pill role-pill-academic" style="opacity:0.9;" data-tip="Foundational building block cited heavily in core academic journals and monographs."><span class="role-dot" style="background:#3b82f6;"></span>Scholarly uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Moderate</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#065f46;">🏛 Practical &amp; Real-World</div><div class="roles-row"><span class="role-pill role-pill-practical" style="opacity:0.9;" data-tip="Cited in government reports, WHO/NGO briefs, or UN policy documents."><span class="role-dot" style="background:#10b981;"></span>Sustainability &amp; policy relevance<span class="role-strength" style="background:#dcfce7;color:#166534;">Moderate</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#b45309;">📢 Public Engagement &amp; Media</div><div class="roles-row"><span class="role-pill role-pill-public" style="opacity:0.75;" data-tip="Heavy social-platform engagement on Reddit, Bluesky, or Mastodon — the work has sparked ongoing community conversation."><span class="role-dot" style="background:#f59e0b;"></span>Active public discourse<span class="role-strength" style="background:#fef3c7;color:#92400e;">Emerging</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
+
+</section>
+<div class="grid-2">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+<ul class="metric-list">
+<li><strong>DOI:</strong> <a href="https://doi.org/10.1126/scitranslmed.add0499" target="_blank">10.1126/scitranslmed.add0499</a></li>
+<li><strong>OA status:</strong> Closed</li>
+<li><strong>Landing page:</strong> <a href="https://doi.org/10.1126/scitranslmed.add0499" style="word-break: break-all;" target="_blank">https://doi.org/10.1126/scitranslmed.add0499</a></li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>0</strong> recorded events globally
+                        
+                    </p>
+<p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+<em>(See specific sources and examples in the Online Mentions section below).</em>
+</p>
+</section>
+</div>
+<div class="grid-2" style="align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Citation context</span> <span class="badge">scite</span></h2>
+<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+<li><strong>Total:</strong> 9</li>
+<li><strong>Supporting:</strong> 0</li>
+<li><strong>Mentioning:</strong> 9</li>
+<li><strong>Contradicting:</strong> 0</li>
+</ul>
+</section>
+</div>
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Associated data repositories and clinical trials.</p>
+<h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Data Repositories &amp; Code</h3>
+<div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom: 1rem; max-height: 250px; overflow-y: auto;">
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://doi.org/10.5061/dryad.51c59zwf1" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">Dryad Dataset</a>
+<a href="datastory_10.5061_dryad.51c59zwf1.html" style="font-size: 0.75rem; color: #6b7280; text-decoration: underline; display: inline-flex; align-items: center; gap: 0.2rem;" title="Run 'python3 -m bookstories.cli 10.5061/dryad.51c59zwf1' to generate this dashboard!">
+<svg fill="none" height="12" stroke="currentColor" viewbox="0 0 24 24" width="12"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                                    View DataStory
+                                                </a>
+</div>
+</div>
+</section>
+</div>
+</div>
+<section class="card" id="sec-citing">
+<h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+                Analysis of the 51 most recent citing works. 
+                <br/>
+<strong>70.6%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>2.0</strong> times itself.
+            </div>
+
+<div class="cite-analysis-always"><div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+<ul class="metric-list">
+<li><strong>Citing work types:</strong>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (29)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (13)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (7)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">letter (1)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (1)</span>
+</li>
+<li><strong>Top citing venues:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">bioRxiv (5)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Neuron (3)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">International Journal of Molecular Sciences (3)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Molecular Neurobiology (3)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Molecular Neurodegeneration (2)</span>
+</li>
+<li><strong>Top citing concepts:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Neurodegeneration (10)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Neuroscience (8)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Autophagy (8)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Parkinson's disease (8)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Disease (7)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">PI3K/AKT/mTOR pathway (7)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Neuroprotection (5)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Proteostasis (5)</span>
+</li>
+<li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+<strong>Citation timeline:</strong>
+<div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+<canvas data-labels="[2023, 2024, 2025, 2026]" data-values="[1, 8, 35, 7]" id="citationChart">
+</canvas>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="cite-tabs">
+<button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-ppl')">👤 Top Citers</button>
+</div>
+<div class="cite-tab-pane active" id="cite-geo"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (16)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">China (13)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (7)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (6)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Canada (4)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">South Korea (3)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Russia (3)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">India (3)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Greece (2)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Spain (2)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Poland (1)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Norway (1)</span>
+</div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (46)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Healthcare (26)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (16)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Government (5)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Company (4)</span>
+</div>
+</div></div>
+<div class="cite-tab-pane" id="cite-inst"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Johns Hopkins University</strong>
+<a class="orcid-badge" href="https://ror.org/00za53h95" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(8)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Johns Hopkins Medicine</strong>
+<a class="orcid-badge" href="https://ror.org/037zgn354" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(8)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>German Center for Neurodegenerative Diseases</strong>
+<a class="orcid-badge" href="https://ror.org/043j0f473" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Petersburg Nuclear Physics Institute</strong>
+<a class="orcid-badge" href="https://ror.org/037styt87" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>First Pavlov State Medical University of St. Petersburg</strong>
+<a class="orcid-badge" href="https://ror.org/04g525b43" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>McGill University</strong>
+<a class="orcid-badge" href="https://ror.org/01pxwe438" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Research Network (United States)</strong>
+<a class="orcid-badge" href="https://ror.org/04tgjxk96" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Northwestern University</strong>
+<a class="orcid-badge" href="https://ror.org/000e0be47" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Philipps University of Marburg</strong>
+<a class="orcid-badge" href="https://ror.org/01rdrb571" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Cambridge</strong>
+<a class="orcid-badge" href="https://ror.org/013meh722" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+</ul>
+</div></div>
+<div class="cite-tab-pane" id="cite-ppl"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Valina L. Dawson</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-2915-3970" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Ted M. Dawson</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-6459-0893" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Taekyung Ryu</strong>
+<a class="orcid-badge" href="https://openalex.org/A5047100853" target="_blank">Profile</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Chan Hyun Na</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-3622-2938" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Fanni F. Geibl</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-5480-0463" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Martin T. Henrich</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-8295-4884" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Zhong Xie</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-8348-4455" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Enrico Zampese</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-8851-2566" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Tatiana Tkatch</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-6626-7435" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>David L. Wokosin</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-5497-6944" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(2)</span>
+</li>
+</ul>
+</div></div>
+
+
+</section>
+<div class="grid-2">
+</div>
+<div class="grid-2" id="sec-contributors">
+<section class="card" id="sec-contributors" style="margin-bottom:0;">
+<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">19 authors · 2 institutions</div>
+<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Mohammed Repon Khan</strong>
+<span class="badge">First</span>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-9744-9220" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Xiling Yin</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-3942-8210" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Sung-Ung Kang</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-8393-2588" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Jaba Mitra</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-6569-6203" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Hu Wang</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Taekyung Ryu</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Saurav Brahmachari</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-9864-3036" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Senthilkumar S. Karuppagounder</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-3281-9913" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Yasuyoshi Kimura</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-9147-8058" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Aanishaa Jhaldiyal</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-0620-7390" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Hyun Hee Kim</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4905-9391" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Hao Gu</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-3110-2531" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Rong Chen</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-9291-5539" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Javier Redding‐Ochoa</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-0677-917X" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Juan C. Troncoso</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-9553-6673" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Chan Hyun Na</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-3622-2938" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Taekjip Ha</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-2195-6258" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Valina L. Dawson</strong>
+<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-2915-3970" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Ted M. Dawson</strong>
+<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-6459-0893" target="_blank">ORCID</a>
+</li>
+</ul>
+<h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/00za53h95" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Johns Hopkins University</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/006w34k90" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Howard Hughes Medical Institute</a>
+</li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">13 specific concepts identified.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">mTORC1</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Parkinson's disease</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Disease</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neuroscience</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Alpha-synuclein</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Medicine</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Animal model</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell biology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Signal transduction</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Pathology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">PI3K/AKT/mTOR pathway</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Internal medicine</span>
+</div>
+<h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">1 targets detected.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Good health and well-being (0.62)</span>
+</div>
+</section>
+</div>
+<section class="card no-print" id="sec-citations">
+<h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">Displaying 51 most recent citing works</div>
+<div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+<table>
+<thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+<tbody id="cit-tbody"></tbody>
+</table>
+</div>
+<div class="cit-pagination">
+<span class="cit-pagination-info" id="cit-info">Loading…</span>
+<div class="cit-pagination-btns">
+<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
+<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
+<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
+</div>
+</div>
+
+</section>
+<footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+<div style="display: flex; flex-direction: column; gap: 0.4rem;">
+<div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+<svg fill="none" height="16" stroke="currentColor" style="color: #9ca3af;" viewbox="0 0 24 24" width="16"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Understanding our metrics: <a href="https://www.openscience.works/about.html" style="color: #2563eb; text-decoration: none; font-weight: 600;" target="_blank">Read the Methodology &amp; Legend ↗</a></span>
+</div>
+<div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-04-03T09:21:31+00:00
+                </div>
+</div>
+</footer>
+</div>
+<script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+<script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+
+<script>
+(function() {
+  var DATA = [{"year": "2024", "title": "α-Synuclein pathology as a target in neurodegenerative diseases", "venue": "Nature Reviews Neurology", "doi": "10.1038/s41582-024-01043-w", "doi_url": "https://doi.org/10.1038/s41582-024-01043-w"}, {"year": "2024", "title": "α-Synuclein pathology disrupts mitochondrial function in dopaminergic and cholinergic neurons at-risk in Parkinson’s disease", "venue": "Molecular Neurodegeneration", "doi": "10.1186/s13024-024-00756-2", "doi_url": "https://doi.org/10.1186/s13024-024-00756-2"}, {"year": "2024", "title": "Programmed cell death: molecular mechanisms, biological functions, diseases, and therapeutic targets", "venue": "MedComm", "doi": "10.1002/mco2.70024", "doi_url": "https://doi.org/10.1002/mco2.70024"}, {"year": "2025", "title": "The cyclic metabolic switching theory of intermittent fasting", "venue": "Nature Metabolism", "doi": "10.1038/s42255-025-01254-5", "doi_url": "https://doi.org/10.1038/s42255-025-01254-5"}, {"year": "2025", "title": "Overview of Metformin and Neurodegeneration: A Comprehensive Review", "venue": "Pharmaceuticals", "doi": "10.3390/ph18040486", "doi_url": "https://doi.org/10.3390/ph18040486"}, {"year": "2025", "title": "Beyond the Brain: Exploring the multi-organ axes in Parkinson’s disease pathogenesis", "venue": "Journal of Advanced Research", "doi": "10.1016/j.jare.2025.05.034", "doi_url": "https://doi.org/10.1016/j.jare.2025.05.034"}, {"year": "2025", "title": "Polystyrene nanoplastics trigger pyroptosis in dopaminergic neurons through TSC2/TFEB-mediated disruption of autophagosome-lysosome fusion in Parkinson’s disease", "venue": "Journal of Translational Medicine", "doi": "10.1186/s12967-025-06634-9", "doi_url": "https://doi.org/10.1186/s12967-025-06634-9"}, {"year": "2025", "title": "Alpha-synuclein mutations mislocalize cytoplasmic p300 compromising autophagy, which is rescued by ACLY inhibition", "venue": "Neuron", "doi": "10.1016/j.neuron.2025.03.028", "doi_url": "https://doi.org/10.1016/j.neuron.2025.03.028"}, {"year": "2025", "title": "Proteomic profiling of plasma extracellular vesicles identifies signatures of innate immunity, coagulation, and endothelial activation in septic patients", "venue": "Scientific Reports", "doi": "10.1038/s41598-025-06430-x", "doi_url": "https://doi.org/10.1038/s41598-025-06430-x"}, {"year": "2025", "title": "Distinct spatial transcriptomic patterns of substantia Nigra in Parkinson disease and Parkinsonian subtype of multiple system atrophy", "venue": "Acta Neuropathologica Communications", "doi": "10.1186/s40478-025-02107-8", "doi_url": "https://doi.org/10.1186/s40478-025-02107-8"}, {"year": "2025", "title": "The Proteostasis Network in Proteinopathies", "venue": "American Journal Of Pathology", "doi": "10.1016/j.ajpath.2025.07.011", "doi_url": "https://doi.org/10.1016/j.ajpath.2025.07.011"}, {"year": "2025", "title": "Selective autophagy in type 2 diabetes-associated cognitive dysfunction: Insightful mechanisms and therapies", "venue": "Pharmacological Research", "doi": "10.1016/j.phrs.2025.107947", "doi_url": "https://doi.org/10.1016/j.phrs.2025.107947"}, {"year": "2024", "title": "Protein Translation in the Pathogenesis of Parkinson’s Disease", "venue": "International Journal of Molecular Sciences", "doi": "10.3390/ijms25042393", "doi_url": "https://doi.org/10.3390/ijms25042393"}, {"year": "2024", "title": "Brain-Region-Specific Differences in Protein Citrullination/Deimination in a Pre-Motor Parkinson’s Disease Rat Model", "venue": "International Journal of Molecular Sciences", "doi": "10.3390/ijms252011168", "doi_url": "https://doi.org/10.3390/ijms252011168"}, {"year": "2025", "title": "A rare genetic variant confers resistance to neurodegeneration across multiple neurological disorders by augmenting selective autophagy", "venue": "Neuron", "doi": "10.1016/j.neuron.2025.08.018", "doi_url": "https://doi.org/10.1016/j.neuron.2025.08.018"}, {"year": "2025", "title": "A review of pharmacological mechanisms, challenges and prospects of macromolecular glycopeptides", "venue": "International Journal of Biological Macromolecules", "doi": "10.1016/j.ijbiomac.2025.140294", "doi_url": "https://doi.org/10.1016/j.ijbiomac.2025.140294"}, {"year": "2025", "title": "Inborn errors of canonical autophagy in neurodegenerative diseases", "venue": "Human Molecular Genetics", "doi": "10.1093/hmg/ddae179", "doi_url": "https://doi.org/10.1093/hmg/ddae179"}, {"year": "2025", "title": "Rapamycin exerts neuroprotective effects by inhibiting FKBP12 instead of mTORC1 in the mouse model of Parkinson's disease", "venue": "Neuropharmacology", "doi": "10.1016/j.neuropharm.2025.110504", "doi_url": "https://doi.org/10.1016/j.neuropharm.2025.110504"}, {"year": "2025", "title": "Quantitative serum proteomic analysis for biomarker discovery in post-COVID-19 postural orthostatic tachycardia syndrome (PC-POTS) patients", "venue": "Autonomic Neuroscience", "doi": "10.1016/j.autneu.2025.103247", "doi_url": "https://doi.org/10.1016/j.autneu.2025.103247"}, {"year": "2024", "title": "Dose-Dependent Alterations of Lysosomal Activity and Alpha-Synuclein in Peripheral Blood Monocyte-Derived Macrophages and SH-SY5Y Neuroblastoma Cell Line by upon Inhibition of MTOR Protein Kinase – Assessment of the Prospects of Parkinson’s Disease Therapy", "venue": "Biochemistry (Moscow)", "doi": "10.1134/s0006297924070113", "doi_url": "https://doi.org/10.1134/s0006297924070113"}, {"year": "2025", "title": "Mikhail ‘Misha’ Blagosklonny’s enduring legacy in geroscience: the hyperfunction theory and the therapeutic potential of rapamycin", "venue": "Aging", "doi": "10.18632/aging.206189", "doi_url": "https://doi.org/10.18632/aging.206189"}, {"year": "2025", "title": "Bioinformatics identification of shared signaling pathways and core targets linking Benzo[a]pyrene exposure to HCC progression", "venue": "Toxicology", "doi": "10.1016/j.tox.2025.154129", "doi_url": "https://doi.org/10.1016/j.tox.2025.154129"}, {"year": "2025", "title": "Deletion of ZNRF2 Exacerbates MPTP-Induced Parkinson’s Disease by Activating mTOR-Mediated Neuroinflammatory Pathways", "venue": "Molecular Neurobiology", "doi": "10.1007/s12035-025-05044-8", "doi_url": "https://doi.org/10.1007/s12035-025-05044-8"}, {"year": "2025", "title": "Cell Type‐Specific mTORC1 Signaling and Translational Control in Synaptic Plasticity and Memory", "venue": "Journal of Neurochemistry", "doi": "10.1111/jnc.70281", "doi_url": "https://doi.org/10.1111/jnc.70281"}, {"year": "2024", "title": "Dose-Dependent Alterations of Lysosomal Activity and Alpha-Synuclein in Peripheral Blood Monocyte-Derived Macrophages and SH-SY5Y Neuroblastoma Cell Line by upon Inhibition of mTOR Protein Kinase – Assessment of the Prospects of Parkinson’s Disease Therapy", "venue": "Биохимия", "doi": "10.31857/s0320972524070085", "doi_url": "https://doi.org/10.31857/s0320972524070085"}, {"year": "2025", "title": "Rapamycin alleviates neurodegeneration in a Drosophila model of spinocerebellar ataxia type 51", "venue": "Journal of genetics and genomics/Journal of Genetics and Genomics", "doi": "10.1016/j.jgg.2025.08.010", "doi_url": "https://doi.org/10.1016/j.jgg.2025.08.010"}, {"year": "2024", "title": "The Biological Roles of ZKSCAN3 (ZNF306) in the Hallmarks of Cancer: From Mechanisms to Therapeutics", "venue": "International Journal of Molecular Sciences", "doi": "10.3390/ijms252111532", "doi_url": "https://doi.org/10.3390/ijms252111532"}, {"year": "2025", "title": "ACLY links mutant α-synuclein to metabolism, autophagy and neurodegeneration", "venue": "Neuron", "doi": "10.1016/j.neuron.2025.05.027", "doi_url": "https://doi.org/10.1016/j.neuron.2025.05.027"}, {"year": "2025", "title": "Parkinson’s disease: exploring the systemic immune mechanisms through molecular investigations", "venue": "Inflammopharmacology", "doi": "10.1007/s10787-025-01816-9", "doi_url": "https://doi.org/10.1007/s10787-025-01816-9"}, {"year": "2025", "title": "Current strategies in the management of dementia with lewy bodies and future directions based on disease pathophysiology", "venue": "Molecular Neurodegeneration", "doi": "10.1186/s13024-025-00856-7", "doi_url": "https://doi.org/10.1186/s13024-025-00856-7"}, {"year": "2025", "title": "Pathophysiological mechanisms linking osteoarthritis and neurodegenerative disease risk", "venue": "Osteoarthritis and Cartilage", "doi": "10.1016/j.joca.2025.10.009", "doi_url": "https://doi.org/10.1016/j.joca.2025.10.009"}, {"year": "2023", "title": "α-Synuclein pathology disrupts mitochondrial function in dopaminergic and cholinergic neurons at-risk in Parkinson’s disease", "venue": "bioRxiv", "doi": "10.1101/2023.12.11.571045", "doi_url": "https://doi.org/10.1101/2023.12.11.571045"}, {"year": "2025", "title": "Proteomic profiling of plasma extracellular vesicles identifies signatures of innate immunity, coagulation, and endothelial activation in septic patients", "venue": "bioRxiv", "doi": "10.1101/2025.02.21.25322420", "doi_url": "https://doi.org/10.1101/2025.02.21.25322420"}, {"year": "2025", "title": "α-Synuclein Activates the PI3K/AKT Pathway to Drive Lipid Droplets Accumulation: Implications for Parkinson’s Disease", "venue": "bioRxiv", "doi": "10.1101/2025.03.27.645689", "doi_url": "https://doi.org/10.1101/2025.03.27.645689"}, {"year": "2025", "title": "ATF4 activates a transcriptional program that chronically suppresses mTOR activity promoting neurodegeneration in Parkinson’s disease models", "venue": "bioRxiv", "doi": "10.1101/2025.06.09.658667", "doi_url": "https://doi.org/10.1101/2025.06.09.658667"}, {"year": "2025", "title": "JNK Acts as A Conserved Regulator Prevents Healthy Aging by Attenuating Proteostasis Stress During Aging", "venue": "Research Square", "doi": "10.21203/rs.3.rs-6316187/v1", "doi_url": "https://doi.org/10.21203/rs.3.rs-6316187/v1"}, {"year": "2025", "title": "Distinct spatial transcriptomic patterns of substantia nigra in Parkinson disease and Parkinsonian subtype of multiple system atrophy", "venue": "Research Square", "doi": "10.21203/rs.3.rs-6225459/v1", "doi_url": "https://doi.org/10.21203/rs.3.rs-6225459/v1"}, {"year": "2025", "title": "SNCAtriplication disrupts proteostasis and extracellular architecture prior to neurodegeneration in human midbrain organoids", "venue": "bioRxiv", "doi": "10.1101/2025.05.28.656641", "doi_url": "https://doi.org/10.1101/2025.05.28.656641"}, {"year": "2025", "title": "Berberine's paradox in Neurodegeneration: Therapeutic promise and safety challenges in Parkinson's disease", "venue": "Neuropharmacology", "doi": "10.1016/j.neuropharm.2025.110555", "doi_url": "https://doi.org/10.1016/j.neuropharm.2025.110555"}, {"year": "2025", "title": "Increased translation in adult mouse striatum is sufficient to induce motor dysfunction", "venue": "Brain Communications", "doi": "10.1093/braincomms/fcaf250", "doi_url": "https://doi.org/10.1093/braincomms/fcaf250"}, {"year": "2025", "title": "Parkinson's disease, herpes simplex virus type 1, and nanopore sequencing: A case analysis", "venue": "Biochemistry and Biophysics Reports", "doi": "10.1016/j.bbrep.2025.102310", "doi_url": "https://doi.org/10.1016/j.bbrep.2025.102310"}, {"year": "2025", "title": "3-Acetyl-11-Keto-β-Boswellic acid (AKBA) Attenuated 6-Hydroxydopamine (6-OHDA)-Induced Toxicity in SH-SY5Y Cells via Modulation of Akt/mTOR Pathway", "venue": "Molecular Neurobiology", "doi": "10.1007/s12035-025-05374-7", "doi_url": "https://doi.org/10.1007/s12035-025-05374-7"}, {"year": "2025", "title": "The 4E-BPs as Translational Regulators in Neurological Disorders: Molecular Mechanisms and Therapeutic Potential", "venue": "Molecular Neurobiology", "doi": "10.1007/s12035-025-05553-6", "doi_url": "https://doi.org/10.1007/s12035-025-05553-6"}, {"year": "2025", "title": "Phospho-signalling deregulation of the mTOR pathway in fibroblasts from LRRK2 Parkinson’s patients", "venue": "bioRxiv (Cold Spring Harbor Laboratory)", "doi": "10.64898/2025.12.05.692089", "doi_url": "https://doi.org/10.64898/2025.12.05.692089"}, {"year": "2026", "title": "Role of Berberine in the Modulation of the PI3K/AKT/mTOR Pathway", "venue": "Unknown", "doi": "10.1007/978-981-95-4751-7_8", "doi_url": "https://doi.org/10.1007/978-981-95-4751-7_8"}, {"year": "2026", "title": "Tau-induced ribosomal collisions impair memory through the activation of the integrated stress response", "venue": "bioRxiv (Cold Spring Harbor Laboratory)", "doi": "10.64898/2026.01.12.699151", "doi_url": "https://doi.org/10.64898/2026.01.12.699151"}, {"year": "2026", "title": "Decoding synaptic imbalance in neurodegenerative diseases: From pathological analysis to targeted intervention", "venue": "Ageing Research Reviews", "doi": "10.1016/j.arr.2026.103028", "doi_url": "https://doi.org/10.1016/j.arr.2026.103028"}, {"year": "2026", "title": "Electroactive stimulation coupled with mechanotransduction inhibition enhance neuroregeneration", "venue": "Materials Today", "doi": "10.1016/j.mattod.2026.103198", "doi_url": "https://doi.org/10.1016/j.mattod.2026.103198"}, {"year": "2026", "title": "SNCA triplication disrupts proteostasis and extracellular architecture prior to neurodegeneration in human midbrain organoids", "venue": "npj Parkinson s Disease", "doi": "10.1038/s41531-026-01292-0", "doi_url": "https://doi.org/10.1038/s41531-026-01292-0"}, {"year": "2026", "title": "Orchestrating the Parkinson’s disease microenvironment in 3D for pathogenesis study and therapeutic development", "venue": "Biofabrication", "doi": "10.1088/1758-5090/ae4895", "doi_url": "https://doi.org/10.1088/1758-5090/ae4895"}, {"year": "2026", "title": "Simultaneous inhibition of mTOR and STING as an approach to reduce alpha-synuclein and lysosphingolipid levels in peripheral blood monocytederived macrophages and the SH-SY5Y cell line: implications for therapy of Parkinson’s disease", "venue": "Biomeditsinskaya Khimiya", "doi": "10.18097/pbmcr1616", "doi_url": "https://doi.org/10.18097/pbmcr1616"}];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('.role-pill[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

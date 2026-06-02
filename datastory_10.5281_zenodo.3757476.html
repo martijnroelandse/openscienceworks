@@ -1,0 +1,3299 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DataStory - COVID-19 CT Lung and Infection Segmentation Dataset</title>
+    <style>
+
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
+
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+.sig-green {background:#dcfce7;color:#166534;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+    
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="datastories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">COVID-19 CT Lung and Infection Segmentation Dataset</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                                    Linked to Data
+                                </span>
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #faf5ff; color: #86198f; border: 1px solid #e9d5ff; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                                    Proven Reuse
+                                </span>
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> 
+                                
+                                    Jun Ma, Cheng Ge, Yixin Wang, Xingle An, Jiantao Gao, Ziqi Yu, Minqing Zhang, Xin Liu, Deng Xueyuan, Shucheng Cao, Hao Wei, Sen Mei, Xiaoyu Yang, Ziwei Nie, Li Chen, Tian Lu, Yuntao Zhu, Qiongjie Zhu, Guoqiang Dong, He Jian
+                                
+                            </div>
+                        
+                            
+                        
+                            
+                            
+                            <div><strong>Source:</strong> 
+                                Zenodo (CERN European Organization for Nuclear Research)
+                            </div>
+                            
+                        
+                            <div><strong>Provider:</strong> 
+                                
+                                    European Organization for Nuclear Research
+                                
+                            </div>
+                        
+                            <div><strong>Publication year:</strong> 
+                                
+                                    2020
+                                
+                            </div>
+                        
+                            <div><strong>DOI:</strong> 
+                                <a href="https://doi.org/10.5281/zenodo.3757476" target="_blank">
+                                    10.5281/zenodo.3757476
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        <!-- Sticky nav -->
+        <nav aria-label="Page sections" class="sticky-nav no-print">
+            <div class="sticky-nav-inner">
+                <a href="#sec-hero">Overview</a>
+                <a href="#sec-story">Story</a>
+                <a href="#sec-impact">Impact</a>
+                <a href="#sec-roles">Roles</a>
+                <a href="#sec-access">Access</a>
+                <a href="#sec-citing">Who's Citing</a>
+                <a href="#sec-mentions">Mentions</a>
+            </div>
+        </nav>
+
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The COVID-19 CT Lung and Infection Segmentation Dataset, hosted on Zenodo, has emerged as a significant resource for researchers, amassing 238 citations and enabling 243 subsequent research endeavors. Its active engagement within the academic community, particularly noted through its high number of downloads (47,981), underscores its technical value and accessibility.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The COVID-19 CT Lung and Infection Segmentation Dataset represents a foundational research contribution to understanding lung infections associated with COVID-19. Released in 2020 by authors from esteemed institutions such as Chongqing University of Posts and Telecommunications and Zhengzhou University, this dataset has generated considerable academic interest, evidenced by its 238 citations across various scholarly works.</p>
+<p class="story-text">The dataset's broad appeal is highlighted by its substantial utilization, as reflected in its impressive statistics of 63,997 views and 47,981 downloads on the Zenodo repository. Such metrics indicate an active community engagement and demonstrate the dataset's significant role in facilitating further research. The Proven Downstream Reuse metric shows that the dataset has enabled an impressive 243 subsequent research efforts, reaffirming its status as a vital resource in the field.</p>
+<p class="story-text">Geographically, the dataset has influenced research in various countries, with notable citations emerging from China, India, the United States, Iran, and South Korea. This international reach emphasizes the collaborative nature of contemporary research on COVID-19 and the importance of data sharing in overcoming global health challenges. The involvement of multiple key institutions also signals a collective commitment to advancing our understanding of COVID-19-related lung conditions.</p>
+<p class="story-text">While the dataset has not yet found its way into public discourse on platforms such as Wikipedia or Reddit, its primary impact lies within the academic community. Moving forward, increased visibility on such platforms could further broaden its influence, fostering greater public understanding of the data's relevance. As research continues to unfold in the context of the pandemic, the contributions of this dataset will likely remain integral to ongoing studies in medical imaging and infection management.</p></div>
+        </section>
+        
+
+        
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+            <div class="im-wrapper">
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">238</div>
+                                <div class="im-label">Total Citations</div>
+                                
+                            </div>
+                            
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2020, 2021, 2022, 2023, 2024, 2025, 2026]"
+                                        data-values="[29, 61, 61, 50, 22, 13, 3]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2020–2026</div>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+                    
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+                    
+                    
+                    
+                    <div class="im-card">
+                        <div class="im-num">47,981</div>
+                        <div class="im-label">Downloads</div>
+                        <div class="im-provenance">Repository usage (DataCite / native provider)</div>
+                    </div>
+                    
+                    
+                    <div class="im-card">
+                        <div class="im-num">63,997</div>
+                        <div class="im-label">Views</div>
+                        <div class="im-provenance">Repository usage (DataCite / native provider)</div>
+                    </div>
+                    
+                    
+                    <!-- scite (only when references exist) -->
+                    
+                    <div class="im-card">
+                        <div class="im-num">43</div>
+                        <div class="im-label">scite References</div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="im-scite-compact">
+                            <div class="im-scite-title">Citation context <span class="im-scite-via">via scite</span></div>
+                            <div class="im-scite-bar">
+                                <div class="im-scite-seg im-scite-sup" data-w="0"></div>
+                                <div class="im-scite-seg im-scite-men" data-w="100"></div>
+                                <div class="im-scite-seg im-scite-con" data-w="0"></div>
+                            </div>
+                            <div class="im-scite-leg">
+                                <span><span class="im-scite-dot" style="background:#22c55e;"></span>0</span>
+                                <span><span class="im-scite-dot" style="background:#94a3b8;"></span>43</span>
+                                <span><span class="im-scite-dot" style="background:#f87171;"></span>0</span>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+
+                
+                
+                
+                
+                
+                <div class="muted" style="margin-top:.7rem; font-size:.8rem;">
+                    Some signals aren’t recorded for this volume yet (online mentions) — these typically accrue after publication.
+                </div>
+                
+
+                
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+                        <span class="sig-pill sig-teal">🔗 Data citations · 50</span>
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 15 countries</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+            
+            
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Dataset reference backbone — heuristic signal (score 1.00)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Dataset reference backbone
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Scholarly uptake — heuristic signal (score 0.89)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Scholarly uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="High-visibility uptake — heuristic signal (score 0.85)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            High-visibility uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#065f46">🏛 Practical & Real-World</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-practical" data-opacity="1"
+                              data-tip="Infrastructure dataset — heuristic signal (score 0.95)">
+                            <span class="role-dot" data-bg="#10b981"></span>
+                            Infrastructure dataset
+                            <span class="role-strength" data-bg="#dcfce7" data-color="#166534">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-practical" data-opacity="0.9"
+                              data-tip="Sustainability & policy relevance — heuristic signal (score 0.55)">
+                            <span class="role-dot" data-bg="#10b981"></span>
+                            Sustainability & policy relevance
+                            <span class="role-strength" data-bg="#dcfce7" data-color="#166534">Moderate</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access & Visibility</span> <span class="badge" style="background:#f0fdf4; color:#15803d; border:1px solid #bbf7d0;">DataCite</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.3757476" target="_blank">10.5281/zenodo.3757476</a></li>
+                    <li><strong>Resource Type:</strong> Dataset</li>
+                    <li><strong>Total Views:</strong> 63,997</li>
+                    <li><strong>Total Downloads:</strong> 47,981</li>
+                </ul>
+            </section>
+            
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.6rem;">
+                        This work has <strong>0</strong> recorded events globally.
+                    </p>
+                    
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 43</li>
+                                <li><strong>Supporting:</strong> 0</li>
+                                <li><strong>Mentioning:</strong> 43</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite / Crossref</span></h2>
+                            
+                            
+                                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Tracking downstream reuse and integration.</p>
+                                <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Reused in 243 related works:</h3>
+                                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom: 1rem;">
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">160 Articles</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">48 Preprints</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">15 Book-Chapters</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">9 Reviews</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">4 Peer-Reviews</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">2 Dissertations</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">1 Datasets</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">4 Softwares</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">1 Biomedical Article Mentions (Europe Pmc)s</span>
+                                    
+                                </div>
+                                
+                                
+                                    <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Known Links:</h3>
+                                    <div style="display:flex; flex-direction:column; gap:0.3rem; max-height: 150px; overflow-y: auto;">
+                                        
+                                            <a href="https://doi.org/10.5281/zenodo.3870441" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Zenodo Software &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.5281/zenodo.3870440" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Zenodo Software &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.5281/zenodo.3757475" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Zenodo Dataset &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.5281/zenodo.3789643" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Zenodo Software &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.5281/zenodo.3789644" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Zenodo Software &#8594;</a>
+                                        
+                                            <a href="https://doi.org/10.1117/1.jmi.11.4.044001" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                    </div>
+                                
+
+                            
+                        </section>
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+        
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>238</strong> citing works.
+                        <strong>11.9%</strong> come from the Top 10 institutions.
+                        Median citing paper cited <strong>6.0</strong> times itself.
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (160)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (48)</span><span class="tag tag-soft" style="font-size:.75rem;">book-chapter (15)</span><span class="tag tag-soft" style="font-size:.75rem;">review (9)</span><span class="tag tag-soft" style="font-size:.75rem;">peer-review (4)</span>
+                        <span class="tag" style="font-size:.75rem;">Unknown</span><span class="tag" style="font-size:.75rem;">arXiv (Cornell University)</span><span class="tag" style="font-size:.75rem;">bioRxiv</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2020, 2021, 2022, 2023, 2024, 2025, 2026]"
+                    data-values="[29, 61, 61, 50, 22, 13, 3]">
+                </canvas>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
+
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (49)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">India (40)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (28)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Iran (17)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">South Korea (13)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Brazil (12)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Germany (10)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Saudi Arabia (9)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Taiwan (9)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Greece (8)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Australia (8)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Spain (8)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Italy (8)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (8)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Bangladesh (7)</span>
+                    
+                </div>
+                
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (212)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Healthcare (52)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (33)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (15)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (8)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Other (5)</span>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Islamic Azad University North Tehran Branch</strong>
+                        <a href="https://ror.org/00sb1nr29" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(5.5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Indian Institute of Technology Madras</strong>
+                        <a href="https://ror.org/03v0r5n49" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Shanghai University</strong>
+                        <a href="https://ror.org/006teas31" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Universidade Federal do Paraná</strong>
+                        <a href="https://ror.org/05syd6y78" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Indian Statistical Institute</strong>
+                        <a href="https://ror.org/00q2w1j53" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Augsburg</strong>
+                        <a href="https://ror.org/03p14d497" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.552631578947368)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>National Technical University of Athens</strong>
+                        <a href="https://ror.org/03cx6bg69" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Bingöl University</strong>
+                        <a href="https://ror.org/03hx84x94" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Duke University</strong>
+                        <a href="https://ror.org/00py81415" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Dongguk University</strong>
+                        <a href="https://ror.org/057q6n778" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Miguel A. Cabra de Luna</strong>
+                        <a href="https://orcid.org/0000-0001-6255-8366" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Myeongkyun Kang</strong>
+                        <a href="https://orcid.org/0000-0002-9165-870X" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kyung Soo Hong</strong>
+                        <a href="https://orcid.org/0000-0003-2931-6861" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>June Hong Ahn</strong>
+                        <a href="https://orcid.org/0000-0001-7104-8325" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Sang Hyun Park</strong>
+                        <a href="https://orcid.org/0000-0001-7476-1046" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Shirin Kordnoori</strong>
+                        <a href="https://orcid.org/0000-0002-0042-3674" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Malihe Sabeti</strong>
+                        <a href="https://orcid.org/0000-0002-8096-8817" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Hamidreza Mostafaei</strong>
+                        <a href="https://orcid.org/0000-0002-5893-4653" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Saeed Banihashemi</strong>
+                        <a href="https://orcid.org/0000-0002-7438-1235" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Eftychios Protopapadakis</strong>
+                        <a href="https://orcid.org/0000-0003-3876-0024" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+        </div>
+
+        
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>20 authors · 0 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Jun Ma</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0002-9739-0855" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Cheng Ge</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0003-4010-5686" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Yixin Wang</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-8062-0765" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Xingle An</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0003-1334-1990" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Jiantao Gao</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-5057-0229" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Ziqi Yu</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-8201-5481" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Minqing Zhang</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-7214-0569" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Xin Liu</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-7281-9216" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Deng Xueyuan</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-8733-6807" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Shucheng Cao</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-9115-6259" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Hao Wei</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-5719-8826" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Sen Mei</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-9610-0126" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Xiaoyu Yang</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0003-0273-9573" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Ziwei Nie</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-4499-7207" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Li Chen</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0003-0348-1957" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Tian Lu</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0003-2148-7623" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Yuntao Zhu</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0003-2816-2709" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Qiongjie Zhu</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Guoqiang Dong</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>He Jian</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                </ul>
+
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>15 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Coronavirus disease 2019 (COVID-19)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Lung infection</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">2019-20 coronavirus outbreak</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Lung</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Segmentation</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Virology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Medicine</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Artificial intelligence</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Pathology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Internal medicine</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Infectious disease (medical specialty)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Disease</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Outbreak</span>
+                    
+                    
+                </div>
+                
+                
+                <h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 targets detected.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Zero hunger (0.42)</span>
+                    
+                </div>
+                
+            </section>
+        </div>
+
+        
+
+
+
+        
+        
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.75rem;"
+                 data-total="239">
+                239 citing works (most recent first)
+            </div>
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>A review of mathematical modeling, artificial intelligence and datasets used in the study, prediction and management of COVID-19</td>
+                        <td>Applied Intelligence</td>
+                        <td><a href="https://doi.org/10.1007/s10489-020-01770-9" target="_blank" style="word-break: break-all;">10.1007/s10489-020-01770-9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Toward data‐efficient learning: A benchmark for COVID‐19 CT lung and infection segmentation</td>
+                        <td>Medical Physics</td>
+                        <td><a href="https://doi.org/10.1002/mp.14676" target="_blank" style="word-break: break-all;">10.1002/mp.14676</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>COVID-19 open source data sets: a comprehensive survey</td>
+                        <td>Applied Intelligence</td>
+                        <td><a href="https://doi.org/10.1007/s10489-020-01862-6" target="_blank" style="word-break: break-all;">10.1007/s10489-020-01862-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>COVID-CT-MD, COVID-19 computed tomography scan dataset applicable in machine learning and deep learning</td>
+                        <td>Scientific Data</td>
+                        <td><a href="https://doi.org/10.1038/s41597-021-00900-3" target="_blank" style="word-break: break-all;">10.1038/s41597-021-00900-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Anam-Net: Anamorphic Depth Embedding-Based Lightweight CNN for Segmentation of Anomalies in COVID-19 Chest CT Images</td>
+                        <td>IEEE Transactions on Neural Networks and Learning Systems</td>
+                        <td><a href="https://doi.org/10.1109/tnnls.2021.3054746" target="_blank" style="word-break: break-all;">10.1109/tnnls.2021.3054746</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>COVID-19 image classification using deep learning: Advances, challenges and opportunities</td>
+                        <td>Computers in Biology and Medicine</td>
+                        <td><a href="https://doi.org/10.1016/j.compbiomed.2022.105350" target="_blank" style="word-break: break-all;">10.1016/j.compbiomed.2022.105350</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Detection and Severity Classification of COVID-19 in CT Images Using Deep Learning</td>
+                        <td>MDPI (MDPI AG)</td>
+                        <td><a href="https://doi.org/10.3390/diagnostics11050893" target="_blank" style="word-break: break-all;">10.3390/diagnostics11050893</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>MiniSeg: An Extremely Minimum Network for Efficient COVID-19 Segmentation</td>
+                        <td>Proceedings of the AAAI Conference on Artificial Intelligence</td>
+                        <td><a href="https://doi.org/10.1609/aaai.v35i6.16617" target="_blank" style="word-break: break-all;">10.1609/aaai.v35i6.16617</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>SSA-Net: Spatial self-attention network for COVID-19 pneumonia infection segmentation with semi-supervised few-shot learning</td>
+                        <td>Medical Image Analysis</td>
+                        <td><a href="https://doi.org/10.1016/j.media.2022.102459" target="_blank" style="word-break: break-all;">10.1016/j.media.2022.102459</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>MosMedData: data set of 1110 chest CT scans performed during the COVID-19 epidemic</td>
+                        <td>Digital Diagnostics</td>
+                        <td><a href="https://doi.org/10.17816/dd46826" target="_blank" style="word-break: break-all;">10.17816/dd46826</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Robust chest CT image segmentation of COVID-19 lung infection based on limited data</td>
+                        <td>Informatics in Medicine Unlocked</td>
+                        <td><a href="https://doi.org/10.1016/j.imu.2021.100681" target="_blank" style="word-break: break-all;">10.1016/j.imu.2021.100681</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>A systematic review on AI/ML approaches against COVID-19 outbreak</td>
+                        <td>Complex & Intelligent Systems</td>
+                        <td><a href="https://doi.org/10.1007/s40747-021-00424-8" target="_blank" style="word-break: break-all;">10.1007/s40747-021-00424-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Towards Efficient COVID-19 CT Annotation: A Benchmark for Lung and Infection Segmentation</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>A Few-Shot U-Net Deep Learning Model for COVID-19 Infected Area Segmentation in CT Images</td>
+                        <td>Sensors</td>
+                        <td><a href="https://doi.org/10.3390/s21062215" target="_blank" style="word-break: break-all;">10.3390/s21062215</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>D2A U-Net: Automatic segmentation of COVID-19 CT slices based on dual attention and hybrid dilated convolution</td>
+                        <td>Computers in Biology and Medicine</td>
+                        <td><a href="https://doi.org/10.1016/j.compbiomed.2021.104526" target="_blank" style="word-break: break-all;">10.1016/j.compbiomed.2021.104526</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Modality-Agnostic Domain Generalizable Medical Image Segmentation by Multi-Frequency in Multi-Scale Attention</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/cvpr52733.2024.01091" target="_blank" style="word-break: break-all;">10.1109/cvpr52733.2024.01091</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>A quantum-clustering optimization method for COVID-19 CT scan image segmentation</td>
+                        <td>Expert Systems with Applications</td>
+                        <td><a href="https://doi.org/10.1016/j.eswa.2021.115637" target="_blank" style="word-break: break-all;">10.1016/j.eswa.2021.115637</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Ambiguous D-means fusion clustering algorithm based on ambiguous set theory: Special application in clustering of CT scan images of COVID-19</td>
+                        <td>Knowledge-Based Systems</td>
+                        <td><a href="https://doi.org/10.1016/j.knosys.2021.107432" target="_blank" style="word-break: break-all;">10.1016/j.knosys.2021.107432</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Role of Artificial Intelligence in COVID-19 Detection</td>
+                        <td>Sensors</td>
+                        <td><a href="https://doi.org/10.3390/s21238045" target="_blank" style="word-break: break-all;">10.3390/s21238045</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Comprehensive Survey of Using Machine Learning in the COVID-19 Pandemic</td>
+                        <td>Diagnostics</td>
+                        <td><a href="https://doi.org/10.3390/diagnostics11071155" target="_blank" style="word-break: break-all;">10.3390/diagnostics11071155</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Does non-COVID-19 lung lesion help? investigating transferability in COVID-19 CT image segmentation</td>
+                        <td>Computer Methods and Programs in Biomedicine</td>
+                        <td><a href="https://doi.org/10.1016/j.cmpb.2021.106004" target="_blank" style="word-break: break-all;">10.1016/j.cmpb.2021.106004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>CovTANet: A Hybrid Tri-Level Attention-Based Network for Lesion Segmentation, Diagnosis, and Severity Prediction of COVID-19 Chest CT Scans</td>
+                        <td>IEEE Transactions on Industrial Informatics</td>
+                        <td><a href="https://doi.org/10.1109/tii.2020.3048391" target="_blank" style="word-break: break-all;">10.1109/tii.2020.3048391</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Supervised and weakly supervised deep learning models for COVID-19 CT diagnosis: A systematic review</td>
+                        <td>Computer Methods and Programs in Biomedicine</td>
+                        <td><a href="https://doi.org/10.1016/j.cmpb.2022.106731" target="_blank" style="word-break: break-all;">10.1016/j.cmpb.2022.106731</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>SD-UNet: A Novel Segmentation Framework for CT Images of Lung Infections</td>
+                        <td>Electronics</td>
+                        <td><a href="https://doi.org/10.3390/electronics11010130" target="_blank" style="word-break: break-all;">10.3390/electronics11010130</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Deep Learning-Based Diagnosis System for COVID-19 Detection and Pneumonia Screening Using CT Imaging</td>
+                        <td>Applied Sciences</td>
+                        <td><a href="https://doi.org/10.3390/app12104825" target="_blank" style="word-break: break-all;">10.3390/app12104825</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>COVID-19 detection from scarce chest x-ray image data using few-shot deep learning approach</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.1117/12.2581496" target="_blank" style="word-break: break-all;">10.1117/12.2581496</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Distance-based detection of out-of-distribution silent failures for Covid-19 lung lesion segmentation</td>
+                        <td>Medical Image Analysis</td>
+                        <td><a href="https://doi.org/10.1016/j.media.2022.102596" target="_blank" style="word-break: break-all;">10.1016/j.media.2022.102596</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>COVID-19 Detection: A Systematic Review of Machine and Deep Learning-Based Approaches Utilizing Chest X-Rays and CT Scans</td>
+                        <td>Cognitive Computation</td>
+                        <td><a href="https://doi.org/10.1007/s12559-022-10076-6" target="_blank" style="word-break: break-all;">10.1007/s12559-022-10076-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Dual attention multiple instance learning with unsupervised complementary loss for COVID-19 screening</td>
+                        <td>Medical Image Analysis</td>
+                        <td><a href="https://doi.org/10.1016/j.media.2021.102105" target="_blank" style="word-break: break-all;">10.1016/j.media.2021.102105</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Deep learning models for COVID-19 infected area segmentation in CT images</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1145/3453892.3461322" target="_blank" style="word-break: break-all;">10.1145/3453892.3461322</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Rethinking adversarial domain adaptation: Orthogonal decomposition for unsupervised domain adaptation in medical image segmentation</td>
+                        <td>Medical Image Analysis</td>
+                        <td><a href="https://doi.org/10.1016/j.media.2022.102623" target="_blank" style="word-break: break-all;">10.1016/j.media.2022.102623</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A modified <scp>DeepLabV3</scp>+ based semantic segmentation of chest computed tomography images for <scp>COVID</scp>‐19 lung infections</td>
+                        <td>International Journal of Imaging Systems and Technology</td>
+                        <td><a href="https://doi.org/10.1002/ima.22772" target="_blank" style="word-break: break-all;">10.1002/ima.22772</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>EMED-UNet: An Efficient Multi-Encoder-Decoder Based UNet for Medical Image Segmentation</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2023.3309158" target="_blank" style="word-break: break-all;">10.1109/access.2023.3309158</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Convolutional neural networks rarely learn shape for semantic segmentation</td>
+                        <td>Pattern Recognition</td>
+                        <td><a href="https://doi.org/10.1016/j.patcog.2023.110018" target="_blank" style="word-break: break-all;">10.1016/j.patcog.2023.110018</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>ATFormer: Advanced transformer for medical image segmentation</td>
+                        <td>Biomedical Signal Processing and Control</td>
+                        <td><a href="https://doi.org/10.1016/j.bspc.2023.105079" target="_blank" style="word-break: break-all;">10.1016/j.bspc.2023.105079</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>An Ambiguous Edge Detection Method for Computed Tomography Scans of Coronavirus Disease 2019 Cases</td>
+                        <td>IEEE Transactions on Systems Man and Cybernetics Systems</td>
+                        <td><a href="https://doi.org/10.1109/tsmc.2023.3307393" target="_blank" style="word-break: break-all;">10.1109/tsmc.2023.3307393</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Augmented Reality for COVID-19 Aid Diagnosis: Ct-Scan segmentation based Deep Learning</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/ispa54004.2022.9786298" target="_blank" style="word-break: break-all;">10.1109/ispa54004.2022.9786298</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>AKDC: Ambiguous Kernel Distance Clustering Algorithm for COVID-19 CT Scans Analysis</td>
+                        <td>IEEE Transactions on Systems Man and Cybernetics Systems</td>
+                        <td><a href="https://doi.org/10.1109/tsmc.2024.3418411" target="_blank" style="word-break: break-all;">10.1109/tsmc.2024.3418411</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Comparative benchmarking of failure detection methods in medical image segmentation: Unveiling the role of confidence aggregation</td>
+                        <td>Medical Image Analysis</td>
+                        <td><a href="https://doi.org/10.1016/j.media.2024.103392" target="_blank" style="word-break: break-all;">10.1016/j.media.2024.103392</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>LungXpertAI: A deep multi-task learning model for chest CT scan analysis and COVID-19 detection</td>
+                        <td>Biomedical Signal Processing and Control</td>
+                        <td><a href="https://doi.org/10.1016/j.bspc.2024.106866" target="_blank" style="word-break: break-all;">10.1016/j.bspc.2024.106866</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Automated Model Design and Benchmarking of Deep Learning Models for COVID-19 Detection with Chest CT Scans</td>
+                        <td>Proceedings of the AAAI Conference on Artificial Intelligence</td>
+                        <td><a href="https://doi.org/10.1609/aaai.v35i6.16614" target="_blank" style="word-break: break-all;">10.1609/aaai.v35i6.16614</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>LungINFseg: Segmenting COVID-19 Infected Regions in Lung CT Images Based on a Receptive-Field-Aware Deep Learning Framework</td>
+                        <td>Diagnostics</td>
+                        <td><a href="https://doi.org/10.3390/diagnostics11020158" target="_blank" style="word-break: break-all;">10.3390/diagnostics11020158</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td><scp>COLI‐Net</scp> : Deep <scp>learning‐assisted</scp> fully automated <scp>COVID</scp> ‐19 lung and infection pneumonia lesion detection and segmentation from chest computed tomography images</td>
+                        <td>International Journal of Imaging Systems and Technology</td>
+                        <td><a href="https://doi.org/10.1002/ima.22672" target="_blank" style="word-break: break-all;">10.1002/ima.22672</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>How does DICOM support big data management? Investigating its use in medical imaging community</td>
+                        <td>Insights into Imaging</td>
+                        <td><a href="https://doi.org/10.1186/s13244-021-01081-8" target="_blank" style="word-break: break-all;">10.1186/s13244-021-01081-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Multi-task semantic segmentation of CT images for COVID-19 infections using DeepLabV3+ based on dilated residual network</td>
+                        <td>Physical and Engineering Sciences in Medicine</td>
+                        <td><a href="https://doi.org/10.1007/s13246-022-01110-w" target="_blank" style="word-break: break-all;">10.1007/s13246-022-01110-w</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>COVIR: A virtual rendering of a novel NN architecture O-Net for COVID-19 Ct-scan automatic lung lesions segmentation</td>
+                        <td>Computers & Graphics</td>
+                        <td><a href="https://doi.org/10.1016/j.cag.2022.03.003" target="_blank" style="word-break: break-all;">10.1016/j.cag.2022.03.003</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>CHS-Net: A Deep Learning Approach for Hierarchical Segmentation of COVID-19 via CT Images</td>
+                        <td>Neural Processing Letters</td>
+                        <td><a href="https://doi.org/10.1007/s11063-022-10785-x" target="_blank" style="word-break: break-all;">10.1007/s11063-022-10785-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Cov-TransNet: Dual branch fusion network with transformer for COVID-19 infection segmentation</td>
+                        <td>Biomedical Signal Processing and Control</td>
+                        <td><a href="https://doi.org/10.1016/j.bspc.2022.104366" target="_blank" style="word-break: break-all;">10.1016/j.bspc.2022.104366</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Attention-RefNet: Interactive Attention Refinement Network for Infected Area Segmentation of COVID-19</td>
+                        <td>IEEE Journal of Biomedical and Health Informatics</td>
+                        <td><a href="https://doi.org/10.1109/jbhi.2021.3082527" target="_blank" style="word-break: break-all;">10.1109/jbhi.2021.3082527</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Deep insight: Convolutional neural network and its applications for COVID-19 prognosis</td>
+                        <td>Biomedical Signal Processing and Control</td>
+                        <td><a href="https://doi.org/10.1016/j.bspc.2021.102814" target="_blank" style="word-break: break-all;">10.1016/j.bspc.2021.102814</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A convolutional neural network with pixel-wise sparse graph reasoning for COVID-19 lesion segmentation in CT images</td>
+                        <td>Computers in Biology and Medicine</td>
+                        <td><a href="https://doi.org/10.1016/j.compbiomed.2023.106698" target="_blank" style="word-break: break-all;">10.1016/j.compbiomed.2023.106698</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Prior wavelet knowledge for multi-modal medical image segmentation using a lightweight neural network with attention guided features</td>
+                        <td>Expert Systems with Applications</td>
+                        <td><a href="https://doi.org/10.1016/j.eswa.2022.118166" target="_blank" style="word-break: break-all;">10.1016/j.eswa.2022.118166</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Image-based decision making for reliable and proper diagnosing in NIFTI format using watermarking</td>
+                        <td>Multimedia Tools and Applications</td>
+                        <td><a href="https://doi.org/10.1007/s11042-022-12192-9" target="_blank" style="word-break: break-all;">10.1007/s11042-022-12192-9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>DMDF-Net: Dual multiscale dilated fusion network for accurate segmentation of lesions related to COVID-19 in lung radiographic scans</td>
+                        <td>Expert Systems with Applications</td>
+                        <td><a href="https://doi.org/10.1016/j.eswa.2022.117360" target="_blank" style="word-break: break-all;">10.1016/j.eswa.2022.117360</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A dual-stage deep convolutional neural network for automatic diagnosis of COVID-19 and pneumonia from chest CT images</td>
+                        <td>Computers in Biology and Medicine</td>
+                        <td><a href="https://doi.org/10.1016/j.compbiomed.2022.105806" target="_blank" style="word-break: break-all;">10.1016/j.compbiomed.2022.105806</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>ADA-COVID: Adversarial Deep Domain Adaptation-Based Diagnosis of COVID-19 from Lung CT Scans Using Triplet Embeddings</td>
+                        <td>Computational Intelligence and Neuroscience</td>
+                        <td><a href="https://doi.org/10.1155/2022/2564022" target="_blank" style="word-break: break-all;">10.1155/2022/2564022</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Explainable COVID-19 Infections Identification and Delineation Using Calibrated Pseudo Labels</td>
+                        <td>IEEE Transactions on Emerging Topics in Computational Intelligence</td>
+                        <td><a href="https://doi.org/10.1109/tetci.2022.3189054" target="_blank" style="word-break: break-all;">10.1109/tetci.2022.3189054</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>MISeval: A Metric Library for Medical Image Segmentation Evaluation</td>
+                        <td>Studies in health technology and informatics</td>
+                        <td><a href="https://doi.org/10.3233/shti220391" target="_blank" style="word-break: break-all;">10.3233/shti220391</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Novel Lightweight Swin-Unet Network for Semantic Segmentation of COVID-19 Lesion in CT Images</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2022.3232721" target="_blank" style="word-break: break-all;">10.1109/access.2022.3232721</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>R<sup>2</sup>U3D: Recurrent Residual 3D U-Net for Lung Segmentation</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2021.3089704" target="_blank" style="word-break: break-all;">10.1109/access.2021.3089704</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Lung Segmentation and Characterization in COVID-19 Patients for Assessing Pulmonary Thromboembolism: An Approach Based on Deep Learning and Radiomics</td>
+                        <td>Electronics</td>
+                        <td><a href="https://doi.org/10.3390/electronics10202475" target="_blank" style="word-break: break-all;">10.3390/electronics10202475</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Mask-guided Attention Deep Learning Model for COVID-19 Diagnosis based on an Integrated CT Scan Images Database</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.36227/techrxiv.18166667" target="_blank" style="word-break: break-all;">10.36227/techrxiv.18166667</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A graph‐based edge attention gate medical image segmentation method</td>
+                        <td>IET Image Processing</td>
+                        <td><a href="https://doi.org/10.1049/ipr2.12780" target="_blank" style="word-break: break-all;">10.1049/ipr2.12780</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A mask-guided attention deep learning model for COVID-19 diagnosis based on an integrated CT scan images database</td>
+                        <td>IISE Transactions on Healthcare Systems Engineering</td>
+                        <td><a href="https://doi.org/10.1080/24725579.2022.2142866" target="_blank" style="word-break: break-all;">10.1080/24725579.2022.2142866</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Real-world federated learning in radiology: hurdles to overcome and benefits to gain</td>
+                        <td>Journal of the American Medical Informatics Association</td>
+                        <td><a href="https://doi.org/10.1093/jamia/ocae259" target="_blank" style="word-break: break-all;">10.1093/jamia/ocae259</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Enhancing medical image segmentation with a multi-transformer U-Net</td>
+                        <td>PeerJ</td>
+                        <td><a href="https://doi.org/10.7717/peerj.17005" target="_blank" style="word-break: break-all;">10.7717/peerj.17005</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A robust NIfTI image authentication framework to ensure reliable and safe diagnosis</td>
+                        <td>PeerJ Computer Science</td>
+                        <td><a href="https://doi.org/10.7717/peerj-cs.1323" target="_blank" style="word-break: break-all;">10.7717/peerj-cs.1323</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>MRL-Net: Multi-Scale Representation Learning Network for COVID-19 Lung CT Image Segmentation</td>
+                        <td>IEEE Journal of Biomedical and Health Informatics</td>
+                        <td><a href="https://doi.org/10.1109/jbhi.2023.3285936" target="_blank" style="word-break: break-all;">10.1109/jbhi.2023.3285936</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>3D unsupervised anomaly detection through virtual multi-view projection and reconstruction: Clinical validation on low-dose chest computed tomography</td>
+                        <td>Expert Systems with Applications</td>
+                        <td><a href="https://doi.org/10.1016/j.eswa.2023.121165" target="_blank" style="word-break: break-all;">10.1016/j.eswa.2023.121165</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>No More Training: SAM’s Zero-Shot Transfer Capabilities for Cost-Efficient Medical Image Segmentation</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2024.3353142" target="_blank" style="word-break: break-all;">10.1109/access.2024.3353142</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>MAEF-Net: MLP Attention for Feature Enhancement in U-Net based Medical Image Segmentation Networks</td>
+                        <td>IEEE Journal of Biomedical and Health Informatics</td>
+                        <td><a href="https://doi.org/10.1109/jbhi.2023.3332908" target="_blank" style="word-break: break-all;">10.1109/jbhi.2023.3332908</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Recent developments in segmentation of COVID-19 CT images using deep-learning: An overview of models, techniques and challenges</td>
+                        <td>Biomedical Signal Processing and Control</td>
+                        <td><a href="https://doi.org/10.1016/j.bspc.2024.105970" target="_blank" style="word-break: break-all;">10.1016/j.bspc.2024.105970</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>An enhanced tree-seed algorithm for global optimization and neural architecture search optimization in medical image segmentation</td>
+                        <td>Biomedical Signal Processing and Control</td>
+                        <td><a href="https://doi.org/10.1016/j.bspc.2024.107457" target="_blank" style="word-break: break-all;">10.1016/j.bspc.2024.107457</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>COVID-19 infection segmentation using hybrid deep learning and image processing techniques</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-023-49337-1" target="_blank" style="word-break: break-all;">10.1038/s41598-023-49337-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Advances in medical image analysis: A comprehensive survey of lung infection detection</td>
+                        <td>IET Image Processing</td>
+                        <td><a href="https://doi.org/10.1049/ipr2.13246" target="_blank" style="word-break: break-all;">10.1049/ipr2.13246</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A fast residual attention network for fine-grained unsupervised anomaly detection and localization</td>
+                        <td>Applied Soft Computing</td>
+                        <td><a href="https://doi.org/10.1016/j.asoc.2024.112066" target="_blank" style="word-break: break-all;">10.1016/j.asoc.2024.112066</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Evaluating Super-Resolution Models in Biomedical Imaging: Applications and Performance in Segmentation and Classification</td>
+                        <td>Journal of Imaging</td>
+                        <td><a href="https://doi.org/10.3390/jimaging11040104" target="_blank" style="word-break: break-all;">10.3390/jimaging11040104</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Translated Skip Connections - Expanding the Receptive Fields of Fully Convolutional Neural Networks</td>
+                        <td>2022 IEEE International Conference on Image Processing (ICIP)</td>
+                        <td><a href="https://doi.org/10.1109/icip46576.2022.9897165" target="_blank" style="word-break: break-all;">10.1109/icip46576.2022.9897165</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Point-annotation supervision for robust 3D pulmonary infection segmentation by CT-based cascading deep learning</td>
+                        <td>Computers in Biology and Medicine</td>
+                        <td><a href="https://doi.org/10.1016/j.compbiomed.2025.109760" target="_blank" style="word-break: break-all;">10.1016/j.compbiomed.2025.109760</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Combination of 2D and 3D nnU-Net for ground glass opacity segmentation in CT images of Post-COVID-19 patients</td>
+                        <td>Computers in Biology and Medicine</td>
+                        <td><a href="https://doi.org/10.1016/j.compbiomed.2025.110376" target="_blank" style="word-break: break-all;">10.1016/j.compbiomed.2025.110376</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Residual Attention Deep SVDD for COVID-19 Diagnosis Using CT Scans</td>
+                        <td>Computers, materials & continua/Computers, materials & continua (Print)</td>
+                        <td><a href="https://doi.org/10.32604/cmc.2023.033413" target="_blank" style="word-break: break-all;">10.32604/cmc.2023.033413</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Quantitative Assessment of Chest CT Patterns in COVID-19 and Bacterial Pneumonia Patients: a Deep Learning Perspective</td>
+                        <td>Journal of Korean Medical Science</td>
+                        <td><a href="https://doi.org/10.3346/jkms.2021.36.e46" target="_blank" style="word-break: break-all;">10.3346/jkms.2021.36.e46</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Advancing Covid‑19 differentiation with a robust preprocessing and integration of multi‑institutional open‑repository computer tomography datasets for deep learning analysis</td>
+                        <td>Experimental and Therapeutic Medicine</td>
+                        <td><a href="https://doi.org/10.3892/etm.2020.9210" target="_blank" style="word-break: break-all;">10.3892/etm.2020.9210</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Performance analysis of lightweight CNN models to segment infectious lung tissues of COVID-19 cases from tomographic images</td>
+                        <td>PeerJ Computer Science</td>
+                        <td><a href="https://doi.org/10.7717/peerj-cs.368" target="_blank" style="word-break: break-all;">10.7717/peerj-cs.368</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Software system to predict the infection in <scp>COVID</scp>‐19 patients using deep learning and web of things</td>
+                        <td>Software Practice and Experience</td>
+                        <td><a href="https://doi.org/10.1002/spe.3011" target="_blank" style="word-break: break-all;">10.1002/spe.3011</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Analysis of lung scan imaging using deep multi‐task learning structure for Covid‐19 disease</td>
+                        <td>IET Image Processing</td>
+                        <td><a href="https://doi.org/10.1049/ipr2.12736" target="_blank" style="word-break: break-all;">10.1049/ipr2.12736</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Lung and Infection CT-Scan-Based Segmentation with 3D UNet Architecture and Its Modification</td>
+                        <td>Healthcare</td>
+                        <td><a href="https://doi.org/10.3390/healthcare11020213" target="_blank" style="word-break: break-all;">10.3390/healthcare11020213</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A deep adversarial model for segmentation-assisted COVID-19 diagnosis using CT images</td>
+                        <td>EURASIP Journal on Advances in Signal Processing</td>
+                        <td><a href="https://doi.org/10.1186/s13634-022-00842-x" target="_blank" style="word-break: break-all;">10.1186/s13634-022-00842-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Unsupervised segmentation and quantification of COVID-19 lesions on computed Tomography scans using CycleGAN</td>
+                        <td>Methods</td>
+                        <td><a href="https://doi.org/10.1016/j.ymeth.2022.07.007" target="_blank" style="word-break: break-all;">10.1016/j.ymeth.2022.07.007</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Classification Performance for COVID Patient Prognosis from Automatic AI Segmentation—A Single-Center Study</td>
+                        <td>Applied Sciences</td>
+                        <td><a href="https://doi.org/10.3390/app11125438" target="_blank" style="word-break: break-all;">10.3390/app11125438</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Domain-Adaptive Artificial Intelligence-Based Model for Personalized Diagnosis of Trivial Lesions Related to COVID-19 in Chest Computed Tomography Scans</td>
+                        <td>Journal of Personalized Medicine</td>
+                        <td><a href="https://doi.org/10.3390/jpm11101008" target="_blank" style="word-break: break-all;">10.3390/jpm11101008</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Let AI Perform Better Next Time—A Systematic Review of Medical Imaging-Based Automated Diagnosis of COVID-19: 2020–2022</td>
+                        <td>Applied Sciences</td>
+                        <td><a href="https://doi.org/10.3390/app12083895" target="_blank" style="word-break: break-all;">10.3390/app12083895</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Semi-supervised COVID-19 volumetric pulmonary lesion estimation on CT images using probabilistic active contour and CNN segmentation</td>
+                        <td>Biomedical Signal Processing and Control</td>
+                        <td><a href="https://doi.org/10.1016/j.bspc.2023.104905" target="_blank" style="word-break: break-all;">10.1016/j.bspc.2023.104905</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>DW-UNet: Loss Balance under Local-Patch for 3D Infection Segmentation from COVID-19 CT Images</td>
+                        <td>Diagnostics</td>
+                        <td><a href="https://doi.org/10.3390/diagnostics11111942" target="_blank" style="word-break: break-all;">10.3390/diagnostics11111942</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Detecting When Pre-trained nnU-Net Models Fail Silently for Covid-19 Lung Lesion Segmentation</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-87234-2_29" target="_blank" style="word-break: break-all;">10.1007/978-3-030-87234-2_29</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>The Dahu graph-cut for interactive segmentation on 2D/3D images</td>
+                        <td>Pattern Recognition</td>
+                        <td><a href="https://doi.org/10.1016/j.patcog.2022.109207" target="_blank" style="word-break: break-all;">10.1016/j.patcog.2022.109207</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>An efficient deep multi‐task learning structure for covid‐19 disease</td>
+                        <td>IET Image Processing</td>
+                        <td><a href="https://doi.org/10.1049/ipr2.12893" target="_blank" style="word-break: break-all;">10.1049/ipr2.12893</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Content preserving image translation with texture co-occurrence and spatial self-similarity for texture debiasing and domain adaptation</td>
+                        <td>Neural Networks</td>
+                        <td><a href="https://doi.org/10.1016/j.neunet.2023.07.049" target="_blank" style="word-break: break-all;">10.1016/j.neunet.2023.07.049</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Weakly-supervised lesion analysis with a CNN-based framework for COVID-19</td>
+                        <td>Physics in Medicine and Biology</td>
+                        <td><a href="https://doi.org/10.1088/1361-6560/ac4316" target="_blank" style="word-break: break-all;">10.1088/1361-6560/ac4316</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>U-TranSvision: Transformer-based deep supervision approach for COVID-19 lesion segmentation on Computed Tomography images</td>
+                        <td>Biomedical Signal Processing and Control</td>
+                        <td><a href="https://doi.org/10.1016/j.bspc.2024.106167" target="_blank" style="word-break: break-all;">10.1016/j.bspc.2024.106167</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>CHDNet: A lightweight weakly supervised segmentation network for lung CT image</td>
+                        <td>Displays</td>
+                        <td><a href="https://doi.org/10.1016/j.displa.2024.102650" target="_blank" style="word-break: break-all;">10.1016/j.displa.2024.102650</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A combination between transfer learning models and UNet++ for COVID-19 diagnosis</td>
+                        <td>Multimedia Tools and Applications</td>
+                        <td><a href="https://doi.org/10.1007/s11042-024-20392-8" target="_blank" style="word-break: break-all;">10.1007/s11042-024-20392-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Encoder-decoder convolutional neural network for simple CT segmentation of COVID-19 infected lungs</td>
+                        <td>PeerJ Computer Science</td>
+                        <td><a href="https://doi.org/10.7717/peerj-cs.2178" target="_blank" style="word-break: break-all;">10.7717/peerj-cs.2178</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Lung lesion segmentation of CT scans after SARS-CoV-2 infection: combining nonhuman primate with human data for inter-species transfer learning</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1117/12.3006206" target="_blank" style="word-break: break-all;">10.1117/12.3006206</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Simultaneous segmentation and classification of lung CT scans for COVID-19 diagnosis: a deep multi-task learning perspective</td>
+                        <td>Neural Computing and Applications</td>
+                        <td><a href="https://doi.org/10.1007/s00521-024-10809-8" target="_blank" style="word-break: break-all;">10.1007/s00521-024-10809-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>An efficient dual path deep learning framework for COVID-19 classification using lung CT scans with explainable AI</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-025-33178-1" target="_blank" style="word-break: break-all;">10.1038/s41598-025-33178-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>A Weakly Supervised Consistency-based Learning Method for COVID-19 Segmentation in CT Images</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.1109/wacv48630.2021.00250" target="_blank" style="word-break: break-all;">10.1109/wacv48630.2021.00250</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Authentication of NIfTI Neuroimages Using Lifting Wavelet Transform, Arnold Cat Map, Z-Transform, and Hessenberg Decomposition</td>
+                        <td>Traitement du signal</td>
+                        <td><a href="https://doi.org/10.18280/ts.390127" target="_blank" style="word-break: break-all;">10.18280/ts.390127</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Mask-guided Attention Deep Learning Model for COVID-19 Diagnosis based on an Integrated CT Scan Images Database</td>
+                        <td>Figshare</td>
+                        <td><a href="https://doi.org/10.36227/techrxiv.18166667.v1" target="_blank" style="word-break: break-all;">10.36227/techrxiv.18166667.v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A proposed artificial intelligence workflow to address application challenges leveraged on algorithm uncertainty</td>
+                        <td>iScience</td>
+                        <td><a href="https://doi.org/10.1016/j.isci.2022.103961" target="_blank" style="word-break: break-all;">10.1016/j.isci.2022.103961</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Automated deep learning-based segmentation of COVID-19 lesions from chest computed tomography images</td>
+                        <td>Polish Journal of Radiology</td>
+                        <td><a href="https://doi.org/10.5114/pjr.2022.119027" target="_blank" style="word-break: break-all;">10.5114/pjr.2022.119027</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Secure NIfTI Image Authentication Scheme for Modern Healthcare System</td>
+                        <td>Applied Sciences</td>
+                        <td><a href="https://doi.org/10.3390/app13095308" target="_blank" style="word-break: break-all;">10.3390/app13095308</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>A Deep Learning Approach For Improved Segmentation Of Lesions Related To Covid-19 Chest CT Scans</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/isbi48211.2021.9434139" target="_blank" style="word-break: break-all;">10.1109/isbi48211.2021.9434139</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Systematic investigation into generalization of COVID-19 CT deep learning models with Gabor ensemble for lung involvement scoring</td>
+                        <td>UTS ePRESS (University of Technology Sydney)</td>
+                        <td><a href="https://doi.org/10.31224/osf.io/tfqa4" target="_blank" style="word-break: break-all;">10.31224/osf.io/tfqa4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Turing test-inspired method for analysis of biases prevalent in artificial intelligence-based medical imaging</td>
+                        <td>AI and Ethics</td>
+                        <td><a href="https://doi.org/10.1007/s43681-022-00227-8" target="_blank" style="word-break: break-all;">10.1007/s43681-022-00227-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Study of Metadata Impact on COVID-19 Detection using Convolutional Neural Networks</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/iri54793.2022.00070" target="_blank" style="word-break: break-all;">10.1109/iri54793.2022.00070</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Identification and Severity Assessment of COVID-19 Using Lung CT Scans</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2023.3330238" target="_blank" style="word-break: break-all;">10.1109/access.2023.3330238</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>COVID-19 therapy optimization by AI-driven biomechanical simulations</td>
+                        <td>The European Physical Journal Plus</td>
+                        <td><a href="https://doi.org/10.1140/epjp/s13360-023-03744-5" target="_blank" style="word-break: break-all;">10.1140/epjp/s13360-023-03744-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Accurate segmentation of COVID-19 infected regions in lung CT scans with deep learning</td>
+                        <td>Neural Computing and Applications</td>
+                        <td><a href="https://doi.org/10.1007/s00521-024-10336-6" target="_blank" style="word-break: break-all;">10.1007/s00521-024-10336-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Factors determining generalization in deep learning models for scoring COVID-CT images</td>
+                        <td>Mathematical Biosciences & Engineering</td>
+                        <td><a href="https://doi.org/10.3934/mbe.2021456" target="_blank" style="word-break: break-all;">10.3934/mbe.2021456</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Transfer Learning via Parameter Regularization for Medical Image Segmentation</td>
+                        <td>2021 29th European Signal Processing Conference (EUSIPCO)</td>
+                        <td><a href="https://doi.org/10.23919/eusipco54536.2021.9616331" target="_blank" style="word-break: break-all;">10.23919/eusipco54536.2021.9616331</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Deep Ensemble Learning Approach to Lung CT Segmentation for Covid-19 Severity Assessment</td>
+                        <td>2022 IEEE International Conference on Image Processing (ICIP)</td>
+                        <td><a href="https://doi.org/10.1109/icip46576.2022.9897656" target="_blank" style="word-break: break-all;">10.1109/icip46576.2022.9897656</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>The STOIC2021 COVID-19 AI challenge: Applying reusable training methodologies to private data</td>
+                        <td>Medical Image Analysis</td>
+                        <td><a href="https://doi.org/10.1016/j.media.2024.103230" target="_blank" style="word-break: break-all;">10.1016/j.media.2024.103230</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>A Covid-19 Patient Severity Stratification using a 3D Convolutional Strategy on CT-Scans</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/isbi48211.2021.9434154" target="_blank" style="word-break: break-all;">10.1109/isbi48211.2021.9434154</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>CovSeg-Unet: End-to-End Method-based Computer-Aided Decision Support System in Lung COVID-19 Detection on CT Images</td>
+                        <td>International Journal of Advanced Computer Science and Applications</td>
+                        <td><a href="https://doi.org/10.14569/ijacsa.2022.0130162" target="_blank" style="word-break: break-all;">10.14569/ijacsa.2022.0130162</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Lightweight COVID-19 predictive model with Synthetic CT images using Conditional GAN &amp; Knowledge Distillation</td>
+                        <td>2022 International Conference for Advancement in Technology (ICONAT)</td>
+                        <td><a href="https://doi.org/10.1109/iconat53423.2022.9726022" target="_blank" style="word-break: break-all;">10.1109/iconat53423.2022.9726022</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>(Retracted) Review of artificial intelligence-assisted COVID-19 detection solutions using radiological images</td>
+                        <td>Journal of Electronic Imaging</td>
+                        <td><a href="https://doi.org/10.1117/1.jei.32.2.021405" target="_blank" style="word-break: break-all;">10.1117/1.jei.32.2.021405</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A deep learning model for segmentation of covid-19 infections using CT scans</td>
+                        <td>AIP conference proceedings</td>
+                        <td><a href="https://doi.org/10.1063/5.0093739" target="_blank" style="word-break: break-all;">10.1063/5.0093739</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Diagnosis Model of COVID-19 with Feature Loss</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/itca52113.2020.00146" target="_blank" style="word-break: break-all;">10.1109/itca52113.2020.00146</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Modified U-Net Based Covid-19 Lesion Segmentation Using CT Scans</td>
+                        <td>2022 IEEE International Conference on Signal Processing and Communications (SPCOM)</td>
+                        <td><a href="https://doi.org/10.1109/spcom55316.2022.9840780" target="_blank" style="word-break: break-all;">10.1109/spcom55316.2022.9840780</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Authentication of Lung CT-Scan Data in NIfTI Format Using LWT, Hessenberg Decomposition, and Affine Transform</td>
+                        <td>IETE Journal of Research</td>
+                        <td><a href="https://doi.org/10.1080/03772063.2023.2195372" target="_blank" style="word-break: break-all;">10.1080/03772063.2023.2195372</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Medical image segmentation using automated rough density approach</td>
+                        <td>Multimedia Tools and Applications</td>
+                        <td><a href="https://doi.org/10.1007/s11042-023-16921-6" target="_blank" style="word-break: break-all;">10.1007/s11042-023-16921-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Dmbg-Net: Dilated multiresidual boundary guidance network for COVID-19 infection segmentation</td>
+                        <td>Mathematical Biosciences & Engineering</td>
+                        <td><a href="https://doi.org/10.3934/mbe.2023892" target="_blank" style="word-break: break-all;">10.3934/mbe.2023892</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Improving Automated Lung Segmentation in Ct Images by Adding Anomalies Adjacent to the Pleura</td>
+                        <td>2022 IEEE 19th International Symposium on Biomedical Imaging (ISBI)</td>
+                        <td><a href="https://doi.org/10.1109/isbi52829.2022.9761592" target="_blank" style="word-break: break-all;">10.1109/isbi52829.2022.9761592</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Optimized attention U-Net for enhanced lung and area of infection segmentation in chest X-Rays and CT scans</td>
+                        <td>Journal of Radiation Research and Applied Sciences</td>
+                        <td><a href="https://doi.org/10.1016/j.jrras.2025.101650" target="_blank" style="word-break: break-all;">10.1016/j.jrras.2025.101650</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Fast Unsupervised Residual Attention GAN for COVID-19 Detection</td>
+                        <td>Communications in computer and information science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-16210-7_30" target="_blank" style="word-break: break-all;">10.1007/978-3-031-16210-7_30</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Role-Framework of Artificial Intelligence in Combating the COVID-19 Pandemic</td>
+                        <td>Intelligent systems reference library</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-75490-7_13" target="_blank" style="word-break: break-all;">10.1007/978-3-030-75490-7_13</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Segmentation and reconstruction of the lung in CT affected by COVID-19 using deep learning and adaptive convex hull</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1117/12.2606289" target="_blank" style="word-break: break-all;">10.1117/12.2606289</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Evaluating Transferability for Covid 3D Localization Using CT SARS-CoV-2 segmentation models</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1145/3529190.3534736" target="_blank" style="word-break: break-all;">10.1145/3529190.3534736</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Artificial intelligence for chest imaging against COVID-19: an insight into image segmentation methods</td>
+                        <td>Elsevier eBooks</td>
+                        <td><a href="https://doi.org/10.1016/b978-0-323-90531-2.00008-4" target="_blank" style="word-break: break-all;">10.1016/b978-0-323-90531-2.00008-4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Cutting-edge multi-task model: unveiling COVID-19 through fusion of image processing algorithms</td>
+                        <td>Computer Methods in Biomechanics and Biomedical Engineering Imaging & Visualization</td>
+                        <td><a href="https://doi.org/10.1080/21681163.2023.2287521" target="_blank" style="word-break: break-all;">10.1080/21681163.2023.2287521</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Personalized federated adaptive regularization for heterogeneous medical image classification: COVID-19 CT results</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/bibm58861.2023.10385702" target="_blank" style="word-break: break-all;">10.1109/bibm58861.2023.10385702</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A Customized 3D CNN Integrated with Convolutional Block Attention Module for Precise Diagnosis of COVID-19 and Pneumonia from CT Scan Images</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/iccit60459.2023.10441137" target="_blank" style="word-break: break-all;">10.1109/iccit60459.2023.10441137</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>DACov: a deeper analysis of data augmentation on the computed tomography segmentation problem</td>
+                        <td>Computer Methods in Biomechanics and Biomedical Engineering Imaging & Visualization</td>
+                        <td><a href="https://doi.org/10.1080/21681163.2023.2183807" target="_blank" style="word-break: break-all;">10.1080/21681163.2023.2183807</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A Systematic Literature Review of Deep Learning Algorithms for Segmentation of the COVID-19 Infection</td>
+                        <td>Computers, materials & continua/Computers, materials & continua (Print)</td>
+                        <td><a href="https://doi.org/10.32604/cmc.2023.038059" target="_blank" style="word-break: break-all;">10.32604/cmc.2023.038059</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Diagnosis and Proposed Treatment for COVID-19 Patients Based on Deep Learning Analysis of Computed Tomography Images</td>
+                        <td>Applied Sciences</td>
+                        <td><a href="https://doi.org/10.3390/app13137565" target="_blank" style="word-break: break-all;">10.3390/app13137565</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>CTextureFusion: Advanced Texture Transfer with Multi-head Attention for Improving Lung CT Super Resolution</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-78195-7_7" target="_blank" style="word-break: break-all;">10.1007/978-3-031-78195-7_7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>MA-Net:Mutex attention network for COVID-19 diagnosis on CT images</td>
+                        <td>Applied Intelligence</td>
+                        <td><a href="https://doi.org/10.1007/s10489-022-03431-5" target="_blank" style="word-break: break-all;">10.1007/s10489-022-03431-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Spatio-Temporal Split Learning for Privacy-Preserving Medical Platforms: Case Studies With COVID-19 CT, X-Ray, and Cholesterol Data</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2021.3108455" target="_blank" style="word-break: break-all;">10.1109/access.2021.3108455</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Transfer Learning with a Layer Dependent Regularization for Medical Image Segmentation</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-87589-3_17" target="_blank" style="word-break: break-all;">10.1007/978-3-030-87589-3_17</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Multitasking segmentation of lung and COVID-19 findings in CT scans using modified EfficientDet, UNet and MobileNetV3 models</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1117/12.2606118" target="_blank" style="word-break: break-all;">10.1117/12.2606118</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Efficient Deep Neural Network for an Automated Detection of COVID-19 using CT images</td>
+                        <td>2021 IEEE International Conference on Systems, Man, and Cybernetics (SMC)</td>
+                        <td><a href="https://doi.org/10.1109/smc52423.2021.9659019" target="_blank" style="word-break: break-all;">10.1109/smc52423.2021.9659019</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Spark in the Dark: Evaluating Encoder-Decoder Pairs for COVID-19 CT’s Semantic Segmentation</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.1109/lars/sbr/wre54079.2021.9605461" target="_blank" style="word-break: break-all;">10.1109/lars/sbr/wre54079.2021.9605461</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Determining and Measuring the Amount of Region Having COVID-19 on Lung Images</td>
+                        <td>Applied Computer Systems</td>
+                        <td><a href="https://doi.org/10.2478/acss-2021-0023" target="_blank" style="word-break: break-all;">10.2478/acss-2021-0023</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Analysing the Changes in Shape of Lung using Pseudo Zernike Moments in Comparison to Invariant Moments</td>
+                        <td>2022 2nd International Conference on Innovative Practices in Technology and Management (ICIPTM)</td>
+                        <td><a href="https://doi.org/10.1109/iciptm54933.2022.9754204" target="_blank" style="word-break: break-all;">10.1109/iciptm54933.2022.9754204</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Automatic Segmentation of COVID-19 Infection on Lung CT Scans using Mask R-CNN</td>
+                        <td>2022 International Congress on Human-Computer Interaction, Optimization and Robotic Applications (HORA)</td>
+                        <td><a href="https://doi.org/10.1109/hora55278.2022.9800029" target="_blank" style="word-break: break-all;">10.1109/hora55278.2022.9800029</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Light In The Black: An Evaluation of Data Augmentation Techniques for COVID-19 CT’s Semantic Segmentation</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.5753/sbcas.2022.222495" target="_blank" style="word-break: break-all;">10.5753/sbcas.2022.222495</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A Pipeline for the Diagnosis and Classification of Lung Lesions for Patients with COVID-19</td>
+                        <td>2022 IEEE 17th International Conference on Computer Sciences and Information Technologies (CSIT)</td>
+                        <td><a href="https://doi.org/10.1109/csit56902.2022.10000435" target="_blank" style="word-break: break-all;">10.1109/csit56902.2022.10000435</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Segmentação de Infecções Pulmonares de COVID-19 com a Rede Mask R-CNN</td>
+                        <td>Journal of Health Informatics</td>
+                        <td><a href="https://doi.org/10.59681/2175-4411.v15.iespecial.2023.1100" target="_blank" style="word-break: break-all;">10.59681/2175-4411.v15.iespecial.2023.1100</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A Fast and Reliable Approach for COVID-19 Detection from CT-Scan Images</td>
+                        <td>Journal of Information Systems Engineering and Business Intelligence</td>
+                        <td><a href="https://doi.org/10.20473/jisebi.9.2.288-304" target="_blank" style="word-break: break-all;">10.20473/jisebi.9.2.288-304</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>COVID-CT-Dataset: A CT Scan Dataset about COVID-19</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2003.13865" target="_blank" style="word-break: break-all;">10.48550/arxiv.2003.13865</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>MosMedData: Chest CT Scans with COVID-19 Related Findings Dataset</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2020.05.20.20100362" target="_blank" style="word-break: break-all;">10.1101/2020.05.20.20100362</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>COVID-19 Open Source Data Sets: A Comprehensive Survey</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2020.05.19.20107532" target="_blank" style="word-break: break-all;">10.1101/2020.05.19.20107532</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Benchmarking Deep Learning Models and Automated Model Design for COVID-19 Detection with Chest CT Scans</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2020.06.08.20125963" target="_blank" style="word-break: break-all;">10.1101/2020.06.08.20125963</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Deep learning models for COVID-19 infected area segmentation in CT images</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2020.05.08.20094664" target="_blank" style="word-break: break-all;">10.1101/2020.05.08.20094664</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>MiniSeg: An Extremely Minimum Network for Efficient COVID-19 Segmentation</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2004.09750" target="_blank" style="word-break: break-all;">10.48550/arxiv.2004.09750</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Automated Chest CT Image Segmentation of COVID-19 Lung Infection based on 3D U-Net</td>
+                        <td>Zenodo (CERN European Organization for Nuclear Research)</td>
+                        <td><a href="https://doi.org/10.5281/zenodo.3902293" target="_blank" style="word-break: break-all;">10.5281/zenodo.3902293</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>COVID-CT-MD: COVID-19 Computed Tomography (CT) Scan Dataset Applicable in Machine Learning and Deep Learning</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2009.14623" target="_blank" style="word-break: break-all;">10.48550/arxiv.2009.14623</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Segmentation and Evaluation of COVID-19 Lesion from CT scan Slices - A Study with Kapur/Otsu Function and Cuckoo Search Algorithm</td>
+                        <td>Research Square (Research Square)</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-40148/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-40148/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>A Weakly Supervised Region-Based Active Learning Method for COVID-19 Segmentation in CT Images</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2007.07012" target="_blank" style="word-break: break-all;">10.48550/arxiv.2007.07012</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Comparative study of deep learning methods for the automatic segmentation of lung, lesion and lesion type in CT scans of COVID-19 patients</td>
+                        <td>VUBIR (Vrije Universiteit Brussel)</td>
+                        <td><a href="https://doi.org/10.5281/zenodo.5847471" target="_blank" style="word-break: break-all;">10.5281/zenodo.5847471</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Does Non-COVID19 Lung Lesion Help? Investigating Transferability in COVID-19 CT Image Segmentation</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2006.13877" target="_blank" style="word-break: break-all;">10.48550/arxiv.2006.13877</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Automated Model Design and Benchmarking of 3D Deep Learning Models for COVID-19 Detection with Chest CT Scans</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2101.05442" target="_blank" style="word-break: break-all;">10.48550/arxiv.2101.05442</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Trustworthy Medical Segmentation with Uncertainty Estimation.</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Auto-diagnosis of COVID-19 using Lung CT Images with Semi-supervised Shallow Learning Network</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-34596/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-34596/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Constrained Multiview Representation for Self-Supervised Contrastive Learning</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.4798864" target="_blank" style="word-break: break-all;">10.2139/ssrn.4798864</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Auto-diagnosis of COVID-19 using Lung CT Images with Semi-supervised Shallow Learning Network</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-34596/v2" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-34596/v2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>PSGR: Pixel-wise Sparse Graph Reasoning for COVID-19 Pneumonia Segmentation in CT Images</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2108.03809" target="_blank" style="word-break: break-all;">10.48550/arxiv.2108.03809</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>STCovidNet: Automatic Detection Model of Novel Coronavirus Pneumonia Based on Swin Transformer</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-1401026/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-1401026/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Symbolic Semantic Segmentation and Interpretation of COVID-19 Lung Infections in Chest CT volumes based on Emergent Languages</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2008.09866" target="_blank" style="word-break: break-all;">10.48550/arxiv.2008.09866</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Screening COVID-19 Based on CT/CXR Images & Building a Publicly Available CT-scan Dataset of COVID-19</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Diagnosis/Prognosis of COVID-19 Images: Challenges, Opportunities, and Applications</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2012.14106" target="_blank" style="word-break: break-all;">10.48550/arxiv.2012.14106</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Dual Attention Multiple Instance Learning with Unsupervised Complementary Loss for COVID-19 Screening</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2020.09.14.20194654" target="_blank" style="word-break: break-all;">10.1101/2020.09.14.20194654</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Quantitative Assessment of Chest CT Patterns in COVID-19 and Bacterial Pneumonia patients: A Deep Learning Perspective</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2020.11.13.20231118" target="_blank" style="word-break: break-all;">10.1101/2020.11.13.20231118</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Automatic CT Quantification of Coronavirus Disease 2019 pneumonia: An international collaborative development, validation, and clinical implication</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-48290/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-48290/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>A Novel Automated Method for COVID-19 Infection and Lung Segmentation using Deep Neural Networks</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-86796/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-86796/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Detection of COVID-19 Lung Lesions in Computed Tomography Images Using Deep Learning</td>
+                        <td>Revista Mexicana de Ingeniería Biomédica</td>
+                        <td><a href="https://doi.org/10.17488/rmib.43.1.1" target="_blank" style="word-break: break-all;">10.17488/rmib.43.1.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Composite Deep Network with Feature Weighting for Improved Delineation of COVID Infection in Lung CT</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.01.17.23284673" target="_blank" style="word-break: break-all;">10.1101/2023.01.17.23284673</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Convolutional Neural Networks Rarely Learn Shape for Semantic Segmentation</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2305.06568" target="_blank" style="word-break: break-all;">10.48550/arxiv.2305.06568</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Development and evaluation of a 3D annotation software for interactive COVID-19 lesion segmentation in chest CT</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2012.14752" target="_blank" style="word-break: break-all;">10.48550/arxiv.2012.14752</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>COVID-19 Lung Lesion Segmentation Using a Sparsely Supervised Mask R-CNN on Chest X-rays Automatically Computed from Volumetric CTs</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>A novel internet of things based on deep neural network framework using soft-attention convolutional neural networks for COVID-19 detection</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-2073361/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-2073361/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>FULL-SCALE DEEPLY SUPERVISED ATTENTION NETWORK FOR SEGMENTING COVID-19 LESIONS</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2022.10.26.22281561" target="_blank" style="word-break: break-all;">10.1101/2022.10.26.22281561</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Multi-Site Split Learning for Privacy-Preserving Medical Systems under Data Imbalance Constraints: A Feasibility Study with COVID-19, X-Ray, and Cholesterol Dataset</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-888423/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-888423/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>COVID-19 Lung Segmentation</td>
+                        <td>The Journal of Open Source Software</td>
+                        <td><a href="https://doi.org/10.21105/joss.03447" target="_blank" style="word-break: break-all;">10.21105/joss.03447</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Data Generation using Texture Co-occurrence and Spatial Self-Similarity for Debiasing.</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>An automated method for segmentation of COVID-19 lesions based on Computed Tomography using deep learning methods</td>
+                        <td>2021 IEEE Symposium on Computers and Communications (ISCC)</td>
+                        <td><a href="https://doi.org/10.1109/iscc53001.2021.9631534" target="_blank" style="word-break: break-all;">10.1109/iscc53001.2021.9631534</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Peer Review #1 of "Performance analysis of lightweight CNN models to segment infectious lung tissues of COVID-19 cases from tomographic images (v0.2)"</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.7287/peerj-cs.368v0.2/reviews/1" target="_blank" style="word-break: break-all;">10.7287/peerj-cs.368v0.2/reviews/1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Peer Review #2 of "Performance analysis of lightweight CNN models to segment infectious lung tissues of COVID-19 cases from tomographic images (v0.2)"</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.7287/peerj-cs.368v0.2/reviews/2" target="_blank" style="word-break: break-all;">10.7287/peerj-cs.368v0.2/reviews/2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Peer Review #1 of "Performance analysis of lightweight CNN models to segment infectious lung tissues of COVID-19 cases from tomographic images (v0.1)"</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.7287/peerj-cs.368v0.1/reviews/1" target="_blank" style="word-break: break-all;">10.7287/peerj-cs.368v0.1/reviews/1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Peer Review #2 of "Performance analysis of lightweight CNN models to segment infectious lung tissues of COVID-19 cases from tomographic images (v0.1)"</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.7287/peerj-cs.368v0.1/reviews/2" target="_blank" style="word-break: break-all;">10.7287/peerj-cs.368v0.1/reviews/2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>A Deep Adversarial Model for Segmentation Assisted COVID-19 Diagnosis Using CT Images</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-1147701/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-1147701/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>DuCN: Dual-Children Network for Medical Diagnosis and Similar Case Recommendation Towards COVID-19</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-90874-4_15" target="_blank" style="word-break: break-all;">10.1007/978-3-030-90874-4_15</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>COVID-19 Volumetric Pulmonary Lesion Estimation on CT Images Based on Probabilistic Active Contour and CNN Segmentation</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.4121063" target="_blank" style="word-break: break-all;">10.2139/ssrn.4121063</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>COVID-19 Volumetric Pulmonary Lesion Estimation on CT Images Based on Probabilistic Active Contour and CNN Segmentation</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.4192612" target="_blank" style="word-break: break-all;">10.2139/ssrn.4192612</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Target region preserving smoothing for selective image segmentation</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-2154107/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-2154107/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Transferability Limitations for Covid 3D Localization Using SARS-CoV-2 Segmentation Models in 4D CT Images</td>
+                        <td>Lecture notes in computer science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-20716-7_25" target="_blank" style="word-break: break-all;">10.1007/978-3-031-20716-7_25</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Classificação e Segmentação de COVID-19 em Imagens de Tomografia Computadorizada Usando Aprendizado Profundo</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.5753/sbc.10508.0.4" target="_blank" style="word-break: break-all;">10.5753/sbc.10508.0.4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>COVID-19 Detection Using Deep Learning Based Medical Image Segmentation</td>
+                        <td>Communications in computer and information science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-22405-8_10" target="_blank" style="word-break: break-all;">10.1007/978-3-031-22405-8_10</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Identification and Severity Assessment of COVID-19 using Lung CT Scans</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.36227/techrxiv.22181980.v1" target="_blank" style="word-break: break-all;">10.36227/techrxiv.22181980.v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A Lightweight Segmentation Network Based on Weak Supervision for COVID-19 Detection</td>
+                        <td>Communications in computer and information science</td>
+                        <td><a href="https://doi.org/10.1007/978-981-99-0856-1_7" target="_blank" style="word-break: break-all;">10.1007/978-981-99-0856-1_7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Detection Covid-19 Infection of Lung CT Scan Slices Images Based on a Transfer Learning and GRAD-CAM</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icdsic56987.2022.10075821" target="_blank" style="word-break: break-all;">10.1109/icdsic56987.2022.10075821</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Monte Carlo Simulation of Cone X-ray Beam and Dose Scoring on Voxel Phantom with Open Source Software EGSnrcmp</td>
+                        <td>Annals of Emerging Technologies in Computing</td>
+                        <td><a href="https://doi.org/10.33166/aetic.2023.02.003" target="_blank" style="word-break: break-all;">10.33166/aetic.2023.02.003</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>ПРОЦЕС ІДЕНТИФІКАЦІЇ УРАЖЕНЬ ЛЕГЕНІВ НА ЗНІМКАХ КОМП’ЮТЕРНОЇ ТОМОГРАФІЇ ПРИ COVID-19</td>
+                        <td>Біомедична інженерія і технологія</td>
+                        <td><a href="https://doi.org/10.20535/2617-8974.2023.9.277490" target="_blank" style="word-break: break-all;">10.20535/2617-8974.2023.9.277490</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Identification and Severity Assessment of COVID-19 using Lung CT Scans</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.36227/techrxiv.22181980.v2" target="_blank" style="word-break: break-all;">10.36227/techrxiv.22181980.v2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>An efficient quantification of <scp>COVID</scp>‐19 in chest <scp>CT</scp> images with improved semantic segmentation using <scp>U‐Net</scp> deep structure</td>
+                        <td>International Journal of Imaging Systems and Technology</td>
+                        <td><a href="https://doi.org/10.1002/ima.22930" target="_blank" style="word-break: break-all;">10.1002/ima.22930</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Detection of COVID-19 lesions based on computed tomography using U-Net 2.5D and GAN</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.5753/sbcas.2023.229466" target="_blank" style="word-break: break-all;">10.5753/sbcas.2023.229466</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Full-Scale Deeply Supervised Attention Network for Segmenting COVID-19 Lesions</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/isbi53787.2023.10230579" target="_blank" style="word-break: break-all;">10.1109/isbi53787.2023.10230579</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Automatic statistical diagnosis of COVID-19 based on multi-modal CT feature extraction</td>
+                        <td>Meta-Radiology</td>
+                        <td><a href="https://doi.org/10.1016/j.metrad.2023.100018" target="_blank" style="word-break: break-all;">10.1016/j.metrad.2023.100018</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>COVID-19 Lung Patch Segmentation Using COVSeg-NET</td>
+                        <td>Lecture notes in networks and systems</td>
+                        <td><a href="https://doi.org/10.1007/978-981-99-4284-8_24" target="_blank" style="word-break: break-all;">10.1007/978-981-99-4284-8_24</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>COVID-19 Diagnosis Using Deep Learning Algorithms Based on Chest CT Scan: A Survey</td>
+                        <td>Journal of Al-Qadisiyah for Computer Science and Mathematics</td>
+                        <td><a href="https://doi.org/10.29304/jqcm.2023.15.3.1274" target="_blank" style="word-break: break-all;">10.29304/jqcm.2023.15.3.1274</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Identification and Severity Assessment of COVID-19 Using Lung CT Scans</td>
+                        <td>Figshare</td>
+                        <td><a href="https://doi.org/10.36227/techrxiv.22181980.v3" target="_blank" style="word-break: break-all;">10.36227/techrxiv.22181980.v3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>DP-UNet:Dual Branch Attention Multi-Layer Encoder and Progressive Fused Pyramid Pooling Network for Covid-19 Infection Region Segmentation</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.4654150" target="_blank" style="word-break: break-all;">10.2139/ssrn.4654150</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Roadmaps for Guiding Chest Computed Tomography Interpretation involving Pneumonia <sup>*</sup></td>
+                        <td>PubMed</td>
+                        <td><a href="https://doi.org/10.1109/embc40787.2023.10340639" target="_blank" style="word-break: break-all;">10.1109/embc40787.2023.10340639</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A review of medical image-based diagnosis of COVID-19</td>
+                        <td>Progress in Medical Devices</td>
+                        <td><a href="https://doi.org/10.61189/323428onxlas" target="_blank" style="word-break: break-all;">10.61189/323428onxlas</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>COVID-19 CT Scan Image Segmentation Using Quantum-Clustering Approach</td>
+                        <td>Brain informatics and health</td>
+                        <td><a href="https://doi.org/10.1007/978-981-99-9939-2_6" target="_blank" style="word-break: break-all;">10.1007/978-981-99-9939-2_6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Human-assisted design of convolutional encoders for pulmonary anomaly analysis in CT images of the thorax</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.47749/t/unicamp.2023.1378893" target="_blank" style="word-break: break-all;">10.47749/t/unicamp.2023.1378893</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A Study of U-Net-Based Architectures for Segmenting COVID-19 Lung Lesions</td>
+                        <td>Communications in computer and information science</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-75233-9_6" target="_blank" style="word-break: break-all;">10.1007/978-3-031-75233-9_6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Pulmonary Parenchyma and COVID-19 Lesion Volumetric Segmentation Based on Probabilistic Active Contours</td>
+                        <td>World Congress on Medical Physics and Biomedical Engineering, September 7 - 12, 2009, Munich, Germany</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-82123-3_39" target="_blank" style="word-break: break-all;">10.1007/978-3-031-82123-3_39</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A hybrid model for the clinical manifestation severity assessment of COVID-19 based on Chest CT Images</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1145/3706890.3706937" target="_blank" style="word-break: break-all;">10.1145/3706890.3706937</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Integration of CA attention and KAN algorithm to predict EGFR mutation status in lung cancer</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.02.20.25322637" target="_blank" style="word-break: break-all;">10.1101/2025.02.20.25322637</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Manual segmentation of opacities and consolidations on CT of long COVID patients from multiple annotators</td>
+                        <td>Scientific Data</td>
+                        <td><a href="https://doi.org/10.1038/s41597-025-04709-2" target="_blank" style="word-break: break-all;">10.1038/s41597-025-04709-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Development and multicentric external validation of a prognostic COVID-19 severity model based on thoracic CT</td>
+                        <td>BMC Medical Informatics and Decision Making</td>
+                        <td><a href="https://doi.org/10.1186/s12911-025-02983-z" target="_blank" style="word-break: break-all;">10.1186/s12911-025-02983-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Estimation of the Severity Level of COVID-19 Contagion in Chest CT Images Using Attention-Residual U-Net Structure and Fuzzy Logic Model</td>
+                        <td>Lecture notes in networks and systems</td>
+                        <td><a href="https://doi.org/10.1007/978-981-96-3372-2_23" target="_blank" style="word-break: break-all;">10.1007/978-981-96-3372-2_23</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Munet: A Semi-Supervised Unet Model Enhanced by Medsam's Prior Knowledge for Covid-19 Pneumonia Infection Segmentation in Ct Images</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.5325704" target="_blank" style="word-break: break-all;">10.2139/ssrn.5325704</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td><scp>CMFR</scp> ‐Net: Cross Multi‐Scale Features Refinement Network for Medical Image Segmentation</td>
+                        <td>International Journal of Imaging Systems and Technology</td>
+                        <td><a href="https://doi.org/10.1002/ima.70167" target="_blank" style="word-break: break-all;">10.1002/ima.70167</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Towards building robust models for unimodal and multimodal medical imaging data</td>
+                        <td>Information Fusion</td>
+                        <td><a href="https://doi.org/10.1016/j.inffus.2025.103822" target="_blank" style="word-break: break-all;">10.1016/j.inffus.2025.103822</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>DTCR-U-Net: a dual-task consistency and multi-scale adaptive attention framework for pneumonia lesion segmentation</td>
+                        <td>Medical & Biological Engineering & Computing</td>
+                        <td><a href="https://doi.org/10.1007/s11517-026-03537-9" target="_blank" style="word-break: break-all;">10.1007/s11517-026-03537-9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>LobePrior segments lung lobes on computed tomography images in the presence of severe abnormalities</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-026-48136-8" target="_blank" style="word-break: break-all;">10.1038/s41598-026-48136-8</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-06-02T10:56:00+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' citing works (most recent first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+    
+    <script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
+</body>
+</html>

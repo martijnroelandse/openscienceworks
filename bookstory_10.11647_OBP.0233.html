@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BookStory – Mendl Mann’s &#x27;The Fall of Berlin&#x27;</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f4f6;
+      color: #111827;
+    }
+    .page {
+      max-width: 1000px;
+      margin: 2.5rem auto;
+      padding: 0 1.25rem 3rem;
+    }
+    header.hero {
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin: 0;
+      color: #111827;
+    }
+    .hero-meta {
+      margin-top: 0.5rem;
+      color: #4b5563;
+      font-size: 0.95rem;
+    }
+    .hero-meta div {
+      margin-bottom: 0.15rem;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 0.9rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+    .card h2 span {
+      color: #111827;
+      font-weight: 600;
+      text-transform: none;
+      font-size: 1.25rem;
+      letter-spacing: 0;
+    }
+    .story-text {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: #111827;
+    }
+    .doab-abstract {
+      margin-bottom: 0.5rem;
+    }
+    .story-text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .story-subheading {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0.4rem 0 0.2rem;
+      color: #4b5563;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+    .usage-chart {
+      margin-top: 0.5rem;
+    }
+    .usage-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.15rem 0;
+      font-size: 0.85rem;
+    }
+    .toolbar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 0.75rem;
+    }
+    .event-summary-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+      gap: 1.25rem;
+      margin-top: 0.25rem;
+    }
+    @media (max-width: 800px) {
+      .event-summary-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+    .event-source-list,
+    .event-examples-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.25rem 0 0;
+    }
+    .event-source-item,
+    .event-example-item {
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .event-example-meta {
+      margin-bottom: 0.2rem;
+    }
+    .event-example-date {
+      font-size: 0.8rem;
+    }
+    .event-footnote {
+      margin-top: 0.75rem;
+    }
+
+    .download-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      background: #111827;
+      color: #f9fafb;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
+    }
+    .download-btn:hover {
+      opacity: 0.9;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+      .page {
+        margin: 0;
+        max-width: 100%;
+        box-shadow: none;
+      }
+      .card {
+        box-shadow: none;
+        border-radius: 0;
+        page-break-inside: avoid;
+      }
+      .toolbar {
+        display: none;  /* hide button on PDF/print */
+      }
+    }
+    .usage-month {
+      width: 2.5rem;
+      color: #6b7280;
+    }
+    .usage-bar-wrap {
+      flex: 1;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+      height: 0.45rem;
+    }
+    .usage-bar {
+      height: 100%;
+      border-radius: 999px;
+      background: #2563eb;
+    }
+    .usage-value {
+      width: 3rem;
+      text-align: right;
+      color: #374151;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .logo-wrap img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .cover-wrap img {
+      width: 110px;
+      height: auto;
+      border-radius: 0.5rem;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
+      object-fit: cover;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+    ul {
+      padding-left: 1.2rem;
+      margin: 0.4rem 0 0;
+    }
+    li {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    a, li {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: #e5f2ff;
+      color: #1d4ed8;
+      font-size: 0.8rem;
+      margin: 0.1rem 0.2rem 0.1rem 0;
+    }
+    .tag-soft {
+      background: #f3f4f6;
+      color: #4b5563;
+    }
+    .tag-list {
+      display: inline-block;
+      margin-top: 0.15rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+    }
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 0.4rem 0.6rem;
+      vertical-align: top;
+    }
+    th {
+      background: #f9fafb;
+      text-align: left;
+      font-weight: 600;
+      color: #374151;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #4338ca;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .scite-link {
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+    .scite-link:hover {
+      text-decoration: underline;
+      color: #4b5563;
+    }
+    .orcid-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 0.3rem;
+      padding: 0.05rem 0.35rem;
+      border-radius: 999px;
+      background: #a6ce39; /* ORCID green */
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .muted {
+      color: #6b7280;
+      font-size: 0.85rem;
+    }
+    footer.page-footer {
+      margin-top: 2rem;
+      text-align: right;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+  </style>
+<body>
+  <div class="toolbar">
+    <button class="download-btn" onclick="window.print()">Download as PDF</button>
+  </div>
+  <div class="page">
+    <header class="hero">
+  <div class="header-bar">
+    <div class="logo-title">
+      <div class="logo-wrap">
+        <img src="bookstories-logo.png" alt="BookStories logo">
+      </div>
+      <div>
+        <h1 class="hero-title">Mendl Mann’s &#x27;The Fall of Berlin&#x27;</h1>
+        <div class="hero-meta">
+          <div><strong>Author(s):</strong> </div>
+          <div><strong>Publisher:</strong> Open Book Publishers</div>
+          <div><strong>Publication year:</strong> 2020</div>
+          <div><strong>DOI:</strong> 10.11647/OBP.0233</div>
+        </div>
+      </div>
+    </div>
+    <div class="cover-wrap"><img src="https://cdn.openbookpublishers.com/small_obp_logo_high_res_8ad3ef43d4.jpg" alt="Book cover for Mendl Mann’s &#x27;The Fall of Berlin&#x27;"></div>
+  </div>
+</header>
+
+
+<section class="card">
+  <h2><span>The story so far…</span></h2>
+  <div class="story-text-block">
+    <h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">Mendl Mann’s The Fall of Berlin (2020) has yet to register measurable citation or usage impact within scholarly communications. As a recent humanities publication from Open Book Publishers, its academic influence remains emergent, with potential for future uptake in historical scholarship pending broader dissemination and engagement.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">Published in 2020 by Open Book Publishers, Mendl Mann’s The Fall of Berlin addresses a historical topic situated within the humanities. As an open access work with a DOI and presence on a dedicated landing page, it benefits from accessibility conditions favorable to academic engagement. However, quantitative evidence to date indicates minimal recorded scholarly impact: there are no citations reported in OpenAlex, no tracked usage on OAPEN or other platforms, no event data reflecting social media or online mention activity, and no evident adoption within Open Educational Resources listing platforms.</p>
+<p class="story-text">This absence of measurable impact metrics is not unusual for a recent monograph in history published under open access conditions. Humanities books—particularly those with narrower thematic focuses—often experience slower and more subtle reception patterns than articles in the sciences. Citation accumulation tends to be delayed by several years due to the longer publication timelines of monographs, the often specialized readership, and the slower pace of scholarly response in historical disciplines. Furthermore, uptake in teaching or public history contexts may not be immediately visible via conventional usage or altmetric data sources.</p>
+<p class="story-text">Given that the book’s concept labels identify it squarely within history, its primary users are likely academics, graduate students, and independent researchers with interests in Berlin’s historical narrative, particularly around the events that precipitate or follow its “fall.” The title suggests a focus on a pivotal historical period, which might hold relevance for ongoing debates or emerging historiographical trends, but without citation or event data, there is as yet no clear evidence that the book has influenced such discourse.</p>
+<p class="story-text">The lack of Open Educational Resources listing also suggests limited current adoption in formal teaching curricula, which could otherwise promote dissemination and engagement. Similarly, absence from OAPEN download records may reflect either low visibility or recent availability, though data limitations restrict certainty on download counts or geographic spread.</p>
+<p class="story-text">Looking ahead, the book’s future impact might be supported by several factors. Its open access model helps remove access barriers, which can incrementally promote awareness and use over time. If the book addresses underexplored aspects of Berlin’s history or offers an original interpretation or archival evidence, it could attract scholarly attention as debates in urban history, German studies, or Cold War historiography evolve. Engagement could also increase if the author and publisher pursue outreach strategies such as conference presentations, webinars, or integration into digital humanities projects.</p>
+<p class="story-text">It is important to acknowledge, however, that the available data reflect a snapshot relatively close to publication. The humanities book citation lifecycle means impact metrics often take years to materialize significantly. Consequently, the current absence of measurable indicators should be viewed as a baseline rather than a definitive judgment on scholarly value. As the academic community becomes more aware of the work, and as secondary literature or teaching incorporate it, The Fall of Berlin may yet build a meaningful impact.</p>
+<p class="story-text">In sum, Mendl Mann’s The Fall of Berlin embodies a freshly minted contribution to historical scholarship that awaits diffusion and uptake. Its presence within an open access framework positions it advantageously for long-term engagement, although immediate demonstrable impact remains limited. Continued monitoring of citation activity, usage data, and curricular integration will be essential to appreciate its evolving role within humanities research on Berlin and broader historical studies.</p>
+  </div>
+</section>
+
+
+    <section class="grid">
+      <div class="card">
+        <h2><span>Where your book is available</span></h2>
+        <ul>
+          <li><strong>DOI landing page</strong><br><a href="https://doi.org/10.11647/OBP.0233" target="_blank">https://doi.org/10.11647/OBP.0233</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+        <ul>
+          <li><span class='tag'>History</span> <span class='tag tag-soft'>score: 0.332</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2><span>OER &amp; teaching use</span></h2>
+        <ul>
+          <li class='muted'>No OER or teaching listings detected yet.</li>
+        </ul>
+      </div>
+
+    <section class="card">
+        <h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref Event Data</span></h2>
+        <p class='muted'>No public Event Data activity found for this DOI yet. Crossref Event Data focuses on web mentions from sources like Wikipedia, news sites, and selected platforms, so coverage can vary a lot between works.</p>
+      </section>
+
+    <section class="card">
+      <h2><span>Open access metadata</span> <span class="badge">DOAB</span></h2>
+      <p class="story-text doab-abstract">&quot;Mendl Mann’s autobiographical novel The Fall of Berlin tells the painful yet compelling story of life as a Jewish soldier in the Red Army. Menakhem Isaacovich is a Polish Jew who, after fleeing the Nazis, finds refuge in the USSR. Translated into English from the original Yiddish by Maurice Wolfthal, the narrative follows Menakhem as he fights on the front line in Stalin’s Red Army against Hitler and the Nazis who are destroying his homeland of Poland and exterminating the Jews.
+ 
+Menakhem encounters anti-Semitism on various occasions throughout the novel, and struggles to comprehend how seemingly normal people could hold such appalling views. As Mann writes, it is odd that &quot;&quot;vicious, insidious anti-Semitism could reside in a person with elevated feelings, an average person, a decent person”. The Fall of Berlin is both a striking and timelylook at the struggle that many Jewish soldiers faced.
+
+An affecting and unique book, which eloquently explores a variety of themes – such as anti-Semitism, patriotism, Stalinism and life as a Jewish soldier in the Second World War – this is essential reading for anyone interested in the Yiddish language, Jewish history, and the history of World War II. &quot;</p>
+      <p class='story-text'><strong>Keywords:</strong> autobiography, fiction, Jewish, Red Army, Poland, Nazis, USSR, Yiddish, anti-semitism, Berlin, patriotism, stalinism, second world war, Jewish history, World War II, Yiddish language, Eastern Europe</p>
+      <p class='story-text'><strong>Rights / licence:</strong> open access</p>
+      <p class="muted">DOAB record: <a href="https://directory.doabooks.org/handle/20.500.12854/34754" target="_blank" rel="noopener noreferrer">https://directory.doabooks.org/handle/20.500.12854/34754</a></p>
+    </section>
+
+
+<div class="card">
+        <h2><span>Usage (OAPEN / OPERAS)</span></h2>
+        <p class='muted'>No OAPEN / OPERAS record found.</p>
+        
+        
+      </div>
+
+    </section>
+
+    <section class="card">
+      <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+      <p class="muted">Total citations found: 0</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Title</th>
+            <th>Venue</th>
+            <th>DOI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan='4' class='muted'>No citations found.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer class="page-footer">
+      Generated by BookStories on 2025-11-27T22:13:27Z
+      &nbsp;·&nbsp; Event Data total: 0
+    </footer>
+
+  </div>
+</body>
+</html>

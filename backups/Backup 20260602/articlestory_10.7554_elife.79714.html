@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ArticleStory - Stable population structure in Europe since the Iron Age, despite high mobility</title>
+<style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+</style>
+<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div class="site-nav-links">
+    <a href="index.html">← All stories</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Print PDF Report
+    </button>
+<div class="page" id="sec-story">
+<header class="hero card" id="sec-hero">
+<div class="header-bar">
+<div style="display: flex; align-items: center; gap: 1.25rem;">
+<div class="logo-wrap"><img alt="Logo" src="articlestories-logo.png"/></div>
+<div>
+<h1 class="hero-title">Stable population structure in Europe since the Iron Age, despite high mobility</h1>
+<div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+<span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em;" title="scite found more citations supporting than contrasting this work's methodology">
+<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                    Methodologically Supported
+                                <span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· scite</span></span>
+<span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-transform: uppercase; letter-spacing: 0.05em;" title="Linked research datasets are registered via DataCite or a similar registry">
+<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                    Linked to Data
+                                <span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· DataCite</span></span>
+<a href="https://doi.org/10.1101/2022.05.15.491973" style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1px solid #fde68a; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s;" target="_blank">
+<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                    Early Sharing / Preprint ↗
+                                </a>
+</div>
+<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+<div><strong>Author(s):</strong> Margaret L. Antonio, Clemens L. Weiß, Ziyue Gao, Susanna Sawyer, Victoria Oberreiter, Hannah M. Moots, Jeffrey P. Spence, Olivia Cheronet, Brina Zagorc, Elisa Praxmarer, Kadir Toykan Özdoğan, Lea Demetz, Pere Gelabert, Daniel Fernandes, Michaela Lucci, Timka Alihodžić, Selma Amrani, Pavel Avetisyan, Christèle Baillif-Ducros, Željka Bedić, Audrey Bertrand, Maja Bilić, Luca Bondioli, Paulina Borówka, Emmanuel Botte, Josip Burmaz, Domagoj Bužanić, Francesca Candilio, Mirna Cvetko, Daniela De Angelis, Ivan Drnić, Kristián Elschek, Mounir Fantar, Andrej Gaspari, Gabriella Gasperetti, Francesco Genchi, Snežana Golubović, Zuzana Hukeľová, Rimantas Jankauskas, Kristina Jelinčić Vučković, Gordana Jeremić, Iva Kaić, Kevin Kazek, Hamazasp Khachatryan, Anahit Yu. Khudaverdyan, Sylvia Kirchengast, Miomir Korać, Valérie Kozlowski, Maria Krošláková, Dora Kušan Špalj, Francesco La Pastina, Marie Laguardia, Sandra Legrand, Tino Leleković, Tamara Leskovar, Wiesław Lorkiewicz, Dženi Los, Ana María Silva, René Masaryk, Vinka Matijević, Yahia Mehdi Seddik Cherifi, Nicolás Meyer, Ilija Mikić, Nataša Miladinović-Radmilović, Branka Milošević Zakić, Lina Nacouzi, Magdalena Natuniewicz-Sekuła, Alessia Nava, Christine Neugebauer-Maresch, Jan Nováček, Anna J. Osterholtz, Julianne Paige, Lujana Paraman, Dominique Piéri, Karol Pieta, Stefan Pop-Lazić, Matej Ruttkay, Mirjana Sanader, Arkadiusz Sołtysiak, Alessandra Sperduti, Tijana Stankovic Pesterac, Maria Teschler‐Nicola, Iwona Teul, Domagoj Tončinić, Julien Trapp, Dragana Vulović, Tomasz Waliszewski, Diethard Walter, Miloš Živanović, Mohamed el Mostefa Filah, Morana Čaušević-Bully, Mario Šlaus, Dušan Borić, Mario Novak, Alfredo Coppa, Ron Pinhasi, Jonathan K. Pritchard</div>
+<div><strong>Publisher:</strong> eLife</div>
+<div><strong>Publication year:</strong> 2023</div>
+<div><strong>DOI:</strong> <a href="https://doi.org/10.7554/elife.79714" target="_blank">10.7554/elife.79714</a></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">85</div>
+<div class="stats-strip-label">Total Citations</div>
+<div class="stats-strip-badge">🏆 Top 1% Cited</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">6</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">38</div>
+<div class="stats-strip-label">scite References</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Gold</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
+
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-mentions">Mentions</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-funding">Funding</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+
+<section class="card" id="sec-story">
+<h2><span>The Story So Far</span></h2>
+<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The research article, “Stable population structure in Europe since the Iron Age, despite high mobility,” has garnered significant academic attention, as demonstrated by its 85 citations across various esteemed journals, including Nature Communications and Genome Biology. This work not only showcases substantial scholarly influence but has also initiated discussions within the community, evident by its inclusion in three Wikipedia entries.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The article has established itself as a significant contribution to the field, with noteworthy backing from key institutions such as the University of Chicago and Aix-Marseille Université. Its substantial funding from organizations including the National Institutes of Health and the Austrian Science Fund highlights a strong institutional investment in the research area. This level of support reinforces the credibility and relevance of the study.</p>
+<p class="story-text">Early sharing of the article in preprint form allowed for immediate engagement within the academic community, reflected in 18 preprint citations and 200 events surrounding the preprint. Such metrics indicate the impact of open science practices, leading to a broader discussion about population structures in Europe amidst historical mobility patterns.</p>
+<p class="story-text">The research has prompted further inquiry, as evidenced by its proven downstream reuse, with 86 instances where the data and materials have been employed in subsequent studies. This demonstrates a strong commitment to scientific stewardship and resource accessibility within the discipline. Furthermore, the open peer reviews associated with the work enhance transparency and accountability, solidifying its place in the ongoing scientific discourse.</p>
+<p class="story-text">Overall, the discussion around this research is not limited to academia; it has also found a footing in public domains, as indicated by its three mentions on Wikipedia. This cross-pollination of academic insights into public knowledge encapsulates the study's broader societal relevance and demonstrates the transformative potential of scholarly communication in enhancing public understanding of complex historical patterns.</p></div>
+</section>
+<section class="card" id="sec-impact">
+<h2><span>Impact metrics</span></h2>
+
+<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">85</div><div class="im-label">Total Citations</div></div><div class="im-spark"><svg height="36" style="display:block;overflow:visible;" viewbox="0 0 120 36" width="120" xmlns="http://www.w3.org/2000/svg"><path d="M0.0,32.2 L40.0,10.2 L80.0,2.0 L120.0,30.3 L120.0,36.0 L0,36.0 Z" fill="#dbeafe" opacity="0.6"></path><polyline fill="none" points="0.0,32.2 40.0,10.2 80.0,2.0 120.0,30.3" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline></svg><div class="im-spark-range">2023–2026</div></div></div><div class="im-top-badge">🏆 Top 1% Cited</div></div><div class="im-card"><div class="im-num">6</div><div class="im-label">Online Mentions</div></div><div class="im-card"><div class="im-num">38</div><div class="im-label">scite References</div></div></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-slate" href="#sec-teaching">📖 Wikipedia</a><a class="sig-pill sig-slate" href="#sec-teaching">📚 WorldCat</a><a class="sig-pill sig-indigo" href="#sec-teaching">🎓 Course syllabus</a><a class="sig-pill sig-amber" href="#sec-funding">💰 7 grants</a><a class="sig-pill sig-blue" href="#sec-citing">🌍 33 countries</a></div></div></div></section>
+<section class="card" id="sec-roles">
+<h2><span>Inferred roles</span></h2>
+<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#b45309;">📢 Public Engagement &amp; Media</div><div class="roles-row"><span class="role-pill role-pill-public" style="opacity:1;" data-tip="Heavy social-platform engagement on Reddit, Bluesky, or Mastodon — the work has sparked ongoing community conversation."><span class="role-dot" style="background:#f59e0b;"></span>Active public discourse<span class="role-strength" style="background:#fef3c7;color:#92400e;">Strong</span></span><span class="role-pill role-pill-public" style="opacity:1;" data-tip="Mentioned in mainstream news, broadsheets, or high-impact professional media."><span class="role-dot" style="background:#f59e0b;"></span>High-visibility uptake<span class="role-strength" style="background:#fef3c7;color:#92400e;">Strong</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#1d4ed8;">🎓 Academic &amp; Scientific</div><div class="roles-row"><span class="role-pill role-pill-academic" style="opacity:0.9;" data-tip="Foundational building block cited heavily in core academic journals and monographs."><span class="role-dot" style="background:#3b82f6;"></span>Scholarly uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Moderate</span></span><span class="role-pill role-pill-academic" style="opacity:0.9;" data-tip="Accumulated high citations or downloads unusually fast after publication."><span class="role-dot" style="background:#3b82f6;"></span>Rapid uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Moderate</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#065f46;">🏛 Practical &amp; Real-World</div><div class="roles-row"><span class="role-pill role-pill-practical" style="opacity:0.9;" data-tip="Cited in government reports, WHO/NGO briefs, or UN policy documents."><span class="role-dot" style="background:#10b981;"></span>Sustainability &amp; policy relevance<span class="role-strength" style="background:#dcfce7;color:#166534;">Moderate</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
+
+</section>
+<div class="grid-2">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+<ul class="metric-list">
+<li><strong>DOI:</strong> <a href="https://doi.org/10.7554/elife.79714" target="_blank">10.7554/elife.79714</a></li>
+<li><strong>OA status:</strong> Gold</li>
+<li><strong>Landing page:</strong> <a href="https://doi.org/10.7554/elife.79714" style="word-break: break-all;" target="_blank">https://doi.org/10.7554/elife.79714</a></li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>6</strong> recorded events globally
+                        
+                        <span style="font-weight:normal;">(combined from the published article and preprint).</span>
+</p>
+<p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+<em>(See specific sources and examples in the Online Mentions section below).</em>
+</p>
+</section>
+</div>
+<div class="grid-2" style="align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Citation context</span> <span class="badge">scite</span></h2>
+<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+<li><strong>Total:</strong> 38</li>
+<li><strong>Supporting:</strong> 6</li>
+<li><strong>Mentioning:</strong> 30</li>
+<li><strong>Contradicting:</strong> 2</li>
+</ul>
+</section>
+</div>
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Associated data repositories and clinical trials.</p>
+<h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Data Repositories &amp; Code</h3>
+<div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom: 1rem; max-height: 250px; overflow-y: auto;">
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/jalvz/depth-cover" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/stschiff/sequenceTools" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/MesserLab/SLiM/tree/v3.6/SLiMgui/Recipes" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+</div>
+</section>
+</div>
+</div>
+<section class="card" id="sec-citing">
+<h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+                Analysis of the 85 most recent citing works. 
+                <br/>
+<strong>149.3%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>1.0</strong> times itself.
+            </div>
+
+<div class="cite-analysis-always"><div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+<ul class="metric-list">
+<li><strong>Citing work types:</strong>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (44)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (22)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (1)</span>
+</li>
+<li><strong>Top citing venues:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">bioRxiv (21)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Genome biology (6)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Cell (3)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Nature Communications (3)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Proceedings of the National Academy of Sciences (3)</span>
+</li>
+<li><strong>Top citing concepts:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Population (16)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Geography (15)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Biology (13)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Ancient DNA (10)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Evolutionary biology (8)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Computational biology (4)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">History (4)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Ancient history (4)</span>
+</li>
+<li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+<strong>Citation timeline:</strong>
+<div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+<canvas data-labels="[2023, 2024, 2025, 2026]" data-values="[2, 26, 35, 4]" id="citationChart">
+</canvas>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="cite-tabs">
+<button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-ppl')">👤 Top Citers</button>
+</div>
+<div class="cite-tab-pane active" id="cite-geo"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (33)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (30)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (22)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Austria (18)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Spain (18)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Italy (16)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Croatia (13)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Sweden (10)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Czechia (10)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Hungary (10)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">France (7)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Slovenia (7)</span>
+</div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (61)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (52)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Government (22)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Archive (19)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (19)</span>
+</div>
+</div></div>
+<div class="cite-tab-pane" id="cite-inst"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Max Planck Institute for Evolutionary Anthropology</strong>
+<a class="orcid-badge" href="https://ror.org/02a33b393" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(20)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Vienna</strong>
+<a class="orcid-badge" href="https://ror.org/03prydq77" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(15)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Eötvös Loránd University</strong>
+<a class="orcid-badge" href="https://ror.org/01jsq2704" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(10)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Harvard University</strong>
+<a class="orcid-badge" href="https://ror.org/03vek6s52" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(9)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Institute for Anthropological Research</strong>
+<a class="orcid-badge" href="https://ror.org/001xj8m36" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(9)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Uppsala University</strong>
+<a class="orcid-badge" href="https://ror.org/048a87296" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(8)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>ELTE Research Centre for the Humanities</strong>
+<a class="orcid-badge" href="https://ror.org/03wxxbs05" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(8)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Institut de Biologia Evolutiva</strong>
+<a class="orcid-badge" href="https://ror.org/044mj7r89" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(7)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Broad Institute</strong>
+<a class="orcid-badge" href="https://ror.org/05a0ya142" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(7)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Primorska</strong>
+<a class="orcid-badge" href="https://ror.org/05xefg082" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(7)</span>
+</li>
+</ul>
+</div></div>
+<div class="cite-tab-pane" id="cite-ppl"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Ron Pinhasi</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-1629-8131" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(10)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Mario Novak</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4567-8742" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(9)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Harald Ringbauer</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4884-9682" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(9)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Olivia Cheronet</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-6760-1204" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(7)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>David Reich</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-7037-5292" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(7)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Johannes Krause</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-9144-3920" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(7)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Anna Szécsényi‐Nagy</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-2095-738X" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(7)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Luca Traverso</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-5749-5751" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(6)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Balázs Gusztáv Mende</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-7667-8633" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(6)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Nadin Rohland</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-8112-9601" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+</ul>
+</div></div>
+
+
+</section>
+<div class="grid-2">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Open Peer Review</span> <span class="badge">Crossref</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Public referee reports and author responses.</p>
+<div style="display:flex; flex-direction:column; gap:0.6rem;">
+<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:0.4rem;">
+<div>
+<span class="tag" style="background:#fce7f3; color:#be185d; border:1px solid #fbcfe8; margin-right:0.4rem;">Peer Review</span>
+<strong>eLife Sciences Publications, Ltd</strong>
+</div>
+<a href="https://doi.org/10.7554/elife.79714.sa2" style="text-decoration:none; color:#2563eb; font-weight:500; font-size:0.85rem;" target="_blank">Read report →</a>
+</div>
+<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:0.4rem;">
+<div>
+<span class="tag" style="background:#fce7f3; color:#be185d; border:1px solid #fbcfe8; margin-right:0.4rem;">Peer Review</span>
+<strong>eLife Sciences Publications, Ltd</strong>
+</div>
+<a href="https://doi.org/10.7554/elife.79714.sa1" style="text-decoration:none; color:#2563eb; font-weight:500; font-size:0.85rem;" target="_blank">Read report →</a>
+</div>
+<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:0.4rem;">
+<div>
+<span class="tag" style="background:#fce7f3; color:#be185d; border:1px solid #fbcfe8; margin-right:0.4rem;">Peer Review</span>
+<strong>eLife Sciences Publications, Ltd</strong>
+</div>
+<a href="https://doi.org/10.7554/elife.79714.sa0" style="text-decoration:none; color:#2563eb; font-weight:500; font-size:0.85rem;" target="_blank">Read report →</a>
+</div>
+</div>
+</section>
+<section class="card" id="sec-mentions" style="margin-bottom:0;">
+<h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref &amp; Open Web</span></h2>
+<h3 style="margin-top: 1.5rem; font-size: 1.1rem; color: #1f2937;">
+                    Community Engagement &amp; Discourse
+                </h3>
+<div style="display: flex; flex-wrap: wrap; gap: 0.5rem; border-bottom: 2px solid #e5e7eb; margin-bottom: 1.5rem; margin-top: 1rem;">
+<button class="soc-tab-btn soc-tab-active" onclick="openSocialTab(event, 'soc-wiki')">
+                        Wikipedia <span style="background: #f1f5f9; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.75rem; margin-left: 0.3rem;">3</span>
+</button>
+</div>
+<div style="position: relative; border-left: 2px solid #e2e8f0; padding-left: 1.5rem; margin-top: 1rem;">
+<div class="soc-tab-content" id="soc-wiki" style="display: block; animation: fadeIn 0.3s;">
+<div style="position: relative; margin-bottom: 1.25rem;">
+<span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #64748b; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.65rem; text-transform: uppercase;">Wikipedia (en)</span>
+</div>
+<a href="https://en.wikipedia.org/wiki/Eurasian_backflow" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.95rem;" target="_blank">Eurasian backflow</a>
+<p class="muted" style="font-size: 0.8rem; margin: 0.1rem 0 0 0;">Work cited as a foundational reference in this encyclopedic entry.</p>
+</div>
+<div style="position: relative; margin-bottom: 1.25rem;">
+<span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #64748b; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.65rem; text-transform: uppercase;">Wikipedia (en)</span>
+</div>
+<a href="https://en.wikipedia.org/wiki/Goths" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.95rem;" target="_blank">Goths</a>
+<p class="muted" style="font-size: 0.8rem; margin: 0.1rem 0 0 0;">Work cited as a foundational reference in this encyclopedic entry.</p>
+</div>
+<div style="position: relative; margin-bottom: 1.25rem;">
+<span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #64748b; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+<div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.65rem; text-transform: uppercase;">Wikipedia (en)</span>
+</div>
+<a href="https://en.wikipedia.org/wiki/Genetic_history_of_North_Africa" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.95rem;" target="_blank">Genetic history of North Africa</a>
+<p class="muted" style="font-size: 0.8rem; margin: 0.1rem 0 0 0;">Work cited as a foundational reference in this encyclopedic entry.</p>
+</div>
+</div>
+</div>
+<div class="muted" style="margin-top: 1.5rem; font-size: 0.8rem; text-align: center; border-top: 1px dashed #e5e7eb; padding-top: 0.8rem;">
+                    Displaying the 3 most detailed mentions. Other aggregated events lack public URLs.
+                </div>
+</section>
+</div>
+<section class="card" id="sec-teaching">
+<h2><span>Teaching, Practice &amp; Library Adoption</span></h2>
+<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem;">
+                Evidence of structured teaching use, reading lists, and library availability.
+            </div>
+<div class="grid-2" style="align-items: start;">
+<div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        OpenCourseWare Mentions <span class="badge" style="float: right;">Google Custom Search</span>
+</h3>
+<ul style="padding-left: 0; list-style: none; margin: 0;">
+<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+<a href="https://www.open.edu/openlearn/history-the-arts/art-and-visual-culture-medieval-modern/content-section-2.2.1/?printable=1" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
+                                        Art and visual culture: Medieval to modern
+                                    </a>
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        www.open.edu
+                                    </span>
+</div>
+<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...This introduction to the history of art and visual culture provides a broad overview of the major developments in western art between c.1100 and the present ......"
+                                </div>
+</li>
+<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+<a href="https://www.open.edu/openlearn/history-the-arts/art-and-visual-culture-medieval-modern/altformat-ouxml" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
+                                        https://www.open.edu/openlearn/25/ ...
+                                    </a>
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        www.open.edu
+                                    </span>
+</div>
+<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...To go to the trouble and expense of transporting it from northern Europe ... large population of relatively affluent city-dwellers. In other countries ......"
+                                </div>
+</li>
+<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+<a href="https://www.open.edu/openlearn/pluginfile.php/59855/mod_oucontent/oucontent/369/6a0adbe5/2a20a7b5/walesandthewiderworld.pdf?forcedownload=1" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
+                                        Wales and the Wider World
+                                    </a>
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        www.open.edu
+                                    </span>
+</div>
+<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...Wales has had an impressive record in stocking Westminster front-benches, in terms of seats and personalities: as leaders of the Labour party, Keir Hardie, ......"
+                                </div>
+</li>
+<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+<a href="https://www.open.edu/openlearn/money-business/managing-my-money/altformat-ouxml" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
+                                        https://www.open.edu/openlearn/f4/18/ ...
+                                    </a>
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        www.open.edu
+                                    </span>
+</div>
+<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...High figures can suggest higher income from investments, but a high yield ... Although they have since been reclassified as 'structured products', they ......"
+                                </div>
+</li>
+<li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+<a href="https://www.open.edu/openlearn/history-the-arts/health-and-wellbeing-the-ancient-world/altformat-ouxml" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;" target="_blank">
+                                        https://www.open.edu/openlearn/72/ ...
+                                    </a>
+<span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                        www.open.edu
+                                    </span>
+</div>
+<div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
+                                    "...Fish from mountain rivers and birds from a high altitude were also 'thinning' in this medical sense, because they were thought to be 'drier' than those ......"
+                                </div>
+</li>
+</ul>
+</div>
+<div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        Library &amp; Community Access <span class="badge" style="float: right; background: #f0fdf4; color: #166534;">Open Library</span>
+</h3>
+<ul class="metric-list" style="margin-top: 0;">
+<li style="margin-bottom: 0.8rem;">
+<strong>Institutional Availability:</strong>
+<div style="margin-top: 0.4rem;">
+<a class="tag" href="https://www.worldcat.org/search?q=ti:Stable%20population%20structure%20in%20Europe%20since%20the%20Iron%20Age%2C%20despite%20high%20mobility" style="background:#e5f2ff; color:#1d4ed8; font-weight: 600; text-decoration: none;" target="_blank">
+                                    Search Global Libraries (WorldCat) ↗
+                                </a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<div class="grid-2" id="sec-contributors">
+<section class="card" id="sec-contributors" style="margin-bottom:0;">
+<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">97 authors · 36 institutions</div>
+<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Margaret L. Antonio</strong>
+<span class="badge">First</span>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-1049-211X" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Clemens L. Weiß</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-3321-3902" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Ziyue Gao</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-9244-0238" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Susanna Sawyer</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-8477-6089" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Victoria Oberreiter</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-0766-3782" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Hannah M. Moots</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-6637-6321" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Jeffrey P. Spence</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-3199-1447" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Olivia Cheronet</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-6760-1204" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Brina Zagorc</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-7685-1958" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Elisa Praxmarer</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Kadir Toykan Özdoğan</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-9508-8193" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Lea Demetz</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Pere Gelabert</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-3019-0725" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Daniel Fernandes</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-7434-6552" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Michaela Lucci</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-5932-9674" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Timka Alihodžić</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Selma Amrani</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-2974-6741" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Pavel Avetisyan</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4469-9517" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Christèle Baillif-Ducros</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-3050-3082" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Željka Bedić</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-0134-5399" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Audrey Bertrand</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-7415-4227" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Maja Bilić</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Luca Bondioli</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Paulina Borówka</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-5112-1820" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Emmanuel Botte</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-0517-7150" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Josip Burmaz</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Domagoj Bužanić</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-9347-6144" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Francesca Candilio</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4668-1361" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Mirna Cvetko</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-6043-480X" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Daniela De Angelis</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Ivan Drnić</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Kristián Elschek</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-8265-730X" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Mounir Fantar</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Andrej Gaspari</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Gabriella Gasperetti</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Francesco Genchi</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Snežana Golubović</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-2184-2429" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Zuzana Hukeľová</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-9181-2407" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Rimantas Jankauskas</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-7611-2576" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Kristina Jelinčić Vučković</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-1236-734X" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Gordana Jeremić</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-0065-4093" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Iva Kaić</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-8958-0360" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Kevin Kazek</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Hamazasp Khachatryan</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-8942-267X" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Anahit Yu. Khudaverdyan</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Sylvia Kirchengast</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-3220-7271" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Miomir Korać</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Valérie Kozlowski</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Maria Krošláková</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-8139-0738" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Dora Kušan Špalj</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-0641-7416" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Francesco La Pastina</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Marie Laguardia</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-9634-921X" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Sandra Legrand</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Tino Leleković</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-6983-8854" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Tamara Leskovar</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4585-4726" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Wiesław Lorkiewicz</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-0754-5161" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Dženi Los</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Ana María Silva</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-1912-6581" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>René Masaryk</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Vinka Matijević</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Yahia Mehdi Seddik Cherifi</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-4533-5704" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Nicolás Meyer</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-4519-8666" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Ilija Mikić</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-4412-9490" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Nataša Miladinović-Radmilović</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-0825-2002" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Branka Milošević Zakić</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Lina Nacouzi</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Magdalena Natuniewicz-Sekuła</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-5722-8223" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Alessia Nava</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-6319-0425" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Christine Neugebauer-Maresch</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-3138-2385" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Jan Nováček</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-2707-5347" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Anna J. Osterholtz</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-8437-9147" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Julianne Paige</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Lujana Paraman</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-8780-5845" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Dominique Piéri</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Karol Pieta</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-6071-8570" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Stefan Pop-Lazić</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-1984-6287" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Matej Ruttkay</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-6441-9914" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Mirjana Sanader</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-9721-5491" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Arkadiusz Sołtysiak</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-9040-5022" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Alessandra Sperduti</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-9338-5891" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Tijana Stankovic Pesterac</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Maria Teschler‐Nicola</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-3080-3085" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Iwona Teul</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Domagoj Tončinić</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-7786-071X" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Julien Trapp</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Dragana Vulović</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-4235-0511" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Tomasz Waliszewski</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-5793-4600" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Diethard Walter</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Miloš Živanović</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Mohamed el Mostefa Filah</strong>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Morana Čaušević-Bully</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-7019-6235" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Mario Šlaus</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4941-2212" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Dušan Borić</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-0166-627X" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Mario Novak</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-4567-8742" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Alfredo Coppa</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-7708-2484" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Ron Pinhasi</strong>
+<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-1629-8131" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Jonathan K. Pritchard</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-8828-5236" target="_blank">ORCID</a>
+</li>
+</ul>
+<h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/00f54p054" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Stanford University</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/00b30xv10" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Pennsylvania</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/03prydq77" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Vienna</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/024mw5h28" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Chicago</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/04pp8hn57" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Utrecht University</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/02be6w209" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Sapienza University of Rome</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/01d2r8q06" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Archaeological Museum in Zagreb</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/02kb89c09" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Sciences and Technology Houari Boumediene</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/02af4h206" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Institute of Archaeology and Ethnography</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/04andmq85" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Institut National de Recherches Archéologiques Préventives</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/001xj8m36" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Institute for Anthropological Research</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/03x42jk29" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Université Gustave Eiffel</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/00240q980" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Padua</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/05cq64r17" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Łódź</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/035xkbk20" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Aix-Marseille Université</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/00mv6sv71" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Zagreb</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/0499krd69" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Musée de la Civilisation</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/02st7ck79" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">National Archaeological Museum</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/03h7qq074" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Slovak Academy of Sciences</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/0206kax92" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">National Heritage Institute</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/05njb9z20" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Ljubljana</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/029q6vx61" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Accademia di Belle Arti di Sassari</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/03vtpmc73" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Institute of Archaeology</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/03nadee84" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Vilnius University</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/00xngy573" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Centre de Recherche Universitaire Lorrain d’Histoire</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/04mczx267" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">National Academy of Sciences of Armenia</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/03z54xm22" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Near East School of Theology</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/03vek6s52" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Harvard University</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/03d04qg82" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Croatian Academy of Sciences and Arts</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/01c27hj86" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Lisbon</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/02t9nm044" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Institut français du Proche-Orient</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/01y9bpm73" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Göttingen</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/01keh0577" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Nevada, Reno</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/01q9h8k89" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Naples - L'Orientale</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/01tv5y993" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Natural History Museum Vienna</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/011r6gp69" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of Algiers Benyoucef Benkhedda</a>
+</li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">19 specific concepts identified.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biological dispersal</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Population</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Demographic history</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Geography</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Prehistory</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Ancient DNA</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Period (music)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Human migration</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Economic geography</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Panmixia</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Genetic structure</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Demography</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Evolutionary biology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Archaeology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Genetic variation</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Physics</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Acoustics</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sociology</span>
+</div>
+<h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">1 targets detected.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Decent work and economic growth (0.61)</span>
+</div>
+</section>
+</div>
+<section class="card" id="sec-funding">
+<h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">7 financial grants and sponsors detected.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>Austrian Science Fund FWF</strong>
+<span style="opacity: 0.8; font-weight: normal;">(M 3108)</span>
+</span>
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>National Institutes of Health</strong>
+<span style="opacity: 0.8; font-weight: normal;">(HG011432)</span>
+</span>
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>National Science Foundation</strong>
+<span style="opacity: 0.8; font-weight: normal;">(Graduate Research Fellowship)</span>
+</span>
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>NIH HHS</strong>
+<span style="opacity: 0.8; font-weight: normal;">(HG011432)</span>
+</span>
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>NHGRI NIH HHS</strong>
+<span style="opacity: 0.8; font-weight: normal;">(R01 HG011432)</span>
+</span>
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>Austrian Science Fund FWF</strong>
+<span style="opacity: 0.8; font-weight: normal;">(M3108-G)</span>
+</span>
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>Howard Hughes Medical Institute</strong>
+</span>
+</div>
+</section>
+<section class="card no-print" id="sec-citations">
+<h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">Displaying 67 most recent citing works</div>
+<div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+<table>
+<thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+<tbody id="cit-tbody"></tbody>
+</table>
+</div>
+<div class="cit-pagination">
+<span class="cit-pagination-info" id="cit-info">Loading…</span>
+<div class="cit-pagination-btns">
+<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
+<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
+<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
+</div>
+</div>
+
+</section>
+<footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+<div style="display: flex; flex-direction: column; gap: 0.4rem;">
+<div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+<svg fill="none" height="16" stroke="currentColor" style="color: #9ca3af;" viewbox="0 0 24 24" width="16"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Understanding our metrics: <a href="https://www.openscience.works/about.html" style="color: #2563eb; text-decoration: none; font-weight: 600;" target="_blank">Read the Methodology &amp; Legend ↗</a></span>
+</div>
+<div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-04-02T15:11:41+00:00
+                </div>
+</div>
+</footer>
+</div>
+<script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+<script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+
+<script>
+(function() {
+  var DATA = [{"year": "2023", "title": "A genetic history of the Balkans from Roman frontier to Slavic migrations", "venue": "Cell", "doi": "10.1016/j.cell.2023.10.018", "doi_url": "https://doi.org/10.1016/j.cell.2023.10.018"}, {"year": "2025", "title": "High-resolution genomic history of early medieval Europe", "venue": "Nature", "doi": "10.1038/s41586-024-08275-2", "doi_url": "https://doi.org/10.1038/s41586-024-08275-2"}, {"year": "2024", "title": "Evidence for dynastic succession among early Celtic elites in Central Europe", "venue": "Nature Human Behaviour", "doi": "10.1038/s41562-024-01888-7", "doi_url": "https://doi.org/10.1038/s41562-024-01888-7"}, {"year": "2025", "title": "The genomic history of Iberian horses since the last Ice Age", "venue": "Nature Communications", "doi": "10.1038/s41467-025-62266-z", "doi_url": "https://doi.org/10.1038/s41467-025-62266-z"}, {"year": "2024", "title": "The role of emerging elites in the formation and development of communities after the fall of the Roman Empire", "venue": "Proceedings of the National Academy of Sciences", "doi": "10.1073/pnas.2317868121", "doi_url": "https://doi.org/10.1073/pnas.2317868121"}, {"year": "2025", "title": "Ancient genomes reveal trans-Eurasian connections between the European Huns and the Xiongnu Empire", "venue": "Proceedings of the National Academy of Sciences", "doi": "10.1073/pnas.2418485122", "doi_url": "https://doi.org/10.1073/pnas.2418485122"}, {"year": "2024", "title": "Human Y chromosome haplogroup L1-M22 traces Neolithic expansion in West Asia and supports the Elamite and Dravidian connection", "venue": "iScience", "doi": "10.1016/j.isci.2024.110016", "doi_url": "https://doi.org/10.1016/j.isci.2024.110016"}, {"year": "2024", "title": "Human genetic structure in Northwest France provides new insights into West European historical demography", "venue": "Nature Communications", "doi": "10.1038/s41467-024-51087-1", "doi_url": "https://doi.org/10.1038/s41467-024-51087-1"}, {"year": "2024", "title": "Ancient genomes reveal Avar-Hungarian transformations in the 9th-10th centuries CE Carpathian Basin", "venue": "Science Advances", "doi": "10.1126/sciadv.adq5864", "doi_url": "https://doi.org/10.1126/sciadv.adq5864"}, {"year": "2025", "title": "Population history and admixture of the Fulani people from the Sahel", "venue": "The American Journal of Human Genetics", "doi": "10.1016/j.ajhg.2024.12.015", "doi_url": "https://doi.org/10.1016/j.ajhg.2024.12.015"}, {"year": "2025", "title": "Ancient DNA connects large-scale migration with the spread of Slavs", "venue": "Nature", "doi": "10.1038/s41586-025-09437-6", "doi_url": "https://doi.org/10.1038/s41586-025-09437-6"}, {"year": "2025", "title": "Medieval genomes from eastern Iberia illuminate the role of Morisco mass deportations in dismantling a long-standing genetic bridge with North Africa", "venue": "Genome biology", "doi": "10.1186/s13059-025-03570-1", "doi_url": "https://doi.org/10.1186/s13059-025-03570-1"}, {"year": "2025", "title": "The genetic history of Portugal over the past 5,000 years", "venue": "Genome biology", "doi": "10.1186/s13059-025-03707-2", "doi_url": "https://doi.org/10.1186/s13059-025-03707-2"}, {"year": "2025", "title": "Urbanization and genetic homogenization in the medieval Low Countries revealed through a ten-century paleogenomic study of the city of Sint-Truiden", "venue": "Genome biology", "doi": "10.1186/s13059-025-03580-z", "doi_url": "https://doi.org/10.1186/s13059-025-03580-z"}, {"year": "2025", "title": "Museum Genomics Reveals Temporal Genetic Stasis and Global Genetic Diversity inArabidopsis thaliana", "venue": "Molecular Ecology", "doi": "10.1111/mec.70081", "doi_url": "https://doi.org/10.1111/mec.70081"}, {"year": "2025", "title": "Inference of human pigmentation from ancient DNA by genotype likelihoods", "venue": "Proceedings of the National Academy of Sciences", "doi": "10.1073/pnas.2502158122", "doi_url": "https://doi.org/10.1073/pnas.2502158122"}, {"year": "2025", "title": "Most males in modern Poland carry Y-chromosomal lineages from clades that have recently expanded over Central, Eastern and South-Eastern Europe", "venue": "Human Genetics", "doi": "10.1007/s00439-025-02781-7", "doi_url": "https://doi.org/10.1007/s00439-025-02781-7"}, {"year": "2024", "title": "An explanation for the sister repulsion phenomenon in Patterson'sf-statistics", "venue": "Genetics", "doi": "10.1093/genetics/iyae144", "doi_url": "https://doi.org/10.1093/genetics/iyae144"}, {"year": "2025", "title": "Patterns of genetic admixture reveal similar rates of borrowing across diverse scenarios of language contact", "venue": "Science Advances", "doi": "10.1126/sciadv.adv7521", "doi_url": "https://doi.org/10.1126/sciadv.adv7521"}, {"year": "2026", "title": "Analysis of medieval burials from Ibiza reveals genetic and pathogenic diversity during the Islamic period", "venue": "Nature Communications", "doi": "10.1038/s41467-026-70615-9", "doi_url": "https://doi.org/10.1038/s41467-026-70615-9"}, {"year": "2024", "title": "Geographic origin, ancestry, and death circumstances at the Cornaux/Les Sauges Iron Age bridge, Switzerland", "venue": "Scientific Reports", "doi": "10.1038/s41598-024-62524-y", "doi_url": "https://doi.org/10.1038/s41598-024-62524-y"}, {"year": "2024", "title": "Improved detection of methylation in ancient DNA", "venue": "Genome biology", "doi": "10.1186/s13059-024-03405-5", "doi_url": "https://doi.org/10.1186/s13059-024-03405-5"}, {"year": "2024", "title": "Unveiling Bishop Teodomiro of Iria Flavia? An attempt to identify the discoverer of St James's tomb through osteological and biomolecular analyses (Santiago de Compostela, Galicia, Spain)", "venue": "Antiquity", "doi": "10.15184/aqy.2024.91", "doi_url": "https://doi.org/10.15184/aqy.2024.91"}, {"year": "2024", "title": "Echoes from the past: Bioarchaeological insights into the burial grounds of Portus Romae", "venue": "Journal of Archaeological Science Reports", "doi": "10.1016/j.jasrep.2024.104931", "doi_url": "https://doi.org/10.1016/j.jasrep.2024.104931"}, {"year": "2025", "title": "Ancient genomes provide evidence of demographic shift to Slavic-associated groups in Moravia", "venue": "Genome biology", "doi": "10.1186/s13059-025-03700-9", "doi_url": "https://doi.org/10.1186/s13059-025-03700-9"}, {"year": "2024", "title": "Bioarchaeological Perspectives on Late Antiquity in Dalmatia: Paleogenetic, Dietary, and Population Studies of the Hvar—Radošević burial site", "venue": "Archaeological and Anthropological Sciences", "doi": "10.1007/s12520-024-02050-0", "doi_url": "https://doi.org/10.1007/s12520-024-02050-0"}, {"year": "2025", "title": "Death and burial of a set of fraternal twins from Tragurium: An osteobiographical approach", "venue": "Journal of Archaeological Science Reports", "doi": "10.1016/j.jasrep.2025.105071", "doi_url": "https://doi.org/10.1016/j.jasrep.2025.105071"}, {"year": "2025", "title": "The process of nucleation amongst the early cities of central Italy in the first millennium BC", "venue": "Frontiers in Human Dynamics", "doi": "10.3389/fhumd.2025.1569997", "doi_url": "https://doi.org/10.3389/fhumd.2025.1569997"}, {"year": "2025", "title": "The genetic history of the Southern Caucasus from the Bronze Age to the Early Middle Ages: 5,000 years of genetic continuity despite high mobility", "venue": "Cell", "doi": "10.1016/j.cell.2025.07.013", "doi_url": "https://doi.org/10.1016/j.cell.2025.07.013"}, {"year": "2025", "title": "Long shared haplotypes identify the southern Urals as a primary source for the 10th-century Hungarians", "venue": "Cell", "doi": "10.1016/j.cell.2025.09.002", "doi_url": "https://doi.org/10.1016/j.cell.2025.09.002"}, {"year": "2025", "title": "Effects of ancestry, agriculture, and lactase persistence on the stature of prehistoric Europeans", "venue": "Current Biology", "doi": "10.1016/j.cub.2025.10.054", "doi_url": "https://doi.org/10.1016/j.cub.2025.10.054"}, {"year": "2024", "title": "Y Chromosome Story—Ancient Genetic Data as a Supplementary Tool for the Analysis of Modern Croatian Genetic Pool", "venue": "Genes", "doi": "10.3390/genes15060748", "doi_url": "https://doi.org/10.3390/genes15060748"}, {"year": "2024", "title": "Pervasive findings of directional selection realize the promise of ancient DNA to elucidate human adaptation", "venue": "bioRxiv", "doi": "10.1101/2024.09.14.613021", "doi_url": "https://doi.org/10.1101/2024.09.14.613021"}, {"year": "2023", "title": "Performance ofqpAdm-based screens for genetic admixture on admixture-graph-shaped histories and stepping-stone landscapes", "venue": "bioRxiv", "doi": "10.1101/2023.04.25.538339", "doi_url": "https://doi.org/10.1101/2023.04.25.538339"}, {"year": "2024", "title": "High-resolution genomic ancestry reveals mobility in early medieval Europe", "venue": "bioRxiv", "doi": "10.1101/2024.03.15.585102", "doi_url": "https://doi.org/10.1101/2024.03.15.585102"}, {"year": "2025", "title": "Patterns of population structure and genetic variation within the Saudi Arabian population", "venue": "bioRxiv", "doi": "10.1101/2025.01.10.632500", "doi_url": "https://doi.org/10.1101/2025.01.10.632500"}, {"year": "2024", "title": "An explanation for the sister repulsion phenomenon in Patterson’s f-statistics", "venue": "bioRxiv", "doi": "10.1101/2024.02.17.580509", "doi_url": "https://doi.org/10.1101/2024.02.17.580509"}, {"year": "2024", "title": "The Genomic portrait of the Picene culture: new insights into the Italic Iron Age and the legacy of the Roman expansion in Central Italy", "venue": "bioRxiv", "doi": "10.1101/2024.03.18.585512", "doi_url": "https://doi.org/10.1101/2024.03.18.585512"}, {"year": "2024", "title": "The Genetic History of the South Caucasus from the Bronze to the Early Middle Ages: 5000 years of genetic continuity despite high mobility", "venue": "bioRxiv", "doi": "10.1101/2024.06.11.597880", "doi_url": "https://doi.org/10.1101/2024.06.11.597880"}, {"year": "2024", "title": "Long shared haplotypes identify the Southern Urals as a primary source for the 10th century Hungarians", "venue": "bioRxiv", "doi": "10.1101/2024.07.21.599526", "doi_url": "https://doi.org/10.1101/2024.07.21.599526"}, {"year": "2024", "title": "Medieval genomes from eastern Iberia illuminate the role of Morisco mass deportations in dismantling a long-standing genetic bridge with North Africa", "venue": "bioRxiv", "doi": "10.1101/2024.10.09.617385", "doi_url": "https://doi.org/10.1101/2024.10.09.617385"}, {"year": "2025", "title": "High resolution analysis of population structure using rare variants", "venue": "bioRxiv", "doi": "10.1101/2025.07.18.665597", "doi_url": "https://doi.org/10.1101/2025.07.18.665597"}, {"year": "2025", "title": "Effects of ancestry, agriculture, and lactase persistence on the stature of prehistoric Europeans", "venue": "bioRxiv", "doi": "10.1101/2025.07.11.664181", "doi_url": "https://doi.org/10.1101/2025.07.11.664181"}, {"year": "2025", "title": "Unveiling the complexity of post-Roman polity formation using ancient DNA", "venue": "bioRxiv", "doi": "10.1101/2025.08.18.670760", "doi_url": "https://doi.org/10.1101/2025.08.18.670760"}, {"year": "2024", "title": "Bioarchaeological Perspectives on Late Antiquity in Dalmatia: Paleogenetic, Dietary, and Population Studies of the Hvar - Radošević burial site", "venue": "bioRxiv", "doi": "10.1101/2024.05.14.594056", "doi_url": "https://doi.org/10.1101/2024.05.14.594056"}, {"year": "2024", "title": "Ancient genomes reveal Avar-Hungarian transformations in the 9th-10th centuries CE Carpathian Basin", "venue": "bioRxiv", "doi": "10.1101/2024.05.29.596386", "doi_url": "https://doi.org/10.1101/2024.05.29.596386"}, {"year": "2024", "title": "Population History and Admixture of the Fulani People from the Sahel", "venue": "bioRxiv", "doi": "10.1101/2024.06.22.600206", "doi_url": "https://doi.org/10.1101/2024.06.22.600206"}, {"year": "2024", "title": "The arrival of the Near Eastern ancestry in Central Italy predates the onset of the Roman Empire", "venue": "bioRxiv", "doi": "10.1101/2024.10.07.617003", "doi_url": "https://doi.org/10.1101/2024.10.07.617003"}, {"year": "2024", "title": "Global patterns of genetic admixture reveal effects of language contact", "venue": "bioRxiv", "doi": "10.1101/2024.12.19.629340", "doi_url": "https://doi.org/10.1101/2024.12.19.629340"}, {"year": "2025", "title": "Ancient DNA reveals diverse community organizations in the 5th millennium BCE Carpathian Basin", "venue": "bioRxiv", "doi": "10.1101/2025.01.02.631136", "doi_url": "https://doi.org/10.1101/2025.01.02.631136"}, {"year": "2025", "title": "The cranium from the Octagon in Ephesos", "venue": "Scientific Reports", "doi": "10.1038/s41598-024-83870-x", "doi_url": "https://doi.org/10.1038/s41598-024-83870-x"}, {"year": "2025", "title": "Museum genomics reveals temporal genetic stasis and global genetic diversity inArabidopsis thaliana", "venue": "bioRxiv", "doi": "10.1101/2025.02.06.636844", "doi_url": "https://doi.org/10.1101/2025.02.06.636844"}, {"year": "2025", "title": "Frequencies of enamel hypomineralisation in permanent and primary molars in a medieval and early-modern-age population (7th − 17th c.) in Sains-en-Gohelle (Pas de Calais, France)", "venue": "Scientific Reports", "doi": "10.1038/s41598-025-87589-1", "doi_url": "https://doi.org/10.1038/s41598-025-87589-1"}, {"year": "2025", "title": "Historic Genomes Uncover Demographic Shifts and Kinship Structures in Post-Roman Central Europe", "venue": "bioRxiv", "doi": "10.1101/2025.03.01.640862", "doi_url": "https://doi.org/10.1101/2025.03.01.640862"}, {"year": "2025", "title": "Perspectives of Population Genetics in the Genetic Improvement and Biodiversity Conservation of Fish Species", "venue": "Genetics.", "doi": "10.5772/intechopen.1009878", "doi_url": "https://doi.org/10.5772/intechopen.1009878"}, {"year": "2025", "title": "Genetic structure and demographic history of house mice in western Europe inferred using whole-genome sequences", "venue": "Proceedings of the Royal Society B Biological Sciences", "doi": "10.1098/rspb.2024.2709", "doi_url": "https://doi.org/10.1098/rspb.2024.2709"}, {"year": "2025", "title": "A New Perspective on the Arrival of the Eastern Mediterranean Genetic Influx in Central Italy Before the Onset of the Roman Empire", "venue": "Genome Biology and Evolution", "doi": "10.1093/gbe/evaf149", "doi_url": "https://doi.org/10.1093/gbe/evaf149"}, {"year": "2024", "title": "Testes de ancestralidade genética: saiba o que realmente significam seus resultados", "venue": "Unknown", "doi": "10.64628/ade.tkq9qfykp", "doi_url": "https://doi.org/10.64628/ade.tkq9qfykp"}, {"year": "2024", "title": "DNA says you’re related to a Viking, a medieval German Jew or a 1700s enslaved African? What a genetic match really means", "venue": "Unknown", "doi": "10.64628/aai.7mny6aqkt", "doi_url": "https://doi.org/10.64628/aai.7mny6aqkt"}, {"year": "2025", "title": "Palaeoproteomic and genetic insights into millennial-scale dairy consumption in Armenia", "venue": "bioRxiv", "doi": "10.1101/2025.08.26.672348", "doi_url": "https://doi.org/10.1101/2025.08.26.672348"}, {"year": "2025", "title": "Testing the Late Pleistocene Arctic Origins of East Asian Psychology using Ancient and Modern DNA", "venue": "Research Square", "doi": "10.21203/rs.3.rs-7696395/v1", "doi_url": "https://doi.org/10.21203/rs.3.rs-7696395/v1"}, {"year": "2025", "title": "Multidisciplinary study of human remains from the 3rd century mass grave in the Roman city of Mursa, Croatia", "venue": "PLoS ONE", "doi": "10.1371/journal.pone.0333440", "doi_url": "https://doi.org/10.1371/journal.pone.0333440"}, {"year": "2025", "title": "Testing the Late Pleistocene Arctic Origins of East Asian Psychology using Ancient and Modern DNA", "venue": "Adaptive Human Behavior and Physiology", "doi": "10.1007/s40750-025-00271-8", "doi_url": "https://doi.org/10.1007/s40750-025-00271-8"}, {"year": "2025", "title": "CTLA4 genetic variants influence immune regulation and susceptibility of HPV associated cervical cancer", "venue": "Discover Oncology", "doi": "10.1007/s12672-025-04179-3", "doi_url": "https://doi.org/10.1007/s12672-025-04179-3"}, {"year": "2026", "title": "Global patterns of natural selection inferred using ancient DNA", "venue": "bioRxiv (Cold Spring Harbor Laboratory)", "doi": "10.64898/2026.01.07.697984", "doi_url": "https://doi.org/10.64898/2026.01.07.697984"}, {"year": "2026", "title": "Cosmopolitanism in the depths of Barbaricum evidenced by archaeogenomic data from the Late Iron Age Goth community of the Masłomęcz group", "venue": "Genome biology", "doi": "10.1186/s13059-026-03969-4", "doi_url": "https://doi.org/10.1186/s13059-026-03969-4"}, {"year": "2026", "title": "Uniparental analysis of Deep Maniot Greeks reveals genetic continuity from the pre-Medieval era", "venue": "Communications Biology", "doi": "10.1038/s42003-026-09597-9", "doi_url": "https://doi.org/10.1038/s42003-026-09597-9"}];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('.role-pill[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

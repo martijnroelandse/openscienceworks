@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ArticleStory – eofs: A Library for EOF Analysis of Meteorological, Oceanographic, and Climate Data</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0; padding: 0;
+      background: #f3f4f6; color: #111827;
+    }
+    .page {
+      max-width: 1000px;
+      margin: 2.5rem auto;
+      padding: 0 1.25rem 3rem;
+    }
+    header.hero { margin-bottom: 2rem; }
+    .hero-title {
+      font-size: 2.1rem; font-weight: 700; margin: 0; color: #111827;
+    }
+    .hero-meta { margin-top: 0.5rem; color: #4b5563; font-size: 0.95rem; }
+    .hero-meta div { margin-bottom: 0.15rem; }
+    .card {
+      background: #ffffff;
+      border-radius: 0.9rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.75rem;
+    }
+    .story-text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .story-subheading {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0.4rem 0 0.2rem;
+      color: #4b5563;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .logo-wrap img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+    .card h2 span {
+      color: #111827;
+      font-weight: 600;
+      text-transform: none;
+      font-size: 1.25rem;
+      letter-spacing: 0;
+    }
+    .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.75rem;
+        margin-bottom: 1.75rem;
+    }
+    .grid-2 .card { margin-bottom: 0; height: 100%; }
+
+    @media (max-width: 980px) {
+        .grid-2 { grid-template-columns: 1fr; }
+    }
+.story-text { font-size: 0.98rem; line-height: 1.7; color: #111827; }
+    .toolbar { display:flex; justify-content:flex-end; margin-bottom:0.75rem; }
+    .download-btn {
+      border:none; border-radius:999px; padding:0.35rem 0.9rem;
+      font-size:0.8rem; cursor:pointer; background:#111827; color:#f9fafb;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
+    }
+    .download-btn:hover { opacity: 0.9; }
+    .grid {
+      display:grid;
+      grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: minmax(0,1fr); }
+    }
+    ul { padding-left: 1.2rem; margin: 0.4rem 0 0; }
+    li { margin-bottom: 0.5rem; font-size: 0.95rem; }
+    a { color:#2563eb; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .scite-link {
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+    .scite-link:hover {
+      text-decoration: underline;
+      color: #4b5563;
+    }
+    a, li { word-break: break-word; overflow-wrap:anywhere; }
+    .tag {
+      display:inline-block;
+      padding:0.15rem 0.45rem;
+      border-radius:999px;
+      background:#e5f2ff;
+      color:#1d4ed8;
+      font-size:0.8rem;
+      margin:0.1rem 0.2rem 0.1rem 0;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+    }
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 0.4rem 0.6rem;
+      vertical-align: top;
+    }
+    th {
+      background: #f9fafb;
+      text-align: left;
+      font-weight: 600;
+      color: #374151;
+    }
+    .badge {
+      display:inline-block;
+      padding:0.2rem 0.6rem;
+      border-radius:999px;
+      background:#eef2ff;
+      color:#4338ca;
+      font-size:0.75rem;
+      font-weight:500;
+    }
+    .orcid-badge {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin-left:0.3rem;
+      padding:0.05rem 0.35rem;
+      border-radius:999px;
+      background:#a6ce39;
+      color:#ffffff;
+      font-size:0.65rem;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:0.04em;
+    }
+    .muted { color:#6b7280; font-size:0.85rem; }
+    footer.page-footer {
+      margin-top: 2rem;
+      text-align: right;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+    @media print {
+      body { background:#ffffff; }
+      .page { margin:0; max-width:100%; box-shadow:none; }
+      .card { box-shadow:none; border-radius:0; page-break-inside:avoid; }
+      .toolbar { display:none; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" /><style>#metrics-widget {  --color-line-graph-1: #4b7094;  --color-line-graph-2: #70944b;  --color-line-graph-3: #944b70;  --color-line-graph-4: #94704b;}</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button class="download-btn" onclick="window.print()">Download as PDF</button>
+</div>
+
+<div class="page">
+
+<header class="hero">
+  <div class="header-bar">
+    <div class="logo-title">
+      <div class="logo-wrap">
+        <img src="articlestories-logo.png" alt="ArticleStories logo">
+      </div>
+      <div>
+        <h1 class="hero-title">eofs: A Library for EOF Analysis of Meteorological, Oceanographic, and Climate Data</h1>
+        <div class="hero-meta">
+          <div><strong>Author(s):</strong> <a href="https://orcid.org/0000-0002-9312-9203" target="_blank" rel="noopener noreferrer">Andrew Dawson<span class="orcid-badge" title="ORCID iD">iD</span></a></div>
+          <div><strong>Venue:</strong> Journal of Open Research Software</div>
+          <div><strong>Publication year:</strong> 2016</div>
+          <div><strong>DOI:</strong> <a href="https://doi.org/10.5334/jors.122" target="_blank" rel="noopener noreferrer">10.5334/jors.122</a></div>
+          <div class="muted">Schema: articlestory.v1</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="card">
+  <h2><span>The story so far…</span></h2>
+<div class="story-text story-text-block"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The 2016 article <em>eofs: A Library for EOF Analysis of Meteorological, Oceanographic, and Climate Data</em>, published in the Journal of Open Research Software by Andrew Dawson, has garnered 182 citations. Its impact is reflected notably in climatology-related research, with strong uptake in journals like the Journal of Climate. While it has minimal online mentions and uncertain open access status, the article’s relevance is evident across diverse international research communities.</p>
+
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">This article, published in April 2016 in the Journal of Open Research Software by Andrew Dawson from NOAA Oceanic and Atmospheric Research, presents a software library focused on empirical orthogonal function (EOF) analysis relevant to meteorology, oceanography, and climate sciences. The work is situated within the open research software sector, emphasizing modular and correct scientific tools, though publisher landing pages and full open access status are not readily available.</p>
+<p class="story-text">Conceptually, the article engages primarily with Python programming (score 0.89) and empirical orthogonal functions (score 0.87), central to computational earth sciences. It also intersects with computer science frameworks, metadata management, and usability concerns, highlighting its role as a modular toolbox for climate data analysis. This thematic positioning underscores its interdisciplinary appeal spanning software engineering and environmental data analysis.</p>
+<p class="story-text">Citation trends reveal a robust uptake primarily through research articles (142), peer reviews (23), and preprints (15). The citing works appear predominantly in high-impact geosciences venues such as the Journal of Climate (10 citations), Geophysical Research Letters (9), and the Quarterly Journal of the Royal Meteorological Society (7). Top citing concepts include climatology (97) and environmental science (42), anchored across global research hubs including the UK (47 citing works) and US (46), indicating a broad geographic and topical engagement.</p>
+<p class="story-text">In terms of online attention, the article has minimal recorded event data, with only one mention from a Wordpress source, suggesting limited broader social media or web-based engagement. This low online trace contrasts with its steady scholarly citation trajectory, indicating its primary impact resides within traditional academic channels rather than digital public discourse.</p>
+<p class="story-text">Regarding open accessibility and reuse, explicit details about open access status and available full-text versions are not confirmed, which may influence discoverability and wider adoption outside established academic institutions. The absence of a publisher landing page or accessible full text limits potential user access pathways, although citations signal ongoing academic utility.</p>
+<p class="story-text">Future qualitative analyses could leverage scite’s detailed citation statements—where all 88 captured mentions are neutral (neither supporting nor contradicting)—to explore how the article's methodology is referenced in context. Such follow-up would clarify interpretive patterns and the software’s functional role in subsequent literature beyond quantitative citation counts.</p></div>
+</section>
+
+
+
+    <section class="card">
+    <h2><span>Impact metrics</span></h2>
+    <ul>
+        <li><strong>Citations (OpenAlex):</strong> 182</li>
+        <li><strong>Online mentions (Crossref Event Data):</strong> 1</li>
+        <li><strong>Citation context (scite):</strong> 88 (<a href='https://scite.ai/reports/10.5334%2Fjors.122' target='_blank' rel='noopener noreferrer'>scite</a>)</li>
+    </ul>
+    </section>
+    
+
+    <section class="card">
+      <h2><span>Inferred roles</span></h2>
+      <p class="muted">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+        <span class='tag'>Scholarly uptake (0.30)</span>
+      </div>
+    </section>
+    
+<div class="grid-2"><section class="card">
+      <h2><span>Usage landscape</span> <span class="badge">OAPEN / OPERAS</span></h2>
+      <ul><li class="muted">Not available.</li></ul>
+    </section><section class="card">
+      <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+      <ul><li class="muted">Not available.</li></ul>
+    </section></div>
+<div class="grid-2"><section class="card">
+  <h2><span>Access</span></h2>
+  <ul>
+    <li><strong>DOI:</strong> <a href="https://doi.org/10.5334/jors.122" target="_blank" rel="noopener noreferrer">10.5334/jors.122</a></li>
+    <li><strong>OA status:</strong> gold</li>
+    <li><strong>Landing page:</strong> <a href='https://doi.org/10.5334/jors.122' target='_blank' rel='noopener noreferrer'>https://doi.org/10.5334/jors.122</a></li>
+    <li><strong>Best OA PDF:</strong> <a href='http://openresearchsoftware.metajnl.com/articles/10.5334/jors.122/galley/147/download/' target='_blank' rel='noopener noreferrer'>http://openresearchsoftware.metajnl.com/articles/10.5334/jors.122/galley/147/download/</a></li>
+  </ul>
+</section><section class="card">
+      <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+      <ul><li><strong>Total:</strong> 88</li><li><strong>Supporting:</strong> 0</li><li><strong>Mentioning:</strong> 88</li><li><strong>Contradicting:</strong> 0</li></ul>
+    </section></div>
+
+    <section class="card">
+      <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
+      <ul>
+        <li><strong>Total citing works captured:</strong> 182</li><li><strong>Top citing venues:</strong> <span class='tag'>Journal of Climate (10)</span> <span class='tag'>Geophysical Research Letters (9)</span> <span class='tag'>Quarterly Journal of the Royal Meteorological Society (7)</span> <span class='tag'>International Journal of Climatology (7)</span> <span class='tag'>Climate Dynamics (7)</span> <span class='tag'>Journal of Geophysical Research Oceans (6)</span> <span class='tag'>Geoscientific model development (6)</span> <span class='tag'>Environmental Research Letters (6)</span> <span class='tag'>Weather and Climate Dynamics (4)</span> <span class='tag'>Ocean science (4)</span></li><li><strong>Citing work types:</strong> <span class='tag'>article (142)</span> <span class='tag'>peer-review (23)</span> <span class='tag'>preprint (15)</span> <span class='tag'>review (1)</span> <span class='tag'>dissertation (1)</span></li><li><strong>Top citing concepts:</strong> <span class='tag'>Climatology (97)</span> <span class='tag'>Environmental science (42)</span> <span class='tag'>Empirical orthogonal functions (28)</span> <span class='tag'>Precipitation (20)</span> <span class='tag'>Oceanography (12)</span> <span class='tag'>Computer science (11)</span> <span class='tag'>Predictability (9)</span> <span class='tag'>Context (archaeology) (9)</span> <span class='tag'>North Atlantic oscillation (8)</span> <span class='tag'>El Niño Southern Oscillation (7)</span></li><li><strong>Countries (from affiliations):</strong> <span class='tag'>GB (47)</span> <span class='tag'>US (46)</span> <span class='tag'>CN (27)</span> <span class='tag'>DE (24)</span> <span class='tag'>NO (12)</span> <span class='tag'>AU (11)</span> <span class='tag'>IT (11)</span> <span class='tag'>NL (9)</span> <span class='tag'>ES (8)</span> <span class='tag'>FR (7)</span></li><li><strong>Citation timeline (by year):</strong> 2016: 1, 2017: 3, 2018: 5, 2019: 9, 2020: 14, 2021: 37, 2022: 32, 2023: 20, 2024: 32, 2025: 28, 2026: 1</li>
+      </ul>
+    </section>
+    
+<section class="card">
+  <h2><span>Contributors &amp; affiliations</span> <span class='badge'>OpenAlex</span></h2>
+  <div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">1 author · 2 institutions · 2 countries</div>
+    <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3><ul><li><a href='https://orcid.org/0000-0002-9312-9203' target='_blank' rel='noopener noreferrer'>Andrew Dawson<span class='orcid-badge' title='ORCID iD'>iD</span></a> <a class='muted' style='text-decoration:none' href='https://openalex.org/A5103137907' target='_blank' rel='noopener noreferrer'>OpenAlex</a> <span class='badge'>First</span> <span class='badge'>Corresponding</span><div class='muted' style='margin-top:0.15rem;'>NOAA Oceanic and Atmospheric Research <span class='muted'>+1 more</span></div></li></ul>
+    <h3 style="margin:0.9rem 0 0.25rem;">Institutions</h3><ul><li><a href='https://openalex.org/I2802992173' target='_blank' rel='noopener noreferrer'>NOAA Oceanic and Atmospheric Research</a> <span class='muted'>(US · government)</span></li><li><a href='https://openalex.org/I40120149' target='_blank' rel='noopener noreferrer'>University of Oxford</a> <span class='muted'>(GB · education)</span></li></ul>
+</section>
+<div class="grid-2">
+        <section class="card">
+          <h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref Event Data</span></h2>
+          <p class="muted">This work has <strong>1</strong> recorded events (most recent on 2022-08-23).</p>
+          <ul class="event-source-list">
+            <li class='event-source-item'><span class='tag'><a href="http://zacklabe.com/methods-and-open-software/" target="_blank">WordPress.com</a></span><span class='tag tag-soft'>1 event</span></li>
+          </ul>
+          <h3>Selected examples</h3>
+          <ul class="event-examples-list">
+            <li class='event-example-item'><div class='event-example-meta'><span class='tag'>WordPress.com</span></div><a href='http://zacklabe.com/methods-and-open-software/' target='_blank'>Methods and Open Software</a><br><span class='muted'>2022-08-23</span></li>
+          </ul>
+        </section>
+        
+        <section class="card">
+        <h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+        <ul><li><span class='tag'>Python (programming language)</span></li>
+<li><span class='tag'>Empirical orthogonal functions</span></li>
+<li><span class='tag'>Computer science</span></li>
+<li><span class='tag'>Metadata</span></li>
+<li><span class='tag'>Modular design</span></li>
+<li><span class='tag'>Software</span></li>
+<li><span class='tag'>Correctness</span></li>
+<li><span class='tag'>NetCDF</span></li>
+<li><span class='tag'>Usability</span></li>
+<li><span class='tag'>Toolbox</span></li>
+<li><span class='tag'>Confusion</span></li>
+<li><span class='tag'>Software engineering</span></li>
+<li><span class='tag'>World Wide Web</span></li>
+<li><span class='tag'>Programming language</span></li>
+<li><span class='tag'>Operating system</span></li>
+<li><span class='tag'>Psychology</span></li>
+<li><span class='tag'>Psychoanalysis</span></li>
+<li><span class='tag'>Machine learning</span></li></ul>
+        </section>
+        </div>
+
+<!-- operas-widget debug: work_uri=info:doi:10.5334/jors.122 measures=['https://metrics.operas-eu.org/crossref/citations/v1'] tabs=1 -->
+<section class="card" id="operas-metrics-card">
+    <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
+    <p class="muted">Usage signals currently indexed by OPERAS Metrics (source-separated).</p>
+    <div id="metrics-widget"></div>
+
+    <script type="application/json" id="operas-metrics-config">
+    {"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true, "cdn_images_url": "https://storage.googleapis.com/operas/metrics-widget/v1/latest/images"}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "usage", "title": "Usage", "scopes": {"m1": {"title": "Crossref · citations", "works": ["info:doi:10.5334/jors.122"], "measures": ["https://metrics.operas-eu.org/crossref/citations/v1"]}}, "graphs": [{"id": "usage_over_time", "type": "line", "title": "Usage over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}
+    </script>
+
+    <script>
+    window.operaswidget = (e => {
+      if (document.getElementById(e)) return window.operaswidget;
+      let t = document.createElement('script');
+      t.id = e;
+      t.src = 'https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js';
+      document.body.appendChild(t);
+      let i = window.operaswidget || {};
+      i.eventQueue = i.eventQueue || [];
+      i.ready = cb => { i.eventQueue.push(cb); };
+      return i;
+    })('operas-metrics-script');
+  </script>
+</section>
+
+<section class="card">
+  <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+  <table>
+    <thead>
+      <tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>2026</td><td>The disappearing quasi-biennial oscillation under sustained global warming</td><td>Nature Communications</td><td><a href="https://doi.org/10.1038/s41467-026-68922-2" target="_blank" rel="noopener noreferrer">10.1038/s41467-026-68922-2</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s41467-026-68922-2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Southern Annular Mode persistence and westerly jet: a reassessment using high-resolution global models</td><td>Weather and Climate Dynamics</td><td><a href="https://doi.org/10.5194/wcd-6-1179-2025" target="_blank" rel="noopener noreferrer">10.5194/wcd-6-1179-2025</a>&nbsp;<a href="https://scite.ai/reports/10.5194/wcd-6-1179-2025" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Learning predictable and informative dynamical drivers of extreme precipitation using variational autoencoders</td><td>Weather and Climate Dynamics</td><td><a href="https://doi.org/10.5194/wcd-6-995-2025" target="_blank" rel="noopener noreferrer">10.5194/wcd-6-995-2025</a>&nbsp;<a href="https://scite.ai/reports/10.5194/wcd-6-995-2025" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Dijital Liderlik ve Performans Arasındaki İlişki Üzerine Bir Meta-Analiz Çalışması</td><td>Trends in Business and Economics</td><td><a href="https://doi.org/10.16951/trendbusecon.1595950" target="_blank" rel="noopener noreferrer">10.16951/trendbusecon.1595950</a>&nbsp;<a href="https://scite.ai/reports/10.16951/trendbusecon.1595950" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Examining of interannual variability in the Mainland-Indochina Southwest Monsoon onset applying new monsoon index</td><td>Theoretical and Applied Climatology</td><td><a href="https://doi.org/10.1007/s00704-025-05543-7" target="_blank" rel="noopener noreferrer">10.1007/s00704-025-05543-7</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s00704-025-05543-7" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Quantifying the causal effects of large-scale climate indices on basin-scale meteorological drought using transfer entropy: a case study of the yellow river basin</td><td>Stochastic Environmental Research and Risk Assessment</td><td><a href="https://doi.org/10.1007/s00477-025-03030-z" target="_blank" rel="noopener noreferrer">10.1007/s00477-025-03030-z</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s00477-025-03030-z" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>The impact of Arctic sea‐ice loss on winter weather in the British Isles</td><td>Quarterly Journal of the Royal Meteorological Society</td><td><a href="https://doi.org/10.1002/qj.70012" target="_blank" rel="noopener noreferrer">10.1002/qj.70012</a>&nbsp;<a href="https://scite.ai/reports/10.1002/qj.70012" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Jet stream poleward migration leads to marine primary production decrease</td><td>Progress In Oceanography</td><td><a href="https://doi.org/10.1016/j.pocean.2025.103494" target="_blank" rel="noopener noreferrer">10.1016/j.pocean.2025.103494</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.pocean.2025.103494" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Stratification and overturning circulation are intertwined controls on ocean heat uptake efficiency in climate models</td><td>Ocean science</td><td><a href="https://doi.org/10.5194/os-21-1081-2025" target="_blank" rel="noopener noreferrer">10.5194/os-21-1081-2025</a>&nbsp;<a href="https://scite.ai/reports/10.5194/os-21-1081-2025" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Interannual variability of summertime cross-isobath exchanges in the northern South China Sea: ENSO and riverine influences</td><td>Ocean science</td><td><a href="https://doi.org/10.5194/os-21-3361-2025" target="_blank" rel="noopener noreferrer">10.5194/os-21-3361-2025</a>&nbsp;<a href="https://scite.ai/reports/10.5194/os-21-3361-2025" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Effectiveness of the Offline Fennel model for biogeochemical simulations in the Mediterranean Sea</td><td>Ocean Modelling</td><td><a href="https://doi.org/10.1016/j.ocemod.2025.102596" target="_blank" rel="noopener noreferrer">10.1016/j.ocemod.2025.102596</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.ocemod.2025.102596" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Global phenology maps reveal the drivers and effects of seasonal asynchrony</td><td>Nature</td><td><a href="https://doi.org/10.1038/s41586-025-09410-3" target="_blank" rel="noopener noreferrer">10.1038/s41586-025-09410-3</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s41586-025-09410-3" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Multivariate causal analysis of the effects of large-scale climate factors on meteorological drought in the Pearl River Basin: a study using partial mutual information and empirical orthogonal teleconnections</td><td>Natural Hazards</td><td><a href="https://doi.org/10.1007/s11069-025-07317-w" target="_blank" rel="noopener noreferrer">10.1007/s11069-025-07317-w</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s11069-025-07317-w" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Flood monitoring: A hydrologically guided method for infilling incomplete flood inundation maps derived from satellite images</td><td>Journal of Hydrology</td><td><a href="https://doi.org/10.1016/j.jhydrol.2025.133365" target="_blank" rel="noopener noreferrer">10.1016/j.jhydrol.2025.133365</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.jhydrol.2025.133365" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Asymmetric Response of the North Atlantic Gyres to the North Atlantic Oscillation</td><td>Journal of Geophysical Research Oceans</td><td><a href="https://doi.org/10.1029/2024jc021997" target="_blank" rel="noopener noreferrer">10.1029/2024jc021997</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2024jc021997" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>An Idealized Model for the Emergence of the North Icelandic Jet</td><td>Journal of Geophysical Research Oceans</td><td><a href="https://doi.org/10.1029/2024jc021992" target="_blank" rel="noopener noreferrer">10.1029/2024jc021992</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2024jc021992" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Patterns and Drivers of Moisture Transport Variability Over Aotearoa/New Zealand and Their Impacts</td><td>International Journal of Climatology</td><td><a href="https://doi.org/10.1002/joc.70095" target="_blank" rel="noopener noreferrer">10.1002/joc.70095</a>&nbsp;<a href="https://scite.ai/reports/10.1002/joc.70095" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>The unstable East Asian Summer Monsoon - ENSO relationship over the past 700 years</td><td>Global and Planetary Change</td><td><a href="https://doi.org/10.1016/j.gloplacha.2025.104842" target="_blank" rel="noopener noreferrer">10.1016/j.gloplacha.2025.104842</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.gloplacha.2025.104842" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Soil parameterization in land surface models drives large discrepancies in soil moisture predictions across hydrologically complex regions of the contiguous United States</td><td>Geoscientific model development</td><td><a href="https://doi.org/10.5194/gmd-18-7707-2025" target="_blank" rel="noopener noreferrer">10.5194/gmd-18-7707-2025</a>&nbsp;<a href="https://scite.ai/reports/10.5194/gmd-18-7707-2025" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>When Simplification Leads to Ambiguity: A Look at Two Ocean Metrics for the Subpolar North Atlantic</td><td>Geophysical Research Letters</td><td><a href="https://doi.org/10.1029/2024gl112496" target="_blank" rel="noopener noreferrer">10.1029/2024gl112496</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2024gl112496" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Stratospheric Impacts on Weather Regimes Following the 2018 and 2019 Sudden Stratospheric Warmings</td><td>Geophysical Research Letters</td><td><a href="https://doi.org/10.1029/2025gl115668" target="_blank" rel="noopener noreferrer">10.1029/2025gl115668</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2025gl115668" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Physical Connectivity in the Wider Caribbean Region</td><td>Geophysical Research Letters</td><td><a href="https://doi.org/10.1029/2024gl113597" target="_blank" rel="noopener noreferrer">10.1029/2024gl113597</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2024gl113597" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Atmospheric and Oceanic Pathways Drive Separate Modes of Southern Hemisphere Climate in Simulations of Spontaneous Dansgaard‐Oeschger‐Type Oscillations</td><td>Geophysical Research Letters</td><td><a href="https://doi.org/10.1029/2024gl111473" target="_blank" rel="noopener noreferrer">10.1029/2024gl111473</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2024gl111473" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Spatiotemporal characteristics of the energy field and disaster cause of the 2023 Gansu Jishishan &lt;i&gt;M&lt;/i&gt; 6.2 earthquake</td><td>Geomatics Natural Hazards and Risk</td><td><a href="https://doi.org/10.1080/19475705.2025.2569822" target="_blank" rel="noopener noreferrer">10.1080/19475705.2025.2569822</a>&nbsp;<a href="https://scite.ai/reports/10.1080/19475705.2025.2569822" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Precipitation leads the long-term vegetation increase in the conterminous United States drylands</td><td>Environmental Research Letters</td><td><a href="https://doi.org/10.1088/1748-9326/adb985" target="_blank" rel="noopener noreferrer">10.1088/1748-9326/adb985</a>&nbsp;<a href="https://scite.ai/reports/10.1088/1748-9326/adb985" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Decadal predictions outperform climate projections in forecasting Mediterranean wintertime precipitation</td><td>Environmental Research Letters</td><td><a href="https://doi.org/10.1088/1748-9326/adb59e" target="_blank" rel="noopener noreferrer">10.1088/1748-9326/adb59e</a>&nbsp;<a href="https://scite.ai/reports/10.1088/1748-9326/adb59e" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Dynamics of the optical water quality parameters in the Lake Nokoué and Cotonou Channel complex (Benin)</td><td>Environmental Challenges</td><td><a href="https://doi.org/10.1016/j.envc.2025.101126" target="_blank" rel="noopener noreferrer">10.1016/j.envc.2025.101126</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.envc.2025.101126" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>On the role of AMOC weakening in shaping wintertime Euro-Atlantic atmospheric circulation</td><td>Climate Dynamics</td><td><a href="https://doi.org/10.1007/s00382-025-07747-z" target="_blank" rel="noopener noreferrer">10.1007/s00382-025-07747-z</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s00382-025-07747-z" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Forecasting springtime rainfall in southeastern Australia using empirical orthogonal functions and neural networks</td><td>Advances in statistical climatology, meteorology and oceanography</td><td><a href="https://doi.org/10.5194/ascmo-11-123-2025" target="_blank" rel="noopener noreferrer">10.5194/ascmo-11-123-2025</a>&nbsp;<a href="https://scite.ai/reports/10.5194/ascmo-11-123-2025" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>xeofs: Comprehensive EOF analysis in Python withxarray</td><td>The Journal of Open Source Software</td><td><a href="https://doi.org/10.21105/joss.06060" target="_blank" rel="noopener noreferrer">10.21105/joss.06060</a>&nbsp;<a href="https://scite.ai/reports/10.21105/joss.06060" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Weather types for the seasonal transitions in Central America</td><td>Revista de Matemática Teoría y Aplicaciones</td><td><a href="https://doi.org/10.15517/rmta.v31i1.54869" target="_blank" rel="noopener noreferrer">10.15517/rmta.v31i1.54869</a>&nbsp;<a href="https://scite.ai/reports/10.15517/rmta.v31i1.54869" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Causal Oceanic Feedbacks onto the Winter NAO</td><td>Research Square (Research Square)</td><td><a href="https://doi.org/10.21203/rs.3.rs-3143255/v1" target="_blank" rel="noopener noreferrer">10.21203/rs.3.rs-3143255/v1</a>&nbsp;<a href="https://scite.ai/reports/10.21203/rs.3.rs-3143255/v1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Large model biases in the Pacific centre of the Northern Annular Mode due to exaggerated variability of the Aleutian Low</td><td>Quarterly Journal of the Royal Meteorological Society</td><td><a href="https://doi.org/10.1002/qj.4825" target="_blank" rel="noopener noreferrer">10.1002/qj.4825</a>&nbsp;<a href="https://scite.ai/reports/10.1002/qj.4825" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Beyond the regional average: Drivers of geographical rainfall variability during East Africa&#x27;s short rains</td><td>Quarterly Journal of the Royal Meteorological Society</td><td><a href="https://doi.org/10.1002/qj.4829" target="_blank" rel="noopener noreferrer">10.1002/qj.4829</a>&nbsp;<a href="https://scite.ai/reports/10.1002/qj.4829" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>A high‐resolution climatological study of explosive cyclones in the Mediterranean region: Frequency, intensity and synoptic drivers</td><td>Quarterly Journal of the Royal Meteorological Society</td><td><a href="https://doi.org/10.1002/qj.4889" target="_blank" rel="noopener noreferrer">10.1002/qj.4889</a>&nbsp;<a href="https://scite.ai/reports/10.1002/qj.4889" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Improving Indonesia&#x27;s tsunami early warning: Part I: Developing synthetic tsunami scenarios and initial deployment</td><td>Ocean Engineering</td><td><a href="https://doi.org/10.1016/j.oceaneng.2024.119892" target="_blank" rel="noopener noreferrer">10.1016/j.oceaneng.2024.119892</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.oceaneng.2024.119892" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Probabilistic seasonal forecasts of North Atlantic atmospheric circulation using complex systems modelling and comparison with dynamical models</td><td>Meteorological Applications</td><td><a href="https://doi.org/10.1002/met.2178" target="_blank" rel="noopener noreferrer">10.1002/met.2178</a>&nbsp;<a href="https://scite.ai/reports/10.1002/met.2178" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>ENSO‐Modulated Variability in Winter Shelf Circulation of the Northern South China Sea</td><td>Journal of Geophysical Research Oceans</td><td><a href="https://doi.org/10.1029/2024jc021577" target="_blank" rel="noopener noreferrer">10.1029/2024jc021577</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2024jc021577" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Arctic and Antarctic Sea Ice Thickness and Volume Changes From Observations Between 1994 and 2023</td><td>Journal of Geophysical Research Oceans</td><td><a href="https://doi.org/10.1029/2023jc020848" target="_blank" rel="noopener noreferrer">10.1029/2023jc020848</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2023jc020848" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Exploring Mechanisms for Model‐Dependency of the Stratospheric Response to Arctic Warming</td><td>Journal of Geophysical Research Atmospheres</td><td><a href="https://doi.org/10.1029/2023jd040416" target="_blank" rel="noopener noreferrer">10.1029/2023jd040416</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2023jd040416" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Disentangling North Atlantic Ocean–Atmosphere Coupling Using Circulation Analogs</td><td>Journal of Climate</td><td><a href="https://doi.org/10.1175/jcli-d-23-0602.1" target="_blank" rel="noopener noreferrer">10.1175/jcli-d-23-0602.1</a>&nbsp;<a href="https://scite.ai/reports/10.1175/jcli-d-23-0602.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Intercomparison of In Situ and Satellite Sea Surface Salinity Products for Global Coastal Ocean Studies</td><td>Journal of Atmospheric and Oceanic Technology</td><td><a href="https://doi.org/10.1175/jtech-d-23-0168.1" target="_blank" rel="noopener noreferrer">10.1175/jtech-d-23-0168.1</a>&nbsp;<a href="https://scite.ai/reports/10.1175/jtech-d-23-0168.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>North Atlantic atmospheric circulation indices: Links with summer and winter temperature and precipitation in north‐west Europe, including persistence and variability</td><td>International Journal of Climatology</td><td><a href="https://doi.org/10.1002/joc.8364" target="_blank" rel="noopener noreferrer">10.1002/joc.8364</a>&nbsp;<a href="https://scite.ai/reports/10.1002/joc.8364" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Systematic and objective evaluation of Earth system models: PCMDI Metrics Package (PMP) version 3</td><td>Geoscientific model development</td><td><a href="https://doi.org/10.5194/gmd-17-3919-2024" target="_blank" rel="noopener noreferrer">10.5194/gmd-17-3919-2024</a>&nbsp;<a href="https://scite.ai/reports/10.5194/gmd-17-3919-2024" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>RASCAL v1.0: an open-source tool for climatological time series reconstruction and extension</td><td>Geoscientific model development</td><td><a href="https://doi.org/10.5194/gmd-17-7245-2024" target="_blank" rel="noopener noreferrer">10.5194/gmd-17-7245-2024</a>&nbsp;<a href="https://scite.ai/reports/10.5194/gmd-17-7245-2024" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Using power system modelling outputs to identify weather-induced extreme events in highly renewable systems</td><td>Environmental Research Letters</td><td><a href="https://doi.org/10.1088/1748-9326/ad374a" target="_blank" rel="noopener noreferrer">10.1088/1748-9326/ad374a</a>&nbsp;<a href="https://scite.ai/reports/10.1088/1748-9326/ad374a" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Spatiotemporal subsidence feature decomposition and hotspot identification</td><td>Environmental Earth Sciences</td><td><a href="https://doi.org/10.1007/s12665-024-11427-2" target="_blank" rel="noopener noreferrer">10.1007/s12665-024-11427-2</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s12665-024-11427-2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Quantifying Residual Soil Moisture through Empirical Orthogonal Functions Analysis to Support Legume-Based Cropping Systems</td><td>Earth Systems and Environment</td><td><a href="https://doi.org/10.1007/s41748-024-00514-w" target="_blank" rel="noopener noreferrer">10.1007/s41748-024-00514-w</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s41748-024-00514-w" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>A global Data Assimilation of Moisture Patterns from 21 000–0 BP (DAMP-21ka) using lake level proxy records</td><td>Climate of the past</td><td><a href="https://doi.org/10.5194/cp-20-2663-2024" target="_blank" rel="noopener noreferrer">10.5194/cp-20-2663-2024</a>&nbsp;<a href="https://scite.ai/reports/10.5194/cp-20-2663-2024" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Causal oceanic feedbacks onto the winter NAO</td><td>Climate Dynamics</td><td><a href="https://doi.org/10.1007/s00382-024-07128-y" target="_blank" rel="noopener noreferrer">10.1007/s00382-024-07128-y</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s00382-024-07128-y" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Evolution of oxygen and stratification and their relationship in the North Pacific Ocean in CMIP6 Earth system models</td><td>Biogeosciences</td><td><a href="https://doi.org/10.5194/bg-21-3985-2024" target="_blank" rel="noopener noreferrer">10.5194/bg-21-3985-2024</a>&nbsp;<a href="https://scite.ai/reports/10.5194/bg-21-3985-2024" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Unveiling the Characteristics of the Mainland-Indochina Southwest Monsoon: Interannual Variability and ENSO Exclusion via a New Monsoon Index</td><td></td><td><a href="https://doi.org/10.21203/rs.3.rs-4825886/v1" target="_blank" rel="noopener noreferrer">10.21203/rs.3.rs-4825886/v1</a>&nbsp;<a href="https://scite.ai/reports/10.21203/rs.3.rs-4825886/v1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Supplementary material to &quot;Source specific bias correction of US background ozone modeled in CMAQ&quot;</td><td></td><td><a href="https://doi.org/10.5194/egusphere-2024-554-supplement" target="_blank" rel="noopener noreferrer">10.5194/egusphere-2024-554-supplement</a>&nbsp;<a href="https://scite.ai/reports/10.5194/egusphere-2024-554-supplement" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Reply on RC1</td><td></td><td><a href="https://doi.org/10.5194/egusphere-2024-746-ac3" target="_blank" rel="noopener noreferrer">10.5194/egusphere-2024-746-ac3</a>&nbsp;<a href="https://scite.ai/reports/10.5194/egusphere-2024-746-ac3" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Comment on egusphere-2024-958</td><td></td><td><a href="https://doi.org/10.5194/egusphere-2024-958-rc1" target="_blank" rel="noopener noreferrer">10.5194/egusphere-2024-958-rc1</a>&nbsp;<a href="https://scite.ai/reports/10.5194/egusphere-2024-958-rc1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Comment on egusphere-2024-958</td><td></td><td><a href="https://doi.org/10.5194/egusphere-2024-958-rc2" target="_blank" rel="noopener noreferrer">10.5194/egusphere-2024-958-rc2</a>&nbsp;<a href="https://scite.ai/reports/10.5194/egusphere-2024-958-rc2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Comment on egusphere-2024-958</td><td></td><td><a href="https://doi.org/10.5194/egusphere-2024-958-rc3" target="_blank" rel="noopener noreferrer">10.5194/egusphere-2024-958-rc3</a>&nbsp;<a href="https://scite.ai/reports/10.5194/egusphere-2024-958-rc3" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Comment on egusphere-2024-746</td><td></td><td><a href="https://doi.org/10.5194/egusphere-2024-746-rc1" target="_blank" rel="noopener noreferrer">10.5194/egusphere-2024-746-rc1</a>&nbsp;<a href="https://scite.ai/reports/10.5194/egusphere-2024-746-rc1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Comment on egusphere-2024-746</td><td></td><td><a href="https://doi.org/10.5194/egusphere-2024-746-rc2" target="_blank" rel="noopener noreferrer">10.5194/egusphere-2024-746-rc2</a>&nbsp;<a href="https://scite.ai/reports/10.5194/egusphere-2024-746-rc2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Atmospheric and Oceanic Pathways Drive Separate Modes of Southern Hemisphere Climate in Simulations of Spontaneous Dansgaard-Oeschger-type Oscillations</td><td></td><td><a href="https://doi.org/10.22541/essoar.172202086.64896478/v1" target="_blank" rel="noopener noreferrer">10.22541/essoar.172202086.64896478/v1</a>&nbsp;<a href="https://scite.ai/reports/10.22541/essoar.172202086.64896478/v1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>A global Data Assimilation of Moisture Patterns from 21,000–0 BP (DAMP-21ka) using lake level proxy records</td><td></td><td><a href="https://doi.org/10.5194/egusphere-2024-746" target="_blank" rel="noopener noreferrer">10.5194/egusphere-2024-746</a>&nbsp;<a href="https://scite.ai/reports/10.5194/egusphere-2024-746" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Using power system modelling outputs to identify weather-induced extreme events in highly renewable systems</td><td>arXiv (Cornell University)</td><td><a href="https://doi.org/10.48550/arxiv.2307.13520" target="_blank" rel="noopener noreferrer">10.48550/arxiv.2307.13520</a>&nbsp;<a href="https://scite.ai/reports/10.48550/arxiv.2307.13520" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Spatiotemporal variability of soil moisture over Ethiopia and its teleconnections with remote and local drivers</td><td>Theoretical and Applied Climatology</td><td><a href="https://doi.org/10.1007/s00704-022-04335-7" target="_blank" rel="noopener noreferrer">10.1007/s00704-022-04335-7</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s00704-022-04335-7" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Comparison of data-driven methods for linking extreme precipitation events to local and large-scale meteorological variables</td><td>Stochastic Environmental Research and Risk Assessment</td><td><a href="https://doi.org/10.1007/s00477-023-02511-3" target="_blank" rel="noopener noreferrer">10.1007/s00477-023-02511-3</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s00477-023-02511-3" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Quantitative attribution of the temperature associated with winter extreme cold events in China</td><td>Research Square (Research Square)</td><td><a href="https://doi.org/10.21203/rs.3.rs-2815055/v1" target="_blank" rel="noopener noreferrer">10.21203/rs.3.rs-2815055/v1</a>&nbsp;<a href="https://scite.ai/reports/10.21203/rs.3.rs-2815055/v1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Climate downscaling for regional models with a neural network: A Hawaiian example</td><td>Progress In Oceanography</td><td><a href="https://doi.org/10.1016/j.pocean.2023.103047" target="_blank" rel="noopener noreferrer">10.1016/j.pocean.2023.103047</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.pocean.2023.103047" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Observed mechanisms activating the recent subpolar North Atlantic Warming since 2016</td><td>Philosophical Transactions of the Royal Society A Mathematical Physical and Engineering Sciences</td><td><a href="https://doi.org/10.1098/rsta.2022.0183" target="_blank" rel="noopener noreferrer">10.1098/rsta.2022.0183</a>&nbsp;<a href="https://scite.ai/reports/10.1098/rsta.2022.0183" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Euro-Atlantic Weather Regimes and Their Modulation by Tropospheric and Stratospheric Teleconnection Pathways in ECMWF Reforecasts</td><td>Monthly Weather Review</td><td><a href="https://doi.org/10.1175/mwr-d-22-0346.1" target="_blank" rel="noopener noreferrer">10.1175/mwr-d-22-0346.1</a>&nbsp;<a href="https://scite.ai/reports/10.1175/mwr-d-22-0346.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Prediction of Summer Precipitation in North China: Role of the Evolution of Sea Surface Temperature Anomalies from Boreal Winter to Spring</td><td>Journal of Climate</td><td><a href="https://doi.org/10.1175/jcli-d-22-0559.1" target="_blank" rel="noopener noreferrer">10.1175/jcli-d-22-0559.1</a>&nbsp;<a href="https://scite.ai/reports/10.1175/jcli-d-22-0559.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Atmospheric Drivers of Tasman Sea Marine Heatwaves</td><td>Journal of Climate</td><td><a href="https://doi.org/10.1175/jcli-d-22-0538.1" target="_blank" rel="noopener noreferrer">10.1175/jcli-d-22-0538.1</a>&nbsp;<a href="https://scite.ai/reports/10.1175/jcli-d-22-0538.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Northern Hemisphere Summer Insolation and Ice Volume Driven Variations in Hydrological Environment in Southwest China</td><td>Geophysical Research Letters</td><td><a href="https://doi.org/10.1029/2023gl105664" target="_blank" rel="noopener noreferrer">10.1029/2023gl105664</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2023gl105664" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Strain fields of Ms &amp;gt;6.0 earthquakes in Menyuan, Qinghai, China</td><td>Frontiers in Earth Science</td><td><a href="https://doi.org/10.3389/feart.2023.1152348" target="_blank" rel="noopener noreferrer">10.3389/feart.2023.1152348</a>&nbsp;<a href="https://scite.ai/reports/10.3389/feart.2023.1152348" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>A 20-year satellite-reanalysis-based climatology of extreme precipitation characteristics over the Sinai Peninsula</td><td>Earth System Dynamics</td><td><a href="https://doi.org/10.5194/esd-14-931-2023" target="_blank" rel="noopener noreferrer">10.5194/esd-14-931-2023</a>&nbsp;<a href="https://scite.ai/reports/10.5194/esd-14-931-2023" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Quantitative attribution of the temperature associated with winter extreme cold events in China</td><td>Climate Dynamics</td><td><a href="https://doi.org/10.1007/s00382-023-06906-4" target="_blank" rel="noopener noreferrer">10.1007/s00382-023-06906-4</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s00382-023-06906-4" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Opposing trends of cloud coverage over land and ocean under global warming</td><td>Atmospheric chemistry and physics</td><td><a href="https://doi.org/10.5194/acp-23-6559-2023" target="_blank" rel="noopener noreferrer">10.5194/acp-23-6559-2023</a>&nbsp;<a href="https://scite.ai/reports/10.5194/acp-23-6559-2023" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Variability of the South Java Current from 1993 to 2021, and its relationship to ENSO and IOD events</td><td>Asia-Pacific Journal of Atmospheric Sciences</td><td><a href="https://doi.org/10.1007/s13143-023-00336-2" target="_blank" rel="noopener noreferrer">10.1007/s13143-023-00336-2</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s13143-023-00336-2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Reply on RC2</td><td></td><td><a href="https://doi.org/10.5194/acp-2022-817-ac2" target="_blank" rel="noopener noreferrer">10.5194/acp-2022-817-ac2</a>&nbsp;<a href="https://scite.ai/reports/10.5194/acp-2022-817-ac2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Reply on RC1</td><td></td><td><a href="https://doi.org/10.5194/acp-2022-817-ac1" target="_blank" rel="noopener noreferrer">10.5194/acp-2022-817-ac1</a>&nbsp;<a href="https://scite.ai/reports/10.5194/acp-2022-817-ac1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Comment on acp-2022-817</td><td></td><td><a href="https://doi.org/10.5194/acp-2022-817-rc1" target="_blank" rel="noopener noreferrer">10.5194/acp-2022-817-rc1</a>&nbsp;<a href="https://scite.ai/reports/10.5194/acp-2022-817-rc1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Comment on acp-2022-817</td><td></td><td><a href="https://doi.org/10.5194/acp-2022-817-rc2" target="_blank" rel="noopener noreferrer">10.5194/acp-2022-817-rc2</a>&nbsp;<a href="https://scite.ai/reports/10.5194/acp-2022-817-rc2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Assessment of Land and Renewable Energy Resource Potential for Regional Power System Integration with ML Spatio-Temporal Clustering</td><td></td><td><a href="https://doi.org/10.1109/icrera59003.2023.10269363" target="_blank" rel="noopener noreferrer">10.1109/icrera59003.2023.10269363</a>&nbsp;<a href="https://scite.ai/reports/10.1109/icrera59003.2023.10269363" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Characteristics and causes of Taiwan&#x27;s extreme rainfall in 2022 January and February</td><td>Weather and Climate Extremes</td><td><a href="https://doi.org/10.1016/j.wace.2022.100532" target="_blank" rel="noopener noreferrer">10.1016/j.wace.2022.100532</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.wace.2022.100532" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Quantifying climate model representation of the wintertime Euro-Atlantic circulation using geopotential-jet regimes</td><td>Weather and Climate Dynamics</td><td><a href="https://doi.org/10.5194/wcd-3-505-2022" target="_blank" rel="noopener noreferrer">10.5194/wcd-3-505-2022</a>&nbsp;<a href="https://scite.ai/reports/10.5194/wcd-3-505-2022" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Alternate Modulations of Enso and the Arctic Oscillation on Winter Extreme Cold Events in China</td><td>SSRN Electronic Journal</td><td><a href="https://doi.org/10.2139/ssrn.4165798" target="_blank" rel="noopener noreferrer">10.2139/ssrn.4165798</a>&nbsp;<a href="https://scite.ai/reports/10.2139/ssrn.4165798" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Spatio-temporal and trend analysis of rain days having different intensity from 1901 – 2020 at regional scale in Haryana, India</td><td>Results in Geophysical Sciences</td><td><a href="https://doi.org/10.1016/j.ringps.2022.100041" target="_blank" rel="noopener noreferrer">10.1016/j.ringps.2022.100041</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.ringps.2022.100041" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Linking The North Atlantic Oscillation to Winter Precipitation Over The Western Himalaya Through Disturbances of The Subtropical Jet</td><td>Research Square (Research Square)</td><td><a href="https://doi.org/10.21203/rs.3.rs-1386023/v1" target="_blank" rel="noopener noreferrer">10.21203/rs.3.rs-1386023/v1</a>&nbsp;<a href="https://scite.ai/reports/10.21203/rs.3.rs-1386023/v1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>The influence of the Arctic Oscillation on North Atlantic wind and wave climate by the end of the 21st century</td><td>Ocean Engineering</td><td><a href="https://doi.org/10.1016/j.oceaneng.2022.110634" target="_blank" rel="noopener noreferrer">10.1016/j.oceaneng.2022.110634</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.oceaneng.2022.110634" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>ENSO modulates interaction between forest insect and fire disturbances in China</td><td>Natural Hazards Research</td><td><a href="https://doi.org/10.1016/j.nhres.2022.04.001" target="_blank" rel="noopener noreferrer">10.1016/j.nhres.2022.04.001</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.nhres.2022.04.001" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Computational Modeling for High-Fidelity Coarsening of Shallow Water Equations Based on Subgrid Data</td><td>Multiscale Modeling and Simulation</td><td><a href="https://doi.org/10.1137/21m1452871" target="_blank" rel="noopener noreferrer">10.1137/21m1452871</a>&nbsp;<a href="https://scite.ai/reports/10.1137/21m1452871" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Long-term sea-level variability along the coast of Japan during the 20th century revealed by a 1/10$$^{\circ }$$ OGCM</td><td>Journal of Oceanography</td><td><a href="https://doi.org/10.1007/s10872-022-00671-4" target="_blank" rel="noopener noreferrer">10.1007/s10872-022-00671-4</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s10872-022-00671-4" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Atmospheric Drivers of Oceanic North Swells in the Eastern Caribbean</td><td>Journal of Marine Science and Engineering</td><td><a href="https://doi.org/10.3390/jmse10020183" target="_blank" rel="noopener noreferrer">10.3390/jmse10020183</a>&nbsp;<a href="https://scite.ai/reports/10.3390/jmse10020183" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Climatic Controls on the Interannual Variability of Shelf Circulation in the Northern South China Sea</td><td>Journal of Geophysical Research Oceans</td><td><a href="https://doi.org/10.1029/2022jc018419" target="_blank" rel="noopener noreferrer">10.1029/2022jc018419</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2022jc018419" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>The Amazon and La Plata River Basins as Moisture Sources of South America: Climatology and Intraseasonal Variability</td><td>Journal of Geophysical Research Atmospheres</td><td><a href="https://doi.org/10.1029/2021jd035455" target="_blank" rel="noopener noreferrer">10.1029/2021jd035455</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2021jd035455" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Diverse Surface Signatures of Stratospheric Polar Vortex Anomalies</td><td>Journal of Geophysical Research Atmospheres</td><td><a href="https://doi.org/10.1029/2022jd037422" target="_blank" rel="noopener noreferrer">10.1029/2022jd037422</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2022jd037422" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>How Do Stratospheric Perturbations Influence North American Weather Regime Predictions?</td><td>Journal of Climate</td><td><a href="https://doi.org/10.1175/jcli-d-21-0413.1" target="_blank" rel="noopener noreferrer">10.1175/jcli-d-21-0413.1</a>&nbsp;<a href="https://scite.ai/reports/10.1175/jcli-d-21-0413.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Spatiotemporal Changes in Frost Indicators in Southeastern Spain (1950–2020): Influence of the East Atlantic Index (EA)</td><td>Journal of Applied Meteorology and Climatology</td><td><a href="https://doi.org/10.1175/jamc-d-21-0064.1" target="_blank" rel="noopener noreferrer">10.1175/jamc-d-21-0064.1</a>&nbsp;<a href="https://scite.ai/reports/10.1175/jamc-d-21-0064.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>How certain are El Niño–Southern Oscillation frequency changes in Coupled Model Intercomparison Project Phase 6 models?</td><td>International Journal of Climatology</td><td><a href="https://doi.org/10.1002/joc.7901" target="_blank" rel="noopener noreferrer">10.1002/joc.7901</a>&nbsp;<a href="https://scite.ai/reports/10.1002/joc.7901" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Satellite observations estimating the effects of river discharge and wind-driven upwelling on phytoplankton dynamics in the Chesapeake Bay</td><td>Integrated Environmental Assessment and Management</td><td><a href="https://doi.org/10.1002/ieam.4597" target="_blank" rel="noopener noreferrer">10.1002/ieam.4597</a>&nbsp;<a href="https://scite.ai/reports/10.1002/ieam.4597" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>AWI-CM3 coupled climate model: description and evaluation experiments for a prototype post-CMIP6 model</td><td>Geoscientific model development</td><td><a href="https://doi.org/10.5194/gmd-15-6399-2022" target="_blank" rel="noopener noreferrer">10.5194/gmd-15-6399-2022</a>&nbsp;<a href="https://scite.ai/reports/10.5194/gmd-15-6399-2022" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Seasonal Predictability of the East Atlantic Pattern in Late Autumn and Early Winter</td><td>Geophysical Research Letters</td><td><a href="https://doi.org/10.1029/2022gl100712" target="_blank" rel="noopener noreferrer">10.1029/2022gl100712</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2022gl100712" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Irminger Sea Is the Center of Action for Subpolar AMOC Variability</td><td>Geophysical Research Letters</td><td><a href="https://doi.org/10.1029/2022gl099133" target="_blank" rel="noopener noreferrer">10.1029/2022gl099133</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2022gl099133" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Long-term response of an estuarine ecosystem to drastic nutrients changes in the Changjiang River during the last 59 years: A modeling perspective</td><td>Frontiers in Marine Science</td><td><a href="https://doi.org/10.3389/fmars.2022.1012127" target="_blank" rel="noopener noreferrer">10.3389/fmars.2022.1012127</a>&nbsp;<a href="https://scite.ai/reports/10.3389/fmars.2022.1012127" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Meteorologically‐Informed Spatial Planning of European PV Deployment to Reduce Multiday Generation Variability</td><td>Earth s Future</td><td><a href="https://doi.org/10.1029/2022ef002673" target="_blank" rel="noopener noreferrer">10.1029/2022ef002673</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2022ef002673" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Linking the North Atlantic Oscillation to winter precipitation over the Western Himalaya through disturbances of the subtropical jet</td><td>Climate Dynamics</td><td><a href="https://doi.org/10.1007/s00382-022-06450-7" target="_blank" rel="noopener noreferrer">10.1007/s00382-022-06450-7</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s00382-022-06450-7" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Lagged oceanic effects on the East African short rains</td><td>Climate Dynamics</td><td><a href="https://doi.org/10.1007/s00382-022-06176-6" target="_blank" rel="noopener noreferrer">10.1007/s00382-022-06176-6</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s00382-022-06176-6" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Dominant modes of summer wet bulb temperature in China</td><td>Climate Dynamics</td><td><a href="https://doi.org/10.1007/s00382-021-06051-w" target="_blank" rel="noopener noreferrer">10.1007/s00382-021-06051-w</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s00382-021-06051-w" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>The Western Pacific North Equatorial Countercurrent Responses to Two Forms of El Niño during the Period 1978 to 2017</td><td>Climate</td><td><a href="https://doi.org/10.3390/cli10100136" target="_blank" rel="noopener noreferrer">10.3390/cli10100136</a>&nbsp;<a href="https://scite.ai/reports/10.3390/cli10100136" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Alternate modulations of ENSO and the Arctic Oscillation on winter extreme cold events in China</td><td>Atmospheric Research</td><td><a href="https://doi.org/10.1016/j.atmosres.2022.106532" target="_blank" rel="noopener noreferrer">10.1016/j.atmosres.2022.106532</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.atmosres.2022.106532" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Possible Relationships between the Interdecadal Anomalies of Heavy Rainfall under Northeastern China Cold Vortexes and the Sea Surface Temperature (SST)</td><td>Atmosphere</td><td><a href="https://doi.org/10.3390/atmos13020354" target="_blank" rel="noopener noreferrer">10.3390/atmos13020354</a>&nbsp;<a href="https://scite.ai/reports/10.3390/atmos13020354" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Origins and mechanisms of subsurface oxygen variability in the California Current System (CCS)</td><td></td><td><a href="https://doi.org/10.1002/essoar.10512614.1" target="_blank" rel="noopener noreferrer">10.1002/essoar.10512614.1</a>&nbsp;<a href="https://scite.ai/reports/10.1002/essoar.10512614.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Opposing trends of cloud coverage over land and ocean under global warming</td><td></td><td><a href="https://doi.org/10.5194/acp-2022-817" target="_blank" rel="noopener noreferrer">10.5194/acp-2022-817</a>&nbsp;<a href="https://scite.ai/reports/10.5194/acp-2022-817" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Meteorologically-Informed Spatial Planning of European PV Deployment to Reduce Multiday Generation Variability</td><td></td><td><a href="https://doi.org/10.1002/essoar.10510224.1" target="_blank" rel="noopener noreferrer">10.1002/essoar.10510224.1</a>&nbsp;<a href="https://scite.ai/reports/10.1002/essoar.10510224.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Author comments on wcd-2021-71</td><td></td><td><a href="https://doi.org/10.5194/wcd-2021-71-ac1" target="_blank" rel="noopener noreferrer">10.5194/wcd-2021-71-ac1</a>&nbsp;<a href="https://scite.ai/reports/10.5194/wcd-2021-71-ac1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Intraseasonal variability of ocean surface wind waves in the western South Atlantic: the role of cyclones and the Pacific South American pattern</td><td>Weather and Climate Dynamics</td><td><a href="https://doi.org/10.5194/wcd-2-1149-2021" target="_blank" rel="noopener noreferrer">10.5194/wcd-2-1149-2021</a>&nbsp;<a href="https://scite.ai/reports/10.5194/wcd-2-1149-2021" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Source of Evaporation for the Seasonal Precipitation in the Pearl River Delta, China</td><td>Water Resources Research</td><td><a href="https://doi.org/10.1029/2020wr028564" target="_blank" rel="noopener noreferrer">10.1029/2020wr028564</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2020wr028564" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>SST‐driven variability of the East Asian summer jet on a decadal time‐scale in CMIP6 models</td><td>Quarterly Journal of the Royal Meteorological Society</td><td><a href="https://doi.org/10.1002/qj.4219" target="_blank" rel="noopener noreferrer">10.1002/qj.4219</a>&nbsp;<a href="https://scite.ai/reports/10.1002/qj.4219" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Forcing mechanism of the Silk Road pattern and the sensitivity of Rossby‐wave source hotspots to mean‐state winds</td><td>Quarterly Journal of the Royal Meteorological Society</td><td><a href="https://doi.org/10.1002/qj.4039" target="_blank" rel="noopener noreferrer">10.1002/qj.4039</a>&nbsp;<a href="https://scite.ai/reports/10.1002/qj.4039" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Relationships between large-scale climate modes and the South Atlantic Ocean wave climate</td><td>Progress In Oceanography</td><td><a href="https://doi.org/10.1016/j.pocean.2021.102660" target="_blank" rel="noopener noreferrer">10.1016/j.pocean.2021.102660</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.pocean.2021.102660" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Imprint of chaotic ocean variability on transports in the southwestern Pacific at interannual timescales</td><td>Ocean science</td><td><a href="https://doi.org/10.5194/os-17-487-2021" target="_blank" rel="noopener noreferrer">10.5194/os-17-487-2021</a>&nbsp;<a href="https://scite.ai/reports/10.5194/os-17-487-2021" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Eddy formation in the bays of Kamchatka and fluxes to the open ocean</td><td>Ocean Dynamics</td><td><a href="https://doi.org/10.1007/s10236-021-01449-w" target="_blank" rel="noopener noreferrer">10.1007/s10236-021-01449-w</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s10236-021-01449-w" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Drivers of exceptional coastal warming in the northeastern United States</td><td>Nature Climate Change</td><td><a href="https://doi.org/10.1038/s41558-021-01159-7" target="_blank" rel="noopener noreferrer">10.1038/s41558-021-01159-7</a>&nbsp;<a href="https://scite.ai/reports/10.1038/s41558-021-01159-7" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Applying machine learning for drought prediction in a perfect model framework using data from a large ensemble of climate simulations</td><td>Natural hazards and earth system sciences</td><td><a href="https://doi.org/10.5194/nhess-21-3679-2021" target="_blank" rel="noopener noreferrer">10.5194/nhess-21-3679-2021</a>&nbsp;<a href="https://scite.ai/reports/10.5194/nhess-21-3679-2021" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>A review of empirical orthogonal function (EOF) with an emphasis on the co-seismic crustal deformation analysis</td><td>Natural Hazards</td><td><a href="https://doi.org/10.1007/s11069-021-04967-4" target="_blank" rel="noopener noreferrer">10.1007/s11069-021-04967-4</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s11069-021-04967-4" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>A Python Package to Calculate the OLR-Based Index of the Madden- Julian-Oscillation (OMI) in Climate Science and Weather Forecasting</td><td>Journal of Open Research Software</td><td><a href="https://doi.org/10.5334/jors.331" target="_blank" rel="noopener noreferrer">10.5334/jors.331</a>&nbsp;<a href="https://scite.ai/reports/10.5334/jors.331" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Impacts of Large-Scale Soil Moisture Anomalies on the Hydroclimate of Southeastern South America</td><td>Journal of Hydrometeorology</td><td><a href="https://doi.org/10.1175/jhm-d-20-0116.1" target="_blank" rel="noopener noreferrer">10.1175/jhm-d-20-0116.1</a>&nbsp;<a href="https://scite.ai/reports/10.1175/jhm-d-20-0116.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Persistence and Variability of Earth’s Interhemispheric Albedo Symmetry in 19 Years of CERES EBAF Observations</td><td>Journal of Climate</td><td><a href="https://doi.org/10.1175/jcli-d-20-0970.1" target="_blank" rel="noopener noreferrer">10.1175/jcli-d-20-0970.1</a>&nbsp;<a href="https://scite.ai/reports/10.1175/jcli-d-20-0970.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Intrinsic Oceanic Decadal Variability of Upper-Ocean Heat Content</td><td>Journal of Climate</td><td><a href="https://doi.org/10.1175/jcli-d-20-0962.1" target="_blank" rel="noopener noreferrer">10.1175/jcli-d-20-0962.1</a>&nbsp;<a href="https://scite.ai/reports/10.1175/jcli-d-20-0962.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Change in the Occurrence Frequency of Landfalling and Non-Landfalling Tropical Cyclones over the Northwest Pacific</td><td>Journal of Climate</td><td><a href="https://doi.org/10.1175/jcli-d-20-0647.1" target="_blank" rel="noopener noreferrer">10.1175/jcli-d-20-0647.1</a>&nbsp;<a href="https://scite.ai/reports/10.1175/jcli-d-20-0647.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Time‐lagged correlations of pre‐monsoon precipitation in the Indochina Peninsula confirmed in a large ensemble simulation dataset</td><td>International Journal of Climatology</td><td><a href="https://doi.org/10.1002/joc.7292" target="_blank" rel="noopener noreferrer">10.1002/joc.7292</a>&nbsp;<a href="https://scite.ai/reports/10.1002/joc.7292" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>&lt;scp&gt;Ocean–atmosphere&lt;/scp&gt; variability and drought in the insular Caribbean</td><td>International Journal of Climatology</td><td><a href="https://doi.org/10.1002/joc.7517" target="_blank" rel="noopener noreferrer">10.1002/joc.7517</a>&nbsp;<a href="https://scite.ai/reports/10.1002/joc.7517" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Modeling small-pelagic fish biomass in the Indonesian seas: climate variability and climate change impacts</td><td>IOP Conference Series Earth and Environmental Science</td><td><a href="https://doi.org/10.1088/1755-1315/944/1/012069" target="_blank" rel="noopener noreferrer">10.1088/1755-1315/944/1/012069</a>&nbsp;<a href="https://scite.ai/reports/10.1088/1755-1315/944/1/012069" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Model calibration using ESEm v1.0.0 – an open, scalable Earth System Emulator</td><td>Geoscientific model development</td><td><a href="https://doi.org/10.5194/gmd-14-7659-2021" target="_blank" rel="noopener noreferrer">10.5194/gmd-14-7659-2021</a>&nbsp;<a href="https://scite.ai/reports/10.5194/gmd-14-7659-2021" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Absolute Baltic Sea Level Trends in the Satellite Altimetry Era: A Revisit</td><td>Frontiers in Marine Science</td><td><a href="https://doi.org/10.3389/fmars.2021.647607" target="_blank" rel="noopener noreferrer">10.3389/fmars.2021.647607</a>&nbsp;<a href="https://scite.ai/reports/10.3389/fmars.2021.647607" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Spatio-temporal variability of meteorological drought over India with footprints on agricultural production</td><td>Environmental Science and Pollution Research</td><td><a href="https://doi.org/10.1007/s11356-021-14866-7" target="_blank" rel="noopener noreferrer">10.1007/s11356-021-14866-7</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s11356-021-14866-7" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Mitigating a century of European renewable variability with transmission and informed siting</td><td>Environmental Research Letters</td><td><a href="https://doi.org/10.1088/1748-9326/abff89" target="_blank" rel="noopener noreferrer">10.1088/1748-9326/abff89</a>&nbsp;<a href="https://scite.ai/reports/10.1088/1748-9326/abff89" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Water vapor monitoring with IGS RTS and GPT3/VMF3 functions over Turkey</td><td>Advances in Space Research</td><td><a href="https://doi.org/10.1016/j.asr.2021.12.036" target="_blank" rel="noopener noreferrer">10.1016/j.asr.2021.12.036</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.asr.2021.12.036" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Iterative Empirical Orthogonal Function in Gap Filling of GPS and InSAR Data</td><td>2021 IEEE International India Geoscience and Remote Sensing Symposium (InGARSS)</td><td><a href="https://doi.org/10.1109/ingarss51564.2021.9792123" target="_blank" rel="noopener noreferrer">10.1109/ingarss51564.2021.9792123</a>&nbsp;<a href="https://scite.ai/reports/10.1109/ingarss51564.2021.9792123" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Reviewer comment on gmd-2021-267</td><td></td><td><a href="https://doi.org/10.5194/gmd-2021-267-rc1" target="_blank" rel="noopener noreferrer">10.5194/gmd-2021-267-rc1</a>&nbsp;<a href="https://scite.ai/reports/10.5194/gmd-2021-267-rc1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Response to reviewer comments</td><td></td><td><a href="https://doi.org/10.5194/gmd-2021-267-ac1" target="_blank" rel="noopener noreferrer">10.5194/gmd-2021-267-ac1</a>&nbsp;<a href="https://scite.ai/reports/10.5194/gmd-2021-267-ac1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Reply on RC2</td><td></td><td><a href="https://doi.org/10.5194/wcd-2021-29-ac2" target="_blank" rel="noopener noreferrer">10.5194/wcd-2021-29-ac2</a>&nbsp;<a href="https://scite.ai/reports/10.5194/wcd-2021-29-ac2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Reply on RC2</td><td></td><td><a href="https://doi.org/10.5194/nhess-2021-110-ac2" target="_blank" rel="noopener noreferrer">10.5194/nhess-2021-110-ac2</a>&nbsp;<a href="https://scite.ai/reports/10.5194/nhess-2021-110-ac2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Reply on RC1</td><td></td><td><a href="https://doi.org/10.5194/nhess-2021-110-ac1" target="_blank" rel="noopener noreferrer">10.5194/nhess-2021-110-ac1</a>&nbsp;<a href="https://scite.ai/reports/10.5194/nhess-2021-110-ac1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Comment on wcd-2021-71</td><td></td><td><a href="https://doi.org/10.5194/wcd-2021-71-rc1" target="_blank" rel="noopener noreferrer">10.5194/wcd-2021-71-rc1</a>&nbsp;<a href="https://scite.ai/reports/10.5194/wcd-2021-71-rc1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Comment on wcd-2021-71</td><td></td><td><a href="https://doi.org/10.5194/wcd-2021-71-rc2" target="_blank" rel="noopener noreferrer">10.5194/wcd-2021-71-rc2</a>&nbsp;<a href="https://scite.ai/reports/10.5194/wcd-2021-71-rc2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Comment on wcd-2021-29</td><td></td><td><a href="https://doi.org/10.5194/wcd-2021-29-rc2" target="_blank" rel="noopener noreferrer">10.5194/wcd-2021-29-rc2</a>&nbsp;<a href="https://scite.ai/reports/10.5194/wcd-2021-29-rc2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Comment on wcd-2021-29</td><td></td><td><a href="https://doi.org/10.5194/wcd-2021-29-rc1" target="_blank" rel="noopener noreferrer">10.5194/wcd-2021-29-rc1</a>&nbsp;<a href="https://scite.ai/reports/10.5194/wcd-2021-29-rc1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Comment on nhess-2021-110</td><td></td><td><a href="https://doi.org/10.5194/nhess-2021-110-rc1" target="_blank" rel="noopener noreferrer">10.5194/nhess-2021-110-rc1</a>&nbsp;<a href="https://scite.ai/reports/10.5194/nhess-2021-110-rc1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Comment on nhess-2021-110</td><td></td><td><a href="https://doi.org/10.5194/nhess-2021-110-rc2" target="_blank" rel="noopener noreferrer">10.5194/nhess-2021-110-rc2</a>&nbsp;<a href="https://scite.ai/reports/10.5194/nhess-2021-110-rc2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Comment on gmd-2021-267</td><td></td><td><a href="https://doi.org/10.5194/gmd-2021-267-rc2" target="_blank" rel="noopener noreferrer">10.5194/gmd-2021-267-rc2</a>&nbsp;<a href="https://scite.ai/reports/10.5194/gmd-2021-267-rc2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Applying machine learning for drought prediction using data from a large ensemble of climate simulations</td><td></td><td><a href="https://doi.org/10.5194/nhess-2021-110" target="_blank" rel="noopener noreferrer">10.5194/nhess-2021-110</a>&nbsp;<a href="https://scite.ai/reports/10.5194/nhess-2021-110" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Temperature and precipitation during winter in NyÅlesund, Svalbard and possible tropical linkages</td><td>Tellus A Dynamic Meteorology and Oceanography</td><td><a href="https://doi.org/10.1080/16000870.2020.1746604" target="_blank" rel="noopener noreferrer">10.1080/16000870.2020.1746604</a>&nbsp;<a href="https://scite.ai/reports/10.1080/16000870.2020.1746604" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Assessment of sea surface wind field pattern over the Caspian Sea using EOF analysis</td><td>Regional Studies in Marine Science</td><td><a href="https://doi.org/10.1016/j.rsma.2020.101254" target="_blank" rel="noopener noreferrer">10.1016/j.rsma.2020.101254</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.rsma.2020.101254" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Representation of the Scandinavia–Greenland pattern and its relationship with the polar vortex in S2S forecast models</td><td>Quarterly Journal of the Royal Meteorological Society</td><td><a href="https://doi.org/10.1002/qj.3892" target="_blank" rel="noopener noreferrer">10.1002/qj.3892</a>&nbsp;<a href="https://scite.ai/reports/10.1002/qj.3892" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>A Reduced Order Deep Data Assimilation model</td><td>Physica D Nonlinear Phenomena</td><td><a href="https://doi.org/10.1016/j.physd.2020.132615" target="_blank" rel="noopener noreferrer">10.1016/j.physd.2020.132615</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.physd.2020.132615" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Eddy‐Driven Cross‐Shelf Transport in the East Australian Current Separation Zone</td><td>Journal of Geophysical Research Oceans</td><td><a href="https://doi.org/10.1029/2019jc015613" target="_blank" rel="noopener noreferrer">10.1029/2019jc015613</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2019jc015613" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Potential Predictability of the Silk Road Pattern and the Role of SST as Inferred from Seasonal Hindcast Experiments of a Coupled Climate Model</td><td>Journal of Climate</td><td><a href="https://doi.org/10.1175/jcli-d-20-0235.1" target="_blank" rel="noopener noreferrer">10.1175/jcli-d-20-0235.1</a>&nbsp;<a href="https://scite.ai/reports/10.1175/jcli-d-20-0235.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Extreme precipitation events in the Mediterranean: Spatiotemporal characteristics and connection to large‐scale atmospheric flow patterns</td><td>International Journal of Climatology</td><td><a href="https://doi.org/10.1002/joc.6985" target="_blank" rel="noopener noreferrer">10.1002/joc.6985</a>&nbsp;<a href="https://scite.ai/reports/10.1002/joc.6985" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>The 2018 northern European hydrological drought and its drivers in a historical perspective</td><td>Hydrology and earth system sciences</td><td><a href="https://doi.org/10.5194/hess-24-5621-2020" target="_blank" rel="noopener noreferrer">10.5194/hess-24-5621-2020</a>&nbsp;<a href="https://scite.ai/reports/10.5194/hess-24-5621-2020" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Enhanced Predictability of Eastern North Pacific Tropical Cyclone Activity Using the ENSO Longitude Index</td><td>Geophysical Research Letters</td><td><a href="https://doi.org/10.1029/2020gl088849" target="_blank" rel="noopener noreferrer">10.1029/2020gl088849</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2020gl088849" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>The influence of system heterogeneity on peat-surface temperature dynamics</td><td>Environmental Research Letters</td><td><a href="https://doi.org/10.1088/1748-9326/abd4ff" target="_blank" rel="noopener noreferrer">10.1088/1748-9326/abd4ff</a>&nbsp;<a href="https://scite.ai/reports/10.1088/1748-9326/abd4ff" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Modeling the evolution of pulse-like perturbations in atmospheric carbon and carbon isotopes: the role of weathering–sedimentation imbalances</td><td>Climate of the past</td><td><a href="https://doi.org/10.5194/cp-16-423-2020" target="_blank" rel="noopener noreferrer">10.5194/cp-16-423-2020</a>&nbsp;<a href="https://scite.ai/reports/10.5194/cp-16-423-2020" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Dominance of large-scale atmospheric circulations in long-term variations of winter PM10 concentrations over East Asia</td><td>Atmospheric Research</td><td><a href="https://doi.org/10.1016/j.atmosres.2020.104871" target="_blank" rel="noopener noreferrer">10.1016/j.atmosres.2020.104871</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.atmosres.2020.104871" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Partitioning of Large-Scale and Local-Scale Precipitation Events by Means of Spatio-Temporal Precipitation Regimes on Corsica</td><td>Atmosphere</td><td><a href="https://doi.org/10.3390/atmos11040417" target="_blank" rel="noopener noreferrer">10.3390/atmos11040417</a>&nbsp;<a href="https://scite.ai/reports/10.3390/atmos11040417" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>The 2018 northern European hydrological drought and its drivers in a historical perspective</td><td></td><td><a href="https://doi.org/10.5194/hess-2020-239" target="_blank" rel="noopener noreferrer">10.5194/hess-2020-239</a>&nbsp;<a href="https://scite.ai/reports/10.5194/hess-2020-239" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>Decadal variations of blocking and storm tracks in centennial reanalyses</td><td>Tellus A Dynamic Meteorology and Oceanography</td><td><a href="https://doi.org/10.1080/16000870.2019.1586236" target="_blank" rel="noopener noreferrer">10.1080/16000870.2019.1586236</a>&nbsp;<a href="https://scite.ai/reports/10.1080/16000870.2019.1586236" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>Wisconsin’s Central Sands Hydroclimatology: Characterization, Forecasting, and Impacts on Real Estate</td><td>Minds at UW (University of Wisconsin)</td><td><a href="https://openalex.org/W2927417554" target="_blank" rel="noopener noreferrer">W2927417554</a> <span class="muted">(OpenAlex)</span></td></tr>
+<tr><td>2019</td><td>An Open Source Software Suite for Multi-Dimensional Meteorological Data Computation and Visualisation</td><td>Journal of Open Research Software</td><td><a href="https://doi.org/10.5334/jors.267" target="_blank" rel="noopener noreferrer">10.5334/jors.267</a>&nbsp;<a href="https://scite.ai/reports/10.5334/jors.267" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>The diurnal cycle of precipitation over South America represented by five gridded datasets</td><td>International Journal of Climatology</td><td><a href="https://doi.org/10.1002/joc.6229" target="_blank" rel="noopener noreferrer">10.1002/joc.6229</a>&nbsp;<a href="https://scite.ai/reports/10.1002/joc.6229" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>Warm Events Induce Loss of Resilience in Organic Carbon Production in the Northeast Pacific Ocean</td><td>Global Biogeochemical Cycles</td><td><a href="https://doi.org/10.1029/2019gb006327" target="_blank" rel="noopener noreferrer">10.1029/2019gb006327</a>&nbsp;<a href="https://scite.ai/reports/10.1029/2019gb006327" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>Reanalysis of the PacIOOS Hawaiian Island Ocean Forecast System, an implementation of the Regional Ocean Modeling System v3.6</td><td>Geoscientific model development</td><td><a href="https://doi.org/10.5194/gmd-12-195-2019" target="_blank" rel="noopener noreferrer">10.5194/gmd-12-195-2019</a>&nbsp;<a href="https://scite.ai/reports/10.5194/gmd-12-195-2019" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>The influence of weather regimes on European renewable energy production and demand</td><td>Environmental Research Letters</td><td><a href="https://doi.org/10.1088/1748-9326/ab38d3" target="_blank" rel="noopener noreferrer">10.1088/1748-9326/ab38d3</a>&nbsp;<a href="https://scite.ai/reports/10.1088/1748-9326/ab38d3" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>Seasonal variability of rainfall and thunderstorm in Guinea over the period 1981 to 2010</td><td>African Journal of Environmental Science and Technology</td><td><a href="https://doi.org/10.5897/ajest2019.2684" target="_blank" rel="noopener noreferrer">10.5897/ajest2019.2684</a>&nbsp;<a href="https://scite.ai/reports/10.5897/ajest2019.2684" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>The response to pulse-like perturbations in atmospheric carbon and carbon isotopes</td><td></td><td><a href="https://doi.org/10.5194/cp-2019-107" target="_blank" rel="noopener noreferrer">10.5194/cp-2019-107</a>&nbsp;<a href="https://scite.ai/reports/10.5194/cp-2019-107" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2018</td><td>Seasonal Forecasting of Wind and Waves in the North Atlantic Using a Grand Multimodel Ensemble</td><td>Weather and Forecasting</td><td><a href="https://doi.org/10.1175/waf-d-18-0099.1" target="_blank" rel="noopener noreferrer">10.1175/waf-d-18-0099.1</a>&nbsp;<a href="https://scite.ai/reports/10.1175/waf-d-18-0099.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2018</td><td>Multi-decadal variability in seasonal mean sea level along the North Sea coast</td><td>Ocean science</td><td><a href="https://doi.org/10.5194/os-14-1491-2018" target="_blank" rel="noopener noreferrer">10.5194/os-14-1491-2018</a>&nbsp;<a href="https://scite.ai/reports/10.5194/os-14-1491-2018" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2018</td><td>Variability of Arctic Sea Ice Thickness Using PIOMAS and the CESM Large Ensemble</td><td>Journal of Climate</td><td><a href="https://doi.org/10.1175/jcli-d-17-0436.1" target="_blank" rel="noopener noreferrer">10.1175/jcli-d-17-0436.1</a>&nbsp;<a href="https://scite.ai/reports/10.1175/jcli-d-17-0436.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2018</td><td>Quantifying the agreement between observed and simulated extratropical modes of interannual variability</td><td>Climate Dynamics</td><td><a href="https://doi.org/10.1007/s00382-018-4355-4" target="_blank" rel="noopener noreferrer">10.1007/s00382-018-4355-4</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s00382-018-4355-4" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2018</td><td>Multidecadal variability in seasonal mean sea level along the NorthSea coast</td><td></td><td><a href="https://doi.org/10.5194/os-2018-102" target="_blank" rel="noopener noreferrer">10.5194/os-2018-102</a>&nbsp;<a href="https://scite.ai/reports/10.5194/os-2018-102" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2017</td><td>Modeling the Nonlocal Effects of Summer Growing Season Irrigation in the Great Plains</td><td>ThinkTech (Texas Tech University)</td><td><a href="https://openalex.org/W2784881722" target="_blank" rel="noopener noreferrer">W2784881722</a> <span class="muted">(OpenAlex)</span></td></tr>
+<tr><td>2017</td><td>xarray: N-D labeled Arrays and Datasets in Python</td><td>Journal of Open Research Software</td><td><a href="https://doi.org/10.5334/jors.148" target="_blank" rel="noopener noreferrer">10.5334/jors.148</a>&nbsp;<a href="https://scite.ai/reports/10.5334/jors.148" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2017</td><td>Pacific sea surface temperatures, midlatitude atmospheric circulation, and widespread interannual anomalies in western U.S. streamflow</td><td>Geophysical Research Letters</td><td><a href="https://doi.org/10.1002/2017gl073536" target="_blank" rel="noopener noreferrer">10.1002/2017gl073536</a>&nbsp;<a href="https://scite.ai/reports/10.1002/2017gl073536" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2016</td><td>A New Method for Identifying the Pacific–South American Pattern and Its Influence on Regional Climate Variability</td><td>Journal of Climate</td><td><a href="https://doi.org/10.1175/jcli-d-15-0843.1" target="_blank" rel="noopener noreferrer">10.1175/jcli-d-15-0843.1</a>&nbsp;<a href="https://scite.ai/reports/10.1175/jcli-d-15-0843.1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="page-footer">
+  Generated by ArticleStories on 2026-02-19T16:24:09+00:00 UTC
+</footer>
+
+</div>
+    <script>
+    window.addEventListener('error', (e) => {
+        console.error('[OPERAS widget] window.error:', e.message, e.error);
+    });
+    window.addEventListener('unhandledrejection', (e) => {
+        console.error('[OPERAS widget] unhandledrejection:', e.reason);
+    });
+    </script>
+</body>
+</html>

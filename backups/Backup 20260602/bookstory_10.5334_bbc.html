@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BookStory – Open: The Philosophy and Practices that are Revolutionizing Education and Science</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f4f6;
+      color: #111827;
+    }
+    .page {
+      max-width: 1000px;
+      margin: 2.5rem auto;
+      padding: 0 1.25rem 3rem;
+    }
+    header.hero { margin-bottom: 2rem; }
+    .hero-title {
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin: 0;
+      color: #111827;
+    }
+    .discipline-badge {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      border: 1px solid rgba(15, 23, 42, 0.15);
+      background: rgba(15, 23, 42, 0.04);
+    }
+    .hero-meta {
+      margin-top: 0.5rem;
+      color: #4b5563;
+      font-size: 0.95rem;
+    }
+    .hero-meta div { margin-bottom: 0.15rem; }
+    .card {
+      background: #ffffff;
+      border-radius: 0.9rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.75rem;
+    }
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+    .card h2 span {
+      color: #111827;
+      font-weight: 600;
+      text-transform: none;
+      font-size: 1.25rem;
+      letter-spacing: 0;
+    }
+    .story-text { font-size: 0.98rem; line-height: 1.7; color: #111827; }
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+    .usage-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.15rem 0;
+      font-size: 0.85rem;
+    }
+    .toolbar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 0.75rem;
+    }
+    .event-source-list,
+    .event-examples-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.25rem 0 0;
+    }
+    .event-source-item,
+    .event-example-item {
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .event-example-meta { margin-bottom: 0.2rem; }
+    .download-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      background: #111827;
+      color: #f9fafb;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
+    }
+    .download-btn:hover { opacity: 0.9; }
+    @media print {
+      body { background: #ffffff; }
+      .page { margin: 0; max-width: 100%; box-shadow: none; }
+      .card { box-shadow: none; border-radius: 0; page-break-inside: avoid; }
+      .toolbar { display: none; }
+    }
+    .usage-month { width: 2.5rem; color: #6b7280; }
+    .usage-bar-wrap {
+      flex: 1;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+      height: 0.45rem;
+    }
+    .usage-bar {
+      height: 100%;
+      border-radius: 999px;
+      background: #2563eb;
+    }
+    .usage-value { width: 3rem; text-align: right; color: #374151; }
+    .logo-title { display: flex; align-items: center; gap: 1.25rem; }
+    .logo-wrap img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: block;
+    }
+    .cover-wrap img {
+      width: 110px;
+      height: auto;
+      border-radius: 0.5rem;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
+      object-fit: cover;
+    }
+    .cover-placeholder {
+      width: 110px;
+      height: 160px;
+      border-radius: 0.5rem;
+      border: 1px dashed rgba(15, 23, 42, 0.22);
+      background: rgba(15, 23, 42, 0.04);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: minmax(0, 1fr); }
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.75rem;
+      margin-bottom: 1.75rem;
+    }
+    .grid-2 .card { margin-bottom: 0; height: 100%; }
+
+    @media (max-width: 980px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    ul { padding-left: 1.2rem; margin: 0.4rem 0 0; }
+    li { margin-bottom: 0.5rem; font-size: 0.95rem; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a, li { word-break: break-word; overflow-wrap: anywhere; }
+    .tag {
+      display: inline-block;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: #e5f2ff;
+      color: #1d4ed8;
+      font-size: 0.8rem;
+      margin: 0.1rem 0.2rem 0.1rem 0;
+    }
+    .tag-soft { background: #f3f4f6; color: #4b5563; }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+    }
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 0.4rem 0.6rem;
+      vertical-align: top;
+    }
+    th {
+      background: #f9fafb;
+      text-align: left;
+      font-weight: 600;
+      color: #374151;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #4338ca;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .scite-link { font-size: 0.75rem; color: #6b7280; }
+    .scite-link:hover { text-decoration: underline; color: #4b5563; }
+    .orcid-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 0.3rem;
+      padding: 0.05rem 0.35rem;
+      border-radius: 999px;
+      background: #a6ce39;
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .muted { color: #6b7280; font-size: 0.85rem; }
+    footer.page-footer {
+      margin-top: 2rem;
+      text-align: right;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+  </style>
+  <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" /><style>#metrics-widget {  --color-line-graph-1: #4b7094;  --color-line-graph-2: #70944b;  --color-line-graph-3: #944b70;  --color-line-graph-4: #94704b;}</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button class="download-btn" onclick="window.print()">Download as PDF</button>
+</div>
+
+<div class="page">
+
+<header class="hero">
+  <div class="header-bar">
+    <div class="logo-title">
+      <div class="logo-wrap">
+        <img src="bookstories-logo.png" alt="BookStories logo">
+      </div>
+      <div>
+        <h1 class="hero-title">Open: The Philosophy and Practices that are Revolutionizing Education and Science</h1>
+        <div class="discipline-badge">Stem</div>
+        <div class="hero-meta">
+          <div><strong>Author(s):</strong> Rajiv S. Jhangiani, Robert Biswas-Diener</div>
+          <div><strong>Publisher:</strong> Ubiquity Press</div>
+          <div><strong>Publication year:</strong> 2017</div>
+          <div><strong>DOI:</strong> 10.5334/bbc</div>
+        </div>
+      </div>
+    </div>
+    <div class="cover-wrap cover-placeholder" aria-label="No cover available"></div>
+  </div>
+</header>
+
+<section class="card">
+  <h2><span>The story so far…</span></h2>
+  <div class="story-text">
+    <h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">Open: The Philosophy and Practices that are Revolutionizing Education and Science, published by Ubiquity Press in 2017, advances key themes in open education, science, and access. The book has garnered notable scholarly attention with 99 citations and shows a significant public presence, evidenced by 22 event mentions primarily across Wikipedia and WordPress. Usage signals indicate over 12,700 downloads, reflecting meaningful engagement despite lacking representation on major OER platforms or OAPEN downloads data.</p>
+
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">Published in 2017 by Ubiquity Press, <em>Open</em> explores the intersection of open education, science, and scholarship through a multidisciplinary lens, touching on fields such as political science, computer science, and library science. Its conceptual reach is broad, encompassing terms like 'Engineering ethics' and 'Computer security,' situating the work within contemporary debates on equitable knowledge dissemination. Despite the absence of hosting on major digital platforms, the book has accumulated 12,765 total downloads, signaling a substantive usage-driven uptake as captured in the usage_landscape data, even if no recent trends are discernible.</p>
+
+<p class="story-text">From a scholarly perspective, the book has attracted 99 recorded citations according to OpenAlex, reflecting a solid level of academic uptake. However, the claim signals data reveal a distinct citation context profile: out of 17 citation contexts analyzed, 15 are mentioning rather than supporting or contradicting. This suggests the book often serves as a reference point or informational background rather than a source of direct empirical evidence or theoretical challenge. Its role appears to align more with providing foundational or conceptual frameworks across various disciplines, as underlined by its multiple concept labels such as 'Supporter' and 'Foundation (evidence).'</p>
+
+<p class="story-text">Public visibility metrics further illustrate the book’s reach beyond academia. The Event Data shows 22 total non-citation events spanning from 2017 to mid-2023, with prominent placements on Wikipedia (14 events) and WordPress (5 events). This sustained attention on widely accessible platforms implies ongoing relevance to public discussions about open knowledge. Although lacking OER platform listings or OAPEN download data, these event sources contribute to the inferred role of 'public visibility signal' with a strength around 0.8, underscoring the book’s recognized presence in dialogues related to open education and science.</p>
+
+<p class="story-text">Taken together, these dimensions of scholarly uptake, public attention, and significant download numbers frame <em>Open</em> as a work that bridges academic and public domains. The inferred roles based on usage and visibility signals, alongside its conceptual grounding, depict a text that is impactful primarily as a knowledge resource and stimulus for further conversation rather than as a heavily empirical or contested reference. The book’s accessibility as open access likely supports its wide usage, reinforcing its role in advancing the ideals of equity and transparency articulated in its abstract.</p>
+
+<p class="story-text">While no data are available from specialized scholarly repositories like OAPEN or OER listings to further quantify its impact, the metrics present provide meaningful evidence of a steady and multidimensional uptake. Future monitoring of citation contexts and event data may illuminate evolving patterns in how this book is situated within the dynamic open education and science ecosystems it seeks to transform.</p>
+  </div>
+</section>
+
+
+    <section class="card">
+      <h2><span>Impact metrics</span></h2>
+      <ul>
+        <li><strong>Citations (OpenAlex):</strong> 99</li>
+        <li><strong>Downloads (OAPEN / OPERAS):</strong> 12765</li>
+        <li><strong>Online mentions (Crossref Event Data):</strong> 22</li>
+        <li><strong>Citation context (scite):</strong> 17</li>
+      </ul>
+    </section>
+    
+
+    <section class="card">
+      <h2><span>Inferred roles</span></h2>
+      <p class="muted">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+        <span class='tag'>Usage-driven uptake (0.80)</span><span class='tag'>Public visibility signal (0.80)</span><span class='tag'>Scholarly uptake (0.75)</span><span class='tag'>Evidence-bearing reference point (0.40)</span>
+      </div>
+    </section>
+    
+<div class="grid-2">
+    <section class="card">
+      <h2><span>Usage landscape</span> <span class="badge">OAPEN / OPERAS</span></h2>
+      <ul>
+        <li><strong>Total downloads:</strong> 12765</li>
+        <li><strong>Recent trend:</strong> <span class='muted'>Not available.</span></li>
+        <li><strong>Host distribution:</strong> <span class='muted'>Not available.</span></li>
+      </ul>
+    </section>
+    
+    <section class="card">
+      <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+      <ul>
+        <li><strong>Recorded events:</strong> 22</li>
+        <li><strong>Top sources:</strong> <span class='tag'>wikipedia (14)</span> <span class='tag'>wordpressdotcom (5)</span> <span class='tag'>newsfeed (3)</span></li>
+      </ul>
+    </section>
+    </div><div class="grid-2">
+    <section class="card">
+      <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+      <ul>
+        <li><strong>Open Library:</strong> <a href="https://openlibrary.org/books/OL28358564M" target="_blank" rel="noopener noreferrer">View</a><span class='muted'> · 0 ratings</span></li><li><strong>Google Books:</strong> <a href="https://books.google.com/books/about/Open.html?hl=&amp;id=t9TuAQAACAAJ" target="_blank" rel="noopener noreferrer">View</a> · <a href="http://books.google.nl/books?id=t9TuAQAACAAJ&amp;dq=isbn:9781911529002&amp;hl=&amp;cd=1&amp;source=gbs_api" target="_blank" rel="noopener noreferrer">Preview</a><span class='muted'></span> <span class='muted'>(matched: Open)</span></li><li><strong>Commercial:</strong> <a href="https://www.amazon.com/s?k=9781911529002" target="_blank" rel="noopener noreferrer">Amazon search</a> · <a href="https://www.goodreads.com/search?q=9781911529002" target="_blank" rel="noopener noreferrer">Goodreads search</a></li>
+      </ul>
+    </section>
+    
+    <section class="card">
+      <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+      <ul><li><strong>Total:</strong> 17</li><li><strong>Supporting:</strong> 0</li><li><strong>Mentioning:</strong> 15</li><li><strong>Contradicting:</strong> 0</li></ul>
+    </section>
+    </div>
+    <section class="card">
+      <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
+      <ul>
+        <li><strong>Total citing works captured:</strong> 99</li><li><strong>Top citing venues:</strong> <span class='tag'>Advances in educational technologies and instructional design book series (3)</span> <span class='tag'>Ubiquity Press eBooks (2)</span> <span class='tag'>Frontiers in Psychology (2)</span> <span class='tag'>The International Review of Research in Open and Distributed Learning (2)</span> <span class='tag'>Teaching of Psychology (2)</span> <span class='tag'>PLoS ONE (2)</span> <span class='tag'>Future education and learning spaces (2)</span> <span class='tag'>transcript Verlag eBooks (2)</span> <span class='tag'>Athabasca University Press eBooks (1)</span> <span class='tag'>Smart Learning Environments (1)</span></li><li><strong>Citing work types:</strong> <span class='tag'>article (60)</span> <span class='tag'>book-chapter (23)</span> <span class='tag'>book (9)</span> <span class='tag'>dissertation (4)</span> <span class='tag'>preprint (2)</span> <span class='tag'>review (1)</span></li><li><strong>Citation timeline (by year):</strong> 2017: 3, 2018: 9, 2019: 11, 2020: 8, 2021: 21, 2022: 8, 2023: 19, 2024: 15, 2025: 5</li>
+      </ul>
+    </section>
+    
+<section class="card">
+  <h2><span>Contributors &amp; affiliations</span> <span class='badge'>OpenAlex</span></h2>
+  <div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">2 authors · 0 institutions</div>
+    <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3><ul><li>Jhangiani, Rajiv <span class='badge'>First</span> <span class='badge'>Corresponding</span></li><li>Biswas-Diener, Robert <span class='badge'>Last</span></li></ul>
+    
+</section>
+
+<div class="grid">
+  <section class="card">
+    <h2><span>Where your book is available</span></h2>
+    <ul><li class='muted'>No hosts found.</li></ul>
+  </section>
+
+  <section class="card">
+    <h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+    <ul><li><span class='tag'>Supporter</span></li>
+<li><span class='tag'>Foundation (evidence)</span></li>
+<li><span class='tag'>Key (lock)</span></li>
+<li><span class='tag'>Library science</span></li>
+<li><span class='tag'>Engineering ethics</span></li>
+<li><span class='tag'>Engineering</span></li>
+<li><span class='tag'>Political science</span></li>
+<li><span class='tag'>History</span></li>
+<li><span class='tag'>Computer science</span></li>
+<li><span class='tag'>Archaeology</span></li>
+<li><span class='tag'>Law</span></li>
+<li><span class='tag'>Computer security</span></li></ul>
+  </section>
+</div>
+
+<section class="card">
+  <h2><span>OER &amp; teaching use</span></h2>
+  <ul><li class='muted'>No OER or teaching listings detected yet.</li></ul>
+</section>
+
+
+
+        <section class="card">
+          <h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref Event Data</span></h2>
+          <p class="muted">This work has <strong>22</strong> recorded events between 2017-04-06 and 2023-06-18.</p>
+          <ul class="event-source-list">
+            <li class='event-source-item'><span class='tag'><a href="https://is.wikibooks.org/w/index.php?title=Opi%C3%B0_menntaefni&amp;oldid=32742" target="_blank">Wikipedia</a></span><span class='tag tag-soft'>14 events</span></li><li class='event-source-item'><span class='tag'>WordPress.com</span><span class='tag tag-soft'>5 events</span></li><li class='event-source-item'><span class='tag'>News &amp; Blogs</span><span class='tag tag-soft'>3 events</span></li>
+          </ul>
+          <h3>Selected examples</h3>
+          <ul class="event-examples-list">
+            <li class='event-example-item'><div class='event-example-meta'><span class='tag'>Wikipedia</span></div><a href='https://is.wikibooks.org/w/index.php?title=Opi%C3%B0_menntaefni&amp;oldid=32742' target='_blank'>Opið menntaefni</a><br><span class='muted'>2020-05-14</span></li><li class='event-example-item'><div class='event-example-meta'><span class='tag'>Wikipedia</span></div><a href='https://is.wikibooks.org/w/index.php?title=Opi%C3%B0_menntaefni&amp;oldid=34507' target='_blank'>Opið menntaefni</a><br><span class='muted'>2023-03-09</span></li><li class='event-example-item'><div class='event-example-meta'><span class='tag'>Wikipedia</span></div><a href='https://is.wikibooks.org/w/index.php?title=Opi%C3%B0_menntaefni&amp;oldid=34508' target='_blank'>Opið menntaefni</a><br><span class='muted'>2023-03-09</span></li><li class='event-example-item'><div class='event-example-meta'><span class='tag'>Wikipedia</span></div><a href='https://is.wikibooks.org/w/index.php?title=Opi%C3%B0_menntaefni&amp;oldid=34509' target='_blank'>Opið menntaefni</a><br><span class='muted'>2023-03-09</span></li><li class='event-example-item'><div class='event-example-meta'><span class='tag'>Wikipedia</span></div><a href='https://is.wikibooks.org/w/index.php?title=Opi%C3%B0_menntaefni&amp;oldid=34510' target='_blank'>Opið menntaefni</a><br><span class='muted'>2023-03-09</span></li>
+          </ul>
+        </section>
+        
+
+        <section class="card">
+          <h2><span>Open access metadata</span> <span class="badge">DOAB</span></h2>
+          <p><strong>Publisher:</strong> <span class='muted'>Not available</span></p>
+          <p><strong>Rights / License:</strong> open access</p>
+          <p><strong>Keywords:</strong> <span class='muted'>None listed</span></p>
+          <p><strong>Abstract:</strong><br>&quot;Affordable education. Transparent science. Accessible scholarship. These ideals are slowly becoming a reality thanks to the open education, open science, and open access movements. Running separate—if parallel—courses, they all share a philosophy of equity, progress, and justice. This book shares the stories, motives, insights, and practical tips from global leaders in the open movement.&quot;</p>
+        </section>
+        
+<!-- operas-widget debug: work_uri=info:doi:10.5334/bbc measures=['https://metrics.operas-eu.org/google-books/views/v1', 'https://metrics.operas-eu.org/oapen/downloads/v1', 'https://metrics.operas-eu.org/up-ga/downloads/v1', 'https://metrics.operas-eu.org/up-logs/downloads/v1', 'https://metrics.operas-eu.org/uplo/downloads/v1', 'https://metrics.operas-eu.org/uplo/sessions/v1'] tabs=2 -->
+<section class="card" id="operas-metrics-card">
+    <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
+    <p class="muted">Usage signals currently indexed by OPERAS Metrics (source-separated).</p>    
+    <div id="metrics-widget"></div>
+    <script type="application/json" id="operas-metrics-config">
+    {"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true, "cdn_images_url": "https://storage.googleapis.com/operas/metrics-widget/v1/latest/images"}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "downloads", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN · downloads", "works": ["info:doi:10.5334/bbc"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}, "m2": {"title": "Up Ga · downloads", "works": ["info:doi:10.5334/bbc"], "measures": ["https://metrics.operas-eu.org/up-ga/downloads/v1"]}, "m3": {"title": "Up Logs · downloads", "works": ["info:doi:10.5334/bbc"], "measures": ["https://metrics.operas-eu.org/up-logs/downloads/v1"]}, "m4": {"title": "Ubiquity Press · downloads", "works": ["info:doi:10.5334/bbc"], "measures": ["https://metrics.operas-eu.org/uplo/downloads/v1"]}}, "graphs": [{"id": "downloads_over_time", "type": "line", "title": "Downloads over time", "scopes": ["m1", "m2", "m3", "m4"], "config": {"stacked": true, "cumulative": false}}]}, {"id": "views", "title": "Views", "scopes": {"m1": {"title": "Google Books · views", "works": ["info:doi:10.5334/bbc"], "measures": ["https://metrics.operas-eu.org/google-books/views/v1"]}}, "graphs": [{"id": "views_over_time", "type": "line", "title": "Views over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}
+    </script>
+
+    <script>
+    window.operaswidget = (e => {
+      if (document.getElementById(e)) return window.operaswidget;
+      let t = document.createElement('script');
+      t.id = e;
+      t.src = 'https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js';
+      document.body.appendChild(t);
+      let i = window.operaswidget || {};
+      i.eventQueue = i.eventQueue || [];
+      i.ready = cb => { i.eventQueue.push(cb); };
+      return i;
+    })('operas-metrics-script');
+  </script>
+</section>
+
+
+<section class="card">
+  <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+  <table>
+    <thead>
+      <tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>2018</td><td>Assessment Strategies for Online Learning: Engagement and Authenticity</td><td>Athabasca University Press eBooks</td><td><a href="https://doi.org/10.15215/aupress/9781771992329.01" target="_blank" rel="noopener noreferrer">10.15215/aupress/9781771992329.01</a>&nbsp;<a href="https://scite.ai/reports/10.15215/aupress/9781771992329.01" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2017</td><td>Open: The Philosophy and Practices that are Revolutionizing Education and Science</td><td>Ubiquity Press eBooks</td><td><a href="https://doi.org/10.5334/bbc" target="_blank" rel="noopener noreferrer">10.5334/bbc</a>&nbsp;<a href="https://scite.ai/reports/10.5334/bbc" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Advancing equity in cross-cultural psychology: embracing diverse epistemologies and fostering collaborative practices</td><td>Frontiers in Psychology</td><td><a href="https://doi.org/10.3389/fpsyg.2024.1368663" target="_blank" rel="noopener noreferrer">10.3389/fpsyg.2024.1368663</a>&nbsp;<a href="https://scite.ai/reports/10.3389/fpsyg.2024.1368663" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>The why of open pedagogy: a value-first conceptualization for enhancing instructor praxis</td><td>Smart Learning Environments</td><td><a href="https://doi.org/10.1186/s40561-022-00191-0" target="_blank" rel="noopener noreferrer">10.1186/s40561-022-00191-0</a>&nbsp;<a href="https://scite.ai/reports/10.1186/s40561-022-00191-0" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Perceived usefulness of open educational resources: Impact of switching to online learning for face-to-face and distance learners</td><td>Frontiers in Psychology</td><td><a href="https://doi.org/10.3389/fpsyg.2022.1004459" target="_blank" rel="noopener noreferrer">10.3389/fpsyg.2022.1004459</a>&nbsp;<a href="https://scite.ai/reports/10.3389/fpsyg.2022.1004459" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Transformative Curriculum Design through Open Educational Resource Creation</td><td>Collected Essays on Learning and Teaching</td><td><a href="https://doi.org/10.22329/celt.v14i1.7137" target="_blank" rel="noopener noreferrer">10.22329/celt.v14i1.7137</a>&nbsp;<a href="https://scite.ai/reports/10.22329/celt.v14i1.7137" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>Teachers as Connected Professionals</td><td>The International Review of Research in Open and Distributed Learning</td><td><a href="https://doi.org/10.19173/irrodl.v20i4.4082" target="_blank" rel="noopener noreferrer">10.19173/irrodl.v20i4.4082</a>&nbsp;<a href="https://scite.ai/reports/10.19173/irrodl.v20i4.4082" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2017</td><td>Predicting learning: Comparing an open educational resource and standard textbooks.</td><td>Scholarship of Teaching and Learning in Psychology</td><td><a href="https://doi.org/10.1037/stl0000092" target="_blank" rel="noopener noreferrer">10.1037/stl0000092</a>&nbsp;<a href="https://scite.ai/reports/10.1037/stl0000092" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>Unveiling the Relationship between the Use of Open Educational Resources and the Adoption of Open Teaching Practices in Higher Education</td><td>Sustainability</td><td><a href="https://doi.org/10.3390/su11205637" target="_blank" rel="noopener noreferrer">10.3390/su11205637</a>&nbsp;<a href="https://scite.ai/reports/10.3390/su11205637" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Open Science por defecto. La nueva normalidad para la investigación</td><td>Arbor</td><td><a href="https://doi.org/10.3989/arbor.2021.799002" target="_blank" rel="noopener noreferrer">10.3989/arbor.2021.799002</a>&nbsp;<a href="https://scite.ai/reports/10.3989/arbor.2021.799002" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Self-directed multimodal learning within a context of transformative open education</td><td>NWU self-directed learning series</td><td><a href="https://doi.org/10.4102/aosis.2020.bk210.01" target="_blank" rel="noopener noreferrer">10.4102/aosis.2020.bk210.01</a>&nbsp;<a href="https://scite.ai/reports/10.4102/aosis.2020.bk210.01" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Exploring Aspects of Open Educational Resources Through OER-Enabled Pedagogy</td><td>Frontiers in Education</td><td><a href="https://doi.org/10.3389/feduc.2020.00076" target="_blank" rel="noopener noreferrer">10.3389/feduc.2020.00076</a>&nbsp;<a href="https://scite.ai/reports/10.3389/feduc.2020.00076" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2018</td><td>Ramp It Up</td><td>Teaching of Psychology</td><td><a href="https://doi.org/10.1177/0098628318796413" target="_blank" rel="noopener noreferrer">10.1177/0098628318796413</a>&nbsp;<a href="https://scite.ai/reports/10.1177/0098628318796413" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>‘Consider the Opposite’ – Effects of elaborative feedback and correct answer feedback on reducing confirmation bias – A pre-registered study</td><td>Contemporary Educational Psychology</td><td><a href="https://doi.org/10.1016/j.cedpsych.2020.101844" target="_blank" rel="noopener noreferrer">10.1016/j.cedpsych.2020.101844</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.cedpsych.2020.101844" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Sustainability and Justice: Challenges and Opportunities for an Open STEM Education</td><td>CBE—Life Sciences Education</td><td><a href="https://doi.org/10.1187/cbe.20-08-0180" target="_blank" rel="noopener noreferrer">10.1187/cbe.20-08-0180</a>&nbsp;<a href="https://scite.ai/reports/10.1187/cbe.20-08-0180" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Development and Evaluation of Digital Learning Tools Promoting Applicable Knowledge in Economics and German Teacher Education</td><td>Education Sciences</td><td><a href="https://doi.org/10.3390/educsci13050481" target="_blank" rel="noopener noreferrer">10.3390/educsci13050481</a>&nbsp;<a href="https://scite.ai/reports/10.3390/educsci13050481" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Collections Education: The Extended Specimen and Data Acumen</td><td>BioScience</td><td><a href="https://doi.org/10.1093/biosci/biab109" target="_blank" rel="noopener noreferrer">10.1093/biosci/biab109</a>&nbsp;<a href="https://scite.ai/reports/10.1093/biosci/biab109" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Digital Presence and Online Identity among Digital Scholars: A Thematic Analysis</td><td>Social Sciences</td><td><a href="https://doi.org/10.3390/socsci12070379" target="_blank" rel="noopener noreferrer">10.3390/socsci12070379</a>&nbsp;<a href="https://scite.ai/reports/10.3390/socsci12070379" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Minimal computing in refugee education in Uganda: economies of digital use and non-use, and the right constraints</td><td>Learning Media and Technology</td><td><a href="https://doi.org/10.1080/17439884.2024.2405128" target="_blank" rel="noopener noreferrer">10.1080/17439884.2024.2405128</a>&nbsp;<a href="https://scite.ai/reports/10.1080/17439884.2024.2405128" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2018</td><td>Equity-oriented design in open education</td><td>International Journal of Information and Learning Technology</td><td><a href="https://doi.org/10.1108/ijilt-06-2018-0070" target="_blank" rel="noopener noreferrer">10.1108/ijilt-06-2018-0070</a>&nbsp;<a href="https://scite.ai/reports/10.1108/ijilt-06-2018-0070" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Healthcare students’ use of an e-textbook open educational resource on vital sign measurement: a qualitative study</td><td>Open Learning The Journal of Open Distance and e-Learning</td><td><a href="https://doi.org/10.1080/02680513.2020.1835623" target="_blank" rel="noopener noreferrer">10.1080/02680513.2020.1835623</a>&nbsp;<a href="https://scite.ai/reports/10.1080/02680513.2020.1835623" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>The next layer: Towards open pedagogy in geospatial education</td><td>Transactions in GIS</td><td><a href="https://doi.org/10.1111/tgis.13081" target="_blank" rel="noopener noreferrer">10.1111/tgis.13081</a>&nbsp;<a href="https://scite.ai/reports/10.1111/tgis.13081" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Distributed Learning Ecosystems</td><td></td><td><a href="https://doi.org/10.1007/978-3-658-38703-7" target="_blank" rel="noopener noreferrer">10.1007/978-3-658-38703-7</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-658-38703-7" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>Performance Improvement Technology for Building a Sustainable OER Initiative in an Academic Library</td><td>TechTrends</td><td><a href="https://doi.org/10.1007/s11528-019-00467-2" target="_blank" rel="noopener noreferrer">10.1007/s11528-019-00467-2</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s11528-019-00467-2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Teaching Critical Thinking and Metaliteracy Through OER: Theory and Practice in a Course Collaboration</td><td>International Journal of Open Educational Resources</td><td><a href="https://doi.org/10.18278/ijoer.2.1.11" target="_blank" rel="noopener noreferrer">10.18278/ijoer.2.1.11</a>&nbsp;<a href="https://scite.ai/reports/10.18278/ijoer.2.1.11" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Open Pedagogy Approaches: Faculty, Library, and Student Collaborations</td><td></td><td></td></tr>
+<tr><td>2021</td><td>Human Rights and Social Justice through Open Educational Resources and Lifelong Learning</td><td>Macro Management &amp; Public Policies</td><td><a href="https://doi.org/10.30564/mmpp.v3i1.2925" target="_blank" rel="noopener noreferrer">10.30564/mmpp.v3i1.2925</a>&nbsp;<a href="https://scite.ai/reports/10.30564/mmpp.v3i1.2925" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Implementing Open Pedagogy in Higher Education: Examples and Recommendations</td><td></td><td><a href="https://doi.org/10.1007/978-3-030-67349-9_15" target="_blank" rel="noopener noreferrer">10.1007/978-3-030-67349-9_15</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-030-67349-9_15" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>The Public Information Disclosure in State Madrasah Aliyah</td><td>Nidhomul Haq Jurnal Manajemen Pendidikan Islam</td><td><a href="https://doi.org/10.31538/ndh.v8i1.3223" target="_blank" rel="noopener noreferrer">10.31538/ndh.v8i1.3223</a>&nbsp;<a href="https://scite.ai/reports/10.31538/ndh.v8i1.3223" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Not Quite on the Same Page: Comparing Key Terms in Introductory Psychology Textbooks</td><td>Teaching of Psychology</td><td><a href="https://doi.org/10.1177/00986283221111749" target="_blank" rel="noopener noreferrer">10.1177/00986283221111749</a>&nbsp;<a href="https://scite.ai/reports/10.1177/00986283221111749" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Open Education and Alternative Digital Credentials in Europe</td><td>The International Review of Research in Open and Distributed Learning</td><td><a href="https://doi.org/10.19173/irrodl.v25i1.7412" target="_blank" rel="noopener noreferrer">10.19173/irrodl.v25i1.7412</a>&nbsp;<a href="https://scite.ai/reports/10.19173/irrodl.v25i1.7412" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Open Educational Practices (OEP) in Higher Education</td><td></td><td><a href="https://doi.org/10.1007/978-981-287-532-7_710-1" target="_blank" rel="noopener noreferrer">10.1007/978-981-287-532-7_710-1</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-981-287-532-7_710-1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Abrir la ciencia para cambiar el mundo</td><td>International Journal of Engineering Social Justice and Peace</td><td><a href="https://doi.org/10.24908/ijesjp.v7i2.13724" target="_blank" rel="noopener noreferrer">10.24908/ijesjp.v7i2.13724</a>&nbsp;<a href="https://scite.ai/reports/10.24908/ijesjp.v7i2.13724" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>Scientist and data architect collaborate to curate and archive an inner ear electrophysiology data collection</td><td>PLoS ONE</td><td><a href="https://doi.org/10.1371/journal.pone.0223984" target="_blank" rel="noopener noreferrer">10.1371/journal.pone.0223984</a>&nbsp;<a href="https://scite.ai/reports/10.1371/journal.pone.0223984" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>Open Science</td><td>Elsevier eBooks</td><td><a href="https://doi.org/10.1016/b978-0-08-102124-8.00007-6" target="_blank" rel="noopener noreferrer">10.1016/b978-0-08-102124-8.00007-6</a>&nbsp;<a href="https://scite.ai/reports/10.1016/b978-0-08-102124-8.00007-6" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>“Do they really know what we need?”Exploring learners’ versus universities’ views on open educational resources in Chinese universities</td><td>International Journal of Educational Research</td><td><a href="https://doi.org/10.1016/j.ijer.2021.101817" target="_blank" rel="noopener noreferrer">10.1016/j.ijer.2021.101817</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.ijer.2021.101817" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Writing between the Lines</td><td>Pedagogy Critical Approaches to Teaching Literature Language Composition and Culture</td><td><a href="https://doi.org/10.1215/15314200-9131828" target="_blank" rel="noopener noreferrer">10.1215/15314200-9131828</a>&nbsp;<a href="https://scite.ai/reports/10.1215/15314200-9131828" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Cartografia de pesquisas nacionais sobre REA</td><td>Revista Linguagem em Foco</td><td><a href="https://doi.org/10.46230/2674-8266-12-4384" target="_blank" rel="noopener noreferrer">10.46230/2674-8266-12-4384</a>&nbsp;<a href="https://scite.ai/reports/10.46230/2674-8266-12-4384" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Open Textbooks in Higher Education Teaching</td><td></td><td><a href="https://doi.org/10.1007/978-3-658-38703-7_6" target="_blank" rel="noopener noreferrer">10.1007/978-3-658-38703-7_6</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-658-38703-7_6" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>The Use of Open Educational Resources as Teaching Tools in Primary Education: Activities by Postgraduate Students of the Hellenic Open University</td><td>International Journal of Learning and Development</td><td><a href="https://doi.org/10.5296/ijld.v13i3.21010" target="_blank" rel="noopener noreferrer">10.5296/ijld.v13i3.21010</a>&nbsp;<a href="https://scite.ai/reports/10.5296/ijld.v13i3.21010" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Open-source 3-D printable autoinjector: Design, testing, and regulatory limitations</td><td>PLoS ONE</td><td><a href="https://doi.org/10.1371/journal.pone.0288696" target="_blank" rel="noopener noreferrer">10.1371/journal.pone.0288696</a>&nbsp;<a href="https://scite.ai/reports/10.1371/journal.pone.0288696" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Review of Linked Data and Open Educational Resources in Academia: Potential Benefits and Challenges</td><td>Journal of Development and Social Sciences</td><td><a href="https://doi.org/10.47205/jdss.2024(5-i)53" target="_blank" rel="noopener noreferrer">10.47205/jdss.2024(5-i)53</a>&nbsp;<a href="https://scite.ai/reports/10.47205/jdss.2024(5-i)53" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Open Education and Second Language Learning and Teaching</td><td>Multilingual Matters eBooks</td><td><a href="https://doi.org/10.21832/blyth0992" target="_blank" rel="noopener noreferrer">10.21832/blyth0992</a>&nbsp;<a href="https://scite.ai/reports/10.21832/blyth0992" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2017</td><td>How to Open an Academic Department</td><td>Ubiquity Press eBooks</td><td><a href="https://doi.org/10.5334/bbc.m" target="_blank" rel="noopener noreferrer">10.5334/bbc.m</a>&nbsp;<a href="https://scite.ai/reports/10.5334/bbc.m" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Contextualising Open Educational Resources in Higher Education</td><td>Future education and learning spaces</td><td><a href="https://doi.org/10.1007/978-981-19-8590-4_1" target="_blank" rel="noopener noreferrer">10.1007/978-981-19-8590-4_1</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-981-19-8590-4_1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Open Educational Practices (OEP) in Higher Education</td><td></td><td><a href="https://doi.org/10.1007/978-981-287-532-7_710-3" target="_blank" rel="noopener noreferrer">10.1007/978-981-287-532-7_710-3</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-981-287-532-7_710-3" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Effective Strategies for Finding Open Educational Resources in High School</td><td>Apertura</td><td><a href="https://doi.org/10.32870/ap.v15n2.2393" target="_blank" rel="noopener noreferrer">10.32870/ap.v15n2.2393</a>&nbsp;<a href="https://scite.ai/reports/10.32870/ap.v15n2.2393" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Educator capacity for online global collaborative learning: developing a framework</td><td>Teacher Development</td><td><a href="https://doi.org/10.1080/13664530.2024.2415385" target="_blank" rel="noopener noreferrer">10.1080/13664530.2024.2415385</a>&nbsp;<a href="https://scite.ai/reports/10.1080/13664530.2024.2415385" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>The innovative evolution of teaching materials: Trends and future prospects</td><td>Journal of Research in Instructional</td><td><a href="https://doi.org/10.30862/jri.v5i1.600" target="_blank" rel="noopener noreferrer">10.30862/jri.v5i1.600</a>&nbsp;<a href="https://scite.ai/reports/10.30862/jri.v5i1.600" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>Designing open access, educational resources</td><td>Quality Advancement in Nursing Education - Avancées en formation infirmière</td><td><a href="https://doi.org/10.17483/2368-6669.1193" target="_blank" rel="noopener noreferrer">10.17483/2368-6669.1193</a>&nbsp;<a href="https://scite.ai/reports/10.17483/2368-6669.1193" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Are Open Textbooks Effective for Learning? Investigating the Issue of Human-computer Interaction in Pedagogical Design of Open Textbook Affordable for a Diversity of Learning Environments</td><td>Journal of Physics Conference Series</td><td><a href="https://doi.org/10.1088/1742-6596/1828/1/012127" target="_blank" rel="noopener noreferrer">10.1088/1742-6596/1828/1/012127</a>&nbsp;<a href="https://scite.ai/reports/10.1088/1742-6596/1828/1/012127" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>User Engagement Using an Etextbook</td><td>CIN Computers Informatics Nursing</td><td><a href="https://doi.org/10.1097/cin.0000000000000720" target="_blank" rel="noopener noreferrer">10.1097/cin.0000000000000720</a>&nbsp;<a href="https://scite.ai/reports/10.1097/cin.0000000000000720" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Commentary: Social Responsibility in College Admissions Requires a Reimagining of Standardized Testing</td><td>Educational Measurement Issues and Practice</td><td><a href="https://doi.org/10.1111/emip.12451" target="_blank" rel="noopener noreferrer">10.1111/emip.12451</a>&nbsp;<a href="https://scite.ai/reports/10.1111/emip.12451" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Advancing social justice through small grants for the development of open educational resources at the University of Cape Town and the Cape Peninsula University of Technology</td><td>African Minds eBooks</td><td><a href="https://doi.org/10.47622/9781928502425_10" target="_blank" rel="noopener noreferrer">10.47622/9781928502425_10</a>&nbsp;<a href="https://scite.ai/reports/10.47622/9781928502425_10" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Post-pandemic digital writing instruction will be Resilient, Open, and Inclusive</td><td>Journal of University Teaching and Learning Practice</td><td><a href="https://doi.org/10.53761/1.20.02.11" target="_blank" rel="noopener noreferrer">10.53761/1.20.02.11</a>&nbsp;<a href="https://scite.ai/reports/10.53761/1.20.02.11" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2018</td><td>Developing a Community of Online Research Assignments</td><td>portal Libraries and the Academy</td><td><a href="https://doi.org/10.1353/pla.2018.0028" target="_blank" rel="noopener noreferrer">10.1353/pla.2018.0028</a>&nbsp;<a href="https://scite.ai/reports/10.1353/pla.2018.0028" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2018</td><td>Recursos Educativos Abiertos en la Universidad Estatal a Distancia</td><td>Revista Electrónica Calidad en la Educación Superior</td><td><a href="https://doi.org/10.22458/caes.v9i2.2077" target="_blank" rel="noopener noreferrer">10.22458/caes.v9i2.2077</a>&nbsp;<a href="https://scite.ai/reports/10.22458/caes.v9i2.2077" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>Foundations for On-Campus Open Social Scholarship Activities</td><td>KULA knowledge creation dissemination and preservation studies</td><td><a href="https://doi.org/10.5334/kula.14" target="_blank" rel="noopener noreferrer">10.5334/kula.14</a>&nbsp;<a href="https://scite.ai/reports/10.5334/kula.14" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Moving Mountains</td><td>Journal of New Librarianship</td><td><a href="https://doi.org/10.33011/newlibs/10/5" target="_blank" rel="noopener noreferrer">10.33011/newlibs/10/5</a>&nbsp;<a href="https://scite.ai/reports/10.33011/newlibs/10/5" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2018</td><td>Specific Features of Fragmented Content</td><td>Advances in educational technologies and instructional design book series</td><td><a href="https://doi.org/10.4018/978-1-5225-5305-2.ch007" target="_blank" rel="noopener noreferrer">10.4018/978-1-5225-5305-2.ch007</a>&nbsp;<a href="https://scite.ai/reports/10.4018/978-1-5225-5305-2.ch007" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2018</td><td>Cost, outcomes, use, and perceptions of Open Educational Resources in psychology: A narrative review of the literature</td><td></td><td><a href="https://doi.org/10.31219/osf.io/kme36" target="_blank" rel="noopener noreferrer">10.31219/osf.io/kme36</a>&nbsp;<a href="https://scite.ai/reports/10.31219/osf.io/kme36" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Repositories of Open Textbooks for Higher Education: A Worldwide Overview</td><td>Future education and learning spaces</td><td><a href="https://doi.org/10.1007/978-981-19-8590-4_10" target="_blank" rel="noopener noreferrer">10.1007/978-981-19-8590-4_10</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-981-19-8590-4_10" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Open Education: Looking at Canadian Higher Education through a Critical Research Lens</td><td>The Open/Technology in Education Society and Scholarship Association Conference</td><td><a href="https://doi.org/10.18357/otessac.2022.2.1.61" target="_blank" rel="noopener noreferrer">10.18357/otessac.2022.2.1.61</a>&nbsp;<a href="https://scite.ai/reports/10.18357/otessac.2022.2.1.61" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Art and/as open education: A collaborative action with refugee artists</td><td>Arts and Humanities in Higher Education</td><td><a href="https://doi.org/10.1177/14740222231156807" target="_blank" rel="noopener noreferrer">10.1177/14740222231156807</a>&nbsp;<a href="https://scite.ai/reports/10.1177/14740222231156807" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Participatory culture and knowledge sharing among educators and scholars in higher education</td><td>Educational Media International</td><td><a href="https://doi.org/10.1080/09523987.2024.2357954" target="_blank" rel="noopener noreferrer">10.1080/09523987.2024.2357954</a>&nbsp;<a href="https://scite.ai/reports/10.1080/09523987.2024.2357954" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Lombok Folktales Dari Datu Pejanggiq Sampai Putri Mandalika as Literacy Support in Elementary Schools</td><td>Indonesian Language Education and Literature</td><td><a href="https://doi.org/10.24235/ileal.v9i2.11458" target="_blank" rel="noopener noreferrer">10.24235/ileal.v9i2.11458</a>&nbsp;<a href="https://scite.ai/reports/10.24235/ileal.v9i2.11458" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>How community college librarians are creating value through an OER virtual community of practice: A netnography</td><td></td><td><a href="https://doi.org/10.5204/thesis.eprints.228555" target="_blank" rel="noopener noreferrer">10.5204/thesis.eprints.228555</a>&nbsp;<a href="https://scite.ai/reports/10.5204/thesis.eprints.228555" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>Sustaining Open Educational Resources (OER) initiatives in higher education: practices, successes, and challenges</td><td></td><td><a href="https://doi.org/10.32469/10355/94325" target="_blank" rel="noopener noreferrer">10.32469/10355/94325</a>&nbsp;<a href="https://scite.ai/reports/10.32469/10355/94325" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Bildung, Praxistransfer und Kooperation</td><td>transcript Verlag eBooks</td><td><a href="https://doi.org/10.1515/9783839471807" target="_blank" rel="noopener noreferrer">10.1515/9783839471807</a>&nbsp;<a href="https://scite.ai/reports/10.1515/9783839471807" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2018</td><td>PLAT 17(1) 2018</td><td>Psychology Learning &amp; Teaching</td><td><a href="https://doi.org/10.1177/1475725717748530" target="_blank" rel="noopener noreferrer">10.1177/1475725717748530</a>&nbsp;<a href="https://scite.ai/reports/10.1177/1475725717748530" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Formação de professores para a Fluência Tecnológico-pedagógica em tecnologia assistiva no curso de pedagogia</td><td></td><td><a href="https://doi.org/10.31560/pimentacultural/2022.206.102-125" target="_blank" rel="noopener noreferrer">10.31560/pimentacultural/2022.206.102-125</a>&nbsp;<a href="https://scite.ai/reports/10.31560/pimentacultural/2022.206.102-125" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>The Flow Between Spaces: The Experiences of International Doctoral Candidates Negotiation and Construction of Professional Identity on Social Media</td><td>White Rose eTheses Online (University of Leeds, The University of Sheffield, University of York)</td><td></td></tr>
+<tr><td>2024</td><td>Impact of Open Education Resources (OER) on Student Academic Performance and Retention Rates in Undergraduate Engineering Departments</td><td></td><td><a href="https://doi.org/10.18260/1-2--36048" target="_blank" rel="noopener noreferrer">10.18260/1-2--36048</a>&nbsp;<a href="https://scite.ai/reports/10.18260/1-2--36048" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Educative features of upper elementary Eureka math curriculum</td><td></td><td><a href="https://doi.org/10.32469/10355/78158" target="_blank" rel="noopener noreferrer">10.32469/10355/78158</a>&nbsp;<a href="https://scite.ai/reports/10.32469/10355/78158" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Gathering Expert Opinions on Self-directed Learning and Online Assessment Using OER—A Delphi Approach for Redesigning Student Assessments</td><td>Lecture notes in educational technology</td><td><a href="https://doi.org/10.1007/978-981-16-4099-5_4" target="_blank" rel="noopener noreferrer">10.1007/978-981-16-4099-5_4</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-981-16-4099-5_4" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Formação de professores da educação básica no RS: integração de Recursos Educacionais Abertos (REA) como inovação didático-metodológica</td><td></td><td><a href="https://doi.org/10.31560/pimentacultural/2022.206.18-37" target="_blank" rel="noopener noreferrer">10.31560/pimentacultural/2022.206.18-37</a>&nbsp;<a href="https://scite.ai/reports/10.31560/pimentacultural/2022.206.18-37" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Inovação disruptiva nas práticas escolares: (co) autoria de REA no contexto da produsage</td><td></td><td><a href="https://doi.org/10.31560/pimentacultural/2022.206.89-101" target="_blank" rel="noopener noreferrer">10.31560/pimentacultural/2022.206.89-101</a>&nbsp;<a href="https://scite.ai/reports/10.31560/pimentacultural/2022.206.89-101" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Habilidades sociais educativas na performance pedagógica do tutor</td><td></td><td><a href="https://doi.org/10.31560/pimentacultural/2022.206.126-146" target="_blank" rel="noopener noreferrer">10.31560/pimentacultural/2022.206.126-146</a>&nbsp;<a href="https://scite.ai/reports/10.31560/pimentacultural/2022.206.126-146" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2021</td><td>Processos formativos: performance docente na (Co)autoria de REA</td><td></td><td><a href="https://doi.org/10.31560/pimentacultural/2022.206.38-55" target="_blank" rel="noopener noreferrer">10.31560/pimentacultural/2022.206.38-55</a>&nbsp;<a href="https://scite.ai/reports/10.31560/pimentacultural/2022.206.38-55" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2018</td><td>Overview of Open Textbooks</td><td>Advances in educational technologies and instructional design book series</td><td><a href="https://doi.org/10.4018/978-1-5225-5305-2.ch001" target="_blank" rel="noopener noreferrer">10.4018/978-1-5225-5305-2.ch001</a>&nbsp;<a href="https://scite.ai/reports/10.4018/978-1-5225-5305-2.ch001" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2020</td><td>Open Educational Practices (POEP) in Higher Education</td><td></td><td><a href="https://doi.org/10.1007/978-981-287-532-7_710-2" target="_blank" rel="noopener noreferrer">10.1007/978-981-287-532-7_710-2</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-981-287-532-7_710-2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>Theorizing Technologies for Learning as Mutable Mobiles</td><td>Proceedings of the 2019 AERA Annual Meeting</td><td><a href="https://doi.org/10.3102/1432243" target="_blank" rel="noopener noreferrer">10.3102/1432243</a>&nbsp;<a href="https://scite.ai/reports/10.3102/1432243" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2022</td><td>The Role of Open Educational Resources (OERs) in the Future of Online Learning</td><td>Advances in educational technologies and instructional design book series</td><td><a href="https://doi.org/10.4018/978-1-6684-6513-4.ch005" target="_blank" rel="noopener noreferrer">10.4018/978-1-6684-6513-4.ch005</a>&nbsp;<a href="https://scite.ai/reports/10.4018/978-1-6684-6513-4.ch005" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Practising open education</td><td>UCL Press eBooks</td><td><a href="https://doi.org/10.2307/j.ctv2wk7261.25" target="_blank" rel="noopener noreferrer">10.2307/j.ctv2wk7261.25</a>&nbsp;<a href="https://scite.ai/reports/10.2307/j.ctv2wk7261.25" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Ressources Educatives Libres et éducation ouverte : l’écosystème RELIEFH pour l’égalité femme-homme</td><td>Education Ouverte et Libre - Open Education</td><td><a href="https://doi.org/10.52612/journals/eol-oe.2023.e1155" target="_blank" rel="noopener noreferrer">10.52612/journals/eol-oe.2023.e1155</a>&nbsp;<a href="https://scite.ai/reports/10.52612/journals/eol-oe.2023.e1155" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>What do we talk about when we talk about &quot;Open&quot;? On Education, Science, Research, and Open Scholarship</td><td></td><td><a href="https://doi.org/10.59350/dxdqq-e4n18" target="_blank" rel="noopener noreferrer">10.59350/dxdqq-e4n18</a>&nbsp;<a href="https://scite.ai/reports/10.59350/dxdqq-e4n18" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>Demystifying the Academic Research Enterprise</td><td>The MIT Press eBooks</td><td><a href="https://doi.org/10.7551/mitpress/14740.001.0001" target="_blank" rel="noopener noreferrer">10.7551/mitpress/14740.001.0001</a>&nbsp;<a href="https://scite.ai/reports/10.7551/mitpress/14740.001.0001" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2023</td><td>&quot;The Pictures Allowed Me to Connect to the Material More&quot;: Student Perceptions of a Diversity-Focused Open Pedagogy Assignment</td><td></td><td><a href="https://doi.org/10.31219/osf.io/hvtxk" target="_blank" rel="noopener noreferrer">10.31219/osf.io/hvtxk</a>&nbsp;<a href="https://scite.ai/reports/10.31219/osf.io/hvtxk" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Open Scholarship in the Humanities</td><td>Bloomsbury Publishing Plc eBooks</td><td><a href="https://doi.org/10.5040/9781350232303" target="_blank" rel="noopener noreferrer">10.5040/9781350232303</a>&nbsp;<a href="https://scite.ai/reports/10.5040/9781350232303" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Improving Student Engagement in the First-Year Transition Seminar Class with Open Educational Resources</td><td></td><td><a href="https://doi.org/10.18260/1-2--45124" target="_blank" rel="noopener noreferrer">10.18260/1-2--45124</a>&nbsp;<a href="https://scite.ai/reports/10.18260/1-2--45124" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Open Educational Resources in einer Open Pedagogy</td><td>transcript Verlag eBooks</td><td><a href="https://doi.org/10.1515/9783839471807-010" target="_blank" rel="noopener noreferrer">10.1515/9783839471807-010</a>&nbsp;<a href="https://scite.ai/reports/10.1515/9783839471807-010" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Perceptions of Open Educational Resources by Teaching Staff in Higher Education in Ireland</td><td>DBS Applied Research and Theory Journal</td><td><a href="https://doi.org/10.22375/dbs.v1i1.113" target="_blank" rel="noopener noreferrer">10.22375/dbs.v1i1.113</a>&nbsp;<a href="https://scite.ai/reports/10.22375/dbs.v1i1.113" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Bildung, Praxistransfer und Kooperation</td><td>Medien- und Gestaltungsästhetik</td><td><a href="https://doi.org/10.14361/9783839471807" target="_blank" rel="noopener noreferrer">10.14361/9783839471807</a>&nbsp;<a href="https://scite.ai/reports/10.14361/9783839471807" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2024</td><td>Former Educators to Enhance Student Growth and Teaching Effectiveness</td><td>Advances in educational marketing, administration, and leadership book series</td><td><a href="https://doi.org/10.4018/979-8-3693-6427-7.ch003" target="_blank" rel="noopener noreferrer">10.4018/979-8-3693-6427-7.ch003</a>&nbsp;<a href="https://scite.ai/reports/10.4018/979-8-3693-6427-7.ch003" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Jupyter Book as an open online teaching environment in the geosciences: lessons learned from Geo-SfM and Geo-UAV</td><td>Geoscience Communication</td><td><a href="https://doi.org/10.5194/gc-8-51-2025" target="_blank" rel="noopener noreferrer">10.5194/gc-8-51-2025</a>&nbsp;<a href="https://scite.ai/reports/10.5194/gc-8-51-2025" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Connected Learning as Collaboration and Psychosocial Support: A Critical Reflection on a Bridging Programme for Refugees in Uganda</td><td>Journal of Interactive Media in Education</td><td><a href="https://doi.org/10.5334/jime.879" target="_blank" rel="noopener noreferrer">10.5334/jime.879</a>&nbsp;<a href="https://scite.ai/reports/10.5334/jime.879" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Quantifying the Human Mortality Costs of Patent-based Intellectual Property: How Many Premature Deaths are due to Patents?</td><td>Health Care Analysis</td><td><a href="https://doi.org/10.1007/s10728-025-00516-3" target="_blank" rel="noopener noreferrer">10.1007/s10728-025-00516-3</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s10728-025-00516-3" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2025</td><td>Perceptions and Attitudes of Teacher Educators towards the Integration of Open Educational Resources (OER) in Teacher Education Programs in Telangana State</td><td>Journal of Informatics Education and Research</td><td><a href="https://doi.org/10.52783/jier.v5i2.2571" target="_blank" rel="noopener noreferrer">10.52783/jier.v5i2.2571</a>&nbsp;<a href="https://scite.ai/reports/10.52783/jier.v5i2.2571" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+<tr><td>2019</td><td>What do we talk about when we talk about &quot;Open&quot;? On Education, Science, Research, and Open Scholarship</td><td></td><td><a href="https://doi.org/10.59350/zddf5-kda18" target="_blank" rel="noopener noreferrer">10.59350/zddf5-kda18</a>&nbsp;<a href="https://scite.ai/reports/10.59350/zddf5-kda18" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer class="page-footer">
+  Generated by BookStories on 2026-02-20T16:18:42+00:00 UTC
+</footer>
+
+</div>
+</body>
+</html>

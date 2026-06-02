@@ -1,0 +1,2685 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>SoftwareStory - PIVlab - Time-Resolved Digital Particle Image Velocimetry Tool for MATLAB</title>
+    <style>
+
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
+
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+.sig-green {background:#dcfce7;color:#166534;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+    
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="softwarestories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">PIVlab - Time-Resolved Digital Particle Image Velocimetry Tool for MATLAB</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #faf5ff; color: #86198f; border: 1px solid #e9d5ff; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                                    Proven Reuse
+                                </span>
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> 
+                                
+                                    William Thielicke, Eize J. Stamhuis
+                                
+                            </div>
+                        
+                            
+                        
+                            
+                            
+                            <div><strong>Source:</strong> 
+                                Figshare
+                            </div>
+                            
+                        
+                            <div><strong>Provider:</strong> 
+                                
+                                    Unknown
+                                
+                            </div>
+                        
+                            <div><strong>Publication year:</strong> 
+                                
+                                    2015
+                                
+                            </div>
+                        
+                            <div><strong>DOI:</strong> 
+                                <a href="https://doi.org/10.6084/m9.figshare.1092508.v6" target="_blank">
+                                    10.6084/m9.figshare.1092508.v6
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        <!-- Sticky nav -->
+        <nav aria-label="Page sections" class="sticky-nav no-print">
+            <div class="sticky-nav-inner">
+                <a href="#sec-hero">Overview</a>
+                <a href="#sec-story">Story</a>
+                <a href="#sec-impact">Impact</a>
+                <a href="#sec-roles">Roles</a>
+                <a href="#sec-access">Access</a>
+                <a href="#sec-citing">Who's Citing</a>
+                <a href="#sec-mentions">Mentions</a>
+            </div>
+        </nav>
+
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The software tool PIVlab, designed for time-resolved digital particle image velocimetry in MATLAB, has garnered 191 citations since its release in 2015, indicating significant academic integration. Its impact is sustained across various disciplines, highlighting its utility in fluid dynamics research.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">PIVlab has emerged as a pivotal software tool within the field of fluid dynamics, boasting an impressive citation count of 191. This metric not only reflects its acceptance among researchers but also underscores its role as a foundational resource for conducting advanced analyses in time-resolved digital particle image velocimetry. The absence of funding agencies indicates that the tool was developed independently, showcasing the author's dedication to enhancing research methodologies.</p>
+<p class="story-text">The tool's influence extends beyond its citations, as it has been referenced in high-impact journals such as *Physics of Fluids* and *Journal of Fluids and Structures*. These venues are crucial for disseminating research findings in fluid dynamics, further solidifying PIVlab’s importance in the academic landscape. The predominant citing countries, which include the United States, the United Kingdom, and Germany, reflect a broad international interest, suggesting that this software tool transcends geographical boundaries and fosters collaborative research initiatives.</p>
+<p class="story-text">While community engagement data reveals no notable mentions on platforms such as Reddit or Wikipedia, the lack of high-fidelity social discourse does not detract from PIVlab's established academic credibility. Instead, it is evident that the software's use is more concentrated within scholarly circles, where it serves as a reliable instrument for researchers aiming to achieve accurate fluid flow measurements in their studies.</p>
+<p class="story-text">Moreover, PIVlab’s proven downstream reuse—highlighted by its 192 instances—demonstrates its robust support for subsequent research activities. This aspect reinforces the tool's capability in providing necessary datasets and analysis techniques vital for advancing knowledge in the field of fluid dynamics. The consistent citation alongside notable journals and researchers speaks to the enduring relevance of PIVlab as a significant tool for scientific inquiry in academic settings.</p></div>
+        </section>
+        
+
+        
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+            <div class="im-wrapper">
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">191</div>
+                                <div class="im-label">Total Citations</div>
+                                
+                            </div>
+                            
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]"
+                                        data-values="[22, 26, 23, 20, 14, 21, 24, 25, 2, 5, 5, 2]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2013–2025</div>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+                    
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+                    
+                    
+                    <!-- scite (only when references exist) -->
+                    
+                </div>
+
+                
+                
+                
+                
+                
+                <div class="muted" style="margin-top:.7rem; font-size:.8rem;">
+                    Some signals aren’t recorded for this volume yet (online mentions, scite citation context) — these typically accrue after publication.
+                </div>
+                
+
+                
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 15 countries</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+            
+            
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Software method anchor — heuristic signal (score 1.00)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Software method anchor
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="High-visibility uptake — heuristic signal (score 0.85)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            High-visibility uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Scholarly uptake — heuristic signal (score 0.84)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Scholarly uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access & Visibility</span> <span class="badge" style="background:#f0fdf4; color:#15803d; border:1px solid #bbf7d0;">DataCite</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.6084/m9.figshare.1092508.v6" target="_blank">10.6084/m9.figshare.1092508.v6</a></li>
+                    <li><strong>Resource Type:</strong> Software</li>
+                    <li><strong>Total Views:</strong> 0</li>
+                    <li><strong>Total Downloads:</strong> 0</li>
+                </ul>
+            </section>
+            
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.6rem;">
+                        This work has <strong>0</strong> recorded events globally.
+                    </p>
+                    
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 0</li>
+                                <li><strong>Supporting:</strong> 0</li>
+                                <li><strong>Mentioning:</strong> 0</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite / Crossref</span></h2>
+                            
+                            
+                                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Tracking downstream reuse and integration.</p>
+                                <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Reused in 192 related works:</h3>
+                                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom: 1rem;">
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">161 Articles</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">17 Preprints</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">8 Dissertations</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">5 Book-Chapters</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">1 Paratexts</span>
+                                    
+                                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">1 Biomedical Article Mentions (Europe Pmc)s</span>
+                                    
+                                </div>
+                                
+                                
+                                    <h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Known Links:</h3>
+                                    <div style="display:flex; flex-direction:column; gap:0.3rem; max-height: 150px; overflow-y: auto;">
+                                        
+                                            <a href="https://doi.org/10.3390/biomimetics4030063" target="_blank" style="font-size:0.85rem; color:#2563eb; text-decoration:none;">Europe PMC Article Mention &#8594;</a>
+                                        
+                                    </div>
+                                
+
+                            
+                        </section>
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+        
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>191</strong> citing works.
+                        <strong>17.1%</strong> come from the Top 10 institutions.
+                        Median citing paper cited <strong>11.0</strong> times itself.
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (161)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (17)</span><span class="tag tag-soft" style="font-size:.75rem;">dissertation (8)</span><span class="tag tag-soft" style="font-size:.75rem;">book-chapter (5)</span><span class="tag tag-soft" style="font-size:.75rem;">paratext (1)</span>
+                        <span class="tag" style="font-size:.75rem;">Unknown</span><span class="tag" style="font-size:.75rem;">Physics of Fluids</span><span class="tag" style="font-size:.75rem;">bioRxiv</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]"
+                    data-values="[2, 22, 26, 23, 20, 14, 21, 24, 25, 2, 5, 5, 2]">
+                </canvas>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
+
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (75)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (15)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Germany (14)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Italy (13)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">France (13)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">India (13)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Russia (11)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (10)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Canada (6)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Australia (6)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Switzerland (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">South Korea (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Netherlands (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Israel (4)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Singapore (4)</span>
+                    
+                </div>
+                
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (166)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (41)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (12)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (9)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Healthcare (6)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (4)</span>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>New York University</strong>
+                        <a href="https://ror.org/0190ak572" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(6.583333333333334)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Perm State Humanitarian-Pedagogical University</strong>
+                        <a href="https://ror.org/012mvrz03" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(5.5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Maryland, College Park</strong>
+                        <a href="https://ror.org/047s2c258" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(4.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Pohang University of Science and Technology</strong>
+                        <a href="https://ror.org/04xysgw12" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Cornell University</strong>
+                        <a href="https://ror.org/05bnh6r87" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.7)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>ETH Zurich</strong>
+                        <a href="https://ror.org/05a28rw58" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Indian Institute of Technology Guwahati</strong>
+                        <a href="https://ror.org/0022nd079" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Tel Aviv University</strong>
+                        <a href="https://ror.org/04mhzgx49" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kent State University</strong>
+                        <a href="https://ror.org/049pfb863" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Indian Institute of Technology Madras</strong>
+                        <a href="https://ror.org/03v0r5n49" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Maurizio Porfiri</strong>
+                        <a href="https://orcid.org/0000-0002-1480-3539" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(10)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>E Novikov</strong>
+                        
+                        <span class="muted">(7)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>В. Г. Козлов</strong>
+                        <a href="https://orcid.org/0000-0003-0327-8764" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>С. В. Субботин</strong>
+                        <a href="https://orcid.org/0000-0002-5567-5035" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Riccardo Panciroli</strong>
+                        <a href="https://orcid.org/0000-0003-0893-4193" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Mohammad Jalalisendi</strong>
+                        <a href="https://openalex.org/A5071190967" target="_blank" class="orcid-badge">Profile</a>
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>A Khoroshilov</strong>
+                        
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>I Zakharov</strong>
+                        
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>A Kozachok</strong>
+                        
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>V Mutilin</strong>
+                        
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+        </div>
+
+        
+        
+        
+        
+            
+                
+                    
+                
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>2 authors · 1 institution</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>William Thielicke</strong> 
+                        <span class="badge">First</span>
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-8866-9769" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Eize J. Stamhuis</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="https://orcid.org/0000-0001-7746-2535" target="_blank">ORCID</a>
+                    </li>
+                    
+                </ul>
+
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        
+                            <a href="https://ror.org/05mbqa235" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">Ecosystem Sciences</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>17 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Particle image velocimetry</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Particle tracking velocimetry</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">MATLAB</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Velocimetry</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer graphics (images)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer vision</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Digital image analysis</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Particle (ecology)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Artificial intelligence</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Physics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Optics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Geology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mechanics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Operating system</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Turbulence</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Oceanography</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
+
+
+
+        
+        
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.75rem;"
+                 data-total="192">
+                192 citing works (most recent first)
+            </div>
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Pulsatile cell-autonomous contractility drives compaction in the mouse embryo</td>
+                        <td>Nature Cell Biology</td>
+                        <td><a href="https://doi.org/10.1038/ncb3185" target="_blank" style="word-break: break-all;">10.1038/ncb3185</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Myosin-II-mediated cell shape changes and cell intercalation contribute to primitive streak formation</td>
+                        <td>Nature Cell Biology</td>
+                        <td><a href="https://doi.org/10.1038/ncb3138" target="_blank" style="word-break: break-all;">10.1038/ncb3138</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Acoustofluidic centrifuge for nanoparticle enrichment and separation</td>
+                        <td>Science Advances</td>
+                        <td><a href="https://doi.org/10.1126/sciadv.abc0467" target="_blank" style="word-break: break-all;">10.1126/sciadv.abc0467</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>A low-cost airborne velocimetry system: proof of concept</td>
+                        <td>Journal of Hydraulic Research</td>
+                        <td><a href="https://doi.org/10.1080/00221686.2015.1054322" target="_blank" style="word-break: break-all;">10.1080/00221686.2015.1054322</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Experiments on the water entry of curved wedges: High speed imaging and particle image velocimetry</td>
+                        <td>Ocean Engineering</td>
+                        <td><a href="https://doi.org/10.1016/j.oceaneng.2014.12.004" target="_blank" style="word-break: break-all;">10.1016/j.oceaneng.2014.12.004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Particle velocimetry analysis of immiscible two-phase flow in micromodels</td>
+                        <td>Advances in Water Resources</td>
+                        <td><a href="https://doi.org/10.1016/j.advwatres.2015.08.015" target="_blank" style="word-break: break-all;">10.1016/j.advwatres.2015.08.015</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Forces Generated by Cell Intercalation Tow Epidermal Sheets in Mammalian Tissue Morphogenesis</td>
+                        <td>Developmental Cell</td>
+                        <td><a href="https://doi.org/10.1016/j.devcel.2014.02.011" target="_blank" style="word-break: break-all;">10.1016/j.devcel.2014.02.011</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Three-dimensional water entry of a solid body: A computational study</td>
+                        <td>Journal of Fluids and Structures</td>
+                        <td><a href="https://doi.org/10.1016/j.jfluidstructs.2016.07.015" target="_blank" style="word-break: break-all;">10.1016/j.jfluidstructs.2016.07.015</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>A combined rheometry and imaging study of viscosity reduction in bacterial suspensions</td>
+                        <td>Proceedings of the National Academy of Sciences</td>
+                        <td><a href="https://doi.org/10.1073/pnas.1912690117" target="_blank" style="word-break: break-all;">10.1073/pnas.1912690117</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Superhydrophobic frictions</td>
+                        <td>Proceedings of the National Academy of Sciences</td>
+                        <td><a href="https://doi.org/10.1073/pnas.1819979116" target="_blank" style="word-break: break-all;">10.1073/pnas.1819979116</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2013</td>
+                        <td>Analysis of fluid flow and particle transport in evaporating droplets exposed to infrared heating</td>
+                        <td>International Journal of Heat and Mass Transfer</td>
+                        <td><a href="https://doi.org/10.1016/j.ijheatmasstransfer.2013.09.012" target="_blank" style="word-break: break-all;">10.1016/j.ijheatmasstransfer.2013.09.012</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>sUAS-Based Remote Sensing of River Discharge Using Thermal Particle Image Velocimetry and Bathymetric Lidar</td>
+                        <td>Remote Sensing</td>
+                        <td><a href="https://doi.org/10.3390/rs11192317" target="_blank" style="word-break: break-all;">10.3390/rs11192317</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Pore-scale visualization and characterization of viscous dissipation in porous media</td>
+                        <td>Journal of Colloid and Interface Science</td>
+                        <td><a href="https://doi.org/10.1016/j.jcis.2019.09.072" target="_blank" style="word-break: break-all;">10.1016/j.jcis.2019.09.072</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Two-dimensional sub-aerial, submerged, and transitional granular slides</td>
+                        <td>Physics of Fluids</td>
+                        <td><a href="https://doi.org/10.1063/1.5121881" target="_blank" style="word-break: break-all;">10.1063/1.5121881</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Spontaneous buckling of contractile poroelastic actomyosin sheets</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-018-04829-x" target="_blank" style="word-break: break-all;">10.1038/s41467-018-04829-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Water entry of compliant slender bodies: Theory and experiments</td>
+                        <td>International Journal of Mechanical Sciences</td>
+                        <td><a href="https://doi.org/10.1016/j.ijmecsci.2017.07.041" target="_blank" style="word-break: break-all;">10.1016/j.ijmecsci.2017.07.041</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Piezoelectric Beam for Intrabody Propulsion Controlled by Embedded Sensing</td>
+                        <td>IEEE/ASME Transactions on Mechatronics</td>
+                        <td><a href="https://doi.org/10.1109/tmech.2016.2520567" target="_blank" style="word-break: break-all;">10.1109/tmech.2016.2520567</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Effect of size and shape of a moving charged object on the propagation characteristics of precursor solitons</td>
+                        <td>Physics of Plasmas</td>
+                        <td><a href="https://doi.org/10.1063/1.5115313" target="_blank" style="word-break: break-all;">10.1063/1.5115313</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Hydrodynamic forces on subsea cables immersed in wave boundary layers</td>
+                        <td>Coastal Engineering</td>
+                        <td><a href="https://doi.org/10.1016/j.coastaleng.2022.104101" target="_blank" style="word-break: break-all;">10.1016/j.coastaleng.2022.104101</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Liquid crystal-enabled electro-osmosis through spatial charge separation in distorted regions as a novel mechanism of electrokinetics</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/ncomms6033" target="_blank" style="word-break: break-all;">10.1038/ncomms6033</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Exposing video inter-frame forgery based on velocity field consistency</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icassp.2014.6854085" target="_blank" style="word-break: break-all;">10.1109/icassp.2014.6854085</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Induced-charge electro-osmosis around metal and Janus spheres in water: Patterns of flow and breaking symmetries</td>
+                        <td>Physical Review E</td>
+                        <td><a href="https://doi.org/10.1103/physreve.90.051002" target="_blank" style="word-break: break-all;">10.1103/physreve.90.051002</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Towards colorless distributed combustion regime</td>
+                        <td>Fuel</td>
+                        <td><a href="https://doi.org/10.1016/j.fuel.2016.12.093" target="_blank" style="word-break: break-all;">10.1016/j.fuel.2016.12.093</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Strain localization and evolving kinematic efficiency of initiating strike-slip faults within wet kaolin experiments</td>
+                        <td>Journal of Structural Geology</td>
+                        <td><a href="https://doi.org/10.1016/j.jsg.2017.06.011" target="_blank" style="word-break: break-all;">10.1016/j.jsg.2017.06.011</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Cortical microtubule nucleation can organise the cytoskeleton of Drosophila oocytes to define the anteroposterior axis</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.06088" target="_blank" style="word-break: break-all;">10.7554/elife.06088</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Model testing of the spatial–temporal evolution of a landslide failure</td>
+                        <td>Bulletin of Engineering Geology and the Environment</td>
+                        <td><a href="https://doi.org/10.1007/s10064-016-0884-4" target="_blank" style="word-break: break-all;">10.1007/s10064-016-0884-4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Experimental characterization of oblique and asymmetric water entry</td>
+                        <td>Experimental Thermal and Fluid Science</td>
+                        <td><a href="https://doi.org/10.1016/j.expthermflusci.2017.10.028" target="_blank" style="word-break: break-all;">10.1016/j.expthermflusci.2017.10.028</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Assessment of PIV-based analysis of water entry problems through synthetic numerical datasets</td>
+                        <td>Journal of Fluids and Structures</td>
+                        <td><a href="https://doi.org/10.1016/j.jfluidstructs.2015.03.018" target="_blank" style="word-break: break-all;">10.1016/j.jfluidstructs.2015.03.018</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Experimental reconstruction of three-dimensional hydrodynamic loading in water entry problems through particle image velocimetry</td>
+                        <td>Experiments in Fluids</td>
+                        <td><a href="https://doi.org/10.1007/s00348-015-1895-9" target="_blank" style="word-break: break-all;">10.1007/s00348-015-1895-9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Impact of confinement on flowfield of swirl flow burners</td>
+                        <td>Fuel</td>
+                        <td><a href="https://doi.org/10.1016/j.fuel.2016.06.098" target="_blank" style="word-break: break-all;">10.1016/j.fuel.2016.06.098</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Analysis of hydroelastic slamming through particle image velocimetry</td>
+                        <td>Journal of Sound and Vibration</td>
+                        <td><a href="https://doi.org/10.1016/j.jsv.2015.02.007" target="_blank" style="word-break: break-all;">10.1016/j.jsv.2015.02.007</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Evaporation-induced flow around a pendant droplet and its influence on evaporation</td>
+                        <td>Physics of Fluids</td>
+                        <td><a href="https://doi.org/10.1063/1.4935355" target="_blank" style="word-break: break-all;">10.1063/1.4935355</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>An experimental comparison of velocities underneath focussed breaking waves</td>
+                        <td>Ocean Engineering</td>
+                        <td><a href="https://doi.org/10.1016/j.oceaneng.2018.02.049" target="_blank" style="word-break: break-all;">10.1016/j.oceaneng.2018.02.049</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Developing a mobile application‐based particle image velocimetry tool for enhanced teaching and learning in fluid mechanics: A design‐based research approach</td>
+                        <td>Computer Applications in Engineering Education</td>
+                        <td><a href="https://doi.org/10.1002/cae.22290" target="_blank" style="word-break: break-all;">10.1002/cae.22290</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>The role of pre-existing discontinuities in the development of extensional faults: An analog modeling perspective</td>
+                        <td>Journal of Structural Geology</td>
+                        <td><a href="https://doi.org/10.1016/j.jsg.2015.03.004" target="_blank" style="word-break: break-all;">10.1016/j.jsg.2015.03.004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Evolving efficiency of restraining bends within wet kaolin analog experiments</td>
+                        <td>Journal of Geophysical Research Solid Earth</td>
+                        <td><a href="https://doi.org/10.1002/2014jb011735" target="_blank" style="word-break: break-all;">10.1002/2014jb011735</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Image-Based Lagrangian Analysis of Granular Kinematics</td>
+                        <td>Journal of Computing in Civil Engineering</td>
+                        <td><a href="https://doi.org/10.1061/(asce)cp.1943-5487.0000433" target="_blank" style="word-break: break-all;">10.1061/(asce)cp.1943-5487.0000433</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Overlimiting behavior of surface-modified heterogeneous anion-exchange membranes</td>
+                        <td>Journal of Membrane Science</td>
+                        <td><a href="https://doi.org/10.1016/j.memsci.2020.118291" target="_blank" style="word-break: break-all;">10.1016/j.memsci.2020.118291</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Controllable Acoustic Mixing of Fluids in Microchannels for the Fabrication of Therapeutic Nanoparticles</td>
+                        <td>Micromachines</td>
+                        <td><a href="https://doi.org/10.3390/mi7090150" target="_blank" style="word-break: break-all;">10.3390/mi7090150</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>The fish Strouhal number as a criterion for hydraulic fishway design</td>
+                        <td>Ecological Engineering</td>
+                        <td><a href="https://doi.org/10.1016/j.ecoleng.2017.03.018" target="_blank" style="word-break: break-all;">10.1016/j.ecoleng.2017.03.018</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Flow around a cube for Reynolds numbers between 500 and 55,000</td>
+                        <td>Experimental Thermal and Fluid Science</td>
+                        <td><a href="https://doi.org/10.1016/j.expthermflusci.2017.12.013" target="_blank" style="word-break: break-all;">10.1016/j.expthermflusci.2017.12.013</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Microtubule End-Clustering Maintains a Steady-State Spindle Shape</td>
+                        <td>Current Biology</td>
+                        <td><a href="https://doi.org/10.1016/j.cub.2019.01.016" target="_blank" style="word-break: break-all;">10.1016/j.cub.2019.01.016</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Influence of nozzle diameter on soot evolution in acoustically forced laminar non-premixed flames</td>
+                        <td>Combustion and Flame</td>
+                        <td><a href="https://doi.org/10.1016/j.combustflame.2018.05.026" target="_blank" style="word-break: break-all;">10.1016/j.combustflame.2018.05.026</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Plume Ascent Tracker: Interactive Matlab software for analysis of ascending plumes in image data</td>
+                        <td>Computers & Geosciences</td>
+                        <td><a href="https://doi.org/10.1016/j.cageo.2013.12.015" target="_blank" style="word-break: break-all;">10.1016/j.cageo.2013.12.015</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Coordinated Dynamics of RNA Splicing Speckles in the Nucleus</td>
+                        <td>Journal of Cellular Physiology</td>
+                        <td><a href="https://doi.org/10.1002/jcp.25224" target="_blank" style="word-break: break-all;">10.1002/jcp.25224</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>On the flame–flow interaction under distributed combustion conditions</td>
+                        <td>Fuel</td>
+                        <td><a href="https://doi.org/10.1016/j.fuel.2016.05.071" target="_blank" style="word-break: break-all;">10.1016/j.fuel.2016.05.071</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Experiments on eccentric granular discharge from a quasi-two-dimensional silo</td>
+                        <td>Powder Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.powtec.2016.07.054" target="_blank" style="word-break: break-all;">10.1016/j.powtec.2016.07.054</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Exploring the Limits of Cell Adhesion under Shear Stress within Physiological Conditions and beyond on a Chip</td>
+                        <td>Diagnostics</td>
+                        <td><a href="https://doi.org/10.3390/diagnostics6040038" target="_blank" style="word-break: break-all;">10.3390/diagnostics6040038</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Mixing and liquid-to-gas mass transfer under digester operating conditions</td>
+                        <td>Chemical Engineering Science</td>
+                        <td><a href="https://doi.org/10.1016/j.ces.2017.01.056" target="_blank" style="word-break: break-all;">10.1016/j.ces.2017.01.056</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Fluid-Dynamic Optimal Design of Helical Vascular Graft for Stenotic Disturbed Flow</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0111047" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0111047</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>North Aegean core complexes, the gravity spreading of a thrust wedge</td>
+                        <td>Journal of Geophysical Research Solid Earth</td>
+                        <td><a href="https://doi.org/10.1002/2014jb011601" target="_blank" style="word-break: break-all;">10.1002/2014jb011601</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Development and evaluation of a dimensionless mechanistic pan coating model for the prediction of coated tablet appearance</td>
+                        <td>International Journal of Pharmaceutics</td>
+                        <td><a href="https://doi.org/10.1016/j.ijpharm.2017.05.060" target="_blank" style="word-break: break-all;">10.1016/j.ijpharm.2017.05.060</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Translational Inertial Effects and Scaling Considerations for Coarse Granular Flows Impacting Landslide-Resisting Barriers</td>
+                        <td>Journal of Geotechnical and Geoenvironmental Engineering</td>
+                        <td><a href="https://doi.org/10.1061/(asce)gt.1943-5606.0002661" target="_blank" style="word-break: break-all;">10.1061/(asce)gt.1943-5606.0002661</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Numerical and Experimental Modeling of Levee Breach Including Slumping Failure of Breach Sides</td>
+                        <td>Journal of Hydraulic Engineering</td>
+                        <td><a href="https://doi.org/10.1061/(asce)hy.1943-7900.0001406" target="_blank" style="word-break: break-all;">10.1061/(asce)hy.1943-7900.0001406</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Detection of inter-frame forgeries in digital videos</td>
+                        <td>Forensic Science International</td>
+                        <td><a href="https://doi.org/10.1016/j.forsciint.2018.04.056" target="_blank" style="word-break: break-all;">10.1016/j.forsciint.2018.04.056</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Shallow water entry: modeling and experiments</td>
+                        <td>Journal of Engineering Mathematics</td>
+                        <td><a href="https://doi.org/10.1007/s10665-016-9877-3" target="_blank" style="word-break: break-all;">10.1007/s10665-016-9877-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>High-speed video analysis of forward and backward spattered blood droplets</td>
+                        <td>Forensic Science International</td>
+                        <td><a href="https://doi.org/10.1016/j.forsciint.2017.04.016" target="_blank" style="word-break: break-all;">10.1016/j.forsciint.2017.04.016</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Soot evolution and flame response to acoustic forcing of laminar non-premixed jet flames at varying amplitudes</td>
+                        <td>Combustion and Flame</td>
+                        <td><a href="https://doi.org/10.1016/j.combustflame.2018.09.022" target="_blank" style="word-break: break-all;">10.1016/j.combustflame.2018.09.022</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Multiscale analysis of single and double maternal-zygotic Myh9 and Myh10 mutants during mouse preimplantation development</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.68536" target="_blank" style="word-break: break-all;">10.7554/elife.68536</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Treadmilling and dynamic protrusions in fire ant rafts</td>
+                        <td>Journal of The Royal Society Interface</td>
+                        <td><a href="https://doi.org/10.1098/rsif.2021.0213" target="_blank" style="word-break: break-all;">10.1098/rsif.2021.0213</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2013</td>
+                        <td>Uncertainty of flow velocity measurements due to refractive index fluctuations</td>
+                        <td>Optics and Lasers in Engineering</td>
+                        <td><a href="https://doi.org/10.1016/j.optlaseng.2013.10.011" target="_blank" style="word-break: break-all;">10.1016/j.optlaseng.2013.10.011</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>A novel approach to determine the velocity dependency of the friction behavior during machining by means of digital particle image velocimetry (DPIV)</td>
+                        <td>CIRP journal of manufacturing science and technology</td>
+                        <td><a href="https://doi.org/10.1016/j.cirpj.2020.11.007" target="_blank" style="word-break: break-all;">10.1016/j.cirpj.2020.11.007</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Impingement of a counter-rotating vortex pair on a wavy wall</td>
+                        <td>Journal of Fluid Mechanics</td>
+                        <td><a href="https://doi.org/10.1017/jfm.2020.263" target="_blank" style="word-break: break-all;">10.1017/jfm.2020.263</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Measuring Turbulent Kinetic Energy Dissipation at a Wavy Sea Surface</td>
+                        <td>Journal of Atmospheric and Oceanic Technology</td>
+                        <td><a href="https://doi.org/10.1175/jtech-d-14-00227.1" target="_blank" style="word-break: break-all;">10.1175/jtech-d-14-00227.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>A particle image velocimetry study of the flow physics generated by a thin lamina oscillating in a viscous fluid</td>
+                        <td>Journal of Applied Physics</td>
+                        <td><a href="https://doi.org/10.1063/1.4863721" target="_blank" style="word-break: break-all;">10.1063/1.4863721</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>2-D Left Ventricular Flow Estimation by Combining Speckle Tracking With Navier–Stokes-Based Regularization: An In Silico, In Vitro and In Vivo Study</td>
+                        <td>Ultrasound in Medicine & Biology</td>
+                        <td><a href="https://doi.org/10.1016/j.ultrasmedbio.2014.08.022" target="_blank" style="word-break: break-all;">10.1016/j.ultrasmedbio.2014.08.022</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Benchmarking the Viability of 3D Printed Micromodels for Single Phase Flow Using Particle Image Velocimetry and Direct Numerical Simulations</td>
+                        <td>Transport in Porous Media</td>
+                        <td><a href="https://doi.org/10.1007/s11242-021-01718-8" target="_blank" style="word-break: break-all;">10.1007/s11242-021-01718-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Steady flows in rotating spherical cavity excited by multi-frequency oscillations of free inner core</td>
+                        <td>Acta Astronautica</td>
+                        <td><a href="https://doi.org/10.1016/j.actaastro.2016.10.018" target="_blank" style="word-break: break-all;">10.1016/j.actaastro.2016.10.018</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Experimental slip distribution in lentils as an analog for scaly clay fabrics</td>
+                        <td>Geology</td>
+                        <td><a href="https://doi.org/10.1130/g37306.1" target="_blank" style="word-break: break-all;">10.1130/g37306.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Characterization of steady streaming for a particle manipulation system</td>
+                        <td>Biomedical Microdevices</td>
+                        <td><a href="https://doi.org/10.1007/s10544-016-0055-1" target="_blank" style="word-break: break-all;">10.1007/s10544-016-0055-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Pulsed LED line light for large-scale PIV—development and use in wave load measurements</td>
+                        <td>Measurement Science and Technology</td>
+                        <td><a href="https://doi.org/10.1088/1361-6501/ac17ce" target="_blank" style="word-break: break-all;">10.1088/1361-6501/ac17ce</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Influence of materials and nozzle geometry on spray and placement behavior of wet-mix shotcrete</td>
+                        <td>Case Studies in Construction Materials</td>
+                        <td><a href="https://doi.org/10.1016/j.cscm.2024.e02852" target="_blank" style="word-break: break-all;">10.1016/j.cscm.2024.e02852</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Spatial development of trailing vortices behind a delta wing, in and out of ground effect</td>
+                        <td>Experiments in Fluids</td>
+                        <td><a href="https://doi.org/10.1007/s00348-020-03058-7" target="_blank" style="word-break: break-all;">10.1007/s00348-020-03058-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Flow characterization of a submerged inclined impinging pulse jet</td>
+                        <td>Physics of Fluids</td>
+                        <td><a href="https://doi.org/10.1063/5.0235975" target="_blank" style="word-break: break-all;">10.1063/5.0235975</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Fluid Flow and Particle Dynamics Inside an Evaporating Droplet Containing Live Bacteria Displaying Chemotaxis</td>
+                        <td>Langmuir</td>
+                        <td><a href="https://doi.org/10.1021/la502491e" target="_blank" style="word-break: break-all;">10.1021/la502491e</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Challenges and improvements in applying a particle image velocimetry (PIV) approach to granular flows</td>
+                        <td>Journal of Physics Conference Series</td>
+                        <td><a href="https://doi.org/10.1088/1742-6596/1249/1/012011" target="_blank" style="word-break: break-all;">10.1088/1742-6596/1249/1/012011</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>PIV for the characterization of focused field induced acoustic streaming: seeding particle choice evaluation</td>
+                        <td>Ultrasonics</td>
+                        <td><a href="https://doi.org/10.1016/j.ultras.2017.01.010" target="_blank" style="word-break: break-all;">10.1016/j.ultras.2017.01.010</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Swimming mechanics and propulsive efficiency in the chambered nautilus</td>
+                        <td>Royal Society Open Science</td>
+                        <td><a href="https://doi.org/10.1098/rsos.170467" target="_blank" style="word-break: break-all;">10.1098/rsos.170467</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>FBXW5 Promotes Tumorigenesis and Metastasis in Gastric Cancer via Activation of the FAK-Src Signaling Pathway</td>
+                        <td>Cancers</td>
+                        <td><a href="https://doi.org/10.3390/cancers11060836" target="_blank" style="word-break: break-all;">10.3390/cancers11060836</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Characterization of Submesoscale Turbulence in the East/Japan Sea Using Geostationary Ocean Color Satellite Images</td>
+                        <td>Geophysical Research Letters</td>
+                        <td><a href="https://doi.org/10.1029/2019gl083892" target="_blank" style="word-break: break-all;">10.1029/2019gl083892</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>A surface acoustic wave-driven micropump for particle uptake investigation under physiological flow conditions in very small volumes</td>
+                        <td>Beilstein Journal of Nanotechnology</td>
+                        <td><a href="https://doi.org/10.3762/bjnano.6.41" target="_blank" style="word-break: break-all;">10.3762/bjnano.6.41</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>A comprehensive approach for exposing inter-frame video forgeries</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/cspa.2017.8064927" target="_blank" style="word-break: break-all;">10.1109/cspa.2017.8064927</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Influence of the suspender in evaporating pendant droplets</td>
+                        <td>International Journal of Thermal Sciences</td>
+                        <td><a href="https://doi.org/10.1016/j.ijthermalsci.2019.03.004" target="_blank" style="word-break: break-all;">10.1016/j.ijthermalsci.2019.03.004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Measurement on soil deformation caused by expanded-base pile in transparent soil using particle image velocimetry (PIV)</td>
+                        <td>Journal of Mountain Science</td>
+                        <td><a href="https://doi.org/10.1007/s11629-016-4025-0" target="_blank" style="word-break: break-all;">10.1007/s11629-016-4025-0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Inertial Waves and Steady Flows in a Liquid Filled Librating Cylinder</td>
+                        <td>Microgravity Science and Technology</td>
+                        <td><a href="https://doi.org/10.1007/s12217-018-9621-x" target="_blank" style="word-break: break-all;">10.1007/s12217-018-9621-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Wake vortex regimes of a pitching cantilever plate in quiescent air and their correlation with mean flow generation</td>
+                        <td>Journal of Fluids and Structures</td>
+                        <td><a href="https://doi.org/10.1016/j.jfluidstructs.2018.11.010" target="_blank" style="word-break: break-all;">10.1016/j.jfluidstructs.2018.11.010</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Marangoni instability triggered by selective evaporation of a binary liquid inside a Hele-Shaw cell</td>
+                        <td>University of Twente Research Information</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Effects of Bileaflet Mechanical Mitral Valve Rotational Orientation on Left Ventricular Flow Conditions</td>
+                        <td>The Open Cardiovascular Medicine Journal</td>
+                        <td><a href="https://doi.org/10.2174/1874192401509010062" target="_blank" style="word-break: break-all;">10.2174/1874192401509010062</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Steady Flows in an Oscillating Spheroidal Cavity with Elastic Wall</td>
+                        <td>Fluid Dynamics</td>
+                        <td><a href="https://doi.org/10.1134/s0015462818020118" target="_blank" style="word-break: break-all;">10.1134/s0015462818020118</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Nervous system and tissue polarity dynamically adapt to new morphologies in planaria</td>
+                        <td>Developmental Biology</td>
+                        <td><a href="https://doi.org/10.1016/j.ydbio.2020.08.009" target="_blank" style="word-break: break-all;">10.1016/j.ydbio.2020.08.009</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Evaluating the Tensile Properties of Geogrids Using the Particle Image Velocimetry Technique</td>
+                        <td>Journal of Materials in Civil Engineering</td>
+                        <td><a href="https://doi.org/10.1061/(asce)mt.1943-5533.0003909" target="_blank" style="word-break: break-all;">10.1061/(asce)mt.1943-5533.0003909</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Real‐Time PEGDA‐Based Microgel Generation and Encapsulation in Microdroplets</td>
+                        <td>Advanced Materials Technologies</td>
+                        <td><a href="https://doi.org/10.1002/admt.201600028" target="_blank" style="word-break: break-all;">10.1002/admt.201600028</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Particles falling through viscoelastic non-Newtonian flows in a horizontal rectangular channel analyzed with PIV and PTV techniques</td>
+                        <td>Journal of Non-Newtonian Fluid Mechanics</td>
+                        <td><a href="https://doi.org/10.1016/j.jnnfm.2016.08.004" target="_blank" style="word-break: break-all;">10.1016/j.jnnfm.2016.08.004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Effect of hybrid-heave motions on the propulsive performance of an oscillating airfoil</td>
+                        <td>Journal of Fluids and Structures</td>
+                        <td><a href="https://doi.org/10.1016/j.jfluidstructs.2019.03.016" target="_blank" style="word-break: break-all;">10.1016/j.jfluidstructs.2019.03.016</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Heterogeneous flow inside threads of low viscosity fluids leads to anomalous long filament lifetimes</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-019-43590-z" target="_blank" style="word-break: break-all;">10.1038/s41598-019-43590-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>The Influence of Turbulence on Subcooled Nucleate Pool Boiling</td>
+                        <td>International Journal of Heat and Mass Transfer</td>
+                        <td><a href="https://doi.org/10.1016/j.ijheatmasstransfer.2020.120694" target="_blank" style="word-break: break-all;">10.1016/j.ijheatmasstransfer.2020.120694</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Fog Formation Related to Gravity Currents Interacting with Coastal Topography</td>
+                        <td>Boundary-Layer Meteorology</td>
+                        <td><a href="https://doi.org/10.1007/s10546-021-00638-w" target="_blank" style="word-break: break-all;">10.1007/s10546-021-00638-w</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Determination of Villous Rigidity in the Distal Ileum of the Possum (Trichosurus vulpecula)</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0100140" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0100140</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Granular flow in a wedge‐shaped heap: Velocity field, kinematic scalings, and segregation</td>
+                        <td>AIChE Journal</td>
+                        <td><a href="https://doi.org/10.1002/aic.16912" target="_blank" style="word-break: break-all;">10.1002/aic.16912</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Relationship between channel flow initiation and crustal viscosity in convergent settings: an analog modeling approach</td>
+                        <td>International Journal of Earth Sciences</td>
+                        <td><a href="https://doi.org/10.1007/s00531-021-02057-1" target="_blank" style="word-break: break-all;">10.1007/s00531-021-02057-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Wave-Structure-Current interactions over smooth and rough breakwaters</td>
+                        <td>Ships and Offshore Structures</td>
+                        <td><a href="https://doi.org/10.1080/17445302.2020.1816746" target="_blank" style="word-break: break-all;">10.1080/17445302.2020.1816746</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Impact of Decelerating India‐Asia Convergence on the Crustal Flow Kinematics in Tibet: An Insight From Scaled Laboratory Modeling</td>
+                        <td>Geochemistry Geophysics Geosystems</td>
+                        <td><a href="https://doi.org/10.1029/2021gc009967" target="_blank" style="word-break: break-all;">10.1029/2021gc009967</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Echocardiographic particle imaging velocimetry data assimilation with least square finite element methods</td>
+                        <td>Computers & Mathematics with Applications</td>
+                        <td><a href="https://doi.org/10.1016/j.camwa.2014.07.026" target="_blank" style="word-break: break-all;">10.1016/j.camwa.2014.07.026</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Effect of Differential Rotation of Oscillating Inner Core on Steady Flow Instability in a Rotating Sphere</td>
+                        <td>Microgravity Science and Technology</td>
+                        <td><a href="https://doi.org/10.1007/s12217-020-09806-y" target="_blank" style="word-break: break-all;">10.1007/s12217-020-09806-y</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Experimental Study of Flow Characteristics and Geometry of Scour Hole around Cylindrical Piers Subject to Wave and Current</td>
+                        <td>Journal of Waterway Port Coastal and Ocean Engineering</td>
+                        <td><a href="https://doi.org/10.1061/jwped5.wweng-2022" target="_blank" style="word-break: break-all;">10.1061/jwped5.wweng-2022</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Improving acoustic streaming effects in fluidic systems by matching SU-8 and polydimethylsiloxane layers</td>
+                        <td>Ultrasonics</td>
+                        <td><a href="https://doi.org/10.1016/j.ultras.2016.03.010" target="_blank" style="word-break: break-all;">10.1016/j.ultras.2016.03.010</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Development and Application of a Test System for Modeling Tunnel Excavation with Transparent Rock Surrogate</td>
+                        <td>Geotechnical Testing Journal</td>
+                        <td><a href="https://doi.org/10.1520/gtj20170119" target="_blank" style="word-break: break-all;">10.1520/gtj20170119</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Enhanced mass transfer in air oscillating in a channel with periodically varying radius</td>
+                        <td>International Journal of Heat and Mass Transfer</td>
+                        <td><a href="https://doi.org/10.1016/j.ijheatmasstransfer.2020.120818" target="_blank" style="word-break: break-all;">10.1016/j.ijheatmasstransfer.2020.120818</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Gravity-driven granular drainage from a closed top quasi-two-dimensional rectangular channel</td>
+                        <td>Physics of Fluids</td>
+                        <td><a href="https://doi.org/10.1063/5.0241151" target="_blank" style="word-break: break-all;">10.1063/5.0241151</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Urban river management by innovative monitoring</td>
+                        <td>Elsevier eBooks</td>
+                        <td><a href="https://doi.org/10.1016/b978-0-323-85703-1.00001-8" target="_blank" style="word-break: break-all;">10.1016/b978-0-323-85703-1.00001-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Laboratory investigation of turbulence scales of swash flows generated by consecutive solitary waves</td>
+                        <td>Coastal Engineering</td>
+                        <td><a href="https://doi.org/10.1016/j.coastaleng.2025.104870" target="_blank" style="word-break: break-all;">10.1016/j.coastaleng.2025.104870</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Left Ventricular Hemodynamics with an Implanted Assist Device: An In Vitro Fluid Dynamics Study</td>
+                        <td>Annals of Biomedical Engineering</td>
+                        <td><a href="https://doi.org/10.1007/s10439-019-02273-6" target="_blank" style="word-break: break-all;">10.1007/s10439-019-02273-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Optimal Transport for Particle Image Velocimetry: Real Data and Postprocessing Algorithms</td>
+                        <td>SIAM Journal on Applied Mathematics</td>
+                        <td><a href="https://doi.org/10.1137/140988814" target="_blank" style="word-break: break-all;">10.1137/140988814</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Beneficial fluid-dynamic features of pulsatile swirling flow in 45° end-to-side anastomosis</td>
+                        <td>Medical Engineering & Physics</td>
+                        <td><a href="https://doi.org/10.1016/j.medengphy.2015.01.007" target="_blank" style="word-break: break-all;">10.1016/j.medengphy.2015.01.007</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Flow of concentrated suspensions through fractures: small variations in solid concentration cause significant in‐plane velocity variations</td>
+                        <td>Geofluids</td>
+                        <td><a href="https://doi.org/10.1111/gfl.12109" target="_blank" style="word-break: break-all;">10.1111/gfl.12109</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>The effect of oscillating force field on the dynamics of free inner core in a rotating fluid-filled spherical cavity</td>
+                        <td>Physics of Fluids</td>
+                        <td><a href="https://doi.org/10.1063/1.4936399" target="_blank" style="word-break: break-all;">10.1063/1.4936399</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Validation of large-scale particle image velocimetry to acquire free-surface flow fields in vegetated rivers</td>
+                        <td>Journal of Applied Water Engineering and Research</td>
+                        <td><a href="https://doi.org/10.1080/23249676.2016.1251856" target="_blank" style="word-break: break-all;">10.1080/23249676.2016.1251856</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>PedPIV: Pedestrian Velocity Extraction From Particle Image Velocimetry</td>
+                        <td>IEEE Transactions on Intelligent Transportation Systems</td>
+                        <td><a href="https://doi.org/10.1109/tits.2019.2899072" target="_blank" style="word-break: break-all;">10.1109/tits.2019.2899072</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Analysis of vortex formation and energy dissipation during interaction of solitary-like waves with submerged breakwaters based on particle image velocimetry</td>
+                        <td>Applied Ocean Research</td>
+                        <td><a href="https://doi.org/10.1016/j.apor.2021.102579" target="_blank" style="word-break: break-all;">10.1016/j.apor.2021.102579</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Instabilities of Steady Flow in a Rotating Spherical Cavity Excited by Inner Core Oscillation</td>
+                        <td>Microgravity Science and Technology</td>
+                        <td><a href="https://doi.org/10.1007/s12217-019-09706-w" target="_blank" style="word-break: break-all;">10.1007/s12217-019-09706-w</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Experimental and numerical studies on the hydraulics of stepped spillways with baffle walls and blocks</td>
+                        <td>ISH Journal of Hydraulic Engineering</td>
+                        <td><a href="https://doi.org/10.1080/09715010.2025.2471339" target="_blank" style="word-break: break-all;">10.1080/09715010.2025.2471339</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Caldera collapse at near-ridge seamounts: an experimental investigation</td>
+                        <td>Bulletin of Volcanology</td>
+                        <td><a href="https://doi.org/10.1007/s00445-016-1065-9" target="_blank" style="word-break: break-all;">10.1007/s00445-016-1065-9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Estimating Horizontal Displacement between DEMs by Means of Particle Image Velocimetry Techniques</td>
+                        <td>Remote Sensing</td>
+                        <td><a href="https://doi.org/10.3390/rs8010014" target="_blank" style="word-break: break-all;">10.3390/rs8010014</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Identifying the dominant physical processes for mixing in full-scale raceway tanks</td>
+                        <td>Renewable Energy</td>
+                        <td><a href="https://doi.org/10.1016/j.renene.2018.05.087" target="_blank" style="word-break: break-all;">10.1016/j.renene.2018.05.087</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>A preliminary study on the active cold seeps flow field in the Qiongdongnan Sea Area, the northern South China Sea</td>
+                        <td>Chinese Science Bulletin (Chinese Version)</td>
+                        <td><a href="https://doi.org/10.1360/tb-2019-0582" target="_blank" style="word-break: break-all;">10.1360/tb-2019-0582</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Advantageous swirling flow in 45° end-to-side anastomosis</td>
+                        <td>Experiments in Fluids</td>
+                        <td><a href="https://doi.org/10.1007/s00348-014-1861-y" target="_blank" style="word-break: break-all;">10.1007/s00348-014-1861-y</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Estimation of flow discharge by an airborne velocimetry system</td>
+                        <td>La Houille Blanche</td>
+                        <td><a href="https://doi.org/10.1051/lhb/2016002" target="_blank" style="word-break: break-all;">10.1051/lhb/2016002</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Efficiency of a Digital Particle Image Velocimetry (DPIV) Method for Monitoring the Surface Velocity of Hyper-Concentrated Flows</td>
+                        <td>Geosciences</td>
+                        <td><a href="https://doi.org/10.3390/geosciences8100383" target="_blank" style="word-break: break-all;">10.3390/geosciences8100383</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Forward-viewing estimation of 3D blood flow velocity fields by intravascular ultrasound: Influence of the catheter on velocity estimation in stenoses</td>
+                        <td>Ultrasonics</td>
+                        <td><a href="https://doi.org/10.1016/j.ultras.2021.106558" target="_blank" style="word-break: break-all;">10.1016/j.ultras.2021.106558</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Effect of β-PVDF Piezoelectric Transducers’ Positioning on the Acoustic Streaming Flows</td>
+                        <td>Micromachines</td>
+                        <td><a href="https://doi.org/10.3390/mi5030654" target="_blank" style="word-break: break-all;">10.3390/mi5030654</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>A Novel Method to Discriminate Active from Residual Whitecaps Using Particle Image Velocimetry</td>
+                        <td>Remote Sensing</td>
+                        <td><a href="https://doi.org/10.3390/rs13204051" target="_blank" style="word-break: break-all;">10.3390/rs13204051</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>A fast memory-saving method for the Morlet wavelet-based transform and its application to in vivo assessment of microcirculation dynamics</td>
+                        <td>Applied Mathematics and Computation</td>
+                        <td><a href="https://doi.org/10.1016/j.amc.2017.02.008" target="_blank" style="word-break: break-all;">10.1016/j.amc.2017.02.008</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Electromagnetic Needleless Injector With Halbach Array Towards Intravitreal Delivery</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2017.2778193" target="_blank" style="word-break: break-all;">10.1109/access.2017.2778193</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Visualizing subsurface burrowing by the polychaete Alitta virens with particle image velocimetry</td>
+                        <td>Limnology and Oceanography Methods</td>
+                        <td><a href="https://doi.org/10.4319/lom.2014.12.703" target="_blank" style="word-break: break-all;">10.4319/lom.2014.12.703</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Radial patterns and velocity field of non-Brownian suspensions in a fully filled horizontal rotating cylinder</td>
+                        <td>Advanced Powder Technology</td>
+                        <td><a href="https://doi.org/10.1016/j.apt.2019.08.039" target="_blank" style="word-break: break-all;">10.1016/j.apt.2019.08.039</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Systematic Application of Background Oriented Schlieren for Shock-Boundary Layer Interaction Study</td>
+                        <td>52nd Aerospace Sciences Meeting</td>
+                        <td><a href="https://doi.org/10.2514/6.2014-0987" target="_blank" style="word-break: break-all;">10.2514/6.2014-0987</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Blood flow velocity and wall shear stress estimation in forward-viewing intravascular ultrasound imaging: Comparison of Doppler and Particle Image Velocimetry (PIV) approaches</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/ius52206.2021.9593916" target="_blank" style="word-break: break-all;">10.1109/ius52206.2021.9593916</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Experimental study on the impulsively started motion of a close-to-neutral buoyancy freely decelerating sphere</td>
+                        <td>Physics of Fluids</td>
+                        <td><a href="https://doi.org/10.1063/5.0141322" target="_blank" style="word-break: break-all;">10.1063/5.0141322</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>粒子图像测速技术：从实验室到工业应用的进展（特邀）</td>
+                        <td>ACTA PHOTONICA SINICA</td>
+                        <td><a href="https://doi.org/10.3788/gzxb20235203.0352103" target="_blank" style="word-break: break-all;">10.3788/gzxb20235203.0352103</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>On the ideal gas law for crowds with high pressure</td>
+                        <td>Physica A Statistical Mechanics and its Applications</td>
+                        <td><a href="https://doi.org/10.1016/j.physa.2024.129657" target="_blank" style="word-break: break-all;">10.1016/j.physa.2024.129657</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Analysis of Soil Deformation and Wheel Traction on Loose Terrain Using PIV</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/aero47225.2020.9172541" target="_blank" style="word-break: break-all;">10.1109/aero47225.2020.9172541</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Temporal evolution of microstructure and rheology of sheared two-dimensional foams</td>
+                        <td>Journal of Non-Newtonian Fluid Mechanics</td>
+                        <td><a href="https://doi.org/10.1016/j.jnnfm.2015.05.001" target="_blank" style="word-break: break-all;">10.1016/j.jnnfm.2015.05.001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>visualisation of acoustic streaming using Piv in Newtonian and Non-Newtonian liquids</td>
+                        <td>International Journal of Computational Methods and Experimental Measurements</td>
+                        <td><a href="https://doi.org/10.2495/cmem-v6-n4-814-826" target="_blank" style="word-break: break-all;">10.2495/cmem-v6-n4-814-826</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Features of the background oriented schlieren method for studying small axisymmetric plasma objects</td>
+                        <td>Journal of Visualization</td>
+                        <td><a href="https://doi.org/10.1007/s12650-021-00763-1" target="_blank" style="word-break: break-all;">10.1007/s12650-021-00763-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>An economical method to measure granular flow in a hopper using a commercial digital camcorder and particle image velocimetry</td>
+                        <td>Geosystem Engineering</td>
+                        <td><a href="https://doi.org/10.1080/12269328.2015.1113894" target="_blank" style="word-break: break-all;">10.1080/12269328.2015.1113894</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Velocity measurements of gas escaping a particle bed during shock-driven expansion</td>
+                        <td>Experiments in Fluids</td>
+                        <td><a href="https://doi.org/10.1007/s00348-020-03069-4" target="_blank" style="word-break: break-all;">10.1007/s00348-020-03069-4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Visualizing the Fundamental Physics of Rapid Earth Penetration Using Transparent Soils</td>
+                        <td>IFCEE 2015</td>
+                        <td><a href="https://doi.org/10.1061/9780784479087.243" target="_blank" style="word-break: break-all;">10.1061/9780784479087.243</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>A Study of Plane Strain Pile Jacking and Driving in Granular Media</td>
+                        <td>IFCEE 2015</td>
+                        <td><a href="https://doi.org/10.1061/9780784479087.066" target="_blank" style="word-break: break-all;">10.1061/9780784479087.066</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>An experimental comparison of the velocities and energies of focused spilling waves in deep water</td>
+                        <td>Ocean Dynamics</td>
+                        <td><a href="https://doi.org/10.1007/s10236-020-01369-1" target="_blank" style="word-break: break-all;">10.1007/s10236-020-01369-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Imaging as a non-intrusive tool in quantifying the dynamics of liquid sheets</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/icccnt49239.2020.9225608" target="_blank" style="word-break: break-all;">10.1109/icccnt49239.2020.9225608</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Chemical Design of Self-Propelled Janus Droplets</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.33774/chemrxiv-2021-p7jvq-v2" target="_blank" style="word-break: break-all;">10.33774/chemrxiv-2021-p7jvq-v2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Sand eddies induced by cyclic tilt of a retaining wall</td>
+                        <td>Acta Geotechnica</td>
+                        <td><a href="https://doi.org/10.1007/s11440-015-0376-x" target="_blank" style="word-break: break-all;">10.1007/s11440-015-0376-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Wear and Related Topology of Rubber Surface</td>
+                        <td>Tire Science and Technology</td>
+                        <td><a href="https://doi.org/10.2346/tire.14.420401" target="_blank" style="word-break: break-all;">10.2346/tire.14.420401</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Configurational phases in elastic foams under lengthscale-free punching</td>
+                        <td>Journal of the Mechanics and Physics of Solids</td>
+                        <td><a href="https://doi.org/10.1016/j.jmps.2016.01.005" target="_blank" style="word-break: break-all;">10.1016/j.jmps.2016.01.005</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Imaging of Healthy and Malaria-Mimicked Red Blood Cells in Polydimethylsiloxane Microchannels for Determination of Cells Deformability and Flow Velocity</td>
+                        <td>Lecture notes in computational vision and biomechanics</td>
+                        <td><a href="https://doi.org/10.1007/978-3-319-68195-5_99" target="_blank" style="word-break: break-all;">10.1007/978-3-319-68195-5_99</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Image processing technique for hydraulic application</td>
+                        <td>Proceedings of the Institute for System Programming of RAS</td>
+                        <td><a href="https://doi.org/10.15514/ispras-2017-29(6)-18" target="_blank" style="word-break: break-all;">10.15514/ispras-2017-29(6)-18</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>LABORATORY EXPERIMENTS OF SEDIMENT MIXING AND THE EFFECT OF BOTTOM EDDIES</td>
+                        <td>Journal of Japan Society of Civil Engineers Ser B3 (Ocean Engineering)</td>
+                        <td><a href="https://doi.org/10.2208/jscejoe.74.i_737" target="_blank" style="word-break: break-all;">10.2208/jscejoe.74.i_737</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Measurements of Settling Velocity with an Acoustic Backscatter Instrument</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1002/essoar.10506168.1" target="_blank" style="word-break: break-all;">10.1002/essoar.10506168.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Measuring binary fluidization of non-spherical and spherical particles using machine learning aided image processing</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.22541/au.162922775.53353321/v1" target="_blank" style="word-break: break-all;">10.22541/au.162922775.53353321/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>LEVEE BREACH MODELING</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-96447-4_16" target="_blank" style="word-break: break-all;">10.1007/978-3-030-96447-4_16</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Inferring Impulsive Hydrodynamic Loading During Hull Slamming From Water Velocity Measurements</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-31065-3_9" target="_blank" style="word-break: break-all;">10.1007/978-3-030-31065-3_9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Development of spray drying technology for microencapsulation of bioactive materials</td>
+                        <td>Unknown</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>None</td>
+                        <td>A kinematic and kinetic analysis of a frog launching from water using digital particle image velocimetry</td>
+                        <td>Unknown</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Multicellular behavior enables cooperation in microbial cell aggregates</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/626481" target="_blank" style="word-break: break-all;">10.1101/626481</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Nervous System and Tissue Polarity Dynamically Adapt to New Morphologies in Planaria</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/815688" target="_blank" style="word-break: break-all;">10.1101/815688</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Mitigating memory effects during undulatory locomotion on hysteretic materials</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/748186" target="_blank" style="word-break: break-all;">10.1101/748186</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Enhancement of endothelialization by topographical features is mediated by PTP1B-dependent endothelial adherens junctions remodeling</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/766816" target="_blank" style="word-break: break-all;">10.1101/766816</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Scale-dependent tipping points of bacterial colonization resistance</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2021.05.13.444017" target="_blank" style="word-break: break-all;">10.1101/2021.05.13.444017</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Influence of Materials and Nozzle Geometry on Spray and Placement Behavior of Wet-Mix Shotcrete</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.4653268" target="_blank" style="word-break: break-all;">10.2139/ssrn.4653268</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Muscle mechanics and hydrodynamics of jet propulsion swimming in marine invertebrates</td>
+                        <td>White Rose eTheses Online (University of Leeds, The University of Sheffield, University of York)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Aortoiliac stenting : how blood flow and stents interact</td>
+                        <td>University of Twente Research Information</td>
+                        <td><a href="https://doi.org/10.3990/1.9789036544252" target="_blank" style="word-break: break-all;">10.3990/1.9789036544252</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>La estabilidad del frente de excavación de un túnel en terrenos heterogéneos o con un criterio de rotura no-lineal</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.20868/upm.thesis.35034" target="_blank" style="word-break: break-all;">10.20868/upm.thesis.35034</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>Optical measurement and numerical analysis of mono- and bidisperse coarse suspensions in vertical axisymmetric sudden-expansion</td>
+                        <td>International Journal of Multiphase Flow</td>
+                        <td><a href="https://doi.org/10.1016/j.ijmultiphaseflow.2014.11.002" target="_blank" style="word-break: break-all;">10.1016/j.ijmultiphaseflow.2014.11.002</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Aplicació de tècniques PIV en hidràulica experimental. Cas d'un règim subcrític en làmina lliure</td>
+                        <td>Unknown</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Theoretical motion functions for video analysis, with a passive navigation example</td>
+                        <td>Open Research Exeter (University of Exeter)</td>
+                        <td><a href="https://doi.org/10.1109/ijcnn.2016.7727720" target="_blank" style="word-break: break-all;">10.1109/ijcnn.2016.7727720</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Colour Variation in Automotive Paint Films</td>
+                        <td>TSpace (University of Toronto)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Driven topological transitions in active nematic films</td>
+                        <td>Soft Matter</td>
+                        <td><a href="https://doi.org/10.1039/d0sm00693a" target="_blank" style="word-break: break-all;">10.1039/d0sm00693a</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>A Novel Approach to Measuring Glacier Motion Remotely using Aerial LiDAR</td>
+                        <td>AGUFM</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Hydrodynamic simulations of rotating black holes</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>On the analogy between black holes and bathtub vortices</td>
+                        <td>Nottingham ePrints (University of Nottingham)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2009.02133" target="_blank" style="word-break: break-all;">10.48550/arxiv.2009.02133</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Remediation design to improve culvert passage for small-bodied fish</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1201/b22619-257" target="_blank" style="word-break: break-all;">10.1201/b22619-257</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Designing a system for forward-viewing 3D intravascular ultrasound imaging of blood flow velocity: assessing the effect of the catheter on velocity estimation in stenoses</td>
+                        <td>IEEE Conference Proceedings</td>
+                        <td><a href="https://doi.org/10.1109/ius46767.2020.9251580" target="_blank" style="word-break: break-all;">10.1109/ius46767.2020.9251580</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Collective treadmilling in fire ant rafts permits sustained protrusion growth</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.2012.15782" target="_blank" style="word-break: break-all;">10.48550/arxiv.2012.15782</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Investigation on the convection flow effect on the surface and depth of the evaporative polymeric solutions via PIV method</td>
+                        <td>International Journal of Thermal Sciences</td>
+                        <td><a href="https://doi.org/10.1016/j.ijthermalsci.2021.106874" target="_blank" style="word-break: break-all;">10.1016/j.ijthermalsci.2021.106874</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Zygotic contractility awakening during mouse preimplantation development</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2021.07.09.451745" target="_blank" style="word-break: break-all;">10.1101/2021.07.09.451745</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Universal Scaling and Real-Time Monitoring of the Production of Liquid Exfoliated Graphene</td>
+                        <td>ChemRxiv</td>
+                        <td><a href="https://doi.org/10.26434/chemrxiv.11628267.v1" target="_blank" style="word-break: break-all;">10.26434/chemrxiv.11628267.v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Enhanced electrophoretic mobility of nematic dipolar Janus colloids.</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Chemical Design of Self-Propelled Janus Droplets</td>
+                        <td>ChemRxiv</td>
+                        <td><a href="https://doi.org/10.26434/chemrxiv-2021-p7jvq-v2" target="_blank" style="word-break: break-all;">10.26434/chemrxiv-2021-p7jvq-v2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td></td>
+                        <td>Proceedings of the Institute for System Programming of RAS</td>
+                        <td><a href="https://doi.org/10.15514/ispras-2017-29(6)" target="_blank" style="word-break: break-all;">10.15514/ispras-2017-29(6)</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Experimental analysis of semi-brittle deformation: Implications for deformation dynamics</td>
+                        <td>Iowa State University Digital Repository (Iowa State University)</td>
+                        <td><a href="https://doi.org/10.31274/td-20240329-317" target="_blank" style="word-break: break-all;">10.31274/td-20240329-317</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Flow mixing enhancement by crossflow induced oscillations of an open semicircular cylinder</td>
+                        <td>Experimental Thermal and Fluid Science</td>
+                        <td><a href="https://doi.org/10.1016/j.expthermflusci.2024.111283" target="_blank" style="word-break: break-all;">10.1016/j.expthermflusci.2024.111283</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2014</td>
+                        <td>The IIHR Fluids Workshop, A Community of Scholars</td>
+                        <td>Iowa Research Online (The University of Iowa)</td>
+                        <td><a href="https://doi.org/10.17077/aseenmw2014.1003" target="_blank" style="word-break: break-all;">10.17077/aseenmw2014.1003</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-06-02T10:56:01+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' citing works (most recent first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+    
+    <script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
+</body>
+</html>

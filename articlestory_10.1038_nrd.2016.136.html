@@ -1,0 +1,2319 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ArticleStory - Parsing clinical success rates</title>
+    <style>
+
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
+
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+.sig-green {background:#dcfce7;color:#166534;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+    
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">Parsing clinical success rates</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    Methodologically Supported
+                                </span>
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> 
+                                
+                                    Asher Mullard
+                                
+                            </div>
+                        
+                            
+                        
+                            
+                            
+                            <div><strong>Journal:</strong> 
+                                Nature Reviews Drug Discovery
+                            </div>
+                            
+                        
+                            <div><strong>Publisher:</strong> 
+                                
+                                    Nature Portfolio
+                                
+                            </div>
+                        
+                            <div><strong>Publication year:</strong> 
+                                
+                                    2016
+                                
+                            </div>
+                        
+                            <div><strong>DOI:</strong> 
+                                <a href="https://doi.org/10.1038/nrd.2016.136" target="_blank">
+                                    10.1038/nrd.2016.136
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        <!-- Sticky nav -->
+        <nav aria-label="Page sections" class="sticky-nav no-print">
+            <div class="sticky-nav-inner">
+                <a href="#sec-hero">Overview</a>
+                <a href="#sec-story">Story</a>
+                <a href="#sec-impact">Impact</a>
+                <a href="#sec-roles">Roles</a>
+                <a href="#sec-access">Access</a>
+                <a href="#sec-citing">Who's Citing</a>
+                <a href="#sec-mentions">Mentions</a>
+            </div>
+        </nav>
+
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">Asher Mullard's 2016 article, published in <i>Nature Reviews Drug Discovery</i>, has garnered significant academic recognition, reflected in its 157 citations to date. This impressive citation count demonstrates the article's influence on understanding clinical success rates in drug discovery.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The article titled "Parsing clinical success rates" has established itself as a pivotal resource within the field of drug discovery, evidenced by its 157 citations according to OpenAlex. This level of engagement suggests that Mullard's analysis has resonated with researchers, potentially shaping future investigations and discussions around clinical success in pharmaceutical development.</p>
+<p class="story-text">While this work lacks public discourse metrics from platforms such as Wikipedia or Reddit, its impact on the academic community is noteworthy. The citation landscape indicates a diverse range of citing works, including 80 articles and 38 reviews, primarily driven by institutions in the United States, United Kingdom, and Germany. This geographical spread emphasizes the wide-reaching relevance of Mullard's contribution to the discipline.</p>
+<p class="story-text">Moreover, the absence of any risk alerts or credibility issues further reinforces the article's stature in the scientific community. Scholars continue to engage with its insights, as indicated by the proven downstream reuse of its findings in 158 subsequent research efforts, reflecting the foundational nature of Mullard's work in informing ongoing studies.</p>
+<p class="story-text">Overall, Mullard's 2016 publication in <i>Nature Reviews Drug Discovery</i> stands as a commendable effort in elucidating the intricacies of clinical success rates, contributing significantly to the discourse in drug discovery, and illustrating the continued importance of rigorous analysis in this critical area of research.</p></div>
+        </section>
+        
+
+        
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+            <div class="im-wrapper">
+                
+                
+                
+                
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">157</div>
+                                <div class="im-label">Total Citations</div>
+                                
+                                <div class="im-top-badge">⭐ Top 10% Cited</div>
+                                
+                            </div>
+                            
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]"
+                                        data-values="[10, 15, 15, 11, 10, 11, 29, 24, 26, 6]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2017–2026</div>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+                    
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+                    
+                    <!-- scite (only when references exist) -->
+                    
+                    <div class="im-card">
+                        <div class="im-num">111</div>
+                        <div class="im-label">scite References</div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="im-scite-compact">
+                            <div class="im-scite-title">Citation context <span class="im-scite-via">via scite</span></div>
+                            <div class="im-scite-bar">
+                                <div class="im-scite-seg im-scite-sup" data-w="1"></div>
+                                <div class="im-scite-seg im-scite-men" data-w="99"></div>
+                                <div class="im-scite-seg im-scite-con" data-w="0"></div>
+                            </div>
+                            <div class="im-scite-leg">
+                                <span><span class="im-scite-dot" style="background:#22c55e;"></span>1</span>
+                                <span><span class="im-scite-dot" style="background:#94a3b8;"></span>110</span>
+                                <span><span class="im-scite-dot" style="background:#f87171;"></span>0</span>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+
+                
+                
+                
+                
+                
+                <div class="muted" style="margin-top:.7rem; font-size:.8rem;">
+                    Some signals aren’t recorded for this volume yet (online mentions) — these typically accrue after publication.
+                </div>
+                
+
+                
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 15 countries</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+            
+            
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Scholarly uptake — heuristic signal (score 0.81)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Scholarly uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="0.9"
+                              data-tip="Reference point for synthesis — heuristic signal (score 0.73)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Reference point for synthesis
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Moderate</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1038/nrd.2016.136" target="_blank">10.1038/nrd.2016.136</a></li>
+                    <li><strong>OA status:</strong> Unknown</li>
+                    
+                    
+                    
+                    
+                </ul>
+            </section>
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.6rem;">
+                        This work has <strong>0</strong> recorded events globally.
+                    </p>
+                    
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 111</li>
+                                <li><strong>Supporting:</strong> 1</li>
+                                <li><strong>Mentioning:</strong> 110</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+        
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>157</strong> citing works.
+                        <strong>11.3%</strong> come from the Top 10 institutions.
+                        Median citing paper cited <strong>6.0</strong> times itself.
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (80)</span><span class="tag tag-soft" style="font-size:.75rem;">review (38)</span><span class="tag tag-soft" style="font-size:.75rem;">book-chapter (15)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (15)</span><span class="tag tag-soft" style="font-size:.75rem;">dissertation (5)</span>
+                        <span class="tag" style="font-size:.75rem;">Unknown</span><span class="tag" style="font-size:.75rem;">bioRxiv</span><span class="tag" style="font-size:.75rem;">Elsevier eBooks</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]"
+                    data-values="[10, 15, 15, 11, 10, 11, 29, 24, 26, 6]">
+                </canvas>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
+
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (72)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (32)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Germany (14)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (13)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Canada (11)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Switzerland (9)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Japan (7)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">South Korea (6)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Netherlands (6)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">France (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Spain (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Sweden (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">India (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Belgium (4)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Italy (4)</span>
+                    
+                </div>
+                
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (125)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Healthcare (43)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (40)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (33)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (26)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Funder (13)</span>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Stanford University</strong>
+                        <a href="https://ror.org/00f54p054" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.3269230769230766)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Cambridge</strong>
+                        <a href="https://ror.org/013meh722" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.238095238095238)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>KU Leuven</strong>
+                        <a href="https://ror.org/05f950310" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Michigan–Ann Arbor</strong>
+                        <a href="https://ror.org/00jmfr291" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Takeda (United States)</strong>
+                        <a href="https://ror.org/03bygaq51" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.8333333333333333)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Nottingham</strong>
+                        <a href="https://ror.org/01ee9ar58" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.75)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of California San Diego</strong>
+                        <a href="https://ror.org/0168r3w48" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.5714285714285714)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Harvard University</strong>
+                        <a href="https://ror.org/03vek6s52" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.453113553113553)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Medical University of Vienna</strong>
+                        <a href="https://ror.org/05n3x4p02" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.25)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>McMaster University</strong>
+                        <a href="https://ror.org/02fa3aq29" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.25)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Shigehiro Yagishita</strong>
+                        <a href="https://orcid.org/0000-0002-1277-1203" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Yasushi Yatabe</strong>
+                        <a href="https://orcid.org/0000-0003-1788-559X" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Mikiko Suzuki</strong>
+                        <a href="https://orcid.org/0000-0003-3237-9919" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Akinobu Hamada</strong>
+                        <a href="https://orcid.org/0000-0002-3467-2644" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Hiroyuki Mano</strong>
+                        <a href="https://orcid.org/0000-0003-4645-0181" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Stuart McIntosh</strong>
+                        <a href="https://orcid.org/0000-0002-4123-9611" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ellen Copson</strong>
+                        <a href="https://orcid.org/0000-0001-8994-4056" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Rifat Atun</strong>
+                        <a href="https://orcid.org/0000-0002-1531-5983" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ramsey Cutress</strong>
+                        <a href="https://orcid.org/0000-0002-1719-7255" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Michael Head</strong>
+                        <a href="https://orcid.org/0000-0003-1189-0531" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+        </div>
+
+        
+        
+        
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 author · 0 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Asher Mullard</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        
+                    </li>
+                    
+                </ul>
+
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>5 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Parsing</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Medicine</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Intensive care medicine</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Natural language processing</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
+
+
+
+        
+        
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.75rem;"
+                 data-total="157">
+                157 citing works (most recent first)
+            </div>
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Artificial intelligence in drug development: present status and future prospects</td>
+                        <td>Drug Discovery Today</td>
+                        <td><a href="https://doi.org/10.1016/j.drudis.2018.11.014" target="_blank" style="word-break: break-all;">10.1016/j.drudis.2018.11.014</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Overcoming barriers to patient adherence: the case for developing innovative drug delivery systems</td>
+                        <td>Nature Reviews Drug Discovery</td>
+                        <td><a href="https://doi.org/10.1038/s41573-023-00670-0" target="_blank" style="word-break: break-all;">10.1038/s41573-023-00670-0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Preclinical mouse solid tumour models: status quo, challenges and perspectives</td>
+                        <td>Nature reviews. Cancer</td>
+                        <td><a href="https://doi.org/10.1038/nrc.2017.92" target="_blank" style="word-break: break-all;">10.1038/nrc.2017.92</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Host-microbiome interactions and recent progress into understanding the biology of acne vulgaris</td>
+                        <td>Microbiome</td>
+                        <td><a href="https://doi.org/10.1186/s40168-018-0558-5" target="_blank" style="word-break: break-all;">10.1186/s40168-018-0558-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Perspectives on the past, present, and future of cancer nanomedicine</td>
+                        <td>Advanced Drug Delivery Reviews</td>
+                        <td><a href="https://doi.org/10.1016/j.addr.2018.05.008" target="_blank" style="word-break: break-all;">10.1016/j.addr.2018.05.008</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Recent clinical trends in Toll‐like receptor targeting therapeutics</td>
+                        <td>Medicinal Research Reviews</td>
+                        <td><a href="https://doi.org/10.1002/med.21553" target="_blank" style="word-break: break-all;">10.1002/med.21553</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Measuring what matters to rare disease patients – reflections on the work by the IRDiRC taskforce on patient-centered outcome measures</td>
+                        <td>Orphanet Journal of Rare Diseases</td>
+                        <td><a href="https://doi.org/10.1186/s13023-017-0718-x" target="_blank" style="word-break: break-all;">10.1186/s13023-017-0718-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Brief Overview of Approaches and Challenges in New Antibiotic Development: A Focus On Drug Repurposing</td>
+                        <td>Frontiers in Cellular and Infection Microbiology</td>
+                        <td><a href="https://doi.org/10.3389/fcimb.2021.684515" target="_blank" style="word-break: break-all;">10.3389/fcimb.2021.684515</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Global funding for cancer research between 2016 and 2020: a content analysis of public and philanthropic investments</td>
+                        <td>The Lancet Oncology</td>
+                        <td><a href="https://doi.org/10.1016/s1470-2045(23)00182-1" target="_blank" style="word-break: break-all;">10.1016/s1470-2045(23)00182-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Therapeutic inhibition of ferroptosis in neurodegenerative disease</td>
+                        <td>Trends in Pharmacological Sciences</td>
+                        <td><a href="https://doi.org/10.1016/j.tips.2023.07.007" target="_blank" style="word-break: break-all;">10.1016/j.tips.2023.07.007</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Current State of Human Gene Therapy: Approved Products and Vectors</td>
+                        <td>Pharmaceuticals</td>
+                        <td><a href="https://doi.org/10.3390/ph16101416" target="_blank" style="word-break: break-all;">10.3390/ph16101416</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Organoids to Study Intestinal Nutrient Transport, Drug Uptake and Metabolism – Update to the Human Model and Expansion of Applications</td>
+                        <td>Frontiers in Bioengineering and Biotechnology</td>
+                        <td><a href="https://doi.org/10.3389/fbioe.2020.577656" target="_blank" style="word-break: break-all;">10.3389/fbioe.2020.577656</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Inventing new therapies without reinventing the wheel: the power of drug repurposing</td>
+                        <td>British Journal of Pharmacology</td>
+                        <td><a href="https://doi.org/10.1111/bph.14081" target="_blank" style="word-break: break-all;">10.1111/bph.14081</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Prioritization of Molecular Targets for Antimalarial Drug Discovery</td>
+                        <td>ACS Infectious Diseases</td>
+                        <td><a href="https://doi.org/10.1021/acsinfecdis.1c00322" target="_blank" style="word-break: break-all;">10.1021/acsinfecdis.1c00322</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Repurposing drugs for the management of COVID-19</td>
+                        <td>Expert Opinion on Therapeutic Patents</td>
+                        <td><a href="https://doi.org/10.1080/13543776.2021.1861248" target="_blank" style="word-break: break-all;">10.1080/13543776.2021.1861248</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>User-friendly and industry-integrated AI for medicinal chemists and pharmaceuticals</td>
+                        <td>Artificial Intelligence Chemistry</td>
+                        <td><a href="https://doi.org/10.1016/j.aichem.2024.100072" target="_blank" style="word-break: break-all;">10.1016/j.aichem.2024.100072</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Effective cryopreservation of human brain tissue and neural organoids</td>
+                        <td>Cell Reports Methods</td>
+                        <td><a href="https://doi.org/10.1016/j.crmeth.2024.100777" target="_blank" style="word-break: break-all;">10.1016/j.crmeth.2024.100777</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Clinically ready magnetic microrobots for targeted therapies</td>
+                        <td>Science</td>
+                        <td><a href="https://doi.org/10.1126/science.adx1708" target="_blank" style="word-break: break-all;">10.1126/science.adx1708</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Neuroactive Steroids, Toll-like Receptors, and Neuroimmune Regulation: Insights into Their Impact on Neuropsychiatric Disorders</td>
+                        <td>Life</td>
+                        <td><a href="https://doi.org/10.3390/life14050582" target="_blank" style="word-break: break-all;">10.3390/life14050582</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Benchmarking R&amp;D success rates of leading pharmaceutical companies: an empirical analysis of FDA approvals (2006–2022)</td>
+                        <td>Drug Discovery Today</td>
+                        <td><a href="https://doi.org/10.1016/j.drudis.2025.104291" target="_blank" style="word-break: break-all;">10.1016/j.drudis.2025.104291</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Recent applications of three-dimensional bioprinting in drug discovery and development</td>
+                        <td>Advanced Drug Delivery Reviews</td>
+                        <td><a href="https://doi.org/10.1016/j.addr.2024.115456" target="_blank" style="word-break: break-all;">10.1016/j.addr.2024.115456</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Discordance between preclinical and clinical testing of NaV1.7-selective inhibitors for pain</td>
+                        <td>Pain</td>
+                        <td><a href="https://doi.org/10.1097/j.pain.0000000000003425" target="_blank" style="word-break: break-all;">10.1097/j.pain.0000000000003425</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Cross‐species translational paradigms for assessing positive valence system as defined by the <scp>RDoC</scp> matrix</td>
+                        <td>Journal of Neurochemistry</td>
+                        <td><a href="https://doi.org/10.1111/jnc.16243" target="_blank" style="word-break: break-all;">10.1111/jnc.16243</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>PharmaFormer predicts clinical drug responses through transfer learning guided by patient derived organoid</td>
+                        <td>npj Precision Oncology</td>
+                        <td><a href="https://doi.org/10.1038/s41698-025-01082-6" target="_blank" style="word-break: break-all;">10.1038/s41698-025-01082-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Miniature magneto-ultrasonic machines for wireless robotic sensing and manipulation</td>
+                        <td>Science Robotics</td>
+                        <td><a href="https://doi.org/10.1126/scirobotics.adu4851" target="_blank" style="word-break: break-all;">10.1126/scirobotics.adu4851</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Self-contained, low-cost Body-on-a-Chip systems for drug development</td>
+                        <td>Experimental Biology and Medicine</td>
+                        <td><a href="https://doi.org/10.1177/1535370217694101" target="_blank" style="word-break: break-all;">10.1177/1535370217694101</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Development of a Convergent Large-Scale Synthesis for Venetoclax, a First-in-Class BCL-2 Selective Inhibitor</td>
+                        <td>The Journal of Organic Chemistry</td>
+                        <td><a href="https://doi.org/10.1021/acs.joc.8b02750" target="_blank" style="word-break: break-all;">10.1021/acs.joc.8b02750</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>ADME Profiling in Drug Discovery and a New Path Paved on Silica</td>
+                        <td>IntechOpen eBooks</td>
+                        <td><a href="https://doi.org/10.5772/intechopen.86174" target="_blank" style="word-break: break-all;">10.5772/intechopen.86174</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>A human-on-a-chip approach to tackling rare diseases</td>
+                        <td>Drug Discovery Today</td>
+                        <td><a href="https://doi.org/10.1016/j.drudis.2019.08.001" target="_blank" style="word-break: break-all;">10.1016/j.drudis.2019.08.001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>ACCELERATE and European Medicine Agency Paediatric Strategy Forum for medicinal product development for mature B-cell malignancies in children</td>
+                        <td>European Journal of Cancer</td>
+                        <td><a href="https://doi.org/10.1016/j.ejca.2019.01.013" target="_blank" style="word-break: break-all;">10.1016/j.ejca.2019.01.013</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Synthesis of Highly Functionalized 12-Membered Trifluoromethyl Heterocycles via a Nondecarboxylative Pd-Catalyzed [6 + 6] Annulation</td>
+                        <td>ACS Catalysis</td>
+                        <td><a href="https://doi.org/10.1021/acscatal.9b05377" target="_blank" style="word-break: break-all;">10.1021/acscatal.9b05377</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>In vitro tissue-engineered adipose constructs for modeling disease</td>
+                        <td>BMC Biomedical Engineering</td>
+                        <td><a href="https://doi.org/10.1186/s42490-019-0027-7" target="_blank" style="word-break: break-all;">10.1186/s42490-019-0027-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Leveraging Big Data to Transform Drug Discovery</td>
+                        <td>Methods in molecular biology</td>
+                        <td><a href="https://doi.org/10.1007/978-1-4939-9089-4_6" target="_blank" style="word-break: break-all;">10.1007/978-1-4939-9089-4_6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Repurposing Pharmaceuticals Previously Approved by Regulatory Agencies to Medically Counter Injuries Arising Either Early or Late Following Radiation Exposure</td>
+                        <td>Frontiers in Pharmacology</td>
+                        <td><a href="https://doi.org/10.3389/fphar.2021.624844" target="_blank" style="word-break: break-all;">10.3389/fphar.2021.624844</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Predicting the cytotoxicity of chemicals using ensemble learning methods and molecular fingerprints</td>
+                        <td>Journal of Applied Toxicology</td>
+                        <td><a href="https://doi.org/10.1002/jat.3785" target="_blank" style="word-break: break-all;">10.1002/jat.3785</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Characterization of the large‐scale Japanese patient‐derived xenograft (J‐PDX) library</td>
+                        <td>Cancer Science</td>
+                        <td><a href="https://doi.org/10.1111/cas.14899" target="_blank" style="word-break: break-all;">10.1111/cas.14899</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Advanced Microengineered Lung Models for Translational Drug Discovery</td>
+                        <td>SLAS DISCOVERY</td>
+                        <td><a href="https://doi.org/10.1177/2472555218760217" target="_blank" style="word-break: break-all;">10.1177/2472555218760217</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Quantitative Translational Modeling to Facilitate Preclinical to Clinical Efficacy &amp; Toxicity Translation in Oncology</td>
+                        <td>Future Science OA</td>
+                        <td><a href="https://doi.org/10.4155/fsoa-2017-0152" target="_blank" style="word-break: break-all;">10.4155/fsoa-2017-0152</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Mutant p53, the Mevalonate Pathway and the Tumor Microenvironment Regulate Tumor Response to Statin Therapy</td>
+                        <td>Cancers</td>
+                        <td><a href="https://doi.org/10.3390/cancers14143500" target="_blank" style="word-break: break-all;">10.3390/cancers14143500</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Drug Screening, Oral Bioavailability and Regulatory Aspects: A Need for Human Organoids</td>
+                        <td>Pharmaceutics</td>
+                        <td><a href="https://doi.org/10.3390/pharmaceutics13081280" target="_blank" style="word-break: break-all;">10.3390/pharmaceutics13081280</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Enhancing Cooperation Between Academic Biobanks and Biomedical Industry: Better Mutual Understanding and New Collaborative Models Are Needed</td>
+                        <td>Biopreservation and Biobanking</td>
+                        <td><a href="https://doi.org/10.1089/bio.2019.0095" target="_blank" style="word-break: break-all;">10.1089/bio.2019.0095</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Recent advances in understanding the role of the skin microbiome in the treatment of atopic dermatitis</td>
+                        <td>Experimental Dermatology</td>
+                        <td><a href="https://doi.org/10.1111/exd.14940" target="_blank" style="word-break: break-all;">10.1111/exd.14940</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Animal Models of Human Disease</td>
+                        <td>Cambridge University Press eBooks</td>
+                        <td><a href="https://doi.org/10.1017/9781009025836" target="_blank" style="word-break: break-all;">10.1017/9781009025836</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Construction of cancer-on-a-chip for drug screening</td>
+                        <td>Drug Discovery Today</td>
+                        <td><a href="https://doi.org/10.1016/j.drudis.2021.03.006" target="_blank" style="word-break: break-all;">10.1016/j.drudis.2021.03.006</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A Framework for the Fair Pricing of Medicines</td>
+                        <td>PharmacoEconomics</td>
+                        <td><a href="https://doi.org/10.1007/s40273-023-01325-z" target="_blank" style="word-break: break-all;">10.1007/s40273-023-01325-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Continual proteomic divergence of HepG2 cells as a consequence of long-term spheroid culture</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-021-89907-9" target="_blank" style="word-break: break-all;">10.1038/s41598-021-89907-9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Comparative Study on the Efficacy and Exposure of Molecular Target Agents in Non–small Cell Lung Cancer PDX Models with Driver Genetic Alterations</td>
+                        <td>Molecular Cancer Therapeutics</td>
+                        <td><a href="https://doi.org/10.1158/1535-7163.mct-21-0371" target="_blank" style="word-break: break-all;">10.1158/1535-7163.mct-21-0371</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Molecular Recognition of FDA-Approved Small Molecule Protein Kinase Drugs in Protein Kinases</td>
+                        <td>Molecules</td>
+                        <td><a href="https://doi.org/10.3390/molecules27207124" target="_blank" style="word-break: break-all;">10.3390/molecules27207124</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Computational drug discovery on human immunodeficiency virus with a customized long short‐term memory variational autoencoder deep‐learning architecture</td>
+                        <td>CPT Pharmacometrics & Systems Pharmacology</td>
+                        <td><a href="https://doi.org/10.1002/psp4.13085" target="_blank" style="word-break: break-all;">10.1002/psp4.13085</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Alternative Toxicity Test Methods</td>
+                        <td>Elsevier eBooks</td>
+                        <td><a href="https://doi.org/10.1016/b978-0-12-813697-3.00034-2" target="_blank" style="word-break: break-all;">10.1016/b978-0-12-813697-3.00034-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Delivering impactful solutions for the bioeconomy</td>
+                        <td>Trends in Plant Science</td>
+                        <td><a href="https://doi.org/10.1016/j.tplants.2023.02.007" target="_blank" style="word-break: break-all;">10.1016/j.tplants.2023.02.007</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Advanced in vitro models for renal cell carcinoma therapy design</td>
+                        <td>Biochimica et Biophysica Acta (BBA) - Reviews on Cancer</td>
+                        <td><a href="https://doi.org/10.1016/j.bbcan.2023.188942" target="_blank" style="word-break: break-all;">10.1016/j.bbcan.2023.188942</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Advanced tissue engineering for in vitro drug safety testing</td>
+                        <td>MRS Communications</td>
+                        <td><a href="https://doi.org/10.1557/s43579-023-00421-7" target="_blank" style="word-break: break-all;">10.1557/s43579-023-00421-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Pixelated Microfluidics for Drug Screening on Tumour Spheroids and Ex Vivo Microdissected Tumour Explants</td>
+                        <td>Cancers</td>
+                        <td><a href="https://doi.org/10.3390/cancers15041060" target="_blank" style="word-break: break-all;">10.3390/cancers15041060</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>The increasing costs of medicines and their implications for patients, physicians and the health system</td>
+                        <td>Internal Medicine Journal</td>
+                        <td><a href="https://doi.org/10.1111/imj.16370" target="_blank" style="word-break: break-all;">10.1111/imj.16370</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A Survey of Large Language Model for Drug Research and Development</td>
+                        <td>IEEE Access</td>
+                        <td><a href="https://doi.org/10.1109/access.2025.3552256" target="_blank" style="word-break: break-all;">10.1109/access.2025.3552256</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Expanding drug targets for 112 chronic diseases using a machine learning-assisted genetic priority score</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-024-53333-y" target="_blank" style="word-break: break-all;">10.1038/s41467-024-53333-y</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Addressable microfluidics technology for non-sacrificial analysis of biomaterial implants <i>in vivo</i></td>
+                        <td>Biomicrofluidics</td>
+                        <td><a href="https://doi.org/10.1063/5.0137932" target="_blank" style="word-break: break-all;">10.1063/5.0137932</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Artificial intelligence and systems biology analysis in stem cell research and therapeutics development</td>
+                        <td>Stem Cells Translational Medicine</td>
+                        <td><a href="https://doi.org/10.1093/stcltm/szaf037" target="_blank" style="word-break: break-all;">10.1093/stcltm/szaf037</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Applications of Quantitative System Pharmacology Modeling to Model-Informed Drug Development</td>
+                        <td>Methods in molecular biology</td>
+                        <td><a href="https://doi.org/10.1007/978-1-0716-2265-0_5" target="_blank" style="word-break: break-all;">10.1007/978-1-0716-2265-0_5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Adverse Outcome Pathway and Machine Learning to Predict Drug Induced Seizure Liability</td>
+                        <td>ACS Chemical Neuroscience</td>
+                        <td><a href="https://doi.org/10.1021/acschemneuro.5c00177" target="_blank" style="word-break: break-all;">10.1021/acschemneuro.5c00177</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Digital Twin Fundamentals of mRNA <i>In Vitro</i> Transcription in Variable Scale Toward Autonomous Operation</td>
+                        <td>ACS Omega</td>
+                        <td><a href="https://doi.org/10.1021/acsomega.3c08732" target="_blank" style="word-break: break-all;">10.1021/acsomega.3c08732</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>A guide to tumor assessment methodologies in cancer drug discovery</td>
+                        <td>Elsevier eBooks</td>
+                        <td><a href="https://doi.org/10.1016/b978-0-12-814704-7.00009-x" target="_blank" style="word-break: break-all;">10.1016/b978-0-12-814704-7.00009-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>BIOPTIC B1 Ultra-High-Throughput Virtual Screening System Discovers LRRK2 Ligands in Vast Chemical Space</td>
+                        <td>Journal of Chemical Information and Modeling</td>
+                        <td><a href="https://doi.org/10.1021/acs.jcim.5c00743" target="_blank" style="word-break: break-all;">10.1021/acs.jcim.5c00743</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A clinical trial inclusion criteria to enrich for patients presenting with canonical symptom structure in bipolar depression</td>
+                        <td>Contemporary Clinical Trials</td>
+                        <td><a href="https://doi.org/10.1016/j.cct.2024.107644" target="_blank" style="word-break: break-all;">10.1016/j.cct.2024.107644</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Biologics as Therapeutical Agents Under Perspective Clinical Studies for Alzheimer’s Disease</td>
+                        <td>Molecules</td>
+                        <td><a href="https://doi.org/10.3390/molecules30173479" target="_blank" style="word-break: break-all;">10.3390/molecules30173479</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Rational Design of Non-Toxic Multidrug Combinations Demonstrates Durable and Hypoxia-Enhanced Efficacy Against Renal Cell Carcinoma</td>
+                        <td>Pharmaceutics</td>
+                        <td><a href="https://doi.org/10.3390/pharmaceutics17101269" target="_blank" style="word-break: break-all;">10.3390/pharmaceutics17101269</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>90% of drugs fail clinical trials – here’s one way researchers can select better drug candidates</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.64628/aai.rs79u5sg9" target="_blank" style="word-break: break-all;">10.64628/aai.rs79u5sg9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Repurposing generic drugs can reduce time and cost to develop new treatments – but low profitability remains a barrier</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.64628/aai.dftakmwj7" target="_blank" style="word-break: break-all;">10.64628/aai.dftakmwj7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Humans in a Dish: The Potential of Organoids in Modeling Immunity and Infectious Diseases</td>
+                        <td>Frontiers in Microbiology</td>
+                        <td><a href="https://doi.org/10.3389/fmicb.2017.02402" target="_blank" style="word-break: break-all;">10.3389/fmicb.2017.02402</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>A Preclinical Model for Studying Herpes Simplex Virus Infection</td>
+                        <td>Journal of Investigative Dermatology</td>
+                        <td><a href="https://doi.org/10.1016/j.jid.2018.08.034" target="_blank" style="word-break: break-all;">10.1016/j.jid.2018.08.034</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Genetic and Tissue Engineering Approaches to Modeling the Mechanics of Human Heart Failure for Drug Discovery</td>
+                        <td>Frontiers in Cardiovascular Medicine</td>
+                        <td><a href="https://doi.org/10.3389/fcvm.2018.00120" target="_blank" style="word-break: break-all;">10.3389/fcvm.2018.00120</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Ethics of randomized trials in a public health emergency</td>
+                        <td>PLoS neglected tropical diseases</td>
+                        <td><a href="https://doi.org/10.1371/journal.pntd.0006313" target="_blank" style="word-break: break-all;">10.1371/journal.pntd.0006313</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Delaying and withholding interventions: ethics and the stepped wedge trial</td>
+                        <td>Journal of Medical Ethics</td>
+                        <td><a href="https://doi.org/10.1136/medethics-2018-105138" target="_blank" style="word-break: break-all;">10.1136/medethics-2018-105138</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Engineering Patient-on-a-Chip Models for Personalized Cancer Medicine</td>
+                        <td>Advances in experimental medicine and biology</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-36588-2_4" target="_blank" style="word-break: break-all;">10.1007/978-3-030-36588-2_4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Human Plasma-Derived 3D Cultures Model Breast Cancer Treatment Responses and Predict Clinically Effective Drug Treatment Concentrations</td>
+                        <td>Cancers</td>
+                        <td><a href="https://doi.org/10.3390/cancers12071722" target="_blank" style="word-break: break-all;">10.3390/cancers12071722</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>A Framework for Assessing Disruptions in a Clinical Supply Chain Using Bayesian Belief Networks</td>
+                        <td>Journal of Pharmaceutical Innovation</td>
+                        <td><a href="https://doi.org/10.1007/s12247-019-09396-2" target="_blank" style="word-break: break-all;">10.1007/s12247-019-09396-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Innovative Technologies for Advancement of WHO Risk Group 4 Pathogens Research</td>
+                        <td>PubMed Central</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-29022-1_15" target="_blank" style="word-break: break-all;">10.1007/978-3-030-29022-1_15</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Patient-derived model systems and the development of next-generation anticancer therapeutics</td>
+                        <td>Current Opinion in Chemical Biology</td>
+                        <td><a href="https://doi.org/10.1016/j.cbpa.2020.01.002" target="_blank" style="word-break: break-all;">10.1016/j.cbpa.2020.01.002</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Advancing treatment of retinal disease through in silico trials</td>
+                        <td>Progress in Biomedical Engineering</td>
+                        <td><a href="https://doi.org/10.1088/2516-1091/acc8a9" target="_blank" style="word-break: break-all;">10.1088/2516-1091/acc8a9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Development and Regulation of Gene and Cell-Based Therapies in Europe: A Quantification and Reflection</td>
+                        <td>Trends in Pharmacological Sciences</td>
+                        <td><a href="https://doi.org/10.1016/j.tips.2019.11.007" target="_blank" style="word-break: break-all;">10.1016/j.tips.2019.11.007</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Fluorescent multiplexing of 3D spheroids: Analysis of biomarkers using automated immunohistochemistry staining platform and multispectral imaging</td>
+                        <td>Journal of Cellular Biochemistry</td>
+                        <td><a href="https://doi.org/10.1002/jcb.29827" target="_blank" style="word-break: break-all;">10.1002/jcb.29827</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>BioSAXS–an emerging method to accelerate, enrich and de-risk antimicrobial drug development</td>
+                        <td>Frontiers in Pharmacology</td>
+                        <td><a href="https://doi.org/10.3389/fphar.2022.947005" target="_blank" style="word-break: break-all;">10.3389/fphar.2022.947005</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Precision antiplatelet therapy</td>
+                        <td>Research and Practice in Thrombosis and Haemostasis</td>
+                        <td><a href="https://doi.org/10.1016/j.rpth.2023.100138" target="_blank" style="word-break: break-all;">10.1016/j.rpth.2023.100138</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Generation and maintenance of kidney and kidney cancer organoids from patient-derived material for drug development and precision oncology</td>
+                        <td>Molecular Therapy — Methods & Clinical Development</td>
+                        <td><a href="https://doi.org/10.1016/j.omtm.2024.101368" target="_blank" style="word-break: break-all;">10.1016/j.omtm.2024.101368</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Development of Effective Medical Countermeasures Against the Main Biowarfare Agents: The Importance of Antibodies</td>
+                        <td>Microorganisms</td>
+                        <td><a href="https://doi.org/10.3390/microorganisms12122622" target="_blank" style="word-break: break-all;">10.3390/microorganisms12122622</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Autophagy unrelated transcriptional mechanisms of hydroxychloroquine resistance revealed by integrated multi-omics of evolved cancer cells</td>
+                        <td>Cell Cycle</td>
+                        <td><a href="https://doi.org/10.1080/15384101.2024.2402191" target="_blank" style="word-break: break-all;">10.1080/15384101.2024.2402191</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Correlation of ex vivo cytokine secretion profiles with scoring indices in ulcerative colitis</td>
+                        <td>European Journal of Clinical Investigation</td>
+                        <td><a href="https://doi.org/10.1111/eci.14070" target="_blank" style="word-break: break-all;">10.1111/eci.14070</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>What have clinical trials taught us about brain health?</td>
+                        <td>Cerebral Circulation - Cognition and Behavior</td>
+                        <td><a href="https://doi.org/10.1016/j.cccb.2023.100199" target="_blank" style="word-break: break-all;">10.1016/j.cccb.2023.100199</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Public and philanthropic research funding, publications, and research networks for cancer in the Commonwealth and globally between 2016 and 2023: a comparative analysis</td>
+                        <td>The Lancet Oncology</td>
+                        <td><a href="https://doi.org/10.1016/s1470-2045(25)00338-9" target="_blank" style="word-break: break-all;">10.1016/s1470-2045(25)00338-9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Identification of Hit Compounds Using Artificial Intelligence for the Management of Allergic Diseases</td>
+                        <td>International Journal of Molecular Sciences</td>
+                        <td><a href="https://doi.org/10.3390/ijms25042280" target="_blank" style="word-break: break-all;">10.3390/ijms25042280</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Design and rationale of the AIR-NET trial: a randomised, open-label, multifactorial, multicentre, adaptive platform trial using a range of repurposed anti-inflammatory treatments to improve outcomes in patients with bronchiectasis within the EMBARC clinical research network</td>
+                        <td>ERJ Open Research</td>
+                        <td><a href="https://doi.org/10.1183/23120541.00719-2025" target="_blank" style="word-break: break-all;">10.1183/23120541.00719-2025</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Advancing target discovery through disease-specific integration of multi-modal target identification models and comprehensive benchmarking system</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-026-47765-3" target="_blank" style="word-break: break-all;">10.1038/s41598-026-47765-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Effects of Culture Condition on Epigenomic Profiles of Brain Tumor Cells</td>
+                        <td>ACS Biomaterials Science & Engineering</td>
+                        <td><a href="https://doi.org/10.1021/acsbiomaterials.9b00161" target="_blank" style="word-break: break-all;">10.1021/acsbiomaterials.9b00161</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>The Potential of Organ on Chip Technology for Replacing Animal Testing</td>
+                        <td>WBI Studies Repository</td>
+                        <td><a href="https://doi.org/10.1163/9789004391192_027" target="_blank" style="word-break: break-all;">10.1163/9789004391192_027</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Open innovation in neuroscience research and drug discovery</td>
+                        <td>Brain and Neuroscience Advances</td>
+                        <td><a href="https://doi.org/10.1177/2398212818799270" target="_blank" style="word-break: break-all;">10.1177/2398212818799270</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>FDA Modernization Act 2.0: An insight from nondeveloping country</td>
+                        <td>Drug Development Research</td>
+                        <td><a href="https://doi.org/10.1002/ddr.22108" target="_blank" style="word-break: break-all;">10.1002/ddr.22108</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>The Role of ETS2 in Macrophage Inflammation</td>
+                        <td>DNA and Cell Biology</td>
+                        <td><a href="https://doi.org/10.1089/dna.2025.0064" target="_blank" style="word-break: break-all;">10.1089/dna.2025.0064</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Preclinical models in oncological pharmacology: limits and advantages</td>
+                        <td>CINECA IRIS Institutial research information system (University of Pisa)</td>
+                        <td><a href="https://doi.org/10.36118/pharmadvances.2021.05" target="_blank" style="word-break: break-all;">10.36118/pharmadvances.2021.05</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Can we have our cake and eat it too? Not when it comes to antiobesity medication prices</td>
+                        <td>Obesity</td>
+                        <td><a href="https://doi.org/10.1002/oby.23751" target="_blank" style="word-break: break-all;">10.1002/oby.23751</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Utilization of the retinal organoid model to evaluate the feasibility of genetic strategies to ameliorate retinal disease(s)</td>
+                        <td>Vision Research</td>
+                        <td><a href="https://doi.org/10.1016/j.visres.2023.108269" target="_blank" style="word-break: break-all;">10.1016/j.visres.2023.108269</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>The Need for Non-profit Psychiatric Drug Discovery and Development</td>
+                        <td>Journal of Clinical Psychopharmacology</td>
+                        <td><a href="https://doi.org/10.1097/jcp.0000000000001607" target="_blank" style="word-break: break-all;">10.1097/jcp.0000000000001607</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Pharmacogenomics in drug discovery and development</td>
+                        <td>Pharmacogenomics</td>
+                        <td><a href="https://doi.org/10.1016/b978-0-443-15336-5.00007-5" target="_blank" style="word-break: break-all;">10.1016/b978-0-443-15336-5.00007-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Comparison of classical Machine Learning-based algorithms to predict Triplex Forming Oligonucleotides</td>
+                        <td>Computational and Structural Biotechnology Reports</td>
+                        <td><a href="https://doi.org/10.1016/j.csbr.2024.100013" target="_blank" style="word-break: break-all;">10.1016/j.csbr.2024.100013</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Focus on Translational Research from Arabidopsis to Crop Plants and Beyond</td>
+                        <td>The Plant Cell</td>
+                        <td><a href="https://doi.org/10.1093/plcell/koaf119" target="_blank" style="word-break: break-all;">10.1093/plcell/koaf119</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Drug Discovery in Psychiatry: Rethinking Conventional Wisdom</td>
+                        <td>The Canadian Journal of Psychiatry</td>
+                        <td><a href="https://doi.org/10.1177/07067437221112907" target="_blank" style="word-break: break-all;">10.1177/07067437221112907</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Design of experiments for the automated development of a multicellular cardiac model for high-throughput screening</td>
+                        <td>SLAS DISCOVERY</td>
+                        <td><a href="https://doi.org/10.1016/j.slasd.2023.10.006" target="_blank" style="word-break: break-all;">10.1016/j.slasd.2023.10.006</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Computing New Medicines</td>
+                        <td>Computer</td>
+                        <td><a href="https://doi.org/10.1109/mc.2022.3191933" target="_blank" style="word-break: break-all;">10.1109/mc.2022.3191933</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>COVID-19 platform trials: insight and lessons in clinical trial design</td>
+                        <td>European Respiratory Society eBooks</td>
+                        <td><a href="https://doi.org/10.1183/2312508x.10021223" target="_blank" style="word-break: break-all;">10.1183/2312508x.10021223</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Comparative study of the computer-aided design of MYCN-specific antigene oligonucleotides</td>
+                        <td>Computational and Structural Biotechnology Reports</td>
+                        <td><a href="https://doi.org/10.1016/j.csbr.2025.100030" target="_blank" style="word-break: break-all;">10.1016/j.csbr.2025.100030</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Optimism in a sea of uncertainties: the journalistic coverage on the research of new medicines in Brazil</td>
+                        <td>Journal of Science Communication</td>
+                        <td><a href="https://doi.org/10.22323/2.17020202" target="_blank" style="word-break: break-all;">10.22323/2.17020202</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Development of CXCR4 Inhibitors for Topical Treatment of Psoriasis</td>
+                        <td>Graduate Medical Education Research Journal</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>DrugGen: a database of <i>de novo</i>-generated molecular binders for specified target proteins</td>
+                        <td>Database</td>
+                        <td><a href="https://doi.org/10.1093/database/baad090" target="_blank" style="word-break: break-all;">10.1093/database/baad090</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Semi-supervised learning of hierarchical representations of molecules using neural message passing</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.48550/arxiv.1711.10168" target="_blank" style="word-break: break-all;">10.48550/arxiv.1711.10168</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Pervasive Transcriptome Interactions of Protein-Targeted Drugs</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2022.07.18.500496" target="_blank" style="word-break: break-all;">10.1101/2022.07.18.500496</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Human heart assembloids with autologous tissue-resident macrophages recreate physiological immuno-cardiac interactions</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.11.13.623051" target="_blank" style="word-break: break-all;">10.1101/2024.11.13.623051</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Identifying drug targets for schizophrenia through gene prioritization</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.05.15.24307423" target="_blank" style="word-break: break-all;">10.1101/2024.05.15.24307423</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Valuing Pharmaceutical Drug Innovations</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.4300678" target="_blank" style="word-break: break-all;">10.2139/ssrn.4300678</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Can Quantum Chemistry Improve the understanding of Protein-Ligand Interactions? Implications for Structure Based Drug Discovery</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.06.01.543295" target="_blank" style="word-break: break-all;">10.1101/2023.06.01.543295</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Mitochondrial dysfunction in PTSD: A mechanism to understand trauma susceptibility?</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.03.28.25324821" target="_blank" style="word-break: break-all;">10.1101/2025.03.28.25324821</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>effects of the biologics price competition and innovation act of 2009 on biopharmaceutical research and development</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.17760/d20284722" target="_blank" style="word-break: break-all;">10.17760/d20284722</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A mechanistic neural network model predicts both potency and toxicity of antimicrobial combination therapies</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.03.19.25324270" target="_blank" style="word-break: break-all;">10.1101/2025.03.19.25324270</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Modeling the Heterogeneous Brain Tumor Microenvironment to Analyze Mechanisms of Vascular Development and Chemoresistance</td>
+                        <td>VTechWorks (Virginia Tech)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Biomedical Graph Visualizer for Identifying Drug Candidates</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2020.11.27.368811" target="_blank" style="word-break: break-all;">10.1101/2020.11.27.368811</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Public and Philanthropic Research Funding, Publications and Research Networks for Cancer in the Commonwealth and Globally in 2016-2023: Comparative Analysis</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.5122487" target="_blank" style="word-break: break-all;">10.2139/ssrn.5122487</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Outlook for the Future</td>
+                        <td>AAPS advances in the pharmaceutical sciences series</td>
+                        <td><a href="https://doi.org/10.1007/978-3-319-50042-3_14" target="_blank" style="word-break: break-all;">10.1007/978-3-319-50042-3_14</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Evaluation of Broad Anti-Herpesviral Activity with a-Hydroxytropolones</td>
+                        <td>Civil War Book Review</td>
+                        <td><a href="https://doi.org/10.31390/gradschool_theses.4588" target="_blank" style="word-break: break-all;">10.31390/gradschool_theses.4588</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Phenotypic analysis of endothelial cell function by using three-dimensional microvessel model</td>
+                        <td>Japanese Journal of Thrombosis and Hemostasis</td>
+                        <td><a href="https://doi.org/10.2491/jjsth.30.512" target="_blank" style="word-break: break-all;">10.2491/jjsth.30.512</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Outsourcing Clinical Trials to Latin America: Causes and Impact</td>
+                        <td>International library of ethics, law, and the new medicine/The international library of ethics, law, and the new medicine</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-17963-2_8" target="_blank" style="word-break: break-all;">10.1007/978-3-030-17963-2_8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>The role of quantitative modeling and simulation in translational science</td>
+                        <td>Elsevier eBooks</td>
+                        <td><a href="https://doi.org/10.1016/b978-0-12-820018-6.00023-5" target="_blank" style="word-break: break-all;">10.1016/b978-0-12-820018-6.00023-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Development, market authorization and market access of gene and cell-based therapies</td>
+                        <td>Data Archiving and Networked Services (DANS)</td>
+                        <td><a href="https://doi.org/10.33540/612" target="_blank" style="word-break: break-all;">10.33540/612</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>FEATURES</td>
+                        <td>Asia-Pacific Biotech News</td>
+                        <td><a href="https://doi.org/10.1142/s0219030317000106" target="_blank" style="word-break: break-all;">10.1142/s0219030317000106</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>War on Cancer (Vol. 21, No. 2, Full Issue)</td>
+                        <td>Asia-Pacific Biotech News</td>
+                        <td><a href="https://doi.org/10.1142/s021903031700101x" target="_blank" style="word-break: break-all;">10.1142/s021903031700101x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Breast cancer drug toxicity prediction Based on AdaBoost Extremely Random Tree</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1145/3523286.3524506" target="_blank" style="word-break: break-all;">10.1145/3523286.3524506</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Pixelated microfluidics for drug screening on tumour spheroids and ex vivo microdissected primary tissue</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2022.10.07.511162" target="_blank" style="word-break: break-all;">10.1101/2022.10.07.511162</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Modeling the marmoset brain using embryonic stem cell-derived cerebral assembloids</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.02.28.530008" target="_blank" style="word-break: break-all;">10.1101/2023.02.28.530008</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Data from Comparative Study on the Efficacy and Exposure of Molecular Target Agents in Non–small Cell Lung Cancer PDX Models with Driver Genetic Alterations</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1158/1535-7163.c.6543219.v1" target="_blank" style="word-break: break-all;">10.1158/1535-7163.c.6543219.v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Data from Comparative Study on the Efficacy and Exposure of Molecular Target Agents in Non–small Cell Lung Cancer PDX Models with Driver Genetic Alterations</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1158/1535-7163.c.6543219" target="_blank" style="word-break: break-all;">10.1158/1535-7163.c.6543219</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Disruption of p54nrb's gene regulatory function by caspase-2 exhibits a multifaceted role in tumor cell death susceptibility</td>
+                        <td>Publication Server of Goethe University Frankfurt am Main (Goethe University Frankfurt)</td>
+                        <td><a href="https://doi.org/10.21248/gups.74656" target="_blank" style="word-break: break-all;">10.21248/gups.74656</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Commercial achievements resulting from multi-organ-on-a-chip applications</td>
+                        <td>Elsevier eBooks</td>
+                        <td><a href="https://doi.org/10.1016/b978-0-443-15384-6.00004-5" target="_blank" style="word-break: break-all;">10.1016/b978-0-443-15384-6.00004-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Advancements in Bioprinting for Medical Applications</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1002/9781119894407.ch6" target="_blank" style="word-break: break-all;">10.1002/9781119894407.ch6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Bayesian approach application for mechanistic model parameters estimatio</td>
+                        <td>Doklady Meždunarodnoj konferencii "Matematičeskaâ biologiâ i bioinformatika"</td>
+                        <td><a href="https://doi.org/10.17537/icmbb24.40" target="_blank" style="word-break: break-all;">10.17537/icmbb24.40</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>“Lung-on-a-chip” as an instrument for studying the pathophysiology of human respiration</td>
+                        <td>Journal of clinical practice</td>
+                        <td><a href="https://doi.org/10.17816/clinpract637140" target="_blank" style="word-break: break-all;">10.17816/clinpract637140</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Licenciranje v farmacevtski industriji: trendi in strategije</td>
+                        <td>Anali PAZU HD</td>
+                        <td><a href="https://doi.org/10.18690/analipazuhd.10.1-2.47-87.2024" target="_blank" style="word-break: break-all;">10.18690/analipazuhd.10.1-2.47-87.2024</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>We need to engage representative patients’ community rather than ‘expert patients’ to increase impact of research in the era of personalised medicine: Yes</td>
+                        <td>Multiple Sclerosis Journal</td>
+                        <td><a href="https://doi.org/10.1177/13524585251315338" target="_blank" style="word-break: break-all;">10.1177/13524585251315338</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Artificial Intelligence-based Morphological Profiling for Drug Discovery: Advancing Towards 4D Phenotypic Profiling</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1039/9781837676941-00209" target="_blank" style="word-break: break-all;">10.1039/9781837676941-00209</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>High‐Throughput Biophysical Assays for Developability Assessment</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1002/9781394236145.ch12" target="_blank" style="word-break: break-all;">10.1002/9781394236145.ch12</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Translational process in research</td>
+                        <td>Elsevier eBooks</td>
+                        <td><a href="https://doi.org/10.1016/b978-0-323-90391-2.00031-2" target="_blank" style="word-break: break-all;">10.1016/b978-0-323-90391-2.00031-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>The Potential of Generative AI in Drug Development</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.4018/979-8-3373-2043-4.ch005" target="_blank" style="word-break: break-all;">10.4018/979-8-3373-2043-4.ch005</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Advancing Target Discovery Through Disease-Specific Integration of Multi-Modal Target Identification Models and Comprehensive Target Benchmarking System</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.08.06.668866" target="_blank" style="word-break: break-all;">10.1101/2025.08.06.668866</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Target identification and validation in drug discovery</td>
+                        <td>Elsevier eBooks</td>
+                        <td><a href="https://doi.org/10.1016/b978-0-443-27461-9.00005-6" target="_blank" style="word-break: break-all;">10.1016/b978-0-443-27461-9.00005-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>The SMART Model: A Simplified Model for Assessing the Resilience of Therapeutic Program Financial Viability</td>
+                        <td>Military Medicine</td>
+                        <td><a href="https://doi.org/10.1093/milmed/usaf152" target="_blank" style="word-break: break-all;">10.1093/milmed/usaf152</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Moving Mendelian Randomization From Traditional Risk Factors to Molecular Targets for Drug Development and Clinical Trials in Nephrology</td>
+                        <td>Kidney International Reports</td>
+                        <td><a href="https://doi.org/10.1016/j.ekir.2026.106350" target="_blank" style="word-break: break-all;">10.1016/j.ekir.2026.106350</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Retrospective evaluation of human genetic evidence for clinical trial success using Mendelian randomization and machine learning</td>
+                        <td>medRxiv</td>
+                        <td><a href="https://doi.org/10.64898/2026.02.19.26346536" target="_blank" style="word-break: break-all;">10.64898/2026.02.19.26346536</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>IRS4 is a PI3K-activating cancer dependency up-regulated through DNA rearrangements or epigenetic mechanisms in multiple solid tumors</td>
+                        <td>Science Advances</td>
+                        <td><a href="https://doi.org/10.1126/sciadv.aeb3503" target="_blank" style="word-break: break-all;">10.1126/sciadv.aeb3503</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Transformative impacts: Artificial intelligence in healthcare</td>
+                        <td>AIP conference proceedings</td>
+                        <td><a href="https://doi.org/10.1063/5.0329192" target="_blank" style="word-break: break-all;">10.1063/5.0329192</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>High-Throughput Complex Disease Modeling for Ethical Drug Discovery: Clinical Relevance of a NAM Platform for Cancer Biomarker Development</td>
+                        <td>Journal of Cancer Genetics and Biomarkers</td>
+                        <td><a href="https://doi.org/10.14302/issn.2572-3030.jcgb-26-6307" target="_blank" style="word-break: break-all;">10.14302/issn.2572-3030.jcgb-26-6307</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-06-02T09:32:34+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' citing works (most recent first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+    
+    <script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
+</body>
+</html>

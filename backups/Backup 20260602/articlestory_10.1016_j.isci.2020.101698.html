@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ArticleStory - The Rigor and Transparency Index Quality Metric for Assessing Biological and Medical Science Methods</title>
+<style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+/* Stats strip */
+.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
+  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
+.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
+.stats-strip-item:last-child{border-right:none;}
+.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
+.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
+.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
+  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
+@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav,.stats-strip{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* CSS tooltip for role descriptions */
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+
+.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+</style>
+<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div class="site-nav-links">
+    <a href="index.html">← All stories</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
+<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+        Print PDF Report
+    </button>
+<div class="page" id="sec-story">
+<header class="hero card" id="sec-hero">
+<div class="header-bar">
+<div style="display: flex; align-items: center; gap: 1.25rem;">
+<div class="logo-wrap"><img alt="Logo" src="articlestories-logo.png"/></div>
+<div>
+<h1 class="hero-title">The Rigor and Transparency Index Quality Metric for Assessing Biological and Medical Science Methods</h1>
+<div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+<span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em;" title="scite found more citations supporting than contrasting this work's methodology">
+<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                    Methodologically Supported
+                                <span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· scite</span></span>
+<span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-transform: uppercase; letter-spacing: 0.05em;" title="Linked research datasets are registered via DataCite or a similar registry">
+<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                    Linked to Data
+                                <span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· DataCite</span></span>
+</div>
+<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+<div><strong>Author(s):</strong> Joseph Menke, Martijn Roelandse, İbrahim Burak Özyurt, Maryann E. Martone, Anita Bandrowski</div>
+<div><strong>Publisher:</strong> iScience</div>
+<div><strong>Publication year:</strong> 2020</div>
+<div><strong>DOI:</strong> <a href="https://doi.org/10.1016/j.isci.2020.101698" target="_blank">10.1016/j.isci.2020.101698</a></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="stats-strip no-print">
+<div class="stats-strip-item">
+<div class="stats-strip-num">84</div>
+<div class="stats-strip-label">Total Citations</div>
+<div class="stats-strip-badge">🏆 Top 10% Cited</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">2</div>
+<div class="stats-strip-label">Online Mentions</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num">87</div>
+<div class="stats-strip-label">scite References</div>
+</div>
+<div class="stats-strip-item">
+<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Gold</div>
+<div class="stats-strip-label">Open Access Status</div>
+</div>
+</div>
+
+<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
+<div class="sticky-nav-inner">
+<a href="#sec-hero">Overview</a>
+<a href="#sec-story">Story</a>
+<a href="#sec-impact">Impact</a>
+<a href="#sec-roles">Roles</a>
+<a href="#sec-citing">Who's Citing</a>
+<a href="#sec-mentions">Mentions</a>
+<a href="#sec-teaching">Teaching</a>
+<a href="#sec-contributors">Contributors</a>
+<a href="#sec-funding">Funding</a>
+<a href="#sec-citations">All Citations</a>
+</div>
+</nav>
+
+<section class="card" id="sec-story">
+<h2><span>The Story So Far</span></h2>
+<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The paper titled "The Rigor and Transparency Index Quality Metric for Assessing Biological and Medical Science Methods," authored by a team from the University of California, San Diego, presents a robust quality metric designed to enhance transparency and rigor in biological and medical research. With 84 citations, the work has garnered attention within the academic community and reflects a significant investment by institutions including the National Institutes of Health (NIH).</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">This study offers a comprehensive framework for assessing methodologies in biological and medical sciences through the development of the Rigor and Transparency Index Quality Metric. Funded by the NIH and its associated agencies, including NIDDK, NIMH, and NIDA, the research reflects substantial institutional investment into enhancing research quality and reproducibility in these critical fields.</p>
+<p class="story-text">Highlighted by its integration of seven Research Resource Identifiers (RRIDs), this work underscores a strong commitment to technical reproducibility. By providing reliable resources, the authors facilitate the reproducibility of results, which is paramount for the advancement of scientific knowledge. The presence of these identifiers reinforces the study’s methodological integrity, enabling researchers to build upon the findings effectively.</p>
+<p class="story-text">Within the broader landscape, the research has generated notable academic impact, as evidenced by its citations in various venues, including 7 mentions in bioRxiv and others in established journals such as PLoS Biology. This positioning indicates that the work is resonating with researchers at the forefront of scientific inquiry, reflecting its influence on burgeoning discussions surrounding research methodology.</p>
+<p class="story-text">Contributing to open science, the study is available through prominent data repositories such as GitHub and the Open Science Framework (OSF), which serve as platforms for sharing datasets and software tools. This commitment to open data ensures that the insights gained from this work are accessible and reusable, thus fostering an environment that encourages collaborative research and validation in biological and medical sciences.</p></div>
+</section>
+<section class="card" id="sec-impact">
+<h2><span>Impact metrics</span></h2>
+
+<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">84</div><div class="im-label">Total Citations</div></div><div class="im-spark"><svg height="36" style="display:block;overflow:visible;" viewbox="0 0 120 36" width="120" xmlns="http://www.w3.org/2000/svg"><path d="M0.0,30.4 L17.1,32.2 L34.3,10.9 L51.4,2.0 L68.6,9.1 L85.7,5.6 L102.9,5.6 L120.0,26.9 L120.0,36.0 L0,36.0 Z" fill="#dbeafe" opacity="0.6"></path><polyline fill="none" points="0.0,30.4 17.1,32.2 34.3,10.9 51.4,2.0 68.6,9.1 85.7,5.6 102.9,5.6 120.0,26.9" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline></svg><div class="im-spark-range">2000–2026</div></div></div><div class="im-top-badge">🏆 Top 10% Cited</div></div><div class="im-card"><div class="im-num">2</div><div class="im-label">Online Mentions</div></div><div class="im-card"><div class="im-num">87</div><div class="im-label">scite References</div></div></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-amber" href="#sec-funding">💰 5 grants</a><a class="sig-pill sig-blue" href="#sec-citing">🌍 36 countries</a></div></div></div></section>
+<section class="card" id="sec-roles">
+<h2><span>Inferred roles</span></h2>
+<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#b45309;">📢 Public Engagement &amp; Media</div><div class="roles-row"><span class="role-pill role-pill-public" style="opacity:1;" data-tip="Heavy social-platform engagement on Reddit, Bluesky, or Mastodon — the work has sparked ongoing community conversation."><span class="role-dot" style="background:#f59e0b;"></span>Active public discourse<span class="role-strength" style="background:#fef3c7;color:#92400e;">Strong</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#1d4ed8;">🎓 Academic &amp; Scientific</div><div class="roles-row"><span class="role-pill role-pill-academic" style="opacity:0.9;" data-tip="Foundational building block cited heavily in core academic journals and monographs."><span class="role-dot" style="background:#3b82f6;"></span>Scholarly uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Moderate</span></span><span class="role-pill role-pill-academic" style="opacity:0.9;" data-tip="Heuristic role based on citation and usage signals from the literature."><span class="role-dot" style="background:#3b82f6;"></span>Reproducibility standard<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Moderate</span></span><span class="role-pill role-pill-academic" style="opacity:0.75;" data-tip="Accumulated high citations or downloads unusually fast after publication."><span class="role-dot" style="background:#3b82f6;"></span>Rapid uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Emerging</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#065f46;">🏛 Practical &amp; Real-World</div><div class="roles-row"><span class="role-pill role-pill-practical" style="opacity:0.9;" data-tip="Cited in government reports, WHO/NGO briefs, or UN policy documents."><span class="role-dot" style="background:#10b981;"></span>Sustainability &amp; policy relevance<span class="role-strength" style="background:#dcfce7;color:#166534;">Moderate</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
+
+</section>
+<div class="grid-2">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+<ul class="metric-list">
+<li><strong>DOI:</strong> <a href="https://doi.org/10.1016/j.isci.2020.101698" target="_blank">10.1016/j.isci.2020.101698</a></li>
+<li><strong>OA status:</strong> Gold</li>
+<li><strong>Landing page:</strong> <a href="https://doi.org/10.1016/j.isci.2020.101698" style="word-break: break-all;" target="_blank">https://doi.org/10.1016/j.isci.2020.101698</a></li>
+<li><strong>Best OA PDF:</strong> <a href="http://www.cell.com/article/S2589004220308907/pdf" style="word-break: break-all;" target="_blank">http://www.cell.com/article/S2589004220308907/pdf</a></li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
+                        This work has <strong>2</strong> recorded events globally
+                        
+                    </p>
+<p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+<em>(See specific sources and examples in the Online Mentions section below).</em>
+</p>
+</section>
+</div>
+<div class="grid-2" style="align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+<section class="card" style="margin-bottom:0; height: 100%;">
+<h2><span>Resource Identifiers</span> <span class="badge">Europe PMC</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;"><strong>7</strong> unique RRIDs detected.</p>
+<div style="max-height: 400px; overflow-y: auto;">
+<div style="margin-top: 0.8rem;">
+<h3 style="margin: 0 0 0.4rem; font-size: 0.95rem;">SCR <span class="muted" style="font-weight:normal;">(4)</span></h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+<a class="tag" href="https://scicrunch.org/resolver/RRID:SCR_004166" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" target="_blank">RRID:SCR_004166</a><a class="tag" href="https://scicrunch.org/resolver/RRID:SCR_004166" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" target="_blank">RRID:SCR_004166</a><a class="tag" href="https://scicrunch.org/resolver/RRID:SCR_018773" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" target="_blank">RRID:SCR_018773</a><a class="tag" href="https://scicrunch.org/resolver/RRID:SCR_016251" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" target="_blank">RRID:SCR_016251</a>
+</div>
+</div>
+<div style="margin-top: 0.8rem;">
+<h3 style="margin: 0 0 0.4rem; font-size: 0.95rem;">AB <span class="muted" style="font-weight:normal;">(1)</span></h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+<a class="tag" href="https://scicrunch.org/resolver/RRID:AB_777714" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" target="_blank">RRID:AB_777714</a>
+</div>
+</div>
+<div style="margin-top: 0.8rem;">
+<h3 style="margin: 0 0 0.4rem; font-size: 0.95rem;">BDSC <span class="muted" style="font-weight:normal;">(1)</span></h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+<a class="tag" href="https://scicrunch.org/resolver/RRID:BDSC_51324" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" target="_blank">RRID:BDSC_51324</a>
+</div>
+</div>
+<div style="margin-top: 0.8rem;">
+<h3 style="margin: 0 0 0.4rem; font-size: 0.95rem;">Addgene <span class="muted" style="font-weight:normal;">(1)</span></h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+<a class="tag" href="https://scicrunch.org/resolver/RRID:Addgene_62988" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" target="_blank">RRID:Addgene_62988</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+<section class="card" style="margin-bottom:0;">
+<h2><span>Scientific Stewardship</span> <span class="badge">Europe PMC / DataCite</span></h2>
+<p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Associated data repositories and clinical trials.</p>
+<h3 style="margin: 0 0 0.5rem; font-size: 0.95rem;">Data Repositories &amp; Code</h3>
+<div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom: 1rem; max-height: 250px; overflow-y: auto;">
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://github.com/SciCrunch/resource_disambiguator" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">GitHub Repository</a>
+</div>
+<div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+<a class="tag" href="https://10.31222/osf.io/9sm4x" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0; text-decoration:none; margin:0;" target="_blank">OSF (Open Science Framework)</a>
+</div>
+</div>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Citation context</span> <span class="badge">scite</span></h2>
+<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+<li><strong>Total:</strong> 87</li>
+<li><strong>Supporting:</strong> 6</li>
+<li><strong>Mentioning:</strong> 79</li>
+<li><strong>Contradicting:</strong> 2</li>
+</ul>
+</section>
+</div>
+</div>
+<section class="card" id="sec-citing">
+<h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
+                Analysis of the 84 most recent citing works. 
+                <br/>
+<strong>75.0%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>3.0</strong> times itself.
+            </div>
+
+<div class="cite-analysis-always"><div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
+<ul class="metric-list">
+<li><strong>Citing work types:</strong>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (51)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (16)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (7)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (5)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">letter (3)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">editorial (2)</span>
+</li>
+<li><strong>Top citing venues:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">bioRxiv (7)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Unknown (5)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">PLoS Biology (3)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Royal Society Open Science (2)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Journal of Biomedical Informatics (2)</span>
+</li>
+<li><strong>Top citing concepts:</strong>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Computer science (23)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Transparency (behavior) (22)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Medicine (9)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Open science (8)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Openness to experience (7)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Context (archaeology) (5)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Meta-analysis (5)</span>
+<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Peer review (4)</span>
+</li>
+<li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
+<strong>Citation timeline:</strong>
+<div style="height: 180px; width: 100%; margin-top: 0.5rem;">
+<canvas data-labels="[2000, 2020, 2021, 2022, 2023, 2024, 2025, 2026]" data-values="[2, 1, 13, 18, 14, 16, 16, 4]" id="citationChart">
+</canvas>
+</div>
+</li>
+</ul>
+</div></div>
+<div class="cite-tabs">
+<button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-ppl')">👤 Top Citers</button>
+</div>
+<div class="cite-tab-pane active" id="cite-geo"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (50)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (23)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (19)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Netherlands (13)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Australia (10)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Switzerland (8)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">France (6)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Canada (5)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Brazil (5)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Sweden (5)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Italy (3)</span>
+<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Finland (3)</span>
+</div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
+<div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (69)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Healthcare (29)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (28)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (16)</span>
+<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Company (12)</span>
+</div>
+</div></div>
+<div class="cite-tab-pane" id="cite-inst"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>University of California San Diego</strong>
+<a class="orcid-badge" href="https://ror.org/0168r3w48" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(11)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Berlin Institute of Health at Charité - Universitätsmedizin Berlin</strong>
+<a class="orcid-badge" href="https://ror.org/0493xsw21" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(10)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Edinburgh</strong>
+<a class="orcid-badge" href="https://ror.org/01nrxwf90" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(7)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Stanford University</strong>
+<a class="orcid-badge" href="https://ror.org/00f54p054" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(6)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Illinois Urbana-Champaign</strong>
+<a class="orcid-badge" href="https://ror.org/047426m28" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Amsterdam University Medical Centers</strong>
+<a class="orcid-badge" href="https://ror.org/05grdyy37" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University of Zurich</strong>
+<a class="orcid-badge" href="https://ror.org/02crff812" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>University of California, Davis</strong>
+<a class="orcid-badge" href="https://ror.org/05rrcem69" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>National Institutes of Health</strong>
+<a class="orcid-badge" href="https://ror.org/01cwqze88" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Charité - Universitätsmedizin Berlin</strong>
+<a class="orcid-badge" href="https://ror.org/001w7jn25" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+</ul>
+</div></div>
+<div class="cite-tab-pane" id="cite-ppl"><div>
+<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
+<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Anita Bandrowski</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-5497-0243" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(12)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Malcolm Macleod</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-9187-9839" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(6)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Halil Kilicoglu</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-3987-9393" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>İbrahim Burak Özyurt</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-3944-1893" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Martijn Roelandse</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-5596-8084" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Jeffrey S. Grethe</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-5212-7052" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(5)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Peter Eckmann</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-5388-9451" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Gerben ter Riet</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-2231-7637" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Benjamin Victor Ineichen</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-1362-4819" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(4)</span>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Tracey L. Weissgerber</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-7490-2600" target="_blank">ORCID</a>
+<span class="muted" style="margin-left: 0.2rem;">(3)</span>
+</li>
+</ul>
+</div></div>
+
+
+</section>
+<div class="grid-2" id="sec-mentions">
+<section class="card span-full" id="sec-mentions" style="margin-bottom:0;">
+<h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref &amp; Open Web</span></h2>
+<div class="muted" style="margin-top: 1.5rem; font-size: 0.8rem; text-align: center; border-top: 1px dashed #e5e7eb; padding-top: 0.8rem;">
+                    Displaying the 0 most detailed mentions. Other aggregated events lack public URLs.
+                </div>
+</section>
+</div>
+<div class="grid-2" id="sec-contributors">
+<section class="card" id="sec-contributors" style="margin-bottom:0;">
+<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">5 authors · 1 institution</div>
+<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+<li style="margin-bottom: 0.4rem;">
+<strong>Joseph Menke</strong>
+<span class="badge">First</span>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-7374-7549" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Martijn Roelandse</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0001-5596-8084" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>İbrahim Burak Özyurt</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0003-3944-1893" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Maryann E. Martone</strong>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-8406-3871" target="_blank">ORCID</a>
+</li>
+<li style="margin-bottom: 0.4rem;">
+<strong>Anita Bandrowski</strong>
+<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+<a class="orcid-badge" href="https://orcid.org/0000-0002-5497-0243" target="_blank">ORCID</a>
+</li>
+</ul>
+<h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
+<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
+<li style="margin-bottom: 0.4rem;">
+<a href="https://ror.org/0168r3w48" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">University of California, San Diego</a>
+</li>
+</ul>
+</section>
+<section class="card" style="margin-bottom:0;">
+<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">22 specific concepts identified.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Blinding</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Rigour</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Transparency (behavior)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Metric (unit)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Quality (philosophy)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Proxy (statistics)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Index (typography)</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Data science</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Medical physics</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Medicine</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mathematics</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer security</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Pathology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Randomized controlled trial</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">World Wide Web</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Engineering</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Operations management</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Geometry</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Philosophy</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Epistemology</span>
+<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Machine learning</span>
+</div>
+<h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">1 targets detected.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+<span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Gender equality (0.45)</span>
+</div>
+</section>
+</div>
+<section class="card" id="sec-funding">
+<h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">5 financial grants and sponsors detected.</div>
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>NIDDK NIH HHS</strong>
+<span style="opacity: 0.8; font-weight: normal;">(U24 DK097771)</span>
+</span>
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>NIH HHS</strong>
+<span style="opacity: 0.8; font-weight: normal;">(R43 OD024432)</span>
+</span>
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>NIMH NIH HHS</strong>
+<span style="opacity: 0.8; font-weight: normal;">(R44 MH119094)</span>
+</span>
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>NIDA NIH HHS</strong>
+<span style="opacity: 0.8; font-weight: normal;">(U24 DA039832)</span>
+</span>
+<span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+<strong>National Institutes of Health</strong>
+</span>
+</div>
+</section>
+<section class="card no-print" id="sec-citations">
+<h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">Displaying 84 most recent citing works</div>
+<div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
+<table>
+<thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+<tbody id="cit-tbody"></tbody>
+</table>
+</div>
+<div class="cit-pagination">
+<span class="cit-pagination-info" id="cit-info">Loading…</span>
+<div class="cit-pagination-btns">
+<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
+<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
+<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
+</div>
+</div>
+
+</section>
+<footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+<div style="display: flex; flex-direction: column; gap: 0.4rem;">
+<div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+<svg fill="none" height="16" stroke="currentColor" style="color: #9ca3af;" viewbox="0 0 24 24" width="16"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span>Understanding our metrics: <a href="https://www.openscience.works/about.html" style="color: #2563eb; text-decoration: none; font-weight: 600;" target="_blank">Read the Methodology &amp; Legend ↗</a></span>
+</div>
+<div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-03-31T13:48:58+00:00
+                </div>
+</div>
+</footer>
+</div>
+<script>
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        })();
+    </script>
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+    </style>
+<script>
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+
+<script>
+(function() {
+  var DATA = [{"year": "2022", "title": "Planning experiments: Updated guidance on experimental design and analysis and their reporting III", "venue": "British Journal of Pharmacology", "doi": "10.1111/bph.15868", "doi_url": "https://doi.org/10.1111/bph.15868"}, {"year": "2021", "title": "Assessment of transparency indicators across the biomedical literature: How open is open?", "venue": "PLoS Biology", "doi": "10.1371/journal.pbio.3001107", "doi_url": "https://doi.org/10.1371/journal.pbio.3001107"}, {"year": "2023", "title": "Artificial intelligence to support publishing and peer review: A summary and review", "venue": "Learned Publishing", "doi": "10.1002/leap.1570", "doi_url": "https://doi.org/10.1002/leap.1570"}, {"year": "2022", "title": "Is the future of peer review automated?", "venue": "BMC Research Notes", "doi": "10.1186/s13104-022-06080-6", "doi_url": "https://doi.org/10.1186/s13104-022-06080-6"}, {"year": "2021", "title": "The MDAR (Materials Design Analysis Reporting) Framework for transparent reporting in the life sciences", "venue": "Proceedings of the National Academy of Sciences", "doi": "10.1073/pnas.2103238118", "doi_url": "https://doi.org/10.1073/pnas.2103238118"}, {"year": "2021", "title": "Automated screening of COVID-19 preprints: can we help authors to improve transparency and reproducibility?", "venue": "Nature Medicine", "doi": "10.1038/s41591-020-01203-7", "doi_url": "https://doi.org/10.1038/s41591-020-01203-7"}, {"year": "2020", "title": "The Antibody Society’s antibody validation webinar series", "venue": "mAbs", "doi": "10.1080/19420862.2020.1794421", "doi_url": "https://doi.org/10.1080/19420862.2020.1794421"}, {"year": "2022", "title": "Reproducibility, relevance and reliability as barriers to efficient and credible biomedical technology translation", "venue": "Advanced Drug Delivery Reviews", "doi": "10.1016/j.addr.2022.114118", "doi_url": "https://doi.org/10.1016/j.addr.2022.114118"}, {"year": "2023", "title": "Open Science 2.0: Towards a truly collaborative research ecosystem", "venue": "PLoS Biology", "doi": "10.1371/journal.pbio.3002362", "doi_url": "https://doi.org/10.1371/journal.pbio.3002362"}, {"year": "2023", "title": "Changes in Research Ethics, Openness, and Transparency in Empirical Studies between CHI 2017 and CHI 2022", "venue": "SERVAL (Université de Lausanne)", "doi": "10.1145/3544548.3580848", "doi_url": "https://doi.org/10.1145/3544548.3580848"}, {"year": "2021", "title": "Risk of bias assessment in preclinical literature using natural language processing", "venue": "Research Synthesis Methods", "doi": "10.1002/jrsm.1533", "doi_url": "https://doi.org/10.1002/jrsm.1533"}, {"year": "2022", "title": "A qualitative study of the barriers to using blinding in in vivo experiments and suggestions for improvement", "venue": "PLoS Biology", "doi": "10.1371/journal.pbio.3001873", "doi_url": "https://doi.org/10.1371/journal.pbio.3001873"}, {"year": "2022", "title": "Establishing Institutional Scores With the Rigor and Transparency Index: Large-scale Analysis of Scientific Reporting Quality", "venue": "Journal of Medical Internet Research", "doi": "10.2196/37324", "doi_url": "https://doi.org/10.2196/37324"}, {"year": "2024", "title": "Antibody characterization is critical to enhance reproducibility in biomedical research", "venue": "eLife", "doi": "10.7554/elife.100211", "doi_url": "https://doi.org/10.7554/elife.100211"}, {"year": "2023", "title": "From Methods to Monographs: Fostering a Culture of Research Quality", "venue": "eNeuro", "doi": "10.1523/eneuro.0247-23.2023", "doi_url": "https://doi.org/10.1523/eneuro.0247-23.2023"}, {"year": "2024", "title": "Systematic review and meta-analysis of preclinical studies", "venue": "Nature Reviews Methods Primers", "doi": "10.1038/s43586-024-00347-x", "doi_url": "https://doi.org/10.1038/s43586-024-00347-x"}, {"year": "2025", "title": "A scoping review on metrics to quantify reproducibility: a multitude of questions leads to a multitude of metrics", "venue": "Royal Society Open Science", "doi": "10.1098/rsos.242076", "doi_url": "https://doi.org/10.1098/rsos.242076"}, {"year": "2021", "title": "Toward Long-Term and Archivable Reproducibility", "venue": "Computing in Science & Engineering", "doi": "10.1109/mcse.2021.3072860", "doi_url": "https://doi.org/10.1109/mcse.2021.3072860"}, {"year": "2021", "title": "Toward assessing clinical trial publications for reporting transparency", "venue": "Journal of Biomedical Informatics", "doi": "10.1016/j.jbi.2021.103717", "doi_url": "https://doi.org/10.1016/j.jbi.2021.103717"}, {"year": "2021", "title": "Technological advances in preclinical meta-research", "venue": "BMJ Open Science", "doi": "10.1136/bmjos-2020-100131", "doi_url": "https://doi.org/10.1136/bmjos-2020-100131"}, {"year": "2022", "title": "Will Biochar Suppress or Stimulate Greenhouse Gas Emissions in Agricultural Fields? Unveiling the Dice Game through Data Syntheses", "venue": "Soil Systems", "doi": "10.3390/soilsystems6040073", "doi_url": "https://doi.org/10.3390/soilsystems6040073"}, {"year": "2021", "title": "CODECHECK: an Open Science initiative for the independent execution of computations underlying research articles during peer review to improve reproducibility", "venue": "F1000Research", "doi": "10.12688/f1000research.51738.2", "doi_url": "https://doi.org/10.12688/f1000research.51738.2"}, {"year": "2023", "title": "Evaluating LC-HRMS metabolomics data processing software using FAIR principles for research software", "venue": "Metabolomics", "doi": "10.1007/s11306-023-01974-3", "doi_url": "https://doi.org/10.1007/s11306-023-01974-3"}, {"year": "2023", "title": "Methodology reporting improved over time in 176,469 randomized controlled trials", "venue": "Journal of Clinical Epidemiology", "doi": "10.1016/j.jclinepi.2023.08.004", "doi_url": "https://doi.org/10.1016/j.jclinepi.2023.08.004"}, {"year": "2021", "title": "CODECHECK: an Open Science initiative for the independent execution of computations underlying research articles during peer review to improve reproducibility", "venue": "F1000Research", "doi": "10.12688/f1000research.51738.1", "doi_url": "https://doi.org/10.12688/f1000research.51738.1"}, {"year": "2022", "title": "Guide for collecting and reporting metadata on protocol variables and parameters from slide-based histotechnology assays to enhance reproducibility", "venue": "Journal of Histotechnology", "doi": "10.1080/01478885.2022.2134022", "doi_url": "https://doi.org/10.1080/01478885.2022.2134022"}, {"year": "2023", "title": "A Tale of Two Academic Communities: Digital Imaginaries of Automatic Screening Tools in Editorial Practice", "venue": "Minerva", "doi": "10.1007/s11024-022-09484-7", "doi_url": "https://doi.org/10.1007/s11024-022-09484-7"}, {"year": "2023", "title": "Synthesis of Publication Metrics in Kinesiology-Related Journals: Proxies for Rigor, Usage, and Prestige", "venue": "Quest", "doi": "10.1080/00336297.2023.2237150", "doi_url": "https://doi.org/10.1080/00336297.2023.2237150"}, {"year": "2024", "title": "Automatic categorization of self-acknowledged limitations in randomized controlled trial publications", "venue": "Journal of Biomedical Informatics", "doi": "10.1016/j.jbi.2024.104628", "doi_url": "https://doi.org/10.1016/j.jbi.2024.104628"}, {"year": "2024", "title": "A survey of researchers’ methods sharing practices and priorities", "venue": "PeerJ", "doi": "10.7717/peerj.16731", "doi_url": "https://doi.org/10.7717/peerj.16731"}, {"year": "2022", "title": "Rigor, Reproducibility, and Transparency in SharedResearch Resources: Follow-Up Survey and Recommendations forImprovements", "venue": "Journal of Biomolecular Techniques JBT", "doi": "10.7171/3fc1f5fe.fa789303", "doi_url": "https://doi.org/10.7171/3fc1f5fe.fa789303"}, {"year": "2025", "title": "Developing a multiscale neural connectivity knowledgebase of the autonomic nervous system", "venue": "Frontiers in Neuroinformatics", "doi": "10.3389/fninf.2025.1541184", "doi_url": "https://doi.org/10.3389/fninf.2025.1541184"}, {"year": "2025", "title": "Modeling reproductive and pregnancy-associated tissues using organ-on-chip platforms: challenges, limitations, and the high throughput data frontier", "venue": "Frontiers in Bioengineering and Biotechnology", "doi": "10.3389/fbioe.2025.1568389", "doi_url": "https://doi.org/10.3389/fbioe.2025.1568389"}, {"year": "2025", "title": "Neurosurgical journals’ policies on artificial intelligence use in manuscript preparation and peer review", "venue": "Neurosurgical Review", "doi": "10.1007/s10143-025-03793-7", "doi_url": "https://doi.org/10.1007/s10143-025-03793-7"}, {"year": "2025", "title": "Be CLEAR to ensure methodological and data transparency", "venue": "Trends in Pharmacological Sciences", "doi": "10.1016/j.tips.2025.09.001", "doi_url": "https://doi.org/10.1016/j.tips.2025.09.001"}, {"year": "2025", "title": "Leveraging artificial intelligence in the peer review of neurosurgical research articles", "venue": "Neurosurgical Review", "doi": "10.1007/s10143-025-03783-9", "doi_url": "https://doi.org/10.1007/s10143-025-03783-9"}, {"year": "2021", "title": "Misidentified biomedical resources: Journal guidelines are not a quick fix", "venue": "International Journal of Cancer", "doi": "10.1002/ijc.33882", "doi_url": "https://doi.org/10.1002/ijc.33882"}, {"year": "2022", "title": "Meta-analysis on reporting practices as a source of heterogeneity in in vitro cancer research", "venue": "BMJ Open Science", "doi": "10.1136/bmjos-2021-100272", "doi_url": "https://doi.org/10.1136/bmjos-2021-100272"}, {"year": "2024", "title": "Advocating for Generalizability: Accepting Inherent Variability in Translation of Animal Research Outcomes", "venue": "Annual Review of Animal Biosciences", "doi": "10.1146/annurev-animal-021022-043531", "doi_url": "https://doi.org/10.1146/annurev-animal-021022-043531"}, {"year": "2022", "title": "Interdisciplinary Approaches and Strategies from Research Reproducibility 2020: Educating for Reproducibility", "venue": "Journal of Statistics and Data Science Education", "doi": "10.1080/26939169.2022.2104767", "doi_url": "https://doi.org/10.1080/26939169.2022.2104767"}, {"year": "2021", "title": "Transparência e integridade em pesquisa: dos problemas às potenciais soluções", "venue": "Revista Brasileira de Geriatria e Gerontologia", "doi": "10.1590/1981-22562021024.210239", "doi_url": "https://doi.org/10.1590/1981-22562021024.210239"}, {"year": "2023", "title": "Reproducibility and rigor in rheumatology research", "venue": "Frontiers in Medicine", "doi": "10.3389/fmed.2022.1073551", "doi_url": "https://doi.org/10.3389/fmed.2022.1073551"}, {"year": "2021", "title": "Converting Access Microbiology to an open research platform: focus group and AI review tool research results", "venue": "Access Microbiology", "doi": "10.1099/acmi.0.000232", "doi_url": "https://doi.org/10.1099/acmi.0.000232"}, {"year": "2022", "title": "SciScore, a tool that can measure rigor criteria presence or absence in a biomedical study", "venue": "Unknown", "doi": "10.14293/s2199-1006.1.sor-.pppxbqn6.v1", "doi_url": "https://doi.org/10.14293/s2199-1006.1.sor-.pppxbqn6.v1"}, {"year": "2022", "title": "A survey of researchers' methods sharing practices and priorities", "venue": "MetArXiv (OSF Preprints)", "doi": "10.31222/osf.io/7jxav", "doi_url": "https://doi.org/10.31222/osf.io/7jxav"}, {"year": "2023", "title": "Changes in Research Ethics, Openness, and Transparency in Empirical Studies between CHI 2017 and CHI 2022", "venue": "OSF Preprints (OSF Preprints)", "doi": "10.31219/osf.io/8ztvq", "doi_url": "https://doi.org/10.31219/osf.io/8ztvq"}, {"year": "2023", "title": "Science Evaluation: Peer Review, Bibliometrics, and Research Impact Assessment", "venue": "Unknown", "doi": "10.1007/978-3-031-27111-3_8", "doi_url": "https://doi.org/10.1007/978-3-031-27111-3_8"}, {"year": "2025", "title": "Misidentified cell lines: failures of peer review, varying journal responses to misidentification inquiries, and strategies for safeguarding biomedical research", "venue": "Research Integrity and Peer Review", "doi": "10.1186/s41073-025-00170-2", "doi_url": "https://doi.org/10.1186/s41073-025-00170-2"}, {"year": "2024", "title": "Research rigor and reproducibility in research education: A CTSA institutional survey", "venue": "Journal of Clinical and Translational Science", "doi": "10.1017/cts.2024.10", "doi_url": "https://doi.org/10.1017/cts.2024.10"}, {"year": "2024", "title": "Research Transparency in 59 Disciplines of Clinical Medicine: A Meta-Research Study", "venue": "MetArXiv (OSF Preprints)", "doi": "10.31222/osf.io/u3w5s", "doi_url": "https://doi.org/10.31222/osf.io/u3w5s"}, {"year": "2024", "title": "Connecting the dots in neuroscience research: The future of evidence synthesis", "venue": "Experimental Neurology", "doi": "10.1016/j.expneurol.2024.115047", "doi_url": "https://doi.org/10.1016/j.expneurol.2024.115047"}, {"year": "2025", "title": "A call to action to address critical flaws and bias in laboratory animal experiments and preclinical research", "venue": "Scientific Reports", "doi": "10.1038/s41598-025-15935-4", "doi_url": "https://doi.org/10.1038/s41598-025-15935-4"}, {"year": "2022", "title": "Mapping the content of comments on bioRxiv and medRxiv preprints", "venue": "bioRxiv", "doi": "10.1101/2022.11.23.517621", "doi_url": "https://doi.org/10.1101/2022.11.23.517621"}, {"year": "2024", "title": "Do organisms need an impact factor? Citations of key biological resources including model organisms reveal usage patterns and impact", "venue": "bioRxiv", "doi": "10.1101/2024.01.15.575636", "doi_url": "https://doi.org/10.1101/2024.01.15.575636"}, {"year": "2021", "title": "Meta-analysis on reporting practices as a source of heterogeneity inin vitrocancer research", "venue": "bioRxiv", "doi": "10.1101/2021.10.05.463182", "doi_url": "https://doi.org/10.1101/2021.10.05.463182"}, {"year": "2024", "title": "Research Transparency in 59 Disciplines of Clinical Medicine: A Meta-Research Study", "venue": "bioRxiv", "doi": "10.1101/2024.04.08.24305416", "doi_url": "https://doi.org/10.1101/2024.04.08.24305416"}, {"year": "2023", "title": "Auto-STEED: A data mining tool for automated extraction of experimental parameters and risk of bias items fromin vivopublications", "venue": "bioRxiv", "doi": "10.1101/2023.02.24.529867", "doi_url": "https://doi.org/10.1101/2023.02.24.529867"}, {"year": "2022", "title": "Establishing Institutional Scores With the Rigor and Transparency Index: Large-scale Analysis of Scientific Reporting Quality (Preprint)", "venue": "Unknown", "doi": "10.2196/preprints.37324", "doi_url": "https://doi.org/10.2196/preprints.37324"}, {"year": "2022", "title": "Consideraciones eticas en el uso de animales de experimentacion", "venue": "Archivos de Neurociencias", "doi": "10.31157/an.v1iinpress.342", "doi_url": "https://doi.org/10.31157/an.v1iinpress.342"}, {"year": "2022", "title": "Ten Meta Science Insights to Deal With the Credibility Crisis in the Social Sciences", "venue": "SocArXiv (OSF Preprints)", "doi": "10.31235/osf.io/rm4p8", "doi_url": "https://doi.org/10.31235/osf.io/rm4p8"}, {"year": "2022", "title": "Consideraciones eticas en el uso de animales de experimentacion", "venue": "Archivos de Neurociencias", "doi": "10.31157/an.v27i3.342", "doi_url": "https://doi.org/10.31157/an.v27i3.342"}, {"year": "2023", "title": "Auto-STEED: A data mining tool for automated extraction of experimental parameters and risk of bias items from in vivo publications", "venue": "Research Square", "doi": "10.21203/rs.3.rs-2841635/v1", "doi_url": "https://doi.org/10.21203/rs.3.rs-2841635/v1"}, {"year": "2023", "title": "Evaluation of Transparency and Openness Guidelines in Physical Therapist Journals", "venue": "Physical Therapy", "doi": "10.1093/ptj/pzad133", "doi_url": "https://doi.org/10.1093/ptj/pzad133"}, {"year": "2024", "title": "Blinding (masking) in non-clinical studies to improve reproducibity and translability (literary review)", "venue": "Translational Medicine", "doi": "10.18705/2311-4495-2024-11-1-122-132", "doi_url": "https://doi.org/10.18705/2311-4495-2024-11-1-122-132"}, {"year": "2024", "title": "How transparent and reproducible are studies that use animal models of opioid addiction?", "venue": "Unknown", "doi": "10.31234/osf.io/rsc54", "doi_url": "https://doi.org/10.31234/osf.io/rsc54"}, {"year": "2024", "title": "Automatic Detection and Extraction of Key Resources from Tables in Biomedical Papers", "venue": "bioRxiv", "doi": "10.1101/2024.10.15.618379", "doi_url": "https://doi.org/10.1101/2024.10.15.618379"}, {"year": "2024", "title": "STEED: A data mining tool for automated extraction of experimental parameters and risk of bias items from in vivo publications", "venue": "PLoS ONE", "doi": "10.1371/journal.pone.0311358", "doi_url": "https://doi.org/10.1371/journal.pone.0311358"}, {"year": "2000", "title": "10.1016/b978-3-437-21073-0.00047-7", "venue": "Time to knit", "doi": "10.1016/b978-3-437-21073-0.00047-7", "doi_url": "https://doi.org/10.1016/b978-3-437-21073-0.00047-7"}, {"year": "2000", "title": "10.1016/b978-3-437-21073-0.00046-5", "venue": "Time to knit", "doi": "10.1016/b978-3-437-21073-0.00046-5", "doi_url": "https://doi.org/10.1016/b978-3-437-21073-0.00046-5"}, {"year": "2025", "title": "Automatic detection and extraction of key resources from tables in biomedical papers", "venue": "BioData Mining", "doi": "10.1186/s13040-025-00438-9", "doi_url": "https://doi.org/10.1186/s13040-025-00438-9"}, {"year": "2025", "title": "How Transparent and Reproducible Are Studies That Use Animal Models of Opioid Addiction?", "venue": "Addiction Biology", "doi": "10.1111/adb.70027", "doi_url": "https://doi.org/10.1111/adb.70027"}, {"year": "2024", "title": "Protocolo de acceso abierto y clasificación de la literatura científica sobre espirometría", "venue": "NCT Neumología y Cirugía de Tórax", "doi": "10.35366/119446", "doi_url": "https://doi.org/10.35366/119446"}, {"year": "2024", "title": "Empiema secundario a embolismo séptico en un paciente con trombosis del seno cavernoso: reporte de un caso y revisión de la literatura", "venue": "NCT Neumología y Cirugía de Tórax", "doi": "10.35366/119447", "doi_url": "https://doi.org/10.35366/119447"}, {"year": "2025", "title": "Using ChatGPT to Evaluate the Methodological Components of Research Proposals: An Experimental Study on Undergraduate English Majors in Vietnam", "venue": "Computer-Assisted Language Learning Electronic Journal", "doi": "10.54855/callej.252637", "doi_url": "https://doi.org/10.54855/callej.252637"}, {"year": "2022", "title": "Prolog: Translationale neurologische Forschung – From Bench to Bedside", "venue": "Elsevier eBooks", "doi": "10.1016/b978-3-437-21884-2.00032-5", "doi_url": "https://doi.org/10.1016/b978-3-437-21884-2.00032-5"}, {"year": "2025", "title": "Wissenschaftliche Bewertung: Peer-Review, Bibliometrie und Forschungsimpact-Bewertung", "venue": "Unknown", "doi": "10.1007/978-3-031-92469-9_8", "doi_url": "https://doi.org/10.1007/978-3-031-92469-9_8"}, {"year": "2025", "title": "Do organisms need an impact factor? Citations of key biological resources including model organisms reveal usage patterns and impact", "venue": "PLoS ONE", "doi": "10.1371/journal.pone.0327344", "doi_url": "https://doi.org/10.1371/journal.pone.0327344"}, {"year": "2025", "title": "A Systematic Assessment of Drug Repurposing Efforts Against COVID‐19: Limited Successes and Key Challenges", "venue": "Journal of Clinical Pharmacy and Therapeutics", "doi": "10.1155/jcpt/3796111", "doi_url": "https://doi.org/10.1155/jcpt/3796111"}, {"year": "2025", "title": "Publishing gold standard science", "venue": "Journal of Clinical Investigation", "doi": "10.1172/jci201281", "doi_url": "https://doi.org/10.1172/jci201281"}, {"year": "2025", "title": "Monitoring of Open Science practices: a survey of 10 major medical journals", "venue": "bioRxiv", "doi": "10.1101/2025.11.26.25341061", "doi_url": "https://doi.org/10.1101/2025.11.26.25341061"}, {"year": "2026", "title": "Genetic Insights into the Economic Toll of Cell Line Misidentification: A Comprehensive Review", "venue": "Medical Sciences", "doi": "10.3390/medsci14010025", "doi_url": "https://doi.org/10.3390/medsci14010025"}, {"year": "2026", "title": "Rigor and Transparency in two neurotrauma-publishing journals: editorial policies improve transparent reporting", "venue": "bioRxiv (Cold Spring Harbor Laboratory)", "doi": "10.64898/2026.01.16.699952", "doi_url": "https://doi.org/10.64898/2026.01.16.699952"}, {"year": "2026", "title": "Validating AI-assisted evaluation of open science practices in brain sciences: ChatGPT, Claude and human expert comparisons", "venue": "Royal Society Open Science", "doi": "10.1098/rsos.250381", "doi_url": "https://doi.org/10.1098/rsos.250381"}, {"year": "2026", "title": "Filtering facepiece respirator use among farm youth in the US: A review", "venue": "Journal of Occupational and Environmental Hygiene", "doi": "10.1080/15459624.2025.2589137", "doi_url": "https://doi.org/10.1080/15459624.2025.2589137"}];
+  var PER  = 25;
+  var _p   = 1;
+  var _tot = Math.ceil(DATA.length / PER);
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function render(page) {
+    _p = page;
+    var tbody  = document.getElementById('cit-tbody');
+    var info   = document.getElementById('cit-info');
+    var prev   = document.getElementById('cit-prev');
+    var next   = document.getElementById('cit-next');
+    var nums   = document.getElementById('cit-page-nums');
+    if (!tbody) return;
+
+    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
+    for (var i=s; i<e; i++) {
+      var r = DATA[i];
+      var d = r.doi_url
+        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
+        : esc(r.doi||'');
+      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
+    }
+    tbody.innerHTML = rows;
+    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
+    if (prev) prev.disabled = (page===1);
+    if (next) next.disabled = (page===_tot);
+
+    if (nums) {
+      var shown = [], html = '', prev2 = null;
+      for (var p=1; p<=_tot; p++) {
+        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
+      }
+      for (var i=0; i<shown.length; i++) {
+        var p=shown[i];
+        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
+        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
+        prev2=p;
+      }
+      nums.innerHTML = html;
+    }
+  }
+
+  window.citGoTo = function(p) {
+    if(p<1||p>_tot) return;
+    render(p);
+    var sec=document.getElementById('sec-citations');
+    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+  window.citPrev = function() { window.citGoTo(_p-1); };
+  window.citNext = function() { window.citGoTo(_p+1); };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){render(1);});
+  else render(1);
+})();
+</script>
+
+<script>
+function citeSwitchTab(btn, tabId) {
+  var card = btn.closest('section, .card') || btn.parentElement;
+  // Find tab buttons and panes in surrounding context
+  var tabsEl = btn.closest('.cite-tabs');
+  if (!tabsEl) return;
+  var parent = tabsEl.parentElement;
+  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
+  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
+  btn.classList.add('active');
+  var pane = document.getElementById(tabId);
+  if (pane) pane.classList.add('active');
+}
+</script>
+
+<script>
+(function() {
+  function init() {
+    document.querySelectorAll('section.card, .card').forEach(function(card) {
+      // Skip the hero header
+      if (card.tagName === 'HEADER') return;
+      var h2 = null;
+      for (var i=0; i<card.children.length; i++) {
+        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
+      }
+      if (!h2) return;
+
+      card.classList.add('card-collapsible');
+
+      // Add chevron span
+      var chev = document.createElement('span');
+      chev.className = 'chevron';
+      chev.setAttribute('aria-hidden','true');
+      chev.textContent = '▾';
+      h2.appendChild(chev);
+
+      // Wrap siblings after h2
+      var wrap = document.createElement('div');
+      wrap.className = 'card-body-wrap';
+      var kids = Array.from(card.children), after = false;
+      kids.forEach(function(c) {
+        if (c===h2){after=true;return;}
+        if (after) wrap.appendChild(c);
+      });
+      card.appendChild(wrap);
+      // CSS handles open state with max-height:9999px — safe for async-loaded content
+
+      h2.addEventListener('click', function() {
+        card.classList.toggle('is-collapsed');
+      });
+    });
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<script>
+(function() {
+  function init() {
+    var nav = document.getElementById('sticky-nav');
+    if (!nav) return;
+    var links = Array.from(nav.querySelectorAll('a'));
+    var targets = links.map(function(l) {
+      var id = l.getAttribute('href').slice(1);
+      return {el: document.getElementById(id), link: l};
+    }).filter(function(t){return t.el;});
+
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          links.forEach(function(l){l.classList.remove('snav-active');});
+          var match = links.find(function(l){
+            return l.getAttribute('href')==='#'+e.target.id;
+          });
+          if (match) match.classList.add('snav-active');
+        }
+      });
+    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
+
+    targets.forEach(function(t){obs.observe(t.el);});
+  }
+  if (document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('.role-pill[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Amsterdam University Press - Dashboard</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1100px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.75rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        
+        .header-bar { display: flex; align-items: center; gap: 1.5rem; }
+        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; }
+        .hero-title { font-size: 2.1rem; margin: 0 0 0.5rem 0; font-weight: 700; line-height: 1.2; }
+        
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.1rem 0.2rem 0.2rem 0; font-weight: 500; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        
+        .stat-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem; text-align: center; }
+        .stat-number { font-size: 2.5rem; font-weight: 700; color: #0f172a; line-height: 1; margin-bottom: 0.25rem; }
+        .stat-label { font-size: 0.85rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+        
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; position: sticky; top: 0; z-index: 10; }
+        tr:hover { background-color: #f9fafb; }
+        
+        h2 { margin-top: 0; font-size: 1.25rem; color: #111827; display: flex; justify-content: space-between; align-items: center; }
+        
+        .list-row { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f3f4f6; padding:0.4rem 0; }
+        .list-row:last-child { border-bottom: none; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; }
+            .grid-2, .grid-3, .grid-4 { display: grid !important; }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000;">
+        Print PDF Dashboard
+    </button>
+    
+    <div class="page">
+        <header class="hero card">
+            <div class="header-bar">
+                <div class="logo-wrap">
+                    <img src="openscience-logo.png" alt="OpenScience Works Logo">
+                </div>
+                <div>
+                    <h1 class="hero-title">Amsterdam University Press</h1>
+                    <div class="muted" style="font-size: 1rem;">Aggregated analysis of <strong>15</strong> works (0 Articles, 15 Books)</div>
+                </div>
+            </div>
+        </header>
+
+        
+        <section class="card" style="margin-top: -0.5rem;">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text" style="line-height: 1.6;">
+                <h3 class='story-subheading'>Executive Summary</h3><p class='story-text'>The Amsterdam University Press encompasses 15 works that have collectively generated significant scholarly and public impact. Anchored predominantly in Sociology, Media studies, and Perspective (graphical), this collection has amassed a highly concentrated thematic footprint.</p><p class='story-text'>Commitment to open knowledge sharing is a defining characteristic of this dataset. A significant portion of this dataset prioritizes accessibility, with 53% of the portfolio available via Open Access.</p><p class='story-text'>The impact of these works is geographically and institutionally diverse. Engagement extends beyond standard academia, with measurable uptake in the Company sector. this portfolio demonstrates both rapid public uptake and sustained relevance as a methodological anchor for future synthesis.</p>
+            </div>
+        </section>
+        
+        
+        <div class="grid-4">
+            <div class="stat-box">
+                <div class="stat-number">17</div>
+                <div class="stat-label">Total Citations</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">91</div>
+                <div class="stat-label">Online Mentions</div>
+            </div>
+            <div class="stat-box">
+                
+                <div class="stat-number">53%</div>
+                <div class="stat-label">Open Access</div>
+                <div class="muted" style="font-size:0.7rem; margin-top:0.25rem;">8 of 15 works</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Citing Countries</div>
+            </div>
+        </div>
+
+        
+
+        <div class="grid-4">
+            <section class="card" style="margin-bottom:0; padding:1.25rem;">
+                <h2 style="font-size:1.1rem; margin-bottom:0.2rem;"><span>Citing Sectors</span> <span class="badge">ROR</span></h2>
+                <div class='muted' style='margin-bottom:1rem; font-size:0.8rem;'>Institutional profiles.</div>
+                <div style="height: 180px; width: 100%; display: flex; justify-content: center;">
+                    <canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Company&#34;]" data-values="[8, 1]"></canvas>
+                </div>
+            </section>
+            
+            <section class="card" style="margin-bottom:0; padding:1.25rem;">
+                <h2 style="font-size:1.1rem; margin-bottom:0.2rem;"><span>Citation Context</span> <span class="badge">scite</span></h2>
+                <div class='muted' style='margin-bottom:1rem; font-size:0.8rem;'>Scholarly reception.</div>
+                <div style="height: 180px; width: 100%; display: flex; justify-content: center;">
+                    <canvas id="sciteChart" data-labels="[&#34;Supporting&#34;, &#34;Mentioning&#34;, &#34;Contradicting&#34;]" data-values="[0, 5, 0]"></canvas>
+                </div>
+            </section>
+            
+            <section class="card" style="margin-bottom:0; padding:1.25rem;">
+                <h2 style="font-size:1.1rem; margin-bottom:0.2rem;"><span>Citing Work Types</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-bottom:1rem; font-size:0.8rem;'>Composition of literature.</div>
+                <div style="height: 180px; width: 100%; display: flex; justify-content: center;">
+                    <canvas id="wtChart" data-labels="[&#34;Book&#34;, &#34;Article&#34;, &#34;Book-Chapter&#34;, &#34;Preprint&#34;, &#34;Other&#34;, &#34;Dissertation&#34;]" data-values="[4, 6, 3, 1, 2, 1]"></canvas>
+                </div>
+            </section>
+
+            <section class="card" style="margin-bottom:0; padding:1.25rem;">
+                <h2 style="font-size:1.1rem; margin-bottom:0.2rem;"><span>Top Citing Venues</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-bottom:1rem; font-size:0.8rem;'>Most frequent journals.</div>
+                <div style="height: 180px; width: 100%; display: flex; justify-content: center;">
+                    <canvas id="venueChart" data-labels="[&#34;Unknown&#34;, &#34;UCL Press eBooks&#34;, &#34;Journal of Legal Anthropology&#34;, &#34;Social Media + Society&#34;, &#34;AoIR Selected Papers of Internet Research&#34;, &#34;Cambridge University Press eBooks&#34;]" data-values="[5, 4, 1, 1, 1, 1]"></canvas>
+                </div>
+            </section>
+        </div>
+
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Dominant Concepts</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:1rem;'>Weighted by AI confidence score.</div>
+                <div>
+                    
+                        
+                            <span class="tag">Sociology</span>
+                        
+                    
+                        
+                            <span class="tag">Media studies</span>
+                        
+                    
+                        
+                            <span class="tag">Perspective (graphical)</span>
+                        
+                    
+                        
+                            <span class="tag">Art</span>
+                        
+                    
+                        
+                            <span class="tag">History</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Aesthetics</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">German</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Materialism</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Computer science</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Technological convergence</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Negotiation</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Repertoire</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Natural (archaeology)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Adaptation (eye)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Metaphor</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Digital media</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Tracking (education)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Swarm behaviour</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Political science</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Epistemology</span>
+                        
+                    
+                    
+                </div>
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Inferred Portfolio Roles</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:1rem;'>Cumulative heuristic classification.</div>
+                <div style="display:flex; flex-direction:column; gap:0.5rem;">
+                    
+                        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f3f4f6; padding-bottom:0.25rem;">
+                            <span style="font-weight: 500; color: #374151;">Commercial Linkage</span>
+                            <span class="muted">Score: 13.5</span>
+                        </div>
+                    
+                        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f3f4f6; padding-bottom:0.25rem;">
+                            <span style="font-weight: 500; color: #374151;">Active Public Discourse</span>
+                            <span class="muted">Score: 5.9</span>
+                        </div>
+                    
+                        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f3f4f6; padding-bottom:0.25rem;">
+                            <span style="font-weight: 500; color: #374151;">Sustainability & Policy Relevance</span>
+                            <span class="muted">Score: 2.2</span>
+                        </div>
+                    
+                        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f3f4f6; padding-bottom:0.25rem;">
+                            <span style="font-weight: 500; color: #374151;">Scholarly Uptake</span>
+                            <span class="muted">Score: 1.8</span>
+                        </div>
+                    
+                        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #f3f4f6; padding-bottom:0.25rem;">
+                            <span style="font-weight: 500; color: #374151;">Public Visibility & Knowledge Base</span>
+                            <span class="muted">Score: 0.8</span>
+                        </div>
+                    
+                    
+                </div>
+            </section>
+        </div>
+
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Top Citing Countries</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:1rem;'>Based on author affiliations of citing works.</div>
+                <div>
+                    
+                        
+                            <span class="tag">Australia (2)</span>
+                        
+                    
+                        
+                            <span class="tag">Israel (1)</span>
+                        
+                    
+                        
+                            <span class="tag">Russia (1)</span>
+                        
+                    
+                        
+                            <span class="tag">Canada (1)</span>
+                        
+                    
+                        
+                            <span class="tag">Spain (1)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">United States (1)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">United Kingdom (1)</span>
+                        
+                    
+                    
+                </div>
+            </section>
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Top Citing Institutions</span> <span class="badge">ROR / OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:1rem;'>Canonical names based on author affiliations.</div>
+                <div>
+                    
+                        
+                            <span class="tag">RMIT University (2)</span>
+                        
+                    
+                        
+                            <span class="tag">Hebrew University of Jerusalem (1)</span>
+                        
+                    
+                        
+                            <span class="tag">Humanitarian Institute (1)</span>
+                        
+                    
+                        
+                            <span class="tag">Wycliffe College (1)</span>
+                        
+                    
+                        
+                            <span class="tag">University of Toronto (1)</span>
+                        
+                    
+                        
+                            <span class="tag">Institute for Christian Studies (1)</span>
+                        
+                    
+                        
+                            <span class="tag">Universidad de Extremadura (1)</span>
+                        
+                    
+                        
+                            <span class="tag">University of Oregon (1)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Pomona College (1)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">University of Birmingham (1)</span>
+                        
+                    
+                        
+                            <span class="tag tag-soft">Royal Shakespeare Company (United Kingdom) (1)</span>
+                        
+                    
+                    
+                </div>
+            </section>
+        </div>
+
+        <div class="grid-2">
+            <section class="card span-full" style="margin-bottom:0;">
+                <h2><span>Top Funders</span> <span class="badge">Europe PMC</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:1rem;'>Number of distinct works supported.</div>
+                <div>
+                    
+                        <span class="muted">Not available.</span>
+                    
+                </div>
+            </section>
+            
+            
+        </div>
+
+        <section class="card span-full">
+            <h2><span>Core Authors</span> <span class="badge">Portfolio</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:1rem;'>Authors with more than 1 work in this dataset.</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.5rem 1.5rem;">
+                
+                
+                    <div class="muted" style="margin-top:0.5rem;">No authors have multiple works in this dataset.</div>
+                
+            </div>
+        </section>
+        </div>
+
+        <section class="card">
+            <h2><span>Citation Timeline</span></h2>
+            <div style="height: 220px; width: 100%; margin-top: 0.5rem;">
+                <canvas id="citationChart" data-labels="[&#34;2020&#34;, &#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2026&#34;]" data-values="[4, 1, 5, 2, 4, 1]"></canvas>
+            </div>
+        </section>
+
+        <section class="card print-breakable">
+            <h2><span>Included Works</span></h2>
+            <div style="max-height: 600px; overflow-y: auto;">
+                <table>
+                    <thead><tr><th>Year</th><th>Type</th><th>Title</th><th>DOI</th><th>Citations</th><th>Events</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Digital Media Practices in Households</td>
+                        <td><a href="https://doi.org/10.5117/9789462989504" target="_blank" style="color:#2563eb; text-decoration:none;">10.5117/9789462989504</a></td>
+                        <td><strong>9</strong></td>
+                        <td>11</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Adaptation in the Age of Media Convergence</td>
+                        <td><a href="https://doi.org/10.5117/9789462983663" target="_blank" style="color:#2563eb; text-decoration:none;">10.5117/9789462983663</a></td>
+                        <td><strong>6</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Exceptional Bodies in Early Modern Culture</td>
+                        <td><a href="https://doi.org/10.5117/9789463721745" target="_blank" style="color:#2563eb; text-decoration:none;">10.5117/9789463721745</a></td>
+                        <td><strong>1</strong></td>
+                        <td>9</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>List Cultures</td>
+                        <td><a href="https://doi.org/10.5117/9789462981102" target="_blank" style="color:#2563eb; text-decoration:none;">10.5117/9789462981102</a></td>
+                        <td><strong>1</strong></td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>None</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Untitled Book</td>
+                        <td><a href="https://doi.org/10.2307/j.ctt1v2xsqn" target="_blank" style="color:#2563eb; text-decoration:none;">10.2307/j.ctt1v2xsqn</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Body, Capital, and Screens</td>
+                        <td><a href="https://doi.org/10.2307/j.ctv12sdvgj" target="_blank" style="color:#2563eb; text-decoration:none;">10.2307/j.ctv12sdvgj</a></td>
+                        <td><strong>0</strong></td>
+                        <td>14</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Zootechnologies</td>
+                        <td><a href="https://doi.org/10.5117/9789462986206" target="_blank" style="color:#2563eb; text-decoration:none;">10.5117/9789462986206</a></td>
+                        <td><strong>0</strong></td>
+                        <td>8</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>None</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Untitled Book</td>
+                        <td><a href="https://doi.org/10.5117/9789048568284" target="_blank" style="color:#2563eb; text-decoration:none;">10.5117/9789048568284</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>None</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Untitled Book</td>
+                        <td><a href="https://doi.org/10.2307/j.ctt45kfbw" target="_blank" style="color:#2563eb; text-decoration:none;">10.2307/j.ctt45kfbw</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Women in the Silent Cinema</td>
+                        <td><a href="https://doi.org/10.5117/9789089647191" target="_blank" style="color:#2563eb; text-decoration:none;">10.5117/9789089647191</a></td>
+                        <td><strong>0</strong></td>
+                        <td>40</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>None</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Untitled Book</td>
+                        <td><a href="https://doi.org/10.5117/9789048512270" target="_blank" style="color:#2563eb; text-decoration:none;">10.5117/9789048512270</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>None</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Untitled Book</td>
+                        <td><a href="https://doi.org/10.5117/9789048551774" target="_blank" style="color:#2563eb; text-decoration:none;">10.5117/9789048551774</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>None</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Untitled Book</td>
+                        <td><a href="https://doi.org/10.5117/9789048524518" target="_blank" style="color:#2563eb; text-decoration:none;">10.5117/9789048524518</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Islam in a Secular State</td>
+                        <td><a href="https://doi.org/10.5117/9789463724012" target="_blank" style="color:#2563eb; text-decoration:none;">10.5117/9789463724012</a></td>
+                        <td><strong>0</strong></td>
+                        <td>8</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td><span class="badge" style="background: #f3f4f6; color: #4b5563;">Book</span></td>
+                        <td>Human Trafficking in Medieval Europe</td>
+                        <td><a href="https://doi.org/10.5117/9789463723336" target="_blank" style="color:#2563eb; text-decoration:none;">10.5117/9789463723336</a></td>
+                        <td><strong>0</strong></td>
+                        <td>0</td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="muted" style="text-align: right; margin-top: 2rem;">Dashboard generated on 2026-03-19 15:54:07 UTC</footer>
+    </div>
+
+    <script>
+        // 1. Citation Timeline (Restored to solid #3b82f6 blue)
+        (function() {
+            const canvas = document.getElementById('citationChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, border: { display: false } },
+                        x: { grid: { display: false }, border: { display: false } }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        })();
+
+        // 2. Scite Context (Semantic Doughnut)
+        (function() {
+            const canvas = document.getElementById('sciteChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            
+            if(data.reduce((a, b) => a + b, 0) === 0) {
+                canvas.parentElement.innerHTML = '<div class="muted" style="display:flex; align-items:center; height:100%;">No citation context data available.</div>';
+                return;
+            }
+
+            new Chart(canvas.getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: ['#16a34a', '#9ca3af', '#dc2626'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: { legend: { position: 'right', labels: { boxWidth: 10, font: { size: 10 } } } }
+                }
+            });
+        })();
+
+        // 3. Work Types (Professional Blue/Slate Palette Doughnut)
+        (function() {
+            const canvas = document.getElementById('wtChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            
+            if(data.length === 0) {
+                canvas.parentElement.innerHTML = '<div class="muted" style="display:flex; align-items:center; height:100%;">No work type data available.</div>';
+                return;
+            }
+
+            new Chart(canvas.getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: ['#2563eb', '#0d9488', '#6366f1', '#475569', '#9333ea', '#0ea5e9', '#8b5cf6', '#14b8a6'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: { legend: { position: 'right', labels: { boxWidth: 10, font: { size: 10 } } } }
+                }
+            });
+        })();
+
+        // 4. Venues (Greyscale Doughnut)
+        (function() {
+            const canvas = document.getElementById('venueChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            
+            if(data.length === 0) {
+                canvas.parentElement.innerHTML = '<div class="muted" style="display:flex; align-items:center; height:100%;">No venue data available.</div>';
+                return;
+            }
+
+            new Chart(canvas.getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: ['#2563eb', '#0d9488', '#6366f1', '#475569', '#9333ea', '#0ea5e9', '#8b5cf6', '#14b8a6'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: { legend: { position: 'right', labels: { boxWidth: 10, font: { size: 10 } } } }
+                }
+            });
+        })();
+
+        // 5. Sectors (Professional Blue/Slate Palette Doughnut)
+        (function() {
+            const canvas = document.getElementById('sectorChart');
+            if(!canvas) return;
+            const labels = JSON.parse(canvas.getAttribute('data-labels'));
+            const data = JSON.parse(canvas.getAttribute('data-values'));
+            
+            if(data.length === 0) {
+                canvas.parentElement.innerHTML = '<div class="muted" style="display:flex; align-items:center; height:100%;">No sector data available.</div>';
+                return;
+            }
+
+            new Chart(canvas.getContext('2d'), {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: ['#2563eb', '#0d9488', '#6366f1', '#475569', '#9333ea', '#0ea5e9', '#8b5cf6', '#14b8a6'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false, cutout: '70%',
+                    plugins: { legend: { position: 'right', labels: { boxWidth: 10, font: { size: 10 } } } }
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
