@@ -467,7 +467,7 @@
           {% set dot_map  = {'academic':'#3b82f6','readership':'#8b5cf6','public':'#f59e0b','practical':'#10b981'} %}
           {% set bg_map   = {'academic':'#dbeafe','readership':'#ede9fe','public':'#fef3c7','practical':'#dcfce7'} %}
           {% set col_map  = {'academic':'#1d4ed8','readership':'#6d28d9','public':'#92400e','practical':'#166534'} %}
-          <span class="role-pill {{ pill_map[domain]|default('role-pill-academic') }}">
+          <span class="role-pill {{ pill_map[domain]|default('role-pill-academic') }}" data-role-label="{{ r.label }}">
             <span class="role-dot" style="background:{{ dot_map[domain]|default('#3b82f6') }};"></span>
             {{ r.label }}
             <span class="role-score" style="background:{{ bg_map[domain]|default('#dbeafe') }};color:{{ col_map[domain]|default('#1d4ed8') }};">{{ "%.1f"|format(r.count) }}</span>
@@ -546,36 +546,8 @@
 
 </div><!-- /page -->
 
-<div id="role-tooltip" style="
-  position:fixed;display:none;z-index:9999;
-  background:#111827;color:white;padding:.5rem .75rem;
-  border-radius:.5rem;font-size:.72rem;width:240px;
-  line-height:1.5;white-space:normal;font-weight:400;
-  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
-"></div>
-<script>
-(function(){
-  var tip = document.getElementById('role-tooltip');
-  document.querySelectorAll('.role-pill[data-tip]').forEach(function(pill){
-    pill.addEventListener('mouseenter', function(){
-      tip.textContent = pill.getAttribute('data-tip');
-      tip.style.top = '-9999px'; tip.style.display = 'block';
-      var r   = pill.getBoundingClientRect();
-      var th  = tip.offsetHeight;
-      var top = (window.innerHeight - r.bottom > th + 16)
-                ? r.bottom + 8          /* open downward */
-                : r.top - th - 8;       /* flip upward   */
-      var left = Math.min(r.left, window.innerWidth - 252);
-      left = Math.max(left, 8);
-      tip.style.top  = top  + 'px';
-      tip.style.left = left + 'px';
-    });
-    pill.addEventListener('mouseleave', function(){
-      tip.style.display = 'none';
-    });
-  });
-})();
-</script>
+<script src="role_tooltips.js"></script>
+<script>initRoleTooltips();</script>
 <script>
 const PALETTE = ['#2563eb','#0d9488','#6366f1','#f59e0b','#ec4899','#0ea5e9','#8b5cf6','#14b8a6'];
 const DOUGHNUT_OPTS = {

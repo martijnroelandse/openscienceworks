@@ -624,7 +624,9 @@
       font-weight: 500;
     }
     .tag-concept { background: #f3f4f6; color: #374151; }
-    .tag-role    { background: #fef3c7; color: #92400e; }
+    .tag-role    { background: #fef3c7; color: #92400e; cursor: help; }
+    label.facet-opt-role { cursor: help; }
+    [data-tip] { cursor: help; }
     .tag-sdg     { background: #dcfce7; color: #166534; }
     .tag-teach   { background: #e0f2fe; color: #0369a1; }
 
@@ -796,6 +798,7 @@
 </footer>
 
 <script src="stories_data.js"></script>
+<script src="role_tooltips.js"></script>
 <script>
 // ── state ─────────────────────────────────────────────────────────────────
 const state = {
@@ -985,7 +988,9 @@ function renderCards(stories) {
     const meta = metaParts.join(`<span class="sep">·</span>`);
 
     const conceptTags = s.concepts.slice(0,4).map(c => `<span class="tag tag-concept">${esc(c)}</span>`).join("");
-    const roleTags    = s.roles.slice(0,2).map(r => `<span class="tag tag-role">${esc(r)}</span>`).join("");
+    const roleTags    = s.roles.slice(0,2).map(r =>
+      `<span class="tag tag-role" data-role-label="${esc(r)}">${esc(r)}</span>`
+    ).join("");
     const extraTags   = [
       s.has_sdgs     ? `<span class="tag tag-sdg">SDGs</span>` : "",
       s.has_teaching ? `<span class="tag tag-teach">Teaching</span>` : "",
@@ -1021,7 +1026,10 @@ function renderFacetGroup(elId, facetKey, allCounts, filtCounts, labelFn, keys) 
     const checked = activeSet.has(k) ? "checked" : "";
     const dim = !filt && !activeSet.has(k) ? `style="opacity:0.4"` : "";
     const safeK = String(k).replace(/\\/g,"\\\\").replace(/'/g,"\\'");
-    return `<label class="facet-opt" ${dim}>
+    const isRole = facetKey === "role";
+    const optCls = isRole ? "facet-opt facet-opt-role" : "facet-opt";
+    const roleAttr = isRole ? ` data-role-label="${esc(String(k))}"` : "";
+    return `<label class="${optCls}" ${dim}${roleAttr}>
       <input type="checkbox" ${checked} onchange="toggleFilter('${facetKey}','${safeK}',this.checked)">
       <span>${labelFn(k)}</span>
       <span class="count">${activeSet.has(k) ? total : filt||total}</span>
@@ -1452,6 +1460,7 @@ function update() {
   renderFacets(all, filtered);
   renderActiveFilters();
   renderResultsCount(filtered.length, all.length);
+  if (typeof initRoleTooltips === "function") initRoleTooltips();
 }
 
 // ── events ────────────────────────────────────────────────────────────────

@@ -1169,36 +1169,7 @@
             evt.currentTarget.classList.add("soc-tab-active");
         }
     </script>
-<div id="role-tooltip" style="
-  position:fixed;display:none;z-index:9999;
-  background:#111827;color:white;padding:.5rem .75rem;
-  border-radius:.5rem;font-size:.72rem;width:240px;
-  line-height:1.5;white-space:normal;font-weight:400;
-  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
-"></div>
-<script>
-(function(){
-  var tip = document.getElementById('role-tooltip');
-  document.querySelectorAll('[data-tip]').forEach(function(pill){
-    pill.addEventListener('mouseenter', function(){
-      tip.textContent = pill.getAttribute('data-tip');
-      tip.style.top = '-9999px'; tip.style.display = 'block';
-      var r   = pill.getBoundingClientRect();
-      var th  = tip.offsetHeight;
-      var top = (window.innerHeight - r.bottom > th + 16)
-                ? r.bottom + 8          /* open downward */
-                : r.top - th - 8;       /* flip upward   */
-      var left = Math.min(r.left, window.innerWidth - 252);
-      left = Math.max(left, 8);
-      tip.style.top  = top  + 'px';
-      tip.style.left = left + 'px';
-    });
-    pill.addEventListener('mouseleave', function(){
-      tip.style.display = 'none';
-    });
-  });
-})();
-</script>
+
 <script>
 // Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
 // linter doesn't choke on templated values; Chromium runs this before PDF export).
@@ -1209,5 +1180,8 @@
     document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
 })();
 </script>
+
+<script src="role_tooltips.js"></script>
+<script>initRoleTooltips();</script>
 </body>
 </html>
