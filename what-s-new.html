@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What's New — openscience.works</title>
+  <meta name="description" content="Latest methodology and platform updates for openscience.works.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --bg:#f3f4f6; --surface:#fff; --border:#e5e7eb; --text:#111827; --muted:#6b7280;
+      --accent:#2E4563; --accent-light:#e8edf3; --fold:#F2C94C; --radius:.9rem; --shadow:0 4px 24px rgba(15,23,42,.08);
+    }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Montserrat,sans-serif; background:var(--bg); color:var(--text); }
+    .site-nav { background:var(--surface); border-bottom:1px solid var(--border); padding:.6rem 1.5rem; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:100; }
+    .site-nav-brand { display:flex; gap:.6rem; align-items:center; text-decoration:none; color:var(--text); font-weight:700; }
+    .site-nav-brand img { width:32px; height:32px; object-fit:contain; }
+    .brand-dot { color:var(--fold); }
+    .site-nav-links { display:flex; gap:.25rem; }
+    .site-nav-links a { padding:.4rem .85rem; border-radius:.4rem; text-decoration:none; color:var(--muted); font-size:.88rem; font-weight:500; }
+    .site-nav-links a:hover { background:var(--bg); color:var(--text); }
+    .site-nav-links a.active { background:var(--accent-light); color:var(--accent); }
+    .page { max-width:980px; margin:2rem auto; padding:0 1.25rem 4rem; }
+    .card { background:var(--surface); border-radius:var(--radius); box-shadow:var(--shadow); padding:2rem 2.25rem; margin-bottom:1.25rem; }
+    .card h1 { margin:.1rem 0 .6rem; font-size:1.8rem; letter-spacing:-.01em; }
+    .card h2 { margin:1.8rem 0 .7rem; font-size:1.15rem; }
+    .muted { color:var(--muted); }
+    .update { border:1px solid var(--border); border-radius:.7rem; padding:1rem 1.1rem; margin-bottom:.8rem; background:#fcfcfd; }
+    .update h3 { margin:.1rem 0 .35rem; font-size:1rem; }
+    .update p { margin:.25rem 0; color:#374151; font-size:.93rem; }
+    .kicker { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:.6rem; }
+    .stamp { margin-top:-.25rem; margin-bottom:.9rem; font-size:.8rem; color:var(--muted); }
+    .chips { display:flex; flex-wrap:wrap; gap:.35rem; margin-top:.45rem; }
+    .chip { font-size:.72rem; background:#f3f4f6; border:1px solid var(--border); border-radius:999px; padding:.12rem .55rem; color:#374151; }
+    details.foldout { margin-top:.55rem; border:1px solid var(--border); background:#fff; border-radius:.6rem; padding:.55rem .7rem; }
+    details.foldout > summary { cursor:pointer; font-size:.85rem; font-weight:600; color:#1f2937; }
+    details.foldout > summary:hover { color:#111827; }
+    .foldout-body { margin-top:.55rem; color:#374151; font-size:.88rem; line-height:1.5; }
+    .foldout-body ul { margin:.35rem 0 0; padding-left:1.1rem; }
+    .foldout-body li { margin-bottom:.3rem; }
+    footer { text-align:center; padding:2rem 1rem 3rem; color:var(--muted); font-size:.85rem; }
+    footer a { color:var(--muted); text-decoration:none; font-weight:500; }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <a class="site-nav-brand" href="index.html">
+      <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+      <span>openscience<span class="brand-dot">.</span>works</span>
+    </a>
+    <div class="site-nav-links">
+      <a href="index.html">Browse stories</a>
+      <a href="about.html">About</a>
+      <a href="what-s-new.html" class="active">What's new</a>
+    </div>
+  </nav>
+
+  <div class="page">
+    <div class="card">
+      <div class="kicker">Release Notes</div>
+      <h1>What's New</h1>
+      <p class="muted">Recent platform and methodology updates in openscience.works.</p>
+      <p class="stamp"><strong>Last updated:</strong> 2026-06-02</p>
+
+      <h2>June 2026 · Inferred Roles v2</h2>
+      <div class="update">
+        <h3>Canonical role normalization</h3>
+        <p>Role IDs are now normalized to a stable canonical map, reducing label drift between story pages, filters, and portfolio summaries.</p>
+        <div class="chips"><span class="chip">roles.v2</span><span class="chip">canonical IDs</span><span class="chip">alias mapping</span></div>
+      </div>
+      <div class="update">
+        <h3>Type-aware role scoring</h3>
+        <p>Role thresholds remain discipline- and type-sensitive across ArticleStory, BookStory, DataStory, and SoftwareStory. Cross-type interpretation should use evidence context, not raw score equality.</p>
+        <div class="chips"><span class="chip">type-aware</span><span class="chip">interpretability</span></div>
+      </div>
+      <div class="update">
+        <h3>Expanded data/software role coverage</h3>
+        <p>Added role support for data/software-specific usage patterns, including benchmark behavior, infrastructure-level reuse, and tooling/community adoption.</p>
+        <details class="foldout">
+          <summary>View DataStory and SoftwareStory role details</summary>
+          <div class="foldout-body">
+            <ul>
+              <li><strong>Dataset reference backbone</strong>: datasets with strong sustained citation/reuse footprints.</li>
+              <li><strong>Benchmark resource</strong>: datasets repeatedly used as shared reference benchmarks.</li>
+              <li><strong>Infrastructure dataset</strong>: datasets supporting broad, cross-venue ecosystem usage.</li>
+              <li><strong>Software method anchor</strong>: software dependencies/methods used repeatedly in downstream research.</li>
+              <li><strong>Computational reproducibility enabler</strong>: software that enables repeatable workflows and transparent methods.</li>
+              <li><strong>Community tooling uptake</strong>: visible adoption in open teaching, practice, and community-facing channels.</li>
+            </ul>
+            <p>These are heuristic role assignments and remain type-aware by design.</p>
+          </div>
+        </details>
+        <div class="chips"><span class="chip">dataset_reference_backbone</span><span class="chip">software_method_anchor</span><span class="chip">community_tooling_uptake</span></div>
+      </div>
+      <div class="update">
+        <h3>Pedagogical signal expansion</h3>
+        <p>Pedagogical Anchor now considers OCW, syllabi/OER, open textbook and educational video evidence across story types.</p>
+        <div class="chips"><span class="chip">teaching signals</span><span class="chip">cross-type</span></div>
+      </div>
+      <div class="update">
+        <h3>Repository usage surfaced for Data/Software stories</h3>
+        <p>Views/downloads from repository-linked usage sources now appear in Impact metrics and Access sections for DataStory and SoftwareStory pages.</p>
+        <div class="chips"><span class="chip">DataCite</span><span class="chip">Zenodo</span><span class="chip">usage metrics</span></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p><a href="index.html">openscience.works</a> · Built on open data · <a href="mailto:martijn.roelandse@openscience.works">Contact</a></p>
+  </footer>
+</body>
+</html>

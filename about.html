@@ -198,6 +198,7 @@
     .role-icon svg { width: 18px; height: 18px; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
     .role-text h4 { margin: 0 0 0.2rem; font-size: 0.95rem; color: var(--text); }
     .role-text p  { margin: 0; font-size: 0.82rem; color: #4b5563; line-height: 1.45; }
+    .roles-subdomain-title { margin: 1rem 0 0.55rem; font-size: 0.95rem; font-weight: 700; display: flex; align-items: center; gap: 0.45rem; }
 
     /* ── BADGES ───────────────────────────────────────────── */
     .badges-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; }
@@ -266,6 +267,7 @@
       </div>
       <div class="hero-links">
         <a class="btn btn-primary" href="index.html">Browse stories ↓</a>
+        <a class="btn btn-outline" href="what-s-new.html">What's new</a>
         <a class="btn btn-outline" href="mailto:martijn.roelandse@openscience.works">Get in touch</a>
       </div>
     </div>
@@ -447,7 +449,9 @@
   <div class="section-label">Classification methodology</div>
   <div class="card">
     <h2>Inferred Roles</h2>
-    <p>Our pipeline goes beyond citation counts. By analysing the composition of a work's attention, usage, and citing landscape, we dynamically assign <strong>Inferred Roles</strong> across four impact domains. These are heuristic signals — not ground truth — always shown with their confidence score and a link to this page.</p>
+    <p>Our pipeline goes beyond citation counts. By analysing the composition of a work's attention, usage, and citing landscape, we dynamically assign <strong>Inferred Roles</strong> across four impact domains. These are heuristic signals — not ground truth — and are always displayed with confidence context.</p>
+    <p>Roles are now normalised through a canonical role map, so legacy and current role IDs resolve to one stable label in stories, filters, and dashboards. Scoring remains <strong>type-aware</strong>: thresholds differ for articles, books, datasets, and software to reflect different signal densities.</p>
+    <p style="margin-bottom:1.2rem;">For cross-type interpretation, compare evidence patterns and within-type salience rather than raw scores alone.</p>
 
     <!-- Academic -->
     <div class="roles-domain">
@@ -462,7 +466,7 @@
         </div>
         <div class="role-item">
           <div class="role-icon" style="background:#dbeafe;color:#2563eb;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
-          <div class="role-text"><h4>Rapid Uptake</h4><p>Accumulated high citations or downloads in an unusually short period — indicating immediate relevance in the field.</p></div>
+          <div class="role-text"><h4>Rapid Uptake</h4><p>Accumulated strong citations or usage signals in an unusually short period — indicating immediate relevance in the field.</p></div>
         </div>
         <div class="role-item">
           <div class="role-icon" style="background:#dbeafe;color:#2563eb;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
@@ -470,15 +474,15 @@
         </div>
         <div class="role-item">
           <div class="role-icon" style="background:#dbeafe;color:#2563eb;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
-          <div class="role-text"><h4>Methodological Anchor</h4><p>A standard protocol or tool used by other researchers — triggered by high supporting citation tallies via scite.ai.</p></div>
+          <div class="role-text"><h4>Methodological Anchor</h4><p>A standard protocol or tool used by other researchers, inferred from reproducibility-oriented uptake patterns.</p></div>
         </div>
         <div class="role-item">
           <div class="role-icon" style="background:#dbeafe;color:#2563eb;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg></div>
-          <div class="role-text"><h4>Evidence-Based Anchor</h4><p>Explicitly applied as hard data or methodology — recognised through high "supporting" citation tallies indicating direct replication or use.</p></div>
+          <div class="role-text"><h4>Evidence-bearing Reference</h4><p>Explicitly applied as hard data or methodology, often accompanied by stewardship, reuse, or supporting citation context.</p></div>
         </div>
         <div class="role-item">
           <div class="role-icon" style="background:#dbeafe;color:#2563eb;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg></div>
-          <div class="role-text"><h4>Active Discussion Signal</h4><p>Work is generating ongoing conversation among researchers — a heuristic signal based on citation and usage patterns suggesting emerging salience.</p></div>
+          <div class="role-text"><h4>Public Visibility &amp; Knowledge Base</h4><p>Integrated into durable open-knowledge surfaces and scholarly discussion layers, indicating broad interpretive uptake.</p></div>
         </div>
       </div>
     </div>
@@ -496,7 +500,7 @@
         </div>
         <div class="role-item">
           <div class="role-icon" style="background:#ede9fe;color:#7c3aed;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg></div>
-          <div class="role-text"><h4>Pedagogical Anchor</h4><p>Widely adopted for teaching — found in OER syllabi, reading lists, or open textbooks via Open Library, WorldCat, and OCW.</p></div>
+          <div class="role-text"><h4>Pedagogical Anchor</h4><p>Teaching adoption signal spanning OCW, syllabi/OER, open textbook matches, and educational video usage across story types.</p></div>
         </div>
       </div>
     </div>
@@ -510,7 +514,7 @@
       <div class="roles-items">
         <div class="role-item">
           <div class="role-icon" style="background:#fef3c7;color:#b45309;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg></div>
-          <div class="role-text"><h4>Active Public Discourse</h4><p>Heavy engagement on Reddit, Bluesky, or Mastodon — the work has sparked ongoing community conversation.</p></div>
+          <div class="role-text"><h4>Active Public Discourse</h4><p>Sustained engagement across open-web channels, calculated from normalized attention sources with legacy fallbacks for continuity.</p></div>
         </div>
         <div class="role-item">
           <div class="role-icon" style="background:#fef3c7;color:#b45309;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"></path></svg></div>
@@ -518,7 +522,7 @@
         </div>
         <div class="role-item">
           <div class="role-icon" style="background:#fef3c7;color:#b45309;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg></div>
-          <div class="role-text"><h4>Public Visibility (Open Knowledge)</h4><p>Cited on Wikipedia, Stack Exchange, or non-academic wikis — the work has been integrated into the trusted public knowledge base.</p></div>
+          <div class="role-text"><h4>Public Visibility &amp; Knowledge Base</h4><p>Cited in public reference infrastructures (e.g., Wikipedia/Stack Exchange), signalling integration into trusted open knowledge.</p></div>
         </div>
       </div>
     </div>
@@ -532,12 +536,42 @@
       <div class="roles-items">
         <div class="role-item">
           <div class="role-icon" style="background:#dcfce7;color:#065f46;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg></div>
-          <div class="role-text"><h4>Sustainability &amp; Policy Relevance</h4><p>Cited in government reports, WHO/NGO briefs, or UN policy documents — direct influence on governance frameworks.</p></div>
+          <div class="role-text"><h4>Sustainability &amp; Policy Relevance</h4><p>Connected to SDG/policy-oriented signals that indicate potential governance and societal relevance.</p></div>
         </div>
         <div class="role-item">
           <div class="role-icon" style="background:#dcfce7;color:#065f46;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg></div>
           <div class="role-text"><h4>Commercial Linkage</h4><p>Present on Amazon, Goodreads, or in patents — indicating consumer interest or industry application.</p></div>
         </div>
+      </div>
+    </div>
+    <div class="roles-subdomain-title" style="color:#34675A;">🗂 DataStory</div>
+    <div class="roles-items" style="margin-top:0.25rem;">
+      <div class="role-item">
+        <div class="role-icon" style="background:#e8f2ef;color:#34675A;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M4 7a2 2 0 012-2h12a2 2 0 012 2v2H4V7zM4 9h16v8a2 2 0 01-2 2H6a2 2 0 01-2-2V9zm4 3h8m-8 3h5"></path></svg></div>
+        <div class="role-text"><h4>Dataset Reference Backbone</h4><p>Foundational dataset reuse reflected in sustained downstream citations.</p></div>
+      </div>
+      <div class="role-item">
+        <div class="role-icon" style="background:#e8f2ef;color:#34675A;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M4 7a2 2 0 012-2h12a2 2 0 012 2v2H4V7zM4 9h16v8a2 2 0 01-2 2H6a2 2 0 01-2-2V9zm4 3h8m-8 3h5"></path></svg></div>
+        <div class="role-text"><h4>Benchmark Resource</h4><p>Dataset appears repeatedly in benchmark-style analytical and methodological usage.</p></div>
+      </div>
+      <div class="role-item">
+        <div class="role-icon" style="background:#e8f2ef;color:#34675A;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M4 7a2 2 0 012-2h12a2 2 0 012 2v2H4V7zM4 9h16v8a2 2 0 01-2 2H6a2 2 0 01-2-2V9zm4 3h8m-8 3h5"></path></svg></div>
+        <div class="role-text"><h4>Infrastructure Dataset</h4><p>Broad, cross-venue dataset utility across multiple communities and workflows.</p></div>
+      </div>
+    </div>
+    <div class="roles-subdomain-title" style="color:#6A4FA3;">💻 SoftwareStory</div>
+    <div class="roles-items" style="margin-top:0.25rem;">
+      <div class="role-item">
+        <div class="role-icon" style="background:#f0ecf9;color:#6A4FA3;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7h8M8 12h8M8 17h5M5 4h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"></path></svg></div>
+        <div class="role-text"><h4>Software Method Anchor</h4><p>Software is repeatedly relied on as part of downstream research methods.</p></div>
+      </div>
+      <div class="role-item">
+        <div class="role-icon" style="background:#f0ecf9;color:#6A4FA3;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7h8M8 12h8M8 17h5M5 4h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"></path></svg></div>
+        <div class="role-text"><h4>Computational Reproducibility Enabler</h4><p>Software supports transparent, repeatable computation and method reuse.</p></div>
+      </div>
+      <div class="role-item">
+        <div class="role-icon" style="background:#f0ecf9;color:#6A4FA3;"><svg stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7h8M8 12h8M8 17h5M5 4h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"></path></svg></div>
+        <div class="role-text"><h4>Community Tooling Uptake</h4><p>Adoption in open teaching/practice channels and broader community usage.</p></div>
       </div>
     </div>
   </div>
