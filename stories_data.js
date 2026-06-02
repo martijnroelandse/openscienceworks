@@ -41,7 +41,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.1007_978-1-4614-7138-7.html",
@@ -85,7 +88,10 @@ window.STORIES_DATA = [
 "Seattle University",
 "Stanford University"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": "Springer texts in statistics",
+"series_id": "https://openalex.org/S4210222172",
+"belongs_to_series": true
 },
 {
 "file": "articlestory_10.1056_NEJMoa2021436.html",
@@ -129,7 +135,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1016_j.physletb.2012.08.020.html",
@@ -170,7 +179,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1056_NEJMoa2007764.html",
@@ -219,7 +231,10 @@ window.STORIES_DATA = [
 "institutions": [
 "National Institute of Allergy and Infectious Diseases"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1056_NEJMoa0810696.html",
@@ -269,7 +284,10 @@ window.STORIES_DATA = [
 "National Institutes of Health",
 "3M (United States)"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "softwarestory_10.5281_zenodo.1174508.html",
@@ -319,7 +337,10 @@ window.STORIES_DATA = [
 "Massachusetts Institute of Technology",
 "Sandia National Laboratories"
 ],
-"download_count": 1602
+"download_count": 1602,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_nature11543.html",
@@ -373,7 +394,10 @@ window.STORIES_DATA = [
 "National Institutes of Health",
 "Leibniz Association"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1056_NEJMoa2007621.html",
@@ -421,7 +445,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Brigham and Women's Hospital"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1056_NEJMoa2007621_.html",
@@ -470,7 +497,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Brigham and Women's Hospital"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "softwarestory_10.5281_zenodo.11813.html",
@@ -511,7 +541,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 3100
+"download_count": 3100,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.7551_mitpress_11805.001.0001.html",
@@ -553,7 +586,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Catherine D'Ignazio, Lauren F. Klein",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": "Strong Ideas",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.4159_9780674369542.html",
@@ -599,7 +635,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Thomas Piketty",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.1007_978-3-319-46478-7_44.html",
@@ -646,7 +685,10 @@ window.STORIES_DATA = [
 "institutions": [
 "University of Nottingham"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": "Lecture notes in computer science",
+"series_id": "https://openalex.org/S106296714",
+"belongs_to_series": true
 },
 {
 "file": "softwarestory_10.5281_zenodo.19690618.html",
@@ -693,7 +735,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Frankfurt Institute for Advanced Studies"
 ],
-"download_count": 981
+"download_count": 981,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "datastory_10.5281_zenodo.5571936.html",
@@ -736,7 +781,10 @@ window.STORIES_DATA = [
 "Wageningen University & Research",
 "European Space Agency"
 ],
-"download_count": 160063
+"download_count": 160063,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.5061_dryad.234_1.html",
@@ -775,7 +823,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "AE Zanne, Gabriela López‐González, David A. Coomes et al.",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "datastory_10.6084_m9.figshare.7504448.v3.html",
@@ -819,7 +870,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 1195
+"download_count": 1195,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "datastory_10.5281_zenodo.1188976.html",
@@ -868,7 +922,10 @@ window.STORIES_DATA = [
 "University of Wisconsin–River Falls",
 "Toronto Metropolitan University"
 ],
-"download_count": 1265541
+"download_count": 1265541,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "softwarestory_10.5281_zenodo.1480624.html",
@@ -914,7 +971,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Polytechnic University of Turin"
 ],
-"download_count": 355
+"download_count": 355,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.4324_9781315712802.html",
@@ -951,7 +1011,10 @@ window.STORIES_DATA = [
 "cover_url": "http://images.tandf.co.uk/common/jackets/crclarge/978131571/9781315712802.jpg",
 "authors": "Jo Littler",
 "institutions": [],
-"download_count": 9966
+"download_count": 9966,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_nature03124.html",
@@ -1001,7 +1064,10 @@ window.STORIES_DATA = [
 "Sylvester Comprehensive Cancer Center",
 "University of Miami"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.5840_cultura20107133.html",
@@ -1038,7 +1104,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "K. Selvi, Peter Lang",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_nature21680.html",
@@ -1088,7 +1157,10 @@ window.STORIES_DATA = [
 "Max Planck Institute for Astronomy",
 "Australian National University"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "datastory_10.5281_zenodo.3757476.html",
@@ -1146,7 +1218,10 @@ window.STORIES_DATA = [
 "Zhengzhou University",
 "Tongji University"
 ],
-"download_count": 47981
+"download_count": 47981,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "datastory_10.5281_zenodo.4743746.html",
@@ -1189,7 +1264,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Czech Technical University in Prague"
 ],
-"download_count": 10012
+"download_count": 10012,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "softwarestory_10.6084_m9.figshare.1164194.v13.html",
@@ -1230,7 +1308,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "datastory_10.6084_m9.figshare.1008029.v1.html",
@@ -1274,7 +1355,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 37
+"download_count": 37,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "softwarestory_10.6084_m9.figshare.1092508.v6.html",
@@ -1317,7 +1401,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1126_science.abk0989.html",
@@ -1362,7 +1449,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.3998_mpub.15472.html",
@@ -1409,7 +1499,10 @@ window.STORIES_DATA = [
 "institutions": [
 "University of Michigan–Ann Arbor"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": "Studies in International Economics",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.1007_978-3-319-00026-8.html",
@@ -1447,7 +1540,10 @@ window.STORIES_DATA = [
 "German Cancer Research Center",
 "Alexander von Humboldt Institute for Internet and Society"
 ],
-"download_count": 12848
+"download_count": 12848,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.3998_mpub.11927713.html",
@@ -1492,7 +1588,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Scott Greer, Elizabeth King, Elize Fonseca et al.",
 "institutions": [],
-"download_count": 9318
+"download_count": 9318,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_nrd.2016.136.html",
@@ -1531,7 +1630,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Asher Mullard",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.3998_mpub.17144.html",
@@ -1573,7 +1675,10 @@ window.STORIES_DATA = [
 "cover_url": "https://www.fulcrum.org/image-service/qr46r420k1752564628/full/286,/0/default.png",
 "authors": "Keith Maskus, John Wilson, John Wilson",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": "Studies in International Economics",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "articlestory_10.7554_eLife.80660.html",
@@ -1618,7 +1723,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1182_blood.2023022222.html",
@@ -1666,7 +1774,10 @@ window.STORIES_DATA = [
 "Harvard University",
 "Howard Hughes Medical Institute"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.12688_f1000research.6555.1.html",
@@ -1716,7 +1827,10 @@ window.STORIES_DATA = [
 "Lawrence Berkeley National Laboratory",
 "RELX Group (Netherlands)"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_s41557-023-01379-8.html",
@@ -1758,7 +1872,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1073_pnas.111146798.html",
@@ -1803,7 +1920,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Friedrich Miescher Institute"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_s41893-020-0532-7.html",
@@ -1849,7 +1969,10 @@ window.STORIES_DATA = [
 "institutions": [
 "University of California, Berkeley"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2020.01.15.908111.html",
@@ -1896,7 +2019,10 @@ window.STORIES_DATA = [
 "Universidad Cristiana Autónoma de Nicaragua",
 "Center for Neurosciences"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_elife.79714.html",
@@ -1942,7 +2068,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_s41588-023-01603-8.html",
@@ -1989,7 +2118,10 @@ window.STORIES_DATA = [
 "Nebraska Medical Center",
 "Cape Town HVTN Immunology Laboratory / Hutchinson Centre Research Institute of South Africa"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1371_journal.pbio.3002916.html",
@@ -2045,7 +2177,10 @@ window.STORIES_DATA = [
 "The Pirbright Institute",
 "Howard Hughes Medical Institute"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1016_j.isci.2020.101698.html",
@@ -2094,7 +2229,10 @@ window.STORIES_DATA = [
 "institutions": [
 "University of California, San Diego"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_d41586-019-01643-3.html",
@@ -2147,7 +2285,10 @@ window.STORIES_DATA = [
 "European Molecular Biology Organization",
 "African Studies Centre"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1371_journal.pcbi.1007128.html",
@@ -2197,7 +2338,10 @@ window.STORIES_DATA = [
 "The University of Texas Southwestern Medical Center",
 "University of Wisconsin–Madison"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.3390_su12010142.html",
@@ -2245,7 +2389,10 @@ window.STORIES_DATA = [
 "Aristotle University of Thessaloniki",
 "Centre for Research and Technology Hellas"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1016_j.devcel.2023.11.004.html",
@@ -2290,7 +2437,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1126_sciimmunol.abp8966.html",
@@ -2336,7 +2486,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_s41586-023-06933-5.html",
@@ -2383,7 +2536,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1016_j.molcel.2023.10.045.html",
@@ -2430,7 +2586,10 @@ window.STORIES_DATA = [
 "University of Nebraska Medical Center",
 "Howard Hughes Medical Institute"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_s41598-021-90639-z.html",
@@ -2472,7 +2631,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1111_j.1460-9568.2004.03503.x.html",
@@ -2520,7 +2682,10 @@ window.STORIES_DATA = [
 "Friedrich Miescher Institute",
 "University Medical Center Utrecht"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_eLife.79042.html",
@@ -2570,7 +2735,10 @@ window.STORIES_DATA = [
 "Howard Hughes Medical Institute",
 "Columbia University"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461662668.html",
@@ -2612,7 +2780,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Mark Pollard",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": "Studies in Archaeological Sciences",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "articlestory_10.1038_s41593-023-01500-7.html",
@@ -2658,7 +2829,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1126_scitranslmed.add0499.html",
@@ -2703,7 +2877,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1016_j.cell.2023.11.010.html",
@@ -2753,7 +2930,10 @@ window.STORIES_DATA = [
 "McGovern Institute for Brain Research",
 "Howard Hughes Medical Institute"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11647_OBP.0222.html",
@@ -2795,7 +2975,10 @@ window.STORIES_DATA = [
 "cover_url": "https://library.oapen.org/rest/bitstreams/2a1dd993-99da-405e-b14c-5a0522f96b50/retrieve",
 "authors": "Floriana Cerniglia, Francesco Saraceno",
 "institutions": [],
-"download_count": 39838
+"download_count": 39838,
+"series_name": "Open reports series",
+"series_id": "https://openalex.org/S4210220030",
+"belongs_to_series": true
 },
 {
 "file": "articlestory_10.1016_j.cell.2023.11.036.html",
@@ -2841,7 +3024,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1523_jneurosci.2872-04.2004.html",
@@ -2886,7 +3072,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Friedrich Miescher Institute"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.12.12.571235.html",
@@ -2930,7 +3119,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2022.02.22.481540.html",
@@ -2971,7 +3163,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_elife.87169.html",
@@ -3016,7 +3211,10 @@ window.STORIES_DATA = [
 "University of Oslo",
 "Allen Institute"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1126_scitranslmed.adh4529.html",
@@ -3061,7 +3259,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1042_bc20100036.html",
@@ -3106,7 +3307,10 @@ window.STORIES_DATA = [
 "Netherlands Institute for Neuroscience",
 "Friedrich Miescher Institute"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_VP_PLU.html",
@@ -3142,7 +3346,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Geert Roskam",
 "institutions": [],
-"download_count": 3641
+"download_count": 3641,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.3998_mpub.16284.html",
@@ -3187,7 +3394,10 @@ window.STORIES_DATA = [
 "cover_url": "https://www.fulcrum.org/image-service/br86b44011542298568/full/286,/0/default.png",
 "authors": "Jun Fu",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": "Studies in International Economics",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.3998_mpub.11649332.html",
@@ -3228,7 +3438,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Bethany Hicok",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461661579.html",
@@ -3264,7 +3477,10 @@ window.STORIES_DATA = [
 "cover_url": "https://lup.be/wp-content/uploads/2024/01/66353_jpg_rgb_original.jpg",
 "authors": "Patrick Degryse",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": "Studies in Archaeological Sciences",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.3998_mpub.17801.html",
@@ -3309,7 +3525,10 @@ window.STORIES_DATA = [
 "cover_url": "https://www.fulcrum.org/image-service/r494vk9901591082261/full/286,/0/default.png",
 "authors": "Thomas Cottier, Petros Mavroidis, Patrick Blatter",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": "Studies in International Economics",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "articlestory_10.1016_j.tcb.2023.10.013.html",
@@ -3359,7 +3578,10 @@ window.STORIES_DATA = [
 "Max Planck Institute for Biology of Ageing",
 "Howard Hughes Medical Institute"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1016_s0306-4522(03)00405-6.html",
@@ -3406,7 +3628,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Friedrich Miescher Institute"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.11.29.569241.html",
@@ -3447,7 +3672,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_eLife.85117.html",
@@ -3493,7 +3721,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_eLife.85756.html",
@@ -3536,7 +3767,10 @@ window.STORIES_DATA = [
 "Howard Hughes Medical Institute",
 "University of North Carolina at Chapel Hill"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2024.04.04.588111.html",
@@ -3578,7 +3812,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.3998_mpub.16818.html",
@@ -3623,7 +3860,10 @@ window.STORIES_DATA = [
 "cover_url": "https://www.fulcrum.org/image-service/37720d52t1540994888/full/286,/0/default.png",
 "authors": "Alan Deardorff, Robert Stern",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": "Studies in International Economics",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "articlestory_10.1101_2023.11.30.23299240.html",
@@ -3667,7 +3907,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.3726_b20254.html",
@@ -3709,7 +3952,10 @@ window.STORIES_DATA = [
 "cover_url": "https://library.oapen.org/rest/bitstreams/8986f0fa-736b-4b6f-8dca-4c082b63207f/retrieve",
 "authors": "Jeremy Waddington, Torsten Müller, Kurt Vandaele",
 "institutions": [],
-"download_count": 2384
+"download_count": 2384,
+"series_name": "Travail et Société / Work and Society",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "articlestory_10.1016_j.cub.2023.11.025.html",
@@ -3758,7 +4004,10 @@ window.STORIES_DATA = [
 "Rockefeller University",
 "Howard Hughes Medical Institute"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.12.01.568979.html",
@@ -3802,7 +4051,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.15252_emmm.202012739.html",
@@ -3847,7 +4099,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_eLife.98405.html",
@@ -3893,7 +4148,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664327.html",
@@ -3934,7 +4192,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Nicholas Cook, Peter Johnson, Hans Zender",
 "institutions": [],
-"download_count": 719
+"download_count": 719,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1371_journal.pone.0000000.html",
@@ -3975,7 +4236,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Public Library of Science"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.12.08.570828.html",
@@ -4018,7 +4282,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.11.29.569289.html",
@@ -4061,7 +4328,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.12.07.565988.html",
@@ -4102,7 +4372,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.2196_37324.html",
@@ -4147,7 +4420,10 @@ window.STORIES_DATA = [
 "institutions": [
 "University of California San Diego"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_eLife.94168.html",
@@ -4189,7 +4465,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.3368_HNAL9672.html",
@@ -4229,7 +4508,10 @@ window.STORIES_DATA = [
 "cover_url": "https://library.oapen.org/rest/bitstreams/9648ddf0-a35a-48a1-896f-fead2f43b02e/retrieve",
 "authors": "Will Fellows",
 "institutions": [],
-"download_count": 9555
+"download_count": 9555,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.2196_preprints.37324.html",
@@ -4272,7 +4554,10 @@ window.STORIES_DATA = [
 "institutions": [
 "University of California San Diego"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.12.12.571160.html",
@@ -4315,7 +4600,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.1007_978-3-030-47436-2.html",
@@ -4360,7 +4648,10 @@ window.STORIES_DATA = [
 "National University of Singapore",
 "Nanyang Technological University"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": "Lecture notes in computer science",
+"series_id": "https://openalex.org/S106296714",
+"belongs_to_series": true
 },
 {
 "file": "articlestory_10.1101_2023.12.19.572369.html",
@@ -4401,7 +4692,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_eLife.96084.html",
@@ -4443,7 +4737,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_eLife.104764.html",
@@ -4487,7 +4784,10 @@ window.STORIES_DATA = [
 "Howard Hughes Medical Institute",
 "California State University System"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_elife.89373.html",
@@ -4528,7 +4828,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1007_s10875-023-01629-x.html",
@@ -4579,7 +4882,10 @@ window.STORIES_DATA = [
 "Assistance Publique – Hôpitaux de Paris",
 "Howard Hughes Medical Institute"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_s41592-023-02115-3.html",
@@ -4622,7 +4928,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1093_pastj_gtw039.html",
@@ -4665,7 +4974,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Queen's University Belfast"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461662545.html",
@@ -4712,7 +5024,10 @@ window.STORIES_DATA = [
 "institutions": [
 "KU Leuven"
 ],
-"download_count": 4248
+"download_count": 4248,
+"series_name": "ISBN:9789462701724",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.3998_mpub.9853855.html",
@@ -4748,7 +5063,10 @@ window.STORIES_DATA = [
 "cover_url": "https://library.oapen.org/rest/bitstreams/48e1f3ca-07b5-40b7-995f-3289290aca4b/retrieve",
 "authors": "Danielle Fosler-Lussier",
 "institutions": [],
-"download_count": 1198
+"download_count": 1198,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.12.07.565993.html",
@@ -4791,7 +5109,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1371_journal.pone.0003059.html",
@@ -4838,7 +5159,10 @@ window.STORIES_DATA = [
 "Allen Institute",
 "Max Planck Institute of Neurobiology"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_elife.90486.html",
@@ -4883,7 +5207,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663993.html",
@@ -4930,7 +5257,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Société Française d'Allergologie"
 ],
-"download_count": 1019
+"download_count": 1019,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.12.06.570341.html",
@@ -4976,7 +5306,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_eLife.93659.html",
@@ -5019,7 +5352,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_EPE_AMP.html",
@@ -5055,7 +5391,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Franco Trabattoni",
 "institutions": [],
-"download_count": 12375
+"download_count": 12375,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1073_pnas.2316466120.html",
@@ -5098,7 +5437,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Rockefeller University"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664655.html",
@@ -5144,7 +5486,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Rega Institute for Medical Research"
 ],
-"download_count": 3567
+"download_count": 3567,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665058.html",
@@ -5189,7 +5534,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Geert Bouckaert",
 "institutions": [],
-"download_count": 2017
+"download_count": 2017,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.4018_978-1-5225-2788-6.html",
@@ -5233,7 +5581,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Patanjali Research Foundation"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": "Advances in medical diagnosis, treatment, and care (AMDTC) book series",
+"series_id": "https://openalex.org/S4210196384",
+"belongs_to_series": true
 },
 {
 "file": "articlestory_10.1038_s41591-026-04206-y.html",
@@ -5277,7 +5628,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.12.09.570606.html",
@@ -5318,7 +5672,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_nphys1170.html",
@@ -5361,7 +5718,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Institute for Quantum Optics and Quantum Information Innsbruck"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1073_pnas.2316964120.html",
@@ -5404,7 +5764,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.12.15.571964.html",
@@ -5445,7 +5808,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.12.22.23300468.html",
@@ -5486,7 +5852,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1007_s00180-017-0762-y.html",
@@ -5529,7 +5898,10 @@ window.STORIES_DATA = [
 "institutions": [
 "University College London"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_s41556-025-01828-1.html",
@@ -5575,7 +5947,10 @@ window.STORIES_DATA = [
 "National Institute of Child Health",
 "Massachusetts Institute of Technology"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_s41572-025-00674-7.html",
@@ -5629,7 +6004,10 @@ window.STORIES_DATA = [
 "University of Milan",
 "Imperial College London"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.5117_9789462989504.html",
@@ -5671,7 +6049,10 @@ window.STORIES_DATA = [
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789462989504&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Larissa Hjorth, Kana Ohashi, Jolynna Sinanan et al.",
 "institutions": [],
-"download_count": 96
+"download_count": 96,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_s42003-023-05579-3.html",
@@ -5712,7 +6093,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1093_nar_gkad1207.html",
@@ -5755,7 +6139,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1128_aac.01193-23.html",
@@ -5799,7 +6186,10 @@ window.STORIES_DATA = [
 "Harvard University",
 "Brigham and Women's Hospital"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7490_f1000research.1116751.1.html",
@@ -5841,7 +6231,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Cassidy R. Sugimoto, Liz Allen, Jeroen Bosman et al.",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663078.html",
@@ -5883,7 +6276,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Geert Bouckaert, Werner Jann",
 "institutions": [],
-"download_count": 7100
+"download_count": 7100,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.3726_b21634.html",
@@ -5921,7 +6317,10 @@ window.STORIES_DATA = [
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1376330/large.webp",
 "authors": "Raymond Boyle, Richard Haynes",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": "Communication, Sport, and Society",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.3726_b21769.html",
@@ -5960,7 +6359,10 @@ window.STORIES_DATA = [
 "cover_url": "https://library.oapen.org/rest/bitstreams/cf1e9397-a9c2-45d4-be83-1d2bcdcc458a/retrieve",
 "authors": "Robert O'Dowd, Margarita Vinagre",
 "institutions": [],
-"download_count": 502
+"download_count": 502,
+"series_name": "Telecollaborative learning and Virtual Exchange in Education",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "articlestory_10.1038_s41556-025-01834-3.html",
@@ -6003,7 +6405,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Howard Hughes Medical Institute"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.12.30.572255.html",
@@ -6046,7 +6451,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.3726_b22161.html",
@@ -6086,7 +6494,10 @@ window.STORIES_DATA = [
 "cover_url": "https://library.oapen.org/rest/bitstreams/3b7451a4-beea-4bed-ab42-db539fe8988d/retrieve",
 "authors": "Durk Gorter, Edina Krompák",
 "institutions": [],
-"download_count": 345
+"download_count": 345,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_s41592-025-02965-z.html",
@@ -6127,7 +6538,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2020.02.10.942185.html",
@@ -6170,7 +6584,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.12.07.570640.html",
@@ -6211,7 +6628,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.12.29.573681.html",
@@ -6254,7 +6674,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1186_s12864-023-09832-1.html",
@@ -6300,7 +6723,10 @@ window.STORIES_DATA = [
 "University of Washington",
 "Howard Hughes Medical Institute"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.1007_978-3-031-38294-9.html",
@@ -6345,7 +6771,10 @@ window.STORIES_DATA = [
 "Inari Agriculture (United States)",
 "Link Consulting"
 ],
-"download_count": 1336
+"download_count": 1336,
+"series_name": "Compendium of plant genomes",
+"series_id": "https://openalex.org/S4210212246",
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.11116_9789461662514.html",
@@ -6388,7 +6817,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Orpheus Institute"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461662521.html",
@@ -6430,7 +6862,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Paulo de Assis",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663139.html",
@@ -6470,7 +6905,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Imagination Technologies (United Kingdom)"
 ],
-"download_count": 7224
+"download_count": 7224,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663634.html",
@@ -6508,7 +6946,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Bacha Kebede Debela, Geert Bouckaert, Meheret Ayenew Warota et al.",
 "institutions": [],
-"download_count": 14600
+"download_count": 14600,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.5117_9789462983663.html",
@@ -6556,7 +6997,10 @@ window.STORIES_DATA = [
 "Convergence",
 "University of Graz"
 ],
-"download_count": 3364
+"download_count": 3364,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1016_j.cell.2025.11.030.html",
@@ -6600,7 +7044,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_s41467-025-67869-0.html",
@@ -6641,7 +7088,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1038_s41597-023-02782-z.html",
@@ -6684,7 +7134,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.11.30.569486.html",
@@ -6725,7 +7178,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1136_bmj.a186.html",
@@ -6766,7 +7222,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "David Warriner",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.3389_feduc.2023.1279921.html",
@@ -6820,7 +7279,10 @@ window.STORIES_DATA = [
 "University of Southern California",
 "University of North Carolina at Charlotte"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.3726_jts012024.04.html",
@@ -6863,7 +7325,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "François Massion",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_eLife.90049.html",
@@ -6906,7 +7371,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461662507.html",
@@ -6943,7 +7411,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Paulo De Assis",
 "institutions": [],
-"download_count": 5095
+"download_count": 5095,
+"series_name": "MODID-19febebe56a:Leuven University Press",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.11116_9789461662835.html",
@@ -6983,7 +7454,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Thomas Coomans, Bieke Cattoor, Krista De Jonge",
 "institutions": [],
-"download_count": 2007
+"download_count": 2007,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663443.html",
@@ -7028,7 +7502,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Fiona-Katharina Seiger, Christiane Timmerman, Noel B. Salazar et al.",
 "institutions": [],
-"download_count": 2746
+"download_count": 2746,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664914.html",
@@ -7070,7 +7547,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Pierre-Philippe Fraiture",
 "institutions": [],
-"download_count": 4353
+"download_count": 4353,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665218.html",
@@ -7112,7 +7592,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Matthew Stanard",
 "institutions": [],
-"download_count": 3112
+"download_count": 3112,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_GCME_KAD.html",
@@ -7158,7 +7641,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Royal Dutch Athletics Federation"
 ],
-"download_count": 3876
+"download_count": 3876,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1084_jem.20251584.html",
@@ -7202,7 +7688,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.12.05.570183.html",
@@ -7243,7 +7732,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.12.08.570796.html",
@@ -7287,7 +7779,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_elife.89373.3.html",
@@ -7330,7 +7825,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Cape Town HVTN Immunology Laboratory / Hutchinson Centre Research Institute of South Africa"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461662590.html",
@@ -7371,7 +7869,10 @@ window.STORIES_DATA = [
 "L’Institut Wallon de l’Évaluation, de la Prospective et de la Statistique",
 "Leman University"
 ],
-"download_count": 52
+"download_count": 52,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461662811.html",
@@ -7412,7 +7913,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Leen d’Haenens, Willem Joris, François Heinderyckx",
 "institutions": [],
-"download_count": 10860
+"download_count": 10860,
+"series_name": "Images of immigrants and refugees in Western Europe. Media representations, public opinion, and refugees’ experiences, Chapt. 2, (21-36)",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.11116_9789461663092.html",
@@ -7451,7 +7955,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Arnim Langer, Ukoha Ukiwo",
 "institutions": [],
-"download_count": 5201
+"download_count": 5201,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663542.html",
@@ -7496,7 +8003,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Luc Verpoest, Leen Engelen, Rajesh Heynickx et al.",
 "institutions": [],
-"download_count": 3477
+"download_count": 3477,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664280.html",
@@ -7543,7 +8053,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Instituto de Historia"
 ],
-"download_count": 3036
+"download_count": 3036,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664778.html",
@@ -7588,7 +8101,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Nidesh Lawtoo",
 "institutions": [],
-"download_count": 4675
+"download_count": 4675,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665072.html",
@@ -7635,7 +8151,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Tilburg University"
 ],
-"download_count": 2448
+"download_count": 2448,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "datastory_10.5281_zenodo.3727291.html",
@@ -7678,7 +8197,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Allen Institute"
 ],
-"download_count": 16310
+"download_count": 16310,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2024.01.15.575636.html",
@@ -7729,7 +8251,10 @@ window.STORIES_DATA = [
 "Marine Biological Laboratory",
 "University of California San Diego"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_pdb.prot4664.html",
@@ -7770,7 +8295,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Andrew Matus, Virginie Biou, Heike Brinkhaus et al.",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1371_journal.ppat.1011861.html",
@@ -7820,7 +8348,10 @@ window.STORIES_DATA = [
 "University of Nairobi",
 "Kenya Medical Research Institute"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_eLife.100947.html",
@@ -7861,7 +8392,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461661883.html",
@@ -7898,7 +8432,10 @@ window.STORIES_DATA = [
 "cover_url": "https://lup.be/wp-content/uploads/2024/01/default_cover.png",
 "authors": "Paulo De Assis",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461662538.html",
@@ -7935,7 +8472,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Royal Conservatoire of Scotland"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663184.html",
@@ -7971,7 +8511,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Margareta von Oswald, Jonas Tinius",
 "institutions": [],
-"download_count": 10212
+"download_count": 10212,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663801.html",
@@ -8018,7 +8561,10 @@ window.STORIES_DATA = [
 "institutions": [
 "KU Leuven"
 ],
-"download_count": 6345
+"download_count": 6345,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663962.html",
@@ -8062,7 +8608,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Nicholas Bullock, Luc Verpoest",
 "institutions": [],
-"download_count": 1637
+"download_count": 1637,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664082.html",
@@ -8107,7 +8656,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Luce Beeckmans, Alessandra Gola, Ashika Singh et al.",
 "institutions": [],
-"download_count": 3323
+"download_count": 3323,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664112.html",
@@ -8152,7 +8704,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Marie Bourguignon, Bieke Nouws, Heleen van Gerwen",
 "institutions": [],
-"download_count": 3415
+"download_count": 3415,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664693.html",
@@ -8194,7 +8749,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Irene Hilden",
 "institutions": [],
-"download_count": 1945
+"download_count": 1945,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665249.html",
@@ -8239,7 +8797,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Hanne Vandermeerschen, Elsa Mescoli, Jean-Michel Lafleur et al.",
 "institutions": [],
-"download_count": 1213
+"download_count": 1213,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.3726_b11422.html",
@@ -8281,7 +8842,10 @@ window.STORIES_DATA = [
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1113360/large.webp",
 "authors": "Javier Ramos, Esther del Campo",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": "Travail et Société / Work and Society",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "datastory_10.5061_dryad.585t4.html",
@@ -8324,7 +8888,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Heneghan, C, Thompson, M, Billingsley, M et al.",
 "institutions": [],
-"download_count": 3224
+"download_count": 3224,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1007_s11999.0000000000000172.html",
@@ -8365,7 +8932,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1056_NEJMimc1109704.html",
@@ -8411,7 +8981,10 @@ window.STORIES_DATA = [
 "institutions": [
 "General Department of Preventive Medicine"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1093_jxb_erad431.html",
@@ -8456,7 +9029,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Salk Institute for Biological Studies"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2023.12.06.23299623.html",
@@ -8499,7 +9075,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.11116_9789461664419.html",
@@ -8545,7 +9124,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Institut de Recherche sur les ArchéoMATériaux"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.36591_se-d-4602-15.html",
@@ -8588,7 +9170,10 @@ window.STORIES_DATA = [
 "institutions": [
 "American Association For Cancer Research"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.64898_2025.12.30.696949.html",
@@ -8629,7 +9214,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461662880.html",
@@ -8670,7 +9258,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Universitair Ziekenhuis Leuven"
 ],
-"download_count": 2061
+"download_count": 2061,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663610.html",
@@ -8710,7 +9301,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Ernst Wolff",
 "institutions": [],
-"download_count": 1562
+"download_count": 1562,
+"series_name": "ISBN:978-94-6270-255-4",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.11116_9789461663900.html",
@@ -8755,7 +9349,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Wim Van Petegem, JP Bosman, Miné De Klerk et al.",
 "institutions": [],
-"download_count": 5052
+"download_count": 5052,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664174.html",
@@ -8797,7 +9394,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Herman Westerink",
 "institutions": [],
-"download_count": 22750
+"download_count": 22750,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664389.html",
@@ -8839,7 +9439,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Julie De Groot",
 "institutions": [],
-"download_count": 4918
+"download_count": 4918,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664419.html",
@@ -8886,7 +9489,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Université d'Orléans"
 ],
-"download_count": 1965
+"download_count": 1965,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664556.html",
@@ -8933,7 +9539,10 @@ window.STORIES_DATA = [
 "institutions": [
 "École Nationale Supérieure d'Architecture de Paris-La Villette"
 ],
-"download_count": 4029
+"download_count": 4029,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664679.html",
@@ -8977,7 +9586,10 @@ window.STORIES_DATA = [
 "institutions": [
 "University of Potsdam"
 ],
-"download_count": 2167
+"download_count": 2167,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664884.html",
@@ -9022,7 +9634,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Franziska van Buren",
 "institutions": [],
-"download_count": 2098
+"download_count": 2098,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665140.html",
@@ -9069,7 +9684,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Department of Land Resource Management"
 ],
-"download_count": 1230
+"download_count": 1230,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_SNTSWW.html",
@@ -9113,7 +9731,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Stanford University"
 ],
-"download_count": 2902
+"download_count": 2902,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.5117_9789463723336.html",
@@ -9155,7 +9776,10 @@ window.STORIES_DATA = [
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789463723336&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Christopher Paolella",
 "institutions": [],
-"download_count": 3766
+"download_count": 3766,
+"series_name": "MODID-d66f183fd58:Amsterdam University Press",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "datastory_10.5281_zenodo.15423474.html",
@@ -9196,7 +9820,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Herb, Ulrich",
 "institutions": [],
-"download_count": 1004
+"download_count": 1004,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1016_j.cell.2025.11.041.html",
@@ -9242,7 +9869,10 @@ window.STORIES_DATA = [
 "Dana-Farber Cancer Institute",
 "University of Connecticut"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1016_j.gde.2025.102424.html",
@@ -9283,7 +9913,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1016_j.jinorgbio.2025.113204.html",
@@ -9330,7 +9963,10 @@ window.STORIES_DATA = [
 "Harvard Bioscience (United States)",
 "Massachusetts Institute of Technology"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1080_19392397.2013.791060.html",
@@ -9375,7 +10011,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Auckland University of Technology"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1162_anti.5czb.html",
@@ -9412,7 +10051,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Google (United States)"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.64898_2025.12.22.696041.html",
@@ -9455,7 +10097,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.64898_2025.12.22.696097.html",
@@ -9496,7 +10141,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.64898_2025.12.23.696258.html",
@@ -9537,7 +10185,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.64898_2025.12.30.697072.html",
@@ -9580,7 +10231,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_eLife.102345.html",
@@ -9621,7 +10275,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_elife.107141.html",
@@ -9666,7 +10323,10 @@ window.STORIES_DATA = [
 "Harvard University",
 "Boston Children's Hospital"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.1007_978-981-16-2229-8_33.html",
@@ -9709,7 +10369,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Shiv Nadar University"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": "Design science and innovation",
+"series_id": "https://openalex.org/S4210183583",
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.11116_9789461662965.html",
@@ -9747,7 +10410,10 @@ window.STORIES_DATA = [
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789461662965&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Pierre Delaere",
 "institutions": [],
-"download_count": 49
+"download_count": 49,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663009.html",
@@ -9791,7 +10457,10 @@ window.STORIES_DATA = [
 "institutions": [
 "KU Leuven"
 ],
-"download_count": 1410
+"download_count": 1410,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663245.html",
@@ -9826,7 +10495,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Burcu Dogramaci, Mareike Hetschold, Laura Karp Lugo et al.",
 "institutions": [],
-"download_count": 4119
+"download_count": 4119,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663481.html",
@@ -9866,7 +10538,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Elke Brems, Marnix Beyen, Ariane Bazan et al.",
 "institutions": [],
-"download_count": 1282
+"download_count": 1282,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663504.html",
@@ -9911,7 +10586,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Anke Gilleir, Aude Defurne",
 "institutions": [],
-"download_count": 2144
+"download_count": 2144,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664242.html",
@@ -9953,7 +10631,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Margareta von Oswald",
 "institutions": [],
-"download_count": 3338
+"download_count": 3338,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664440.html",
@@ -9993,7 +10674,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Eleonora Poggio",
 "institutions": [],
-"download_count": 926
+"download_count": 926,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664518.html",
@@ -10038,7 +10722,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Bram Demulder",
 "institutions": [],
-"download_count": 1492
+"download_count": 1492,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664532.html",
@@ -10079,7 +10766,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Beatrijs Vanacker, Lieke van Deinsen",
 "institutions": [],
-"download_count": 3409
+"download_count": 3409,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664990.html",
@@ -10117,7 +10807,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Maïka De Keyzer",
 "institutions": [],
-"download_count": 3997
+"download_count": 3997,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665119.html",
@@ -10162,7 +10855,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Clarissa Colangelo",
 "institutions": [],
-"download_count": 744
+"download_count": 744,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665256.html",
@@ -10202,7 +10898,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Jeroen Poblome",
 "institutions": [],
-"download_count": 2366
+"download_count": 2366,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665515.html",
@@ -10247,7 +10946,10 @@ window.STORIES_DATA = [
 "cover_url": "https://lup.be/wp-content/uploads/2024/12/jpg_rgb_original-1-scaled.jpg",
 "authors": "Regine Hess, Inbal Ben-Asher Gitler, Tzafrir Fainholtz et al.",
 "institutions": [],
-"download_count": 1472
+"download_count": 1472,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665522.html",
@@ -10292,7 +10994,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Angeliki Sioli, Nishat Awan, Kristopher Palagi",
 "institutions": [],
-"download_count": 1623
+"download_count": 1623,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665607.html",
@@ -10334,7 +11039,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Luca Burzelli",
 "institutions": [],
-"download_count": 448
+"download_count": 448,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665621.html",
@@ -10372,7 +11080,10 @@ window.STORIES_DATA = [
 "cover_url": "https://lup.be/wp-content/uploads/2024/04/jpg_rgb_original-10-scaled.jpg",
 "authors": "Judith Gruber, Jonas Van Mulder, Kim Christiaens et al.",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_NMIE_CII.html",
@@ -10417,7 +11128,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 2334
+"download_count": 2334,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.5117_9789462981102.html",
@@ -10462,7 +11176,10 @@ window.STORIES_DATA = [
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789462981102&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Liam Young",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.5117_9789463721745.html",
@@ -10507,7 +11224,10 @@ window.STORIES_DATA = [
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789463721745&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Maja Bondestam",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "datastory_10.5061_dryad.mq8r2.html",
@@ -10552,7 +11272,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Virginia Tech"
 ],
-"download_count": 70
+"download_count": 70,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1002_ange.202519203.html",
@@ -10595,7 +11318,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1002_anie.202519203.html",
@@ -10638,7 +11364,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1007_s10722-026-02786-9.html",
@@ -10681,7 +11410,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1016_j.celrep.2025.116739.html",
@@ -10724,7 +11456,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Yale University"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_2025.09.08.674753.html",
@@ -10763,7 +11498,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1101_pdb.ip28.html",
@@ -10802,7 +11540,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Andrew Matus, Virginie Biou, Heike Brinkhaus et al.",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.1371_journal.pone.0327344.html",
@@ -10853,7 +11594,10 @@ window.STORIES_DATA = [
 "University of California, San Diego",
 "University of San Diego"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.23640_07243.5959789.v1.html",
@@ -10892,7 +11636,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "ORCID, Alice Meadows, Tony Alves et al.",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.3233_isu-240004.html",
@@ -10942,7 +11689,10 @@ window.STORIES_DATA = [
 "SGS (Netherlands)",
 "Technische Hochschule Mannheim"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.5281_zenodo.11472834.html",
@@ -10981,7 +11731,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.5281_zenodo.7842938.html",
@@ -11020,7 +11773,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 24
+"download_count": 24,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.5451_unibas-003686587.html",
@@ -11059,7 +11815,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Martijn Roelandse",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.64898_2025.12.16.694733.html",
@@ -11098,7 +11857,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.64898_2025.12.23.696259.html",
@@ -11137,7 +11899,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.64898_2025.12.23.696279.html",
@@ -11180,7 +11945,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.64898_2025.12.24.696395.html",
@@ -11219,7 +11987,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.64898_2025.12.27.696673.html",
@@ -11262,7 +12033,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.64898_2025.12.31.697091.html",
@@ -11301,7 +12075,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_eLife.103118.html",
@@ -11344,7 +12121,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_eLife.107450.html",
@@ -11383,7 +12163,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_eLife.108439.html",
@@ -11422,7 +12205,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_eLife.110392.html",
@@ -11461,7 +12247,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "articlestory_10.7554_elife.107467.html",
@@ -11502,7 +12291,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Howard Hughes Medical Institute"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461662293.html",
@@ -11544,7 +12336,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Michiel Meeusen",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461662842.html",
@@ -11581,7 +12376,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Lene Rock",
 "institutions": [],
-"download_count": 3161
+"download_count": 3161,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663023.html",
@@ -11623,7 +12421,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Serafettin Pektas, Johan Leman",
 "institutions": [],
-"download_count": 3330
+"download_count": 3330,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663221.html",
@@ -11657,7 +12458,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Sebastiaan Loosen, Rajesh Heynickx, Hilde Heynen",
 "institutions": [],
-"download_count": 2817
+"download_count": 2817,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663283.html",
@@ -11695,7 +12499,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Jan Schmidt, Willy Vande Walle",
 "institutions": [],
-"download_count": 3926
+"download_count": 3926,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663412.html",
@@ -11736,7 +12543,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Benjamin Nickl",
 "institutions": [],
-"download_count": 4085
+"download_count": 4085,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663573.html",
@@ -11774,7 +12584,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Rega Institute for Medical Research"
 ],
-"download_count": 2077
+"download_count": 2077,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663788.html",
@@ -11812,7 +12625,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Bruno Yammine",
 "institutions": [],
-"download_count": 1620
+"download_count": 1620,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663832.html",
@@ -11851,7 +12667,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Mohit Chandna",
 "institutions": [],
-"download_count": 1502
+"download_count": 1502,
+"series_name": "MODID-19febebe56a:Leuven University Press",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.11116_9789461663948.html",
@@ -11895,7 +12714,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Pieter Boons, Sandrine Colard",
 "institutions": [],
-"download_count": 1613
+"download_count": 1613,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663955.html",
@@ -11933,7 +12755,10 @@ window.STORIES_DATA = [
 "cover_url": "https://lup.be/wp-content/uploads/2024/01/default_cover.png",
 "authors": "Pieter Boons, Sandrine Colard",
 "institutions": [],
-"download_count": 790
+"download_count": 790,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461663979.html",
@@ -11977,7 +12802,10 @@ window.STORIES_DATA = [
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789461663979&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Renilde Loeckx",
 "institutions": [],
-"download_count": 20
+"download_count": 20,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664020.html",
@@ -12017,7 +12845,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Jacob W. Lewis, Kyle Parry",
 "institutions": [],
-"download_count": 3549
+"download_count": 3549,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664037.html",
@@ -12060,7 +12891,10 @@ window.STORIES_DATA = [
 "institutions": [
 "La Cambre"
 ],
-"download_count": 2470
+"download_count": 2470,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664051.html",
@@ -12095,7 +12929,10 @@ window.STORIES_DATA = [
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789461664051&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Jo Tollebeek, Liesbet Nys",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664129.html",
@@ -12136,7 +12973,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Roel Smeets",
 "institutions": [],
-"download_count": 1663
+"download_count": 1663,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664143.html",
@@ -12180,7 +13020,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Ernst Wolff",
 "institutions": [],
-"download_count": 877
+"download_count": 877,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664297.html",
@@ -12224,7 +13067,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "René Vermeir, Dries Raeymaekers, José Eloy Hortal Muñoz",
 "institutions": [],
-"download_count": 2902
+"download_count": 2902,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664303.html",
@@ -12261,7 +13107,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Pieter Bergé",
 "institutions": [],
-"download_count": 1614
+"download_count": 1614,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664310.html",
@@ -12302,7 +13151,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Michael Boyden",
 "institutions": [],
-"download_count": 568
+"download_count": 568,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664495.html",
@@ -12346,7 +13198,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Me-Linh Hannah Riemann",
 "institutions": [],
-"download_count": 1453
+"download_count": 1453,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664570.html",
@@ -12387,7 +13242,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Griet Galle, Kris Grimonprez",
 "institutions": [],
-"download_count": 1994
+"download_count": 1994,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664631.html",
@@ -12431,7 +13289,10 @@ window.STORIES_DATA = [
 "cover_url": "https://lup.be/wp-content/uploads/2024/01/default_cover.png",
 "authors": "Lesly Deschler Canossi, Zoraida Lopez-Diago",
 "institutions": [],
-"download_count": 2437
+"download_count": 2437,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664792.html",
@@ -12470,7 +13331,10 @@ window.STORIES_DATA = [
 "cover_url": "https://lup.be/wp-content/uploads/2024/01/jpg_rgb_original-347-scaled.jpg",
 "authors": "Pieter Verstraete",
 "institutions": [],
-"download_count": 2627
+"download_count": 2627,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664815.html",
@@ -12514,7 +13378,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Stephan Ehrig, Britta C. Jung, Gad Schaffer",
 "institutions": [],
-"download_count": 1957
+"download_count": 1957,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664952.html",
@@ -12560,7 +13427,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Toronto Metropolitan University"
 ],
-"download_count": 1020
+"download_count": 1020,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461664976.html",
@@ -12606,7 +13476,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Université Sorbonne Nouvelle"
 ],
-"download_count": 2240
+"download_count": 2240,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665096.html",
@@ -12647,7 +13520,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Leen d’Haenens, Abdelwahed Mekki-Berrada",
 "institutions": [],
-"download_count": 2035
+"download_count": 2035,
+"series_name": "Islamophobia as a Form of Radicalisation Perspectives on Media, Academia and Socio-political Scapes from Europe and Canada",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.11116_9789461665171.html",
@@ -12688,7 +13564,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Noah Oehri",
 "institutions": [],
-"download_count": 616
+"download_count": 616,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665195.html",
@@ -12727,7 +13606,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Aarhus School of Architecture"
 ],
-"download_count": 1660
+"download_count": 1660,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665232.html",
@@ -12771,7 +13653,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Chiara Zampieri, Martina Piperno, Bart Van den Bossche",
 "institutions": [],
-"download_count": 1093
+"download_count": 1093,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665263.html",
@@ -12812,7 +13697,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Katharina Jörder",
 "institutions": [],
-"download_count": 1305
+"download_count": 1305,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665270.html",
@@ -12853,7 +13741,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Martha Kuhlman, José Alaniz",
 "institutions": [],
-"download_count": 2249
+"download_count": 2249,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665324.html",
@@ -12891,7 +13782,10 @@ window.STORIES_DATA = [
 "cover_url": "https://lup.be/wp-content/uploads/2024/01/jpg_rgb_original-37-scaled.jpg",
 "authors": "Lieven D'hulst, Chris Van de Poel",
 "institutions": [],
-"download_count": 1206
+"download_count": 1206,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665355.html",
@@ -12935,7 +13829,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Laurens van der Wiel",
 "institutions": [],
-"download_count": 962
+"download_count": 962,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665409.html",
@@ -12979,7 +13876,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Markéta Hánová, Yuka Kadoi, Simone Wille",
 "institutions": [],
-"download_count": 1733
+"download_count": 1733,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665416.html",
@@ -13025,7 +13925,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Royal Society"
 ],
-"download_count": 1489
+"download_count": 1489,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665423.html",
@@ -13069,7 +13972,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Julie McBrien, Annelies Moors",
 "institutions": [],
-"download_count": 1772
+"download_count": 1772,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665478.html",
@@ -13113,7 +14019,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Kurt Bertels, Adrianne Honnold",
 "institutions": [],
-"download_count": 2132
+"download_count": 2132,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665553.html",
@@ -13151,7 +14060,10 @@ window.STORIES_DATA = [
 "cover_url": "https://lup.be/wp-content/uploads/2024/12/jpg_rgb_original-4.jpg",
 "authors": "Juan Jiménez Castillo Jiménez Castillo",
 "institutions": [],
-"download_count": 468
+"download_count": 468,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665591.html",
@@ -13192,7 +14104,10 @@ window.STORIES_DATA = [
 "cover_url": "https://library.oapen.org/rest/bitstreams/52cb54a3-d251-47f6-9b96-79ceb5399b02/retrieve",
 "authors": "Bruno Forment",
 "institutions": [],
-"download_count": 1404
+"download_count": 1404,
+"series_name": "Orpheus Institute Series",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.11116_9789461665690.html",
@@ -13236,7 +14151,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Liesbeth François, Michiel Rys",
 "institutions": [],
-"download_count": 1277
+"download_count": 1277,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_9789461665706.html",
@@ -13280,7 +14198,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Theofanis Tsiampokalos",
 "institutions": [],
-"download_count": 981
+"download_count": 981,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11116_MITA_CII.html",
@@ -13320,7 +14241,10 @@ window.STORIES_DATA = [
 "institutions": [
 "University of Denver"
 ],
-"download_count": 3350
+"download_count": 3350,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.11647_obp.0173.html",
@@ -13352,7 +14276,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.2307_j.ctt1v2xsqn.html",
@@ -13393,7 +14320,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.2307_j.ctt45kfbw.html",
@@ -13434,7 +14364,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.2307_j.ctv12sdvgj.html",
@@ -13472,7 +14405,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Instituto de Estudos Avançados da Universidade de São Paulo"
 ],
-"download_count": 1956
+"download_count": 1956,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.3726_978-3-653-02684-9.html",
@@ -13508,7 +14444,10 @@ window.STORIES_DATA = [
 "cover_url": "https://library.oapen.org/rest/bitstreams/81f8b02f-c67b-4cfb-aeac-9eff4ebb4ddb/retrieve",
 "authors": "Jürgen Kloosterhuis, Bernhard R. Kroener, Klaus Neitmann et al.",
 "institutions": [],
-"download_count": 1986
+"download_count": 1986,
+"series_name": "Quellen, Findbuecher und Inventare des Brandenburgischen Landeshauptarchivs",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.3726_b17114.html",
@@ -13547,7 +14486,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Les Afriques dans le Monde"
 ],
-"download_count": 0
+"download_count": 0,
+"series_name": "Travail et Société / Work and Society",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.3726_b21088.html",
@@ -13591,7 +14533,10 @@ window.STORIES_DATA = [
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1313443/large.webp",
 "authors": "Andrea Maria Locatelli, Cecilia Maria Bravi",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": "Travail et Société / Work and Society",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.3726_b21787.html",
@@ -13632,7 +14577,10 @@ window.STORIES_DATA = [
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1438907/large.webp",
 "authors": "Silvia Carbone",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.3998_mpub.14414299.html",
@@ -13676,7 +14624,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Stefan Ekman",
 "institutions": [],
-"download_count": 325
+"download_count": 325,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.5117_9789048512270.html",
@@ -13708,7 +14659,10 @@ window.STORIES_DATA = [
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789048512270&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.5117_9789048524518.html",
@@ -13740,7 +14694,10 @@ window.STORIES_DATA = [
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789048524518&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.5117_9789048551774.html",
@@ -13772,7 +14729,10 @@ window.STORIES_DATA = [
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789048551774&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.5117_9789048568284.html",
@@ -13813,7 +14773,10 @@ window.STORIES_DATA = [
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789048568284&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "",
 "institutions": [],
-"download_count": 251
+"download_count": 251,
+"series_name": "MODID-d66f183fd58:Amsterdam University Press",
+"series_id": null,
+"belongs_to_series": true
 },
 {
 "file": "bookstory_10.5117_9789089647191.html",
@@ -13845,7 +14808,10 @@ window.STORIES_DATA = [
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789089647191&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Annette Förster",
 "institutions": [],
-"download_count": 1654
+"download_count": 1654,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.5117_9789462986206.html",
@@ -13889,7 +14855,10 @@ window.STORIES_DATA = [
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789462986206&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Sebastian Vehlken",
 "institutions": [],
-"download_count": 503
+"download_count": 503,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.5117_9789463724012.html",
@@ -13921,7 +14890,10 @@ window.STORIES_DATA = [
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789463724012&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Walid Jumblatt Abdullah",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.5703_1288284317628.html",
@@ -13965,7 +14937,10 @@ window.STORIES_DATA = [
 "cover_url": "https://library.oapen.org/rest/bitstreams/d618778c-cb80-4296-bbc4-14f15cdc3052/retrieve",
 "authors": "Diann Jordan",
 "institutions": [],
-"download_count": 416
+"download_count": 416,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "bookstory_10.7765_9781526137760.html",
@@ -13997,7 +14972,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Raymond Hinnebusch",
 "institutions": [],
-"download_count": 414
+"download_count": 414,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "datastory_10.23640_07243.5259502.v1.html",
@@ -14032,7 +15010,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "terence smyre, 0000-0001-7094-8102, Smyre, Terence et al.",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "datastory_10.25378_janelia.23816295.html",
@@ -14071,7 +15052,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "datastory_10.25378_janelia.23816295.v1.html",
@@ -14110,7 +15094,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "datastory_10.5281_zenodo.10875062.html",
@@ -14149,7 +15136,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 1084
+"download_count": 1084,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "datastory_10.5281_zenodo.11472834.html",
@@ -14188,7 +15178,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 0
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "datastory_10.5281_zenodo.17442025.html",
@@ -14229,7 +15222,10 @@ window.STORIES_DATA = [
 "institutions": [
 "Leiden University"
 ],
-"download_count": 557
+"download_count": 557,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "datastory_10.5281_zenodo.7821611.html",
@@ -14269,7 +15265,10 @@ window.STORIES_DATA = [
 "Ospedale di Parma",
 "Ospedale San Luigi Gonzaga"
 ],
-"download_count": 450
+"download_count": 450,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "datastory_10.5281_zenodo.7842938.html",
@@ -14308,7 +15307,10 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "",
 "institutions": [],
-"download_count": 24
+"download_count": 24,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 },
 {
 "file": "softwarestory_10.5281_zenodo.3559815.html",
@@ -14349,7 +15351,10 @@ window.STORIES_DATA = [
 "institutions": [
 "ETH Zurich"
 ],
-"download_count": 222
+"download_count": 222,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false
 }
 ];
 window.STORIES_STATS = {"total": 335, "total_articles": 157, "total_books": 152, "total_data": 19, "total_software": 7, "total_oa": 299, "pct_oa": 89, "total_citations": 108473, "num_disciplines": 30};

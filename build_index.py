@@ -50,6 +50,48 @@ def get_val(d, *keys, default=None):
             return default
     return d
 
+def _text_or_none(val):
+    """Coerce series identifiers to str or None (handles null / non-string)."""
+    if val is None:
+        return None
+    if isinstance(val, str):
+        s = val.strip()
+        return s if s else None
+    return str(val).strip() or None
+
+def extract_series_fields(d, signals):
+    """Read book-series fields from current and legacy JSON shapes."""
+    series_name = None
+    series_id = None
+    belongs_to_series = None
+
+    meta = signals.get("series_metadata")
+    if isinstance(meta, dict):
+        series_name = _text_or_none(meta.get("series_name"))
+        series_id = _text_or_none(meta.get("series_id"))
+        if meta.get("belongs_to_series") is not None:
+            belongs_to_series = bool(meta.get("belongs_to_series"))
+
+    if series_name is None:
+        series_name = _text_or_none(signals.get("series_name"))
+    if series_id is None:
+        series_id = _text_or_none(signals.get("series_id"))
+
+    if series_name is None:
+        doab = d.get("doab")
+        if isinstance(doab, dict):
+            series_name = _text_or_none(doab.get("series_name"))
+
+    if series_name is None:
+        series_name = _text_or_none(d.get("series_name"))
+    if series_id is None:
+        series_id = _text_or_none(d.get("series_id"))
+
+    if belongs_to_series is None:
+        belongs_to_series = bool(series_name or series_id)
+
+    return series_name, series_id, belongs_to_series
+
 # ── extract one story ─────────────────────────────────────────────────────────
 
 def extract(filepath):
@@ -311,6 +353,8 @@ def extract(filepath):
     if len(d.get("authors") or []) > 3:
         author_str += " et al."
 
+    series_name, series_id, belongs_to_series = extract_series_fields(d, signals)
+
     return {
         "file": html_file,
         "title": title,
@@ -340,6 +384,9 @@ def extract(filepath):
         "authors": author_str,
         "institutions": institutions,
         "download_count": download_count,
+        "series_name": series_name,
+        "series_id": series_id,
+        "belongs_to_series": belongs_to_series,
     }
 
 # ── main ──────────────────────────────────────────────────────────────────────

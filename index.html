@@ -753,6 +753,12 @@
       <div class="facet-options overflow" id="fo-venue"></div>
     </div>
 
+    <!-- Book series -->
+    <div class="facet-group collapsed" id="fg-series">
+      <h3 onclick="toggleFacet('fg-series')">Book series <span class="caret">▾</span></h3>
+      <div class="facet-options overflow" id="fo-series"></div>
+    </div>
+
     <!-- Year -->
     <div class="facet-group collapsed" id="fg-year">
       <h3 onclick="toggleFacet('fg-year')">Year <span class="caret">▾</span></h3>
@@ -769,6 +775,7 @@
         <button class="view-btn active" id="vbtn-stories"       onclick="setView('stories')">Stories</button>
         <button class="view-btn"        id="vbtn-institution"   onclick="setView('institution')">By institution</button>
         <button class="view-btn"        id="vbtn-publisher"     onclick="setView('publisher')">By publisher</button>
+        <button class="view-btn"        id="vbtn-series"        onclick="setView('series')">By series</button>
       </div>
       <div class="active-filters" id="activeFilters"></div>
     </div>
@@ -787,7 +794,7 @@
 const state = {
   query: "",
   sort: "citations",
-  view: "stories",   // "stories" | "institution" | "publisher"
+  view: "stories",   // "stories" | "institution" | "publisher" | "series"
   aggSort: { key: "stories", dir: "desc" },
   filters: {
     type: new Set(),
@@ -797,6 +804,7 @@ const state = {
     concept: new Set(),
     institution: new Set(),
     venue: new Set(),
+    series: new Set(),
     year: new Set(),
   }
 };
@@ -844,7 +852,7 @@ function typeLogo(t) {
 
 // ── build facet counts ────────────────────────────────────────────────────
 function buildFacetCounts(stories) {
-  const counts = { type:{}, oa:{}, concept:{}, role:{}, institution:{}, venue:{}, year:{}, features:{} };
+  const counts = { type:{}, oa:{}, concept:{}, role:{}, institution:{}, venue:{}, series:{}, year:{}, features:{} };
   for (const s of stories) {
     counts.type[s.type] = (counts.type[s.type]||0)+1;
     const oaKey = s.oa_status || (s.is_oa===true?"oa":"closed");
@@ -852,6 +860,7 @@ function buildFacetCounts(stories) {
     for (const c of s.concepts) counts.concept[c] = (counts.concept[c]||0)+1;
     for (const r of s.roles) counts.role[r] = (counts.role[r]||0)+1;
     if (s.venue) counts.venue[s.venue] = (counts.venue[s.venue]||0)+1;
+    if (s.series_name) counts.series[s.series_name] = (counts.series[s.series_name]||0)+1;
     if (s.year) counts.year[s.year] = (counts.year[s.year]||0)+1;
     if (s.has_sdgs)              counts.features["SDG-linked"]          = (counts.features["SDG-linked"]||0)+1;
     if (s.has_peer_review)       counts.features["Peer reviewed"]       = (counts.features["Peer reviewed"]||0)+1;
@@ -870,7 +879,7 @@ function buildFacetCounts(stories) {
 function filterStories(stories) {
   return stories.filter(s => {
     if (state.query) {
-      const haystack = [s.title, s.authors, s.venue, s.excerpt, ...s.concepts, ...s.roles].join(" ").toLowerCase();
+      const haystack = [s.title, s.authors, s.venue, s.series_name, s.excerpt, ...s.concepts, ...s.roles].join(" ").toLowerCase();
       if (!haystack.includes(state.query)) return false;
     }
     if (state.filters.type.size && !state.filters.type.has(s.type)) return false;
@@ -895,6 +904,10 @@ function filterStories(stories) {
       if (![...state.filters.features].every(f => feats.has(f))) return false;
     }
     if (state.filters.venue.size && !state.filters.venue.has(s.venue)) return false;
+    if (state.filters.series.size) {
+      const seriesKey = s.series_name || "(no series)";
+      if (!state.filters.series.has(seriesKey)) return false;
+    }
     if (state.filters.year.size && !state.filters.year.has(s.year)) return false;
     return true;
   });
@@ -1004,6 +1017,10 @@ function renderFacets(allStories, filtered) {
 
   const topVenues = Object.entries(allC.venue).sort((a,b)=>b[1]-a[1]).slice(0,25).map(([k])=>k);
   renderFacetGroup("fo-venue", "venue", allC.venue, filtC.venue, k => esc(k), topVenues);
+
+  const topSeries = Object.entries(allC.series).sort((a,b)=>b[1]-a[1]).slice(0,30).map(([k])=>k);
+  renderFacetGroup("fo-series", "series", allC.series, filtC.series, k => esc(k), topSeries);
+  document.getElementById("fg-series").style.display = topSeries.length ? "" : "none";
 
   const years = Object.keys(allC.year).map(Number).sort((a,b)=>b-a);
   renderFacetGroup("fo-year", "year", allC.year, filtC.year, k => k, years);
@@ -1203,6 +1220,10 @@ function buildAggGroups(stories, groupKey) {
     if (groupKey === "institution") {
       keys = (s.institutions || []).filter(Boolean);
       if (!keys.length) keys = ["(no institution)"];
+    } else if (groupKey === "series") {
+      if (s.type !== "BookStory") continue;
+      const k = s.series_name || "(no series)";
+      keys = [k];
     } else {
       const k = s.publisher || s.venue || "(no publisher)";
       keys = [k];
@@ -1240,8 +1261,10 @@ function renderAgg(stories, groupKey) {
   const groups   = sortAggGroups(buildAggGroups(stories, groupKey));
   const maxCit   = Math.max(...groups.map(g => g.citations), 1);
   const hasDl    = groups.some(g => g.downloads > 0);
-  const facetKey = groupKey === "institution" ? "institution" : "venue";
-  const label    = groupKey === "institution" ? "all institutions" : "all publishers";
+  const facetKey = groupKey === "institution" ? "institution"
+    : groupKey === "series" ? "series" : "venue";
+  const label    = groupKey === "institution" ? "all institutions"
+    : groupKey === "series" ? "all book series" : "all publishers";
 
   // Refresh drill-map
   Object.keys(_aggDrillMap).forEach(k => delete _aggDrillMap[k]);
@@ -1293,7 +1316,8 @@ function renderAgg(stories, groupKey) {
     </tr>`;
   }).join("");
 
-  const groupWord = groupKey === "institution" ? "institution" : "publisher";
+  const groupWord = groupKey === "institution" ? "institution"
+    : groupKey === "series" ? "book series" : "publisher";
   document.getElementById("aggView").innerHTML = pfCard + `
     <div class="pf-section-label" style="margin-bottom:0.5rem">
       Breakdown by ${groupWord} — ${groups.length} groups · click a name to filter stories
