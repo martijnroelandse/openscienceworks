@@ -92,6 +92,172 @@ def extract_series_fields(d, signals):
 
     return series_name, series_id, belongs_to_series
 
+# Web mention platforms (about.html — Public Discourse sources)
+PLATFORM_LABELS = {
+    "wikipedia": "Wikipedia",
+    "reddit": "Reddit",
+    "bluesky": "Bluesky",
+    "hypothesis": "Hypothesis",
+    "substack": "Substack",
+    "stackexchange": "Stack Exchange",
+    "stack_exchange": "Stack Exchange",
+    "mastodon": "Mastodon",
+    "news": "News",
+    "blog": "Blogs",
+    "blogs": "Blogs",
+    "podcast": "Podcasts",
+    "podcasts": "Podcasts",
+}
+
+# Crossref Event Data source_id / event type → explorer platform label
+EVENT_SOURCE_LABELS = {
+    "newsfeed": "Blogs",
+    "wordpressdotcom": "Blogs",
+    "wordpress_dotcom": "Blogs",
+    "post-weblog": "Blogs",
+    "post_weblog": "Blogs",
+    "blog": "Blogs",
+    "blogs": "Blogs",
+    "podcast": "Podcasts",
+    "podcasts": "Podcasts",
+    "wikipedia": "Wikipedia",
+    "reddit": "Reddit",
+    "reddit-links": "Reddit",
+    "reddit_links": "Reddit",
+    "hypothesis": "Hypothesis",
+    "bluesky": "Bluesky",
+    "substack": "Substack",
+    "stackexchange": "Stack Exchange",
+    "stack_exchange": "Stack Exchange",
+    "mastodon": "Mastodon",
+    "news": "News",
+}
+
+# Event sources that are not end-user mention platforms
+EVENT_SOURCE_SKIP = frozenset({
+    "crossref",
+    "cambia-lens",
+    "cambia_lens",
+    "f1000",
+    "facultyopinions",
+})
+
+def _has_mention_content(val):
+    """True when a platform bucket carries at least one mention."""
+    if val is None:
+        return False
+    if isinstance(val, list):
+        return len(val) > 0
+    if isinstance(val, dict):
+        if val.get("count") or val.get("total"):
+            try:
+                return int(val.get("count") or val.get("total") or 0) > 0
+            except (TypeError, ValueError):
+                pass
+        return any(_has_mention_content(v) for v in val.values())
+    if isinstance(val, (int, float)):
+        return val > 0
+    return bool(val)
+
+def _platform_label(key):
+    raw = str(key).strip()
+    if not raw:
+        return None
+    norm = raw.lower().replace("-", "_").replace(" ", "_")
+    if norm in PLATFORM_LABELS:
+        return PLATFORM_LABELS[norm]
+    return raw.replace("_", " ").title()
+
+def _add_platform(platforms, seen, key):
+    label = _platform_label(key)
+    if label and label not in seen:
+        platforms.append(label)
+        seen.add(label)
+
+def _event_source_label(raw):
+    if not raw:
+        return None
+    norm = str(raw).strip().lower()
+    if not norm or norm in EVENT_SOURCE_SKIP:
+        return None
+    if norm in EVENT_SOURCE_LABELS:
+        return EVENT_SOURCE_LABELS[norm]
+    alt = norm.replace("-", "_")
+    if alt in EVENT_SOURCE_LABELS:
+        return EVENT_SOURCE_LABELS[alt]
+    if norm in PLATFORM_LABELS:
+        return PLATFORM_LABELS[norm]
+    return None
+
+def _add_event_source(platforms, seen, raw):
+    label = _event_source_label(raw)
+    if label and label not in seen:
+        platforms.append(label)
+        seen.add(label)
+
+def _collect_event_platforms(signals, impact, platforms, seen):
+    """Mine Crossref Event Data blocks for mention platforms."""
+    blocks = []
+    raw = signals.get("raw_events")
+    if isinstance(raw, dict):
+        blocks.append(raw)
+    ev = impact.get("events") if isinstance(impact, dict) else None
+    if isinstance(ev, dict) and ev is not raw:
+        blocks.append(ev)
+
+    for block in blocks:
+        for item in block.get("by_source") or []:
+            sid = None
+            count = 1
+            if isinstance(item, (list, tuple)) and item:
+                sid = item[0]
+                if len(item) > 1 and item[1] is not None:
+                    try:
+                        count = int(item[1])
+                    except (TypeError, ValueError):
+                        count = 1
+            elif isinstance(item, str):
+                sid = item
+            if sid and count > 0:
+                _add_event_source(platforms, seen, sid)
+
+        for key in ("examples", "events"):
+            for ev in block.get(key) or []:
+                if not isinstance(ev, dict):
+                    continue
+                for field in ("source_id", "type"):
+                    if ev.get(field):
+                        _add_event_source(platforms, seen, ev[field])
+
+def extract_mention_platforms(d, signals):
+    """
+    Platforms with recorded web mentions (social_mentions, web_mentions, public_discourse,
+    Crossref Event Data). Designed to pick up new platform keys as the pipeline expands.
+    """
+    platforms = []
+    seen = set()
+
+    for block_key in ("social_mentions", "web_mentions"):
+        block = signals.get(block_key) or (d.get(block_key) if block_key == "web_mentions" else None)
+        if not isinstance(block, dict):
+            continue
+        for k, v in block.items():
+            if k in ("last_updated", "updated_at"):
+                continue
+            if _has_mention_content(v):
+                _add_platform(platforms, seen, k)
+
+    pd = signals.get("public_discourse")
+    if isinstance(pd, dict):
+        for k, v in pd.items():
+            if _has_mention_content(v):
+                _add_platform(platforms, seen, k)
+
+    impact = d.get("impact") or {}
+    _collect_event_platforms(signals, impact, platforms, seen)
+
+    return platforms
+
 # Canonical inferred-role labels (about.html — Inferred Roles)
 ROLE_CANONICAL_BY_ID = {
     "scholarly_uptake": "Scholarly Uptake",
@@ -421,6 +587,7 @@ def extract(filepath):
         author_str += " et al."
 
     series_name, series_id, belongs_to_series = extract_series_fields(d, signals)
+    mention_platforms = extract_mention_platforms(d, signals)
 
     return {
         "file": html_file,
@@ -454,6 +621,7 @@ def extract(filepath):
         "series_name": series_name,
         "series_id": series_id,
         "belongs_to_series": belongs_to_series,
+        "mention_platforms": mention_platforms,
     }
 
 # ── main ──────────────────────────────────────────────────────────────────────

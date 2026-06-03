@@ -726,12 +726,6 @@
       <div class="facet-options" id="fo-type"></div>
     </div>
 
-    <!-- Book series -->
-    <div class="facet-group" id="fg-series">
-      <h3 onclick="toggleFacet('fg-series')">Book series <span class="caret">▾</span></h3>
-      <div class="facet-options overflow" id="fo-series"></div>
-    </div>
-
     <!-- Role / signal -->
     <div class="facet-group" id="fg-role">
       <h3 onclick="toggleFacet('fg-role')">Impact signal <span class="caret">▾</span></h3>
@@ -742,6 +736,12 @@
     <div class="facet-group" id="fg-features">
       <h3 onclick="toggleFacet('fg-features')">Open science signals <span class="caret">▾</span></h3>
       <div class="facet-options" id="fo-features"></div>
+    </div>
+
+    <!-- Web mention platform -->
+    <div class="facet-group collapsed" id="fg-platform">
+      <h3 onclick="toggleFacet('fg-platform')">Mention platform <span class="caret">▾</span></h3>
+      <div class="facet-options" id="fo-platform"></div>
     </div>
 
     <!-- OA Status -->
@@ -760,6 +760,12 @@
     <div class="facet-group collapsed" id="fg-inst">
       <h3 onclick="toggleFacet('fg-inst')">Institution <span class="caret">▾</span></h3>
       <div class="facet-options overflow" id="fo-inst"></div>
+    </div>
+
+    <!-- Book series -->
+    <div class="facet-group collapsed" id="fg-series">
+      <h3 onclick="toggleFacet('fg-series')">Book series <span class="caret">▾</span></h3>
+      <div class="facet-options overflow" id="fo-series"></div>
     </div>
 
     <!-- Publisher / venue -->
@@ -815,6 +821,7 @@ const state = {
     institution: new Set(),
     venue: new Set(),
     series: new Set(),
+    platform: new Set(),
     year: new Set(),
   }
 };
@@ -894,9 +901,34 @@ function orderedRoles(counts) {
   return keys;
 }
 
+const PLATFORM_ORDER = [
+  "Wikipedia",
+  "Reddit",
+  "Bluesky",
+  "Stack Exchange",
+  "Hypothesis",
+  "Substack",
+  "Podcasts",
+  "Blogs",
+  "Mastodon",
+  "News",
+];
+
+function orderedPlatforms(counts) {
+  const seen = new Set();
+  const keys = [];
+  for (const k of PLATFORM_ORDER) {
+    if (counts[k]) { keys.push(k); seen.add(k); }
+  }
+  for (const [k, n] of Object.entries(counts).sort((a, b) => b[1] - a[1])) {
+    if (!seen.has(k)) keys.push(k);
+  }
+  return keys;
+}
+
 // ── build facet counts ────────────────────────────────────────────────────
 function buildFacetCounts(stories) {
-  const counts = { type:{}, oa:{}, concept:{}, role:{}, institution:{}, venue:{}, series:{}, year:{}, features:{} };
+  const counts = { type:{}, oa:{}, concept:{}, role:{}, institution:{}, venue:{}, series:{}, platform:{}, year:{}, features:{} };
   for (const s of stories) {
     counts.type[s.type] = (counts.type[s.type]||0)+1;
     const oaKey = s.oa_status || (s.is_oa===true?"oa":"closed");
@@ -905,6 +937,7 @@ function buildFacetCounts(stories) {
     for (const r of s.roles) counts.role[r] = (counts.role[r]||0)+1;
     if (s.venue) counts.venue[s.venue] = (counts.venue[s.venue]||0)+1;
     if (s.series_name) counts.series[s.series_name] = (counts.series[s.series_name]||0)+1;
+    for (const p of (s.mention_platforms||[])) counts.platform[p] = (counts.platform[p]||0)+1;
     if (s.year) counts.year[s.year] = (counts.year[s.year]||0)+1;
     if (s.has_sdgs)              counts.features["SDG-linked"]          = (counts.features["SDG-linked"]||0)+1;
     if (s.has_peer_review)       counts.features["Peer reviewed"]       = (counts.features["Peer reviewed"]||0)+1;
@@ -923,7 +956,7 @@ function buildFacetCounts(stories) {
 function filterStories(stories) {
   return stories.filter(s => {
     if (state.query) {
-      const haystack = [s.title, s.authors, s.venue, s.series_name, s.excerpt, ...s.concepts, ...s.roles].join(" ").toLowerCase();
+      const haystack = [s.title, s.authors, s.venue, s.series_name, s.excerpt, ...(s.mention_platforms||[]), ...s.concepts, ...s.roles].join(" ").toLowerCase();
       if (!haystack.includes(state.query)) return false;
     }
     if (state.filters.type.size && !state.filters.type.has(s.type)) return false;
@@ -951,6 +984,11 @@ function filterStories(stories) {
     if (state.filters.series.size) {
       const seriesKey = s.series_name || "(no series)";
       if (!state.filters.series.has(seriesKey)) return false;
+    }
+    // OR within platform facet: story must appear on at least one selected platform
+    if (state.filters.platform.size) {
+      const plats = s.mention_platforms || [];
+      if (![...state.filters.platform].some(p => plats.includes(p))) return false;
     }
     if (state.filters.year.size && !state.filters.year.has(s.year)) return false;
     return true;
@@ -1087,6 +1125,9 @@ function renderFacets(allStories, filtered) {
     k => esc(k),
     featOrder.filter(k => allC.features[k])
   );
+
+  const topPlatforms = orderedPlatforms(allC.platform);
+  renderFacetGroup("fo-platform", "platform", allC.platform, filtC.platform, k => esc(k), topPlatforms);
 }
 
 function renderActiveFilters() {
