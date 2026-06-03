@@ -1,537 +1,2209 @@
-
 <!DOCTYPE html>
+
+
+
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>BookStory – Open: The Philosophy and Practices that are Revolutionizing Education and Science</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f3f4f6;
-      color: #111827;
-    }
-    .page {
-      max-width: 1000px;
-      margin: 2.5rem auto;
-      padding: 0 1.25rem 3rem;
-    }
-    header.hero { margin-bottom: 2rem; }
-    .hero-title {
-      font-size: 2.1rem;
-      font-weight: 700;
-      margin: 0;
-      color: #111827;
-    }
-    .discipline-badge {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      border: 1px solid rgba(15, 23, 42, 0.15);
-      background: rgba(15, 23, 42, 0.04);
-    }
-    .hero-meta {
-      margin-top: 0.5rem;
-      color: #4b5563;
-      font-size: 0.95rem;
-    }
-    .hero-meta div { margin-bottom: 0.15rem; }
-    .card {
-      background: #ffffff;
-      border-radius: 0.9rem;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-      padding: 1.5rem 1.75rem;
-      margin-bottom: 1.75rem;
-    }
-    .card h2 {
-      margin-top: 0;
-      font-size: 1.1rem;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      color: #6b7280;
-    }
-    .card h2 span {
-      color: #111827;
-      font-weight: 600;
-      text-transform: none;
-      font-size: 1.25rem;
-      letter-spacing: 0;
-    }
-    .story-text { font-size: 0.98rem; line-height: 1.7; color: #111827; }
-    .header-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.25rem;
-    }
-    .usage-row {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 0.15rem 0;
-      font-size: 0.85rem;
-    }
-    .toolbar {
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 0.75rem;
-    }
-    .event-source-list,
-    .event-examples-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0.25rem 0 0;
-    }
-    .event-source-item,
-    .event-example-item {
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-    }
-    .event-example-meta { margin-bottom: 0.2rem; }
-    .download-btn {
-      border: none;
-      border-radius: 999px;
-      padding: 0.35rem 0.9rem;
-      font-size: 0.8rem;
-      cursor: pointer;
-      background: #111827;
-      color: #f9fafb;
-      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
-    }
-    .download-btn:hover { opacity: 0.9; }
-    @media print {
-      body { background: #ffffff; }
-      .page { margin: 0; max-width: 100%; box-shadow: none; }
-      .card { box-shadow: none; border-radius: 0; page-break-inside: avoid; }
-      .toolbar { display: none; }
-    }
-    .usage-month { width: 2.5rem; color: #6b7280; }
-    .usage-bar-wrap {
-      flex: 1;
-      background: #e5e7eb;
-      border-radius: 999px;
-      overflow: hidden;
-      height: 0.45rem;
-    }
-    .usage-bar {
-      height: 100%;
-      border-radius: 999px;
-      background: #2563eb;
-    }
-    .usage-value { width: 3rem; text-align: right; color: #374151; }
-    .logo-title { display: flex; align-items: center; gap: 1.25rem; }
-    .logo-wrap img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      display: block;
-    }
-    .cover-wrap img {
-      width: 110px;
-      height: auto;
-      border-radius: 0.5rem;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
-      object-fit: cover;
-    }
-    .cover-placeholder {
-      width: 110px;
-      height: 160px;
-      border-radius: 0.5rem;
-      border: 1px dashed rgba(15, 23, 42, 0.22);
-      background: rgba(15, 23, 42, 0.04);
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 1.5rem;
-    }
-    @media (max-width: 800px) {
-      .grid { grid-template-columns: minmax(0, 1fr); }
-    }
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.75rem;
-      margin-bottom: 1.75rem;
-    }
-    .grid-2 .card { margin-bottom: 0; height: 100%; }
+    <meta charset="utf-8">
+    <title>BookStory - Open: The Philosophy and Practices that are Revolutionizing Education and Science</title>
+    <style>
 
-    @media (max-width: 980px) {
-      .grid-2 { grid-template-columns: 1fr; }
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
+
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+.sig-green {background:#dcfce7;color:#166534;}
+.cover-fallback{
+  width:110px;height:155px;border-radius:.55rem;
+  border:1px solid #dbe7f3;
+  box-shadow:0 4px 10px rgba(15,23,42,.08);
+  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:.55rem;gap:.35rem;
+}
+.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
+.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
+.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
     }
-    ul { padding-left: 1.2rem; margin: 0.4rem 0 0; }
-    li { margin-bottom: 0.5rem; font-size: 0.95rem; }
-    a { color: #2563eb; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    a, li { word-break: break-word; overflow-wrap: anywhere; }
-    .tag {
-      display: inline-block;
-      padding: 0.15rem 0.45rem;
-      border-radius: 999px;
-      background: #e5f2ff;
-      color: #1d4ed8;
-      font-size: 0.8rem;
-      margin: 0.1rem 0.2rem 0.1rem 0;
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
     }
-    .tag-soft { background: #f3f4f6; color: #4b5563; }
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      font-size: 0.85rem;
-      margin-top: 0.75rem;
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
     }
-    th, td {
-      border: 1px solid #e5e7eb;
-      padding: 0.4rem 0.6rem;
-      vertical-align: top;
-    }
-    th {
-      background: #f9fafb;
-      text-align: left;
-      font-weight: 600;
-      color: #374151;
-    }
-    .badge {
-      display: inline-block;
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      background: #eef2ff;
-      color: #4338ca;
-      font-size: 0.75rem;
-      font-weight: 500;
-    }
-    .scite-link { font-size: 0.75rem; color: #6b7280; }
-    .scite-link:hover { text-decoration: underline; color: #4b5563; }
-    .orcid-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-left: 0.3rem;
-      padding: 0.05rem 0.35rem;
-      border-radius: 999px;
-      background: #a6ce39;
-      color: #ffffff;
-      font-size: 0.65rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .muted { color: #6b7280; font-size: 0.85rem; }
-    footer.page-footer {
-      margin-top: 2rem;
-      text-align: right;
-      font-size: 0.8rem;
-      color: #9ca3af;
-    }
-  </style>
-  <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" /><style>#metrics-widget {  --color-line-graph-1: #4b7094;  --color-line-graph-2: #70944b;  --color-line-graph-3: #944b70;  --color-line-graph-4: #94704b;}</style>
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-
-<div class="toolbar">
-  <button class="download-btn" onclick="window.print()">Download as PDF</button>
-</div>
-
-<div class="page">
-
-<header class="hero">
-  <div class="header-bar">
-    <div class="logo-title">
-      <div class="logo-wrap">
-        <img src="bookstories-logo.png" alt="BookStories logo">
-      </div>
-      <div>
-        <h1 class="hero-title">Open: The Philosophy and Practices that are Revolutionizing Education and Science</h1>
-        <div class="discipline-badge">Stem</div>
-        <div class="hero-meta">
-          <div><strong>Author(s):</strong> Rajiv S. Jhangiani, Robert Biswas-Diener</div>
-          <div><strong>Publisher:</strong> Ubiquity Press</div>
-          <div><strong>Publication year:</strong> 2017</div>
-          <div><strong>DOI:</strong> 10.5334/bbc</div>
-        </div>
-      </div>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
     </div>
-    <div class="cover-wrap cover-placeholder" aria-label="No cover available"></div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
   </div>
-</header>
+</nav>
+    
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="bookstories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">Open: The Philosophy and Practices that are Revolutionizing Education and Science</h1>
+                        
+                            <div class="discipline-badge" style="background:#fef08a; color:#854d0e; border-color:#fde047; font-weight:600; margin-top: 0.5rem; margin-bottom: 0;">
+                                <svg style="width:14px; height:14px; display:inline; vertical-align:middle; margin-right:4px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                                Open Access (Hybrid)
+                            </div>
+                        
+                        <div class="discipline-badge">Stem</div>                        
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
 
-<section class="card">
-  <h2><span>The story so far…</span></h2>
-  <div class="story-text">
-    <h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Open: The Philosophy and Practices that are Revolutionizing Education and Science, published by Ubiquity Press in 2017, advances key themes in open education, science, and access. The book has garnered notable scholarly attention with 99 citations and shows a significant public presence, evidenced by 22 event mentions primarily across Wikipedia and WordPress. Usage signals indicate over 12,700 downloads, reflecting meaningful engagement despite lacking representation on major OER platforms or OAPEN downloads data.</p>
+                            
 
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> 
+                                
+                                    Jhangiani, Rajiv, Biswas-Diener, Robert
+                                
+                            </div>
+                        
+                            
+                        
+                            
+                            
+                        
+                            <div><strong>Publisher:</strong> 
+                                
+                                    Ubiquity Press
+                                
+                            </div>
+                        
+                            <div><strong>Publication year:</strong> 
+                                
+                                    2017
+                                
+                            </div>
+                        
+                            <div><strong>DOI:</strong> 
+                                <a href="https://doi.org/10.5334/bbc" target="_blank">
+                                    10.5334/bbc
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="cover-wrap">
+                    
+                    <img src="https://books.google.com/books/content?vid=ISBN9781911529002&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+                    
+                </div>
+                
+            </div>
+        </header>
+
+        <!-- Sticky nav -->
+        <nav aria-label="Page sections" class="sticky-nav no-print">
+            <div class="sticky-nav-inner">
+                <a href="#sec-hero">Overview</a>
+                <a href="#sec-story">Story</a>
+                <a href="#sec-impact">Impact</a>
+                <a href="#sec-roles">Roles</a>
+                <a href="#sec-access">Access</a>
+                <a href="#sec-citing">Who's Citing</a>
+                <a href="#sec-mentions">Mentions</a>
+            </div>
+        </nav>
+
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The book "Open: The Philosophy and Practices that are Revolutionizing Education and Science," published by Ubiquity Press in 2017, serves as a significant reference point for the synthesis of ideas around open education and science. Strong commercial linkages, evidenced by its presence on platforms like Amazon and Goodreads, reflect its relevance and accessibility to broader audiences.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Published in 2017 by Ubiquity Press, <em>Open</em> explores the intersection of open education, science, and scholarship through a multidisciplinary lens, touching on fields such as political science, computer science, and library science. Its conceptual reach is broad, encompassing terms like 'Engineering ethics' and 'Computer security,' situating the work within contemporary debates on equitable knowledge dissemination. Despite the absence of hosting on major digital platforms, the book has accumulated 12,765 total downloads, signaling a substantive usage-driven uptake as captured in the usage_landscape data, even if no recent trends are discernible.</p>
+<p class="story-text">"Open: The Philosophy and Practices that are Revolutionizing Education and Science" is a noteworthy contribution to the discourse surrounding open education and science. Published by Ubiquity Press in 2017, the book has yet to generate formal academic citations, but its inferred roles suggest a prominent position within its domain. Specifically, the work demonstrates a strong commercial linkage, highlighted by its availability on major bookstores like Amazon and its mention on Goodreads, which illustrates its accessibility to a general audience and its potential influence beyond academia.</p>
+<p class="story-text">Furthermore, the book is identified as a reference point for synthesis in the field, implying that it plays a critical role in shaping ongoing discussions and developments related to open practices in education and science. This indicates that while its citation count stands at zero, the foundational ideas presented in the book are being recognized and integrated into broader conversations, providing a valuable context for research and academic exploration.</p>
+<p class="story-text">Another aspect of its significance is the mention of sustainability and policy relevance, which indicates that the book aligns with contemporary agendas in education and science that seek to embrace sustainable practices. This relevance to sustainability is particularly important, as it indicates the book's alignment with current trends and global objectives, contributing to the discussions surrounding the Sustainable Development Goals (SDGs).</p>
+<p class="story-text">Although there is no current evidence of community discourse on platforms such as Wikipedia, Reddit, and Bluesky, the book's inherent value as a comprehensive exploration of open practices lays a foundation for future discussions. As educational and scientific communities continue to navigate the evolving landscape of open access and practice, "Open" serves as a critical resource that can inform and inspire future initiatives and research in these vital areas.</p></div>
+        </section>
+        
 
-<p class="story-text">From a scholarly perspective, the book has attracted 99 recorded citations according to OpenAlex, reflecting a solid level of academic uptake. However, the claim signals data reveal a distinct citation context profile: out of 17 citation contexts analyzed, 15 are mentioning rather than supporting or contradicting. This suggests the book often serves as a reference point or informational background rather than a source of direct empirical evidence or theoretical challenge. Its role appears to align more with providing foundational or conceptual frameworks across various disciplines, as underlined by its multiple concept labels such as 'Supporter' and 'Foundation (evidence).'</p>
+        
 
-<p class="story-text">Public visibility metrics further illustrate the book’s reach beyond academia. The Event Data shows 22 total non-citation events spanning from 2017 to mid-2023, with prominent placements on Wikipedia (14 events) and WordPress (5 events). This sustained attention on widely accessible platforms implies ongoing relevance to public discussions about open knowledge. Although lacking OER platform listings or OAPEN download data, these event sources contribute to the inferred role of 'public visibility signal' with a strength around 0.8, underscoring the book’s recognized presence in dialogues related to open education and science.</p>
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+            <div class="im-wrapper">
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">100</div>
+                                <div class="im-label">Total Citations</div>
+                                
+                                <div class="im-top-badge">⭐ Top 10% Cited</div>
+                                
+                            </div>
+                            
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]"
+                                        data-values="[3, 9, 11, 8, 21, 8, 19, 15, 5, 1]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2017–2026</div>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+                    
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+                    
+                    <div class="im-card">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">14,019</div>
+                                <div class="im-label">Downloads (OAPEN)</div>
+                            </div>
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="downloadsSparkline"
+                                        data-labels="[&#34;Jan&#34;, &#34;Jan&#34;, &#34;Jan&#34;, &#34;Feb&#34;, &#34;Feb&#34;, &#34;Feb&#34;, &#34;Feb&#34;, &#34;Feb&#34;, &#34;Mar&#34;, &#34;Mar&#34;, &#34;Mar&#34;, &#34;Mar&#34;, &#34;Apr&#34;, &#34;Apr&#34;, &#34;Apr&#34;, &#34;Apr&#34;, &#34;Apr&#34;, &#34;May&#34;, &#34;May&#34;, &#34;May&#34;, &#34;May&#34;, &#34;May&#34;, &#34;Jun&#34;, &#34;Jun&#34;, &#34;Jun&#34;, &#34;Jun&#34;, &#34;Jul&#34;, &#34;Jul&#34;, &#34;Jul&#34;, &#34;Aug&#34;, &#34;Aug&#34;, &#34;Aug&#34;, &#34;Sep&#34;, &#34;Sep&#34;, &#34;Sep&#34;, &#34;Sep&#34;, &#34;Oct&#34;, &#34;Oct&#34;, &#34;Oct&#34;, &#34;Oct&#34;, &#34;Nov&#34;, &#34;Nov&#34;, &#34;Nov&#34;, &#34;Nov&#34;, &#34;Dec&#34;, &#34;Dec&#34;, &#34;Dec&#34;, &#34;Dec&#34;]"
+                                        data-values="[418, 204, 634, 424, 1, 164, 4, 757, 568, 416, 3, 672, 462, 5, 738, 3, 528, 504, 1, 224, 12, 520, 448, 364, 3, 301, 404, 178, 214, 431, 213, 192, 368, 164, 14, 242, 445, 261, 2, 246, 335, 224, 1, 440, 270, 170, 2, 825]"></canvas>
+                                </div>
+                                
+                                <div class="im-spark-range">2017 (Jan–Dec)</div>
+                                
+                            </div>
+                            
+                        </div>
+                        <a class="im-card-link" href="#operas-metrics-card">📊 View full timeline ↓</a>
+                    </div>
+                    
+                    
+                    <!-- scite (only when references exist) -->
+                    
+                    <div class="im-card">
+                        <div class="im-num">17</div>
+                        <div class="im-label">scite References</div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="im-scite-compact">
+                            <div class="im-scite-title">Citation context <span class="im-scite-via">via scite</span></div>
+                            <div class="im-scite-bar">
+                                <div class="im-scite-seg im-scite-sup" data-w="0"></div>
+                                <div class="im-scite-seg im-scite-men" data-w="100"></div>
+                                <div class="im-scite-seg im-scite-con" data-w="0"></div>
+                            </div>
+                            <div class="im-scite-leg">
+                                <span><span class="im-scite-dot" style="background:#22c55e;"></span>0</span>
+                                <span><span class="im-scite-dot" style="background:#94a3b8;"></span>15</span>
+                                <span><span class="im-scite-dot" style="background:#f87171;"></span>0</span>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
 
-<p class="story-text">Taken together, these dimensions of scholarly uptake, public attention, and significant download numbers frame <em>Open</em> as a work that bridges academic and public domains. The inferred roles based on usage and visibility signals, alongside its conceptual grounding, depict a text that is impactful primarily as a knowledge resource and stimulus for further conversation rather than as a heavily empirical or contested reference. The book’s accessibility as open access likely supports its wide usage, reinforcing its role in advancing the ideals of equity and transparency articulated in its abstract.</p>
+                
+                
+                
+                
+                
+                <div class="muted" style="margin-top:.7rem; font-size:.8rem;">
+                    Some signals aren’t recorded for this volume yet (online mentions) — these typically accrue after publication.
+                </div>
+                
 
-<p class="story-text">While no data are available from specialized scholarly repositories like OAPEN or OER listings to further quantify its impact, the metrics present provide meaningful evidence of a steady and multidimensional uptake. Future monitoring of citation contexts and event data may illuminate evolving patterns in how this book is situated within the dynamic open education and science ecosystems it seeks to transform.</p>
-  </div>
-</section>
+                
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="https://www.worldcat.org/search?q=bn:9781911529002" target="_blank" style="text-decoration:none;">📚 WorldCat · 2</a>
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <span class="sig-pill sig-green" title="Open access: Hybrid">
+                            <svg class="sig-oa-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="5" y="11" width="14" height="10" rx="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 9.5-2.2"/>
+                                <path d="M16.5 4.8V11"/>
+                            </svg>
+                            Hybrid
+                        </span>
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 15 countries</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+            
+            
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Reference point for synthesis — heuristic signal (score 0.90)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Reference point for synthesis
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#065f46">🏛 Practical & Real-World</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-practical" data-opacity="1"
+                              data-tip="Commercial linkage — heuristic signal (score 0.90)">
+                            <span class="role-dot" data-bg="#10b981"></span>
+                            Commercial linkage
+                            <span class="role-strength" data-bg="#dcfce7" data-color="#166534">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-practical" data-opacity="0.9"
+                              data-tip="Sustainability & policy relevance — heuristic signal (score 0.55)">
+                            <span class="role-dot" data-bg="#10b981"></span>
+                            Sustainability & policy relevance
+                            <span class="role-strength" data-bg="#dcfce7" data-color="#166534">Moderate</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2 style="margin-top:0;"><span>Access</span> <span class="badge" style="background:#f3f4f6; color:#4b5563;">Availability</span></h2>
+                <ul class="metric-list" style="line-height: 1.8;">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.5334/bbc" target="_blank" style="word-break: break-all;">https://doi.org/10.5334/bbc</a></li>
+                    
+                    <li><strong>OA status:</strong> 
+                        
+                            Hybrid
+                        
+                    </li>
+
+                    
+                        <li><strong>Landing page:</strong> <a href="https://doi.org/10.5334/bbc" target="_blank" style="word-break: break-all;">https://doi.org/10.5334/bbc</a></li>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </section>
+
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.6rem;">
+                        This work has <strong>0</strong> recorded events globally.
+                    </p>
+                    
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+                <ul class="metric-list">
+                    
+                    
+                        <li style="margin-bottom: 0.8rem; padding-bottom: 0.8rem; border-bottom: 1px solid #f3f4f6;">
+                            <strong>Formal Book Reviews:</strong> <span class="badge" style="background: #fdf2f8; color: #be185d;">1 Reviews</span>
+                            <ul style="margin-top: 0.4rem; padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.4;">
+                                
+                                <li style="margin-bottom: 0.3rem;">
+                                    <em>Journal of Development and Social Sciences</em>: <br>
+                                    <a href="https://doi.org/" target="_blank" style="color: #2563eb; text-decoration: none;">Review of Linked Data and Open Educational Resources in Academia: Potential Benefits and Challenges</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+
+                    
+                    
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Commercial:</strong> 
+                        <a href="https://www.amazon.com/s?k=9781911529002" target="_blank" style="color: #2563eb; text-decoration: none;">Amazon</a>
+                         · 
+                        <a href="https://www.goodreads.com/search?q=9781911529002" target="_blank" style="color: #2563eb; text-decoration: none;">Goodreads</a>
+                    </li>
+                    
+                    
+                </ul>
+            </section>
+
+                <section class="card" style="margin-bottom:0;">
+                    <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                    
+                    <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                        <li><strong>Total:</strong> 17</li>
+                        <li><strong>Supporting:</strong> 0</li>
+                        <li><strong>Mentioning:</strong> 15</li>
+                        <li><strong>Contradicting:</strong> 0</li>
+                    </ul>
+                    
+                </section>
+
+                
+                
+                
+
+            
+        </div>
+
+        
+        
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>100</strong> citing works.
+                        <strong>19.4%</strong> come from the Top 10 institutions.
+                        Median citing paper cited <strong>2.0</strong> times itself.
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (61)</span><span class="tag tag-soft" style="font-size:.75rem;">book-chapter (23)</span><span class="tag tag-soft" style="font-size:.75rem;">book (9)</span><span class="tag tag-soft" style="font-size:.75rem;">dissertation (4)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (2)</span>
+                        <span class="tag" style="font-size:.75rem;">Unknown</span><span class="tag" style="font-size:.75rem;">Advances in educational technologies and instructional design book series</span><span class="tag" style="font-size:.75rem;">Ubiquity Press eBooks</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]"
+                    data-values="[3, 9, 11, 8, 21, 8, 19, 15, 5, 1]">
+                </canvas>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
+
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (22)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Canada (10)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Australia (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Germany (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Spain (4)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Greece (3)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Norway (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Netherlands (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Portugal (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Estonia (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">South Korea (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Switzerland (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Turkey (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Hong Kong (1)</span>
+                    
+                </div>
+                
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (70)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (6)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (4)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (3)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Other (1)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (1)</span>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Western University</strong>
+                        <a href="https://ror.org/02grkyz14" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Universität Hamburg</strong>
+                        <a href="https://ror.org/00g30e956" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Queensland University of Technology</strong>
+                        <a href="https://ror.org/03pnv4752" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Pikeville</strong>
+                        <a href="https://ror.org/02fs2ee62" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Universidad Internacional De La Rioja</strong>
+                        <a href="https://ror.org/029gnnp81" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Hellenic Open University</strong>
+                        <a href="https://ror.org/02kq26x23" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Centennial College</strong>
+                        <a href="https://ror.org/05bhp3g52" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.5833333333333333)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Wisconsin–Green Bay</strong>
+                        <a href="https://ror.org/05hbexn54" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.5)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Oslo</strong>
+                        <a href="https://ror.org/01xtthb56" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.3333333333333333)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Universidad Carlos III de Madrid</strong>
+                        <a href="https://ror.org/03ths8210" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.0)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>R Arnheim</strong>
+                        
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>O Ruf</strong>
+                        
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Elena María Mallmann</strong>
+                        <a href="https://orcid.org/0000-0002-7611-3904" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Regan A. R. Gurung</strong>
+                        <a href="https://orcid.org/0000-0002-3542-4378" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Margaret Verkuyl</strong>
+                        <a href="https://orcid.org/0000-0002-7714-5449" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jennifer Lapum</strong>
+                        <a href="https://orcid.org/0000-0002-1300-599X" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kerstin Mayrberger</strong>
+                        <a href="https://orcid.org/0000-0002-6836-4199" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Hg</strong>
+                        
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Eric Werth</strong>
+                        <a href="https://orcid.org/0000-0003-0724-1598" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(2)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Katherine Williams</strong>
+                        <a href="https://orcid.org/0000-0002-9385-2813" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(2)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+        </div>
+
+        
+        <section class="card">
+            <h2><span>Teaching, Practice & Library Adoption</span></h2>
+            <div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem;">
+                Evidence of structured teaching use, reading lists, and library availability.
+            </div>
+            
+            <div class="grid-2" style="align-items: start;">
+                
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        OpenCourseWare Mentions <span class="badge" style="float: right;">Google Custom Search</span>
+                    </h3>
+                    
+                        <p class="muted" style="font-size: 0.85rem; font-style: italic;">No verified course syllabi found in open university repositories.</p>
+                    
+                    
+
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        Library & Community Access <span class="badge" style="float: right; background: #f0fdf4; color: #166534;">Open Library</span>
+                    </h3>
+                    
+                    <ul class="metric-list" style="margin-top: 0;">
+                        
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Community Reach:</strong> 
+                            <a href="https://openlibrary.org/search?title=Open%3A%20The%20Philosophy%20and%20Practices%20that%20are%20Revolutionizing%20Education%20and%20Science" target="_blank" class="badge" style="background:#fef2f2; color:#dc2626; text-decoration: none; display: inline-flex; align-items: center; gap: 0.2rem;">
+                                2 logs/editions ↗
+                            </a>
+                            <div class="muted" style="font-size: 0.8rem; margin-top: 0.2rem;">Tracked across Open Library community reading lists and catalog editions.</div>
+                        </li>
+                        
+                        
+                        
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Institutional Availability:</strong>
+                            <div style="margin-top: 0.4rem;">
+                                <a href="https://www.worldcat.org/search?q=bn:9781911529002" target="_blank" class="tag" style="background:#e5f2ff; color:#1d4ed8; font-weight: 600; text-decoration: none;">
+                                    Search Global Libraries (WorldCat) ↗
+                                </a>
+                            </div>
+                        </li>
+                        
+
+                        
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Library Classification Subjects:</strong>
+                            <div style="display:flex; flex-wrap:wrap; gap:0.3rem; margin-top: 0.4rem;">
+                                
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Information technology: general issues</span>
+                                
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Social issues & processes</span>
+                                
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Open learning, home learning, distance education</span>
+                                
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Psychology</span>
+                                
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Impact of science & technology on society</span>
+                                
+                            </div>
+                        </li>
+                        
+
+                        
+
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </section>
+        
+        
+        
+        
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>2 authors · 0 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Jhangiani, Rajiv</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Biswas-Diener, Robert</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                </ul>
+
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>12 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Supporter</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Foundation (evidence)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Key (lock)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Library science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Engineering ethics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Engineering</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Political science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">History</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Archaeology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Law</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer security</span>
+                    
+                    
+                </div>
+                
+                
+                <h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 targets detected.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Quality Education (0.66)</span>
+                    
+                </div>
+                
+            </section>
+        </div>
+
+        
 
 
-    <section class="card">
-      <h2><span>Impact metrics</span></h2>
-      <ul>
-        <li><strong>Citations (OpenAlex):</strong> 99</li>
-        <li><strong>Downloads (OAPEN / OPERAS):</strong> 12765</li>
-        <li><strong>Online mentions (Crossref Event Data):</strong> 22</li>
-        <li><strong>Citation context (scite):</strong> 17</li>
-      </ul>
-    </section>
-    
+        
+        <section class="card" id="operas-metrics-card">
+            <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
+            <div id="metrics-widget"></div>
+            <script type="application/json" id="operas-metrics-config">{"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "tab1", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN \u00b7 downloads", "works": ["info:doi:10.5334/bbc"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}}, "graphs": [{"id": "g1", "type": "line", "title": "Downloads over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}</script>
+            <script src="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js" async></script>
+        </section>
 
-    <section class="card">
-      <h2><span>Inferred roles</span></h2>
-      <p class="muted">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
-      <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-        <span class='tag'>Usage-driven uptake (0.80)</span><span class='tag'>Public visibility signal (0.80)</span><span class='tag'>Scholarly uptake (0.75)</span><span class='tag'>Evidence-bearing reference point (0.40)</span>
-      </div>
-    </section>
-    
-<div class="grid-2">
-    <section class="card">
-      <h2><span>Usage landscape</span> <span class="badge">OAPEN / OPERAS</span></h2>
-      <ul>
-        <li><strong>Total downloads:</strong> 12765</li>
-        <li><strong>Recent trend:</strong> <span class='muted'>Not available.</span></li>
-        <li><strong>Host distribution:</strong> <span class='muted'>Not available.</span></li>
-      </ul>
-    </section>
-    
-    <section class="card">
-      <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
-      <ul>
-        <li><strong>Recorded events:</strong> 22</li>
-        <li><strong>Top sources:</strong> <span class='tag'>wikipedia (14)</span> <span class='tag'>wordpressdotcom (5)</span> <span class='tag'>newsfeed (3)</span></li>
-      </ul>
-    </section>
-    </div><div class="grid-2">
-    <section class="card">
-      <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
-      <ul>
-        <li><strong>Open Library:</strong> <a href="https://openlibrary.org/books/OL28358564M" target="_blank" rel="noopener noreferrer">View</a><span class='muted'> · 0 ratings</span></li><li><strong>Google Books:</strong> <a href="https://books.google.com/books/about/Open.html?hl=&amp;id=t9TuAQAACAAJ" target="_blank" rel="noopener noreferrer">View</a> · <a href="http://books.google.nl/books?id=t9TuAQAACAAJ&amp;dq=isbn:9781911529002&amp;hl=&amp;cd=1&amp;source=gbs_api" target="_blank" rel="noopener noreferrer">Preview</a><span class='muted'></span> <span class='muted'>(matched: Open)</span></li><li><strong>Commercial:</strong> <a href="https://www.amazon.com/s?k=9781911529002" target="_blank" rel="noopener noreferrer">Amazon search</a> · <a href="https://www.goodreads.com/search?q=9781911529002" target="_blank" rel="noopener noreferrer">Goodreads search</a></li>
-      </ul>
-    </section>
-    
-    <section class="card">
-      <h2><span>Citation context</span> <span class="badge">scite</span></h2>
-      <ul><li><strong>Total:</strong> 17</li><li><strong>Supporting:</strong> 0</li><li><strong>Mentioning:</strong> 15</li><li><strong>Contradicting:</strong> 0</li></ul>
-    </section>
+
+
+        
+        
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.75rem;"
+                 data-total="100">
+                100 citing works (most recent first)
+            </div>
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Assessment Strategies for Online Learning: Engagement and Authenticity</td>
+                        <td>Athabasca University Press eBooks</td>
+                        <td><a href="https://doi.org/10.15215/aupress/9781771992329.01" target="_blank" style="word-break: break-all;">10.15215/aupress/9781771992329.01</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Open: The Philosophy and Practices that are Revolutionizing Education and Science</td>
+                        <td>Ubiquity Press eBooks</td>
+                        <td><a href="https://doi.org/10.5334/bbc" target="_blank" style="word-break: break-all;">10.5334/bbc</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Teachers as Connected Professionals</td>
+                        <td>The International Review of Research in Open and Distributed Learning</td>
+                        <td><a href="https://doi.org/10.19173/irrodl.v20i4.4082" target="_blank" style="word-break: break-all;">10.19173/irrodl.v20i4.4082</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Advancing equity in cross-cultural psychology: embracing diverse epistemologies and fostering collaborative practices</td>
+                        <td>Frontiers in Psychology</td>
+                        <td><a href="https://doi.org/10.3389/fpsyg.2024.1368663" target="_blank" style="word-break: break-all;">10.3389/fpsyg.2024.1368663</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>The why of open pedagogy: a value-first conceptualization for enhancing instructor praxis</td>
+                        <td>Smart Learning Environments</td>
+                        <td><a href="https://doi.org/10.1186/s40561-022-00191-0" target="_blank" style="word-break: break-all;">10.1186/s40561-022-00191-0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Perceived usefulness of open educational resources: Impact of switching to online learning for face-to-face and distance learners</td>
+                        <td>Frontiers in Psychology</td>
+                        <td><a href="https://doi.org/10.3389/fpsyg.2022.1004459" target="_blank" style="word-break: break-all;">10.3389/fpsyg.2022.1004459</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Predicting learning: Comparing an open educational resource and standard textbooks.</td>
+                        <td>Scholarship of Teaching and Learning in Psychology</td>
+                        <td><a href="https://doi.org/10.1037/stl0000092" target="_blank" style="word-break: break-all;">10.1037/stl0000092</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Unveiling the Relationship between the Use of Open Educational Resources and the Adoption of Open Teaching Practices in Higher Education</td>
+                        <td>Sustainability</td>
+                        <td><a href="https://doi.org/10.3390/su11205637" target="_blank" style="word-break: break-all;">10.3390/su11205637</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Open Science por defecto. La nueva normalidad para la investigación</td>
+                        <td>Arbor</td>
+                        <td><a href="https://doi.org/10.3989/arbor.2021.799002" target="_blank" style="word-break: break-all;">10.3989/arbor.2021.799002</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Self-directed multimodal learning within a context of transformative open education</td>
+                        <td>NWU self-directed learning series</td>
+                        <td><a href="https://doi.org/10.4102/aosis.2020.bk210.01" target="_blank" style="word-break: break-all;">10.4102/aosis.2020.bk210.01</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Exploring Aspects of Open Educational Resources Through OER-Enabled Pedagogy</td>
+                        <td>Frontiers in Education</td>
+                        <td><a href="https://doi.org/10.3389/feduc.2020.00076" target="_blank" style="word-break: break-all;">10.3389/feduc.2020.00076</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>‘Consider the Opposite’ – Effects of elaborative feedback and correct answer feedback on reducing confirmation bias – A pre-registered study</td>
+                        <td>Contemporary Educational Psychology</td>
+                        <td><a href="https://doi.org/10.1016/j.cedpsych.2020.101844" target="_blank" style="word-break: break-all;">10.1016/j.cedpsych.2020.101844</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Ramp It Up</td>
+                        <td>Teaching of Psychology</td>
+                        <td><a href="https://doi.org/10.1177/0098628318796413" target="_blank" style="word-break: break-all;">10.1177/0098628318796413</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Sustainability and Justice: Challenges and Opportunities for an Open STEM Education</td>
+                        <td>CBE—Life Sciences Education</td>
+                        <td><a href="https://doi.org/10.1187/cbe.20-08-0180" target="_blank" style="word-break: break-all;">10.1187/cbe.20-08-0180</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Development and Evaluation of Digital Learning Tools Promoting Applicable Knowledge in Economics and German Teacher Education</td>
+                        <td>Education Sciences</td>
+                        <td><a href="https://doi.org/10.3390/educsci13050481" target="_blank" style="word-break: break-all;">10.3390/educsci13050481</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Teaching Critical Thinking and Metaliteracy Through OER: Theory and Practice in a Course Collaboration</td>
+                        <td>International Journal of Open Educational Resources</td>
+                        <td><a href="https://doi.org/10.18278/ijoer.2.1.11" target="_blank" style="word-break: break-all;">10.18278/ijoer.2.1.11</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Digital Presence and Online Identity among Digital Scholars: A Thematic Analysis</td>
+                        <td>Social Sciences</td>
+                        <td><a href="https://doi.org/10.3390/socsci12070379" target="_blank" style="word-break: break-all;">10.3390/socsci12070379</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Educator capacity for online global collaborative learning: developing a framework</td>
+                        <td>Teacher Development</td>
+                        <td><a href="https://doi.org/10.1080/13664530.2024.2415385" target="_blank" style="word-break: break-all;">10.1080/13664530.2024.2415385</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Open Scholarship in the Humanities</td>
+                        <td>Bloomsbury Publishing Plc eBooks</td>
+                        <td><a href="https://doi.org/10.5040/9781350232303" target="_blank" style="word-break: break-all;">10.5040/9781350232303</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Performance Improvement Technology for Building a Sustainable OER Initiative in an Academic Library</td>
+                        <td>TechTrends</td>
+                        <td><a href="https://doi.org/10.1007/s11528-019-00467-2" target="_blank" style="word-break: break-all;">10.1007/s11528-019-00467-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Equity-oriented design in open education</td>
+                        <td>International Journal of Information and Learning Technology</td>
+                        <td><a href="https://doi.org/10.1108/ijilt-06-2018-0070" target="_blank" style="word-break: break-all;">10.1108/ijilt-06-2018-0070</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Healthcare students’ use of an e-textbook open educational resource on vital sign measurement: a qualitative study</td>
+                        <td>Open Learning The Journal of Open Distance and e-Learning</td>
+                        <td><a href="https://doi.org/10.1080/02680513.2020.1835623" target="_blank" style="word-break: break-all;">10.1080/02680513.2020.1835623</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Collections Education: The Extended Specimen and Data Acumen</td>
+                        <td>BioScience</td>
+                        <td><a href="https://doi.org/10.1093/biosci/biab109" target="_blank" style="word-break: break-all;">10.1093/biosci/biab109</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>The next layer: Towards open pedagogy in geospatial education</td>
+                        <td>Transactions in GIS</td>
+                        <td><a href="https://doi.org/10.1111/tgis.13081" target="_blank" style="word-break: break-all;">10.1111/tgis.13081</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Open Pedagogy Approaches: Faculty, Library, and Student Collaborations</td>
+                        <td>Unknown</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Implementing Open Pedagogy in Higher Education: Examples and Recommendations</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-67349-9_15" target="_blank" style="word-break: break-all;">10.1007/978-3-030-67349-9_15</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Distributed Learning Ecosystems</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-3-658-38703-7" target="_blank" style="word-break: break-all;">10.1007/978-3-658-38703-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>The Public Information Disclosure in State Madrasah Aliyah</td>
+                        <td>Nidhomul Haq Jurnal Manajemen Pendidikan Islam</td>
+                        <td><a href="https://doi.org/10.31538/ndh.v8i1.3223" target="_blank" style="word-break: break-all;">10.31538/ndh.v8i1.3223</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Minimal computing in refugee education in Uganda: economies of digital use and non-use, and the right constraints</td>
+                        <td>Learning Media and Technology</td>
+                        <td><a href="https://doi.org/10.1080/17439884.2024.2405128" target="_blank" style="word-break: break-all;">10.1080/17439884.2024.2405128</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Post-pandemic digital writing instruction will be Resilient, Open, and Inclusive</td>
+                        <td>Journal of University Teaching and Learning Practice</td>
+                        <td><a href="https://doi.org/10.53761/1.20.02.11" target="_blank" style="word-break: break-all;">10.53761/1.20.02.11</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Open Textbooks in Higher Education Teaching</td>
+                        <td>Open Research Online (The Open University)</td>
+                        <td><a href="https://doi.org/10.1007/978-3-658-38703-7_6" target="_blank" style="word-break: break-all;">10.1007/978-3-658-38703-7_6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Open-source 3-D printable autoinjector: Design, testing, and regulatory limitations</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0288696" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0288696</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Art and/as open education: A collaborative action with refugee artists</td>
+                        <td>Arts and Humanities in Higher Education</td>
+                        <td><a href="https://doi.org/10.1177/14740222231156807" target="_blank" style="word-break: break-all;">10.1177/14740222231156807</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Transformative Curriculum Design through Open Educational Resource Creation</td>
+                        <td>Collected Essays on Learning and Teaching</td>
+                        <td><a href="https://doi.org/10.22329/celt.v14i1.7137" target="_blank" style="word-break: break-all;">10.22329/celt.v14i1.7137</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Jupyter Book as an open online teaching environment in the geosciences: lessons learned from Geo-SfM and Geo-UAV</td>
+                        <td>Geoscience Communication</td>
+                        <td><a href="https://doi.org/10.5194/gc-8-51-2025" target="_blank" style="word-break: break-all;">10.5194/gc-8-51-2025</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Human Rights and Social Justice through Open Educational Resources and Lifelong Learning</td>
+                        <td>Macro Management & Public Policies</td>
+                        <td><a href="https://doi.org/10.30564/mmpp.v3i1.2925" target="_blank" style="word-break: break-all;">10.30564/mmpp.v3i1.2925</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Not Quite on the Same Page: Comparing Key Terms in Introductory Psychology Textbooks</td>
+                        <td>Teaching of Psychology</td>
+                        <td><a href="https://doi.org/10.1177/00986283221111749" target="_blank" style="word-break: break-all;">10.1177/00986283221111749</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Open Education and Alternative Digital Credentials in Europe</td>
+                        <td>The International Review of Research in Open and Distributed Learning</td>
+                        <td><a href="https://doi.org/10.19173/irrodl.v25i1.7412" target="_blank" style="word-break: break-all;">10.19173/irrodl.v25i1.7412</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Open Educational Practices (OEP) in Higher Education</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-981-287-532-7_710-1" target="_blank" style="word-break: break-all;">10.1007/978-981-287-532-7_710-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Abrir la ciencia para cambiar el mundo</td>
+                        <td>International Journal of Engineering Social Justice and Peace</td>
+                        <td><a href="https://doi.org/10.24908/ijesjp.v7i2.13724" target="_blank" style="word-break: break-all;">10.24908/ijesjp.v7i2.13724</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Scientist and data architect collaborate to curate and archive an inner ear electrophysiology data collection</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0223984" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0223984</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Open Science</td>
+                        <td>Elsevier eBooks</td>
+                        <td><a href="https://doi.org/10.1016/b978-0-08-102124-8.00007-6" target="_blank" style="word-break: break-all;">10.1016/b978-0-08-102124-8.00007-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>“Do they really know what we need?”Exploring learners’ versus universities’ views on open educational resources in Chinese universities</td>
+                        <td>International Journal of Educational Research</td>
+                        <td><a href="https://doi.org/10.1016/j.ijer.2021.101817" target="_blank" style="word-break: break-all;">10.1016/j.ijer.2021.101817</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Writing between the Lines</td>
+                        <td>Pedagogy Critical Approaches to Teaching Literature Language Composition and Culture</td>
+                        <td><a href="https://doi.org/10.1215/15314200-9131828" target="_blank" style="word-break: break-all;">10.1215/15314200-9131828</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Cartografia de pesquisas nacionais sobre REA</td>
+                        <td>Revista Linguagem em Foco</td>
+                        <td><a href="https://doi.org/10.46230/2674-8266-12-4384" target="_blank" style="word-break: break-all;">10.46230/2674-8266-12-4384</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>The Use of Open Educational Resources as Teaching Tools in Primary Education: Activities by Postgraduate Students of the Hellenic Open University</td>
+                        <td>International Journal of Learning and Development</td>
+                        <td><a href="https://doi.org/10.5296/ijld.v13i3.21010" target="_blank" style="word-break: break-all;">10.5296/ijld.v13i3.21010</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Review of Linked Data and Open Educational Resources in Academia: Potential Benefits and Challenges</td>
+                        <td>Journal of Development and Social Sciences</td>
+                        <td><a href="https://doi.org/10.47205/jdss.2024(5-i)53" target="_blank" style="word-break: break-all;">10.47205/jdss.2024(5-i)53</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Open Education and Second Language Learning and Teaching</td>
+                        <td>Multilingual Matters eBooks</td>
+                        <td><a href="https://doi.org/10.21832/blyth0992" target="_blank" style="word-break: break-all;">10.21832/blyth0992</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>How to Open an Academic Department</td>
+                        <td>Ubiquity Press eBooks</td>
+                        <td><a href="https://doi.org/10.5334/bbc.m" target="_blank" style="word-break: break-all;">10.5334/bbc.m</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Contextualising Open Educational Resources in Higher Education</td>
+                        <td>Future education and learning spaces</td>
+                        <td><a href="https://doi.org/10.1007/978-981-19-8590-4_1" target="_blank" style="word-break: break-all;">10.1007/978-981-19-8590-4_1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Open Educational Practices (OEP) in Higher Education</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-981-287-532-7_710-3" target="_blank" style="word-break: break-all;">10.1007/978-981-287-532-7_710-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Effective Strategies for Finding Open Educational Resources in High School</td>
+                        <td>Apertura</td>
+                        <td><a href="https://doi.org/10.32870/ap.v15n2.2393" target="_blank" style="word-break: break-all;">10.32870/ap.v15n2.2393</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Bildung, Praxistransfer und Kooperation</td>
+                        <td>transcript Verlag eBooks</td>
+                        <td><a href="https://doi.org/10.1515/9783839471807" target="_blank" style="word-break: break-all;">10.1515/9783839471807</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>The innovative evolution of teaching materials: Trends and future prospects</td>
+                        <td>Journal of Research in Instructional</td>
+                        <td><a href="https://doi.org/10.30862/jri.v5i1.600" target="_blank" style="word-break: break-all;">10.30862/jri.v5i1.600</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Designing Open Access, Educational Resources</td>
+                        <td>Quality Advancement in Nursing Education - Avancées en formation infirmière</td>
+                        <td><a href="https://doi.org/10.17483/2368-6669.1193" target="_blank" style="word-break: break-all;">10.17483/2368-6669.1193</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Are Open Textbooks Effective for Learning? Investigating the Issue of Human-computer Interaction in Pedagogical Design of Open Textbook Affordable for a Diversity of Learning Environments</td>
+                        <td>Journal of Physics Conference Series</td>
+                        <td><a href="https://doi.org/10.1088/1742-6596/1828/1/012127" target="_blank" style="word-break: break-all;">10.1088/1742-6596/1828/1/012127</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>User Engagement Using an Etextbook</td>
+                        <td>CIN Computers Informatics Nursing</td>
+                        <td><a href="https://doi.org/10.1097/cin.0000000000000720" target="_blank" style="word-break: break-all;">10.1097/cin.0000000000000720</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Commentary: Social Responsibility in College Admissions Requires a Reimagining of Standardized Testing</td>
+                        <td>Educational Measurement Issues and Practice</td>
+                        <td><a href="https://doi.org/10.1111/emip.12451" target="_blank" style="word-break: break-all;">10.1111/emip.12451</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Advancing social justice through small grants for the development of open educational resources at the University of Cape Town and the Cape Peninsula University of Technology</td>
+                        <td>African Minds eBooks</td>
+                        <td><a href="https://doi.org/10.47622/9781928502425_10" target="_blank" style="word-break: break-all;">10.47622/9781928502425_10</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Developing a Community of Online Research Assignments</td>
+                        <td>portal Libraries and the Academy</td>
+                        <td><a href="https://doi.org/10.1353/pla.2018.0028" target="_blank" style="word-break: break-all;">10.1353/pla.2018.0028</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Recursos Educativos Abiertos en la Universidad Estatal a Distancia</td>
+                        <td>Revista Electrónica Calidad en la Educación Superior</td>
+                        <td><a href="https://doi.org/10.22458/caes.v9i2.2077" target="_blank" style="word-break: break-all;">10.22458/caes.v9i2.2077</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Foundations for On-Campus Open Social Scholarship Activities</td>
+                        <td>KULA knowledge creation dissemination and preservation studies</td>
+                        <td><a href="https://doi.org/10.5334/kula.14" target="_blank" style="word-break: break-all;">10.5334/kula.14</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Moving Mountains</td>
+                        <td>Journal of New Librarianship</td>
+                        <td><a href="https://doi.org/10.33011/newlibs/10/5" target="_blank" style="word-break: break-all;">10.33011/newlibs/10/5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Specific Features of Fragmented Content</td>
+                        <td>Advances in educational technologies and instructional design book series</td>
+                        <td><a href="https://doi.org/10.4018/978-1-5225-5305-2.ch007" target="_blank" style="word-break: break-all;">10.4018/978-1-5225-5305-2.ch007</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Cost, outcomes, use, and perceptions of Open Educational Resources in psychology: A narrative review of the literature</td>
+                        <td>OSF Preprints (OSF Preprints)</td>
+                        <td><a href="https://doi.org/10.31219/osf.io/kme36" target="_blank" style="word-break: break-all;">10.31219/osf.io/kme36</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Repositories of Open Textbooks for Higher Education: A Worldwide Overview</td>
+                        <td>Future education and learning spaces</td>
+                        <td><a href="https://doi.org/10.1007/978-981-19-8590-4_10" target="_blank" style="word-break: break-all;">10.1007/978-981-19-8590-4_10</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Open Education: Looking at Canadian Higher Education through a Critical Research Lens</td>
+                        <td>The Open/Technology in Education Society and Scholarship Association Conference</td>
+                        <td><a href="https://doi.org/10.18357/otessac.2022.2.1.61" target="_blank" style="word-break: break-all;">10.18357/otessac.2022.2.1.61</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Participatory culture and knowledge sharing among educators and scholars in higher education</td>
+                        <td>Educational Media International</td>
+                        <td><a href="https://doi.org/10.1080/09523987.2024.2357954" target="_blank" style="word-break: break-all;">10.1080/09523987.2024.2357954</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Lombok Folktales Dari Datu Pejanggiq Sampai Putri Mandalika as Literacy Support in Elementary Schools</td>
+                        <td>Indonesian Language Education and Literature</td>
+                        <td><a href="https://doi.org/10.24235/ileal.v9i2.11458" target="_blank" style="word-break: break-all;">10.24235/ileal.v9i2.11458</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>How community college librarians are creating value through an OER virtual community of practice: A netnography</td>
+                        <td>Queensland University of Technology</td>
+                        <td><a href="https://doi.org/10.5204/thesis.eprints.228555" target="_blank" style="word-break: break-all;">10.5204/thesis.eprints.228555</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Sustaining Open Educational Resources (OER) initiatives in higher education: practices, successes, and challenges</td>
+                        <td>MOspace Institutional Repository (University of Missouri)</td>
+                        <td><a href="https://doi.org/10.32469/10355/94325" target="_blank" style="word-break: break-all;">10.32469/10355/94325</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>PLAT 17(1) 2018</td>
+                        <td>Psychology Learning & Teaching</td>
+                        <td><a href="https://doi.org/10.1177/1475725717748530" target="_blank" style="word-break: break-all;">10.1177/1475725717748530</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Formação de professores para a Fluência Tecnológico-pedagógica em tecnologia assistiva no curso de pedagogia</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.31560/pimentacultural/2022.206.102-125" target="_blank" style="word-break: break-all;">10.31560/pimentacultural/2022.206.102-125</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>The Flow Between Spaces: The Experiences of International Doctoral Candidates Negotiation and Construction of Professional Identity on Social Media</td>
+                        <td>White Rose eTheses Online (University of Leeds, The University of Sheffield, University of York)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Impact of Open Education Resources (OER) on Student Academic Performance and Retention Rates in Undergraduate Engineering Departments</td>
+                        <td>Papers on Engineering Education Repository (American Society for Engineering Education)</td>
+                        <td><a href="https://doi.org/10.18260/1-2--36048" target="_blank" style="word-break: break-all;">10.18260/1-2--36048</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Educative features of upper elementary Eureka math curriculum</td>
+                        <td>MOspace Institutional Repository (University of Missouri)</td>
+                        <td><a href="https://doi.org/10.32469/10355/78158" target="_blank" style="word-break: break-all;">10.32469/10355/78158</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Gathering Expert Opinions on Self-directed Learning and Online Assessment Using OER—A Delphi Approach for Redesigning Student Assessments</td>
+                        <td>Lecture notes in educational technology</td>
+                        <td><a href="https://doi.org/10.1007/978-981-16-4099-5_4" target="_blank" style="word-break: break-all;">10.1007/978-981-16-4099-5_4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Formação de professores da educação básica no RS: integração de Recursos Educacionais Abertos (REA) como inovação didático-metodológica</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.31560/pimentacultural/2022.206.18-37" target="_blank" style="word-break: break-all;">10.31560/pimentacultural/2022.206.18-37</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Inovação disruptiva nas práticas escolares: (co) autoria de REA no contexto da produsage</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.31560/pimentacultural/2022.206.89-101" target="_blank" style="word-break: break-all;">10.31560/pimentacultural/2022.206.89-101</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Habilidades sociais educativas na performance pedagógica do tutor</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.31560/pimentacultural/2022.206.126-146" target="_blank" style="word-break: break-all;">10.31560/pimentacultural/2022.206.126-146</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Processos formativos: performance docente na (Co)autoria de REA</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.31560/pimentacultural/2022.206.38-55" target="_blank" style="word-break: break-all;">10.31560/pimentacultural/2022.206.38-55</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Overview of Open Textbooks</td>
+                        <td>Advances in educational technologies and instructional design book series</td>
+                        <td><a href="https://doi.org/10.4018/978-1-5225-5305-2.ch001" target="_blank" style="word-break: break-all;">10.4018/978-1-5225-5305-2.ch001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Open Educational Practices (POEP) in Higher Education</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-981-287-532-7_710-2" target="_blank" style="word-break: break-all;">10.1007/978-981-287-532-7_710-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Theorizing Technologies for Learning as Mutable Mobiles</td>
+                        <td>Proceedings of the 2019 AERA Annual Meeting</td>
+                        <td><a href="https://doi.org/10.3102/1432243" target="_blank" style="word-break: break-all;">10.3102/1432243</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>The Role of Open Educational Resources (OERs) in the Future of Online Learning</td>
+                        <td>Advances in educational technologies and instructional design book series</td>
+                        <td><a href="https://doi.org/10.4018/978-1-6684-6513-4.ch005" target="_blank" style="word-break: break-all;">10.4018/978-1-6684-6513-4.ch005</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Practising open education</td>
+                        <td>UCL Press eBooks</td>
+                        <td><a href="https://doi.org/10.2307/j.ctv2wk7261.25" target="_blank" style="word-break: break-all;">10.2307/j.ctv2wk7261.25</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Ressources Educatives Libres et éducation ouverte : l’écosystème RELIEFH pour l’égalité femme-homme</td>
+                        <td>Education Ouverte et Libre - Open Education</td>
+                        <td><a href="https://doi.org/10.52612/journals/eol-oe.2023.e1155" target="_blank" style="word-break: break-all;">10.52612/journals/eol-oe.2023.e1155</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>What do we talk about when we talk about "Open"? On Education, Science, Research, and Open Scholarship</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.59350/dxdqq-e4n18" target="_blank" style="word-break: break-all;">10.59350/dxdqq-e4n18</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Demystifying the Academic Research Enterprise</td>
+                        <td>The MIT Press eBooks</td>
+                        <td><a href="https://doi.org/10.7551/mitpress/14740.001.0001" target="_blank" style="word-break: break-all;">10.7551/mitpress/14740.001.0001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>"The Pictures Allowed Me to Connect to the Material More": Student Perceptions of a Diversity-Focused Open Pedagogy Assignment</td>
+                        <td>OSF Preprints (OSF Preprints)</td>
+                        <td><a href="https://doi.org/10.31219/osf.io/hvtxk" target="_blank" style="word-break: break-all;">10.31219/osf.io/hvtxk</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Improving Student Engagement in the First-Year Transition Seminar Class with Open Educational Resources</td>
+                        <td>Papers on Engineering Education Repository (American Society for Engineering Education)</td>
+                        <td><a href="https://doi.org/10.18260/1-2--45124" target="_blank" style="word-break: break-all;">10.18260/1-2--45124</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Open Educational Resources in einer Open Pedagogy</td>
+                        <td>transcript Verlag eBooks</td>
+                        <td><a href="https://doi.org/10.1515/9783839471807-010" target="_blank" style="word-break: break-all;">10.1515/9783839471807-010</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Perceptions of Open Educational Resources by Teaching Staff in Higher Education in Ireland</td>
+                        <td>DBS Applied Research and Theory Journal</td>
+                        <td><a href="https://doi.org/10.22375/dbs.v1i1.113" target="_blank" style="word-break: break-all;">10.22375/dbs.v1i1.113</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Bildung, Praxistransfer und Kooperation</td>
+                        <td>Medien- und Gestaltungsästhetik</td>
+                        <td><a href="https://doi.org/10.14361/9783839471807" target="_blank" style="word-break: break-all;">10.14361/9783839471807</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Former Educators to Enhance Student Growth and Teaching Effectiveness</td>
+                        <td>Advances in educational marketing, administration, and leadership book series</td>
+                        <td><a href="https://doi.org/10.4018/979-8-3693-6427-7.ch003" target="_blank" style="word-break: break-all;">10.4018/979-8-3693-6427-7.ch003</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Connected Learning as Collaboration and Psychosocial Support: A Critical Reflection on a Bridging Programme for Refugees in Uganda</td>
+                        <td>Journal of Interactive Media in Education</td>
+                        <td><a href="https://doi.org/10.5334/jime.879" target="_blank" style="word-break: break-all;">10.5334/jime.879</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Quantifying the Human Mortality Costs of Patent-based Intellectual Property: How Many Premature Deaths are due to Patents?</td>
+                        <td>Health Care Analysis</td>
+                        <td><a href="https://doi.org/10.1007/s10728-025-00516-3" target="_blank" style="word-break: break-all;">10.1007/s10728-025-00516-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Perceptions and Attitudes of Teacher Educators towards the Integration of Open Educational Resources (OER) in Teacher Education Programs in Telangana State</td>
+                        <td>Journal of Informatics Education and Research</td>
+                        <td><a href="https://doi.org/10.52783/jier.v5i2.2571" target="_blank" style="word-break: break-all;">10.52783/jier.v5i2.2571</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>What do we talk about when we talk about "Open"? On Education, Science, Research, and Open Scholarship</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.59350/zddf5-kda18" target="_blank" style="word-break: break-all;">10.59350/zddf5-kda18</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>The evolution of open pedagogy in higher education: a bibliometric perspective</td>
+                        <td>AAOU Journal/AAOU journal</td>
+                        <td><a href="https://doi.org/10.1108/aaouj-06-2025-0070" target="_blank" style="word-break: break-all;">10.1108/aaouj-06-2025-0070</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-06-03T21:33:56+00:00
+                </div>
+                
+            </div>
+        </footer>
     </div>
-    <section class="card">
-      <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
-      <ul>
-        <li><strong>Total citing works captured:</strong> 99</li><li><strong>Top citing venues:</strong> <span class='tag'>Advances in educational technologies and instructional design book series (3)</span> <span class='tag'>Ubiquity Press eBooks (2)</span> <span class='tag'>Frontiers in Psychology (2)</span> <span class='tag'>The International Review of Research in Open and Distributed Learning (2)</span> <span class='tag'>Teaching of Psychology (2)</span> <span class='tag'>PLoS ONE (2)</span> <span class='tag'>Future education and learning spaces (2)</span> <span class='tag'>transcript Verlag eBooks (2)</span> <span class='tag'>Athabasca University Press eBooks (1)</span> <span class='tag'>Smart Learning Environments (1)</span></li><li><strong>Citing work types:</strong> <span class='tag'>article (60)</span> <span class='tag'>book-chapter (23)</span> <span class='tag'>book (9)</span> <span class='tag'>dissertation (4)</span> <span class='tag'>preprint (2)</span> <span class='tag'>review (1)</span></li><li><strong>Citation timeline (by year):</strong> 2017: 3, 2018: 9, 2019: 11, 2020: 8, 2021: 21, 2022: 8, 2023: 19, 2024: 15, 2025: 5</li>
-      </ul>
-    </section>
-    
-<section class="card">
-  <h2><span>Contributors &amp; affiliations</span> <span class='badge'>OpenAlex</span></h2>
-  <div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">2 authors · 0 institutions</div>
-    <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3><ul><li>Jhangiani, Rajiv <span class='badge'>First</span> <span class='badge'>Corresponding</span></li><li>Biswas-Diener, Robert <span class='badge'>Last</span></li></ul>
-    
-</section>
-
-<div class="grid">
-  <section class="card">
-    <h2><span>Where your book is available</span></h2>
-    <ul><li class='muted'>No hosts found.</li></ul>
-  </section>
-
-  <section class="card">
-    <h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
-    <ul><li><span class='tag'>Supporter</span></li>
-<li><span class='tag'>Foundation (evidence)</span></li>
-<li><span class='tag'>Key (lock)</span></li>
-<li><span class='tag'>Library science</span></li>
-<li><span class='tag'>Engineering ethics</span></li>
-<li><span class='tag'>Engineering</span></li>
-<li><span class='tag'>Political science</span></li>
-<li><span class='tag'>History</span></li>
-<li><span class='tag'>Computer science</span></li>
-<li><span class='tag'>Archaeology</span></li>
-<li><span class='tag'>Law</span></li>
-<li><span class='tag'>Computer security</span></li></ul>
-  </section>
-</div>
-
-<section class="card">
-  <h2><span>OER &amp; teaching use</span></h2>
-  <ul><li class='muted'>No OER or teaching listings detected yet.</li></ul>
-</section>
-
-
-
-        <section class="card">
-          <h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref Event Data</span></h2>
-          <p class="muted">This work has <strong>22</strong> recorded events between 2017-04-06 and 2023-06-18.</p>
-          <ul class="event-source-list">
-            <li class='event-source-item'><span class='tag'><a href="https://is.wikibooks.org/w/index.php?title=Opi%C3%B0_menntaefni&amp;oldid=32742" target="_blank">Wikipedia</a></span><span class='tag tag-soft'>14 events</span></li><li class='event-source-item'><span class='tag'>WordPress.com</span><span class='tag tag-soft'>5 events</span></li><li class='event-source-item'><span class='tag'>News &amp; Blogs</span><span class='tag tag-soft'>3 events</span></li>
-          </ul>
-          <h3>Selected examples</h3>
-          <ul class="event-examples-list">
-            <li class='event-example-item'><div class='event-example-meta'><span class='tag'>Wikipedia</span></div><a href='https://is.wikibooks.org/w/index.php?title=Opi%C3%B0_menntaefni&amp;oldid=32742' target='_blank'>Opið menntaefni</a><br><span class='muted'>2020-05-14</span></li><li class='event-example-item'><div class='event-example-meta'><span class='tag'>Wikipedia</span></div><a href='https://is.wikibooks.org/w/index.php?title=Opi%C3%B0_menntaefni&amp;oldid=34507' target='_blank'>Opið menntaefni</a><br><span class='muted'>2023-03-09</span></li><li class='event-example-item'><div class='event-example-meta'><span class='tag'>Wikipedia</span></div><a href='https://is.wikibooks.org/w/index.php?title=Opi%C3%B0_menntaefni&amp;oldid=34508' target='_blank'>Opið menntaefni</a><br><span class='muted'>2023-03-09</span></li><li class='event-example-item'><div class='event-example-meta'><span class='tag'>Wikipedia</span></div><a href='https://is.wikibooks.org/w/index.php?title=Opi%C3%B0_menntaefni&amp;oldid=34509' target='_blank'>Opið menntaefni</a><br><span class='muted'>2023-03-09</span></li><li class='event-example-item'><div class='event-example-meta'><span class='tag'>Wikipedia</span></div><a href='https://is.wikibooks.org/w/index.php?title=Opi%C3%B0_menntaefni&amp;oldid=34510' target='_blank'>Opið menntaefni</a><br><span class='muted'>2023-03-09</span></li>
-          </ul>
-        </section>
-        
-
-        <section class="card">
-          <h2><span>Open access metadata</span> <span class="badge">DOAB</span></h2>
-          <p><strong>Publisher:</strong> <span class='muted'>Not available</span></p>
-          <p><strong>Rights / License:</strong> open access</p>
-          <p><strong>Keywords:</strong> <span class='muted'>None listed</span></p>
-          <p><strong>Abstract:</strong><br>&quot;Affordable education. Transparent science. Accessible scholarship. These ideals are slowly becoming a reality thanks to the open education, open science, and open access movements. Running separate—if parallel—courses, they all share a philosophy of equity, progress, and justice. This book shares the stories, motives, insights, and practical tips from global leaders in the open movement.&quot;</p>
-        </section>
-        
-<!-- operas-widget debug: work_uri=info:doi:10.5334/bbc measures=['https://metrics.operas-eu.org/google-books/views/v1', 'https://metrics.operas-eu.org/oapen/downloads/v1', 'https://metrics.operas-eu.org/up-ga/downloads/v1', 'https://metrics.operas-eu.org/up-logs/downloads/v1', 'https://metrics.operas-eu.org/uplo/downloads/v1', 'https://metrics.operas-eu.org/uplo/sessions/v1'] tabs=2 -->
-<section class="card" id="operas-metrics-card">
-    <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
-    <p class="muted">Usage signals currently indexed by OPERAS Metrics (source-separated).</p>    
-    <div id="metrics-widget"></div>
-    <script type="application/json" id="operas-metrics-config">
-    {"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true, "cdn_images_url": "https://storage.googleapis.com/operas/metrics-widget/v1/latest/images"}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "downloads", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN · downloads", "works": ["info:doi:10.5334/bbc"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}, "m2": {"title": "Up Ga · downloads", "works": ["info:doi:10.5334/bbc"], "measures": ["https://metrics.operas-eu.org/up-ga/downloads/v1"]}, "m3": {"title": "Up Logs · downloads", "works": ["info:doi:10.5334/bbc"], "measures": ["https://metrics.operas-eu.org/up-logs/downloads/v1"]}, "m4": {"title": "Ubiquity Press · downloads", "works": ["info:doi:10.5334/bbc"], "measures": ["https://metrics.operas-eu.org/uplo/downloads/v1"]}}, "graphs": [{"id": "downloads_over_time", "type": "line", "title": "Downloads over time", "scopes": ["m1", "m2", "m3", "m4"], "config": {"stacked": true, "cumulative": false}}]}, {"id": "views", "title": "Views", "scopes": {"m1": {"title": "Google Books · views", "works": ["info:doi:10.5334/bbc"], "measures": ["https://metrics.operas-eu.org/google-books/views/v1"]}}, "graphs": [{"id": "views_over_time", "type": "line", "title": "Views over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}
-    </script>
 
     <script>
-    window.operaswidget = (e => {
-      if (document.getElementById(e)) return window.operaswidget;
-      let t = document.createElement('script');
-      t.id = e;
-      t.src = 'https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js';
-      document.body.appendChild(t);
-      let i = window.operaswidget || {};
-      i.eventQueue = i.eventQueue || [];
-      i.ready = cb => { i.eventQueue.push(cb); };
-      return i;
-    })('operas-metrics-script');
-  </script>
-</section>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
 
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        }
 
-<section class="card">
-  <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
-  <table>
-    <thead>
-      <tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>2018</td><td>Assessment Strategies for Online Learning: Engagement and Authenticity</td><td>Athabasca University Press eBooks</td><td><a href="https://doi.org/10.15215/aupress/9781771992329.01" target="_blank" rel="noopener noreferrer">10.15215/aupress/9781771992329.01</a>&nbsp;<a href="https://scite.ai/reports/10.15215/aupress/9781771992329.01" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2017</td><td>Open: The Philosophy and Practices that are Revolutionizing Education and Science</td><td>Ubiquity Press eBooks</td><td><a href="https://doi.org/10.5334/bbc" target="_blank" rel="noopener noreferrer">10.5334/bbc</a>&nbsp;<a href="https://scite.ai/reports/10.5334/bbc" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Advancing equity in cross-cultural psychology: embracing diverse epistemologies and fostering collaborative practices</td><td>Frontiers in Psychology</td><td><a href="https://doi.org/10.3389/fpsyg.2024.1368663" target="_blank" rel="noopener noreferrer">10.3389/fpsyg.2024.1368663</a>&nbsp;<a href="https://scite.ai/reports/10.3389/fpsyg.2024.1368663" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>The why of open pedagogy: a value-first conceptualization for enhancing instructor praxis</td><td>Smart Learning Environments</td><td><a href="https://doi.org/10.1186/s40561-022-00191-0" target="_blank" rel="noopener noreferrer">10.1186/s40561-022-00191-0</a>&nbsp;<a href="https://scite.ai/reports/10.1186/s40561-022-00191-0" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Perceived usefulness of open educational resources: Impact of switching to online learning for face-to-face and distance learners</td><td>Frontiers in Psychology</td><td><a href="https://doi.org/10.3389/fpsyg.2022.1004459" target="_blank" rel="noopener noreferrer">10.3389/fpsyg.2022.1004459</a>&nbsp;<a href="https://scite.ai/reports/10.3389/fpsyg.2022.1004459" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Transformative Curriculum Design through Open Educational Resource Creation</td><td>Collected Essays on Learning and Teaching</td><td><a href="https://doi.org/10.22329/celt.v14i1.7137" target="_blank" rel="noopener noreferrer">10.22329/celt.v14i1.7137</a>&nbsp;<a href="https://scite.ai/reports/10.22329/celt.v14i1.7137" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Teachers as Connected Professionals</td><td>The International Review of Research in Open and Distributed Learning</td><td><a href="https://doi.org/10.19173/irrodl.v20i4.4082" target="_blank" rel="noopener noreferrer">10.19173/irrodl.v20i4.4082</a>&nbsp;<a href="https://scite.ai/reports/10.19173/irrodl.v20i4.4082" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2017</td><td>Predicting learning: Comparing an open educational resource and standard textbooks.</td><td>Scholarship of Teaching and Learning in Psychology</td><td><a href="https://doi.org/10.1037/stl0000092" target="_blank" rel="noopener noreferrer">10.1037/stl0000092</a>&nbsp;<a href="https://scite.ai/reports/10.1037/stl0000092" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Unveiling the Relationship between the Use of Open Educational Resources and the Adoption of Open Teaching Practices in Higher Education</td><td>Sustainability</td><td><a href="https://doi.org/10.3390/su11205637" target="_blank" rel="noopener noreferrer">10.3390/su11205637</a>&nbsp;<a href="https://scite.ai/reports/10.3390/su11205637" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Open Science por defecto. La nueva normalidad para la investigación</td><td>Arbor</td><td><a href="https://doi.org/10.3989/arbor.2021.799002" target="_blank" rel="noopener noreferrer">10.3989/arbor.2021.799002</a>&nbsp;<a href="https://scite.ai/reports/10.3989/arbor.2021.799002" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Self-directed multimodal learning within a context of transformative open education</td><td>NWU self-directed learning series</td><td><a href="https://doi.org/10.4102/aosis.2020.bk210.01" target="_blank" rel="noopener noreferrer">10.4102/aosis.2020.bk210.01</a>&nbsp;<a href="https://scite.ai/reports/10.4102/aosis.2020.bk210.01" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Exploring Aspects of Open Educational Resources Through OER-Enabled Pedagogy</td><td>Frontiers in Education</td><td><a href="https://doi.org/10.3389/feduc.2020.00076" target="_blank" rel="noopener noreferrer">10.3389/feduc.2020.00076</a>&nbsp;<a href="https://scite.ai/reports/10.3389/feduc.2020.00076" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2018</td><td>Ramp It Up</td><td>Teaching of Psychology</td><td><a href="https://doi.org/10.1177/0098628318796413" target="_blank" rel="noopener noreferrer">10.1177/0098628318796413</a>&nbsp;<a href="https://scite.ai/reports/10.1177/0098628318796413" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>‘Consider the Opposite’ – Effects of elaborative feedback and correct answer feedback on reducing confirmation bias – A pre-registered study</td><td>Contemporary Educational Psychology</td><td><a href="https://doi.org/10.1016/j.cedpsych.2020.101844" target="_blank" rel="noopener noreferrer">10.1016/j.cedpsych.2020.101844</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.cedpsych.2020.101844" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Sustainability and Justice: Challenges and Opportunities for an Open STEM Education</td><td>CBE—Life Sciences Education</td><td><a href="https://doi.org/10.1187/cbe.20-08-0180" target="_blank" rel="noopener noreferrer">10.1187/cbe.20-08-0180</a>&nbsp;<a href="https://scite.ai/reports/10.1187/cbe.20-08-0180" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Development and Evaluation of Digital Learning Tools Promoting Applicable Knowledge in Economics and German Teacher Education</td><td>Education Sciences</td><td><a href="https://doi.org/10.3390/educsci13050481" target="_blank" rel="noopener noreferrer">10.3390/educsci13050481</a>&nbsp;<a href="https://scite.ai/reports/10.3390/educsci13050481" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Collections Education: The Extended Specimen and Data Acumen</td><td>BioScience</td><td><a href="https://doi.org/10.1093/biosci/biab109" target="_blank" rel="noopener noreferrer">10.1093/biosci/biab109</a>&nbsp;<a href="https://scite.ai/reports/10.1093/biosci/biab109" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Digital Presence and Online Identity among Digital Scholars: A Thematic Analysis</td><td>Social Sciences</td><td><a href="https://doi.org/10.3390/socsci12070379" target="_blank" rel="noopener noreferrer">10.3390/socsci12070379</a>&nbsp;<a href="https://scite.ai/reports/10.3390/socsci12070379" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Minimal computing in refugee education in Uganda: economies of digital use and non-use, and the right constraints</td><td>Learning Media and Technology</td><td><a href="https://doi.org/10.1080/17439884.2024.2405128" target="_blank" rel="noopener noreferrer">10.1080/17439884.2024.2405128</a>&nbsp;<a href="https://scite.ai/reports/10.1080/17439884.2024.2405128" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2018</td><td>Equity-oriented design in open education</td><td>International Journal of Information and Learning Technology</td><td><a href="https://doi.org/10.1108/ijilt-06-2018-0070" target="_blank" rel="noopener noreferrer">10.1108/ijilt-06-2018-0070</a>&nbsp;<a href="https://scite.ai/reports/10.1108/ijilt-06-2018-0070" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Healthcare students’ use of an e-textbook open educational resource on vital sign measurement: a qualitative study</td><td>Open Learning The Journal of Open Distance and e-Learning</td><td><a href="https://doi.org/10.1080/02680513.2020.1835623" target="_blank" rel="noopener noreferrer">10.1080/02680513.2020.1835623</a>&nbsp;<a href="https://scite.ai/reports/10.1080/02680513.2020.1835623" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>The next layer: Towards open pedagogy in geospatial education</td><td>Transactions in GIS</td><td><a href="https://doi.org/10.1111/tgis.13081" target="_blank" rel="noopener noreferrer">10.1111/tgis.13081</a>&nbsp;<a href="https://scite.ai/reports/10.1111/tgis.13081" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Distributed Learning Ecosystems</td><td></td><td><a href="https://doi.org/10.1007/978-3-658-38703-7" target="_blank" rel="noopener noreferrer">10.1007/978-3-658-38703-7</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-658-38703-7" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Performance Improvement Technology for Building a Sustainable OER Initiative in an Academic Library</td><td>TechTrends</td><td><a href="https://doi.org/10.1007/s11528-019-00467-2" target="_blank" rel="noopener noreferrer">10.1007/s11528-019-00467-2</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s11528-019-00467-2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Teaching Critical Thinking and Metaliteracy Through OER: Theory and Practice in a Course Collaboration</td><td>International Journal of Open Educational Resources</td><td><a href="https://doi.org/10.18278/ijoer.2.1.11" target="_blank" rel="noopener noreferrer">10.18278/ijoer.2.1.11</a>&nbsp;<a href="https://scite.ai/reports/10.18278/ijoer.2.1.11" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Open Pedagogy Approaches: Faculty, Library, and Student Collaborations</td><td></td><td></td></tr>
-<tr><td>2021</td><td>Human Rights and Social Justice through Open Educational Resources and Lifelong Learning</td><td>Macro Management &amp; Public Policies</td><td><a href="https://doi.org/10.30564/mmpp.v3i1.2925" target="_blank" rel="noopener noreferrer">10.30564/mmpp.v3i1.2925</a>&nbsp;<a href="https://scite.ai/reports/10.30564/mmpp.v3i1.2925" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Implementing Open Pedagogy in Higher Education: Examples and Recommendations</td><td></td><td><a href="https://doi.org/10.1007/978-3-030-67349-9_15" target="_blank" rel="noopener noreferrer">10.1007/978-3-030-67349-9_15</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-030-67349-9_15" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>The Public Information Disclosure in State Madrasah Aliyah</td><td>Nidhomul Haq Jurnal Manajemen Pendidikan Islam</td><td><a href="https://doi.org/10.31538/ndh.v8i1.3223" target="_blank" rel="noopener noreferrer">10.31538/ndh.v8i1.3223</a>&nbsp;<a href="https://scite.ai/reports/10.31538/ndh.v8i1.3223" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Not Quite on the Same Page: Comparing Key Terms in Introductory Psychology Textbooks</td><td>Teaching of Psychology</td><td><a href="https://doi.org/10.1177/00986283221111749" target="_blank" rel="noopener noreferrer">10.1177/00986283221111749</a>&nbsp;<a href="https://scite.ai/reports/10.1177/00986283221111749" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Open Education and Alternative Digital Credentials in Europe</td><td>The International Review of Research in Open and Distributed Learning</td><td><a href="https://doi.org/10.19173/irrodl.v25i1.7412" target="_blank" rel="noopener noreferrer">10.19173/irrodl.v25i1.7412</a>&nbsp;<a href="https://scite.ai/reports/10.19173/irrodl.v25i1.7412" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Open Educational Practices (OEP) in Higher Education</td><td></td><td><a href="https://doi.org/10.1007/978-981-287-532-7_710-1" target="_blank" rel="noopener noreferrer">10.1007/978-981-287-532-7_710-1</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-981-287-532-7_710-1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Abrir la ciencia para cambiar el mundo</td><td>International Journal of Engineering Social Justice and Peace</td><td><a href="https://doi.org/10.24908/ijesjp.v7i2.13724" target="_blank" rel="noopener noreferrer">10.24908/ijesjp.v7i2.13724</a>&nbsp;<a href="https://scite.ai/reports/10.24908/ijesjp.v7i2.13724" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Scientist and data architect collaborate to curate and archive an inner ear electrophysiology data collection</td><td>PLoS ONE</td><td><a href="https://doi.org/10.1371/journal.pone.0223984" target="_blank" rel="noopener noreferrer">10.1371/journal.pone.0223984</a>&nbsp;<a href="https://scite.ai/reports/10.1371/journal.pone.0223984" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Open Science</td><td>Elsevier eBooks</td><td><a href="https://doi.org/10.1016/b978-0-08-102124-8.00007-6" target="_blank" rel="noopener noreferrer">10.1016/b978-0-08-102124-8.00007-6</a>&nbsp;<a href="https://scite.ai/reports/10.1016/b978-0-08-102124-8.00007-6" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>“Do they really know what we need?”Exploring learners’ versus universities’ views on open educational resources in Chinese universities</td><td>International Journal of Educational Research</td><td><a href="https://doi.org/10.1016/j.ijer.2021.101817" target="_blank" rel="noopener noreferrer">10.1016/j.ijer.2021.101817</a>&nbsp;<a href="https://scite.ai/reports/10.1016/j.ijer.2021.101817" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Writing between the Lines</td><td>Pedagogy Critical Approaches to Teaching Literature Language Composition and Culture</td><td><a href="https://doi.org/10.1215/15314200-9131828" target="_blank" rel="noopener noreferrer">10.1215/15314200-9131828</a>&nbsp;<a href="https://scite.ai/reports/10.1215/15314200-9131828" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Cartografia de pesquisas nacionais sobre REA</td><td>Revista Linguagem em Foco</td><td><a href="https://doi.org/10.46230/2674-8266-12-4384" target="_blank" rel="noopener noreferrer">10.46230/2674-8266-12-4384</a>&nbsp;<a href="https://scite.ai/reports/10.46230/2674-8266-12-4384" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Open Textbooks in Higher Education Teaching</td><td></td><td><a href="https://doi.org/10.1007/978-3-658-38703-7_6" target="_blank" rel="noopener noreferrer">10.1007/978-3-658-38703-7_6</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-3-658-38703-7_6" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>The Use of Open Educational Resources as Teaching Tools in Primary Education: Activities by Postgraduate Students of the Hellenic Open University</td><td>International Journal of Learning and Development</td><td><a href="https://doi.org/10.5296/ijld.v13i3.21010" target="_blank" rel="noopener noreferrer">10.5296/ijld.v13i3.21010</a>&nbsp;<a href="https://scite.ai/reports/10.5296/ijld.v13i3.21010" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Open-source 3-D printable autoinjector: Design, testing, and regulatory limitations</td><td>PLoS ONE</td><td><a href="https://doi.org/10.1371/journal.pone.0288696" target="_blank" rel="noopener noreferrer">10.1371/journal.pone.0288696</a>&nbsp;<a href="https://scite.ai/reports/10.1371/journal.pone.0288696" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Review of Linked Data and Open Educational Resources in Academia: Potential Benefits and Challenges</td><td>Journal of Development and Social Sciences</td><td><a href="https://doi.org/10.47205/jdss.2024(5-i)53" target="_blank" rel="noopener noreferrer">10.47205/jdss.2024(5-i)53</a>&nbsp;<a href="https://scite.ai/reports/10.47205/jdss.2024(5-i)53" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Open Education and Second Language Learning and Teaching</td><td>Multilingual Matters eBooks</td><td><a href="https://doi.org/10.21832/blyth0992" target="_blank" rel="noopener noreferrer">10.21832/blyth0992</a>&nbsp;<a href="https://scite.ai/reports/10.21832/blyth0992" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2017</td><td>How to Open an Academic Department</td><td>Ubiquity Press eBooks</td><td><a href="https://doi.org/10.5334/bbc.m" target="_blank" rel="noopener noreferrer">10.5334/bbc.m</a>&nbsp;<a href="https://scite.ai/reports/10.5334/bbc.m" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Contextualising Open Educational Resources in Higher Education</td><td>Future education and learning spaces</td><td><a href="https://doi.org/10.1007/978-981-19-8590-4_1" target="_blank" rel="noopener noreferrer">10.1007/978-981-19-8590-4_1</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-981-19-8590-4_1" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Open Educational Practices (OEP) in Higher Education</td><td></td><td><a href="https://doi.org/10.1007/978-981-287-532-7_710-3" target="_blank" rel="noopener noreferrer">10.1007/978-981-287-532-7_710-3</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-981-287-532-7_710-3" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Effective Strategies for Finding Open Educational Resources in High School</td><td>Apertura</td><td><a href="https://doi.org/10.32870/ap.v15n2.2393" target="_blank" rel="noopener noreferrer">10.32870/ap.v15n2.2393</a>&nbsp;<a href="https://scite.ai/reports/10.32870/ap.v15n2.2393" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Educator capacity for online global collaborative learning: developing a framework</td><td>Teacher Development</td><td><a href="https://doi.org/10.1080/13664530.2024.2415385" target="_blank" rel="noopener noreferrer">10.1080/13664530.2024.2415385</a>&nbsp;<a href="https://scite.ai/reports/10.1080/13664530.2024.2415385" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2025</td><td>The innovative evolution of teaching materials: Trends and future prospects</td><td>Journal of Research in Instructional</td><td><a href="https://doi.org/10.30862/jri.v5i1.600" target="_blank" rel="noopener noreferrer">10.30862/jri.v5i1.600</a>&nbsp;<a href="https://scite.ai/reports/10.30862/jri.v5i1.600" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Designing open access, educational resources</td><td>Quality Advancement in Nursing Education - Avancées en formation infirmière</td><td><a href="https://doi.org/10.17483/2368-6669.1193" target="_blank" rel="noopener noreferrer">10.17483/2368-6669.1193</a>&nbsp;<a href="https://scite.ai/reports/10.17483/2368-6669.1193" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Are Open Textbooks Effective for Learning? Investigating the Issue of Human-computer Interaction in Pedagogical Design of Open Textbook Affordable for a Diversity of Learning Environments</td><td>Journal of Physics Conference Series</td><td><a href="https://doi.org/10.1088/1742-6596/1828/1/012127" target="_blank" rel="noopener noreferrer">10.1088/1742-6596/1828/1/012127</a>&nbsp;<a href="https://scite.ai/reports/10.1088/1742-6596/1828/1/012127" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>User Engagement Using an Etextbook</td><td>CIN Computers Informatics Nursing</td><td><a href="https://doi.org/10.1097/cin.0000000000000720" target="_blank" rel="noopener noreferrer">10.1097/cin.0000000000000720</a>&nbsp;<a href="https://scite.ai/reports/10.1097/cin.0000000000000720" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Commentary: Social Responsibility in College Admissions Requires a Reimagining of Standardized Testing</td><td>Educational Measurement Issues and Practice</td><td><a href="https://doi.org/10.1111/emip.12451" target="_blank" rel="noopener noreferrer">10.1111/emip.12451</a>&nbsp;<a href="https://scite.ai/reports/10.1111/emip.12451" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Advancing social justice through small grants for the development of open educational resources at the University of Cape Town and the Cape Peninsula University of Technology</td><td>African Minds eBooks</td><td><a href="https://doi.org/10.47622/9781928502425_10" target="_blank" rel="noopener noreferrer">10.47622/9781928502425_10</a>&nbsp;<a href="https://scite.ai/reports/10.47622/9781928502425_10" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Post-pandemic digital writing instruction will be Resilient, Open, and Inclusive</td><td>Journal of University Teaching and Learning Practice</td><td><a href="https://doi.org/10.53761/1.20.02.11" target="_blank" rel="noopener noreferrer">10.53761/1.20.02.11</a>&nbsp;<a href="https://scite.ai/reports/10.53761/1.20.02.11" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2018</td><td>Developing a Community of Online Research Assignments</td><td>portal Libraries and the Academy</td><td><a href="https://doi.org/10.1353/pla.2018.0028" target="_blank" rel="noopener noreferrer">10.1353/pla.2018.0028</a>&nbsp;<a href="https://scite.ai/reports/10.1353/pla.2018.0028" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2018</td><td>Recursos Educativos Abiertos en la Universidad Estatal a Distancia</td><td>Revista Electrónica Calidad en la Educación Superior</td><td><a href="https://doi.org/10.22458/caes.v9i2.2077" target="_blank" rel="noopener noreferrer">10.22458/caes.v9i2.2077</a>&nbsp;<a href="https://scite.ai/reports/10.22458/caes.v9i2.2077" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Foundations for On-Campus Open Social Scholarship Activities</td><td>KULA knowledge creation dissemination and preservation studies</td><td><a href="https://doi.org/10.5334/kula.14" target="_blank" rel="noopener noreferrer">10.5334/kula.14</a>&nbsp;<a href="https://scite.ai/reports/10.5334/kula.14" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Moving Mountains</td><td>Journal of New Librarianship</td><td><a href="https://doi.org/10.33011/newlibs/10/5" target="_blank" rel="noopener noreferrer">10.33011/newlibs/10/5</a>&nbsp;<a href="https://scite.ai/reports/10.33011/newlibs/10/5" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2018</td><td>Specific Features of Fragmented Content</td><td>Advances in educational technologies and instructional design book series</td><td><a href="https://doi.org/10.4018/978-1-5225-5305-2.ch007" target="_blank" rel="noopener noreferrer">10.4018/978-1-5225-5305-2.ch007</a>&nbsp;<a href="https://scite.ai/reports/10.4018/978-1-5225-5305-2.ch007" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2018</td><td>Cost, outcomes, use, and perceptions of Open Educational Resources in psychology: A narrative review of the literature</td><td></td><td><a href="https://doi.org/10.31219/osf.io/kme36" target="_blank" rel="noopener noreferrer">10.31219/osf.io/kme36</a>&nbsp;<a href="https://scite.ai/reports/10.31219/osf.io/kme36" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Repositories of Open Textbooks for Higher Education: A Worldwide Overview</td><td>Future education and learning spaces</td><td><a href="https://doi.org/10.1007/978-981-19-8590-4_10" target="_blank" rel="noopener noreferrer">10.1007/978-981-19-8590-4_10</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-981-19-8590-4_10" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Open Education: Looking at Canadian Higher Education through a Critical Research Lens</td><td>The Open/Technology in Education Society and Scholarship Association Conference</td><td><a href="https://doi.org/10.18357/otessac.2022.2.1.61" target="_blank" rel="noopener noreferrer">10.18357/otessac.2022.2.1.61</a>&nbsp;<a href="https://scite.ai/reports/10.18357/otessac.2022.2.1.61" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Art and/as open education: A collaborative action with refugee artists</td><td>Arts and Humanities in Higher Education</td><td><a href="https://doi.org/10.1177/14740222231156807" target="_blank" rel="noopener noreferrer">10.1177/14740222231156807</a>&nbsp;<a href="https://scite.ai/reports/10.1177/14740222231156807" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Participatory culture and knowledge sharing among educators and scholars in higher education</td><td>Educational Media International</td><td><a href="https://doi.org/10.1080/09523987.2024.2357954" target="_blank" rel="noopener noreferrer">10.1080/09523987.2024.2357954</a>&nbsp;<a href="https://scite.ai/reports/10.1080/09523987.2024.2357954" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Lombok Folktales Dari Datu Pejanggiq Sampai Putri Mandalika as Literacy Support in Elementary Schools</td><td>Indonesian Language Education and Literature</td><td><a href="https://doi.org/10.24235/ileal.v9i2.11458" target="_blank" rel="noopener noreferrer">10.24235/ileal.v9i2.11458</a>&nbsp;<a href="https://scite.ai/reports/10.24235/ileal.v9i2.11458" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>How community college librarians are creating value through an OER virtual community of practice: A netnography</td><td></td><td><a href="https://doi.org/10.5204/thesis.eprints.228555" target="_blank" rel="noopener noreferrer">10.5204/thesis.eprints.228555</a>&nbsp;<a href="https://scite.ai/reports/10.5204/thesis.eprints.228555" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>Sustaining Open Educational Resources (OER) initiatives in higher education: practices, successes, and challenges</td><td></td><td><a href="https://doi.org/10.32469/10355/94325" target="_blank" rel="noopener noreferrer">10.32469/10355/94325</a>&nbsp;<a href="https://scite.ai/reports/10.32469/10355/94325" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Bildung, Praxistransfer und Kooperation</td><td>transcript Verlag eBooks</td><td><a href="https://doi.org/10.1515/9783839471807" target="_blank" rel="noopener noreferrer">10.1515/9783839471807</a>&nbsp;<a href="https://scite.ai/reports/10.1515/9783839471807" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2018</td><td>PLAT 17(1) 2018</td><td>Psychology Learning &amp; Teaching</td><td><a href="https://doi.org/10.1177/1475725717748530" target="_blank" rel="noopener noreferrer">10.1177/1475725717748530</a>&nbsp;<a href="https://scite.ai/reports/10.1177/1475725717748530" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Formação de professores para a Fluência Tecnológico-pedagógica em tecnologia assistiva no curso de pedagogia</td><td></td><td><a href="https://doi.org/10.31560/pimentacultural/2022.206.102-125" target="_blank" rel="noopener noreferrer">10.31560/pimentacultural/2022.206.102-125</a>&nbsp;<a href="https://scite.ai/reports/10.31560/pimentacultural/2022.206.102-125" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>The Flow Between Spaces: The Experiences of International Doctoral Candidates Negotiation and Construction of Professional Identity on Social Media</td><td>White Rose eTheses Online (University of Leeds, The University of Sheffield, University of York)</td><td></td></tr>
-<tr><td>2024</td><td>Impact of Open Education Resources (OER) on Student Academic Performance and Retention Rates in Undergraduate Engineering Departments</td><td></td><td><a href="https://doi.org/10.18260/1-2--36048" target="_blank" rel="noopener noreferrer">10.18260/1-2--36048</a>&nbsp;<a href="https://scite.ai/reports/10.18260/1-2--36048" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Educative features of upper elementary Eureka math curriculum</td><td></td><td><a href="https://doi.org/10.32469/10355/78158" target="_blank" rel="noopener noreferrer">10.32469/10355/78158</a>&nbsp;<a href="https://scite.ai/reports/10.32469/10355/78158" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Gathering Expert Opinions on Self-directed Learning and Online Assessment Using OER—A Delphi Approach for Redesigning Student Assessments</td><td>Lecture notes in educational technology</td><td><a href="https://doi.org/10.1007/978-981-16-4099-5_4" target="_blank" rel="noopener noreferrer">10.1007/978-981-16-4099-5_4</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-981-16-4099-5_4" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Formação de professores da educação básica no RS: integração de Recursos Educacionais Abertos (REA) como inovação didático-metodológica</td><td></td><td><a href="https://doi.org/10.31560/pimentacultural/2022.206.18-37" target="_blank" rel="noopener noreferrer">10.31560/pimentacultural/2022.206.18-37</a>&nbsp;<a href="https://scite.ai/reports/10.31560/pimentacultural/2022.206.18-37" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Inovação disruptiva nas práticas escolares: (co) autoria de REA no contexto da produsage</td><td></td><td><a href="https://doi.org/10.31560/pimentacultural/2022.206.89-101" target="_blank" rel="noopener noreferrer">10.31560/pimentacultural/2022.206.89-101</a>&nbsp;<a href="https://scite.ai/reports/10.31560/pimentacultural/2022.206.89-101" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Habilidades sociais educativas na performance pedagógica do tutor</td><td></td><td><a href="https://doi.org/10.31560/pimentacultural/2022.206.126-146" target="_blank" rel="noopener noreferrer">10.31560/pimentacultural/2022.206.126-146</a>&nbsp;<a href="https://scite.ai/reports/10.31560/pimentacultural/2022.206.126-146" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2021</td><td>Processos formativos: performance docente na (Co)autoria de REA</td><td></td><td><a href="https://doi.org/10.31560/pimentacultural/2022.206.38-55" target="_blank" rel="noopener noreferrer">10.31560/pimentacultural/2022.206.38-55</a>&nbsp;<a href="https://scite.ai/reports/10.31560/pimentacultural/2022.206.38-55" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2018</td><td>Overview of Open Textbooks</td><td>Advances in educational technologies and instructional design book series</td><td><a href="https://doi.org/10.4018/978-1-5225-5305-2.ch001" target="_blank" rel="noopener noreferrer">10.4018/978-1-5225-5305-2.ch001</a>&nbsp;<a href="https://scite.ai/reports/10.4018/978-1-5225-5305-2.ch001" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2020</td><td>Open Educational Practices (POEP) in Higher Education</td><td></td><td><a href="https://doi.org/10.1007/978-981-287-532-7_710-2" target="_blank" rel="noopener noreferrer">10.1007/978-981-287-532-7_710-2</a>&nbsp;<a href="https://scite.ai/reports/10.1007/978-981-287-532-7_710-2" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>Theorizing Technologies for Learning as Mutable Mobiles</td><td>Proceedings of the 2019 AERA Annual Meeting</td><td><a href="https://doi.org/10.3102/1432243" target="_blank" rel="noopener noreferrer">10.3102/1432243</a>&nbsp;<a href="https://scite.ai/reports/10.3102/1432243" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2022</td><td>The Role of Open Educational Resources (OERs) in the Future of Online Learning</td><td>Advances in educational technologies and instructional design book series</td><td><a href="https://doi.org/10.4018/978-1-6684-6513-4.ch005" target="_blank" rel="noopener noreferrer">10.4018/978-1-6684-6513-4.ch005</a>&nbsp;<a href="https://scite.ai/reports/10.4018/978-1-6684-6513-4.ch005" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Practising open education</td><td>UCL Press eBooks</td><td><a href="https://doi.org/10.2307/j.ctv2wk7261.25" target="_blank" rel="noopener noreferrer">10.2307/j.ctv2wk7261.25</a>&nbsp;<a href="https://scite.ai/reports/10.2307/j.ctv2wk7261.25" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Ressources Educatives Libres et éducation ouverte : l’écosystème RELIEFH pour l’égalité femme-homme</td><td>Education Ouverte et Libre - Open Education</td><td><a href="https://doi.org/10.52612/journals/eol-oe.2023.e1155" target="_blank" rel="noopener noreferrer">10.52612/journals/eol-oe.2023.e1155</a>&nbsp;<a href="https://scite.ai/reports/10.52612/journals/eol-oe.2023.e1155" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>What do we talk about when we talk about &quot;Open&quot;? On Education, Science, Research, and Open Scholarship</td><td></td><td><a href="https://doi.org/10.59350/dxdqq-e4n18" target="_blank" rel="noopener noreferrer">10.59350/dxdqq-e4n18</a>&nbsp;<a href="https://scite.ai/reports/10.59350/dxdqq-e4n18" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>Demystifying the Academic Research Enterprise</td><td>The MIT Press eBooks</td><td><a href="https://doi.org/10.7551/mitpress/14740.001.0001" target="_blank" rel="noopener noreferrer">10.7551/mitpress/14740.001.0001</a>&nbsp;<a href="https://scite.ai/reports/10.7551/mitpress/14740.001.0001" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2023</td><td>&quot;The Pictures Allowed Me to Connect to the Material More&quot;: Student Perceptions of a Diversity-Focused Open Pedagogy Assignment</td><td></td><td><a href="https://doi.org/10.31219/osf.io/hvtxk" target="_blank" rel="noopener noreferrer">10.31219/osf.io/hvtxk</a>&nbsp;<a href="https://scite.ai/reports/10.31219/osf.io/hvtxk" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Open Scholarship in the Humanities</td><td>Bloomsbury Publishing Plc eBooks</td><td><a href="https://doi.org/10.5040/9781350232303" target="_blank" rel="noopener noreferrer">10.5040/9781350232303</a>&nbsp;<a href="https://scite.ai/reports/10.5040/9781350232303" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Improving Student Engagement in the First-Year Transition Seminar Class with Open Educational Resources</td><td></td><td><a href="https://doi.org/10.18260/1-2--45124" target="_blank" rel="noopener noreferrer">10.18260/1-2--45124</a>&nbsp;<a href="https://scite.ai/reports/10.18260/1-2--45124" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Open Educational Resources in einer Open Pedagogy</td><td>transcript Verlag eBooks</td><td><a href="https://doi.org/10.1515/9783839471807-010" target="_blank" rel="noopener noreferrer">10.1515/9783839471807-010</a>&nbsp;<a href="https://scite.ai/reports/10.1515/9783839471807-010" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Perceptions of Open Educational Resources by Teaching Staff in Higher Education in Ireland</td><td>DBS Applied Research and Theory Journal</td><td><a href="https://doi.org/10.22375/dbs.v1i1.113" target="_blank" rel="noopener noreferrer">10.22375/dbs.v1i1.113</a>&nbsp;<a href="https://scite.ai/reports/10.22375/dbs.v1i1.113" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Bildung, Praxistransfer und Kooperation</td><td>Medien- und Gestaltungsästhetik</td><td><a href="https://doi.org/10.14361/9783839471807" target="_blank" rel="noopener noreferrer">10.14361/9783839471807</a>&nbsp;<a href="https://scite.ai/reports/10.14361/9783839471807" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2024</td><td>Former Educators to Enhance Student Growth and Teaching Effectiveness</td><td>Advances in educational marketing, administration, and leadership book series</td><td><a href="https://doi.org/10.4018/979-8-3693-6427-7.ch003" target="_blank" rel="noopener noreferrer">10.4018/979-8-3693-6427-7.ch003</a>&nbsp;<a href="https://scite.ai/reports/10.4018/979-8-3693-6427-7.ch003" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2025</td><td>Jupyter Book as an open online teaching environment in the geosciences: lessons learned from Geo-SfM and Geo-UAV</td><td>Geoscience Communication</td><td><a href="https://doi.org/10.5194/gc-8-51-2025" target="_blank" rel="noopener noreferrer">10.5194/gc-8-51-2025</a>&nbsp;<a href="https://scite.ai/reports/10.5194/gc-8-51-2025" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2025</td><td>Connected Learning as Collaboration and Psychosocial Support: A Critical Reflection on a Bridging Programme for Refugees in Uganda</td><td>Journal of Interactive Media in Education</td><td><a href="https://doi.org/10.5334/jime.879" target="_blank" rel="noopener noreferrer">10.5334/jime.879</a>&nbsp;<a href="https://scite.ai/reports/10.5334/jime.879" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2025</td><td>Quantifying the Human Mortality Costs of Patent-based Intellectual Property: How Many Premature Deaths are due to Patents?</td><td>Health Care Analysis</td><td><a href="https://doi.org/10.1007/s10728-025-00516-3" target="_blank" rel="noopener noreferrer">10.1007/s10728-025-00516-3</a>&nbsp;<a href="https://scite.ai/reports/10.1007/s10728-025-00516-3" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2025</td><td>Perceptions and Attitudes of Teacher Educators towards the Integration of Open Educational Resources (OER) in Teacher Education Programs in Telangana State</td><td>Journal of Informatics Education and Research</td><td><a href="https://doi.org/10.52783/jier.v5i2.2571" target="_blank" rel="noopener noreferrer">10.52783/jier.v5i2.2571</a>&nbsp;<a href="https://scite.ai/reports/10.52783/jier.v5i2.2571" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-<tr><td>2019</td><td>What do we talk about when we talk about &quot;Open&quot;? On Education, Science, Research, and Open Scholarship</td><td></td><td><a href="https://doi.org/10.59350/zddf5-kda18" target="_blank" rel="noopener noreferrer">10.59350/zddf5-kda18</a>&nbsp;<a href="https://scite.ai/reports/10.59350/zddf5-kda18" target="_blank" rel="noopener noreferrer" class="scite-link" title="View citation context on scite.ai">scite</a></td></tr>
-    </tbody>
-  </table>
-</section>
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' citing works (most recent first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
 
-<footer class="page-footer">
-  Generated by BookStories on 2026-02-20T16:18:42+00:00 UTC
-</footer>
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
 
-</div>
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+        .wm-tab-btn {
+            border: none;
+            background: #f3f4f6;
+            color: #4b5563;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .wm-tab-btn.wm-tab-active {
+            outline: 2px solid #3b82f6;
+            outline-offset: 1px;
+        }
+    </style>
+    
+    <script>
+        function citeSwitchTab(btn, paneId) {
+            var panes = document.querySelectorAll('#sec-citing .cite-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].classList.remove('active');
+            }
+            var btns = document.querySelectorAll('#sec-citing .cite-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('active');
+            }
+            var pane = document.getElementById(paneId);
+            if (pane) pane.classList.add('active');
+            if (btn) btn.classList.add('active');
+        }
+        function openWebMentionTab(evt, tabId) {
+            var panes = document.querySelectorAll('.wm-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].style.display = 'none';
+            }
+            var btns = document.querySelectorAll('.wm-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('wm-tab-active');
+            }
+            var pane = document.getElementById(tabId);
+            if (pane) pane.style.display = 'block';
+            if (evt && evt.currentTarget) evt.currentTarget.classList.add('wm-tab-active');
+        }
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
 </body>
 </html>

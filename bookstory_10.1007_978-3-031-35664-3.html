@@ -8,6 +8,7 @@
     <meta charset="utf-8">
     <title>BookStory - Smart Cities</title>
     <style>
+
         * { box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
         .page { max-width: 1000px; margin: auto; }
@@ -16,7 +17,7 @@
         .span-full { grid-column: 1 / -1; }
         .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
         .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
-        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
         .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
         .tag-soft { background: #f3f4f6; color: #4b5563; }
         .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
@@ -39,33 +40,286 @@
             * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
             .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
             .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
             table { page-break-inside: auto !important; width: 100% !important; }
             tr { page-break-inside: avoid !important; page-break-after: auto !important; }
             thead { display: table-header-group !important; }
         }
+    
+
+/* ── UX Enhancements ── */
+
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
+
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+.sig-green {background:#dcfce7;color:#166534;}
+.cover-fallback{
+  width:110px;height:155px;border-radius:.55rem;
+  border:1px solid #dbe7f3;
+  box-shadow:0 4px 10px rgba(15,23,42,.08);
+  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:.55rem;gap:.35rem;
+}
+.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
+.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
+.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+
     </style>
     <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <button onclick="window.print()" class="no-print" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
-        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
-        Print PDF Report
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
     </button>
+  </div>
+</nav>
     
     <div class="page">
-        <header class="hero card">
+        <header class="hero card" id="sec-hero">
             <div class="header-bar">
                 <div style="display: flex; align-items: center; gap: 1.25rem;">
-                    <div class="logo-wrap"><img src="bookstories-logo.png" alt="Logo"></div>
+                    <div class="logo-wrap"><img src="bookstories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
                     <div>
                         <h1 class="hero-title">Smart Cities</h1>
-                        <div class="discipline-badge">Stem</div>
+                        
+                            <div class="discipline-badge" style="background:#fef08a; color:#854d0e; border-color:#fde047; font-weight:600; margin-top: 0.5rem; margin-bottom: 0;">
+                                <svg style="width:14px; height:14px; display:inline; vertical-align:middle; margin-right:4px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                                Open Access (Hybrid)
+                            </div>
+                        
+                        <div class="discipline-badge">Stem</div>                        
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
                         <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
-                            <div><strong>Author(s):</strong> Fateh Bélaïd, Anvita Arora</div>
-                            <div><strong>Publisher:</strong> Springer International Publishing</div>
-                            <div><strong>Publication year:</strong> 2024</div>
-                            <div><strong>DOI:</strong> <a href="https://doi.org/10.1007/978-3-031-35664-3" target="_blank">10.1007/978-3-031-35664-3</a></div>
+                            <div><strong>Author(s):</strong> 
+                                
+                                    Fateh Bélaïd, Anvita Arora
+                                
+                            </div>
+                        
+                            
+                            <div><strong>Series:</strong> 
+                                Studies in energy, resource and environmental economics
+                                
+                                    <span class="badge" style="background:#f1f5f9; color:#334155; margin-left:0.3rem;">ISSN 2731-3409</span>
+                                
+                                
+                                    <a href="https://openalex.org/S4393919257" target="_blank" class="badge" style="background:#eef2ff; color:#4338ca; margin-left:0.3rem; text-decoration:none;">OpenAlex ↗</a>
+                                
+                            </div>
+                            
+                        
+                            
+                            
+                        
+                            <div><strong>Publisher:</strong> 
+                                
+                                    Springer International Publishing
+                                
+                            </div>
+                        
+                            <div><strong>Publication year:</strong> 
+                                
+                                    2024
+                                
+                            </div>
+                        
+                            <div><strong>DOI:</strong> 
+                                <a href="https://doi.org/10.1007/978-3-031-35664-3" target="_blank">
+                                    10.1007/978-3-031-35664-3
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -73,54 +327,378 @@
                 
                 <div class="cover-wrap">
                     
-                    <img src="https://library.oapen.org/rest/bitstreams/24b3aef4-e0d2-4c0d-ae4d-4eed66ea6d8d/retrieve" alt="Cover" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+                    <img src="https://media.springernature.com/full/springer-static/cover-hires/book/978-3-031-35664-3" alt="Cover" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
 
+        <!-- Sticky nav -->
+        <nav aria-label="Page sections" class="sticky-nav no-print">
+            <div class="sticky-nav-inner">
+                <a href="#sec-hero">Overview</a>
+                <a href="#sec-story">Story</a>
+                <a href="#sec-impact">Impact</a>
+                <a href="#sec-roles">Roles</a>
+                <a href="#sec-access">Access</a>
+                <a href="#sec-citing">Who's Citing</a>
+                <a href="#sec-mentions">Mentions</a>
+            </div>
+        </nav>
+
+
+        
+        
         
         <section class="card">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">The upcoming book titled "Smart Cities," to be published by Springer International Publishing in 2024, aims to address the critical intersection of technology and urban development. With a strong commercial presence on platforms like Amazon and Goodreads, it is positioned to reach a broad audience beyond academia.</p>
+<p class="story-text">The upcoming book "Smart Cities," set for publication in 2024 by Springer International Publishing, aims to explore the multifunctional aspects of urban environments that leverage technology for enhanced living. Its high commercial linkage suggests a potentially robust interest in its themes among both academic and public spheres.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">"Smart Cities" represents a significant contribution to the evolving discourse on urban environments enhanced by technology. Set for publication in 2024 by Springer International Publishing, the book has already garnered some interest, as indicated by its strong commercial linkage through platforms such as Amazon and Goodreads. While direct citations are currently at zero, the inferred scholarly uptake suggests a potential for positive engagement within academic circles.</p>
-<p class="story-text">Although the current dataset lacks any specific metrics on open access or downloads, the anticipation surrounding "Smart Cities" implies a readiness within the academic community to explore innovative urban solutions. This anticipation is bolstered by evolving scholarly trends toward research that integrates technology into everyday urban life, reflecting a growing interest in how smart solutions can address urban challenges.</p>
-<p class="story-text">Furthermore, the absence of significant online mentions, event data, and open educational resource listings at this stage indicates an opportunity for the authors and publisher to build momentum. By promoting discussion and dissemination through academic and public channels, "Smart Cities" could play a pivotal role in shaping future urban policies and community-driven projects.</p>
-<p class="story-text">In essence, the book is poised to serve as a foundational text for both scholarly reference and practical implementation in smart city initiatives. As the publication date approaches, continued efforts to amplify its reach through strategic marketing and engagement with potential citing entities will be crucial for securing a lasting impact in academia and beyond.</p></div>
+<p class="story-text">"Smart Cities" is poised to contribute significantly to ongoing discussions about urban development and technology integration. While it currently has zero citations, its future relevance will likely become apparent as the dialogue around smart city initiatives continues to expand. The topics covered within the book align closely with emerging global trends, indicating its potential utility as a reference for researchers and practitioners alike.</p>
+<p class="story-text">A key feature of this work is its strong commercial linkage, with the book appearing on platforms like Amazon and Goodreads. This suggests that there is not just an academic interest in smart cities, but also a public appetite for literature that addresses the complexities of urban modernization. As cities worldwide seek innovative solutions to pressing issues, resources like this book may gain traction among broader audiences.</p>
+<p class="story-text">While there is currently no high-fidelity community discourse associated with "Smart Cities," the lack of social media engagement does not diminish its prospective impact. Instead, it may represent an opportunity for outreach and engagement, positioning the book to trigger future discussions in various online platforms. The prevailing interest in smart technologies suggests that once published, the book could catalyze significant conversations in academic circles and beyond.</p>
+<p class="story-text">In summary, "Smart Cities" reflects an important intersection of academic inquiry and public interest. As a forthcoming publication, it awaits the opportunity to contribute to the narrative of how technology is reshaping urban life, thus encouraging the authors and researchers involved to foster discussions that could elevate its visibility in both academic and community contexts.</p></div>
         </section>
         
 
-        <section class="card">
-            <h2><span>Impact metrics</span></h2>
-            <ul class="metric-list">
-                
-                    <li><strong>Citations (OpenAlex):</strong> 21</li>
-                    <li><strong>Online mentions (Crossref Event Data):</strong> 0</li>
-                
+        
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+            <div class="im-wrapper">
                 
                 
-                <li><strong>Downloads (OAPEN / OPERAS):</strong> 4717</li>
                 
                 
-                <li><strong>Citation context (scite):</strong> 0</li>
                 
                 
-            </ul>
+                
+                
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">21</div>
+                                <div class="im-label">Total Citations</div>
+                                
+                                <div class="im-top-badge">⭐ Top 10% Cited</div>
+                                
+                            </div>
+                            
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2024, 2025, 2026]"
+                                        data-values="[11, 9, 1]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2024–2026</div>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+                    
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+                    
+                    <div class="im-card">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">4,816</div>
+                                <div class="im-label">Downloads (OAPEN)</div>
+                            </div>
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="downloadsSparkline"
+                                        data-labels="[&#34;Jan&#34;, &#34;Feb&#34;, &#34;Mar&#34;, &#34;Apr&#34;, &#34;May&#34;, &#34;Jun&#34;, &#34;Jul&#34;, &#34;Aug&#34;, &#34;Sep&#34;, &#34;Oct&#34;, &#34;Nov&#34;, &#34;Dec&#34;]"
+                                        data-values="[351, 427, 502, 510, 461, 397, 368, 181, 220, 329, 393, 677]"></canvas>
+                                </div>
+                                
+                                <div class="im-spark-range">2024 (Jan–Dec)</div>
+                                
+                            </div>
+                            
+                        </div>
+                        <a class="im-card-link" href="#operas-metrics-card">📊 View full timeline ↓</a>
+                    </div>
+                    
+                    
+                    <!-- scite (only when references exist) -->
+                    
+                </div>
+
+                
+                
+                
+                
+                
+                <div class="muted" style="margin-top:.7rem; font-size:.8rem;">
+                    Some signals aren’t recorded for this volume yet (online mentions, scite citation context) — these typically accrue after publication.
+                </div>
+                
+
+                
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="https://www.worldcat.org/search?q=bn:9783031356643" target="_blank" style="text-decoration:none;">📚 WorldCat</a>
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <span class="sig-pill sig-green" title="Open access: Hybrid">
+                            <svg class="sig-oa-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="5" y="11" width="14" height="10" rx="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 9.5-2.2"/>
+                                <path d="M16.5 4.8V11"/>
+                            </svg>
+                            Hybrid
+                        </span>
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 15 countries</a>
+                        
+                    </div>
+                </div>
+            </div>
         </section>
 
         
         <section class="card">
+            <h2><span>Book Series Benchmarking Context</span> <span class="badge" style="background:#fef3c7; color:#b45309;">Competitive Analytics</span></h2>
+            <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">
+                Contextualizing this volume's relative performance alongside peers published inside <strong>Studies in energy, resource and environmental economics</strong>.
+            </p>
+            
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Publication Title</th>
+                        <th>Year</th>
+                        <th>Author / Editor</th>
+                        <th style="text-align:right;" data-tip="Citations recorded by OpenAlex.">Citations</th>
+                        <th style="text-align:right;" data-tip="Downloads aggregated via OAPEN / OPERAS Metrics.">Downloads</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background: #f0fdf4; font-weight: 600;">
+                        <td>Smart Cities <br><span class="muted" style="color:#166534;">[This Volume]</span></td>
+                        <td>2024</td>
+                        <td>Fateh Bélaïd</td>
+                        <td style="text-align:right;">21</td>
+                        <td style="text-align:right;">4,816</td>
+                    </tr>
+                    
+                        
+                        <tr>
+                            <td>The EU in the Global Hydrogen Race: Bringing Together Climate Action, Energy Security, and Industrial Policy</td>
+                            <td>2024</td>
+                            <td>Yana Zabanova</td>
+                            <td style="text-align:right;">25</td>
+                            <td style="text-align:right;">—</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Germany’s Hydrogen Strategy: Securing Industrial Leadership in a Carbon–Neutral Economy</td>
+                            <td>2024</td>
+                            <td>Almudena Nunez</td>
+                            <td style="text-align:right;">21</td>
+                            <td style="text-align:right;">—</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>The Geopolitics of Hydrogen</td>
+                            <td>2024</td>
+                            <td>Quitzow, Rainer</td>
+                            <td style="text-align:right;">12</td>
+                            <td style="text-align:right;">—</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>France’s Hydrogen Strategy: Focusing on Domestic Hydrogen Production to Decarbonise Industry and Mobility</td>
+                            <td>2024</td>
+                            <td>Ines Bouacida</td>
+                            <td style="text-align:right;">10</td>
+                            <td style="text-align:right;">—</td>
+                        </tr>
+                        
+                    
+                </tbody>
+            </table>
+            <p class="muted" style="margin-top:0.75rem; font-size:0.78rem;">
+                Metrics shown where available per source; “—” indicates a metric isn't yet tracked for that volume. More metrics will be added as the benchmarking database grows.
+            </p>
+        </section>
+        
+
+        
+        <section class="card" id="sec-roles">
             <h2><span>Inferred roles</span></h2>
-            <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.8rem;">Heuristic classification from citation composition / usage signals. Not based on full text.</p>
-            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+            
+            
+            
+            
+            
                 
-                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Commercial linkage (0.90)</span>
                 
-                <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Scholarly uptake (0.60)</span>
                 
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="0.9"
+                              data-tip="Scholarly uptake — heuristic signal (score 0.60)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Scholarly uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Moderate</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#065f46">🏛 Practical & Real-World</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-practical" data-opacity="1"
+                              data-tip="Commercial linkage — heuristic signal (score 0.90)">
+                            <span class="role-dot" data-bg="#10b981"></span>
+                            Commercial linkage
+                            <span class="role-strength" data-bg="#dcfce7" data-color="#166534">Strong</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
             </div>
         </section>
         
@@ -128,37 +706,67 @@
         <div class="grid-2">
             
             
+            <section class="card" style="margin-bottom:0;">
+                <h2 style="margin-top:0;"><span>Access</span> <span class="badge" style="background:#f3f4f6; color:#4b5563;">Availability</span></h2>
+                <ul class="metric-list" style="line-height: 1.8;">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1007/978-3-031-35664-3" target="_blank" style="word-break: break-all;">https://doi.org/10.1007/978-3-031-35664-3</a></li>
+                    
+                    <li><strong>OA status:</strong> 
+                        
+                            Hybrid
+                        
+                    </li>
+
+                    
+                        <li><strong>Landing page:</strong> <a href="https://doi.org/10.1007/978-3-031-35664-3" target="_blank" style="word-break: break-all;">https://doi.org/10.1007/978-3-031-35664-3</a></li>
+                    
+                    
+                    
+                        <li><strong>OAPEN Library:</strong> <a href="https://library.oapen.org/handle/20.500.12657/76728" target="_blank" style="word-break: break-all;">https://library.oapen.org/handle/20.500.12657/76728</a></li>
+                    
+                    
+                    
+                </ul>
+            </section>
+
+            
 
             <section class="card" style="margin-bottom:0;">
                 <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
                 
-                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
-                        This work has <strong>0</strong> recorded events globally
-                        
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.6rem;">
+                        This work has <strong>0</strong> recorded events globally.
                     </p>
+                    
                     <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
                         <em>(See specific sources and examples in the Online Mentions section below).</em>
                     </p>
                 
             </section>
         </div>
-
-        <div class="grid-2">
+        
+        <div class="grid-2" style="align-items: start;">
             
-                <section class="card" style="margin-bottom:0;">
-                    <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
-                    <ul class="metric-list">
-                        
-                        
-                        
-                        <li><strong>Commercial:</strong> 
-                            <a href="https://www.amazon.com/s?k=9783031356636" target="_blank">Amazon</a>
-                             · 
-                            <a href="https://www.goodreads.com/search?q=9783031356636" target="_blank">Goodreads</a>
-                        </li>
-                        
-                    </ul>
-                </section>
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+                <ul class="metric-list">
+                    
+                    
+
+                    
+                    
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Commercial:</strong> 
+                        <a href="https://www.amazon.com/s?k=9783031356643" target="_blank" style="color: #2563eb; text-decoration: none;">Amazon</a>
+                         · 
+                        <a href="https://www.goodreads.com/search?q=9783031356643" target="_blank" style="color: #2563eb; text-decoration: none;">Goodreads</a>
+                    </li>
+                    
+                    
+                </ul>
+            </section>
+
                 <section class="card" style="margin-bottom:0;">
                     <h2><span>Citation context</span> <span class="badge">scite</span></h2>
                     
@@ -171,56 +779,252 @@
                     
                 </section>
 
+                
+                
+                
+
             
         </div>
 
         
         
-        <section class="card">
-            <h2><span>Citing landscape</span> <span class="badge">OpenAlex</span></h2>
-            <ul class="metric-list">
-                <li><strong>Total citing works (OpenAlex):</strong> 21 <span class="muted" style="font-weight:normal;">(Landscape analysis & tables limited to 1000 most recent works to optimize speed)</span></li>
-                
-                
-                <li><strong>Top citing venues:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sustainability (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Smart Cities (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Contributions to economics (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Environmental Science and Pollution Research (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Alexandria Engineering Journal (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Energies (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Journal of Urban Technology (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Journal of Umm Al-Qura University for Engineering and Architecture (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Lecture notes in intelligent transportation and infrastructure (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Nature Communications (1)</span> </li>
-                
-                
-                
-                <li><strong>Citing work types:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (14)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (5)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (2)</span> </li>
-                
-                
-                
-                <li><strong>Top citing concepts:</strong> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Business (6)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Smart city (6)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science (5)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sustainability (4)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Transport engineering (3)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Government (linguistics) (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Environmental planning (2)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Renewable energy (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Urbanization (1)</span> <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Economic growth (1)</span> </li>
-                
-                
-                
-                
-                
-                <li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
-                    <strong>Citation timeline:</strong>
-                    <div style="height: 180px; width: 100%; margin-top: 0.5rem;">
-                        <canvas id="citationChart" data-labels="[&#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[11, 9, 1]"></canvas>
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>21</strong> citing works.
+                        <strong>59.5%</strong> come from the Top 10 institutions.
+                        Median citing paper cited <strong>4.0</strong> times itself.
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (14)</span><span class="tag tag-soft" style="font-size:.75rem;">book-chapter (5)</span><span class="tag tag-soft" style="font-size:.75rem;">review (2)</span>
+                        <span class="tag" style="font-size:.75rem;">Sustainability</span><span class="tag" style="font-size:.75rem;">Smart Cities</span><span class="tag" style="font-size:.75rem;">Contributions to economics</span>
                     </div>
-                </li>
+                </div>
+            </div>
+
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2024, 2025, 2026]"
+                    data-values="[11, 9, 1]">
+                </canvas>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
+
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Saudi Arabia (6)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Poland (3)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Turkey (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">France (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Australia (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">India (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Russia (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Cyprus (2)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">UZ (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Ecuador (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">AZ (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Oman (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Lebanon (1)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Italy (1)</span>
+                    
+                </div>
                 
-            </ul>
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (20)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (5)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (1)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (1)</span>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Silesian University of Technology</strong>
+                        <a href="https://ror.org/02dyjk442" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.166666666666667)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>King Abdullah Petroleum Studies and Research Center</strong>
+                        <a href="https://ror.org/00qd31w11" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Eastern Mediterranean University</strong>
+                        <a href="https://ror.org/00excyz84" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.3333333333333333)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Taibah University</strong>
+                        <a href="https://ror.org/01xv1nn60" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Trento</strong>
+                        <a href="https://ror.org/05trd4x28" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>UNSW Sydney</strong>
+                        <a href="https://ror.org/03r8z3t63" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Universidade do Porto</strong>
+                        <a href="https://ror.org/043pwc612" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Indian Institute of Information Technology Allahabad</strong>
+                        <a href="https://ror.org/03rgjt374" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Islamic University of Madinah</strong>
+                        <a href="https://ror.org/03rcp1y74" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Université Catholique de Lille</strong>
+                        <a href="https://ror.org/025s1b152" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.0)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Fateh Bélaïd</strong>
+                        <a href="https://orcid.org/0000-0002-1077-2798" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Radosław Wolniak</strong>
+                        <a href="https://orcid.org/0000-0003-0317-9811" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(2)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Mohammad Mahtab Alam</strong>
+                        <a href="https://orcid.org/0000-0003-3966-6988" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(1)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Mehmet Akif Destek</strong>
+                        <a href="https://orcid.org/0000-0002-2514-9405" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(1)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ansarul Haque</strong>
+                        <a href="https://openalex.org/A5002020937" target="_blank" class="orcid-badge">Profile</a>
+                        <span class="muted">(1)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Derviş Kırıkkaleli</strong>
+                        <a href="https://orcid.org/0000-0001-5733-5045" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(1)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Stefania Pinzón</strong>
+                        <a href="https://orcid.org/0000-0003-3126-030X" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(1)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Khurshid Khudoykulov</strong>
+                        <a href="https://orcid.org/0000-0003-3105-9358" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(1)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Hasan Hashim</strong>
+                        <a href="https://orcid.org/0009-0006-6724-7499" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(1)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Masoud Khanmohamadi</strong>
+                        <a href="https://openalex.org/A5031456159" target="_blank" class="orcid-badge">Profile</a>
+                        <span class="muted">(1)</span>
+                    </li>
+                    
+                </ul>
+            </div>
         </section>
         
 
         <div class="grid-2">
             
 
-            <section class="card span-full" style="margin-bottom:0;">
-                <h2><span>Online mentions & activity</span> <span class="badge">Crossref Event Data</span></h2>
-                
-                <p class="muted">Not available.</p>
-            </section>
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
         </div>
 
         
         
-            
-                
+        
+        
             
         
             
@@ -228,38 +1032,30 @@
         <div class="grid-2">
             <section class="card" style="margin-bottom:0;">
                 <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
-                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>2 authors · 1 institution</div>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>2 authors · 0 institutions</div>
                 
                 <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
                 <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                
                     
                     <li style="margin-bottom: 0.4rem;">
                         <strong>Fateh Bélaïd</strong> 
                         <span class="badge">First</span>
                         <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-                        <a class="orcid-badge" href="https://orcid.org/0000-0002-1077-2798" target="_blank">ORCID</a>
+                        <a class="orcid-badge" href="0000-0002-1077-2798" target="_blank">ORCID</a>
                     </li>
                     
                     <li style="margin-bottom: 0.4rem;">
                         <strong>Anvita Arora</strong> 
                         
                         
-                        <a class="orcid-badge" href="https://orcid.org/0000-0002-0393-2343" target="_blank">ORCID</a>
+                        <a class="orcid-badge" href="0000-0002-0393-2343" target="_blank">ORCID</a>
                     </li>
                     
                 </ul>
 
-                
-                <h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
-                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
-                    
-                    <li style="margin-bottom: 0.4rem;">
-                        
-                            <a href="https://ror.org/00qd31w11" target="_blank" style="text-decoration:none; color:#2563eb; font-weight:500;">King Abdullah Petroleum Studies and Research Center</a>
-                        
-                    </li>
-                    
-                </ul>
                 
             </section>
 
@@ -280,19 +1076,7 @@
 
         
 
-        
-        <section class="card">
-            <h2 style="margin-top:0;"><span>Where your book is available</span></h2>
-            <ul class="metric-list">
-                
-                    <li><strong>OAPEN Library</strong><br><a href="https://library.oapen.org/handle/20.500.12657/76728" target="_blank" style="word-break: break-all;">https://library.oapen.org/handle/20.500.12657/76728</a></li>
-                
-                
-                
-                
-                
-            </ul>
-        </section>
+
         
         <section class="card" id="operas-metrics-card">
             <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
@@ -300,16 +1084,20 @@
             <script type="application/json" id="operas-metrics-config">{"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "tab1", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN \u00b7 downloads", "works": ["info:doi:10.1007/978-3-031-35664-3"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}}, "graphs": [{"id": "g1", "type": "line", "title": "Downloads over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}</script>
             <script src="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js" async></script>
         </section>
-        
+
+
 
         
         
-        <section class="card print-breakable">
+        <section class="card no-print" id="sec-citations-table">
             <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
-            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>Displaying 21 most recent citing works</div>
-            <div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
-                <table>
-                    <thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.75rem;"
+                 data-total="21">
+                21 citing works (most recent first)
+            </div>
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
                     <tbody>
                     
                     <tr>
@@ -349,23 +1137,9 @@
                     
                     <tr>
                         <td>2024</td>
-                        <td>Can Smart Cities Be Sustainable? An Emerging Field of Research</td>
-                        <td>Journal of Urban Technology</td>
-                        <td><a href="https://doi.org/10.1080/10630732.2024.2352992" target="_blank" style="word-break: break-all;">10.1080/10630732.2024.2352992</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
                         <td>Enhancing Cycling Safety in Smart Cities: A Data-Driven Embedded Risk Alert System</td>
                         <td>Smart Cities</td>
                         <td><a href="https://doi.org/10.3390/smartcities7040079" target="_blank" style="word-break: break-all;">10.3390/smartcities7040079</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2025</td>
-                        <td>Investigation of the impact of smart mobility solutions on urban transportation efficiency in Saudi Arabian Cities</td>
-                        <td>Journal of Umm Al-Qura University for Engineering and Architecture</td>
-                        <td><a href="https://doi.org/10.1007/s43995-025-00114-3" target="_blank" style="word-break: break-all;">10.1007/s43995-025-00114-3</a></td>
                     </tr>
                     
                     <tr>
@@ -390,10 +1164,17 @@
                     </tr>
                     
                     <tr>
+                        <td>2024</td>
+                        <td>Can Smart Cities Be Sustainable? An Emerging Field of Research</td>
+                        <td>Journal of Urban Technology</td>
+                        <td><a href="https://doi.org/10.1080/10630732.2024.2352992" target="_blank" style="word-break: break-all;">10.1080/10630732.2024.2352992</a></td>
+                    </tr>
+                    
+                    <tr>
                         <td>2025</td>
-                        <td>Developing an indexing framework based on actor network theory (ANT) to analyze, evaluate, and realize success in sustainable smart city</td>
-                        <td>GeoJournal</td>
-                        <td><a href="https://doi.org/10.1007/s10708-025-11522-2" target="_blank" style="word-break: break-all;">10.1007/s10708-025-11522-2</a></td>
+                        <td>Investigation of the impact of smart mobility solutions on urban transportation efficiency in Saudi Arabian Cities</td>
+                        <td>Journal of Umm Al-Qura University for Engineering and Architecture</td>
+                        <td><a href="https://doi.org/10.1007/s43995-025-00114-3" target="_blank" style="word-break: break-all;">10.1007/s43995-025-00114-3</a></td>
                     </tr>
                     
                     <tr>
@@ -401,6 +1182,27 @@
                         <td>Between Smart Cities Infrastructure and Intention: Mapping the Relationship Between Urban Barriers and Bike-Sharing Usage</td>
                         <td>Smart Cities</td>
                         <td><a href="https://doi.org/10.3390/smartcities8040124" target="_blank" style="word-break: break-all;">10.3390/smartcities8040124</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Data Analytics for Predicting Situational Developments in Smart Cities: Assessing User Perceptions</td>
+                        <td>Sensors</td>
+                        <td><a href="https://doi.org/10.3390/s24154810" target="_blank" style="word-break: break-all;">10.3390/s24154810</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Developing an indexing framework based on actor network theory (ANT) to analyze, evaluate, and realize success in sustainable smart city</td>
+                        <td>GeoJournal</td>
+                        <td><a href="https://doi.org/10.1007/s10708-025-11522-2" target="_blank" style="word-break: break-all;">10.1007/s10708-025-11522-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Migration, Population Growth, and Threats for Smart Urban Cities</td>
+                        <td>Sustainable development goals series</td>
+                        <td><a href="https://doi.org/10.1007/978-3-032-05715-0_5" target="_blank" style="word-break: break-all;">10.1007/978-3-032-05715-0_5</a></td>
                     </tr>
                     
                     <tr>
@@ -426,13 +1228,6 @@
                     
                     <tr>
                         <td>2024</td>
-                        <td>Data Analytics for Predicting Situational Developments in Smart Cities: Assessing User Perceptions</td>
-                        <td>Sensors</td>
-                        <td><a href="https://doi.org/10.3390/s24154810" target="_blank" style="word-break: break-all;">10.3390/s24154810</a></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>2024</td>
                         <td>Globalization, Climate Change, and Compound Health Risks in the Era of COVID-19 Pandemic: The Case of the GCC</td>
                         <td>Contributions to economics</td>
                         <td><a href="https://doi.org/10.1007/978-3-031-73090-0_11" target="_blank" style="word-break: break-all;">10.1007/978-3-031-73090-0_11</a></td>
@@ -452,31 +1247,76 @@
                         <td><a href="https://doi.org/10.1007/978-3-031-99605-4_13" target="_blank" style="word-break: break-all;">10.1007/978-3-031-99605-4_13</a></td>
                     </tr>
                     
-                    <tr>
-                        <td>2026</td>
-                        <td>Migration, Population Growth, and Threats for Smart Urban Cities</td>
-                        <td>Sustainable development goals series</td>
-                        <td><a href="https://doi.org/10.1007/978-3-032-05715-0_5" target="_blank" style="word-break: break-all;">10.1007/978-3-032-05715-0_5</a></td>
-                    </tr>
-                    
                     </tbody>
                 </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
             </div>
         </section>
         
 
-        <footer class="muted" style="text-align: right; margin-top: 2rem;">Generated on 2026-03-16T21:11:52+00:00</footer>
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-06-03T21:33:40+00:00
+                </div>
+                
+            </div>
+        </footer>
     </div>
 
-    
     <script>
-        (function() {
-            const canvas = document.getElementById('citationChart');
-            if(!canvas) return;
-            const labels = JSON.parse(canvas.getAttribute('data-labels'));
-            const data = JSON.parse(canvas.getAttribute('data-values'));
-            const ctx = canvas.getContext('2d');
-            new Chart(ctx, {
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
                 type: 'bar',
                 data: {
                     labels: labels,
@@ -501,8 +1341,217 @@
                     }
                 }
             });
-        })();
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' citing works (most recent first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
     </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+        .wm-tab-btn {
+            border: none;
+            background: #f3f4f6;
+            color: #4b5563;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .wm-tab-btn.wm-tab-active {
+            outline: 2px solid #3b82f6;
+            outline-offset: 1px;
+        }
+    </style>
     
+    <script>
+        function citeSwitchTab(btn, paneId) {
+            var panes = document.querySelectorAll('#sec-citing .cite-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].classList.remove('active');
+            }
+            var btns = document.querySelectorAll('#sec-citing .cite-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('active');
+            }
+            var pane = document.getElementById(paneId);
+            if (pane) pane.classList.add('active');
+            if (btn) btn.classList.add('active');
+        }
+        function openWebMentionTab(evt, tabId) {
+            var panes = document.querySelectorAll('.wm-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].style.display = 'none';
+            }
+            var btns = document.querySelectorAll('.wm-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('wm-tab-active');
+            }
+            var pane = document.getElementById(tabId);
+            if (pane) pane.style.display = 'block';
+            if (evt && evt.currentTarget) evt.currentTarget.classList.add('wm-tab-active');
+        }
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
 </body>
 </html>

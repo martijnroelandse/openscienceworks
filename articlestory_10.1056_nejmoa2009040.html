@@ -1,0 +1,3091 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ArticleStory - “Super-Spreaders” and Person-to-Person Transmission of Andes Virus in Argentina</title>
+    <style>
+
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
+
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+.sig-green {background:#dcfce7;color:#166534;}
+.cover-fallback{
+  width:110px;height:155px;border-radius:.55rem;
+  border:1px solid #dbe7f3;
+  box-shadow:0 4px 10px rgba(15,23,42,.08);
+  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:.55rem;gap:.35rem;
+}
+.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
+.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
+.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+    
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">“Super-Spreaders” and Person-to-Person Transmission of Andes Virus in Argentina</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    Methodologically Supported
+                                </span>
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> 
+                                
+                                    Valeria P. Martínez, Nicholas Di Paola, Daniel Oscar Alonso, Unai Pérez‐Sautu, Carla Bellomo, Ayelén Iglesias, Rocío Coelho, Beatriz López, Natalia Períolo, Peter A. Larson, Elyse R. Nagle, Joseph Alex Chitty, Catherine Pratt, Jorge Alberto Álvarez Díaz, Daniel Cisterna, Josefina Campos, Heema Sharma, Bonnie Dighero-Kemp, Emiliano Biondo, Lorena Cecilia Lewis, Constanza Rosario Anselmo, Camila Paula Olivera, Fernanda Pontoriero, Enzo Lavarra, Jens H. Kuhn, Teresa Strella, Alexis Edelstein, Miriam I. Burgos, Mario Kaler, Adolfo Rubinstein, Jeffrey R. Kugelman, Mariano Sánchez-Lockhart, Claudia Perandones, Gustavo Palacios
+                                
+                            </div>
+                        
+                            
+                        
+                            
+                            
+                            <div><strong>Journal:</strong> 
+                                New England Journal of Medicine
+                            </div>
+                            
+                        
+                            <div><strong>Publisher:</strong> 
+                                
+                                    Massachusetts Medical Society
+                                
+                            </div>
+                        
+                            <div><strong>Publication year:</strong> 
+                                
+                                    2020
+                                
+                            </div>
+                        
+                            <div><strong>DOI:</strong> 
+                                <a href="https://doi.org/10.1056/nejmoa2009040" target="_blank">
+                                    10.1056/nejmoa2009040
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        <!-- Sticky nav -->
+        <nav aria-label="Page sections" class="sticky-nav no-print">
+            <div class="sticky-nav-inner">
+                <a href="#sec-hero">Overview</a>
+                <a href="#sec-story">Story</a>
+                <a href="#sec-impact">Impact</a>
+                <a href="#sec-roles">Roles</a>
+                <a href="#sec-access">Access</a>
+                <a href="#sec-citing">Who's Citing</a>
+                <a href="#sec-mentions">Mentions</a>
+            </div>
+        </nav>
+
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The article titled “Super-Spreaders” and Person-to-Person Transmission of Andes Virus in Argentina published in the New England Journal of Medicine has garnered significant academic and public attention, evidenced by 142 citations and mentions on platforms such as Bluesky.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">Published in the New England Journal of Medicine in 2020, the article “Super-Spreaders” and Person-to-Person Transmission of Andes Virus in Argentina represents a pivotal contribution to understanding viral transmission dynamics in emerging infectious diseases. With a citation count of 142, the work clearly resonates within academic circles, signaling its importance in the field.</p>
+<p class="story-text">In addition to its scholarly impact, the narrative surrounding this work has found traction in social discourse, particularly on Bluesky, where it has been referenced four times. This highlights its relevance not only in academic discussions but also in public forums, pointing to growing societal interest in the implications of the Andes virus transmission.</p>
+<p class="story-text">The research was backed by notable institutions including the National Institutes of Health and the United States Army Medical Research Institute of Infectious Diseases, showcasing a formidable collaborative effort. The funding from prominent agencies such as the US National Institute of Allergy and Infectious Diseases underscores an institutional investment in the significance of infectious disease research, particularly in relation to viruses with pandemic potential.</p>
+<p class="story-text">The article’s broad reach is further evidenced by its citations stemming from a diverse set of countries, with the United States and Argentina leading the way. This international footprint emphasizes the global relevance of findings related to the Andes virus, supporting its role in the ongoing discourse surrounding emerging infectious diseases and their management in public health contexts.</p></div>
+        </section>
+        
+
+        
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+            <div class="im-wrapper">
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">142</div>
+                                <div class="im-label">Total Citations</div>
+                                
+                                <div class="im-top-badge">⭐ Top 10% Cited</div>
+                                
+                            </div>
+                            
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2021, 2022, 2023, 2024, 2025, 2026]"
+                                        data-values="[14, 14, 28, 21, 24, 39]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2021–2026</div>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+                    
+                    <div class="im-card">
+                        <div class="im-num">6</div>
+                        <div class="im-label">Online Mentions</div>
+                        
+                    </div>
+                    
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+                    
+                    
+                    <!-- scite (only when references exist) -->
+                    
+                    <div class="im-card">
+                        <div class="im-num">109</div>
+                        <div class="im-label">scite References</div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="im-scite-compact">
+                            <div class="im-scite-title">Citation context <span class="im-scite-via">via scite</span></div>
+                            <div class="im-scite-bar">
+                                <div class="im-scite-seg im-scite-sup" data-w="2"></div>
+                                <div class="im-scite-seg im-scite-men" data-w="97"></div>
+                                <div class="im-scite-seg im-scite-con" data-w="1"></div>
+                            </div>
+                            <div class="im-scite-leg">
+                                <span><span class="im-scite-dot" style="background:#22c55e;"></span>2</span>
+                                <span><span class="im-scite-dot" style="background:#94a3b8;"></span>102</span>
+                                <span><span class="im-scite-dot" style="background:#f87171;"></span>1</span>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+
+                
+                
+                
+                
+                
+
+                
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        <span class="sig-pill sig-slate">📖 Wikipedia · 2</span>
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+                        <span class="sig-pill sig-blue">🦋 Bluesky · 4</span>
+                        
+
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-amber" href="#sec-public-discourse" style="text-decoration:none;" title="Expert newsletters, blogs, podcasts">
+                            📰 Scholarly web · 3
+                        </a>
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 15 countries</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+            
+            
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="High-visibility uptake — heuristic signal (score 0.85)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            High-visibility uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="0.9"
+                              data-tip="Scholarly uptake — heuristic signal (score 0.79)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Scholarly uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Moderate</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="0.75"
+                              data-tip="Reference point for synthesis — heuristic signal (score 0.44)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Reference point for synthesis
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Emerging</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#b45309">📢 Public Engagement & Media</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-public" data-opacity="0.9"
+                              data-tip="Active public discourse — heuristic signal (score 0.52)">
+                            <span class="role-dot" data-bg="#f59e0b"></span>
+                            Active public discourse
+                            <span class="role-strength" data-bg="#fef3c7" data-color="#92400e">Moderate</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#065f46">🏛 Practical & Real-World</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-practical" data-opacity="0.9"
+                              data-tip="Sustainability & policy relevance — heuristic signal (score 0.55)">
+                            <span class="role-dot" data-bg="#10b981"></span>
+                            Sustainability & policy relevance
+                            <span class="role-strength" data-bg="#dcfce7" data-color="#166534">Moderate</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1056/nejmoa2009040" target="_blank">10.1056/nejmoa2009040</a></li>
+                    <li><strong>OA status:</strong> Unknown</li>
+                    
+                    
+                    
+                    
+                </ul>
+            </section>
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.6rem;">
+                        This work has <strong>6</strong> recorded events globally.
+                    </p>
+                    
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 109</li>
+                                <li><strong>Supporting:</strong> 2</li>
+                                <li><strong>Mentioning:</strong> 102</li>
+                                <li><strong>Contradicting:</strong> 1</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+        
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>142</strong> citing works.
+                        <strong>17.5%</strong> come from the Top 10 institutions.
+                        Median citing paper cited <strong>1.0</strong> times itself.
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (91)</span><span class="tag tag-soft" style="font-size:.75rem;">review (21)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (14)</span><span class="tag tag-soft" style="font-size:.75rem;">book-chapter (11)</span><span class="tag tag-soft" style="font-size:.75rem;">other (2)</span>
+                        <span class="tag" style="font-size:.75rem;">Viruses</span><span class="tag" style="font-size:.75rem;">Unknown</span><span class="tag" style="font-size:.75rem;">bioRxiv</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2021, 2022, 2023, 2024, 2025, 2026]"
+                    data-values="[14, 14, 28, 21, 24, 39]">
+                </canvas>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
+
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (60)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Argentina (21)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Germany (14)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">France (14)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (11)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Chile (10)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Sweden (9)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Spain (8)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (7)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Brazil (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Australia (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Netherlands (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Switzerland (4)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Colombia (4)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Canada (4)</span>
+                    
+                </div>
+                
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (116)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Healthcare (52)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (48)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (45)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (21)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (15)</span>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of New Mexico</strong>
+                        <a href="https://ror.org/05fs6jp91" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(4.943228993228994)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Administración Nacional de Laboratorios e Institutos de Salud</strong>
+                        <a href="https://ror.org/024hqjk04" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3.2789682539682543)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Icahn School of Medicine at Mount Sinai</strong>
+                        <a href="https://ror.org/04a9tmd77" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.3345238095238092)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Heidelberg University</strong>
+                        <a href="https://ror.org/038t36y30" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.25)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>National Institutes of Health</strong>
+                        <a href="https://ror.org/01cwqze88" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.088888888888889)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>National Institute of Allergy and Infectious Diseases</strong>
+                        <a href="https://ror.org/043z4tv69" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.088888888888889)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Air Force Medical University</strong>
+                        <a href="https://ror.org/00ms48f15" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.083333333333333)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>United States Army Medical Research Institute of Infectious Diseases</strong>
+                        <a href="https://ror.org/01pveve47" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.8606532356532357)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Albert Einstein College of Medicine</strong>
+                        <a href="https://ror.org/05cf8a891" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.8483516483516484)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Consejo Nacional de Investigaciones Científicas y Técnicas</strong>
+                        <a href="https://ror.org/03cqe8w59" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.7706349206349206)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Carla Bellomo</strong>
+                        <a href="https://orcid.org/0000-0001-6869-1707" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(14)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Valeria P. Martínez</strong>
+                        <a href="https://orcid.org/0000-0002-4356-8136" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(14)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Rocío Coelho</strong>
+                        <a href="https://orcid.org/0000-0002-7274-9315" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(11)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Sebastián Kehl</strong>
+                        <a href="https://orcid.org/0000-0003-1203-7225" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(11)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Natalia Períolo</strong>
+                        <a href="https://orcid.org/0000-0002-2077-720X" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(10)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Daniel Oscar Alonso</strong>
+                        <a href="https://orcid.org/0000-0003-3605-4679" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(10)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Gustavo Palacios</strong>
+                        <a href="https://orcid.org/0000-0001-5062-1938" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(8)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Eva Mittler</strong>
+                        <a href="https://orcid.org/0000-0002-5935-6314" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(7)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kartik Chandran</strong>
+                        <a href="https://orcid.org/0000-0003-0232-7077" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(7)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jens H. Kuhn</strong>
+                        <a href="https://orcid.org/0000-0002-7800-6045" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            <section class="card span-full" style="margin-bottom:0;" id="sec-public-discourse">
+                <h2><span>Online mentions &amp; public discourse</span> <span class="badge">Crossref &amp; Open Web</span></h2>
+                <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.5rem; font-size:0.85rem;">
+                    Aggregated events, community platforms, and curated expert sources (newsletters, blogs, podcasts).
+                </p>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+    
+    <div style="margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb;">
+        <h3 style="font-size: 1.1rem; color: #1f2937; margin: 0 0 0.35rem 0; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+            <span>Scholarly web mentions</span>
+            <span class="badge" style="background:#fef3c7; color:#92400e; border:1px solid #fde68a; font-size:0.65rem;">Pilot</span>
+        </h3>
+    
+    <p class="muted" style="margin-top:0; margin-bottom:1rem;">
+        Expert newsletters, subject blogs, and science podcasts from <code>pilot_sources.tsv</code>
+         — <strong>3</strong> hits
+         · 🎙 3
+    </p>
+
+    
+    <div style="display:flex; flex-wrap:wrap; gap:0.5rem; border-bottom:2px solid #e5e7eb; margin-bottom:1.25rem;">
+        <button type="button" onclick="openWebMentionTab(event, 'wm-all')" class="wm-tab-btn wm-tab-active">All (3)</button>
+        
+        
+        <button type="button" onclick="openWebMentionTab(event, 'wm-podcast')" class="wm-tab-btn" style="background:#f5f3ff; color:#6d28d9;">🎙 Podcasts (3)</button>
+    </div>
+    
+
+    
+    <div id="wm-all" class="wm-tab-pane" style="display:block;">
+        <div class="wm-row" data-source-type="podcast" style="position:relative; margin-bottom:1.35rem; padding-left:0.25rem; border-bottom:1px solid #f3f4f6; padding-bottom:1rem;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; margin-bottom:0.35rem;">
+        <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+            
+            <span style="font-size:1rem;" title="Podcast">🎙</span>
+            <span class="badge" style="background:#f5f3ff; color:#6d28d9; font-size:0.65rem;">Podcast</span>
+            
+            <strong style="font-size:0.9rem;">TWIV (This Week in Virology)</strong>
+            
+            <span class="muted" style="font-size:0.75rem;">· 2026-05-30</span>
+            
+        </div>
+        
+        <a href="https://www.microbe.tv/twiv/twiv-1326/" target="_blank" style="font-size:0.8rem; color:#2563eb; font-weight:600; white-space:nowrap; text-decoration:none;">Read post →</a>
+        
+    </div>
+    
+    <div style="font-weight:600; font-size:0.95rem; color:#1e293b; margin-bottom:0.35rem;">TWiV 1326: Clinical update with Dr. Daniel Griffin</div>
+    
+    
+    <p style="font-size:0.85rem; color:#475569; line-height:1.5; margin:0; font-style:italic;">In his weekly clinical update, Daniel Griffin and Vincent Racaniello comment on incidences of locally transmitted malaria in the US, mpox diagnostics, the latest developments surrounding hantavirus infections, and the Ebola outbreak in the …</p>
+    
+    
+</div><div class="wm-row" data-source-type="podcast" style="position:relative; margin-bottom:1.35rem; padding-left:0.25rem; border-bottom:1px solid #f3f4f6; padding-bottom:1rem;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; margin-bottom:0.35rem;">
+        <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+            
+            <span style="font-size:1rem;" title="Podcast">🎙</span>
+            <span class="badge" style="background:#f5f3ff; color:#6d28d9; font-size:0.65rem;">Podcast</span>
+            
+            <strong style="font-size:0.9rem;">TWIV (This Week in Virology)</strong>
+            
+            <span class="muted" style="font-size:0.75rem;">· 2026-05-23</span>
+            
+        </div>
+        
+        <a href="https://www.microbe.tv/twiv/twiv-1324/" target="_blank" style="font-size:0.8rem; color:#2563eb; font-weight:600; white-space:nowrap; text-decoration:none;">Read post →</a>
+        
+    </div>
+    
+    <div style="font-weight:600; font-size:0.95rem; color:#1e293b; margin-bottom:0.35rem;">TWiV 1324: Clinical update with Dr. Daniel Griffin</div>
+    
+    
+    <p style="font-size:0.85rem; color:#475569; line-height:1.5; margin:0; font-style:italic;">In his weekly clinical update, Daniel Griffin and Vincent Racaniello discuss withdrawal of the ACIP charter published in April 2026, the first council meeting on antibiotic resistant bacteria, the latest developments surrounding hantavirus …</p>
+    
+    
+</div><div class="wm-row" data-source-type="podcast" style="position:relative; margin-bottom:1.35rem; padding-left:0.25rem; border-bottom:1px solid #f3f4f6; padding-bottom:1rem;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; margin-bottom:0.35rem;">
+        <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+            
+            <span style="font-size:1rem;" title="Podcast">🎙</span>
+            <span class="badge" style="background:#f5f3ff; color:#6d28d9; font-size:0.65rem;">Podcast</span>
+            
+            <strong style="font-size:0.9rem;">TWIV (This Week in Virology)</strong>
+            
+            <span class="muted" style="font-size:0.75rem;">· 2026-05-16</span>
+            
+        </div>
+        
+        <a href="https://www.microbe.tv/twiv/twiv-1322/" target="_blank" style="font-size:0.8rem; color:#2563eb; font-weight:600; white-space:nowrap; text-decoration:none;">Read post →</a>
+        
+    </div>
+    
+    <div style="font-weight:600; font-size:0.95rem; color:#1e293b; margin-bottom:0.35rem;">TWiV 1322: Clinical update with Dr. Daniel Griffin – Hantavirus special</div>
+    
+    
+    <p style="font-size:0.85rem; color:#475569; line-height:1.5; margin:0; font-style:italic;">In his weekly clinical update, Daniel Griffin and Vincent Racaniello reviewed the latest developments surrounding the hantavirus outbreak, including new interim guidance from the Centers for Disease Control and Prevention for the management…</p>
+    
+    
+</div>
+    </div>
+    
+    
+    <div id="wm-podcast" class="wm-tab-pane" style="display:none;"><div class="wm-row" data-source-type="podcast" style="position:relative; margin-bottom:1.35rem; padding-left:0.25rem; border-bottom:1px solid #f3f4f6; padding-bottom:1rem;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; margin-bottom:0.35rem;">
+        <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+            
+            <span style="font-size:1rem;" title="Podcast">🎙</span>
+            <span class="badge" style="background:#f5f3ff; color:#6d28d9; font-size:0.65rem;">Podcast</span>
+            
+            <strong style="font-size:0.9rem;">TWIV (This Week in Virology)</strong>
+            
+            <span class="muted" style="font-size:0.75rem;">· 2026-05-30</span>
+            
+        </div>
+        
+        <a href="https://www.microbe.tv/twiv/twiv-1326/" target="_blank" style="font-size:0.8rem; color:#2563eb; font-weight:600; white-space:nowrap; text-decoration:none;">Read post →</a>
+        
+    </div>
+    
+    <div style="font-weight:600; font-size:0.95rem; color:#1e293b; margin-bottom:0.35rem;">TWiV 1326: Clinical update with Dr. Daniel Griffin</div>
+    
+    
+    <p style="font-size:0.85rem; color:#475569; line-height:1.5; margin:0; font-style:italic;">In his weekly clinical update, Daniel Griffin and Vincent Racaniello comment on incidences of locally transmitted malaria in the US, mpox diagnostics, the latest developments surrounding hantavirus infections, and the Ebola outbreak in the …</p>
+    
+    
+</div><div class="wm-row" data-source-type="podcast" style="position:relative; margin-bottom:1.35rem; padding-left:0.25rem; border-bottom:1px solid #f3f4f6; padding-bottom:1rem;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; margin-bottom:0.35rem;">
+        <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+            
+            <span style="font-size:1rem;" title="Podcast">🎙</span>
+            <span class="badge" style="background:#f5f3ff; color:#6d28d9; font-size:0.65rem;">Podcast</span>
+            
+            <strong style="font-size:0.9rem;">TWIV (This Week in Virology)</strong>
+            
+            <span class="muted" style="font-size:0.75rem;">· 2026-05-23</span>
+            
+        </div>
+        
+        <a href="https://www.microbe.tv/twiv/twiv-1324/" target="_blank" style="font-size:0.8rem; color:#2563eb; font-weight:600; white-space:nowrap; text-decoration:none;">Read post →</a>
+        
+    </div>
+    
+    <div style="font-weight:600; font-size:0.95rem; color:#1e293b; margin-bottom:0.35rem;">TWiV 1324: Clinical update with Dr. Daniel Griffin</div>
+    
+    
+    <p style="font-size:0.85rem; color:#475569; line-height:1.5; margin:0; font-style:italic;">In his weekly clinical update, Daniel Griffin and Vincent Racaniello discuss withdrawal of the ACIP charter published in April 2026, the first council meeting on antibiotic resistant bacteria, the latest developments surrounding hantavirus …</p>
+    
+    
+</div><div class="wm-row" data-source-type="podcast" style="position:relative; margin-bottom:1.35rem; padding-left:0.25rem; border-bottom:1px solid #f3f4f6; padding-bottom:1rem;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; margin-bottom:0.35rem;">
+        <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+            
+            <span style="font-size:1rem;" title="Podcast">🎙</span>
+            <span class="badge" style="background:#f5f3ff; color:#6d28d9; font-size:0.65rem;">Podcast</span>
+            
+            <strong style="font-size:0.9rem;">TWIV (This Week in Virology)</strong>
+            
+            <span class="muted" style="font-size:0.75rem;">· 2026-05-16</span>
+            
+        </div>
+        
+        <a href="https://www.microbe.tv/twiv/twiv-1322/" target="_blank" style="font-size:0.8rem; color:#2563eb; font-weight:600; white-space:nowrap; text-decoration:none;">Read post →</a>
+        
+    </div>
+    
+    <div style="font-weight:600; font-size:0.95rem; color:#1e293b; margin-bottom:0.35rem;">TWiV 1322: Clinical update with Dr. Daniel Griffin – Hantavirus special</div>
+    
+    
+    <p style="font-size:0.85rem; color:#475569; line-height:1.5; margin:0; font-style:italic;">In his weekly clinical update, Daniel Griffin and Vincent Racaniello reviewed the latest developments surrounding the hantavirus outbreak, including new interim guidance from the Centers for Disease Control and Prevention for the management…</p>
+    
+    
+</div></div>
+    
+
+    
+
+
+    </div>
+
+                
+
+                
+                
+                
+                
+                <h3 style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; font-size: 1.1rem; color: #1f2937;">
+                    Community engagement
+                </h3>
+                
+                
+                
+                
+
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; border-bottom: 2px solid #e5e7eb; margin-bottom: 1.5rem; margin-top: 1rem;">
+                    
+                    
+                
+                    
+                    
+                    <button onclick="openSocialTab(event, 'soc-wiki')" class="soc-tab-btn soc-tab-active">
+                        Wikipedia <span style="background: #f1f5f9; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.75rem; margin-left: 0.3rem;">2</span>
+                    </button>
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    <button onclick="openSocialTab(event, 'soc-bsky')" class="soc-tab-btn ">
+                        Bluesky <span style="background: #e0f2fe; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.75rem; margin-left: 0.3rem;">4</span>
+                    </button>
+                    
+
+                    
+                    
+                </div>
+
+                <div style="position: relative; border-left: 2px solid #e2e8f0; padding-left: 1.5rem; margin-top: 1rem;">
+                    
+                    
+                    
+                    
+                    
+                    
+                    <div id="soc-wiki" class="soc-tab-content" style="display: block; animation: fadeIn 0.3s;">
+                        
+                        <div style="position: relative; margin-bottom: 1.25rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #64748b; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+                                <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.65rem; text-transform: uppercase;">Wikipedia (en)</span>
+                            </div>
+                            <a href="https://en.wikipedia.org/wiki/Basic_reproduction_number" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Basic reproduction number</a>
+                            <p class="muted" style="font-size: 0.8rem; margin: 0.1rem 0 0 0;">Work cited as a foundational reference in this encyclopedic entry.</p>
+                        </div>
+                        
+                        <div style="position: relative; margin-bottom: 1.25rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #64748b; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem;">
+                                <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.65rem; text-transform: uppercase;">Wikipedia (en)</span>
+                            </div>
+                            <a href="https://en.wikipedia.org/wiki/Andes_virus_infection" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.95rem;">Andes virus infection</a>
+                            <p class="muted" style="font-size: 0.8rem; margin: 0.1rem 0 0 0;">Work cited as a foundational reference in this encyclopedic entry.</p>
+                        </div>
+                        
+                    </div>
+                    
+
+                    
+                    
+
+                    
+                    
+
+                    
+                    
+                    <div id="soc-bsky" class="soc-tab-content" style="display: none;">
+                        
+                        <div style="position: relative; margin-bottom: 1.5rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #0ea5e9; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span class="badge" style="background: #e0f2fe; color: #0369a1; font-size: 0.65rem; text-transform: uppercase;">Bluesky Post</span>
+                                <span class="muted" style="font-size: 0.7rem;">2026-05-14</span>
+                            </div>
+                            <div style="font-size: 0.85rem; line-height: 1.5; color: #334155; font-style: italic; background: #f8fafc; padding: 0.75rem; border-radius: 8px; border: 1px solid #f1f5f9; margin-bottom: 0.3rem;">
+                                "What a fucking loser.  Linked this and I guess the full thought I wouldn't read it.https://www.nejm.org/doi/full/10.1056/NEJMoa2009040" — <span style="font-weight: 600;">@educatedunhoused.bsky.social</span>
+                            </div>
+                            <a href="https://bsky.app/profile/educatedunhoused.bsky.social/post/3mlttkr23b22y" target="_blank" style="font-size: 0.75rem; color: #0369a1; text-decoration: none; font-weight: 500;">View Thread ↗</a>
+                        </div>
+                        
+                        <div style="position: relative; margin-bottom: 1.5rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #0ea5e9; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span class="badge" style="background: #e0f2fe; color: #0369a1; font-size: 0.65rem; text-transform: uppercase;">Bluesky Post</span>
+                                <span class="muted" style="font-size: 0.7rem;">2026-05-07</span>
+                            </div>
+                            <div style="font-size: 0.85rem; line-height: 1.5; color: #334155; font-style: italic; background: #f8fafc; padding: 0.75rem; border-radius: 8px; border: 1px solid #f1f5f9; margin-bottom: 0.3rem;">
+                                "Para este nuevo brote de Hantavirus creo que este debería ser el paper clave 👉 https://www.nejm.org/doi/full/10.1056/NEJMoa2009040  En el Abstract lee..." — <span style="font-weight: 600;">@kimeragupta.bsky.social</span>
+                            </div>
+                            <a href="https://bsky.app/profile/kimeragupta.bsky.social/post/3mlaszg6ngk2g" target="_blank" style="font-size: 0.75rem; color: #0369a1; text-decoration: none; font-weight: 500;">View Thread ↗</a>
+                        </div>
+                        
+                        <div style="position: relative; margin-bottom: 1.5rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #0ea5e9; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span class="badge" style="background: #e0f2fe; color: #0369a1; font-size: 0.65rem; text-transform: uppercase;">Bluesky Post</span>
+                                <span class="muted" style="font-size: 0.7rem;">2026-05-06</span>
+                            </div>
+                            <div style="font-size: 0.85rem; line-height: 1.5; color: #334155; font-style: italic; background: #f8fafc; padding: 0.75rem; border-radius: 8px; border: 1px solid #f1f5f9; margin-bottom: 0.3rem;">
+                                "Après une introduction unique de l'ANDV depuis le réservoir animal dans la population humaine, la transmission a été pilotée par 3 personnes symptomat..." — <span style="font-weight: 600;">@cdonnees.bsky.social</span>
+                            </div>
+                            <a href="https://bsky.app/profile/cdonnees.bsky.social/post/3ml5iezlnw52l" target="_blank" style="font-size: 0.75rem; color: #0369a1; text-decoration: none; font-weight: 500;">View Thread ↗</a>
+                        </div>
+                        
+                        <div style="position: relative; margin-bottom: 1.5rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #0ea5e9; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span class="badge" style="background: #e0f2fe; color: #0369a1; font-size: 0.65rem; text-transform: uppercase;">Bluesky Post</span>
+                                <span class="muted" style="font-size: 0.7rem;">2026-05-06</span>
+                            </div>
+                            <div style="font-size: 0.85rem; line-height: 1.5; color: #334155; font-style: italic; background: #f8fafc; padding: 0.75rem; border-radius: 8px; border: 1px solid #f1f5f9; margin-bottom: 0.3rem;">
+                                "La période d'incubation observée dans les clusters de transmission interhumaine varie de 9 à 40 jours. La fenêtre d'infectiosité semble étroite.   Les..." — <span style="font-weight: 600;">@cdonnees.bsky.social</span>
+                            </div>
+                            <a href="https://bsky.app/profile/cdonnees.bsky.social/post/3ml5ieyjbd52l" target="_blank" style="font-size: 0.75rem; color: #0369a1; text-decoration: none; font-weight: 500;">View Thread ↗</a>
+                        </div>
+                        
+                    </div>
+                    
+
+                    
+                    
+                </div>
+                
+                
+                
+                
+                
+                
+            </section>
+            
+        </div>
+
+        
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>34 authors · 0 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Valeria P. Martínez</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0002-4356-8136" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Nicholas Di Paola</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-9694-3913" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Daniel Oscar Alonso</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0003-3605-4679" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Unai Pérez‐Sautu</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-8587-7001" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Carla Bellomo</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-6869-1707" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Ayelén Iglesias</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Rocío Coelho</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-7274-9315" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Beatriz López</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0003-1353-9948" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Natalia Períolo</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-2077-720X" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Peter A. Larson</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-1490-150X" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Elyse R. Nagle</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Joseph Alex Chitty</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Catherine Pratt</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-6132-2570" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Jorge Alberto Álvarez Díaz</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-9935-8632" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Daniel Cisterna</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-7614-9272" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Josefina Campos</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0003-1409-0441" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Heema Sharma</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Bonnie Dighero-Kemp</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Emiliano Biondo</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Lorena Cecilia Lewis</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Constanza Rosario Anselmo</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Camila Paula Olivera</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Fernanda Pontoriero</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Enzo Lavarra</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Jens H. Kuhn</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-7800-6045" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Teresa Strella</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Alexis Edelstein</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0003-1746-4111" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Miriam I. Burgos</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Mario Kaler</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Adolfo Rubinstein</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-6455-2566" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Jeffrey R. Kugelman</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-7442-9684" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Mariano Sánchez-Lockhart</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-8009-7540" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Claudia Perandones</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0003-2572-1499" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Gustavo Palacios</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-5062-1938" target="_blank">ORCID</a>
+                    </li>
+                    
+                </ul>
+
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>8 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Transmission (telecommunications)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Virology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Virus</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Geography</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Artificial intelligence</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Telecommunications</span>
+                    
+                    
+                </div>
+                
+                
+                <h2 style="margin-top:2rem;"><span>UN Sustainable Development Goals</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 targets detected.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag" style="background:#dcfce7; color:#166534; border:1px solid #bbf7d0;">Good health and well-being (0.86)</span>
+                    
+                </div>
+                
+            </section>
+        </div>
+
+        
+        <section class="card">
+            <h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>4 financial grants and sponsors detected.</div>
+            
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Medical Chemical and Biological Incident Preparedness and Response Funding</strong> 
+                        
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>US National Institute of Allergy and Infectious Diseases</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(HHSN272200700016I)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Administración Nacional de Laboratorios e Institutos de Salud (ANLIS), Dr. Carlos Malbrán</strong> 
+                        
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIAID NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(HHSN272200700016I)</span>
+                    </span>
+                
+            </div>
+        </section>
+        
+
+
+
+        
+        
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.75rem;"
+                 data-total="140">
+                140 citing works (most recent first)
+            </div>
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Hantavirus in humans: a review of clinical aspects and management</td>
+                        <td>The Lancet Infectious Diseases</td>
+                        <td><a href="https://doi.org/10.1016/s1473-3099(23)00128-7" target="_blank" style="word-break: break-all;">10.1016/s1473-3099(23)00128-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Recent Advances in Bunyavirus Glycoprotein Research: Precursor Processing, Receptor Binding and Structure</td>
+                        <td>Viruses</td>
+                        <td><a href="https://doi.org/10.3390/v13020353" target="_blank" style="word-break: break-all;">10.3390/v13020353</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>The kidney in hantavirus infection—epidemiology, virology, pathophysiology, clinical presentation, diagnosis and management</td>
+                        <td>Clinical Kidney Journal</td>
+                        <td><a href="https://doi.org/10.1093/ckj/sfac008" target="_blank" style="word-break: break-all;">10.1093/ckj/sfac008</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A Brief History of Bunyaviral Family Hantaviridae</td>
+                        <td>Diseases</td>
+                        <td><a href="https://doi.org/10.3390/diseases11010038" target="_blank" style="word-break: break-all;">10.3390/diseases11010038</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Evidence for Human-to-Human Transmission of Hantavirus: A Systematic Review</td>
+                        <td>The Journal of Infectious Diseases</td>
+                        <td><a href="https://doi.org/10.1093/infdis/jiab461" target="_blank" style="word-break: break-all;">10.1093/infdis/jiab461</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Antiviral Efficacy of Ribavirin and Favipiravir against Hantaan Virus</td>
+                        <td>Microorganisms</td>
+                        <td><a href="https://doi.org/10.3390/microorganisms9061306" target="_blank" style="word-break: break-all;">10.3390/microorganisms9061306</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Zoonotic Hantaviridae with Global Public Health Significance</td>
+                        <td>Viruses</td>
+                        <td><a href="https://doi.org/10.3390/v15081705" target="_blank" style="word-break: break-all;">10.3390/v15081705</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Viral shedding and viraemia of Andes virus during acute hantavirus infection: a prospective study</td>
+                        <td>The Lancet Infectious Diseases</td>
+                        <td><a href="https://doi.org/10.1016/s1473-3099(24)00142-7" target="_blank" style="word-break: break-all;">10.1016/s1473-3099(24)00142-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Seroprevalence of hantavirus infection in non-epidemic settings over four decades: a systematic review and meta-analysis</td>
+                        <td>BMC Public Health</td>
+                        <td><a href="https://doi.org/10.1186/s12889-024-20014-w" target="_blank" style="word-break: break-all;">10.1186/s12889-024-20014-w</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Common Themes in Zoonotic Spillover and Disease Emergence: Lessons Learned from Bat- and Rodent-Borne RNA Viruses</td>
+                        <td>Viruses</td>
+                        <td><a href="https://doi.org/10.3390/v13081509" target="_blank" style="word-break: break-all;">10.3390/v13081509</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Broad and potently neutralizing monoclonal antibodies isolated from human survivors of New World hantavirus infection</td>
+                        <td>Cell Reports</td>
+                        <td><a href="https://doi.org/10.1016/j.celrep.2021.109086" target="_blank" style="word-break: break-all;">10.1016/j.celrep.2021.109086</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Hantavirus Replication Cycle—An Updated Structural Virology Perspective</td>
+                        <td>Viruses</td>
+                        <td><a href="https://doi.org/10.3390/v13081561" target="_blank" style="word-break: break-all;">10.3390/v13081561</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Human antibody recognizing a quaternary epitope in the Puumala virus glycoprotein provides broad protection against orthohantaviruses</td>
+                        <td>Science Translational Medicine</td>
+                        <td><a href="https://doi.org/10.1126/scitranslmed.abl5399" target="_blank" style="word-break: break-all;">10.1126/scitranslmed.abl5399</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Antigenic mapping and functional characterization of human New World hantavirus neutralizing antibodies</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.81743" target="_blank" style="word-break: break-all;">10.7554/elife.81743</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Genetic depletion studies inform receptor usage by virulent hantaviruses in human endothelial cells</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.69708" target="_blank" style="word-break: break-all;">10.7554/elife.69708</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Structural and mechanistic basis of neutralization by a pan-hantavirus protective antibody</td>
+                        <td>Science Translational Medicine</td>
+                        <td><a href="https://doi.org/10.1126/scitranslmed.adg1855" target="_blank" style="word-break: break-all;">10.1126/scitranslmed.adg1855</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Oral and ocular transmission of severe fever with thrombocytopenia syndrome virus</td>
+                        <td>Infectious Medicine</td>
+                        <td><a href="https://doi.org/10.1016/j.imj.2021.12.002" target="_blank" style="word-break: break-all;">10.1016/j.imj.2021.12.002</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Mechanistic basis for potent neutralization of Sin Nombre hantavirus by a human monoclonal antibody</td>
+                        <td>Nature Microbiology</td>
+                        <td><a href="https://doi.org/10.1038/s41564-023-01413-y" target="_blank" style="word-break: break-all;">10.1038/s41564-023-01413-y</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Bunyavirales: Scientific Gaps and Prototype Pathogens for a Large and Diverse Group of Zoonotic Viruses</td>
+                        <td>The Journal of Infectious Diseases</td>
+                        <td><a href="https://doi.org/10.1093/infdis/jiac338" target="_blank" style="word-break: break-all;">10.1093/infdis/jiac338</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Disparate macrophage responses are linked to infection outcome of Hantan virus in humans or rodents</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-024-44687-4" target="_blank" style="word-break: break-all;">10.1038/s41467-024-44687-4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Therapeutic Efficacy of Human Monoclonal Antibodies against Andes Virus Infection in Syrian Hamsters</td>
+                        <td>Emerging infectious diseases</td>
+                        <td><a href="https://doi.org/10.3201/eid2710.210735" target="_blank" style="word-break: break-all;">10.3201/eid2710.210735</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Delayed viral clearance despite high number of activated T cells during the acute phase in Argentinean patients with hantavirus pulmonary syndrome</td>
+                        <td>EBioMedicine</td>
+                        <td><a href="https://doi.org/10.1016/j.ebiom.2021.103765" target="_blank" style="word-break: break-all;">10.1016/j.ebiom.2021.103765</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>The Risk of Virus Emergence in South America: A Subtle Balance Between Increasingly Favorable Conditions and a Protective Environment</td>
+                        <td>Annual Review of Virology</td>
+                        <td><a href="https://doi.org/10.1146/annurev-virology-100422-024648" target="_blank" style="word-break: break-all;">10.1146/annurev-virology-100422-024648</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Modeling potential risk areas of Orthohantavirus transmission in Northwestern Argentina using an ecological niche approach</td>
+                        <td>BMC Public Health</td>
+                        <td><a href="https://doi.org/10.1186/s12889-023-16071-2" target="_blank" style="word-break: break-all;">10.1186/s12889-023-16071-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Human Orthohantavirus disease prevalence and genotype distribution in the U.S., 2008–2020: a retrospective observational study</td>
+                        <td>The Lancet Regional Health - Americas</td>
+                        <td><a href="https://doi.org/10.1016/j.lana.2024.100836" target="_blank" style="word-break: break-all;">10.1016/j.lana.2024.100836</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Cells of the human respiratory tract support the replication of pathogenic Old World orthohantavirus Puumala</td>
+                        <td>Virology Journal</td>
+                        <td><a href="https://doi.org/10.1186/s12985-021-01636-7" target="_blank" style="word-break: break-all;">10.1186/s12985-021-01636-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Andes Virus Genome Mutations That Are Likely Associated with Animal Model Attenuation and Human Person-to-Person Transmission</td>
+                        <td>mSphere</td>
+                        <td><a href="https://doi.org/10.1128/msphere.00018-23" target="_blank" style="word-break: break-all;">10.1128/msphere.00018-23</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Comparison of uridine and N1-methylpseudouridine mRNA platforms in development of an Andes virus vaccine</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-024-50774-3" target="_blank" style="word-break: break-all;">10.1038/s41467-024-50774-3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Presence and Persistence of Andes Virus RNA in Human Semen</td>
+                        <td>Viruses</td>
+                        <td><a href="https://doi.org/10.3390/v15112266" target="_blank" style="word-break: break-all;">10.3390/v15112266</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Achievement and Challenges in Orthohantavirus Vaccines</td>
+                        <td>Vaccines</td>
+                        <td><a href="https://doi.org/10.3390/vaccines13020198" target="_blank" style="word-break: break-all;">10.3390/vaccines13020198</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Puumala orthohantavirus: prevalence, biology, disease, animal models and recent advances in therapeutics development and structural biology</td>
+                        <td>Frontiers in Immunology</td>
+                        <td><a href="https://doi.org/10.3389/fimmu.2025.1575112" target="_blank" style="word-break: break-all;">10.3389/fimmu.2025.1575112</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Seoul orthohantavirus evades innate immune activation by reservoir endothelial cells</td>
+                        <td>PLoS Pathogens</td>
+                        <td><a href="https://doi.org/10.1371/journal.ppat.1012728" target="_blank" style="word-break: break-all;">10.1371/journal.ppat.1012728</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Pathogenicity and virulence of Rodent-Borne Orthohantaviruses</td>
+                        <td>Virulence</td>
+                        <td><a href="https://doi.org/10.1080/21505594.2025.2553784" target="_blank" style="word-break: break-all;">10.1080/21505594.2025.2553784</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Preclinical evaluation of a fully human, quadrivalent-hantavirus polyclonal antibody derived from a non-human source</td>
+                        <td>mBio</td>
+                        <td><a href="https://doi.org/10.1128/mbio.01600-24" target="_blank" style="word-break: break-all;">10.1128/mbio.01600-24</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>The Era of Gene Therapy: The Advancement of Lentiviral Vectors and Their Pseudotyping</td>
+                        <td>Viruses</td>
+                        <td><a href="https://doi.org/10.3390/v17081036" target="_blank" style="word-break: break-all;">10.3390/v17081036</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Ebola Virus Disease: Uniquely Challenging Among the Viral Hemorrhagic Fevers</td>
+                        <td>Open Forum Infectious Diseases</td>
+                        <td><a href="https://doi.org/10.1093/ofid/ofaf464" target="_blank" style="word-break: break-all;">10.1093/ofid/ofaf464</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Lethal hantavirus at sea: Infectious disease outbreaks on cruise ships and limits of preparedness</td>
+                        <td>Travel Medicine and Infectious Disease</td>
+                        <td><a href="https://doi.org/10.1016/j.tmaid.2026.102989" target="_blank" style="word-break: break-all;">10.1016/j.tmaid.2026.102989</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Orthohantaviruses: An Overview of the Current Status of Diagnostics and Surveillance</td>
+                        <td>Viruses</td>
+                        <td><a href="https://doi.org/10.3390/v17050622" target="_blank" style="word-break: break-all;">10.3390/v17050622</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Differential tropisms of old and new world hantaviruses influence virulence and developing host-directed antiviral candidates</td>
+                        <td>PLoS Pathogens</td>
+                        <td><a href="https://doi.org/10.1371/journal.ppat.1013401" target="_blank" style="word-break: break-all;">10.1371/journal.ppat.1013401</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>High-resolution in situ structures of hantavirus glycoprotein tetramers</td>
+                        <td>Cell</td>
+                        <td><a href="https://doi.org/10.1016/j.cell.2026.01.030" target="_blank" style="word-break: break-all;">10.1016/j.cell.2026.01.030</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>When rare zoonoses travel: Andes virus, hantavirus cardiopulmonary syndrome, and the preparedness gap</td>
+                        <td>International Journal of Infectious Diseases</td>
+                        <td><a href="https://doi.org/10.1016/j.ijid.2026.108778" target="_blank" style="word-break: break-all;">10.1016/j.ijid.2026.108778</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Hantavirus outbreak should reset WHO’s default approach to airborne risk</td>
+                        <td>BMJ</td>
+                        <td><a href="https://doi.org/10.1136/bmj.s919" target="_blank" style="word-break: break-all;">10.1136/bmj.s919</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Infección por hantavirus en la Provincia de Buenos Aires-Argentina. Comportamiento de la serie temporal 1997-2021</td>
+                        <td>Revista chilena de infectología</td>
+                        <td><a href="https://doi.org/10.4067/s0716-10182023000300213" target="_blank" style="word-break: break-all;">10.4067/s0716-10182023000300213</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Emerging hantaviruses in Central Argentina: First case of Hantavirus Pulmonary Syndrome caused by Alto Paraguay virus, and a novel orthohantavirus in Scapteromys aquaticus rodent</td>
+                        <td>PLoS neglected tropical diseases</td>
+                        <td><a href="https://doi.org/10.1371/journal.pntd.0009842" target="_blank" style="word-break: break-all;">10.1371/journal.pntd.0009842</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Hantavirus Pulmonary Syndrome in a COVID-19 Patient, Argentina, 2020</td>
+                        <td>Emerging infectious diseases</td>
+                        <td><a href="https://doi.org/10.3201/eid2804.211837" target="_blank" style="word-break: break-all;">10.3201/eid2804.211837</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Mathematical Model of the Spread of Hantavirus Infection</td>
+                        <td>Pathogens</td>
+                        <td><a href="https://doi.org/10.3390/pathogens12091147" target="_blank" style="word-break: break-all;">10.3390/pathogens12091147</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Insight into the Hantaan virus RNA-dependent RNA polymerase inhibition using in-silico approaches</td>
+                        <td>Molecular Diversity</td>
+                        <td><a href="https://doi.org/10.1007/s11030-022-10567-6" target="_blank" style="word-break: break-all;">10.1007/s11030-022-10567-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Deep Sequencing to Reveal Phylo-Geographic Relationships of Juquitiba Virus in Paraguay</td>
+                        <td>Viruses</td>
+                        <td><a href="https://doi.org/10.3390/v15091798" target="_blank" style="word-break: break-all;">10.3390/v15091798</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Orthohantavirus infections in South America: a systematic review and meta-analysis</td>
+                        <td>Archives of Virology</td>
+                        <td><a href="https://doi.org/10.1007/s00705-024-06104-5" target="_blank" style="word-break: break-all;">10.1007/s00705-024-06104-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Nephropathia Epidemica Caused by Puumala Virus in Bank Voles, Scania, Southern Sweden</td>
+                        <td>Emerging infectious diseases</td>
+                        <td><a href="https://doi.org/10.3201/eid3004.231414" target="_blank" style="word-break: break-all;">10.3201/eid3004.231414</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Orthohantavirus rodent hosts and genotypes in Southern South America: A narrative review</td>
+                        <td>PLoS neglected tropical diseases</td>
+                        <td><a href="https://doi.org/10.1371/journal.pntd.0013489" target="_blank" style="word-break: break-all;">10.1371/journal.pntd.0013489</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Genome sequencing identifies “Limestone Canyon virus” as Montaño virus (Hantaviridae: Orthohantavirus montanoense) circulating in brush deermice in New Mexico</td>
+                        <td>npj Viruses</td>
+                        <td><a href="https://doi.org/10.1038/s44298-024-00016-6" target="_blank" style="word-break: break-all;">10.1038/s44298-024-00016-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Virological characterization of a new isolated strain of Andes virus involved in the recent person-to-person transmission outbreak reported in Argentina</td>
+                        <td>PLoS neglected tropical diseases</td>
+                        <td><a href="https://doi.org/10.1371/journal.pntd.0013205" target="_blank" style="word-break: break-all;">10.1371/journal.pntd.0013205</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Hantavirus: What you need to know</td>
+                        <td>BMJ</td>
+                        <td><a href="https://doi.org/10.1136/bmj.s877" target="_blank" style="word-break: break-all;">10.1136/bmj.s877</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Hantavirus: Third British national has suspected infection as WHO says this is “not the start of a pandemic”</td>
+                        <td>BMJ</td>
+                        <td><a href="https://doi.org/10.1136/bmj.s899" target="_blank" style="word-break: break-all;">10.1136/bmj.s899</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Andes hantavirus outbreak on a cruise ship - an ESCMID Emerging Infections Subcommittee (EIS) rapid assessment</td>
+                        <td>Clinical Microbiology and Infection</td>
+                        <td><a href="https://doi.org/10.1016/j.cmi.2026.05.016" target="_blank" style="word-break: break-all;">10.1016/j.cmi.2026.05.016</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Hantavirus outbreak on a cruise ship in the South Atlantic</td>
+                        <td>The Lancet</td>
+                        <td><a href="https://doi.org/10.1016/s0140-6736(26)00934-7" target="_blank" style="word-break: break-all;">10.1016/s0140-6736(26)00934-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Andes hantavirus in South America: Emerging epidemiological trends, regional challenges, and lessons beyond the MV Hondius outbreak</td>
+                        <td>New Microbes and New Infections</td>
+                        <td><a href="https://doi.org/10.1016/j.nmni.2026.101767" target="_blank" style="word-break: break-all;">10.1016/j.nmni.2026.101767</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Case Report: Hantavirus Cardiopulmonary Syndrome Diagnostic in the Face of the COVID-19 Pandemic</td>
+                        <td>American Journal of Tropical Medicine and Hygiene</td>
+                        <td><a href="https://doi.org/10.4269/ajtmh.21-0637" target="_blank" style="word-break: break-all;">10.4269/ajtmh.21-0637</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Hantavirus Pulmonary Syndrome Outbreak Anticipation by a Rapid Synchronous Increase in Rodent Abundance in the Northwestern Argentina Endemic Region: Towards an Early Warning System for Disease Based on Climate and Rodent Surveillance Data</td>
+                        <td>Pathogens</td>
+                        <td><a href="https://doi.org/10.3390/pathogens13090753" target="_blank" style="word-break: break-all;">10.3390/pathogens13090753</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>HantaNet: A New MicrobeTrace Application for Hantavirus Classification, Genomic Surveillance, Epidemiology and Outbreak Investigations</td>
+                        <td>Viruses</td>
+                        <td><a href="https://doi.org/10.3390/v15112208" target="_blank" style="word-break: break-all;">10.3390/v15112208</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Orthohantavirus diversity in Central-East Argentina: Insights from complete genomic sequencing on phylogenetics, Geographic patterns and transmission scenarios</td>
+                        <td>PLoS neglected tropical diseases</td>
+                        <td><a href="https://doi.org/10.1371/journal.pntd.0012465" target="_blank" style="word-break: break-all;">10.1371/journal.pntd.0012465</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Orthohantavirus Replication in the Context of Innate Immunity</td>
+                        <td>Viruses</td>
+                        <td><a href="https://doi.org/10.3390/v15051130" target="_blank" style="word-break: break-all;">10.3390/v15051130</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Modeling of hantavirus cardiopulmonary syndrome</td>
+                        <td>Medwave</td>
+                        <td><a href="https://doi.org/10.5867/medwave.2022.03.002526" target="_blank" style="word-break: break-all;">10.5867/medwave.2022.03.002526</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>The Input of Structural Vaccinology in the Search for Vaccines against Bunyaviruses</td>
+                        <td>Viruses</td>
+                        <td><a href="https://doi.org/10.3390/v13091766" target="_blank" style="word-break: break-all;">10.3390/v13091766</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>The Role of Gender in Moderating The Effect of Teachers Empathy, Reputation and System Quality on Student Satisfaction Online Learning Program</td>
+                        <td>2022 4th International Conference on Cybernetics and Intelligent System (ICORIS)</td>
+                        <td><a href="https://doi.org/10.1109/icoris56080.2022.10031371" target="_blank" style="word-break: break-all;">10.1109/icoris56080.2022.10031371</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Zoonotic Hantaviridae with global public health significance</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.22541/au.168606259.94645566/v1" target="_blank" style="word-break: break-all;">10.22541/au.168606259.94645566/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A Novel HTNV Budding Inhibitor Interferes the Interaction Between Viral Glycoprotein and Host ESCRT Accessory Protein ALIX</td>
+                        <td>Journal of Medical Virology</td>
+                        <td><a href="https://doi.org/10.1002/jmv.70182" target="_blank" style="word-break: break-all;">10.1002/jmv.70182</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Stability of Andes virus and its inactivation by WHO-recommended hand-rub formulations and surface disinfectants</td>
+                        <td>Journal of Hospital Infection</td>
+                        <td><a href="https://doi.org/10.1016/j.jhin.2025.08.010" target="_blank" style="word-break: break-all;">10.1016/j.jhin.2025.08.010</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Is COVID-19 Herd Immunity Influenced by Population Densities of Cities?</td>
+                        <td>Sustainability</td>
+                        <td><a href="https://doi.org/10.3390/su141610286" target="_blank" style="word-break: break-all;">10.3390/su141610286</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Human-to-Human Transmission of Andes Virus Modeled in Syrian Hamster</td>
+                        <td>Emerging infectious diseases</td>
+                        <td><a href="https://doi.org/10.3201/eid2910.230544" target="_blank" style="word-break: break-all;">10.3201/eid2910.230544</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Hantaviruses in a Global Perspective</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-27164-9_30" target="_blank" style="word-break: break-all;">10.1007/978-3-031-27164-9_30</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Hantavirus Pulmonary Syndrome in Northwestern Argentina: Seroprevalence in rodents of Jujuy province and first seropositive record for Euryoryzomys legatus</td>
+                        <td>Acta Tropica</td>
+                        <td><a href="https://doi.org/10.1016/j.actatropica.2024.107500" target="_blank" style="word-break: break-all;">10.1016/j.actatropica.2024.107500</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A pan-orthohantavirus human lung xenograft mouse model and its utility for preclinical studies</td>
+                        <td>PLoS Pathogens</td>
+                        <td><a href="https://doi.org/10.1371/journal.ppat.1012875" target="_blank" style="word-break: break-all;">10.1371/journal.ppat.1012875</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Apatinib inhibits HTNV by stimulating TFEB-driven lysosome biogenesis to degrade viral protein</td>
+                        <td>Antiviral Research</td>
+                        <td><a href="https://doi.org/10.1016/j.antiviral.2025.106124" target="_blank" style="word-break: break-all;">10.1016/j.antiviral.2025.106124</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Les Orthohantavirus du Nouveau Monde</td>
+                        <td>Médecine et Maladies Infectieuses Formation</td>
+                        <td><a href="https://doi.org/10.1016/j.mmifmc.2023.09.004" target="_blank" style="word-break: break-all;">10.1016/j.mmifmc.2023.09.004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Orthohantaviruses in the Arctic: Present and Future</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-87853-5_18" target="_blank" style="word-break: break-all;">10.1007/978-3-030-87853-5_18</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Antigenic mapping and functional characterization of human New World hantavirus neutralizing antibodies</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2022.07.19.500579" target="_blank" style="word-break: break-all;">10.1101/2022.07.19.500579</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Emerging Hantaviruses in Central Argentina: first case of Hantavirus Pulmonary Syndrome caused by Alto Paraguay Virus and a novel orthohantavirus in <i>Scapteromys aquaticus</i> rodent</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2021.06.13.448262" target="_blank" style="word-break: break-all;">10.1101/2021.06.13.448262</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Orthohantavirus Diversity in Central-East Argentina: Insights from Complete Genomic Sequencing on Phylogenetics, Geographic patterns and Transmission scenarios</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.03.25.586579" target="_blank" style="word-break: break-all;">10.1101/2024.03.25.586579</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Genetic depletion studies define receptor usage by virulent hantaviruses in human endothelial cells</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2020.12.30.424861" target="_blank" style="word-break: break-all;">10.1101/2020.12.30.424861</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Andes virus genome mutations that are likely associated with animal-model attenuation and human person-to-person transmission</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.01.18.524667" target="_blank" style="word-break: break-all;">10.1101/2023.01.18.524667</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Andes virus mRNA vaccines: comparison of unmodified and modified mRNA platforms</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-3182841/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-3182841/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Seoul orthohantavirus evades innate immune activation by reservoir endothelial cells</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.06.18.599607" target="_blank" style="word-break: break-all;">10.1101/2024.06.18.599607</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Virological Characterization of a New Isolated Strain of Andes Virus Involved in the Recent Person-to-Person Transmission Outbreak Reported in Argentina</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.10.08.24312738" target="_blank" style="word-break: break-all;">10.1101/2024.10.08.24312738</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>High-resolution in situ structures of hantavirus glycoprotein tetramers</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.06.17.660152" target="_blank" style="word-break: break-all;">10.1101/2025.06.17.660152</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Studies of inflammatory responses in hantavirus infection</td>
+                        <td>Figshare</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Differential Macrophage Phenotype Rewired by Hantaan Virus Constrains the Magnitude of Inflammatory Responses in Murine versus Humans</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-1181604/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-1181604/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Hantaviruses in a Global Perspective</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-3-030-85877-3_30-1" target="_blank" style="word-break: break-all;">10.1007/978-3-030-85877-3_30-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Modeling potential risk areas of orthohantavirus transmission in northwestern Argentina using ecological niche approach</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-2515073/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-2515073/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Vaccines</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-10035-2_9" target="_blank" style="word-break: break-all;">10.1007/978-3-031-10035-2_9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Hantavirus</td>
+                        <td>Elsevier eBooks</td>
+                        <td><a href="https://doi.org/10.1016/b978-0-12-822521-9.00150-7" target="_blank" style="word-break: break-all;">10.1016/b978-0-12-822521-9.00150-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>The Epuyén Outbreak of Hantavirus Pulmonary Syndrome, Argentina, 2018–2019</td>
+                        <td>One Health Cases</td>
+                        <td><a href="https://doi.org/10.1079/onehealthcases.2023.0018" target="_blank" style="word-break: break-all;">10.1079/onehealthcases.2023.0018</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Biodefense Vaccines, Vaccines for Emerging Infectious Diseases, and Coalition for Epidemic Preparedness Innovations (CEPI)</td>
+                        <td>Elsevier eBooks</td>
+                        <td><a href="https://doi.org/10.1016/b978-0-323-79058-1.00013-x" target="_blank" style="word-break: break-all;">10.1016/b978-0-323-79058-1.00013-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>A pan-orthohantavirus preclinical human lung xenograft mouse model</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-3999668/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-3999668/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Viral Diseases</td>
+                        <td>Elsevier eBooks</td>
+                        <td><a href="https://doi.org/10.1016/b978-0-323-93548-7.00013-1" target="_blank" style="word-break: break-all;">10.1016/b978-0-323-93548-7.00013-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Public Health Importance of Hantavirus Hemorrhagic Fevers in Colombia and South America</td>
+                        <td>The Latin American studies book series</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-68419-7_2" target="_blank" style="word-break: break-all;">10.1007/978-3-031-68419-7_2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Phylogenetics, Eco-epidemiology, and Evolution of Orthohantaviruses in Venezuela</td>
+                        <td>The Latin American studies book series</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-68419-7_3" target="_blank" style="word-break: break-all;">10.1007/978-3-031-68419-7_3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Hantaviruses</td>
+                        <td>ClinMicroNow</td>
+                        <td><a href="https://doi.org/10.1002/9781683674849.mcm0099" target="_blank" style="word-break: break-all;">10.1002/9781683674849.mcm0099</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Hantaviruses</td>
+                        <td>ClinMicroNow</td>
+                        <td><a href="https://doi.org/10.1002/9781683670438.mcm0099" target="_blank" style="word-break: break-all;">10.1002/9781683670438.mcm0099</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Defining the Impact of Cell-Type and Species on the Molecular RNA Replication Kinetics of Seoul Virus</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.04.24.650411" target="_blank" style="word-break: break-all;">10.1101/2025.04.24.650411</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Vaccines Against Hantavirus Disease: Strategies, Outcomes, and Future Directions</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-3-031-77911-4_32" target="_blank" style="word-break: break-all;">10.1007/978-3-031-77911-4_32</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>High genomic stability of Andes virus following successive passage <i>in vivo</i> in Syrian hamsters</td>
+                        <td>Journal of Virology</td>
+                        <td><a href="https://doi.org/10.1128/jvi.00512-25" target="_blank" style="word-break: break-all;">10.1128/jvi.00512-25</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>New Andes virus isolate haplotype obtained during prospective close contacts follow-up of an Hantavirus cardiopulmonary syndrome fatal case, Chile</td>
+                        <td>Current Research in Microbial Sciences</td>
+                        <td><a href="https://doi.org/10.1016/j.crmicr.2025.100472" target="_blank" style="word-break: break-all;">10.1016/j.crmicr.2025.100472</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Discovery and characterization of Sager Creek virus, a new orthohantavirus in prairie voles (Microtus ochrogaster)</td>
+                        <td>npj Viruses</td>
+                        <td><a href="https://doi.org/10.1038/s44298-025-00153-6" target="_blank" style="word-break: break-all;">10.1038/s44298-025-00153-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Hantavirus Gn <sup>H</sup> Nanoparticle Immunogen Elicits a Cross-Neutralizing Antibody Response in Mice</td>
+                        <td>ACS Infectious Diseases</td>
+                        <td><a href="https://doi.org/10.1021/acsinfecdis.5c00415" target="_blank" style="word-break: break-all;">10.1021/acsinfecdis.5c00415</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Global threats and regional trends: Navigating the complex landscape of human Orthohantavirus infections</td>
+                        <td>Infectious Diseases & Immunity</td>
+                        <td><a href="https://doi.org/10.1097/id9.0000000000000187" target="_blank" style="word-break: break-all;">10.1097/id9.0000000000000187</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Impact of cell type and species on RNA replication kinetics of Seoul virus</td>
+                        <td>Journal of General Virology</td>
+                        <td><a href="https://doi.org/10.1099/jgv.0.002189" target="_blank" style="word-break: break-all;">10.1099/jgv.0.002189</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Cell surface localization and intercellular transfer of the hantavirus nucleocapsid protein via a viral assembly-independent mechanism</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2025.12.05.692699" target="_blank" style="word-break: break-all;">10.64898/2025.12.05.692699</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Bunyaviruses: Hantaviruses</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-1-4939-9544-8_9-1" target="_blank" style="word-break: break-all;">10.1007/978-1-4939-9544-8_9-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Specific determinants of the Transmembrane region of the Andes virus Gc glycoprotein drive the transition from membrane hemifusion to pore formation</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.03.17.712151" target="_blank" style="word-break: break-all;">10.64898/2026.03.17.712151</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Cytokine profiling of maternal peripheral and umbilical cord blood in term and preterm labor</td>
+                        <td>Frontiers in Immunology</td>
+                        <td><a href="https://doi.org/10.3389/fimmu.2026.1786565" target="_blank" style="word-break: break-all;">10.3389/fimmu.2026.1786565</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Health authorities work to contain cruise ship hantavirus outbreak</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.64628/aai.nk4s9nhmx" target="_blank" style="word-break: break-all;">10.64628/aai.nk4s9nhmx</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Evidence of Juquitiba and Jaborá Orthohantavirus Co-Circulation in Rodent Communities of Argentina</td>
+                        <td>EcoHealth</td>
+                        <td><a href="https://doi.org/10.1007/s10393-026-01803-8" target="_blank" style="word-break: break-all;">10.1007/s10393-026-01803-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Hantavirus is very different to COVID. Here’s why the ‘Andes virus’ won’t cause the next pandemic</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.64628/aa.mmv6was5x" target="_blank" style="word-break: break-all;">10.64628/aa.mmv6was5x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Hantavirus Infection: Scoping Review with ☸SAIMSARA</td>
+                        <td>SAIMSARA Journal</td>
+                        <td><a href="https://doi.org/10.62487/saimsara12cb6553" target="_blank" style="word-break: break-all;">10.62487/saimsara12cb6553</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Hantavirus outbreak exposes uncertainty about how disease spreads</td>
+                        <td>Nature</td>
+                        <td><a href="https://doi.org/10.1038/d41586-026-01512-w" target="_blank" style="word-break: break-all;">10.1038/d41586-026-01512-w</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Modeling the Impact of Exposed Cases in a Hantavirus Outbreak on a Cruise Ship</td>
+                        <td>medRxiv</td>
+                        <td><a href="https://doi.org/10.64898/2026.05.08.26352718" target="_blank" style="word-break: break-all;">10.64898/2026.05.08.26352718</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Hantavirus: A cruise ship, a deer mouse and the fictional line between human and animal health</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.64628/aam.khg6vtk6d" target="_blank" style="word-break: break-all;">10.64628/aam.khg6vtk6d</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>From medieval plague ships to hantavirus: How outbreaks at sea helped to shape the international public health system</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.64628/aai.3y96v4aww" target="_blank" style="word-break: break-all;">10.64628/aai.3y96v4aww</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Hanta on the Hondius - public health and bioethical perspectives of the recent Andes hantavirus cruise ship outbreak</td>
+                        <td>New Microbes and New Infections</td>
+                        <td><a href="https://doi.org/10.1016/j.nmni.2026.101766" target="_blank" style="word-break: break-all;">10.1016/j.nmni.2026.101766</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Hantavirus Infections—Clinical Recognition and Diagnostic Challenges</td>
+                        <td>The Lancet Regional Health - Europe</td>
+                        <td><a href="https://doi.org/10.1016/j.lanepe.2026.101728" target="_blank" style="word-break: break-all;">10.1016/j.lanepe.2026.101728</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>First epidemic of hantavirus on cruise ships: from passenger surveillance to ship ecology</td>
+                        <td>Infectious Diseases</td>
+                        <td><a href="https://doi.org/10.1080/23744235.2026.2675432" target="_blank" style="word-break: break-all;">10.1080/23744235.2026.2675432</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Transmission potential of Andes virus from human to human</td>
+                        <td>New Microbes and New Infections</td>
+                        <td><a href="https://doi.org/10.1016/j.nmni.2026.101768" target="_blank" style="word-break: break-all;">10.1016/j.nmni.2026.101768</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Hantavirus Outbreak Aboard a Cruise Ship: An Urgent Wake‐Up Call for Ecotourism‐Related Zoonotic Risk</td>
+                        <td>Journal of Medical Virology</td>
+                        <td><a href="https://doi.org/10.1002/jmv.70983" target="_blank" style="word-break: break-all;">10.1002/jmv.70983</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Hantavirus in 2026: What the MV Hondius outbreak demands from transfusion medicine</td>
+                        <td>Transfusion Clinique et Biologique</td>
+                        <td><a href="https://doi.org/10.1016/j.tracli.2026.05.002" target="_blank" style="word-break: break-all;">10.1016/j.tracli.2026.05.002</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Andes Hantavirus Outbreak on a Cruise Ship, 2026</td>
+                        <td>New England Journal of Medicine</td>
+                        <td><a href="https://doi.org/10.1056/nejmc2606496" target="_blank" style="word-break: break-all;">10.1056/nejmc2606496</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Andes Hantavirus Outbreak on a Cruise Ship, 2026</td>
+                        <td>NEJM Evidence</td>
+                        <td><a href="https://doi.org/10.1056/evidpha2600170" target="_blank" style="word-break: break-all;">10.1056/evidpha2600170</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Andes virus on a cruise ship: person-to-person transmission and an empty pipeline</td>
+                        <td>The Lancet Infectious Diseases</td>
+                        <td><a href="https://doi.org/10.1016/s1473-3099(26)00283-5" target="_blank" style="word-break: break-all;">10.1016/s1473-3099(26)00283-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>The MV Hondius Warning: Hantavirus Surveillance Blind Spots</td>
+                        <td>The Lancet Regional Health - Europe</td>
+                        <td><a href="https://doi.org/10.1016/j.lanepe.2026.101732" target="_blank" style="word-break: break-all;">10.1016/j.lanepe.2026.101732</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Andes virus, hantavirus infections, and the unresolved question of transfusion transmission</td>
+                        <td>Transfusion and Apheresis Science</td>
+                        <td><a href="https://doi.org/10.1016/j.transci.2026.104455" target="_blank" style="word-break: break-all;">10.1016/j.transci.2026.104455</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Time to provide clear guidance around respiratory protection for hantavirus during outbreaks involving human to human transmission</td>
+                        <td>International Journal of Nursing Studies</td>
+                        <td><a href="https://doi.org/10.1016/j.ijnurstu.2026.105590" target="_blank" style="word-break: break-all;">10.1016/j.ijnurstu.2026.105590</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Rapid <i>in vitro</i> synthesis of DNA templates via Sidewinder for polyadenylated Hantavirus mRNA vaccine candidates</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.05.22.727328" target="_blank" style="word-break: break-all;">10.64898/2026.05.22.727328</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Hantavirus infection: A narrative review focusing on epidemiology, diagnosis, infection control and treatment in the era of globalisation</td>
+                        <td>Medicina Intensiva (English Edition)</td>
+                        <td><a href="https://doi.org/10.1016/j.medine.2026.502523" target="_blank" style="word-break: break-all;">10.1016/j.medine.2026.502523</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>The <i>MV Hondius</i> Hantavirus Outbreak—Lessons for Pandemic Preparedness</td>
+                        <td>JAMA</td>
+                        <td><a href="https://doi.org/10.1001/jama.2026.10321" target="_blank" style="word-break: break-all;">10.1001/jama.2026.10321</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Human infection with Andes hantavirus: an update for the general physician</td>
+                        <td>European Journal of Internal Medicine</td>
+                        <td><a href="https://doi.org/10.1016/j.ejim.2026.106946" target="_blank" style="word-break: break-all;">10.1016/j.ejim.2026.106946</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>The Andes virus paradox: high lethality, low transmissibility, and the clinical urgency beyond pandemic risk</td>
+                        <td>Infection</td>
+                        <td><a href="https://doi.org/10.1007/s15010-026-02839-2" target="_blank" style="word-break: break-all;">10.1007/s15010-026-02839-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Hantavirus disease and the need for pathogenesis-guided therapy</td>
+                        <td>The Journal of Experimental Medicine</td>
+                        <td><a href="https://doi.org/10.1084/jem.20260871" target="_blank" style="word-break: break-all;">10.1084/jem.20260871</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Beyond pathogen-specific preparedness: adaptable laboratory systems for emerging infections</td>
+                        <td>The Lancet Regional Health - Europe</td>
+                        <td><a href="https://doi.org/10.1016/j.lanepe.2026.101745" target="_blank" style="word-break: break-all;">10.1016/j.lanepe.2026.101745</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Hantaviruses and Rodent-Borne Diseases: Distinct Ecologies at the Human–Environment Interface</td>
+                        <td>New Microbes and New Infections</td>
+                        <td><a href="https://doi.org/10.1016/j.nmni.2026.101782" target="_blank" style="word-break: break-all;">10.1016/j.nmni.2026.101782</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-06-03T21:33:29+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' citing works (most recent first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+        .wm-tab-btn {
+            border: none;
+            background: #f3f4f6;
+            color: #4b5563;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .wm-tab-btn.wm-tab-active {
+            outline: 2px solid #3b82f6;
+            outline-offset: 1px;
+        }
+    </style>
+    
+    <script>
+        function citeSwitchTab(btn, paneId) {
+            var panes = document.querySelectorAll('#sec-citing .cite-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].classList.remove('active');
+            }
+            var btns = document.querySelectorAll('#sec-citing .cite-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('active');
+            }
+            var pane = document.getElementById(paneId);
+            if (pane) pane.classList.add('active');
+            if (btn) btn.classList.add('active');
+        }
+        function openWebMentionTab(evt, tabId) {
+            var panes = document.querySelectorAll('.wm-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].style.display = 'none';
+            }
+            var btns = document.querySelectorAll('.wm-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('wm-tab-active');
+            }
+            var pane = document.getElementById(tabId);
+            if (pane) pane.style.display = 'block';
+            if (evt && evt.currentTarget) evt.currentTarget.classList.add('wm-tab-active');
+        }
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
+</body>
+</html>

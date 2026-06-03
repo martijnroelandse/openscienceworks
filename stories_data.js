@@ -53,6 +53,109 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "articlestory_10.1038_s41586-020-2649-2.html",
+"title": "Array programming with NumPy",
+"type": "ArticleStory",
+"doi": "10.1038/s41586-020-2649-2",
+"year": 2020,
+"venue": "Nature",
+"venue_name": "Nature",
+"publisher": "",
+"concepts": [
+"Python (programming language)",
+"Computer science",
+"Interoperability",
+"Syntax",
+"Programming paradigm",
+"Application programming interface",
+"Software",
+"Programming language"
+],
+"roles": [
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Public Visibility & Knowledge Base"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 21876,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": true,
+"has_reuse": true,
+"excerpt": "Short impact summary The 2020 work on array programming with NumPy has garnered significant academic attention, evidenced by its impressive citation count of 21,876.",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
+"file": "articlestory_10.1056_nejmoa2001316.html",
+"title": "Early Transmission Dynamics in Wuhan, China, of Novel Coronavirus–Infected Pneumonia",
+"type": "ArticleStory",
+"doi": "10.1056/nejmoa2001316",
+"year": 2020,
+"venue": "New England Journal of Medicine",
+"venue_name": "New England Journal of Medicine",
+"publisher": "Massachusetts Medical Society",
+"concepts": [
+"Coronavirus",
+"Transmission (telecommunications)",
+"Pneumonia",
+"Coronavirus disease 2019 (COVID-19)",
+"Virology",
+"China",
+"Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
+"2019-20 coronavirus outbreak"
+],
+"roles": [
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Active Public Discourse",
+"Sustainability & Policy Relevance",
+"Public Visibility & Knowledge Base"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 17937,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article titled \"Early Transmission Dynamics in Wuhan, China, of Novel Coronavirus–Infected Pneumonia\" has achieved significant academic impact, amassing 17,937 citations in th…",
+"cover_url": "",
+"authors": "Qun Li, Xuhua Guan, Peng Wu et al.",
+"institutions": [
+"World Wide Web Consortium"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Wikipedia",
+"Bluesky"
+]
+},
+{
 "file": "bookstory_10.1007_978-1-4614-7138-7.html",
 "title": "An Introduction to Statistical Learning",
 "type": "BookStory",
@@ -226,7 +329,7 @@ window.STORIES_DATA = [
 "High-Visibility Uptake",
 "Sustainability & Policy Relevance",
 "Reference Point for Synthesis",
-"Active Public Discourse"
+"Public Visibility & Knowledge Base"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -243,7 +346,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary The final report on Remdesivir for the treatment of COVID-19, published in the New England Journal of Medicine, has significantly influenced both academic discourse and public awa…",
+"excerpt": "Short impact summary The study titled \"Remdesivir for the Treatment of Covid-19,\" published in the New England Journal of Medicine, has emerged as a significant contribution to understanding COVID-19 …",
 "cover_url": "",
 "authors": "John H. Beigel, Kay M Tomashek, Lori E. Dodd et al.",
 "institutions": [
@@ -253,10 +356,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Wikipedia",
-"Bluesky"
-]
+"mention_platforms": []
 },
 {
 "file": "articlestory_10.1056_NEJMoa0810696.html",
@@ -321,9 +421,9 @@ window.STORIES_DATA = [
 "type": "SoftwareStory",
 "doi": "10.5281/zenodo.1174508",
 "year": 2018,
-"venue": "Figshare",
-"venue_name": "Figshare",
-"publisher": "Figshare (United Kingdom)",
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
 "concepts": [
 "Kinetics",
 "Thermodynamics",
@@ -548,9 +648,9 @@ window.STORIES_DATA = [
 "type": "SoftwareStory",
 "doi": "10.5281/zenodo.11813",
 "year": 2014,
-"venue": "Zenodo (CERN European Organization for Nuclear Research)",
-"venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
-"publisher": "",
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
 "concepts": [
 "Curve fitting",
 "Mathematics",
@@ -689,6 +789,124 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "articlestory_10.1038_s41586-019-1364-3.html",
+"title": "Committed emissions from existing energy infrastructure jeopardize 1.5 °C climate target",
+"type": "ArticleStory",
+"doi": "10.1038/s41586-019-1364-3",
+"year": 2019,
+"venue": "Nature",
+"venue_name": "Nature",
+"publisher": "Nature Portfolio",
+"concepts": [
+"Fossil fuel",
+"Greenhouse gas",
+"Environmental science",
+"Climate change",
+"Electricity",
+"Global warming",
+"Carbon dioxide",
+"Range (aeronautics)"
+],
+"roles": [
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Active Public Discourse",
+"Public Visibility & Knowledge Base"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 785,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article, \"Committed emissions from existing energy infrastructure jeopardize 1.5 °C climate target,\" has garnered significant academic attention, evidenced by its 785 citation…",
+"cover_url": "",
+"authors": "Dan Tong, Qiang Zhang, Yixuan Zheng et al.",
+"institutions": [
+"Irvine University",
+"Tsinghua University",
+"Carnegie Institution for Science",
+"Energy International (United States)",
+"University of California, Irvine"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Wikipedia"
+]
+},
+{
+"file": "articlestory_10.5334_aogh.2831.html",
+"title": "Human Health and Ocean Pollution",
+"type": "ArticleStory",
+"doi": "10.5334/aogh.2831",
+"year": 2020,
+"venue": "Annals of Global Health",
+"venue_name": "Annals of Global Health",
+"publisher": "Elsevier BV",
+"concepts": [
+"Pollution",
+"Environmental protection",
+"Surface runoff",
+"Environmental science",
+"Environmental planning",
+"Natural resource economics",
+"Human health",
+"Business"
+],
+"roles": [
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance",
+"Reference Point for Synthesis",
+"Public Visibility & Knowledge Base"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 735,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Life below water"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article \"Human Health and Ocean Pollution,\" published in the Annals of Global Health, has garnered significant academic attention with 735 citations, reflecting its importance…",
+"cover_url": "",
+"authors": "Philip J. Landrigan, John J. Stegeman, Lora E. Fleming et al.",
+"institutions": [
+"Boston College",
+"Woods Hole Oceanographic Institution",
+"University of Exeter",
+"Scientific Centre of Monaco",
+"Centers for Disease Control and Prevention",
+"Université Côte d'Azur",
+"Health Alliance International",
+"University of Copenhagen",
+"Centre National de la Recherche Scientifique",
+"Scripps Institution of Oceanography"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
 "file": "bookstory_10.1007_978-3-319-46478-7_44.html",
 "title": "Human Pose Estimation via Convolutional Part Heatmap Regression",
 "type": "BookStory",
@@ -745,9 +963,9 @@ window.STORIES_DATA = [
 "type": "SoftwareStory",
 "doi": "10.5281/zenodo.19690618",
 "year": 2026,
-"venue": "Open MIND",
-"venue_name": "Open MIND",
-"publisher": "",
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
 "concepts": [
 "Computer science",
 "Python (programming language)",
@@ -796,9 +1014,9 @@ window.STORIES_DATA = [
 "type": "DataStory",
 "doi": "10.5281/zenodo.5571936",
 "year": 2021,
-"venue": "Socio-Environmental Systems Modeling",
-"venue_name": "Socio-Environmental Systems Modeling",
-"publisher": "",
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
 "concepts": [
 "Computer science"
 ],
@@ -881,6 +1099,104 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
+"file": "bookstory_10.1017_cbo9781107415416.008.html",
+"title": "Integrated Risk and Uncertainty Assessment of Climate Change Response Policies",
+"type": "BookStory",
+"doi": "10.1017/cbo9781107415416.008",
+"year": 2015,
+"venue": "Cambridge University Press",
+"venue_name": "",
+"publisher": "Cambridge University Press",
+"concepts": [
+"Framing (construction)",
+"Climate change",
+"Risk assessment",
+"Risk analysis (engineering)",
+"Environmental resource management",
+"Political science",
+"Environmental science",
+"Business"
+],
+"roles": [
+"Commercial Linkage",
+"Reference Point for Synthesis",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 393,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Climate action"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The book \"Integrated Risk and Uncertainty Assessment of Climate Change Response Policies,\" published by Cambridge University Press in 2015, serves as a crucial reference point for…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781107058217&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": "Climate Change 2014: Mitigation of Climate Change",
+"series_id": null,
+"belongs_to_series": true,
+"mention_platforms": []
+},
+{
+"file": "articlestory_10.1038_nrn.2017.26.html",
+"title": "Motor compensation and its effects on neural reorganization after stroke",
+"type": "ArticleStory",
+"doi": "10.1038/nrn.2017.26",
+"year": 2017,
+"venue": "Nature reviews. Neuroscience",
+"venue_name": "Nature reviews. Neuroscience",
+"publisher": "Nature Portfolio",
+"concepts": [
+"Stroke (engine)",
+"Physical medicine and rehabilitation",
+"Outcome (game theory)",
+"Motor function",
+"Compensation (psychology)",
+"Neuroscience",
+"Motor system",
+"Psychology"
+],
+"roles": [
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Reference Point for Synthesis"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 369,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Jones' work, \"Motor compensation and its effects on neural reorganization after stroke,\" published in Nature Reviews: Neuroscience, has garnered significant academic interest, evidenced by its 369 cit…",
+"cover_url": "",
+"authors": "Theresa A. Jones",
+"institutions": [
+"The University of Texas at Austin"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
 "file": "datastory_10.6084_m9.figshare.7504448.v3.html",
 "title": "Global Aridity Index and Potential Evapotranspiration (ET0) Climate Database v2",
 "type": "DataStory",
@@ -888,7 +1204,7 @@ window.STORIES_DATA = [
 "year": 2019,
 "venue": "Figshare",
 "venue_name": "Figshare",
-"publisher": "",
+"publisher": "Digital Science",
 "concepts": [
 "Aridity index",
 "Evapotranspiration",
@@ -934,9 +1250,9 @@ window.STORIES_DATA = [
 "type": "DataStory",
 "doi": "10.5281/zenodo.1188976",
 "year": 2018,
-"venue": "Zenodo (CERN European Organization for Nuclear Research)",
-"venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
-"publisher": "European Organization for Nuclear Research",
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
 "concepts": [
 "Audio visual",
 "Computer science",
@@ -989,9 +1305,9 @@ window.STORIES_DATA = [
 "type": "SoftwareStory",
 "doi": "10.5281/zenodo.1480624",
 "year": 2016,
-"venue": "Zenodo (CERN European Organization for Nuclear Research)",
-"venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
-"publisher": "European Organization for Nuclear Research",
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
 "concepts": [
 "Computer science",
 "Computation",
@@ -1231,9 +1547,9 @@ window.STORIES_DATA = [
 "type": "DataStory",
 "doi": "10.5281/zenodo.3757476",
 "year": 2020,
-"venue": "Zenodo (CERN European Organization for Nuclear Research)",
-"venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
-"publisher": "European Organization for Nuclear Research",
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
 "concepts": [
 "Coronavirus disease 2019 (COVID-19)",
 "Lung infection",
@@ -1293,9 +1609,9 @@ window.STORIES_DATA = [
 "type": "DataStory",
 "doi": "10.5281/zenodo.4743746",
 "year": 2020,
-"venue": "Zenodo (CERN European Organization for Nuclear Research)",
-"venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
-"publisher": "European Organization for Nuclear Research",
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
 "concepts": [
 "Internet of Things",
 "Computer science",
@@ -1342,7 +1658,7 @@ window.STORIES_DATA = [
 "year": 2015,
 "venue": "Figshare",
 "venue_name": "Figshare",
-"publisher": "",
+"publisher": "Digital Science",
 "concepts": [
 "Python (programming language)",
 "Computer science",
@@ -1380,6 +1696,55 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
+"file": "articlestory_10.1103_prxquantum.5.037001.html",
+"title": "Quantum Computing for High-Energy Physics: State of the Art and Challenges",
+"type": "ArticleStory",
+"doi": "10.1103/prxquantum.5.037001",
+"year": 2024,
+"venue": "PRX Quantum",
+"venue_name": "PRX Quantum",
+"publisher": "",
+"concepts": [
+"Quantum computer",
+"Computer science",
+"Qubit",
+"Large Hadron Collider",
+"Computational science",
+"Computer engineering",
+"Physics",
+"Quantum"
+],
+"roles": [
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 203,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Affordable and clean energy"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article titled \"Quantum Computing for High-Energy Physics: State of the Art and Challenges,\" published in PRX Quantum, has garnered significant academic interest, with 203 cit…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
 "file": "datastory_10.6084_m9.figshare.1008029.v1.html",
 "title": "TNO Image Fusion Dataset",
 "type": "DataStory",
@@ -1387,7 +1752,7 @@ window.STORIES_DATA = [
 "year": 2014,
 "venue": "Figshare",
 "venue_name": "Figshare",
-"publisher": "",
+"publisher": "Digital Science",
 "concepts": [
 "Image fusion",
 "Artificial intelligence",
@@ -1428,6 +1793,55 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
+"file": "articlestory_10.5334_jors.122.html",
+"title": "eofs: A Library for EOF Analysis of Meteorological, Oceanographic, and Climate Data",
+"type": "ArticleStory",
+"doi": "10.5334/jors.122",
+"year": 2016,
+"venue": "Journal of Open Research Software",
+"venue_name": "Journal of Open Research Software",
+"publisher": "",
+"concepts": [
+"Python (programming language)",
+"Empirical orthogonal functions",
+"Computer science",
+"Metadata",
+"Modular design",
+"Software",
+"Correctness",
+"NetCDF"
+],
+"roles": [
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 193,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Climate action"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The software tool \"eofs,\" developed for empirical orthogonal function analysis of meteorological, oceanographic, and climate data, has seen a solid academic reception with 193 cit…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
 "file": "softwarestory_10.6084_m9.figshare.1092508.v6.html",
 "title": "PIVlab - Time-Resolved Digital Particle Image Velocimetry Tool for MATLAB",
 "type": "SoftwareStory",
@@ -1435,7 +1849,7 @@ window.STORIES_DATA = [
 "year": 2015,
 "venue": "Figshare",
 "venue_name": "Figshare",
-"publisher": "",
+"publisher": "Digital Science",
 "concepts": [
 "Particle image velocimetry",
 "Particle tracking velocimetry",
@@ -1689,8 +2103,10 @@ window.STORIES_DATA = [
 "Natural language processing"
 ],
 "roles": [
+"High-Visibility Uptake",
 "Scholarly Uptake",
-"Reference Point for Synthesis"
+"Reference Point for Synthesis",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "bronze",
@@ -1705,7 +2121,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary Asher Mullard's 2016 article, published in Nature Reviews Drug Discovery , has garnered significant academic recognition, reflected in its 157 citations to date.",
+"excerpt": "Short impact summary Asher Mullard's article, \"Parsing clinical success rates,\" published in 2016 in Nature Reviews Drug Discovery, has gained notable traction in the academic community, accumulating …",
 "cover_url": "",
 "authors": "Asher Mullard",
 "institutions": [],
@@ -1713,7 +2129,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Substack"
+]
 },
 {
 "file": "bookstory_10.3998_mpub.17144.html",
@@ -1765,11 +2183,11 @@ window.STORIES_DATA = [
 "file": "articlestory_10.7554_eLife.80660.html",
 "title": "A searchable image resource of Drosophila GAL4 driver expression patterns with single neuron resolution",
 "type": "ArticleStory",
-"doi": "10.7554/eLife.80660",
+"doi": "10.7554/elife.80660",
 "year": 2023,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications, Ltd",
+"publisher": "",
 "concepts": [
 "Key (lock)",
 "Drosophila (subgenus)",
@@ -1785,7 +2203,7 @@ window.STORIES_DATA = [
 "High-Visibility Uptake",
 "Scholarly Uptake",
 "Rapid Uptake",
-"Reference Point for Synthesis"
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -1800,7 +2218,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary The dataset titled \"A searchable image resource of Drosophila GAL4 driver expression patterns with single neuron resolution,\" published in eLife, has made significant strides in t…",
+"excerpt": "Short impact summary The 2023 dataset titled \"A searchable image resource of Drosophila GAL4 driver expression patterns with single neuron resolution\" has made a significant impact in the field of neu…",
 "cover_url": "",
 "authors": "",
 "institutions": [],
@@ -1869,6 +2287,69 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "articlestory_10.1056_nejmoa2009040.html",
+"title": "“Super-Spreaders” and Person-to-Person Transmission of Andes Virus in Argentina",
+"type": "ArticleStory",
+"doi": "10.1056/nejmoa2009040",
+"year": 2020,
+"venue": "New England Journal of Medicine",
+"venue_name": "New England Journal of Medicine",
+"publisher": "Massachusetts Medical Society",
+"concepts": [
+"Transmission (telecommunications)",
+"Virology",
+"Virus",
+"Geography",
+"Computer science",
+"Artificial intelligence",
+"Biology",
+"Telecommunications"
+],
+"roles": [
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance",
+"Active Public Discourse",
+"Reference Point for Synthesis"
+],
+"is_oa": true,
+"oa_status": "bronze",
+"citation_count": 142,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article titled “Super-Spreaders” and Person-to-Person Transmission of Andes Virus in Argentina published in the New England Journal of Medicine has garnered significant academ…",
+"cover_url": "",
+"authors": "Valeria P. Martínez, Nicholas Di Paola, Daniel Oscar Alonso et al.",
+"institutions": [
+"Laboratoire National de Référence",
+"United States Army Medical Research Institute of Infectious Diseases",
+"Administración Nacional de Laboratorios e Institutos de Salud",
+"National Institutes of Health",
+"CHI Health Immanuel",
+"National University of Río Negro",
+"Ministerio de Salud",
+"Secretaria de Salud"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Wikipedia",
+"Bluesky"
+]
+},
+{
 "file": "articlestory_10.12688_f1000research.6555.1.html",
 "title": "The Resource Identification Initiative: A cultural shift in publishing",
 "type": "ArticleStory",
@@ -1923,6 +2404,58 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
+"file": "bookstory_10.1007_978-981-19-2080-6.html",
+"title": "Handbook of Open, Distance and Digital Education",
+"type": "BookStory",
+"doi": "10.1007/978-981-19-2080-6",
+"year": 2023,
+"venue": "Springer Nature Singapore",
+"venue_name": "",
+"publisher": "Springer Nature Singapore",
+"concepts": [
+"Distance education",
+"Open education",
+"Computer science",
+"Field (mathematics)",
+"Open university",
+"Open source",
+"Open shop",
+"World Wide Web"
+],
+"roles": [
+"Commercial Linkage",
+"Reference Point for Synthesis",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 135,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The \"Handbook of Open, Distance and Digital Education,\" published by Springer Nature Singapore in 2023, has the potential to serve as a vital reference for synthesis in the evolvi…",
+"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-981-19-2080-6",
+"authors": "Olaf Zawacki-Richter, Insung Jung",
+"institutions": [
+"Carl von Ossietzky Universität Oldenburg",
+"Seoul National University of Education"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
 "file": "articlestory_10.1038_s41557-023-01379-8.html",
 "title": "Proteolysis-targeting chimeras with reduced off-targets",
 "type": "ArticleStory",
@@ -1969,6 +2502,64 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Reddit"
 ]
+},
+{
+"file": "articlestory_10.1016_j.neuron.2022.09.009.html",
+"title": "A brain atlas of synapse protein lifetime across the mouse lifespan",
+"type": "ArticleStory",
+"doi": "10.1016/j.neuron.2022.09.009",
+"year": 2022,
+"venue": "Neuron",
+"venue_name": "Neuron",
+"publisher": "Cell Press",
+"concepts": [
+"Neuroscience",
+"Synapse",
+"Excitatory postsynaptic potential",
+"Biology",
+"Postsynaptic potential",
+"Excitatory synapse",
+"Silent synapse",
+"Cellular neuroscience"
+],
+"roles": [
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Computational Reproducibility Enabler",
+"Rapid Uptake",
+"Reference Point for Synthesis"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 123,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article entitled \"A brain atlas of synapse protein lifetime across the mouse lifespan,\" published in Neuron, has garnered significant attention within the academic community, …",
+"cover_url": "",
+"authors": "Edita Bulovaite, Zhen Qiu, Maximilian Kratschke et al.",
+"institutions": [
+"University of Edinburgh",
+"Edinburgh Napier University",
+"University of California, Los Angeles",
+"Instituto Cajal",
+"University of Geneva",
+"Centre for Inflammation Research",
+"MRC Centre for Regenerative Medicine",
+"Science for Life Laboratory"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
 },
 {
 "file": "articlestory_10.1073_pnas.111146798.html",
@@ -2124,6 +2715,55 @@ window.STORIES_DATA = [
 "Reddit",
 "Blogs"
 ]
+},
+{
+"file": "bookstory_10.5334_bbc.html",
+"title": "Open: The Philosophy and Practices that are Revolutionizing Education and Science",
+"type": "BookStory",
+"doi": "10.5334/bbc",
+"year": 2017,
+"venue": "Ubiquity Press",
+"venue_name": "",
+"publisher": "Ubiquity Press",
+"concepts": [
+"Supporter",
+"Foundation (evidence)",
+"Key (lock)",
+"Library science",
+"Engineering ethics",
+"Engineering",
+"Political science",
+"History"
+],
+"roles": [
+"Commercial Linkage",
+"Reference Point for Synthesis",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 100,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The book \"Open: The Philosophy and Practices that are Revolutionizing Education and Science,\" published by Ubiquity Press in 2017, serves as a significant reference point for the …",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781911529002&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Rajiv S. Jhangiani, Robert Biswas-Diener",
+"institutions": [],
+"download_count": 14019,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
 },
 {
 "file": "articlestory_10.7554_elife.79714.html",
@@ -2616,6 +3256,55 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Reddit"
 ]
+},
+{
+"file": "articlestory_10.1075_ijcl.23087.yu.html",
+"title": "Assessing the potential of LLM-assisted annotation for corpus-based pragmatics and discourse analysis",
+"type": "ArticleStory",
+"doi": "10.1075/ijcl.23087.yu",
+"year": 2024,
+"venue": "International Journal of Corpus Linguistics",
+"venue_name": "International Journal of Corpus Linguistics",
+"publisher": "",
+"concepts": [
+"Pragmatics",
+"Linguistics",
+"Annotation",
+"Corpus linguistics",
+"Computer science",
+"Natural language processing",
+"Artificial intelligence",
+"Philosophy"
+],
+"roles": [
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 71,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The work titled \"Assessing the potential of LLM-assisted annotation for corpus-based pragmatics and discourse analysis,\" published in 2024 in the International Journal of Corpus L…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
 },
 {
 "file": "articlestory_10.1038_s41586-023-06933-5.html",
@@ -3266,6 +3955,63 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": []
+},
+{
+"file": "articlestory_10.1073_pnas.1607187113.html",
+"title": "Early somatic mosaicism is a rare cause of long-QT syndrome",
+"type": "ArticleStory",
+"doi": "10.1073/pnas.1607187113",
+"year": 2016,
+"venue": "Proceedings of the National Academy of Sciences",
+"venue_name": "Proceedings of the National Academy of Sciences",
+"publisher": "National Academy of Sciences",
+"concepts": [
+"Long QT syndrome",
+"Medicine",
+"Genetic testing",
+"J wave",
+"Genetic diagnosis",
+"Population",
+"QT interval",
+"Internal medicine"
+],
+"roles": [
+"Reference Point for Synthesis",
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Active Public Discourse"
+],
+"is_oa": true,
+"oa_status": "bronze",
+"citation_count": 50,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research article \"Early somatic mosaicism is a rare cause of long-QT syndrome,\" published in the Proceedings of the National Academy of Sciences in 2016, has gained notable tr…",
+"cover_url": "",
+"authors": "James R. Priest, Charles Gawad, Kristopher M. Kahlig et al.",
+"institutions": [
+"Stanford University",
+"Gilead Sciences (United States)",
+"Johns Hopkins University",
+"Personalis (United States)",
+"Lucile Packard Children's Hospital",
+"Howard Hughes Medical Institute"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Wikipedia"
+]
 },
 {
 "file": "articlestory_10.1101_2022.02.22.481540.html",
@@ -4081,6 +4827,55 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
+"file": "articlestory_10.1371_journal.pone.0253205.html",
+"title": "Automatic classification of medical image modality and anatomical location using convolutional neural network",
+"type": "ArticleStory",
+"doi": "10.1371/journal.pone.0253205",
+"year": 2021,
+"venue": "PLoS ONE",
+"venue_name": "PLoS ONE",
+"publisher": "Public Library of Science",
+"concepts": [
+"DICOM",
+"Convolutional neural network",
+"Modality (human–computer interaction)",
+"Computer science",
+"Artificial intelligence",
+"JPEG",
+"Medical imaging",
+"Magnetic resonance imaging"
+],
+"roles": [
+"High-Visibility Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 33,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article titled \"Automatic classification of medical image modality and anatomical location using convolutional neural network\" has made a notable impact within the academic co…",
+"cover_url": "",
+"authors": "Chen-Hua Chiang, Chi-Lun Weng, Hung‐Wen Chiu",
+"institutions": [
+"Taipei Medical University-Shuang Ho Hospital",
+"Tainan Municipal Hospital",
+"Taipei Medical University"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
 "file": "bookstory_10.3726_b20254.html",
 "title": "Trade Unions in the European Union",
 "type": "BookStory",
@@ -4180,6 +4975,106 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": []
+},
+{
+"file": "articlestory_10.1001_jama.2025.3810.html",
+"title": "Varenicline for Youth Nicotine Vaping Cessation",
+"type": "ArticleStory",
+"doi": "10.1001/jama.2025.3810",
+"year": 2025,
+"venue": "JAMA",
+"venue_name": "JAMA",
+"publisher": "",
+"concepts": [
+"Varenicline",
+"Medicine",
+"Smoking cessation",
+"Abstinence",
+"Placebo",
+"Randomized controlled trial",
+"Population",
+"Quitline"
+],
+"roles": [
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 30,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study on varenicline for youth nicotine vaping cessation, published in JAMA, showcases significant academic influence with 30 citations across various reputable journals, and …",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
+"file": "articlestory_10.1101_2020.02.05.933721.html",
+"title": "Protective anti-prion antibodies in human immunoglobulin repertoires",
+"type": "ArticleStory",
+"doi": "10.1101/2020.02.05.933721",
+"year": 2020,
+"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+"publisher": "",
+"concepts": [
+"Antibody",
+"Epitope",
+"Virology",
+"Phage display",
+"Immunology",
+"Biology",
+"Immunotherapy",
+"Autoimmunity"
+],
+"roles": [
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance",
+"Active Public Discourse",
+"Reference Point for Synthesis"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 30,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study titled \"Protective anti-prion antibodies in human immunoglobulin repertoires\" has made a notable impact in the field of immunology, garnering 30 citations since its rele…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Hypothesis"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.01.568979.html",
@@ -4690,7 +5585,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Farm Boys: Lives of Gay Men from the Rural Midwest,\" published by The University of Wisconsin Press in 1998, has established a notable scholarly uptake with 26 citations, reflect…",
+"excerpt": "Short impact summary \"Farm Boys: Lives of Gay Men from the Rural Midwest\" presents a nuanced exploration of the lives of gay men in a specific cultural context.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/9648ddf0-a35a-48a1-896f-fead2f43b02e/retrieve",
 "authors": "Will Fellows",
 "institutions": [],
@@ -4889,6 +5784,57 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
+"file": "articlestory_10.1371_journal.pone.0281234.html",
+"title": "Maternal serum vitamin D level in early pregnancy and risk for preeclampsia: A case-control study in Southern Sweden",
+"type": "ArticleStory",
+"doi": "10.1371/journal.pone.0281234",
+"year": 2023,
+"venue": "PLoS ONE",
+"venue_name": "PLoS ONE",
+"publisher": "Public Library of Science",
+"concepts": [
+"Preeclampsia",
+"Vitamin D and neurology",
+"Medicine",
+"Pregnancy",
+"vitamin D deficiency",
+"Small for gestational age",
+"Gestational age",
+"Obstetrics"
+],
+"roles": [
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance",
+"Reference Point for Synthesis"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 22,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study \"Maternal serum vitamin D level in early pregnancy and risk for preeclampsia,\" published in PLoS ONE, explores the correlation between maternal vitamin D levels and the …",
+"cover_url": "",
+"authors": "Gunilla Malm, Christian Lindh, Stefan R. Hansson et al.",
+"institutions": [
+"Lund University"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
 "file": "articlestory_10.7554_eLife.96084.html",
 "title": "Transforming descending input into motor output: An analysis of the Drosophila Male Adult Nerve Cord connectome",
 "type": "ArticleStory",
@@ -4932,6 +5878,47 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
+"mention_platforms": []
+},
+{
+"file": "bookstory_10.1007_978-3-031-35664-3.html",
+"title": "Smart Cities",
+"type": "BookStory",
+"doi": "10.1007/978-3-031-35664-3",
+"year": 2024,
+"venue": "Springer International Publishing",
+"venue_name": "",
+"publisher": "Springer International Publishing",
+"concepts": [
+"Computer science"
+],
+"roles": [
+"Commercial Linkage",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 21,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The upcoming book \"Smart Cities,\" set for publication in 2024 by Springer International Publishing, aims to explore the multifunctional aspects of urban environments that leverage…",
+"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-031-35664-3",
+"authors": "Fateh Belaïd, Anvita Arora",
+"institutions": [
+"King Abdullah Petroleum Studies and Research Center"
+],
+"download_count": 4816,
+"series_name": "Studies in energy, resource and environmental economics",
+"series_id": "https://openalex.org/S4393919257",
+"belongs_to_series": true,
 "mention_platforms": []
 },
 {
@@ -5259,7 +6246,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite being published by the University of Michigan Press in 2020, 'Music on the Move' has yet to gain traction within academic and public discourse as evidenced by its zero cit…",
+"excerpt": "Short impact summary Despite the absence of formal citations or online mentions, \"Music on the Move,\" published by the University of Michigan Press in 2020, remains positioned within a scholarly lands…",
 "cover_url": "https://library.oapen.org/rest/bitstreams/48e1f3ca-07b5-40b7-995f-3289290aca4b/retrieve",
 "authors": "Danielle Fosler-Lussier",
 "institutions": [],
@@ -5901,6 +6888,55 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
+"file": "articlestory_10.1002_mrm.29349.html",
+"title": "SENSE EPI reconstruction with 2D phase error correction and channel‐wise noise removal",
+"type": "ArticleStory",
+"doi": "10.1002/mrm.29349",
+"year": 2022,
+"venue": "Magnetic Resonance in Medicine",
+"venue_name": "Magnetic Resonance in Medicine",
+"publisher": "Wiley",
+"concepts": [
+"Noise reduction",
+"Imaging phantom",
+"Noise (video)",
+"Computer science",
+"Pipeline (software)",
+"Algorithm",
+"Ground truth",
+"Sensitivity (control systems)"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 10,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article titled \"SENSE EPI reconstruction with 2D phase error correction and channel‐wise noise removal,\" published in 2022 in the journal Magnetic Resonance in Medicine, has g…",
+"cover_url": "",
+"authors": "Elizabeth Powell, Torben Schneider, Marco Battiston et al.",
+"institutions": [
+"Queen Mary University of London",
+"Philips (Finland)",
+"Great Ormond Street Hospital"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
 "file": "articlestory_10.1038_nphys1170.html",
 "title": "Measured measurement",
 "type": "ArticleStory",
@@ -5920,7 +6956,7 @@ window.STORIES_DATA = [
 "Quantum state"
 ],
 "roles": [
-"Scholarly Uptake"
+"Active Public Discourse"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -5935,7 +6971,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The 2009 article \"Measured Measurement\" by Markus Aspelmeyer has garnered an academic footprint with 10 citations, predominantly from notable physics venues such as Optics Communi…",
+"excerpt": "Short impact summary Markus Aspelmeyer's 2009 article, published in Nature Physics, has garnered notable academic attention, reflected in its ten citations across various reputable journals.",
 "cover_url": "",
 "authors": "Markus Aspelmeyer",
 "institutions": [
@@ -7454,6 +8490,55 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
+"file": "articlestory_10.1111_oik.10722.html",
+"title": "Coordinated distributed experiments in ecology do not consistently reduce heterogeneity in effect size",
+"type": "ArticleStory",
+"doi": "10.1111/oik.10722",
+"year": 2024,
+"venue": "Oikos",
+"venue_name": "Oikos",
+"publisher": "Wiley",
+"concepts": [
+"Study heterogeneity",
+"Spatial heterogeneity",
+"Sample size determination",
+"Meta-analysis",
+"Pairwise comparison",
+"Statistics",
+"Ecology",
+"Variance (accounting)"
+],
+"roles": [
+"Sustainability & Policy Relevance"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 5,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Life in Land"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study titled \"Coordinated distributed experiments in ecology do not consistently reduce heterogeneity in effect size\" presents important findings on the variability of ecologi…",
+"cover_url": "",
+"authors": "Julia Bebout, Jeremy W. Fox",
+"institutions": [
+"University of Calgary"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
 "file": "articlestory_10.1136_bmj.a186.html",
 "title": "How to Read a Paper: The Basics of Evidence-Based Medicine",
 "type": "ArticleStory",
@@ -8455,9 +9540,9 @@ window.STORIES_DATA = [
 "type": "DataStory",
 "doi": "10.5281/zenodo.3727291",
 "year": 2020,
-"venue": "Zenodo (CERN European Organization for Nuclear Research)",
-"venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
-"publisher": "European Organization for Nuclear Research",
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
 "concepts": [
 "Coronavirus disease 2019 (COVID-19)",
 "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
@@ -8484,7 +9569,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The COVID-19 Open Research Dataset (CORD-19), hosted on Zenodo, serves as a vital resource for the scientific community, accruing 2,909 views and 2,771 downloads, underscoring its…",
+"excerpt": "Short impact summary The COVID-19 Open Research Dataset (CORD-19) has garnered significant academic interest, evidenced by 4 citations in various reputable venues, including bioRxiv and the Journal of…",
 "cover_url": "",
 "authors": "Sebastian Kohlmeier, Kyle Lo, Lucy Lu Wang et al.",
 "institutions": [
@@ -10121,9 +11206,9 @@ window.STORIES_DATA = [
 "type": "DataStory",
 "doi": "10.5281/zenodo.15423474",
 "year": 2025,
-"venue": "Zenodo (CERN European Organization for Nuclear Research)",
-"venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
-"publisher": "European Organization for Nuclear Research",
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
 "concepts": [
 "Publishing",
 "Computer science",
@@ -10300,6 +11385,51 @@ window.STORIES_DATA = [
 "Harvard Bioscience (United States)",
 "Massachusetts Institute of Technology"
 ],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
+"file": "articlestory_10.1073_pnas.2519395123.html",
+"title": "D-amino acid aminotransferase1 regulates grain chalkiness in rice by modulating endoplasmic reticulum stress response",
+"type": "ArticleStory",
+"doi": "10.1073/pnas.2519395123",
+"year": 2026,
+"venue": "Proceedings of the National Academy of Sciences",
+"venue_name": "Proceedings of the National Academy of Sciences",
+"publisher": "",
+"concepts": [
+"Endoplasmic reticulum",
+"Complementation",
+"Cell biology",
+"Biochemistry",
+"Metabolism",
+"Enzyme",
+"Biology",
+"Oryza sativa"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research article titled \"D-amino acid aminotransferase1 regulates grain chalkiness in rice by modulating endoplasmic reticulum stress response,\" published in the Proceedings o…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
 "download_count": 0,
 "series_name": null,
 "series_id": null,
@@ -11837,6 +12967,53 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
+"file": "articlestory_10.1038_d41586-026-01558-w.html",
+"title": "Exclusive: NIH ousts infectious-disease leaders as COVID scientists face US charges",
+"type": "ArticleStory",
+"doi": "10.1038/d41586-026-01558-w",
+"year": 2026,
+"venue": "Nature",
+"venue_name": "Nature",
+"publisher": "Nature Portfolio",
+"concepts": [
+"Coronavirus disease 2019 (COVID-19)",
+"Face (sociological concept)",
+"Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
+"Political science",
+"2019-20 coronavirus outbreak",
+"Pandemic",
+"Public relations",
+"Coronavirus Infections"
+],
+"roles": [
+"Sustainability & Policy Relevance"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Gender equality"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article by Max Kozlov, published in Nature, reports on significant developments within the National Institutes of Health (NIH) concerning infectious disease leadership and ong…",
+"cover_url": "",
+"authors": "Max Kozlov",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
 "file": "articlestory_10.1101_2025.09.08.674753.html",
 "title": "Generative genomics accurately predicts future experimental results",
 "type": "ArticleStory",
@@ -11917,6 +13094,53 @@ window.STORIES_DATA = [
 "excerpt": "Short impact summary The research on imaging actin in transgenic mouse brain tissue slices contributes to the understanding of cellular structures and their dynamics, as evidenced by its foundational …",
 "cover_url": "",
 "authors": "Andrew Matus, Virginie Biou, Heike Brinkhaus et al.",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
+"file": "articlestory_10.11575_PRISM_42399.html",
+"title": "OER by Discipline Guide: Reducing Barriers and Building Sustainability for OER Adoption",
+"type": "ArticleStory",
+"doi": "10.11575/PRISM/42399",
+"year": 2023,
+"venue": "Open MIND",
+"venue_name": "Open MIND",
+"publisher": "",
+"concepts": [
+"Open educational resources",
+"Open education",
+"Institution",
+"Sustainability",
+"Subject (documents)",
+"Service (business)",
+"Higher education",
+"Inclusion (mineral)"
+],
+"roles": [
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The article \"OER by Discipline Guide: Reducing Barriers and Building Sustainability for OER Adoption\" highlights the efforts towards enhancing the adoption and sustainability of O…",
+"cover_url": "",
+"authors": "Adams, Sarah, Sillito, Savannah",
 "institutions": [],
 "download_count": 0,
 "series_name": null,
@@ -12686,6 +13910,42 @@ window.STORIES_DATA = [
 "institutions": [
 "Howard Hughes Medical Institute"
 ],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
+"file": "bookstory_10.1007_978-3-030-14635-1.html",
+"title": "Untitled Book",
+"type": "BookStory",
+"doi": "10.1007/978-3-030-14635-1",
+"year": null,
+"venue": "",
+"venue_name": "",
+"publisher": "",
+"concepts": [],
+"roles": [
+"Commercial Linkage"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The Untitled Book currently holds a presence within commercial platforms like Amazon and Goodreads, indicative of its potential engagement with broader audiences.",
+"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-030-14635-1",
+"authors": "",
+"institutions": [],
 "download_count": 0,
 "series_name": null,
 "series_id": null,
@@ -14687,6 +15947,44 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
+"file": "bookstory_10.11647_OBP.0233.html",
+"title": "Mendl Mann’s 'The Fall of Berlin'",
+"type": "BookStory",
+"doi": "10.11647/OBP.0233",
+"year": 2020,
+"venue": "Open Book Publishers",
+"venue_name": "",
+"publisher": "Open Book Publishers",
+"concepts": [
+"History"
+],
+"roles": [
+"Commercial Linkage"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Mendl Mann’s 'The Fall of Berlin' has yet to generate significant academic citations or online discourse, reflecting a nascent impact within both scholarly and public domains.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/7625d4f3-bf18-4904-a407-eb48214e1ab5/retrieve",
+"authors": "",
+"institutions": [],
+"download_count": 4800,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
 "file": "bookstory_10.11647_obp.0173.html",
 "title": "Untitled Book",
 "type": "BookStory",
@@ -14713,6 +16011,42 @@ window.STORIES_DATA = [
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite the absence of formal citations and community discourse, the potential for the \"Untitled Book\" to garner academic and public interest remains promising, particularly throu…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
+"file": "bookstory_10.1525_9780520390171.html",
+"title": "Untitled Book",
+"type": "BookStory",
+"doi": "10.1525/9780520390171",
+"year": null,
+"venue": "",
+"venue_name": "",
+"publisher": "",
+"concepts": [],
+"roles": [
+"Commercial Linkage"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The current work, while lacking formal citations or public mentions, showcases a promising commercial linkage as indicated by its presence on platforms such as Amazon and Goodread…",
 "cover_url": "",
 "authors": "",
 "institutions": [],
@@ -15404,6 +16738,42 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
+"file": "bookstory_10.7551_mitpress_9780262048016.001.0001.html",
+"title": "Untitled Book",
+"type": "BookStory",
+"doi": "10.7551/mitpress_9780262048016.001.0001",
+"year": null,
+"venue": "",
+"venue_name": "",
+"publisher": "",
+"concepts": [],
+"roles": [
+"Commercial Linkage"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The current metadata indicates that the book has not yet established a formal publication context or community engagement through academic platforms.",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
 "file": "bookstory_10.7765_9781526137760.html",
 "title": "The international politics of the Middle East",
 "type": "ArticleStory",
@@ -15572,7 +16942,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "Zenodo",
 "venue_name": "Zenodo",
-"publisher": "European Organization For Nuclear Research and OpenAIRE",
+"publisher": "CERN",
 "concepts": [
 "Segmentation",
 "Artificial intelligence",
@@ -15615,7 +16985,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "Zenodo",
 "venue_name": "Zenodo",
-"publisher": "European Organization For Nuclear Research and OpenAIRE",
+"publisher": "CERN",
 "concepts": [
 "Nucleofection",
 "Gestational period",
@@ -15656,9 +17026,9 @@ window.STORIES_DATA = [
 "type": "DataStory",
 "doi": "10.5281/zenodo.17442025",
 "year": 2025,
-"venue": "Zenodo (CERN European Organization for Nuclear Research)",
-"venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
-"publisher": "European Organization for Nuclear Research",
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
 "concepts": [
 "Citation",
 "Computer science",
@@ -15701,9 +17071,9 @@ window.STORIES_DATA = [
 "type": "DataStory",
 "doi": "10.5281/zenodo.7821611",
 "year": 2023,
-"venue": "Zenodo (CERN European Organization for Nuclear Research)",
-"venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
-"publisher": "European Organization for Nuclear Research",
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
 "concepts": [
 "Computer science"
 ],
@@ -15747,7 +17117,7 @@ window.STORIES_DATA = [
 "year": 2022,
 "venue": "Zenodo",
 "venue_name": "Zenodo",
-"publisher": "European Organization For Nuclear Research and OpenAIRE",
+"publisher": "CERN",
 "concepts": [
 "Table (database)",
 "Ancient history",
@@ -15788,9 +17158,9 @@ window.STORIES_DATA = [
 "type": "SoftwareStory",
 "doi": "10.5281/zenodo.3559815",
 "year": 2019,
-"venue": "Zenodo (CERN European Organization for Nuclear Research)",
-"venue_name": "Zenodo (CERN European Organization for Nuclear Research)",
-"publisher": "European Organization for Nuclear Research",
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
 "concepts": [
 "Medicine",
 "Engineering",
@@ -15815,7 +17185,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The software tool \"stineb/rpmodel,\" developed by Benjamin Stocker at ETH Zurich, represents a valuable contribution to the field, demonstrating interest with 54 views and 3 downlo…",
+"excerpt": "Short impact summary The software tool stineb/rpmodel by Benjamin Stocker, associated with ETH Zurich, has seen a noteworthy engagement, with over 1,101 views and 222 downloads on Zenodo, indicating a…",
 "cover_url": "",
 "authors": "Stocker, Benjamin",
 "institutions": [
@@ -15828,4 +17198,4 @@ window.STORIES_DATA = [
 "mention_platforms": []
 }
 ];
-window.STORIES_STATS = {"total": 335, "total_articles": 157, "total_books": 152, "total_data": 19, "total_software": 7, "total_oa": 299, "pct_oa": 89, "total_citations": 108473, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 363, "total_articles": 177, "total_books": 160, "total_data": 19, "total_software": 7, "total_oa": 322, "pct_oa": 89, "total_citations": 151737, "num_disciplines": 30};

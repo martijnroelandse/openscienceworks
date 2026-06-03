@@ -1,0 +1,2569 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ArticleStory - A brain atlas of synapse protein lifetime across the mouse lifespan</title>
+    <style>
+
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
+
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+.sig-green {background:#dcfce7;color:#166534;}
+.cover-fallback{
+  width:110px;height:155px;border-radius:.55rem;
+  border:1px solid #dbe7f3;
+  box-shadow:0 4px 10px rgba(15,23,42,.08);
+  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:.55rem;gap:.35rem;
+}
+.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
+.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
+.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+    
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">A brain atlas of synapse protein lifetime across the mouse lifespan</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    Methodologically Supported
+                                </span>
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+                                <a href="https://doi.org/10.1101/2021.12.16.472938" target="_blank" style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1px solid #fde68a; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    Early Sharing / Preprint ↗
+                                </a>
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> 
+                                
+                                    Edita Bulovaite, Zhen Qiu, Maximilian Kratschke, Adrianna Zgraj, David Fricker, Eleanor J. Tuck, Ragini Gokhale, Babis Koniaris, Shekib A. Jami, Paula Merino‐Serrais, Elodie Husi, Lorena Mendive‐Tapia, Marc Vendrell, Thomas J. O’Dell, Javier DeFelipe, Noboru H. Komiyama, Anthony Holtmaat, Erik Fransén, Seth G. N. Grant
+                                
+                            </div>
+                        
+                            
+                        
+                            
+                            
+                            <div><strong>Journal:</strong> 
+                                Neuron
+                            </div>
+                            
+                        
+                            <div><strong>Publisher:</strong> 
+                                
+                                    Cell Press
+                                
+                            </div>
+                        
+                            <div><strong>Publication year:</strong> 
+                                
+                                    2022
+                                
+                            </div>
+                        
+                            <div><strong>DOI:</strong> 
+                                <a href="https://doi.org/10.1016/j.neuron.2022.09.009" target="_blank">
+                                    10.1016/j.neuron.2022.09.009
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        <!-- Sticky nav -->
+        <nav aria-label="Page sections" class="sticky-nav no-print">
+            <div class="sticky-nav-inner">
+                <a href="#sec-hero">Overview</a>
+                <a href="#sec-story">Story</a>
+                <a href="#sec-impact">Impact</a>
+                <a href="#sec-roles">Roles</a>
+                <a href="#sec-access">Access</a>
+                <a href="#sec-citing">Who's Citing</a>
+                <a href="#sec-mentions">Mentions</a>
+            </div>
+        </nav>
+
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The article entitled "A brain atlas of synapse protein lifetime across the mouse lifespan," published in Neuron, has garnered significant attention within the academic community, reflected by its 123 citations. The research, supported by notable institutions and funding bodies, underscores the relevance of synaptic protein dynamics and their implications across the lifespan of mice.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">This pivotal research, led by Edita Bulovaite and colleagues, presents a detailed brain atlas that maps synapse protein lifetimes throughout the mouse lifespan. The substantial backing from institutions such as the Science for Life Laboratory and the University of Edinburgh, combined with funding from prestigious agencies like the NIH and the Swiss National Science Foundation, provides strong institutional validation for the significance of this work.</p>
+<p class="story-text">The impact of this study is evident beyond just its citation count; it has effectively influenced the forefront of neuroscience research, with 30 preprints citing it. This reflects its integration into ongoing discourse and highlights the authors' commitment to open science through early sharing, allowing for immediate engagement with the scientific community, despite the lack of formal downloads or events prior to publication.</p>
+<p class="story-text">The inclusion of three Research Resource Identifiers indicates a robust commitment to technical reproducibility, fostering confidence in the methodologies employed. This attention to reproducibility is crucial in neuroscience research, where synaptic mechanisms play a pivotal role in understanding neural function and development.</p>
+<p class="story-text">Furthermore, the article has demonstrated proven downstream reuse, with 124 instances of its materials being leveraged in subsequent research efforts. This not only attests to the foundational nature of the study but also underscores its importance as a resource for ongoing and future investigations into synaptic dynamics across various contexts and conditions.</p></div>
+        </section>
+        
+
+        
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+            <div class="im-wrapper">
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">123</div>
+                                <div class="im-label">Total Citations</div>
+                                
+                                <div class="im-top-badge">🏆 Top 1% Cited</div>
+                                
+                            </div>
+                            
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2022, 2023, 2024, 2025, 2026]"
+                                        data-values="[6, 19, 33, 39, 13]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2022–2026</div>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="im-provenance">
+                            Includes <strong>110</strong> from the published article and <strong>13</strong> from its <a href="https://doi.org/10.1101/2021.12.16.472938" target="_blank">early preprint version</a>.
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+                    
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+                    
+                    
+                    <!-- scite (only when references exist) -->
+                    
+                    <div class="im-card">
+                        <div class="im-num">168</div>
+                        <div class="im-label">scite References</div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="im-scite-compact">
+                            <div class="im-scite-title">Citation context <span class="im-scite-via">via scite</span></div>
+                            <div class="im-scite-bar">
+                                <div class="im-scite-seg im-scite-sup" data-w="4"></div>
+                                <div class="im-scite-seg im-scite-men" data-w="96"></div>
+                                <div class="im-scite-seg im-scite-con" data-w="0"></div>
+                            </div>
+                            <div class="im-scite-leg">
+                                <span><span class="im-scite-dot" style="background:#22c55e;"></span>7</span>
+                                <span><span class="im-scite-dot" style="background:#94a3b8;"></span>161</span>
+                                <span><span class="im-scite-dot" style="background:#f87171;"></span>0</span>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+
+                
+                
+                
+                
+                
+                <div class="muted" style="margin-top:.7rem; font-size:.8rem;">
+                    Some signals aren’t recorded for this volume yet (online mentions) — these typically accrue after publication.
+                </div>
+                
+
+                
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-amber" href="#sec-public-discourse" style="text-decoration:none;" title="Expert newsletters, blogs, podcasts">
+                            📰 Scholarly web · 1
+                        </a>
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <span class="sig-pill sig-teal">🔬 3 RRIDs</span>
+                        
+
+                        
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 15 countries</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+            
+            
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="High-visibility uptake — heuristic signal (score 0.85)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            High-visibility uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="0.9"
+                              data-tip="Scholarly uptake — heuristic signal (score 0.77)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Scholarly uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Moderate</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="0.9"
+                              data-tip="Reproducibility standard — heuristic signal (score 0.65)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Reproducibility standard
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Moderate</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="0.75"
+                              data-tip="Rapid uptake — heuristic signal (score 0.49)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Rapid uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Emerging</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="0.75"
+                              data-tip="Reference point for synthesis — heuristic signal (score 0.29)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Reference point for synthesis
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Emerging</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                        
+                            
+                        
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1016/j.neuron.2022.09.009" target="_blank">10.1016/j.neuron.2022.09.009</a></li>
+                    <li><strong>OA status:</strong> Unknown</li>
+                    
+                    
+                    
+                    
+                </ul>
+            </section>
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.6rem;">
+                        This work has <strong>0</strong> recorded events globally.
+                    </p>
+                    
+                    <div class="im-provenance" style="margin-bottom:1rem;">
+                        Includes <strong>0</strong> from the published article and <strong>0</strong> from the <a href="https://doi.org/10.1101/2021.12.16.472938" target="_blank">preprint</a>.
+                    </div>
+                    
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0; height: 100%;">
+                            <h2><span>Resource Identifiers</span> <span class="badge">Europe PMC</span></h2>
+                            <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;"><strong>3</strong> unique RRIDs detected.</p>
+                            
+                            <div style="max-height: 400px; overflow-y: auto;">
+                                
+                                
+                                    
+                                    
+                                        
+                                    
+                                    
+                                
+                                    
+                                    
+                                        
+                                    
+                                    
+                                
+                                    
+                                    
+                                        
+                                    
+                                    
+                                
+
+                                
+                                <div style="margin-top: 0.8rem;">
+                                    <h3 style="margin: 0 0 0.4rem; font-size: 0.95rem;">CVCL <span class="muted" style="font-weight:normal;">(1)</span></h3>
+                                    <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                                        <a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:CVCL_9108" target="_blank">RRID:CVCL_9108</a>
+                                    </div>
+                                </div>
+                                
+                                <div style="margin-top: 0.8rem;">
+                                    <h3 style="margin: 0 0 0.4rem; font-size: 0.95rem;">AB <span class="muted" style="font-weight:normal;">(1)</span></h3>
+                                    <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                                        <a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:AB_397862" target="_blank">RRID:AB_397862</a>
+                                    </div>
+                                </div>
+                                
+                                <div style="margin-top: 0.8rem;">
+                                    <h3 style="margin: 0 0 0.4rem; font-size: 0.95rem;">Addgene <span class="muted" style="font-weight:normal;">(1)</span></h3>
+                                    <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                                        <a class="tag" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe; text-decoration:none; margin:0; padding:0.25rem 0.6rem;" href="https://scicrunch.org/resolver/RRID:Addgene_105558" target="_blank">RRID:Addgene_105558</a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    
+
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 168</li>
+                                <li><strong>Supporting:</strong> 7</li>
+                                <li><strong>Mentioning:</strong> 161</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+            
+        </div>
+
+        
+        
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>123</strong> citing works.
+                        <strong>20.7%</strong> come from the Top 10 institutions.
+                        Median citing paper cited <strong>2.0</strong> times itself.
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (64)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (30)</span><span class="tag tag-soft" style="font-size:.75rem;">review (12)</span><span class="tag tag-soft" style="font-size:.75rem;">peer-review (3)</span><span class="tag tag-soft" style="font-size:.75rem;">letter (1)</span>
+                        <span class="tag" style="font-size:.75rem;">bioRxiv</span><span class="tag" style="font-size:.75rem;">eLife</span><span class="tag" style="font-size:.75rem;">bioRxiv (Cold Spring Harbor Laboratory)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2022, 2023, 2024, 2025, 2026]"
+                    data-values="[6, 19, 33, 39, 13]">
+                </canvas>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
+
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (39)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (34)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Germany (30)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (23)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Canada (9)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Switzerland (7)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Japan (7)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Italy (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Spain (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">South Korea (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Austria (4)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Sweden (4)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Australia (4)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">France (3)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Portugal (3)</span>
+                    
+                </div>
+                
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (98)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (61)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Healthcare (39)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (18)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (17)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (9)</span>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Edinburgh</strong>
+                        <a href="https://ror.org/01nrxwf90" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(7.612301587301587)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Strathclyde</strong>
+                        <a href="https://ror.org/00n3w3b69" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.125)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>MRC Centre for Regenerative Medicine</strong>
+                        <a href="https://ror.org/01x802g65" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.083333333333333)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Wisconsin–Madison</strong>
+                        <a href="https://ror.org/01y2jtd41" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Utah</strong>
+                        <a href="https://ror.org/03r0ha626" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(2.0)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Universitätsmedizin Göttingen</strong>
+                        <a href="https://ror.org/021ft0n22" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.7095238095238094)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Centre for Inflammation Research</strong>
+                        <a href="https://ror.org/05wcr1b38" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of North Carolina at Chapel Hill</strong>
+                        <a href="https://ror.org/0130frc33" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.3333333333333333)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Göttingen</strong>
+                        <a href="https://ror.org/01y9bpm73" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.3095238095238095)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Indiana University – Purdue University Indianapolis</strong>
+                        <a href="https://ror.org/05gxnyn08" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(1.25)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Seth G. N. Grant</strong>
+                        <a href="https://orcid.org/0000-0001-8732-8735" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(22)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Edita Bulovaite</strong>
+                        <a href="https://orcid.org/0000-0003-2565-1371" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(14)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Takeshi Kaizuka</strong>
+                        <a href="https://orcid.org/0000-0002-5253-1896" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(12)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Noboru H. Komiyama</strong>
+                        <a href="https://orcid.org/0000-0001-9960-3597" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(12)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Katie Morris</strong>
+                        <a href="https://orcid.org/0000-0002-8944-2264" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(11)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Mathew H. Horrocks</strong>
+                        <a href="https://orcid.org/0000-0001-5495-5492" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(11)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Zhen Qiu</strong>
+                        <a href="https://orcid.org/0000-0002-0226-7855" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(10)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Lorena Mendive‐Tapia</strong>
+                        <a href="https://orcid.org/0000-0002-3406-5203" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(8)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Sebastian Schnorrenberg</strong>
+                        <a href="https://orcid.org/0000-0002-8076-2237" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kai Johnsson</strong>
+                        <a href="https://orcid.org/0000-0002-8002-1981" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(5)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            <section class="card span-full" style="margin-bottom:0;" id="sec-public-discourse">
+                <h2><span>Online mentions &amp; public discourse</span> <span class="badge">Crossref &amp; Open Web</span></h2>
+                <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.5rem; font-size:0.85rem;">
+                    Aggregated events, community platforms, and curated expert sources (newsletters, blogs, podcasts).
+                </p>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+    
+    <div style="margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb;">
+        <h3 style="font-size: 1.1rem; color: #1f2937; margin: 0 0 0.35rem 0; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+            <span>Scholarly web mentions</span>
+            <span class="badge" style="background:#fef3c7; color:#92400e; border:1px solid #fde68a; font-size:0.65rem;">Pilot</span>
+        </h3>
+    
+    <p class="muted" style="margin-top:0; margin-bottom:1rem;">
+        Expert newsletters, subject blogs, and science podcasts from <code>pilot_sources.tsv</code>
+         — <strong>1</strong> hit
+         · 🎙 1
+    </p>
+
+    
+
+    
+    <div id="wm-all" class="wm-tab-pane" style="display:block;">
+        <div class="wm-row" data-source-type="podcast" style="position:relative; margin-bottom:1.35rem; padding-left:0.25rem; border-bottom:1px solid #f3f4f6; padding-bottom:1rem;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; margin-bottom:0.35rem;">
+        <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+            
+            <span style="font-size:1rem;" title="Podcast">🎙</span>
+            <span class="badge" style="background:#f5f3ff; color:#6d28d9; font-size:0.65rem;">Podcast</span>
+            
+            <strong style="font-size:0.9rem;">Brain Science Podcast</strong>
+            
+            <span class="muted" style="font-size:0.75rem;">· 2023-08-25</span>
+            
+        </div>
+        
+        <a href="https://brainsciencepodcast.com/bsp/2023/bs211-seth-grant" target="_blank" style="font-size:0.8rem; color:#2563eb; font-weight:600; white-space:nowrap; text-decoration:none;">Read post →</a>
+        
+    </div>
+    
+    <div style="font-weight:600; font-size:0.95rem; color:#1e293b; margin-bottom:0.35rem;">Molecular Biologist Seth Grant (BS 211)</div>
+    
+    
+    <p style="font-size:0.85rem; color:#475569; line-height:1.5; margin:0; font-style:italic;">…2). A brain atlas of synapse protein lifetime across the mouse lifespan. Neuron, 110(24), 4057–4073.e8. https://doi.org/10.1016/j.neuron.2022.09.009 Cizeron, M., Qiu, Z., Koniaris, B., Gokhale, R., Komiyama, N. H., Fransén, E., & Grant, S. G. N. (2020). A brainwide at…</p>
+    
+    
+</div>
+    </div>
+    
+    
+    <div id="wm-podcast" class="wm-tab-pane" style="display:none;"><div class="wm-row" data-source-type="podcast" style="position:relative; margin-bottom:1.35rem; padding-left:0.25rem; border-bottom:1px solid #f3f4f6; padding-bottom:1rem;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; margin-bottom:0.35rem;">
+        <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+            
+            <span style="font-size:1rem;" title="Podcast">🎙</span>
+            <span class="badge" style="background:#f5f3ff; color:#6d28d9; font-size:0.65rem;">Podcast</span>
+            
+            <strong style="font-size:0.9rem;">Brain Science Podcast</strong>
+            
+            <span class="muted" style="font-size:0.75rem;">· 2023-08-25</span>
+            
+        </div>
+        
+        <a href="https://brainsciencepodcast.com/bsp/2023/bs211-seth-grant" target="_blank" style="font-size:0.8rem; color:#2563eb; font-weight:600; white-space:nowrap; text-decoration:none;">Read post →</a>
+        
+    </div>
+    
+    <div style="font-weight:600; font-size:0.95rem; color:#1e293b; margin-bottom:0.35rem;">Molecular Biologist Seth Grant (BS 211)</div>
+    
+    
+    <p style="font-size:0.85rem; color:#475569; line-height:1.5; margin:0; font-style:italic;">…2). A brain atlas of synapse protein lifetime across the mouse lifespan. Neuron, 110(24), 4057–4073.e8. https://doi.org/10.1016/j.neuron.2022.09.009 Cizeron, M., Qiu, Z., Koniaris, B., Gokhale, R., Komiyama, N. H., Fransén, E., & Grant, S. G. N. (2020). A brainwide at…</p>
+    
+    
+</div></div>
+    
+
+    
+
+
+    </div>
+
+                
+
+                
+                
+                
+                
+                
+                
+            </section>
+            
+        </div>
+
+        
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>19 authors · 0 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Edita Bulovaite</strong> 
+                        <span class="badge">First</span>
+                        
+                        <a class="orcid-badge" href="0000-0003-2565-1371" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Zhen Qiu</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-0226-7855" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Maximilian Kratschke</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Adrianna Zgraj</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>David Fricker</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-8874-8720" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Eleanor J. Tuck</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Ragini Gokhale</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Babis Koniaris</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Shekib A. Jami</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-5478-1963" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Paula Merino‐Serrais</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-1842-9476" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Elodie Husi</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Lorena Mendive‐Tapia</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-3406-5203" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Marc Vendrell</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-5392-9740" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Thomas J. O’Dell</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-9231-8694" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Javier DeFelipe</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-5484-0660" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Noboru H. Komiyama</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-9960-3597" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Anthony Holtmaat</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0002-7577-0769" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Erik Fransén</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-7785-4790" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Seth G. N. Grant</strong> 
+                        
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0001-8732-8735" target="_blank">ORCID</a>
+                    </li>
+                    
+                </ul>
+
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>13 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neuroscience</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Synapse</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Excitatory postsynaptic potential</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Postsynaptic potential</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Excitatory synapse</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Silent synapse</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cellular neuroscience</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Inhibitory postsynaptic potential</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">NMDA receptor</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">AMPA receptor</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Receptor</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Genetics</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
+        <section class="card">
+            <h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>3 financial grants and sponsors detected.</div>
+            
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NIMH NIH HHS</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(R01 MH060919)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Swiss National Science Foundation</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(173125)</span>
+                    </span>
+                
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Wellcome Trust</strong> 
+                        <span style="opacity: 0.8; font-weight: normal;">(202932)</span>
+                    </span>
+                
+            </div>
+        </section>
+        
+
+
+
+        
+        
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.75rem;"
+                 data-total="110">
+                110 citing works (most recent first)
+            </div>
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Targeting synapse function and loss for treatment of neurodegenerative diseases</td>
+                        <td>Nature Reviews Drug Discovery</td>
+                        <td><a href="https://doi.org/10.1038/s41573-023-00823-1" target="_blank" style="word-break: break-all;">10.1038/s41573-023-00823-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Chemical Approaches to Optimize the Properties of Organic Fluorophores for Imaging and Sensing</td>
+                        <td>Angewandte Chemie International Edition</td>
+                        <td><a href="https://doi.org/10.1002/anie.202315217" target="_blank" style="word-break: break-all;">10.1002/anie.202315217</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Mitochondria as central hubs in synaptic modulation</td>
+                        <td>Cellular and Molecular Life Sciences</td>
+                        <td><a href="https://doi.org/10.1007/s00018-023-04814-8" target="_blank" style="word-break: break-all;">10.1007/s00018-023-04814-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Recording physiological history of cells with chemical labeling</td>
+                        <td>Science</td>
+                        <td><a href="https://doi.org/10.1126/science.adg0812" target="_blank" style="word-break: break-all;">10.1126/science.adg0812</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Dense 4D nanoscale reconstruction of living brain tissue</td>
+                        <td>Nature Methods</td>
+                        <td><a href="https://doi.org/10.1038/s41592-023-01936-6" target="_blank" style="word-break: break-all;">10.1038/s41592-023-01936-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Chemical Approaches to Optimize the Properties of Organic Fluorophores for Imaging and Sensing</td>
+                        <td>Angewandte Chemie</td>
+                        <td><a href="https://doi.org/10.1002/ange.202315217" target="_blank" style="word-break: break-all;">10.1002/ange.202315217</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Small Fluorogenic Amino Acids for Peptide‐Guided Background‐Free Imaging</td>
+                        <td>Angewandte Chemie International Edition</td>
+                        <td><a href="https://doi.org/10.1002/anie.202216231" target="_blank" style="word-break: break-all;">10.1002/anie.202216231</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Alternative neural systems: What is a neuron? (Ctenophores, sponges and placozoans)</td>
+                        <td>Frontiers in Cell and Developmental Biology</td>
+                        <td><a href="https://doi.org/10.3389/fcell.2022.1071961" target="_blank" style="word-break: break-all;">10.3389/fcell.2022.1071961</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Chemical tags and beyond: Live‐cell protein labeling technologies for modern optical imaging</td>
+                        <td>Smart Molecules</td>
+                        <td><a href="https://doi.org/10.1002/smo.20230002" target="_blank" style="word-break: break-all;">10.1002/smo.20230002</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>In vivo multiplex imaging of dynamic neurochemical networks with designed far-red dopamine sensors</td>
+                        <td>Science</td>
+                        <td><a href="https://doi.org/10.1126/science.adt7705" target="_blank" style="word-break: break-all;">10.1126/science.adt7705</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Imaging brain tissue architecture across millimeter to nanometer scales</td>
+                        <td>Nature Biotechnology</td>
+                        <td><a href="https://doi.org/10.1038/s41587-023-01911-8" target="_blank" style="word-break: break-all;">10.1038/s41587-023-01911-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Global analysis of protein turnover dynamics in single cells</td>
+                        <td>Cell</td>
+                        <td><a href="https://doi.org/10.1016/j.cell.2025.03.002" target="_blank" style="word-break: break-all;">10.1016/j.cell.2025.03.002</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Antisense oligonucleotide treatment in a preterm infant with early-onset SCN2A developmental and epileptic encephalopathy</td>
+                        <td>Nature Medicine</td>
+                        <td><a href="https://doi.org/10.1038/s41591-025-03656-0" target="_blank" style="word-break: break-all;">10.1038/s41591-025-03656-0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>DELTA: a method for brain-wide measurement of synaptic protein turnover reveals localized plasticity during learning</td>
+                        <td>Nature Neuroscience</td>
+                        <td><a href="https://doi.org/10.1038/s41593-025-01923-4" target="_blank" style="word-break: break-all;">10.1038/s41593-025-01923-4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Sleep maintains excitatory synapse diversity in the cortex and hippocampus</td>
+                        <td>Current Biology</td>
+                        <td><a href="https://doi.org/10.1016/j.cub.2024.07.032" target="_blank" style="word-break: break-all;">10.1016/j.cub.2024.07.032</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Exploiting Covalent Chemical Labeling with Self-Labeling Proteins</td>
+                        <td>Annual Review of Biochemistry</td>
+                        <td><a href="https://doi.org/10.1146/annurev-biochem-030222-121016" target="_blank" style="word-break: break-all;">10.1146/annurev-biochem-030222-121016</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Mitochondrial Dynamics and mRNA Translation: A Local Synaptic Tale</td>
+                        <td>Biology</td>
+                        <td><a href="https://doi.org/10.3390/biology13090746" target="_blank" style="word-break: break-all;">10.3390/biology13090746</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Dysregulated RNA-binding proteins and alternative splicing: Emerging roles in autism spectrum disorder</td>
+                        <td>Molecules and Cells</td>
+                        <td><a href="https://doi.org/10.1016/j.mocell.2025.100237" target="_blank" style="word-break: break-all;">10.1016/j.mocell.2025.100237</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Combining nanobody labeling with STED microscopy reveals input-specific and layer-specific organization of neocortical synapses</td>
+                        <td>PLoS Biology</td>
+                        <td><a href="https://doi.org/10.1371/journal.pbio.3002649" target="_blank" style="word-break: break-all;">10.1371/journal.pbio.3002649</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Molecular recording of cellular protein kinase activity with chemical labeling</td>
+                        <td>Nature Chemical Biology</td>
+                        <td><a href="https://doi.org/10.1038/s41589-025-01949-6" target="_blank" style="word-break: break-all;">10.1038/s41589-025-01949-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Developmental disruption and restoration of brain synaptome architecture in the murine Pax6 neurodevelopmental disease model</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-022-34131-w" target="_blank" style="word-break: break-all;">10.1038/s41467-022-34131-w</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Exercise and mitochondrial remodeling to prevent age-related neurodegeneration</td>
+                        <td>Journal of Applied Physiology</td>
+                        <td><a href="https://doi.org/10.1152/japplphysiol.00611.2022" target="_blank" style="word-break: break-all;">10.1152/japplphysiol.00611.2022</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>The missing hallmark of health: psychosocial adaptation</td>
+                        <td>Cell Stress</td>
+                        <td><a href="https://doi.org/10.15698/cst2024.03.294" target="_blank" style="word-break: break-all;">10.15698/cst2024.03.294</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Simple and Highly Efficient Detection of PSD95 Using a Nanobody and Its Recombinant Heavy-Chain Antibody Derivatives</td>
+                        <td>International Journal of Molecular Sciences</td>
+                        <td><a href="https://doi.org/10.3390/ijms24087294" target="_blank" style="word-break: break-all;">10.3390/ijms24087294</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Dissecting cell‐type‐specific pathways in medial entorhinal cortical‐hippocampal network for episodic memory</td>
+                        <td>Journal of Neurochemistry</td>
+                        <td><a href="https://doi.org/10.1111/jnc.15850" target="_blank" style="word-break: break-all;">10.1111/jnc.15850</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Developing forebrain synapses are uniquely vulnerable to sleep loss</td>
+                        <td>Proceedings of the National Academy of Sciences</td>
+                        <td><a href="https://doi.org/10.1073/pnas.2407533121" target="_blank" style="word-break: break-all;">10.1073/pnas.2407533121</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Proteome Dynamics in iPSC-Derived Human Dopaminergic Neurons</td>
+                        <td>Molecular & Cellular Proteomics</td>
+                        <td><a href="https://doi.org/10.1016/j.mcpro.2024.100838" target="_blank" style="word-break: break-all;">10.1016/j.mcpro.2024.100838</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Alteration of synaptic protein composition during developmental synapse maturation</td>
+                        <td>European Journal of Neuroscience</td>
+                        <td><a href="https://doi.org/10.1111/ejn.16304" target="_blank" style="word-break: break-all;">10.1111/ejn.16304</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>EPSILON: a method for pulse-chase labeling to probe synaptic AMPAR exocytosis during memory formation</td>
+                        <td>Nature Neuroscience</td>
+                        <td><a href="https://doi.org/10.1038/s41593-025-01922-5" target="_blank" style="word-break: break-all;">10.1038/s41593-025-01922-5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Sequential replacement of PSD95 subunits in postsynaptic supercomplexes is slowest in the cortex</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.99303" target="_blank" style="word-break: break-all;">10.7554/elife.99303</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>FKBP51 is Involved in Epileptic Seizure by Regulating PSD95 in a PTZ-Induced Epileptic Mouse Model</td>
+                        <td>Journal of Integrative Neuroscience</td>
+                        <td><a href="https://doi.org/10.31083/jin25710" target="_blank" style="word-break: break-all;">10.31083/jin25710</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>TET1 mitigates prenatal fluoride-induced cognition impairment by modulating Bcl2 DNA hydroxymethylation level</td>
+                        <td>Molecular Medicine</td>
+                        <td><a href="https://doi.org/10.1186/s10020-025-01174-w" target="_blank" style="word-break: break-all;">10.1186/s10020-025-01174-w</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Endogenous SNAP-Tagging of Munc13-1 for Monitoring Synapse Nanoarchitecture</td>
+                        <td>JACS Au</td>
+                        <td><a href="https://doi.org/10.1021/jacsau.4c00946" target="_blank" style="word-break: break-all;">10.1021/jacsau.4c00946</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Maintenance and Decline of Neuronal Lysosomal Function in Aging</td>
+                        <td>Cells</td>
+                        <td><a href="https://doi.org/10.3390/cells14241976" target="_blank" style="word-break: break-all;">10.3390/cells14241976</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>In vivo pulse-chase in Caenorhabditis elegans reveals intestinal histone turnover changes upon starvation</td>
+                        <td>Journal of Biological Chemistry</td>
+                        <td><a href="https://doi.org/10.1016/j.jbc.2025.110299" target="_blank" style="word-break: break-all;">10.1016/j.jbc.2025.110299</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Aging Effects on Lipid Metabolism in Response to Traumatic Brain Injury</td>
+                        <td>Journal of Neurochemistry</td>
+                        <td><a href="https://doi.org/10.1111/jnc.70227" target="_blank" style="word-break: break-all;">10.1111/jnc.70227</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Single-cell synaptome mapping of endogenous protein subpopulations in mammalian brain</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-025-65813-w" target="_blank" style="word-break: break-all;">10.1038/s41467-025-65813-w</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Brain-wide synaptosome profiling reveals localized mRNAs that diversify synapses</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2025.12.07.692806" target="_blank" style="word-break: break-all;">10.64898/2025.12.07.692806</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Connecto-informatics at the mesoscale: current advances in image processing and analysis for mapping the brain connectivity</td>
+                        <td>Brain Informatics</td>
+                        <td><a href="https://doi.org/10.1186/s40708-024-00228-9" target="_blank" style="word-break: break-all;">10.1186/s40708-024-00228-9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>miR-145a-5p/SIK1/cAMP-dependent alteration of synaptic structural plasticity drives cognitive impairment induced by coke oven emissions</td>
+                        <td>Ecotoxicology and Environmental Safety</td>
+                        <td><a href="https://doi.org/10.1016/j.ecoenv.2024.116401" target="_blank" style="word-break: break-all;">10.1016/j.ecoenv.2024.116401</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Unique Properties of Synaptosomes and Prospects for Their Use for the Treatment of Alzheimer’s Disease</td>
+                        <td>Biochemistry (Moscow)</td>
+                        <td><a href="https://doi.org/10.1134/s0006297924060051" target="_blank" style="word-break: break-all;">10.1134/s0006297924060051</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Dynamic Organization of Neuronal Extracellular Matrix Revealed by HaloTag-HAPLN1</td>
+                        <td>Journal of Neuroscience</td>
+                        <td><a href="https://doi.org/10.1523/jneurosci.0666-24.2024" target="_blank" style="word-break: break-all;">10.1523/jneurosci.0666-24.2024</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Single-cell synaptome mapping: its technical basis and applications in critical period plasticity research</td>
+                        <td>Frontiers in Neural Circuits</td>
+                        <td><a href="https://doi.org/10.3389/fncir.2024.1523614" target="_blank" style="word-break: break-all;">10.3389/fncir.2024.1523614</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Sequential replacement of PSD95 subunits in postsynaptic supercomplexes is slowest in the cortex</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.99303.3" target="_blank" style="word-break: break-all;">10.7554/elife.99303.3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>SV2A is expressed in synapse subpopulations in mouse and human brain: implications for PET radiotracer studies</td>
+                        <td>Wellcome Open Research</td>
+                        <td><a href="https://doi.org/10.12688/wellcomeopenres.24668.1" target="_blank" style="word-break: break-all;">10.12688/wellcomeopenres.24668.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Experiences are encoded by brainwide reprogramming of synaptome architecture</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2025.12.12.693919" target="_blank" style="word-break: break-all;">10.64898/2025.12.12.693919</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Small Fluorogenic Amino Acids for Peptide‐Guided Background‐Free Imaging</td>
+                        <td>Angewandte Chemie</td>
+                        <td><a href="https://doi.org/10.1002/ange.202216231" target="_blank" style="word-break: break-all;">10.1002/ange.202216231</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>The combined damage of bisphenol A and high fat diet to learning and memory in young male mice: the regulatory effect of BDNF/TrkB/PI3K/AKT pathway on autophagy</td>
+                        <td>Environmental Research</td>
+                        <td><a href="https://doi.org/10.1016/j.envres.2025.121538" target="_blank" style="word-break: break-all;">10.1016/j.envres.2025.121538</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Long-lived cellular molecules in the brain</td>
+                        <td>Trends in Neurosciences</td>
+                        <td><a href="https://doi.org/10.1016/j.tins.2025.07.004" target="_blank" style="word-break: break-all;">10.1016/j.tins.2025.07.004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Memory engram synapse 3D macromolecular architecture visualized by cryoCLEM-guided cryoET</td>
+                        <td>Structure</td>
+                        <td><a href="https://doi.org/10.1016/j.str.2025.10.014" target="_blank" style="word-break: break-all;">10.1016/j.str.2025.10.014</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Extracellular matrix proteolysis maintains synapse plasticity during brain development</td>
+                        <td>Nature Neuroscience</td>
+                        <td><a href="https://doi.org/10.1038/s41593-025-02153-4" target="_blank" style="word-break: break-all;">10.1038/s41593-025-02153-4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Distributed disruption and remodelling of synaptome architecture following traumatic brain injury</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2025.12.19.695532" target="_blank" style="word-break: break-all;">10.64898/2025.12.19.695532</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Nanoscale reorganisation of synaptic proteins in Alzheimer's disease</td>
+                        <td>Neuropathology and Applied Neurobiology</td>
+                        <td><a href="https://doi.org/10.1111/nan.12924" target="_blank" style="word-break: break-all;">10.1111/nan.12924</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Hydromethylthionine rescues synaptic SNARE proteins in a mouse model of tauopathies: Interference by cholinesterase inhibitors</td>
+                        <td>Brain Research Bulletin</td>
+                        <td><a href="https://doi.org/10.1016/j.brainresbull.2024.110955" target="_blank" style="word-break: break-all;">10.1016/j.brainresbull.2024.110955</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>A Year at the Forefront of Proteostasis and Aging</td>
+                        <td>Biology Open</td>
+                        <td><a href="https://doi.org/10.1242/bio.059750" target="_blank" style="word-break: break-all;">10.1242/bio.059750</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Cross-species comparative analysis of single presynapses</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-023-40683-8" target="_blank" style="word-break: break-all;">10.1038/s41598-023-40683-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Age-Dependent Regulation of Dendritic Spine Density and Protein Expression in Mir324 KO Mice</td>
+                        <td>Journal of Molecular Neuroscience</td>
+                        <td><a href="https://doi.org/10.1007/s12031-023-02157-4" target="_blank" style="word-break: break-all;">10.1007/s12031-023-02157-4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>3D Super-Resolution Imaging of PSD95 Reveals an Abundance of Diffuse Protein Supercomplexes in the Mouse Brain</td>
+                        <td>ACS Chemical Neuroscience</td>
+                        <td><a href="https://doi.org/10.1021/acschemneuro.4c00684" target="_blank" style="word-break: break-all;">10.1021/acschemneuro.4c00684</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Concerns regarding the interpretation of Shank3 protein isoforms expressed in Shank3B-/- mice: potential off-target effects by a neomycin resistance cassette</td>
+                        <td>Molecular Psychiatry</td>
+                        <td><a href="https://doi.org/10.1038/s41380-024-02720-4" target="_blank" style="word-break: break-all;">10.1038/s41380-024-02720-4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>A Single‐Nucleus Transcriptomic Atlas Reveals Cellular and Genetic Characteristics of Alzheimer's‐Like Pathology in Aging Tree Shrews</td>
+                        <td>MedComm</td>
+                        <td><a href="https://doi.org/10.1002/mco2.70114" target="_blank" style="word-break: break-all;">10.1002/mco2.70114</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>SynaptopathyDB integrates synaptic proteomes, genetic and phenotypic data to advance research on nervous system disorders</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-025-26969-z" target="_blank" style="word-break: break-all;">10.1038/s41598-025-26969-z</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Sequential replacement of PSD95 subunits in postsynaptic supercomplexes is slowest in the cortex</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.99303.2" target="_blank" style="word-break: break-all;">10.7554/elife.99303.2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Brain-wide measurement of synaptic protein turnover reveals localized plasticity during learning</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2022.11.12.516226" target="_blank" style="word-break: break-all;">10.1101/2022.11.12.516226</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Neuronal activity modulates the incorporation of newly translated PSD-95 into a robust structure as revealed by STED and MINFLUX</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.10.18.562700" target="_blank" style="word-break: break-all;">10.1101/2023.10.18.562700</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Developing forebrain synapses are uniquely vulnerable to sleep loss</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.11.06.565853" target="_blank" style="word-break: break-all;">10.1101/2023.11.06.565853</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>BromoCatch: a self-labelling tag platform for protein analysis and live cell imaging</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.04.07.647551" target="_blank" style="word-break: break-all;">10.1101/2025.04.07.647551</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Novel extracellular matrix architecture on excitatory neurons revealed by HaloTag-HAPLN1</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.03.29.587384" target="_blank" style="word-break: break-all;">10.1101/2024.03.29.587384</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Analysis <i>in vivo</i> using a new method, ARGO (Analysis of Red Green Offset), reveals complexity and cell-type specificity in presynaptic turnover of synaptic vesicle protein Synaptogyrin/SNG-1</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.11.26.625560" target="_blank" style="word-break: break-all;">10.1101/2024.11.26.625560</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Simple and highly efficient detection of PSD95 using a nanobody and its recombinant minibody derivative</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.03.16.532938" target="_blank" style="word-break: break-all;">10.1101/2023.03.16.532938</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Nanoscale analysis of functionally diverse glutamatergic synapses in the neocortex reveals input and layer-specific organization</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.05.01.592008" target="_blank" style="word-break: break-all;">10.1101/2024.05.01.592008</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Molecular recording of cellular protein kinase activity with chemical labeling</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.09.11.611894" target="_blank" style="word-break: break-all;">10.1101/2024.09.11.611894</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Synaptome architecture shapes regional dynamics in the mouse brain</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.01.24.634803" target="_blank" style="word-break: break-all;">10.1101/2025.01.24.634803</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Sex and experience dependent regulation of synaptic protein turnover</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.11.24.690161" target="_blank" style="word-break: break-all;">10.1101/2025.11.24.690161</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Sleep maintains excitatory synapse diversity in the cortex and hippocampus</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.07.19.549645" target="_blank" style="word-break: break-all;">10.1101/2023.07.19.549645</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>SV2A is expressed in synapse subpopulations in mouse and human brain: implications for PET radiotracer studies</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.07.15.603608" target="_blank" style="word-break: break-all;">10.1101/2024.07.15.603608</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Endogenous SNAP-tagging of Munc13-1 for monitoring synapse nanoarchitecture</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.10.08.617143" target="_blank" style="word-break: break-all;">10.1101/2024.10.08.617143</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>In vivo pulse-chase in <i>C. elegans</i> reveals intestinal histone turnover changes upon starvation</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.02.13.638128" target="_blank" style="word-break: break-all;">10.1101/2025.02.13.638128</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Extracellular matrix proteolysis maintains synapse plasticity during brain development</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.02.27.640672" target="_blank" style="word-break: break-all;">10.1101/2025.02.27.640672</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>PRMix: Primary Region Mix Augmentation and Benchmark Dataset for Precise Whole Mouse Brain Anatomical Delineation</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.08.13.670045" target="_blank" style="word-break: break-all;">10.1101/2025.08.13.670045</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Developmental plasticity facilitates the structural maturation of cochlear inner hair cell ribbon synapses</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.08.19.671016" target="_blank" style="word-break: break-all;">10.1101/2025.08.19.671016</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Sequential replacement of PSD95 subunits in postsynaptic supercomplexes is slowest in the cortex</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.07.13.548866" target="_blank" style="word-break: break-all;">10.1101/2023.07.13.548866</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Age-dependent regulation of dendritic spine density and protein expression in Mir324 KO mice</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-3221779/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-3221779/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>eLife Assessment: Sequential replacement of PSD95 subunits in postsynaptic supercomplexes is slowest in the cortex</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.99303.1.sa2" target="_blank" style="word-break: break-all;">10.7554/elife.99303.1.sa2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Joint Public Review: Sequential replacement of PSD95 subunits in postsynaptic supercomplexes is slowest in the cortex</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.99303.1.sa1" target="_blank" style="word-break: break-all;">10.7554/elife.99303.1.sa1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Author response: Sequential replacement of PSD95 subunits in postsynaptic supercomplexes is slowest in the cortex</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.99303.1.sa0" target="_blank" style="word-break: break-all;">10.7554/elife.99303.1.sa0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Sequential replacement of PSD95 subunits in postsynaptic supercomplexes is slowest in the cortex</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.99303.1" target="_blank" style="word-break: break-all;">10.7554/elife.99303.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>The role of TRPV4 in acute sleep deprivation-induced fear memory impairment</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.08.12.607531" target="_blank" style="word-break: break-all;">10.1101/2024.08.12.607531</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>mRNA Trafficking and Local Translation: Shaping Mitochondria in the Synapse</td>
+                        <td>Preprints.org</td>
+                        <td><a href="https://doi.org/10.20944/preprints202408.1029.v1" target="_blank" style="word-break: break-all;">10.20944/preprints202408.1029.v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>3D super-resolution imaging of PSD95 reveals an abundance of diffuse protein supercomplexes in the mouse brain</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.10.14.617231" target="_blank" style="word-break: break-all;">10.1101/2024.10.14.617231</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Revealing Acute Consequences of Rapid Protein Elimination at Individual Synapses using Auxin-Inducible Degron 2 Technology</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.10.20.619267" target="_blank" style="word-break: break-all;">10.1101/2024.10.20.619267</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Unique Properties of Synaptosomes and Prospects for Their Use for the Treatment of Neurodegenerative Diseases (Review)</td>
+                        <td>Биохимия</td>
+                        <td><a href="https://doi.org/10.31857/s0320972524060058" target="_blank" style="word-break: break-all;">10.31857/s0320972524060058</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Specific dendritic spine modifications and dendritic transport: From in vitro to in vivo</td>
+                        <td>Neural Regeneration Research</td>
+                        <td><a href="https://doi.org/10.4103/nrr.nrr-d-24-01159" target="_blank" style="word-break: break-all;">10.4103/nrr.nrr-d-24-01159</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Sketch of a novel approach to a neural model</td>
+                        <td>F1000Research</td>
+                        <td><a href="https://doi.org/10.12688/f1000research.161106.1" target="_blank" style="word-break: break-all;">10.12688/f1000research.161106.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Protein trafficking and synaptic demand configure complex and dynamic synaptome architectures of individual neurons</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.07.31.667853" target="_blank" style="word-break: break-all;">10.1101/2025.07.31.667853</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Revealing acute consequences of rapid degradation of synaptic fusion proteins at individual synapses using Auxin-Inducible Degron 2 technology</td>
+                        <td>Communications Biology</td>
+                        <td><a href="https://doi.org/10.1038/s42003-025-08996-8" target="_blank" style="word-break: break-all;">10.1038/s42003-025-08996-8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Nutrient stress activates Rab5b-mediated autophagy to remodel the synaptic proteome</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2025.11.25.690410" target="_blank" style="word-break: break-all;">10.1101/2025.11.25.690410</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Environmental enrichment differentially regulates synaptic plasticity of hippocampal mature and newborn dentate granule cells and attenuates methamphetamine-induced behaviors</td>
+                        <td>European Journal of Pharmacology</td>
+                        <td><a href="https://doi.org/10.1016/j.ejphar.2025.178496" target="_blank" style="word-break: break-all;">10.1016/j.ejphar.2025.178496</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Metabolome Atlas of Brain Reveals Regional Shared and Unique Metabolic Drifts in Response to Type 2 Diabetes in Male Mice</td>
+                        <td>The FASEB Journal</td>
+                        <td><a href="https://doi.org/10.1096/fj.202501739rr" target="_blank" style="word-break: break-all;">10.1096/fj.202501739rr</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>How molecular mechanisms of aging drive Alzheimer's disease pathology</td>
+                        <td>Cellular Signalling</td>
+                        <td><a href="https://doi.org/10.1016/j.cellsig.2026.112426" target="_blank" style="word-break: break-all;">10.1016/j.cellsig.2026.112426</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Synapse types are spatially associated with regional hemodynamics in the mouse brain</td>
+                        <td>PLoS Biology</td>
+                        <td><a href="https://doi.org/10.1371/journal.pbio.3003637" target="_blank" style="word-break: break-all;">10.1371/journal.pbio.3003637</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>A Brainwide Atlas of Synaptic Nanoarchitecture Across the Mouse Lifespan</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.02.18.706606" target="_blank" style="word-break: break-all;">10.64898/2026.02.18.706606</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Region- and layer-specific glutamatergic synapse development in the nascent cortical hierarchy</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.02.17.706315" target="_blank" style="word-break: break-all;">10.64898/2026.02.17.706315</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Protein trafficking and synaptic demand configure complex and dynamic synaptome architectures of individual neurons</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-026-40513-7" target="_blank" style="word-break: break-all;">10.1038/s41598-026-40513-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Sex-and age- dependent modulation of synaptic proteins and behavioral variability in a postnatal valproic acid model</td>
+                        <td>Brain Research</td>
+                        <td><a href="https://doi.org/10.1016/j.brainres.2026.150261" target="_blank" style="word-break: break-all;">10.1016/j.brainres.2026.150261</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>SynAPSeg: A novel dataset and image analysis framework for deep learning-based synapse detection and quantification</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.03.12.711395" target="_blank" style="word-break: break-all;">10.64898/2026.03.12.711395</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>PRMix: Primary Region Mix Augmentation and Benchmark Dataset for Precise Whole Mouse Brain Anatomical Delineation</td>
+                        <td>NeuroImage</td>
+                        <td><a href="https://doi.org/10.1016/j.neuroimage.2026.121881" target="_blank" style="word-break: break-all;">10.1016/j.neuroimage.2026.121881</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Senolytic therapy ameliorates high-fat diet-induced hippocampal senescence and cognitive decline in mice</td>
+                        <td>Experimental Neurology</td>
+                        <td><a href="https://doi.org/10.1016/j.expneurol.2026.115745" target="_blank" style="word-break: break-all;">10.1016/j.expneurol.2026.115745</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Janus Synapses as Modular Neurointerfaces</td>
+                        <td>ACS Applied Materials & Interfaces</td>
+                        <td><a href="https://doi.org/10.1021/acsami.6c01266" target="_blank" style="word-break: break-all;">10.1021/acsami.6c01266</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Wake-active brainstem GABA neurons signal sleep pressure by upregulating AMPA receptors to drive recovery sleep</td>
+                        <td>Current Biology</td>
+                        <td><a href="https://doi.org/10.1016/j.cub.2026.04.059" target="_blank" style="word-break: break-all;">10.1016/j.cub.2026.04.059</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2026</td>
+                        <td>Enhanced engulfment by microglia and oligodendrocyte precursor cells contributes to synapse loss in the primary visual cortex following optic nerve injury</td>
+                        <td>Brain Research Bulletin</td>
+                        <td><a href="https://doi.org/10.1016/j.brainresbull.2026.111961" target="_blank" style="word-break: break-all;">10.1016/j.brainresbull.2026.111961</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-06-03T21:49:25+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' citing works (most recent first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+        .wm-tab-btn {
+            border: none;
+            background: #f3f4f6;
+            color: #4b5563;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .wm-tab-btn.wm-tab-active {
+            outline: 2px solid #3b82f6;
+            outline-offset: 1px;
+        }
+    </style>
+    
+    <script>
+        function citeSwitchTab(btn, paneId) {
+            var panes = document.querySelectorAll('#sec-citing .cite-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].classList.remove('active');
+            }
+            var btns = document.querySelectorAll('#sec-citing .cite-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('active');
+            }
+            var pane = document.getElementById(paneId);
+            if (pane) pane.classList.add('active');
+            if (btn) btn.classList.add('active');
+        }
+        function openWebMentionTab(evt, tabId) {
+            var panes = document.querySelectorAll('.wm-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].style.display = 'none';
+            }
+            var btns = document.querySelectorAll('.wm-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('wm-tab-active');
+            }
+            var pane = document.getElementById(tabId);
+            if (pane) pane.style.display = 'block';
+            if (evt && evt.currentTarget) evt.currentTarget.classList.add('wm-tab-active');
+        }
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
+</body>
+</html>
