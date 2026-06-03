@@ -107,6 +107,7 @@ PLATFORM_LABELS = {
     "blogs": "Blogs",
     "podcast": "Podcasts",
     "podcasts": "Podcasts",
+    "newsletter": "Newsletter",
 }
 
 # Crossref Event Data source_id / event type → explorer platform label
@@ -229,6 +230,30 @@ def _collect_event_platforms(signals, impact, platforms, seen):
                     if ev.get(field):
                         _add_event_source(platforms, seen, ev[field])
 
+def _collect_web_mentions(block, platforms, seen):
+    """web_mentions: list of pilot-source records, or legacy dict keyed by platform."""
+    if isinstance(block, list):
+        for item in block:
+            if isinstance(item, dict) and item.get("source_type"):
+                _add_platform(platforms, seen, item["source_type"])
+        return
+    if not isinstance(block, dict):
+        return
+    for k, v in block.items():
+        if k in ("last_updated", "updated_at"):
+            continue
+        if _has_mention_content(v):
+            _add_platform(platforms, seen, k)
+
+def _collect_web_mentions_breakdown(signals, platforms, seen):
+    """Fallback when attention_summary carries counts but web_mentions list is empty."""
+    bd = (signals.get("attention_summary") or {}).get("web_mentions_breakdown")
+    if not isinstance(bd, dict):
+        return
+    for k, v in bd.items():
+        if _has_mention_content(v):
+            _add_platform(platforms, seen, k)
+
 def extract_mention_platforms(d, signals):
     """
     Platforms with recorded web mentions (social_mentions, web_mentions, public_discourse,
@@ -237,15 +262,21 @@ def extract_mention_platforms(d, signals):
     platforms = []
     seen = set()
 
-    for block_key in ("social_mentions", "web_mentions"):
-        block = signals.get(block_key) or (d.get(block_key) if block_key == "web_mentions" else None)
-        if not isinstance(block, dict):
-            continue
-        for k, v in block.items():
+    _collect_web_mentions(
+        signals.get("web_mentions") or d.get("web_mentions"),
+        platforms,
+        seen,
+    )
+
+    sm = signals.get("social_mentions")
+    if isinstance(sm, dict):
+        for k, v in sm.items():
             if k in ("last_updated", "updated_at"):
                 continue
             if _has_mention_content(v):
                 _add_platform(platforms, seen, k)
+
+    _collect_web_mentions_breakdown(signals, platforms, seen)
 
     pd = signals.get("public_discourse")
     if isinstance(pd, dict):

@@ -1194,7 +1194,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Podcasts"
+]
 },
 {
 "file": "datastory_10.6084_m9.figshare.7504448.v3.html",
@@ -2345,6 +2347,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Podcasts",
 "Wikipedia",
 "Bluesky"
 ]
@@ -2559,7 +2562,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Podcasts"
+]
 },
 {
 "file": "articlestory_10.1073_pnas.111146798.html",
@@ -4010,6 +4015,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Podcasts",
 "Wikipedia"
 ]
 },
@@ -4873,7 +4879,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Blogs"
+]
 },
 {
 "file": "bookstory_10.3726_b20254.html",
@@ -5022,7 +5030,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Podcasts"
+]
 },
 {
 "file": "articlestory_10.1101_2020.02.05.933721.html",
@@ -8536,7 +8546,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Blogs"
+]
 },
 {
 "file": "articlestory_10.1136_bmj.a186.html",
@@ -13011,7 +13023,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Podcasts"
+]
 },
 {
 "file": "articlestory_10.1101_2025.09.08.674753.html",
