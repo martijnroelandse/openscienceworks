@@ -586,63 +586,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "articlestory_10.1056_NEJMoa2007621_.html",
-"title": "Cardiovascular Disease, Drug Therapy, and Mortality in Covid-19",
-"type": "ArticleStory",
-"doi": "10.1056/NEJMoa2007621",
-"year": 2020,
-"venue": "New England Journal of Medicine",
-"venue_name": "New England Journal of Medicine",
-"publisher": "Massachusetts Medical Society",
-"concepts": [
-"Coronavirus disease 2019 (COVID-19)",
-"Disease",
-"Medicine",
-"Drug",
-"Pharmacotherapy",
-"Intensive care medicine",
-"Virology",
-"Internal medicine"
-],
-"roles": [
-"Scholarly Uptake",
-"Active Public Discourse",
-"Reference Point for Synthesis",
-"Sustainability & Policy Relevance"
-],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 1493,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Good health and well-being"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The article \"Cardiovascular Disease, Drug Therapy, and Mortality in Covid-19,\" published in the New England Journal of Medicine, has garnered significant attention, accumulating 1…",
-"cover_url": "",
-"authors": "Mandeep R. Mehra, Sapan S. Desai, SreyRam Kuy et al.",
-"institutions": [
-"Brigham and Women's Hospital"
-],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"Wikipedia",
-"Bluesky",
-"Reddit",
-"Blogs"
-]
-},
-{
 "file": "softwarestory_10.5281_zenodo.11813.html",
 "title": "LMFIT: Non-Linear Least-Square Minimization and Curve-Fitting for Python",
 "type": "SoftwareStory",
@@ -17212,4 +17155,4 @@ window.STORIES_DATA = [
 "mention_platforms": []
 }
 ];
-window.STORIES_STATS = {"total": 363, "total_articles": 177, "total_books": 160, "total_data": 19, "total_software": 7, "total_oa": 322, "pct_oa": 89, "total_citations": 151737, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 362, "total_articles": 176, "total_books": 160, "total_data": 19, "total_software": 7, "total_oa": 321, "pct_oa": 89, "total_citations": 150244, "num_disciplines": 30};
