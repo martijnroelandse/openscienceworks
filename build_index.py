@@ -659,6 +659,19 @@ def extract(filepath):
 
 def main():
     base = os.path.dirname(os.path.abspath(__file__))
+
+    from check_uploads import print_report, scan_directory
+
+    upload_issues = scan_directory(base, hash_duplicates=False)
+    upload_errors = [issue for issue in upload_issues if issue.severity == "error"]
+    if upload_errors:
+        print("✗ Duplicate upload check failed — fix before building index:")
+        print_report(upload_issues, base)
+        raise SystemExit(1)
+    if upload_issues:
+        print("⚠ Upload check warnings:")
+        print_report(upload_issues, base)
+
     pattern = os.path.join(base, "*.json")
     files = sorted(glob.glob(pattern))
 
