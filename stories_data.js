@@ -1549,6 +1549,52 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
+"file": "bookstory_isbn_9789082942187.html",
+"title": "De meeste mensen deugen",
+"type": "BookStory",
+"doi": "9789082942187",
+"year": 2019,
+"venue": "De Correspondent Uitgevers B.V.",
+"venue_name": "",
+"publisher": "De Correspondent Uitgevers B.V.",
+"concepts": [
+"Human beings",
+"Kindness",
+"Humanity",
+"Human behavior",
+"nyt:hardcover-nonfiction=2020-06-21",
+"New York Times bestseller",
+"New York Times reviewed",
+"Philosophical anthropology"
+],
+"roles": [],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 237,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 5,
+"ta_ol_holdings": 20,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary De meeste mensen deugen (2019) is an open access scholarly book from De Correspondent Uitgevers B.V.",
+"cover_url": "https://covers.openlibrary.org/b/id/10218373-L.jpg",
+"authors": "Rutger Bregman",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Bluesky",
+"Wikipedia"
+]
+},
+{
 "file": "datastory_10.5281_zenodo.4743746.html",
 "title": "IoT-23: A labeled dataset with malicious and benign IoT network traffic",
 "type": "DataStory",
@@ -17155,4 +17201,4 @@ window.STORIES_DATA = [
 "mention_platforms": []
 }
 ];
-window.STORIES_STATS = {"total": 362, "total_articles": 176, "total_books": 160, "total_data": 19, "total_software": 7, "total_oa": 321, "pct_oa": 89, "total_citations": 150244, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 363, "total_articles": 176, "total_books": 161, "total_data": 19, "total_software": 7, "total_oa": 321, "pct_oa": 88, "total_citations": 150481, "num_disciplines": 30};
