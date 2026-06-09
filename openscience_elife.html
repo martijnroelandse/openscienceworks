@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>eLife — Portfolio Dashboard</title>
+    <style>
+        /* ── Base ── */
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+               background: #f3f4f6; color: #111827; margin: 0; padding: 0; }
+        .page { max-width: 1100px; margin: auto; padding: 1.5rem 2rem 4rem; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem;
+                box-shadow: 0 10px 30px rgba(15,23,42,.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 1.75rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1/-1; }
+
+        /* ── Typography ── */
+        h2 { margin-top: 0; font-size: 1.15rem; color: #111827;
+             display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
+        h2 span:first-child { flex: 1; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .section-label { font-size: .65rem; font-weight: 700; text-transform: uppercase;
+                         letter-spacing: .1em; color: #9ca3af; margin-bottom: .5rem; margin-top: .25rem; }
+
+        /* ── Tags / Badges ── */
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8;
+               padding: .15rem .5rem; border-radius: 999px; font-size: .82rem;
+               margin: .1rem .15rem .1rem 0; font-weight: 500; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca;
+                 padding: .15rem .55rem; border-radius: 999px; font-size: .72rem; font-weight: 500;
+                 white-space: nowrap; flex-shrink: 0; }
+
+        /* ── Site nav ── */
+        .site-nav { background: white; border-bottom: 1px solid #e5e7eb;
+                    padding: .55rem 2rem; display: flex; align-items: center;
+                    justify-content: space-between; position: sticky; top: 0; z-index: 200; }
+        .site-nav-brand { display: flex; align-items: center; gap: .55rem;
+                          text-decoration: none; color: #111827; font-weight: 700; font-size: .95rem; }
+        .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+        .brand-dot { color: #F2C94C; }
+        .site-nav-right { display: flex; align-items: center; gap: .75rem; }
+        .site-nav-links { display: flex; gap: .2rem; }
+        .site-nav-links a { padding: .35rem .8rem; border-radius: .4rem; font-size: .85rem;
+                            font-weight: 500; text-decoration: none; color: #6b7280;
+                            transition: background .15s, color .15s; }
+        .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+        .print-btn { display: flex; align-items: center; gap: .4rem; padding: .4rem .9rem;
+                     background: #2563eb; color: white; border: none; border-radius: .45rem;
+                     font-size: .82rem; font-weight: 600; cursor: pointer;
+                     box-shadow: 0 2px 8px rgba(37,99,235,.3); transition: background .15s; }
+        .print-btn:hover { background: #1d4ed8; }
+        .print-btn svg { flex-shrink: 0; }
+
+        /* ── Hero ── */
+        .hero { padding: 1.75rem 2rem; background: white; margin-bottom: 1.75rem;
+                border-bottom: 1px solid #e5e7eb; }
+        .hero-inner { max-width: 1100px; margin: 0 auto;
+                      display: flex; align-items: center; gap: 1.75rem; }
+        .hero-logo { width: 80px; height: 80px; object-fit: contain; flex-shrink: 0; }
+        .hero-title { font-size: 1.8rem; font-weight: 800; line-height: 1.2; margin: 0 0 .4rem; }
+        .hero-meta { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap;
+                     font-size: .9rem; color: #6b7280; }
+        .hero-type-badge { display: inline-flex; align-items: center; gap: .3rem;
+                           padding: .2rem .6rem; border-radius: 999px; font-size: .78rem;
+                           font-weight: 600; background: #f3f4f6; color: #374151;
+                           border: 1px solid #e5e7eb; }
+
+        /* ── Stats strip ── */
+        .stats-strip { display: grid; grid-template-columns: repeat(4,1fr); background: white;
+                       border-radius: .9rem; box-shadow: 0 10px 30px rgba(15,23,42,.08);
+                       margin-bottom: 1.75rem; overflow: hidden; }
+        .stats-strip-item { padding: 1rem 1.25rem; text-align: center; border-right: 1px solid #f3f4f6; }
+        .stats-strip-item:last-child { border-right: none; }
+        .stats-strip-num { font-size: 1.7rem; font-weight: 800; color: #2563eb; line-height: 1.1; }
+        .stats-strip-label { font-size: .68rem; color: #6b7280; text-transform: uppercase;
+                             letter-spacing: .06em; margin-top: .25rem; }
+        .stats-strip-sub { font-size: .65rem; color: #b45309; font-weight: 700; margin-top: .2rem; }
+        @media(max-width:640px) { .stats-strip { grid-template-columns: repeat(2,1fr); } }
+
+        /* ── Stat box (secondary stats) ── */
+        .stat-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: .75rem;
+                    padding: 1.1rem; text-align: center; }
+        .stat-number { font-size: 2rem; font-weight: 800; color: #0f172a; line-height: 1; margin-bottom: .2rem; }
+        .stat-label { font-size: .75rem; color: #64748b; text-transform: uppercase;
+                      letter-spacing: .05em; font-weight: 600; }
+
+        /* ── Risk card ── */
+        .risk-card { border: 2px solid #dc2626; background: #fff5f5; }
+        .risk-card h2 { color: #991b1b; }
+
+        /* ── Platform mentions ── */
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px,1fr)); gap: 1rem; }
+        .platform-box { background: white; border-radius: .75rem; padding: 1rem;
+                        text-align: center; border: 1px solid #e2e8f0; border-top-width: 3px; }
+        .platform-num { font-size: 1.8rem; font-weight: 800; line-height: 1; margin-bottom: .25rem; }
+        .platform-lbl { font-size: .72rem; color: #6b7280; text-transform: uppercase;
+                        letter-spacing: .05em; font-weight: 600; }
+
+        /* ── Role pills (same as story pages) ── */
+        .roles-domain { margin-bottom: .85rem; }
+        .roles-domain:last-of-type { margin-bottom: 0; }
+        .roles-domain-label { font-size: .62rem; font-weight: 700; text-transform: uppercase;
+                              letter-spacing: .07em; margin-bottom: .4rem; }
+        .roles-row { display: flex; flex-wrap: wrap; gap: .35rem; }
+        .role-pill { position: relative; display: inline-flex; align-items: center; gap: .3rem;
+                     padding: .28rem .65rem .28rem .45rem; border-radius: 999px;
+                     font-size: .78rem; font-weight: 600; border: 1.5px solid; }
+        .role-pill-academic   { background: #eff6ff; color: #1e40af; border-color: #bfdbfe; }
+        .role-pill-readership { background: #f5f3ff; color: #4c1d95; border-color: #ddd6fe; }
+        .role-pill-public     { background: #fffbeb; color: #92400e; border-color: #fde68a; }
+        .role-pill-practical  { background: #f0fdf4; color: #065f46; border-color: #bbf7d0; }
+        .role-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+        .role-score { font-size: .6rem; font-weight: 700; padding: .05rem .3rem;
+                      border-radius: 999px; margin-left: .1rem; background: rgba(0,0,0,.06); }
+
+        /* ── Chart cards ── */
+        .chart-card { padding: 1.25rem 1.5rem; }
+        .chart-card h2 { font-size: 1rem; margin-bottom: .15rem; }
+        .chart-wrap { height: 200px; width: 100%; margin-top: .75rem; }
+
+        /* ── Table ── */
+        table { width: 100%; border-collapse: collapse; font-size: .84rem; margin-top: .75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: .55rem .65rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; position: sticky; top: 0; z-index: 10; }
+        tr:hover td { background: #f9fafb; }
+        .table-scroll { max-height: 520px; overflow-y: auto; border-radius: .5rem; border: 1px solid #e5e7eb; }
+        .table-scroll table { margin-top: 0; }
+        .table-scroll th, .table-scroll td { border-left: none; border-right: none; }
+        .table-scroll tr:first-child th { border-top: none; }
+
+        /* ── List rows ── */
+        .list-row { display: flex; justify-content: space-between; align-items: center;
+                    border-bottom: 1px solid #f3f4f6; padding: .4rem 0; }
+        .list-row:last-child { border-bottom: none; }
+
+        /* ── Footer ── */
+        footer { margin-top: 3rem; padding: 1.5rem 0 3rem;
+                 border-top: 1px solid #e5e7eb; color: #9ca3af; font-size: .82rem; }
+
+        /* ── Print ── */
+        @media print {
+            .site-nav, .print-btn { display: none !important; }
+            body { background: white !important; padding: 0; }
+            .page { max-width: 100% !important; padding: 1rem; }
+            .hero { border: none; padding: 1rem 0; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; }
+            .stats-strip { box-shadow: none !important; border: 1px solid #e5e7eb !important; }
+            .grid-2, .grid-3, .grid-4 { display: grid !important; }
+            tr { page-break-inside: avoid; }
+            thead { display: table-header-group; }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div class="site-nav-right">
+    <div class="site-nav-links">
+      <a href="index.html">← All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="print-btn" onclick="window.print()">
+      <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+      </svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <img class="hero-logo" src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <div>
+      <h1 class="hero-title">eLife</h1>
+      <div class="hero-meta">
+        <span>Portfolio analysis of <strong>15</strong> works</span>
+        
+        <span class="hero-type-badge">11 Articles</span>
+        
+        <span class="hero-type-badge">4 Preprints</span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+
+  
+  <div class="section-label">Portfolio narrative</div>
+  <section class="card">
+    <h2><span>The Story So Far</span></h2>
+    <div style="line-height:1.65;"><h3 class='story-subheading'>Executive Summary</h3><p class='story-text'>The eLife encompasses 15 works that have collectively generated significant scholarly and public impact. Anchored predominantly in Biology, Neuroscience, and Drosophila (subgenus), this collection has amassed a highly concentrated thematic footprint.</p><p class='story-text'>Commitment to open knowledge sharing is a defining characteristic of this dataset. An impressive 100% of the portfolio is available via Open Access, ensuring global accessibility. Furthermore, 53% of the works provide linked data repositories or code, highlighting a robust culture of transparency and reproducibility.</p><p class='story-text'>The impact of these works is geographically and institutionally diverse. Noteworthy engagement extends beyond standard academia, with measurable uptake in the Facility and Nonprofit sectors. Supported by foundational backing from Howard Hughes Medical Institute, this portfolio demonstrates both rapid public uptake and sustained relevance as a methodological anchor for future synthesis.</p></div>
+  </section>
+  
+
+  
+
+  <!-- Key metrics strip -->
+  <div class="section-label">Key metrics</div>
+  <div class="stats-strip">
+    <div class="stats-strip-item">
+      <div class="stats-strip-num">264</div>
+      <div class="stats-strip-label">Total Citations</div>
+      
+      <div class="stats-strip-sub">🏆 1 in Top 1%</div>
+      
+    </div>
+    <div class="stats-strip-item">
+      <div class="stats-strip-num">4</div>
+      <div class="stats-strip-label">Online Mentions</div>
+    </div>
+    <div class="stats-strip-item">
+      
+      <div class="stats-strip-num">100%</div>
+      <div class="stats-strip-label">Open Access</div>
+      <div style="font-size:.65rem;color:#6b7280;margin-top:.2rem;">15 of 15 works</div>
+    </div>
+    <div class="stats-strip-item">
+      <div class="stats-strip-num">15</div>
+      <div class="stats-strip-label">Citing Countries</div>
+    </div>
+  </div>
+
+  
+  <div class="section-label">Open science report card</div>
+  <section class="card">
+    <h2><span>Open Science Indicators</span> <span class="badge" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;">Crossref / EuropePMC</span></h2>
+    <div class="grid-4" style="margin-bottom:0;margin-top:1rem;">
+      <div class="stat-box">
+        
+        <div class="stat-number">87%</div>
+        <div class="stat-label">Linked Preprints</div>
+      </div>
+      <div class="stat-box">
+        
+        <div class="stat-number">47%</div>
+        <div class="stat-label">Open Peer Review</div>
+      </div>
+      <div class="stat-box">
+        
+        <div class="stat-number">53%</div>
+        <div class="stat-label">Open Data / Code</div>
+      </div>
+      <div class="stat-box">
+        
+        <div class="stat-number">33%</div>
+        <div class="stat-label">Contains RRIDs</div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Charts -->
+  <div class="section-label">Citation &amp; attention landscape</div>
+  <div class="grid-2" style="margin-bottom:0;">
+    <section class="card chart-card" style="margin-bottom:0;">
+      <h2><span>Citation Timeline</span></h2>
+      <div class="muted" style="margin-top:-.15rem;font-size:.8rem;">Annual citation counts across the portfolio.</div>
+      <div class="chart-wrap">
+        <canvas id="citationChart" data-labels="[&#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[14, 55, 94, 24]"></canvas>
+      </div>
+    </section>
+    <div class="grid-2" style="margin-bottom:0;gap:1rem;">
+      <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
+        <h2 style="font-size:.95rem;"><span>Citing Sectors</span> <span class="badge">ROR</span></h2>
+        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Facility&#34;, &#34;Government&#34;, &#34;Other&#34;, &#34;Company&#34;, &#34;Healthcare&#34;, &#34;Nonprofit&#34;, &#34;Funder&#34;, &#34;Archive&#34;]" data-values="[166, 104, 31, 19, 24, 30, 44, 11, 23]"></canvas></div>
+      </section>
+      <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
+        <h2 style="font-size:.95rem;"><span>Citation Context</span> <span class="badge">scite</span></h2>
+        <div class="chart-wrap" style="height:170px;"><canvas id="sciteChart" data-labels="[&#34;Supporting&#34;, &#34;Mentioning&#34;, &#34;Contradicting&#34;]" data-values="[13, 117, 2]"></canvas></div>
+      </section>
+      <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
+        <h2 style="font-size:.95rem;"><span>Work Types</span> <span class="badge">OpenAlex</span></h2>
+        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Preprint&#34;, &#34;Book-Chapter&#34;, &#34;Article&#34;, &#34;Review&#34;, &#34;Editorial&#34;, &#34;Dissertation&#34;]" data-values="[58, 6, 112, 8, 2, 1]"></canvas></div>
+      </section>
+      <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
+        <h2 style="font-size:.95rem;"><span>Top Venues</span> <span class="badge">OpenAlex</span></h2>
+        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;bioRxiv&#34;, &#34;eLife&#34;, &#34;Nature&#34;, &#34;bioRxiv (Cold Spring Harbor Laboratory)&#34;, &#34;Genome biology&#34;, &#34;Nature Communications&#34;]" data-values="[55, 21, 7, 6, 6, 5]"></canvas></div>
+      </section>
+    </div>
+  </div>
+  <div style="margin-bottom:1.75rem;"></div>
+
+  <!-- Community -->
+  <div class="section-label">Community engagement &amp; public discourse</div>
+  <section class="card">
+    <h2><span>Online Mentions by Platform</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:1.25rem;">Breakdown across platforms for the entire portfolio.</div>
+    <div class="platform-grid">
+      <div class="platform-box" style="border-top-color:#64748b;">
+        <div class="platform-num" style="color:#334155;">4</div>
+        <div class="platform-lbl">Wikipedia</div>
+      </div>
+      <div class="platform-box" style="border-top-color:#ea580c;">
+        <div class="platform-num" style="color:#c2410c;">0</div>
+        <div class="platform-lbl">Reddit</div>
+      </div>
+      <div class="platform-box" style="border-top-color:#0ea5e9;">
+        <div class="platform-num" style="color:#0369a1;">0</div>
+        <div class="platform-lbl">Bluesky</div>
+      </div>
+      <div class="platform-box" style="border-top-color:#eab308;">
+        <div class="platform-num" style="color:#a16207;">0</div>
+        <div class="platform-lbl">StackExchange</div>
+      </div>
+      <div class="platform-box" style="border-top-color:#db2777;">
+        <div class="platform-num" style="color:#be185d;">0</div>
+        <div class="platform-lbl">Expert Annotations</div>
+      </div>
+      <div class="platform-box" style="border-top-color:#16a34a;">
+        <div class="platform-num" style="color:#15803d;">3</div>
+        <div class="platform-lbl">News Media</div>
+      </div>
+    </div>
+  </section>
+
+  
+  <div class="section-label">Teaching, practice &amp; library</div>
+  <section class="card">
+    <h2><span>Teaching, Practice &amp; Library Adoption</span></h2>
+    <div class="grid-3" style="margin-bottom:0;margin-top:1rem;">
+      <div class="stat-box">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Library Holdings</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">45</div>
+        <div class="stat-label">Syllabi / OCW</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number" style="color:#dc2626;">1</div>
+        <div class="stat-label">Edu Video Lectures</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">0</div>
+        <div class="stat-label">OER / Open Texts</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Formal Reviews</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">0</div>
+        <div class="stat-label">Chapter Cites</div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Concepts / Roles / Geo -->
+  <div class="section-label">Thematic &amp; impact profile</div>
+  <div class="grid-2">
+    <section class="card" style="margin-bottom:0;">
+      <h2><span>Dominant Concepts</span> <span class="badge">OpenAlex</span></h2>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Weighted by AI confidence score.</div>
+      <div>
+        
+          <span class="tag">Biology</span>
+        
+          <span class="tag">Neuroscience</span>
+        
+          <span class="tag">Drosophila (subgenus)</span>
+        
+          <span class="tag">Drosophila melanogaster</span>
+        
+          <span class="tag">Cell biology</span>
+        
+          <span class="tag tag-soft">Genetics</span>
+        
+          <span class="tag tag-soft">Biological neural network</span>
+        
+          <span class="tag tag-soft">Computer science</span>
+        
+          <span class="tag tag-soft">Connectome</span>
+        
+          <span class="tag tag-soft">Sensory system</span>
+        
+          <span class="tag tag-soft">In vivo</span>
+        
+          <span class="tag tag-soft">Gene</span>
+        
+          <span class="tag tag-soft">Fusobacterium nucleatum</span>
+        
+          <span class="tag tag-soft">Publishing</span>
+        
+          <span class="tag tag-soft">Histone</span>
+        
+          <span class="tag tag-soft">Computational biology</span>
+        
+          <span class="tag tag-soft">In vitro</span>
+        
+          <span class="tag tag-soft">Anatomy</span>
+        
+          <span class="tag tag-soft">Chromatin</span>
+        
+          <span class="tag tag-soft">Political science</span>
+        
+      </div>
+    </section>
+
+    <section class="card" style="margin-bottom:0;">
+      <h2><span>Inferred Portfolio Roles</span></h2>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Cumulative heuristic classification across all works.</div>
+      
+      <div class="roles-row">
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            High-visibility uptake
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">4.2</span>
+          </span>
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Sustainability & policy relevance
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">3.8</span>
+          </span>
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Methodological anchor
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">2.7</span>
+          </span>
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Rapid uptake
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">2.0</span>
+          </span>
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Reproducibility standard
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">1.3</span>
+          </span>
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Scholarly uptake
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">1.0</span>
+          </span>
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Reference point for synthesis
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">1.0</span>
+          </span>
+        
+      </div>
+      
+    </section>
+  </div>
+
+  <div class="grid-2">
+    <section class="card" style="margin-bottom:0;">
+      <h2><span>Top Citing Countries</span> <span class="badge">OpenAlex</span></h2>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Based on author affiliations of citing works.</div>
+      <div>
+        
+          <span class="tag">United States (118)</span>
+        
+          <span class="tag">Germany (48)</span>
+        
+          <span class="tag">United Kingdom (47)</span>
+        
+          <span class="tag">Spain (23)</span>
+        
+          <span class="tag">Austria (22)</span>
+        
+          <span class="tag tag-soft">Italy (19)</span>
+        
+          <span class="tag tag-soft">Switzerland (15)</span>
+        
+          <span class="tag tag-soft">France (14)</span>
+        
+          <span class="tag tag-soft">Croatia (13)</span>
+        
+          <span class="tag tag-soft">Sweden (13)</span>
+        
+          <span class="tag tag-soft">Hungary (12)</span>
+        
+          <span class="tag tag-soft">Portugal (11)</span>
+        
+          <span class="tag tag-soft">Czechia (10)</span>
+        
+          <span class="tag tag-soft">Canada (9)</span>
+        
+          <span class="tag tag-soft">Israel (9)</span>
+        
+      </div>
+    </section>
+    <section class="card" style="margin-bottom:0;">
+      <h2><span>Top Citing Institutions</span> <span class="badge">ROR / OpenAlex</span></h2>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Canonical names based on author affiliations.</div>
+      <div>
+        
+          <span class="tag">Howard Hughes Medical Institute (6)</span>
+        
+          <span class="tag">Janelia Research Campus (5)</span>
+        
+          <span class="tag">Max Planck Institute for Evolutionary Anthropology (4)</span>
+        
+          <span class="tag">Harvard University (4)</span>
+        
+          <span class="tag">Tata Institute for Genetics and Society (4)</span>
+        
+          <span class="tag tag-soft">University of Washington (3)</span>
+        
+          <span class="tag tag-soft">The Francis Crick Institute (2)</span>
+        
+          <span class="tag tag-soft">Emory University (2)</span>
+        
+          <span class="tag tag-soft">University of California, Santa Barbara (2)</span>
+        
+          <span class="tag tag-soft">Rockefeller University (2)</span>
+        
+          <span class="tag tag-soft">Louisiana State University Health Sciences Center Shreveport (2)</span>
+        
+          <span class="tag tag-soft">Umeå University (2)</span>
+        
+          <span class="tag tag-soft">University of California, Berkeley (1)</span>
+        
+          <span class="tag tag-soft">Pennsylvania State University (1)</span>
+        
+          <span class="tag tag-soft">University of Oxford (1)</span>
+        
+      </div>
+    </section>
+  </div>
+
+  <div class="grid-2">
+    <section class="card " style="margin-bottom:0;">
+      <h2><span>Top Funders</span> <span class="badge">Europe PMC</span></h2>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Number of distinct works supported.</div>
+      <div>
+        
+          
+            <span class="tag" style="background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;">Howard Hughes Medical Institute (5)</span>
+          
+            <span class="tag tag-soft">National Institutes of Health (2)</span>
+          
+            <span class="tag tag-soft">NIH HHS (2)</span>
+          
+            <span class="tag tag-soft">NHGRI NIH HHS (2)</span>
+          
+            <span class="tag tag-soft">Spanish State Research Agency (1)</span>
+          
+            <span class="tag tag-soft">Spanish National Plan for Scientific and Technical Research and Innovation (1)</span>
+          
+            <span class="tag tag-soft">Generalitat Valenciana (1)</span>
+          
+            <span class="tag tag-soft">ANID Fondo Subvencion a la Instalacion Academia (1)</span>
+          
+            <span class="tag tag-soft">Financiamiento Basal para Centros Científicos y Tecnológicos de Excelencia Centro Ciencia and Vida (1)</span>
+          
+            <span class="tag tag-soft">Fondo Nacional de Desarrollo Científico y Tecnológico (1)</span>
+          
+            <span class="tag tag-soft">Fondo de Financiamiento de Centros de Investigación en Áreas Prioritarias (1)</span>
+          
+            <span class="tag tag-soft">Israel Science Foundation (1)</span>
+          
+            <span class="tag tag-soft">Israel Science Foundation (IPMP) (1)</span>
+          
+            <span class="tag tag-soft">Israeli Innovation Authority (1)</span>
+          
+            <span class="tag tag-soft">NIMH NIH HHS (1)</span>
+          
+        
+      </div>
+    </section>
+    
+    <section class="card" style="margin-bottom:0;">
+      <h2><span>Data Repositories</span> <span class="badge">Europe PMC</span></h2>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Platforms hosting associated code / data.</div>
+      <div>
+        
+          
+            <span class="tag" style="background:#dcfce7;color:#166534;border:1px solid #bbf7d0;">GitHub Repository (15)</span>
+          
+            <span class="tag" style="background:#dcfce7;color:#166534;border:1px solid #bbf7d0;">Zenodo (4)</span>
+          
+            <span class="tag" style="background:#dcfce7;color:#166534;border:1px solid #bbf7d0;">Crossref Dataset Citation (4)</span>
+          
+            <span class="tag" style="background:#dcfce7;color:#166534;border:1px solid #bbf7d0;">GitLab Repository (1)</span>
+          
+        
+      </div>
+    </section>
+    
+  </div>
+
+  <!-- Authors -->
+  <div class="section-label">Contributors</div>
+  <section class="card">
+    <h2><span>Core Authors</span> <span class="badge">Portfolio</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Authors with more than one work in this dataset.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.4rem 1.5rem;">
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">Shigehiro Namiki</span>
+          <span class="tag tag-soft" style="margin:0;">3 works</span>
+        </div>
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">Han SJ Cheong</span>
+          <span class="tag tag-soft" style="margin:0;">3 works</span>
+        </div>
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">Gwyneth M Card</span>
+          <span class="tag tag-soft" style="margin:0;">3 works</span>
+        </div>
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">Gabriella R Sterne</span>
+          <span class="tag tag-soft" style="margin:0;">3 works</span>
+        </div>
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">Geoffrey W Meissner</span>
+          <span class="tag tag-soft" style="margin:0;">2 works</span>
+        </div>
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">Marta Costa</span>
+          <span class="tag tag-soft" style="margin:0;">2 works</span>
+        </div>
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">Katharina Eichler</span>
+          <span class="tag tag-soft" style="margin:0;">2 works</span>
+        </div>
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">Tomke Stürner</span>
+          <span class="tag tag-soft" style="margin:0;">2 works</span>
+        </div>
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">Gregory S.X.E. Jefferis</span>
+          <span class="tag tag-soft" style="margin:0;">2 works</span>
+        </div>
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">Claire Managan</span>
+          <span class="tag tag-soft" style="margin:0;">2 works</span>
+        </div>
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">FlyLight Project Team</span>
+          <span class="tag tag-soft" style="margin:0;">2 works</span>
+        </div>
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">Wyatt Korff</span>
+          <span class="tag tag-soft" style="margin:0;">2 works</span>
+        </div>
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">Aljoscha Nern</span>
+          <span class="tag tag-soft" style="margin:0;">2 works</span>
+        </div>
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">Karen L Hibbard</span>
+          <span class="tag tag-soft" style="margin:0;">2 works</span>
+        </div>
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">Igor Siwanowicz</span>
+          <span class="tag tag-soft" style="margin:0;">2 works</span>
+        </div>
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">Gerald M. Rubin</span>
+          <span class="tag tag-soft" style="margin:0;">2 works</span>
+        </div>
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">Yoshinori Aso</span>
+          <span class="tag tag-soft" style="margin:0;">2 works</span>
+        </div>
+      
+        <div class="list-row">
+          <span style="font-weight:500;color:#374151;">Lalanti Venkatasubramanian</span>
+          <span class="tag tag-soft" style="margin:0;">2 works</span>
+        </div>
+      
+    </div>
+  </section>
+
+  <!-- Works table -->
+  <div class="section-label">Included works</div>
+  <section class="card">
+    <h2><span>All Works</span> <span class="badge">15 total</span></h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Year</th><th>Type</th><th>Title</th><th>DOI</th><th>Citations</th><th>Mentions</th></tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td style="white-space:nowrap;">2023</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Article</span></td>
+            <td>Stable population structure in Europe since the Iron Age, despite high mobility</td>
+            <td><a href="https://doi.org/10.7554/elife.79714" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/elife.79714</a></td>
+            <td style="text-align:right;font-weight:600;">93</td>
+            <td style="text-align:right;">3</td>
+          </tr>
+          
+          <tr>
+            <td style="white-space:nowrap;">2023</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Article</span></td>
+            <td>Mating activates neuroendocrine pathways signaling hunger in Drosophila females</td>
+            <td><a href="https://doi.org/10.7554/eLife.85117" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.85117</a></td>
+            <td style="text-align:right;font-weight:600;">37</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr>
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Article</span></td>
+            <td>A split-GAL4 driver line resource for Drosophila neuron types</td>
+            <td><a href="https://doi.org/10.7554/eLife.98405" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.98405</a></td>
+            <td style="text-align:right;font-weight:600;">29</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr>
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Article</span></td>
+            <td>Driver lines for studying associative learning in Drosophila</td>
+            <td><a href="https://doi.org/10.7554/eLife.94168" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.94168</a></td>
+            <td style="text-align:right;font-weight:600;">26</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr>
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Preprint</span></td>
+            <td>Transforming descending input into motor output: An analysis of the Drosophila Male Adult Nerve Cord connectome</td>
+            <td><a href="https://doi.org/10.7554/eLife.96084" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.96084</a></td>
+            <td style="text-align:right;font-weight:600;">21</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr>
+            <td style="white-space:nowrap;">2023</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Article</span></td>
+            <td>Chromosome-specific maturation of the epigenome in the Drosophila male germline</td>
+            <td><a href="https://doi.org/10.7554/elife.89373" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/elife.89373</a></td>
+            <td style="text-align:right;font-weight:600;">20</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr>
+            <td style="white-space:nowrap;">2023</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Article</span></td>
+            <td>Baited reconstruction with 2D template matching for high-resolution structure determination in vitro and in vivo without template bias</td>
+            <td><a href="https://doi.org/10.7554/elife.90486" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/elife.90486</a></td>
+            <td style="text-align:right;font-weight:600;">15</td>
+            <td style="text-align:right;">1</td>
+          </tr>
+          
+          <tr>
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Preprint</span></td>
+            <td>A comprehensive neuroanatomical survey of the Drosophila Lobula Plate Tangential Neurons with predictions for their optic flow sensitivity</td>
+            <td><a href="https://doi.org/10.7554/eLife.93659" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.93659</a></td>
+            <td style="text-align:right;font-weight:600;">14</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr>
+            <td style="white-space:nowrap;">2023</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Preprint</span></td>
+            <td>Gender differences in submission behavior exacerbate publication disparities in elite journals</td>
+            <td><a href="https://doi.org/10.7554/eLife.90049" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.90049</a></td>
+            <td style="text-align:right;font-weight:600;">5</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr>
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Article</span></td>
+            <td>Molecular characterization of gustatory second-order neurons reveals integrative mechanisms of gustatory and metabolic information</td>
+            <td><a href="https://doi.org/10.7554/eLife.100947" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.100947</a></td>
+            <td style="text-align:right;font-weight:600;">3</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr>
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Preprint</span></td>
+            <td>A brainstem circuit controls cough-like airway defensive behaviors in mice</td>
+            <td><a href="https://doi.org/10.7554/eLife.102345" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.102345</a></td>
+            <td style="text-align:right;font-weight:600;">1</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr>
+            <td style="white-space:nowrap;">2026</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Article</span></td>
+            <td>Age-dependent H3K9 trimethylation by dSetdb1 impairs mitochondrial UPR leading to degeneration of olfactory neurons and loss of olfactory function in Drosophila</td>
+            <td><a href="https://doi.org/10.7554/eLife.103118" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.103118</a></td>
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr>
+            <td style="white-space:nowrap;">2025</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Article</span></td>
+            <td>An updated catalogue of split-GAL4 driver lines for descending neurons in Drosophila melanogaster</td>
+            <td><a href="https://doi.org/10.7554/eLife.107450" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.107450</a></td>
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr>
+            <td style="white-space:nowrap;">2025</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Article</span></td>
+            <td>RadD from Fusobacterium nucleatum Engages NKp46 to Promote Antitumor Cytotoxicity</td>
+            <td><a href="https://doi.org/10.7554/eLife.108439" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.108439</a></td>
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr>
+            <td style="white-space:nowrap;">2026</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Article</span></td>
+            <td>Rethinking how research is reviewed and published</td>
+            <td><a href="https://doi.org/10.7554/eLife.110392" target="_blank" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7554/eLife.110392</a></td>
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem;">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#9ca3af;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;font-weight:600;text-decoration:none;">Read the Methodology &amp; Legend ↗</a></span>
+    </div>
+    <div style="padding-left:1.35rem;">Generated on 2026-06-09 18:49:48 UTC</div>
+  </footer>
+
+</div><!-- /page -->
+
+<script>
+const DOUGHNUT_OPTS = {
+  responsive: true, maintainAspectRatio: false, cutout: '68%',
+  plugins: { legend: { position: 'right', labels: { boxWidth: 9, padding: 8, font: { size: 10 } } } }
+};
+const PALETTE = ['#2563eb','#0d9488','#6366f1','#f59e0b','#ec4899','#0ea5e9','#8b5cf6','#14b8a6'];
+
+function makeDoughnut(id, palette) {
+  const canvas = document.getElementById(id); if (!canvas) return;
+  const labels = JSON.parse(canvas.getAttribute('data-labels'));
+  const data   = JSON.parse(canvas.getAttribute('data-values'));
+  if (!data.length || data.reduce((a,b)=>a+b,0)===0) {
+    canvas.parentElement.innerHTML = '<div style="display:flex;align-items:center;height:100%;color:#9ca3af;font-size:.82rem;">No data available.</div>';
+    return;
+  }
+  new Chart(canvas.getContext('2d'), {
+    type: 'doughnut',
+    data: { labels, datasets: [{ data, backgroundColor: palette || PALETTE, borderWidth: 0 }] },
+    options: DOUGHNUT_OPTS
+  });
+}
+
+// Citation timeline
+(function(){
+  const canvas = document.getElementById('citationChart'); if (!canvas) return;
+  const labels = JSON.parse(canvas.getAttribute('data-labels'));
+  const data   = JSON.parse(canvas.getAttribute('data-values'));
+  new Chart(canvas.getContext('2d'), {
+    type: 'bar',
+    data: { labels, datasets: [{ label: 'Citations', data, backgroundColor: '#2563eb', borderRadius: 4 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        y: { beginAtZero: true, border: { display: false }, grid: { color: '#f3f4f6' } },
+        x: { grid: { display: false }, border: { display: false } }
+      },
+      plugins: { legend: { display: false } }
+    }
+  });
+})();
+
+makeDoughnut('sectorChart');
+makeDoughnut('sciteChart', ['#16a34a','#9ca3af','#dc2626']);
+makeDoughnut('wtChart');
+makeDoughnut('venueChart');
+</script>
+</body>
+</html>
