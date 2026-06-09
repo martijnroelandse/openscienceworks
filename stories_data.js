@@ -30,9 +30,9 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 5,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": true,
@@ -46,10 +46,13 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Substack",
 "Wikipedia",
 "Bluesky",
 "Hypothesis",
-"Reddit"
+"Reddit",
+"News",
+"Blogs"
 ]
 },
 {
@@ -237,9 +240,9 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 2,
-"ta_youtube": 4,
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": true,
@@ -266,7 +269,7 @@ window.STORIES_DATA = [
 "year": 2012,
 "venue": "Physics Letters B",
 "venue_name": "Physics Letters B",
-"publisher": "Elsevier",
+"publisher": "Elsevier BV",
 "concepts": [
 "Physics",
 "Particle physics",
@@ -278,32 +281,45 @@ window.STORIES_DATA = [
 "Atlas (anatomy)"
 ],
 "roles": [
-"Scholarly Uptake"
+"Scholarly Uptake",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 10685,
+"citation_count": 10397,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 10,
+"ta_ocw": 0,
 "ta_youtube": 5,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The 2012 observation of a new particle in the pursuit of the Standard Model Higgs boson using the ATLAS detector at the LHC represents a significant contribution to the field of p…",
+"excerpt": "Short impact summary The observation of a new particle in the search for the Standard Model Higgs boson, as reported by G.",
 "cover_url": "",
-"authors": "",
-"institutions": [],
+"authors": "G. Aad, T. Abajyan, B. Abbott et al.",
+"institutions": [
+"University of Freiburg",
+"University of Bonn",
+"University of Oklahoma",
+"Universitat Autònoma de Barcelona",
+"Université Paris-Sud",
+"University of Geneva",
+"Azerbaijan National Academy of Sciences",
+"Amsterdam University of the Arts",
+"Oklahoma State University",
+"Michigan State University"
+],
 "download_count": 0,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia",
-"Hypothesis"
+"Hypothesis",
+"Reddit"
 ]
 },
 {
@@ -330,24 +346,24 @@ window.STORIES_DATA = [
 "High-Visibility Uptake",
 "Sustainability & Policy Relevance",
 "Reference Point for Synthesis",
-"Public Visibility & Knowledge Base"
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 7716,
+"citation_count": 7675,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
-"ta_youtube": 3,
+"ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary The study titled \"Remdesivir for the Treatment of Covid-19,\" published in the New England Journal of Medicine, has emerged as a significant contribution to understanding COVID-19 …",
+"excerpt": "Short impact summary The research article \"Remdesivir for the Treatment of Covid-19 — Final Report,\" published in the New England Journal of Medicine, underscores the efficacy of Remdesivir in treatin…",
 "cover_url": "",
 "authors": "John H. Beigel, Kay M Tomashek, Lori E. Dodd et al.",
 "institutions": [
@@ -380,14 +396,14 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Scholarly Uptake",
+"Active Public Discourse",
 "High-Visibility Uptake",
 "Sustainability & Policy Relevance",
-"Reference Point for Synthesis",
-"Active Public Discourse"
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "bronze",
-"citation_count": 2915,
+"citation_count": 3061,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -395,25 +411,34 @@ window.STORIES_DATA = [
 ],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 5,
+"ta_youtube": 4,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The randomized prostate-cancer screening trial led by prominent institutions, including the National Institutes of Health, has made a significant impact in the field of oncology, …",
+"excerpt": "Short impact summary The randomized prostate cancer screening trial, published in the New England Journal of Medicine by a team from esteemed institutions including the University of Toronto and the N…",
 "cover_url": "",
 "authors": "Gerald L. Andriole, E. David Crawford, Robert L. Grubb et al.",
 "institutions": [
 "National Institutes of Health",
-"3M (United States)"
+"University of Colorado Denver",
+"Huntsman Cancer Institute",
+"University of Alabama at Birmingham",
+"Henry Ford Health System",
+"University of Pittsburgh Medical Center",
+"Pacific Health Research and Education Institute",
+"Westat (United States)",
+"Information Management Services",
+"Office of Disease Prevention"
 ],
 "download_count": 0,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"Blogs",
 "Wikipedia",
-"Hypothesis"
+"Reddit"
 ]
 },
 {
@@ -491,23 +516,23 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Scholarly Uptake",
-"Reference Point for Synthesis",
-"Active Public Discourse"
+"Active Public Discourse",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 1503,
+"citation_count": 1502,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 8,
+"ta_ocw": 0,
 "ta_youtube": 1,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The publication \"A physical, genetic and functional sequence assembly of the barley genome\" has garnered significant recognition within the scientific community, as evidenced by i…",
+"excerpt": "Short impact summary The comprehensive assembly of the barley genome presented in this study has garnered significant academic attention, evidenced by over 1,500 citations from a diverse range of jour…",
 "cover_url": "",
 "authors": "Heidrun Gundlach, Matthias Pfeifer, Thomas Nussbaumer et al.",
 "institutions": [
@@ -527,12 +552,13 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia"
+"Wikipedia",
+"Reddit"
 ]
 },
 {
 "file": "articlestory_10.1056_NEJMoa2007621.html",
-"title": "RETRACTED: Cardiovascular Disease, Drug Therapy, and Mortality in Covid-19",
+"title": "Cardiovascular Disease, Drug Therapy, and Mortality in Covid-19",
 "type": "ArticleStory",
 "doi": "10.1056/NEJMoa2007621",
 "year": 2020,
@@ -551,13 +577,13 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Scholarly Uptake",
+"Active Public Discourse",
 "Reference Point for Synthesis",
-"Sustainability & Policy Relevance",
-"Active Public Discourse"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 1495,
+"citation_count": 1493,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -570,7 +596,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The article \"Cardiovascular Disease, Drug Therapy, and Mortality in Covid-19\" has garnered significant attention since its retraction, highlighting the ongoing debates in the fiel…",
+"excerpt": "Short impact summary The article \"Cardiovascular Disease, Drug Therapy, and Mortality in Covid-19,\" published in the New England Journal of Medicine, has generated substantial academic interest, evide…",
 "cover_url": "",
 "authors": "Mandeep R. Mehra, Sapan S. Desai, SreyRam Kuy et al.",
 "institutions": [
@@ -583,7 +609,9 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "Bluesky",
-"Reddit"
+"Reddit",
+"News",
+"Blogs"
 ]
 },
 {
@@ -1000,6 +1028,61 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
+"file": "articlestory_10.1101_2020.02.10.942185.html",
+"title": "Structural modeling of 2019-novel coronavirus (nCoV) spike protein reveals a proteolytically-sensitive activation loop as a distinguishing feature compared to SARS-CoV and related SARS-like coronaviruses",
+"type": "ArticleStory",
+"doi": "10.1101/2020.02.10.942185",
+"year": 2020,
+"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+"publisher": "Cold Spring Harbor Laboratory",
+"concepts": [
+"Coronavirus",
+"Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
+"Biology",
+"Virology",
+"Coronavirus disease 2019 (COVID-19)",
+"Betacoronavirus",
+"Glycoprotein",
+"Lipid bilayer fusion"
+],
+"roles": [
+"Scholarly Uptake",
+"Active Public Discourse",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 511,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 1,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study of the 2019-novel coronavirus (nCoV) spike protein by Jaimes et al.",
+"cover_url": "",
+"authors": "Javier A. Jaimes, Nicole M. André, Jean K. Millet et al.",
+"institutions": [
+"Cornell University",
+"Université Paris-Saclay"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Hypothesis",
+"Wikipedia"
+]
+},
+{
 "file": "articlestory_10.5061_dryad.234_1.html",
 "title": "Global Wood Density Database",
 "type": "DataStory",
@@ -1359,10 +1442,10 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Reference Point for Synthesis",
+"Active Public Discourse",
 "Scholarly Uptake",
 "High-Visibility Uptake",
-"Sustainability & Policy Relevance",
-"Active Public Discourse"
+"Sustainability & Policy Relevance"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -1379,7 +1462,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research article titled \"A FADD-dependent innate immune mechanism in mammalian cells\" has garnered significant academic attention, as evidenced by its 286 citations.",
+"excerpt": "Short impact summary The article titled \"A FADD-dependent innate immune mechanism in mammalian cells\" has garnered significant academic attention, as evidenced by its 286 citations across various rese…",
 "cover_url": "",
 "authors": "Siddharth Balachandran, Emmanuel Thomas, Glen N. Barber",
 "institutions": [
@@ -1390,7 +1473,10 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"News",
+"Blogs"
+]
 },
 {
 "file": "articlestory_10.5840_cultura20107133.html",
@@ -1453,12 +1539,13 @@ window.STORIES_DATA = [
 "Galaxy formation and evolution"
 ],
 "roles": [
+"Active Public Discourse",
 "Scholarly Uptake",
 "High-Visibility Uptake"
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 253,
+"citation_count": 244,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
@@ -1469,7 +1556,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The publication titled \"A massive, quiescent galaxy at a redshift of 3.717,\" authored by an international team including Karl Glazebrook and Ivo Labbé, has garnered significant ac…",
+"excerpt": "Short impact summary The research on a massive, quiescent galaxy at a redshift of 3.717 has garnered significant academic attention, as evidenced by its 244 citations across prominent journals.",
 "cover_url": "",
 "authors": "Karl Glazebrook, C. Schreiber, Ivo Labbé et al.",
 "institutions": [
@@ -1485,7 +1572,10 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"News",
+"Blogs"
+]
 },
 {
 "file": "datastory_10.5281_zenodo.3757476.html",
@@ -1928,7 +2018,9 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia"
+"Wikipedia",
+"News",
+"Blogs"
 ]
 },
 {
@@ -2205,8 +2297,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 9,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -2256,8 +2348,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -2314,8 +2406,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 9,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -2340,6 +2432,7 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Podcasts",
+"Substack",
 "Wikipedia",
 "Bluesky"
 ]
@@ -2451,54 +2544,6 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
-"file": "articlestory_10.1038_s41557-023-01379-8.html",
-"title": "Proteolysis-targeting chimeras with reduced off-targets",
-"type": "ArticleStory",
-"doi": "10.1038/s41557-023-01379-8",
-"year": 2023,
-"venue": "Nature Chemistry",
-"venue_name": "Nature Chemistry",
-"publisher": "",
-"concepts": [
-"Chemistry",
-"Pomalidomide",
-"Protein degradation",
-"Ubiquitin ligase",
-"Proteolysis",
-"Cereblon",
-"Computational biology",
-"Ubiquitin"
-],
-"roles": [
-"Scholarly Uptake",
-"Reference Point for Synthesis"
-],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 129,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The research on proteolysis-targeting chimeras with reduced off-targets, published in Nature Chemistry, has already garnered significant academic interest with 129 citations, refl…",
-"cover_url": "",
-"authors": "",
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"Reddit"
-]
-},
-{
 "file": "articlestory_10.1016_j.neuron.2022.09.009.html",
 "title": "A brain atlas of synapse protein lifetime across the mouse lifespan",
 "type": "ArticleStory",
@@ -2556,6 +2601,60 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Podcasts"
+]
+},
+{
+"file": "articlestory_10.1038_s41557-023-01379-8.html",
+"title": "Proteolysis-targeting chimeras with reduced off-targets",
+"type": "ArticleStory",
+"doi": "10.1038/s41557-023-01379-8",
+"year": 2023,
+"venue": "Nature Chemistry",
+"venue_name": "Nature Chemistry",
+"publisher": "Nature Portfolio",
+"concepts": [
+"Chemistry",
+"Pomalidomide",
+"Protein degradation",
+"Ubiquitin ligase",
+"Proteolysis",
+"Cereblon",
+"Computational biology",
+"Ubiquitin"
+],
+"roles": [
+"Scholarly Uptake",
+"Active Public Discourse",
+"Reference Point for Synthesis"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 123,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research on proteolysis-targeting chimeras (PROTACs) with reduced off-target effects has garnered significant academic attention, evidenced by 123 citations since its release …",
+"cover_url": "",
+"authors": "Tuan M. Nguyen, Vedagopuram Sreekanth, Arghya Deb et al.",
+"institutions": [
+"Broad Institute",
+"Harvard University"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Reddit",
+"News",
+"Blogs"
 ]
 },
 {
@@ -2629,25 +2728,26 @@ window.STORIES_DATA = [
 "Natural resource economics"
 ],
 "roles": [
+"Active Public Discourse",
 "Scholarly Uptake",
 "Sustainability & Policy Relevance"
 ],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 114,
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 113,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
 "Clean water and sanitation"
 ],
 "has_teaching": true,
-"ta_ocw": 10,
+"ta_ocw": 5,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The article \"Hydrological limits to carbon capture and storage,\" published in Nature Sustainability, has garnered significant academic attention, reflected in its 114 citations fr…",
+"excerpt": "Short impact summary The article \"Hydrological limits to carbon capture and storage,\" published in Nature Sustainability, explores critical factors impacting carbon capture technologies.",
 "cover_url": "",
 "authors": "Lorenzo Rosa, Jeffrey A. Reimer, Marjorie Went et al.",
 "institutions": [
@@ -2657,7 +2757,10 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"News",
+"Blogs"
+]
 },
 {
 "file": "articlestory_10.1101_2020.01.15.908111.html",
@@ -2795,8 +2898,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Decent work and economic growth"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 5,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -2811,7 +2914,9 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia"
+"Wikipedia",
+"News",
+"Blogs"
 ]
 },
 {
@@ -2836,23 +2941,24 @@ window.STORIES_DATA = [
 "roles": [
 "High-Visibility Uptake",
 "Scholarly Uptake",
+"Active Public Discourse",
 "Rapid Uptake",
 "Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 90,
+"citation_count": 87,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 6,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The 2023 study titled \"The BAF chromatin remodeler synergizes with RNA polymerase II and transcription factors to evict nucleosomes\" has garnered significant attention with 90 cit…",
+"excerpt": "Short impact summary This research published in Nature Genetics by Sandipan Brahma and Steven Henikoff explores the collaborative dynamics of the BAF chromatin remodeler with RNA polymerase II and tra…",
 "cover_url": "",
 "authors": "Sandipan Brahma, Steven Henikoff",
 "institutions": [
@@ -2926,7 +3032,9 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Bluesky"
+"Bluesky",
+"News",
+"Blogs"
 ]
 },
 {
@@ -3152,57 +3260,6 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
-"file": "articlestory_10.1016_j.devcel.2023.11.004.html",
-"title": "Shaping the brain: The emergence of cortical structure and folding",
-"type": "ArticleStory",
-"doi": "10.1016/j.devcel.2023.11.004",
-"year": 2023,
-"venue": "Developmental Cell",
-"venue_name": "Developmental Cell",
-"publisher": "Elsevier",
-"concepts": [
-"Gyrification",
-"Biology",
-"Neuroscience",
-"Cerebral cortex",
-"Cortex (anatomy)",
-"Human brain"
-],
-"roles": [
-"High-Visibility Uptake",
-"Scholarly Uptake",
-"Reference Point for Synthesis",
-"Sustainability & Policy Relevance",
-"Rapid Uptake"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 78,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Zero hunger"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The research article titled \"Shaping the brain: The emergence of cortical structure and folding\" published in Developmental Cell has garnered significant academic attention, as ev…",
-"cover_url": "",
-"authors": "",
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"Wikipedia"
-]
-},
-{
 "file": "articlestory_10.1126_sciimmunol.abp8966.html",
 "title": "Vaccine breakthrough hypoxemic COVID-19 pneumonia in patients with auto-Abs neutralizing type I IFNs",
 "type": "ArticleStory",
@@ -3251,7 +3308,62 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Reddit"
+"Reddit",
+"News",
+"Blogs"
+]
+},
+{
+"file": "articlestory_10.1016_j.devcel.2023.11.004.html",
+"title": "Shaping the brain: The emergence of cortical structure and folding",
+"type": "ArticleStory",
+"doi": "10.1016/j.devcel.2023.11.004",
+"year": 2023,
+"venue": "Developmental Cell",
+"venue_name": "Developmental Cell",
+"publisher": "Elsevier BV",
+"concepts": [
+"Gyrification",
+"Biology",
+"Neuroscience",
+"Cerebral cortex",
+"Cortex (anatomy)",
+"Human brain"
+],
+"roles": [
+"Active Public Discourse",
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Reference Point for Synthesis",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 73,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Zero hunger"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article titled \"Shaping the brain: The emergence of cortical structure and folding,\" published in Developmental Cell, has achieved significant academic traction, evidenced by …",
+"cover_url": "",
+"authors": "Shyam K. Akula, David Exposito-Alonso, Christopher A. Walsh",
+"institutions": [
+"Boston Children's Hospital"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Wikipedia"
 ]
 },
 {
@@ -3311,7 +3423,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "Nature",
 "venue_name": "Nature",
-"publisher": "Springer Nature",
+"publisher": "Nature Portfolio",
 "concepts": [
 "Retrotransposon",
 "Biology",
@@ -3323,133 +3435,42 @@ window.STORIES_DATA = [
 "Alu element"
 ],
 "roles": [
+"Active Public Discourse",
 "High-Visibility Uptake",
 "Scholarly Uptake",
 "Sustainability & Policy Relevance",
-"Rapid Uptake",
-"Reference Point for Synthesis"
+"Rapid Uptake"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 70,
+"citation_count": 67,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
 "Life in Land"
 ],
-"has_teaching": true,
-"ta_ocw": 10,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The article titled \"Template and target-site recognition by human LINE-1 in retrotransposition\" published in Nature showcases significant contributions to the understanding of ret…",
+"excerpt": "Short impact summary The research detailed in the article titled \"Template and target-site recognition by human LINE-1 in retrotransposition,\" published in *Nature*, has garnered significant academic …",
 "cover_url": "",
-"authors": "",
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": []
-},
-{
-"file": "articlestory_10.1016_j.molcel.2023.10.045.html",
-"title": "Epigenetic pioneering by SWI/SNF family remodelers",
-"type": "ArticleStory",
-"doi": "10.1016/j.molcel.2023.10.045",
-"year": 2023,
-"venue": "Molecular Cell",
-"venue_name": "Molecular Cell",
-"publisher": "Elsevier BV",
-"concepts": [
-"Biology",
-"SWI/SNF",
-"Nucleosome",
-"Chromatin",
-"RNA polymerase II",
-"Enhancer",
-"Genetics",
-"Promoter"
-],
-"roles": [
-"Scholarly Uptake",
-"Reference Point for Synthesis",
-"Active Public Discourse"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 67,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 1,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The article \"Epigenetic pioneering by SWI/SNF family remodelers,\" published in Molecular Cell, has garnered a significant academic response, evidenced by 67 citations.",
-"cover_url": "",
-"authors": "Kami Ahmad, Sandipan Brahma, Steven Henikoff",
+"authors": "Akanksha Thawani, Alfredo Jose Florez Ariza, Eva Nogales et al.",
 "institutions": [
-"Fred Hutch Cancer Center",
-"University of Nebraska Medical Center",
-"Howard Hughes Medical Institute"
+"QB3"
 ],
 "download_count": 0,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
-},
-{
-"file": "articlestory_10.1038_s41598-021-90639-z.html",
-"title": "Seven day pre-analytical stability of serum and plasma neurofilament light chain",
-"type": "ArticleStory",
-"doi": "10.1038/s41598-021-90639-z",
-"year": 2021,
-"venue": "Scientific Reports",
-"venue_name": "Scientific Reports",
-"publisher": "Springer Nature",
-"concepts": [
-"Intraclass correlation",
-"Biomarker",
-"Repeatability",
-"Coefficient of variation",
-"Chemistry",
-"Medicine",
-"Blood plasma",
-"Chromatography"
-],
-"roles": [
-"Scholarly Uptake",
-"Reference Point for Synthesis"
-],
-"is_oa": true,
-"oa_status": "gold",
-"citation_count": 67,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 10,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The study titled \"Seven day pre-analytical stability of serum and plasma neurofilament light chain,\" published in Scientific Reports in 2021, has garnered significant attention wi…",
-"cover_url": "",
-"authors": "",
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"News",
+"Wikipedia",
+"Blogs"
+]
 },
 {
 "file": "articlestory_10.1111_j.1460-9568.2004.03503.x.html",
@@ -3504,6 +3525,108 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
+"file": "articlestory_10.1016_j.molcel.2023.10.045.html",
+"title": "Epigenetic pioneering by SWI/SNF family remodelers",
+"type": "ArticleStory",
+"doi": "10.1016/j.molcel.2023.10.045",
+"year": 2023,
+"venue": "Molecular Cell",
+"venue_name": "Molecular Cell",
+"publisher": "Elsevier BV",
+"concepts": [
+"Biology",
+"SWI/SNF",
+"Nucleosome",
+"Chromatin",
+"RNA polymerase II",
+"Enhancer",
+"Genetics",
+"Promoter"
+],
+"roles": [
+"Scholarly Uptake",
+"Reference Point for Synthesis",
+"Active Public Discourse"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 65,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 1,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research on epigenetic pioneering by SWI/SNF family remodelers, conducted by Kami Ahmad, Sandipan Brahma, and Steven Henikoff, has garnered significant citations, with 65 refe…",
+"cover_url": "",
+"authors": "Kami Ahmad, Sandipan Brahma, Steven Henikoff",
+"institutions": [
+"Fred Hutch Cancer Center",
+"University of Nebraska Medical Center",
+"Howard Hughes Medical Institute"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
+"file": "articlestory_10.1038_s41598-021-90639-z.html",
+"title": "Seven day pre-analytical stability of serum and plasma neurofilament light chain",
+"type": "ArticleStory",
+"doi": "10.1038/s41598-021-90639-z",
+"year": 2021,
+"venue": "Scientific Reports",
+"venue_name": "Scientific Reports",
+"publisher": "Nature Portfolio",
+"concepts": [
+"Intraclass correlation",
+"Biomarker",
+"Repeatability",
+"Coefficient of variation",
+"Chemistry",
+"Medicine",
+"Blood plasma",
+"Chromatography"
+],
+"roles": [
+"Active Public Discourse",
+"Scholarly Uptake",
+"Reference Point for Synthesis"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 64,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study on the seven-day pre-analytical stability of serum and plasma neurofilament light chain has garnered significant attention, being cited 64 times across various disciplin…",
+"cover_url": "",
+"authors": "Patrick Altmann, Markus Ponleitner, Paulus Rommer et al.",
+"institutions": [
+"Medical University of Vienna",
+"National Hospital for Neurology and Neurosurgery",
+"Sahlgrenska University Hospital"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
 "file": "articlestory_10.7554_eLife.79042.html",
 "title": "Hierarchical architecture of dopaminergic circuits enables second-order conditioning in Drosophila",
 "type": "ArticleStory",
@@ -3536,8 +3659,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Quality Education"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 9,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -3606,56 +3729,6 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
-"file": "articlestory_10.1038_s41593-023-01500-7.html",
-"title": "Decoding motor plans using a closed-loop ultrasonic brain–machine interface",
-"type": "ArticleStory",
-"doi": "10.1038/s41593-023-01500-7",
-"year": 2023,
-"venue": "Nature Neuroscience",
-"venue_name": "Nature Neuroscience",
-"publisher": "Springer Nature",
-"concepts": [
-"Brain–computer interface",
-"Decoding methods",
-"Neuroscience",
-"Interface (matter)",
-"Computer science",
-"Neural decoding",
-"Closed loop",
-"Motor cortex"
-],
-"roles": [
-"Scholarly Uptake",
-"Sustainability & Policy Relevance",
-"Rapid Uptake",
-"Reference Point for Synthesis"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 57,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Partnerships for the goals"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The research titled \"Decoding motor plans using a closed-loop ultrasonic brain–machine interface,\" published in Nature Neuroscience , has garnered significant engagement with 57 c…",
-"cover_url": "",
-"authors": "",
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": []
-},
-{
 "file": "articlestory_10.1126_scitranslmed.add0499.html",
 "title": "Enhanced mTORC1 signaling and protein synthesis in pathologic α-synuclein cellular and animal models of Parkinson’s disease",
 "type": "ArticleStory",
@@ -3705,30 +3778,30 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
-"file": "articlestory_10.1016_j.cell.2023.11.010.html",
-"title": "Temporally multiplexed imaging of dynamic signaling networks in living cells",
+"file": "articlestory_10.1038_s41593-023-01500-7.html",
+"title": "Decoding motor plans using a closed-loop ultrasonic brain–machine interface",
 "type": "ArticleStory",
-"doi": "10.1016/j.cell.2023.11.010",
+"doi": "10.1038/s41593-023-01500-7",
 "year": 2023,
-"venue": "Cell",
-"venue_name": "Cell",
-"publisher": "Cell Press",
+"venue": "Nature Neuroscience",
+"venue_name": "Nature Neuroscience",
+"publisher": "Nature Portfolio",
 "concepts": [
-"Biology",
-"Fluorophore",
-"Fluorescence",
-"Multiplexing",
-"Live cell imaging",
-"Signal transduction",
-"Fluorescence microscope",
-"SIGNAL (programming language)"
+"Brain–computer interface",
+"Decoding methods",
+"Neuroscience",
+"Interface (matter)",
+"Computer science",
+"Neural decoding",
+"Closed loop",
+"Motor cortex"
 ],
 "roles": [
-"High-Visibility Uptake",
 "Scholarly Uptake",
-"Reference Point for Synthesis",
-"Computational Reproducibility Enabler",
-"Sustainability & Policy Relevance"
+"Sustainability & Policy Relevance",
+"Active Public Discourse",
+"Rapid Uptake",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -3736,7 +3809,7 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
-"Life in Land"
+"Partnerships for the goals"
 ],
 "has_teaching": false,
 "ta_ocw": 0,
@@ -3745,19 +3818,20 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The study titled \"Temporally multiplexed imaging of dynamic signaling networks in living cells,\" published in Cell , has garnered significant attention, evidenced by its 54 citati…",
+"excerpt": "Short impact summary The research article titled \"Decoding motor plans using a closed-loop ultrasonic brain–machine interface,\" co-authored by a multidisciplinary team from the California Institute of…",
 "cover_url": "",
-"authors": "Yong Qian, Orhan T. Celiker, Zeguan Wang et al.",
+"authors": "Whitney S. Griggs, Sumner L. Norman, Thomas Deffieux et al.",
 "institutions": [
-"McGovern Institute for Brain Research",
-"Howard Hughes Medical Institute"
+"California Institute of Technology",
+"Centre National de la Recherche Scientifique",
+"University of California, Riverside"
 ],
 "download_count": 0,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia"
+"Reddit"
 ]
 },
 {
@@ -3804,56 +3878,6 @@ window.STORIES_DATA = [
 "series_name": "Open reports series",
 "series_id": "https://openalex.org/S4210220030",
 "belongs_to_series": true,
-"mention_platforms": []
-},
-{
-"file": "articlestory_10.1016_j.cell.2023.11.036.html",
-"title": "Human inherited CCR2 deficiency underlies progressive polycystic lung disease",
-"type": "ArticleStory",
-"doi": "10.1016/j.cell.2023.11.036",
-"year": 2023,
-"venue": "Cell",
-"venue_name": "Cell",
-"publisher": "Elsevier",
-"concepts": [
-"Biology",
-"Disease",
-"Lung",
-"Lung disease",
-"Genetics",
-"Internal medicine",
-"Medicine"
-],
-"roles": [
-"Methodological Anchor",
-"High-Visibility Uptake",
-"Reference Point for Synthesis",
-"Scholarly Uptake",
-"Sustainability & Policy Relevance"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 53,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Good health and well-being"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The research article titled \"Human inherited CCR2 deficiency underlies progressive polycystic lung disease,\" published in Cell , has achieved significant academic traction, amassi…",
-"cover_url": "",
-"authors": "",
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
 "mention_platforms": []
 },
 {
@@ -3936,8 +3960,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 6,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -3951,7 +3975,72 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Hypothesis"
+]
+},
+{
+"file": "articlestory_10.1016_j.cell.2023.11.036.html",
+"title": "Human inherited CCR2 deficiency underlies progressive polycystic lung disease",
+"type": "ArticleStory",
+"doi": "10.1016/j.cell.2023.11.036",
+"year": 2023,
+"venue": "Cell",
+"venue_name": "Cell",
+"publisher": "Cell Press",
+"concepts": [
+"Biology",
+"Disease",
+"Lung",
+"Lung disease",
+"Genetics",
+"Internal medicine",
+"Medicine"
+],
+"roles": [
+"Methodological Anchor",
+"High-Visibility Uptake",
+"Reference Point for Synthesis",
+"Scholarly Uptake",
+"Active Public Discourse"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 51,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study led by Neehus et al.",
+"cover_url": "",
+"authors": "Anna‐Lena Neehus, Brenna Carey, Marija Landekic et al.",
+"institutions": [
+"Inserm",
+"Cincinnati Children's Hospital Medical Center",
+"McGill University",
+"University of Washington",
+"Rockefeller University",
+"University of Tehran",
+"Universal Scientific Education and Research Network",
+"Child Health and Development Institute",
+"Jackson Laboratory",
+"Délégation Paris 5"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Hypothesis"
+]
 },
 {
 "file": "articlestory_10.1073_pnas.1607187113.html",
@@ -4039,8 +4128,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 3,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -4152,7 +4241,71 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"News",
+"Hypothesis",
+"Blogs"
+]
+},
+{
+"file": "articlestory_10.1016_j.cell.2023.11.010.html",
+"title": "Temporally multiplexed imaging of dynamic signaling networks in living cells",
+"type": "ArticleStory",
+"doi": "10.1016/j.cell.2023.11.010",
+"year": 2023,
+"venue": "Cell",
+"venue_name": "Cell",
+"publisher": "Cell Press",
+"concepts": [
+"Biology",
+"Fluorophore",
+"Fluorescence",
+"Multiplexing",
+"Live cell imaging",
+"Signal transduction",
+"Fluorescence microscope",
+"SIGNAL (programming language)"
+],
+"roles": [
+"Active Public Discourse",
+"High-Visibility Uptake",
+"Reference Point for Synthesis",
+"Computational Reproducibility Enabler",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 47,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Life in Land"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The groundbreaking work titled \"Temporally multiplexed imaging of dynamic signaling networks in living cells,\" published in Cell, has garnered significant academic attention, as e…",
+"cover_url": "",
+"authors": "Yong Qian, Orhan T. Celiker, Zeguan Wang et al.",
+"institutions": [
+"McGovern Institute for Brain Research",
+"Howard Hughes Medical Institute"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Wikipedia",
+"News",
+"Blogs",
+"Hypothesis",
+"Reddit"
+]
 },
 {
 "file": "articlestory_10.1042_bc20100036.html",
@@ -4431,60 +4584,6 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
-"file": "articlestory_10.1016_j.tcb.2023.10.013.html",
-"title": "Metabolic immunity against microbes",
-"type": "ArticleStory",
-"doi": "10.1016/j.tcb.2023.10.013",
-"year": 2023,
-"venue": "Trends in Cell Biology",
-"venue_name": "Trends in Cell Biology",
-"publisher": "Elsevier BV",
-"concepts": [
-"Biology",
-"Host (biology)",
-"Immunity",
-"Pathogen",
-"Domestication",
-"Ecology",
-"Immune system",
-"Microbiology"
-],
-"roles": [
-"High-Visibility Uptake",
-"Sustainability & Policy Relevance",
-"Reference Point for Synthesis",
-"Rapid Uptake",
-"Active Public Discourse"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 39,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Zero hunger"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The article \"Metabolic immunity against microbes,\" authored by Sebastian Kreimendahl and Lena Pernas and published in Trends in Cell Biology, has made significant strides in showc…",
-"cover_url": "",
-"authors": "Sebastian Kreimendahl, Lena Pernas",
-"institutions": [
-"Max Planck Institute for Biology of Ageing",
-"Howard Hughes Medical Institute"
-],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": []
-},
-{
 "file": "articlestory_10.1016_s0306-4522(03)00405-6.html",
 "title": "Focal motility determines the geometry of dendritic spines☆",
 "type": "ArticleStory",
@@ -4543,9 +4642,9 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1101/2023.11.29.569241",
 "year": 2023,
-"venue": "bioRxiv",
-"venue_name": "bioRxiv",
-"publisher": "openRxiv",
+"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+"publisher": "Cold Spring Harbor Laboratory",
 "concepts": [
 "Drosophila (subgenus)",
 "Center (category theory)",
@@ -4557,6 +4656,7 @@ window.STORIES_DATA = [
 "Artificial intelligence"
 ],
 "roles": [
+"Active Public Discourse",
 "Rapid Uptake"
 ],
 "is_oa": true,
@@ -4572,10 +4672,14 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The preprint \"Connectomic reconstruction predicts the functional organization of visual inputs to the navigation center of the Drosophila brain\" has garnered significant scholarly…",
+"excerpt": "Short impact summary The work titled \"Connectomic reconstruction predicts the functional organization of visual inputs to the navigation center of the Drosophila brain\" has made notable contributions …",
 "cover_url": "",
-"authors": "",
-"institutions": [],
+"authors": "Dustin Garner, Emil Kind, Aljoscha Nern et al.",
+"institutions": [
+"University of California, Santa Barbara",
+"Freie Universität Berlin",
+"Howard Hughes Medical Institute"
+],
 "download_count": 0,
 "series_name": null,
 "series_id": null,
@@ -4615,9 +4719,9 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Zero hunger"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 1,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": true,
@@ -4659,8 +4763,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 4,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -4680,6 +4784,60 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Hypothesis"
 ]
+},
+{
+"file": "articlestory_10.1016_j.tcb.2023.10.013.html",
+"title": "Metabolic immunity against microbes",
+"type": "ArticleStory",
+"doi": "10.1016/j.tcb.2023.10.013",
+"year": 2023,
+"venue": "Trends in Cell Biology",
+"venue_name": "Trends in Cell Biology",
+"publisher": "Elsevier BV",
+"concepts": [
+"Biology",
+"Host (biology)",
+"Immunity",
+"Pathogen",
+"Domestication",
+"Ecology",
+"Immune system",
+"Microbiology"
+],
+"roles": [
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance",
+"Reference Point for Synthesis",
+"Active Public Discourse",
+"Rapid Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 35,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Zero hunger"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The work \"Metabolic immunity against microbes\" by Sebastian Kreimendahl and Lena Pernas has garnered increasing attention within the academic community, reflected by its 35 citati…",
+"cover_url": "",
+"authors": "Sebastian Kreimendahl, Lena Pernas",
+"institutions": [
+"Max Planck Institute for Biology of Ageing",
+"Howard Hughes Medical Institute"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
 },
 {
 "file": "articlestory_10.1101_2024.04.04.588111.html",
@@ -4779,54 +4937,6 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
-"file": "articlestory_10.1101_2023.11.30.23299240.html",
-"title": "Fitness models provide accurate short-term forecasts of SARS-CoV-2 variant frequency",
-"type": "ArticleStory",
-"doi": "10.1101/2023.11.30.23299240",
-"year": 2023,
-"venue": "medRxiv",
-"venue_name": "medRxiv",
-"publisher": "openRxiv",
-"concepts": [
-"Term (time)",
-"Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
-"Coronavirus disease 2019 (COVID-19)",
-"2019-20 coronavirus outbreak",
-"Econometrics",
-"Computer science",
-"Mathematics",
-"Virology"
-],
-"roles": [
-"High-Visibility Uptake",
-"Sustainability & Policy Relevance"
-],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 34,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Partnerships for the goals"
-],
-"has_teaching": true,
-"ta_ocw": 3,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary This study highlights the efficacy of fitness models in accurately forecasting the frequency of SARS-CoV-2 variants.",
-"cover_url": "",
-"authors": "",
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": []
-},
-{
 "file": "articlestory_10.1371_journal.pone.0253205.html",
 "title": "Automatic classification of medical image modality and anatomical location using convolutional neural network",
 "type": "ArticleStory",
@@ -4878,6 +4988,58 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "articlestory_10.1101_2023.11.30.23299240.html",
+"title": "Fitness models provide accurate short-term forecasts of SARS-CoV-2 variant frequency",
+"type": "ArticleStory",
+"doi": "10.1101/2023.11.30.23299240",
+"year": 2023,
+"venue": "medRxiv",
+"venue_name": "medRxiv",
+"publisher": "",
+"concepts": [
+"Term (time)",
+"Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
+"Coronavirus disease 2019 (COVID-19)",
+"2019-20 coronavirus outbreak",
+"Econometrics",
+"Computer science",
+"Mathematics",
+"Virology"
+],
+"roles": [
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 32,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Partnerships for the goals"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study by Abousamra et al.",
+"cover_url": "",
+"authors": "Eslam Abousamra, Marlin D Figgins, Trevor Bedford",
+"institutions": [
+"University of Washington",
+"Fred Hutch Cancer Center",
+"Howard Hughes Medical Institute"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
 "file": "bookstory_10.3726_b20254.html",
 "title": "Trade Unions in the European Union",
 "type": "BookStory",
@@ -4924,59 +5086,6 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia"
 ]
-},
-{
-"file": "articlestory_10.1016_j.cub.2023.11.025.html",
-"title": "Transcriptional and post-transcriptional control of odorant receptor choice in ants",
-"type": "ArticleStory",
-"doi": "10.1016/j.cub.2023.11.025",
-"year": 2023,
-"venue": "Current Biology",
-"venue_name": "Current Biology",
-"publisher": "Elsevier BV",
-"concepts": [
-"Biology",
-"Receptor",
-"Nucleus",
-"Cell biology",
-"Gene",
-"Olfactory receptor",
-"Sensory neuron",
-"Genetics"
-],
-"roles": [
-"High-Visibility Uptake",
-"Rapid Uptake",
-"Sustainability & Policy Relevance",
-"Reference Point for Synthesis"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 31,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Life in Land"
-],
-"has_teaching": true,
-"ta_ocw": 7,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The article titled \"Transcriptional and post-transcriptional control of odorant receptor choice in ants,\" published in Current Biology in 2023, has garnered notable academic atten…",
-"cover_url": "",
-"authors": "Anindita Brahma, Dominic D. Frank, P. Daniel H. Pastor et al.",
-"institutions": [
-"Rockefeller University",
-"Howard Hughes Medical Institute"
-],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": []
 },
 {
 "file": "articlestory_10.1001_jama.2025.3810.html",
@@ -5027,6 +5136,60 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Podcasts"
 ]
+},
+{
+"file": "articlestory_10.1016_j.cub.2023.11.025.html",
+"title": "Transcriptional and post-transcriptional control of odorant receptor choice in ants",
+"type": "ArticleStory",
+"doi": "10.1016/j.cub.2023.11.025",
+"year": 2023,
+"venue": "Current Biology",
+"venue_name": "Current Biology",
+"publisher": "Elsevier BV",
+"concepts": [
+"Biology",
+"Receptor",
+"Nucleus",
+"Cell biology",
+"Gene",
+"Olfactory receptor",
+"Sensory neuron",
+"Genetics"
+],
+"roles": [
+"High-Visibility Uptake",
+"Rapid Uptake",
+"Sustainability & Policy Relevance",
+"Active Public Discourse",
+"Reference Point for Synthesis"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 30,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Life in Land"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research article \"Transcriptional and post-transcriptional control of odorant receptor choice in ants,\" published in Current Biology, presents significant findings in the area…",
+"cover_url": "",
+"authors": "Anindita Brahma, Dominic D. Frank, P. Daniel H. Pastor et al.",
+"institutions": [
+"Rockefeller University",
+"Howard Hughes Medical Institute"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
 },
 {
 "file": "articlestory_10.1101_2020.02.05.933721.html",
@@ -5176,7 +5339,9 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Hypothesis"
+"Hypothesis",
+"News",
+"Blogs"
 ]
 },
 {
@@ -5212,8 +5377,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Life in Land"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 9,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -5367,53 +5532,6 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
-"file": "articlestory_10.1101_2023.11.29.569289.html",
-"title": "A fluorogenic complementation tool kit for interrogating lipid droplet-organelle interaction",
-"type": "ArticleStory",
-"doi": "10.1101/2023.11.29.569289",
-"year": 2023,
-"venue": "bioRxiv",
-"venue_name": "bioRxiv",
-"publisher": "openRxiv",
-"concepts": [
-"Organelle",
-"Endoplasmic reticulum",
-"Lipid droplet",
-"Chemistry",
-"Biogenesis",
-"Biophysics",
-"Membrane contact site",
-"Cell biology"
-],
-"roles": [
-"Sustainability & Policy Relevance"
-],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 26,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Affordable and clean energy"
-],
-"has_teaching": true,
-"ta_ocw": 9,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The article titled \"A fluorogenic complementation tool kit for interrogating lipid droplet-organelle interaction\" has made a notable impact in the field since its initial release …",
-"cover_url": "",
-"authors": "",
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": []
-},
-{
 "file": "articlestory_10.1101_2023.12.07.565988.html",
 "title": "Permanent deconstruction of intracellular primary cilia in differentiating granule cell neurons",
 "type": "ArticleStory",
@@ -5441,8 +5559,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 10,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -5506,7 +5624,9 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Bluesky"
+"Bluesky",
+"Hypothesis",
+"Blogs"
 ]
 },
 {
@@ -5600,6 +5720,59 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
+"file": "articlestory_10.1101_2023.11.29.569289.html",
+"title": "A fluorogenic complementation tool kit for interrogating lipid droplet-organelle interaction",
+"type": "ArticleStory",
+"doi": "10.1101/2023.11.29.569289",
+"year": 2023,
+"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+"publisher": "Cold Spring Harbor Laboratory",
+"concepts": [
+"Organelle",
+"Endoplasmic reticulum",
+"Lipid droplet",
+"Chemistry",
+"Biogenesis",
+"Biophysics",
+"Membrane contact site",
+"Cell biology"
+],
+"roles": [
+"Active Public Discourse",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 25,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Affordable and clean energy"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study presents a fluorogenic complementation toolkit designed for investigating lipid droplet-organelle interactions, signaling its potential to advance understanding in cellu…",
+"cover_url": "",
+"authors": "Xiao Li, Rico Gamuyao, Ming-Lun Wu et al.",
+"institutions": [
+"St. Jude Children's Research Hospital",
+"Howard Hughes Medical Institute"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Wikipedia"
+]
+},
+{
 "file": "articlestory_10.2196_preprints.37324.html",
 "title": "Establishing Institutional Scores With the Rigor and Transparency Index: Large-scale Analysis of Scientific Reporting Quality (Preprint)",
 "type": "ArticleStory",
@@ -5691,7 +5864,10 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"News",
+"Blogs"
+]
 },
 {
 "file": "bookstory_10.1007_978-3-030-47436-2.html",
@@ -5867,8 +6043,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -5953,8 +6129,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 10,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -6018,7 +6194,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Hypothesis"
+]
 },
 {
 "file": "articlestory_10.1007_s10875-023-01629-x.html",
@@ -6047,7 +6225,7 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 19,
+"citation_count": 18,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -6060,7 +6238,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The study titled \"Ruxolitinib Rescues Multiorgan Clinical Autoimmunity in Patients with APS-1,\" published in the Journal of Clinical Immunology, represents a significant advanceme…",
+"excerpt": "Short impact summary Ruxolitinib has emerged as a promising therapeutic agent, demonstrating potential in mitigating multicentric organ autoimmunity in patients diagnosed with autoimmune polyglandular…",
 "cover_url": "",
 "authors": "Romain Lévy, Agathe Escudier, Paul Bastard et al.",
 "institutions": [
@@ -6083,7 +6261,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "Nature Methods",
 "venue_name": "Nature Methods",
-"publisher": "Springer Nature",
+"publisher": "Nature Portfolio",
 "concepts": [
 "Fluidics",
 "Multiplexing",
@@ -6095,27 +6273,31 @@ window.STORIES_DATA = [
 "Materials science"
 ],
 "roles": [
-"Sustainability & Policy Relevance"
+"Sustainability & Policy Relevance",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 19,
+"citation_count": 18,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
 "Affordable and clean energy"
 ],
-"has_teaching": true,
-"ta_ocw": 9,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The study titled \"Thermal-plex: fluidic-free, rapid sequential multiplexed imaging with DNA-encoded thermal channels\" has emerged as a significant contribution to the field of ima…",
+"excerpt": "Short impact summary The research on \"Thermal-plex: fluidic-free, rapid sequential multiplexed imaging with DNA-encoded thermal channels,\" published in Nature Methods , reveals a novel approach in ima…",
 "cover_url": "",
-"authors": "",
-"institutions": [],
+"authors": "Hong Fan, Jocelyn Y. Kishi, Ryan N. Delgado et al.",
+"institutions": [
+"Harvard University",
+"Howard Hughes Medical Institute"
+],
 "download_count": 0,
 "series_name": null,
 "series_id": null,
@@ -6142,22 +6324,22 @@ window.STORIES_DATA = [
 "Literature"
 ],
 "roles": [
-"Scholarly Uptake"
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 19,
+"citation_count": 18,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 3,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary Christopher Marsh's work, \"Best-Selling Ballads and their Pictures in Seventeenth-Century England,\" published in Past & Present , has garnered significant academic interest, refle…",
+"excerpt": "Short impact summary Christopher Marsh's work on the best-selling ballads and their imagery in seventeenth-century England has garnered notable academic attention, as evidenced by its 18 citations in …",
 "cover_url": "",
 "authors": "Christopher Marsh",
 "institutions": [
@@ -6294,8 +6476,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 2,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -6546,8 +6728,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Life below water"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 5,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -6598,53 +6780,6 @@ window.STORIES_DATA = [
 "authors": "Franco Trabattoni",
 "institutions": [],
 "download_count": 12375,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": []
-},
-{
-"file": "articlestory_10.1073_pnas.2316466120.html",
-"title": "Mechanism of eukaryotic origin unwinding is a dual helicase DNA shearing process",
-"type": "ArticleStory",
-"doi": "10.1073/pnas.2316466120",
-"year": 2023,
-"venue": "Proceedings of the National Academy of Sciences",
-"venue_name": "Proceedings of the National Academy of Sciences",
-"publisher": "National Academy of Sciences",
-"concepts": [
-"Processivity",
-"Helicase",
-"Eukaryotic DNA replication",
-"DNA replication",
-"Biology",
-"DNA",
-"Cell biology",
-"Duplex (building)"
-],
-"roles": [
-"Reference Point for Synthesis"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 12,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 4,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The research titled \"Mechanism of eukaryotic origin unwinding is a dual helicase DNA shearing process,\" published in the Proceedings of the National Academy of Sciences, has garne…",
-"cover_url": "",
-"authors": "Lance D. Langston, Roxana E. Georgescu, Mike O’Donnell",
-"institutions": [
-"Rockefeller University"
-],
-"download_count": 0,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
@@ -6828,9 +6963,9 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
-"ta_youtube": 4,
+"ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
@@ -6846,6 +6981,54 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Bluesky"
 ]
+},
+{
+"file": "articlestory_10.1073_pnas.2316466120.html",
+"title": "Mechanism of eukaryotic origin unwinding is a dual helicase DNA shearing process",
+"type": "ArticleStory",
+"doi": "10.1073/pnas.2316466120",
+"year": 2023,
+"venue": "Proceedings of the National Academy of Sciences",
+"venue_name": "Proceedings of the National Academy of Sciences",
+"publisher": "National Academy of Sciences",
+"concepts": [
+"Processivity",
+"Helicase",
+"Eukaryotic DNA replication",
+"DNA replication",
+"Biology",
+"DNA",
+"Cell biology",
+"Duplex (building)"
+],
+"roles": [
+"Reference Point for Synthesis",
+"Active Public Discourse"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 11,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research article titled \"Mechanism of eukaryotic origin unwinding is a dual helicase DNA shearing process\" authored by Lance D.",
+"cover_url": "",
+"authors": "Lance D. Langston, Roxana E. Georgescu, Mike O’Donnell",
+"institutions": [
+"Rockefeller University"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
 },
 {
 "file": "articlestory_10.1101_2023.12.09.570606.html",
@@ -6875,8 +7058,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 2,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -6976,7 +7159,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary Markus Aspelmeyer's 2009 article, published in Nature Physics, has garnered notable academic attention, reflected in its ten citations across various reputable journals.",
+"excerpt": "Short impact summary Markus Aspelmeyer's work, published in Nature Physics, has garnered significant academic attention, as evidenced by its 10 citations across reputable journals such as Optics Commu…",
 "cover_url": "",
 "authors": "Markus Aspelmeyer",
 "institutions": [
@@ -6987,8 +7170,59 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Bluesky"
+"Bluesky",
+"Wikipedia"
 ]
+},
+{
+"file": "articlestory_10.1056_NEJMimc1109704.html",
+"title": "A Startling Decline",
+"type": "ArticleStory",
+"doi": "10.1056/NEJMimc1109704",
+"year": 2012,
+"venue": "New England Journal of Medicine",
+"venue_name": "New England Journal of Medicine",
+"publisher": "Massachusetts Medical Society",
+"concepts": [
+"Medicine",
+"Personality",
+"Cognition",
+"Cognitive decline",
+"Cognitive psychology",
+"Psychiatry",
+"Psychoanalysis",
+"Dementia"
+],
+"roles": [
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 10,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"No poverty"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study, published in the esteemed New England Journal of Medicine by Anand Vaidya and colleagues, has gained notable traction within the academic community, evidenced by 10 cit…",
+"cover_url": "",
+"authors": "Anand Vaidya, Brigid M. Dolan, Brian L. Edlow et al.",
+"institutions": [
+"General Department of Preventive Medicine"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
 },
 {
 "file": "articlestory_10.1073_pnas.2316964120.html",
@@ -7010,7 +7244,8 @@ window.STORIES_DATA = [
 "Epitope mapping"
 ],
 "roles": [
-"Sustainability & Policy Relevance"
+"Sustainability & Policy Relevance",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -7020,17 +7255,22 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": true,
-"ta_ocw": 3,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The study published in the Proceedings of the National Academy of Sciences investigates protective human antibodies targeting a conserved epitope in influenza hemagglutinin, revea…",
+"excerpt": "Short impact summary The research article titled \"Protective human antibodies against a conserved epitope in pre- and postfusion influenza hemagglutinin\" has garnered a meaningful academic footprint, …",
 "cover_url": "",
-"authors": "",
-"institutions": [],
+"authors": "Joel Finney, Annie Park Moseman, Susan Kong et al.",
+"institutions": [
+"Boston Children's Hospital",
+"Duke University",
+"Harvard University",
+"University of Pittsburgh"
+],
 "download_count": 0,
 "series_name": null,
 "series_id": null,
@@ -7065,8 +7305,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 6,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -7149,7 +7389,7 @@ window.STORIES_DATA = [
 "Maximum likelihood"
 ],
 "roles": [
-"Scholarly Uptake"
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
@@ -7164,7 +7404,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The article \"Sample selection models for count data in R\" has garnered nine citations, showing its relevance and adoption within the academic community, particularly in statistics…",
+"excerpt": "Short impact summary The article \"Sample selection models for count data in R\" by Karol Wyszynski and Giampiero Marra showcases a significant academic footprint with 9 citations, indicating its releva…",
 "cover_url": "",
 "authors": "Karol Wyszynski, Giampiero Marra",
 "institutions": [
@@ -7174,7 +7414,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Stack Exchange"
+]
 },
 {
 "file": "articlestory_10.1038_s41556-025-01828-1.html",
@@ -7256,8 +7498,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": true,
-"ta_ocw": 1,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -7327,98 +7569,6 @@ window.STORIES_DATA = [
 "authors": "Larissa Hjorth, Kana Ohashi, Jolynna Sinanan et al.",
 "institutions": [],
 "download_count": 96,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": []
-},
-{
-"file": "articlestory_10.1038_s42003-023-05579-3.html",
-"title": "Structural and biochemical investigations of a HEAT-repeat protein involved in the cytosolic iron-sulfur cluster assembly pathway",
-"type": "ArticleStory",
-"doi": "10.1038/s42003-023-05579-3",
-"year": 2023,
-"venue": "Communications Biology",
-"venue_name": "Communications Biology",
-"publisher": "Springer Nature",
-"concepts": [
-"Iron–sulfur cluster",
-"Cytosol",
-"Biochemistry",
-"Sulfur",
-"Saccharomyces cerevisiae",
-"Cluster (spacecraft)",
-"Chemistry",
-"Biophysics"
-],
-"roles": [
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "gold",
-"citation_count": 8,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 8,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary This research published in *Communications Biology* explores the structural and biochemical characteristics of a HEAT-repeat protein involved in the cytosolic iron-sulfur cluster …",
-"cover_url": "",
-"authors": "",
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": []
-},
-{
-"file": "articlestory_10.1093_nar_gkad1207.html",
-"title": "A phage-encoded RNA-binding protein inhibits the antiviral activity of a toxin–antitoxin system",
-"type": "ArticleStory",
-"doi": "10.1093/nar/gkad1207",
-"year": 2023,
-"venue": "Nucleic Acids Research",
-"venue_name": "Nucleic Acids Research",
-"publisher": "Oxford University Press",
-"concepts": [
-"Biology",
-"Antitoxin",
-"Endoribonuclease",
-"RNA",
-"Ribonucleoprotein",
-"RNase P",
-"Toxin",
-"RNA-binding protein"
-],
-"roles": [
-"Sustainability & Policy Relevance"
-],
-"is_oa": true,
-"oa_status": "gold",
-"citation_count": 8,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Life below water"
-],
-"has_teaching": true,
-"ta_ocw": 3,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The study titled \"A phage-encoded RNA-binding protein inhibits the antiviral activity of a toxin–antitoxin system,\" published in Nucleic Acids Research in 2023, presents significa…",
-"cover_url": "",
-"authors": "",
-"institutions": [],
-"download_count": 0,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
@@ -7679,8 +7829,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 7,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -7690,6 +7840,55 @@ window.STORIES_DATA = [
 "cover_url": "",
 "authors": "Jarrett Smith, David P. Bartel",
 "institutions": [
+"Howard Hughes Medical Institute"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
+"file": "articlestory_10.1038_s42003-023-05579-3.html",
+"title": "Structural and biochemical investigations of a HEAT-repeat protein involved in the cytosolic iron-sulfur cluster assembly pathway",
+"type": "ArticleStory",
+"doi": "10.1038/s42003-023-05579-3",
+"year": 2023,
+"venue": "Communications Biology",
+"venue_name": "Communications Biology",
+"publisher": "Nature Portfolio",
+"concepts": [
+"Iron–sulfur cluster",
+"Cytosol",
+"Biochemistry",
+"Sulfur",
+"Saccharomyces cerevisiae",
+"Cluster (spacecraft)",
+"Chemistry",
+"Biophysics"
+],
+"roles": [
+"Active Public Discourse"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 7,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The article titled \"Structural and biochemical investigations of a HEAT-repeat protein involved in the cytosolic iron-sulfur cluster assembly pathway,\" published in Communications…",
+"cover_url": "",
+"authors": "Sheena Vasquez, Melissa D. Marquez, Edward J. Brignole et al.",
+"institutions": [
+"Massachusetts Institute of Technology",
+"Boston University",
 "Howard Hughes Medical Institute"
 ],
 "download_count": 0,
@@ -7835,53 +8034,55 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
-"file": "articlestory_10.1101_2020.02.10.942185.html",
-"title": "Structural modeling of 2019-novel coronavirus (nCoV) spike protein reveals a proteolytically-sensitive activation loop as a distinguishing feature compared to SARS-CoV and related SARS-like coronaviruses",
+"file": "articlestory_10.1093_nar_gkad1207.html",
+"title": "A phage-encoded RNA-binding protein inhibits the antiviral activity of a toxin–antitoxin system",
 "type": "ArticleStory",
-"doi": "10.1101/2020.02.10.942185",
-"year": 2020,
-"venue": "bioRxiv",
-"venue_name": "bioRxiv",
-"publisher": "openRxiv",
+"doi": "10.1093/nar/gkad1207",
+"year": 2023,
+"venue": "Nucleic Acids Research",
+"venue_name": "Nucleic Acids Research",
+"publisher": "Oxford University Press",
 "concepts": [
-"Coronavirus",
-"Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
 "Biology",
-"Virology",
-"Coronavirus disease 2019 (COVID-19)",
-"Betacoronavirus",
-"Glycoprotein",
-"Lipid bilayer fusion"
+"Antitoxin",
+"Endoribonuclease",
+"RNA",
+"Ribonucleoprotein",
+"RNase P",
+"Toxin",
+"RNA-binding protein"
 ],
 "roles": [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "green",
+"oa_status": "gold",
 "citation_count": 6,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
-"Good health and well-being"
+"Life below water"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
-"ta_youtube": 1,
+"ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary This preprint presents a structural model of the 2019-novel coronavirus spike protein, revealing a unique proteolytically-sensitive activation loop that distinguishes it from SARS…",
+"excerpt": "Short impact summary This research presents findings on a phage-encoded RNA-binding protein that inhibits the antiviral activity of a toxin-antitoxin system.",
 "cover_url": "",
-"authors": "",
-"institutions": [],
+"authors": "Chantal K. Guegler, Gabriella I. C. Teodoro, Sriram Srikant et al.",
+"institutions": [
+"Harvard University",
+"Massachusetts Institute of Technology",
+"Howard Hughes Medical Institute"
+],
 "download_count": 0,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Hypothesis"
-]
+"mention_platforms": []
 },
 {
 "file": "articlestory_10.1101_2023.12.07.570640.html",
@@ -7911,8 +8112,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 7,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -8342,8 +8543,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": true,
-"ta_ocw": 9,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -8387,8 +8588,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 3,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -8405,61 +8606,14 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
-"file": "articlestory_10.1038_s41597-023-02782-z.html",
-"title": "Chromosome-level genome assembly of chub mackerel (Scomber japonicus) from the Indo-Pacific Ocean",
-"type": "ArticleStory",
-"doi": "10.1038/s41597-023-02782-z",
-"year": 2023,
-"venue": "Scientific Data",
-"venue_name": "Scientific Data",
-"publisher": "Springer Nature",
-"concepts": [
-"Scomber",
-"Indo-Pacific",
-"Fishery",
-"Mackerel",
-"Biology",
-"Chromosome",
-"Oceanography",
-"Gene"
-],
-"roles": [
-"Sustainability & Policy Relevance"
-],
-"is_oa": true,
-"oa_status": "gold",
-"citation_count": 5,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Life below water"
-],
-"has_teaching": true,
-"ta_ocw": 9,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The chromosome-level genome assembly of chub mackerel (Scomber japonicus) represents a significant contribution to marine genomics, supported by a robust institutional framework a…",
-"cover_url": "",
-"authors": "",
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": []
-},
-{
 "file": "articlestory_10.1101_2023.11.30.569486.html",
 "title": "Bioorthogonal labeling enables in situ fluorescence imaging of expressed gas vesicle nanostructures",
 "type": "ArticleStory",
 "doi": "10.1101/2023.11.30.569486",
 "year": 2023,
-"venue": "bioRxiv",
-"venue_name": "bioRxiv",
-"publisher": "openRxiv",
+"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+"publisher": "Cold Spring Harbor Laboratory",
 "concepts": [
 "Bioorthogonal chemistry",
 "Fluorescence",
@@ -8471,7 +8625,7 @@ window.STORIES_DATA = [
 "Protein subunit"
 ],
 "roles": [
-"Scholarly Uptake"
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -8479,17 +8633,19 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 7,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The preprint titled \"Bioorthogonal labeling enables in situ fluorescence imaging of expressed gas vesicle nanostructures\" has garnered attention within the academic community, acc…",
+"excerpt": "Short impact summary The research titled \"Bioorthogonal labeling enables in situ fluorescence imaging of expressed gas vesicle nanostructures,\" authored by Erik Schrunk and colleagues, presents signif…",
 "cover_url": "",
-"authors": "",
-"institutions": [],
+"authors": "Erik Schrunk, Przemysław Dutka, Robert C. Hurt et al.",
+"institutions": [
+"Pasadena City College"
+],
 "download_count": 0,
 "series_name": null,
 "series_id": null,
@@ -8680,8 +8836,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Quality Education"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 2,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -9055,8 +9211,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": true,
-"ta_ocw": 2,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -9163,7 +9319,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Hypothesis"
+]
 },
 {
 "file": "articlestory_10.7554_elife.89373.3.html",
@@ -9597,6 +9755,61 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
+"file": "articlestory_10.1038_s41597-023-02782-z.html",
+"title": "Chromosome-level genome assembly of chub mackerel (Scomber japonicus) from the Indo-Pacific Ocean",
+"type": "ArticleStory",
+"doi": "10.1038/s41597-023-02782-z",
+"year": 2023,
+"venue": "Scientific Data",
+"venue_name": "Scientific Data",
+"publisher": "Nature Portfolio",
+"concepts": [
+"Scomber",
+"Indo-Pacific",
+"Fishery",
+"Mackerel",
+"Biology",
+"Chromosome",
+"Oceanography",
+"Gene"
+],
+"roles": [
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 3,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Life below water"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The chromosome-level genome assembly of chub mackerel (Scomber japonicus) represents a significant contribution to marine genomics, backed by reputable institutions such as Pukyon…",
+"cover_url": "",
+"authors": "Young Ho Lee, Linelle Abueg, Jin‐Koo Kim et al.",
+"institutions": [
+"Seoul National University",
+"Rockefeller University",
+"Pukyong National University",
+"Wellcome Sanger Institute",
+"National Institutes of Health",
+"National Institute of Fisheries Science",
+"Howard Hughes Medical Institute"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": []
+},
+{
 "file": "articlestory_10.1101_2024.01.15.575636.html",
 "title": "Do organisms need an impact factor? Citations of key biological resources including model organisms reveal usage patterns and impact",
 "type": "ArticleStory",
@@ -9780,8 +9993,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 3,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -10312,7 +10525,7 @@ window.STORIES_DATA = [
 "year": 2018,
 "venue": "Clinical Orthopaedics and Related Research",
 "venue_name": "Clinical Orthopaedics and Related Research",
-"publisher": "Wolters Kluwer",
+"publisher": "Lippincott Williams & Wilkins",
 "concepts": [
 "Medicine",
 "Carpal tunnel release",
@@ -10324,7 +10537,7 @@ window.STORIES_DATA = [
 "Surgery"
 ],
 "roles": [
-"Scholarly Uptake"
+"Active Public Discourse"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -10339,59 +10552,11 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The study titled \"Preoperative Pain Sensitization Is Associated With Postoperative Pillar Pain After Open Carpal Tunnel Release,\" published in Clinical Orthopaedics and Related Re…",
+"excerpt": "Short impact summary Ana‐Maria Vranceanu's research published in Clinical Orthopaedics and Related Research explores the critical link between preoperative pain sensitization and postoperative pillar …",
 "cover_url": "",
-"authors": "",
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": []
-},
-{
-"file": "articlestory_10.1056_NEJMimc1109704.html",
-"title": "A Startling Decline",
-"type": "ArticleStory",
-"doi": "10.1056/NEJMimc1109704",
-"year": 2012,
-"venue": "New England Journal of Medicine",
-"venue_name": "New England Journal of Medicine",
-"publisher": "Massachusetts Medical Society",
-"concepts": [
-"Medicine",
-"Personality",
-"Cognition",
-"Cognitive decline",
-"Cognitive psychology",
-"Psychiatry",
-"Psychoanalysis",
-"Dementia"
-],
-"roles": [
-"High-Visibility Uptake",
-"Sustainability & Policy Relevance"
-],
-"is_oa": false,
-"oa_status": "closed",
-"citation_count": 2,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"No poverty"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary Published in the prestigious New England Journal of Medicine, the article \"A Startling Decline\" by Anand Vaidya et al.",
-"cover_url": "",
-"authors": "Anand Vaidya, Brigid M. Dolan, Brian L. Edlow et al.",
+"authors": "Ana‐Maria Vranceanu",
 "institutions": [
-"General Department of Preventive Medicine"
+"Harvard University"
 ],
 "download_count": 0,
 "series_name": null,
@@ -10429,14 +10594,14 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Zero hunger"
 ],
-"has_teaching": true,
-"ta_ocw": 3,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The article titled \"Carnivorous plant evolution: is a killer defense always the best option?\" by Carl Procko and Joanne Chory, published in 2023 in the Journal of Experimental Bot…",
+"excerpt": "Short impact summary The research article \"Carnivorous plant evolution: is a killer defense always the best option?\" by Carl Procko and Joanne Chory is published in the Journal of Experimental Botany,…",
 "cover_url": "",
 "authors": "Carl Procko, Joanne Chory",
 "institutions": [
@@ -11245,8 +11410,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 2,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -11388,8 +11553,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Zero hunger"
 ],
-"has_teaching": true,
-"ta_ocw": 5,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -11490,7 +11655,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary Chris Rojek's article, \"Fame attack: the inflation of celebrity and its consequences,\" published in 2013 in the journal Celebrity Studies, has generated notable scholarly impact w…",
+"excerpt": "Short impact summary Chris Rojek's work, titled \" Fame attack: the inflation of celebrity and its consequences \", has been recognized within academic circles, with its citation by the \"PHILANTHROPY Jo…",
 "cover_url": "",
 "authors": "Barry King",
 "institutions": [
@@ -11524,9 +11689,9 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 4,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
@@ -12831,8 +12996,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Life in Land"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -12880,8 +13045,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": true,
-"ta_ocw": 3,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -12927,8 +13092,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": true,
-"ta_ocw": 3,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -12974,8 +13139,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Zero hunger"
 ],
-"has_teaching": true,
-"ta_ocw": 3,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -13019,8 +13184,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 3,
+"has_teaching": false,
+"ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -13799,8 +13964,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Life in Land"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 6,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -13842,8 +14007,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 6,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -13928,8 +14093,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 10,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -16910,8 +17075,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 2,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -16996,9 +17161,9 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
+"has_teaching": true,
+"ta_ocw": 9,
+"ta_youtube": 1,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
@@ -17234,4 +17399,4 @@ window.STORIES_DATA = [
 "mention_platforms": []
 }
 ];
-window.STORIES_STATS = {"total": 363, "total_articles": 176, "total_books": 161, "total_data": 19, "total_software": 7, "total_oa": 321, "pct_oa": 88, "total_citations": 150482, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 363, "total_articles": 176, "total_books": 161, "total_data": 19, "total_software": 7, "total_oa": 320, "pct_oa": 88, "total_citations": 150748, "num_disciplines": 30};
