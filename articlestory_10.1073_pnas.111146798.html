@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 
+
+
+
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>ArticleStory - Cytoskeletal microdifferentiation: A mechanism for organizing morphological plasticity in dendrites</title>
-<style>
+    <meta charset="utf-8">
+    <title>ArticleStory - Cytoskeletal microdifferentiation: A mechanism for organizing morphological plasticity in dendrites</title>
+    <style>
+
         * { box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
         .page { max-width: 1000px; margin: auto; }
@@ -13,7 +17,7 @@
         .span-full { grid-column: 1 / -1; }
         .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
         .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
-        .logo-wrap img { width: 100px; height: 100px; border-radius: 50%; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
         .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
         .tag-soft { background: #f3f4f6; color: #4b5563; }
         .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
@@ -36,6 +40,8 @@
             * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
             .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
             .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
             table { page-break-inside: auto !important; width: 100% !important; }
             tr { page-break-inside: avoid !important; page-break-after: auto !important; }
             thead { display: table-header-group !important; }
@@ -44,16 +50,6 @@
 
 /* ── UX Enhancements ── */
 
-/* Stats strip */
-.stats-strip{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:.9rem;
-  box-shadow:0 10px 30px rgba(15,23,42,.08);margin-bottom:1.75rem;overflow:hidden;}
-.stats-strip-item{padding:1rem 1.25rem;text-align:center;border-right:1px solid #f3f4f6;}
-.stats-strip-item:last-child{border-right:none;}
-.stats-strip-num{font-size:1.7rem;font-weight:800;color:#2563eb;line-height:1.1;}
-.stats-strip-label{font-size:.68rem;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;}
-.stats-strip-badge{display:inline-block;font-size:.6rem;background:#fef9c3;color:#b45309;border:1px solid #fde68a;
-  border-radius:999px;padding:.1rem .35rem;font-weight:700;margin-top:.25rem;}
-@media(max-width:600px){.stats-strip{grid-template-columns:repeat(2,1fr);}}
 
 /* Sticky nav */
 .sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
@@ -66,7 +62,7 @@
   transition:color .15s,border-color .15s;white-space:nowrap;}
 .sticky-nav a:hover{color:#111827;}
 .sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
-@media print{.sticky-nav,.stats-strip{display:none!important;}}
+@media print{.sticky-nav{display:none!important;}}
 
 /* Collapsible cards */
 .card-collapsible > h2{
@@ -107,7 +103,9 @@
 .role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
 .role-pill:hover{opacity:1!important;}
 
-/* CSS tooltip for role descriptions */
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
 
 
 .role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
@@ -140,14 +138,26 @@
 .im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
 .im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
   color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
-.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;}
-.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
 .im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
 .im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
 .im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
 
-.im-scite{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
-.im-scite-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
 .im-scite-via{font-weight:400;color:#9ca3af;}
 .im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
 .im-scite-seg{height:100%;}
@@ -161,8 +171,9 @@
 .im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
 .im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
 .im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
-.sig-pill{display:inline-flex;align-items:center;padding:.2rem .55rem;border-radius:999px;
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
   font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
 .sig-pill:hover{opacity:.75;}
 .sig-red   {background:#fee2e2;color:#b91c1c;}
 .sig-slate {background:#f1f5f9;color:#475569;}
@@ -170,6 +181,18 @@
 .sig-teal  {background:#ccfbf1;color:#0f766e;}
 .sig-amber {background:#fef3c7;color:#b45309;}
 .sig-blue  {background:#dbeafe;color:#1d4ed8;}
+.sig-green {background:#dcfce7;color:#166534;}
+.cover-fallback{
+  width:110px;height:155px;border-radius:.55rem;
+  border:1px solid #dbe7f3;
+  box-shadow:0 4px 10px rgba(15,23,42,.08);
+  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:.55rem;gap:.35rem;
+}
+.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
+.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
+.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -196,9 +219,10 @@
     }
     .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
 
-</style>
-<link href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" rel="stylesheet"/>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <!-- Site nav -->
@@ -207,422 +231,1831 @@
     <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
     <span>openscience<span class="brand-dot">.</span>works</span>
   </a>
-  <div class="site-nav-links">
-    <a href="index.html">← All stories</a>
-    <a href="about.html">About</a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
   </div>
 </nav>
+    
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">Cytoskeletal microdifferentiation: A mechanism for organizing morphological plasticity in dendrites</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
 
-<button class="no-print" onclick="window.print()" style="position: fixed; bottom: 2rem; right: 2rem; background: #3b82f6; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); z-index: 1000; display: flex; align-items: center; gap: 0.5rem;">
-<svg fill="none" height="20" stroke="currentColor" viewbox="0 0 24 24" width="20"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-        Print PDF Report
-    </button>
-<div class="page" id="sec-story">
-<header class="hero card" id="sec-hero">
-<div class="header-bar">
-<div style="display: flex; align-items: center; gap: 1.25rem;">
-<div class="logo-wrap"><img alt="Logo" src="articlestories-logo.png"/></div>
-<div>
-<h1 class="hero-title">Cytoskeletal microdifferentiation: A mechanism for organizing morphological plasticity in dendrites</h1>
-<div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
-<span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em;" title="scite found more citations supporting than contrasting this work's methodology">
-<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                            
+
+                            
+
+                            
+
+                            
+                                <span style="display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                     Methodologically Supported
-                                <span style="opacity:0.55;font-weight:400;font-size:0.65em;margin-left:0.35em;text-transform:none;letter-spacing:0;">· scite</span></span>
-</div>
-<div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
-<div><strong>Author(s):</strong> Stefanie Kaech, Hema Parmar, Martijn Roelandse, Caroline Bornmann, Andrew Matus</div>
-<div><strong>Publisher:</strong> Proceedings of the National Academy of Sciences</div>
-<div><strong>Publication year:</strong> 2001</div>
-<div><strong>DOI:</strong> <a href="https://doi.org/10.1073/pnas.111146798" target="_blank">10.1073/pnas.111146798</a></div>
-</div>
-</div>
-</div>
-</div>
-</header>
-<div class="stats-strip no-print">
-<div class="stats-strip-item">
-<div class="stats-strip-num">123</div>
-<div class="stats-strip-label">Total Citations</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num">1</div>
-<div class="stats-strip-label">Online Mentions</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num">97</div>
-<div class="stats-strip-label">scite References</div>
-</div>
-<div class="stats-strip-item">
-<div class="stats-strip-num" style="font-size:1.15rem;padding-top:.3rem;">Green</div>
-<div class="stats-strip-label">Open Access Status</div>
-</div>
-</div>
+                                </span>
+                            
 
-<nav aria-label="Page sections" class="sticky-nav no-print" id="sticky-nav">
-<div class="sticky-nav-inner">
-<a href="#sec-hero">Overview</a>
-<a href="#sec-story">Story</a>
-<a href="#sec-impact">Impact</a>
-<a href="#sec-roles">Roles</a>
-<a href="#sec-citing">Who's Citing</a>
-<a href="#sec-mentions">Mentions</a>
-<a href="#sec-teaching">Teaching</a>
-<a href="#sec-contributors">Contributors</a>
-<a href="#sec-funding">Funding</a>
-<a href="#sec-citations">All Citations</a>
-</div>
-</nav>
+                            
 
-<section class="card" id="sec-story">
-<h2><span>The Story So Far</span></h2>
-<div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> 
+                                
+                                    Stefanie Kaech, Hema Parmar, Martijn Roelandse, Caroline Bornmann, Andrew Matus
+                                
+                            </div>
+                        
+                            
+                        
+                            
+                            
+                            <div><strong>Journal:</strong> 
+                                Proceedings of the National Academy of Sciences
+                            </div>
+                            
+                        
+                            <div><strong>Publisher:</strong> 
+                                
+                                    National Academy of Sciences
+                                
+                            </div>
+                        
+                            <div><strong>Publication year:</strong> 
+                                
+                                    2001
+                                
+                            </div>
+                        
+                            
+                            
+                            <div><strong>DOI:</strong>
+                                <a href="https://doi.org/10.1073/pnas.111146798" target="_blank">10.1073/pnas.111146798</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </header>
+
+        <!-- Sticky nav -->
+        <nav aria-label="Page sections" class="sticky-nav no-print">
+            <div class="sticky-nav-inner">
+                <a href="#sec-hero">Overview</a>
+                <a href="#sec-story">Story</a>
+                <a href="#sec-impact">Impact</a>
+                <a href="#sec-roles">Roles</a>
+                <a href="#sec-access">Access</a>
+                <a href="#sec-citing">Who's Citing</a>
+                <a href="#sec-mentions">Mentions</a>
+            </div>
+        </nav>
+
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
 <p class="story-text">The article titled "Cytoskeletal microdifferentiation: A mechanism for organizing morphological plasticity in dendrites" has made a significant impact in the field of neuroscience, garnering 123 citations in high-profile journals such as the Journal of Neuroscience and Neuron. This reflects the work's substantial influence on ongoing research regarding dendritic morphology and cytoskeletal dynamics, particularly highlighting the contributions from the Friedrich Miescher Institute.</p>
 <h3 class="story-subheading">Full narrative</h3>
 <p class="story-text">This research article, published in the Proceedings of the National Academy of Sciences, addresses the complex mechanisms underlying morphological plasticity in dendrites through cytoskeletal microdifferentiation. The authors, including notable researchers like Stefanie Kaech and Andrew Matus from the esteemed Friedrich Miescher Institute, have contributed to a burgeoning understanding of cellular adaptability, a key theme in contemporary neuroscience. The work has received considerable attention in the academic community, as evidenced by its 123 citations, positioning it as a crucial reference in neurobiological research.</p>
+
 <p class="story-text">The citing landscape shows that the research has significantly influenced various disciplines, with citations primarily emerging from notable journals such as the Journal of Neuroscience and Neuron. The impact of this article transcends regional boundaries, as it has been cited in countries like the United States, Germany, Japan, Canada, and China, further indicating its global relevance in the scientific discourse surrounding dendritic function and structure.</p>
+
 <p class="story-text">The absence of public discourse metrics, such as mentions on platforms like Wikipedia or Reddit, suggests that while the article is grounded in rigorous scientific reporting, it has not yet translated into broader public engagement. However, the proven downstream reuse of the article in 124 subsequent studies underscores its foundational role in advancing knowledge within the field. This reuse is an important indicator of the work's technical value and its ability to inform and guide future research endeavors.</p>
+
 <p class="story-text">Moreover, the lack of funding agencies listed in the metadata signifies that this research stands independently of external financial influences, which may reflect the intrinsic interest and commitment of the authors and the Friedrich Miescher Institute in contributing to fundamental neuroscience. As the study continues to be referenced by emerging research, it reinforces the relevance of understanding the cytoskeletal adaptations that are crucial for neuronal plasticity.</p></div>
-</section>
-<section class="card" id="sec-impact">
-<h2><span>Impact metrics</span></h2>
+        </section>
+        
 
-<div class="im-wrapper"><div class="im-cards"><div class="im-card im-card-primary"><div class="im-card-top"><div><div class="im-num">123</div><div class="im-label">Total Citations</div></div><div class="im-spark"><svg height="36" style="display:block;overflow:visible;" viewbox="0 0 120 36" width="120" xmlns="http://www.w3.org/2000/svg"><path d="M0.0,31.5 L5.2,24.2 L10.4,11.8 L15.7,9.4 L20.9,21.7 L26.1,2.0 L31.3,21.7 L36.5,19.2 L41.7,14.3 L47.0,16.8 L52.2,21.7 L57.4,24.2 L62.6,21.7 L67.8,26.6 L73.0,24.2 L78.3,21.7 L83.5,26.6 L88.7,21.7 L93.9,26.6 L99.1,24.2 L104.3,19.2 L109.6,31.5 L114.8,24.2 L120.0,26.6 L120.0,36.0 L0,36.0 Z" fill="#dbeafe" opacity="0.6"></path><polyline fill="none" points="0.0,31.5 5.2,24.2 10.4,11.8 15.7,9.4 20.9,21.7 26.1,2.0 31.3,21.7 36.5,19.2 41.7,14.3 47.0,16.8 52.2,21.7 57.4,24.2 62.6,21.7 67.8,26.6 73.0,24.2 78.3,21.7 83.5,26.6 88.7,21.7 93.9,26.6 99.1,24.2 104.3,19.2 109.6,31.5 114.8,24.2 120.0,26.6" stroke="#2563eb" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline></svg><div class="im-spark-range">2001–2025</div></div></div></div><div class="im-card"><div class="im-num">1</div><div class="im-label">Online Mentions</div></div><div class="im-card"><div class="im-num">97</div><div class="im-label">scite References</div></div></div><div class="im-signals"><div class="im-signals-title">Additional signals</div><div class="im-signals-pills"><a class="sig-pill sig-blue" href="#sec-citing">🌍 35 countries</a></div></div></div></section>
-<section class="card" id="sec-roles">
-<h2><span>Inferred roles</span></h2>
-<p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" style="color:#2563eb;text-decoration:none;font-weight:600;" target="_blank">Learn about all roles ↗</a></p><div class="roles-domain"><div class="roles-domain-label" style="color:#1d4ed8;">🎓 Academic &amp; Scientific</div><div class="roles-row"><span class="role-pill role-pill-academic" style="opacity:0.9;" data-tip="Foundational building block cited heavily in core academic journals and monographs."><span class="role-dot" style="background:#3b82f6;"></span>Scholarly uptake<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Moderate</span></span><span class="role-pill role-pill-academic" style="opacity:0.9;" data-tip="Frequently cited in literature reviews and meta-analyses as a shorthand reference."><span class="role-dot" style="background:#3b82f6;"></span>Reference point for synthesis<span class="role-strength" style="background:#dbeafe;color:#1d4ed8;">Moderate</span></span></div></div><div class="roles-domain"><div class="roles-domain-label" style="color:#b45309;">📢 Public Engagement &amp; Media</div><div class="roles-row"><span class="role-pill role-pill-public" style="opacity:0.75;" data-tip="Heavy social-platform engagement on Reddit, Bluesky, or Mastodon — the work has sparked ongoing community conversation."><span class="role-dot" style="background:#f59e0b;"></span>Active public discourse<span class="role-strength" style="background:#fef3c7;color:#92400e;">Emerging</span></span></div></div><div class="roles-legend"><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span><span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span></div>
+        
 
-</section>
-<div class="grid-2">
-<section class="card" style="margin-bottom:0;">
-<h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
-<ul class="metric-list">
-<li><strong>DOI:</strong> <a href="https://doi.org/10.1073/pnas.111146798" target="_blank">10.1073/pnas.111146798</a></li>
-<li><strong>OA status:</strong> Green</li>
-<li><strong>Landing page:</strong> <a href="https://doi.org/10.1073/pnas.111146798" style="word-break: break-all;" target="_blank">https://doi.org/10.1073/pnas.111146798</a></li>
-</ul>
-</section>
-<section class="card" style="margin-bottom:0;">
-<h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
-<p class="muted" style="margin-top:-0.2rem; margin-bottom:1.2rem;">
-                        This work has <strong>1</strong> recorded events globally
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+            <div class="im-wrapper">
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">123</div>
+                                <div class="im-label">Total Citations</div>
+                                
+                            </div>
+                            
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]"
+                                        data-values="[5, 3, 4, 5, 3, 5, 3, 4, 6, 1, 4, 3]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2001–2025</div>
+                            </div>
+                            
+                        </div>
                         
+                        
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+                    
+                    <div class="im-card">
+                        <div class="im-num">1</div>
+                        <div class="im-label">Online Mentions</div>
+                        
+                    </div>
+                    
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+                    
+                    
+                    <!-- scite (only when references exist) -->
+                    
+                    <div class="im-card">
+                        <div class="im-num">97</div>
+                        <div class="im-label">scite References</div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="im-scite-compact">
+                            <div class="im-scite-title">Citation context <span class="im-scite-via">via scite</span></div>
+                            <div class="im-scite-bar">
+                                <div class="im-scite-seg im-scite-sup" data-w="9"></div>
+                                <div class="im-scite-seg im-scite-men" data-w="91"></div>
+                                <div class="im-scite-seg im-scite-con" data-w="0"></div>
+                            </div>
+                            <div class="im-scite-leg">
+                                <span><span class="im-scite-dot" style="background:#22c55e;"></span>9</span>
+                                <span><span class="im-scite-dot" style="background:#94a3b8;"></span>88</span>
+                                <span><span class="im-scite-dot" style="background:#f87171;"></span>0</span>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+
+                
+                
+                
+                
+                
+
+                
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+                        
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 15 countries</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+            
+            
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="0.9"
+                              data-tip="Scholarly uptake — heuristic signal (score 0.77)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Scholarly uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Moderate</span>
+                        </span>
+                        
+                        
+                        
+                        <span class="role-pill role-pill-academic" data-opacity="0.9"
+                              data-tip="Reference point for synthesis — heuristic signal (score 0.59)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Reference point for synthesis
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Moderate</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+                
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#b45309">📢 Public Engagement & Media</div>
+                    <div class="roles-row">
+                        
+                        
+                        
+                        <span class="role-pill role-pill-public" data-opacity="0.75"
+                              data-tip="Active public discourse — heuristic signal (score 0.42)">
+                            <span class="role-dot" data-bg="#f59e0b"></span>
+                            Active public discourse
+                            <span class="role-strength" data-bg="#fef3c7" data-color="#92400e">Emerging</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1073/pnas.111146798" target="_blank">10.1073/pnas.111146798</a></li>
+                    <li><strong>OA status:</strong> Unknown</li>
+                    
+                    
+                    
+                    
+                </ul>
+            </section>
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.6rem;">
+                        This work has <strong>1</strong> recorded events globally.
                     </p>
-<p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
-<em>(See specific sources and examples in the Online Mentions section below).</em>
-</p>
-</section>
-</div>
-<div class="grid-2" style="align-items: start;">
-<div style="display: flex; flex-direction: column; gap: 1.5rem;">
-<section class="card" style="margin-bottom:0;">
-<h2><span>Citation context</span> <span class="badge">scite</span></h2>
-<ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
-<li><strong>Total:</strong> 97</li>
-<li><strong>Supporting:</strong> 9</li>
-<li><strong>Mentioning:</strong> 88</li>
-<li><strong>Contradicting:</strong> 0</li>
-</ul>
-</section>
-</div>
-<div style="display: flex; flex-direction: column; gap: 1.5rem;">
-</div>
-</div>
-<section class="card" id="sec-citing">
-<h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem; line-height: 1.5;">
-                Analysis of the 123 most recent citing works. 
-                <br/>
-<strong>27.6%</strong> of these citations come from the Top 10 institutions below. The median citing paper has gone on to be cited <strong>23.0</strong> times itself.
+                    
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+                
+                
+                
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                            
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 97</li>
+                                <li><strong>Supporting:</strong> 9</li>
+                                <li><strong>Mentioning:</strong> 88</li>
+                                <li><strong>Contradicting:</strong> 0</li>
+                            </ul>
+                            
+                        </section>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    
+                    
+
+                    
+                </div>
+            
+        </div>
+
+        
+        
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>123</strong> citing works.
+                        <strong>27.6%</strong> come from the Top 10 institutions.
+                        Median citing paper cited <strong>23.0</strong> times itself.
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (86)</span><span class="tag tag-soft" style="font-size:.75rem;">review (24)</span><span class="tag tag-soft" style="font-size:.75rem;">book-chapter (5)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (5)</span><span class="tag tag-soft" style="font-size:.75rem;">dissertation (3)</span>
+                        <span class="tag" style="font-size:.75rem;">Journal of Neuroscience</span><span class="tag" style="font-size:.75rem;">Neuron</span><span class="tag" style="font-size:.75rem;">Journal of Biological Chemistry</span>
+                    </div>
+                </div>
             </div>
 
-<div class="cite-analysis-always"><div style="border-top: 1px solid #e5e7eb; padding-top: 1rem;">
-<ul class="metric-list">
-<li><strong>Citing work types:</strong>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">article (86)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">review (24)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">book-chapter (5)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">preprint (5)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">dissertation (3)</span>
-</li>
-<li><strong>Top citing venues:</strong>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Journal of Neuroscience (7)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Neuron (4)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Journal of Biological Chemistry (4)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Journal of Cell Science (4)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">bioRxiv (4)</span>
-</li>
-<li><strong>Top citing concepts:</strong>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Biology (34)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Neuroscience (29)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Dendritic spine (25)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Cell biology (22)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Microtubule (13)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Cytoskeleton (11)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Postsynaptic potential (9)</span>
-<span class="tag tag-soft" style="background:#f3f4f6; color:#4b5563;">Hippocampal formation (7)</span>
-</li>
-<li style="margin-top: 1rem; list-style: none; margin-left: -1.5rem;">
-<strong>Citation timeline:</strong>
-<div style="height: 180px; width: 100%; margin-top: 0.5rem;">
-<canvas data-labels="[2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]" data-values="[1, 4, 9, 10, 5, 13, 5, 6, 8, 7, 5, 4, 5, 3, 4, 5, 3, 5, 3, 4, 6, 1, 4, 3]" id="citationChart">
-</canvas>
-</div>
-</li>
-</ul>
-</div></div>
-<div class="cite-tabs">
-<button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
-<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
-<button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-ppl')">👤 Top Citers</button>
-</div>
-<div class="cite-tab-pane active" id="cite-geo"><div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Global Reach (Top Countries)</h3>
-<div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom: 1.5rem;">
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United States (46)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Germany (14)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Japan (13)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Canada (10)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">China (10)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">United Kingdom (8)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Netherlands (6)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Italy (5)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">India (5)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Mexico (5)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Switzerland (5)</span>
-<span class="tag tag-soft" style="background:#f1f5f9; color:#475569;">Chile (3)</span>
-</div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Institutional Sectors</h3>
-<div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Education (100)</span>
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Facility (37)</span>
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Healthcare (22)</span>
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Funder (9)</span>
-<span class="tag tag-soft" style="background:#fdf4ff; color:#9d174d; border: 1px solid #fce7f3;">Nonprofit (8)</span>
-</div>
-</div></div>
-<div class="cite-tab-pane" id="cite-inst"><div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Top Citing Institutions</h3>
-<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
-<li style="margin-bottom: 0.4rem;">
-<strong>Yokohama City University</strong>
-<a class="orcid-badge" href="https://ror.org/0135d1r83" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(6)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Friedrich Miescher Institute</strong>
-<a class="orcid-badge" href="https://ror.org/01bmjkv45" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Erasmus MC</strong>
-<a class="orcid-badge" href="https://ror.org/018906e22" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Gunma University</strong>
-<a class="orcid-badge" href="https://ror.org/046fm7598" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>University of Wisconsin–Madison</strong>
-<a class="orcid-badge" href="https://ror.org/01y2jtd41" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Harvard University</strong>
-<a class="orcid-badge" href="https://ror.org/03vek6s52" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>University of Alberta</strong>
-<a class="orcid-badge" href="https://ror.org/0160cpw27" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>University of Chile</strong>
-<a class="orcid-badge" href="https://ror.org/047gc3g35" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Universidad Nacional Autónoma de México</strong>
-<a class="orcid-badge" href="https://ror.org/01tmp8f25" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>University of Minnesota</strong>
-<a class="orcid-badge" href="https://ror.org/017zqws13" style="background: #e2e8f0; color: #475569; padding: 0.1rem 0.3rem; margin-left: 0.3rem; text-decoration: none; border-radius: 4px;" target="_blank">ROR</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-</ul>
-</div></div>
-<div class="cite-tab-pane" id="cite-ppl"><div>
-<h3 style="font-size: 0.95rem; margin-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">Most Frequent Citers</h3>
-<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin: 0;">
-<li style="margin-bottom: 0.4rem;">
-<strong>Andrew Matus</strong>
-<a class="orcid-badge" href="https://openalex.org/A5111828854" target="_blank">Profile</a>
-<span class="muted" style="margin-left: 0.2rem;">(4)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Tomoaki Shirao</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0003-4323-028X" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Erik W. Dent</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0001-8525-7136" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Avner Priel</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-4620-6376" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Jack A. Tuszyński</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0001-9976-0429" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Christian González‐Billault</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0003-0335-1482" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Ignacio Camacho‐Arroyo</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0003-2978-1253" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(3)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Anna Akhmanova</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-9048-8614" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(2)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Casper C. Hoogenraad</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-2666-0758" target="_blank">ORCID</a>
-<span class="muted" style="margin-left: 0.2rem;">(2)</span>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>John C. Fiala</strong>
-<a class="orcid-badge" href="https://openalex.org/A5108544656" target="_blank">Profile</a>
-<span class="muted" style="margin-left: 0.2rem;">(2)</span>
-</li>
-</ul>
-</div></div>
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]"
+                    data-values="[1, 4, 9, 10, 5, 13, 5, 6, 8, 7, 5, 4, 5, 3, 4, 5, 3, 5, 3, 4, 6, 1, 4, 3]">
+                </canvas>
+            </div>
 
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
 
-</section>
-<div class="grid-2" id="sec-mentions">
-<section class="card span-full" id="sec-mentions" style="margin-bottom:0;">
-<h2><span>Online mentions &amp; activity</span> <span class="badge">Crossref &amp; Open Web</span></h2>
-<ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin-top: 1.5rem; margin-bottom: 1.5rem;">
-<li style="margin-bottom: 0.6rem;">
-<a href="https://blogs.scientificamerican.com/observations/how-augmented-reality-and-virtual-reality-can-revolutionize-science/" style="color: #2563eb; text-decoration: none; font-weight: 500;" target="_blank">
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (46)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Germany (14)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Japan (13)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Canada (10)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (10)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (8)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Netherlands (6)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Italy (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">India (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Mexico (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Switzerland (5)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Chile (3)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Taiwan (3)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Spain (3)</span>
+                    
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Australia (3)</span>
+                    
+                </div>
+                
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (100)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (37)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Healthcare (22)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Funder (9)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (8)</span>
+                        
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (6)</span>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Yokohama City University</strong>
+                        <a href="https://ror.org/0135d1r83" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(6)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Friedrich Miescher Institute</strong>
+                        <a href="https://ror.org/01bmjkv45" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Erasmus MC</strong>
+                        <a href="https://ror.org/018906e22" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Gunma University</strong>
+                        <a href="https://ror.org/046fm7598" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Wisconsin–Madison</strong>
+                        <a href="https://ror.org/01y2jtd41" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Harvard University</strong>
+                        <a href="https://ror.org/03vek6s52" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Alberta</strong>
+                        <a href="https://ror.org/0160cpw27" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Chile</strong>
+                        <a href="https://ror.org/047gc3g35" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Universidad Nacional Autónoma de México</strong>
+                        <a href="https://ror.org/01tmp8f25" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Minnesota</strong>
+                        <a href="https://ror.org/017zqws13" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Andrew Matus</strong>
+                        <a href="https://openalex.org/A5111828854" target="_blank" class="orcid-badge">Profile</a>
+                        <span class="muted">(4)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Tomoaki Shirao</strong>
+                        <a href="https://orcid.org/0000-0003-4323-028X" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Erik W. Dent</strong>
+                        <a href="https://orcid.org/0000-0001-8525-7136" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Avner Priel</strong>
+                        <a href="https://orcid.org/0000-0002-4620-6376" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jack A. Tuszyński</strong>
+                        <a href="https://orcid.org/0000-0001-9976-0429" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Christian González‐Billault</strong>
+                        <a href="https://orcid.org/0000-0003-0335-1482" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ignacio Camacho‐Arroyo</strong>
+                        <a href="https://orcid.org/0000-0003-2978-1253" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(3)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Anna Akhmanova</strong>
+                        <a href="https://orcid.org/0000-0002-9048-8614" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(2)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Casper C. Hoogenraad</strong>
+                        <a href="https://orcid.org/0000-0002-2666-0758" target="_blank" class="orcid-badge">ORCID</a>
+                        <span class="muted">(2)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>John C. Fiala</strong>
+                        <a href="https://openalex.org/A5108544656" target="_blank" class="orcid-badge">Profile</a>
+                        <span class="muted">(2)</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            <section class="card span-full" style="margin-bottom:0;" id="sec-public-discourse">
+                <h2><span>Online mentions &amp; public discourse</span> <span class="badge">Crossref &amp; Open Web</span></h2>
+                <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.5rem; font-size:0.85rem;">
+                    Aggregated events, community platforms, and curated expert sources (newsletters, blogs, podcasts).
+                </p>
+
+                
+                
+
+                
+                
+                
+                
+                
+                
+                    
+                    
+                        
+                    
+                
+                
+                
+                <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6; margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                    
+                    <li style="margin-bottom: 0.6rem;">
+                        <a href="https://blogs.scientificamerican.com/observations/how-augmented-reality-and-virtual-reality-can-revolutionize-science/" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 500;">
                             How Augmented Reality and Virtual Reality Can Revolutionize Science
                         </a>
-<span class="badge" style="background: #f3f4f6; color: #4b5563; font-size: 0.65rem; text-transform: uppercase; margin-left: 0.4rem;">newsfeed</span>
-</li>
-</ul>
-</section>
-</div>
-<div class="grid-2" id="sec-contributors">
-<section class="card" id="sec-contributors" style="margin-bottom:0;">
-<h2><span>Contributors &amp; affiliations</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">5 authors · 1 institution</div>
-<h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
-<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
-<li style="margin-bottom: 0.4rem;">
-<strong>Stefanie Kaech</strong>
-<span class="badge">First</span>
-<span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
-<a class="orcid-badge" href="https://orcid.org/0000-0002-6246-6434" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Hema Parmar</strong>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Martijn Roelandse</strong>
-<a class="orcid-badge" href="https://orcid.org/0000-0001-5596-8084" target="_blank">ORCID</a>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Caroline Bornmann</strong>
-</li>
-<li style="margin-bottom: 0.4rem;">
-<strong>Andrew Matus</strong>
-</li>
-</ul>
-<h3 style="margin:0.6rem 0 0.25rem;">Institutions</h3>
-<ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem;">
-<li style="margin-bottom: 0.4rem;">
-<a href="https://ror.org/01bmjkv45" style="text-decoration:none; color:#2563eb; font-weight:500;" target="_blank">Friedrich Miescher Institute</a>
-</li>
-</ul>
-</section>
-<section class="card" style="margin-bottom:0;">
-<h2><span>Concepts &amp; topics</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">17 specific concepts identified.</div>
-<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Microtubule</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Microfilament</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell biology</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Dendritic spine</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Actin remodeling of neurons</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Dendritic filopodia</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Dendrite (mathematics)</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Actin</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cytoskeleton</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neuroscience</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Tubulin</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biochemistry</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Geometry</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mathematics</span>
-<span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Hippocampal formation</span>
-</div>
-</section>
-</div>
-<section class="card no-print" id="sec-citations">
-<h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
-<div class="muted" style="margin-top:-0.25rem; margin-bottom:0.75rem;">Displaying 123 most recent citing works</div>
-<div class="table-scroll-wrapper" style="max-height: 500px; overflow-y: auto;">
-<table>
-<thead style="position: sticky; top: 0; z-index: 1;"><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
-<tbody id="cit-tbody"></tbody>
-</table>
-</div>
-<div class="cit-pagination">
-<span class="cit-pagination-info" id="cit-info">Loading…</span>
-<div class="cit-pagination-btns">
-<button class="cit-btn" disabled="" id="cit-prev" onclick="citPrev()">← Prev</button>
-<span id="cit-page-nums" style="display:flex;gap:0.3rem;flex-wrap:wrap;align-items:center;"></span>
-<button class="cit-btn" id="cit-next" onclick="citNext()">Next →</button>
-</div>
-</div>
+                        <span class="badge" style="background: #f3f4f6; color: #4b5563; font-size: 0.65rem; text-transform: uppercase; margin-left: 0.4rem;">newsfeed</span>
+                    </li>
+                    
+                </ul>
+                
 
-</section>
-<footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
-<div style="display: flex; flex-direction: column; gap: 0.4rem;">
-<div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
-<svg fill="none" height="16" stroke="currentColor" style="color: #9ca3af;" viewbox="0 0 24 24" width="16"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<span>Understanding our metrics: <a href="https://www.openscience.works/about.html" style="color: #2563eb; text-decoration: none; font-weight: 600;" target="_blank">Read the Methodology &amp; Legend ↗</a></span>
-</div>
-<div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-03-31T13:49:23+00:00
+                
+                
+
+                
+                
+                
+                
+                
+                
+            </section>
+            
+        </div>
+
+        
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>5 authors · 0 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Stefanie Kaech</strong> 
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0002-6246-6434" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Hema Parmar</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Martijn Roelandse</strong> 
+                        
+                        
+                        <a class="orcid-badge" href="0000-0001-5596-8084" target="_blank">ORCID</a>
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Caroline Bornmann</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Andrew Matus</strong> 
+                        
+                        
+                        
+                    </li>
+                    
+                </ul>
+
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>17 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Microtubule</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Microfilament</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell biology</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Dendritic spine</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Actin remodeling of neurons</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Dendritic filopodia</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Dendrite (mathematics)</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Actin</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cytoskeleton</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neuroscience</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Tubulin</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biochemistry</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Cell</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Geometry</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mathematics</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Hippocampal formation</span>
+                    
+                    
                 </div>
-</div>
-</footer>
-</div>
-<script>
-        (function() {
-            const canvas = document.getElementById('citationChart');
-            if(!canvas) return;
-            const labels = JSON.parse(canvas.getAttribute('data-labels'));
-            const data = JSON.parse(canvas.getAttribute('data-values'));
-            const ctx = canvas.getContext('2d');
-            new Chart(ctx, {
+                
+                
+            </section>
+        </div>
+
+        
+
+
+
+        
+        
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.75rem;"
+                 data-total="123">
+                123 citing works (most recent first)
+            </div>
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2009</td>
+                        <td>Microtubule assembly, organization and dynamics in axons and dendrites</td>
+                        <td>Nature reviews. Neuroscience</td>
+                        <td><a href="https://doi.org/10.1038/nrn2631" target="_blank" style="word-break: break-all;">10.1038/nrn2631</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2003</td>
+                        <td>Hippocampal LTP Is Accompanied by Enhanced F-Actin Content within the Dendritic Spine that Is Essential for Late LTP Maintenance In Vivo</td>
+                        <td>Neuron</td>
+                        <td><a href="https://doi.org/10.1016/s0896-6273(03)00206-x" target="_blank" style="word-break: break-all;">10.1016/s0896-6273(03)00206-x</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2009</td>
+                        <td>Dynamic Microtubules Regulate Dendritic Spine Morphology and Synaptic Plasticity</td>
+                        <td>Neuron</td>
+                        <td><a href="https://doi.org/10.1016/j.neuron.2008.11.013" target="_blank" style="word-break: break-all;">10.1016/j.neuron.2008.11.013</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2002</td>
+                        <td>Polyribosomes Redistribute from Dendritic Shafts into Spines with Enlarged Synapses during LTP in Developing Rat Hippocampal Slices</td>
+                        <td>Neuron</td>
+                        <td><a href="https://doi.org/10.1016/s0896-6273(02)00785-7" target="_blank" style="word-break: break-all;">10.1016/s0896-6273(02)00785-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2007</td>
+                        <td>Role of actin cytoskeleton in dendritic spine morphogenesis</td>
+                        <td>Neurochemistry International</td>
+                        <td><a href="https://doi.org/10.1016/j.neuint.2007.04.029" target="_blank" style="word-break: break-all;">10.1016/j.neuint.2007.04.029</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2008</td>
+                        <td>Activity-Dependent Dynamic Microtubule Invasion of Dendritic Spines</td>
+                        <td>Journal of Neuroscience</td>
+                        <td><a href="https://doi.org/10.1523/jneurosci.3074-08.2008" target="_blank" style="word-break: break-all;">10.1523/jneurosci.3074-08.2008</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2004</td>
+                        <td>Proteomics Analysis of Rat Brain Postsynaptic Density</td>
+                        <td>Journal of Biological Chemistry</td>
+                        <td><a href="https://doi.org/10.1074/jbc.m303116200" target="_blank" style="word-break: break-all;">10.1074/jbc.m303116200</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2005</td>
+                        <td>stathmin, a Gene Enriched in the Amygdala, Controls Both Learned and Innate Fear</td>
+                        <td>Cell</td>
+                        <td><a href="https://doi.org/10.1016/j.cell.2005.08.038" target="_blank" style="word-break: break-all;">10.1016/j.cell.2005.08.038</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2002</td>
+                        <td>A Novel Mechanism of Dendritic Spine Plasticity Involving Estradiol Induction of Prostaglandin-E<sub>2</sub></td>
+                        <td>Journal of Neuroscience</td>
+                        <td><a href="https://doi.org/10.1523/jneurosci.22-19-08586.2002" target="_blank" style="word-break: break-all;">10.1523/jneurosci.22-19-08586.2002</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2010</td>
+                        <td>Cholinergic systems mediate action from movement to higher consciousness</td>
+                        <td>Behavioural Brain Research</td>
+                        <td><a href="https://doi.org/10.1016/j.bbr.2009.12.046" target="_blank" style="word-break: break-all;">10.1016/j.bbr.2009.12.046</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2004</td>
+                        <td>New Synaptic Bouton Formation Is Disrupted by Misregulation of Microtubule Stability in aPKC Mutants</td>
+                        <td>Neuron</td>
+                        <td><a href="https://doi.org/10.1016/s0896-6273(04)00255-7" target="_blank" style="word-break: break-all;">10.1016/s0896-6273(04)00255-7</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2006</td>
+                        <td>A Biopolymer Transistor: Electrical Amplification by Microtubules</td>
+                        <td>Biophysical Journal</td>
+                        <td><a href="https://doi.org/10.1529/biophysj.105.078915" target="_blank" style="word-break: break-all;">10.1529/biophysj.105.078915</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Of microtubules and memory: implications for microtubule dynamics in dendrites and spines</td>
+                        <td>Molecular Biology of the Cell</td>
+                        <td><a href="https://doi.org/10.1091/mbc.e15-11-0769" target="_blank" style="word-break: break-all;">10.1091/mbc.e15-11-0769</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2007</td>
+                        <td>Homers regulate drug-induced neuroplasticity: Implications for addiction</td>
+                        <td>Biochemical Pharmacology</td>
+                        <td><a href="https://doi.org/10.1016/j.bcp.2007.07.031" target="_blank" style="word-break: break-all;">10.1016/j.bcp.2007.07.031</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Microtubule‐associated proteins as direct crosslinkers of actin filaments and microtubules</td>
+                        <td>IUBMB Life</td>
+                        <td><a href="https://doi.org/10.1002/iub.1384" target="_blank" style="word-break: break-all;">10.1002/iub.1384</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2013</td>
+                        <td>Actin filaments and microtubules in dendritic spines</td>
+                        <td>Journal of Neurochemistry</td>
+                        <td><a href="https://doi.org/10.1111/jnc.12313" target="_blank" style="word-break: break-all;">10.1111/jnc.12313</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2010</td>
+                        <td>The dynamic cytoskeleton: backbone of dendritic spine plasticity</td>
+                        <td>Current Opinion in Neurobiology</td>
+                        <td><a href="https://doi.org/10.1016/j.conb.2010.08.013" target="_blank" style="word-break: break-all;">10.1016/j.conb.2010.08.013</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2007</td>
+                        <td>Mice Deficient in Collapsin Response Mediator Protein-1 Exhibit Impaired Long-Term Potentiation and Impaired Spatial Learning and Memory</td>
+                        <td>Journal of Neuroscience</td>
+                        <td><a href="https://doi.org/10.1523/jneurosci.4497-06.2007" target="_blank" style="word-break: break-all;">10.1523/jneurosci.4497-06.2007</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Components of RNA granules affect their localization and dynamics in neuronal dendrites</td>
+                        <td>Molecular Biology of the Cell</td>
+                        <td><a href="https://doi.org/10.1091/mbc.e16-07-0497" target="_blank" style="word-break: break-all;">10.1091/mbc.e16-07-0497</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>The synaptic life of microtubules</td>
+                        <td>Current Opinion in Neurobiology</td>
+                        <td><a href="https://doi.org/10.1016/j.conb.2021.03.004" target="_blank" style="word-break: break-all;">10.1016/j.conb.2021.03.004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2001</td>
+                        <td>A cellular mechanism for targeting newly synthesized mRNAs to synaptic sites on dendrites</td>
+                        <td>Proceedings of the National Academy of Sciences</td>
+                        <td><a href="https://doi.org/10.1073/pnas.131146398" target="_blank" style="word-break: break-all;">10.1073/pnas.131146398</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2002</td>
+                        <td>Filopodia are conduits for melanosome transfer to keratinocytes</td>
+                        <td>Journal of Cell Science</td>
+                        <td><a href="https://doi.org/10.1242/jcs.115.7.1441" target="_blank" style="word-break: break-all;">10.1242/jcs.115.7.1441</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2003</td>
+                        <td>Kalirin, a Multifunctional Rho Guanine Nucleotide Exchange Factor, Is Necessary for Maintenance of Hippocampal Pyramidal Neuron Dendrites and Dendritic Spines</td>
+                        <td>Journal of Neuroscience</td>
+                        <td><a href="https://doi.org/10.1523/jneurosci.23-33-10593.2003" target="_blank" style="word-break: break-all;">10.1523/jneurosci.23-33-10593.2003</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2003</td>
+                        <td>Timing of neuronal and glial ultrastructure disruption during brain slice preparation and recovery in vitro</td>
+                        <td>The Journal of Comparative Neurology</td>
+                        <td><a href="https://doi.org/10.1002/cne.10825" target="_blank" style="word-break: break-all;">10.1002/cne.10825</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2006</td>
+                        <td>2‐DE proteome analysis of a proliferating and differentiating human neuronal stem cell line (ReNcell VM)</td>
+                        <td>PROTEOMICS</td>
+                        <td><a href="https://doi.org/10.1002/pmic.200500556" target="_blank" style="word-break: break-all;">10.1002/pmic.200500556</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2004</td>
+                        <td>MAP2c, but Not Tau, Binds and Bundles F-Actin via Its Microtubule Binding Domain</td>
+                        <td>Current Biology</td>
+                        <td><a href="https://doi.org/10.1016/j.cub.2004.01.058" target="_blank" style="word-break: break-all;">10.1016/j.cub.2004.01.058</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2011</td>
+                        <td>Microtubule-associated Protein 1B (MAP1B) Is Required for Dendritic Spine Development and Synaptic Maturation</td>
+                        <td>Journal of Biological Chemistry</td>
+                        <td><a href="https://doi.org/10.1074/jbc.m111.271320" target="_blank" style="word-break: break-all;">10.1074/jbc.m111.271320</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2004</td>
+                        <td>LIMK1 and CLIP‐115: linking cytoskeletal defects to Williams syndrome</td>
+                        <td>BioEssays</td>
+                        <td><a href="https://doi.org/10.1002/bies.10402" target="_blank" style="word-break: break-all;">10.1002/bies.10402</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2003</td>
+                        <td>Retinal Ganglion Cells Resistant to Advanced Glaucoma: A Postmortem Study of Human Retinas with the Carbocyanine Dye DiI</td>
+                        <td>Investigative Ophthalmology & Visual Science</td>
+                        <td><a href="https://doi.org/10.1167/iovs.03-0614" target="_blank" style="word-break: break-all;">10.1167/iovs.03-0614</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2003</td>
+                        <td>Ethanol and brain plasticity: receptors and molecular networks of the postsynaptic density as targets of ethanol</td>
+                        <td>Pharmacology & Therapeutics</td>
+                        <td><a href="https://doi.org/10.1016/s0163-7258(03)00096-2" target="_blank" style="word-break: break-all;">10.1016/s0163-7258(03)00096-2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2004</td>
+                        <td>Lateral Diffusion of Inositol 1,4,5-Trisphosphate Receptor Type 1 Is Regulated by Actin Filaments and 4.1N in Neuronal Dendrites</td>
+                        <td>Journal of Biological Chemistry</td>
+                        <td><a href="https://doi.org/10.1074/jbc.m408364200" target="_blank" style="word-break: break-all;">10.1074/jbc.m408364200</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2007</td>
+                        <td>Trafficking and synaptic anchoring of ionotropic inhibitory neurotransmitter receptors</td>
+                        <td>Biology of the Cell</td>
+                        <td><a href="https://doi.org/10.1042/bc20060120" target="_blank" style="word-break: break-all;">10.1042/bc20060120</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2009</td>
+                        <td>βCaMKII Regulates Actin Assembly and Structure</td>
+                        <td>Journal of Biological Chemistry</td>
+                        <td><a href="https://doi.org/10.1074/jbc.m809518200" target="_blank" style="word-break: break-all;">10.1074/jbc.m809518200</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>Sex Hormones Regulate Cytoskeletal Proteins Involved in Brain Plasticity</td>
+                        <td>Frontiers in Psychiatry</td>
+                        <td><a href="https://doi.org/10.3389/fpsyt.2015.00165" target="_blank" style="word-break: break-all;">10.3389/fpsyt.2015.00165</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Microtubule‐associated protein 2 mediates induction of long‐term potentiation in hippocampal neurons</td>
+                        <td>The FASEB Journal</td>
+                        <td><a href="https://doi.org/10.1096/fj.201902122rr" target="_blank" style="word-break: break-all;">10.1096/fj.201902122rr</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2011</td>
+                        <td>The synaptic cytoskeleton in development and disease</td>
+                        <td>Developmental Neurobiology</td>
+                        <td><a href="https://doi.org/10.1002/dneu.20892" target="_blank" style="word-break: break-all;">10.1002/dneu.20892</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2004</td>
+                        <td>Hypothermia-Associated Loss of Dendritic Spines</td>
+                        <td>Journal of Neuroscience</td>
+                        <td><a href="https://doi.org/10.1523/jneurosci.2872-04.2004" target="_blank" style="word-break: break-all;">10.1523/jneurosci.2872-04.2004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2010</td>
+                        <td>Chronic Ethanol Exposure Alters the Levels, Assembly, and Cellular Organization of the Actin Cytoskeleton and Microtubules in Hippocampal Neurons in Primary Culture</td>
+                        <td>Toxicological Sciences</td>
+                        <td><a href="https://doi.org/10.1093/toxsci/kfq260" target="_blank" style="word-break: break-all;">10.1093/toxsci/kfq260</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2004</td>
+                        <td>Influx of extracellular calcium regulates actin-dependent morphological plasticity in dendritic spines</td>
+                        <td>Neuropharmacology</td>
+                        <td><a href="https://doi.org/10.1016/j.neuropharm.2004.07.038" target="_blank" style="word-break: break-all;">10.1016/j.neuropharm.2004.07.038</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2008</td>
+                        <td>A nonlinear cable-like model of amplified ionic wave propagation along microtubules</td>
+                        <td>Europhysics Letters (EPL)</td>
+                        <td><a href="https://doi.org/10.1209/0295-5075/83/68004" target="_blank" style="word-break: break-all;">10.1209/0295-5075/83/68004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2013</td>
+                        <td>HIV-1 Tat protein variants: Critical role for the cysteine region in synaptodendritic injury</td>
+                        <td>Experimental Neurology</td>
+                        <td><a href="https://doi.org/10.1016/j.expneurol.2013.06.020" target="_blank" style="word-break: break-all;">10.1016/j.expneurol.2013.06.020</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>The Presynaptic Microtubule Cytoskeleton in Physiological and Pathological Conditions: Lessons from Drosophila Fragile X Syndrome and Hereditary Spastic Paraplegias</td>
+                        <td>Frontiers in Molecular Neuroscience</td>
+                        <td><a href="https://doi.org/10.3389/fnmol.2016.00060" target="_blank" style="word-break: break-all;">10.3389/fnmol.2016.00060</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2012</td>
+                        <td>Actin Polymerization-Dependent Increase in Synaptic Arc/Arg3.1 Expression in the Amygdala Is Crucial for the Expression of Aversive Memory Associated with Drug Withdrawal</td>
+                        <td>Journal of Neuroscience</td>
+                        <td><a href="https://doi.org/10.1523/jneurosci.0871-12.2012" target="_blank" style="word-break: break-all;">10.1523/jneurosci.0871-12.2012</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Role of actin in organelle trafficking in neurons</td>
+                        <td>Cytoskeleton</td>
+                        <td><a href="https://doi.org/10.1002/cm.21580" target="_blank" style="word-break: break-all;">10.1002/cm.21580</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2006</td>
+                        <td>Dendritic Spine Viscoelasticity and Soft-Glassy Nature: Balancing Dynamic Remodeling with Structural Stability</td>
+                        <td>Biophysical Journal</td>
+                        <td><a href="https://doi.org/10.1529/biophysj.106.092361" target="_blank" style="word-break: break-all;">10.1529/biophysj.106.092361</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2013</td>
+                        <td>Tropomyosins induce neuritogenesis and determine neurite branching patterns in B35 neuroblastoma cells</td>
+                        <td>Molecular and Cellular Neuroscience</td>
+                        <td><a href="https://doi.org/10.1016/j.mcn.2013.10.011" target="_blank" style="word-break: break-all;">10.1016/j.mcn.2013.10.011</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2011</td>
+                        <td>PAR-1/MARK: a Kinase Essential for Maintaining the Dynamic State of Microtubules</td>
+                        <td>Cell Structure and Function</td>
+                        <td><a href="https://doi.org/10.1247/csf.11038" target="_blank" style="word-break: break-all;">10.1247/csf.11038</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Aerobic exercise regulates Rho/cofilin pathways to rescue synaptic loss in aged rats</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0171491" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0171491</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>The Small GTPase Rac1 Contributes to Extinction of Aversive Memories of Drug Withdrawal by Facilitating GABA<sub>A</sub> Receptor Endocytosis in the vmPFC</td>
+                        <td>Journal of Neuroscience</td>
+                        <td><a href="https://doi.org/10.1523/jneurosci.3859-16.2017" target="_blank" style="word-break: break-all;">10.1523/jneurosci.3859-16.2017</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Intracellular and Extracellular Markers of Lethality in Osteogenesis Imperfecta: A Quantitative Proteomic Approach</td>
+                        <td>International Journal of Molecular Sciences</td>
+                        <td><a href="https://doi.org/10.3390/ijms22010429" target="_blank" style="word-break: break-all;">10.3390/ijms22010429</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Studies of pathology and pharmacology of diabetic encephalopathy with KK‐Ay mouse model</td>
+                        <td>CNS Neuroscience & Therapeutics</td>
+                        <td><a href="https://doi.org/10.1111/cns.13201" target="_blank" style="word-break: break-all;">10.1111/cns.13201</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2008</td>
+                        <td>Proteomic Profiling of Proliferating and Differentiated Neural mes-c-myc A1 Cell Line from Mouse Embryonic Mesencephalon by LC−MS</td>
+                        <td>Journal of Proteome Research</td>
+                        <td><a href="https://doi.org/10.1021/pr800454n" target="_blank" style="word-break: break-all;">10.1021/pr800454n</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Sigma-1 Receptor Antagonist (BD1047) Decreases Cathepsin B Secretion in HIV-Infected Macrophages Exposed to Cocaine</td>
+                        <td>Journal of Neuroimmune Pharmacology</td>
+                        <td><a href="https://doi.org/10.1007/s11481-018-9807-4" target="_blank" style="word-break: break-all;">10.1007/s11481-018-9807-4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>SAP97 Binding Partner CRIPT Promotes Dendrite Growth<i>In Vitro</i>and<i>In Vivo</i></td>
+                        <td>eNeuro</td>
+                        <td><a href="https://doi.org/10.1523/eneuro.0175-17.2017" target="_blank" style="word-break: break-all;">10.1523/eneuro.0175-17.2017</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Sex hormones and proteins involved in brain plasticity</td>
+                        <td>Vitamins and hormones</td>
+                        <td><a href="https://doi.org/10.1016/bs.vh.2020.04.002" target="_blank" style="word-break: break-all;">10.1016/bs.vh.2020.04.002</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Metformin alters dendrite development and synaptic plasticity in rat cortical neurons</td>
+                        <td>Biochemical and Biophysical Research Communications</td>
+                        <td><a href="https://doi.org/10.1016/j.bbrc.2024.149874" target="_blank" style="word-break: break-all;">10.1016/j.bbrc.2024.149874</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Effects of neoadjuvant chemotherapy on the depth of total intravenous anesthesia in patients with breast cancer undergoing unilateral modified radical mastectomy</td>
+                        <td>Medicine</td>
+                        <td><a href="https://doi.org/10.1097/md.0000000000013776" target="_blank" style="word-break: break-all;">10.1097/md.0000000000013776</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Kallikrein 8: A key sheddase to strengthen and stabilize neural plasticity</td>
+                        <td>Neuroscience & Biobehavioral Reviews</td>
+                        <td><a href="https://doi.org/10.1016/j.neubiorev.2022.104774" target="_blank" style="word-break: break-all;">10.1016/j.neubiorev.2022.104774</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Soliton-mediated ionic pulses and coupled ionic excitations in a dissipative electrical network model of microtubules</td>
+                        <td>Chaos Solitons & Fractals</td>
+                        <td><a href="https://doi.org/10.1016/j.chaos.2022.112446" target="_blank" style="word-break: break-all;">10.1016/j.chaos.2022.112446</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Characterization of endotoxin free protein production of brain-derived neurotrophic factor (BDNF) for the study of Parkinson model in SH-SY5Y differentiated cells</td>
+                        <td>Protein Expression and Purification</td>
+                        <td><a href="https://doi.org/10.1016/j.pep.2022.106212" target="_blank" style="word-break: break-all;">10.1016/j.pep.2022.106212</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Cellular and subcellular distribution of the K+-dependent Na+/Ca2+-exchanger subtype 4, NCKX4, in mouse brain</td>
+                        <td>Neuroscience</td>
+                        <td><a href="https://doi.org/10.1016/j.neuroscience.2025.02.013" target="_blank" style="word-break: break-all;">10.1016/j.neuroscience.2025.02.013</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2006</td>
+                        <td>Changes in microtubule‐associated protein‐2 (MAP2) expression during development and after status epilepticus in the immature rat hippocampus</td>
+                        <td>International Journal of Developmental Neuroscience</td>
+                        <td><a href="https://doi.org/10.1016/j.ijdevneu.2006.12.001" target="_blank" style="word-break: break-all;">10.1016/j.ijdevneu.2006.12.001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2007</td>
+                        <td>The neuronal Arf GAP centaurin α1 modulates dendritic differentiation</td>
+                        <td>Journal of Cell Science</td>
+                        <td><a href="https://doi.org/10.1242/jcs.006346" target="_blank" style="word-break: break-all;">10.1242/jcs.006346</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2012</td>
+                        <td>Dyrk1A negatively regulates the actin cytoskeleton through threonine phosphorylation of N-WASP</td>
+                        <td>Journal of Cell Science</td>
+                        <td><a href="https://doi.org/10.1242/jcs.086124" target="_blank" style="word-break: break-all;">10.1242/jcs.086124</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2004</td>
+                        <td>Stress-Induced Thermoprotection of Neuromuscular Transmission</td>
+                        <td>Integrative and Comparative Biology</td>
+                        <td><a href="https://doi.org/10.1093/icb/44.1.14" target="_blank" style="word-break: break-all;">10.1093/icb/44.1.14</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2003</td>
+                        <td>Cytoskeleton derangement in brain of patients with Down Syndrome, Alzheimer’s disease and Pick’s disease</td>
+                        <td>Journal of neural transmission. Supplementum</td>
+                        <td><a href="https://doi.org/10.1007/978-3-7091-6721-2_13" target="_blank" style="word-break: break-all;">10.1007/978-3-7091-6721-2_13</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2006</td>
+                        <td>The Dendritic Cytoskeleton as a Computational Device: An Hypothesis</td>
+                        <td>The frontiers collection</td>
+                        <td><a href="https://doi.org/10.1007/3-540-36723-3_8" target="_blank" style="word-break: break-all;">10.1007/3-540-36723-3_8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2003</td>
+                        <td>Overview of Image Analysis, Image Importing, and Image Processing using Freeware</td>
+                        <td>Current Protocols in Molecular Biology</td>
+                        <td><a href="https://doi.org/10.1002/0471142727.mb1415s63" target="_blank" style="word-break: break-all;">10.1002/0471142727.mb1415s63</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2018</td>
+                        <td>Biophysics Model of Heavy-Ion Degradation of Neuron Morphology in Mouse Hippocampal Granular Cell Layer Neurons</td>
+                        <td>Radiation Research</td>
+                        <td><a href="https://doi.org/10.1667/rr14923.1" target="_blank" style="word-break: break-all;">10.1667/rr14923.1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2008</td>
+                        <td>Association of Gap-43 (neuromodulin) with microtubule-associated protein MAP-2 in neuronal cells</td>
+                        <td>Biochemical and Biophysical Research Communications</td>
+                        <td><a href="https://doi.org/10.1016/j.bbrc.2008.04.119" target="_blank" style="word-break: break-all;">10.1016/j.bbrc.2008.04.119</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2006</td>
+                        <td>2-DE Proteomic Profiling of Neuronal Stem Cells</td>
+                        <td>Neurodegenerative Diseases</td>
+                        <td><a href="https://doi.org/10.1159/000092102" target="_blank" style="word-break: break-all;">10.1159/000092102</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Human pluripotent stem cell (PSC)-derived mesenchymal stem cells (MSCs) show potent neurogenic capacity which is enhanced with cytoskeletal rearrangement</td>
+                        <td>Oncotarget</td>
+                        <td><a href="https://doi.org/10.18632/oncotarget.9947" target="_blank" style="word-break: break-all;">10.18632/oncotarget.9947</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2012</td>
+                        <td>Spatiotemporal maps of CaMKII in dendritic spines</td>
+                        <td>Journal of Computational Neuroscience</td>
+                        <td><a href="https://doi.org/10.1007/s10827-011-0377-1" target="_blank" style="word-break: break-all;">10.1007/s10827-011-0377-1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>Neuronal Plasticity in the Mushroom‐Body Calyx of Bumble Bee Workers During Early Adult Development</td>
+                        <td>Developmental Neurobiology</td>
+                        <td><a href="https://doi.org/10.1002/dneu.22678" target="_blank" style="word-break: break-all;">10.1002/dneu.22678</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2010</td>
+                        <td>Proteomic identification of differentially expressed genes in neural stem cells and neurons differentiated from embryonic stem cells of cynomolgus monkey (Macaca fascicularis) in vitro</td>
+                        <td>Biochimica et Biophysica Acta (BBA) - Proteins and Proteomics</td>
+                        <td><a href="https://doi.org/10.1016/j.bbapap.2010.10.009" target="_blank" style="word-break: break-all;">10.1016/j.bbapap.2010.10.009</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2008</td>
+                        <td>Proteomic identification of differentially expressed genes in mouse neural stem cells and neurons differentiated from embryonic stem cells in vitro</td>
+                        <td>Biochimica et Biophysica Acta (BBA) - Proteins and Proteomics</td>
+                        <td><a href="https://doi.org/10.1016/j.bbapap.2008.02.001" target="_blank" style="word-break: break-all;">10.1016/j.bbapap.2008.02.001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Monoallelic CRMP1 gene variants cause neurodevelopmental disorder</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.80793" target="_blank" style="word-break: break-all;">10.7554/elife.80793</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2010</td>
+                        <td>Filamentous microtubules in the neuronal spinous process and the role of microtubule regulatory drugs in neuropathic pain</td>
+                        <td>Neurochemistry International</td>
+                        <td><a href="https://doi.org/10.1016/j.neuint.2010.06.022" target="_blank" style="word-break: break-all;">10.1016/j.neuint.2010.06.022</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2002</td>
+                        <td>A converging‐methods approach to fragile X syndrome</td>
+                        <td>Developmental Psychobiology</td>
+                        <td><a href="https://doi.org/10.1002/dev.10036" target="_blank" style="word-break: break-all;">10.1002/dev.10036</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2006</td>
+                        <td>MAP2 and synaptophysin protein expression following motor learning suggests dynamic regulation and distinct alterations coinciding with synaptogenesis</td>
+                        <td>Neurobiology of Learning and Memory</td>
+                        <td><a href="https://doi.org/10.1016/j.nlm.2006.10.004" target="_blank" style="word-break: break-all;">10.1016/j.nlm.2006.10.004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2006</td>
+                        <td>In vivo, competitive blockade of N-methyl-d-aspartate receptors induces rapid changes in filamentous actin and drebrin A distributions within dendritic spines of adult rat cortex</td>
+                        <td>Neuroscience</td>
+                        <td><a href="https://doi.org/10.1016/j.neuroscience.2006.03.009" target="_blank" style="word-break: break-all;">10.1016/j.neuroscience.2006.03.009</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2006</td>
+                        <td>The novel cytoskeleton-associated protein Neuronal protein 22: Elevated expression in the developing rat brain</td>
+                        <td>Brain Research</td>
+                        <td><a href="https://doi.org/10.1016/j.brainres.2006.01.126" target="_blank" style="word-break: break-all;">10.1016/j.brainres.2006.01.126</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2006</td>
+                        <td>Time-lapse imaging of dendritic spines in vitro</td>
+                        <td>Nature Protocols</td>
+                        <td><a href="https://doi.org/10.1038/nprot.2006.357" target="_blank" style="word-break: break-all;">10.1038/nprot.2006.357</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2013</td>
+                        <td>The Effects of Target Skeletal Muscle Cells on Dorsal Root Ganglion Neuronal Outgrowth and Migration In Vitro</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0052849" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0052849</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2011</td>
+                        <td>Overexpression of myosin-IIB in the brain of a rat model of streptozotocin-induced diabetes</td>
+                        <td>Journal of the Neurological Sciences</td>
+                        <td><a href="https://doi.org/10.1016/j.jns.2011.01.017" target="_blank" style="word-break: break-all;">10.1016/j.jns.2011.01.017</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2011</td>
+                        <td>A novel function of the cell polarity-regulating kinase PAR-1/MARK in dendritic spines</td>
+                        <td>BioArchitecture</td>
+                        <td><a href="https://doi.org/10.4161/bioa.1.6.19199" target="_blank" style="word-break: break-all;">10.4161/bioa.1.6.19199</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Quantifying neuronal structural changes over time using dynamic morphometrics</td>
+                        <td>Trends in Neurosciences</td>
+                        <td><a href="https://doi.org/10.1016/j.tins.2021.10.011" target="_blank" style="word-break: break-all;">10.1016/j.tins.2021.10.011</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2003</td>
+                        <td>Focal motility determines the geometry of dendritic spines☆</td>
+                        <td>Neuroscience</td>
+                        <td><a href="https://doi.org/10.1016/s0306-4522(03)00405-6" target="_blank" style="word-break: break-all;">10.1016/s0306-4522(03)00405-6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2005</td>
+                        <td>Impact of Time-Dependent Changes in Spine Density and Spine Shape on the Input-Output Properties of a Dendritic Branch: A Computational Study</td>
+                        <td>Journal of Neurophysiology</td>
+                        <td><a href="https://doi.org/10.1152/jn.00373.2004" target="_blank" style="word-break: break-all;">10.1152/jn.00373.2004</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2003</td>
+                        <td>Expression of hNP22 Is Altered in the Frontal Cortex and Hippocampus of the Alcoholic Human Brain</td>
+                        <td>Alcoholism Clinical and Experimental Research</td>
+                        <td><a href="https://doi.org/10.1097/01.alc.0000086060.18032.59" target="_blank" style="word-break: break-all;">10.1097/01.alc.0000086060.18032.59</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2006</td>
+                        <td> 1-Integrins determine the dendritic morphology which enhances DC-SIGN-mediated particle capture by dendritic cells</td>
+                        <td>International Immunology</td>
+                        <td><a href="https://doi.org/10.1093/intimm/dxl062" target="_blank" style="word-break: break-all;">10.1093/intimm/dxl062</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2005</td>
+                        <td>Both the phosphoinositide and receptor binding activities of Dab1 are required for Reelin-stimulated Dab1 tyrosine phosphorylation</td>
+                        <td>Molecular Brain Research</td>
+                        <td><a href="https://doi.org/10.1016/j.molbrainres.2005.06.001" target="_blank" style="word-break: break-all;">10.1016/j.molbrainres.2005.06.001</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2013</td>
+                        <td>Proteome analysis of the effects of all-trans retinoic acid on human germ cell tumor cell lines</td>
+                        <td>Journal of Proteomics</td>
+                        <td><a href="https://doi.org/10.1016/j.jprot.2013.11.010" target="_blank" style="word-break: break-all;">10.1016/j.jprot.2013.11.010</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2005</td>
+                        <td>Up-regulation of peripherin is associated with alterations in synaptic plasticity in CA1 and CA3 regions of hippocampus</td>
+                        <td>Neurobiology of Disease</td>
+                        <td><a href="https://doi.org/10.1016/j.nbd.2004.10.009" target="_blank" style="word-break: break-all;">10.1016/j.nbd.2004.10.009</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2017</td>
+                        <td>Effects of estrogen receptor modulators on cytoskeletal proteins in the central nervous system</td>
+                        <td>Neural Regeneration Research</td>
+                        <td><a href="https://doi.org/10.4103/1673-5374.213536" target="_blank" style="word-break: break-all;">10.4103/1673-5374.213536</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2010</td>
+                        <td>Nuclear Proteome Dynamics in Differentiating Embryonic Carcinoma (NTERA-2) Cells</td>
+                        <td>Journal of Proteome Research</td>
+                        <td><a href="https://doi.org/10.1021/pr901069d" target="_blank" style="word-break: break-all;">10.1021/pr901069d</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2006</td>
+                        <td>Phosphorylation-Dephosphorylation Imbalance of Cytoskeletal Associated Proteins in Neurodegenerative Diseases</td>
+                        <td>Recent Patents on CNS Drug Discovery</td>
+                        <td><a href="https://doi.org/10.2174/157488906777452776" target="_blank" style="word-break: break-all;">10.2174/157488906777452776</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2012</td>
+                        <td>Expression of mRNAs for PPT, CGRP, NF-200, and MAP-2 in cocultures of dissociated DRG neurons and skeletal muscle cells in administration of NGF or NT-3</td>
+                        <td>Folia Histochemica et Cytobiologica</td>
+                        <td><a href="https://doi.org/10.5603/fhc.2012.0041" target="_blank" style="word-break: break-all;">10.5603/fhc.2012.0041</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2020</td>
+                        <td>Internal Clocks, mGluR7 and Microtubules: A Primer for the Molecular Encoding of Target Durations in Cerebellar Purkinje Cells and Striatal Medium Spiny Neurons</td>
+                        <td>Frontiers in Molecular Neuroscience</td>
+                        <td><a href="https://doi.org/10.3389/fnmol.2019.00321" target="_blank" style="word-break: break-all;">10.3389/fnmol.2019.00321</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2016</td>
+                        <td>Neuronal diversity and their spine density in the hippocampal complex of the House Crow (<i>Corvus splendens</i>), a food-storing bird</td>
+                        <td>Canadian Journal of Zoology</td>
+                        <td><a href="https://doi.org/10.1139/cjz-2015-0260" target="_blank" style="word-break: break-all;">10.1139/cjz-2015-0260</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Epidermal Collagen Reduction Drives Selective Aspects of Aging in Sensory Neurons</td>
+                        <td>Aging Cell</td>
+                        <td><a href="https://doi.org/10.1111/acel.14459" target="_blank" style="word-break: break-all;">10.1111/acel.14459</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2008</td>
+                        <td>Modulation of microtubule dynamics by the microtubule‐associated protein 1a</td>
+                        <td>Journal of Neuroscience Research</td>
+                        <td><a href="https://doi.org/10.1002/jnr.21920" target="_blank" style="word-break: break-all;">10.1002/jnr.21920</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2009</td>
+                        <td>Tau hyperphosphorylation and axonal damage induced by N,N‐diethyldithiocarbamate (DEDTC) treatment along late postnatal development is followed by a rescue during adulthood</td>
+                        <td>Journal of Neuroscience Research</td>
+                        <td><a href="https://doi.org/10.1002/jnr.22284" target="_blank" style="word-break: break-all;">10.1002/jnr.22284</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Manipulation of DHPS activity affects dendritic morphology and expression of synaptic proteins in primary rat cortical neurons</td>
+                        <td>Frontiers in Cellular Neuroscience</td>
+                        <td><a href="https://doi.org/10.3389/fncel.2024.1465011" target="_blank" style="word-break: break-all;">10.3389/fncel.2024.1465011</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Dynein-driven regulation of postsynaptic membrane architecture and synaptic function</td>
+                        <td>Journal of Cell Science</td>
+                        <td><a href="https://doi.org/10.1242/jcs.263844" target="_blank" style="word-break: break-all;">10.1242/jcs.263844</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2004</td>
+                        <td>Changes in the content and distribution of microtubule associated protein 2 in the hippocampus of the rat during the estrous cycle</td>
+                        <td>Journal of Neurobiology</td>
+                        <td><a href="https://doi.org/10.1002/neu.20042" target="_blank" style="word-break: break-all;">10.1002/neu.20042</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2005</td>
+                        <td>Three-dimensional reconstruction of synapses and dendritic spines in the rat and ground squirrel hippocampus: New structural-functional paradigms for synaptic function</td>
+                        <td>Neuroscience and Behavioral Physiology</td>
+                        <td><a href="https://doi.org/10.1007/s11055-005-0030-4" target="_blank" style="word-break: break-all;">10.1007/s11055-005-0030-4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2004</td>
+                        <td>Mathematical model of retinal mosaic formation</td>
+                        <td>Biosystems</td>
+                        <td><a href="https://doi.org/10.1016/j.biosystems.2004.05.034" target="_blank" style="word-break: break-all;">10.1016/j.biosystems.2004.05.034</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2009</td>
+                        <td>LONG TERM POTENTIATION AS A MECHANISM FOR LEARNING AND MEMORY</td>
+                        <td>Unknown</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2023</td>
+                        <td>Axon onset remodeling in response to network activity in mouse cortical neurons</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2023.07.31.551236" target="_blank" style="word-break: break-all;">10.1101/2023.07.31.551236</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2009</td>
+                        <td>Zur Rolle des Calciums bei Estrogen-vermittelter synaptischer Plastizität</td>
+                        <td>Unknown</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2021</td>
+                        <td>Dynein acts to cluster glutamate receptors and traffic the PIP5 kinase, Skittles, to regulate postsynaptic membrane organization at the neuromuscular junction</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2021.09.27.462070" target="_blank" style="word-break: break-all;">10.1101/2021.09.27.462070</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Monoallelic <i>CRMP1</i> gene variants cause neurodevelopmental disorder</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2022.07.05.22276556" target="_blank" style="word-break: break-all;">10.1101/2022.07.05.22276556</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2015</td>
+                        <td>HIV-1 AND COCAINE: MOTIVATION AND SYNAPTIC FUNCTION</td>
+                        <td>Scholar Commons (University of South Carolina)</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2006</td>
+                        <td>Visualization of the Ca2+-dependent regulation of voltage-gated Ether-à-go-go channels by FRET microscopy</td>
+                        <td>eDiss (Georg-August-Universität Göttingen)</td>
+                        <td><a href="https://doi.org/10.53846/goediss-3227" target="_blank" style="word-break: break-all;">10.53846/goediss-3227</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2009</td>
+                        <td>Cytoskeletal Regulation and Morphogen Signaling During Synaptic Outgrowth at the Drosophila Larval Neuromuscular Junction : A Dissertation</td>
+                        <td>University of Massachusetts (UMass) Chan Medical School</td>
+                        <td><a href="https://doi.org/10.13028/e8pg-tq46" target="_blank" style="word-break: break-all;">10.13028/e8pg-tq46</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>A quantitative analysis of the molecular organization of dendritic spines from hippocampal neurons</td>
+                        <td>eDiss (Georg-August-Universität Göttingen)</td>
+                        <td><a href="https://doi.org/10.53846/goediss-7592" target="_blank" style="word-break: break-all;">10.53846/goediss-7592</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2019</td>
+                        <td>A dDAAM sejtvázszabályozó fehérje szinaptikus fejlődésben betöltött szerepének vizsgálata</td>
+                        <td>SZTE Repository of Dissertations (University of Szeged)</td>
+                        <td><a href="https://doi.org/10.14232/phd.9844" target="_blank" style="word-break: break-all;">10.14232/phd.9844</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2022</td>
+                        <td>Umbilical cord mesenchymal stem cells and monosialotetrahexosy 1 ganglioside alleviate neuroinflammation in traumatic brain injury</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-1833517/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-1833517/v1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2024</td>
+                        <td>Epidermal Collagen Reduction Drives Selective Aspects of Aging in Sensory Neurons</td>
+                        <td>bioRxiv</td>
+                        <td><a href="https://doi.org/10.1101/2024.05.07.593041" target="_blank" style="word-break: break-all;">10.1101/2024.05.07.593041</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2009</td>
+                        <td>Functional and Dysfunctional Aspects of the Cerebral Cortex</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1007/978-3-642-00396-7_2" target="_blank" style="word-break: break-all;">10.1007/978-3-642-00396-7_2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2010</td>
+                        <td>Actin at the Synapse: Contribution to Pre- and Postsynaptic Functions</td>
+                        <td>Advances in neurobiology</td>
+                        <td><a href="https://doi.org/10.1007/978-1-4419-7368-9_10" target="_blank" style="word-break: break-all;">10.1007/978-1-4419-7368-9_10</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Sticks with whips in neurodegenerative diseases: On the roles of intrinsic disorder in the (dis)function of cytoskeletal proteins</td>
+                        <td>Advances in protein chemistry and structural biology</td>
+                        <td><a href="https://doi.org/10.1016/bs.apcsb.2025.10.031" target="_blank" style="word-break: break-all;">10.1016/bs.apcsb.2025.10.031</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-06-09T18:16:39+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
                 type: 'bar',
                 data: {
                     labels: labels,
@@ -647,9 +2080,97 @@
                     }
                 }
             });
-        })();
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' citing works (most recent first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
     </script>
-<style>
+    <style>
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(5px); }
             to { opacity: 1; transform: translateY(0); }
@@ -672,8 +2193,49 @@
             border-bottom: 3px solid #3b82f6;
             color: #111827;
         }
+        .wm-tab-btn {
+            border: none;
+            background: #f3f4f6;
+            color: #4b5563;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .wm-tab-btn.wm-tab-active {
+            outline: 2px solid #3b82f6;
+            outline-offset: 1px;
+        }
     </style>
-<script>
+    
+    <script>
+        function citeSwitchTab(btn, paneId) {
+            var panes = document.querySelectorAll('#sec-citing .cite-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].classList.remove('active');
+            }
+            var btns = document.querySelectorAll('#sec-citing .cite-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('active');
+            }
+            var pane = document.getElementById(paneId);
+            if (pane) pane.classList.add('active');
+            if (btn) btn.classList.add('active');
+        }
+        function openWebMentionTab(evt, tabId) {
+            var panes = document.querySelectorAll('.wm-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].style.display = 'none';
+            }
+            var btns = document.querySelectorAll('.wm-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('wm-tab-active');
+            }
+            var pane = document.getElementById(tabId);
+            if (pane) pane.style.display = 'block';
+            if (evt && evt.currentTarget) evt.currentTarget.classList.add('wm-tab-active');
+        }
         function openSocialTab(evt, tabId) {
             // Hide all tab content
             var contents = document.getElementsByClassName("soc-tab-content");
@@ -690,165 +2252,45 @@
             evt.currentTarget.classList.add("soc-tab-active");
         }
     </script>
-
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
 <script>
-(function() {
-  var DATA = [{"year": "2009", "title": "Microtubule assembly, organization and dynamics in axons and dendrites", "venue": "Nature reviews. Neuroscience", "doi": "10.1038/nrn2631", "doi_url": "https://doi.org/10.1038/nrn2631"}, {"year": "2003", "title": "Hippocampal LTP Is Accompanied by Enhanced F-Actin Content within the Dendritic Spine that Is Essential for Late LTP Maintenance In Vivo", "venue": "Neuron", "doi": "10.1016/s0896-6273(03)00206-x", "doi_url": "https://doi.org/10.1016/s0896-6273(03)00206-x"}, {"year": "2009", "title": "Dynamic Microtubules Regulate Dendritic Spine Morphology and Synaptic Plasticity", "venue": "Neuron", "doi": "10.1016/j.neuron.2008.11.013", "doi_url": "https://doi.org/10.1016/j.neuron.2008.11.013"}, {"year": "2002", "title": "Polyribosomes Redistribute from Dendritic Shafts into Spines with Enlarged Synapses during LTP in Developing Rat Hippocampal Slices", "venue": "Neuron", "doi": "10.1016/s0896-6273(02)00785-7", "doi_url": "https://doi.org/10.1016/s0896-6273(02)00785-7"}, {"year": "2007", "title": "Role of actin cytoskeleton in dendritic spine morphogenesis", "venue": "Neurochemistry International", "doi": "10.1016/j.neuint.2007.04.029", "doi_url": "https://doi.org/10.1016/j.neuint.2007.04.029"}, {"year": "2008", "title": "Activity-Dependent Dynamic Microtubule Invasion of Dendritic Spines", "venue": "Journal of Neuroscience", "doi": "10.1523/jneurosci.3074-08.2008", "doi_url": "https://doi.org/10.1523/jneurosci.3074-08.2008"}, {"year": "2004", "title": "Proteomics Analysis of Rat Brain Postsynaptic Density", "venue": "Journal of Biological Chemistry", "doi": "10.1074/jbc.m303116200", "doi_url": "https://doi.org/10.1074/jbc.m303116200"}, {"year": "2005", "title": "stathmin, a Gene Enriched in the Amygdala, Controls Both Learned and Innate Fear", "venue": "Cell", "doi": "10.1016/j.cell.2005.08.038", "doi_url": "https://doi.org/10.1016/j.cell.2005.08.038"}, {"year": "2002", "title": "A Novel Mechanism of Dendritic Spine Plasticity Involving Estradiol Induction of Prostaglandin-E2", "venue": "Journal of Neuroscience", "doi": "10.1523/jneurosci.22-19-08586.2002", "doi_url": "https://doi.org/10.1523/jneurosci.22-19-08586.2002"}, {"year": "2010", "title": "Cholinergic systems mediate action from movement to higher consciousness", "venue": "Behavioural Brain Research", "doi": "10.1016/j.bbr.2009.12.046", "doi_url": "https://doi.org/10.1016/j.bbr.2009.12.046"}, {"year": "2004", "title": "New Synaptic Bouton Formation Is Disrupted by Misregulation of Microtubule Stability in aPKC Mutants", "venue": "Neuron", "doi": "10.1016/s0896-6273(04)00255-7", "doi_url": "https://doi.org/10.1016/s0896-6273(04)00255-7"}, {"year": "2006", "title": "A Biopolymer Transistor: Electrical Amplification by Microtubules", "venue": "Biophysical Journal", "doi": "10.1529/biophysj.105.078915", "doi_url": "https://doi.org/10.1529/biophysj.105.078915"}, {"year": "2016", "title": "Of microtubules and memory: implications for microtubule dynamics in dendrites and spines", "venue": "Molecular Biology of the Cell", "doi": "10.1091/mbc.e15-11-0769", "doi_url": "https://doi.org/10.1091/mbc.e15-11-0769"}, {"year": "2007", "title": "Homers regulate drug-induced neuroplasticity: Implications for addiction", "venue": "Biochemical Pharmacology", "doi": "10.1016/j.bcp.2007.07.031", "doi_url": "https://doi.org/10.1016/j.bcp.2007.07.031"}, {"year": "2015", "title": "Microtubule‐associated proteins as direct crosslinkers of actin filaments and microtubules", "venue": "IUBMB Life", "doi": "10.1002/iub.1384", "doi_url": "https://doi.org/10.1002/iub.1384"}, {"year": "2013", "title": "Actin filaments and microtubules in dendritic spines", "venue": "Journal of Neurochemistry", "doi": "10.1111/jnc.12313", "doi_url": "https://doi.org/10.1111/jnc.12313"}, {"year": "2010", "title": "The dynamic cytoskeleton: backbone of dendritic spine plasticity", "venue": "Current Opinion in Neurobiology", "doi": "10.1016/j.conb.2010.08.013", "doi_url": "https://doi.org/10.1016/j.conb.2010.08.013"}, {"year": "2007", "title": "Mice Deficient in Collapsin Response Mediator Protein-1 Exhibit Impaired Long-Term Potentiation and Impaired Spatial Learning and Memory", "venue": "Journal of Neuroscience", "doi": "10.1523/jneurosci.4497-06.2007", "doi_url": "https://doi.org/10.1523/jneurosci.4497-06.2007"}, {"year": "2017", "title": "Components of RNA granules affect their localization and dynamics in neuronal dendrites", "venue": "Molecular Biology of the Cell", "doi": "10.1091/mbc.e16-07-0497", "doi_url": "https://doi.org/10.1091/mbc.e16-07-0497"}, {"year": "2021", "title": "The synaptic life of microtubules", "venue": "Current Opinion in Neurobiology", "doi": "10.1016/j.conb.2021.03.004", "doi_url": "https://doi.org/10.1016/j.conb.2021.03.004"}, {"year": "2001", "title": "A cellular mechanism for targeting newly synthesized mRNAs to synaptic sites on dendrites", "venue": "Proceedings of the National Academy of Sciences", "doi": "10.1073/pnas.131146398", "doi_url": "https://doi.org/10.1073/pnas.131146398"}, {"year": "2002", "title": "Filopodia are conduits for melanosome transfer to keratinocytes", "venue": "Journal of Cell Science", "doi": "10.1242/jcs.115.7.1441", "doi_url": "https://doi.org/10.1242/jcs.115.7.1441"}, {"year": "2003", "title": "Kalirin, a Multifunctional Rho Guanine Nucleotide Exchange Factor, Is Necessary for Maintenance of Hippocampal Pyramidal Neuron Dendrites and Dendritic Spines", "venue": "Journal of Neuroscience", "doi": "10.1523/jneurosci.23-33-10593.2003", "doi_url": "https://doi.org/10.1523/jneurosci.23-33-10593.2003"}, {"year": "2003", "title": "Timing of neuronal and glial ultrastructure disruption during brain slice preparation and recovery in vitro", "venue": "The Journal of Comparative Neurology", "doi": "10.1002/cne.10825", "doi_url": "https://doi.org/10.1002/cne.10825"}, {"year": "2006", "title": "2‐DE proteome analysis of a proliferating and differentiating human neuronal stem cell line (ReNcell VM)", "venue": "PROTEOMICS", "doi": "10.1002/pmic.200500556", "doi_url": "https://doi.org/10.1002/pmic.200500556"}, {"year": "2004", "title": "MAP2c, but Not Tau, Binds and Bundles F-Actin via Its Microtubule Binding Domain", "venue": "Current Biology", "doi": "10.1016/j.cub.2004.01.058", "doi_url": "https://doi.org/10.1016/j.cub.2004.01.058"}, {"year": "2011", "title": "Microtubule-associated Protein 1B (MAP1B) Is Required for Dendritic Spine Development and Synaptic Maturation", "venue": "Journal of Biological Chemistry", "doi": "10.1074/jbc.m111.271320", "doi_url": "https://doi.org/10.1074/jbc.m111.271320"}, {"year": "2004", "title": "LIMK1 and CLIP‐115: linking cytoskeletal defects to Williams syndrome", "venue": "BioEssays", "doi": "10.1002/bies.10402", "doi_url": "https://doi.org/10.1002/bies.10402"}, {"year": "2003", "title": "Retinal Ganglion Cells Resistant to Advanced Glaucoma: A Postmortem Study of Human Retinas with the Carbocyanine Dye DiI", "venue": "Investigative Ophthalmology & Visual Science", "doi": "10.1167/iovs.03-0614", "doi_url": "https://doi.org/10.1167/iovs.03-0614"}, {"year": "2003", "title": "Ethanol and brain plasticity: receptors and molecular networks of the postsynaptic density as targets of ethanol", "venue": "Pharmacology & Therapeutics", "doi": "10.1016/s0163-7258(03)00096-2", "doi_url": "https://doi.org/10.1016/s0163-7258(03)00096-2"}, {"year": "2004", "title": "Lateral Diffusion of Inositol 1,4,5-Trisphosphate Receptor Type 1 Is Regulated by Actin Filaments and 4.1N in Neuronal Dendrites", "venue": "Journal of Biological Chemistry", "doi": "10.1074/jbc.m408364200", "doi_url": "https://doi.org/10.1074/jbc.m408364200"}, {"year": "2007", "title": "Trafficking and synaptic anchoring of ionotropic inhibitory neurotransmitter receptors", "venue": "Biology of the Cell", "doi": "10.1042/bc20060120", "doi_url": "https://doi.org/10.1042/bc20060120"}, {"year": "2009", "title": "βCaMKII Regulates Actin Assembly and Structure", "venue": "Journal of Biological Chemistry", "doi": "10.1074/jbc.m809518200", "doi_url": "https://doi.org/10.1074/jbc.m809518200"}, {"year": "2015", "title": "Sex Hormones Regulate Cytoskeletal Proteins Involved in Brain Plasticity", "venue": "Frontiers in Psychiatry", "doi": "10.3389/fpsyt.2015.00165", "doi_url": "https://doi.org/10.3389/fpsyt.2015.00165"}, {"year": "2020", "title": "Microtubule‐associated protein 2 mediates induction of long‐term potentiation in hippocampal neurons", "venue": "The FASEB Journal", "doi": "10.1096/fj.201902122rr", "doi_url": "https://doi.org/10.1096/fj.201902122rr"}, {"year": "2011", "title": "The synaptic cytoskeleton in development and disease", "venue": "Developmental Neurobiology", "doi": "10.1002/dneu.20892", "doi_url": "https://doi.org/10.1002/dneu.20892"}, {"year": "2004", "title": "Hypothermia-Associated Loss of Dendritic Spines", "venue": "Journal of Neuroscience", "doi": "10.1523/jneurosci.2872-04.2004", "doi_url": "https://doi.org/10.1523/jneurosci.2872-04.2004"}, {"year": "2010", "title": "Chronic Ethanol Exposure Alters the Levels, Assembly, and Cellular Organization of the Actin Cytoskeleton and Microtubules in Hippocampal Neurons in Primary Culture", "venue": "Toxicological Sciences", "doi": "10.1093/toxsci/kfq260", "doi_url": "https://doi.org/10.1093/toxsci/kfq260"}, {"year": "2004", "title": "Influx of extracellular calcium regulates actin-dependent morphological plasticity in dendritic spines", "venue": "Neuropharmacology", "doi": "10.1016/j.neuropharm.2004.07.038", "doi_url": "https://doi.org/10.1016/j.neuropharm.2004.07.038"}, {"year": "2008", "title": "A nonlinear cable-like model of amplified ionic wave propagation along microtubules", "venue": "Europhysics Letters (EPL)", "doi": "10.1209/0295-5075/83/68004", "doi_url": "https://doi.org/10.1209/0295-5075/83/68004"}, {"year": "2013", "title": "HIV-1 Tat protein variants: Critical role for the cysteine region in synaptodendritic injury", "venue": "Experimental Neurology", "doi": "10.1016/j.expneurol.2013.06.020", "doi_url": "https://doi.org/10.1016/j.expneurol.2013.06.020"}, {"year": "2016", "title": "The Presynaptic Microtubule Cytoskeleton in Physiological and Pathological Conditions: Lessons from Drosophila Fragile X Syndrome and Hereditary Spastic Paraplegias", "venue": "Frontiers in Molecular Neuroscience", "doi": "10.3389/fnmol.2016.00060", "doi_url": "https://doi.org/10.3389/fnmol.2016.00060"}, {"year": "2012", "title": "Actin Polymerization-Dependent Increase in Synaptic Arc/Arg3.1 Expression in the Amygdala Is Crucial for the Expression of Aversive Memory Associated with Drug Withdrawal", "venue": "Journal of Neuroscience", "doi": "10.1523/jneurosci.0871-12.2012", "doi_url": "https://doi.org/10.1523/jneurosci.0871-12.2012"}, {"year": "2019", "title": "Role of actin in organelle trafficking in neurons", "venue": "Cytoskeleton", "doi": "10.1002/cm.21580", "doi_url": "https://doi.org/10.1002/cm.21580"}, {"year": "2006", "title": "Dendritic Spine Viscoelasticity and Soft-Glassy Nature: Balancing Dynamic Remodeling with Structural Stability", "venue": "Biophysical Journal", "doi": "10.1529/biophysj.106.092361", "doi_url": "https://doi.org/10.1529/biophysj.106.092361"}, {"year": "2013", "title": "Tropomyosins induce neuritogenesis and determine neurite branching patterns in B35 neuroblastoma cells", "venue": "Molecular and Cellular Neuroscience", "doi": "10.1016/j.mcn.2013.10.011", "doi_url": "https://doi.org/10.1016/j.mcn.2013.10.011"}, {"year": "2011", "title": "PAR-1/MARK: a Kinase Essential for Maintaining the Dynamic State of Microtubules", "venue": "Cell Structure and Function", "doi": "10.1247/csf.11038", "doi_url": "https://doi.org/10.1247/csf.11038"}, {"year": "2017", "title": "Aerobic exercise regulates Rho/cofilin pathways to rescue synaptic loss in aged rats", "venue": "PLoS ONE", "doi": "10.1371/journal.pone.0171491", "doi_url": "https://doi.org/10.1371/journal.pone.0171491"}, {"year": "2017", "title": "The Small GTPase Rac1 Contributes to Extinction of Aversive Memories of Drug Withdrawal by Facilitating GABAAReceptor Endocytosis in the vmPFC", "venue": "Journal of Neuroscience", "doi": "10.1523/jneurosci.3859-16.2017", "doi_url": "https://doi.org/10.1523/jneurosci.3859-16.2017"}, {"year": "2021", "title": "Intracellular and Extracellular Markers of Lethality in Osteogenesis Imperfecta: A Quantitative Proteomic Approach", "venue": "International Journal of Molecular Sciences", "doi": "10.3390/ijms22010429", "doi_url": "https://doi.org/10.3390/ijms22010429"}, {"year": "2019", "title": "Studies of pathology and pharmacology of diabetic encephalopathy with KK‐Ay mouse model", "venue": "CNS Neuroscience & Therapeutics", "doi": "10.1111/cns.13201", "doi_url": "https://doi.org/10.1111/cns.13201"}, {"year": "2008", "title": "Proteomic Profiling of Proliferating and Differentiated Neural mes-c-myc A1 Cell Line from Mouse Embryonic Mesencephalon by LC−MS", "venue": "Journal of Proteome Research", "doi": "10.1021/pr800454n", "doi_url": "https://doi.org/10.1021/pr800454n"}, {"year": "2018", "title": "Sigma-1 Receptor Antagonist (BD1047) Decreases Cathepsin B Secretion in HIV-Infected Macrophages Exposed to Cocaine", "venue": "Journal of Neuroimmune Pharmacology", "doi": "10.1007/s11481-018-9807-4", "doi_url": "https://doi.org/10.1007/s11481-018-9807-4"}, {"year": "2017", "title": "SAP97 Binding Partner CRIPT Promotes Dendrite GrowthIn VitroandIn Vivo", "venue": "eNeuro", "doi": "10.1523/eneuro.0175-17.2017", "doi_url": "https://doi.org/10.1523/eneuro.0175-17.2017"}, {"year": "2020", "title": "Sex hormones and proteins involved in brain plasticity", "venue": "Vitamins and hormones", "doi": "10.1016/bs.vh.2020.04.002", "doi_url": "https://doi.org/10.1016/bs.vh.2020.04.002"}, {"year": "2024", "title": "Metformin alters dendrite development and synaptic plasticity in rat cortical neurons", "venue": "Biochemical and Biophysical Research Communications", "doi": "10.1016/j.bbrc.2024.149874", "doi_url": "https://doi.org/10.1016/j.bbrc.2024.149874"}, {"year": "2018", "title": "Effects of neoadjuvant chemotherapy on the depth of total intravenous anesthesia in patients with breast cancer undergoing unilateral modified radical mastectomy", "venue": "Medicine", "doi": "10.1097/md.0000000000013776", "doi_url": "https://doi.org/10.1097/md.0000000000013776"}, {"year": "2022", "title": "Kallikrein 8: A key sheddase to strengthen and stabilize neural plasticity", "venue": "Neuroscience & Biobehavioral Reviews", "doi": "10.1016/j.neubiorev.2022.104774", "doi_url": "https://doi.org/10.1016/j.neubiorev.2022.104774"}, {"year": "2022", "title": "Soliton-mediated ionic pulses and coupled ionic excitations in a dissipative electrical network model of microtubules", "venue": "Chaos Solitons & Fractals", "doi": "10.1016/j.chaos.2022.112446", "doi_url": "https://doi.org/10.1016/j.chaos.2022.112446"}, {"year": "2022", "title": "Characterization of endotoxin free protein production of brain-derived neurotrophic factor (BDNF) for the study of Parkinson model in SH-SY5Y differentiated cells", "venue": "Protein Expression and Purification", "doi": "10.1016/j.pep.2022.106212", "doi_url": "https://doi.org/10.1016/j.pep.2022.106212"}, {"year": "2025", "title": "Cellular and subcellular distribution of the K+-dependent Na+/Ca2+-exchanger subtype 4, NCKX4, in mouse brain", "venue": "Neuroscience", "doi": "10.1016/j.neuroscience.2025.02.013", "doi_url": "https://doi.org/10.1016/j.neuroscience.2025.02.013"}, {"year": "2006", "title": "Changes in microtubule‐associated protein‐2 (MAP2) expression during development and after status epilepticus in the immature rat hippocampus", "venue": "International Journal of Developmental Neuroscience", "doi": "10.1016/j.ijdevneu.2006.12.001", "doi_url": "https://doi.org/10.1016/j.ijdevneu.2006.12.001"}, {"year": "2007", "title": "The neuronal Arf GAP centaurin α1 modulates dendritic differentiation", "venue": "Journal of Cell Science", "doi": "10.1242/jcs.006346", "doi_url": "https://doi.org/10.1242/jcs.006346"}, {"year": "2012", "title": "Dyrk1A negatively regulates the actin cytoskeleton through threonine phosphorylation of N-WASP", "venue": "Journal of Cell Science", "doi": "10.1242/jcs.086124", "doi_url": "https://doi.org/10.1242/jcs.086124"}, {"year": "2004", "title": "Stress-Induced Thermoprotection of Neuromuscular Transmission", "venue": "Integrative and Comparative Biology", "doi": "10.1093/icb/44.1.14", "doi_url": "https://doi.org/10.1093/icb/44.1.14"}, {"year": "2003", "title": "Cytoskeleton derangement in brain of patients with Down Syndrome, Alzheimer’s disease and Pick’s disease", "venue": "Journal of neural transmission. Supplementum", "doi": "10.1007/978-3-7091-6721-2_13", "doi_url": "https://doi.org/10.1007/978-3-7091-6721-2_13"}, {"year": "2006", "title": "The Dendritic Cytoskeleton as a Computational Device: An Hypothesis", "venue": "The frontiers collection", "doi": "10.1007/3-540-36723-3_8", "doi_url": "https://doi.org/10.1007/3-540-36723-3_8"}, {"year": "2003", "title": "Overview of Image Analysis, Image Importing, and Image Processing using Freeware", "venue": "Current Protocols in Molecular Biology", "doi": "10.1002/0471142727.mb1415s63", "doi_url": "https://doi.org/10.1002/0471142727.mb1415s63"}, {"year": "2018", "title": "Biophysics Model of Heavy-Ion Degradation of Neuron Morphology in Mouse Hippocampal Granular Cell Layer Neurons", "venue": "Radiation Research", "doi": "10.1667/rr14923.1", "doi_url": "https://doi.org/10.1667/rr14923.1"}, {"year": "2008", "title": "Association of Gap-43 (neuromodulin) with microtubule-associated protein MAP-2 in neuronal cells", "venue": "Biochemical and Biophysical Research Communications", "doi": "10.1016/j.bbrc.2008.04.119", "doi_url": "https://doi.org/10.1016/j.bbrc.2008.04.119"}, {"year": "2006", "title": "2-DE Proteomic Profiling of Neuronal Stem Cells", "venue": "Neurodegenerative Diseases", "doi": "10.1159/000092102", "doi_url": "https://doi.org/10.1159/000092102"}, {"year": "2016", "title": "Human pluripotent stem cell (PSC)-derived mesenchymal stem cells (MSCs) show potent neurogenic capacity which is enhanced with cytoskeletal rearrangement", "venue": "Oncotarget", "doi": "10.18632/oncotarget.9947", "doi_url": "https://doi.org/10.18632/oncotarget.9947"}, {"year": "2012", "title": "Spatiotemporal maps of CaMKII in dendritic spines", "venue": "Journal of Computational Neuroscience", "doi": "10.1007/s10827-011-0377-1", "doi_url": "https://doi.org/10.1007/s10827-011-0377-1"}, {"year": "2019", "title": "Neuronal Plasticity in the Mushroom‐Body Calyx of Bumble Bee Workers During Early Adult Development", "venue": "Developmental Neurobiology", "doi": "10.1002/dneu.22678", "doi_url": "https://doi.org/10.1002/dneu.22678"}, {"year": "2010", "title": "Proteomic identification of differentially expressed genes in neural stem cells and neurons differentiated from embryonic stem cells of cynomolgus monkey (Macaca fascicularis) in vitro", "venue": "Biochimica et Biophysica Acta (BBA) - Proteins and Proteomics", "doi": "10.1016/j.bbapap.2010.10.009", "doi_url": "https://doi.org/10.1016/j.bbapap.2010.10.009"}, {"year": "2008", "title": "Proteomic identification of differentially expressed genes in mouse neural stem cells and neurons differentiated from embryonic stem cells in vitro", "venue": "Biochimica et Biophysica Acta (BBA) - Proteins and Proteomics", "doi": "10.1016/j.bbapap.2008.02.001", "doi_url": "https://doi.org/10.1016/j.bbapap.2008.02.001"}, {"year": "2022", "title": "Monoallelic CRMP1 gene variants cause neurodevelopmental disorder", "venue": "eLife", "doi": "10.7554/elife.80793", "doi_url": "https://doi.org/10.7554/elife.80793"}, {"year": "2010", "title": "Filamentous microtubules in the neuronal spinous process and the role of microtubule regulatory drugs in neuropathic pain", "venue": "Neurochemistry International", "doi": "10.1016/j.neuint.2010.06.022", "doi_url": "https://doi.org/10.1016/j.neuint.2010.06.022"}, {"year": "2002", "title": "A converging‐methods approach to fragile X syndrome", "venue": "Developmental Psychobiology", "doi": "10.1002/dev.10036", "doi_url": "https://doi.org/10.1002/dev.10036"}, {"year": "2006", "title": "MAP2 and synaptophysin protein expression following motor learning suggests dynamic regulation and distinct alterations coinciding with synaptogenesis", "venue": "Neurobiology of Learning and Memory", "doi": "10.1016/j.nlm.2006.10.004", "doi_url": "https://doi.org/10.1016/j.nlm.2006.10.004"}, {"year": "2006", "title": "In vivo, competitive blockade of N-methyl-d-aspartate receptors induces rapid changes in filamentous actin and drebrin A distributions within dendritic spines of adult rat cortex", "venue": "Neuroscience", "doi": "10.1016/j.neuroscience.2006.03.009", "doi_url": "https://doi.org/10.1016/j.neuroscience.2006.03.009"}, {"year": "2006", "title": "The novel cytoskeleton-associated protein Neuronal protein 22: Elevated expression in the developing rat brain", "venue": "Brain Research", "doi": "10.1016/j.brainres.2006.01.126", "doi_url": "https://doi.org/10.1016/j.brainres.2006.01.126"}, {"year": "2006", "title": "Time-lapse imaging of dendritic spines in vitro", "venue": "Nature Protocols", "doi": "10.1038/nprot.2006.357", "doi_url": "https://doi.org/10.1038/nprot.2006.357"}, {"year": "2013", "title": "The Effects of Target Skeletal Muscle Cells on Dorsal Root Ganglion Neuronal Outgrowth and Migration In Vitro", "venue": "PLoS ONE", "doi": "10.1371/journal.pone.0052849", "doi_url": "https://doi.org/10.1371/journal.pone.0052849"}, {"year": "2011", "title": "Overexpression of myosin-IIB in the brain of a rat model of streptozotocin-induced diabetes", "venue": "Journal of the Neurological Sciences", "doi": "10.1016/j.jns.2011.01.017", "doi_url": "https://doi.org/10.1016/j.jns.2011.01.017"}, {"year": "2011", "title": "A novel function of the cell polarity-regulating kinase PAR-1/MARK in dendritic spines", "venue": "BioArchitecture", "doi": "10.4161/bioa.1.6.19199", "doi_url": "https://doi.org/10.4161/bioa.1.6.19199"}, {"year": "2021", "title": "Quantifying neuronal structural changes over time using dynamic morphometrics", "venue": "Trends in Neurosciences", "doi": "10.1016/j.tins.2021.10.011", "doi_url": "https://doi.org/10.1016/j.tins.2021.10.011"}, {"year": "2003", "title": "Focal motility determines the geometry of dendritic spines☆", "venue": "Neuroscience", "doi": "10.1016/s0306-4522(03)00405-6", "doi_url": "https://doi.org/10.1016/s0306-4522(03)00405-6"}, {"year": "2005", "title": "Impact of Time-Dependent Changes in Spine Density and Spine Shape on the Input-Output Properties of a Dendritic Branch: A Computational Study", "venue": "Journal of Neurophysiology", "doi": "10.1152/jn.00373.2004", "doi_url": "https://doi.org/10.1152/jn.00373.2004"}, {"year": "2003", "title": "Expression of hNP22 Is Altered in the Frontal Cortex and Hippocampus of the Alcoholic Human Brain", "venue": "Alcoholism Clinical and Experimental Research", "doi": "10.1097/01.alc.0000086060.18032.59", "doi_url": "https://doi.org/10.1097/01.alc.0000086060.18032.59"}, {"year": "2006", "title": "1-Integrins determine the dendritic morphology which enhances DC-SIGN-mediated particle capture by dendritic cells", "venue": "International Immunology", "doi": "10.1093/intimm/dxl062", "doi_url": "https://doi.org/10.1093/intimm/dxl062"}, {"year": "2005", "title": "Both the phosphoinositide and receptor binding activities of Dab1 are required for Reelin-stimulated Dab1 tyrosine phosphorylation", "venue": "Molecular Brain Research", "doi": "10.1016/j.molbrainres.2005.06.001", "doi_url": "https://doi.org/10.1016/j.molbrainres.2005.06.001"}, {"year": "2013", "title": "Proteome analysis of the effects of all-trans retinoic acid on human germ cell tumor cell lines", "venue": "Journal of Proteomics", "doi": "10.1016/j.jprot.2013.11.010", "doi_url": "https://doi.org/10.1016/j.jprot.2013.11.010"}, {"year": "2005", "title": "Up-regulation of peripherin is associated with alterations in synaptic plasticity in CA1 and CA3 regions of hippocampus", "venue": "Neurobiology of Disease", "doi": "10.1016/j.nbd.2004.10.009", "doi_url": "https://doi.org/10.1016/j.nbd.2004.10.009"}, {"year": "2017", "title": "Effects of estrogen receptor modulators on cytoskeletal proteins in the central nervous system", "venue": "Neural Regeneration Research", "doi": "10.4103/1673-5374.213536", "doi_url": "https://doi.org/10.4103/1673-5374.213536"}, {"year": "2010", "title": "Nuclear Proteome Dynamics in Differentiating Embryonic Carcinoma (NTERA-2) Cells", "venue": "Journal of Proteome Research", "doi": "10.1021/pr901069d", "doi_url": "https://doi.org/10.1021/pr901069d"}, {"year": "2006", "title": "Phosphorylation-Dephosphorylation Imbalance of Cytoskeletal Associated Proteins in Neurodegenerative Diseases", "venue": "Recent Patents on CNS Drug Discovery", "doi": "10.2174/157488906777452776", "doi_url": "https://doi.org/10.2174/157488906777452776"}, {"year": "2012", "title": "Expression of mRNAs for PPT, CGRP, NF-200, and MAP-2 in cocultures of dissociated DRG neurons and skeletal muscle cells in administration of NGF or NT-3", "venue": "Folia Histochemica et Cytobiologica", "doi": "10.5603/fhc.2012.0041", "doi_url": "https://doi.org/10.5603/fhc.2012.0041"}, {"year": "2020", "title": "Internal Clocks, mGluR7 and Microtubules: A Primer for the Molecular Encoding of Target Durations in Cerebellar Purkinje Cells and Striatal Medium Spiny Neurons", "venue": "Frontiers in Molecular Neuroscience", "doi": "10.3389/fnmol.2019.00321", "doi_url": "https://doi.org/10.3389/fnmol.2019.00321"}, {"year": "2016", "title": "Neuronal diversity and their spine density in the hippocampal complex of the House Crow (Corvus splendens), a food-storing bird", "venue": "Canadian Journal of Zoology", "doi": "10.1139/cjz-2015-0260", "doi_url": "https://doi.org/10.1139/cjz-2015-0260"}, {"year": "2024", "title": "Epidermal Collagen Reduction Drives Selective Aspects of Aging in Sensory Neurons", "venue": "Aging Cell", "doi": "10.1111/acel.14459", "doi_url": "https://doi.org/10.1111/acel.14459"}, {"year": "2008", "title": "Modulation of microtubule dynamics by the microtubule‐associated protein 1a", "venue": "Journal of Neuroscience Research", "doi": "10.1002/jnr.21920", "doi_url": "https://doi.org/10.1002/jnr.21920"}, {"year": "2009", "title": "Tau hyperphosphorylation and axonal damage induced by N,N‐diethyldithiocarbamate (DEDTC) treatment along late postnatal development is followed by a rescue during adulthood", "venue": "Journal of Neuroscience Research", "doi": "10.1002/jnr.22284", "doi_url": "https://doi.org/10.1002/jnr.22284"}, {"year": "2024", "title": "Manipulation of DHPS activity affects dendritic morphology and expression of synaptic proteins in primary rat cortical neurons", "venue": "Frontiers in Cellular Neuroscience", "doi": "10.3389/fncel.2024.1465011", "doi_url": "https://doi.org/10.3389/fncel.2024.1465011"}, {"year": "2025", "title": "Dynein-driven regulation of postsynaptic membrane architecture and synaptic function", "venue": "Journal of Cell Science", "doi": "10.1242/jcs.263844", "doi_url": "https://doi.org/10.1242/jcs.263844"}, {"year": "2004", "title": "Changes in the content and distribution of microtubule associated protein 2 in the hippocampus of the rat during the estrous cycle", "venue": "Journal of Neurobiology", "doi": "10.1002/neu.20042", "doi_url": "https://doi.org/10.1002/neu.20042"}, {"year": "2005", "title": "Three-dimensional reconstruction of synapses and dendritic spines in the rat and ground squirrel hippocampus: New structural-functional paradigms for synaptic function", "venue": "Neuroscience and Behavioral Physiology", "doi": "10.1007/s11055-005-0030-4", "doi_url": "https://doi.org/10.1007/s11055-005-0030-4"}, {"year": "2004", "title": "Mathematical model of retinal mosaic formation", "venue": "Biosystems", "doi": "10.1016/j.biosystems.2004.05.034", "doi_url": "https://doi.org/10.1016/j.biosystems.2004.05.034"}, {"year": "2009", "title": "LONG TERM POTENTIATION AS A MECHANISM FOR LEARNING AND MEMORY", "venue": "Unknown", "doi": "", "doi_url": ""}, {"year": "2023", "title": "Axon onset remodeling in response to network activity in mouse cortical neurons", "venue": "bioRxiv", "doi": "10.1101/2023.07.31.551236", "doi_url": "https://doi.org/10.1101/2023.07.31.551236"}, {"year": "2009", "title": "Zur Rolle des Calciums bei Estrogen-vermittelter synaptischer Plastizität", "venue": "Unknown", "doi": "", "doi_url": ""}, {"year": "2021", "title": "Dynein acts to cluster glutamate receptors and traffic the PIP5 kinase, Skittles, to regulate postsynaptic membrane organization at the neuromuscular junction", "venue": "bioRxiv", "doi": "10.1101/2021.09.27.462070", "doi_url": "https://doi.org/10.1101/2021.09.27.462070"}, {"year": "2022", "title": "MonoallelicCRMP1gene variants cause neurodevelopmental disorder", "venue": "bioRxiv", "doi": "10.1101/2022.07.05.22276556", "doi_url": "https://doi.org/10.1101/2022.07.05.22276556"}, {"year": "2015", "title": "HIV-1 AND COCAINE: MOTIVATION AND SYNAPTIC FUNCTION", "venue": "Scholar Commons (University of South Carolina)", "doi": "", "doi_url": ""}, {"year": "2006", "title": "Visualization of the Ca2+-dependent regulation of voltage-gated Ether-à-go-go channels by FRET microscopy", "venue": "eDiss (Georg-August-Universität Göttingen)", "doi": "10.53846/goediss-3227", "doi_url": "https://doi.org/10.53846/goediss-3227"}, {"year": "2009", "title": "Cytoskeletal Regulation and Morphogen Signaling During Synaptic Outgrowth at the Drosophila Larval Neuromuscular Junction : A Dissertation", "venue": "University of Massachusetts (UMass) Chan Medical School", "doi": "10.13028/e8pg-tq46", "doi_url": "https://doi.org/10.13028/e8pg-tq46"}, {"year": "2019", "title": "A quantitative analysis of the molecular organization of dendritic spines from hippocampal neurons", "venue": "eDiss (Georg-August-Universität Göttingen)", "doi": "10.53846/goediss-7592", "doi_url": "https://doi.org/10.53846/goediss-7592"}, {"year": "2019", "title": "A dDAAM sejtvázszabályozó fehérje szinaptikus fejlődésben betöltött szerepének vizsgálata", "venue": "SZTE Repository of Dissertations (University of Szeged)", "doi": "10.14232/phd.9844", "doi_url": "https://doi.org/10.14232/phd.9844"}, {"year": "2022", "title": "Umbilical cord mesenchymal stem cells and monosialotetrahexosy 1 ganglioside alleviate neuroinflammation in traumatic brain injury", "venue": "Research Square", "doi": "10.21203/rs.3.rs-1833517/v1", "doi_url": "https://doi.org/10.21203/rs.3.rs-1833517/v1"}, {"year": "2024", "title": "Epidermal Collagen Reduction Drives Selective Aspects of Aging in Sensory Neurons", "venue": "bioRxiv", "doi": "10.1101/2024.05.07.593041", "doi_url": "https://doi.org/10.1101/2024.05.07.593041"}, {"year": "2009", "title": "Functional and Dysfunctional Aspects of the Cerebral Cortex", "venue": "Unknown", "doi": "10.1007/978-3-642-00396-7_2", "doi_url": "https://doi.org/10.1007/978-3-642-00396-7_2"}, {"year": "2010", "title": "Actin at the Synapse: Contribution to Pre- and Postsynaptic Functions", "venue": "Advances in neurobiology", "doi": "10.1007/978-1-4419-7368-9_10", "doi_url": "https://doi.org/10.1007/978-1-4419-7368-9_10"}, {"year": "2025", "title": "Sticks with whips in neurodegenerative diseases: On the roles of intrinsic disorder in the (dis)function of cytoskeletal proteins", "venue": "Advances in protein chemistry and structural biology", "doi": "10.1016/bs.apcsb.2025.10.031", "doi_url": "https://doi.org/10.1016/bs.apcsb.2025.10.031"}];
-  var PER  = 25;
-  var _p   = 1;
-  var _tot = Math.ceil(DATA.length / PER);
-
-  function esc(s) {
-    return String(s)
-      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
-      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-
-  function render(page) {
-    _p = page;
-    var tbody  = document.getElementById('cit-tbody');
-    var info   = document.getElementById('cit-info');
-    var prev   = document.getElementById('cit-prev');
-    var next   = document.getElementById('cit-next');
-    var nums   = document.getElementById('cit-page-nums');
-    if (!tbody) return;
-
-    var s = (page-1)*PER, e = Math.min(s+PER, DATA.length), rows = '';
-    for (var i=s; i<e; i++) {
-      var r = DATA[i];
-      var d = r.doi_url
-        ? '<a href="'+esc(r.doi_url)+'" target="_blank" style="word-break:break-all;">'+esc(r.doi)+'</a>'
-        : esc(r.doi||'');
-      rows += '<tr><td>'+esc(r.year)+'</td><td>'+esc(r.title)+'</td><td>'+esc(r.venue)+'</td><td>'+d+'</td></tr>';
-    }
-    tbody.innerHTML = rows;
-    if (info) info.textContent = 'Showing '+(s+1)+'–'+e+' of '+DATA.length+' citing works';
-    if (prev) prev.disabled = (page===1);
-    if (next) next.disabled = (page===_tot);
-
-    if (nums) {
-      var shown = [], html = '', prev2 = null;
-      for (var p=1; p<=_tot; p++) {
-        if (p===1||p===_tot||(p>=page-2&&p<=page+2)) shown.push(p);
-      }
-      for (var i=0; i<shown.length; i++) {
-        var p=shown[i];
-        if (prev2!==null&&p-prev2>1) html+='<span style="padding:0 .2rem;color:#9ca3af;">…</span>';
-        html+='<button class="cit-btn'+(p===_p?' cit-active':'')+'" onclick="citGoTo('+p+')">'+p+'</button>';
-        prev2=p;
-      }
-      nums.innerHTML = html;
-    }
-  }
-
-  window.citGoTo = function(p) {
-    if(p<1||p>_tot) return;
-    render(p);
-    var sec=document.getElementById('sec-citations');
-    if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
-  };
-  window.citPrev = function() { window.citGoTo(_p-1); };
-  window.citNext = function() { window.citGoTo(_p+1); };
-
-  if(document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded',function(){render(1);});
-  else render(1);
-})();
-</script>
-
-<script>
-function citeSwitchTab(btn, tabId) {
-  var card = btn.closest('section, .card') || btn.parentElement;
-  // Find tab buttons and panes in surrounding context
-  var tabsEl = btn.closest('.cite-tabs');
-  if (!tabsEl) return;
-  var parent = tabsEl.parentElement;
-  parent.querySelectorAll('.cite-tab-btn').forEach(function(b){b.classList.remove('active');});
-  parent.querySelectorAll('.cite-tab-pane').forEach(function(p){p.classList.remove('active');});
-  btn.classList.add('active');
-  var pane = document.getElementById(tabId);
-  if (pane) pane.classList.add('active');
-}
-</script>
-
-<script>
-(function() {
-  function init() {
-    document.querySelectorAll('section.card, .card').forEach(function(card) {
-      // Skip the hero header
-      if (card.tagName === 'HEADER') return;
-      var h2 = null;
-      for (var i=0; i<card.children.length; i++) {
-        if (card.children[i].tagName === 'H2') { h2 = card.children[i]; break; }
-      }
-      if (!h2) return;
-
-      card.classList.add('card-collapsible');
-
-      // Add chevron span
-      var chev = document.createElement('span');
-      chev.className = 'chevron';
-      chev.setAttribute('aria-hidden','true');
-      chev.textContent = '▾';
-      h2.appendChild(chev);
-
-      // Wrap siblings after h2
-      var wrap = document.createElement('div');
-      wrap.className = 'card-body-wrap';
-      var kids = Array.from(card.children), after = false;
-      kids.forEach(function(c) {
-        if (c===h2){after=true;return;}
-        if (after) wrap.appendChild(c);
-      });
-      card.appendChild(wrap);
-      // CSS handles open state with max-height:9999px — safe for async-loaded content
-
-      h2.addEventListener('click', function() {
-        card.classList.toggle('is-collapsed');
-      });
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
     });
-  }
-  if (document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded', init);
-  else init();
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
 })();
 </script>
-
 <script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
 (function() {
-  function init() {
-    var nav = document.getElementById('sticky-nav');
-    if (!nav) return;
-    var links = Array.from(nav.querySelectorAll('a'));
-    var targets = links.map(function(l) {
-      var id = l.getAttribute('href').slice(1);
-      return {el: document.getElementById(id), link: l};
-    }).filter(function(t){return t.el;});
-
-    var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) {
-          links.forEach(function(l){l.classList.remove('snav-active');});
-          var match = links.find(function(l){
-            return l.getAttribute('href')==='#'+e.target.id;
-          });
-          if (match) match.classList.add('snav-active');
-        }
-      });
-    }, {rootMargin:'-5% 0px -80% 0px', threshold:0});
-
-    targets.forEach(function(t){obs.observe(t.el);});
-  }
-  if (document.readyState==='loading')
-    document.addEventListener('DOMContentLoaded', init);
-  else init();
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
 })();
 </script>
-
-
-
-
-<script src="role_tooltips.js"></script>
-<script>initRoleTooltips();</script>
 </body>
 </html>
