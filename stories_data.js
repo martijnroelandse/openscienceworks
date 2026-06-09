@@ -183,10 +183,10 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 0,
+"ta_ocw": 5,
 "ta_youtube": 0,
 "ta_ol_holdings": 4,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary \"An Introduction to Statistical Learning,\" published by Springer New York in 2013, has established itself as a reference point in the field of statistical learning, amassing over …",
@@ -202,7 +202,8 @@ window.STORIES_DATA = [
 "series_id": "https://openalex.org/S4210222172",
 "belongs_to_series": true,
 "mention_platforms": [
-"Wikipedia"
+"Wikipedia",
+"Blogs"
 ]
 },
 {
@@ -883,7 +884,7 @@ window.STORIES_DATA = [
 ],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 1,
 "ta_ol_holdings": 6,
 "ta_otl": false,
 "has_peer_review": false,
@@ -1320,7 +1321,7 @@ window.STORIES_DATA = [
 "sdg_ids": [],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 1,
 "ta_ol_holdings": 5,
 "ta_otl": false,
 "has_peer_review": false,
@@ -2004,10 +2005,10 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 0,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 2,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite its publication in 2014, \"Opening Science\" has yet to garner citations or community discourse, suggesting limited immediate impact or engagement within academic circles or…",
@@ -2060,9 +2061,9 @@ window.STORIES_DATA = [
 ],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 3,
 "ta_ol_holdings": 3,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite the absence of traditional metrics such as citations or community discourse, \"Coronavirus Politics\" published by the University of Michigan Press in 2021 serves as a signi…",
@@ -2074,7 +2075,9 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia"
+"Wikipedia",
+"News",
+"Blogs"
 ]
 },
 {
@@ -3586,7 +3589,7 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 0,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 2,
 "ta_otl": false,
@@ -3786,11 +3789,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 1,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite being published in 2020, \"A European Public Investment Outlook\" by Open Book Publishers has shown a promising scholarly uptake, garnering 54 citations, indicating its sign…",
@@ -4319,7 +4322,7 @@ window.STORIES_DATA = [
 ],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 5,
 "ta_ol_holdings": 1,
 "ta_otl": false,
 "has_peer_review": false,
@@ -4333,7 +4336,9 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia"
+"Wikipedia",
+"News",
+"Blogs"
 ]
 },
 {
@@ -5252,11 +5257,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite its recent publication in 2021, \"Theory into Practice\" has yet to gain significant traction in terms of academic citations or public discourse, with indicators showing no …",
@@ -5577,8 +5582,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Gender equality"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 2,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -5718,7 +5723,7 @@ window.STORIES_DATA = [
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 9,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary The book \"Advances in Knowledge Discovery and Data Mining,\" published by Springer International Publishing in 2020, has gained noteworthy citations, reflecting its scholarly uptak…",
@@ -6240,9 +6245,9 @@ window.STORIES_DATA = [
 "sdg_ids": [],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 2,
 "ta_ol_holdings": 5,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite the absence of formal citations or online mentions, \"Music on the Move,\" published by the University of Michigan Press in 2020, remains positioned within a scholarly lands…",
@@ -6255,7 +6260,8 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia",
-"Hypothesis"
+"Hypothesis",
+"Blogs"
 ]
 },
 {
@@ -6441,11 +6447,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Reduced inequalities"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite its recent publication in 2021 by Leuven University Press, \"The Global Horizon\" has observed relatively low engagement metrics, with no citations reported.",
@@ -6580,11 +6586,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite the absence of citations or public discourse, \"Essays on Plato's Epistemology\" by Leuven University Press remains a significant scholarly contribution within its field, sh…",
@@ -6774,7 +6780,7 @@ window.STORIES_DATA = [
 ],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 1,
 "ta_ol_holdings": 4,
 "ta_otl": false,
 "has_peer_review": false,
@@ -7543,11 +7549,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite its publication in 2019 by Leuven University Press, \"European Perspectives for Public Administration\" has not yet gained traction in academic citations or public discourse…",
@@ -7585,9 +7591,9 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 1,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
@@ -7629,10 +7635,10 @@ window.STORIES_DATA = [
 "Industry, innovation and infrastructure"
 ],
 "has_teaching": true,
-"ta_ocw": 0,
+"ta_ocw": 3,
 "ta_youtube": 0,
 "ta_ol_holdings": 3,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary The forthcoming publication, \"Virtual Innovation and Support Networks,\" by Peter Lang Verlag, is poised to contribute to the critical discourse surrounding digital collaboration a…",
@@ -7766,11 +7772,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary \"Educational Agency and Activism in Linguistic Landscape Studies,\" published by Peter Lang Verlag in 2024, is positioned to contribute to ongoing discussions in linguistic studies…",
@@ -8149,10 +8155,10 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 0,
+"ta_ocw": 5,
 "ta_youtube": 0,
 "ta_ol_holdings": 1,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary The book \"Virtual Works – Actual Things,\" published by Leuven University Press in 2018, presents a unique exploration of the intersection between digital and physical realities.",
@@ -8191,7 +8197,7 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 0,
+"ta_ocw": 3,
 "ta_youtube": 0,
 "ta_ol_holdings": 2,
 "ta_otl": false,
@@ -8207,7 +8213,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Wikipedia"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663634.html",
@@ -8234,11 +8242,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite having recorded no public engagement or citation metrics, \"Public Administration in Ethiopia,\" published by Leuven University Press in 2020, offers a specialized explorati…",
@@ -8761,7 +8769,7 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 0,
+"ta_ocw": 5,
 "ta_youtube": 0,
 "ta_ol_holdings": 1,
 "ta_otl": false,
@@ -8804,11 +8812,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite its publication in 2019 not garnering any recorded citations or social media mentions, \"Mapping Landscapes in Transformation\" by Leuven University Press stands as a work o…",
@@ -8819,7 +8827,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Wikipedia"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663443.html",
@@ -8857,7 +8867,7 @@ window.STORIES_DATA = [
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 2,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite the absence of citations or broad public discourse at the time of its publication, \"Migration at Work\" offers valuable insights into the intersections of migration and lab…",
@@ -8943,10 +8953,12 @@ window.STORIES_DATA = [
 "oa_status": "gold",
 "citation_count": 5,
 "event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Sustainable cities and communities"
+],
+"has_teaching": true,
+"ta_ocw": 2,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -8993,11 +9005,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Gender equality"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 5,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite its publication in 2012 and a current citation count of five, \"Gender and Christianity in Modern Europe\" has demonstrated its relevance within academic circles, particular…",
@@ -9277,7 +9289,7 @@ window.STORIES_DATA = [
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 1,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite limited citations and community discourse, \"Images of Immigrants and Refugees\" offers valuable insights into the portrayal of immigration and refugee issues, showcasing a …",
@@ -9365,11 +9377,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Sustainable cities and communities"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary \"Revival After the Great War,\" published by Leuven University Press in 2021, demonstrates a significant commercial linkage, indicating strong engagement from platforms such as Ama…",
@@ -9416,11 +9428,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Gender equality"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary \"Christian Masculinity,\" published by Leuven University Press in 2021, explores the nuances of masculinity within Christian contexts.",
@@ -9482,7 +9494,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Wikipedia"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665072.html",
@@ -9808,10 +9822,10 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 0,
+"ta_ocw": 5,
 "ta_youtube": 0,
 "ta_ol_holdings": 2,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite its publication in 2015 and the absence of citations or social media mentions, \"Experimental Affinities in Music\" presents a noteworthy avenue for exploration within its a…",
@@ -9889,10 +9903,10 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 0,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 2,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite its publication in 2020, \"Across Anthropology\" has yet to gain significant traction within academic circles, recorded with zero citations.",
@@ -9937,11 +9951,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Sustainable cities and communities"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite having no recorded citations or online discussions, \"The Tacit Dimension\" published by Leuven University Press in 2021 shows evidence of a strong commercial linkage, sugge…",
@@ -10036,11 +10050,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Sustainable cities and communities"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary \"Making Home(s) in Displacement,\" published by Leuven University Press in 2021, addresses critical themes of home and belonging amidst forced displacement.",
@@ -10085,11 +10099,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Peace, Justice and strong institutions"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 2,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite its recent publication year of 2021, \"Translation Policies in Legal and Institutional Settings\" has not yet garnered formal citations or online discourse.",
@@ -10131,11 +10145,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary \"Absent Presences in the Colonial Archive,\" published by Leuven University Press in 2022, explores themes critical to understanding colonial legacies and their contemporary implic…",
@@ -10180,11 +10194,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Reduced inequalities"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary The work titled \"Newcomers Navigating the Welfare State,\" published in 2023 by Leuven University Press, addresses critical elements related to the welfare state and its navigation…",
@@ -10746,11 +10760,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Industry, innovation and infrastructure"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Published in 2021 by Leuven University Press, \"Evolving as a Digital Scholar\" addresses the contemporary transitions and methodologies within digital scholarship.",
@@ -10792,11 +10806,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Published in 2021 by Leuven University Press, \"A Dark Trace\" currently has a small but significant scholarly uptake, with two recorded citations.",
@@ -10838,8 +10852,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Sustainable cities and communities"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -10887,11 +10901,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Peace, Justice and strong institutions"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary \"Islamic Glass in the Making\" published by Leuven University Press in 2022, stands at the intersection of academic rigor and commercial linkage, indicating its relevance in both s…",
@@ -10940,11 +10954,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Sustainable cities and communities"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite the absence of citations and public discourse metrics indicating its reach, \"The Hybrid Practitioner,\" published by Leuven University Press in 2022, reflects a solid engag…",
@@ -11088,11 +11102,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Sustainable cities and communities"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite the absence of external citations or online mentions, \"Contested Legacies,\" published by Leuven University Press in 2023, hints at promising engagement in academic discour…",
@@ -11136,11 +11150,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite limited citations and online discourse, \"A Small Nation in the Turmoil of the Second World War\" published by Leuven University Press in 2013, demonstrates a considerable c…",
@@ -11153,7 +11167,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Wikipedia"
+]
 },
 {
 "file": "bookstory_10.5117_9789463723336.html",
@@ -11835,9 +11851,9 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 1,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
@@ -11853,7 +11869,8 @@ window.STORIES_DATA = [
 "series_id": "https://openalex.org/S4210183583",
 "belongs_to_series": true,
 "mention_platforms": [
-"Wikipedia"
+"Wikipedia",
+"Blogs"
 ]
 },
 {
@@ -11881,8 +11898,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Zero hunger"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -11928,10 +11945,10 @@ window.STORIES_DATA = [
 "Decent work and economic growth"
 ],
 "has_teaching": true,
-"ta_ocw": 0,
+"ta_ocw": 5,
 "ta_youtube": 0,
 "ta_ol_holdings": 1,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite being published in 2019, \"Financing Quality Education for All\" showcases strong potential for sustainability and policy relevance in the field of educational finance, refl…",
@@ -11972,7 +11989,7 @@ window.STORIES_DATA = [
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 2,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite its release in 2020, \"Arrival Cities\" has yet to receive citations or public engagement on platforms such as Wikipedia and Reddit.",
@@ -11983,7 +12000,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Wikipedia"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663481.html",
@@ -12061,11 +12080,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Reduced inequalities"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite its publication in 2020, \"Strategic Imaginations\" has shown limited scholarly uptake, with no recorded citations or mentions across high-fidelity social platforms.",
@@ -12107,11 +12126,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary The scholarly work titled \"Working Through Colonial Collections,\" published by Leuven University Press in 2022, explores significant themes related to colonial collections, contri…",
@@ -12245,11 +12264,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Gender equality"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary \"Portraits and Poses,\" published by Leuven University Press in 2022, is a notable academic contribution, enriched by a commercial linkage evidenced by its availability on platform…",
@@ -12260,7 +12279,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Wikipedia"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664990.html",
@@ -12429,11 +12450,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Sustainable cities and communities"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 5,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary The upcoming publication titled \"Between Conventional and Experimental,\" set to release in 2024 by Leuven University Press, showcases the intersection of traditional and innovativ…",
@@ -12478,11 +12499,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Sustainable cities and communities"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite being a forthcoming title with no current citations or online mentions, \"Architectures of Resistance\" by Leuven University Press is positioned within a landscape of commer…",
@@ -12615,11 +12636,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Reduced inequalities"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 5,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite being published in 2014, \"New Multicultural Identities in Europe\" by Leuven University Press appears to lack significant academic engagement and public discourse, with no …",
@@ -12631,6 +12652,56 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": []
+},
+{
+"file": "bookstory_10.3998_mpub.14414299.html",
+"title": "Urban Fantasy",
+"type": "BookStory",
+"doi": "10.3998/mpub.14414299",
+"year": 2024,
+"venue": "Lever Press",
+"venue_name": "",
+"publisher": "Lever Press",
+"concepts": [
+"Modernity",
+"Fantasy",
+"MAGIC (telescope)",
+"Art",
+"Aesthetics",
+"Literature",
+"Philosophy",
+"Epistemology"
+],
+"roles": [
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Sustainable cities and communities"
+],
+"has_teaching": true,
+"ta_ocw": 1,
+"ta_youtube": 4,
+"ta_ol_holdings": 1,
+"ta_otl": true,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The upcoming book Urban Fantasy , published by Lever Press in 2024, stands at the intersection of scholarly discourse and commercial engagement, reflecting a strong potential for …",
+"cover_url": "",
+"authors": "Stefan Ekman",
+"institutions": [],
+"download_count": 325,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Wikipedia"
+]
 },
 {
 "file": "bookstory_10.5117_9789462981102.html",
@@ -14026,10 +14097,10 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 0,
+"ta_ocw": 2,
 "ta_youtube": 0,
 "ta_ol_holdings": 1,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary As German as Kafka, published by Leuven University Press in 2019, has not yet generated academic citations or community discourse, highlighting the need for further engagement wit…",
@@ -14110,10 +14181,10 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 0,
+"ta_ocw": 5,
 "ta_youtube": 0,
 "ta_ol_holdings": 2,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite a lack of citations and online discourse, \"The Figure of Knowledge\" remains an exceptional resource within STEM, showcasing its academic integrity through strong commercia…",
@@ -14166,7 +14237,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Wikipedia"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663412.html",
@@ -14197,7 +14270,7 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 0,
+"ta_ocw": 2,
 "ta_youtube": 0,
 "ta_ol_holdings": 2,
 "ta_otl": false,
@@ -14236,11 +14309,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite generating no recorded citations or online mentions, the book \"Contact Zones,\" published by Leuven University Press in 2020, serves as a pivotal contribution in its field.",
@@ -14295,7 +14368,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Wikipedia"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663832.html",
@@ -14386,7 +14461,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Wikipedia"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663955.html",
@@ -14461,11 +14538,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite the absence of citations and online discourse for the book \"Cold War Triangle,\" it stands out due to its strong commercial linkage, appearing on platforms like Amazon and …",
@@ -14505,11 +14582,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 5,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite its recent publication in 2021 by Leuven University Press, the book \"Ubiquity\" has not yet received academic citations or public discourse across major platforms.",
@@ -14550,11 +14627,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite being published in 2021 by Leuven University Press, \"Protagonists of War\" has yet to garner external citations or significant public mentions, indicating a limited visibil…",
@@ -14567,7 +14644,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Wikipedia"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664051.html",
@@ -14818,11 +14897,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 5,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite being published by Leuven University Press in 2021, \"Predicting the Past\" remains without citations or online discourse, indicating that it has not yet garnered significan…",
@@ -14866,11 +14945,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Reduced inequalities"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary The book \"Leaving Spain,\" published by Leuven University Press in 2022, demonstrates notable commercial reach as evidenced by its presence on platforms such as Amazon and Goodread…",
@@ -15193,8 +15272,10 @@ window.STORIES_DATA = [
 "oa_status": "gold",
 "citation_count": 0,
 "event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
+"has_sdgs": true,
+"sdg_ids": [
+"Peace, Justice and strong institutions"
+],
 "has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
@@ -15240,11 +15321,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary \"Landscapes of Liberation,\" published by Leuven University Press in 2023, marks a significant contribution to its field, primarily through its commercial presence noted on platfor…",
@@ -15281,11 +15362,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Good health and well-being"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary \"Watching, Waiting,\" published by Leuven University Press in 2023, presents a unique exploration that has yet to generate substantial formal citations or community discourse.",
@@ -15331,11 +15412,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Quality Education"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary The book \"Modern Etruscans,\" published by Leuven University Press in 2023, represents a significant contribution to the understanding of Etruscan culture.",
@@ -15376,11 +15457,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary \"Building a White Nation,\" published by Leuven University Press in 2023, offers a critical exploration of the socio-political dynamics surrounding racial identity.",
@@ -15559,11 +15640,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Sustainable cities and communities"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary \"Collecting Asian Art,\" set to be published by Leuven University Press in 2024, indicates a strong commercial potential based on its presence on major retail and review platforms …",
@@ -15657,11 +15738,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Gender equality"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary \"Muslim Marriage and Non-Marriage,\" published by Leuven University Press in 2023, delves into critical aspects of marital and non-marital experiences within Muslim communities, ad…",
@@ -15720,7 +15801,9 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [
+"Wikipedia"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665553.html",
@@ -15792,11 +15875,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary \"Performing by the Book?\" is set to be published by Leuven University Press in 2024, marking a significant contribution to its field.",
@@ -15840,11 +15923,11 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Reduced inequalities"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 5,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary \"Re-Imagining Class,\" published by Leuven University Press in 2024, represents a significant scholarly contribution to the discourse on social class, although it currently lacks m…",
@@ -15930,11 +16013,11 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite a lack of community discourse and citations, \"Modern Islamic Thinking and Activism\" serves as a significant mark in the academic exploration of contemporary Islamic though…",
@@ -16368,56 +16451,6 @@ window.STORIES_DATA = [
 "mention_platforms": []
 },
 {
-"file": "bookstory_10.3998_mpub.14414299.html",
-"title": "Urban Fantasy",
-"type": "BookStory",
-"doi": "10.3998/mpub.14414299",
-"year": 2024,
-"venue": "Lever Press",
-"venue_name": "",
-"publisher": "Lever Press",
-"concepts": [
-"Modernity",
-"Fantasy",
-"MAGIC (telescope)",
-"Art",
-"Aesthetics",
-"Literature",
-"Philosophy",
-"Epistemology"
-],
-"roles": [
-"Commercial Linkage",
-"Sustainability & Policy Relevance"
-],
-"is_oa": true,
-"oa_status": "gold",
-"citation_count": 0,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Sustainable cities and communities"
-],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 1,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": false,
-"excerpt": "Short impact summary The upcoming book Urban Fantasy , published by Lever Press in 2024, stands at the intersection of scholarly discourse and commercial engagement, reflecting a strong potential for …",
-"cover_url": "",
-"authors": "Stefan Ekman",
-"institutions": [],
-"download_count": 325,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"Wikipedia"
-]
-},
-{
 "file": "bookstory_10.5117_9789048512270.html",
 "title": "Untitled Book",
 "type": "BookStory",
@@ -16724,10 +16757,10 @@ window.STORIES_DATA = [
 "Gender equality"
 ],
 "has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 0,
+"ta_ocw": 10,
+"ta_youtube": 1,
 "ta_ol_holdings": 5,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Published by Purdue University in 2006, \"Sisters in Science\" has not yet garnered citations or public discourse in high-fidelity social media platforms.",
@@ -16799,7 +16832,7 @@ window.STORIES_DATA = [
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 10,
-"ta_otl": false,
+"ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
 "excerpt": "Short impact summary Despite the publication year being 2018, \"The International Politics of the Middle East\" has yet to generate notable academic citations or public discourse in online platforms.",
@@ -17201,4 +17234,4 @@ window.STORIES_DATA = [
 "mention_platforms": []
 }
 ];
-window.STORIES_STATS = {"total": 363, "total_articles": 176, "total_books": 161, "total_data": 19, "total_software": 7, "total_oa": 321, "pct_oa": 88, "total_citations": 150481, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 363, "total_articles": 176, "total_books": 161, "total_data": 19, "total_software": 7, "total_oa": 321, "pct_oa": 88, "total_citations": 150482, "num_disciplines": 30};
