@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>openscience.works — Product Overview</title>
+<style>
+:root {
+  --purple-fill: #EEEDFE; --purple-mid: #7F77DD; --purple-dark: #3C3489; --purple-deep: #26215C;
+  --teal-fill: #E1F5EE; --teal-mid: #1D9E75; --teal-dark: #085041;
+  --amber-fill: #FAEEDA; --amber-mid: #BA7517; --amber-dark: #633806;
+  --coral-fill: #FAECE7; --coral-mid: #D85A30; --coral-dark: #712B13;
+  --gray-fill: #F1EFE8; --gray-mid: #888780; --gray-dark: #2C2C2A;
+  --green-fill: #EAF3DE; --green-mid: #639922; --green-dark: #27500A;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #fff; color: #2C2C2A;
+  padding: 40px 48px; max-width: 860px; margin: 0 auto;
+}
+@media (prefers-color-scheme: dark) {
+  body { background: #1a1a18; color: #D3D1C7; }
+  .pcard.article { background: #2a284a !important; border-color: #534AB7 !important; }
+  .pcard.book    { background: #0d2d24 !important; border-color: #1D9E75 !important; }
+  .pcard.data    { background: #2d2010 !important; border-color: #BA7517 !important; }
+  .pcard.soft    { background: #2d1810 !important; border-color: #D85A30 !important; }
+  .signals       { background: #222220 !important; }
+  .pcard-name, .bignum { filter: brightness(1.4); }
+}
+.infog { width: 100%; }
+.hdr { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; padding-bottom: 16px; border-bottom: 0.5px solid rgba(0,0,0,.12); margin-bottom: 28px; }
+.hdr-brand { font-size: 20px; font-weight: 500; }
+.hdr-brand span { font-weight: 400; opacity: .5; }
+.hdr-total { text-align: center; }
+.hdr-total .num { font-size: 36px; font-weight: 500; line-height: 1; }
+.hdr-total .lbl { font-size: 11px; opacity: .5; letter-spacing: .04em; text-transform: uppercase; margin-top: 2px; }
+.hdr-right { text-align: right; }
+.hdr-cites { font-size: 24px; font-weight: 500; }
+.hdr-cites-lbl { font-size: 11px; opacity: .5; letter-spacing: .04em; text-transform: uppercase; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.pcard { border-radius: 14px; padding: 18px 20px; border: 0.5px solid; }
+.pcard.article { background: var(--purple-fill); border-color: #D5D2F8; }
+.pcard.book    { background: var(--teal-fill);   border-color: #9EDDC9; }
+.pcard.data    { background: var(--amber-fill);  border-color: #F5CC87; }
+.pcard.soft    { background: var(--coral-fill);  border-color: #F5C1AC; }
+.pcard-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+.pcard-name { font-size: 15px; font-weight: 500; }
+.article .pcard-name { color: var(--purple-deep); }
+.book    .pcard-name { color: var(--teal-dark); }
+.data    .pcard-name { color: var(--amber-dark); }
+.soft    .pcard-name { color: var(--coral-dark); }
+.pcard-count { font-size: 11px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; }
+.article .pcard-count { background: #D5D2F8; color: var(--purple-deep); }
+.book    .pcard-count { background: #9FE1CB; color: var(--teal-dark); }
+.data    .pcard-count { background: #FAC775; color: var(--amber-dark); }
+.soft    .pcard-count { background: #F5C1AC; color: var(--coral-dark); }
+.bignum { font-size: 28px; font-weight: 500; line-height: 1; margin-bottom: 2px; }
+.article .bignum { color: var(--purple-dark); }
+.book    .bignum { color: var(--teal-dark); }
+.data    .bignum { color: var(--amber-dark); }
+.soft    .bignum { color: var(--coral-dark); }
+.bignumlbl { font-size: 11px; color: #888780; letter-spacing: .03em; text-transform: uppercase; margin-bottom: 14px; }
+.divider { border: none; border-top: 0.5px solid rgba(0,0,0,.1); margin: 12px 0; }
+.mrow { display: flex; justify-content: space-between; align-items: center; font-size: 12px; margin: 6px 0; }
+.mrow-lbl { opacity: .6; }
+.mrow-val { font-weight: 500; }
+.oa-bar-wrap { margin: 10px 0 4px; }
+.oa-bar-lbl { font-size: 11px; opacity: .5; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; }
+.oa-bar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; gap: 1px; }
+.oa-seg { height: 100%; }
+.oa-legend { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-top: 7px; }
+.oa-dot { display: flex; align-items: center; gap: 4px; font-size: 11px; opacity: .7; }
+.oa-dot i { width: 8px; height: 8px; border-radius: 2px; display: inline-block; flex-shrink: 0; }
+.mention-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.mchip { display: flex; align-items: center; gap: 5px; font-size: 11px; padding: 3px 9px; border-radius: 20px; font-weight: 500; }
+.mchip.other   { background: #D3D1C7; color: #2C2C2A; }
+.mchip.podcast { background: #CECBF6; color: var(--purple-deep); }
+.mchip.web     { background: #B5D4F4; color: #042C53; }
+.mchip.substack{ background: #FAC775; color: var(--amber-dark); }
+.mchip.blog    { background: #C0DD97; color: var(--green-dark); }
+.scite-row { display: flex; gap: 8px; margin-top: 10px; }
+.scite-block { flex: 1; border-radius: 8px; padding: 8px 10px; text-align: center; }
+.scite-block .n { font-size: 18px; font-weight: 500; }
+.scite-block .l { font-size: 10px; text-transform: uppercase; letter-spacing: .04em; margin-top: 2px; }
+.scite-sup { background: #EAF3DE; } .scite-sup .n { color: #27500A; } .scite-sup .l { color: #3B6D11; }
+.scite-men { background: #E1F5EE; } .scite-men .n { color: #085041; } .scite-men .l { color: #0F6E56; }
+.scite-con { background: #FCEBEB; } .scite-con .n { color: #501313; } .scite-con .l { color: #A32D2D; }
+.signals { border: 0.5px solid rgba(0,0,0,.1); border-radius: 14px; padding: 18px 20px; background: #F7F6F2; }
+.signals-head { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; opacity: .5; margin-bottom: 14px; }
+.signals-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.sig-item { text-align: center; }
+.sig-n { font-size: 22px; font-weight: 500; line-height: 1; }
+.sig-l { font-size: 10px; opacity: .5; text-transform: uppercase; letter-spacing: .04em; margin-top: 3px; line-height: 1.4; }
+.signals-divider { border: none; border-top: 0.5px solid rgba(0,0,0,.1); margin: 14px 0; }
+.footnote { font-size: 11px; opacity: .4; text-align: center; margin-top: 14px; }
+</style>
+</head>
+<body>
+<div class="infog">
+  <div class="hdr">
+    <div>
+      <div class="hdr-brand">openscience<span>.works</span></div>
+      <div style="font-size:12px;opacity:.4;margin-top:3px;">Story portfolio overview</div>
+    </div>
+    <div class="hdr-total">
+      <div class="num">354</div>
+      <div class="lbl">stories</div>
+    </div>
+    <div class="hdr-right">
+      <div class="hdr-cites">139,892</div>
+      <div class="hdr-cites-lbl">total citations</div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="pcard article">
+      <div class="pcard-head">
+        <div class="pcard-name">ArticleStories</div>
+        <div class="pcard-count">173 stories</div>
+      </div>
+      <div class="bignum">127,797</div>
+      <div class="bignumlbl">citations</div>
+      <div class="oa-bar-wrap">
+        <div class="oa-bar-lbl">Open access breakdown</div>
+        <div class="oa-bar">
+          <div class="oa-seg" style="width:29%;background:#FAC775;"></div>
+          <div class="oa-seg" style="width:38%;background:#97C459;"></div>
+          <div class="oa-seg" style="width:21%;background:#85B7EB;"></div>
+          <div class="oa-seg" style="width:1.2%;background:#9FE1CB;"></div>
+          <div class="oa-seg" style="width:10.3%;background:#D3D1C7;"></div>
+        </div>
+        <div class="oa-legend">
+          <span class="oa-dot"><i style="background:#FAC775;"></i>Gold 48</span>
+          <span class="oa-dot"><i style="background:#97C459;"></i>Green 63</span>
+          <span class="oa-dot"><i style="background:#85B7EB;"></i>Hybrid 35</span>
+          <span class="oa-dot"><i style="background:#9FE1CB;"></i>Diamond 2</span>
+          <span class="oa-dot"><i style="background:#D3D1C7;"></i>Closed 17</span>
+        </div>
+      </div>
+      <hr class="divider">
+      <div class="oa-bar-lbl">Mentions by type · 951 total</div>
+      <div class="mention-row">
+        <span class="mchip other">🌐 other · 931</span>
+        <span class="mchip web">🔗 web · 20</span>
+        <span class="mchip podcast">🎙 podcast · 12</span>
+        <span class="mchip substack">✉ substack · 6</span>
+        <span class="mchip blog">📝 blog · 2</span>
+      </div>
+      <hr class="divider">
+      <div class="mrow"><span class="mrow-lbl">Top 1% by citations</span><span class="mrow-val">23 articles</span></div>
+      <div class="mrow"><span class="mrow-lbl">Top 10% by citations</span><span class="mrow-val">60 articles</span></div>
+      <div class="mrow"><span class="mrow-lbl">Funded research</span><span class="mrow-val">78 articles</span></div>
+    </div>
+
+    <div class="pcard book">
+      <div class="pcard-head">
+        <div class="pcard-name">BookStories</div>
+        <div class="pcard-count">156 stories</div>
+      </div>
+      <div class="bignum">5,892</div>
+      <div class="bignumlbl">citations · 100% open access</div>
+      <hr class="divider">
+      <div class="oa-bar-lbl">Scite smart citations · 11,269 total</div>
+      <div class="scite-row">
+        <div class="scite-block scite-sup"><div class="n">75</div><div class="l">supporting</div></div>
+        <div class="scite-block scite-men"><div class="n">10,547</div><div class="l">mentioning</div></div>
+        <div class="scite-block scite-con"><div class="n">6</div><div class="l">contrasting</div></div>
+      </div>
+      <hr class="divider">
+      <div class="mrow"><span class="mrow-lbl">In named series</span><span class="mrow-val">155 books</span></div>
+      <div class="mrow"><span class="mrow-lbl">Most supported book</span><span class="mrow-val">Intro to Statistical Learning</span></div>
+      <div class="mrow"><span class="mrow-lbl">Top book supporting citations</span><span class="mrow-val">45</span></div>
+    </div>
+
+    <div class="pcard data">
+      <div class="pcard-head">
+        <div class="pcard-name">DataStories</div>
+        <div class="pcard-count">18 stories</div>
+      </div>
+      <div class="bignum">1,855</div>
+      <div class="bignumlbl">citations · 100% open access</div>
+      <hr class="divider">
+      <div class="oa-bar-wrap">
+        <div class="oa-bar-lbl">OA type</div>
+        <div class="oa-bar">
+          <div class="oa-seg" style="width:94%;background:#97C459;"></div>
+          <div class="oa-seg" style="width:6%;background:#FAC775;"></div>
+        </div>
+        <div class="oa-legend">
+          <span class="oa-dot"><i style="background:#97C459;"></i>Green 17</span>
+          <span class="oa-dot"><i style="background:#FAC775;"></i>Gold 1</span>
+        </div>
+      </div>
+      <hr class="divider">
+      <div class="mrow"><span class="mrow-lbl">Avg citations / story</span><span class="mrow-val">103</span></div>
+      <div class="mrow"><span class="mrow-lbl">Hosted on Zenodo / Dryad</span><span class="mrow-val">15 datasets</span></div>
+    </div>
+
+    <div class="pcard soft">
+      <div class="pcard-head">
+        <div class="pcard-name">SoftwareStories</div>
+        <div class="pcard-count">7 stories</div>
+      </div>
+      <div class="bignum">4,348</div>
+      <div class="bignumlbl">citations · 100% open access</div>
+      <hr class="divider">
+      <div class="mrow"><span class="mrow-lbl">Avg citations / story</span><span class="mrow-val">621</span></div>
+      <div class="mrow"><span class="mrow-lbl">Hosted on Zenodo / Figshare</span><span class="mrow-val">6 packages</span></div>
+      <hr class="divider">
+      <div style="font-size:12px;color:var(--coral-dark);font-style:italic;line-height:1.5;">Highest impact per story — software underpins research at scale.</div>
+    </div>
+  </div>
+
+  <div class="signals">
+    <div class="signals-head">Open science signals · ArticleStories</div>
+    <div class="signals-grid">
+      <div class="sig-item"><div class="sig-n">168</div><div class="sig-l">data &amp; code links</div></div>
+      <div class="sig-item"><div class="sig-n">33</div><div class="sig-l">GitHub / code repos</div></div>
+      <div class="sig-item"><div class="sig-n">78</div><div class="sig-l">funded articles</div></div>
+      <div class="sig-item"><div class="sig-n">4</div><div class="sig-l">clinical trials registered</div></div>
+    </div>
+    <div class="signals-divider"></div>
+    <div class="signals-grid">
+      <div class="sig-item"><div class="sig-n">23</div><div class="sig-l">top 1% cited globally</div></div>
+      <div class="sig-item"><div class="sig-n">60</div><div class="sig-l">top 10% cited globally</div></div>
+      <div class="sig-item"><div class="sig-n">620</div><div class="sig-l">author contributors</div></div>
+      <div class="sig-item"><div class="sig-n">156</div><div class="sig-l">books fully open access</div></div>
+    </div>
+  </div>
+
+  <div class="footnote">Data from OpenAlex · Scite · Altmetric · openscience.works repository, June 2026</div>
+</div>
+</body>
+</html>
