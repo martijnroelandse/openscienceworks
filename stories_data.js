@@ -53,7 +53,67 @@ window.STORIES_DATA = [
 "Reddit",
 "News",
 "Blogs"
-]
+],
+"platform_counts": {
+"wikipedia": 9,
+"bluesky": 2,
+"hypothesis": 1,
+"reddit": 1,
+"substack": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 4,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1856
+},
+{
+"label": "Facility",
+"count": 981
+},
+{
+"label": "Healthcare",
+"count": 435
+},
+{
+"label": "Government",
+"count": 362
+},
+{
+"label": "Nonprofit",
+"count": 353
+}
+],
+"countries": [],
+"citing_institutions": [
+{
+"label": "Howard Hughes Medical Institute",
+"count": 22
+},
+{
+"label": "Harvard University",
+"count": 21
+},
+{
+"label": "Massachusetts Institute of Technology",
+"count": 18
+},
+{
+"label": "Stanford University",
+"count": 17
+},
+{
+"label": "University of Washington",
+"count": 16
+}
+],
+"scite_supporting": 574,
+"scite_contradicting": 18
 },
 {
 "file": "articlestory_10.1038_s41586-020-2649-2.html",
@@ -100,7 +160,61 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1845
+},
+{
+"label": "Facility",
+"count": 1153
+},
+{
+"label": "Government",
+"count": 512
+},
+{
+"label": "Nonprofit",
+"count": 418
+},
+{
+"label": "Company",
+"count": 300
+}
+],
+"countries": [],
+"citing_institutions": [
+{
+"label": "Centre National de la Recherche Scientifique",
+"count": 20
+},
+{
+"label": "Massachusetts Institute of Technology",
+"count": 19
+},
+{
+"label": "University of Cambridge",
+"count": 16
+},
+{
+"label": "University of Oxford",
+"count": 15
+},
+{
+"label": "Princeton University",
+"count": 14
+}
+],
+"scite_supporting": 10,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1056_nejmoa2001316.html",
@@ -156,7 +270,91 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "Bluesky"
-]
+],
+"platform_counts": {
+"wikipedia": 8,
+"bluesky": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 5,
+"funders": [
+"Ministry of Science and Technology",
+"Health and Medical Research Fund",
+"NIAID NIH HHS",
+"National Institute of Allergy and Infectious Diseases",
+"National Natural Science Foundation of China"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1832
+},
+{
+"label": "Healthcare",
+"count": 989
+},
+{
+"label": "Facility",
+"count": 454
+},
+{
+"label": "Government",
+"count": 356
+},
+{
+"label": "Nonprofit",
+"count": 182
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 708
+},
+{
+"label": "United States",
+"count": 585
+},
+{
+"label": "United Kingdom",
+"count": 236
+},
+{
+"label": "Italy",
+"count": 176
+},
+{
+"label": "India",
+"count": 117
+}
+],
+"citing_institutions": [
+{
+"label": "Huazhong University of Science and Technology",
+"count": 26
+},
+{
+"label": "Wuhan University",
+"count": 19
+},
+{
+"label": "University of Hong Kong",
+"count": 19
+},
+{
+"label": "Harvard University",
+"count": 15
+},
+{
+"label": "London School of Hygiene & Tropical Medicine",
+"count": 14
+}
+],
+"scite_supporting": 511,
+"scite_contradicting": 101
 },
 {
 "file": "bookstory_10.1007_978-1-4614-7138-7.html",
@@ -207,7 +405,84 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "Blogs"
-]
+],
+"platform_counts": {
+"wikipedia": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 940
+},
+{
+"label": "Facility",
+"count": 246
+},
+{
+"label": "Government",
+"count": 110
+},
+{
+"label": "Healthcare",
+"count": 105
+},
+{
+"label": "Nonprofit",
+"count": 85
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 421
+},
+{
+"label": "China",
+"count": 120
+},
+{
+"label": "United Kingdom",
+"count": 108
+},
+{
+"label": "Germany",
+"count": 100
+},
+{
+"label": "Australia",
+"count": 76
+}
+],
+"citing_institutions": [
+{
+"label": "Stanford University",
+"count": 8
+},
+{
+"label": "Harvard University",
+"count": 7
+},
+{
+"label": "ETH Zurich",
+"count": 6
+},
+{
+"label": "University of California, Los Angeles",
+"count": 6
+},
+{
+"label": "University of Southern California",
+"count": 5
+}
+],
+"scite_supporting": 45,
+"scite_contradicting": 2
 },
 {
 "file": "articlestory_10.1056_NEJMoa2021436.html",
@@ -259,7 +534,71 @@ window.STORIES_DATA = [
 "Wikipedia",
 "Bluesky",
 "Hypothesis"
-]
+],
+"platform_counts": {
+"wikipedia": 5,
+"bluesky": 2,
+"hypothesis": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"National Institute for Health Research (NIHR)",
+"Medical Research Council",
+"United Kingdom Research and Innovation",
+"Biotechnology and Biological Sciences Research Council",
+"Kidney Research UK"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1795
+},
+{
+"label": "Healthcare",
+"count": 1379
+},
+{
+"label": "Facility",
+"count": 679
+},
+{
+"label": "Government",
+"count": 415
+},
+{
+"label": "Nonprofit",
+"count": 345
+}
+],
+"countries": [],
+"citing_institutions": [
+{
+"label": "Harvard University",
+"count": 15
+},
+{
+"label": "University of Oxford",
+"count": 13
+},
+{
+"label": "Imperial College London",
+"count": 13
+},
+{
+"label": "Inserm",
+"count": 10
+},
+{
+"label": "Johns Hopkins University",
+"count": 10
+}
+],
+"scite_supporting": 137,
+"scite_contradicting": 43
 },
 {
 "file": "articlestory_10.1016_j.physletb.2012.08.020.html",
@@ -320,7 +659,85 @@ window.STORIES_DATA = [
 "Wikipedia",
 "Hypothesis",
 "Reddit"
-]
+],
+"platform_counts": {
+"wikipedia": 10,
+"hypothesis": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1848
+},
+{
+"label": "Facility",
+"count": 1344
+},
+{
+"label": "Government",
+"count": 352
+},
+{
+"label": "Funder",
+"count": 297
+},
+{
+"label": "Nonprofit",
+"count": 219
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 734
+},
+{
+"label": "Germany",
+"count": 544
+},
+{
+"label": "Switzerland",
+"count": 486
+},
+{
+"label": "United Kingdom",
+"count": 437
+},
+{
+"label": "Italy",
+"count": 393
+}
+],
+"citing_institutions": [
+{
+"label": "European Organization for Nuclear Research",
+"count": 383
+},
+{
+"label": "Centre National de la Recherche Scientifique",
+"count": 323
+},
+{
+"label": "Fermi National Accelerator Laboratory",
+"count": 213
+},
+{
+"label": "Institut National de Physique Nucléaire et de Physique des Particules",
+"count": 208
+},
+{
+"label": "University of Oklahoma",
+"count": 206
+}
+],
+"scite_supporting": 174,
+"scite_contradicting": 9
 },
 {
 "file": "articlestory_10.1056_NEJMoa2007764.html",
@@ -373,7 +790,67 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 3,
+"funders": [
+"NIAID NIH HHS",
+"United States",
+"National Institute of Allergy and Infectious Diseases",
+"BLRD VA",
+"NCI NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1779
+},
+{
+"label": "Healthcare",
+"count": 1091
+},
+{
+"label": "Facility",
+"count": 589
+},
+{
+"label": "Nonprofit",
+"count": 322
+},
+{
+"label": "Government",
+"count": 309
+}
+],
+"countries": [],
+"citing_institutions": [
+{
+"label": "Harvard University",
+"count": 93
+},
+{
+"label": "Inserm",
+"count": 57
+},
+{
+"label": "Massachusetts General Hospital",
+"count": 52
+},
+{
+"label": "University of Washington",
+"count": 52
+},
+{
+"label": "Johns Hopkins University",
+"count": 51
+}
+],
+"scite_supporting": 184,
+"scite_contradicting": 32
 },
 {
 "file": "articlestory_10.1056_NEJMoa0810696.html",
@@ -439,7 +916,85 @@ window.STORIES_DATA = [
 "Blogs",
 "Wikipedia",
 "Reddit"
-]
+],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NCI NIH HHS",
+"NCRR NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1528
+},
+{
+"label": "Healthcare",
+"count": 1126
+},
+{
+"label": "Facility",
+"count": 336
+},
+{
+"label": "Funder",
+"count": 311
+},
+{
+"label": "Nonprofit",
+"count": 264
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1111
+},
+{
+"label": "United Kingdom",
+"count": 193
+},
+{
+"label": "Canada",
+"count": 143
+},
+{
+"label": "Germany",
+"count": 133
+},
+{
+"label": "China",
+"count": 102
+}
+],
+"citing_institutions": [
+{
+"label": "Harvard University",
+"count": 98
+},
+{
+"label": "National Cancer Institute",
+"count": 78
+},
+{
+"label": "Johns Hopkins University",
+"count": 70
+},
+{
+"label": "Memorial Sloan Kettering Cancer Center",
+"count": 67
+},
+{
+"label": "Erasmus MC",
+"count": 63
+}
+],
+"scite_supporting": 15,
+"scite_contradicting": 5
 },
 {
 "file": "softwarestory_10.5281_zenodo.1174508.html",
@@ -493,7 +1048,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1493
+},
+{
+"label": "Facility",
+"count": 461
+},
+{
+"label": "Company",
+"count": 175
+},
+{
+"label": "Government",
+"count": 132
+},
+{
+"label": "Other",
+"count": 42
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 603
+},
+{
+"label": "Germany",
+"count": 277
+},
+{
+"label": "China",
+"count": 276
+},
+{
+"label": "France",
+"count": 127
+},
+{
+"label": "United Kingdom",
+"count": 120
+}
+],
+"citing_institutions": [
+{
+"label": "Stanford University",
+"count": 26
+},
+{
+"label": "Deutsches Zentrum für Luft- und Raumfahrt e. V. (DLR)",
+"count": 26
+},
+{
+"label": "ETH Zurich",
+"count": 23
+},
+{
+"label": "University of Duisburg-Essen",
+"count": 23
+},
+{
+"label": "King Abdullah University of Science and Technology",
+"count": 20
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_nature11543.html",
@@ -554,7 +1184,86 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "Reddit"
-]
+],
+"platform_counts": {
+"wikipedia": 3
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Biotechnology and Biological Sciences Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1149
+},
+{
+"label": "Facility",
+"count": 725
+},
+{
+"label": "Government",
+"count": 293
+},
+{
+"label": "Funder",
+"count": 251
+},
+{
+"label": "Nonprofit",
+"count": 158
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 325
+},
+{
+"label": "Germany",
+"count": 311
+},
+{
+"label": "China",
+"count": 287
+},
+{
+"label": "United Kingdom",
+"count": 253
+},
+{
+"label": "Australia",
+"count": 195
+}
+],
+"citing_institutions": [
+{
+"label": "James Hutton Institute",
+"count": 116
+},
+{
+"label": "Leibniz Institute of Plant Genetics and Crop Plant Research",
+"count": 114
+},
+{
+"label": "University of Dundee",
+"count": 71
+},
+{
+"label": "University of Minnesota",
+"count": 70
+},
+{
+"label": "Czech Academy of Sciences, Institute of Experimental Botany",
+"count": 48
+}
+],
+"scite_supporting": 22,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1056_NEJMoa2007621.html",
@@ -612,7 +1321,86 @@ window.STORIES_DATA = [
 "Reddit",
 "News",
 "Blogs"
-]
+],
+"platform_counts": {
+"wikipedia": 5,
+"bluesky": 3,
+"reddit": 4
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": true,
+"risk_eoc": false,
+"risk_pubpeer": 4,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1174
+},
+{
+"label": "Healthcare",
+"count": 736
+},
+{
+"label": "Facility",
+"count": 245
+},
+{
+"label": "Funder",
+"count": 136
+},
+{
+"label": "Government",
+"count": 131
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 418
+},
+{
+"label": "United Kingdom",
+"count": 137
+},
+{
+"label": "Italy",
+"count": 136
+},
+{
+"label": "China",
+"count": 120
+},
+{
+"label": "Spain",
+"count": 86
+}
+],
+"citing_institutions": [
+{
+"label": "Harvard University",
+"count": 39
+},
+{
+"label": "Inserm",
+"count": 32
+},
+{
+"label": "Istituti di Ricovero e Cura a Carattere Scientifico",
+"count": 27
+},
+{
+"label": "Brigham and Women's Hospital",
+"count": 24
+},
+{
+"label": "University College London",
+"count": 23
+}
+],
+"scite_supporting": 75,
+"scite_contradicting": 12
 },
 {
 "file": "softwarestory_10.5281_zenodo.11813.html",
@@ -657,7 +1445,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1143
+},
+{
+"label": "Facility",
+"count": 675
+},
+{
+"label": "Government",
+"count": 272
+},
+{
+"label": "Nonprofit",
+"count": 166
+},
+{
+"label": "Company",
+"count": 132
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 610
+},
+{
+"label": "Germany",
+"count": 265
+},
+{
+"label": "United Kingdom",
+"count": 237
+},
+{
+"label": "France",
+"count": 170
+},
+{
+"label": "China",
+"count": 107
+}
+],
+"citing_institutions": [
+{
+"label": "Centre National de la Recherche Scientifique",
+"count": 14
+},
+{
+"label": "Oak Ridge National Laboratory",
+"count": 11
+},
+{
+"label": "Imperial College London",
+"count": 9
+},
+{
+"label": "University of Arizona",
+"count": 9
+},
+{
+"label": "University of California, Berkeley",
+"count": 9
+}
+],
+"scite_supporting": 2,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.7551_mitpress_11805.001.0001.html",
@@ -706,7 +1569,85 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "Hypothesis"
-]
+],
+"platform_counts": {
+"wikipedia": 1,
+"hypothesis": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 869
+},
+{
+"label": "Nonprofit",
+"count": 72
+},
+{
+"label": "Facility",
+"count": 69
+},
+{
+"label": "Company",
+"count": 54
+},
+{
+"label": "Government",
+"count": 28
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 429
+},
+{
+"label": "United Kingdom",
+"count": 196
+},
+{
+"label": "Germany",
+"count": 86
+},
+{
+"label": "Canada",
+"count": 78
+},
+{
+"label": "Netherlands",
+"count": 55
+}
+],
+"citing_institutions": [
+{
+"label": "University of Michigan",
+"count": 13
+},
+{
+"label": "Massachusetts Institute of Technology",
+"count": 13
+},
+{
+"label": "University of Washington",
+"count": 11
+},
+{
+"label": "University of Toronto",
+"count": 9
+},
+{
+"label": "Delft University of Technology",
+"count": 8
+}
+],
+"scite_supporting": 3,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.4159_9780674369542.html",
@@ -758,7 +1699,84 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {
+"wikipedia": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 866
+},
+{
+"label": "Facility",
+"count": 106
+},
+{
+"label": "Nonprofit",
+"count": 103
+},
+{
+"label": "Other",
+"count": 59
+},
+{
+"label": "Government",
+"count": 57
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 389
+},
+{
+"label": "United Kingdom",
+"count": 252
+},
+{
+"label": "Germany",
+"count": 93
+},
+{
+"label": "Australia",
+"count": 75
+},
+{
+"label": "Netherlands",
+"count": 74
+}
+],
+"citing_institutions": [
+{
+"label": "London School of Economics and Political Science",
+"count": 26
+},
+{
+"label": "University of Amsterdam",
+"count": 14
+},
+{
+"label": "University of California, Berkeley",
+"count": 14
+},
+{
+"label": "Columbia University",
+"count": 12
+},
+{
+"label": "Harvard University Press",
+"count": 10
+}
+],
+"scite_supporting": 23,
+"scite_contradicting": 4
 },
 {
 "file": "articlestory_10.1038_s41586-019-1364-3.html",
@@ -814,7 +1832,86 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {
+"wikipedia": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Shared Services Center NASA"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 692
+},
+{
+"label": "Facility",
+"count": 236
+},
+{
+"label": "Government",
+"count": 127
+},
+{
+"label": "Nonprofit",
+"count": 108
+},
+{
+"label": "Company",
+"count": 61
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 323
+},
+{
+"label": "United States",
+"count": 205
+},
+{
+"label": "United Kingdom",
+"count": 111
+},
+{
+"label": "Germany",
+"count": 82
+},
+{
+"label": "Canada",
+"count": 53
+}
+],
+"citing_institutions": [
+{
+"label": "Tsinghua University",
+"count": 21
+},
+{
+"label": "Australian National University",
+"count": 13
+},
+{
+"label": "Chinese Academy of Sciences",
+"count": 8
+},
+{
+"label": "Georgia Institute of Technology",
+"count": 6
+},
+{
+"label": "Technische Universität Berlin",
+"count": 6
+}
+],
+"scite_supporting": 5,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.5334_aogh.2831.html",
@@ -876,7 +1973,86 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"World Health Organization",
+"NIEHS NIH HHS",
+"Natural Environment Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 622
+},
+{
+"label": "Facility",
+"count": 189
+},
+{
+"label": "Government",
+"count": 139
+},
+{
+"label": "Nonprofit",
+"count": 89
+},
+{
+"label": "Healthcare",
+"count": 59
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 134
+},
+{
+"label": "China",
+"count": 94
+},
+{
+"label": "India",
+"count": 82
+},
+{
+"label": "United Kingdom",
+"count": 63
+},
+{
+"label": "France",
+"count": 56
+}
+],
+"citing_institutions": [
+{
+"label": "Centre National de la Recherche Scientifique",
+"count": 5
+},
+{
+"label": "Nelson Mandela University",
+"count": 4
+},
+{
+"label": "University of Exeter",
+"count": 4
+},
+{
+"label": "Institut de Recherche pour le Développement",
+"count": 3
+},
+{
+"label": "Stazione Zoologica Anton Dohrn",
+"count": 3
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.1007_978-3-319-46478-7_44.html",
@@ -927,7 +2103,82 @@ window.STORIES_DATA = [
 "series_name": "Lecture notes in computer science",
 "series_id": "https://openalex.org/S106296714",
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 437
+},
+{
+"label": "Company",
+"count": 85
+},
+{
+"label": "Facility",
+"count": 57
+},
+{
+"label": "Government",
+"count": 21
+},
+{
+"label": "Healthcare",
+"count": 19
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 199
+},
+{
+"label": "United States",
+"count": 85
+},
+{
+"label": "United Kingdom",
+"count": 51
+},
+{
+"label": "India",
+"count": 30
+},
+{
+"label": "South Korea",
+"count": 30
+}
+],
+"citing_institutions": [
+{
+"label": "University of Nottingham",
+"count": 11
+},
+{
+"label": "Shanghai University",
+"count": 8
+},
+{
+"label": "Huazhong University of Science and Technology",
+"count": 6
+},
+{
+"label": "University of Chinese Academy of Sciences",
+"count": 5
+},
+{
+"label": "Sun Yat-sen University",
+"count": 5
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "softwarestory_10.5281_zenodo.19690618.html",
@@ -978,7 +2229,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 448
+},
+{
+"label": "Facility",
+"count": 126
+},
+{
+"label": "Nonprofit",
+"count": 60
+},
+{
+"label": "Company",
+"count": 41
+},
+{
+"label": "Government",
+"count": 32
+}
+],
+"countries": [
+{
+"label": "Germany",
+"count": 179
+},
+{
+"label": "United States",
+"count": 76
+},
+{
+"label": "United Kingdom",
+"count": 52
+},
+{
+"label": "Denmark",
+"count": 46
+},
+{
+"label": "Italy",
+"count": 33
+}
+],
+"citing_institutions": [
+{
+"label": "Technische Universität Berlin",
+"count": 20
+},
+{
+"label": "Karlsruhe Institute of Technology",
+"count": 20
+},
+{
+"label": "Aarhus University",
+"count": 17
+},
+{
+"label": "RWTH Aachen University",
+"count": 7
+},
+{
+"label": "Forschungszentrum Jülich",
+"count": 7
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "datastory_10.5281_zenodo.5571936.html",
@@ -1025,7 +2351,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 369
+},
+{
+"label": "Facility",
+"count": 169
+},
+{
+"label": "Government",
+"count": 112
+},
+{
+"label": "Nonprofit",
+"count": 44
+},
+{
+"label": "Company",
+"count": 28
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 150
+},
+{
+"label": "United States",
+"count": 90
+},
+{
+"label": "Germany",
+"count": 50
+},
+{
+"label": "United Kingdom",
+"count": 42
+},
+{
+"label": "Netherlands",
+"count": 32
+}
+],
+"citing_institutions": [
+{
+"label": "Southern University of Science and Technology",
+"count": 13
+},
+{
+"label": "Chinese Academy of Sciences",
+"count": 8
+},
+{
+"label": "Beijing Normal University",
+"count": 8
+},
+{
+"label": "Tongji University",
+"count": 7
+},
+{
+"label": "University of Chinese Academy of Sciences",
+"count": 6
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2020.02.10.942185.html",
@@ -1080,7 +2481,76 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Hypothesis",
 "Wikipedia"
-]
+],
+"platform_counts": {
+"hypothesis": 2
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 5
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Healthcare",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "Iran",
+"count": 1
+},
+{
+"label": "Brazil",
+"count": 1
+},
+{
+"label": "India",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Birjand University of Medical Sciences",
+"count": 1
+},
+{
+"label": "Brighton and Sussex Medical School",
+"count": 1
+},
+{
+"label": "Universidade Federal de Pernambuco",
+"count": 1
+},
+{
+"label": "Indian Institute of Technology Delhi",
+"count": 1
+},
+{
+"label": "University of Maryland, Baltimore",
+"count": 1
+}
+],
+"scite_supporting": 5,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.5061_dryad.234_1.html",
@@ -1123,7 +2593,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 381
+},
+{
+"label": "Facility",
+"count": 177
+},
+{
+"label": "Government",
+"count": 110
+},
+{
+"label": "Nonprofit",
+"count": 81
+},
+{
+"label": "Archive",
+"count": 48
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 110
+},
+{
+"label": "United Kingdom",
+"count": 79
+},
+{
+"label": "Brazil",
+"count": 69
+},
+{
+"label": "France",
+"count": 62
+},
+{
+"label": "Germany",
+"count": 35
+}
+],
+"citing_institutions": [
+{
+"label": "Centre de Coopération Internationale en Recherche Agronomique pour le Développement",
+"count": 5
+},
+{
+"label": "Universidade Federal de Lavras",
+"count": 5
+},
+{
+"label": "Université de Yaoundé I",
+"count": 5
+},
+{
+"label": "University of Göttingen",
+"count": 4
+},
+{
+"label": "Tribhuvan University",
+"count": 4
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.1017_cbo9781107415416.008.html",
@@ -1172,7 +2717,82 @@ window.STORIES_DATA = [
 "series_name": "Climate Change 2014: Mitigation of Climate Change",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 325
+},
+{
+"label": "Facility",
+"count": 143
+},
+{
+"label": "Government",
+"count": 100
+},
+{
+"label": "Nonprofit",
+"count": 55
+},
+{
+"label": "Other",
+"count": 32
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 128
+},
+{
+"label": "China",
+"count": 56
+},
+{
+"label": "United Kingdom",
+"count": 51
+},
+{
+"label": "Germany",
+"count": 49
+},
+{
+"label": "Canada",
+"count": 36
+}
+],
+"citing_institutions": [
+{
+"label": "ETH Zurich",
+"count": 4
+},
+{
+"label": "Universität Hamburg",
+"count": 3
+},
+{
+"label": "Chinese Academy of Sciences",
+"count": 3
+},
+{
+"label": "UK Centre for Ecology & Hydrology",
+"count": 2
+},
+{
+"label": "Mekelle University",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_nrn.2017.26.html",
@@ -1223,7 +2843,86 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Podcasts"
-]
+],
+"platform_counts": {
+"podcast": 3
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NINDS NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 339
+},
+{
+"label": "Healthcare",
+"count": 171
+},
+{
+"label": "Facility",
+"count": 84
+},
+{
+"label": "Nonprofit",
+"count": 31
+},
+{
+"label": "Government",
+"count": 26
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 119
+},
+{
+"label": "China",
+"count": 67
+},
+{
+"label": "Canada",
+"count": 46
+},
+{
+"label": "Italy",
+"count": 26
+},
+{
+"label": "United Kingdom",
+"count": 26
+}
+],
+"citing_institutions": [
+{
+"label": "Hong Kong Polytechnic University",
+"count": 7
+},
+{
+"label": "University of Southern California",
+"count": 7
+},
+{
+"label": "The University of Texas at Austin",
+"count": 6
+},
+{
+"label": "Chinese University of Hong Kong",
+"count": 5
+},
+{
+"label": "Northwestern University",
+"count": 4
+}
+],
+"scite_supporting": 11,
+"scite_contradicting": 2
 },
 {
 "file": "datastory_10.6084_m9.figshare.7504448.v3.html",
@@ -1271,7 +2970,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 298
+},
+{
+"label": "Facility",
+"count": 170
+},
+{
+"label": "Government",
+"count": 105
+},
+{
+"label": "Nonprofit",
+"count": 57
+},
+{
+"label": "Funder",
+"count": 31
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 115
+},
+{
+"label": "Germany",
+"count": 77
+},
+{
+"label": "China",
+"count": 76
+},
+{
+"label": "Switzerland",
+"count": 45
+},
+{
+"label": "United Kingdom",
+"count": 40
+}
+],
+"citing_institutions": [
+{
+"label": "University of Freiburg",
+"count": 10
+},
+{
+"label": "Masaryk University",
+"count": 10
+},
+{
+"label": "BOKU University",
+"count": 9
+},
+{
+"label": "ETH Zurich",
+"count": 7
+},
+{
+"label": "Chinese Academy of Sciences",
+"count": 4
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "datastory_10.5281_zenodo.1188976.html",
@@ -1326,7 +3100,84 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {
+"wikipedia": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 288
+},
+{
+"label": "Company",
+"count": 35
+},
+{
+"label": "Facility",
+"count": 29
+},
+{
+"label": "Government",
+"count": 11
+},
+{
+"label": "Healthcare",
+"count": 9
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 79
+},
+{
+"label": "India",
+"count": 67
+},
+{
+"label": "United States",
+"count": 48
+},
+{
+"label": "United Kingdom",
+"count": 27
+},
+{
+"label": "Japan",
+"count": 17
+}
+],
+"citing_institutions": [
+{
+"label": "Vellore Institute of Technology University",
+"count": 4
+},
+{
+"label": "Zhejiang University",
+"count": 4
+},
+{
+"label": "South China University of Technology",
+"count": 4
+},
+{
+"label": "Amrita Vishwa Vidyapeetham",
+"count": 4
+},
+{
+"label": "Zhejiang Lab",
+"count": 3
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "softwarestory_10.5281_zenodo.1480624.html",
@@ -1376,7 +3227,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 286
+},
+{
+"label": "Facility",
+"count": 82
+},
+{
+"label": "Healthcare",
+"count": 65
+},
+{
+"label": "Nonprofit",
+"count": 30
+},
+{
+"label": "Government",
+"count": 28
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 116
+},
+{
+"label": "Germany",
+"count": 69
+},
+{
+"label": "United Kingdom",
+"count": 49
+},
+{
+"label": "Canada",
+"count": 34
+},
+{
+"label": "Netherlands",
+"count": 20
+}
+],
+"citing_institutions": [
+{
+"label": "University of Birmingham",
+"count": 4
+},
+{
+"label": "University of Illinois Urbana-Champaign",
+"count": 3
+},
+{
+"label": "University of California, Berkeley",
+"count": 3
+},
+{
+"label": "University of Waterloo",
+"count": 3
+},
+{
+"label": "Ludwig-Maximilians-Universität München",
+"count": 3
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.4324_9781315712802.html",
@@ -1419,7 +3345,84 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {
+"wikipedia": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 260
+},
+{
+"label": "Facility",
+"count": 17
+},
+{
+"label": "Government",
+"count": 6
+},
+{
+"label": "Healthcare",
+"count": 3
+},
+{
+"label": "Nonprofit",
+"count": 3
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 132
+},
+{
+"label": "United States",
+"count": 30
+},
+{
+"label": "Australia",
+"count": 17
+},
+{
+"label": "Netherlands",
+"count": 11
+},
+{
+"label": "Germany",
+"count": 11
+}
+],
+"citing_institutions": [
+{
+"label": "Queen Mary University of London",
+"count": 10
+},
+{
+"label": "University of Leeds",
+"count": 10
+},
+{
+"label": "City, University of London",
+"count": 6
+},
+{
+"label": "University of Cambridge",
+"count": 6
+},
+{
+"label": "Durham University",
+"count": 5
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_nature03124.html",
@@ -1476,7 +3479,82 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "News",
 "Blogs"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 4,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 228
+},
+{
+"label": "Healthcare",
+"count": 84
+},
+{
+"label": "Facility",
+"count": 62
+},
+{
+"label": "Government",
+"count": 45
+},
+{
+"label": "Funder",
+"count": 29
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 134
+},
+{
+"label": "Japan",
+"count": 40
+},
+{
+"label": "China",
+"count": 35
+},
+{
+"label": "France",
+"count": 24
+},
+{
+"label": "Germany",
+"count": 19
+}
+],
+"citing_institutions": [
+{
+"label": "University of Miami",
+"count": 18
+},
+{
+"label": "Osaka University",
+"count": 18
+},
+{
+"label": "Japan Science and Technology Agency",
+"count": 16
+},
+{
+"label": "Inserm",
+"count": 16
+},
+{
+"label": "Sylvester Comprehensive Cancer Center",
+"count": 14
+}
+],
+"scite_supporting": 11,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.5840_cultura20107133.html",
@@ -1517,7 +3595,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 215
+},
+{
+"label": "Nonprofit",
+"count": 8
+},
+{
+"label": "Government",
+"count": 5
+},
+{
+"label": "Healthcare",
+"count": 4
+},
+{
+"label": "Company",
+"count": 4
+}
+],
+"countries": [
+{
+"label": "Indonesia",
+"count": 65
+},
+{
+"label": "Turkey",
+"count": 16
+},
+{
+"label": "Philippines",
+"count": 13
+},
+{
+"label": "China",
+"count": 11
+},
+{
+"label": "United States",
+"count": 7
+}
+],
+"citing_institutions": [
+{
+"label": "Yogyakarta State University",
+"count": 6
+},
+{
+"label": "Indonesia University of Education",
+"count": 4
+},
+{
+"label": "Bukidnon State University",
+"count": 4
+},
+{
+"label": "Ferdowsi University of Mashhad",
+"count": 2
+},
+{
+"label": "Universitas Muhammadiyah Jember",
+"count": 2
+}
+],
+"scite_supporting": 4,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_nature21680.html",
@@ -1575,7 +3728,82 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "News",
 "Blogs"
-]
+],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 196
+},
+{
+"label": "Facility",
+"count": 178
+},
+{
+"label": "Government",
+"count": 66
+},
+{
+"label": "Nonprofit",
+"count": 57
+},
+{
+"label": "Other",
+"count": 38
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 151
+},
+{
+"label": "United Kingdom",
+"count": 84
+},
+{
+"label": "Germany",
+"count": 78
+},
+{
+"label": "Italy",
+"count": 73
+},
+{
+"label": "France",
+"count": 71
+}
+],
+"citing_institutions": [
+{
+"label": "University of Copenhagen",
+"count": 58
+},
+{
+"label": "Centre National de la Recherche Scientifique",
+"count": 55
+},
+{
+"label": "Leiden University",
+"count": 40
+},
+{
+"label": "National Astronomical Observatory of Japan",
+"count": 35
+},
+{
+"label": "Swinburne University of Technology",
+"count": 33
+}
+],
+"scite_supporting": 27,
+"scite_contradicting": 1
 },
 {
 "file": "datastory_10.5281_zenodo.3757476.html",
@@ -1637,7 +3865,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 212
+},
+{
+"label": "Healthcare",
+"count": 52
+},
+{
+"label": "Facility",
+"count": 33
+},
+{
+"label": "Company",
+"count": 15
+},
+{
+"label": "Government",
+"count": 8
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 49
+},
+{
+"label": "India",
+"count": 40
+},
+{
+"label": "United States",
+"count": 28
+},
+{
+"label": "Iran",
+"count": 17
+},
+{
+"label": "South Korea",
+"count": 13
+}
+],
+"citing_institutions": [
+{
+"label": "Islamic Azad University North Tehran Branch",
+"count": 6
+},
+{
+"label": "Indian Institute of Technology Madras",
+"count": 3
+},
+{
+"label": "Shanghai University",
+"count": 3
+},
+{
+"label": "Universidade Federal do Paraná",
+"count": 3
+},
+{
+"label": "Indian Statistical Institute",
+"count": 3
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_isbn_9789082942187.html",
@@ -1683,7 +3986,85 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Bluesky",
 "Wikipedia"
-]
+],
+"platform_counts": {
+"bluesky": 30,
+"wikipedia": 4
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 41
+},
+{
+"label": "Facility",
+"count": 5
+},
+{
+"label": "Nonprofit",
+"count": 4
+},
+{
+"label": "Archive",
+"count": 3
+},
+{
+"label": "Funder",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 9
+},
+{
+"label": "United States",
+"count": 8
+},
+{
+"label": "Netherlands",
+"count": 6
+},
+{
+"label": "Australia",
+"count": 5
+},
+{
+"label": "Sweden",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "Wageningen University & Research",
+"count": 2
+},
+{
+"label": "University of Toronto",
+"count": 2
+},
+{
+"label": "University of St Andrews",
+"count": 1
+},
+{
+"label": "Field Museum of Natural History",
+"count": 1
+},
+{
+"label": "University of Oxford",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "datastory_10.5281_zenodo.4743746.html",
@@ -1730,7 +4111,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 207
+},
+{
+"label": "Company",
+"count": 18
+},
+{
+"label": "Government",
+"count": 16
+},
+{
+"label": "Facility",
+"count": 15
+},
+{
+"label": "Nonprofit",
+"count": 12
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 29
+},
+{
+"label": "India",
+"count": 23
+},
+{
+"label": "China",
+"count": 21
+},
+{
+"label": "United Kingdom",
+"count": 17
+},
+{
+"label": "Saudi Arabia",
+"count": 14
+}
+],
+"citing_institutions": [
+{
+"label": "Polytechnic Institute of Porto",
+"count": 7
+},
+{
+"label": "University of Bradford",
+"count": 4
+},
+{
+"label": "Koya University",
+"count": 3
+},
+{
+"label": "Universidad de Murcia",
+"count": 2
+},
+{
+"label": "Ontario Tech University",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "softwarestory_10.6084_m9.figshare.1164194.v13.html",
@@ -1775,7 +4231,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 191
+},
+{
+"label": "Facility",
+"count": 68
+},
+{
+"label": "Company",
+"count": 19
+},
+{
+"label": "Government",
+"count": 16
+},
+{
+"label": "Nonprofit",
+"count": 12
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 72
+},
+{
+"label": "United Kingdom",
+"count": 34
+},
+{
+"label": "Germany",
+"count": 28
+},
+{
+"label": "Italy",
+"count": 15
+},
+{
+"label": "France",
+"count": 13
+}
+],
+"citing_institutions": [
+{
+"label": "University of Stuttgart",
+"count": 5
+},
+{
+"label": "University of Cambridge",
+"count": 3
+},
+{
+"label": "Michigan State University",
+"count": 3
+},
+{
+"label": "University of Bath",
+"count": 2
+},
+{
+"label": "Technical University of Munich",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1103_prxquantum.5.037001.html",
@@ -1824,7 +4355,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 154
+},
+{
+"label": "Facility",
+"count": 103
+},
+{
+"label": "Company",
+"count": 24
+},
+{
+"label": "Other",
+"count": 13
+},
+{
+"label": "Government",
+"count": 10
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 70
+},
+{
+"label": "Germany",
+"count": 29
+},
+{
+"label": "Spain",
+"count": 24
+},
+{
+"label": "Italy",
+"count": 24
+},
+{
+"label": "Switzerland",
+"count": 21
+}
+],
+"citing_institutions": [
+{
+"label": "University of Washington",
+"count": 7
+},
+{
+"label": "Lawrence Berkeley National Laboratory",
+"count": 4
+},
+{
+"label": "European Organization for Nuclear Research",
+"count": 3
+},
+{
+"label": "University of Illinois System",
+"count": 2
+},
+{
+"label": "IBM Research - Zurich",
+"count": 2
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "datastory_10.6084_m9.figshare.1008029.v1.html",
@@ -1872,7 +4478,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 179
+},
+{
+"label": "Facility",
+"count": 26
+},
+{
+"label": "Government",
+"count": 14
+},
+{
+"label": "Company",
+"count": 10
+},
+{
+"label": "Other",
+"count": 5
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 156
+},
+{
+"label": "United Kingdom",
+"count": 13
+},
+{
+"label": "India",
+"count": 9
+},
+{
+"label": "South Korea",
+"count": 8
+},
+{
+"label": "United States",
+"count": 6
+}
+],
+"citing_institutions": [
+{
+"label": "Jiangnan University",
+"count": 13
+},
+{
+"label": "Wuhan University",
+"count": 9
+},
+{
+"label": "PLA Army Engineering University",
+"count": 4
+},
+{
+"label": "Nanjing University of Science and Technology",
+"count": 4
+},
+{
+"label": "University of Surrey",
+"count": 4
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.5334_jors.122.html",
@@ -1921,7 +4602,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 176
+},
+{
+"label": "Facility",
+"count": 79
+},
+{
+"label": "Government",
+"count": 48
+},
+{
+"label": "Nonprofit",
+"count": 25
+},
+{
+"label": "Other",
+"count": 12
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 53
+},
+{
+"label": "United Kingdom",
+"count": 50
+},
+{
+"label": "China",
+"count": 28
+},
+{
+"label": "Germany",
+"count": 26
+},
+{
+"label": "Norway",
+"count": 14
+}
+],
+"citing_institutions": [
+{
+"label": "University of Oxford",
+"count": 6
+},
+{
+"label": "Weizmann Institute of Science",
+"count": 6
+},
+{
+"label": "Ludwig-Maximilians-Universität München",
+"count": 6
+},
+{
+"label": "University of Reading",
+"count": 4
+},
+{
+"label": "Universidade de São Paulo",
+"count": 4
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "softwarestory_10.6084_m9.figshare.1092508.v6.html",
@@ -1968,7 +4724,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 166
+},
+{
+"label": "Facility",
+"count": 41
+},
+{
+"label": "Government",
+"count": 12
+},
+{
+"label": "Company",
+"count": 9
+},
+{
+"label": "Healthcare",
+"count": 6
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 75
+},
+{
+"label": "United Kingdom",
+"count": 15
+},
+{
+"label": "Germany",
+"count": 14
+},
+{
+"label": "Italy",
+"count": 13
+},
+{
+"label": "France",
+"count": 13
+}
+],
+"citing_institutions": [
+{
+"label": "New York University",
+"count": 7
+},
+{
+"label": "Perm State Humanitarian-Pedagogical University",
+"count": 6
+},
+{
+"label": "University of Maryland, College Park",
+"count": 4
+},
+{
+"label": "Pohang University of Science and Technology",
+"count": 3
+},
+{
+"label": "Cornell University",
+"count": 3
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1126_science.abk0989.html",
@@ -2021,7 +4852,86 @@ window.STORIES_DATA = [
 "Wikipedia",
 "News",
 "Blogs"
-]
+],
+"platform_counts": {
+"wikipedia": 4
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Natural Environment Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 180
+},
+{
+"label": "Facility",
+"count": 65
+},
+{
+"label": "Government",
+"count": 50
+},
+{
+"label": "Archive",
+"count": 25
+},
+{
+"label": "Nonprofit",
+"count": 25
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 68
+},
+{
+"label": "Canada",
+"count": 49
+},
+{
+"label": "Brazil",
+"count": 29
+},
+{
+"label": "France",
+"count": 28
+},
+{
+"label": "Germany",
+"count": 26
+}
+],
+"citing_institutions": [
+{
+"label": "University of Toronto",
+"count": 10
+},
+{
+"label": "Washington University in St. Louis",
+"count": 6
+},
+{
+"label": "Thomas Foundation",
+"count": 3
+},
+{
+"label": "Centre National de la Recherche Scientifique",
+"count": 2
+},
+{
+"label": "University of Calcutta",
+"count": 2
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 2
 },
 {
 "file": "bookstory_10.3998_mpub.15472.html",
@@ -2072,7 +4982,82 @@ window.STORIES_DATA = [
 "series_name": "Studies in International Economics",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 85
+},
+{
+"label": "Facility",
+"count": 14
+},
+{
+"label": "Nonprofit",
+"count": 12
+},
+{
+"label": "Government",
+"count": 7
+},
+{
+"label": "Other",
+"count": 4
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 45
+},
+{
+"label": "France",
+"count": 10
+},
+{
+"label": "China",
+"count": 8
+},
+{
+"label": "Germany",
+"count": 7
+},
+{
+"label": "Italy",
+"count": 5
+}
+],
+"citing_institutions": [
+{
+"label": "Iowa State University",
+"count": 6
+},
+{
+"label": "Economie Publique",
+"count": 3
+},
+{
+"label": "IPB University",
+"count": 2
+},
+{
+"label": "International Monetary Fund",
+"count": 2
+},
+{
+"label": "Springer Nature (Germany)",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.1007_978-3-319-00026-8.html",
@@ -2117,7 +5102,85 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "Bluesky"
-]
+],
+"platform_counts": {
+"wikipedia": 2,
+"bluesky": 1
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 120
+},
+{
+"label": "Facility",
+"count": 36
+},
+{
+"label": "Nonprofit",
+"count": 14
+},
+{
+"label": "Company",
+"count": 7
+},
+{
+"label": "Healthcare",
+"count": 5
+}
+],
+"countries": [
+{
+"label": "Germany",
+"count": 27
+},
+{
+"label": "United States",
+"count": 26
+},
+{
+"label": "United Kingdom",
+"count": 23
+},
+{
+"label": "Spain",
+"count": 21
+},
+{
+"label": "Italy",
+"count": 15
+}
+],
+"citing_institutions": [
+{
+"label": "Institute of Nanostructured Materials",
+"count": 4
+},
+{
+"label": "Universidad de Zaragoza",
+"count": 3
+},
+{
+"label": "North Carolina State University",
+"count": 3
+},
+{
+"label": "Universitat de Barcelona",
+"count": 3
+},
+{
+"label": "Universidade Aberta",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3998_mpub.11927713.html",
@@ -2170,7 +5233,84 @@ window.STORIES_DATA = [
 "Wikipedia",
 "News",
 "Blogs"
-]
+],
+"platform_counts": {
+"wikipedia": 3
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 132
+},
+{
+"label": "Facility",
+"count": 27
+},
+{
+"label": "Government",
+"count": 17
+},
+{
+"label": "Nonprofit",
+"count": 14
+},
+{
+"label": "Healthcare",
+"count": 8
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 44
+},
+{
+"label": "United Kingdom",
+"count": 21
+},
+{
+"label": "Brazil",
+"count": 20
+},
+{
+"label": "Canada",
+"count": 17
+},
+{
+"label": "France",
+"count": 12
+}
+],
+"citing_institutions": [
+{
+"label": "University of Michigan",
+"count": 4
+},
+{
+"label": "Fundação Getulio Vargas",
+"count": 4
+},
+{
+"label": "University of Michigan–Ann Arbor",
+"count": 3
+},
+{
+"label": "Medizinische Hochschule Hannover",
+"count": 3
+},
+{
+"label": "University of British Columbia",
+"count": 2
+}
+],
+"scite_supporting": 2,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_nrd.2016.136.html",
@@ -2217,7 +5357,84 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Substack"
-]
+],
+"platform_counts": {
+"substack": 4
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 125
+},
+{
+"label": "Healthcare",
+"count": 43
+},
+{
+"label": "Company",
+"count": 40
+},
+{
+"label": "Facility",
+"count": 33
+},
+{
+"label": "Nonprofit",
+"count": 26
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 72
+},
+{
+"label": "United Kingdom",
+"count": 32
+},
+{
+"label": "Germany",
+"count": 14
+},
+{
+"label": "China",
+"count": 13
+},
+{
+"label": "Canada",
+"count": 11
+}
+],
+"citing_institutions": [
+{
+"label": "Stanford University",
+"count": 2
+},
+{
+"label": "University of Cambridge",
+"count": 2
+},
+{
+"label": "KU Leuven",
+"count": 2
+},
+{
+"label": "University of Michigan–Ann Arbor",
+"count": 2
+},
+{
+"label": "Takeda (United States)",
+"count": 2
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3998_mpub.17144.html",
@@ -2263,7 +5480,82 @@ window.STORIES_DATA = [
 "series_name": "Studies in International Economics",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 98
+},
+{
+"label": "Nonprofit",
+"count": 16
+},
+{
+"label": "Government",
+"count": 8
+},
+{
+"label": "Other",
+"count": 7
+},
+{
+"label": "Facility",
+"count": 4
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 28
+},
+{
+"label": "Switzerland",
+"count": 13
+},
+{
+"label": "United Kingdom",
+"count": 13
+},
+{
+"label": "Australia",
+"count": 9
+},
+{
+"label": "China",
+"count": 8
+}
+],
+"citing_institutions": [
+{
+"label": "Graduate Institute of International and Development Studies",
+"count": 10
+},
+{
+"label": "University of Malaya",
+"count": 5
+},
+{
+"label": "Kyung Hee University",
+"count": 3
+},
+{
+"label": "Iowa State University",
+"count": 2
+},
+{
+"label": "Loughborough University",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_eLife.80660.html",
@@ -2314,7 +5606,87 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Hypothesis"
-]
+],
+"platform_counts": {
+"hypothesis": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIH HHS",
+"Howard Hughes Medical Institute"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 103
+},
+{
+"label": "Facility",
+"count": 80
+},
+{
+"label": "Healthcare",
+"count": 18
+},
+{
+"label": "Company",
+"count": 11
+},
+{
+"label": "Nonprofit",
+"count": 9
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 102
+},
+{
+"label": "Germany",
+"count": 34
+},
+{
+"label": "United Kingdom",
+"count": 27
+},
+{
+"label": "Switzerland",
+"count": 13
+},
+{
+"label": "Australia",
+"count": 12
+}
+],
+"citing_institutions": [
+{
+"label": "Janelia Research Campus",
+"count": 14
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 13
+},
+{
+"label": "University of Washington",
+"count": 7
+},
+{
+"label": "Instituto de Neurociencias",
+"count": 5
+},
+{
+"label": "Princeton University",
+"count": 3
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1182_blood.2023022222.html",
@@ -2370,7 +5742,90 @@ window.STORIES_DATA = [
 "Wikipedia",
 "Hypothesis",
 "Reddit"
-]
+],
+"platform_counts": {
+"wikipedia": 2,
+"hypothesis": 1,
+"reddit": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NHLBI NIH HHS",
+"Howard Hughes Medical Institute",
+"NCI NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 110
+},
+{
+"label": "Healthcare",
+"count": 99
+},
+{
+"label": "Facility",
+"count": 66
+},
+{
+"label": "Nonprofit",
+"count": 31
+},
+{
+"label": "Government",
+"count": 25
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 77
+},
+{
+"label": "China",
+"count": 16
+},
+{
+"label": "Italy",
+"count": 15
+},
+{
+"label": "Germany",
+"count": 11
+},
+{
+"label": "Spain",
+"count": 10
+}
+],
+"citing_institutions": [
+{
+"label": "Dana-Farber Cancer Institute",
+"count": 6
+},
+{
+"label": "University Hospital of Zurich",
+"count": 4
+},
+{
+"label": "City of Hope",
+"count": 2
+},
+{
+"label": "Harvard University",
+"count": 2
+},
+{
+"label": "Broad Institute",
+"count": 2
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 1
 },
 {
 "file": "articlestory_10.1056_nejmoa2009040.html",
@@ -2435,7 +5890,92 @@ window.STORIES_DATA = [
 "Substack",
 "Wikipedia",
 "Bluesky"
-]
+],
+"platform_counts": {
+"wikipedia": 2,
+"bluesky": 4,
+"substack": 2,
+"podcast": 3
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Medical Chemical and Biological Incident Preparedness and Response Funding",
+"US National Institute of Allergy and Infectious Diseases",
+"Administración Nacional de Laboratorios e Institutos de Salud (ANLIS), Dr. Carlos Malbrán",
+"NIAID NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 116
+},
+{
+"label": "Healthcare",
+"count": 52
+},
+{
+"label": "Facility",
+"count": 48
+},
+{
+"label": "Government",
+"count": 45
+},
+{
+"label": "Nonprofit",
+"count": 21
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 60
+},
+{
+"label": "Argentina",
+"count": 21
+},
+{
+"label": "Germany",
+"count": 14
+},
+{
+"label": "France",
+"count": 14
+},
+{
+"label": "China",
+"count": 11
+}
+],
+"citing_institutions": [
+{
+"label": "University of New Mexico",
+"count": 5
+},
+{
+"label": "Administración Nacional de Laboratorios e Institutos de Salud",
+"count": 3
+},
+{
+"label": "Icahn School of Medicine at Mount Sinai",
+"count": 2
+},
+{
+"label": "Heidelberg University",
+"count": 2
+},
+{
+"label": "National Institutes of Health",
+"count": 2
+}
+],
+"scite_supporting": 2,
+"scite_contradicting": 1
 },
 {
 "file": "articlestory_10.12688_f1000research.6555.1.html",
@@ -2489,7 +6029,61 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 38
+},
+{
+"label": "Facility",
+"count": 21
+},
+{
+"label": "Healthcare",
+"count": 14
+},
+{
+"label": "Company",
+"count": 12
+},
+{
+"label": "Nonprofit",
+"count": 11
+}
+],
+"countries": [],
+"citing_institutions": [
+{
+"label": "University of California San Diego",
+"count": 6
+},
+{
+"label": "Stanford University",
+"count": 4
+},
+{
+"label": "Center for Systems Biology",
+"count": 4
+},
+{
+"label": "SIB Swiss Institute of Bioinformatics",
+"count": 3
+},
+{
+"label": "European Bioinformatics Institute",
+"count": 3
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.1007_978-981-19-2080-6.html",
@@ -2541,7 +6135,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 123
+},
+{
+"label": "Healthcare",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Nonprofit",
+"count": 3
+},
+{
+"label": "Government",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 18
+},
+{
+"label": "China",
+"count": 12
+},
+{
+"label": "Germany",
+"count": 10
+},
+{
+"label": "Indonesia",
+"count": 8
+},
+{
+"label": "United Kingdom",
+"count": 8
+}
+],
+"citing_institutions": [
+{
+"label": "University of South Africa",
+"count": 4
+},
+{
+"label": "National and Kapodistrian University of Athens",
+"count": 2
+},
+{
+"label": "University of Alicante",
+"count": 2
+},
+{
+"label": "Virginia Tech",
+"count": 2
+},
+{
+"label": "Carl von Ossietzky Universität Oldenburg",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1016_j.neuron.2022.09.009.html",
@@ -2601,7 +6270,88 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Podcasts"
-]
+],
+"platform_counts": {
+"podcast": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIMH NIH HHS",
+"Swiss National Science Foundation",
+"Wellcome Trust"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 98
+},
+{
+"label": "Facility",
+"count": 61
+},
+{
+"label": "Healthcare",
+"count": 39
+},
+{
+"label": "Nonprofit",
+"count": 18
+},
+{
+"label": "Government",
+"count": 17
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 39
+},
+{
+"label": "United Kingdom",
+"count": 34
+},
+{
+"label": "Germany",
+"count": 30
+},
+{
+"label": "China",
+"count": 23
+},
+{
+"label": "Canada",
+"count": 9
+}
+],
+"citing_institutions": [
+{
+"label": "University of Edinburgh",
+"count": 8
+},
+{
+"label": "University of Strathclyde",
+"count": 2
+},
+{
+"label": "MRC Centre for Regenerative Medicine",
+"count": 2
+},
+{
+"label": "University of Wisconsin–Madison",
+"count": 2
+},
+{
+"label": "University of Utah",
+"count": 2
+}
+],
+"scite_supporting": 7,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_s41557-023-01379-8.html",
@@ -2655,7 +6405,69 @@ window.STORIES_DATA = [
 "Reddit",
 "News",
 "Blogs"
-]
+],
+"platform_counts": {
+"reddit": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"U.S. Department of Health &amp; Human Services | NIH | National Cancer Institute",
+"U.S. Department of Health &amp; Human Services | NIH | National Institute of Biomedical Imaging and Bioengineering",
+"U.S. Department of Health &amp; Human Services | NIH | National Institute of General Medical Sciences",
+"NIBIB NIH HHS",
+"NIGMS NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 101
+},
+{
+"label": "Facility",
+"count": 49
+},
+{
+"label": "Healthcare",
+"count": 35
+},
+{
+"label": "Nonprofit",
+"count": 17
+},
+{
+"label": "Company",
+"count": 14
+}
+],
+"countries": [],
+"citing_institutions": [
+{
+"label": "Harvard University",
+"count": 9
+},
+{
+"label": "Broad Institute",
+"count": 7
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 6
+},
+{
+"label": "Brigham and Women's Hospital",
+"count": 6
+},
+{
+"label": "Shanghai Institute of Materia Medica",
+"count": 5
+}
+],
+"scite_supporting": 2,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1073_pnas.111146798.html",
@@ -2706,7 +6518,82 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Blogs"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 100
+},
+{
+"label": "Facility",
+"count": 37
+},
+{
+"label": "Healthcare",
+"count": 22
+},
+{
+"label": "Funder",
+"count": 9
+},
+{
+"label": "Nonprofit",
+"count": 8
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 46
+},
+{
+"label": "Germany",
+"count": 14
+},
+{
+"label": "Japan",
+"count": 13
+},
+{
+"label": "Canada",
+"count": 10
+},
+{
+"label": "China",
+"count": 10
+}
+],
+"citing_institutions": [
+{
+"label": "Yokohama City University",
+"count": 6
+},
+{
+"label": "Friedrich Miescher Institute",
+"count": 4
+},
+{
+"label": "Erasmus MC",
+"count": 3
+},
+{
+"label": "Gunma University",
+"count": 3
+},
+{
+"label": "University of Wisconsin–Madison",
+"count": 3
+}
+],
+"scite_supporting": 9,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_s41893-020-0532-7.html",
@@ -2760,7 +6647,82 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "News",
 "Blogs"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 91
+},
+{
+"label": "Facility",
+"count": 32
+},
+{
+"label": "Nonprofit",
+"count": 16
+},
+{
+"label": "Government",
+"count": 13
+},
+{
+"label": "Funder",
+"count": 12
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 40
+},
+{
+"label": "United States",
+"count": 32
+},
+{
+"label": "Switzerland",
+"count": 12
+},
+{
+"label": "United Kingdom",
+"count": 8
+},
+{
+"label": "India",
+"count": 7
+}
+],
+"citing_institutions": [
+{
+"label": "ETH Zurich",
+"count": 11
+},
+{
+"label": "Carnegie Institution for Science",
+"count": 10
+},
+{
+"label": "Tsinghua University",
+"count": 9
+},
+{
+"label": "University of California, Berkeley",
+"count": 5
+},
+{
+"label": "China University of Geosciences",
+"count": 5
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2020.01.15.908111.html",
@@ -2814,7 +6776,82 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Reddit",
 "Blogs"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 11
+},
+{
+"label": "Healthcare",
+"count": 4
+},
+{
+"label": "Company",
+"count": 3
+},
+{
+"label": "Archive",
+"count": 3
+},
+{
+"label": "Nonprofit",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 8
+},
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "Netherlands",
+"count": 3
+},
+{
+"label": "Switzerland",
+"count": 2
+},
+{
+"label": "Canada",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Amsterdam University Medical Centers",
+"count": 2
+},
+{
+"label": "Stanford University",
+"count": 2
+},
+{
+"label": "National Institutes of Health",
+"count": 2
+},
+{
+"label": "Amsterdam University of Applied Sciences",
+"count": 2
+},
+{
+"label": "University of Amsterdam",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.5334_bbc.html",
@@ -2863,7 +6900,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 70
+},
+{
+"label": "Nonprofit",
+"count": 6
+},
+{
+"label": "Government",
+"count": 4
+},
+{
+"label": "Company",
+"count": 3
+},
+{
+"label": "Other",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 22
+},
+{
+"label": "Canada",
+"count": 10
+},
+{
+"label": "Australia",
+"count": 5
+},
+{
+"label": "Germany",
+"count": 5
+},
+{
+"label": "Spain",
+"count": 4
+}
+],
+"citing_institutions": [
+{
+"label": "Western University",
+"count": 3
+},
+{
+"label": "Universität Hamburg",
+"count": 3
+},
+{
+"label": "Queensland University of Technology",
+"count": 2
+},
+{
+"label": "University of Pikeville",
+"count": 2
+},
+{
+"label": "Universidad Internacional De La Rioja",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_elife.79714.html",
@@ -2917,7 +7029,90 @@ window.STORIES_DATA = [
 "Wikipedia",
 "News",
 "Blogs"
-]
+],
+"platform_counts": {
+"wikipedia": 3
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Austrian Science Fund FWF",
+"National Institutes of Health",
+"National Science Foundation",
+"NIH HHS",
+"NHGRI NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 67
+},
+{
+"label": "Facility",
+"count": 56
+},
+{
+"label": "Government",
+"count": 26
+},
+{
+"label": "Nonprofit",
+"count": 24
+},
+{
+"label": "Archive",
+"count": 23
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 39
+},
+{
+"label": "Germany",
+"count": 34
+},
+{
+"label": "United Kingdom",
+"count": 24
+},
+{
+"label": "Spain",
+"count": 21
+},
+{
+"label": "Austria",
+"count": 19
+}
+],
+"citing_institutions": [
+{
+"label": "Max Planck Institute for Evolutionary Anthropology",
+"count": 5
+},
+{
+"label": "Pennsylvania State University",
+"count": 2
+},
+{
+"label": "Middle East Technical University",
+"count": 1
+},
+{
+"label": "University of Vienna",
+"count": 1
+},
+{
+"label": "Hebrew University of Jerusalem",
+"count": 1
+}
+],
+"scite_supporting": 6,
+"scite_contradicting": 2
 },
 {
 "file": "articlestory_10.1038_s41588-023-01603-8.html",
@@ -2971,7 +7166,89 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {
+"wikipedia": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"U.S. Department of Health &amp; Human Services | National Institutes of Health",
+"Howard Hughes Medical Institute",
+"NIGMS NIH HHS",
+"NCI NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 71
+},
+{
+"label": "Facility",
+"count": 39
+},
+{
+"label": "Healthcare",
+"count": 37
+},
+{
+"label": "Government",
+"count": 11
+},
+{
+"label": "Nonprofit",
+"count": 10
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 44
+},
+{
+"label": "China",
+"count": 16
+},
+{
+"label": "United Kingdom",
+"count": 9
+},
+{
+"label": "Germany",
+"count": 8
+},
+{
+"label": "France",
+"count": 8
+}
+],
+"citing_institutions": [
+{
+"label": "Howard Hughes Medical Institute",
+"count": 7
+},
+{
+"label": "Centre National de la Recherche Scientifique",
+"count": 7
+},
+{
+"label": "Université Paris-Saclay",
+"count": 7
+},
+{
+"label": "Institut de Biologie Intégrative de la Cellule",
+"count": 6
+},
+{
+"label": "Commissariat à l'Énergie Atomique et aux Énergies Alternatives",
+"count": 6
+}
+],
+"scite_supporting": 2,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1371_journal.pbio.3002916.html",
@@ -3035,7 +7312,90 @@ window.STORIES_DATA = [
 "Bluesky",
 "News",
 "Blogs"
-]
+],
+"platform_counts": {
+"bluesky": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Biotechnology and Biological Sciences Research Council",
+"NIAID NIH HHS",
+"National Institute of Health",
+"Howard Hughes Medical Institute",
+"Division of Intramural Research, National Institute of Allergy and Infectious Diseases"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 60
+},
+{
+"label": "Facility",
+"count": 29
+},
+{
+"label": "Nonprofit",
+"count": 28
+},
+{
+"label": "Healthcare",
+"count": 17
+},
+{
+"label": "Government",
+"count": 11
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 44
+},
+{
+"label": "Canada",
+"count": 8
+},
+{
+"label": "Netherlands",
+"count": 8
+},
+{
+"label": "South Africa",
+"count": 7
+},
+{
+"label": "United Kingdom",
+"count": 5
+}
+],
+"citing_institutions": [
+{
+"label": "University of Washington",
+"count": 5
+},
+{
+"label": "Fred Hutch Cancer Center",
+"count": 3
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 3
+},
+{
+"label": "Utrecht University",
+"count": 2
+},
+{
+"label": "University of British Columbia",
+"count": 2
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1016_j.isci.2020.101698.html",
@@ -3092,7 +7452,88 @@ window.STORIES_DATA = [
 "Wikipedia",
 "Hypothesis",
 "Blogs"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIDDK NIH HHS",
+"NIH HHS",
+"NIMH NIH HHS",
+"NIDA NIH HHS",
+"National Institutes of Health"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 69
+},
+{
+"label": "Healthcare",
+"count": 29
+},
+{
+"label": "Facility",
+"count": 28
+},
+{
+"label": "Nonprofit",
+"count": 16
+},
+{
+"label": "Company",
+"count": 12
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 50
+},
+{
+"label": "Germany",
+"count": 23
+},
+{
+"label": "United Kingdom",
+"count": 19
+},
+{
+"label": "Netherlands",
+"count": 13
+},
+{
+"label": "Australia",
+"count": 10
+}
+],
+"citing_institutions": [
+{
+"label": "University of California San Diego",
+"count": 11
+},
+{
+"label": "Berlin Institute of Health at Charité - Universitätsmedizin Berlin",
+"count": 10
+},
+{
+"label": "University of Edinburgh",
+"count": 7
+},
+{
+"label": "Stanford University",
+"count": 6
+},
+{
+"label": "University of Illinois Urbana-Champaign",
+"count": 5
+}
+],
+"scite_supporting": 6,
+"scite_contradicting": 2
 },
 {
 "file": "articlestory_10.1038_d41586-019-01643-3.html",
@@ -3151,7 +7592,82 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Reddit",
 "Blogs"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 76
+},
+{
+"label": "Facility",
+"count": 13
+},
+{
+"label": "Government",
+"count": 12
+},
+{
+"label": "Funder",
+"count": 7
+},
+{
+"label": "Other",
+"count": 5
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 24
+},
+{
+"label": "China",
+"count": 19
+},
+{
+"label": "Netherlands",
+"count": 11
+},
+{
+"label": "United Kingdom",
+"count": 11
+},
+{
+"label": "Belgium",
+"count": 9
+}
+],
+"citing_institutions": [
+{
+"label": "University of Antwerp",
+"count": 7
+},
+{
+"label": "Leiden University",
+"count": 6
+},
+{
+"label": "Federation of Finnish Learned Societies",
+"count": 4
+},
+{
+"label": "Universidad de Granada",
+"count": 4
+},
+{
+"label": "University of Cambridge",
+"count": 3
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1371_journal.pcbi.1007128.html",
@@ -3205,7 +7721,86 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Cancer Prevention and Research Institute of Texas",
+"Gordon and Betty Moore Foundation",
+"Alfred P. Sloan Foundation"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 69
+},
+{
+"label": "Facility",
+"count": 33
+},
+{
+"label": "Nonprofit",
+"count": 18
+},
+{
+"label": "Company",
+"count": 16
+},
+{
+"label": "Government",
+"count": 15
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 50
+},
+{
+"label": "Germany",
+"count": 21
+},
+{
+"label": "Switzerland",
+"count": 18
+},
+{
+"label": "United Kingdom",
+"count": 10
+},
+{
+"label": "Netherlands",
+"count": 7
+}
+],
+"citing_institutions": [
+{
+"label": "University of Colorado Denver",
+"count": 7
+},
+{
+"label": "University of Pennsylvania",
+"count": 5
+},
+{
+"label": "University of Bern",
+"count": 3
+},
+{
+"label": "Sabancı Üniversitesi",
+"count": 3
+},
+{
+"label": "Research Institute for Telecommunication Cooperation",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.3390_su12010142.html",
@@ -3257,7 +7852,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 77
+},
+{
+"label": "Company",
+"count": 4
+},
+{
+"label": "Facility",
+"count": 4
+},
+{
+"label": "Government",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 12
+},
+{
+"label": "India",
+"count": 12
+},
+{
+"label": "United States",
+"count": 7
+},
+{
+"label": "Canada",
+"count": 4
+},
+{
+"label": "Iran",
+"count": 4
+}
+],
+"citing_institutions": [
+{
+"label": "University of Calabria",
+"count": 3
+},
+{
+"label": "Tarbiat Modares University",
+"count": 2
+},
+{
+"label": "Binus University",
+"count": 2
+},
+{
+"label": "University College Dublin",
+"count": 2
+},
+{
+"label": "University of Johannesburg",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1126_sciimmunol.abp8966.html",
@@ -3311,7 +7981,90 @@ window.STORIES_DATA = [
 "Reddit",
 "News",
 "Blogs"
-]
+],
+"platform_counts": {
+"reddit": 1
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Novo Nordisk Fonden",
+"NCRR NIH HHS",
+"NIAID NIH HHS",
+"NCATS NIH HHS",
+"NCI NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 67
+},
+{
+"label": "Healthcare",
+"count": 51
+},
+{
+"label": "Facility",
+"count": 41
+},
+{
+"label": "Government",
+"count": 32
+},
+{
+"label": "Nonprofit",
+"count": 20
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 41
+},
+{
+"label": "France",
+"count": 29
+},
+{
+"label": "Italy",
+"count": 14
+},
+{
+"label": "Switzerland",
+"count": 13
+},
+{
+"label": "United Kingdom",
+"count": 10
+}
+],
+"citing_institutions": [
+{
+"label": "Institut des Maladies Génétiques Imagine",
+"count": 2
+},
+{
+"label": "Inserm",
+"count": 2
+},
+{
+"label": "Rockefeller University",
+"count": 2
+},
+{
+"label": "Université Paris Cité",
+"count": 2
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 2
+}
+],
+"scite_supporting": 3,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1016_j.devcel.2023.11.004.html",
@@ -3364,7 +8117,90 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {
+"wikipedia": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NINDS NIH HHS",
+"NHGRI NIH HHS",
+"Howard Hughes Medical Institute",
+"National Institutes of Health",
+"NIMH NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 68
+},
+{
+"label": "Facility",
+"count": 28
+},
+{
+"label": "Healthcare",
+"count": 26
+},
+{
+"label": "Nonprofit",
+"count": 10
+},
+{
+"label": "Funder",
+"count": 7
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 36
+},
+{
+"label": "China",
+"count": 24
+},
+{
+"label": "Germany",
+"count": 10
+},
+{
+"label": "United Kingdom",
+"count": 8
+},
+{
+"label": "Italy",
+"count": 6
+}
+],
+"citing_institutions": [
+{
+"label": "Harvard University",
+"count": 12
+},
+{
+"label": "Chinese University of Hong Kong",
+"count": 10
+},
+{
+"label": "Duke University",
+"count": 6
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 6
+},
+{
+"label": "Boston Children's Hospital",
+"count": 5
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1075_ijcl.23087.yu.html",
@@ -3413,7 +8249,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 44
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Government",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 16
+},
+{
+"label": "Italy",
+"count": 6
+},
+{
+"label": "United Kingdom",
+"count": 5
+},
+{
+"label": "Germany",
+"count": 5
+},
+{
+"label": "United States",
+"count": 4
+}
+],
+"citing_institutions": [
+{
+"label": "Beijing Foreign Studies University",
+"count": 4
+},
+{
+"label": "Sichuan International Studies University",
+"count": 2
+},
+{
+"label": "Nagoya University of Foreign Studies",
+"count": 2
+},
+{
+"label": "Renmin University of China",
+"count": 2
+},
+{
+"label": "Ca' Foscari University of Venice",
+"count": 2
+}
+],
+"scite_supporting": 3,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_s41586-023-06933-5.html",
@@ -3470,7 +8381,85 @@ window.STORIES_DATA = [
 "News",
 "Wikipedia",
 "Blogs"
-]
+],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIGMS NIH HHS",
+"NHLBI NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 53
+},
+{
+"label": "Facility",
+"count": 28
+},
+{
+"label": "Nonprofit",
+"count": 22
+},
+{
+"label": "Healthcare",
+"count": 14
+},
+{
+"label": "Government",
+"count": 12
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 43
+},
+{
+"label": "United Kingdom",
+"count": 8
+},
+{
+"label": "China",
+"count": 8
+},
+{
+"label": "France",
+"count": 5
+},
+{
+"label": "Spain",
+"count": 5
+}
+],
+"citing_institutions": [
+{
+"label": "University of California San Diego",
+"count": 6
+},
+{
+"label": "Dana-Farber Cancer Institute",
+"count": 6
+},
+{
+"label": "Harvard University",
+"count": 6
+},
+{
+"label": "Broad Institute",
+"count": 5
+},
+{
+"label": "Marine Biological Laboratory",
+"count": 4
+}
+],
+"scite_supporting": 6,
+"scite_contradicting": 1
 },
 {
 "file": "articlestory_10.1111_j.1460-9568.2004.03503.x.html",
@@ -3522,7 +8511,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 52
+},
+{
+"label": "Facility",
+"count": 26
+},
+{
+"label": "Healthcare",
+"count": 19
+},
+{
+"label": "Funder",
+"count": 14
+},
+{
+"label": "Nonprofit",
+"count": 11
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 41
+},
+{
+"label": "Netherlands",
+"count": 19
+},
+{
+"label": "United Kingdom",
+"count": 8
+},
+{
+"label": "Germany",
+"count": 8
+},
+{
+"label": "Sweden",
+"count": 6
+}
+],
+"citing_institutions": [
+{
+"label": "Amsterdam Neuroscience",
+"count": 11
+},
+{
+"label": "Baylor College of Medicine",
+"count": 6
+},
+{
+"label": "Karolinska Institutet",
+"count": 6
+},
+{
+"label": "Cognitive Research (United States)",
+"count": 6
+},
+{
+"label": "Vrije Universiteit Amsterdam",
+"count": 5
+}
+],
+"scite_supporting": 2,
+"scite_contradicting": 1
 },
 {
 "file": "articlestory_10.1016_j.molcel.2023.10.045.html",
@@ -3573,7 +8637,88 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIGMS NIH HHS",
+"National Institute of General Medical Sciences",
+"NHGRI NIH HHS",
+"National Human Genome Research Institute",
+"Howard Hughes Medical Institute"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 57
+},
+{
+"label": "Facility",
+"count": 23
+},
+{
+"label": "Healthcare",
+"count": 23
+},
+{
+"label": "Government",
+"count": 9
+},
+{
+"label": "Nonprofit",
+"count": 6
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 25
+},
+{
+"label": "China",
+"count": 22
+},
+{
+"label": "France",
+"count": 4
+},
+{
+"label": "Germany",
+"count": 3
+},
+{
+"label": "United Kingdom",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Centre National de la Recherche Scientifique",
+"count": 4
+},
+{
+"label": "Northwestern University",
+"count": 3
+},
+{
+"label": "Tongji University",
+"count": 3
+},
+{
+"label": "Shanghai Jiao Tong University",
+"count": 3
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 3
+}
+],
+"scite_supporting": 3,
+"scite_contradicting": 1
 },
 {
 "file": "articlestory_10.1038_s41598-021-90639-z.html",
@@ -3624,7 +8769,84 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Medical Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 61
+},
+{
+"label": "Healthcare",
+"count": 38
+},
+{
+"label": "Facility",
+"count": 27
+},
+{
+"label": "Funder",
+"count": 16
+},
+{
+"label": "Government",
+"count": 12
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 30
+},
+{
+"label": "United Kingdom",
+"count": 22
+},
+{
+"label": "Germany",
+"count": 18
+},
+{
+"label": "Sweden",
+"count": 13
+},
+{
+"label": "Italy",
+"count": 10
+}
+],
+"citing_institutions": [
+{
+"label": "University College London",
+"count": 18
+},
+{
+"label": "University of Gothenburg",
+"count": 12
+},
+{
+"label": "National Hospital for Neurology and Neurosurgery",
+"count": 12
+},
+{
+"label": "UK Dementia Research Institute",
+"count": 10
+},
+{
+"label": "Sahlgrenska University Hospital",
+"count": 9
+}
+],
+"scite_supporting": 6,
+"scite_contradicting": 2
 },
 {
 "file": "articlestory_10.7554_eLife.79042.html",
@@ -3680,7 +8902,90 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Hypothesis"
-]
+],
+"platform_counts": {
+"hypothesis": 1
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIDCD NIH HHS",
+"National Science Foundation",
+"Japan Society for the Promotion of Science",
+"NIBIB NIH HHS",
+"Simons Foundation"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 44
+},
+{
+"label": "Facility",
+"count": 39
+},
+{
+"label": "Company",
+"count": 7
+},
+{
+"label": "Healthcare",
+"count": 6
+},
+{
+"label": "Nonprofit",
+"count": 5
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 34
+},
+{
+"label": "Germany",
+"count": 21
+},
+{
+"label": "United Kingdom",
+"count": 7
+},
+{
+"label": "Australia",
+"count": 6
+},
+{
+"label": "Hungary",
+"count": 5
+}
+],
+"citing_institutions": [
+{
+"label": "Howard Hughes Medical Institute",
+"count": 6
+},
+{
+"label": "Janelia Research Campus",
+"count": 6
+},
+{
+"label": "University of Cologne",
+"count": 3
+},
+{
+"label": "University of North Carolina at Chapel Hill",
+"count": 2
+},
+{
+"label": "University of Göttingen",
+"count": 2
+}
+],
+"scite_supporting": 2,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461662668.html",
@@ -3726,7 +9031,82 @@ window.STORIES_DATA = [
 "series_name": "Studies in Archaeological Sciences",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 51
+},
+{
+"label": "Facility",
+"count": 24
+},
+{
+"label": "Archive",
+"count": 20
+},
+{
+"label": "Government",
+"count": 16
+},
+{
+"label": "Nonprofit",
+"count": 11
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 25
+},
+{
+"label": "United Kingdom",
+"count": 19
+},
+{
+"label": "Germany",
+"count": 7
+},
+{
+"label": "Spain",
+"count": 6
+},
+{
+"label": "France",
+"count": 4
+}
+],
+"citing_institutions": [
+{
+"label": "Klaipėda University",
+"count": 3
+},
+{
+"label": "University of Oxford",
+"count": 3
+},
+{
+"label": "University of Chinese Academy of Sciences",
+"count": 3
+},
+{
+"label": "Peking University",
+"count": 2
+},
+{
+"label": "Oxford Archaeology",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1126_scitranslmed.add0499.html",
@@ -3775,7 +9155,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 51
+},
+{
+"label": "Healthcare",
+"count": 28
+},
+{
+"label": "Facility",
+"count": 17
+},
+{
+"label": "Government",
+"count": 5
+},
+{
+"label": "Company",
+"count": 4
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 17
+},
+{
+"label": "China",
+"count": 15
+},
+{
+"label": "Germany",
+"count": 7
+},
+{
+"label": "United Kingdom",
+"count": 7
+},
+{
+"label": "Canada",
+"count": 4
+}
+],
+"citing_institutions": [
+{
+"label": "Johns Hopkins University",
+"count": 2
+},
+{
+"label": "Johns Hopkins Medicine",
+"count": 2
+},
+{
+"label": "New York University",
+"count": 1
+},
+{
+"label": "Henan University",
+"count": 1
+},
+{
+"label": "Medical University of South Carolina",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_s41593-023-01500-7.html",
@@ -3832,7 +9287,67 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Reddit"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"U.S. Department of Health &amp; Human Services | NIH | National Eye Institute",
+"U.S. Department of Health &amp; Human Services | NIH | National Institute of Neurological Disorders and Stroke",
+"Della Martin Foundation",
+"Della Martin Foundation and T&amp;C Chen Brain-Machine Interface Center",
+"U.S. Department of Health &amp; Human Services | NIH | National Institute of General Medical Sciences"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 42
+},
+{
+"label": "Facility",
+"count": 19
+},
+{
+"label": "Healthcare",
+"count": 19
+},
+{
+"label": "Funder",
+"count": 9
+},
+{
+"label": "Government",
+"count": 6
+}
+],
+"countries": [],
+"citing_institutions": [
+{
+"label": "University of Southern California",
+"count": 7
+},
+{
+"label": "Rancho Los Amigos National Rehabilitation Center",
+"count": 6
+},
+{
+"label": "Chinese Academy of Sciences",
+"count": 5
+},
+{
+"label": "Neurological Surgery",
+"count": 5
+},
+{
+"label": "California Institute of Technology",
+"count": 4
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11647_OBP.0222.html",
@@ -3878,7 +9393,82 @@ window.STORIES_DATA = [
 "series_name": "Open reports series",
 "series_id": "https://openalex.org/S4210220030",
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 21
+},
+{
+"label": "Nonprofit",
+"count": 2
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Healthcare",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Italy",
+"count": 11
+},
+{
+"label": "United States",
+"count": 4
+},
+{
+"label": "France",
+"count": 3
+},
+{
+"label": "China",
+"count": 2
+},
+{
+"label": "Germany",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Università Cattolica del Sacro Cuore",
+"count": 2
+},
+{
+"label": "Vistula University",
+"count": 2
+},
+{
+"label": "Sapienza University of Rome",
+"count": 1
+},
+{
+"label": "European Investment Bank",
+"count": 1
+},
+{
+"label": "Universidade Federal Rural do Rio de Janeiro",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1523_jneurosci.2872-04.2004.html",
@@ -3927,7 +9517,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 46
+},
+{
+"label": "Facility",
+"count": 11
+},
+{
+"label": "Healthcare",
+"count": 6
+},
+{
+"label": "Government",
+"count": 5
+},
+{
+"label": "Nonprofit",
+"count": 4
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 33
+},
+{
+"label": "Canada",
+"count": 5
+},
+{
+"label": "United Kingdom",
+"count": 4
+},
+{
+"label": "China",
+"count": 4
+},
+{
+"label": "Germany",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "Washington University in St. Louis",
+"count": 4
+},
+{
+"label": "University of Alaska Fairbanks",
+"count": 3
+},
+{
+"label": "Weizmann Institute of Science",
+"count": 2
+},
+{
+"label": "University of Pennsylvania",
+"count": 2
+},
+{
+"label": "Memorial University of Newfoundland",
+"count": 2
+}
+],
+"scite_supporting": 2,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.12.571235.html",
@@ -3977,7 +9642,84 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Hypothesis"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Wellcome Trust"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 12
+},
+{
+"label": "Nonprofit",
+"count": 6
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Other",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 8
+},
+{
+"label": "Switzerland",
+"count": 3
+},
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "Italy",
+"count": 2
+},
+{
+"label": "South Africa",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Chicago",
+"count": 3
+},
+{
+"label": "University of Cologne",
+"count": 2
+},
+{
+"label": "University of Pennsylvania",
+"count": 1
+},
+{
+"label": "SIB Swiss Institute of Bioinformatics",
+"count": 1
+},
+{
+"label": "University of Basel",
+"count": 1
+}
+],
+"scite_supporting": 2,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1016_j.cell.2023.11.036.html",
@@ -4040,7 +9782,88 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Hypothesis"
-]
+],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NHLBI NIH HHS",
+"Texas Biomedical Research Institute",
+"The Rockefeller University",
+"American Thoracic Society",
+"EMBO"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 49
+},
+{
+"label": "Healthcare",
+"count": 29
+},
+{
+"label": "Facility",
+"count": 25
+},
+{
+"label": "Government",
+"count": 17
+},
+{
+"label": "Funder",
+"count": 15
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 30
+},
+{
+"label": "France",
+"count": 21
+},
+{
+"label": "Germany",
+"count": 8
+},
+{
+"label": "United Kingdom",
+"count": 7
+},
+{
+"label": "Canada",
+"count": 6
+}
+],
+"citing_institutions": [
+{
+"label": "Université Paris Cité",
+"count": 17
+},
+{
+"label": "Inserm",
+"count": 17
+},
+{
+"label": "Institut des Maladies Génétiques Imagine",
+"count": 12
+},
+{
+"label": "Rockefeller University",
+"count": 12
+},
+{
+"label": "Assistance Publique – Hôpitaux de Paris",
+"count": 10
+}
+],
+"scite_supporting": 3,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1073_pnas.1607187113.html",
@@ -4098,7 +9921,91 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Podcasts",
 "Wikipedia"
-]
+],
+"platform_counts": {
+"wikipedia": 1,
+"podcast": 1
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"HHS | National Institutes of Health",
+"NIH HHS",
+"NHLBI NIH HHS",
+"NHGRI NIH HHS",
+"European Hematology Association"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 43
+},
+{
+"label": "Healthcare",
+"count": 25
+},
+{
+"label": "Facility",
+"count": 13
+},
+{
+"label": "Company",
+"count": 11
+},
+{
+"label": "Nonprofit",
+"count": 7
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 33
+},
+{
+"label": "Netherlands",
+"count": 6
+},
+{
+"label": "United Kingdom",
+"count": 5
+},
+{
+"label": "Chile",
+"count": 3
+},
+{
+"label": "China",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "Stanford University",
+"count": 6
+},
+{
+"label": "Johns Hopkins University",
+"count": 3
+},
+{
+"label": "Dassault Systèmes (United States)",
+"count": 2
+},
+{
+"label": "University of Washington",
+"count": 2
+},
+{
+"label": "Stanford Medicine",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2022.02.22.481540.html",
@@ -4143,7 +10050,58 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Nonprofit",
+"count": 3
+},
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 3
+},
+{
+"label": "Norway",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Allen Institute",
+"count": 2
+},
+{
+"label": "The Kavli Foundation",
+"count": 0
+},
+{
+"label": "Cure Alzheimer’s Fund",
+"count": 0
+},
+{
+"label": "University of California San Diego",
+"count": 0
+},
+{
+"label": "Norwegian University of Life Sciences",
+"count": 0
+}
+],
+"scite_supporting": 2,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_elife.87169.html",
@@ -4192,7 +10150,88 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NINDS NIH HHS",
+"Simula School of Research",
+"European Union Horizon 2020 Research and Innovation program",
+"IKTPLUSS-IKT and Digital Innovation",
+"NIBIB NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 42
+},
+{
+"label": "Nonprofit",
+"count": 17
+},
+{
+"label": "Facility",
+"count": 14
+},
+{
+"label": "Healthcare",
+"count": 8
+},
+{
+"label": "Government",
+"count": 4
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 19
+},
+{
+"label": "Switzerland",
+"count": 16
+},
+{
+"label": "Norway",
+"count": 9
+},
+{
+"label": "Germany",
+"count": 9
+},
+{
+"label": "Canada",
+"count": 7
+}
+],
+"citing_institutions": [
+{
+"label": "École Polytechnique Fédérale de Lausanne",
+"count": 5
+},
+{
+"label": "University of Oslo",
+"count": 3
+},
+{
+"label": "Norwegian University of Life Sciences",
+"count": 3
+},
+{
+"label": "Foundation for Research on Information Technologies in Society",
+"count": 2
+},
+{
+"label": "Allen Institute",
+"count": 2
+}
+],
+"scite_supporting": 5,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1126_scitranslmed.adh4529.html",
@@ -4245,7 +10284,86 @@ window.STORIES_DATA = [
 "News",
 "Hypothesis",
 "Blogs"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIGMS NIH HHS",
+"NIDA NIH HHS",
+"NIAID NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 44
+},
+{
+"label": "Healthcare",
+"count": 40
+},
+{
+"label": "Nonprofit",
+"count": 17
+},
+{
+"label": "Facility",
+"count": 17
+},
+{
+"label": "Government",
+"count": 9
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 28
+},
+{
+"label": "United Kingdom",
+"count": 7
+},
+{
+"label": "Canada",
+"count": 7
+},
+{
+"label": "Australia",
+"count": 6
+},
+{
+"label": "South Africa",
+"count": 6
+}
+],
+"citing_institutions": [
+{
+"label": "Washington University in St. Louis",
+"count": 2
+},
+{
+"label": "Ragon Institute of MGH, MIT and Harvard",
+"count": 1
+},
+{
+"label": "Trinity College Dublin",
+"count": 1
+},
+{
+"label": "Imperial College London",
+"count": 1
+},
+{
+"label": "University Children's Hospital Tübingen",
+"count": 1
+}
+],
+"scite_supporting": 3,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1016_j.cell.2023.11.010.html",
@@ -4305,7 +10423,90 @@ window.STORIES_DATA = [
 "Blogs",
 "Hypothesis",
 "Reddit"
-]
+],
+"platform_counts": {
+"wikipedia": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIDA NIH HHS",
+"NIMH NIH HHS",
+"National Institutes of Health",
+"Massachusetts Institute of Technology",
+"NIA NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 39
+},
+{
+"label": "Facility",
+"count": 15
+},
+{
+"label": "Healthcare",
+"count": 9
+},
+{
+"label": "Nonprofit",
+"count": 7
+},
+{
+"label": "Company",
+"count": 5
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 16
+},
+{
+"label": "China",
+"count": 16
+},
+{
+"label": "Japan",
+"count": 5
+},
+{
+"label": "Germany",
+"count": 4
+},
+{
+"label": "Sweden",
+"count": 4
+}
+],
+"citing_institutions": [
+{
+"label": "Westlake University",
+"count": 3
+},
+{
+"label": "Zhejiang University",
+"count": 3
+},
+{
+"label": "The University of Tokyo",
+"count": 3
+},
+{
+"label": "Shanghai Jiao Tong University",
+"count": 3
+},
+{
+"label": "Massachusetts Institute of Technology",
+"count": 3
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1042_bc20100036.html",
@@ -4354,7 +10555,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 37
+},
+{
+"label": "Healthcare",
+"count": 16
+},
+{
+"label": "Facility",
+"count": 15
+},
+{
+"label": "Funder",
+"count": 5
+},
+{
+"label": "Government",
+"count": 5
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 19
+},
+{
+"label": "Netherlands",
+"count": 7
+},
+{
+"label": "Canada",
+"count": 6
+},
+{
+"label": "Germany",
+"count": 5
+},
+{
+"label": "Belgium",
+"count": 5
+}
+],
+"citing_institutions": [
+{
+"label": "Harvard University",
+"count": 5
+},
+{
+"label": "University Medical Center Utrecht",
+"count": 4
+},
+{
+"label": "University of North Carolina at Chapel Hill",
+"count": 4
+},
+{
+"label": "University of Toronto",
+"count": 4
+},
+{
+"label": "Max Planck Institute of Experimental Medicine",
+"count": 3
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_VP_PLU.html",
@@ -4394,7 +10670,62 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 22
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 14
+},
+{
+"label": "United Kingdom",
+"count": 6
+},
+{
+"label": "Switzerland",
+"count": 1
+},
+{
+"label": "New Zealand",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Florida State University",
+"count": 13
+},
+{
+"label": "University of Exeter",
+"count": 3
+},
+{
+"label": "University of St Andrews",
+"count": 3
+},
+{
+"label": "University of Pittsburgh",
+"count": 1
+},
+{
+"label": "University of Bern",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3998_mpub.16284.html",
@@ -4443,7 +10774,78 @@ window.STORIES_DATA = [
 "series_name": "Studies in International Economics",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 40
+},
+{
+"label": "Nonprofit",
+"count": 2
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 25
+},
+{
+"label": "China",
+"count": 6
+},
+{
+"label": "Taiwan",
+"count": 3
+},
+{
+"label": "Canada",
+"count": 2
+},
+{
+"label": "Australia",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Massachusetts Institute of Technology",
+"count": 11
+},
+{
+"label": "George Mason University",
+"count": 2
+},
+{
+"label": "Ming Chuan University",
+"count": 2
+},
+{
+"label": "Peking University",
+"count": 2
+},
+{
+"label": "University of Missouri",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3998_mpub.11649332.html",
@@ -4492,7 +10894,52 @@ window.STORIES_DATA = [
 "Wikipedia",
 "News",
 "Blogs"
-]
+],
+"platform_counts": {
+"wikipedia": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 9
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 7
+},
+{
+"label": "Canada",
+"count": 6
+},
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Sheffield",
+"count": 4
+},
+{
+"label": "Seneca Polytechnic",
+"count": 4
+},
+{
+"label": "Baylor University",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461661579.html",
@@ -4532,7 +10979,84 @@ window.STORIES_DATA = [
 "series_name": "Studies in Archaeological Sciences",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"European Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 18
+},
+{
+"label": "Facility",
+"count": 7
+},
+{
+"label": "Nonprofit",
+"count": 3
+},
+{
+"label": "Government",
+"count": 3
+},
+{
+"label": "Funder",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 7
+},
+{
+"label": "France",
+"count": 5
+},
+{
+"label": "Italy",
+"count": 4
+},
+{
+"label": "Belgium",
+"count": 3
+},
+{
+"label": "Portugal",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "University of Nottingham",
+"count": 2
+},
+{
+"label": "Institut de Recherche sur les ArchéoMATériaux",
+"count": 2
+},
+{
+"label": "Newcastle University",
+"count": 1
+},
+{
+"label": "Université d'Orléans",
+"count": 1
+},
+{
+"label": "University of Siena",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3998_mpub.17801.html",
@@ -4581,7 +11105,78 @@ window.STORIES_DATA = [
 "series_name": "Studies in International Economics",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 12
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+},
+{
+"label": "Other",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Switzerland",
+"count": 3
+},
+{
+"label": "Germany",
+"count": 3
+},
+{
+"label": "Australia",
+"count": 2
+},
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "United States",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "University of Bremen",
+"count": 2
+},
+{
+"label": "The University of Melbourne",
+"count": 1
+},
+{
+"label": "Queen Mary University of London",
+"count": 1
+},
+{
+"label": "University of Glasgow",
+"count": 1
+},
+{
+"label": "University of Lucerne",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1016_s0306-4522(03)00405-6.html",
@@ -4634,7 +11229,82 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Blogs"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 23
+},
+{
+"label": "Facility",
+"count": 21
+},
+{
+"label": "Company",
+"count": 4
+},
+{
+"label": "Funder",
+"count": 4
+},
+{
+"label": "Healthcare",
+"count": 3
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 14
+},
+{
+"label": "Switzerland",
+"count": 10
+},
+{
+"label": "Netherlands",
+"count": 4
+},
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "Germany",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "Friedrich Miescher Institute",
+"count": 9
+},
+{
+"label": "Amsterdam Neuroscience",
+"count": 3
+},
+{
+"label": "University of North Carolina at Chapel Hill",
+"count": 3
+},
+{
+"label": "Friedrich Miescher Institute",
+"count": 2
+},
+{
+"label": "Vrije Universiteit Amsterdam",
+"count": 2
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.11.29.569241.html",
@@ -4684,7 +11354,78 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 11
+},
+{
+"label": "Facility",
+"count": 6
+},
+{
+"label": "Company",
+"count": 4
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 8
+},
+{
+"label": "Germany",
+"count": 7
+},
+{
+"label": "Australia",
+"count": 6
+},
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "Turkey",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Howard Hughes Medical Institute",
+"count": 6
+},
+{
+"label": "Janelia Research Campus",
+"count": 6
+},
+{
+"label": "University of Cologne",
+"count": 6
+},
+{
+"label": "University of California, Berkeley",
+"count": 6
+},
+{
+"label": "The University of Queensland",
+"count": 6
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_eLife.85117.html",
@@ -4734,7 +11475,88 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"European Research Council",
+"Wellcome Trust",
+"NIDCD NIH HHS",
+"NIMH NIH HHS",
+"National Institutes of Health"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 24
+},
+{
+"label": "Facility",
+"count": 8
+},
+{
+"label": "Nonprofit",
+"count": 7
+},
+{
+"label": "Healthcare",
+"count": 6
+},
+{
+"label": "Other",
+"count": 3
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 17
+},
+{
+"label": "India",
+"count": 5
+},
+{
+"label": "United Kingdom",
+"count": 4
+},
+{
+"label": "Argentina",
+"count": 4
+},
+{
+"label": "Canada",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "Tata Institute for Genetics and Society",
+"count": 4
+},
+{
+"label": "Emory University",
+"count": 2
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 1
+},
+{
+"label": "Janelia Research Campus",
+"count": 1
+},
+{
+"label": "University of Copenhagen",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_eLife.85756.html",
@@ -4783,7 +11605,90 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Hypothesis"
-]
+],
+"platform_counts": {
+"hypothesis": 2
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"National Science Foundation",
+"Howard Hughes Medical Institute",
+"NIDCD NIH HHS",
+"Toyobo Biotechnology Foundation",
+"UNC Junior Faculty Development Award"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 22
+},
+{
+"label": "Facility",
+"count": 22
+},
+{
+"label": "Healthcare",
+"count": 7
+},
+{
+"label": "Company",
+"count": 4
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 25
+},
+{
+"label": "Germany",
+"count": 8
+},
+{
+"label": "Australia",
+"count": 6
+},
+{
+"label": "Israel",
+"count": 3
+},
+{
+"label": "Japan",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Howard Hughes Medical Institute",
+"count": 5
+},
+{
+"label": "Janelia Research Campus",
+"count": 5
+},
+{
+"label": "University of North Carolina at Chapel Hill",
+"count": 2
+},
+{
+"label": "Columbia University",
+"count": 1
+},
+{
+"label": "University of Colorado Anschutz Medical Campus",
+"count": 1
+}
+],
+"scite_supporting": 3,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1016_j.tcb.2023.10.013.html",
@@ -4837,7 +11742,86 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Howard Hughes Medical Institute",
+"Deutsche Forschungsgemeinschaft",
+"European Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 32
+},
+{
+"label": "Facility",
+"count": 11
+},
+{
+"label": "Healthcare",
+"count": 9
+},
+{
+"label": "Nonprofit",
+"count": 4
+},
+{
+"label": "Government",
+"count": 3
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 15
+},
+{
+"label": "China",
+"count": 8
+},
+{
+"label": "Germany",
+"count": 6
+},
+{
+"label": "India",
+"count": 6
+},
+{
+"label": "United Kingdom",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "Rajendra Memorial Research Institute of Medical Sciences",
+"count": 5
+},
+{
+"label": "Indian Institute of Technology Kharagpur",
+"count": 4
+},
+{
+"label": "Hospital de Egas Moniz",
+"count": 3
+},
+{
+"label": "University of California, Los Angeles",
+"count": 2
+},
+{
+"label": "Max Planck Institute for Biology of Ageing",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2024.04.04.588111.html",
@@ -4885,7 +11869,84 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Hypothesis"
-]
+],
+"platform_counts": {
+"hypothesis": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 31
+},
+{
+"label": "Healthcare",
+"count": 12
+},
+{
+"label": "Facility",
+"count": 10
+},
+{
+"label": "Nonprofit",
+"count": 7
+},
+{
+"label": "Company",
+"count": 4
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 20
+},
+{
+"label": "United Kingdom",
+"count": 9
+},
+{
+"label": "Germany",
+"count": 7
+},
+{
+"label": "Canada",
+"count": 4
+},
+{
+"label": "China",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "University of Alabama at Birmingham",
+"count": 3
+},
+{
+"label": "Cedars-Sinai Medical Center",
+"count": 1
+},
+{
+"label": "The University of Melbourne",
+"count": 1
+},
+{
+"label": "University of Turin",
+"count": 1
+},
+{
+"label": "Cedars-Sinai Smidt Heart Institute",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3998_mpub.16818.html",
@@ -4934,7 +11995,82 @@ window.STORIES_DATA = [
 "series_name": "Studies in International Economics",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 30
+},
+{
+"label": "Nonprofit",
+"count": 3
+},
+{
+"label": "Other",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Funder",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 25
+},
+{
+"label": "Norway",
+"count": 2
+},
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "France",
+"count": 2
+},
+{
+"label": "India",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Rhode Island College",
+"count": 5
+},
+{
+"label": "Providence College",
+"count": 5
+},
+{
+"label": "Middle Tennessee State University",
+"count": 2
+},
+{
+"label": "Rutgers, The State University of New Jersey",
+"count": 2
+},
+{
+"label": "Cornell University",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1371_journal.pone.0253205.html",
@@ -4985,7 +12121,84 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Blogs"
-]
+],
+"platform_counts": {
+"blog": 1
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 2,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 33
+},
+{
+"label": "Healthcare",
+"count": 12
+},
+{
+"label": "Facility",
+"count": 4
+},
+{
+"label": "Nonprofit",
+"count": 4
+},
+{
+"label": "Government",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "India",
+"count": 6
+},
+{
+"label": "United Kingdom",
+"count": 5
+},
+{
+"label": "Germany",
+"count": 5
+},
+{
+"label": "China",
+"count": 4
+},
+{
+"label": "United States",
+"count": 4
+}
+],
+"citing_institutions": [
+{
+"label": "University of St Andrews",
+"count": 2
+},
+{
+"label": "Manipal Academy of Higher Education",
+"count": 1
+},
+{
+"label": "University of Tübingen",
+"count": 1
+},
+{
+"label": "Charotar University of Science and Technology",
+"count": 1
+},
+{
+"label": "National Institute of Technology Rourkela",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.11.30.23299240.html",
@@ -5037,7 +12250,66 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 5
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 5
+},
+{
+"label": "South Africa",
+"count": 1
+},
+{
+"label": "Sweden",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Washington Applied Physics Laboratory",
+"count": 2
+},
+{
+"label": "University of Washington",
+"count": 2
+},
+{
+"label": "Michigan State University",
+"count": 2
+},
+{
+"label": "Los Alamos National Laboratory",
+"count": 2
+},
+{
+"label": "University of Tennessee at Chattanooga",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3726_b20254.html",
@@ -5085,7 +12357,84 @@ window.STORIES_DATA = [
 "belongs_to_series": true,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {
+"wikipedia": 4
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 26
+},
+{
+"label": "Nonprofit",
+"count": 6
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Government",
+"count": 2
+},
+{
+"label": "Healthcare",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Belgium",
+"count": 5
+},
+{
+"label": "Poland",
+"count": 5
+},
+{
+"label": "Sweden",
+"count": 4
+},
+{
+"label": "Germany",
+"count": 4
+},
+{
+"label": "United Kingdom",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "European Trade Union Institute",
+"count": 2
+},
+{
+"label": "Stockholm School of Economics",
+"count": 2
+},
+{
+"label": "SGH Warsaw School of Economics",
+"count": 2
+},
+{
+"label": "University of Silesia in Katowice",
+"count": 2
+},
+{
+"label": "West University of Timişoara",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1001_jama.2025.3810.html",
@@ -5135,7 +12484,86 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Podcasts"
-]
+],
+"platform_counts": {
+"podcast": 3
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIDA NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 19
+},
+{
+"label": "Healthcare",
+"count": 11
+},
+{
+"label": "Government",
+"count": 3
+},
+{
+"label": "Funder",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 11
+},
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "Canada",
+"count": 2
+},
+{
+"label": "ME",
+"count": 1
+},
+{
+"label": "China",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Massachusetts General Hospital",
+"count": 1
+},
+{
+"label": "Clifford Chance",
+"count": 1
+},
+{
+"label": "Griffith University",
+"count": 1
+},
+{
+"label": "Chiang Mai University",
+"count": 1
+},
+{
+"label": "University of Catania",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1016_j.cub.2023.11.025.html",
@@ -5189,7 +12617,88 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"National Institutes of Health",
+"NINDS NIH HHS",
+"Rockefeller University",
+"Howard Hughes Medical Institute",
+"National Institute of Neurological Disorders and Stroke"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 27
+},
+{
+"label": "Facility",
+"count": 12
+},
+{
+"label": "Government",
+"count": 7
+},
+{
+"label": "Company",
+"count": 5
+},
+{
+"label": "Healthcare",
+"count": 4
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 19
+},
+{
+"label": "China",
+"count": 8
+},
+{
+"label": "Japan",
+"count": 4
+},
+{
+"label": "Switzerland",
+"count": 3
+},
+{
+"label": "Turkey",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "Rockefeller University",
+"count": 5
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 4
+},
+{
+"label": "Chinese Academy of Sciences",
+"count": 3
+},
+{
+"label": "Kunming Institute of Zoology",
+"count": 3
+},
+{
+"label": "Columbia University",
+"count": 3
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2020.02.05.933721.html",
@@ -5241,7 +12750,76 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Hypothesis"
-]
+],
+"platform_counts": {
+"hypothesis": 5
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 4
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Switzerland",
+"count": 3
+},
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Zurich",
+"count": 2
+},
+{
+"label": "Van Andel Institute",
+"count": 1
+},
+{
+"label": "Roslin Institute",
+"count": 0
+},
+{
+"label": "University of Edinburgh",
+"count": 0
+},
+{
+"label": "Universitätsklinikum Würzburg",
+"count": 0
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.01.568979.html",
@@ -5289,7 +12867,78 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 10
+},
+{
+"label": "Healthcare",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 5
+},
+{
+"label": "China",
+"count": 3
+},
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "Sweden",
+"count": 2
+},
+{
+"label": "Switzerland",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Washington University in St. Louis",
+"count": 4
+},
+{
+"label": "Uppsala University",
+"count": 1
+},
+{
+"label": "Indiana University School of Medicine",
+"count": 1
+},
+{
+"label": "Indiana University – Purdue University Indianapolis",
+"count": 1
+},
+{
+"label": "Jiangnan University",
+"count": 0
+}
+],
+"scite_supporting": 4,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.15252_emmm.202012739.html",
@@ -5342,7 +12991,90 @@ window.STORIES_DATA = [
 "Hypothesis",
 "News",
 "Blogs"
-]
+],
+"platform_counts": {
+"hypothesis": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 1,
+"funders": [
+"Stavros Niarchos Foundation (SNF)",
+"Swiss Personalized Health Network (SPHN)",
+"SystemsX.ch (Swiss SystemsX.ch)",
+"Ono Pharmaceutical (Ono Pharmaceutical Co., Ltd.)",
+"European Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 23
+},
+{
+"label": "Healthcare",
+"count": 8
+},
+{
+"label": "Funder",
+"count": 7
+},
+{
+"label": "Facility",
+"count": 7
+},
+{
+"label": "Nonprofit",
+"count": 6
+}
+],
+"countries": [
+{
+"label": "Switzerland",
+"count": 15
+},
+{
+"label": "United States",
+"count": 8
+},
+{
+"label": "United Kingdom",
+"count": 6
+},
+{
+"label": "Italy",
+"count": 5
+},
+{
+"label": "Canada",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "University of Zurich",
+"count": 5
+},
+{
+"label": "École Polytechnique Fédérale de Lausanne",
+"count": 1
+},
+{
+"label": "Van Andel Institute",
+"count": 1
+},
+{
+"label": "New York University",
+"count": 1
+},
+{
+"label": "Scuola Internazionale Superiore di Studi Avanzati",
+"count": 1
+}
+],
+"scite_supporting": 2,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_eLife.98405.html",
@@ -5392,7 +13124,85 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIH HHS",
+"Howard Hughes Medical Institute"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 14
+},
+{
+"label": "Facility",
+"count": 13
+},
+{
+"label": "Healthcare",
+"count": 3
+},
+{
+"label": "Nonprofit",
+"count": 3
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 14
+},
+{
+"label": "United Kingdom",
+"count": 7
+},
+{
+"label": "Germany",
+"count": 4
+},
+{
+"label": "France",
+"count": 3
+},
+{
+"label": "Switzerland",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Howard Hughes Medical Institute",
+"count": 2
+},
+{
+"label": "Janelia Research Campus",
+"count": 1
+},
+{
+"label": "The Francis Crick Institute",
+"count": 1
+},
+{
+"label": "University of Washington",
+"count": 1
+},
+{
+"label": "University of Cambridge",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664327.html",
@@ -5437,7 +13247,62 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 8
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 5
+},
+{
+"label": "Portugal",
+"count": 1
+},
+{
+"label": "Italy",
+"count": 1
+},
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Trinity College London",
+"count": 1
+},
+{
+"label": "University of Cambridge",
+"count": 1
+},
+{
+"label": "University of Southampton",
+"count": 1
+},
+{
+"label": "University of Aveiro",
+"count": 1
+},
+{
+"label": "City, University of London",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1371_journal.pone.0000000.html",
@@ -5482,7 +13347,78 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 20
+},
+{
+"label": "Healthcare",
+"count": 13
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 18
+},
+{
+"label": "United States",
+"count": 5
+},
+{
+"label": "Japan",
+"count": 1
+},
+{
+"label": "Egypt",
+"count": 1
+},
+{
+"label": "Hong Kong",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Nanjing Drum Tower Hospital",
+"count": 2
+},
+{
+"label": "Yangzhou University",
+"count": 1
+},
+{
+"label": "Xuzhou Medical College",
+"count": 1
+},
+{
+"label": "Weifang Medical University",
+"count": 1
+},
+{
+"label": "Yantaishan Hospital",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.08.570828.html",
@@ -5529,7 +13465,78 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 6
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Company",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 6
+},
+{
+"label": "Japan",
+"count": 2
+},
+{
+"label": "China",
+"count": 2
+},
+{
+"label": "France",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "North Carolina State University",
+"count": 2
+},
+{
+"label": "Memorial Sloan Kettering Cancer Center",
+"count": 1
+},
+{
+"label": "The University of Texas at El Paso",
+"count": 1
+},
+{
+"label": "Central China Normal University",
+"count": 1
+},
+{
+"label": "Translational Research Informatics Center (Japan)",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.07.565988.html",
@@ -5574,7 +13581,54 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "Turkey",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Koç University",
+"count": 1
+},
+{
+"label": "Emory University",
+"count": 0
+},
+{
+"label": "University of California, San Francisco",
+"count": 0
+},
+{
+"label": "Indiana University School of Medicine",
+"count": 0
+},
+{
+"label": "Indiana University – Purdue University Indianapolis",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.2196_37324.html",
@@ -5627,7 +13681,90 @@ window.STORIES_DATA = [
 "Bluesky",
 "Hypothesis",
 "Blogs"
-]
+],
+"platform_counts": {
+"bluesky": 1
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIGMS NIH HHS",
+"NIDA NIH HHS",
+"NIDDK NIH HHS",
+"NIH HHS",
+"NIMH NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 20
+},
+{
+"label": "Facility",
+"count": 9
+},
+{
+"label": "Nonprofit",
+"count": 6
+},
+{
+"label": "Company",
+"count": 5
+},
+{
+"label": "Government",
+"count": 5
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 17
+},
+{
+"label": "Germany",
+"count": 7
+},
+{
+"label": "United Kingdom",
+"count": 5
+},
+{
+"label": "Australia",
+"count": 3
+},
+{
+"label": "Netherlands",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "University of California San Diego",
+"count": 3
+},
+{
+"label": "Federation of American Societies for Experimental Biology",
+"count": 1
+},
+{
+"label": "University of Jordan",
+"count": 1
+},
+{
+"label": "University of Foggia",
+"count": 1
+},
+{
+"label": "Medical University of South Carolina",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_eLife.94168.html",
@@ -5673,7 +13810,84 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Howard Hughes Medical Institute"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 10
+},
+{
+"label": "Facility",
+"count": 6
+},
+{
+"label": "Nonprofit",
+"count": 2
+},
+{
+"label": "Company",
+"count": 1
+},
+{
+"label": "Healthcare",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 10
+},
+{
+"label": "KZ",
+"count": 1
+},
+{
+"label": "Israel",
+"count": 1
+},
+{
+"label": "Germany",
+"count": 1
+},
+{
+"label": "France",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Howard Hughes Medical Institute",
+"count": 1
+},
+{
+"label": "Janelia Research Campus",
+"count": 1
+},
+{
+"label": "University of Utah",
+"count": 1
+},
+{
+"label": "Harvard University",
+"count": 1
+},
+{
+"label": "University of Washington",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3368_HNAL9672.html",
@@ -5717,7 +13931,78 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 21
+},
+{
+"label": "Government",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 14
+},
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "Australia",
+"count": 2
+},
+{
+"label": "Canada",
+"count": 2
+},
+{
+"label": "France",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Wisconsin–Madison",
+"count": 2
+},
+{
+"label": "Arizona State University",
+"count": 1
+},
+{
+"label": "Missouri Western State University",
+"count": 1
+},
+{
+"label": "University of Wollongong",
+"count": 1
+},
+{
+"label": "University of Wyoming",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.11.29.569289.html",
@@ -5770,7 +14055,82 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 4
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Government",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "France",
+"count": 3
+},
+{
+"label": "Italy",
+"count": 2
+},
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "Sweden",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Sorbonne Université",
+"count": 2
+},
+{
+"label": "Centre National de la Recherche Scientifique",
+"count": 2
+},
+{
+"label": "University of Padua",
+"count": 2
+},
+{
+"label": "VIB-KU Leuven Center for Cancer Biology",
+"count": 1
+},
+{
+"label": "Istituti di Ricovero e Cura a Carattere Scientifico",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.2196_preprints.37324.html",
@@ -5817,7 +14177,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.12.571160.html",
@@ -5867,7 +14239,82 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "News",
 "Blogs"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 5
+},
+{
+"label": "Healthcare",
+"count": 4
+},
+{
+"label": "Nonprofit",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Government",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 5
+},
+{
+"label": "Japan",
+"count": 2
+},
+{
+"label": "South Africa",
+"count": 2
+},
+{
+"label": "Italy",
+"count": 2
+},
+{
+"label": "Spain",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Georgia Institute of Technology",
+"count": 1
+},
+{
+"label": "University of Wisconsin–Madison",
+"count": 1
+},
+{
+"label": "Weill Cornell Medicine",
+"count": 0
+},
+{
+"label": "Cornell University",
+"count": 0
+},
+{
+"label": "St. Jude Children's Research Hospital",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.1007_978-3-030-47436-2.html",
@@ -5916,7 +14363,82 @@ window.STORIES_DATA = [
 "series_name": "Lecture notes in computer science",
 "series_id": "https://openalex.org/S106296714",
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 21
+},
+{
+"label": "Company",
+"count": 6
+},
+{
+"label": "Facility",
+"count": 4
+},
+{
+"label": "Government",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 10
+},
+{
+"label": "Canada",
+"count": 2
+},
+{
+"label": "France",
+"count": 2
+},
+{
+"label": "GH",
+"count": 2
+},
+{
+"label": "ZM",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "National University of Defense Technology",
+"count": 1
+},
+{
+"label": "Central University of Jammu",
+"count": 1
+},
+{
+"label": "Queensland University of Technology",
+"count": 1
+},
+{
+"label": "Sony (France)",
+"count": 1
+},
+{
+"label": "Guangdong University of Technology",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.19.572369.html",
@@ -5961,7 +14483,66 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Education",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 2
+},
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Dalian University of Technology",
+"count": 0
+},
+{
+"label": "China Academy of Engineering Physics",
+"count": 0
+},
+{
+"label": "Marine Biological Laboratory",
+"count": 0
+},
+{
+"label": "Zhejiang University",
+"count": 0
+},
+{
+"label": "University of Chicago",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1371_journal.pone.0281234.html",
@@ -6012,7 +14593,86 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Swedish Research Council for Sustainable Development",
+"Lund University",
+"European Union, Interreg VÖKS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 20
+},
+{
+"label": "Healthcare",
+"count": 9
+},
+{
+"label": "Government",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 5
+},
+{
+"label": "Sweden",
+"count": 4
+},
+{
+"label": "Iran",
+"count": 3
+},
+{
+"label": "Saudi Arabia",
+"count": 2
+},
+{
+"label": "China",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Lund University",
+"count": 3
+},
+{
+"label": "University of Minnesota",
+"count": 1
+},
+{
+"label": "University of Da Nang",
+"count": 1
+},
+{
+"label": "Anhui University of Technology",
+"count": 1
+},
+{
+"label": "Taizhou University",
+"count": 0
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_eLife.96084.html",
@@ -6058,7 +14718,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 18
+},
+{
+"label": "Facility",
+"count": 7
+},
+{
+"label": "Nonprofit",
+"count": 3
+},
+{
+"label": "Company",
+"count": 1
+},
+{
+"label": "Healthcare",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 16
+},
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "Canada",
+"count": 3
+},
+{
+"label": "Switzerland",
+"count": 2
+},
+{
+"label": "Portugal",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Harvard University",
+"count": 2
+},
+{
+"label": "University of California, Santa Barbara",
+"count": 2
+},
+{
+"label": "University of Washington",
+"count": 2
+},
+{
+"label": "Janelia Research Campus",
+"count": 1
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 1
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.1007_978-3-031-35664-3.html",
@@ -6099,7 +14834,78 @@ window.STORIES_DATA = [
 "series_name": "Studies in energy, resource and environmental economics",
 "series_id": "https://openalex.org/S4393919257",
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 20
+},
+{
+"label": "Facility",
+"count": 5
+},
+{
+"label": "Company",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Saudi Arabia",
+"count": 6
+},
+{
+"label": "Poland",
+"count": 3
+},
+{
+"label": "Turkey",
+"count": 2
+},
+{
+"label": "France",
+"count": 2
+},
+{
+"label": "United States",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Silesian University of Technology",
+"count": 2
+},
+{
+"label": "King Abdullah Petroleum Studies and Research Center",
+"count": 2
+},
+{
+"label": "Eastern Mediterranean University",
+"count": 1
+},
+{
+"label": "Taibah University",
+"count": 1
+},
+{
+"label": "University of Trento",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_eLife.104764.html",
@@ -6149,7 +14955,90 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Hypothesis"
-]
+],
+"platform_counts": {
+"hypothesis": 2
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"National Institutes of Health",
+"National Science Foundation",
+"NIH HHS",
+"NIGMS NIH HHS",
+"Howard Hughes Medical Institute"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 7
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 2
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 4
+},
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "Sweden",
+"count": 1
+},
+{
+"label": "Belgium",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Janelia Research Campus",
+"count": 1
+},
+{
+"label": "Stockholm University",
+"count": 1
+},
+{
+"label": "KU Leuven",
+"count": 1
+},
+{
+"label": "University of Missouri–Kansas City",
+"count": 1
+},
+{
+"label": "Freie Universität Berlin",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_elife.89373.html",
@@ -6196,7 +15085,86 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Hypothesis"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"National Human Genome Research Institute",
+"Howard Hughes Medical Institute",
+"NHGRI NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 14
+},
+{
+"label": "Healthcare",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 8
+},
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "Austria",
+"count": 2
+},
+{
+"label": "Sweden",
+"count": 2
+},
+{
+"label": "Canada",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Rockefeller University",
+"count": 2
+},
+{
+"label": "Louisiana State University Health Sciences Center Shreveport",
+"count": 2
+},
+{
+"label": "Umeå University",
+"count": 2
+},
+{
+"label": "Institute of Science and Technology Austria",
+"count": 2
+},
+{
+"label": "University of California, Berkeley",
+"count": 1
+}
+],
+"scite_supporting": 5,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1007_s10875-023-01629-x.html",
@@ -6251,7 +15219,85 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIAID NIH HHS",
+"NCATS NIH HHS"
+],
+"sectors": [
+{
+"label": "Healthcare",
+"count": 15
+},
+{
+"label": "Education",
+"count": 15
+},
+{
+"label": "Facility",
+"count": 9
+},
+{
+"label": "Government",
+"count": 7
+},
+{
+"label": "Funder",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 10
+},
+{
+"label": "United Kingdom",
+"count": 4
+},
+{
+"label": "Italy",
+"count": 3
+},
+{
+"label": "Norway",
+"count": 2
+},
+{
+"label": "Germany",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "National Institute of Allergy and Infectious Diseases",
+"count": 5
+},
+{
+"label": "National Institutes of Health",
+"count": 3
+},
+{
+"label": "University of Bergen",
+"count": 2
+},
+{
+"label": "Haukeland University Hospital",
+"count": 2
+},
+{
+"label": "University Medical Center Hamburg-Eppendorf",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_s41592-023-02115-3.html",
@@ -6302,7 +15348,84 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIMH NIH HHS",
+"European Molecular Biology Laboratory",
+"Howard Hughes Medical Institute",
+"Foundation for the National Institutes of Health",
+"U.S. Department of Health &amp; Human Services | NIH | National Institute of General Medical Sciences"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 18
+},
+{
+"label": "Healthcare",
+"count": 6
+},
+{
+"label": "Facility",
+"count": 5
+},
+{
+"label": "Nonprofit",
+"count": 2
+},
+{
+"label": "Other",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 9
+},
+{
+"label": "China",
+"count": 8
+},
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "Hungary",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Florida",
+"count": 4
+},
+{
+"label": "University of Göttingen",
+"count": 2
+},
+{
+"label": "Universitätsmedizin Göttingen",
+"count": 2
+},
+{
+"label": "Peking University",
+"count": 2
+},
+{
+"label": "Capital Medical University",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1093_pastj_gtw039.html",
@@ -6349,7 +15472,42 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 13
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 13
+}
+],
+"citing_institutions": [
+{
+"label": "University of East Anglia",
+"count": 11
+},
+{
+"label": "University of Surrey",
+"count": 1
+},
+{
+"label": "University of Kent",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461662545.html",
@@ -6400,7 +15558,73 @@ window.STORIES_DATA = [
 "series_name": "ISBN:9789462701724",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Volkswagen Foundation"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 6
+},
+{
+"label": "Facility",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "Poland",
+"count": 3
+},
+{
+"label": "Russia",
+"count": 1
+},
+{
+"label": "Switzerland",
+"count": 1
+},
+{
+"label": "Romania",
+"count": 1
+},
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Instytut Historii Nauki im. Ludwika i Aleksandra Birkenmajerów Polskiej Akademii Nauk",
+"count": 1
+},
+{
+"label": "Jagiellonian University",
+"count": 1
+},
+{
+"label": "Nicolaus Copernicus University",
+"count": 1
+},
+{
+"label": "University of Basel",
+"count": 1
+},
+{
+"label": "Bucharest National University of Arts",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3998_mpub.9853855.html",
@@ -6444,7 +15668,81 @@ window.STORIES_DATA = [
 "Wikipedia",
 "Hypothesis",
 "Blogs"
-]
+],
+"platform_counts": {
+"wikipedia": 1,
+"hypothesis": 6
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 10
+},
+{
+"label": "Government",
+"count": 1
+},
+{
+"label": "Healthcare",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "Canada",
+"count": 1
+},
+{
+"label": "Malaysia",
+"count": 1
+},
+{
+"label": "Bulgaria",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Stony Brook University",
+"count": 1
+},
+{
+"label": "Queen's University",
+"count": 1
+},
+{
+"label": "Universiti Putra Malaysia",
+"count": 1
+},
+{
+"label": "Bulgarian Academy of Sciences",
+"count": 1
+},
+{
+"label": "Universitas Gadjah Mada",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.07.565993.html",
@@ -6491,7 +15789,78 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 5
+},
+{
+"label": "Healthcare",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Funder",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 3
+},
+{
+"label": "Germany",
+"count": 1
+},
+{
+"label": "Norway",
+"count": 1
+},
+{
+"label": "Turkey",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Koç University",
+"count": 1
+},
+{
+"label": "The University of Texas Southwestern Medical Center",
+"count": 1
+},
+{
+"label": "Children's Hospital of Philadelphia",
+"count": 0
+},
+{
+"label": "Northwestern University",
+"count": 0
+},
+{
+"label": "Janelia Research Campus",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1371_journal.pone.0003059.html",
@@ -6544,7 +15913,82 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 10
+},
+{
+"label": "Facility",
+"count": 9
+},
+{
+"label": "Funder",
+"count": 4
+},
+{
+"label": "Healthcare",
+"count": 3
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 6
+},
+{
+"label": "Netherlands",
+"count": 6
+},
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "Switzerland",
+"count": 1
+},
+{
+"label": "Spain",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Icahn School of Medicine at Mount Sinai",
+"count": 3
+},
+{
+"label": "Allen Institute for Brain Science",
+"count": 3
+},
+{
+"label": "Amsterdam Neuroscience",
+"count": 3
+},
+{
+"label": "Royal Netherlands Academy of Arts and Sciences",
+"count": 3
+},
+{
+"label": "Vrije Universiteit Amsterdam",
+"count": 2
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_elife.90486.html",
@@ -6595,7 +16039,87 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {
+"wikipedia": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Chan Zuckerberg Initiative",
+"Howard Hughes Medical Institute"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 12
+},
+{
+"label": "Facility",
+"count": 9
+},
+{
+"label": "Nonprofit",
+"count": 3
+},
+{
+"label": "Government",
+"count": 2
+},
+{
+"label": "Healthcare",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 8
+},
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "Germany",
+"count": 3
+},
+{
+"label": "China",
+"count": 2
+},
+{
+"label": "Switzerland",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "University of California, Berkeley",
+"count": 1
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 1
+},
+{
+"label": "Duke University",
+"count": 1
+},
+{
+"label": "University of Massachusetts Chan Medical School",
+"count": 1
+},
+{
+"label": "State Key Laboratory of Membrane Biology",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663993.html",
@@ -6646,7 +16170,74 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 8
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Italy",
+"count": 2
+},
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "Canada",
+"count": 1
+},
+{
+"label": "Portugal",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Oxford",
+"count": 1
+},
+{
+"label": "Saint Mary's University",
+"count": 1
+},
+{
+"label": "University of Milano-Bicocca",
+"count": 1
+},
+{
+"label": "Center for Global Development",
+"count": 1
+},
+{
+"label": "Danish Institute for International Studies",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.06.570341.html",
@@ -6696,7 +16287,78 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 13
+},
+{
+"label": "Facility",
+"count": 4
+},
+{
+"label": "Government",
+"count": 4
+},
+{
+"label": "Company",
+"count": 2
+},
+{
+"label": "Other",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 8
+},
+{
+"label": "Germany",
+"count": 4
+},
+{
+"label": "China",
+"count": 2
+},
+{
+"label": "Spain",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Chicago",
+"count": 1
+},
+{
+"label": "Universidad de Granada",
+"count": 1
+},
+{
+"label": "Justus-Liebig-Universität Gießen",
+"count": 1
+},
+{
+"label": "SUNY College of Optometry",
+"count": 1
+},
+{
+"label": "Stony Brook University",
+"count": 1
+}
+],
+"scite_supporting": 3,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_eLife.93659.html",
@@ -6743,7 +16405,50 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+},
+{
+"label": "Facility",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Cambridge",
+"count": 1
+},
+{
+"label": "MRC Laboratory of Molecular Biology",
+"count": 1
+},
+{
+"label": "Janelia Research Campus",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_EPE_AMP.html",
@@ -6783,7 +16488,66 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 9
+}
+],
+"countries": [
+{
+"label": "Italy",
+"count": 3
+},
+{
+"label": "Spain",
+"count": 2
+},
+{
+"label": "Indonesia",
+"count": 1
+},
+{
+"label": "France",
+"count": 1
+},
+{
+"label": "Czechia",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Salerno",
+"count": 2
+},
+{
+"label": "University of the Basque Country",
+"count": 2
+},
+{
+"label": "Sunan Kalijaga State Islamic University Yogyakarta",
+"count": 1
+},
+{
+"label": "Université Grenoble Alpes",
+"count": 1
+},
+{
+"label": "University of Hradec Králové",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664655.html",
@@ -6833,7 +16597,84 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 10
+},
+{
+"label": "Archive",
+"count": 6
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Funder",
+"count": 1
+},
+{
+"label": "Healthcare",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 7
+},
+{
+"label": "Poland",
+"count": 3
+},
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "Taiwan",
+"count": 1
+},
+{
+"label": "Bangladesh",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Field Museum of Natural History",
+"count": 2
+},
+{
+"label": "University of Warsaw",
+"count": 1
+},
+{
+"label": "Santa Clara University",
+"count": 1
+},
+{
+"label": "University of South Africa",
+"count": 0
+},
+{
+"label": "University of York",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665058.html",
@@ -6882,7 +16723,76 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Diputación Foral de Gipuzkoa"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 10
+},
+{
+"label": "Nonprofit",
+"count": 3
+},
+{
+"label": "Government",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "Spain",
+"count": 4
+},
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "Belgium",
+"count": 2
+},
+{
+"label": "Israel",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "University of the Basque Country",
+"count": 1
+},
+{
+"label": "London School of Economics and Political Science",
+"count": 1
+},
+{
+"label": "Diputación Foral de Gipuzkoa",
+"count": 1
+},
+{
+"label": "Universidad Casa Grande",
+"count": 1
+},
+{
+"label": "University of Haifa",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.4018_978-1-5225-2788-6.html",
@@ -6930,7 +16840,82 @@ window.STORIES_DATA = [
 "series_name": "Advances in medical diagnosis, treatment, and care (AMDTC) book series",
 "series_id": "https://openalex.org/S4210196384",
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 9
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "India",
+"count": 8
+},
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "Norway",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "New Zealand",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Victoria University of Wellington",
+"count": 1
+},
+{
+"label": "Patanjali Research Foundation",
+"count": 1
+},
+{
+"label": "Maharishi International University",
+"count": 1
+},
+{
+"label": "Indian Institute of Technology Madras",
+"count": 1
+},
+{
+"label": "Kavikulaguru Kalidas Sanskrit University",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_s41591-026-04206-y.html",
@@ -6980,7 +16965,69 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Bluesky"
-]
+],
+"platform_counts": {
+"bluesky": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 4,
+"funders": [
+"NIA NIH HHS",
+"U.S. Department of Health &amp; Human Services | NIH | National Institute on Aging",
+"U.S. Department of Health & Human Services | NIH | National Institute on Aging (U.S. National Institute on Aging)",
+"Alzheimer&apos;s Association",
+"Biogen"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 6
+},
+{
+"label": "Facility",
+"count": 4
+},
+{
+"label": "Healthcare",
+"count": 4
+},
+{
+"label": "Other",
+"count": 2
+},
+{
+"label": "Company",
+"count": 2
+}
+],
+"countries": [],
+"citing_institutions": [
+{
+"label": "University of Parma",
+"count": 1
+},
+{
+"label": "Institute of Nature Management",
+"count": 1
+},
+{
+"label": "University of California, San Francisco",
+"count": 1
+},
+{
+"label": "Dementia UK",
+"count": 1
+},
+{
+"label": "University of Southern California",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1073_pnas.2316466120.html",
@@ -7028,7 +17075,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Howard Hughes Medical Institute",
+"HHS | National Institutes of Health",
+"NIGMS NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 10
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Healthcare",
+"count": 3
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 3
+},
+{
+"label": "China",
+"count": 3
+},
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "Ireland",
+"count": 2
+},
+{
+"label": "Hong Kong",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "The Francis Crick Institute",
+"count": 2
+},
+{
+"label": "Ollscoil na Gaillimhe – University of Galway",
+"count": 2
+},
+{
+"label": "Shenzhen University Health Science Center",
+"count": 2
+},
+{
+"label": "University of Hong Kong",
+"count": 2
+},
+{
+"label": "University of Colorado Anschutz Medical Campus",
+"count": 1
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.09.570606.html",
@@ -7073,7 +17195,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1002_mrm.29349.html",
@@ -7122,7 +17256,84 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Rosetrees"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 10
+},
+{
+"label": "Facility",
+"count": 5
+},
+{
+"label": "Healthcare",
+"count": 5
+},
+{
+"label": "Government",
+"count": 3
+},
+{
+"label": "Nonprofit",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 5
+},
+{
+"label": "United States",
+"count": 5
+},
+{
+"label": "Finland",
+"count": 2
+},
+{
+"label": "Netherlands",
+"count": 1
+},
+{
+"label": "Italy",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Nottingham",
+"count": 1
+},
+{
+"label": "National Institute of Biomedical Imaging and Bioengineering",
+"count": 1
+},
+{
+"label": "New Jersey Institute of Technology",
+"count": 1
+},
+{
+"label": "UCLA Medical Center",
+"count": 0
+},
+{
+"label": "University of California, Los Angeles",
+"count": 0
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_nphys1170.html",
@@ -7172,7 +17383,80 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Bluesky",
 "Wikipedia"
-]
+],
+"platform_counts": {
+"bluesky": 1
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 9
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Funder",
+"count": 2
+},
+{
+"label": "Healthcare",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 5
+},
+{
+"label": "United States",
+"count": 4
+},
+{
+"label": "Netherlands",
+"count": 3
+},
+{
+"label": "Czechia",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "University of Science and Technology of China",
+"count": 5
+},
+{
+"label": "University of Amsterdam",
+"count": 3
+},
+{
+"label": "University of Detroit Mercy",
+"count": 3
+},
+{
+"label": "Czech Academy of Sciences",
+"count": 3
+},
+{
+"label": "Jiangxi Normal University",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1056_NEJMimc1109704.html",
@@ -7222,7 +17506,58 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Queen's Hospital",
+"count": 1
+},
+{
+"label": "North East London NHS Foundation Trust",
+"count": 1
+},
+{
+"label": "University College London",
+"count": 1
+},
+{
+"label": "Harvard University",
+"count": 1
+},
+{
+"label": "Brigham and Women's Hospital",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1073_pnas.2316964120.html",
@@ -7275,7 +17610,83 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Howard Hughes Medical Institute",
+"NIAID NIH HHS",
+"HHS | NIH | National Institute of Allergy and Infectious Diseases",
+"NIGMS NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 10
+},
+{
+"label": "Nonprofit",
+"count": 2
+},
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Government",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 7
+},
+{
+"label": "South Korea",
+"count": 2
+},
+{
+"label": "Japan",
+"count": 2
+},
+{
+"label": "China",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Duke University",
+"count": 5
+},
+{
+"label": "University of Pittsburgh",
+"count": 3
+},
+{
+"label": "Boston Children's Hospital",
+"count": 2
+},
+{
+"label": "Harvard University",
+"count": 2
+},
+{
+"label": "National Institute of Infectious Diseases",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.15.571964.html",
@@ -7322,7 +17733,84 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {
+"wikipedia": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 8
+},
+{
+"label": "Facility",
+"count": 7
+},
+{
+"label": "Government",
+"count": 4
+},
+{
+"label": "Healthcare",
+"count": 4
+},
+{
+"label": "Nonprofit",
+"count": 3
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 6
+},
+{
+"label": "France",
+"count": 3
+},
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "Portugal",
+"count": 1
+},
+{
+"label": "Spain",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Erasmus MC",
+"count": 0
+},
+{
+"label": "Delft University of Technology",
+"count": 0
+},
+{
+"label": "Centre National de la Recherche Scientifique",
+"count": 0
+},
+{
+"label": "Institut de la Vision",
+"count": 0
+},
+{
+"label": "Inserm",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.22.23300468.html",
@@ -7367,7 +17855,54 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of California, Merced",
+"count": 0
+},
+{
+"label": "Lawrence Berkeley National Laboratory",
+"count": 0
+},
+{
+"label": "University of California, Berkeley",
+"count": 0
+},
+{
+"label": "Joint Genome Institute",
+"count": 0
+},
+{
+"label": "Stanford University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1007_s00180-017-0762-y.html",
@@ -7416,7 +17951,78 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Stack Exchange"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 9
+},
+{
+"label": "Company",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "Italy",
+"count": 2
+},
+{
+"label": "Netherlands",
+"count": 2
+},
+{
+"label": "Spain",
+"count": 1
+},
+{
+"label": "Chile",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Groningen",
+"count": 2
+},
+{
+"label": "Birkbeck, University of London",
+"count": 1
+},
+{
+"label": "University College London",
+"count": 1
+},
+{
+"label": "University of Plymouth",
+"count": 1
+},
+{
+"label": "Università Cattolica del Sacro Cuore",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_s41556-025-01828-1.html",
@@ -7466,7 +18072,88 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NHGRI NIH HHS",
+"U.S. Department of Health & Human Services | NIH | National Human Genome Research Institute (NHGRI)",
+"U.S. Department of Health & Human Services | NIH | National Institute of Allergy and Infectious Diseases (NIAID)",
+"NIAID NIH HHS",
+"NIGMS NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 9
+},
+{
+"label": "Facility",
+"count": 4
+},
+{
+"label": "Nonprofit",
+"count": 2
+},
+{
+"label": "Healthcare",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 7
+},
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "Russia",
+"count": 1
+},
+{
+"label": "Spain",
+"count": 1
+},
+{
+"label": "SX",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Baylor College of Medicine",
+"count": 2
+},
+{
+"label": "Jawaharlal Nehru University",
+"count": 1
+},
+{
+"label": "New York University",
+"count": 1
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 0
+},
+{
+"label": "University of Massachusetts Chan Medical School",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_s41572-025-00674-7.html",
@@ -7526,7 +18213,84 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Bluesky"
-]
+],
+"platform_counts": {
+"bluesky": 1
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Healthcare",
+"count": 7
+},
+{
+"label": "Education",
+"count": 5
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Company",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 3
+},
+{
+"label": "Japan",
+"count": 1
+},
+{
+"label": "Italy",
+"count": 1
+},
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Cangzhou Central Hospital",
+"count": 1
+},
+{
+"label": "Minoh City Hospital",
+"count": 0
+},
+{
+"label": "Fukuoka Institute of Health and Environmental Sciences",
+"count": 0
+},
+{
+"label": "University College London",
+"count": 0
+},
+{
+"label": "Institute of Archaeology",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.5117_9789462989504.html",
@@ -7572,7 +18336,50 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 4
+}
+],
+"countries": [
+{
+"label": "Australia",
+"count": 2
+},
+{
+"label": "Israel",
+"count": 1
+},
+{
+"label": "Russia",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "RMIT University",
+"count": 2
+},
+{
+"label": "Hebrew University of Jerusalem",
+"count": 1
+},
+{
+"label": "Humanitarian Institute",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1128_aac.01193-23.html",
@@ -7620,7 +18427,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIAID NIH HHS",
+"Howard Hughes Medical Institute",
+"HHS | National Institutes of Health"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 7
+},
+{
+"label": "Healthcare",
+"count": 6
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "Brazil",
+"count": 2
+},
+{
+"label": "Portugal",
+"count": 2
+},
+{
+"label": "China",
+"count": 2
+},
+{
+"label": "RE",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Universidade de São Paulo",
+"count": 1
+},
+{
+"label": "University of Coimbra",
+"count": 1
+},
+{
+"label": "University Hospital Schleswig-Holstein",
+"count": 0
+},
+{
+"label": "German Center for Lung Research",
+"count": 0
+},
+{
+"label": "German Center for Infection Research",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7490_f1000research.1116751.1.html",
@@ -7668,7 +18550,82 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Blogs"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 5
+},
+{
+"label": "Company",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 2
+},
+{
+"label": "Healthcare",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "Israel",
+"count": 2
+},
+{
+"label": "Germany",
+"count": 1
+},
+{
+"label": "Netherlands",
+"count": 1
+},
+{
+"label": "Canada",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Taylor and Francis (United Kingdom)",
+"count": 2
+},
+{
+"label": "Clarivate (United States)",
+"count": 1
+},
+{
+"label": "Mount Saint Vincent University",
+"count": 1
+},
+{
+"label": "African Studies Centre",
+"count": 1
+},
+{
+"label": "Indiana University Bloomington",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663078.html",
@@ -7714,7 +18671,85 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Alexander von Humboldt Foundation",
+"European Perspectives for Public Administration (EPPA)"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 7
+},
+{
+"label": "Nonprofit",
+"count": 3
+},
+{
+"label": "Other",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Belgium",
+"count": 3
+},
+{
+"label": "Norway",
+"count": 2
+},
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "Russia",
+"count": 1
+},
+{
+"label": "Hungary",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "European Corporate Governance Institute",
+"count": 2
+},
+{
+"label": "KU Leuven",
+"count": 1
+},
+{
+"label": "University of Oslo",
+"count": 1
+},
+{
+"label": "University of Bergen",
+"count": 0
+},
+{
+"label": "University of California, Berkeley",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3726_b21634.html",
@@ -7756,7 +18791,70 @@ window.STORIES_DATA = [
 "series_name": "Communication, Sport, and Society",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 8
+},
+{
+"label": "Healthcare",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Australia",
+"count": 2
+},
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "Italy",
+"count": 2
+},
+{
+"label": "Belgium",
+"count": 1
+},
+{
+"label": "Russia",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Deakin University",
+"count": 1
+},
+{
+"label": "Herzen University",
+"count": 1
+},
+{
+"label": "Massey University",
+"count": 1
+},
+{
+"label": "Florida State University",
+"count": 1
+},
+{
+"label": "Ghent University Hospital",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3726_b21769.html",
@@ -7799,7 +18897,66 @@ window.STORIES_DATA = [
 "series_name": "Telecollaborative learning and Virtual Exchange in Education",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 7
+}
+],
+"countries": [
+{
+"label": "Germany",
+"count": 3
+},
+{
+"label": "Spain",
+"count": 2
+},
+{
+"label": "Turkey",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "UZ",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Nukus State Pedagogical Institute named after Ajiniyaz",
+"count": 1
+},
+{
+"label": "Universidad de León",
+"count": 1
+},
+{
+"label": "RheinMain University of Applied Sciences",
+"count": 1
+},
+{
+"label": "University of Clermont Auvergne",
+"count": 1
+},
+{
+"label": "Bartin University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_s41556-025-01834-3.html",
@@ -7846,7 +19003,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 7
+},
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "China",
+"count": 2
+},
+{
+"label": "Canada",
+"count": 2
+},
+{
+"label": "India",
+"count": 1
+},
+{
+"label": "France",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Indian Institute of Science Education and Research Pune",
+"count": 0
+},
+{
+"label": "University of Chicago",
+"count": 0
+},
+{
+"label": "Shantou University Medical College",
+"count": 0
+},
+{
+"label": "Shantou University",
+"count": 0
+},
+{
+"label": "University of Wrocław",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_s42003-023-05579-3.html",
@@ -7895,7 +19127,79 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIGMS NIH HHS",
+"U.S. Department of Health &amp; Human Services | National Institutes of Health",
+"National Science Foundation",
+"Howard Hughes Medical Institute"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 7
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Healthcare",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 3
+},
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "China",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "Italy",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Boston University",
+"count": 2
+},
+{
+"label": "Uniformed Services University of the Health Sciences",
+"count": 1
+},
+{
+"label": "Massachusetts Institute of Technology",
+"count": 1
+},
+{
+"label": "Friedrich-Alexander-Universität Erlangen-Nürnberg",
+"count": 1
+},
+{
+"label": "Zhejiang University-University of Edinburgh Institute",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.30.572255.html",
@@ -7942,7 +19246,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3726_b22161.html",
@@ -7986,7 +19302,66 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 5
+}
+],
+"countries": [
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "Romania",
+"count": 1
+},
+{
+"label": "Italy",
+"count": 1
+},
+{
+"label": "Greece",
+"count": 1
+},
+{
+"label": "Norway",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Universität Hamburg",
+"count": 2
+},
+{
+"label": "University of Thessaly",
+"count": 1
+},
+{
+"label": "Sapientia Hungarian University of Transylvania",
+"count": 0
+},
+{
+"label": "University of Padua",
+"count": 0
+},
+{
+"label": "Mid Sweden University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_s41592-025-02965-z.html",
@@ -8031,7 +19406,59 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NINDS NIH HHS",
+"U.S. Department of Health &amp; Human Services | National Institutes of Health",
+"Boehringer Ingelheim Stiftung",
+"U.S. Department of Health & Human Services | National Institutes of Health (NIH)",
+"Allen Intitute, HHMI"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 5
+},
+{
+"label": "Facility",
+"count": 4
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [],
+"citing_institutions": [
+{
+"label": "University of Illinois Chicago",
+"count": 1
+},
+{
+"label": "University of California, Berkeley",
+"count": 0
+},
+{
+"label": "Lawrence Berkeley National Laboratory",
+"count": 0
+},
+{
+"label": "Saarland University",
+"count": 0
+},
+{
+"label": "Institute of Plant Biology and Biotechnology",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1093_nar_gkad1207.html",
@@ -8082,7 +19509,84 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Life Sciences Research Foundation",
+"NSF",
+"Howard Hughes Medical Institute Gilliam Fellowship",
+"Howard Hughes Medical Institute",
+"Merck Fellow of the Jane Coffin Childs Fund for Medical Research"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 5
+},
+{
+"label": "Facility",
+"count": 4
+},
+{
+"label": "Funder",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "India",
+"count": 3
+},
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "Russia",
+"count": 1
+},
+{
+"label": "South Korea",
+"count": 1
+},
+{
+"label": "China",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Indian Institute of Science Bangalore",
+"count": 2
+},
+{
+"label": "Institute of Chemical Biology and Fundamental Medicine",
+"count": 1
+},
+{
+"label": "Siberian Branch of the Russian Academy of Sciences",
+"count": 1
+},
+{
+"label": "National Institute of Diabetes and Digestive and Kidney Diseases",
+"count": 1
+},
+{
+"label": "Dong-A University",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.07.570640.html",
@@ -8129,7 +19633,80 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Hypothesis"
-]
+],
+"platform_counts": {
+"hypothesis": 6
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 5
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Healthcare",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Spain",
+"count": 2
+},
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "Israel",
+"count": 1
+},
+{
+"label": "France",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Minnesota",
+"count": 1
+},
+{
+"label": "Institute for Research in Biomedicine",
+"count": 0
+},
+{
+"label": "Universitat Pompeu Fabra",
+"count": 0
+},
+{
+"label": "Max Planck Graduate Center",
+"count": 0
+},
+{
+"label": "Ludwig-Maximilians-Universität München",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.29.573681.html",
@@ -8176,7 +19753,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 4
+},
+{
+"label": "Healthcare",
+"count": 4
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Other",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "United Arab Emirates",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "Australia",
+"count": 1
+},
+{
+"label": "China",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Moffitt Cancer Center",
+"count": 1
+},
+{
+"label": "Laiko General Hospital of Athens",
+"count": 1
+},
+{
+"label": "Chinese Academy of Medical Sciences & Peking Union Medical College",
+"count": 0
+},
+{
+"label": "Institute of Hematology & Blood Diseases Hospital",
+"count": 0
+},
+{
+"label": "Illinois College",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1186_s12864-023-09832-1.html",
@@ -8226,7 +19878,67 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NHGRI NIH HHS",
+"National Human Genome Research Institute",
+"Brotman Baty Institute for Precision Medicine",
+"4DN Centers for Data Integration, Modeling and Visualization",
+"National Human Genome Research Institute,"
+],
+"sectors": [
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Education",
+"count": 2
+},
+{
+"label": "Funder",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+},
+{
+"label": "Healthcare",
+"count": 1
+}
+],
+"countries": [],
+"citing_institutions": [
+{
+"label": "Shenyang Agricultural University",
+"count": 1
+},
+{
+"label": "Novo Nordisk Foundation",
+"count": 0
+},
+{
+"label": "Leiden University Medical Center",
+"count": 0
+},
+{
+"label": "University of California, San Francisco",
+"count": 0
+},
+{
+"label": "Chan Zuckerberg Initiative (United States)",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.1007_978-3-031-38294-9.html",
@@ -8277,7 +19989,72 @@ window.STORIES_DATA = [
 "belongs_to_series": true,
 "mention_platforms": [
 "Hypothesis"
-]
+],
+"platform_counts": {
+"hypothesis": 2
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 4
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 2
+},
+{
+"label": "Russia",
+"count": 2
+},
+{
+"label": "Spain",
+"count": 1
+},
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Institute of Cytology and Genetics",
+"count": 2
+},
+{
+"label": "University of Castilla-La Mancha",
+"count": 1
+},
+{
+"label": "University of Nebraska–Lincoln",
+"count": 1
+},
+{
+"label": "Dalian University of Technology",
+"count": 0
+},
+{
+"label": "Dalian University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461662514.html",
@@ -8324,7 +20101,64 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"European Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Croatia",
+"count": 1
+},
+{
+"label": "Spain",
+"count": 1
+},
+{
+"label": "Brazil",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Universidade de São Paulo",
+"count": 1
+},
+{
+"label": "Sociedad Española de Cuidados Intensivos Pediátricos",
+"count": 0
+},
+{
+"label": "Escola Superior de Música de Catalunya",
+"count": 0
+},
+{
+"label": "Pliva (Croatia)",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461662521.html",
@@ -8370,7 +20204,56 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"European Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 4
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "Poland",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Princeton University",
+"count": 1
+},
+{
+"label": "University of Bristol",
+"count": 1
+},
+{
+"label": "Nicolaus Copernicus University",
+"count": 1
+},
+{
+"label": "Marymount University",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663139.html",
@@ -8416,7 +20299,72 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 4
+},
+{
+"label": "Other",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Finland",
+"count": 1
+},
+{
+"label": "France",
+"count": 1
+},
+{
+"label": "Australia",
+"count": 1
+},
+{
+"label": "Belgium",
+"count": 1
+},
+{
+"label": "Canada",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of the Sunshine Coast",
+"count": 1
+},
+{
+"label": "Niagara University",
+"count": 1
+},
+{
+"label": "University of Oulu",
+"count": 0
+},
+{
+"label": "NEOMA Business School",
+"count": 0
+},
+{
+"label": "Athabasca University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663634.html",
@@ -8458,7 +20406,74 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 5
+},
+{
+"label": "Nonprofit",
+"count": 2
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "ET",
+"count": 3
+},
+{
+"label": "Belgium",
+"count": 2
+},
+{
+"label": "Hungary",
+"count": 1
+},
+{
+"label": "NE",
+"count": 1
+},
+{
+"label": "GM",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "European Corporate Governance Institute",
+"count": 1
+},
+{
+"label": "Haramaya University",
+"count": 1
+},
+{
+"label": "Jimma University",
+"count": 1
+},
+{
+"label": "University of Gondar",
+"count": 1
+},
+{
+"label": "Université Abdou Moumouni",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.5117_9789462983663.html",
@@ -8510,7 +20525,54 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Oregon",
+"count": 0
+},
+{
+"label": "Pomona College",
+"count": 0
+},
+{
+"label": "Royal Shakespeare Company (United Kingdom)",
+"count": 0
+},
+{
+"label": "University of Birmingham",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1016_j.cell.2025.11.030.html",
@@ -8558,7 +20620,72 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NHLBI NIH HHS",
+"Chan Zuckerberg Initiative",
+"National Institute of Mental Health",
+"National Cancer Institute",
+"NIGMS NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+},
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 3
+},
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Scripps Research Institute",
+"count": 1
+},
+{
+"label": "Shenyang Pharmaceutical University",
+"count": 0
+},
+{
+"label": "Northwestern Polytechnical University",
+"count": 0
+},
+{
+"label": "Shanghai Innovative Research Center of Traditional Chinese Medicine",
+"count": 0
+},
+{
+"label": "Anhui University of Traditional Chinese Medicine",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_s41467-025-67869-0.html",
@@ -8603,7 +20730,55 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NSF | BIO | Division of Molecular and Cellular Biosciences",
+"NCI NIH HHS",
+"U.S. Department of Health &amp; Human Services | NIH | National Cancer Institute",
+"U.S. Department of Health & Human Services | NIH | National Institute of General Medical Sciences (NIGMS)",
+"U.S. Department of Health &amp; Human Services | NIH | National Institute of General Medical Sciences"
+],
+"sectors": [
+{
+"label": "Healthcare",
+"count": 5
+},
+{
+"label": "Education",
+"count": 4
+}
+],
+"countries": [],
+"citing_institutions": [
+{
+"label": "The University of Texas MD Anderson Cancer Center",
+"count": 1
+},
+{
+"label": "Hainan Maternal and Child Health Hospital",
+"count": 0
+},
+{
+"label": "Capital Medical University",
+"count": 0
+},
+{
+"label": "Central South University",
+"count": 0
+},
+{
+"label": "Hainan Medical University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.11.30.569486.html",
@@ -8650,7 +20825,42 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Healthcare",
+"count": 1
+},
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of South China",
+"count": 1
+},
+{
+"label": "Changsha Central Hospital",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1111_oik.10722.html",
@@ -8701,7 +20911,80 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Blogs"
-]
+],
+"platform_counts": {
+"blog": 1
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 5
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Government",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 3
+},
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "Canada",
+"count": 2
+},
+{
+"label": "Spain",
+"count": 1
+},
+{
+"label": "France",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Calgary",
+"count": 1
+},
+{
+"label": "University of South Florida",
+"count": 1
+},
+{
+"label": "Bielefeld University",
+"count": 0
+},
+{
+"label": "Friedrich Schiller University Jena",
+"count": 0
+},
+{
+"label": "University of Münster",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1136_bmj.a186.html",
@@ -8746,7 +21029,74 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 4
+},
+{
+"label": "Healthcare",
+"count": 1
+},
+{
+"label": "Funder",
+"count": 1
+},
+{
+"label": "Other",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 3
+},
+{
+"label": "Switzerland",
+"count": 1
+},
+{
+"label": "Italy",
+"count": 1
+},
+{
+"label": "India",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Brown University",
+"count": 0
+},
+{
+"label": "University of Basel",
+"count": 0
+},
+{
+"label": "University of Alabama",
+"count": 0
+},
+{
+"label": "University of North Carolina at Charlotte",
+"count": 0
+},
+{
+"label": "ING Direct",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.3389_feduc.2023.1279921.html",
@@ -8804,7 +21154,80 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Howard Hughes Medical Institute"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 4
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Company",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 3
+},
+{
+"label": "Mexico",
+"count": 2
+},
+{
+"label": "Argentina",
+"count": 2
+},
+{
+"label": "Nigeria",
+"count": 2
+},
+{
+"label": "Philippines",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Perpetual Help System DALTA",
+"count": 1
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 1
+},
+{
+"label": "University of Pittsburgh",
+"count": 1
+},
+{
+"label": "Purdue University West Lafayette",
+"count": 0
+},
+{
+"label": "Brigham Young University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.3726_jts012024.04.html",
@@ -8851,7 +21274,58 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Germany",
+"count": 1
+},
+{
+"label": "Austria",
+"count": 1
+},
+{
+"label": "China",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "TH Köln - University of Applied Sciences",
+"count": 1
+},
+{
+"label": "Austrian Academy of Sciences",
+"count": 1
+},
+{
+"label": "Changzhou Vocational Institute of Light Industry",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_eLife.90049.html",
@@ -8898,7 +21372,46 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "China",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Georgetown University",
+"count": 1
+},
+{
+"label": "Renmin University of China",
+"count": 0
+},
+{
+"label": "University of Virginia",
+"count": 0
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461662507.html",
@@ -8939,7 +21452,44 @@ window.STORIES_DATA = [
 "series_name": "MODID-19febebe56a:Leuven University Press",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"European Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "Portugal",
+"count": 1
+},
+{
+"label": "Brazil",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Aveiro",
+"count": 1
+},
+{
+"label": "Universidade Federal de Minas Gerais",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461662835.html",
@@ -8985,7 +21535,62 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 5
+}
+],
+"countries": [
+{
+"label": "Italy",
+"count": 2
+},
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "Colombia",
+"count": 1
+},
+{
+"label": "Poland",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Catania",
+"count": 1
+},
+{
+"label": "University of Arkansas at Fayetteville",
+"count": 1
+},
+{
+"label": "Free University of Bozen-Bolzano",
+"count": 1
+},
+{
+"label": "Universidad de Los Andes",
+"count": 1
+},
+{
+"label": "University of Silesia in Katowice",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663443.html",
@@ -9034,7 +21639,78 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Research Foundation Flanders (FWO)",
+"Erasmus University Rotterdam"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 4
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Portugal",
+"count": 1
+},
+{
+"label": "Belgium",
+"count": 1
+},
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "Czechia",
+"count": 1
+},
+{
+"label": "Switzerland",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "California State University, Long Beach",
+"count": 1
+},
+{
+"label": "University of Milano-Bicocca",
+"count": 1
+},
+{
+"label": "University of Lisbon",
+"count": 0
+},
+{
+"label": "KU Leuven",
+"count": 0
+},
+{
+"label": "University of Basel",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664914.html",
@@ -9080,7 +21756,64 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 5
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "Belgium",
+"count": 2
+},
+{
+"label": "RW",
+"count": 1
+},
+{
+"label": "Mexico",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "KU Leuven",
+"count": 2
+},
+{
+"label": "University of Birmingham",
+"count": 1
+},
+{
+"label": "University of St Andrews",
+"count": 0
+},
+{
+"label": "University of Rwanda",
+"count": 0
+},
+{
+"label": "Universidad de Londres",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665218.html",
@@ -9128,7 +21861,44 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Knowledge Unlatched"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "Russia",
+"count": 1
+},
+{
+"label": "South Africa",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Yaroslav-the-Wise Novgorod State University",
+"count": 1
+},
+{
+"label": "North-West University",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_GCME_KAD.html",
@@ -9178,7 +21948,58 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 4
+}
+],
+"countries": [
+{
+"label": "Poland",
+"count": 1
+},
+{
+"label": "Sweden",
+"count": 1
+},
+{
+"label": "Belgium",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Warsaw",
+"count": 1
+},
+{
+"label": "Umeå University",
+"count": 1
+},
+{
+"label": "Vrije Universiteit Brussel",
+"count": 1
+},
+{
+"label": "King's College London",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1084_jem.20251584.html",
@@ -9226,7 +22047,80 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Bill and Melinda Gates Foundation",
+"National Institutes of Health",
+"NIH HHS",
+"NIAID NIH HHS",
+"NINDS NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 4
+},
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 2
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 3
+},
+{
+"label": "Canada",
+"count": 2
+},
+{
+"label": "Peru",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Rockefeller University",
+"count": 1
+},
+{
+"label": "Centre Hospitalier de l’Université de Montréal",
+"count": 0
+},
+{
+"label": "Université de Montréal",
+"count": 0
+},
+{
+"label": "National University of San Marcos",
+"count": 0
+},
+{
+"label": "Jackson Laboratory",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.05.570183.html",
@@ -9271,7 +22165,82 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 4
+},
+{
+"label": "Government",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+},
+{
+"label": "Healthcare",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "China",
+"count": 1
+},
+{
+"label": "India",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "Indonesia",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Huzhou University",
+"count": 1
+},
+{
+"label": "All India Institute of Medical Sciences",
+"count": 0
+},
+{
+"label": "Department of Biotechnology",
+"count": 0
+},
+{
+"label": "University of California, Berkeley",
+"count": 0
+},
+{
+"label": "University of California, San Francisco",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.08.570796.html",
@@ -9321,7 +22290,78 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Hypothesis"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Facility",
+"count": 4
+},
+{
+"label": "Education",
+"count": 4
+},
+{
+"label": "Company",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 4
+},
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "Austria",
+"count": 2
+},
+{
+"label": "Ukraine",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Howard Hughes Medical Institute",
+"count": 1
+},
+{
+"label": "University of Massachusetts Chan Medical School",
+"count": 1
+},
+{
+"label": "Massachusetts Institute of Technology",
+"count": 1
+},
+{
+"label": "University of Edinburgh",
+"count": 0
+},
+{
+"label": "University of Wisconsin–Oshkosh",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_elife.89373.3.html",
@@ -9368,7 +22408,62 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Austria",
+"count": 1
+},
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Institute of Science and Technology Austria",
+"count": 1
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 0
+},
+{
+"label": "Carnegie Institution for Science",
+"count": 0
+},
+{
+"label": "National Heart Lung and Blood Institute",
+"count": 0
+},
+{
+"label": "Johns Hopkins University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461662590.html",
@@ -9413,7 +22508,56 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Koning Boudewijnstichting"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+},
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Belgium",
+"count": 4
+}
+],
+"citing_institutions": [
+{
+"label": "KU Leuven",
+"count": 2
+},
+{
+"label": "Ghent University Hospital",
+"count": 2
+},
+{
+"label": "Ghent University",
+"count": 0
+},
+{
+"label": "Institut National de Criminalistique et de Criminologie",
+"count": 0
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461662811.html",
@@ -9458,7 +22602,81 @@ window.STORIES_DATA = [
 "series_name": "Images of immigrants and refugees in Western Europe. Media representations, public opinion, and refugees’ experiences, Chapt. 2, (21-36)",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Belgian Federal Science Policy Office"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Belgium",
+"count": 1
+},
+{
+"label": "Germany",
+"count": 1
+},
+{
+"label": "Bulgaria",
+"count": 1
+},
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "Turkey",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "KU Leuven",
+"count": 1
+},
+{
+"label": "William Jewell College",
+"count": 1
+},
+{
+"label": "Anadolu University",
+"count": 1
+},
+{
+"label": "Institut für Arbeitsmarkt und Berufsforschung",
+"count": 0
+},
+{
+"label": "Federal Office for Migration and Refugees",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663092.html",
@@ -9501,7 +22719,84 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 4
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Government",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+},
+{
+"label": "Other",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "France",
+"count": 2
+},
+{
+"label": "Mexico",
+"count": 1
+},
+{
+"label": "Brazil",
+"count": 1
+},
+{
+"label": "CI",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Université de Rennes",
+"count": 0
+},
+{
+"label": "Arènes: politique, santé publique, environnement, médias",
+"count": 0
+},
+{
+"label": "African Development Bank Group",
+"count": 0
+},
+{
+"label": "Dalhousie University",
+"count": 0
+},
+{
+"label": "Mexican Institute of Petroleum",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663542.html",
@@ -9552,7 +22847,46 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {
+"wikipedia": 2
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "Belgium",
+"count": 1
+},
+{
+"label": "Ukraine",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "KU Leuven",
+"count": 1
+},
+{
+"label": "National University of Water and Environmental Engineering",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664280.html",
@@ -9603,7 +22937,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664778.html",
@@ -9654,7 +23000,53 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"European Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+}
+],
+"countries": [
+{
+"label": "Israel",
+"count": 1
+},
+{
+"label": "Hungary",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Tel Aviv University",
+"count": 1
+},
+{
+"label": "University of Szeged",
+"count": 1
+},
+{
+"label": "University of Manchester",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665072.html",
@@ -9705,7 +23097,62 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"be.Source KU Leuven Chair  ‘Empowerment of underprivileged elderly’",
+"HIVA – KU Leuven"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 4
+}
+],
+"countries": [
+{
+"label": "Belgium",
+"count": 3
+},
+{
+"label": "Netherlands",
+"count": 2
+},
+{
+"label": "Italy",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "KU Leuven",
+"count": 1
+},
+{
+"label": "University of Bologna",
+"count": 1
+},
+{
+"label": "Tilburg University",
+"count": 1
+},
+{
+"label": "HAN University of Applied Sciences",
+"count": 1
+},
+{
+"label": "Thomas More Kempen",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "datastory_10.5281_zenodo.3727291.html",
@@ -9752,7 +23199,66 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 2
+},
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Canada",
+"count": 2
+},
+{
+"label": "China",
+"count": 1
+},
+{
+"label": "Australia",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Mental Health Research Canada",
+"count": 2
+},
+{
+"label": "Holland Bloorview Kids Rehabilitation Hospital",
+"count": 0
+},
+{
+"label": "Guangzhou Women and Children Medical Center",
+"count": 0
+},
+{
+"label": "The University of Queensland",
+"count": 0
+},
+{
+"label": "Guangzhou College of Commerce",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_s41597-023-02782-z.html",
@@ -9807,7 +23313,71 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"National Research Foundation of Korea",
+"Korea Institute of Marine Science and Technology promotion",
+"Howard Hughes Medical Institute",
+"Wellcome Trust"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "South Korea",
+"count": 2
+},
+{
+"label": "Japan",
+"count": 1
+},
+{
+"label": "China",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Jeju National University",
+"count": 2
+},
+{
+"label": "Kyoto University",
+"count": 1
+},
+{
+"label": "Kyushu University",
+"count": 1
+},
+{
+"label": "Shanghai Institute for Science of Science",
+"count": 1
+},
+{
+"label": "National Institute for Basic Biology",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2024.01.15.575636.html",
@@ -9864,7 +23434,62 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Hypothesis"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 3
+},
+{
+"label": "France",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of California San Diego",
+"count": 2
+},
+{
+"label": "Michael J. Fox Foundation",
+"count": 1
+},
+{
+"label": "Research Network (United States)",
+"count": 1
+},
+{
+"label": "Align Technology (United States)",
+"count": 1
+},
+{
+"label": "Short and Associates (United States)",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_pdb.prot4664.html",
@@ -9909,7 +23534,58 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 3
+},
+{
+"label": "Japan",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Shinshu University",
+"count": 1
+},
+{
+"label": "Stanford University",
+"count": 1
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 1
+},
+{
+"label": "Icahn School of Medicine at Mount Sinai",
+"count": 1
+},
+{
+"label": "University of Massachusetts Boston",
+"count": 1
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1371_journal.ppat.1011861.html",
@@ -9963,7 +23639,72 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"FIC NIH HHS",
+"Howard Hughes Medical Institute",
+"NCI NIH HHS",
+"National Institute of Allergy and Infectious Diseases",
+"NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+},
+{
+"label": "Healthcare",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "Israel",
+"count": 1
+},
+{
+"label": "South Africa",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Tshwane University of Technology",
+"count": 0
+},
+{
+"label": "University of the Witwatersrand",
+"count": 0
+},
+{
+"label": "University of Pretoria",
+"count": 0
+},
+{
+"label": "Princeton University",
+"count": 0
+},
+{
+"label": "Georgia State University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_eLife.100947.html",
@@ -10008,7 +23749,86 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Spanish State Research Agency",
+"Spanish National Plan for Scientific and Technical Research and Innovation",
+"Generalitat Valenciana"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Government",
+"count": 1
+},
+{
+"label": "Other",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 3
+},
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "SS",
+"count": 1
+},
+{
+"label": "Switzerland",
+"count": 1
+},
+{
+"label": "Germany",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of California, Riverside",
+"count": 1
+},
+{
+"label": "Princeton University",
+"count": 0
+},
+{
+"label": "Harvard University",
+"count": 0
+},
+{
+"label": "Allen Institute for Brain Science",
+"count": 0
+},
+{
+"label": "University of Nevada, Reno",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461661883.html",
@@ -10049,7 +23869,36 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"European Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Norway",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Agder",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461662538.html",
@@ -10090,7 +23939,48 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"European Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "Canada",
+"count": 1
+},
+{
+"label": "Finland",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of the Arts Helsinki",
+"count": 1
+},
+{
+"label": "Université du Québec à Montréal",
+"count": 0
+},
+{
+"label": "Université de Sherbrooke",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663184.html",
@@ -10130,7 +24020,23 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Humboldt-Universität zu Berlin",
+"CARMAH"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663801.html",
@@ -10181,7 +24087,64 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Germany",
+"count": 1
+},
+{
+"label": "Denmark",
+"count": 1
+},
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Twitter (United States)",
+"count": 1
+},
+{
+"label": "Aarhus University",
+"count": 0
+},
+{
+"label": "Aalborg University",
+"count": 0
+},
+{
+"label": "Technical University of Munich",
+"count": 0
+},
+{
+"label": "Technische Universität Darmstadt",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663962.html",
@@ -10229,7 +24192,54 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "Belgium",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Académie Royale des Beaux-Arts",
+"count": 1
+},
+{
+"label": "Manchester Metropolitan University",
+"count": 0
+},
+{
+"label": "Film Independent",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664082.html",
@@ -10278,7 +24288,61 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Research Foundation Flanders (FWO)"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+}
+],
+"countries": [
+{
+"label": "Turkey",
+"count": 1
+},
+{
+"label": "Belgium",
+"count": 1
+},
+{
+"label": "Finland",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "KU Leuven",
+"count": 1
+},
+{
+"label": "Istinye University",
+"count": 0
+},
+{
+"label": "Yaşar University",
+"count": 0
+},
+{
+"label": "Åbo Akademi University",
+"count": 0
+},
+{
+"label": "University of Helsinki",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664112.html",
@@ -10327,7 +24391,53 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"CETRA"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+}
+],
+"countries": [
+{
+"label": "Switzerland",
+"count": 1
+},
+{
+"label": "China",
+"count": 1
+},
+{
+"label": "Belgium",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Geneva",
+"count": 1
+},
+{
+"label": "Southwest University of Political Science & Law",
+"count": 1
+},
+{
+"label": "University of Liège",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664693.html",
@@ -10373,7 +24483,46 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Humboldt-Universität zu Berlin",
+"CARMAH"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Germany",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Berlin-Brandenburg Academy of Sciences and Humanities",
+"count": 1
+},
+{
+"label": "Max Planck Institute for the History of Science",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665249.html",
@@ -10422,7 +24571,53 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Belgian Federal Science Policy Office"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "Belgium",
+"count": 1
+},
+{
+"label": "Netherlands",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Glasgow",
+"count": 1
+},
+{
+"label": "Tilburg University",
+"count": 0
+},
+{
+"label": "Université Libre de Bruxelles",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3726_b11422.html",
@@ -10468,7 +24663,58 @@ window.STORIES_DATA = [
 "series_name": "Travail et Société / Work and Society",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "Spain",
+"count": 2
+},
+{
+"label": "Finland",
+"count": 1
+},
+{
+"label": "Brazil",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Universidad Complutense de Madrid",
+"count": 1
+},
+{
+"label": "Tampere University",
+"count": 0
+},
+{
+"label": "Tampere University",
+"count": 0
+},
+{
+"label": "Universidade de São Paulo",
+"count": 0
+},
+{
+"label": "Universidad de La Laguna",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "datastory_10.5061_dryad.585t4.html",
@@ -10515,7 +24761,74 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Funder",
+"count": 1
+},
+{
+"label": "Archive",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "Costa Rica",
+"count": 1
+},
+{
+"label": "Mexico",
+"count": 1
+},
+{
+"label": "Argentina",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Universidad de Costa Rica",
+"count": 1
+},
+{
+"label": "Rocky Mountain Biological Laboratory",
+"count": 0
+},
+{
+"label": "Santa Fe Institute",
+"count": 0
+},
+{
+"label": "University of California, Berkeley",
+"count": 0
+},
+{
+"label": "Universidad Nacional Autónoma de México",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1007_s11999.0000000000000172.html",
@@ -10562,7 +24875,42 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": true,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Massachusetts General Hospital",
+"count": 2
+},
+{
+"label": "Harvard University",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1093_jxb_erad431.html",
@@ -10611,7 +24959,59 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIGMS NIH HHS",
+"NIH HHS",
+"Howard Hughes Medical Institute",
+"National Institutes of Health"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "Czechia",
+"count": 1
+},
+{
+"label": "Poland",
+"count": 1
+},
+{
+"label": "Austria",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Palacký University Olomouc",
+"count": 1
+},
+{
+"label": "University of Agriculture in Krakow",
+"count": 1
+},
+{
+"label": "University of Vienna",
+"count": 1
+},
+{
+"label": "Medical University of Lublin",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2023.12.06.23299623.html",
@@ -10658,7 +25058,52 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Swiss National Science Foundation"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Singapore",
+"count": 1
+},
+{
+"label": "Canada",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Duke-NUS Medical School",
+"count": 1
+},
+{
+"label": "McGill University",
+"count": 0
+},
+{
+"label": "McGill Genome Centre",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.11116_9789461664419.html",
@@ -10708,7 +25153,46 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "Italy",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "University of Florence",
+"count": 2
+},
+{
+"label": "Institute of Geosciences and Earth Resources",
+"count": 2
+},
+{
+"label": "Ca' Foscari University of Venice",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.36591_se-d-4602-15.html",
@@ -10755,7 +25239,87 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIH HHS",
+"NIDDK NIH HHS",
+"NIMH NIH HHS",
+"NIDA NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+},
+{
+"label": "Healthcare",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Funder",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Switzerland",
+"count": 1
+},
+{
+"label": "Germany",
+"count": 1
+},
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "Italy",
+"count": 1
+},
+{
+"label": "Australia",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Radboud University Medical Center",
+"count": 1
+},
+{
+"label": "Torrens University Australia",
+"count": 1
+},
+{
+"label": "Finland University",
+"count": 1
+},
+{
+"label": "University Medical Center",
+"count": 1
+},
+{
+"label": "Berlin Institute of Health at Charité - Universitätsmedizin Berlin",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.64898_2025.12.30.696949.html",
@@ -10802,7 +25366,80 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {
+"wikipedia": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Czechia",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "Austria",
+"count": 1
+},
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "China",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "State Key Laboratory of Cryptology",
+"count": 1
+},
+{
+"label": "AITHYRA GmbH- Research Institute for Biomedical Artificial Intelligence (Austria)",
+"count": 0
+},
+{
+"label": "Voith (United States)",
+"count": 0
+},
+{
+"label": "University of Oxford",
+"count": 0
+},
+{
+"label": "PRO-BIO (Czechia)",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461662880.html",
@@ -10847,7 +25484,52 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "Belgium",
+"count": 2
+},
+{
+"label": "Switzerland",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Hasselt University",
+"count": 1
+},
+{
+"label": "LUCA School of Arts",
+"count": 0
+},
+{
+"label": "ETH Zurich",
+"count": 0
+},
+{
+"label": "KU Leuven",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663610.html",
@@ -10891,7 +25573,36 @@ window.STORIES_DATA = [
 "series_name": "ISBN:978-94-6270-255-4",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "South Africa",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of South Africa",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663900.html",
@@ -10940,7 +25651,56 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "TZ",
+"count": 1
+},
+{
+"label": "Malaysia",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Taylor's University",
+"count": 0
+},
+{
+"label": "University of Central Lancashire",
+"count": 0
+},
+{
+"label": "Institute of Social Work",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664174.html",
@@ -10986,7 +25746,74 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+},
+{
+"label": "Healthcare",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Greece",
+"count": 1
+},
+{
+"label": "TN",
+"count": 1
+},
+{
+"label": "France",
+"count": 1
+},
+{
+"label": "Lebanon",
+"count": 1
+},
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "National and Kapodistrian University of Athens",
+"count": 0
+},
+{
+"label": "Agricultural University of Athens",
+"count": 0
+},
+{
+"label": "Future University in Egypt",
+"count": 0
+},
+{
+"label": "Alrafidain University College",
+"count": 0
+},
+{
+"label": "Lebanese International University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664389.html",
@@ -11032,7 +25859,38 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Fondation Universitaire de Belgique",
+"University of Antwerp"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Portugal",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Minho",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664419.html",
@@ -11085,7 +25943,50 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {
+"wikipedia": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"European Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+},
+{
+"label": "Facility",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "Italy",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Ca' Foscari University of Venice",
+"count": 1
+},
+{
+"label": "University of Florence",
+"count": 1
+},
+{
+"label": "Institute of Geosciences and Earth Resources",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664556.html",
@@ -11136,7 +26037,44 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "Italy",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Politecnico di Milano",
+"count": 1
+},
+{
+"label": "Northumbria University",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664679.html",
@@ -11184,7 +26122,60 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"VLIR-UOS (Belgium)",
+"Ambo University",
+"Addis Ababa University",
+"Ethiopian Public Administration Association"
+],
+"sectors": [
+{
+"label": "Nonprofit",
+"count": 2
+},
+{
+"label": "Healthcare",
+"count": 1
+},
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Belgium",
+"count": 2
+},
+{
+"label": "ET",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "European Corporate Governance Institute",
+"count": 1
+},
+{
+"label": "Ethiopian Public Health Association",
+"count": 0
+},
+{
+"label": "KU Leuven",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664884.html",
@@ -11233,7 +26224,37 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"European Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of North Texas",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665140.html",
@@ -11284,7 +26305,48 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Russia",
+"count": 1
+},
+{
+"label": "Czechia",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "North-West State Technical University",
+"count": 1
+},
+{
+"label": "Czech Academy of Sciences",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_SNTSWW.html",
@@ -11334,7 +26396,42 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "Japan",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Gakushuin University",
+"count": 0
+},
+{
+"label": "University of Oxford",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.5117_9789463723336.html",
@@ -11380,7 +26477,19 @@ window.STORIES_DATA = [
 "series_name": "MODID-d66f183fd58:Amsterdam University Press",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "datastory_10.5281_zenodo.15423474.html",
@@ -11425,7 +26534,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1016_j.cell.2025.11.041.html",
@@ -11475,7 +26596,52 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Burroughs Wellcome Fund",
+"National Institute of Allergy and Infectious Diseases Division of Microbiology and Infectious Diseases",
+"NIH National Cancer Institute",
+"NIAID NIH HHS",
+"Servier"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Germany",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Medizinische Hochschule Hannover",
+"count": 0
+},
+{
+"label": "Centre for Structural Systems Biology",
+"count": 0
+},
+{
+"label": "German Center for Infection Research",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1016_j.gde.2025.102424.html",
@@ -11520,7 +26686,80 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIMH NIH HHS",
+"Chan Zuckerberg Initiative",
+"National Human Genome Research Institute",
+"California Institute for Regenerative Medicine",
+"NHGRI NIH HHS"
+],
+"sectors": [
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+},
+{
+"label": "Healthcare",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "Germany",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of California, San Francisco",
+"count": 0
+},
+{
+"label": "University of Oxford",
+"count": 0
+},
+{
+"label": "Allen Institute",
+"count": 0
+},
+{
+"label": "Scripps Research Institute",
+"count": 0
+},
+{
+"label": "Kaiser Permanente San Francisco Medical Center",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1016_j.jinorgbio.2025.113204.html",
@@ -11571,7 +26810,45 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"National Institutes of Health",
+"Howard Hughes Medical Institute"
+],
+"sectors": [
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Harvard Bioscience (United States)",
+"count": 0
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1073_pnas.2519395123.html",
@@ -11616,7 +26893,47 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"JBGS Project of Seed Industry Revitalization in Jiangsu Province",
+"MOST | National Natural Science Foundation of China (NSFC)",
+"MOST | National Key Research and Development Program of China (NKPs)",
+"Open Funds of the State Key laboratory of Crop Genetics & Germplasm Enhancement and Utilization"
+],
+"sectors": [
+{
+"label": "Government",
+"count": 1
+},
+{
+"label": "Other",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Chongqing Academy of Agricultural Sciences",
+"count": 0
+},
+{
+"label": "Ministry of Agriculture and Rural Affairs",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1080_19392397.2013.791060.html",
@@ -11665,7 +26982,34 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Indonesia",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Universitas Gadjah Mada",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1162_anti.5czb.html",
@@ -11706,7 +27050,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.64898_2025.12.22.696041.html",
@@ -11753,7 +27109,62 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "Israel",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "New York University",
+"count": 0
+},
+{
+"label": "Agricultural Research Organization",
+"count": 0
+},
+{
+"label": "University of California, Berkeley",
+"count": 0
+},
+{
+"label": "Hebrew University of Jerusalem",
+"count": 0
+},
+{
+"label": "Tel Aviv University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.64898_2025.12.22.696097.html",
@@ -11798,7 +27209,50 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Austria",
+"count": 1
+},
+{
+"label": "Germany",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Max Planck Institute for Biological Intelligence",
+"count": 0
+},
+{
+"label": "Ludwig-Maximilians-Universität München",
+"count": 0
+},
+{
+"label": "Medical University of Graz",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.64898_2025.12.23.696258.html",
@@ -11843,7 +27297,58 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Renmin University of China",
+"count": 0
+},
+{
+"label": "National Institute for Viral Disease Control and Prevention",
+"count": 0
+},
+{
+"label": "Tsinghua University",
+"count": 0
+},
+{
+"label": "Guangzhou Automobile Group (China)",
+"count": 0
+},
+{
+"label": "Capital Medical University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.64898_2025.12.30.697072.html",
@@ -11890,7 +27395,58 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Healthcare",
+"count": 1
+},
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Funder",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Howard Hughes Medical Institute",
+"count": 0
+},
+{
+"label": "Princeton University",
+"count": 0
+},
+{
+"label": "Memorial Sloan Kettering Cancer Center",
+"count": 0
+},
+{
+"label": "Mayo Clinic",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_eLife.102345.html",
@@ -11935,7 +27491,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_elife.107141.html",
@@ -11986,7 +27554,66 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Hypothesis"
-]
+],
+"platform_counts": {
+"hypothesis": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"John Templeton Foundation",
+"NINDS NIH HHS",
+"NIGMS NIH HHS",
+"CUHK Faculty of Science Direct Grant for Research",
+"Harvard Quantitative Biology Initiative and the NSF-Simons Center for Mathematical and Statistical Analysis of Biology at Harvard"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "Hong Kong",
+"count": 1
+},
+{
+"label": "France",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Chinese University of Hong Kong",
+"count": 0
+},
+{
+"label": "Institut Pasteur",
+"count": 0
+},
+{
+"label": "Université Paris Cité",
+"count": 0
+},
+{
+"label": "Harvard University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.1007_978-981-16-2229-8_33.html",
@@ -12036,7 +27663,21 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "Blogs"
-]
+],
+"platform_counts": {
+"wikipedia": 2
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461662965.html",
@@ -12078,7 +27719,74 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Mexico",
+"count": 1
+},
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "KN",
+"count": 1
+},
+{
+"label": "Ireland",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Science Foundation Ireland",
+"count": 0
+},
+{
+"label": "Cellular Research (United States)",
+"count": 0
+},
+{
+"label": "Molecular Medicine Ireland",
+"count": 0
+},
+{
+"label": "Trinity College Dublin",
+"count": 0
+},
+{
+"label": "Tissue Regeneration Systems (United States)",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663009.html",
@@ -12126,7 +27834,46 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Government of the German-speaking Community of Belgium",
+"Steunpunt Onderwijsonderzoek (SONO) of the Flemish Ministry of Education"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "Spain",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Universitat Autònoma de Barcelona",
+"count": 0
+},
+{
+"label": "University of Glasgow",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663245.html",
@@ -12167,7 +27914,22 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"European Research Council"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663481.html",
@@ -12211,7 +27973,36 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Belgium",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "UCLouvain",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663504.html",
@@ -12260,7 +28051,40 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Mount Holyoke College",
+"count": 0
+},
+{
+"label": "Michigan State University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664242.html",
@@ -12306,7 +28130,46 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Humboldt-Universität zu Berlin",
+"CARMAH"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Argentina",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Consejo Nacional de Investigaciones Científicas y Técnicas",
+"count": 0
+},
+{
+"label": "National University of General San Martín",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664440.html",
@@ -12350,7 +28213,38 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Linnaeus University fund for open access publications",
+"LNU Centre for Concurrences in Colonial and Postcolonial Studies"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Spain",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Universidad Pablo de Olavide",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664518.html",
@@ -12399,7 +28293,21 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664532.html",
@@ -12446,7 +28354,40 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Research Foundation Flanders (FWO)",
+"Dr. C. Louise Thijssen-Schoute Stichting",
+"The Dutch-Belgian Society for Eighteenth-Century Studies",
+"Fonds P. Druwé"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Finland",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Finland University",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664990.html",
@@ -12488,7 +28429,48 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Belgium",
+"count": 1
+},
+{
+"label": "Italy",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Ghent University",
+"count": 0
+},
+{
+"label": "Food and Agriculture Organization of the United Nations",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665119.html",
@@ -12537,7 +28519,36 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Belgium",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "KU Leuven",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665256.html",
@@ -12581,7 +28592,21 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665515.html",
@@ -12630,7 +28655,42 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Sapir College",
+"Technion - Israel Institute of Technology"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of California, Berkeley",
+"count": 0
+},
+{
+"label": "Berkeley College",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665522.html",
@@ -12679,7 +28739,39 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"University College London",
+"Delft University of Technology",
+"Louisiana State University"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Goldsmiths University of London",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665607.html",
@@ -12725,7 +28817,37 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"University of Siegen"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Germany",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Siegen",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665621.html",
@@ -12767,7 +28889,36 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Indonesia",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Universitas Gadjah Mada",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_NMIE_CII.html",
@@ -12816,7 +28967,50 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "Greece",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Coventry University",
+"count": 0
+},
+{
+"label": "International Hellenic University",
+"count": 0
+},
+{
+"label": "Durham University",
+"count": 0
+},
+{
+"label": "University of Derby",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3998_mpub.14414299.html",
@@ -12866,7 +29060,21 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {
+"wikipedia": 3
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.5117_9789462981102.html",
@@ -12915,7 +29123,46 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Portugal",
+"count": 1
+},
+{
+"label": "Spain",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Direção Geral do Património Cultural",
+"count": 0
+},
+{
+"label": "Universidad de Extremadura",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.5117_9789463721745.html",
@@ -12964,7 +29211,42 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Canada",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Wycliffe College",
+"count": 0
+},
+{
+"label": "Institute for Christian Studies",
+"count": 0
+},
+{
+"label": "University of Toronto",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "datastory_10.5061_dryad.mq8r2.html",
@@ -13013,7 +29295,54 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "Kenya",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Leeds",
+"count": 0
+},
+{
+"label": "University of Edinburgh",
+"count": 0
+},
+{
+"label": "BirdLife International",
+"count": 0
+},
+{
+"label": "University of Liverpool",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1002_ange.202519203.html",
@@ -13060,7 +29389,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1002_anie.202519203.html",
@@ -13107,7 +29448,25 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"National Institutes of Health",
+"Cancer Research UK",
+"NIH HHS",
+"Howard Hughes Medical Institute",
+"Ragon Institute of MGH, MIT, and Harvard"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1007_s10722-026-02786-9.html",
@@ -13154,7 +29513,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1016_j.celrep.2025.116739.html",
@@ -13201,7 +29572,25 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIGMS NIH HHS",
+"NHGRI NIH HHS",
+"National Institutes of Health",
+"National Science Foundation",
+"Howard Hughes Medical Institute"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1038_d41586-026-01558-w.html",
@@ -13250,7 +29639,21 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Podcasts"
-]
+],
+"platform_counts": {
+"podcast": 1
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_2025.09.08.674753.html",
@@ -13295,7 +29698,21 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Substack"
-]
+],
+"platform_counts": {
+"substack": 2
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1101_pdb.ip28.html",
@@ -13338,7 +29755,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.11575_PRISM_42399.html",
@@ -13385,7 +29814,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.1371_journal.pone.0327344.html",
@@ -13440,7 +29881,24 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NIAID NIH HHS",
+"NIGMS NIH HHS",
+"NIDDK NIH HHS",
+"NIH HHS"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.23640_07243.5959789.v1.html",
@@ -13483,7 +29941,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.3233_isu-240004.html",
@@ -13537,7 +30007,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.5281_zenodo.11472834.html",
@@ -13580,7 +30062,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.5281_zenodo.7842938.html",
@@ -13623,7 +30117,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.5451_unibas-003686587.html",
@@ -13666,7 +30172,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.64898_2025.12.16.694733.html",
@@ -13709,7 +30227,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.64898_2025.12.23.696259.html",
@@ -13752,7 +30282,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.64898_2025.12.23.696279.html",
@@ -13799,7 +30341,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.64898_2025.12.24.696395.html",
@@ -13842,7 +30396,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.64898_2025.12.27.696673.html",
@@ -13889,7 +30455,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.64898_2025.12.31.697091.html",
@@ -13932,7 +30510,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_eLife.103118.html",
@@ -13979,7 +30569,24 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Fondo Nacional de Desarrollo Científico y Tecnológico",
+"Fondo de Financiamiento de Centros de Investigación en Áreas Prioritarias",
+"ANID Fondo Subvencion a la Instalacion Academia",
+"Financiamiento Basal para Centros Científicos y Tecnológicos de Excelencia Centro Ciencia and Vida"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_eLife.107450.html",
@@ -14022,7 +30629,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_eLife.108439.html",
@@ -14065,7 +30684,23 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Israeli Innovation Authority",
+"Israel Science Foundation (IPMP)",
+"Israel Science Foundation"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_eLife.110392.html",
@@ -14108,7 +30743,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_elife.107467.html",
@@ -14153,7 +30800,21 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Human Frontier Science Program"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461662293.html",
@@ -14199,7 +30860,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461662842.html",
@@ -14240,7 +30913,21 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663023.html",
@@ -14286,7 +30973,21 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663221.html",
@@ -14324,7 +31025,21 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663283.html",
@@ -14368,7 +31083,21 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663412.html",
@@ -14413,7 +31142,23 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"University of Sydney",
+"The Popular Culture Association of Australia and New Zealand"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663573.html",
@@ -14455,7 +31200,22 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Terra Foundation for American Art"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663788.html",
@@ -14499,7 +31259,22 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Fondation Universitaire de Belgique"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663832.html",
@@ -14542,7 +31317,21 @@ window.STORIES_DATA = [
 "series_name": "MODID-19febebe56a:Leuven University Press",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663948.html",
@@ -14592,7 +31381,19 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663955.html",
@@ -14634,7 +31435,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461663979.html",
@@ -14682,7 +31495,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664020.html",
@@ -14726,7 +31551,23 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Liz Warnock Publication Fund, Northwestern University",
+"Arts Research Institute at the University of California, Santa Cruz"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664037.html",
@@ -14775,7 +31616,21 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NWO Free competition"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664051.html",
@@ -14814,7 +31669,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664129.html",
@@ -14859,7 +31726,23 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"The Graduate School for the Humanities of the Radboud University",
+"J. E. Jurriaanse Stichting"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664143.html",
@@ -14907,7 +31790,21 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664297.html",
@@ -14955,7 +31852,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664303.html",
@@ -14996,7 +31905,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664310.html",
@@ -15041,7 +31962,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664495.html",
@@ -15089,7 +32022,23 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Stiftung der Deutschen Wirtschaft",
+"Cambridge Commonwealth European and International Trust"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664570.html",
@@ -15134,7 +32083,24 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"College of Europe",
+"Fonds Lenaerts-Grimonprez",
+"European Union"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664631.html",
@@ -15182,7 +32148,22 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Knowledge Unlatched"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664792.html",
@@ -15225,7 +32206,21 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664815.html",
@@ -15273,7 +32268,24 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"The Institute of Modern Languages Research (University of London)",
+"Humanities Institute, University College Dublin",
+"Irish Research Council"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664952.html",
@@ -15323,7 +32335,23 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Toronto Metropolitan University",
+"University College Dublin"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461664976.html",
@@ -15373,7 +32401,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665096.html",
@@ -15420,7 +32460,21 @@ window.STORIES_DATA = [
 "series_name": "Islamophobia as a Form of Radicalisation Perspectives on Media, Academia and Socio-political Scapes from Europe and Canada",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665171.html",
@@ -15465,7 +32519,21 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Swiss National Science Foundation"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665195.html",
@@ -15508,7 +32576,22 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Institute of Art History"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665232.html",
@@ -15556,7 +32639,23 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"MDRN",
+"Museo Nazionale Etrusco di Villa Giulia"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665263.html",
@@ -15601,7 +32700,22 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Freie Universität Berlin"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665270.html",
@@ -15646,7 +32760,21 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Knowledge Unlatched"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665324.html",
@@ -15688,7 +32816,22 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"ELV (Expertisecentrum Literair Vertalen)"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665355.html",
@@ -15736,7 +32879,21 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665409.html",
@@ -15784,7 +32941,22 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"FWF - Der Wissenschaftsfonds"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665416.html",
@@ -15834,7 +33006,21 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665423.html",
@@ -15882,7 +33068,22 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"University of Amsterdam"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665478.html",
@@ -15932,7 +33133,21 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665553.html",
@@ -15974,7 +33189,21 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665591.html",
@@ -16019,7 +33248,19 @@ window.STORIES_DATA = [
 "series_name": "Orpheus Institute Series",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665690.html",
@@ -16067,7 +33308,21 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_9789461665706.html",
@@ -16115,7 +33370,21 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11116_MITA_CII.html",
@@ -16159,7 +33428,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.11647_OBP.0233.html",
@@ -16197,7 +33478,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.2307_j.ctt1v2xsqn.html",
@@ -16242,7 +33535,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.2307_j.ctv12sdvgj.html",
@@ -16284,7 +33589,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3726_978-3-653-02684-9.html",
@@ -16324,7 +33641,19 @@ window.STORIES_DATA = [
 "series_name": "Quellen, Findbuecher und Inventare des Brandenburgischen Landeshauptarchivs",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3726_b17114.html",
@@ -16367,7 +33696,19 @@ window.STORIES_DATA = [
 "series_name": "Travail et Société / Work and Society",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3726_b21088.html",
@@ -16415,7 +33756,19 @@ window.STORIES_DATA = [
 "series_name": "Travail et Société / Work and Society",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.3726_b21787.html",
@@ -16460,7 +33813,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.5117_9789089647191.html",
@@ -16498,7 +33863,21 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia"
-]
+],
+"platform_counts": {
+"wikipedia": 2
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.5117_9789462986206.html",
@@ -16546,7 +33925,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.5117_9789463724012.html",
@@ -16582,7 +33973,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.5703_1288284317628.html",
@@ -16630,7 +34033,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "bookstory_10.7765_9781526137760.html",
@@ -16666,7 +34081,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "datastory_10.23640_07243.5259502.v1.html",
@@ -16705,7 +34132,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "datastory_10.25378_janelia.23816295.html",
@@ -16748,7 +34187,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "datastory_10.25378_janelia.23816295.v1.html",
@@ -16791,7 +34242,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "datastory_10.5281_zenodo.10875062.html",
@@ -16834,7 +34297,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "datastory_10.5281_zenodo.11472834.html",
@@ -16877,7 +34352,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "datastory_10.5281_zenodo.17442025.html",
@@ -16922,7 +34409,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "datastory_10.5281_zenodo.7821611.html",
@@ -16966,7 +34465,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "datastory_10.5281_zenodo.7842938.html",
@@ -17009,7 +34520,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "softwarestory_10.5281_zenodo.3559815.html",
@@ -17054,7 +34577,19 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": []
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
 }
 ];
 window.STORIES_STATS = {"total": 354, "total_articles": 176, "total_books": 152, "total_data": 19, "total_software": 7, "total_oa": 319, "pct_oa": 90, "total_citations": 150748, "num_disciplines": 30};

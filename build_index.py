@@ -582,6 +582,72 @@ def extract(filepath):
     except (TypeError, ValueError):
         download_count = 0
 
+    # ── percentile flags ──
+    pct = signals.get("percentiles") or {}
+    is_top1pct  = bool(pct.get("is_in_top_1_percent"))
+    is_top10pct = bool(pct.get("is_in_top_10_percent")) or is_top1pct
+
+    # ── risk flags ──
+    risk = signals.get("risk_layer") or {}
+    risk_retracted = bool(risk.get("is_retracted"))
+    risk_eoc       = bool(risk.get("expression_of_concern"))
+    risk_pubpeer   = int(risk.get("pubpeer_threads") or 0)
+
+    # ── funders (top 5 unique names) ──
+    _seen_funders = set()
+    funders = []
+    for f in (signals.get("funding") or []):
+        name = f.get("funder") if isinstance(f, dict) else None
+        if name and name not in _seen_funders:
+            funders.append(name)
+            _seen_funders.add(name)
+        if len(funders) >= 5:
+            break
+
+    # ── citing landscape aggregates ──
+    landscape = signals.get("citing_landscape") or {}
+    sectors = [
+        {"label": s.get("label", ""), "count": s.get("count", 0)}
+        for s in (landscape.get("sectors") or [])[:5]
+        if s.get("label")
+    ]
+    countries = [
+        {"label": c.get("label", ""), "count": c.get("count", 0)}
+        for c in (landscape.get("countries") or [])[:5]
+        if c.get("label")
+    ]
+    citing_institutions = [
+        {"label": i.get("label", ""), "count": round(i.get("count", 0))}
+        for i in (landscape.get("top_institutions") or [])[:5]
+        if i.get("label")
+    ]
+
+    # ── per-platform mention counts ──
+    # Combine social_mentions (list lengths) with web_mentions_breakdown counts
+    _plat = {}
+    sm = signals.get("social_mentions") or {}
+    if isinstance(sm, dict):
+        for k, v in sm.items():
+            if k in ("last_updated", "updated_at"):
+                continue
+            if isinstance(v, list):
+                _plat[k] = _plat.get(k, 0) + len(v)
+            elif isinstance(v, (int, float)):
+                _plat[k] = _plat.get(k, 0) + int(v)
+    att_sig = signals.get("attention_summary") or {}
+    if isinstance(att_sig, dict):
+        for k, v in (att_sig.get("web_mentions_breakdown") or {}).items():
+            if isinstance(v, (int, float)) and v > 0:
+                _plat[k] = _plat.get(k, 0) + int(v)
+    platform_counts = {k: v for k, v in _plat.items() if v > 0}
+
+    # ── scite citation context ──
+    _scite = d.get("scite") or {}
+    if not _scite:
+        _scite = (d.get("impact") or {}).get("scite") or {}
+    scite_supporting    = int(_scite.get("supporting", 0) or 0)
+    scite_contradicting = int(_scite.get("contradicting", 0) or 0)
+
     # ── institutions — unique affiliations from template_authors ──
     institutions = []
     seen_inst = set()
@@ -653,6 +719,18 @@ def extract(filepath):
         "series_id": series_id,
         "belongs_to_series": belongs_to_series,
         "mention_platforms": mention_platforms,
+        "platform_counts": platform_counts,
+        "is_top1pct": is_top1pct,
+        "is_top10pct": is_top10pct,
+        "risk_retracted": risk_retracted,
+        "risk_eoc": risk_eoc,
+        "risk_pubpeer": risk_pubpeer,
+        "funders": funders,
+        "sectors": sectors,
+        "countries": countries,
+        "citing_institutions": citing_institutions,
+        "scite_supporting": scite_supporting,
+        "scite_contradicting": scite_contradicting,
     }
 
 # ── main ──────────────────────────────────────────────────────────────────────

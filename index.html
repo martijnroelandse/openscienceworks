@@ -426,6 +426,54 @@
     }
     .cc-tag:hover { background: var(--accent-light); }
 
+    /* ── portfolio card extended sections ── */
+    .pf-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media(max-width:640px) { .pf-two-col { grid-template-columns: 1fr; } }
+
+    .pf-rank-list { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.4rem; }
+    .pf-rank-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; }
+    .pf-rank-label { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text); }
+    .pf-rank-bar-wrap { width: 70px; flex-shrink: 0; }
+    .pf-rank-bar { height: 5px; border-radius: 3px; background: var(--accent-light); overflow: hidden; }
+    .pf-rank-bar-fill { height: 100%; background: var(--c-article); border-radius: 3px; }
+    .pf-rank-count { font-size: 0.7rem; color: var(--muted); min-width: 28px; text-align: right; flex-shrink: 0; }
+
+    .pf-platform-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.4rem; }
+    .pf-platform-item { display: inline-flex; flex-direction: column; align-items: center;
+      padding: 0.45rem 0.7rem; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 0.5rem; min-width: 58px; }
+    .pf-platform-n { font-size: 1.05rem; font-weight: 800; color: var(--text); line-height: 1.1; }
+    .pf-platform-lbl { font-size: 0.63rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-top: 0.1rem; }
+
+    .pf-top-list { display: flex; flex-direction: column; gap: 0; margin-top: 0.4rem; }
+    .pf-top-item { display: flex; align-items: baseline; gap: 0.6rem; font-size: 0.82rem;
+      padding: 0.35rem 0; border-bottom: 1px solid var(--border); }
+    .pf-top-item:last-child { border-bottom: none; }
+    .pf-top-rank { font-size: 0.7rem; color: var(--muted); min-width: 14px; flex-shrink: 0; }
+    .pf-top-title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .pf-top-title a { color: var(--c-article); text-decoration: none; }
+    .pf-top-title a:hover { text-decoration: underline; }
+    .pf-top-cit { font-size: 0.72rem; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+
+    .pf-funder-list { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.4rem; }
+    .pf-funder-tag { display: inline-flex; align-items: center; gap: 0.3rem;
+      padding: 0.18rem 0.55rem; background: var(--bg); border: 1px solid var(--border);
+      border-radius: 999px; font-size: 0.74rem; color: var(--text); }
+    .pf-funder-n { font-size: 0.66rem; font-weight: 700; color: var(--muted); }
+
+    .pf-risk-box { background: #fff5f5; border: 1px solid #fca5a5; border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem; margin-top: 0.4rem; font-size: 0.82rem; color: #991b1b;
+      display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .pf-risk-item { display: flex; align-items: center; gap: 0.3rem; }
+    .pf-risk-n { font-weight: 800; }
+
+    .pf-quality-row { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.4rem; }
+    .pf-qbadge { display: inline-flex; align-items: center; gap: 0.3rem;
+      padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.74rem; font-weight: 600; }
+    .pf-qbadge.gold   { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .pf-qbadge.silver { background: var(--accent-light); color: var(--c-article); border: 1px solid #c8d8ec; }
+    .pf-qbadge.scite  { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+
     /* groups table */
     .agg-table {
       width: 100%;
@@ -1215,6 +1263,13 @@ function computePortfolioSummary(stories) {
   const conceptFreq = {};
   let minYear = 9999, maxYear = 0;
 
+  // new aggregations
+  const platformTotals = {}, funderFreq = {}, sectorTotals = {};
+  const countryTotals = {}, instTotals = {};
+  let riskRetracted = 0, riskEoc = 0, riskPubpeer = 0;
+  let top1pct = 0, top10pct = 0;
+  let sciteSupporting = 0, sciteContradicting = 0;
+
   for (const s of stories) {
     byType[s.type] = (byType[s.type] || 0) + 1;
     totalCit += s.citation_count || 0;
@@ -1234,9 +1289,35 @@ function computePortfolioSummary(stories) {
       if (s.year < minYear) minYear = s.year;
       if (s.year > maxYear) maxYear = s.year;
     }
+    // new fields
+    for (const [k, v] of Object.entries(s.platform_counts || {}))
+      platformTotals[k] = (platformTotals[k] || 0) + v;
+    for (const f of (s.funders || []))
+      funderFreq[f] = (funderFreq[f] || 0) + 1;
+    for (const sec of (s.sectors || []))
+      sectorTotals[sec.label] = (sectorTotals[sec.label] || 0) + sec.count;
+    for (const c of (s.countries || []))
+      countryTotals[c.label] = (countryTotals[c.label] || 0) + c.count;
+    for (const i of (s.citing_institutions || []))
+      instTotals[i.label] = (instTotals[i.label] || 0) + i.count;
+    if (s.risk_retracted) riskRetracted++;
+    if (s.risk_eoc)       riskEoc++;
+    if (s.risk_pubpeer > 0) riskPubpeer++;
+    if (s.is_top1pct)  top1pct++;
+    if (s.is_top10pct) top10pct++;
+    sciteSupporting    += s.scite_supporting    || 0;
+    sciteContradicting += s.scite_contradicting || 0;
   }
-  const topConcepts = Object.entries(conceptFreq)
-    .sort((a, b) => b[1] - a[1]).slice(0, 20);
+
+  const _sort = (obj, n) => Object.entries(obj).sort((a,b)=>b[1]-a[1]).slice(0,n);
+  const topConcepts      = _sort(conceptFreq, 20);
+  const topPlatforms     = _sort(platformTotals, 8);
+  const topFunders       = _sort(funderFreq, 8);
+  const topSectors       = _sort(sectorTotals, 6);
+  const topCountries     = _sort(countryTotals, 8);
+  const topInstitutions  = _sort(instTotals, 8);
+  const topItems         = [...stories].sort((a,b)=>(b.citation_count||0)-(a.citation_count||0)).slice(0,5);
+
   return {
     total: stories.length, byType, totalCit, totalDl, oaCount,
     sdgCount, teachCount, prCount, reuseCount,
@@ -1244,6 +1325,10 @@ function computePortfolioSummary(stories) {
     topConcepts,
     minYear: minYear === 9999 ? null : minYear,
     maxYear: maxYear === 0   ? null : maxYear,
+    // new
+    topPlatforms, topFunders, topSectors, topCountries, topInstitutions, topItems,
+    riskRetracted, riskEoc, riskPubpeer,
+    top1pct, top10pct, sciteSupporting, sciteContradicting,
   };
 }
 
@@ -1251,7 +1336,10 @@ function renderPortfolioCard(p, groupLabel) {
   const { total, byType, totalCit, totalDl, oaCount,
           sdgCount, teachCount, prCount, reuseCount,
           ocwCount, ytCount, olCount, otlCount,
-          topConcepts, minYear, maxYear } = p;
+          topConcepts, minYear, maxYear,
+          topPlatforms, topFunders, topSectors, topCountries, topInstitutions, topItems,
+          riskRetracted, riskEoc, riskPubpeer,
+          top1pct, top10pct, sciteSupporting, sciteContradicting } = p;
   const pctOA = total ? Math.round(100 * oaCount / total) : 0;
 
   // ── stats row ──
@@ -1284,28 +1372,101 @@ function renderPortfolioCard(p, groupLabel) {
     .filter(t => (byType[t.key] || 0) > 0)
     .map(t => `<span><span class="tml-dot ${t.cls}"></span>${byType[t.key]} ${t.label}</span>`).join("");
 
-  // ── open science signals — two rows ──
-  // Row 1: scholarly / integrity signals
-  const scholSignals = [
+  // ── citation quality badges ──
+  const qualityBadges = [
+    ...(top1pct  > 0 ? [`<span class="pf-qbadge gold">🏆 ${top1pct} top 1% cited</span>`] : []),
+    ...(top10pct - top1pct > 0 ? [`<span class="pf-qbadge silver">⭐ ${top10pct - top1pct} top 10% cited</span>`] : []),
+    ...(sciteSupporting > 0 ? [`<span class="pf-qbadge scite">✓ ${fmt(sciteSupporting)} supporting citations</span>`] : []),
+    ...(sciteContradicting > 0 ? [`<span class="pf-qbadge" style="background:#fef2f2;color:#991b1b;border:1px solid #fecaca;">⚠ ${sciteContradicting} contradicting</span>`] : []),
+  ].join("");
+
+  // ── open science signals ──
+  const allSignals = [
     { n: sdgCount,   l: "SDG-linked" },
     { n: prCount,    l: "Peer reviewed" },
     { n: reuseCount, l: "Data / code reuse" },
+    ...(ocwCount > 0 ? [{ n: ocwCount, l: "OCW mentions" }]    : []),
+    ...(ytCount  > 0 ? [{ n: ytCount,  l: "Video lectures" }]  : []),
+    ...(olCount  > 0 ? [{ n: olCount,  l: "Library holdings" }]: []),
+    ...(otlCount > 0 ? [{ n: otlCount, l: "Open textbooks" }]  : []),
   ].filter(s => s.n > 0);
-
-  // Row 2: teaching & adoption signals (richer breakdown)
-  const teachSignals = [
-    ...(ocwCount > 0 ? [{ n: ocwCount,  l: "OCW mentions" }]      : []),
-    ...(ytCount  > 0 ? [{ n: ytCount,   l: "Video lectures" }]     : []),
-    ...(olCount  > 0 ? [{ n: olCount,   l: "Library holdings" }]   : []),
-    ...(otlCount > 0 ? [{ n: otlCount,  l: "Open textbooks" }]     : []),
-  ];
-
-  const allSignals = [...scholSignals, ...teachSignals];
   const signalsHtml = allSignals.length
     ? allSignals.map(s =>
         `<span class="signal-pill"><span class="sp-n">${s.n}</span>${s.l}</span>`
       ).join("")
     : `<span style="font-size:0.8rem;color:var(--muted)">No signals recorded</span>`;
+
+  // ── platform mentions ──
+  const PLAT_LABELS = { wikipedia:"Wikipedia", reddit:"Reddit", bluesky:"Bluesky",
+    hypothesis:"Hypothesis", substack:"Substack", blog:"Blogs", podcast:"Podcasts",
+    stackexchange:"StackExch.", mastodon:"Mastodon", news:"News" };
+  const platformHtml = topPlatforms.length
+    ? topPlatforms.map(([k, v]) =>
+        `<div class="pf-platform-item">
+          <span class="pf-platform-n">${v}</span>
+          <span class="pf-platform-lbl">${PLAT_LABELS[k] || k}</span>
+        </div>`
+      ).join("")
+    : "";
+
+  // ── ranked list helper ──
+  function rankList(entries, maxVal) {
+    return entries.map(([label, count]) => {
+      const pct = Math.round(100 * count / maxVal);
+      return `<div class="pf-rank-item">
+        <span class="pf-rank-label" title="${escHtml(label)}">${escHtml(label)}</span>
+        <div class="pf-rank-bar-wrap"><div class="pf-rank-bar">
+          <div class="pf-rank-bar-fill" style="width:${pct}%"></div>
+        </div></div>
+        <span class="pf-rank-count">${fmt(count)}</span>
+      </div>`;
+    }).join("");
+  }
+
+  // ── sectors ──
+  const sectorsHtml = topSectors.length
+    ? rankList(topSectors, topSectors[0][1])
+    : "";
+
+  // ── countries ──
+  const countriesHtml = topCountries.length
+    ? rankList(topCountries, topCountries[0][1])
+    : "";
+
+  // ── institutions ──
+  const instHtml = topInstitutions.length
+    ? rankList(topInstitutions, topInstitutions[0][1])
+    : "";
+
+  // ── funders ──
+  const fundersHtml = topFunders.length
+    ? topFunders.map(([name, count]) =>
+        `<span class="pf-funder-tag">${escHtml(name)}<span class="pf-funder-n">${count}</span></span>`
+      ).join("")
+    : "";
+
+  // ── top papers ──
+  const topPapersHtml = topItems.length
+    ? topItems.map((s, i) =>
+        `<div class="pf-top-item">
+          <span class="pf-top-rank">${i+1}</span>
+          <span class="pf-top-title"><a href="${escHtml(s.file)}" target="_blank">${escHtml(s.title)}</a></span>
+          <span class="pf-top-cit">${fmt(s.citation_count||0)} cit.</span>
+        </div>`
+      ).join("")
+    : "";
+
+  // ── risk box ──
+  const riskItems = [
+    ...(riskRetracted > 0 ? [`<span class="pf-risk-item">⛔ <span class="pf-risk-n">${riskRetracted}</span> retracted</span>`] : []),
+    ...(riskEoc       > 0 ? [`<span class="pf-risk-item">⚠️ <span class="pf-risk-n">${riskEoc}</span> expression of concern</span>`] : []),
+    ...(riskPubpeer   > 0 ? [`<span class="pf-risk-item">💬 <span class="pf-risk-n">${riskPubpeer}</span> with PubPeer threads</span>`] : []),
+  ];
+  const riskHtml = riskItems.length
+    ? `<hr class="pf-divider">
+       <div class="pf-section-label">Integrity &amp; risk signals</div>
+       <div class="pf-risk-box">${riskItems.join("")}</div>`
+    : "";
 
   // ── concept cloud ──
   const maxFreq = topConcepts.length ? topConcepts[0][1] : 1;
@@ -1318,18 +1479,58 @@ function renderPortfolioCard(p, groupLabel) {
     <div class="pf-card">
       <div class="pf-card-title">Portfolio overview — ${escHtml(groupLabel)}</div>
       <div class="pf-stats-row">${statsHtml}</div>
+
+      ${qualityBadges ? `<div class="pf-quality-row">${qualityBadges}</div>` : ""}
+
       <hr class="pf-divider">
       <div class="pf-section-label">Work type</div>
       <div class="type-mix-bar">${mixSegs}</div>
       <div class="type-mix-legend">${mixLegend}</div>
+
+      ${topPapersHtml ? `
+      <hr class="pf-divider">
+      <div class="pf-section-label">Most cited works</div>
+      <div class="pf-top-list">${topPapersHtml}</div>` : ""}
+
+      ${platformHtml ? `
+      <hr class="pf-divider">
+      <div class="pf-section-label">Online mentions by platform</div>
+      <div class="pf-platform-grid">${platformHtml}</div>` : ""}
+
+      ${(sectorsHtml || countriesHtml) ? `
+      <hr class="pf-divider">
+      <div class="pf-two-col">
+        ${sectorsHtml ? `<div>
+          <div class="pf-section-label">Citing sectors</div>
+          <div class="pf-rank-list">${sectorsHtml}</div>
+        </div>` : ""}
+        ${countriesHtml ? `<div>
+          <div class="pf-section-label">Geographic reach</div>
+          <div class="pf-rank-list">${countriesHtml}</div>
+        </div>` : ""}
+      </div>` : ""}
+
+      ${instHtml ? `
+      <hr class="pf-divider">
+      <div class="pf-section-label">Top citing institutions</div>
+      <div class="pf-rank-list">${instHtml}</div>` : ""}
+
+      ${fundersHtml ? `
+      <hr class="pf-divider">
+      <div class="pf-section-label">Funder landscape</div>
+      <div class="pf-funder-list">${fundersHtml}</div>` : ""}
+
       ${allSignals.length ? `
       <hr class="pf-divider">
       <div class="pf-section-label">Open science &amp; teaching signals</div>
       <div class="signal-pills">${signalsHtml}</div>` : ""}
-      ${topConcepts.length ? `
+
+      ${cloudHtml ? `
       <hr class="pf-divider">
       <div class="pf-section-label">Dominant concepts</div>
       <div class="concept-cloud">${cloudHtml}</div>` : ""}
+
+      ${riskHtml}
     </div>`;
 }
 
