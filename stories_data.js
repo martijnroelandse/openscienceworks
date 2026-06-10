@@ -23155,6 +23155,96 @@ window.STORIES_DATA = [
 "scite_contradicting": 0
 },
 {
+"file": "bookstory_10.3726_978-3-0352-6563-7.html",
+"title": "Untitled Book",
+"type": "BookStory",
+"doi": "10.3726/978-3-0352-6563-7",
+"year": null,
+"venue": "",
+"venue_name": "",
+"publisher": "",
+"concepts": [
+"Art"
+],
+"roles": [
+"Pedagogical Anchor",
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 4,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Sustainable cities and communities"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 5,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The work reflects a significant impact in the educational landscape, demonstrated by its status as a pedagogical anchor, with a strong presence on platforms like YouTube.",
+"cover_url": "https://cdn.openpublishing.com/thumbnail/products/1053930/large.webp",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": "Philosophie et Politique / Philosophy and Politics",
+"series_id": null,
+"belongs_to_series": true,
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Germany",
+"count": 1
+},
+{
+"label": "France",
+"count": 1
+},
+{
+"label": "Chile",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Paderborn University",
+"count": 1
+},
+{
+"label": "Pays Germaniques",
+"count": 1
+},
+{
+"label": "Universidad Diego Portales",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
 "file": "datastory_10.5281_zenodo.3727291.html",
 "title": "COVID-19 Open Research Dataset (CORD-19)",
 "type": "DataStory",
@@ -24614,6 +24704,95 @@ window.STORIES_DATA = [
 {
 "label": "Université Libre de Bruxelles",
 "count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "bookstory_10.3726_978-3-0352-6544-6.html",
+"title": "Redesigning Life",
+"type": "BookStory",
+"doi": "10.3726/978-3-0352-6544-6",
+"year": 2015,
+"venue": "Peter Lang B",
+"venue_name": "",
+"publisher": "Peter Lang B",
+"concepts": [
+"Biopower",
+"Eugenics",
+"Sociology",
+"Environmental ethics",
+"Philosophy",
+"Political science",
+"Law",
+"Politics"
+],
+"roles": [
+"Commercial Linkage",
+"Pedagogical Anchor",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 3,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Zero hunger"
+],
+"has_teaching": true,
+"ta_ocw": 7,
+"ta_youtube": 0,
+"ta_ol_holdings": 4,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite its publication in 2015, \"Redesigning Life\" has not yet garnered a notable academic or public discourse footprint, as reflected by zero citations and no mentions across va…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9782875742810&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Nathan Van Camp",
+"institutions": [],
+"download_count": 1114,
+"series_name": "Philosophie et Politique / Philosophy and Politics",
+"series_id": null,
+"belongs_to_series": true,
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Netherlands",
+"count": 2
+},
+{
+"label": "Russia",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Delft University of Technology",
+"count": 2
+},
+{
+"label": "Russian Academy of Sciences",
+"count": 1
 }
 ],
 "scite_supporting": 0,
@@ -26428,6 +26607,82 @@ window.STORIES_DATA = [
 {
 "label": "University of Oxford",
 "count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "bookstory_10.3726_978-3-0352-6632-0.html",
+"title": "Untitled Book",
+"type": "BookStory",
+"doi": "10.3726/978-3-0352-6632-0",
+"year": null,
+"venue": "",
+"venue_name": "",
+"publisher": "",
+"concepts": [
+"Physics",
+"Philosophy"
+],
+"roles": [
+"Pedagogical Anchor",
+"Commercial Linkage",
+"Scholarly Uptake"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 2,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 5,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary The work demonstrates notable commercial linkage, being available on platforms like Amazon and Goodreads, which can increase its visibility and accessibility to a broader audience…",
+"cover_url": "https://cdn.openpublishing.com/thumbnail/products/1053992/large.webp",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": "Philosophie et Politique / Philosophy and Politics",
+"series_id": null,
+"belongs_to_series": true,
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "Belgium",
+"count": 1
+},
+{
+"label": "Austria",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Université Libre de Bruxelles",
+"count": 1
+},
+{
+"label": "University of Graz",
+"count": 1
 }
 ],
 "scite_supporting": 0,
@@ -29009,6 +29264,62 @@ window.STORIES_DATA = [
 "count": 0
 }
 ],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "bookstory_10.3726_978-3-0352-6588-0.html",
+"title": "The Point of Philosophy",
+"type": "BookStory",
+"doi": "10.3726/978-3-0352-6588-0",
+"year": 2016,
+"venue": "Peter Lang B",
+"venue_name": "",
+"publisher": "Peter Lang B",
+"concepts": [
+"Point (geometry)",
+"Philosophy",
+"Epistemology",
+"Mathematics",
+"Geometry"
+],
+"roles": [
+"Commercial Linkage",
+"Pedagogical Anchor",
+"Scholarly Uptake"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 4,
+"ta_otl": true,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite the absence of online mentions or citations, \"The Point of Philosophy\" by Peter Lang B is positioned as a pedagogical anchor, having been cited in one instance and held by…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9782875743121&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Ludo Abicht, Hendrik Opdebeeck",
+"institutions": [],
+"download_count": 0,
+"series_name": "Philosophie et Politique / Philosophy and Politics",
+"series_id": null,
+"belongs_to_series": true,
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
 "scite_supporting": 0,
 "scite_contradicting": 0
 },
@@ -33656,6 +33967,61 @@ window.STORIES_DATA = [
 "scite_contradicting": 0
 },
 {
+"file": "bookstory_10.3726_b15232.html",
+"title": "Untitled Book",
+"type": "BookStory",
+"doi": "10.3726/b15232",
+"year": null,
+"venue": "",
+"venue_name": "",
+"publisher": "",
+"concepts": [
+"Economics",
+"Psychology"
+],
+"roles": [
+"Pedagogical Anchor",
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Decent work and economic growth"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 5,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite the absence of formal citations and public discourse currently available, there are indications that this work holds substantial potential for pedagogical and commercial a…",
+"cover_url": "https://cdn.openpublishing.com/thumbnail/products/1057626/large.webp",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": "Philosophie et Politique / Philosophy and Politics",
+"series_id": null,
+"belongs_to_series": true,
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
 "file": "bookstory_10.3726_b17114.html",
 "title": "Les défis de la diversité culturelle dans le monde du travail au XXIe siècle",
 "type": "BookStory",
@@ -34592,4 +34958,4 @@ window.STORIES_DATA = [
 "scite_contradicting": 0
 }
 ];
-window.STORIES_STATS = {"total": 354, "total_articles": 176, "total_books": 152, "total_data": 19, "total_software": 7, "total_oa": 319, "pct_oa": 90, "total_citations": 150748, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 359, "total_articles": 176, "total_books": 157, "total_data": 19, "total_software": 7, "total_oa": 320, "pct_oa": 89, "total_citations": 150758, "num_disciplines": 30};
