@@ -4,232 +4,354 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>openscience.works — Product Overview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --purple-fill: #EEEDFE; --purple-mid: #7F77DD; --purple-dark: #3C3489; --purple-deep: #26215C;
-  --teal-fill: #E1F5EE; --teal-mid: #1D9E75; --teal-dark: #085041;
-  --amber-fill: #FAEEDA; --amber-mid: #BA7517; --amber-dark: #633806;
-  --coral-fill: #FAECE7; --coral-mid: #D85A30; --coral-dark: #712B13;
-  --gray-fill: #F1EFE8; --gray-mid: #888780; --gray-dark: #2C2C2A;
-  --green-fill: #EAF3DE; --green-mid: #639922; --green-dark: #27500A;
+  --c-article: #3C5A7F; --c-article-light: #e8edf3;
+  --c-book: #B34444; --c-book-light: #f5e5e5;
+  --c-data: #34675A; --c-data-light: #e1eeeb;
+  --c-software: #6A4FA3; --c-software-light: #ede9f7;
+  --fold: #F2C94C;
+  --bg: #f3f4f6; --surface: #ffffff;
+  --border: #e5e7eb; --text: #111827; --muted: #6b7280;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background: #fff; color: #2C2C2A;
-  padding: 40px 48px; max-width: 860px; margin: 0 auto;
-}
-@media (prefers-color-scheme: dark) {
-  body { background: #1a1a18; color: #D3D1C7; }
-  .pcard.article { background: #2a284a !important; border-color: #534AB7 !important; }
-  .pcard.book    { background: #0d2d24 !important; border-color: #1D9E75 !important; }
-  .pcard.data    { background: #2d2010 !important; border-color: #BA7517 !important; }
-  .pcard.soft    { background: #2d1810 !important; border-color: #D85A30 !important; }
-  .signals       { background: #222220 !important; }
-  .pcard-name, .bignum { filter: brightness(1.4); }
-}
-.infog { width: 100%; }
-.hdr { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; padding-bottom: 16px; border-bottom: 0.5px solid rgba(0,0,0,.12); margin-bottom: 28px; }
-.hdr-brand { font-size: 20px; font-weight: 500; }
-.hdr-brand span { font-weight: 400; opacity: .5; }
-.hdr-total { text-align: center; }
-.hdr-total .num { font-size: 36px; font-weight: 500; line-height: 1; }
-.hdr-total .lbl { font-size: 11px; opacity: .5; letter-spacing: .04em; text-transform: uppercase; margin-top: 2px; }
-.hdr-right { text-align: right; }
-.hdr-cites { font-size: 24px; font-weight: 500; }
-.hdr-cites-lbl { font-size: 11px; opacity: .5; letter-spacing: .04em; text-transform: uppercase; }
-.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
-.pcard { border-radius: 14px; padding: 18px 20px; border: 0.5px solid; }
-.pcard.article { background: var(--purple-fill); border-color: #D5D2F8; }
-.pcard.book    { background: var(--teal-fill);   border-color: #9EDDC9; }
-.pcard.data    { background: var(--amber-fill);  border-color: #F5CC87; }
-.pcard.soft    { background: var(--coral-fill);  border-color: #F5C1AC; }
-.pcard-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
-.pcard-name { font-size: 15px; font-weight: 500; }
-.article .pcard-name { color: var(--purple-deep); }
-.book    .pcard-name { color: var(--teal-dark); }
-.data    .pcard-name { color: var(--amber-dark); }
-.soft    .pcard-name { color: var(--coral-dark); }
-.pcard-count { font-size: 11px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; }
-.article .pcard-count { background: #D5D2F8; color: var(--purple-deep); }
-.book    .pcard-count { background: #9FE1CB; color: var(--teal-dark); }
-.data    .pcard-count { background: #FAC775; color: var(--amber-dark); }
-.soft    .pcard-count { background: #F5C1AC; color: var(--coral-dark); }
-.bignum { font-size: 28px; font-weight: 500; line-height: 1; margin-bottom: 2px; }
-.article .bignum { color: var(--purple-dark); }
-.book    .bignum { color: var(--teal-dark); }
-.data    .bignum { color: var(--amber-dark); }
-.soft    .bignum { color: var(--coral-dark); }
-.bignumlbl { font-size: 11px; color: #888780; letter-spacing: .03em; text-transform: uppercase; margin-bottom: 14px; }
-.divider { border: none; border-top: 0.5px solid rgba(0,0,0,.1); margin: 12px 0; }
-.mrow { display: flex; justify-content: space-between; align-items: center; font-size: 12px; margin: 6px 0; }
-.mrow-lbl { opacity: .6; }
-.mrow-val { font-weight: 500; }
-.oa-bar-wrap { margin: 10px 0 4px; }
-.oa-bar-lbl { font-size: 11px; opacity: .5; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; }
-.oa-bar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; gap: 1px; }
-.oa-seg { height: 100%; }
-.oa-legend { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-top: 7px; }
-.oa-dot { display: flex; align-items: center; gap: 4px; font-size: 11px; opacity: .7; }
-.oa-dot i { width: 8px; height: 8px; border-radius: 2px; display: inline-block; flex-shrink: 0; }
-.mention-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-.mchip { display: flex; align-items: center; gap: 5px; font-size: 11px; padding: 3px 9px; border-radius: 20px; font-weight: 500; }
-.mchip.other   { background: #D3D1C7; color: #2C2C2A; }
-.mchip.podcast { background: #CECBF6; color: var(--purple-deep); }
-.mchip.web     { background: #B5D4F4; color: #042C53; }
-.mchip.substack{ background: #FAC775; color: var(--amber-dark); }
-.mchip.blog    { background: #C0DD97; color: var(--green-dark); }
-.scite-row { display: flex; gap: 8px; margin-top: 10px; }
-.scite-block { flex: 1; border-radius: 8px; padding: 8px 10px; text-align: center; }
-.scite-block .n { font-size: 18px; font-weight: 500; }
-.scite-block .l { font-size: 10px; text-transform: uppercase; letter-spacing: .04em; margin-top: 2px; }
-.scite-sup { background: #EAF3DE; } .scite-sup .n { color: #27500A; } .scite-sup .l { color: #3B6D11; }
-.scite-men { background: #E1F5EE; } .scite-men .n { color: #085041; } .scite-men .l { color: #0F6E56; }
-.scite-con { background: #FCEBEB; } .scite-con .n { color: #501313; } .scite-con .l { color: #A32D2D; }
-.signals { border: 0.5px solid rgba(0,0,0,.1); border-radius: 14px; padding: 18px 20px; background: #F7F6F2; }
-.signals-head { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; opacity: .5; margin-bottom: 14px; }
-.signals-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-.sig-item { text-align: center; }
-.sig-n { font-size: 22px; font-weight: 500; line-height: 1; }
-.sig-l { font-size: 10px; opacity: .5; text-transform: uppercase; letter-spacing: .04em; margin-top: 3px; line-height: 1.4; }
-.signals-divider { border: none; border-top: 0.5px solid rgba(0,0,0,.1); margin: 14px 0; }
-.footnote { font-size: 11px; opacity: .4; text-align: center; margin-top: 14px; }
+body { font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); padding: 36px 40px; max-width: 900px; margin: 0 auto; line-height: 1.5; }
+.hdr { display:flex; justify-content:space-between; align-items:center; padding-bottom:16px; border-bottom:2.5px solid var(--fold); margin-bottom:24px; }
+.hdr-brand { font-size:22px; font-weight:800; letter-spacing:-0.02em; }
+.hdr-brand .dot { color:var(--fold); }
+.hdr-brand .works { font-weight:400; }
+.hdr-sub { font-size:11px; color:var(--muted); margin-top:2px; }
+.hdr-totals { display:flex; gap:28px; }
+.hdr-stat { text-align:right; }
+.hdr-stat .n { font-size:30px; font-weight:700; line-height:1; }
+.hdr-stat .l { font-size:10px; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); margin-top:2px; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
+.card { background:var(--surface); border-radius:12px; border:0.5px solid var(--border); overflow:hidden; }
+.stripe { height:4px; }
+.article .stripe { background:var(--c-article); }
+.book    .stripe { background:var(--c-book); }
+.data    .stripe { background:var(--c-data); }
+.software .stripe { background:var(--c-software); }
+.card-body { padding:16px 18px; }
+.card-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+.card-title { font-size:13px; font-weight:700; }
+.article  .card-title { color:var(--c-article); }
+.book     .card-title { color:var(--c-book); }
+.data     .card-title { color:var(--c-data); }
+.software .card-title { color:var(--c-software); }
+.badge { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; padding:2px 8px; border-radius:20px; }
+.article  .badge { background:var(--c-article-light); color:var(--c-article); }
+.book     .badge { background:var(--c-book-light); color:var(--c-book); }
+.data     .badge { background:var(--c-data-light); color:var(--c-data); }
+.software .badge { background:var(--c-software-light); color:var(--c-software); }
+.bignum { font-size:30px; font-weight:800; line-height:1; letter-spacing:-0.02em; }
+.article  .bignum { color:var(--c-article); }
+.book     .bignum { color:var(--c-book); }
+.data     .bignum { color:var(--c-data); }
+.software .bignum { color:var(--c-software); }
+.bignum-lbl { font-size:10px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-top:2px; margin-bottom:12px; }
+.rule { border:none; border-top:0.5px solid var(--border); margin:10px 0; }
+.sec-lbl { font-size:10px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:5px; }
+.oa-bar { display:flex; height:6px; border-radius:3px; overflow:hidden; gap:1px; margin-bottom:7px; }
+.oa-seg { height:100%; }
+.oa-legend { display:flex; flex-wrap:wrap; gap:4px 9px; }
+.oa-item { display:flex; align-items:center; gap:3px; font-size:10px; color:var(--muted); }
+.oa-sw { width:7px; height:7px; border-radius:2px; flex-shrink:0; }
+.chips { display:flex; flex-wrap:wrap; gap:4px; margin-top:5px; }
+.chip { font-size:10px; font-weight:600; padding:2px 7px; border-radius:20px; }
+.chip.other    { background:#e5e7eb; color:#374151; }
+.chip.web      { background:#dbeafe; color:#1e40af; }
+.chip.podcast  { background:var(--c-software-light); color:var(--c-software); }
+.chip.substack { background:#fef3c7; color:#92400e; }
+.chip.blog     { background:var(--c-data-light); color:var(--c-data); }
+.mrow { display:flex; justify-content:space-between; font-size:11px; padding:3px 0; }
+.mrow-lbl { color:var(--muted); }
+.mrow-val { font-weight:600; }
+/* teaching uptake blocks */
+.uptake-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; margin-top:8px; }
+.uptake-block { border-radius:8px; padding:8px 6px; text-align:center; }
+.uptake-block .n { font-size:18px; font-weight:700; }
+.uptake-block .l { font-size:9px; text-transform:uppercase; letter-spacing:.05em; margin-top:2px; line-height:1.3; }
+.up-ocw  { background:#eff6ff; } .up-ocw .n  { color:#1d4ed8; } .up-ocw .l  { color:#3b82f6; }
+.up-yt   { background:#fef2f2; } .up-yt .n   { color:#991b1b; } .up-yt .l   { color:#ef4444; }
+.up-lib  { background:#f0fdf4; } .up-lib .n  { color:#166534; } .up-lib .l  { color:#16a34a; }
+.up-otl  { background:#fefce8; } .up-otl .n  { color:#854d0e; } .up-otl .l  { color:#ca8a04; }
+/* discourse row */
+.disc-row { display:flex; gap:6px; margin-top:8px; }
+.disc-item { flex:1; background:var(--bg); border-radius:7px; padding:6px 8px; text-align:center; }
+.disc-item .n { font-size:16px; font-weight:700; color:var(--text); }
+.disc-item .l { font-size:9px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); }
+/* series row */
+.series-row { display:flex; gap:6px; margin-top:8px; }
+.series-stat { flex:1; background:var(--c-book-light); border-radius:7px; padding:7px 5px; text-align:center; }
+.series-stat .n { font-size:16px; font-weight:800; color:var(--c-book); }
+.series-stat .l { font-size:8px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); margin-top:2px; line-height:1.3; }
+/* stewardship panel */
+.panel { background:var(--surface); border-radius:12px; border:0.5px solid var(--border); overflow:hidden; margin-bottom:12px; }
+.panel-hdr { display:flex; align-items:center; gap:8px; padding:12px 18px 10px; border-bottom:0.5px solid var(--border); }
+.panel-title { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.panel-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:20px; background:var(--c-article-light); color:var(--c-article); text-transform:uppercase; letter-spacing:.05em; }
+.panel-body { padding:14px 18px; }
+.steward-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:7px; }
+.sg { border-radius:9px; padding:10px 6px; text-align:center; border:0.5px solid var(--border); }
+.sg .n { font-size:20px; font-weight:700; line-height:1; }
+.sg .l { font-size:9px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin-top:3px; line-height:1.4; }
+.sg-gh  { background:#f0fdf4; } .sg-gh .n  { color:#15803d; }
+.sg-dat { background:#eff6ff; } .sg-dat .n { color:#1d4ed8; }
+.sg-fun { background:#fefce8; } .sg-fun .n { color:#854d0e; }
+.sg-tri { background:#fef2f2; } .sg-tri .n { color:#991b1b; }
+.sg-top { background:var(--c-article-light); } .sg-top .n { color:var(--c-article); }
+.ltype-grid { display:grid; grid-template-columns:1fr 1fr; gap:5px 18px; margin-top:10px; }
+.ltype-row { display:flex; align-items:center; gap:5px; }
+.ltype-lbl { font-size:10px; color:var(--muted); min-width:90px; }
+.ltype-track { flex:1; background:var(--bg); border-radius:3px; height:5px; overflow:hidden; }
+.ltype-fill { height:100%; border-radius:3px; }
+.ltype-val { font-size:10px; font-weight:600; min-width:18px; text-align:right; }
+.note { font-size:11px; font-style:italic; color:var(--muted); line-height:1.5; margin-top:7px; }
+/* open peer review pills */
+.opr-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:5px; margin-top:7px; }
+.opr-pill { border-radius:7px; padding:6px 4px; text-align:center; border:0.5px solid var(--border); }
+.opr-pill .n { font-size:16px; font-weight:700; }
+.opr-pill .l { font-size:9px; text-transform:uppercase; letter-spacing:.04em; margin-top:1px; color:var(--muted); }
+.opr-landmark  { background:#fef9c3; } .opr-landmark .n  { color:#713f12; }
+.opr-fund      { background:#eff6ff; } .opr-fund .n      { color:#1d4ed8; }
+.opr-important { background:var(--c-article-light); } .opr-important .n { color:var(--c-article); }
+.opr-valuable  { background:#f0fdf4; } .opr-valuable .n  { color:#166534; }
+.opr-useful    { background:#f3f4f6; } .opr-useful .n    { color:#374151; }
+/* RRID row */
+.rrid-row { display:flex; align-items:center; gap:10px; margin-top:7px; padding:8px 10px; background:var(--bg); border-radius:8px; }
+.rrid-big { font-size:20px; font-weight:700; color:var(--c-article); }
+.rrid-text { font-size:11px; color:var(--muted); line-height:1.4; }
+.rrid-sub { font-size:10px; color:var(--muted); margin-top:7px; }
+.footnote { font-size:10px; color:var(--muted); text-align:center; margin-top:12px; }
+.footnote a { color:var(--c-article); }
 </style>
 </head>
 <body>
-<div class="infog">
-  <div class="hdr">
-    <div>
-      <div class="hdr-brand">openscience<span>.works</span></div>
-      <div style="font-size:12px;opacity:.4;margin-top:3px;">Story portfolio overview</div>
-    </div>
-    <div class="hdr-total">
-      <div class="num">354</div>
-      <div class="lbl">stories</div>
-    </div>
-    <div class="hdr-right">
-      <div class="hdr-cites">139,892</div>
-      <div class="hdr-cites-lbl">total citations</div>
-    </div>
+
+<div class="hdr">
+  <div>
+    <div class="hdr-brand">openscience<span class="dot">.</span><span class="works">works</span></div>
+    <div class="hdr-sub">Story portfolio overview · June 2026</div>
   </div>
-
-  <div class="grid">
-    <div class="pcard article">
-      <div class="pcard-head">
-        <div class="pcard-name">ArticleStories</div>
-        <div class="pcard-count">173 stories</div>
-      </div>
-      <div class="bignum">127,797</div>
-      <div class="bignumlbl">citations</div>
-      <div class="oa-bar-wrap">
-        <div class="oa-bar-lbl">Open access breakdown</div>
-        <div class="oa-bar">
-          <div class="oa-seg" style="width:29%;background:#FAC775;"></div>
-          <div class="oa-seg" style="width:38%;background:#97C459;"></div>
-          <div class="oa-seg" style="width:21%;background:#85B7EB;"></div>
-          <div class="oa-seg" style="width:1.2%;background:#9FE1CB;"></div>
-          <div class="oa-seg" style="width:10.3%;background:#D3D1C7;"></div>
-        </div>
-        <div class="oa-legend">
-          <span class="oa-dot"><i style="background:#FAC775;"></i>Gold 48</span>
-          <span class="oa-dot"><i style="background:#97C459;"></i>Green 63</span>
-          <span class="oa-dot"><i style="background:#85B7EB;"></i>Hybrid 35</span>
-          <span class="oa-dot"><i style="background:#9FE1CB;"></i>Diamond 2</span>
-          <span class="oa-dot"><i style="background:#D3D1C7;"></i>Closed 17</span>
-        </div>
-      </div>
-      <hr class="divider">
-      <div class="oa-bar-lbl">Mentions by type · 951 total</div>
-      <div class="mention-row">
-        <span class="mchip other">🌐 other · 931</span>
-        <span class="mchip web">🔗 web · 20</span>
-        <span class="mchip podcast">🎙 podcast · 12</span>
-        <span class="mchip substack">✉ substack · 6</span>
-        <span class="mchip blog">📝 blog · 2</span>
-      </div>
-      <hr class="divider">
-      <div class="mrow"><span class="mrow-lbl">Top 1% by citations</span><span class="mrow-val">23 articles</span></div>
-      <div class="mrow"><span class="mrow-lbl">Top 10% by citations</span><span class="mrow-val">60 articles</span></div>
-      <div class="mrow"><span class="mrow-lbl">Funded research</span><span class="mrow-val">78 articles</span></div>
-    </div>
-
-    <div class="pcard book">
-      <div class="pcard-head">
-        <div class="pcard-name">BookStories</div>
-        <div class="pcard-count">156 stories</div>
-      </div>
-      <div class="bignum">5,892</div>
-      <div class="bignumlbl">citations · 100% open access</div>
-      <hr class="divider">
-      <div class="oa-bar-lbl">Scite smart citations · 11,269 total</div>
-      <div class="scite-row">
-        <div class="scite-block scite-sup"><div class="n">75</div><div class="l">supporting</div></div>
-        <div class="scite-block scite-men"><div class="n">10,547</div><div class="l">mentioning</div></div>
-        <div class="scite-block scite-con"><div class="n">6</div><div class="l">contrasting</div></div>
-      </div>
-      <hr class="divider">
-      <div class="mrow"><span class="mrow-lbl">In named series</span><span class="mrow-val">155 books</span></div>
-      <div class="mrow"><span class="mrow-lbl">Most supported book</span><span class="mrow-val">Intro to Statistical Learning</span></div>
-      <div class="mrow"><span class="mrow-lbl">Top book supporting citations</span><span class="mrow-val">45</span></div>
-    </div>
-
-    <div class="pcard data">
-      <div class="pcard-head">
-        <div class="pcard-name">DataStories</div>
-        <div class="pcard-count">18 stories</div>
-      </div>
-      <div class="bignum">1,855</div>
-      <div class="bignumlbl">citations · 100% open access</div>
-      <hr class="divider">
-      <div class="oa-bar-wrap">
-        <div class="oa-bar-lbl">OA type</div>
-        <div class="oa-bar">
-          <div class="oa-seg" style="width:94%;background:#97C459;"></div>
-          <div class="oa-seg" style="width:6%;background:#FAC775;"></div>
-        </div>
-        <div class="oa-legend">
-          <span class="oa-dot"><i style="background:#97C459;"></i>Green 17</span>
-          <span class="oa-dot"><i style="background:#FAC775;"></i>Gold 1</span>
-        </div>
-      </div>
-      <hr class="divider">
-      <div class="mrow"><span class="mrow-lbl">Avg citations / story</span><span class="mrow-val">103</span></div>
-      <div class="mrow"><span class="mrow-lbl">Hosted on Zenodo / Dryad</span><span class="mrow-val">15 datasets</span></div>
-    </div>
-
-    <div class="pcard soft">
-      <div class="pcard-head">
-        <div class="pcard-name">SoftwareStories</div>
-        <div class="pcard-count">7 stories</div>
-      </div>
-      <div class="bignum">4,348</div>
-      <div class="bignumlbl">citations · 100% open access</div>
-      <hr class="divider">
-      <div class="mrow"><span class="mrow-lbl">Avg citations / story</span><span class="mrow-val">621</span></div>
-      <div class="mrow"><span class="mrow-lbl">Hosted on Zenodo / Figshare</span><span class="mrow-val">6 packages</span></div>
-      <hr class="divider">
-      <div style="font-size:12px;color:var(--coral-dark);font-style:italic;line-height:1.5;">Highest impact per story — software underpins research at scale.</div>
-    </div>
+  <div class="hdr-totals">
+    <div class="hdr-stat"><div class="n">354</div><div class="l">stories</div></div>
+    <div class="hdr-stat"><div class="n">139,892</div><div class="l">citations</div></div>
   </div>
-
-  <div class="signals">
-    <div class="signals-head">Open science signals · ArticleStories</div>
-    <div class="signals-grid">
-      <div class="sig-item"><div class="sig-n">168</div><div class="sig-l">data &amp; code links</div></div>
-      <div class="sig-item"><div class="sig-n">33</div><div class="sig-l">GitHub / code repos</div></div>
-      <div class="sig-item"><div class="sig-n">78</div><div class="sig-l">funded articles</div></div>
-      <div class="sig-item"><div class="sig-n">4</div><div class="sig-l">clinical trials registered</div></div>
-    </div>
-    <div class="signals-divider"></div>
-    <div class="signals-grid">
-      <div class="sig-item"><div class="sig-n">23</div><div class="sig-l">top 1% cited globally</div></div>
-      <div class="sig-item"><div class="sig-n">60</div><div class="sig-l">top 10% cited globally</div></div>
-      <div class="sig-item"><div class="sig-n">620</div><div class="sig-l">author contributors</div></div>
-      <div class="sig-item"><div class="sig-n">156</div><div class="sig-l">books fully open access</div></div>
-    </div>
-  </div>
-
-  <div class="footnote">Data from OpenAlex · Scite · Altmetric · openscience.works repository, June 2026</div>
 </div>
+
+<div class="grid">
+
+  <!-- ARTICLESTORIES -->
+  <div class="card article">
+    <div class="stripe"></div>
+    <div class="card-body">
+      <div class="card-head"><div class="card-title">ArticleStories</div><div class="badge">173 stories</div></div>
+      <div class="bignum">127,797</div>
+      <div class="bignum-lbl">citations</div>
+      <div class="sec-lbl">Open access breakdown</div>
+      <div class="oa-bar">
+        <div class="oa-seg" style="width:29%;background:#F59E0B;"></div>
+        <div class="oa-seg" style="width:38%;background:#10B981;"></div>
+        <div class="oa-seg" style="width:21%;background:#60A5FA;"></div>
+        <div class="oa-seg" style="width:1.2%;background:#A7F3D0;"></div>
+        <div class="oa-seg" style="width:10.3%;background:#D1D5DB;"></div>
+      </div>
+      <div class="oa-legend">
+        <span class="oa-item"><span class="oa-sw" style="background:#F59E0B;"></span>Gold 48</span>
+        <span class="oa-item"><span class="oa-sw" style="background:#10B981;"></span>Green 63</span>
+        <span class="oa-item"><span class="oa-sw" style="background:#60A5FA;"></span>Hybrid 35</span>
+        <span class="oa-item"><span class="oa-sw" style="background:#A7F3D0;"></span>Diamond 2</span>
+        <span class="oa-item"><span class="oa-sw" style="background:#D1D5DB;"></span>Closed 17</span>
+      </div>
+      <hr class="rule">
+      <div class="sec-lbl">Mentions by type · 951 total</div>
+      <div class="chips">
+        <span class="chip other">🌐 other · 931</span>
+        <span class="chip web">🔗 web · 20</span>
+        <span class="chip podcast">🎙 podcast · 12</span>
+        <span class="chip substack">✉ substack · 6</span>
+        <span class="chip blog">📝 blog · 2</span>
+      </div>
+      <hr class="rule">
+      <div class="sec-lbl">Open peer review · eLife assessments (11 articles)</div>
+      <div class="opr-grid">
+        <div class="opr-pill opr-landmark"><div class="n">1</div><div class="l">Landmark</div></div>
+        <div class="opr-pill opr-fund"><div class="n">1</div><div class="l">Fundamental</div></div>
+        <div class="opr-pill opr-important"><div class="n">5</div><div class="l">Important</div></div>
+        <div class="opr-pill opr-valuable"><div class="n">2</div><div class="l">Valuable</div></div>
+        <div class="opr-pill opr-useful"><div class="n">2</div><div class="l">Useful</div></div>
+      </div>
+      <hr class="rule">
+      <div class="sec-lbl">Research Resource Identifiers (RRIDs)</div>
+      <div class="rrid-row">
+        <div class="rrid-big">267</div>
+        <div class="rrid-text"><strong>RRID mentions</strong> across <strong>20 articles</strong> — accession numbers linking to shared reagents, model organisms &amp; software</div>
+      </div>
+      <hr class="rule">
+      <div class="mrow"><span class="mrow-lbl">Top 1% cited globally</span><span class="mrow-val">23 articles</span></div>
+      <div class="mrow"><span class="mrow-lbl">Top 10% cited globally</span><span class="mrow-val">60 articles</span></div>
+      <div class="mrow"><span class="mrow-lbl">Funded research</span><span class="mrow-val">78 articles</span></div>
+      <div class="mrow"><span class="mrow-lbl">Preprint DOIs (bioRxiv)</span><span class="mrow-val">30 articles</span></div>
+    </div>
+  </div>
+
+  <!-- BOOKSTORIES -->
+  <div class="card book">
+    <div class="stripe"></div>
+    <div class="card-body">
+      <div class="card-head"><div class="card-title">BookStories</div><div class="badge">156 stories</div></div>
+      <div class="bignum">5,892</div>
+      <div class="bignum-lbl">citations</div>
+      <div class="sec-lbl">Open access breakdown</div>
+      <div class="oa-bar">
+        <div class="oa-seg" style="width:45.5%;background:#60A5FA;"></div>
+        <div class="oa-seg" style="width:23.1%;background:#10B981;"></div>
+        <div class="oa-seg" style="width:18.6%;background:#F59E0B;"></div>
+        <div class="oa-seg" style="width:3.2%;background:#D1D5DB;"></div>
+        <div class="oa-seg" style="width:0.6%;background:#6B7280;"></div>
+        <div class="oa-seg" style="width:8.3%;background:#E5E7EB;"></div>
+      </div>
+      <div class="oa-legend">
+        <span class="oa-item"><span class="oa-sw" style="background:#60A5FA;"></span>Hybrid 71</span>
+        <span class="oa-item"><span class="oa-sw" style="background:#10B981;"></span>Green 36</span>
+        <span class="oa-item"><span class="oa-sw" style="background:#F59E0B;"></span>Gold 29</span>
+        <span class="oa-item"><span class="oa-sw" style="background:#D1D5DB;"></span>Closed 5</span>
+        <span class="oa-item"><span class="oa-sw" style="background:#E5E7EB;"></span>Unknown 13</span>
+      </div>
+      <hr class="rule">
+      <div class="sec-lbl">Teaching &amp; learning uptake</div>
+      <div class="uptake-grid">
+        <div class="uptake-block up-ocw">
+          <div class="n">97</div>
+          <div class="l">OCW lectures</div>
+        </div>
+        <div class="uptake-block up-yt">
+          <div class="n">26</div>
+          <div class="l">YouTube lectures</div>
+        </div>
+        <div class="uptake-block up-lib">
+          <div class="n">172</div>
+          <div class="l">library holdings</div>
+        </div>
+        <div class="uptake-block up-otl">
+          <div class="n">61</div>
+          <div class="l">OTL listings</div>
+        </div>
+      </div>
+      <hr class="rule">
+      <div class="sec-lbl">Online discourse</div>
+      <div class="disc-row">
+        <div class="disc-item"><div class="n">29</div><div class="l">Wikipedia</div></div>
+        <div class="disc-item"><div class="n">7</div><div class="l">News</div></div>
+        <div class="disc-item"><div class="n">31</div><div class="l">Books w/ OCW</div></div>
+        <div class="disc-item"><div class="n">12</div><div class="l">Books w/ YouTube</div></div>
+      </div>
+      <hr class="rule">
+      <div class="sec-lbl">Book series coverage</div>
+      <div class="series-row">
+        <div class="series-stat"><div class="n">32</div><div class="l">books in a series</div></div>
+        <div class="series-stat"><div class="n">18</div><div class="l">named series</div></div>
+        <div class="series-stat"><div class="n">3,657</div><div class="l">citations from series books</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DATASTORIES -->
+  <div class="card data">
+    <div class="stripe"></div>
+    <div class="card-body">
+      <div class="card-head"><div class="card-title">DataStories</div><div class="badge">18 stories</div></div>
+      <div class="bignum">1,855</div>
+      <div class="bignum-lbl">citations · 100% open access</div>
+      <div class="sec-lbl">OA type</div>
+      <div class="oa-bar">
+        <div class="oa-seg" style="width:94%;background:#10B981;"></div>
+        <div class="oa-seg" style="width:6%;background:#F59E0B;"></div>
+      </div>
+      <div class="oa-legend">
+        <span class="oa-item"><span class="oa-sw" style="background:#10B981;"></span>Green 17</span>
+        <span class="oa-item"><span class="oa-sw" style="background:#F59E0B;"></span>Gold 1</span>
+      </div>
+      <hr class="rule">
+      <div class="mrow"><span class="mrow-lbl">Avg citations / story</span><span class="mrow-val">103</span></div>
+      <div class="mrow"><span class="mrow-lbl">Hosted on Zenodo</span><span class="mrow-val">10 datasets</span></div>
+      <div class="mrow"><span class="mrow-lbl">Hosted on Dryad / Figshare</span><span class="mrow-val">5 datasets</span></div>
+    </div>
+  </div>
+
+  <!-- SOFTWARESTORIES -->
+  <div class="card software">
+    <div class="stripe"></div>
+    <div class="card-body">
+      <div class="card-head"><div class="card-title">SoftwareStories</div><div class="badge">7 stories</div></div>
+      <div class="bignum">4,348</div>
+      <div class="bignum-lbl">citations · 100% open access</div>
+      <hr class="rule">
+      <div class="mrow"><span class="mrow-lbl">Avg citations / story</span><span class="mrow-val" style="color:var(--c-software);font-size:14px;">621</span></div>
+      <div class="mrow"><span class="mrow-lbl">Hosted on Zenodo / Figshare</span><span class="mrow-val">6 packages</span></div>
+      <hr class="rule">
+      <p class="note">Highest impact per story — software underpins research at scale.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- SCIENTIFIC STEWARDSHIP -->
+<div class="panel">
+  <div class="panel-hdr">
+    <div class="panel-title">Scientific stewardship signals</div>
+    <div class="panel-tag">ArticleStories</div>
+  </div>
+  <div class="panel-body">
+    <div class="steward-grid">
+      <div class="sg sg-gh"><div class="n">33</div><div class="l">GitHub / GitLab repos</div></div>
+      <div class="sg sg-dat"><div class="n">168</div><div class="l">total data &amp; code links</div></div>
+      <div class="sg sg-fun"><div class="n">78</div><div class="l">funded articles</div></div>
+      <div class="sg sg-tri"><div class="n">4</div><div class="l">clinical trials registered</div></div>
+      <div class="sg sg-top"><div class="n">23</div><div class="l">top 1% cited globally</div></div>
+    </div>
+    <hr class="rule" style="margin:12px 0;">
+    <div class="sec-lbl">Linked resource types · 168 links across 49 articles</div>
+    <div class="ltype-grid">
+      <div class="ltype-row">
+        <span class="ltype-lbl">GitHub Repository</span>
+        <div class="ltype-track"><div class="ltype-fill" style="width:53.6%;background:var(--c-article);"></div></div>
+        <span class="ltype-val" style="color:var(--c-article);">90</span>
+      </div>
+      <div class="ltype-row">
+        <span class="ltype-lbl">Figshare</span>
+        <div class="ltype-track"><div class="ltype-fill" style="width:11.9%;background:var(--c-software);"></div></div>
+        <span class="ltype-val" style="color:var(--c-software);">20</span>
+      </div>
+      <div class="ltype-row">
+        <span class="ltype-lbl">Crossref Dataset</span>
+        <div class="ltype-track"><div class="ltype-fill" style="width:13.1%;background:var(--c-data);"></div></div>
+        <span class="ltype-val" style="color:var(--c-data);">22</span>
+      </div>
+      <div class="ltype-row">
+        <span class="ltype-lbl">DataCite Dataset</span>
+        <div class="ltype-track"><div class="ltype-fill" style="width:7.7%;background:var(--c-data);"></div></div>
+        <span class="ltype-val" style="color:var(--c-data);">13</span>
+      </div>
+      <div class="ltype-row">
+        <span class="ltype-lbl">Zenodo</span>
+        <div class="ltype-track"><div class="ltype-fill" style="width:6%;background:var(--c-book);"></div></div>
+        <span class="ltype-val" style="color:var(--c-book);">10</span>
+      </div>
+      <div class="ltype-row">
+        <span class="ltype-lbl">Dryad / OSF / other</span>
+        <div class="ltype-track"><div class="ltype-fill" style="width:7.7%;background:#9CA3AF;"></div></div>
+        <span class="ltype-val" style="color:#9CA3AF;">13</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footnote">Metrics drawn from 25+ open data sources · <a href="about.html">see full sources &amp; methodology</a> · June 2026</div>
+
 </body>
 </html>
