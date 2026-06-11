@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trevor Bedford — openscience.works</title>
+  <meta name="description" content="Trevor Bedford has 2 publications in the openscience.works collection.">
+  <link rel="icon" type="image/png" href="openscience.works%20logos/openscience.works%20icon.png">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --bg:            #f3f4f6;
+      --surface:       #ffffff;
+      --border:        #e5e7eb;
+      --text:          #111827;
+      --muted:         #6b7280;
+      --accent:        #2E4563;
+      --accent-light:  #e8edf3;
+      --fold:          #F2C94C;
+      --c-article:     #3C5A7F;
+      --c-book:        #B34444;
+      --c-data:        #34675A;
+      --c-software:    #6A4FA3;
+      --radius:        0.9rem;
+      --shadow:        0 4px 24px rgba(15,23,42,0.08);
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Montserrat, sans-serif;
+      background: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6;
+    }
+
+    /* ── SITE NAV ────────────────────────────────────────── */
+    .site-nav {
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 0.6rem 1.5rem; display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.6rem;
+      text-decoration: none; color: var(--text); font-weight: 700; font-size: 1rem;
+    }
+    .site-nav-brand img { width: 32px; height: 32px; object-fit: contain; }
+    .brand-dot { color: var(--fold); }
+    .site-nav-links { display: flex; gap: 0.25rem; }
+    .site-nav-links a {
+      padding: 0.4rem 0.85rem; border-radius: 0.4rem; font-size: 0.88rem; font-weight: 500;
+      text-decoration: none; color: var(--muted); transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: var(--bg); color: var(--text); }
+    .site-nav-links a.active { background: var(--accent-light); color: var(--accent); }
+
+    /* ── LAYOUT ──────────────────────────────────────────── */
+    .page { max-width: 1020px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .card {
+      background: var(--surface); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 1.5rem 1.75rem; margin-bottom: 1.75rem;
+    }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+
+    /* ── AUTHOR HEADER ───────────────────────────────────── */
+    .author-header {
+      display: flex; gap: 1.5rem; align-items: flex-start;
+    }
+    .author-avatar {
+      width: 72px; height: 72px; border-radius: 50%; flex-shrink: 0;
+      background: var(--accent-light); display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; font-weight: 700; color: var(--accent); border: 3px solid var(--fold);
+    }
+    .author-meta { flex: 1; min-width: 0; }
+    .author-name {
+      font-size: 2rem; font-weight: 700; line-height: 1.2; margin: 0 0 0.3rem 0;
+      color: var(--text);
+    }
+    .author-sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.6rem; }
+    .orcid-badge {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      background: #a6ce39; color: white; padding: 0.2rem 0.55rem; border-radius: 999px;
+      font-size: 0.72rem; font-weight: 700; text-decoration: none; text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .orcid-badge svg { width: 14px; height: 14px; fill: white; flex-shrink: 0; }
+    .type-pill {
+      display: inline-block; padding: 0.15rem 0.55rem; border-radius: 999px;
+      font-size: 0.75rem; font-weight: 600; margin: 0 0.2rem 0.2rem 0;
+    }
+    .type-article  { background: #dbeafe; color: var(--c-article); }
+    .type-book     { background: #fee2e2; color: var(--c-book); }
+    .type-data     { background: #d1fae5; color: var(--c-data); }
+    .type-software { background: #ede9fe; color: var(--c-software); }
+
+    /* ── STAT BOXES ──────────────────────────────────────── */
+    .stats-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.25rem; }
+    .stat-box {
+      background: var(--bg); border-radius: 0.6rem; padding: 0.75rem 1rem;
+      min-width: 110px; text-align: center; flex: 1;
+    }
+    .stat-box .val { font-size: 1.6rem; font-weight: 700; color: var(--accent); line-height: 1; }
+    .stat-box .lbl { font-size: 0.72rem; color: var(--muted); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* ── SECTION HEADINGS ────────────────────────────────── */
+    h2 { font-size: 1.1rem; font-weight: 700; margin: 0 0 1rem 0; color: var(--text); }
+    h2 .count { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 0.4rem; }
+
+    /* ── PUB CARDS ───────────────────────────────────────── */
+    .pub-list { display: flex; flex-direction: column; gap: 0.85rem; }
+    .pub-card {
+      border: 1px solid var(--border); border-radius: 0.65rem; padding: 1rem 1.1rem;
+      display: flex; gap: 1rem; align-items: flex-start; text-decoration: none; color: inherit;
+      transition: box-shadow 0.15s, border-color 0.15s; background: var(--surface);
+    }
+    .pub-card:hover { box-shadow: 0 4px 16px rgba(15,23,42,0.12); border-color: #cbd5e1; }
+    .pub-type-stripe {
+      width: 4px; border-radius: 2px; flex-shrink: 0; align-self: stretch; min-height: 40px;
+    }
+    .stripe-article  { background: var(--c-article); }
+    .stripe-book     { background: var(--c-book); }
+    .stripe-data     { background: var(--c-data); }
+    .stripe-software { background: var(--c-software); }
+    .pub-body { flex: 1; min-width: 0; }
+    .pub-title { font-size: 0.95rem; font-weight: 600; line-height: 1.35; margin: 0 0 0.3rem 0; }
+    .pub-meta { font-size: 0.78rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; }
+    .pub-signals { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.4rem; }
+    .sig-pill {
+      display: inline-flex; align-items: center; gap: 0.25rem;
+      font-size: 0.72rem; padding: 0.1rem 0.45rem; border-radius: 999px; font-weight: 500;
+    }
+    .sig-blue   { background: #dbeafe; color: #1e40af; }
+    .sig-amber  { background: #fef3c7; color: #b45309; }
+    .sig-green  { background: #d1fae5; color: #065f46; }
+    .sig-purple { background: #ede9fe; color: #5b21b6; }
+    .sig-gray   { background: var(--bg); color: var(--muted); }
+    .oa-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #a6ce39; margin-right: 2px; }
+
+    /* ── TIMELINE CHART ──────────────────────────────────── */
+    .chart-wrap { position: relative; height: 160px; }
+
+    /* ── INSTITUTION LIST ────────────────────────────────── */
+    .inst-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .inst-tag {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 999px;
+      font-size: 0.8rem; padding: 0.2rem 0.65rem; color: var(--muted);
+    }
+
+    /* ── CO-AUTHOR LIST ──────────────────────────────────── */
+    .coauthor-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .coauthor-pill {
+      background: var(--accent-light); color: var(--accent); border-radius: 999px;
+      font-size: 0.82rem; padding: 0.2rem 0.7rem; font-weight: 500;
+      white-space: nowrap;
+    }
+    .coauthor-pill a { color: inherit; text-decoration: none; }
+    .coauthor-pill a:hover { text-decoration: underline; }
+    .coauthor-count { font-size: 0.72rem; color: var(--muted); margin-left: 0.25rem; }
+
+    /* ── TEACHING & OPEN SCIENCE SIGNALS ────────────────── */
+    .signals-section { margin-bottom: 0.5rem; }
+    .signals-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.07em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 0.55rem;
+    }
+    .signals-pills { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .signal-pill {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--accent-light); color: var(--accent);
+      border-radius: 999px; font-size: 0.8rem; font-weight: 500;
+      padding: 0.25rem 0.75rem;
+    }
+    .signal-pill .pill-count {
+      background: var(--accent); color: #fff;
+      border-radius: 999px; font-size: 0.72rem; font-weight: 700;
+      padding: 0.05rem 0.45rem; min-width: 1.4rem; text-align: center;
+    }
+
+    /* ── AUTHOR STRENGTHS ───────────────────────────────── */
+    .strengths-list { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .strength-badge {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      background: var(--surface); border: 1.5px solid var(--accent);
+      color: var(--accent); border-radius: 999px;
+      font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.75rem;
+    }
+
+    /* ── SCIENCE STEWARDSHIP ─────────────────────────────── */
+    .stewardship-grid {
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .stewardship-row { display: flex; flex-direction: column; gap: 0.3rem; }
+    .stewardship-row-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .stewardship-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .stewardship-pill {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 0.45rem; font-size: 0.78rem; padding: 0.2rem 0.6rem;
+      color: var(--text); text-decoration: none;
+    }
+    .stewardship-pill:hover { border-color: var(--accent); color: var(--accent); }
+    .stewardship-pill .pill-icon { font-size: 0.85rem; }
+
+    /* ── DOMINANT CONCEPTS ───────────────────────────────── */
+    .concepts-cloud { display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: baseline; }
+    .concept-tag {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+      color: var(--text); font-weight: 500; line-height: 1;
+      padding: 0.25rem 0.65rem; white-space: nowrap;
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .author-header { flex-direction: column; gap: 1rem; }
+      .stats-row { gap: 0.6rem; }
+      .stat-box { min-width: 80px; }
+    }
+
+    @media print {
+      .site-nav { display: none !important; }
+      body { background: white !important; }
+      .card { box-shadow: none !important; border: 1px solid var(--border) !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── SITE NAV ─────────────────────────────────────────────────────────── -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works icon">
+    openscience<span class="brand-dot">.</span>works
+  </a>
+  <div class="site-nav-links">
+    <a href="index.html">Stories</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<!-- ── PAGE ─────────────────────────────────────────────────────────────── -->
+<div class="page">
+
+  <!-- HEADER CARD -->
+  <div class="card">
+    <div class="author-header">
+      <div class="author-avatar">T</div>
+      <div class="author-meta">
+        <h1 class="author-name">Trevor Bedford</h1>
+        <div class="author-sub">
+          2023–2023 &nbsp;·&nbsp;
+          
+            <span class="type-pill type-article">ArticleStory</span>
+          
+        </div>
+        
+          <a class="orcid-badge" href="https://orcid.org/0000-0002-4039-5794" target="_blank" rel="noopener">
+            <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M128 0C57.3 0 0 57.3 0 128s57.3 128 128 128 128-57.3 128-128S198.7 0 128 0zm-25.4 74.2h11.1v107.6H102.6V74.2zm23.1 0h30.1c28.7 0 47.6 18 47.6 53.3 0 35.1-19.3 54.3-47.6 54.3h-30.1V74.2zm11.2 9.7v88.4h18.5c22.8 0 36.4-14.1 36.4-44.3 0-30.1-13.6-44.1-36.4-44.1h-18.5z"/></svg>
+            ORCID&nbsp;0000-0002-4039-5794
+          </a>
+        
+        
+          <div style="margin-top:0.6rem; display:flex; flex-direction:column; gap:0.3rem;">
+            
+              <div style="display:flex; align-items:baseline; gap:0.5rem; flex-wrap:wrap;">
+                <span style="font-size:0.85rem; color:var(--text); font-weight:500;">Fred Hutchinson Cancer Research Center</span>
+                
+                
+                  <span style="font-size:0.75rem; color:#a6ce39; margin-left:auto;">current</span>
+                
+              </div>
+            
+          </div>
+        
+
+        <div class="stats-row">
+          <div class="stat-box">
+            <div class="val">2</div>
+            <div class="lbl">Publications</div>
+          </div>
+          <div class="stat-box">
+            <div class="val">84</div>
+            <div class="lbl">Citations</div>
+          </div>
+          <div class="stat-box">
+            <div class="val">0</div>
+            <div class="lbl">Mentions</div>
+          </div>
+          <div class="stat-box">
+            <div class="val">2/2</div>
+            <div class="lbl">Open Access</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROW: TIMELINE (full width) -->
+  <div class="card">
+    <h2>Timeline</h2>
+    
+      <div class="chart-wrap">
+        <canvas id="timeline-chart"></canvas>
+      </div>
+      
+    
+  </div>
+
+  <!-- ROW: [Strengths + Signals stacked left] [Stewardship right] -->
+  
+  
+  
+  <div class="grid-2">
+
+    <!-- LEFT COLUMN: Strengths on top, Open Science & Teaching Signals below -->
+    <div style="display:flex; flex-direction:column; gap:1rem;">
+
+      
+      <div class="card" style="flex:0 0 auto;">
+        <h2>Author Strengths</h2>
+        <div class="strengths-list">
+          
+            <span class="strength-badge">Preprint Advocate</span>
+          
+            <span class="strength-badge">Open Access Champion</span>
+          
+            <span class="strength-badge">Funded Researcher</span>
+          
+            <span class="strength-badge">Educator</span>
+          
+            <span class="strength-badge">SDG-Aligned</span>
+          
+        </div>
+      </div>
+      
+
+      
+      <div class="card" style="flex:1 1 auto;">
+        <h2>Open Science &amp; Teaching Signals</h2>
+        <div class="signals-pills">
+          
+            <span class="signal-pill"><span class="pill-count">2</span> Open Access</span>
+          
+          
+            <span class="signal-pill"><span class="pill-count">2</span> Preprints</span>
+          
+          
+            <span class="signal-pill"><span class="pill-count">2</span> SDG-linked</span>
+          
+          
+            <span class="signal-pill"><span class="pill-count">6</span> OCW mentions</span>
+          
+          
+          
+          
+        </div>
+      </div>
+      
+
+    </div>
+
+    <!-- RIGHT COLUMN: Science Stewardship -->
+    
+    <div class="card">
+      <h2>Science Stewardship</h2>
+      <div class="stewardship-grid">
+
+        
+
+        
+
+        
+        <div class="stewardship-row">
+          <div class="stewardship-row-label">Funding</div>
+          <div class="stewardship-pills">
+            
+              <span class="stewardship-pill"><span class="pill-icon">🏛</span>Wellcome Trust</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+
+      </div>
+    </div>
+    
+
+  </div>
+  
+
+  <!-- ROW: CO-AUTHORS (full width) -->
+  <div class="card">
+    <h2>Co-authors in this collection <span class="count">(2)</span></h2>
+    
+      <div class="coauthor-list">
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-1267-3408.html">Jesse D. Bloom</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-0607-6025.html">F. A. Matsen</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+      </div>
+    
+  </div>
+
+  <!-- ROW: DOMINANT CONCEPTS (full width) -->
+  
+  <div class="card">
+    <h2>Dominant Concepts</h2>
+    <div class="concepts-cloud">
+      
+        
+        <span class="concept-tag" style="font-size: 0.81rem;" title="0.83 across publications">Hemagglutinin (influenza)</span>
+      
+        
+        <span class="concept-tag" style="font-size: 0.80rem;" title="0.76 across publications">Antigenic drift</span>
+      
+        
+        <span class="concept-tag" style="font-size: 0.80rem;" title="0.76 across publications">Neutralization</span>
+      
+        
+        <span class="concept-tag" style="font-size: 0.80rem;" title="0.73 across publications">Term (time)</span>
+      
+        
+        <span class="concept-tag" style="font-size: 0.79rem;" title="0.67 across publications">Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)</span>
+      
+        
+        <span class="concept-tag" style="font-size: 0.79rem;" title="0.66 across publications">Biology</span>
+      
+        
+        <span class="concept-tag" style="font-size: 0.79rem;" title="0.65 across publications">Coronavirus disease 2019 (COVID-19)</span>
+      
+        
+        <span class="concept-tag" style="font-size: 0.79rem;" title="0.65 across publications">Virology</span>
+      
+        
+        <span class="concept-tag" style="font-size: 0.79rem;" title="0.6 across publications">Virus</span>
+      
+        
+        <span class="concept-tag" style="font-size: 0.79rem;" title="0.54 across publications">Antigenic shift</span>
+      
+        
+        <span class="concept-tag" style="font-size: 0.79rem;" title="0.53 across publications">2019-20 coronavirus outbreak</span>
+      
+        
+        <span class="concept-tag" style="font-size: 0.78rem;" title="0.52 across publications">Influenza A virus</span>
+      
+    </div>
+  </div>
+  
+
+  <!-- PUBLICATIONS -->
+  <div class="card">
+    <h2>Publications <span class="count">(2)</span></h2>
+    <div class="pub-list">
+      
+      <a class="pub-card" href="articlestory_10.1101_2023.11.30.23299240.html" >
+        <div class="pub-type-stripe stripe-article"></div>
+        <div class="pub-body">
+          <div class="pub-title">Fitness models provide accurate short-term forecasts of SARS-CoV-2 variant frequency</div>
+          <div class="pub-meta">
+            <span>2023</span>
+            <span>medRxiv</span>
+            <span class="type-pill type-article" style="font-size:0.7rem; padding:0.05rem 0.4rem;">Article</span>
+          </div>
+          <div class="pub-signals">
+            
+              <span class="sig-pill sig-blue">📖 32 citations</span>
+            
+            
+            
+              <span class="sig-pill sig-green"><span class="oa-dot"></span>Open Access</span>
+            
+          </div>
+        </div>
+      </a>
+      
+      <a class="pub-card" href="articlestory_10.1101_2023.12.12.571235.html" >
+        <div class="pub-type-stripe stripe-article"></div>
+        <div class="pub-body">
+          <div class="pub-title">Age-dependent heterogeneity in the antigenic effects of mutations to influenza hemagglutinin</div>
+          <div class="pub-meta">
+            <span>2023</span>
+            <span>bioRxiv</span>
+            <span class="type-pill type-article" style="font-size:0.7rem; padding:0.05rem 0.4rem;">Article</span>
+          </div>
+          <div class="pub-signals">
+            
+              <span class="sig-pill sig-blue">📖 52 citations</span>
+            
+            
+            
+              <span class="sig-pill sig-green"><span class="oa-dot"></span>Open Access</span>
+            
+          </div>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+<script>
+// ── Timeline chart ────────────────────────────────────────────────────────
+(function() {
+  const rawData = [{"year": 2023, "article": 2, "book": 0, "data": 0, "software": 0}];
+  if (!rawData || rawData.length === 0) return;
+
+  const labels = rawData.map(d => d.year);
+  const datasets = {
+    article:  { label: 'Article',  color: '#3C5A7F', data: rawData.map(d => d.article  || 0) },
+    book:     { label: 'Book',     color: '#B34444', data: rawData.map(d => d.book     || 0) },
+    data:     { label: 'Data',     color: '#34675A', data: rawData.map(d => d.data     || 0) },
+    software: { label: 'Software', color: '#6A4FA3', data: rawData.map(d => d.software || 0) },
+  };
+
+  // Only include types present in this author's data
+  const activeTypes = ["article"];
+  const chartDatasets = activeTypes.map(t => ({
+    label: datasets[t].label,
+    backgroundColor: datasets[t].color,
+    data: datasets[t].data,
+    borderRadius: 3,
+  }));
+
+  new Chart(document.getElementById('timeline-chart'), {
+    type: 'bar',
+    data: { labels, datasets: chartDatasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: activeTypes.length > 1, position: 'bottom',
+        labels: { font: { size: 11 }, boxWidth: 10, padding: 8 } } },
+      scales: {
+        x: { stacked: true, grid: { display: false }, ticks: { font: { size: 11 } } },
+        y: { stacked: true, beginAtZero: true, ticks: { stepSize: 1, font: { size: 11 } },
+             grid: { color: '#f0f0f0' } }
+      }
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
