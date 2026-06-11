@@ -319,6 +319,34 @@
     .agg-view { display: none; }
     .agg-view.visible { display: block; }
 
+    /* ── authors view ──────────────────────────────────── */
+    .authors-view { padding-top: 0.25rem; }
+    .authors-search { margin-bottom: 1rem; }
+    .authors-search input {
+      width: 100%; padding: 0.55rem 0.9rem; border: 1px solid var(--border);
+      border-radius: 0.5rem; font-size: 0.9rem; background: var(--surface);
+      color: var(--text); outline: none;
+    }
+    .authors-search input:focus { border-color: var(--accent); }
+    .authors-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem;
+    }
+    .author-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 0.75rem;
+      padding: 1.1rem 1.2rem; text-decoration: none; color: inherit;
+      transition: box-shadow 0.15s, border-color 0.15s; display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .author-card:hover { box-shadow: 0 4px 16px rgba(15,23,42,0.1); border-color: #cbd5e1; }
+    .author-card-name { font-size: 0.98rem; font-weight: 700; line-height: 1.25; }
+    .author-card-meta { font-size: 0.78rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; }
+    .author-card-types { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .author-type-pill {
+      font-size: 0.7rem; font-weight: 600; padding: 0.1rem 0.45rem; border-radius: 999px;
+    }
+    .author-orcid { font-size: 0.7rem; color: #a6ce39; font-weight: 700; }
+    .author-card-stats { font-size: 0.78rem; color: var(--muted); margin-top: auto; }
+    .author-card-stats strong { color: var(--text); }
+
     /* portfolio summary card */
     .pf-card {
       background: var(--surface);
@@ -859,11 +887,13 @@
         <button class="view-btn"        id="vbtn-institution"   onclick="setView('institution')">By institution</button>
         <button class="view-btn"        id="vbtn-publisher"     onclick="setView('publisher')">By publisher</button>
         <button class="view-btn"        id="vbtn-series"        onclick="setView('series')">By series</button>
+        <button class="view-btn"        id="vbtn-authors"       onclick="setView('authors')">Authors</button>
       </div>
       <div class="active-filters" id="activeFilters"></div>
     </div>
     <div class="cards-grid" id="cardsGrid"></div>
     <div class="agg-view" id="aggView"></div>
+    <div class="authors-view" id="authorsView" style="display:none;"></div>
   </main>
 </div>
 
@@ -879,6 +909,7 @@
 </footer>
 
 <script src="stories_data.js"></script>
+<script src="authors_data.js"></script>
 <script src="role_tooltips.js"></script>
 <script>
 // ── state ─────────────────────────────────────────────────────────────────
@@ -1738,13 +1769,19 @@ function update() {
   const filtered = filterStories(all);
   const sorted   = sortStories(filtered);
 
-  const isAgg = state.view !== "stories";
-  document.getElementById("cardsGrid").style.display = isAgg ? "none" : "";
-  document.getElementById("sortSelect").parentElement.style.opacity = isAgg ? "0.4" : "";
-  document.getElementById("sortSelect").disabled = isAgg;
+  const isAuthors = state.view === "authors";
+  const isAgg     = !isAuthors && state.view !== "stories";
+
+  document.getElementById("cardsGrid").style.display    = (!isAuthors && !isAgg) ? "" : "none";
+  document.getElementById("authorsView").style.display  = isAuthors ? "" : "none";
+  document.getElementById("sortSelect").parentElement.style.opacity = (isAgg || isAuthors) ? "0.4" : "";
+  document.getElementById("sortSelect").disabled = isAgg || isAuthors;
 
   const aggEl = document.getElementById("aggView");
-  if (isAgg) {
+  if (isAuthors) {
+    aggEl.classList.remove("visible");
+    renderAuthors(state.query);
+  } else if (isAgg) {
     aggEl.classList.add("visible");
     renderAgg(filtered, state.view);
   } else {
@@ -1752,10 +1789,64 @@ function update() {
     renderCards(sorted);
   }
 
-  renderFacets(all, filtered);
-  renderActiveFilters();
-  renderResultsCount(filtered.length, all.length);
+  if (!isAuthors) {
+    renderFacets(all, filtered);
+    renderActiveFilters();
+    renderResultsCount(filtered.length, all.length);
+  } else {
+    const authorsData = window.AUTHORS_DATA || [];
+    const q = state.query.toLowerCase().trim();
+    const shown = q ? authorsData.filter(a => a.display_name.toLowerCase().includes(q)) : authorsData;
+    document.getElementById("resultsCount").textContent = `${shown.length} author${shown.length !== 1 ? "s" : ""}`;
+  }
   if (typeof initRoleTooltips === "function") initRoleTooltips();
+}
+
+// ── author view ───────────────────────────────────────────────────────────
+function renderAuthors(query) {
+  const el = document.getElementById("authorsView");
+  const authors = window.AUTHORS_DATA || [];
+  const q = (query || "").toLowerCase().trim();
+  const filtered = q ? authors.filter(a => a.display_name.toLowerCase().includes(q)) : authors;
+
+  const TYPE_COLORS = {
+    article:  { bg: "#dbeafe", color: "#1e40af" },
+    book:     { bg: "#fee2e2", color: "#991b1b" },
+    data:     { bg: "#d1fae5", color: "#065f46" },
+    software: { bg: "#ede9fe", color: "#5b21b6" },
+  };
+
+  const cards = filtered.map(a => {
+    const typePills = a.story_types.map(t => {
+      const c = TYPE_COLORS[t] || { bg: "#f3f4f6", color: "#374151" };
+      return `<span class="author-type-pill" style="background:${c.bg};color:${c.color}">${t.charAt(0).toUpperCase()+t.slice(1)}</span>`;
+    }).join("");
+    const orcidTag = a.orcid
+      ? `<span class="author-orcid">ORCID ✓</span>`
+      : "";
+    const inst = a.institutions && a.institutions.length
+      ? `<span>${a.institutions[0]}</span>` : "";
+    const yearSpan = a.year_range ? `<span>${a.year_range}</span>` : "";
+    const stats = [
+      `<strong>${a.pub_count}</strong> pub${a.pub_count !== 1 ? "s" : ""}`,
+      a.total_citations ? `<strong>${a.total_citations}</strong> citations` : null,
+    ].filter(Boolean).join(" &nbsp;·&nbsp; ");
+
+    return `<a class="author-card" href="${a.page}">
+      <div class="author-card-name">${a.display_name}</div>
+      <div class="author-card-types">${typePills}${orcidTag ? " " + orcidTag : ""}</div>
+      <div class="author-card-meta">${yearSpan}${inst}</div>
+      <div class="author-card-stats">${stats}</div>
+    </a>`;
+  }).join("");
+
+  el.innerHTML = `
+    <div class="authors-search">
+      <input type="search" placeholder="Search authors…" value="${query || ""}"
+             oninput="state.query=this.value.toLowerCase().trim();renderAuthors(state.query);document.getElementById('resultsCount').textContent=(window.AUTHORS_DATA||[]).filter(a=>!state.query||a.display_name.toLowerCase().includes(state.query)).length+' author'+(1!==1?'s':'s');">
+    </div>
+    <div class="authors-grid">${cards || "<p style='color:var(--muted)'>No authors found.</p>"}</div>
+  `;
 }
 
 // ── events ────────────────────────────────────────────────────────────────
