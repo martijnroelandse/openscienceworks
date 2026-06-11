@@ -21237,7 +21237,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "Journal of Translation Studies",
 "venue_name": "Journal of Translation Studies",
-"publisher": "Peter Lang",
+"publisher": "Peter Lang Verlag",
 "concepts": [
 "Terminology",
 "Transformation (genetics)",
@@ -23186,7 +23186,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The book \"Lotze et son héritage,\" published by Peter Lang B in 2015, contributes to the academic discourse surrounding Lotze's influence but has not yet generated significant cita…",
+"excerpt": "Short impact summary The book \"Lotze et son héritage,\" published by Peter Lang Verlag in 2015, contributes to the academic discourse surrounding Lotze's influence but has not yet generated significant…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9782875742780&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Federico Boccaccini",
 "institutions": [],
@@ -24714,9 +24714,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.3726/978-3-0352-6544-6",
 "year": 2015,
-"venue": "Peter Lang B",
+"venue": "Peter Lang Verlag",
 "venue_name": "",
-"publisher": "Peter Lang B",
+"publisher": "Peter Lang Verlag",
 "concepts": [
 "Biopower",
 "Eugenics",
@@ -24803,9 +24803,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.3726/b11422",
 "year": 2017,
-"venue": "Peter Lang B",
+"venue": "Peter Lang Verlag",
 "venue_name": "",
-"publisher": "Peter Lang B",
+"publisher": "Peter Lang Verlag",
 "concepts": [
 "Austerity",
 "Political science",
@@ -24833,7 +24833,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The book \"Austerity and the Implementation of the Europe 2020 Strategy in Spain,\" published in 2017 by Peter Lang B, addresses the intersection of economic policy and social welfa…",
+"excerpt": "Short impact summary The book \"Austerity and the Implementation of the Europe 2020 Strategy in Spain,\" published in 2017 by Peter Lang Verlag, addresses the intersection of economic policy and social …",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1113360/large.webp",
 "authors": "Javier Ramos, Esther del Campo",
 "institutions": [],
@@ -24888,6 +24888,231 @@ window.STORIES_DATA = [
 },
 {
 "label": "Universidad de La Laguna",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "bookstory_10.3726_b11759.html",
+"title": "Digital Disruption",
+"type": "BookStory",
+"doi": "10.3726/b11759",
+"year": 2018,
+"venue": "Peter Lang Verlag",
+"venue_name": "",
+"publisher": "Peter Lang Verlag",
+"concepts": [
+"Computer science"
+],
+"roles": [
+"Commercial Linkage",
+"Pedagogical Anchor",
+"Scholarly Uptake"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 3,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 5,
+"ta_ol_holdings": 1,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite the absence of extensive social media visibility or direct citations, \"Digital Disruption,\" published by Peter Lang Verlag in 2018, has made initial inroads in academic co…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781433149214&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Tracey Wilen-Daugenti",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "The Chicago School",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "bookstory_10.3726_b16046.html",
+"title": "Renewing the Church-State Partnership for Catholic Education",
+"type": "BookStory",
+"doi": "10.3726/b16046",
+"year": 2020,
+"venue": "Peter Lang Verlag",
+"venue_name": "",
+"publisher": "Peter Lang Verlag",
+"concepts": [
+"General partnership",
+"State (computer science)",
+"Political science",
+"Public administration",
+"Sociology",
+"Theology",
+"Law",
+"Philosophy"
+],
+"roles": [
+"Commercial Linkage",
+"Scholarly Uptake"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 3,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 4,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary \"Renewing the Church-State Partnership for Catholic Education\" published by Peter Lang Verlag in 2020 explores the dynamic relationship between religious institutions and educatio…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781789975826&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Margaret Buck",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "St Mary's University Twickenham London",
+"count": 2
+},
+{
+"label": "University of Glasgow",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "bookstory_10.3726_b16301.html",
+"title": "Digital Marketing Applications",
+"type": "BookStory",
+"doi": "10.3726/b16301",
+"year": 2019,
+"venue": "Peter Lang Verlag",
+"venue_name": "",
+"publisher": "Peter Lang Verlag",
+"concepts": [
+"Computer science",
+"Business",
+"Marketing"
+],
+"roles": [
+"Commercial Linkage",
+"Pedagogical Anchor",
+"Scholarly Uptake"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 3,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 4,
+"ta_otl": true,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary \"Digital Marketing Applications,\" published by Peter Lang Verlag in 2019, stands as a noteworthy contribution to the field despite limited academic citations and public engagement…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9783631802519&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Hatice Aydin",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "Malaysia",
+"count": 1
+},
+{
+"label": "India",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "National University of Malaysia",
+"count": 1
+},
+{
+"label": "Alagappa University",
+"count": 0
+},
+{
+"label": "Jamia Millia Islamia",
 "count": 0
 }
 ],
@@ -26682,6 +26907,236 @@ window.STORIES_DATA = [
 {
 "label": "University of Graz",
 "count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "bookstory_10.3726_b13071.html",
+"title": "Competition, Community, and Educational Growth",
+"type": "BookStory",
+"doi": "10.3726/b13071",
+"year": 2018,
+"venue": "Peter Lang Verlag",
+"venue_name": "",
+"publisher": "Peter Lang Verlag",
+"concepts": [
+"Competition (biology)",
+"Biology",
+"Ecology"
+],
+"roles": [
+"Commercial Linkage",
+"Scholarly Uptake"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 2,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 5,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Since its publication in 2018 by Peter Lang Verlag, \"Competition, Community, and Educational Growth\" has maintained a visible presence in commercial academic platforms, suggesting…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781433152399&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Kristopher Copeland, Garret L. Castleberry",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Tulsa Community College",
+"count": 1
+},
+{
+"label": "University of Oklahoma",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "bookstory_10.3726_b13149.html",
+"title": "The Great Irish Famine and Social Class",
+"type": "BookStory",
+"doi": "10.3726/b13149",
+"year": 2019,
+"venue": "Peter Lang Verlag",
+"venue_name": "",
+"publisher": "Peter Lang Verlag",
+"concepts": [
+"Famine",
+"Irish",
+"Class (philosophy)",
+"History",
+"Geography",
+"Genealogy",
+"Archaeology",
+"Computer science"
+],
+"roles": [
+"Commercial Linkage",
+"Pedagogical Anchor",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 2,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 4,
+"ta_youtube": 0,
+"ta_ol_holdings": 4,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Published in 2019 by Peter Lang Verlag, \"The Great Irish Famine and Social Class\" has explored the intricate relationships between social class and the historical context of the I…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781788741668&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Marguerite Corporaal, Peter Gray",
+"institutions": [],
+"download_count": 0,
+"series_name": "Reimagining Ireland",
+"series_id": null,
+"belongs_to_series": true,
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Quinnipiac University",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "bookstory_10.3726_b14667.html",
+"title": "All Children Are All Our Children",
+"type": "BookStory",
+"doi": "10.3726/b14667",
+"year": 2019,
+"venue": "Peter Lang Verlag",
+"venue_name": "",
+"publisher": "Peter Lang Verlag",
+"concepts": [
+"Psychology",
+"Developmental psychology"
+],
+"roles": [
+"Commercial Linkage",
+"Pedagogical Anchor",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 2,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 10,
+"ta_youtube": 1,
+"ta_ol_holdings": 5,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Published in 2019 by Peter Lang Verlag, \"All Children Are All Our Children\" has established itself as an influential resource within its niche, benefiting from commercial platform…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781433161636&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Doug Selwyn",
+"institutions": [],
+"download_count": 0,
+"series_name": "Counterpoints",
+"series_id": null,
+"belongs_to_series": true,
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Georgia Southern University",
+"count": 1
+},
+{
+"label": "Iowa State University",
+"count": 0
+},
+{
+"label": "The Ohio State University",
+"count": 0
+},
+{
+"label": "George Mason University",
+"count": 0
+},
+{
+"label": "University of Arizona",
+"count": 0
 }
 ],
 "scite_supporting": 0,
@@ -29272,9 +29727,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.3726/978-3-0352-6588-0",
 "year": 2016,
-"venue": "Peter Lang B",
+"venue": "Peter Lang Verlag",
 "venue_name": "",
-"publisher": "Peter Lang B",
+"publisher": "Peter Lang Verlag",
 "concepts": [
 "Point (geometry)",
 "Philosophy",
@@ -29300,7 +29755,7 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary Despite the absence of online mentions or citations, \"The Point of Philosophy\" by Peter Lang B is positioned as a pedagogical anchor, having been cited in one instance and held by…",
+"excerpt": "Short impact summary Despite the absence of online mentions or citations, \"The Point of Philosophy\" by Peter Lang Verlag is positioned as a pedagogical anchor, having been cited in one instance and he…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9782875743121&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Ludo Abicht, Hendrik Opdebeeck",
 "institutions": [],
@@ -29319,6 +29774,92 @@ window.STORIES_DATA = [
 "sectors": [],
 "countries": [],
 "citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "bookstory_10.3726_b13225.html",
+"title": "Imagined Cosmopolis",
+"type": "BookStory",
+"doi": "10.3726/b13225",
+"year": 2019,
+"venue": "Peter Lang Verlag",
+"venue_name": "",
+"publisher": "Peter Lang Verlag",
+"concepts": [
+"Internationalism (politics)",
+"Homeland",
+"The arts",
+"League",
+"Political science",
+"Historiography",
+"National identity",
+"Cultural exchange"
+],
+"roles": [
+"Commercial Linkage",
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Reduced inequalities"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 4,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Although the book \"Imagined Cosmopolis\" published by Peter Lang Verlag in 2019 has not yet garnered any citations or online mentions, its commercial presence on platforms like Ama…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9783034318709&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Charlotte Ashby, Grace Brockington, Daniel Laqua et al.",
+"institutions": [
+"Courtauld Institute of Art"
+],
+"download_count": 0,
+"series_name": "Internationalism and the Arts",
+"series_id": null,
+"belongs_to_series": true,
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Canada",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Carleton University",
+"count": 0
+},
+{
+"label": "University College London",
+"count": 0
+}
+],
 "scite_supporting": 0,
 "scite_contradicting": 0
 },
@@ -33919,9 +34460,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.3726/978-3-653-02684-9",
 "year": 2014,
-"venue": "Peter Lang D",
+"venue": "Peter Lang Verlag",
 "venue_name": "",
-"publisher": "Peter Lang D",
+"publisher": "Peter Lang Verlag",
 "concepts": [
 "Political science",
 "Psychology",
@@ -33951,6 +34492,164 @@ window.STORIES_DATA = [
 "series_name": "Quellen, Findbuecher und Inventare des Brandenburgischen Landeshauptarchivs",
 "series_id": null,
 "belongs_to_series": true,
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "bookstory_10.3726_b13395.html",
+"title": "El mundo de atrás",
+"type": "BookStory",
+"doi": "10.3726/b13395",
+"year": 2019,
+"venue": "Peter Lang Verlag",
+"venue_name": "",
+"publisher": "Peter Lang Verlag",
+"concepts": [
+"Art"
+],
+"roles": [
+"Commercial Linkage"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 4,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary \"El mundo de atrás,\" published by Peter Lang Verlag in 2019, currently has no recorded citations or mentions across academic or social media platforms.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781788743655&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Claudio Canaparo",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "bookstory_10.3726_b14860.html",
+"title": "Narrativas periféricas",
+"type": "BookStory",
+"doi": "10.3726/b14860",
+"year": 2019,
+"venue": "Peter Lang Verlag",
+"venue_name": "",
+"publisher": "Peter Lang Verlag",
+"concepts": [
+"History"
+],
+"roles": [
+"Commercial Linkage"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 4,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite lacking formal citations or community discourse metrics, \"Narrativas periféricas\" by Peter Lang Verlag presents a notable contribution within its scholarly realm, particul…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781433163180&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Iliana Olmedo",
+"institutions": [],
+"download_count": 0,
+"series_name": "Exiles and Transterrados",
+"series_id": null,
+"belongs_to_series": true,
+"mention_platforms": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "bookstory_10.3726_b14917.html",
+"title": "The Curriculum of Horror",
+"type": "BookStory",
+"doi": "10.3726/b14917",
+"year": 2019,
+"venue": "Peter Lang Verlag",
+"venue_name": "",
+"publisher": "Peter Lang Verlag",
+"concepts": [
+"Curriculum",
+"Art",
+"Psychology",
+"Sociology",
+"Pedagogy"
+],
+"roles": [
+"Commercial Linkage",
+"Pedagogical Anchor",
+"Sustainability & Policy Relevance"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": true,
+"ta_ocw": 9,
+"ta_youtube": 0,
+"ta_ol_holdings": 3,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Published in 2019 by Peter Lang Verlag, \"The Curriculum of Horror\" explores significant themes within its subject area, drawing on a strong commercial linkage reflected in its lis…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781433163227&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "James V. Grant",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
 "mention_platforms": [],
 "platform_counts": {},
 "is_top1pct": false,
@@ -34021,14 +34720,74 @@ window.STORIES_DATA = [
 "scite_contradicting": 0
 },
 {
+"file": "bookstory_10.3726_b15269.html",
+"title": "World War II Re-explored",
+"type": "BookStory",
+"doi": "10.3726/b15269",
+"year": 2019,
+"venue": "Peter Lang Verlag",
+"venue_name": "",
+"publisher": "Peter Lang Verlag",
+"concepts": [
+"World War II",
+"Political science",
+"History",
+"Archaeology"
+],
+"roles": [
+"Commercial Linkage",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "bronze",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Peace, Justice and strong institutions"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 4,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Despite its publication in 2019, \"World War II Re-explored\" has not yet garnered community discourse or academic citations, indicating a potential gap in engagement within its fie…",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9783631777404&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Jarosław Suchoples, Stephanie James, Barbara Törnquist-Plewa",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Wikipedia"
+],
+"platform_counts": {
+"wikipedia": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
 "file": "bookstory_10.3726_b17114.html",
 "title": "Les défis de la diversité culturelle dans le monde du travail au XXIe siècle",
 "type": "BookStory",
 "doi": "10.3726/b17114",
 "year": 2020,
-"venue": "Peter Lang B",
+"venue": "Peter Lang Verlag",
 "venue_name": "",
-"publisher": "Peter Lang B",
+"publisher": "Peter Lang Verlag",
 "concepts": [
 "Art"
 ],
@@ -34051,7 +34810,7 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The book \"Les défis de la diversité culturelle dans le monde du travail au XXIe siècle,\" published by Peter Lang B in 2020, addresses the complex challenges of cultural diversity …",
+"excerpt": "Short impact summary The book \"Les défis de la diversité culturelle dans le monde du travail au XXIe siècle,\" published by Peter Lang Verlag in 2020, addresses the complex challenges of cultural diver…",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1057947/large.webp",
 "authors": "Ariane Le Moing, Saïd Ouaked, Christèle Le Bihan",
 "institutions": [
@@ -34957,4 +35716,4 @@ window.STORIES_DATA = [
 "scite_contradicting": 0
 }
 ];
-window.STORIES_STATS = {"total": 359, "total_articles": 176, "total_books": 157, "total_data": 19, "total_software": 7, "total_oa": 320, "pct_oa": 89, "total_citations": 150758, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 370, "total_articles": 176, "total_books": 168, "total_data": 19, "total_software": 7, "total_oa": 323, "pct_oa": 87, "total_citations": 150774, "num_disciplines": 30};
