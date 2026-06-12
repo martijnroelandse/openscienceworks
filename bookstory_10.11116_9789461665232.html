@@ -77,6 +77,18 @@
   transition:color .15s,border-color .15s;white-space:nowrap;}
 .sticky-nav a:hover{color:#111827;}
 .sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+.sticky-nav-more{display:inline-block;position:relative;}
+.sticky-nav-more>summary{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;cursor:pointer;list-style:none;border-bottom:2px solid transparent;}
+.sticky-nav-more>summary::-webkit-details-marker{display:none;}
+.sticky-nav-more[open]>summary,.sticky-nav-more>summary:hover{color:#111827;}
+.sticky-nav-more-menu{position:absolute;right:0;top:100%;min-width:10rem;background:#fff;
+  border:1px solid #e5e7eb;border-radius:.6rem;box-shadow:0 8px 24px rgba(15,23,42,.12);
+  padding:.35rem 0;z-index:120;}
+.sticky-nav-more-menu a{display:block;padding:.5rem .9rem;font-size:.78rem;font-weight:600;
+  color:#374151;text-decoration:none;white-space:nowrap;}
+.sticky-nav-more-menu a:hover{background:#f8fafc;color:#111827;}
+[id^="sec-"]{scroll-margin-top:4.75rem;}
 @media print{.sticky-nav{display:none!important;}}
 
 /* Collapsible cards */
@@ -348,24 +360,43 @@
             </div>
         </header>
 
-        <!-- Sticky nav -->
-        <nav aria-label="Page sections" class="sticky-nav no-print">
+        <!-- Sticky nav (built from story_nav — only sections present on this page) -->
+        
+        <nav aria-label="Page sections" class="sticky-nav no-print" id="story-sticky-nav">
             <div class="sticky-nav-inner">
-                <a href="#sec-hero">Overview</a>
-                <a href="#sec-story">Story</a>
-                <a href="#sec-impact">Impact</a>
-                <a href="#sec-roles">Roles</a>
-                <a href="#sec-access">Access</a>
-                <a href="#sec-citing">Who's Citing</a>
-                <a href="#sec-mentions">Mentions</a>
+                
+                <a href="#sec-hero" data-sec="sec-hero">Overview</a>
+                
+                <a href="#sec-story" data-sec="sec-story">Story</a>
+                
+                <a href="#sec-impact" data-sec="sec-impact">Impact</a>
+                
+                <a href="#sec-roles" data-sec="sec-roles">Roles</a>
+                
+                <a href="#sec-access" data-sec="sec-access">Access</a>
+                
+                <a href="#sec-downloads" data-sec="sec-downloads">Downloads</a>
+                
+                
+                
+                <details class="sticky-nav-more">
+                    <summary>More</summary>
+                    <div class="sticky-nav-more-menu">
+                        
+                        <a href="#sec-funding" data-sec="sec-funding">Funding</a>
+                        
+                    </div>
+                </details>
+                
             </div>
         </nav>
+        
 
 
         
         
         
-        <section class="card">
+        <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
 <p class="story-text">The book "Modern Etruscans," published by Leuven University Press in 2023, represents a significant contribution to the understanding of Etruscan culture. With its commercial availability highlighted on platforms like Amazon and Goodreads, it demonstrates a robust intersection between academic research and wider public engagement.</p>
@@ -427,7 +458,7 @@
                             </div>
                             
                         </div>
-                        <a class="im-card-link" href="#operas-metrics-card">📊 View full timeline ↓</a>
+                        <a class="im-card-link" href="#sec-downloads">📊 View full timeline ↓</a>
                     </div>
                     
                     
@@ -634,7 +665,7 @@
         <div class="grid-2">
             
             
-            <section class="card" style="margin-bottom:0;">
+            <section class="card" style="margin-bottom:0;" id="sec-access">
                 <h2 style="margin-top:0;"><span>Access</span> <span class="badge" style="background:#f3f4f6; color:#4b5563;">Availability</span></h2>
                 <ul class="metric-list" style="line-height: 1.8;">
                     
@@ -834,7 +865,7 @@
         </div>
 
         
-        <section class="card">
+        <section class="card" id="sec-funding">
             <h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
             <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>3 financial grants and sponsors detected.</div>
             
@@ -861,7 +892,7 @@
 
 
         
-        <section class="card" id="operas-metrics-card">
+        <section class="card" id="sec-downloads">
             <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
             <div id="metrics-widget"></div>
             <script type="application/json" id="operas-metrics-config">{"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "tab1", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN \u00b7 downloads", "works": ["info:doi:10.11116/9789461665232"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}}, "graphs": [{"id": "g1", "type": "line", "title": "Downloads over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}</script>
@@ -882,7 +913,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-06-12T08:00:25+00:00
+                    Generated on 2026-06-12T10:51:47+00:00
                 </div>
                 
             </div>
@@ -1167,6 +1198,62 @@
     document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
     document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
     document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
+<script>
+(function() {
+    var nav = document.getElementById('story-sticky-nav');
+    if (!nav) return;
+    var links = nav.querySelectorAll('a[href^="#sec-"]');
+    var sectionIds = [];
+    links.forEach(function(a) {
+        var id = (a.getAttribute('href') || '').slice(1);
+        if (id && document.getElementById(id)) sectionIds.push(id);
+    });
+    if (!sectionIds.length) return;
+
+    function setActive(id) {
+        links.forEach(function(a) {
+            a.classList.toggle('snav-active', a.getAttribute('href') === '#' + id);
+        });
+    }
+
+    links.forEach(function(a) {
+        a.addEventListener('click', function(e) {
+            var id = (a.getAttribute('href') || '').slice(1);
+            var target = id ? document.getElementById(id) : null;
+            if (!target) return;
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.replaceState(null, '', '#' + id);
+            setActive(id);
+            var more = nav.querySelector('.sticky-nav-more');
+            if (more) more.removeAttribute('open');
+        });
+    });
+
+    if (!('IntersectionObserver' in window)) return;
+    var visible = new Map();
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            visible.set(entry.target.id, entry.intersectionRatio);
+        });
+        var bestId = null;
+        var bestRatio = 0;
+        sectionIds.forEach(function(id) {
+            var ratio = visible.get(id) || 0;
+            if (ratio > bestRatio) {
+                bestRatio = ratio;
+                bestId = id;
+            }
+        });
+        if (bestId) setActive(bestId);
+    }, { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] });
+
+    sectionIds.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) observer.observe(el);
+    });
 })();
 </script>
 </body>
