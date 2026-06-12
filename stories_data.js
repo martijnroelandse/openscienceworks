@@ -143,7 +143,7 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 21876,
+"citation_count": 22038,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
@@ -166,8 +166,8 @@ window.STORIES_DATA = [
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
+"is_top1pct": true,
+"is_top10pct": true,
 "risk_retracted": false,
 "risk_eoc": false,
 "risk_pubpeer": 0,
@@ -175,46 +175,67 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 1845
+"count": 18510
 },
 {
 "label": "Facility",
-"count": 1153
+"count": 9250
 },
 {
 "label": "Government",
-"count": 512
+"count": 3319
 },
 {
 "label": "Nonprofit",
-"count": 418
+"count": 2597
 },
 {
-"label": "Company",
-"count": 300
+"label": "Healthcare",
+"count": 2276
 }
 ],
-"countries": [],
+"countries": [
+{
+"label": "United States of America",
+"count": 8762
+},
+{
+"label": "Germany",
+"count": 4083
+},
+{
+"label": "United Kingdom of Great Britain and Northern Ireland",
+"count": 3450
+},
+{
+"label": "France",
+"count": 2170
+},
+{
+"label": "Canada",
+"count": 1638
+}
+],
 "citing_institutions": [
 {
 "label": "Centre National de la Recherche Scientifique",
-"count": 20
+"count": 1305
 },
 {
-"label": "Massachusetts Institute of Technology",
-"count": 19
+"label": "California Institute of Technology",
+"count": 652
 },
 {
-"label": "University of Cambridge",
-"count": 16
+"label": "Center for Astrophysics Harvard & Smithsonian",
+"count": 609
 },
 {
 "label": "University of Oxford",
-"count": 15
+"count": 551
 },
 {
-"label": "Princeton University",
-"count": 14
+"label": "University of Cambridge",
+"count": 525
 }
 ],
 "scite_supporting": 10,
@@ -368,9 +389,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.1007/978-1-4614-7138-7",
 "year": 2013,
-"venue": "Springer New York",
+"venue": "Springer Nature",
 "venue_name": "",
-"publisher": "Springer New York",
+"publisher": "Springer Nature",
 "concepts": [
 "Statistical learning",
 "Computer science",
@@ -619,7 +640,7 @@ window.STORIES_DATA = [
 "year": 2012,
 "venue": "Physics Letters B",
 "venue_name": "Physics Letters B",
-"publisher": "Elsevier BV",
+"publisher": "Elsevier",
 "concepts": [
 "Physics",
 "Particle physics",
@@ -1152,7 +1173,7 @@ window.STORIES_DATA = [
 "year": 2012,
 "venue": "Nature",
 "venue_name": "Nature",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Sequence (biology)",
 "Genome",
@@ -1817,7 +1838,7 @@ window.STORIES_DATA = [
 "year": 2019,
 "venue": "Nature",
 "venue_name": "Nature",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Fossil fuel",
 "Greenhouse gas",
@@ -1836,7 +1857,7 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 785,
+"citation_count": 787,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
@@ -1880,7 +1901,7 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 692
+"count": 694
 },
 {
 "label": "Facility",
@@ -1888,7 +1909,7 @@ window.STORIES_DATA = [
 },
 {
 "label": "Government",
-"count": 127
+"count": 128
 },
 {
 "label": "Nonprofit",
@@ -1902,15 +1923,15 @@ window.STORIES_DATA = [
 "countries": [
 {
 "label": "China",
-"count": 323
+"count": 325
 },
 {
-"label": "United States",
-"count": 205
+"label": "United States of America",
+"count": 207
 },
 {
-"label": "United Kingdom",
-"count": 111
+"label": "United Kingdom of Great Britain and Northern Ireland",
+"count": 112
 },
 {
 "label": "Germany",
@@ -1918,29 +1939,29 @@ window.STORIES_DATA = [
 },
 {
 "label": "Canada",
-"count": 53
+"count": 55
 }
 ],
 "citing_institutions": [
 {
 "label": "Tsinghua University",
-"count": 21
-},
-{
-"label": "Australian National University",
-"count": 13
+"count": 72
 },
 {
 "label": "Chinese Academy of Sciences",
-"count": 8
+"count": 44
 },
 {
-"label": "Georgia Institute of Technology",
-"count": 6
+"label": "Potsdam Institute for Climate Impact Research",
+"count": 30
 },
 {
-"label": "Technische Universität Berlin",
-"count": 6
+"label": "International Institute for Applied Systems Analysis",
+"count": 29
+},
+{
+"label": "State Key Joint Laboratory of Environment Simulation and Pollution Control",
+"count": 26
 }
 ],
 "scite_supporting": 5,
@@ -1954,7 +1975,7 @@ window.STORIES_DATA = [
 "year": 2020,
 "venue": "Annals of Global Health",
 "venue_name": "Annals of Global Health",
-"publisher": "Elsevier BV",
+"publisher": "Elsevier",
 "concepts": [
 "Pollution",
 "Environmental protection",
@@ -2095,9 +2116,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.1007/978-3-319-46478-7_44",
 "year": 2016,
-"venue": "Springer International Publishing",
+"venue": "Springer Nature",
 "venue_name": "",
-"publisher": "Springer International Publishing",
+"publisher": "Springer Nature",
 "concepts": [
 "Computer science",
 "Artificial intelligence",
@@ -2849,7 +2870,7 @@ window.STORIES_DATA = [
 "year": 2017,
 "venue": "Nature reviews. Neuroscience",
 "venue_name": "Nature reviews. Neuroscience",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Stroke (engine)",
 "Physical medicine and rehabilitation",
@@ -2928,46 +2949,46 @@ window.STORIES_DATA = [
 ],
 "countries": [
 {
-"label": "United States",
+"label": "United States of America",
 "count": 119
 },
 {
 "label": "China",
-"count": 67
+"count": 68
 },
 {
 "label": "Canada",
 "count": 46
 },
 {
-"label": "Italy",
+"label": "United Kingdom of Great Britain and Northern Ireland",
 "count": 26
 },
 {
-"label": "United Kingdom",
+"label": "Italy",
 "count": 26
 }
 ],
 "citing_institutions": [
 {
-"label": "Hong Kong Polytechnic University",
-"count": 7
-},
-{
 "label": "University of Southern California",
-"count": 7
+"count": 15
 },
 {
 "label": "The University of Texas at Austin",
-"count": 6
+"count": 15
 },
 {
-"label": "Chinese University of Hong Kong",
-"count": 5
+"label": "Université de Montpellier",
+"count": 13
 },
 {
-"label": "Northwestern University",
-"count": 4
+"label": "Hong Kong Polytechnic University",
+"count": 12
+},
+{
+"label": "IMT Mines Alès",
+"count": 11
 }
 ],
 "scite_supporting": 11,
@@ -3484,9 +3505,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.4324/9781315712802",
 "year": 2017,
-"venue": "Routledge",
+"venue": "Taylor & Francis",
 "venue_name": "",
-"publisher": "Routledge",
+"publisher": "Taylor & Francis",
 "concepts": [
 "Meritocracy",
 "Political science",
@@ -3609,7 +3630,7 @@ window.STORIES_DATA = [
 "year": 2004,
 "venue": "Nature",
 "venue_name": "Nature",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Innate immune system",
 "Biology",
@@ -3669,29 +3690,29 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 228
+"count": 229
 },
 {
 "label": "Healthcare",
-"count": 84
+"count": 91
 },
 {
 "label": "Facility",
-"count": 62
+"count": 69
 },
 {
 "label": "Government",
-"count": 45
+"count": 54
 },
 {
-"label": "Funder",
-"count": 29
+"label": "Nonprofit",
+"count": 26
 }
 ],
 "countries": [
 {
-"label": "United States",
-"count": 134
+"label": "United States of America",
+"count": 136
 },
 {
 "label": "Japan",
@@ -3699,11 +3720,11 @@ window.STORIES_DATA = [
 },
 {
 "label": "China",
-"count": 35
+"count": 36
 },
 {
 "label": "France",
-"count": 24
+"count": 25
 },
 {
 "label": "Germany",
@@ -3712,23 +3733,23 @@ window.STORIES_DATA = [
 ],
 "citing_institutions": [
 {
+"label": "The University of Osaka",
+"count": 23
+},
+{
 "label": "University of Miami",
 "count": 18
 },
 {
-"label": "Osaka University",
-"count": 18
+"label": "Inserm",
+"count": 17
 },
 {
 "label": "Japan Science and Technology Agency",
 "count": 16
 },
 {
-"label": "Inserm",
-"count": 16
-},
-{
-"label": "Sylvester Comprehensive Cancer Center",
+"label": "Centre National de la Recherche Scientifique",
 "count": 14
 }
 ],
@@ -3743,7 +3764,7 @@ window.STORIES_DATA = [
 "year": 2010,
 "venue": "Cultura",
 "venue_name": "Cultura",
-"publisher": "Peter Lang",
+"publisher": "Peter Lang Verlag",
 "concepts": [
 "Psychology",
 "Linguistics",
@@ -3861,7 +3882,7 @@ window.STORIES_DATA = [
 "year": 2017,
 "venue": "Nature",
 "venue_name": "Nature",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Physics",
 "Astrophysics",
@@ -3879,7 +3900,7 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 244,
+"citation_count": 255,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
@@ -3922,67 +3943,67 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 196
+"count": 213
 },
 {
 "label": "Facility",
-"count": 178
+"count": 194
 },
 {
 "label": "Government",
-"count": 66
+"count": 79
 },
 {
 "label": "Nonprofit",
-"count": 57
+"count": 66
 },
 {
 "label": "Other",
-"count": 38
+"count": 40
 }
 ],
 "countries": [
 {
-"label": "United States",
-"count": 151
+"label": "United States of America",
+"count": 167
 },
 {
-"label": "United Kingdom",
-"count": 84
+"label": "United Kingdom of Great Britain and Northern Ireland",
+"count": 94
 },
 {
 "label": "Germany",
-"count": 78
+"count": 88
 },
 {
 "label": "Italy",
-"count": 73
+"count": 86
 },
 {
 "label": "France",
-"count": 71
+"count": 76
 }
 ],
 "citing_institutions": [
 {
 "label": "University of Copenhagen",
-"count": 58
+"count": 63
 },
 {
 "label": "Centre National de la Recherche Scientifique",
-"count": 55
+"count": 59
 },
 {
 "label": "Leiden University",
-"count": 40
+"count": 42
 },
 {
 "label": "National Astronomical Observatory of Japan",
-"count": 35
+"count": 39
 },
 {
-"label": "Swinburne University of Technology",
-"count": 33
+"label": "Space Telescope Science Institute",
+"count": 36
 }
 ],
 "scite_supporting": 27,
@@ -5882,9 +5903,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.1007/978-3-319-00026-8",
 "year": 2014,
-"venue": "Springer International Publishing",
+"venue": "Springer Nature",
 "venue_name": "",
-"publisher": "Springer International Publishing",
+"publisher": "Springer Nature",
 "concepts": [
 "Computer science"
 ],
@@ -6141,7 +6162,7 @@ window.STORIES_DATA = [
 "year": 2016,
 "venue": "Nature Reviews Drug Discovery",
 "venue_name": "Nature Reviews Drug Discovery",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Parsing",
 "Medicine",
@@ -6523,7 +6544,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "Blood",
 "venue_name": "Blood",
-"publisher": "Elsevier BV",
+"publisher": "Elsevier",
 "concepts": [
 "Haematopoiesis",
 "Biology",
@@ -6816,7 +6837,7 @@ window.STORIES_DATA = [
 "year": 2015,
 "venue": "F1000Research",
 "venue_name": "F1000Research",
-"publisher": "Faculty of 1000",
+"publisher": "Taylor & Francis",
 "concepts": [
 "Identification (biology)",
 "Resource (disambiguation)",
@@ -6924,9 +6945,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.1007/978-981-19-2080-6",
 "year": 2023,
-"venue": "Springer Nature Singapore",
+"venue": "Springer Nature",
 "venue_name": "",
-"publisher": "Springer Nature Singapore",
+"publisher": "Springer Nature",
 "concepts": [
 "Distance education",
 "Open education",
@@ -7055,7 +7076,7 @@ window.STORIES_DATA = [
 "year": 2022,
 "venue": "Neuron",
 "venue_name": "Neuron",
-"publisher": "Cell Press",
+"publisher": "Elsevier",
 "concepts": [
 "Neuroscience",
 "Synapse",
@@ -7198,7 +7219,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "Nature Chemistry",
 "venue_name": "Nature Chemistry",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Chemistry",
 "Pomalidomide",
@@ -7444,7 +7465,7 @@ window.STORIES_DATA = [
 "year": 2020,
 "venue": "Nature Sustainability",
 "venue_name": "Nature Sustainability",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Water scarcity",
 "Scarcity",
@@ -7832,7 +7853,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications, Ltd",
+"publisher": "eLife Sciences Publications Ltd",
 "concepts": [
 "Biological dispersal",
 "Population",
@@ -7971,7 +7992,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "Nature Genetics",
 "venue_name": "Nature Genetics",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Chromatin",
 "Nucleosome",
@@ -8258,7 +8279,7 @@ window.STORIES_DATA = [
 "year": 2020,
 "venue": "iScience",
 "venue_name": "iScience",
-"publisher": "Cell Press",
+"publisher": "Elsevier",
 "concepts": [
 "Blinding",
 "Rigour",
@@ -8398,7 +8419,7 @@ window.STORIES_DATA = [
 "year": 2019,
 "venue": "Nature",
 "venue_name": "Nature",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Suite",
 "Publishing",
@@ -8937,7 +8958,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "Developmental Cell",
 "venue_name": "Developmental Cell",
-"publisher": "Elsevier BV",
+"publisher": "Elsevier",
 "concepts": [
 "Gyrification",
 "Biology",
@@ -9201,7 +9222,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "Nature",
 "venue_name": "Nature",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Retrotransposon",
 "Biology",
@@ -9338,7 +9359,7 @@ window.STORIES_DATA = [
 "year": 2004,
 "venue": "European Journal of Neuroscience",
 "venue_name": "European Journal of Neuroscience",
-"publisher": "Wiley",
+"publisher": "wiley",
 "concepts": [
 "Biology",
 "Neuron",
@@ -9467,7 +9488,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "Molecular Cell",
 "venue_name": "Molecular Cell",
-"publisher": "Elsevier BV",
+"publisher": "Elsevier",
 "concepts": [
 "Biology",
 "SWI/SNF",
@@ -9601,7 +9622,7 @@ window.STORIES_DATA = [
 "year": 2021,
 "venue": "Scientific Reports",
 "venue_name": "Scientific Reports",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Intraclass correlation",
 "Biomarker",
@@ -10121,7 +10142,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "Nature Neuroscience",
 "venue_name": "Nature Neuroscience",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Brain–computer interface",
 "Decoding methods",
@@ -10618,7 +10639,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "Cell",
 "venue_name": "Cell",
-"publisher": "Cell Press",
+"publisher": "Elsevier",
 "concepts": [
 "Biology",
 "Disease",
@@ -11272,7 +11293,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "Cell",
 "venue_name": "Cell",
-"publisher": "Cell Press",
+"publisher": "Elsevier",
 "concepts": [
 "Biology",
 "Fluorophore",
@@ -11417,7 +11438,7 @@ window.STORIES_DATA = [
 "year": 2010,
 "venue": "Biology of the Cell",
 "venue_name": "Biology of the Cell",
-"publisher": "Wiley",
+"publisher": "wiley",
 "concepts": [
 "Filopodia",
 "Synaptogenesis",
@@ -12099,7 +12120,7 @@ window.STORIES_DATA = [
 "year": 2003,
 "venue": "Neuroscience",
 "venue_name": "Neuroscience",
-"publisher": "Elsevier BV",
+"publisher": "Elsevier",
 "concepts": [
 "Dendritic filopodia",
 "Dendritic spine",
@@ -12352,7 +12373,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications, Ltd",
+"publisher": "eLife Sciences Publications Ltd",
 "concepts": [
 "Biology",
 "Mating",
@@ -12619,7 +12640,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "Trends in Cell Biology",
 "venue_name": "Trends in Cell Biology",
-"publisher": "Elsevier BV",
+"publisher": "Elsevier",
 "concepts": [
 "Biology",
 "Host (biology)",
@@ -13508,7 +13529,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "Current Biology",
 "venue_name": "Current Biology",
-"publisher": "Elsevier BV",
+"publisher": "Elsevier",
 "concepts": [
 "Biology",
 "Receptor",
@@ -14027,7 +14048,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications, Ltd",
+"publisher": "eLife Sciences Publications Ltd",
 "concepts": [
 "Drosophila (subgenus)",
 "Resource (disambiguation)",
@@ -14591,7 +14612,7 @@ window.STORIES_DATA = [
 "year": 2022,
 "venue": "Journal of Medical Internet Research",
 "venue_name": "Journal of Medical Internet Research",
-"publisher": "JMIR Publications",
+"publisher": "JMIR Publications Inc.",
 "concepts": [
 "Transparency (behavior)",
 "Scale (ratio)",
@@ -14729,7 +14750,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications, Ltd",
+"publisher": "eLife Sciences Publications Ltd",
 "concepts": [
 "Mushroom bodies",
 "Neuroscience",
@@ -15289,9 +15310,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.1007/978-3-030-47436-2",
 "year": 2020,
-"venue": "Springer International Publishing",
+"venue": "Springer Nature",
 "venue_name": "",
-"publisher": "Springer International Publishing",
+"publisher": "Springer Nature",
 "concepts": [
 "Computer science",
 "Knowledge extraction",
@@ -15655,7 +15676,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications, Ltd",
+"publisher": "eLife Sciences Publications Ltd",
 "concepts": [
 "Ventral nerve cord",
 "Neuroscience",
@@ -15776,9 +15797,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.1007/978-3-031-35664-3",
 "year": 2024,
-"venue": "Springer International Publishing",
+"venue": "Springer Nature",
 "venue_name": "",
-"publisher": "Springer International Publishing",
+"publisher": "Springer Nature",
 "concepts": [
 "Computer science"
 ],
@@ -16027,7 +16048,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications, Ltd",
+"publisher": "eLife Sciences Publications Ltd",
 "concepts": [
 "Biology",
 "Dosage compensation",
@@ -16155,7 +16176,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "Journal of Clinical Immunology",
 "venue_name": "Journal of Clinical Immunology",
-"publisher": "Springer Science+Business Media",
+"publisher": "Springer Nature",
 "concepts": [
 "Medicine",
 "Ruxolitinib",
@@ -16290,7 +16311,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "Nature Methods",
 "venue_name": "Nature Methods",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Fluidics",
 "Multiplexing",
@@ -16993,7 +17014,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications, Ltd",
+"publisher": "eLife Sciences Publications Ltd",
 "concepts": [
 "In vivo",
 "Computational biology",
@@ -17369,7 +17390,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications, Ltd",
+"publisher": "eLife Sciences Publications Ltd",
 "concepts": [
 "Neuroscience",
 "Biology",
@@ -17548,6 +17569,141 @@ window.STORIES_DATA = [
 },
 {
 "label": "University of Hradec Králové",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "articlestory_10.1038_s41591-026-04206-y.html",
+"title": "Predicting onset of symptomatic Alzheimerʼs disease with plasma p-tau217 clocks",
+"type": "ArticleStory",
+"doi": "10.1038/s41591-026-04206-y",
+"year": 2026,
+"venue": "Nature Medicine",
+"venue_name": "Nature Medicine",
+"publisher": "Springer Nature",
+"concepts": [
+"Medicine",
+"Internal medicine",
+"Disease",
+"Oncology",
+"Positron emission tomography",
+"Biomarker",
+"Clinical trial",
+"Cardiology"
+],
+"roles": [
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 12,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The research titled \"Predicting onset of symptomatic Alzheimer's disease with plasma p-tau217 clocks,\" published in Nature Medicine , leverages innovative methodologies to predict…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Bluesky"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"bluesky": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 4,
+"funders": [
+"NIA NIH HHS",
+"U.S. Department of Health &amp; Human Services | NIH | National Institute on Aging",
+"U.S. Department of Health & Human Services | NIH | National Institute on Aging (U.S. National Institute on Aging)",
+"Alzheimer&apos;s Association",
+"Biogen"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 6
+},
+{
+"label": "Healthcare",
+"count": 5
+},
+{
+"label": "Facility",
+"count": 4
+},
+{
+"label": "Company",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States of America",
+"count": 4
+},
+{
+"label": "Australia",
+"count": 2
+},
+{
+"label": "United Kingdom of Great Britain and Northern Ireland",
+"count": 2
+},
+{
+"label": "Italy",
+"count": 2
+},
+{
+"label": "Belarus",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Southern California",
+"count": 2
+},
+{
+"label": "University of Parma",
+"count": 1
+},
+{
+"label": "Brigham and Women's Hospital",
+"count": 1
+},
+{
+"label": "Commonwealth Scientific and Industrial Research Organisation",
+"count": 1
+},
+{
+"label": "Johnson & Johnson (United States)",
 "count": 1
 }
 ],
@@ -17809,9 +17965,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.4018/978-1-5225-2788-6",
 "year": 2018,
-"venue": "IGI Global",
+"venue": "IGI Global Publishing",
 "venue_name": "",
-"publisher": "IGI Global",
+"publisher": "IGI Global Publishing",
 "concepts": [
 "Psychophysiology",
 "Psychology",
@@ -17929,30 +18085,29 @@ window.STORIES_DATA = [
 "scite_contradicting": 0
 },
 {
-"file": "articlestory_10.1038_s41591-026-04206-y.html",
-"title": "Predicting onset of symptomatic Alzheimerʼs disease with plasma p-tau217 clocks",
+"file": "articlestory_10.1038_s41572-025-00674-7.html",
+"title": "COVID-19-associated neurological and psychological manifestations",
 "type": "ArticleStory",
-"doi": "10.1038/s41591-026-04206-y",
-"year": 2026,
-"venue": "Nature Medicine",
-"venue_name": "Nature Medicine",
+"doi": "10.1038/s41572-025-00674-7",
+"year": 2025,
+"venue": "Nature Reviews Disease Primers",
+"venue_name": "Nature Reviews Disease Primers",
 "publisher": "Springer Nature",
 "concepts": [
 "Medicine",
-"Internal medicine",
-"Disease",
-"Oncology",
-"Positron emission tomography",
-"Biomarker",
-"Clinical trial",
-"Cardiology"
+"Intensive care medicine",
+"Incidence (geometry)",
+"Affect (linguistics)",
+"Psychiatry",
+"Depression (economics)",
+"Coronavirus disease 2019 (COVID-19)",
+"Pathophysiology"
 ],
 "roles": [
-"High-Visibility Uptake",
 "Sustainability & Policy Relevance"
 ],
-"is_oa": true,
-"oa_status": "hybrid",
+"is_oa": false,
+"oa_status": "closed",
 "citation_count": 11,
 "event_count": 0,
 "has_sdgs": true,
@@ -17966,10 +18121,21 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The research titled \"Predicting onset of symptomatic Alzheimer's disease with plasma p-tau217 clocks,\" published in Nature Medicine , leverages innovative methodologies to predict…",
+"excerpt": "Short impact summary The article titled \"COVID-19-associated neurological and psychological manifestations,\" published in Nature Reviews Disease Primers, explores significant neurological and psycholo…",
 "cover_url": "",
-"authors": "",
-"institutions": [],
+"authors": "Jo Ellen Wilson, Deepti Gurdasani, Raimund Helbok et al.",
+"institutions": [
+"VA Tennessee Valley Healthcare System",
+"Johannes Kepler University of Linz",
+"Selçuk University",
+"Western University",
+"University of Belgrade",
+"University of California, San Francisco",
+"Howard Hughes Medical Institute",
+"Universidade Estadual de Campinas (UNICAMP)",
+"University of Milan",
+"Imperial College London"
+],
 "download_count": 0,
 "series_name": null,
 "series_id": null,
@@ -17983,60 +18149,75 @@ window.STORIES_DATA = [
 "bluesky": 1
 },
 "is_top1pct": false,
-"is_top10pct": false,
+"is_top10pct": true,
 "risk_retracted": false,
 "risk_eoc": false,
-"risk_pubpeer": 4,
-"funders": [
-"NIA NIH HHS",
-"U.S. Department of Health &amp; Human Services | NIH | National Institute on Aging",
-"U.S. Department of Health & Human Services | NIH | National Institute on Aging (U.S. National Institute on Aging)",
-"Alzheimer&apos;s Association",
-"Biogen"
-],
+"risk_pubpeer": 0,
+"funders": [],
 "sectors": [
 {
+"label": "Healthcare",
+"count": 8
+},
+{
 "label": "Education",
-"count": 6
+"count": 7
 },
 {
 "label": "Facility",
-"count": 4
-},
-{
-"label": "Healthcare",
-"count": 4
-},
-{
-"label": "Other",
-"count": 2
+"count": 3
 },
 {
 "label": "Company",
 "count": 2
+},
+{
+"label": "Funder",
+"count": 1
 }
 ],
-"countries": [],
+"countries": [
+{
+"label": "China",
+"count": 3
+},
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "Japan",
+"count": 2
+},
+{
+"label": "Canada",
+"count": 1
+},
+{
+"label": "United Kingdom of Great Britain and Northern Ireland",
+"count": 1
+}
+],
 "citing_institutions": [
 {
-"label": "University of Parma",
+"label": "Humboldt-Universität zu Berlin",
+"count": 2
+},
+{
+"label": "Jikei University School of Medicine",
 "count": 1
 },
 {
-"label": "Institute of Nature Management",
+"label": "Weifang Medical University",
 "count": 1
 },
 {
-"label": "University of California, San Francisco",
+"label": "University of Toledo Medical Center",
 "count": 1
 },
 {
-"label": "Dementia UK",
+"label": "Western University",
 "count": 1
-},
-{
-"label": "University of Southern California",
-"count": 0
 }
 ],
 "scite_supporting": 0,
@@ -18234,7 +18415,7 @@ window.STORIES_DATA = [
 "year": 2022,
 "venue": "Magnetic Resonance in Medicine",
 "venue_name": "Magnetic Resonance in Medicine",
-"publisher": "Wiley",
+"publisher": "wiley",
 "concepts": [
 "Noise reduction",
 "Imaging phantom",
@@ -18362,7 +18543,7 @@ window.STORIES_DATA = [
 "year": 2009,
 "venue": "Nature Physics",
 "venue_name": "Nature Physics",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Physics",
 "Quantum",
@@ -18474,6 +18655,126 @@ window.STORIES_DATA = [
 {
 "label": "Jiangxi Normal University",
 "count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "articlestory_10.1038_s41467-025-67869-0.html",
+"title": "Deep Mutational Scanning of FDX1 Identifies Key Structural Determinants of Lipoylation and Cuproptosis",
+"type": "ArticleStory",
+"doi": "10.1038/s41467-025-67869-0",
+"year": 2025,
+"venue": "Nature Communications",
+"venue_name": "Nature Communications",
+"publisher": "Springer Nature",
+"concepts": [
+"Protein subunit",
+"Computational biology",
+"Helix (gastropod)",
+"Biology",
+"Key (lock)",
+"Computer science",
+"Cell biology",
+"Protein structure"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 10,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The study titled \"Deep Mutational Scanning of FDX1 Identifies Key Structural Determinants of Lipoylation and Cuproptosis,\" published in Nature Communications in 2025, explores cri…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NSF | BIO | Division of Molecular and Cellular Biosciences",
+"NCI NIH HHS",
+"U.S. Department of Health &amp; Human Services | NIH | National Cancer Institute",
+"U.S. Department of Health & Human Services | NIH | National Institute of General Medical Sciences (NIGMS)",
+"U.S. Department of Health &amp; Human Services | NIH | National Institute of General Medical Sciences"
+],
+"sectors": [
+{
+"label": "Healthcare",
+"count": 9
+},
+{
+"label": "Education",
+"count": 8
+},
+{
+"label": "Facility",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 7
+},
+{
+"label": "United States of America",
+"count": 2
+},
+{
+"label": "India",
+"count": 1
+},
+{
+"label": "Korea, Republic of",
+"count": 1
+},
+{
+"label": "Maldives",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Wannan Medical College",
+"count": 1
+},
+{
+"label": "Tongji University",
+"count": 1
+},
+{
+"label": "The University of Texas MD Anderson Cancer Center",
+"count": 1
+},
+{
+"label": "Central South University",
+"count": 1
+},
+{
+"label": "Prince Sattam Bin Abdulaziz University",
+"count": 1
 }
 ],
 "scite_supporting": 0,
@@ -18941,7 +19242,7 @@ window.STORIES_DATA = [
 "year": 2018,
 "venue": "Computational Statistics",
 "venue_name": "Computational Statistics",
-"publisher": "Springer Science+Business Media",
+"publisher": "Springer Nature",
 "concepts": [
 "Covariate",
 "Selection (genetic algorithm)",
@@ -19063,7 +19364,7 @@ window.STORIES_DATA = [
 "year": 2025,
 "venue": "Nature Cell Biology",
 "venue_name": "Nature Cell Biology",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Interphase",
 "Cytoplasm",
@@ -19133,7 +19434,7 @@ window.STORIES_DATA = [
 "count": 2
 },
 {
-"label": "Healthcare",
+"label": "Company",
 "count": 1
 },
 {
@@ -19141,189 +19442,8 @@ window.STORIES_DATA = [
 "count": 1
 }
 ],
-"countries": [
-{
-"label": "United States",
-"count": 7
-},
-{
-"label": "Germany",
-"count": 2
-},
-{
-"label": "Russia",
-"count": 1
-},
-{
-"label": "Spain",
-"count": 1
-},
-{
-"label": "SX",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "Baylor College of Medicine",
-"count": 2
-},
-{
-"label": "Jawaharlal Nehru University",
-"count": 1
-},
-{
-"label": "New York University",
-"count": 1
-},
-{
-"label": "Howard Hughes Medical Institute",
-"count": 0
-},
-{
-"label": "University of Massachusetts Chan Medical School",
-"count": 0
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0
-},
-{
-"file": "articlestory_10.1038_s41572-025-00674-7.html",
-"title": "COVID-19-associated neurological and psychological manifestations",
-"type": "ArticleStory",
-"doi": "10.1038/s41572-025-00674-7",
-"year": 2025,
-"venue": "Nature Reviews Disease Primers",
-"venue_name": "Nature Reviews Disease Primers",
-"publisher": "Nature Portfolio",
-"concepts": [
-"Medicine",
-"Intensive care medicine",
-"Incidence (geometry)",
-"Affect (linguistics)",
-"Psychiatry",
-"Depression (economics)",
-"Coronavirus disease 2019 (COVID-19)",
-"Pathophysiology"
-],
-"roles": [
-"Sustainability & Policy Relevance"
-],
-"is_oa": false,
-"oa_status": "closed",
-"citation_count": 9,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Good health and well-being"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The article titled \"COVID-19-associated neurological and psychological manifestations,\" published in Nature Reviews Disease Primers, explores significant neurological and psycholo…",
-"cover_url": "",
-"authors": "Jo Ellen Wilson, Deepti Gurdasani, Raimund Helbok et al.",
-"institutions": [
-"VA Tennessee Valley Healthcare System",
-"Johannes Kepler University of Linz",
-"Selçuk University",
-"Western University",
-"University of Belgrade",
-"University of California, San Francisco",
-"Howard Hughes Medical Institute",
-"Universidade Estadual de Campinas (UNICAMP)",
-"University of Milan",
-"Imperial College London"
-],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"Bluesky"
-],
-"has_librarything": false,
-"librarything_rating": null,
-"platform_counts": {
-"bluesky": 1
-},
-"is_top1pct": false,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Healthcare",
-"count": 7
-},
-{
-"label": "Education",
-"count": 5
-},
-{
-"label": "Facility",
-"count": 3
-},
-{
-"label": "Company",
-"count": 2
-},
-{
-"label": "Nonprofit",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "China",
-"count": 3
-},
-{
-"label": "Japan",
-"count": 1
-},
-{
-"label": "Italy",
-"count": 1
-},
-{
-"label": "United States",
-"count": 1
-},
-{
-"label": "United Kingdom",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "Cangzhou Central Hospital",
-"count": 1
-},
-{
-"label": "Minoh City Hospital",
-"count": 0
-},
-{
-"label": "Fukuoka Institute of Health and Environmental Sciences",
-"count": 0
-},
-{
-"label": "University College London",
-"count": 0
-},
-{
-"label": "Institute of Archaeology",
-"count": 0
-}
-],
+"countries": [],
+"citing_institutions": [],
 "scite_supporting": 0,
 "scite_contradicting": 0
 },
@@ -19333,9 +19453,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.5117/9789462989504",
 "year": 2025,
-"venue": "Routledge",
+"venue": "Taylor & Francis",
 "venue_name": "",
-"publisher": "Routledge",
+"publisher": "Taylor & Francis",
 "concepts": [
 "Digital media",
 "Tracking (education)",
@@ -20013,7 +20133,7 @@ window.STORIES_DATA = [
 "year": 2025,
 "venue": "Nature Cell Biology",
 "venue_name": "Nature Cell Biology",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Translation (biology)",
 "Stress granule",
@@ -20070,21 +20190,21 @@ window.STORIES_DATA = [
 "count": 2
 },
 {
+"label": "Company",
+"count": 1
+},
+{
 "label": "Facility",
 "count": 1
 },
 {
 "label": "Government",
 "count": 1
-},
-{
-"label": "Company",
-"count": 1
 }
 ],
 "countries": [
 {
-"label": "United States",
+"label": "Canada",
 "count": 2
 },
 {
@@ -20092,11 +20212,11 @@ window.STORIES_DATA = [
 "count": 2
 },
 {
-"label": "Canada",
+"label": "United States of America",
 "count": 2
 },
 {
-"label": "India",
+"label": "Czechia",
 "count": 1
 },
 {
@@ -20104,28 +20224,7 @@ window.STORIES_DATA = [
 "count": 1
 }
 ],
-"citing_institutions": [
-{
-"label": "Indian Institute of Science Education and Research Pune",
-"count": 0
-},
-{
-"label": "University of Chicago",
-"count": 0
-},
-{
-"label": "Shantou University Medical College",
-"count": 0
-},
-{
-"label": "Shantou University",
-"count": 0
-},
-{
-"label": "University of Wrocław",
-"count": 0
-}
-],
+"citing_institutions": [],
 "scite_supporting": 0,
 "scite_contradicting": 0
 },
@@ -20137,7 +20236,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "Communications Biology",
 "venue_name": "Communications Biology",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Iron–sulfur cluster",
 "Cytosol",
@@ -20901,7 +21000,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "BMC Genomics",
 "venue_name": "BMC Genomics",
-"publisher": "BioMed Central",
+"publisher": "Springer Nature",
 "concepts": [
 "Profiling (computer programming)",
 "Biology",
@@ -21011,9 +21110,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.1007/978-3-031-38294-9",
 "year": 2024,
-"venue": "Springer International Publishing",
+"venue": "Springer Nature",
 "venue_name": "",
-"publisher": "Springer International Publishing",
+"publisher": "Springer Nature",
 "concepts": [
 "Genome",
 "Computational biology",
@@ -21556,9 +21655,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.5117/9789462983663",
 "year": 2025,
-"venue": "Routledge",
+"venue": "Taylor & Francis",
 "venue_name": "",
-"publisher": "Routledge",
+"publisher": "Taylor & Francis",
 "concepts": [
 "Technological convergence",
 "Negotiation",
@@ -21767,101 +21866,6 @@ window.STORIES_DATA = [
 "scite_contradicting": 0
 },
 {
-"file": "articlestory_10.1038_s41467-025-67869-0.html",
-"title": "Deep Mutational Scanning of FDX1 Identifies Key Structural Determinants of Lipoylation and Cuproptosis",
-"type": "ArticleStory",
-"doi": "10.1038/s41467-025-67869-0",
-"year": 2025,
-"venue": "Nature Communications",
-"venue_name": "Nature Communications",
-"publisher": "Springer Nature",
-"concepts": [
-"Protein subunit",
-"Computational biology",
-"Helix (gastropod)",
-"Biology",
-"Key (lock)",
-"Computer science",
-"Cell biology",
-"Protein structure"
-],
-"roles": [
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "gold",
-"citation_count": 5,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": true,
-"excerpt": "Short impact summary The study titled \"Deep Mutational Scanning of FDX1 Identifies Key Structural Determinants of Lipoylation and Cuproptosis,\" published in Nature Communications in 2025, explores cri…",
-"cover_url": "",
-"authors": "",
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [
-"NSF | BIO | Division of Molecular and Cellular Biosciences",
-"NCI NIH HHS",
-"U.S. Department of Health &amp; Human Services | NIH | National Cancer Institute",
-"U.S. Department of Health & Human Services | NIH | National Institute of General Medical Sciences (NIGMS)",
-"U.S. Department of Health &amp; Human Services | NIH | National Institute of General Medical Sciences"
-],
-"sectors": [
-{
-"label": "Healthcare",
-"count": 5
-},
-{
-"label": "Education",
-"count": 4
-}
-],
-"countries": [],
-"citing_institutions": [
-{
-"label": "The University of Texas MD Anderson Cancer Center",
-"count": 1
-},
-{
-"label": "Hainan Maternal and Child Health Hospital",
-"count": 0
-},
-{
-"label": "Capital Medical University",
-"count": 0
-},
-{
-"label": "Central South University",
-"count": 0
-},
-{
-"label": "Hainan Medical University",
-"count": 0
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0
-},
-{
 "file": "articlestory_10.1101_2023.11.30.569486.html",
 "title": "Bioorthogonal labeling enables in situ fluorescence imaging of expressed gas vesicle nanostructures",
 "type": "ArticleStory",
@@ -21953,7 +21957,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "Oikos",
 "venue_name": "Oikos",
-"publisher": "Wiley",
+"publisher": "wiley",
 "concepts": [
 "Study heterogeneity",
 "Spatial heterogeneity",
@@ -22193,7 +22197,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "Frontiers in Education",
 "venue_name": "Frontiers in Education",
-"publisher": "Frontiers Media",
+"publisher": "Frontiers Media S.A.",
 "concepts": [
 "Grading (engineering)",
 "Mathematics education",
@@ -22426,7 +22430,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications, Ltd",
+"publisher": "eLife Sciences Publications Ltd",
 "concepts": [
 "Publishing",
 "Psychological intervention",
@@ -24488,7 +24492,7 @@ window.STORIES_DATA = [
 "year": 2023,
 "venue": "Scientific Data",
 "venue_name": "Scientific Data",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Scomber",
 "Indo-Pacific",
@@ -24942,7 +24946,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications, Ltd",
+"publisher": "eLife Sciences Publications Ltd",
 "concepts": [
 "Neuroscience",
 "Order (exchange)",
@@ -28361,9 +28365,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.5117/9789463723336",
 "year": 2025,
-"venue": "Routledge",
+"venue": "Taylor & Francis",
 "venue_name": "",
-"publisher": "Routledge",
+"publisher": "Taylor & Francis",
 "concepts": [
 "Human trafficking",
 "Entitlement (fair division)",
@@ -28482,7 +28486,7 @@ window.STORIES_DATA = [
 "year": 2025,
 "venue": "Cell",
 "venue_name": "Cell",
-"publisher": "Cell Press",
+"publisher": "Elsevier",
 "concepts": [
 "Biology",
 "Replisome",
@@ -28699,7 +28703,7 @@ window.STORIES_DATA = [
 "year": 2025,
 "venue": "Journal of Inorganic Biochemistry",
 "venue_name": "Journal of Inorganic Biochemistry",
-"publisher": "Elsevier BV",
+"publisher": "Elsevier",
 "concepts": [
 "Chemistry",
 "Enzyme",
@@ -28877,7 +28881,7 @@ window.STORIES_DATA = [
 "year": 2013,
 "venue": "Celebrity Studies",
 "venue_name": "Celebrity Studies",
-"publisher": "Routledge",
+"publisher": "Taylor & Francis",
 "concepts": [
 "Inflation (cosmology)",
 "Field (mathematics)",
@@ -29402,7 +29406,7 @@ window.STORIES_DATA = [
 "year": 2024,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications, Ltd",
+"publisher": "eLife Sciences Publications Ltd",
 "concepts": [
 "Brainstem",
 "Neuroscience",
@@ -29571,9 +29575,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.1007/978-981-16-2229-8_33",
 "year": 2022,
-"venue": "Springer Nature Singapore",
+"venue": "Springer Nature",
 "venue_name": "",
-"publisher": "Springer Nature Singapore",
+"publisher": "Springer Nature",
 "concepts": [
 "Clothing",
 "Rack",
@@ -31216,9 +31220,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.5117/9789462981102",
 "year": 2025,
-"venue": "Routledge",
+"venue": "Taylor & Francis",
 "venue_name": "",
-"publisher": "Routledge",
+"publisher": "Taylor & Francis",
 "concepts": [
 "German",
 "Materialism",
@@ -31306,9 +31310,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.5117/9789463721745",
 "year": 2025,
-"venue": "Routledge",
+"venue": "Taylor & Francis",
 "venue_name": "",
-"publisher": "Routledge",
+"publisher": "Taylor & Francis",
 "concepts": [
 "Repertoire",
 "Natural (archaeology)",
@@ -31492,7 +31496,7 @@ window.STORIES_DATA = [
 "year": 2025,
 "venue": "Angewandte Chemie",
 "venue_name": "Angewandte Chemie",
-"publisher": "Wiley-VCH",
+"publisher": "John Wiley & Sons",
 "concepts": [
 "Avidity",
 "Chemistry",
@@ -31553,7 +31557,7 @@ window.STORIES_DATA = [
 "year": 2025,
 "venue": "Angewandte Chemie International Edition",
 "venue_name": "Angewandte Chemie International Edition",
-"publisher": "Wiley-VCH",
+"publisher": "John Wiley & Sons",
 "concepts": [
 "Avidity",
 "Chemistry",
@@ -31620,7 +31624,7 @@ window.STORIES_DATA = [
 "year": 2026,
 "venue": "Genetic Resources and Crop Evolution",
 "venue_name": "Genetic Resources and Crop Evolution",
-"publisher": "Springer",
+"publisher": "Springer Nature",
 "concepts": [
 "Biology",
 "Yield (engineering)",
@@ -31681,7 +31685,7 @@ window.STORIES_DATA = [
 "year": 2025,
 "venue": "Cell Reports",
 "venue_name": "Cell Reports",
-"publisher": "Cell Press",
+"publisher": "Elsevier",
 "concepts": [
 "Pseudoknot",
 "Biology",
@@ -31748,7 +31752,7 @@ window.STORIES_DATA = [
 "year": 2026,
 "venue": "Nature",
 "venue_name": "Nature",
-"publisher": "Nature Portfolio",
+"publisher": "Springer Nature",
 "concepts": [
 "Coronavirus disease 2019 (COVID-19)",
 "Face (sociological concept)",
@@ -32712,7 +32716,7 @@ window.STORIES_DATA = [
 "year": 2026,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications, Ltd",
+"publisher": "eLife Sciences Publications Ltd",
 "concepts": [
 "Neurodegeneration",
 "Biology",
@@ -32778,7 +32782,7 @@ window.STORIES_DATA = [
 "year": 2025,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications, Ltd",
+"publisher": "eLife Sciences Publications Ltd",
 "concepts": [
 "Drosophila melanogaster",
 "Melanogaster",
@@ -32835,7 +32839,7 @@ window.STORIES_DATA = [
 "year": 2025,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications, Ltd",
+"publisher": "eLife Sciences Publications Ltd",
 "concepts": [
 "Fusobacterium nucleatum",
 "Cytotoxicity",
@@ -32896,7 +32900,7 @@ window.STORIES_DATA = [
 "year": 2026,
 "venue": "eLife",
 "venue_name": "eLife",
-"publisher": "eLife Sciences Publications, Ltd",
+"publisher": "eLife Sciences Publications Ltd",
 "concepts": [
 "Political science",
 "Engineering ethics",
@@ -36465,9 +36469,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.5117/9789462986206",
 "year": 2025,
-"venue": "Routledge",
+"venue": "Taylor & Francis",
 "venue_name": "",
-"publisher": "Routledge",
+"publisher": "Taylor & Francis",
 "concepts": [
 "Metaphor",
 "Swarm behaviour",
@@ -36527,9 +36531,9 @@ window.STORIES_DATA = [
 "type": "BookStory",
 "doi": "10.5117/9789463724012",
 "year": 2025,
-"venue": "Routledge",
+"venue": "Taylor & Francis",
 "venue_name": "",
-"publisher": "Routledge",
+"publisher": "Taylor & Francis",
 "concepts": [],
 "roles": [
 "Commercial Linkage"
@@ -37200,4 +37204,4 @@ window.STORIES_DATA = [
 "scite_contradicting": 0
 }
 ];
-window.STORIES_STATS = {"total": 382, "total_articles": 164, "total_books": 192, "total_data": 19, "total_software": 7, "total_oa": 323, "pct_oa": 85, "total_citations": 153475, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 382, "total_articles": 164, "total_books": 192, "total_data": 19, "total_software": 7, "total_oa": 323, "pct_oa": 85, "total_citations": 153658, "num_disciplines": 30};
