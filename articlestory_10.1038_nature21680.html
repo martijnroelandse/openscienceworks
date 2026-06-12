@@ -22,6 +22,21 @@
         .tag-soft { background: #f3f4f6; color: #4b5563; }
         .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
         .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        /* AuthorStory links on story pages */
+        a.author-link,
+        .hero-meta a[href^="authorstory_"],
+        .card strong a[href^="authorstory_"],
+        #sec-citing strong a[href^="authorstory_"] {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a.author-link:hover,
+        .hero-meta a[href^="authorstory_"]:hover,
+        .card strong a[href^="authorstory_"]:hover,
+        #sec-citing strong a[href^="authorstory_"]:hover {
+            text-decoration: underline;
+        }
         table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
         th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
         th { background: #f9fafb; font-weight: 600; }
@@ -220,23 +235,7 @@
     .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
 
 
-    
-        /* AuthorStory links on story pages */
-        a.author-link,
-        .hero-meta a[href^="authorstory_"],
-        .card strong a[href^="authorstory_"],
-        #sec-citing strong a[href^="authorstory_"] {
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        a.author-link:hover,
-        .hero-meta a[href^="authorstory_"]:hover,
-        .card strong a[href^="authorstory_"]:hover,
-        #sec-citing strong a[href^="authorstory_"]:hover {
-            text-decoration: underline;
-        }
-</style>
+    </style>
     <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -391,7 +390,7 @@
                     <div class="im-card im-card-primary">
                         <div class="im-card-top">
                             <div>
-                                <div class="im-num">244</div>
+                                <div class="im-num">255</div>
                                 <div class="im-label">Total Citations</div>
                                 
                                 <div class="im-top-badge">🏆 Top 1% Cited</div>
@@ -403,7 +402,7 @@
                                 <div class="im-spark-chart">
                                     <canvas id="impactSparkline"
                                         data-labels="[2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]"
-                                        data-values="[9, 19, 34, 30, 27, 30, 28, 36, 22, 5]"></canvas>
+                                        data-values="[9, 22, 37, 31, 29, 31, 28, 36, 22, 14]"></canvas>
                                 </div>
                                 <div class="im-spark-range">2017–2026</div>
                             </div>
@@ -520,7 +519,7 @@
 
                         
                         
-                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 15 countries</a>
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 12 countries</a>
                         
                     </div>
                 </div>
@@ -795,12 +794,12 @@
             <div class="cite-analysis-always">
                 <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
                     <p class="muted" style="margin:0;line-height:1.6;">
-                        Analysis of <strong>244</strong> citing works.
-                        <strong>151.2%</strong> come from the Top 10 institutions.
-                        Median citing paper cited <strong>24.0</strong> times itself.
+                        Analysis of <strong>259</strong> citing works.
+                        <strong>152.5%</strong> come from the Top 10 institutions.
+                        Median citing paper cited <strong>0</strong> times itself.
                     </p>
                     <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
-                        <span class="tag tag-soft" style="font-size:.75rem;">article (225)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (15)</span>
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (246)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (18)</span>
                         <span class="tag" style="font-size:.75rem;">The Astrophysical Journal</span><span class="tag" style="font-size:.75rem;">Monthly Notices of the Royal Astronomical Society</span><span class="tag" style="font-size:.75rem;">Astronomy and Astrophysics</span>
                     </div>
                 </div>
@@ -810,7 +809,7 @@
             <div style="height:180px;width:100%;margin-bottom:1.25rem;">
                 <canvas id="citationChart"
                     data-labels="[2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]"
-                    data-values="[9, 19, 34, 30, 27, 30, 28, 36, 22, 5]">
+                    data-values="[9, 22, 37, 31, 29, 31, 28, 36, 22, 14]">
                 </canvas>
             </div>
 
@@ -824,35 +823,29 @@
             <div id="cite-geo" class="cite-tab-pane active">
                 <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
                     
-                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (151)</span>
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States of America (167)</span>
                     
-                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (84)</span>
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom of Great Britain and Northern Ireland (94)</span>
                     
-                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Germany (78)</span>
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Germany (88)</span>
                     
-                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Italy (73)</span>
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Italy (86)</span>
                     
-                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">France (71)</span>
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">France (76)</span>
                     
-                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Denmark (65)</span>
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Denmark (71)</span>
                     
-                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Australia (53)</span>
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Australia (60)</span>
                     
-                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Netherlands (53)</span>
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Netherlands (58)</span>
                     
-                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Spain (49)</span>
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Spain (54)</span>
                     
-                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Japan (46)</span>
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Japan (51)</span>
                     
-                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Canada (44)</span>
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Canada (48)</span>
                     
-                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Chile (37)</span>
-                    
-                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Switzerland (29)</span>
-                    
-                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (23)</span>
-                    
-                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Belgium (13)</span>
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Chile (42)</span>
                     
                 </div>
                 
@@ -860,17 +853,17 @@
                     <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
                     <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
                         
-                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (196)</span>
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (213)</span>
                         
-                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (178)</span>
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (194)</span>
                         
-                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (66)</span>
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (79)</span>
                         
-                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (57)</span>
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (66)</span>
                         
-                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Other (38)</span>
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Other (40)</span>
                         
-                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (33)</span>
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (34)</span>
                         
                     </div>
                 </div>
@@ -882,62 +875,74 @@
                     
                     <li style="margin-bottom:.4rem;">
                         <strong>University of Copenhagen</strong>
-                        <a href="https://ror.org/035b05819" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
-                        <span class="muted">(58)</span>
+                        
+                        <span class="muted">(63)</span>
                     </li>
                     
                     <li style="margin-bottom:.4rem;">
                         <strong>Centre National de la Recherche Scientifique</strong>
-                        <a href="https://ror.org/02feahw73" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
-                        <span class="muted">(55)</span>
+                        
+                        <span class="muted">(59)</span>
                     </li>
                     
                     <li style="margin-bottom:.4rem;">
                         <strong>Leiden University</strong>
-                        <a href="https://ror.org/027bh9e22" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
-                        <span class="muted">(40)</span>
+                        
+                        <span class="muted">(42)</span>
                     </li>
                     
                     <li style="margin-bottom:.4rem;">
                         <strong>National Astronomical Observatory of Japan</strong>
-                        <a href="https://ror.org/052rrw050" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
-                        <span class="muted">(35)</span>
-                    </li>
-                    
-                    <li style="margin-bottom:.4rem;">
-                        <strong>Swinburne University of Technology</strong>
-                        <a href="https://ror.org/031rekg67" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
-                        <span class="muted">(33)</span>
+                        
+                        <span class="muted">(39)</span>
                     </li>
                     
                     <li style="margin-bottom:.4rem;">
                         <strong>Space Telescope Science Institute</strong>
-                        <a href="https://ror.org/036f5mx38" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
-                        <span class="muted">(31)</span>
+                        
+                        <span class="muted">(36)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Swinburne University of Technology</strong>
+                        
+                        <span class="muted">(34)</span>
                     </li>
                     
                     <li style="margin-bottom:.4rem;">
                         <strong>Max Planck Institute for Astronomy</strong>
-                        <a href="https://ror.org/01vhnrs90" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
-                        <span class="muted">(28)</span>
-                    </li>
-                    
-                    <li style="margin-bottom:.4rem;">
-                        <strong>Technical University of Denmark</strong>
-                        <a href="https://ror.org/04qtj9h94" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
-                        <span class="muted">(28)</span>
+                        
+                        <span class="muted">(31)</span>
                     </li>
                     
                     <li style="margin-bottom:.4rem;">
                         <strong>The University of Tokyo</strong>
-                        <a href="https://ror.org/057zh3y96" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
-                        <span class="muted">(28)</span>
+                        
+                        <span class="muted">(31)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Arcetri Astrophysical Observatory</strong>
+                        
+                        <span class="muted">(30)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Technical University of Denmark</strong>
+                        
+                        <span class="muted">(30)</span>
                     </li>
                     
                     <li style="margin-bottom:.4rem;">
                         <strong>ARC Centre of Excellence for All-sky Astrophysics</strong>
-                        <a href="https://ror.org/04v9m3h35" target="_blank" class="orcid-badge" style="background:#e2e8f0;color:#475569;text-decoration:none;">ROR</a>
-                        <span class="muted">(27)</span>
+                        
+                        <span class="muted">(29)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>California Institute of Technology</strong>
+                        
+                        <span class="muted">(28)</span>
                     </li>
                     
                 </ul>
@@ -948,62 +953,74 @@
                     
                     <li style="margin-bottom:.4rem;">
                         <strong>Gabriel Brammer</strong>
-                        <a href="https://orcid.org/0000-0003-2680-005X" target="_blank" class="orcid-badge">ORCID</a>
+                        
                         <span class="muted">(33)</span>
                     </li>
                     
                     <li style="margin-bottom:.4rem;">
+                        <strong>Francesco Valentino</strong>
+                        
+                        <span class="muted">(24)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
                         <strong>Karl Glazebrook</strong>
-                        <a href="https://orcid.org/0000-0002-3254-9044" target="_blank" class="orcid-badge">ORCID</a>
-                        <span class="muted">(27)</span>
-                    </li>
-                    
-                    <li style="margin-bottom:.4rem;">
-                        <strong>Themiya Nanayakkara</strong>
-                        <a href="https://orcid.org/0000-0003-2804-0648" target="_blank" class="orcid-badge">ORCID</a>
-                        <span class="muted">(25)</span>
-                    </li>
-                    
-                    <li style="margin-bottom:.4rem;">
-                        <strong>Casey Papovich</strong>
-                        <a href="https://orcid.org/0000-0001-7503-8482" target="_blank" class="orcid-badge">ORCID</a>
-                        <span class="muted">(25)</span>
+                        
+                        <span class="muted">(23)</span>
                     </li>
                     
                     <li style="margin-bottom:.4rem;">
                         <strong>Ivo Labbé</strong>
-                        <a href="https://orcid.org/0000-0002-2057-5376" target="_blank" class="orcid-badge">ORCID</a>
-                        <span class="muted">(23)</span>
-                    </li>
-                    
-                    <li style="margin-bottom:.4rem;">
-                        <strong>Francesco Valentino</strong>
-                        <a href="https://orcid.org/0000-0001-6477-4011" target="_blank" class="orcid-badge">ORCID</a>
-                        <span class="muted">(23)</span>
-                    </li>
-                    
-                    <li style="margin-bottom:.4rem;">
-                        <strong>Danilo Marchesini</strong>
-                        <a href="https://orcid.org/0000-0001-9002-3502" target="_blank" class="orcid-badge">ORCID</a>
+                        
                         <span class="muted">(22)</span>
                     </li>
                     
                     <li style="margin-bottom:.4rem;">
                         <strong>Pascal A. Oesch</strong>
-                        <a href="https://orcid.org/0000-0001-5851-6649" target="_blank" class="orcid-badge">ORCID</a>
+                        
+                        <span class="muted">(22)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Danilo Marchesini</strong>
+                        
                         <span class="muted">(21)</span>
                     </li>
                     
                     <li style="margin-bottom:.4rem;">
-                        <strong>Rachel Bezanson</strong>
-                        <a href="https://orcid.org/0000-0001-5063-8254" target="_blank" class="orcid-badge">ORCID</a>
+                        <strong>Themiya Nanayakkara</strong>
+                        
+                        <span class="muted">(21)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Casey Papovich</strong>
+                        
                         <span class="muted">(20)</span>
                     </li>
                     
                     <li style="margin-bottom:.4rem;">
+                        <strong>Rachel Bezanson</strong>
+                        
+                        <span class="muted">(19)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
                         <strong>Sune Toft</strong>
-                        <a href="https://orcid.org/0000-0003-3631-7176" target="_blank" class="orcid-badge">ORCID</a>
+                        
+                        <span class="muted">(19)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Anton M. Koekemoer</strong>
+                        
                         <span class="muted">(18)</span>
+                    </li>
+                    
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Katherine E. Whitaker</strong>
+                        
+                        <span class="muted">(17)</span>
                     </li>
                     
                 </ul>
@@ -2929,7 +2946,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-06-09T18:16:34+00:00
+                    Generated on 2026-06-12T10:23:17+00:00
                 </div>
                 
             </div>

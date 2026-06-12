@@ -1140,7 +1140,7 @@ function renderCards(stories) {
     const extraTags   = [
       s.has_sdgs     ? `<span class="tag tag-sdg">SDGs</span>` : "",
       s.has_teaching ? `<span class="tag tag-teach">Teaching</span>` : "",
-      s.librarything_rating ? `<span class="tag tag-lt">⭐ ${esc(String(s.librarything_rating))}/10</span>` : "",
+      s.librarything_rating ? `<span class="tag tag-lt">${esc(String(s.librarything_rating))}/10</span>` : "",
     ].join("");
 
     const excerpt = s.excerpt ? `<p class="card-excerpt">${esc(s.excerpt)}</p>` : "";
@@ -1237,7 +1237,7 @@ function renderFacets(allStories, filtered) {
 
   const topPlatforms = orderedPlatforms(allC.platform);
   renderFacetGroup("fo-platform", "platform", allC.platform, filtC.platform,
-    k => k === "LibraryThing" ? "⭐ LibraryThing rating" : esc(k),
+    k => k === "LibraryThing" ? "LibraryThing rating" : esc(k),
     topPlatforms);
 }
 
