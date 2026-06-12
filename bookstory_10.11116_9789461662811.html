@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ArticleStory - Images of Immigrants and Refugees</title>
+    <title>BookStory - Images of Immigrants and Refugees</title>
     <style>
 
         * { box-sizing: border-box; }
@@ -22,6 +22,21 @@
         .tag-soft { background: #f3f4f6; color: #4b5563; }
         .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
         .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        /* AuthorStory links on story pages */
+        a.author-link,
+        .hero-meta a[href^="authorstory_"],
+        .card strong a[href^="authorstory_"],
+        #sec-citing strong a[href^="authorstory_"] {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a.author-link:hover,
+        .hero-meta a[href^="authorstory_"]:hover,
+        .card strong a[href^="authorstory_"]:hover,
+        #sec-citing strong a[href^="authorstory_"]:hover {
+            text-decoration: underline;
+        }
         table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
         th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
         th { background: #f9fafb; font-weight: 600; }
@@ -220,23 +235,7 @@
     .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
 
 
-    
-        /* AuthorStory links on story pages */
-        a.author-link,
-        .hero-meta a[href^="authorstory_"],
-        .card strong a[href^="authorstory_"],
-        #sec-citing strong a[href^="authorstory_"] {
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        a.author-link:hover,
-        .hero-meta a[href^="authorstory_"]:hover,
-        .card strong a[href^="authorstory_"]:hover,
-        #sec-citing strong a[href^="authorstory_"]:hover {
-            text-decoration: underline;
-        }
-</style>
+    </style>
     <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -263,7 +262,7 @@
         <header class="hero card" id="sec-hero">
             <div class="header-bar">
                 <div style="display: flex; align-items: center; gap: 1.25rem;">
-                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div class="logo-wrap"><img src="bookstories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
                     <div>
                         <h1 class="hero-title">Images of Immigrants and Refugees</h1>
                         
@@ -337,6 +336,20 @@
                     </div>
                 </div>
                 
+                
+                <div class="cover-wrap">
+                    
+                    <div class="cover-fallback" aria-label="Cover unavailable">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                            <path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3V4z"></path>
+                            <path d="M8 20h11"></path>
+                            <path d="M8 8h7M8 12h7"></path>
+                        </svg>
+                        <div class="cover-fallback-title">Cover pending</div>
+                        <div class="cover-fallback-sub">Image not yet available</div>
+                    </div>
+                    
+                </div>
                 
             </div>
         </header>
@@ -416,6 +429,28 @@
                     <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
                     
                     <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+                    
+                    <div class="im-card">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">10,860</div>
+                                <div class="im-label">Downloads (OAPEN)</div>
+                            </div>
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="downloadsSparkline"
+                                        data-labels="[&#34;Jan&#34;, &#34;Feb&#34;, &#34;Mar&#34;, &#34;Apr&#34;, &#34;May&#34;, &#34;Jun&#34;, &#34;Jul&#34;, &#34;Aug&#34;, &#34;Sep&#34;, &#34;Oct&#34;, &#34;Nov&#34;, &#34;Dec&#34;]"
+                                        data-values="[893, 859, 1034, 1073, 1512, 833, 645, 563, 676, 904, 911, 957]"></canvas>
+                                </div>
+                                
+                                <div class="im-spark-range">2019 (Jan–Dec)</div>
+                                
+                            </div>
+                            
+                        </div>
+                        <a class="im-card-link" href="#operas-metrics-card">📊 View full timeline ↓</a>
+                    </div>
                     
                     
                     <!-- scite (only when references exist) -->
@@ -697,16 +732,29 @@
             
             
             <section class="card" style="margin-bottom:0;">
-                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
-                <ul class="metric-list">
-                    <li><strong>DOI:</strong> <a href="https://doi.org/10.11116/9789461662811" target="_blank">10.11116/9789461662811</a></li>
-                    <li><strong>OA status:</strong> Gold</li>
+                <h2 style="margin-top:0;"><span>Access</span> <span class="badge" style="background:#f3f4f6; color:#4b5563;">Availability</span></h2>
+                <ul class="metric-list" style="line-height: 1.8;">
+                    
+                    
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.11116/9789461662811" target="_blank" style="word-break: break-all;">https://doi.org/10.11116/9789461662811</a></li>
+                    
+                    
+                    <li><strong>OA status:</strong> 
+                        
+                            Gold
+                        
+                    </li>
+
+                    
+                        <li><strong>Landing page:</strong> <a href="https://lup.be/products/119589" target="_blank" style="word-break: break-all;">https://lup.be/products/119589</a></li>
+                    
                     
                     
                     
                     
                 </ul>
             </section>
+
             
 
             <section class="card" style="margin-bottom:0;">
@@ -725,32 +773,37 @@
         
         <div class="grid-2" style="align-items: start;">
             
-                
-                
-                
-
-                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    
-                        <section class="card" style="margin-bottom:0;">
-                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
-                            
-                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
-                                <li><strong>Total:</strong> 0</li>
-                                <li><strong>Supporting:</strong> 0</li>
-                                <li><strong>Mentioning:</strong> 0</li>
-                                <li><strong>Contradicting:</strong> 0</li>
-                            </ul>
-                            
-                        </section>
-                    
-                </div>
-
-                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+                <ul class="metric-list">
                     
                     
 
                     
-                </div>
+
+                    
+
+                    
+                    
+                </ul>
+            </section>
+
+                <section class="card" style="margin-bottom:0;">
+                    <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                    
+                    <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                        <li><strong>Total:</strong> 0</li>
+                        <li><strong>Supporting:</strong> 0</li>
+                        <li><strong>Mentioning:</strong> 0</li>
+                        <li><strong>Contradicting:</strong> 0</li>
+                    </ul>
+                    
+                </section>
+
+                
+                
+                
+
             
         </div>
 
@@ -1106,7 +1159,7 @@
                     </li>
                     
                     <li style="margin-bottom: 0.4rem;">
-                        <strong><a href="authorstory_leen-d-haenens.html">Leen d’Haenens</a></strong> 
+                        <strong><a class="author-link" href="authorstory_leen-d-haenens.html">Leen d’Haenens</a></strong> 
                         
                         
                         <a class="orcid-badge" href="https://orcid.org/0000-0001-7847-9996" target="_blank">ORCID</a>
@@ -1190,6 +1243,15 @@
         
 
 
+        
+        <section class="card" id="operas-metrics-card">
+            <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
+            <div id="metrics-widget"></div>
+            <script type="application/json" id="operas-metrics-config">{"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "tab1", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN \u00b7 downloads", "works": ["info:doi:10.11116/9789461662811"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}}, "graphs": [{"id": "g1", "type": "line", "title": "Downloads over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}</script>
+            <script src="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js" async></script>
+        </section>
+
+
 
         
         
@@ -1251,7 +1313,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-06-09T18:46:27+00:00
+                    Generated on 2026-06-12T07:59:25+00:00
                 </div>
                 
             </div>

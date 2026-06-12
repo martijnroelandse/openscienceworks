@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>BookStory - Untitled</title>
+    <style>
+
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        /* AuthorStory links on story pages */
+        a.author-link,
+        .hero-meta a[href^="authorstory_"],
+        .card strong a[href^="authorstory_"],
+        #sec-citing strong a[href^="authorstory_"] {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a.author-link:hover,
+        .hero-meta a[href^="authorstory_"]:hover,
+        .card strong a[href^="authorstory_"]:hover,
+        #sec-citing strong a[href^="authorstory_"]:hover {
+            text-decoration: underline;
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+        
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+    
+
+/* ── UX Enhancements ── */
+
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+@media print{.sticky-nav{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
+
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+.sig-green {background:#dcfce7;color:#166534;}
+.cover-fallback{
+  width:110px;height:155px;border-radius:.55rem;
+  border:1px solid #dbe7f3;
+  box-shadow:0 4px 10px rgba(15,23,42,.08);
+  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:.55rem;gap:.35rem;
+}
+.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
+.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
+.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+    
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="bookstories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">Untitled</h1>
+                        
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
+                            
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+
+                            
+                            
+                            
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong> 
+                                
+                                    
+                                
+                            </div>
+                        
+                            
+                        
+                            
+                            
+                        
+                            <div><strong>Publisher:</strong> 
+                                
+                                    
+                                
+                            </div>
+                        
+                            <div><strong>Publication year:</strong> 
+                                
+                                    None
+                                
+                            </div>
+                        
+                            
+                            
+                            <div><strong>ISBN:</strong> 9781800799981</div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="cover-wrap">
+                    
+                    <img src="https://covers.openlibrary.org/b/isbn/9781800799981-L.jpg" alt="Cover" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+                    
+                </div>
+                
+            </div>
+        </header>
+
+        <!-- Sticky nav -->
+        <nav aria-label="Page sections" class="sticky-nav no-print">
+            <div class="sticky-nav-inner">
+                <a href="#sec-hero">Overview</a>
+                <a href="#sec-story">Story</a>
+                <a href="#sec-impact">Impact</a>
+                
+                <a href="#sec-access">Access</a>
+                <a href="#sec-citing">Who's Citing</a>
+                <a href="#sec-mentions">Mentions</a>
+            </div>
+        </nav>
+
+
+        
+        
+        
+        <section class="card">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">Untitled (its publication year) is an open access scholarly book from its publisher that has become a recognised reference point in ongoing research. Its availability across open platforms positions it for growing use in both research and teaching.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">Untitled, published by its publisher in its publication year, is a scholarly book that contributes to ongoing discussions in its field. As part of a broader move towards more accessible and connected research, it has the potential to reach readers well beyond the boundaries of a single institution or paywalled platform.</p>
+<p class="story-text"> It has so far been cited 50 times in the scholarly literature, indicating that it has found a role as a reference point in ongoing research. Metadata and citation links connect the book to areas such as Prent and Art, helping to position it within the wider research landscape. Taken together, these signals begin to map how the book is being taken up, cited, and positioned within current academic debates.</p>
+<p class="story-text"> No public web mentions have been detected through Crossref Event Data, which is still common for many academic books and does not diminish its potential relevance. Public usage statistics from open-access infrastructure are not yet available or not exposed for this title, so much of its readership remains invisible in the data. As more readers discover the work and as additional platforms index and surface it, its influence can continue to grow – both in formal scholarship and in how researchers, students, and practitioners engage with its ideas in the future.</p></div>
+        </section>
+        
+
+        
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+            <div class="im-wrapper">
+                
+                
+                
+                
+                
+                
+                
+                
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">213</div>
+                                <div class="im-label">Total Citations</div>
+                                
+                            </div>
+                            
+                            
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2025]"
+                                        data-values="[50]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2025–2025</div>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+                    
+                    <div class="im-card">
+                        <div class="im-num">54</div>
+                        <div class="im-label">Online Mentions</div>
+                        
+                    </div>
+                    
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+                    
+                    
+                    <!-- scite (only when references exist) -->
+                    
+                </div>
+
+                
+                
+                
+                
+                
+                <div class="muted" style="margin-top:.7rem; font-size:.8rem;">
+                    Some signals aren’t recorded for this volume yet (scite citation context) — these typically accrue after publication.
+                </div>
+                
+
+                
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+                        
+                        
+                        
+                        
+                        
+                        
+                        <span class="sig-pill sig-red">▶ YouTube · 5 videos</span>
+                        
+
+                        
+                        
+
+                        
+                        
+                        <a class="sig-pill sig-slate" href="https://www.worldcat.org/search?q=isbn%3A9781800799981" target="_blank" style="text-decoration:none;">📚 WorldCat</a>
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+                        <span class="sig-pill sig-blue">🦋 Bluesky · 29</span>
+                        
+
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+
+        <div class="grid-2">
+            
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2 style="margin-top:0;"><span>Access</span> <span class="badge" style="background:#f3f4f6; color:#4b5563;">Availability</span></h2>
+                <ul class="metric-list" style="line-height: 1.8;">
+                    
+                    
+                    <li><strong>ISBN:</strong> 9781800799981</li>
+                    
+                    
+                    <li><strong>OA status:</strong> 
+                        
+                            <span class="muted">Closed / Unknown</span>
+                        
+                    </li>
+
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </section>
+
+            
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Attention landscape</span> <span class="badge">Event Data</span></h2>
+                
+                    <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.6rem;">
+                        This work has <strong>54</strong> recorded events globally.
+                    </p>
+                    
+                    <p style="font-size: 0.9rem; margin-top: 1rem; color: #4b5563;">
+                        <em>(See specific sources and examples in the Online Mentions section below).</em>
+                    </p>
+                
+            </section>
+        </div>
+        
+        <div class="grid-2" style="align-items: start;">
+            
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+                <ul class="metric-list">
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                </ul>
+            </section>
+
+                <section class="card" style="margin-bottom:0;">
+                    <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                    <p class="muted">Not available.</p>
+                </section>
+
+                
+                
+                
+
+            
+        </div>
+
+        
+        
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>213</strong> citing works.
+                        <strong>%</strong> come from the Top 10 institutions.
+                        Median citing paper cited <strong></strong> times itself.
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">preprint (50)</span>
+                        <span class="tag" style="font-size:.75rem;">Qeios</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2025]"
+                    data-values="[50]">
+                </canvas>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
+
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+                    
+                </div>
+                
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+                    
+                </ul>
+            </div>
+        </section>
+        
+
+        <div class="grid-2">
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            <section class="card span-full" style="margin-bottom:0;" id="sec-public-discourse">
+                <h2><span>Online mentions &amp; public discourse</span> <span class="badge">Crossref &amp; Open Web</span></h2>
+                <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.5rem; font-size:0.85rem;">
+                    Aggregated events, community platforms, and curated expert sources (newsletters, blogs, podcasts).
+                </p>
+
+                
+                
+                
+                <div style="border:1px solid #e5e7eb; border-radius:.75rem; padding:1rem 1.1rem; margin-bottom:1.25rem; background:#f8fafc;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:.75rem;">
+                        <strong style="font-size:.9rem;">📰 News coverage</strong>
+                        <span class="badge">GDELT</span>
+                    </div>
+                    
+                    <div style="font-size:.8rem; color:#4b5563; margin-bottom:.6rem;">
+                        Top sources:
+                        
+                        <span style="background:#e5e7eb; border-radius:999px; padding:.1rem .5rem; margin:.1rem; display:inline-block;">comingsoon.net</span>
+                        
+                        <span style="background:#e5e7eb; border-radius:999px; padding:.1rem .5rem; margin:.1rem; display:inline-block;">destructoid.com</span>
+                        
+                        <span style="background:#e5e7eb; border-radius:999px; padding:.1rem .5rem; margin:.1rem; display:inline-block;">gamerant.com</span>
+                        
+                        <span style="background:#e5e7eb; border-radius:999px; padding:.1rem .5rem; margin:.1rem; display:inline-block;">comicsalliance.com</span>
+                        
+                        <span style="background:#e5e7eb; border-radius:999px; padding:.1rem .5rem; margin:.1rem; display:inline-block;">warm1069.com</span>
+                        
+                    </div>
+                    
+                    
+                    <div style="font-size:.8rem; color:#4b5563; margin-bottom:.75rem;">
+                        Countries covered:
+                        
+                        <span style="background:#dbeafe; color:#1e40af; border-radius:999px; padding:.1rem .45rem; margin:.1rem; display:inline-block; font-size:.75rem;">United States</span>
+                        
+                        <span style="background:#dbeafe; color:#1e40af; border-radius:999px; padding:.1rem .45rem; margin:.1rem; display:inline-block; font-size:.75rem;">United Kingdom</span>
+                        
+                        <span style="background:#dbeafe; color:#1e40af; border-radius:999px; padding:.1rem .45rem; margin:.1rem; display:inline-block; font-size:.75rem;">Brazil</span>
+                        
+                        <span style="background:#dbeafe; color:#1e40af; border-radius:999px; padding:.1rem .45rem; margin:.1rem; display:inline-block; font-size:.75rem;">Japan</span>
+                        
+                        <span style="background:#dbeafe; color:#1e40af; border-radius:999px; padding:.1rem .45rem; margin:.1rem; display:inline-block; font-size:.75rem;">Kazakhstan</span>
+                        
+                        <span style="background:#dbeafe; color:#1e40af; border-radius:999px; padding:.1rem .45rem; margin:.1rem; display:inline-block; font-size:.75rem;">Mexico</span>
+                        
+                    </div>
+                    
+                    
+                    <ul style="list-style:none; padding:0; margin:0; font-size:.82rem;">
+                        
+                        <li style="padding:.35rem 0; border-top:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:baseline; gap:.5rem;">
+                            <a href="https://www.comingsoon.net/movies/news/2110773-disney-dates-10-movies-including-new-pixar-film" target="_blank" style="color:#2563eb; text-decoration:none; flex:1; line-height:1.4;">Disney Dates 10 Movies , Including New Pixar Film</a>
+                            <span style="color:#9ca3af; font-size:.72rem; white-space:nowrap;">2026-03-20 · comingsoon.net</span>
+                        </li>
+                        
+                        <li style="padding:.35rem 0; border-top:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:baseline; gap:.5rem;">
+                            <a href="https://www.destructoid.com/untitled-boxing-game-codes/" target="_blank" style="color:#2563eb; text-decoration:none; flex:1; line-height:1.4;">Untitled Boxing Game ( UBG ) Codes ( May 2026 ) </a>
+                            <span style="color:#9ca3af; font-size:.72rem; white-space:nowrap;">2026-05-06 · destructoid.com</span>
+                        </li>
+                        
+                        <li style="padding:.35rem 0; border-top:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:baseline; gap:.5rem;">
+                            <a href="https://gamerant.com/roblox-untitled-slayer-codes/" target="_blank" style="color:#2563eb; text-decoration:none; flex:1; line-height:1.4;">Roblox Untitled Slayer Codes</a>
+                            <span style="color:#9ca3af; font-size:.72rem; white-space:nowrap;">2026-04-26 · gamerant.com</span>
+                        </li>
+                        
+                        <li style="padding:.35rem 0; border-top:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:baseline; gap:.5rem;">
+                            <a href="https://comicsalliance.com/ixp/442/p/upcoming-marvel-movie-calendar/" target="_blank" style="color:#2563eb; text-decoration:none; flex:1; line-height:1.4;">Marvel Adds 2 Mystery Movies to Upcoming Schedule</a>
+                            <span style="color:#9ca3af; font-size:.72rem; white-space:nowrap;">2026-03-20 · comicsalliance.com</span>
+                        </li>
+                        
+                        <li style="padding:.35rem 0; border-top:1px solid #f1f5f9; display:flex; justify-content:space-between; align-items:baseline; gap:.5rem;">
+                            <a href="https://warm1069.com/contests/whale-watching-on-the-emerald-clipper-text-to-win-with-shellie-hart/" target="_blank" style="color:#2563eb; text-decoration:none; flex:1; line-height:1.4;">Whale Watching on the Emerald Clipper Text - to - Win with Shellie Hart – WARM 106 . 9</a>
+                            <span style="color:#9ca3af; font-size:.72rem; white-space:nowrap;">2026-04-24 · warm1069.com</span>
+                        </li>
+                        
+                    </ul>
+                    
+                </div>
+                
+
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+
+                
+                
+                
+                
+                <h3 style="margin-top: 1.5rem; font-size: 1.1rem; color: #1f2937;">
+                    Community engagement
+                </h3>
+                
+                
+                
+                
+
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; border-bottom: 2px solid #e5e7eb; margin-bottom: 1.5rem; margin-top: 1rem;">
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                
+                    
+                    
+                    <button onclick="openSocialTab(event, 'soc-bsky')" class="soc-tab-btn soc-tab-active">
+                        Bluesky <span style="background: #e0f2fe; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.75rem; margin-left: 0.3rem;">29</span>
+                    </button>
+                    
+
+                    
+                    
+                </div>
+
+                <div style="position: relative; border-left: 2px solid #e2e8f0; padding-left: 1.5rem; margin-top: 1rem;">
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    
+
+                    
+                    
+
+                    
+                    
+                    <div id="soc-bsky" class="soc-tab-content" style="display: block; animation: fadeIn 0.3s;">
+                        
+                        <div style="position: relative; margin-bottom: 1.5rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #0ea5e9; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span class="badge" style="background: #e0f2fe; color: #0369a1; font-size: 0.65rem; text-transform: uppercase;">Bluesky Post</span>
+                                <span class="muted" style="font-size: 0.7rem;">2026-06-11</span>
+                            </div>
+                            <div style="font-size: 0.85rem; line-height: 1.5; color: #334155; font-style: italic; background: #f8fafc; padding: 0.75rem; border-radius: 8px; border: 1px solid #f1f5f9; margin-bottom: 0.3rem;">
+                                "Der Tag war konstruktiv und erfüllend, mental und emotional kräftezehrend. So unterschiedliche Menschen, so schwere Themen. Ich habe mein Bestes gegeb..." — <span style="font-weight: 600;">@traumfaengerin.bsky.social</span>
+                            </div>
+                            <a href="https://bsky.app/profile/traumfaengerin.bsky.social/post/3mo22oarevk2t" target="_blank" style="font-size: 0.75rem; color: #0369a1; text-decoration: none; font-weight: 500;">View Thread ↗</a>
+                        </div>
+                        
+                        <div style="position: relative; margin-bottom: 1.5rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #0ea5e9; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span class="badge" style="background: #e0f2fe; color: #0369a1; font-size: 0.65rem; text-transform: uppercase;">Bluesky Post</span>
+                                <span class="muted" style="font-size: 0.7rem;">2026-06-11</span>
+                            </div>
+                            <div style="font-size: 0.85rem; line-height: 1.5; color: #334155; font-style: italic; background: #f8fafc; padding: 0.75rem; border-radius: 8px; border: 1px solid #f1f5f9; margin-bottom: 0.3rem;">
+                                "Untitled photo, possibly related to: Hired man helps the farmers' oldest boy on the Myers farm. Washington, near Outlook, Yakima County  #Myers #Washi..." — <span style="font-weight: 600;">@dorothealange.mastodon.ozioso.online.ap.brid.gy</span>
+                            </div>
+                            <a href="https://bsky.app/profile/dorothealange.mastodon.ozioso.online.ap.brid.gy/post/3mo22m3noqv62" target="_blank" style="font-size: 0.75rem; color: #0369a1; text-decoration: none; font-weight: 500;">View Thread ↗</a>
+                        </div>
+                        
+                        <div style="position: relative; margin-bottom: 1.5rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #0ea5e9; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span class="badge" style="background: #e0f2fe; color: #0369a1; font-size: 0.65rem; text-transform: uppercase;">Bluesky Post</span>
+                                <span class="muted" style="font-size: 0.7rem;">2026-06-11</span>
+                            </div>
+                            <div style="font-size: 0.85rem; line-height: 1.5; color: #334155; font-style: italic; background: #f8fafc; padding: 0.75rem; border-radius: 8px; border: 1px solid #f1f5f9; margin-bottom: 0.3rem;">
+                                "New ‘Transformers’ Movie Taps ‘It: Welcome to Derry’ Writer Jason Fuchs  https://www.inbella.com/1617588/new-transformers-movie-taps-it-welcome-to-der..." — <span style="font-weight: 600;">@inbella.bsky.social</span>
+                            </div>
+                            <a href="https://bsky.app/profile/inbella.bsky.social/post/3mo22j672t42d" target="_blank" style="font-size: 0.75rem; color: #0369a1; text-decoration: none; font-weight: 500;">View Thread ↗</a>
+                        </div>
+                        
+                        <div style="position: relative; margin-bottom: 1.5rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #0ea5e9; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span class="badge" style="background: #e0f2fe; color: #0369a1; font-size: 0.65rem; text-transform: uppercase;">Bluesky Post</span>
+                                <span class="muted" style="font-size: 0.7rem;">2026-06-11</span>
+                            </div>
+                            <div style="font-size: 0.85rem; line-height: 1.5; color: #334155; font-style: italic; background: #f8fafc; padding: 0.75rem; border-radius: 8px; border: 1px solid #f1f5f9; margin-bottom: 0.3rem;">
+                                "Untitled, Clement Edgar Ted Garrison Jr., oil on canvas, 40 × 38", private collection.  Clement Edgar Ted Garrison Jr. (1925 - 2023) was an  American ..." — <span style="font-weight: 600;">@jonathanbsmall.bsky.social</span>
+                            </div>
+                            <a href="https://bsky.app/profile/jonathanbsmall.bsky.social/post/3mo22fe5rk224" target="_blank" style="font-size: 0.75rem; color: #0369a1; text-decoration: none; font-weight: 500;">View Thread ↗</a>
+                        </div>
+                        
+                        <div style="position: relative; margin-bottom: 1.5rem;">
+                            <span style="position: absolute; left: -2.05rem; top: 0.25rem; background: #0ea5e9; width: 8px; height: 8px; border-radius: 50%; border: 2px solid white;"></span>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
+                                <span class="badge" style="background: #e0f2fe; color: #0369a1; font-size: 0.65rem; text-transform: uppercase;">Bluesky Post</span>
+                                <span class="muted" style="font-size: 0.7rem;">2026-06-11</span>
+                            </div>
+                            <div style="font-size: 0.85rem; line-height: 1.5; color: #334155; font-style: italic; background: #f8fafc; padding: 0.75rem; border-radius: 8px; border: 1px solid #f1f5f9; margin-bottom: 0.3rem;">
+                                "For the 1994 #WorldCup, the Armory Center for the Arts [ @armoryarts.bsky.social ] in Pasadena curated an exhibit titled "The World of Cups," sponsore..." — <span style="font-weight: 600;">@lahistory.bsky.social</span>
+                            </div>
+                            <a href="https://bsky.app/profile/lahistory.bsky.social/post/3mo22durovc2b" target="_blank" style="font-size: 0.75rem; color: #0369a1; text-decoration: none; font-weight: 500;">View Thread ↗</a>
+                        </div>
+                        
+                    </div>
+                    
+
+                    
+                    
+                </div>
+                
+                
+                
+                
+                
+                <div class="muted" style="margin-top: 1.5rem; font-size: 0.8rem; text-align: center; border-top: 1px dashed #e5e7eb; padding-top: 0.8rem;">
+                    Displaying the 29 most detailed mentions. Other aggregated events lack public URLs.
+                </div>
+                
+                
+            </section>
+            
+        </div>
+
+        
+        <section class="card">
+            <h2><span>Teaching, Practice & Library Adoption</span></h2>
+            <div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem;">
+                Evidence of structured teaching use, reading lists, and library availability.
+            </div>
+            
+            <div class="grid-2" style="align-items: start;">
+                
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        OpenCourseWare Mentions <span class="badge" style="float: right;">Google Custom Search</span>
+                    </h3>
+                    
+                        <p class="muted" style="font-size: 0.85rem; font-style: italic;">No verified course syllabi found in open university repositories.</p>
+                    
+                    
+                    <h3 style="font-size: 0.95rem; margin-top: 1.5rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem; display: flex; justify-content: space-between; align-items: baseline;">
+                        Video Lectures & Presentations
+                        <span class="badge" style="background: #fef2f2; color: #dc2626; border: 1px solid #fecaca;">YouTube Transcripts</span>
+                    </h3>
+                    
+                    <ul style="padding-left: 0; list-style: none; margin: 0;">
+                        
+                        <li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                                <a href="https://www.youtube.com/watch?v=SxVNOnPyvIU" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;">
+                                    D'Angelo - Untitled (How Does It Feel) (Official Music Video)
+                                </a>
+                                <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                    D'Angelo
+                                </span>
+                            </div>
+                            
+                            <div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #fecaca;">
+                                "...Discussed in video...."
+                            </div>
+                            
+                            <div class="muted" style="font-size: 0.7rem; margin-top: 0.4rem; text-align: right;">
+                                AI Academic Confidence: <strong>70%</strong>
+                            </div>
+                        </li>
+                        
+                        <li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                                <a href="https://www.youtube.com/watch?v=ZQ7oqmikZDQ" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;">
+                                    Simple Plan - Untitled (Official Video)
+                                </a>
+                                <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                    SimplePlan
+                                </span>
+                            </div>
+                            
+                            <div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #fecaca;">
+                                "...Discussed in video...."
+                            </div>
+                            
+                            <div class="muted" style="font-size: 0.7rem; margin-top: 0.4rem; text-align: right;">
+                                AI Academic Confidence: <strong>70%</strong>
+                            </div>
+                        </li>
+                        
+                        <li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                                <a href="https://www.youtube.com/watch?v=L4p2gN2CzsA" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;">
+                                    THE AMAZING DIGITAL CIRCUS - Ep 5: Untitled
+                                </a>
+                                <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                    GLITCH
+                                </span>
+                            </div>
+                            
+                            <div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #fecaca;">
+                                "...Discussed in video...."
+                            </div>
+                            
+                            <div class="muted" style="font-size: 0.7rem; margin-top: 0.4rem; text-align: right;">
+                                AI Academic Confidence: <strong>70%</strong>
+                            </div>
+                        </li>
+                        
+                        <li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                                <a href="https://www.youtube.com/watch?v=MkzLR7LeZjs" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;">
+                                    Elmiene - Untitled (How Does It Feel) | Live Session
+                                </a>
+                                <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                    Elmiene
+                                </span>
+                            </div>
+                            
+                            <div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #fecaca;">
+                                "...Discussed in video...."
+                            </div>
+                            
+                            <div class="muted" style="font-size: 0.7rem; margin-top: 0.4rem; text-align: right;">
+                                AI Academic Confidence: <strong>70%</strong>
+                            </div>
+                        </li>
+                        
+                        <li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
+                                <a href="https://www.youtube.com/watch?v=xqYFU1_SiBo" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;">
+                                    Untitled (2012 Remaster)
+                                </a>
+                                <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
+                                    Interpol
+                                </span>
+                            </div>
+                            
+                            <div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #fecaca;">
+                                "...Discussed in video...."
+                            </div>
+                            
+                            <div class="muted" style="font-size: 0.7rem; margin-top: 0.4rem; text-align: right;">
+                                AI Academic Confidence: <strong>70%</strong>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                    
+
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        Library & Community Access <span class="badge" style="float: right; background: #f0fdf4; color: #166534;">Open Library</span>
+                    </h3>
+                    
+                    <ul class="metric-list" style="margin-top: 0;">
+                        
+                        
+                        
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Institutional Availability:</strong>
+                            <div style="margin-top: 0.4rem;">
+                                <a href="https://www.worldcat.org/search?q=isbn%3A9781800799981" target="_blank" class="tag" style="background:#e5f2ff; color:#1d4ed8; font-weight: 600; text-decoration: none;">
+                                    Search Global Libraries (WorldCat) ↗
+                                </a>
+                            </div>
+                        </li>
+                        
+
+                        
+
+                        
+
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </section>
+        
+        
+        
+        
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>0 authors · 0 institutions</div>
+                
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+                
+                
+                
+                    
+                </ul>
+
+                
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>2 specific concepts identified.</div>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Prent</span>
+                    
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Art</span>
+                    
+                    
+                </div>
+                
+                
+            </section>
+        </div>
+
+        
+
+
+        
+        <section class="card" id="operas-metrics-card">
+            <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
+            <div id="metrics-widget"></div>
+            <script type="application/json" id="operas-metrics-config">{"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "tab1", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN \u00b7 downloads", "works": ["info:doi:9781800799981"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}}, "graphs": [{"id": "g1", "type": "line", "title": "Downloads over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}</script>
+            <script src="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js" async></script>
+        </section>
+
+
+
+        
+        
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.75rem;"
+                 data-total="50">
+                50 citing works (most recent first)
+            </div>
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "(Electrical - Telecommunication Nano-Antennas) Nano-Antennas in Various Applications of Telecommunication and Communication Systems Common With Nano-Scale Systems"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/51ijw6" target="_blank" style="word-break: break-all;">10.32388/51ijw6</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Nano Antenna as a Primary Tool For Absorbing Nano Electromagnetic Waves in Nano Telecommunications"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/39vxm4" target="_blank" style="word-break: break-all;">10.32388/39vxm4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "The Most important Parameters of Each Nano Antenna Nano Antenna (From  Electromagnetic Current Distribution to Checking The important Characteristics of Nano Antennas)"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/9ur9h5" target="_blank" style="word-break: break-all;">10.32388/9ur9h5</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Placement of Proper Rectifier in The Place of Nano Antenna Feed Gap"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/yvddkc" target="_blank" style="word-break: break-all;">10.32388/yvddkc</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Optical Nano Antennas ( a Practical Solution With High Efficiency Compared to Other Technologies)"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/0jz1wo" target="_blank" style="word-break: break-all;">10.32388/0jz1wo</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "MIM , Nano Antenna ( Frequency Range  12 MIM ) Nano Antenna And  Frequencies Over 30 Terahertz"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/xb6x8d" target="_blank" style="word-break: break-all;">10.32388/xb6x8d</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "In Order To Be Usable, Nano Antennas Need to Have a Very High Operating Frequency ( The Resonance Frequency of Graphene-Based Nano Antennas )"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/fenbnd" target="_blank" style="word-break: break-all;">10.32388/fenbnd</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "The Difference Between Nanotube Antennas Compared to Classical Antennas (Wave Speed in Nanotubes is About one Hundred Times Lower Than The Speed of Light)"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/8lst36" target="_blank" style="word-break: break-all;">10.32388/8lst36</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Nano Bio_Electronic Nano Sensors; CDSE Nano Sensor"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/tfy4jy" target="_blank" style="word-break: break-all;">10.32388/tfy4jy</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Basis of Formation and Construction and Types (Nano Bio-Sensors)"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/wz4keb" target="_blank" style="word-break: break-all;">10.32388/wz4keb</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Electronic Nanosensors (Nano-Biosensors) Can be implanted or intelligent Components for Special Patients Who Are in a Dangerous Situation"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/pr66o8" target="_blank" style="word-break: break-all;">10.32388/pr66o8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Gas Nano Bio-Sensors Good Sensory Properties With The Ability of Nanosensors to Detect at Low Detection Limits (ppm)"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/pbxqhk" target="_blank" style="word-break: break-all;">10.32388/pbxqhk</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Research Has Shown That Depending on The Need and Design (Nano-Electric Biobots)  , They can Be Used for Many Years, Even a Century, Without Disturbing Their Performance"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/bihzhi" target="_blank" style="word-break: break-all;">10.32388/bihzhi</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Making Nano-Bio-Robots Electric (Nano-Bio Robot)  in Size Between The Range of 0.1 to 10 nm and The Nanoscale or Molecular Components"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/epm3f9" target="_blank" style="word-break: break-all;">10.32388/epm3f9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Nano Microbiological Robots A Controllable Nanoscale Device Consisting of a Nano bio Sensor Liquid Nanosensor and a Nanoelectric Motor"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/o8kuvh" target="_blank" style="word-break: break-all;">10.32388/o8kuvh</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "The Method and Principles of The Construction and Placement of The MEMS Nano-  Electric and Mechanical System"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/e0kg3q" target="_blank" style="word-break: break-all;">10.32388/e0kg3q</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Dynamic Biological Robots Are Less Than 1 mm Long and Are Made of 500-1000 Living Cells"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/6xsl2f" target="_blank" style="word-break: break-all;">10.32388/6xsl2f</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "What is NEMS? (Abbreviation for nanoelectric systems) or  Nano electronical systems"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/7ss0iz" target="_blank" style="word-break: break-all;">10.32388/7ss0iz</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Micro and Nano-Electromechanical Systems (  MEMS  /  NEMS  ) are Devices in Which The Physical Motion of a Micro- or Nano-Scale Structure is Controlled by an Electronic Circuit."</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/mhvm1o" target="_blank" style="word-break: break-all;">10.32388/mhvm1o</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Development Goals of Nanoelectronic Systems (NEMS) Such as Nanocomputers"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/i0lu0u" target="_blank" style="word-break: break-all;">10.32388/i0lu0u</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Creative Use of Nano-Microelectronics Systems and (Nano-Electronic Systems NEMS )"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/z04sqq" target="_blank" style="word-break: break-all;">10.32388/z04sqq</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Nanoelectro Systems (  NEMS  ) The integration  of Nanoelectric Elements, Sensors, Actuators, and Nanoelectronic Devices on a Silicon Basis by Micron-Sized Manufacturing Technology"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/8y0zbl" target="_blank" style="word-break: break-all;">10.32388/8y0zbl</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Electronics and classification based on the wavelength of the output beam and the wavelength of the exit beam from the nanolaser"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/9eqb9h" target="_blank" style="word-break: break-all;">10.32388/9eqb9h</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "In nanolaser applications, refraction only plays a significant role when a transparent material, such as the one being irradiated, is used"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/jz401f" target="_blank" style="word-break: break-all;">10.32388/jz401f</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "An infrared nanolaser or terahertz nanolaser (FIR laser, terahertz laser) is a nanolaser with an output wavelength between 30–1000 μm (frequency 0.3–10 terahertz), in the far-infrared or terahertz band of the electromagnetic spectrum"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/io8x77" target="_blank" style="word-break: break-all;">10.32388/io8x77</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Electric Nano Memories N_RAM (Quantum) Supporting Nanostructures (Multi-Functional NRAM Memories) Are The Construction of Memory Chips Made  of Carbon Nanotubes"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/oooxtu" target="_blank" style="word-break: break-all;">10.32388/oooxtu</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Common Nanoelectronic Technologies in (Quantum Nano Memories)"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/ih3qnl" target="_blank" style="word-break: break-all;">10.32388/ih3qnl</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "A Complete Comparison Between Two Quantum Nano-Memory Nickel  NI_ Nanoparticle and  Nano-Memory (Graphene Molecule)"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/cph8k9" target="_blank" style="word-break: break-all;">10.32388/cph8k9</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Fabrication and Replication of Graphene Molecular Nano-Memories by Nano-Graphene Synthesis in The Surface-integrated Growth Method"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/me4ibt" target="_blank" style="word-break: break-all;">10.32388/me4ibt</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Molecular Nanoelectronics and Graphene Molecular Nanomemories: A Novel Non-Volatile Charge Trapping Memory Using isolated and Uniformly Distributed Graphene Nanocrystals as Nano-Floating Gates"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/kvnef2" target="_blank" style="word-break: break-all;">10.32388/kvnef2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "(Molecular Nanomemory) Storing information Using Nickel Quantum Dots at Nanometer Sizes"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/aqtxde" target="_blank" style="word-break: break-all;">10.32388/aqtxde</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Graphene Molecular Nano Memory Moulcolar A Floating Gate Transistor Nanomemory Device"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/l38c06" target="_blank" style="word-break: break-all;">10.32388/l38c06</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Link Between Graphene Molecular Nano Memories and Graphene Nanotransistors For The Replication and Production of This Type of Nano Memory"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/fgwbhw" target="_blank" style="word-break: break-all;">10.32388/fgwbhw</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Nuclear Electricity _ Uranium (Solid Phase) Nano Uranium"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/479i7j" target="_blank" style="word-break: break-all;">10.32388/479i7j</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Nuclear Power (Nuclear _ Electricity) Radioactive Nano Particle Decay Mode"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/tjljgt" target="_blank" style="word-break: break-all;">10.32388/tjljgt</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "TURBO-ELECTRIC GENERATOR (Turbo Generator in Nuclear Power)"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/u3a9g4" target="_blank" style="word-break: break-all;">10.32388/u3a9g4</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "The important and Stable isotope of Uranium 238 (U238) or Enriched Uranium in The Production of Nuclear Electricity"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/2ydjmo" target="_blank" style="word-break: break-all;">10.32388/2ydjmo</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "The Density of Uranium 65% is Greatly Affected by Cold Water and (Suitable for Generating Electrical Energy or Nuclear Power)"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/aimuzm" target="_blank" style="word-break: break-all;">10.32388/aimuzm</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Uranium-235 is The Most important Material Required (For Fission and Energy Production)"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/j6pwq2" target="_blank" style="word-break: break-all;">10.32388/j6pwq2</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Enrichment of 72% isotope (Uranium 235) For Electrical Energy"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/fvxhrz" target="_blank" style="word-break: break-all;">10.32388/fvxhrz</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Enrichment of 92% isotope (Uranium 238) Or U238 For Unlimited Electrical Energy"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/pld3d0" target="_blank" style="word-break: break-all;">10.32388/pld3d0</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Uranium Required for Electricity Generation is Usually in a Stable, Compact Form Such as (Yellow Cake) _ Urania"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/alb9g3" target="_blank" style="word-break: break-all;">10.32388/alb9g3</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Reproduction of Nano-Memory (Graphene Molecules) by Hybrid Nanolithography"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/yn8w42" target="_blank" style="word-break: break-all;">10.32388/yn8w42</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "In The Proliferation of Nanotransistors and Nanoelectronic Properties, They are Significantly improved, Such as: increased Young's Modulus, Tensile Strength, Resistance to Thermal Deformation, Fire Resistance"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/b20do1" target="_blank" style="word-break: break-all;">10.32388/b20do1</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Nano-Assemblers Can  include Nano-Transistors and Nano-Diodes or Even Components of Nano-Robots"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/f2hevu" target="_blank" style="word-break: break-all;">10.32388/f2hevu</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Nanoplasmonic Pattern and  Small Changes in The Dielectric Around The Nano Volume"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/d7hthn" target="_blank" style="word-break: break-all;">10.32388/d7hthn</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "(Nanoelectronics and Plasmonic Model) in The Design of Nanodevices Such as Nanotransistors and Nanodiodes, Nanoswitches and Nanologic Gates"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/1jkgax" target="_blank" style="word-break: break-all;">10.32388/1jkgax</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "Electronics and The Concept of Free Electron Nanolasers"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/qjfig8" target="_blank" style="word-break: break-all;">10.32388/qjfig8</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "The reason for the nanolaser in industry is its significant use compared to other traditional laser manufacturing and production methods"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/os8cqt" target="_blank" style="word-break: break-all;">10.32388/os8cqt</a></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>2025</td>
+                        <td>Review of: "liquid nanolasers have the advantage that they are easier to cool when flowing. Dye nanolasers are an example of these lasers"</td>
+                        <td>Qeios</td>
+                        <td><a href="https://doi.org/10.32388/t9juu8" target="_blank" style="word-break: break-all;">10.32388/t9juu8</a></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+        
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+        
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-06-12T08:01:40+00:00
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' citing works (most recent first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+        
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+        .wm-tab-btn {
+            border: none;
+            background: #f3f4f6;
+            color: #4b5563;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .wm-tab-btn.wm-tab-active {
+            outline: 2px solid #3b82f6;
+            outline-offset: 1px;
+        }
+    </style>
+    
+    <script>
+        function citeSwitchTab(btn, paneId) {
+            var panes = document.querySelectorAll('#sec-citing .cite-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].classList.remove('active');
+            }
+            var btns = document.querySelectorAll('#sec-citing .cite-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('active');
+            }
+            var pane = document.getElementById(paneId);
+            if (pane) pane.classList.add('active');
+            if (btn) btn.classList.add('active');
+        }
+        function openWebMentionTab(evt, tabId) {
+            var panes = document.querySelectorAll('.wm-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].style.display = 'none';
+            }
+            var btns = document.querySelectorAll('.wm-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('wm-tab-active');
+            }
+            var pane = document.getElementById(tabId);
+            if (pane) pane.style.display = 'block';
+            if (evt && evt.currentTarget) evt.currentTarget.classList.add('wm-tab-active');
+        }
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
+</body>
+</html>
