@@ -712,6 +712,7 @@
     [data-tip] { cursor: help; }
     .tag-sdg     { background: #dcfce7; color: #166534; }
     .tag-teach   { background: #e0f2fe; color: #0369a1; }
+    .tag-lt      { background: #fef9c3; color: #92400e; border: 1px solid #fde68a; font-weight: 600; }
 
     .card-footer {
       display: flex;
@@ -834,9 +835,9 @@
       <div class="facet-options" id="fo-features"></div>
     </div>
 
-    <!-- Web mention platform -->
+    <!-- Online signals (web mentions, LibraryThing, etc.) -->
     <div class="facet-group collapsed" id="fg-platform">
-      <h3 onclick="toggleFacet('fg-platform')">Mention platform <span class="caret">▾</span></h3>
+      <h3 onclick="toggleFacet('fg-platform')">Online signals <span class="caret">▾</span></h3>
       <div class="facet-options" id="fo-platform"></div>
     </div>
 
@@ -1008,6 +1009,7 @@ function orderedRoles(counts) {
 }
 
 const PLATFORM_ORDER = [
+  "LibraryThing",
   "Wikipedia",
   "Reddit",
   "Bluesky",
@@ -1138,6 +1140,7 @@ function renderCards(stories) {
     const extraTags   = [
       s.has_sdgs     ? `<span class="tag tag-sdg">SDGs</span>` : "",
       s.has_teaching ? `<span class="tag tag-teach">Teaching</span>` : "",
+      s.librarything_rating ? `<span class="tag tag-lt">⭐ ${esc(String(s.librarything_rating))}/10</span>` : "",
     ].join("");
 
     const excerpt = s.excerpt ? `<p class="card-excerpt">${esc(s.excerpt)}</p>` : "";
@@ -1233,7 +1236,9 @@ function renderFacets(allStories, filtered) {
   );
 
   const topPlatforms = orderedPlatforms(allC.platform);
-  renderFacetGroup("fo-platform", "platform", allC.platform, filtC.platform, k => esc(k), topPlatforms);
+  renderFacetGroup("fo-platform", "platform", allC.platform, filtC.platform,
+    k => k === "LibraryThing" ? "⭐ LibraryThing rating" : esc(k),
+    topPlatforms);
 }
 
 function renderActiveFilters() {
@@ -1441,7 +1446,7 @@ function renderPortfolioCard(p, groupLabel) {
     : `<span style="font-size:0.8rem;color:var(--muted)">No signals recorded</span>`;
 
   // ── platform mentions ──
-  const PLAT_LABELS = { wikipedia:"Wikipedia", reddit:"Reddit", bluesky:"Bluesky",
+  const PLAT_LABELS = { librarything:"LibraryThing", wikipedia:"Wikipedia", reddit:"Reddit", bluesky:"Bluesky",
     hypothesis:"Hypothesis", substack:"Substack", blog:"Blogs", podcast:"Podcasts",
     stackexchange:"StackExch.", mastodon:"Mastodon", news:"News" };
   const platformHtml = topPlatforms.length
@@ -1546,7 +1551,7 @@ function renderPortfolioCard(p, groupLabel) {
 
       ${platformHtml ? `
       <hr class="pf-divider">
-      <div class="pf-section-label">Online mentions by platform</div>
+      <div class="pf-section-label">Online signals by platform</div>
       <div class="pf-platform-grid">${platformHtml}</div>` : ""}
 
       ${(sectorsHtml || countriesHtml) ? `
