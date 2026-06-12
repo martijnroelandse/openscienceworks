@@ -1916,7 +1916,7 @@ window.STORIES_DATA = [
 {
 "file": "articlestory_10.5334_aogh.2831.html",
 "title": "Human Health and Ocean Pollution",
-"type": "ArticleStory",
+"type": "BookStory",
 "doi": "10.5334/aogh.2831",
 "year": 2020,
 "venue": "Annals of Global Health",
@@ -4558,7 +4558,7 @@ window.STORIES_DATA = [
 {
 "file": "articlestory_10.5334_jors.122.html",
 "title": "eofs: A Library for EOF Analysis of Meteorological, Oceanographic, and Climate Data",
-"type": "ArticleStory",
+"type": "BookStory",
 "doi": "10.5334/jors.122",
 "year": 2016,
 "venue": "Journal of Open Research Software",
@@ -15169,7 +15169,7 @@ window.STORIES_DATA = [
 {
 "file": "articlestory_10.1007_s10875-023-01629-x.html",
 "title": "Ruxolitinib Rescues Multiorgan Clinical Autoimmunity in Patients with APS-1",
-"type": "ArticleStory",
+"type": "BookStory",
 "doi": "10.1007/s10875-023-01629-x",
 "year": 2024,
 "venue": "Journal of Clinical Immunology",
@@ -17907,7 +17907,7 @@ window.STORIES_DATA = [
 {
 "file": "articlestory_10.1007_s00180-017-0762-y.html",
 "title": "Sample selection models for count data in R",
-"type": "ArticleStory",
+"type": "BookStory",
 "doi": "10.1007/s00180-017-0762-y",
 "year": 2018,
 "venue": "Computational Statistics",
@@ -21232,7 +21232,7 @@ window.STORIES_DATA = [
 {
 "file": "articlestory_10.3726_jts012024.04.html",
 "title": "Terminology in the Age of AI: The Transformation of Terminology Theory and Practice",
-"type": "ArticleStory",
+"type": "BookStory",
 "doi": "10.3726/jts012024.04",
 "year": 2024,
 "venue": "Journal of Translation Studies",
@@ -21494,7 +21494,7 @@ window.STORIES_DATA = [
 {
 "file": "bookstory_10.11116_9789461662835.html",
 "title": "Mapping Landscapes in Transformation",
-"type": "ArticleStory",
+"type": "BookStory",
 "doi": "10.11116/9789461662835",
 "year": 2019,
 "venue": "Leuven University Press",
@@ -22562,7 +22562,7 @@ window.STORIES_DATA = [
 {
 "file": "bookstory_10.11116_9789461662811.html",
 "title": "Images of Immigrants and Refugees",
-"type": "ArticleStory",
+"type": "BookStory",
 "doi": "10.11116/9789461662811",
 "year": 2019,
 "venue": "Leuven University Press",
@@ -25236,7 +25236,7 @@ window.STORIES_DATA = [
 {
 "file": "articlestory_10.1007_s11999.0000000000000172.html",
 "title": "CORR Insights®: Preoperative Pain Sensitization Is Associated With Postoperative Pillar Pain After Open Carpal Tunnel Release",
-"type": "ArticleStory",
+"type": "BookStory",
 "doi": "10.1007/s11999.0000000000000172",
 "year": 2018,
 "venue": "Clinical Orthopaedics and Related Research",
@@ -25511,7 +25511,7 @@ window.STORIES_DATA = [
 {
 "file": "articlestory_10.11116_9789461664419.html",
 "title": "Islamic Glass in the Making",
-"type": "ArticleStory",
+"type": "BookStory",
 "doi": "10.11116/9789461664419",
 "year": 2022,
 "venue": "Leuven University Press eBooks",
@@ -26298,7 +26298,7 @@ window.STORIES_DATA = [
 {
 "file": "bookstory_10.11116_9789461664419.html",
 "title": "Islamic Glass in the Making",
-"type": "ArticleStory",
+"type": "BookStory",
 "doi": "10.11116/9789461664419",
 "year": 2022,
 "venue": "Leuven University Press",
@@ -30322,7 +30322,7 @@ window.STORIES_DATA = [
 {
 "file": "articlestory_10.1007_s10722-026-02786-9.html",
 "title": "Retraction Note: Characterization of brown rust resistance in bread wheat using yield related morphological indices",
-"type": "ArticleStory",
+"type": "BookStory",
 "doi": "10.1007/s10722-026-02786-9",
 "year": 2026,
 "venue": "Genetic Resources and Crop Evolution",
@@ -35174,7 +35174,7 @@ window.STORIES_DATA = [
 {
 "file": "bookstory_10.7765_9781526137760.html",
 "title": "The international politics of the Middle East",
-"type": "ArticleStory",
+"type": "BookStory",
 "doi": "10.7765/9781526137760",
 "year": 2018,
 "venue": "Manchester University Press",
@@ -35716,4 +35716,4 @@ window.STORIES_DATA = [
 "scite_contradicting": 0
 }
 ];
-window.STORIES_STATS = {"total": 370, "total_articles": 176, "total_books": 168, "total_data": 19, "total_software": 7, "total_oa": 323, "pct_oa": 87, "total_citations": 150774, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 370, "total_articles": 164, "total_books": 180, "total_data": 19, "total_software": 7, "total_oa": 323, "pct_oa": 87, "total_citations": 150774, "num_disciplines": 30};

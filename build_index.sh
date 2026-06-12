@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Regenerate stories_data.js for index.html.
-# Build logic lives in the sibling bookstories repo (openscienceworks is static output only).
+# Run: ./build_index.sh   (do not use python3 on this file)
+# Or:  python3 build_index.py
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")" && pwd)"
