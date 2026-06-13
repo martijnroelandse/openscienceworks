@@ -774,6 +774,140 @@ window.STORIES_DATA = [
 "scite_contradicting": 9
 },
 {
+"file": "articlestory_10.1056_nejmoa1707914.html",
+"title": "Antiinflammatory Therapy with Canakinumab for Atherosclerotic Disease",
+"type": "ArticleStory",
+"doi": "10.1056/nejmoa1707914",
+"year": 2017,
+"venue": "New England Journal of Medicine",
+"venue_name": "New England Journal of Medicine",
+"publisher": "",
+"concepts": [
+"Canakinumab",
+"Medicine",
+"Placebo",
+"Myocardial infarction",
+"Hazard ratio",
+"Internal medicine",
+"Confidence interval",
+"Randomized controlled trial"
+],
+"roles": [
+"Scholarly Uptake",
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance",
+"Reference Point for Synthesis",
+"Public Visibility & Knowledge Base"
+],
+"is_oa": true,
+"oa_status": "bronze",
+"citation_count": 9070,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary Antiinflammatory Therapy with Canakinumab for Atherosclerotic Disease (2017) in New England Journal of Medicine shows measurable signals of attention across scholarly and online c…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Substack"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"substack": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NINDS NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1802
+},
+{
+"label": "Healthcare",
+"count": 1416
+},
+{
+"label": "Facility",
+"count": 654
+},
+{
+"label": "Nonprofit",
+"count": 271
+},
+{
+"label": "Funder",
+"count": 261
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 985
+},
+{
+"label": "Germany",
+"count": 348
+},
+{
+"label": "United Kingdom",
+"count": 325
+},
+{
+"label": "China",
+"count": 307
+},
+{
+"label": "Italy",
+"count": 249
+}
+],
+"citing_institutions": [
+{
+"label": "Brigham and Women's Hospital",
+"count": 40
+},
+{
+"label": "Harvard University",
+"count": 38
+},
+{
+"label": "German Centre for Cardiovascular Research",
+"count": 16
+},
+{
+"label": "Chinese Academy of Medical Sciences & Peking Union Medical College",
+"count": 13
+},
+{
+"label": "Icahn School of Medicine at Mount Sinai",
+"count": 12
+}
+],
+"scite_supporting": 128,
+"scite_contradicting": 11
+},
+{
 "file": "articlestory_10.1056_NEJMoa2007764.html",
 "title": "Remdesivir for the Treatment of Covid-19 — Final Report",
 "type": "ArticleStory",
@@ -6971,6 +7105,138 @@ window.STORIES_DATA = [
 "scite_contradicting": 0
 },
 {
+"file": "articlestory_10.52570_dgac2025.html",
+"title": "Scientific Report of the 2025 Dietary Guidelines Advisory Committee: Advisory Report to the Secretary of Health and Human Services and Secretary of Agriculture",
+"type": "ArticleStory",
+"doi": "10.52570/dgac2025",
+"year": 2024,
+"venue": "Unknown",
+"venue_name": "Unknown",
+"publisher": "",
+"concepts": [
+"Advisory committee",
+"Secretary general",
+"Human services",
+"Agriculture",
+"Surgeon general",
+"Political science",
+"Public administration",
+"Library science"
+],
+"roles": [
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance",
+"Reference Point for Synthesis",
+"Public Visibility & Knowledge Base"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 117,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Zero hunger"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary Scientific Report of the 2025 Dietary Guidelines Advisory Committee: Advisory Report to the Secretary of Health and Human Services and Secretary of Agriculture (2024) in Unknown s…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Podcasts"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"podcast": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 97
+},
+{
+"label": "Government",
+"count": 31
+},
+{
+"label": "Healthcare",
+"count": 30
+},
+{
+"label": "Facility",
+"count": 28
+},
+{
+"label": "Company",
+"count": 20
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 77
+},
+{
+"label": "Australia",
+"count": 13
+},
+{
+"label": "France",
+"count": 12
+},
+{
+"label": "Spain",
+"count": 10
+},
+{
+"label": "United Kingdom",
+"count": 8
+}
+],
+"citing_institutions": [
+{
+"label": "Nutritional Research Foundation",
+"count": 3
+},
+{
+"label": "Rutgers, The State University of New Jersey",
+"count": 3
+},
+{
+"label": "University of Illinois Urbana-Champaign",
+"count": 3
+},
+{
+"label": "Harvard University",
+"count": 2
+},
+{
+"label": "Tufts University",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
 "file": "articlestory_10.1038_s41893-020-0532-7.html",
 "title": "Hydrological limits to carbon capture and storage",
 "type": "ArticleStory",
@@ -7100,6 +7366,145 @@ window.STORIES_DATA = [
 ],
 "scite_supporting": 0,
 "scite_contradicting": 0
+},
+{
+"file": "articlestory_10.1016_j.jacc.2022.01.038.html",
+"title": "Effects of Experimental Sleep Restriction on Energy Intake, Energy Expenditure, and Visceral Obesity",
+"type": "ArticleStory",
+"doi": "10.1016/j.jacc.2022.01.038",
+"year": 2022,
+"venue": "Journal of the American College of Cardiology",
+"venue_name": "Journal of the American College of Cardiology",
+"publisher": "Elsevier",
+"concepts": [
+"Medicine",
+"Sleep restriction",
+"Calorie",
+"Obesity",
+"Sleep (system call)",
+"Calorie restriction",
+"Internal medicine",
+"Sleep deprivation"
+],
+"roles": [
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Reference Point for Synthesis",
+"Sustainability & Policy Relevance",
+"Public Visibility & Knowledge Base"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 110,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Affordable and clean energy"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary Effects of Experimental Sleep Restriction on Energy Intake, Energy Expenditure, and Visceral Obesity (2022) in Journal of the American College of Cardiology shows measurable signa…",
+"cover_url": "",
+"authors": "Naima Covassin, Prachi Singh, Shelly McCrady-Spitzer et al.",
+"institutions": [
+"Mayo Clinic",
+"Pennington Biomedical Research Center",
+"Mayo Clinic Health System"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Podcasts"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"podcast": 2
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"NCATS NIH HHS",
+"NHLBI NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 91
+},
+{
+"label": "Healthcare",
+"count": 48
+},
+{
+"label": "Facility",
+"count": 26
+},
+{
+"label": "Government",
+"count": 15
+},
+{
+"label": "Funder",
+"count": 7
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 46
+},
+{
+"label": "China",
+"count": 29
+},
+{
+"label": "Spain",
+"count": 9
+},
+{
+"label": "United Kingdom",
+"count": 7
+},
+{
+"label": "Japan",
+"count": 6
+}
+],
+"citing_institutions": [
+{
+"label": "Columbia University Irving Medical Center",
+"count": 3
+},
+{
+"label": "Institute of Cytology and Genetics",
+"count": 2
+},
+{
+"label": "Pennington Biomedical Research Center",
+"count": 1
+},
+{
+"label": "Universidad de Granada",
+"count": 1
+},
+{
+"label": "Mayo Clinic in Arizona",
+"count": 1
+}
+],
+"scite_supporting": 1,
+"scite_contradicting": 3
 },
 {
 "file": "articlestory_10.1101_2020.01.15.908111.html",
@@ -7356,6 +7761,138 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "articlestory_10.1016_j.socscimed.2019.112499.html",
+"title": "Multilevel versus single-level regression for the analysis of multilevel information: The case of quantitative intersectional analysis",
+"type": "ArticleStory",
+"doi": "10.1016/j.socscimed.2019.112499",
+"year": 2019,
+"venue": "Social Science & Medicine",
+"venue_name": "Social Science & Medicine",
+"publisher": "",
+"concepts": [
+"Residual",
+"Interpretation (philosophy)",
+"Multilevel model",
+"Statistics",
+"CLARITY",
+"Econometrics",
+"Mathematics",
+"Regression"
+],
+"roles": [
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 97,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Reduced inequalities"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary Multilevel versus single-level regression for the analysis of multilevel information: The case of quantitative intersectional analysis (2019) in Social Science & Medicine shows me…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Blogs"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"blog": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Swedish Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 86
+},
+{
+"label": "Healthcare",
+"count": 22
+},
+{
+"label": "Facility",
+"count": 14
+},
+{
+"label": "Government",
+"count": 10
+},
+{
+"label": "Nonprofit",
+"count": 8
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 35
+},
+{
+"label": "United Kingdom",
+"count": 24
+},
+{
+"label": "Sweden",
+"count": 22
+},
+{
+"label": "Canada",
+"count": 13
+},
+{
+"label": "Germany",
+"count": 9
+}
+],
+"citing_institutions": [
+{
+"label": "Lund University",
+"count": 9
+},
+{
+"label": "University of Oregon",
+"count": 6
+},
+{
+"label": "University of Bristol",
+"count": 4
+},
+{
+"label": "University of Sheffield",
+"count": 3
+},
+{
+"label": "Queen's University",
+"count": 2
+}
+],
+"scite_supporting": 2,
 "scite_contradicting": 0
 },
 {
@@ -8325,6 +8862,142 @@ window.STORIES_DATA = [
 "scite_contradicting": 0
 },
 {
+"file": "articlestory_10.1038_s41598-020-63014-7.html",
+"title": "Parity is associated with cognitive function and brain age in both females and males",
+"type": "ArticleStory",
+"doi": "10.1038/s41598-020-63014-7",
+"year": 2020,
+"venue": "Scientific Reports",
+"venue_name": "Scientific Reports",
+"publisher": "Springer Nature",
+"concepts": [
+"Offspring",
+"Cognition",
+"Association (psychology)",
+"Context (archaeology)",
+"Brain function",
+"Parity (physics)",
+"Pregnancy",
+"Developmental psychology"
+],
+"roles": [
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance",
+"Reference Point for Synthesis"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 74,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being",
+"Gender equality"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary Parity is associated with cognitive function and brain age in both females and males (2020) in Scientific Reports shows measurable signals of attention across scholarly and online…",
+"cover_url": "",
+"authors": "Kaida Ning, Lu Zhao, Meredith Franklin et al.",
+"institutions": [
+"University of Southern California"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Substack"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"substack": 1
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Medical Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 72
+},
+{
+"label": "Healthcare",
+"count": 34
+},
+{
+"label": "Facility",
+"count": 20
+},
+{
+"label": "Government",
+"count": 14
+},
+{
+"label": "Funder",
+"count": 6
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 41
+},
+{
+"label": "Australia",
+"count": 12
+},
+{
+"label": "United Kingdom",
+"count": 11
+},
+{
+"label": "Norway",
+"count": 9
+},
+{
+"label": "Canada",
+"count": 8
+}
+],
+"citing_institutions": [
+{
+"label": "University of Wisconsin–Madison",
+"count": 4
+},
+{
+"label": "University of Southern California",
+"count": 3
+},
+{
+"label": "Monash University",
+"count": 3
+},
+{
+"label": "Australian Research Council",
+"count": 2
+},
+{
+"label": "Cornell University",
+"count": 2
+}
+],
+"scite_supporting": 26,
+"scite_contradicting": 3
+},
+{
 "file": "articlestory_10.1126_sciimmunol.abp8966.html",
 "title": "Vaccine breakthrough hypoxemic COVID-19 pneumonia in patients with auto-Abs neutralizing type I IFNs",
 "type": "ArticleStory",
@@ -8725,6 +9398,140 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 3,
+"scite_contradicting": 0
+},
+{
+"file": "articlestory_10.1377_hlthaff.2016.1471.html",
+"title": "Americans Support Price Shopping For Health Care, But Few Actually Seek Out Price Information",
+"type": "ArticleStory",
+"doi": "10.1377/hlthaff.2016.1471",
+"year": 2017,
+"venue": "Health Affairs",
+"venue_name": "Health Affairs",
+"publisher": "Project HOPE",
+"concepts": [
+"Health care",
+"Opposition (politics)",
+"Business",
+"Health care cost",
+"Quality (philosophy)",
+"Cost sharing",
+"Demographic economics",
+"Marketing"
+],
+"roles": [
+"High-Visibility Uptake",
+"Scholarly Uptake",
+"Reference Point for Synthesis",
+"Public Visibility & Knowledge Base"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 71,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary Americans Support Price Shopping For Health Care, But Few Actually Seek Out Price Information (2017) in Health Affairs shows measurable signals of attention across scholarly and o…",
+"cover_url": "",
+"authors": "Ateev Mehrotra, Katie Dean, Anna D. Sinaiko et al.",
+"institutions": [
+"Beth Israel Deaconess Medical Center",
+"Harvard University",
+"Sinai Health System",
+"Center For Policy Research"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Blogs"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"blog": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 54
+},
+{
+"label": "Healthcare",
+"count": 31
+},
+{
+"label": "Nonprofit",
+"count": 10
+},
+{
+"label": "Company",
+"count": 4
+},
+{
+"label": "Facility",
+"count": 4
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 59
+},
+{
+"label": "Australia",
+"count": 4
+},
+{
+"label": "Germany",
+"count": 3
+},
+{
+"label": "Canada",
+"count": 2
+},
+{
+"label": "Israel",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Massachusetts General Hospital",
+"count": 3
+},
+{
+"label": "Harvard University",
+"count": 2
+},
+{
+"label": "RAND Corporation",
+"count": 2
+},
+{
+"label": "University of Washington",
+"count": 2
+},
+{
+"label": "Michigan Medicine",
+"count": 2
+}
+],
+"scite_supporting": 2,
 "scite_contradicting": 0
 },
 {
@@ -9256,6 +10063,130 @@ window.STORIES_DATA = [
 ],
 "scite_supporting": 6,
 "scite_contradicting": 2
+},
+{
+"file": "bookstory_10.1007_978-1-4899-7303-0_2.html",
+"title": "Smith, Turgot, and the ‘Four Stages’ Theory",
+"type": "BookStory",
+"doi": "10.1007/978-1-4899-7303-0_2",
+"year": 1977,
+"venue": "Springer Nature",
+"venue_name": "",
+"publisher": "Springer Nature",
+"concepts": [
+"Materialism",
+"Adam smith",
+"Face (sociological concept)",
+"Art history",
+"History",
+"Classics",
+"Sociology",
+"Philosophy"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 61,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 3,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Smith, Turgot, and the ‘Four Stages’ Theory (1977) is an open access scholarly book from Springer Nature with impact that is still emerging in formal metrics.",
+"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-1-4899-7303-0_2",
+"authors": "Ronald L. Meek",
+"institutions": [
+"University of Leicester"
+],
+"download_count": 0,
+"series_name": "Smith, Marx, &amp; After",
+"series_id": null,
+"belongs_to_series": true,
+"mention_platforms": [
+"Substack"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"substack": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 32
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Archive",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United Kingdom",
+"count": 11
+},
+{
+"label": "United States",
+"count": 10
+},
+{
+"label": "France",
+"count": 4
+},
+{
+"label": "New Zealand",
+"count": 2
+},
+{
+"label": "Australia",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Massey University",
+"count": 2
+},
+{
+"label": "Syracuse University",
+"count": 1
+},
+{
+"label": "Yale University",
+"count": 1
+},
+{
+"label": "University of California, Berkeley",
+"count": 1
+},
+{
+"label": "Goldsmiths University of London",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
 },
 {
 "file": "articlestory_10.7554_eLife.79042.html",
@@ -19052,6 +19983,247 @@ window.STORIES_DATA = [
 "scite_contradicting": 0
 },
 {
+"file": "articlestory_10.1080_0015198x.2023.2173506.html",
+"title": "Earning Alpha by Avoiding the Index Rebalancing Crowd",
+"type": "ArticleStory",
+"doi": "10.1080/0015198x.2023.2173506",
+"year": 2023,
+"venue": "Financial Analysts Journal",
+"venue_name": "Financial Analysts Journal",
+"publisher": "Taylor & Francis",
+"concepts": [
+"Valuation (finance)",
+"Portfolio",
+"Market capitalization",
+"Capitalization",
+"Index (typography)",
+"Basis point",
+"Multiple",
+"Economics"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 8,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary Earning Alpha by Avoiding the Index Rebalancing Crowd (2023) in Financial Analysts Journal shows measurable signals of attention across scholarly and online channels.",
+"cover_url": "",
+"authors": "Robert D. Arnott, Christopher Brightman, Vitali Kalesnik et al.",
+"institutions": [
+"Moscow State University of Technologies and Management named after K.G. Razumovskiy"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Substack"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"substack": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 6
+},
+{
+"label": "Other",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 4
+},
+{
+"label": "Colombia",
+"count": 2
+},
+{
+"label": "Argentina",
+"count": 1
+},
+{
+"label": "Germany",
+"count": 1
+},
+{
+"label": "MC",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Universidad del Valle",
+"count": 2
+},
+{
+"label": "University of Notre Dame",
+"count": 1
+},
+{
+"label": "Boston College",
+"count": 1
+},
+{
+"label": "Harvard University Press",
+"count": 1
+},
+{
+"label": "Harvard University",
+"count": 0
+}
+],
+"scite_supporting": 6,
+"scite_contradicting": 0
+},
+{
+"file": "articlestory_10.1111_add.70017.html",
+"title": "The impacts of e‐cigarette flavours: An overview of systematic reviews",
+"type": "ArticleStory",
+"doi": "10.1111/add.70017",
+"year": 2025,
+"venue": "Addiction",
+"venue_name": "Addiction",
+"publisher": "",
+"concepts": [
+"Psychology",
+"Medicine"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 8,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The impacts of e‐cigarette flavours: An overview of systematic reviews (2025) in Addiction shows measurable signals of attention across scholarly and online channels.",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Podcasts"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"podcast": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"United States Food and Drug Administration Center for Tobacco Products",
+"National Cancer Institute",
+"NCI NIH HHS",
+"National Cancer Institute of the National Institutes of Health"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 8
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Company",
+"count": 2
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 4
+},
+{
+"label": "United Kingdom",
+"count": 4
+},
+{
+"label": "Netherlands",
+"count": 2
+},
+{
+"label": "Canada",
+"count": 2
+},
+{
+"label": "Mexico",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "King's College London",
+"count": 1
+},
+{
+"label": "University of Massachusetts Amherst",
+"count": 1
+},
+{
+"label": "University of Michigan",
+"count": 1
+},
+{
+"label": "National Institute for Public Health and the Environment",
+"count": 0
+},
+{
+"label": "Wageningen University & Research",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
 "file": "articlestory_10.1128_aac.01193-23.html",
 "title": "Divergent genetic landscapes drive lower levels of AmpC induction and stable de-repression in <i>Serratia marcescens</i> compared to <i>Enterobacter cloacae</i>",
 "type": "ArticleStory",
@@ -28387,6 +29559,186 @@ window.STORIES_DATA = [
 "scite_contradicting": 0
 },
 {
+"file": "articlestory_10.1038_s41467-026-73694-w.html",
+"title": "Genome-wide association study of cocaine self-administration behavior in Heterogeneous Stock rats",
+"type": "ArticleStory",
+"doi": "10.1038/s41467-026-73694-w",
+"year": 2025,
+"venue": "Nature Communications",
+"venue_name": "Nature Communications",
+"publisher": "Springer Nature",
+"concepts": [
+"Self-administration",
+"Association (psychology)",
+"Genome-wide association study",
+"Stock (firearms)",
+"Genetics",
+"Medicine",
+"Biology",
+"Pharmacology"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary Genome-wide association study of cocaine self-administration behavior in Heterogeneous Stock rats (2025) in Nature Communications shows measurable signals of attention across scho…",
+"cover_url": "",
+"authors": "Montana Kay Lara, Lieselot L. G. Carrette, Thiago Missfeldt Sanches et al.",
+"institutions": [
+"University of California San Diego",
+"Jamestown Community College",
+"Wake Forest University",
+"Scripps Research Institute",
+"Purdue University West Lafayette",
+"Aix-Marseille Université"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Podcasts"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"podcast": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"U.S. Department of Health & Human Services | National Institutes of Health (NIH)",
+"U.S. Department of Health & Human Services | NIH | National Institute on Drug Abuse (NIDA)"
+],
+"sectors": [
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "France",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Scripps Research Institute",
+"count": 0
+},
+{
+"label": "Institut de Neurosciences de la Timone",
+"count": 0
+},
+{
+"label": "Aix-Marseille Université",
+"count": 0
+},
+{
+"label": "University of California San Diego",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "articlestory_10.1056_nejmcp2516616.html",
+"title": "Childhood Vaccine Hesitancy",
+"type": "ArticleStory",
+"doi": "10.1056/nejmcp2516616",
+"year": 2026,
+"venue": "New England Journal of Medicine",
+"venue_name": "New England Journal of Medicine",
+"publisher": "Massachusetts Medical Society",
+"concepts": [
+"Medicine",
+"Vaccination",
+"Family medicine",
+"Vaccine safety",
+"Incidence (geometry)",
+"Risk communication",
+"Disease",
+"MEDLINE"
+],
+"roles": [
+"Sustainability & Policy Relevance"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Good health and well-being"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary Childhood Vaccine Hesitancy (2026) in New England Journal of Medicine shows measurable signals of attention across scholarly and online channels.",
+"cover_url": "",
+"authors": "Sean T. O’Leary, Margie Danchin",
+"institutions": [
+"Children's Hospital Colorado",
+"Royal Children's Hospital"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Podcasts"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"podcast": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
 "file": "articlestory_10.1073_pnas.2519395123.html",
 "title": "D-amino acid aminotransferase1 regulates grain chalkiness in rice by modulating endoplasmic reticulum stress response",
 "type": "ArticleStory",
@@ -28545,6 +29897,161 @@ window.STORIES_DATA = [
 "citing_institutions": [
 {
 "label": "Universitas Gadjah Mada",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "articlestory_10.1126_sciadv.adr4039.html",
+"title": "Ousiometrics: The essence of meaning aligns with a power-danger-structure framework instead of valence-arousal-dominance",
+"type": "ArticleStory",
+"doi": "10.1126/sciadv.adr4039",
+"year": 2026,
+"venue": "Science Advances",
+"venue_name": "Science Advances",
+"publisher": "American Association for the Advancement of Science",
+"concepts": [
+"Meaning (existential)",
+"Cornerstone",
+"Construct (python library)",
+"Computer science",
+"Linguistics",
+"Epistemology",
+"Natural language processing",
+"Artificial intelligence"
+],
+"roles": [
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Reduced inequalities"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary Ousiometrics: The essence of meaning aligns with a power-danger-structure framework instead of valence-arousal-dominance (2026) in Science Advances shows measurable signals of att…",
+"cover_url": "",
+"authors": "Peter Sheridan Dodds, Thayer Alshaabi, Mikaela Irene Fudolig et al.",
+"institutions": [
+"University of Vermont",
+"Howard Hughes Medical Institute",
+"The University of Adelaide",
+"University of Massachusetts Amherst"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Blogs"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"blog": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "articlestory_10.1126_science.aec7671.html",
+"title": "Home alone: Remote work, isolation, and mental health",
+"type": "ArticleStory",
+"doi": "10.1126/science.aec7671",
+"year": 2026,
+"venue": "Science",
+"venue_name": "Science",
+"publisher": "American Association for the Advancement of Science",
+"concepts": [
+"Mental health",
+"Affect (linguistics)",
+"Isolation (microbiology)",
+"Work (physics)",
+"Mental distress",
+"Distress",
+"Psychological distress",
+"Psychology"
+],
+"roles": [
+"High-Visibility Uptake",
+"Active Public Discourse"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary Home alone: Remote work, isolation, and mental health (2026) in Science shows measurable signals of attention across scholarly and online channels.",
+"cover_url": "",
+"authors": "Natalia Emanuel, Emma Harrington, Amanda Pallais",
+"institutions": [
+"Federal Reserve Bank of New York",
+"University of Virginia",
+"Harvard University"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Blogs",
+"Bluesky"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"bluesky": 9,
+"blog": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 1,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Yale University",
 "count": 1
 }
 ],
@@ -31516,6 +33023,137 @@ window.STORIES_DATA = [
 "scite_contradicting": 0
 },
 {
+"file": "articlestory_10.1038_d41586-026-01723-1.html",
+"title": "The future of science communication is not an article like this",
+"type": "ArticleStory",
+"doi": "10.1038/d41586-026-01723-1",
+"year": 2026,
+"venue": "Nature",
+"venue_name": "Nature",
+"publisher": "Springer Nature",
+"concepts": [
+"Engineering ethics",
+"Science communication",
+"Computer science",
+"Sociology",
+"Political science",
+"Public relations",
+"Data science",
+"Scientific communication"
+],
+"roles": [],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary The future of science communication is not an article like this (2026) in Nature shows measurable signals of attention across scholarly and online channels.",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Blogs",
+"Substack"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"substack": 1,
+"blog": 2
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "articlestory_10.1080_30700485.2026.2680358.html",
+"title": "Introducing the Journal of Research on Research (J·ROR): aligning constellations and communities",
+"type": "ArticleStory",
+"doi": "10.1080/30700485.2026.2680358",
+"year": 2026,
+"venue": "Journal of Research on Research",
+"venue_name": "Journal of Research on Research",
+"publisher": "",
+"concepts": [
+"Constellation",
+"Computer science",
+"Key (lock)",
+"Knowledge management",
+"Sociology",
+"Public relations",
+"Data science",
+"Context (archaeology)"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary Introducing the Journal of Research on Research (J·ROR): aligning constellations and communities (2026) in Journal of Research on Research shows measurable signals of attention ac…",
+"cover_url": "",
+"authors": "G. M. Derrick, Serge P. J. M. Horbach, Bart Penders et al.",
+"institutions": [
+"Centre for Higher Education",
+"Radboud University Nijmegen",
+"Department of Health",
+"Know Center Research GmbH (Austria)"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Blogs",
+"Substack"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"substack": 1,
+"blog": 1
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
 "file": "articlestory_10.1101_2025.09.08.674753.html",
 "title": "Generative genomics accurately predicts future experimental results",
 "type": "ArticleStory",
@@ -31634,6 +33272,142 @@ window.STORIES_DATA = [
 "scite_contradicting": 0
 },
 {
+"file": "articlestory_10.1111_1365-2435.70303.html",
+"title": "How vulnerable are amphibians to climate change? A mechanistic perspective",
+"type": "ArticleStory",
+"doi": "10.1111/1365-2435.70303",
+"year": 2026,
+"venue": "Functional Ecology",
+"venue_name": "Functional Ecology",
+"publisher": "wiley",
+"concepts": [
+"Biology",
+"Amphibian",
+"Ecology",
+"Hydric soil",
+"Climate change",
+"Chytridiomycosis",
+"Extinction (optical mineralogy)",
+"Perspective (graphical)"
+],
+"roles": [
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Climate action"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary How vulnerable are amphibians to climate change?",
+"cover_url": "",
+"authors": "Eric A. Riddell, D R Adams, Molly C. Womack",
+"institutions": [
+"University of North Carolina at Chapel Hill",
+"Cornell University"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Blogs"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"blog": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "articlestory_10.1128_mbio.02716-25.html",
+"title": "<i>Streptococcus mitis</i> bacteriocins drive contact-dependent lysis of <i>S. pneumoniae</i> facilitating transformation in multispecies environments",
+"type": "ArticleStory",
+"doi": "10.1128/mbio.02716-25",
+"year": 2026,
+"venue": "mBio",
+"venue_name": "mBio",
+"publisher": "",
+"concepts": [
+"Bacteriocin",
+"Horizontal gene transfer",
+"Biology",
+"Microbiology",
+"Gene",
+"Gene transfer",
+"Commensalism",
+"Bacteria"
+],
+"roles": [
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Life in Land"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary Streptococcus mitis bacteriocins drive contact-dependent lysis of S.",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Podcasts"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"podcast": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Fundação para a Ciência e Tecnologia, Portugal",
+"Orçamento de Estado and FEDER, Portugal"
+],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
 "file": "articlestory_10.11575_PRISM_42399.html",
 "title": "OER by Discipline Guide: Reducing Barriers and Building Sustainability for OER Adoption",
 "type": "ArticleStory",
@@ -31688,6 +33462,73 @@ window.STORIES_DATA = [
 "risk_eoc": false,
 "risk_pubpeer": 0,
 "funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "articlestory_10.1158_2159-8290.cd-25-1493.html",
+"title": "Trends in Childhood and Adolescent Cancer Incidence Rates in the United States between 2001 and 2022",
+"type": "ArticleStory",
+"doi": "10.1158/2159-8290.cd-25-1493",
+"year": 2025,
+"venue": "Cancer Discovery",
+"venue_name": "Cancer Discovery",
+"publisher": "",
+"concepts": [
+"Medicine",
+"Childhood cancer",
+"Cancer",
+"Incidence (geometry)",
+"Demography",
+"Cancer incidence",
+"Childhood leukemia",
+"Standardized rate"
+],
+"roles": [
+"Computational Reproducibility Enabler"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"excerpt": "Short impact summary Trends in Childhood and Adolescent Cancer Incidence Rates in the United States between 2001 and 2022 (2025) in Cancer Discovery shows measurable signals of attention across schola…",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Podcasts"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"podcast": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"National Cancer Institute",
+"National Cancer Institute (NCI)",
+"Intramural NIH HHS"
+],
 "sectors": [],
 "countries": [],
 "citing_institutions": [],
@@ -31891,6 +33732,71 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
+"scite_contradicting": 0
+},
+{
+"file": "articlestory_10.48550_arxiv.2603.18161.html",
+"title": "How LLMs Distort Our Written Language",
+"type": "ArticleStory",
+"doi": "10.48550/arxiv.2603.18161",
+"year": 2026,
+"venue": "arXiv (Cornell University)",
+"venue_name": "arXiv (Cornell University)",
+"publisher": "",
+"concepts": [
+"Readability",
+"CLARITY",
+"Grammar",
+"Written language",
+"Tone (literature)",
+"Psychology",
+"Plain language",
+"Point (geometry)"
+],
+"roles": [
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"excerpt": "Short impact summary How LLMs Distort Our Written Language (2026) in arXiv (Cornell University) shows measurable signals of attention across scholarly and online channels.",
+"cover_url": "",
+"authors": "",
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Substack"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"substack": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 1,
 "scite_contradicting": 0
 },
 {
@@ -37367,4 +39273,4 @@ window.STORIES_DATA = [
 "scite_contradicting": 0
 }
 ];
-window.STORIES_STATS = {"total": 382, "total_articles": 164, "total_books": 192, "total_data": 19, "total_software": 7, "total_oa": 323, "pct_oa": 85, "total_citations": 151449, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 401, "total_articles": 182, "total_books": 193, "total_data": 19, "total_software": 7, "total_oa": 336, "pct_oa": 84, "total_citations": 161069, "num_disciplines": 30};
