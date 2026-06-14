@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ArticleStory - Terminology in the Age of AI: The Transformation of Terminology Theory and Practice</title>
+    <title>BookStory - Terminology in the Age of AI: The Transformation of Terminology Theory and Practice</title>
     <style>
 
         * { box-sizing: border-box; }
@@ -22,6 +22,21 @@
         .tag-soft { background: #f3f4f6; color: #4b5563; }
         .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
         .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        /* AuthorStory links on story pages */
+        a.author-link,
+        .hero-meta a[href^="authorstory_"],
+        .card strong a[href^="authorstory_"],
+        #sec-citing strong a[href^="authorstory_"] {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a.author-link:hover,
+        .hero-meta a[href^="authorstory_"]:hover,
+        .card strong a[href^="authorstory_"]:hover,
+        #sec-citing strong a[href^="authorstory_"]:hover {
+            text-decoration: underline;
+        }
         table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
         th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
         th { background: #f9fafb; font-weight: 600; }
@@ -62,6 +77,18 @@
   transition:color .15s,border-color .15s;white-space:nowrap;}
 .sticky-nav a:hover{color:#111827;}
 .sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+.sticky-nav-more{display:inline-block;position:relative;}
+.sticky-nav-more>summary{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;cursor:pointer;list-style:none;border-bottom:2px solid transparent;}
+.sticky-nav-more>summary::-webkit-details-marker{display:none;}
+.sticky-nav-more[open]>summary,.sticky-nav-more>summary:hover{color:#111827;}
+.sticky-nav-more-menu{position:absolute;right:0;top:100%;min-width:10rem;background:#fff;
+  border:1px solid #e5e7eb;border-radius:.6rem;box-shadow:0 8px 24px rgba(15,23,42,.12);
+  padding:.35rem 0;z-index:120;}
+.sticky-nav-more-menu a{display:block;padding:.5rem .9rem;font-size:.78rem;font-weight:600;
+  color:#374151;text-decoration:none;white-space:nowrap;}
+.sticky-nav-more-menu a:hover{background:#f8fafc;color:#111827;}
+[id^="sec-"]{scroll-margin-top:4.75rem;}
 @media print{.sticky-nav{display:none!important;}}
 
 /* Collapsible cards */
@@ -220,23 +247,7 @@
     .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
 
 
-    
-        /* AuthorStory links on story pages */
-        a.author-link,
-        .hero-meta a[href^="authorstory_"],
-        .card strong a[href^="authorstory_"],
-        #sec-citing strong a[href^="authorstory_"] {
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        a.author-link:hover,
-        .hero-meta a[href^="authorstory_"]:hover,
-        .card strong a[href^="authorstory_"]:hover,
-        #sec-citing strong a[href^="authorstory_"]:hover {
-            text-decoration: underline;
-        }
-</style>
+    </style>
     <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -263,7 +274,7 @@
         <header class="hero card" id="sec-hero">
             <div class="header-bar">
                 <div style="display: flex; align-items: center; gap: 1.25rem;">
-                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div class="logo-wrap"><img src="bookstories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
                     <div>
                         <h1 class="hero-title">Terminology in the Age of AI: The Transformation of Terminology Theory and Practice</h1>
                         
@@ -304,13 +315,13 @@
                             
                             
                             <div><strong>Journal:</strong> 
-                                Journal of Translation Studies
+                                Peter Lang Verlag
                             </div>
                             
                         
                             <div><strong>Publisher:</strong> 
                                 
-                                    Peter Lang
+                                    Peter Lang Verlag
                                 
                             </div>
                         
@@ -331,35 +342,74 @@
                 </div>
                 
                 
+                <div class="cover-wrap">
+                    
+                    <div class="cover-fallback" aria-label="Cover unavailable">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                            <path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3V4z"></path>
+                            <path d="M8 20h11"></path>
+                            <path d="M8 8h7M8 12h7"></path>
+                        </svg>
+                        <div class="cover-fallback-title">Cover pending</div>
+                        <div class="cover-fallback-sub">Image not yet available</div>
+                    </div>
+                    
+                </div>
+                
             </div>
         </header>
 
-        <!-- Sticky nav -->
-        <nav aria-label="Page sections" class="sticky-nav no-print">
+        <!-- Sticky nav (built from story_nav — only sections present on this page) -->
+        
+        <nav aria-label="Page sections" class="sticky-nav no-print" id="story-sticky-nav">
             <div class="sticky-nav-inner">
-                <a href="#sec-hero">Overview</a>
-                <a href="#sec-story">Story</a>
-                <a href="#sec-impact">Impact</a>
-                <a href="#sec-roles">Roles</a>
-                <a href="#sec-access">Access</a>
-                <a href="#sec-citing">Who's Citing</a>
-                <a href="#sec-mentions">Mentions</a>
+                
+                <a href="#sec-hero" data-sec="sec-hero">Overview</a>
+                
+                <a href="#sec-story" data-sec="sec-story">Story</a>
+                
+                <a href="#sec-impact" data-sec="sec-impact">Impact</a>
+                
+                <a href="#sec-roles" data-sec="sec-roles">Roles</a>
+                
+                <a href="#sec-access" data-sec="sec-access">Access</a>
+                
+                <a href="#sec-teaching" data-sec="sec-teaching">Teaching</a>
+                
+                
+                
+                <details class="sticky-nav-more">
+                    <summary>More</summary>
+                    <div class="sticky-nav-more-menu">
+                        
+                        <a href="#sec-citing" data-sec="sec-citing">Who's Citing</a>
+                        
+                        <a href="#sec-downloads" data-sec="sec-downloads">Downloads</a>
+                        
+                    </div>
+                </details>
+                
             </div>
         </nav>
+        
 
 
         
         
         
-        <section class="card">
+        <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">François Massion's article, "Terminology in the Age of AI: The Transformation of Terminology Theory and Practice," published in the Journal of Translation Studies, has garnered attention with 5 citations, reflecting its influence in the field. The work is cited by various academic venues, including Lebende Sprachen and Tradumàtica tecnologies de la traducció, indicating its relevance across diverse scholarly discussions.</p>
+<p class="story-text">Published in 2024 in the <em>Peter Lang Verlag</em>, François Massion's article on the transformation of terminology theory and practice in the age of AI has accumulated 5 citations within its first year, placing it in the top 2% of similarly aged works by citation volume. Its citing community spans applied linguistics, translation technology, and institutional terminology management, signalling early but substantive uptake across a focused disciplinary cluster.</p>
+
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">François Massion's work, "Terminology in the Age of AI: The Transformation of Terminology Theory and Practice," represents a significant contribution to the evolving landscape of translation studies. Published in 2024 in the Journal of Translation Studies, this article has received 5 citations to date, underscoring its academic impact and the reception of its ideas on terminology theory within the modern context of artificial intelligence.</p>
-<p class="story-text">The influence of this research can be observed through its citations in various venues such as Lebende Sprachen and Tradumàtica tecnologies de la traducció, as well as in interdisciplinary discussions reflected in three articles and one book chapter. These citations span multiple countries, including Germany, Austria, and China, showcasing the global reach and diverse perspectives engaged with Massion's insights on AI's impact on terminology.</p>
-<p class="story-text">While the article has not yet sparked discussion on social platforms like Reddit or Wikipedia, its academic pedigree is reinforced by proven downstream reuse, evidenced by the five instances where its materials have enabled further research. This indication of practical application speaks to the work's relevance and the broader implications of terminology in transitioning fields influenced by technological advancements.</p>
-<p class="story-text">Overall, the trajectory of Massion's work, from its conceptual foundations to its academic citations, reflects the transformative dialogue surrounding terminology theory as it adapts to the challenges and opportunities presented by artificial intelligence. As the scholarly community continues to explore these intersections, this article stands as a critical resource for future inquiries into AI's role in translation and terminology practices.</p></div>
+<p class="story-text">Massion's article addresses a timely question at the intersection of computational linguistics and terminological theory: how do AI-driven tools — particularly large language models and generative systems — reshape the foundational assumptions and practical workflows of terminology work? The piece draws on epistemological and linguistic frameworks alongside natural language processing perspectives, positioning itself as both a theoretical intervention and a practitioner-facing analysis. Its 28-page scope allows for substantive engagement with questions of conceptual stability, term extraction, and the evolving role of human expertise when automated systems can generate and manage terminological content at scale.</p>
+
+<p class="story-text">The article's citation trajectory is notable for a work published in early 2024: three citations appeared in 2025 and one further citation is already recorded for 2026, suggesting sustained rather than purely reactive engagement. Citing works appear in <em>Lebende Sprachen</em>, <em>Tradumàtica: tecnologies de la traducció</em>, and the German-language edited volume series <em>Studien zu Fach, Sprache und Kultur</em>, venues that collectively represent the core readership of applied translation and language technology research in the German-speaking world and beyond. Notably, Tanja Wissik of the Austrian Academy of Sciences has cited the work in two separate publications — one empirical study on terminology professionals in institutional settings and one book chapter on the impacts of AI on institutional terminology work — underscoring the article's relevance to research examining real-world professional practice.</p>
+
+<p class="story-text">Thematically, the citing literature concentrates on professional workflows and competence development in AI-augmented language industries, with Ralph Krüger's 2025 article in <em>Lebende Sprachen</em> (itself already accumulating 4 citations) exploring competence frameworks for generative AI adoption in language industry contexts. This suggests that Massion's contribution is functioning as a conceptual anchor for a small but active community of scholars working on the human-AI interface in specialized language work. The geographic spread of citing institutions — Germany, Austria, and China — indicates early cross-regional relevance, though the community remains concentrated in European applied linguistics and translation studies.</p>
+
+<p class="story-text">Beyond direct citations, the article carries a strong alignment with the UN Sustainable Development Goal of Quality Education (SDG 4), reflecting its potential utility in framing curricula and professional development programmes for translators and terminologists navigating AI-transformed workplaces. It has also been indexed on the publisher's open-access platform, broadening discoverability. While social media and broader online discourse have not yet registered measurable activity around this work, the citation-based evidence positions it as an early reference point in an emerging scholarly conversation — one likely to grow as AI's integration into language industries deepens and the field seeks theoretically grounded accounts of that transformation.</p></div>
         </section>
         
 
@@ -569,17 +619,28 @@
         <div class="grid-2">
             
             
-            <section class="card" style="margin-bottom:0;">
-                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
-                <ul class="metric-list">
-                    <li><strong>DOI:</strong> <a href="https://doi.org/10.3726/jts012024.04" target="_blank">10.3726/jts012024.04</a></li>
-                    <li><strong>OA status:</strong> Unknown</li>
+            <section class="card" style="margin-bottom:0;" id="sec-access">
+                <h2 style="margin-top:0;"><span>Access</span> <span class="badge" style="background:#f3f4f6; color:#4b5563;">Availability</span></h2>
+                <ul class="metric-list" style="line-height: 1.8;">
+                    
+                    
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.3726/jts012024.04" target="_blank" style="word-break: break-all;">https://doi.org/10.3726/jts012024.04</a></li>
+                    
+                    
+                    <li><strong>OA status:</strong> 
+                        
+                            <span class="muted">Closed / Unknown</span>
+                        
+                    </li>
+
+                    
                     
                     
                     
                     
                 </ul>
             </section>
+
             
 
             <section class="card" style="margin-bottom:0;">
@@ -598,32 +659,37 @@
         
         <div class="grid-2" style="align-items: start;">
             
-                
-                
-                
-
-                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    
-                        <section class="card" style="margin-bottom:0;">
-                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
-                            
-                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
-                                <li><strong>Total:</strong> 0</li>
-                                <li><strong>Supporting:</strong> 0</li>
-                                <li><strong>Mentioning:</strong> 0</li>
-                                <li><strong>Contradicting:</strong> 0</li>
-                            </ul>
-                            
-                        </section>
-                    
-                </div>
-
-                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+                <ul class="metric-list">
                     
                     
 
                     
-                </div>
+
+                    
+
+                    
+                    
+                </ul>
+            </section>
+
+                <section class="card" style="margin-bottom:0;">
+                    <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+                    
+                    <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                        <li><strong>Total:</strong> 0</li>
+                        <li><strong>Supporting:</strong> 0</li>
+                        <li><strong>Mentioning:</strong> 0</li>
+                        <li><strong>Contradicting:</strong> 0</li>
+                    </ul>
+                    
+                </section>
+
+                
+                
+                
+
             
         </div>
 
@@ -759,7 +825,7 @@
         </div>
 
         
-        <section class="card">
+        <section class="card" id="sec-teaching">
             <h2><span>Teaching, Practice & Library Adoption</span></h2>
             <div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem;">
                 Evidence of structured teaching use, reading lists, and library availability.
@@ -785,20 +851,6 @@
                                 </div>
                                 <div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
                                     "...Terminology in the Age of AI: The Transformation of Terminology Theory and Practice. by FRANÇOIS MASSION (Author). 28 Pages. Open Access. Journal: Journal of ......"
-                                </div>
-                            </li>
-                            
-                            <li style="margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px dashed #e5e7eb;">
-                                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem;">
-                                    <a href="https://www.researchgate.net/publication/382737092_Terminology_in_the_Age_of_AI_The_Transformation_of_Terminology_Theory_and_Practice" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem; line-height: 1.4;">
-                                        The Transformation of Terminology Theory and Practice
-                                    </a>
-                                    <span class="badge" style="background: #f1f5f9; color: #475569; font-size: 0.6rem; text-transform: uppercase; white-space: nowrap; margin-left: 0.5rem;">
-                                        www.researchgate.net
-                                    </span>
-                                </div>
-                                <div style="font-size: 0.8rem; color: #4b5563; line-height: 1.5; font-style: italic; background: #f8fafc; padding: 0.6rem; border-radius: 6px; border-left: 3px solid #cbd5e1;">
-                                    "...Terminology in the Age of AI: The Transformation of Terminology Theory and Practice ... (Massion, 2024) and the way how terminologists and specialized ......"
                                 </div>
                             </li>
                             
@@ -911,6 +963,15 @@
         
 
 
+        
+        <section class="card" id="sec-downloads">
+            <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
+            <div id="metrics-widget"></div>
+            <script type="application/json" id="operas-metrics-config">{"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "tab1", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN \u00b7 downloads", "works": ["info:doi:10.3726/jts012024.04"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}}, "graphs": [{"id": "g1", "type": "line", "title": "Downloads over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}</script>
+            <script src="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js" async></script>
+        </section>
+
+
 
         
         
@@ -972,7 +1033,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-06-09T18:16:48+00:00
+                    Generated on 2026-06-14T19:44:58+00:00
                 </div>
                 
             </div>
@@ -1257,6 +1318,62 @@
     document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
     document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
     document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
+<script>
+(function() {
+    var nav = document.getElementById('story-sticky-nav');
+    if (!nav) return;
+    var links = nav.querySelectorAll('a[href^="#sec-"]');
+    var sectionIds = [];
+    links.forEach(function(a) {
+        var id = (a.getAttribute('href') || '').slice(1);
+        if (id && document.getElementById(id)) sectionIds.push(id);
+    });
+    if (!sectionIds.length) return;
+
+    function setActive(id) {
+        links.forEach(function(a) {
+            a.classList.toggle('snav-active', a.getAttribute('href') === '#' + id);
+        });
+    }
+
+    links.forEach(function(a) {
+        a.addEventListener('click', function(e) {
+            var id = (a.getAttribute('href') || '').slice(1);
+            var target = id ? document.getElementById(id) : null;
+            if (!target) return;
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.replaceState(null, '', '#' + id);
+            setActive(id);
+            var more = nav.querySelector('.sticky-nav-more');
+            if (more) more.removeAttribute('open');
+        });
+    });
+
+    if (!('IntersectionObserver' in window)) return;
+    var visible = new Map();
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            visible.set(entry.target.id, entry.intersectionRatio);
+        });
+        var bestId = null;
+        var bestRatio = 0;
+        sectionIds.forEach(function(id) {
+            var ratio = visible.get(id) || 0;
+            if (ratio > bestRatio) {
+                bestRatio = ratio;
+                bestId = id;
+            }
+        });
+        if (bestId) setActive(bestId);
+    }, { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] });
+
+    sectionIds.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) observer.observe(el);
+    });
 })();
 </script>
 </body>
