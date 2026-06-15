@@ -307,7 +307,7 @@ window.STORIES_DATA = [
 "platform_counts": {
 "wikipedia": 8,
 "bluesky": 1,
-"news": 8
+"news": 2
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -1916,7 +1916,7 @@ window.STORIES_DATA = [
 "librarything_rating": 8.3,
 "platform_counts": {
 "wikipedia": 1,
-"news": 2
+"news": 1
 },
 "is_top1pct": false,
 "is_top10pct": false,
@@ -4254,7 +4254,7 @@ window.STORIES_DATA = [
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"news": 6
+"news": 1
 },
 "is_top1pct": false,
 "is_top10pct": false,
@@ -5648,8 +5648,7 @@ window.STORIES_DATA = [
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"wikipedia": 3,
-"news": 1
+"wikipedia": 3
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -6707,7 +6706,7 @@ window.STORIES_DATA = [
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"news": 2
+"news": 1
 },
 "is_top1pct": false,
 "is_top10pct": false,
@@ -15131,7 +15130,7 @@ window.STORIES_DATA = [
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"news": 3
+"news": 1
 },
 "is_top1pct": false,
 "is_top10pct": false,
@@ -22252,14 +22251,10 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"News"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {
-"news": 2
-},
+"platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -27331,14 +27326,10 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"News"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {
-"news": 14
-},
+"platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -29174,14 +29165,10 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"News"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {
-"news": 1
-},
+"platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -30708,14 +30695,10 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"News"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {
-"news": 2
-},
+"platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -32738,14 +32721,10 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"News"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {
-"news": 1
-},
+"platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -35007,14 +34986,10 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"News"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {
-"news": 1
-},
+"platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -38013,14 +37988,10 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"News"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {
-"news": 1
-},
+"platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -38427,14 +38398,10 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"News"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {
-"news": 7
-},
+"platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -38555,14 +38522,10 @@ window.STORIES_DATA = [
 "series_name": "Counterpoints",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"News"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {
-"news": 1
-},
+"platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
