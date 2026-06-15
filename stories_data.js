@@ -61,7 +61,8 @@ window.STORIES_DATA = [
 "bluesky": 2,
 "hypothesis": 1,
 "reddit": 1,
-"substack": 1
+"substack": 1,
+"news": 3
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -162,10 +163,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -294,13 +299,15 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia",
-"Bluesky"
+"Bluesky",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
 "wikipedia": 8,
-"bluesky": 1
+"bluesky": 1,
+"news": 8
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -431,13 +438,15 @@ window.STORIES_DATA = [
 "belongs_to_series": true,
 "mention_platforms": [
 "Wikipedia",
+"News",
 "Blogs",
 "LibraryThing"
 ],
 "has_librarything": true,
 "librarything_rating": 9.2,
 "platform_counts": {
-"wikipedia": 1
+"wikipedia": 1,
+"news": 4
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -563,14 +572,16 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "Bluesky",
-"Hypothesis"
+"Hypothesis",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
 "wikipedia": 5,
 "bluesky": 2,
-"hypothesis": 1
+"hypothesis": 1,
+"news": 10
 },
 "is_top1pct": false,
 "is_top10pct": false,
@@ -823,12 +834,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Substack"
+"Substack",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"substack": 1
+"substack": 1,
+"news": 3
 },
 "is_top1pct": false,
 "is_top10pct": false,
@@ -958,10 +971,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 4
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -1083,13 +1100,16 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"News",
 "Blogs",
 "Wikipedia",
 "Reddit"
 ],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 3
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -1357,12 +1377,14 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia",
+"News",
 "Reddit"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"wikipedia": 3
+"wikipedia": 3,
+"news": 1
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -1503,7 +1525,8 @@ window.STORIES_DATA = [
 "platform_counts": {
 "wikipedia": 5,
 "bluesky": 3,
-"reddit": 4
+"reddit": 4,
+"news": 2
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -1628,6 +1651,7 @@ window.STORIES_DATA = [
 "Substack",
 "Wikipedia",
 "Hypothesis",
+"News",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -1635,7 +1659,8 @@ window.STORIES_DATA = [
 "platform_counts": {
 "wikipedia": 1,
 "hypothesis": 1,
-"substack": 1
+"substack": 1,
+"news": 6
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -1884,12 +1909,14 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia",
+"News",
 "LibraryThing"
 ],
 "has_librarything": true,
 "librarything_rating": 8.3,
 "platform_counts": {
-"wikipedia": 1
+"wikipedia": 1,
+"news": 2
 },
 "is_top1pct": false,
 "is_top10pct": false,
@@ -2019,12 +2046,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia"
+"Wikipedia",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"wikipedia": 1
+"wikipedia": 1,
+"news": 1
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -2163,10 +2192,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 2
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -2793,10 +2826,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 2
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -3676,12 +3713,14 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia",
+"News",
 "LibraryThing"
 ],
 "has_librarything": true,
 "librarything_rating": 10.0,
 "platform_counts": {
-"wikipedia": 1
+"wikipedia": 1,
+"news": 5
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -3816,7 +3855,9 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -4069,7 +4110,9 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 5
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -4205,10 +4248,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 6
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -5213,7 +5260,8 @@ window.STORIES_DATA = [
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"wikipedia": 4
+"wikipedia": 4,
+"news": 1
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -5600,7 +5648,8 @@ window.STORIES_DATA = [
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"wikipedia": 3
+"wikipedia": 3,
+"news": 1
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -5721,12 +5770,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Substack"
+"Substack",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"substack": 4
+"substack": 4,
+"news": 1
 },
 "is_top1pct": false,
 "is_top10pct": true,
@@ -5847,10 +5898,14 @@ window.STORIES_DATA = [
 "series_name": "Studies in International Economics",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -6112,14 +6167,16 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "Hypothesis",
-"Reddit"
+"Reddit",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
 "wikipedia": 2,
 "hypothesis": 1,
-"reddit": 1
+"reddit": 1,
+"news": 1
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -6262,7 +6319,8 @@ window.STORIES_DATA = [
 "Podcasts",
 "Substack",
 "Wikipedia",
-"Bluesky"
+"Bluesky",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -6270,7 +6328,8 @@ window.STORIES_DATA = [
 "wikipedia": 2,
 "bluesky": 4,
 "substack": 2,
-"podcast": 3
+"podcast": 3,
+"news": 1
 },
 "is_top1pct": false,
 "is_top10pct": true,
@@ -6642,10 +6701,14 @@ window.STORIES_DATA = [
 "series_name": "Counterpoints",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 2
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -6920,7 +6983,8 @@ window.STORIES_DATA = [
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"reddit": 1
+"reddit": 1,
+"news": 1
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -7030,11 +7094,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"News",
 "Blogs"
 ],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -7297,7 +7364,9 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 2
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -7427,12 +7496,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Podcasts"
+"Podcasts",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"podcast": 2
+"podcast": 2,
+"news": 1
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -8100,12 +8171,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia"
+"Wikipedia",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"wikipedia": 1
+"wikipedia": 1,
+"news": 1
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -8531,12 +8604,15 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"News",
 "Reddit",
 "Blogs"
 ],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -8928,12 +9004,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Substack"
+"Substack",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"substack": 1
+"substack": 1,
+"news": 1
 },
 "is_top1pct": false,
 "is_top10pct": true,
@@ -9607,7 +9685,9 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -9998,10 +10078,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -10514,10 +10598,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -10647,11 +10735,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"News",
 "Reddit"
 ],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -10882,10 +10973,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -11291,13 +11386,15 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Podcasts",
-"Wikipedia"
+"Wikipedia",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
 "wikipedia": 1,
-"podcast": 1
+"podcast": 1,
+"news": 1
 },
 "is_top1pct": false,
 "is_top10pct": true,
@@ -11664,7 +11761,9 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -12749,10 +12848,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -13896,12 +13999,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Podcasts"
+"Podcasts",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"podcast": 3
+"podcast": 3,
+"news": 3
 },
 "is_top1pct": false,
 "is_top10pct": false,
@@ -14286,10 +14391,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -14672,10 +14781,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 3
+},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -15012,10 +15125,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 3
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -15369,11 +15486,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"News",
 "LibraryThing"
 ],
 "has_librarything": true,
 "librarything_rating": 8.1,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -15687,7 +15807,9 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -15810,10 +15932,14 @@ window.STORIES_DATA = [
 "series_name": "Lecture notes in computer science",
 "series_id": "https://openalex.org/S106296714",
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -17770,10 +17896,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 2
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -18085,12 +18215,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Bluesky"
+"Bluesky",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"bluesky": 1
+"bluesky": 1,
+"news": 1
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -18604,12 +18736,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Bluesky"
+"Bluesky",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"bluesky": 1
+"bluesky": 1,
+"news": 2
 },
 "is_top1pct": false,
 "is_top10pct": true,
@@ -18732,10 +18866,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 3
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -19166,10 +19304,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -19646,10 +19788,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -19867,10 +20013,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -20422,10 +20572,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -20670,10 +20824,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -21008,10 +21166,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -21113,10 +21275,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -21398,10 +21564,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -21860,12 +22030,14 @@ window.STORIES_DATA = [
 "series_id": "https://openalex.org/S4210212246",
 "belongs_to_series": true,
 "mention_platforms": [
-"Hypothesis"
+"Hypothesis",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"hypothesis": 2
+"hypothesis": 2,
+"news": 7
 },
 "is_top1pct": false,
 "is_top10pct": true,
@@ -22080,10 +22252,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 2
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -22286,10 +22462,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -23864,10 +24044,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -24834,11 +25018,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"News",
 "Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 3
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -25245,10 +25432,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 2
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -26035,10 +26226,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -27044,10 +27239,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -27132,10 +27331,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 14
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -27964,10 +28167,14 @@ window.STORIES_DATA = [
 "series_name": "ISBN:978-94-6270-255-4",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -28341,12 +28548,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia"
+"Wikipedia",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"wikipedia": 1
+"wikipedia": 1,
+"news": 2
 },
 "is_top1pct": false,
 "is_top10pct": false,
@@ -28629,10 +28838,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -28961,10 +29174,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -29636,12 +29853,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Podcasts"
+"Podcasts",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"podcast": 1
+"podcast": 1,
+"news": 1
 },
 "is_top1pct": false,
 "is_top10pct": false,
@@ -29746,12 +29965,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Podcasts"
+"Podcasts",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"podcast": 1
+"podcast": 1,
+"news": 2
 },
 "is_top1pct": false,
 "is_top10pct": false,
@@ -29808,10 +30029,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -29981,12 +30206,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Blogs"
+"Blogs",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"blog": 1
+"blog": 1,
+"news": 1
 },
 "is_top1pct": false,
 "is_top10pct": false,
@@ -30124,10 +30351,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 5
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -30477,10 +30708,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 2
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -32435,12 +32670,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia"
+"Wikipedia",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"wikipedia": 3
+"wikipedia": 3,
+"news": 1
 },
 "is_top1pct": false,
 "is_top10pct": true,
@@ -32501,10 +32738,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -32773,10 +33014,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -32834,10 +33079,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -33030,12 +33279,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Podcasts"
+"Podcasts",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"podcast": 1
+"podcast": 1,
+"news": 2
 },
 "is_top1pct": false,
 "is_top10pct": true,
@@ -33092,13 +33343,15 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Blogs",
-"Substack"
+"Substack",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
 "substack": 1,
-"blog": 2
+"blog": 2,
+"news": 1
 },
 "is_top1pct": false,
 "is_top10pct": true,
@@ -33412,12 +33665,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Podcasts"
+"Podcasts",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"podcast": 1
+"podcast": 1,
+"news": 1
 },
 "is_top1pct": false,
 "is_top10pct": false,
@@ -34156,10 +34411,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -34748,10 +35007,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -36221,10 +36484,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -36660,10 +36927,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -36847,10 +37118,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -37044,11 +37319,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"News",
 "Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -37735,10 +38013,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -38145,10 +38427,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 7
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -38269,10 +38555,14 @@ window.STORIES_DATA = [
 "series_name": "Counterpoints",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -38430,10 +38720,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 3
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -38655,10 +38949,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -38717,10 +39015,14 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -38768,11 +39070,14 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"News",
 "LibraryThing"
 ],
 "has_librarything": true,
 "librarything_rating": 7.0,
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
