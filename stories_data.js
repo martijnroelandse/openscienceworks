@@ -1893,7 +1893,7 @@ window.STORIES_DATA = [
 "No poverty"
 ],
 "has_teaching": true,
-"ta_ocw": 0,
+"ta_ocw": 5,
 "ta_youtube": 4,
 "ta_ol_holdings": 19,
 "ta_otl": false,
@@ -28546,7 +28546,7 @@ window.STORIES_DATA = [
 "librarything_rating": null,
 "platform_counts": {
 "wikipedia": 1,
-"news": 2
+"news": 1
 },
 "is_top1pct": false,
 "is_top10pct": false,
@@ -32706,8 +32706,8 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Quality Education"
 ],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 3,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -34972,7 +34972,7 @@ window.STORIES_DATA = [
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 0,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 1,
 "ta_otl": true,
