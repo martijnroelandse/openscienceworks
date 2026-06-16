@@ -347,6 +347,44 @@
     .author-card-stats { font-size: 0.78rem; color: var(--muted); margin-top: auto; }
     .author-card-stats strong { color: var(--text); }
 
+    /* ── author matches (stories search) ───────────────── */
+    .author-matches {
+      margin-bottom: 1rem;
+      padding: 0.85rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+    }
+    .author-matches h4 {
+      margin: 0 0 0.6rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+    .author-matches-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .author-match-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .author-match-pill:hover { border-color: #cbd5e1; background: #fff; }
+    .author-match-pill span.meta { font-weight: 500; color: var(--muted); }
+
     /* portfolio summary card */
     .pf-card {
       background: var(--surface);
@@ -801,7 +839,7 @@
     <!-- Search -->
     <div class="search-wrap">
       <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-      <input type="search" id="searchInput" placeholder="Search titles, authors…" autocomplete="off">
+      <input type="search" id="searchInput" placeholder="Search titles, authors, DOIs…" autocomplete="off">
     </div>
 
     <button class="clear-btn" id="clearBtn" onclick="clearAll()">Clear all filters</button>
@@ -892,6 +930,7 @@
       </div>
       <div class="active-filters" id="activeFilters"></div>
     </div>
+    <div class="author-matches" id="authorMatches" style="display:none;"></div>
     <div class="cards-grid" id="cardsGrid"></div>
     <div class="agg-view" id="aggView"></div>
     <div class="authors-view" id="authorsView" style="display:none;"></div>
@@ -1060,12 +1099,60 @@ function buildFacetCounts(stories) {
   return counts;
 }
 
+// ── search ────────────────────────────────────────────────────────────────
+function normalizeSearchQuery(raw) {
+  let q = (raw || "").toLowerCase().trim();
+  q = q.replace(/^https?:\/\/(?:dx\.)?doi\.org\//, "");
+  q = q.replace(/^doi:\s*/, "");
+  return q;
+}
+
+function storySearchHaystack(s) {
+  return [
+    s.title,
+    s.authors,
+    ...(s.all_authors || []),
+    s.doi,
+    s.publisher,
+    s.venue,
+    s.series_name,
+    s.excerpt,
+    ...(s.institutions || []),
+    ...(s.funders || []),
+    ...(s.mention_platforms || []),
+    ...s.concepts,
+    ...s.roles,
+  ].join(" ").toLowerCase();
+}
+
+function queryMatchesHaystack(query, haystack) {
+  if (!query) return true;
+  if (haystack.includes(query)) return true;
+  const tokens = query.split(/\s+/).filter(Boolean);
+  if (tokens.length <= 1) return false;
+  return tokens.every(token => haystack.includes(token));
+}
+
+function authorSearchHaystack(a) {
+  const insts = (a.institutions || []).map(i => {
+    if (i && typeof i === "object") return i.name || "";
+    return String(i || "");
+  });
+  return [a.display_name, a.orcid, ...insts].join(" ").toLowerCase();
+}
+
+function filterAuthors(query) {
+  if (!query) return [];
+  const authors = window.AUTHORS_DATA || [];
+  return authors.filter(a => queryMatchesHaystack(query, authorSearchHaystack(a)));
+}
+
 // ── filter ────────────────────────────────────────────────────────────────
 function filterStories(stories) {
   return stories.filter(s => {
     if (state.query) {
-      const haystack = [s.title, s.authors, s.venue, s.series_name, s.excerpt, ...(s.mention_platforms||[]), ...s.concepts, ...s.roles].join(" ").toLowerCase();
-      if (!haystack.includes(state.query)) return false;
+      const haystack = storySearchHaystack(s);
+      if (!queryMatchesHaystack(state.query, haystack)) return false;
     }
     if (state.filters.type.size && !state.filters.type.has(s.type)) return false;
     if (state.filters.oa.size) {
@@ -1118,6 +1205,24 @@ function sortStories(stories) {
 function esc(str) {
   if (!str) return "";
   return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+function renderAuthorMatches(authors) {
+  const el = document.getElementById("authorMatches");
+  if (!authors.length) {
+    el.style.display = "none";
+    el.innerHTML = "";
+    return;
+  }
+  const pills = authors.slice(0, 6).map(a => {
+    const meta = a.pub_count ? `<span class="meta">${a.pub_count} pub${a.pub_count !== 1 ? "s" : ""}</span>` : "";
+    return `<a class="author-match-pill" href="${a.page}">${esc(a.display_name)}${meta}</a>`;
+  }).join("");
+  const more = authors.length > 6
+    ? `<a class="author-match-pill" href="#" onclick="setView('authors');return false;">+${authors.length - 6} more authors</a>`
+    : "";
+  el.innerHTML = `<h4>Matching authors</h4><div class="author-matches-grid">${pills}${more}</div>`;
+  el.style.display = "";
 }
 
 function renderCards(stories) {
@@ -1791,17 +1896,25 @@ function update() {
     renderAgg(filtered, state.view);
   } else {
     aggEl.classList.remove("visible");
+    const authorHits = state.query ? filterAuthors(state.query) : [];
+    renderAuthorMatches(authorHits);
     renderCards(sorted);
   }
 
   if (!isAuthors) {
     renderFacets(all, filtered);
     renderActiveFilters();
-    renderResultsCount(filtered.length, all.length);
+    const authorHits = state.query ? filterAuthors(state.query) : [];
+    if (!isAgg && state.view === "stories" && authorHits.length) {
+      document.getElementById("resultsCount").textContent =
+        `${filtered.length} of ${all.length} stories · ${authorHits.length} author${authorHits.length !== 1 ? "s" : ""}`;
+    } else {
+      renderResultsCount(filtered.length, all.length);
+    }
   } else {
     const authorsData = window.AUTHORS_DATA || [];
     const q = state.query.toLowerCase().trim();
-    const shown = q ? authorsData.filter(a => a.display_name.toLowerCase().includes(q)) : authorsData;
+    const shown = q ? authorsData.filter(a => queryMatchesHaystack(q, authorSearchHaystack(a))) : authorsData;
     document.getElementById("resultsCount").textContent = `${shown.length} author${shown.length !== 1 ? "s" : ""}`;
   }
   if (typeof initRoleTooltips === "function") initRoleTooltips();
@@ -1811,8 +1924,8 @@ function update() {
 function renderAuthors(query) {
   const el = document.getElementById("authorsView");
   const authors = window.AUTHORS_DATA || [];
-  const q = (query || "").toLowerCase().trim();
-  const filtered = q ? authors.filter(a => a.display_name.toLowerCase().includes(q)) : authors;
+  const q = normalizeSearchQuery(query || "");
+  const filtered = q ? authors.filter(a => queryMatchesHaystack(q, authorSearchHaystack(a))) : authors;
 
   const TYPE_COLORS = {
     article:  { bg: "#dbeafe", color: "#1e40af" },
@@ -1829,8 +1942,9 @@ function renderAuthors(query) {
     const orcidTag = a.orcid
       ? `<span class="author-orcid">ORCID ✓</span>`
       : "";
-    const inst = a.institutions && a.institutions.length
-      ? `<span>${a.institutions[0]}</span>` : "";
+    const inst0 = a.institutions && a.institutions.length ? a.institutions[0] : null;
+    const inst = inst0
+      ? `<span>${esc(typeof inst0 === "object" ? (inst0.name || "") : inst0)}</span>` : "";
     const yearSpan = a.year_range ? `<span>${a.year_range}</span>` : "";
     const stats = [
       `<strong>${a.pub_count}</strong> pub${a.pub_count !== 1 ? "s" : ""}`,
@@ -1848,7 +1962,7 @@ function renderAuthors(query) {
   el.innerHTML = `
     <div class="authors-search">
       <input type="search" placeholder="Search authors…" value="${query || ""}"
-             oninput="state.query=this.value.toLowerCase().trim();renderAuthors(state.query);document.getElementById('resultsCount').textContent=(window.AUTHORS_DATA||[]).filter(a=>!state.query||a.display_name.toLowerCase().includes(state.query)).length+' author'+(1!==1?'s':'s');">
+             oninput="state.query=normalizeSearchQuery(this.value);renderAuthors(state.query);document.getElementById('resultsCount').textContent=(window.AUTHORS_DATA||[]).filter(a=>!state.query||queryMatchesHaystack(state.query,authorSearchHaystack(a))).length+' author'+(1!==1?'s':'s');">
     </div>
     <div class="authors-grid">${cards || "<p style='color:var(--muted)'>No authors found.</p>"}</div>
   `;
@@ -1856,7 +1970,7 @@ function renderAuthors(query) {
 
 // ── events ────────────────────────────────────────────────────────────────
 document.getElementById("searchInput").addEventListener("input", e => {
-  state.query = e.target.value.toLowerCase().trim();
+  state.query = normalizeSearchQuery(e.target.value);
   update();
 });
 document.getElementById("sortSelect").addEventListener("change", e => {
