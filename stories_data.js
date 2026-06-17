@@ -37,6 +37,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The highly regarded study on protein structure prediction with AlphaFold, published in Nature in 2021, has received an impressive 44,520 citations, indicating its profound influen…",
 "cover_url": "",
 "authors": "John Jumper, Richard Evans, Alexander Pritzel et al.",
@@ -152,7 +154,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 574,
-"scite_contradicting": 18
+"scite_contradicting": 18,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41586-021-03819-2"
+]
 },
 {
 "file": "articlestory_10.1038_s41586-020-2649-2.html",
@@ -162,7 +168,7 @@ window.STORIES_DATA = [
 "year": 2020,
 "venue": "Nature",
 "venue_name": "Nature",
-"publisher": "",
+"publisher": "Springer Nature",
 "concepts": [
 "Python (programming language)",
 "Computer science",
@@ -176,22 +182,26 @@ window.STORIES_DATA = [
 "roles": [
 "Scholarly Uptake",
 "High-Visibility Uptake",
+"Pedagogical Anchor",
+"Active Public Discourse",
 "Public Visibility & Knowledge Base"
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"citation_count": 22038,
+"citation_count": 22112,
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
-"ta_ocw": 0,
+"ta_ocw": 1,
 "ta_youtube": 1,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
-"excerpt": "Short impact summary The 2020 work on array programming with NumPy has garnered significant academic attention, evidenced by its impressive citation count of 21,876.",
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary The article \"Array programming with NumPy,\" published in Nature in 2020, has garnered significant scholarly attention, amassing over 22,000 citations.",
 "cover_url": "",
 "authors": "Charles R. Harris, K. Jarrod Millman, Stéfan J. van der Walt et al.",
 "all_authors": [
@@ -222,18 +232,33 @@ window.STORIES_DATA = [
 "Christoph Gohlke",
 "Travis E. Oliphant"
 ],
-"institutions": [],
+"institutions": [
+"Berkeley College",
+"Quansight (United States)",
+"University of Jyväskylä",
+"University of Cambridge",
+"Karlsruhe University of Education",
+"University of California, Berkeley",
+"Enthought (United States)",
+"Google (United States)",
+"University of Toronto",
+"Imaging Center"
+],
 "download_count": 0,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"News"
+"Wikipedia",
+"Bluesky",
+"Hypothesis"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"news": 1
+"wikipedia": 1,
+"bluesky": 1,
+"hypothesis": 2
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -244,71 +269,54 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 18510
+"count": 1847
 },
 {
 "label": "Facility",
-"count": 9250
+"count": 1158
 },
 {
 "label": "Government",
-"count": 3319
+"count": 514
 },
 {
 "label": "Nonprofit",
-"count": 2597
+"count": 418
 },
 {
-"label": "Healthcare",
-"count": 2276
+"label": "Company",
+"count": 299
 }
 ],
-"countries": [
-{
-"label": "United States of America",
-"count": 8762
-},
-{
-"label": "Germany",
-"count": 4083
-},
-{
-"label": "United Kingdom of Great Britain and Northern Ireland",
-"count": 3450
-},
-{
-"label": "France",
-"count": 2170
-},
-{
-"label": "Canada",
-"count": 1638
-}
-],
+"countries": [],
 "citing_institutions": [
 {
 "label": "Centre National de la Recherche Scientifique",
-"count": 1305
+"count": 20
 },
 {
-"label": "California Institute of Technology",
-"count": 652
-},
-{
-"label": "Center for Astrophysics Harvard & Smithsonian",
-"count": 609
-},
-{
-"label": "University of Oxford",
-"count": 551
+"label": "Massachusetts Institute of Technology",
+"count": 19
 },
 {
 "label": "University of Cambridge",
-"count": 525
+"count": 15
+},
+{
+"label": "California Institute of Technology",
+"count": 15
+},
+{
+"label": "University of Oxford",
+"count": 14
 }
 ],
-"scite_supporting": 10,
-"scite_contradicting": 0
+"scite_supporting": 11,
+"scite_contradicting": 1,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41586-020-2649-2"
+]
 },
 {
 "file": "articlestory_10.1056_nejmoa2001316.html",
@@ -351,6 +359,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled \"Early Transmission Dynamics in Wuhan, China, of Novel Coronavirus–Infected Pneumonia\" has achieved significant academic impact, amassing 17,937 citations in th…",
 "cover_url": "",
 "authors": "Qun Li, Xuhua Guan, Peng Wu et al.",
@@ -499,7 +509,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 511,
-"scite_contradicting": 101
+"scite_contradicting": 101,
+"version_count": 1,
+"version_dois": [
+"10.1056/nejmoa2001316"
+]
 },
 {
 "file": "bookstory_10.1007_978-1-4614-7138-7.html",
@@ -535,6 +549,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"An Introduction to Statistical Learning,\" published by Springer New York in 2013, has established itself as a reference point in the field of statistical learning, amassing over …",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-1-4614-7138-7",
 "authors": "Gareth James, Daniela Witten, Trevor Hastie et al.",
@@ -638,7 +654,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 45,
-"scite_contradicting": 2
+"scite_contradicting": 2,
+"version_count": 1,
+"version_dois": [
+"10.1007/978-1-4614-7138-7"
+]
 },
 {
 "file": "articlestory_10.1056_NEJMoa2021436.html",
@@ -678,6 +698,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study titled \"Dexamethasone in Hospitalized Patients with Covid-19\" published in the New England Journal of Medicine has made a significant impact on the treatment of COVID-19…",
 "cover_url": "",
 "authors": "The RECOVERY Collaborative Group",
@@ -761,7 +783,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 137,
-"scite_contradicting": 43
+"scite_contradicting": 43,
+"version_count": 1,
+"version_dois": [
+"10.1056/NEJMoa2021436"
+]
 },
 {
 "file": "articlestory_10.1016_j.physletb.2012.08.020.html",
@@ -799,6 +825,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The observation of a new particle in the search for the Standard Model Higgs boson, as reported by G.",
 "cover_url": "",
 "authors": "G. Aad, T. Abajyan, B. Abbott et al.",
@@ -3836,7 +3864,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 174,
-"scite_contradicting": 9
+"scite_contradicting": 9,
+"version_count": 1,
+"version_dois": [
+"10.1016/j.physletb.2012.08.020"
+]
 },
 {
 "file": "articlestory_10.1056_nejmoa1707914.html",
@@ -3879,6 +3911,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Antiinflammatory Therapy with Canakinumab for Atherosclerotic Disease (2017) in New England Journal of Medicine shows measurable signals of attention across scholarly and online c…",
 "cover_url": "",
 "authors": "Paul M. Ridker, Giulia Renda, Tom Thurén et al.",
@@ -4002,7 +4036,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 128,
-"scite_contradicting": 11
+"scite_contradicting": 11,
+"version_count": 1,
+"version_dois": [
+"10.1056/nejmoa1707914"
+]
 },
 {
 "file": "articlestory_10.1056_NEJMoa2007764.html",
@@ -4027,12 +4065,12 @@ window.STORIES_DATA = [
 "Scholarly Uptake",
 "High-Visibility Uptake",
 "Sustainability & Policy Relevance",
-"Reference Point for Synthesis",
-"Active Public Discourse"
+"Active Public Discourse",
+"Reference Point for Synthesis"
 ],
 "is_oa": true,
 "oa_status": "green",
-"citation_count": 7675,
+"citation_count": 7726,
 "event_count": 0,
 "has_sdgs": true,
 "sdg_ids": [
@@ -4045,7 +4083,9 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": false,
-"excerpt": "Short impact summary The research article \"Remdesivir for the Treatment of Covid-19 — Final Report,\" published in the New England Journal of Medicine, underscores the efficacy of Remdesivir in treatin…",
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary The article \"Remdesivir for the Treatment of Covid-19 — Final Report,\" published in the New England Journal of Medicine, has garnered significant scholarly attention, accumulating…",
 "cover_url": "",
 "authors": "John H. Beigel, Kay M Tomashek, Lori E. Dodd et al.",
 "all_authors": [
@@ -4098,12 +4138,13 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"News"
+"Bluesky",
+"Stack Exchange"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "platform_counts": {
-"news": 4
+"bluesky": 2
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -4120,50 +4161,54 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 1779
+"count": 1786
 },
 {
 "label": "Healthcare",
-"count": 1091
+"count": 1123
 },
 {
 "label": "Facility",
-"count": 589
-},
-{
-"label": "Nonprofit",
-"count": 322
+"count": 604
 },
 {
 "label": "Government",
-"count": 309
+"count": 359
+},
+{
+"label": "Nonprofit",
+"count": 344
 }
 ],
 "countries": [],
 "citing_institutions": [
 {
+"label": "Gilead Sciences (United States)",
+"count": 14
+},
+{
 "label": "Harvard University",
-"count": 93
-},
-{
-"label": "Inserm",
-"count": 57
-},
-{
-"label": "Massachusetts General Hospital",
-"count": 52
-},
-{
-"label": "University of Washington",
-"count": 52
+"count": 13
 },
 {
 "label": "Johns Hopkins University",
-"count": 51
+"count": 10
+},
+{
+"label": "Massachusetts General Hospital",
+"count": 10
+},
+{
+"label": "University of California, San Francisco",
+"count": 9
 }
 ],
-"scite_supporting": 184,
-"scite_contradicting": 32
+"scite_supporting": 186,
+"scite_contradicting": 32,
+"version_count": 1,
+"version_dois": [
+"10.1056/NEJMoa2007764"
+]
 },
 {
 "file": "articlestory_10.1056_NEJMoa0810696.html",
@@ -4206,6 +4251,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The randomized prostate cancer screening trial, published in the New England Journal of Medicine by a team from esteemed institutions including the University of Toronto and the N…",
 "cover_url": "",
 "authors": "Gerald L. Andriole, E. David Crawford, Robert L. Grubb et al.",
@@ -4338,7 +4385,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 15,
-"scite_contradicting": 5
+"scite_contradicting": 5,
+"version_count": 1,
+"version_dois": [
+"10.1056/NEJMoa0810696"
+]
 },
 {
 "file": "softwarestory_10.5281_zenodo.1174508.html",
@@ -4380,6 +4431,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The software toolkit \"Cantera,\" developed by a team of researchers from prestigious institutions such as the Massachusetts Institute of Technology and Sandia National Laboratories…",
 "cover_url": "",
 "authors": "David G. Goodwin, Raymond L. Speth, Harry K. Moffat et al.",
@@ -4475,7 +4528,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.1174508"
+]
 },
 {
 "file": "articlestory_10.1038_nature11543.html",
@@ -4514,6 +4571,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The comprehensive assembly of the barley genome presented in this study has garnered significant academic attention, evidenced by over 1,500 citations from a diverse range of jour…",
 "cover_url": "",
 "authors": "Heidrun Gundlach, Matthias Pfeifer, Thomas Nussbaumer et al.",
@@ -4711,7 +4770,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 22,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/nature11543"
+]
 },
 {
 "file": "articlestory_10.1056_NEJMoa2007621.html",
@@ -4753,6 +4816,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article \"Cardiovascular Disease, Drug Therapy, and Mortality in Covid-19,\" published in the New England Journal of Medicine, has generated substantial academic interest, evide…",
 "cover_url": "",
 "authors": "Mandeep R. Mehra, Sapan S. Desai, SreyRam Kuy et al.",
@@ -4858,7 +4923,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 75,
-"scite_contradicting": 12
+"scite_contradicting": 12,
+"version_count": 1,
+"version_dois": [
+"10.1056/NEJMoa2007621"
+]
 },
 {
 "file": "bookstory_10.7551_mitpress_11805.001.0001.html",
@@ -4896,6 +4965,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"Data Feminism,\" published by The MIT Press in 2020, has emerged as a significant reference point for synthesizing discussions around feminist data studies.",
 "cover_url": "",
 "authors": "Catherine D'Ignazio, Lauren F. Klein",
@@ -4996,7 +5067,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 3,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7551/mitpress/11805.001.0001"
+]
 },
 {
 "file": "softwarestory_10.5281_zenodo.11813.html",
@@ -5033,6 +5108,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary LMFIT, a software tool for non-linear least-square minimization and curve-fitting, has made significant contributions to various fields, garnering 1,346 citations and facilitating…",
 "cover_url": "",
 "authors": "M. Newville, Till Stensitzki, Daniel B. Allen et al.",
@@ -5124,7 +5201,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 2,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.11813"
+]
 },
 {
 "file": "bookstory_10.4159_9780674369542.html",
@@ -5149,6 +5230,7 @@ window.STORIES_DATA = [
 "Commercial Linkage",
 "Reference Point for Synthesis",
 "Evidence-bearing Reference",
+"Pedagogical Anchor",
 "Sustainability & Policy Relevance"
 ],
 "is_oa": null,
@@ -5166,8 +5248,10 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary \"Capital in the Twenty-First Century\" has established itself as a significant reference point within the academic community, evidenced by nearly 999 citations.",
-"cover_url": "",
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Thomas Piketty's \"Capital in the Twenty-First Century\" has established itself as a foundational text in discussions of economic inequality and capital dynamics.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780674430006&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Thomas Piketty",
 "all_authors": [
 "Thomas Piketty"
@@ -5178,16 +5262,11 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia",
-"News",
 "LibraryThing"
 ],
 "has_librarything": true,
 "librarything_rating": 8.3,
-"platform_counts": {
-"wikipedia": 1,
-"news": 1
-},
+"platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -5197,19 +5276,19 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 866
+"count": 867
 },
 {
 "label": "Facility",
-"count": 106
+"count": 105
 },
 {
 "label": "Nonprofit",
-"count": 103
+"count": 104
 },
 {
 "label": "Other",
-"count": 59
+"count": 60
 },
 {
 "label": "Government",
@@ -5223,7 +5302,7 @@ window.STORIES_DATA = [
 },
 {
 "label": "United Kingdom",
-"count": 252
+"count": 251
 },
 {
 "label": "Germany",
@@ -5231,11 +5310,11 @@ window.STORIES_DATA = [
 },
 {
 "label": "Australia",
-"count": 75
+"count": 74
 },
 {
 "label": "Netherlands",
-"count": 74
+"count": 73
 }
 ],
 "citing_institutions": [
@@ -5249,19 +5328,23 @@ window.STORIES_DATA = [
 },
 {
 "label": "University of California, Berkeley",
-"count": 14
+"count": 13
 },
 {
 "label": "Columbia University",
-"count": 12
+"count": 11
 },
 {
 "label": "Harvard University Press",
 "count": 10
 }
 ],
-"scite_supporting": 23,
-"scite_contradicting": 4
+"scite_supporting": 24,
+"scite_contradicting": 4,
+"version_count": 1,
+"version_dois": [
+"10.4159/9780674369542"
+]
 },
 {
 "file": "articlestory_10.1038_s41586-019-1364-3.html",
@@ -5301,6 +5384,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article, \"Committed emissions from existing energy infrastructure jeopardize 1.5 °C climate target,\" has garnered significant academic attention, evidenced by its 785 citation…",
 "cover_url": "",
 "authors": "Dan Tong, Qiang Zhang, Yixuan Zheng et al.",
@@ -5410,7 +5495,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 5,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41586-019-1364-3"
+]
 },
 {
 "file": "articlestory_10.5334_aogh.2831.html",
@@ -5453,6 +5542,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article \"Human Health and Ocean Pollution,\" published in the Annals of Global Health, has garnered significant academic attention with 735 citations, reflecting its importance…",
 "cover_url": "",
 "authors": "Philip J. Landrigan, John J. Stegeman, Lora E. Fleming et al.",
@@ -5603,7 +5694,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5334/aogh.2831"
+]
 },
 {
 "file": "bookstory_10.1007_978-3-319-46478-7_44.html",
@@ -5644,6 +5739,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite being published in 2016, \"Human Pose Estimation via Convolutional Part Heatmap Regression\" has established itself as a significant reference point in its field, evidenced …",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-319-46478-7_44",
 "authors": "Adrian Bulat, Georgios Tzimiropoulos",
@@ -5735,7 +5832,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1007/978-3-319-46478-7_44"
+]
 },
 {
 "file": "softwarestory_10.5281_zenodo.19690618.html",
@@ -5776,6 +5877,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary PyPSA, a software tool for power system analysis, has garnered significant academic attention, evidenced by its 528 citations.",
 "cover_url": "",
 "authors": "Brown, Tom, Jonas Hörsch, David Schlachtberger",
@@ -5868,7 +5971,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.19690618"
+]
 },
 {
 "file": "datastory_10.5281_zenodo.5571936.html",
@@ -5901,6 +6008,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The ESA WorldCover 10 m 2020 dataset, developed by a team of experts from prestigious institutions including the European Space Agency and Wageningen University & Research, has ga…",
 "cover_url": "",
 "authors": "Daniele Zanaga, Ruben Van De Kerchove, Wanda De Keersmaecker et al.",
@@ -6015,7 +6124,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.5571936"
+]
 },
 {
 "file": "articlestory_10.1101_2020.02.10.942185.html",
@@ -6056,6 +6169,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study of the 2019-novel coronavirus (nCoV) spike protein by Jaimes et al.",
 "cover_url": "",
 "authors": "Javier A. Jaimes, Nicole M. André, Jean K. Millet et al.",
@@ -6147,7 +6262,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 5,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2020.02.10.942185"
+]
 },
 {
 "file": "articlestory_10.5061_dryad.234_1.html",
@@ -6182,6 +6301,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The Global Wood Density Database (2009) has become a significant resource within the ecological and forestry research community, garnering 457 citations, demonstrating its substan…",
 "cover_url": "",
 "authors": "AE Zanne, Gabriela López‐González, David A. Coomes et al.",
@@ -6293,7 +6414,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5061/dryad.234/1"
+]
 },
 {
 "file": "bookstory_10.1017_cbo9781107415416.008.html",
@@ -6334,6 +6459,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"Integrated Risk and Uncertainty Assessment of Climate Change Response Policies,\" published by Cambridge University Press in 2015, serves as a crucial reference point for…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781107058217&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Intergovernmental Panel on Climate Change",
@@ -6422,7 +6549,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1017/cbo9781107415416.008"
+]
 },
 {
 "file": "articlestory_10.1038_nrn.2017.26.html",
@@ -6461,6 +6592,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Jones' work, \"Motor compensation and its effects on neural reorganization after stroke,\" published in Nature Reviews: Neuroscience, has garnered significant academic interest, evidenced by its 369 cit…",
 "cover_url": "",
 "authors": "Theresa A. Jones",
@@ -6557,7 +6690,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 11,
-"scite_contradicting": 2
+"scite_contradicting": 2,
+"version_count": 1,
+"version_dois": [
+"10.1038/nrn.2017.26"
+]
 },
 {
 "file": "bookstory_isbn_9789052019192.html",
@@ -6591,6 +6728,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Strath's Enlightenment and Genocide, Contradictions of Modernity , published by P.I.E.",
 "cover_url": "https://covers.openlibrary.org/b/id/5213719-L.jpg",
 "authors": "B. Strath",
@@ -6679,7 +6818,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"9789052019192"
+]
 },
 {
 "file": "datastory_10.6084_m9.figshare.7504448.v3.html",
@@ -6719,6 +6862,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The Global Aridity Index and Potential Evapotranspiration (ET0) Climate Database v2 has established itself as a valuable dataset within the climate research community, evidenced b…",
 "cover_url": "",
 "authors": "Antonio Trabucco, Robert J. Zomer",
@@ -6808,7 +6953,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.6084/m9.figshare.7504448.v3"
+]
 },
 {
 "file": "datastory_10.5281_zenodo.1188976.html",
@@ -6850,6 +6999,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS) has made a significant mark in the academic and research community, with 329 citations highlighting its im…",
 "cover_url": "",
 "authors": "Steven R. Livingstone, Frank Russo",
@@ -6946,7 +7097,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.1188976"
+]
 },
 {
 "file": "softwarestory_10.5281_zenodo.1480624.html",
@@ -6986,6 +7141,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The software tool Effsize, authored by Marco Torchiano and made available through Zenodo, has garnered significant academic attention, reflected in its 320 citations.",
 "cover_url": "",
 "authors": "Marco Torchiano",
@@ -7076,7 +7233,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.1480624"
+]
 },
 {
 "file": "bookstory_10.4324_9781315712802.html",
@@ -7109,6 +7270,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication in 2017, the book \"Against Meritocracy\" has established itself as a significant reference point, receiving an impressive 306 citations in academic literatu…",
 "cover_url": "http://images.tandf.co.uk/common/jackets/crclarge/978131571/9781315712802.jpg",
 "authors": "Jo Littler",
@@ -7204,7 +7367,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.4324/9781315712802"
+]
 },
 {
 "file": "articlestory_10.1038_nature03124.html",
@@ -7247,6 +7414,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled \"A FADD-dependent innate immune mechanism in mammalian cells\" has garnered significant academic attention, as evidenced by its 286 citations across various rese…",
 "cover_url": "",
 "authors": "Siddharth Balachandran, Emmanuel Thomas, Glen N. Barber",
@@ -7345,7 +7514,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 11,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/nature03124"
+]
 },
 {
 "file": "articlestory_10.5840_cultura20107133.html",
@@ -7378,6 +7551,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The work titled \"Teachers’ Competencies,\" authored by K.",
 "cover_url": "",
 "authors": "K. Selvi, Peter Lang",
@@ -7467,7 +7642,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 4,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5840/cultura20107133"
+]
 },
 {
 "file": "articlestory_10.1038_nature21680.html",
@@ -7506,6 +7685,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research on a massive, quiescent galaxy at a redshift of 3.717 has garnered significant academic attention, as evidenced by its 244 citations across prominent journals.",
 "cover_url": "",
 "authors": "Karl Glazebrook, C. Schreiber, Ivo Labbé et al.",
@@ -7617,7 +7798,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 27,
-"scite_contradicting": 1
+"scite_contradicting": 1,
+"version_count": 1,
+"version_dois": [
+"10.1038/nature21680"
+]
 },
 {
 "file": "datastory_10.5281_zenodo.3757476.html",
@@ -7660,7 +7845,9 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The COVID-19 CT Lung and Infection Segmentation Dataset, hosted on Zenodo, has emerged as a significant resource for researchers, amassing 238 citations and enabling 243 subsequen…",
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary The COVID-19 CT Lung and Infection Segmentation Dataset, published in 2020, has established itself as a crucial resource in the study of COVID-19, demonstrated by its 238 citation…",
 "cover_url": "",
 "authors": "Jun Ma, Cheng Ge, Yixin Wang et al.",
 "all_authors": [
@@ -7697,18 +7884,14 @@ window.STORIES_DATA = [
 "Zhengzhou University",
 "Tongji University"
 ],
-"download_count": 47981,
+"download_count": 48290,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"News"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {
-"news": 1
-},
+"platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -7726,7 +7909,7 @@ window.STORIES_DATA = [
 },
 {
 "label": "Facility",
-"count": 33
+"count": 31
 },
 {
 "label": "Company",
@@ -7782,7 +7965,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.3757476"
+]
 },
 {
 "file": "bookstory_isbn_9789082942187.html",
@@ -7817,6 +8004,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary De meeste mensen deugen (2019) is an open access scholarly book from De Correspondent Uitgevers B.V.",
 "cover_url": "https://covers.openlibrary.org/b/id/10218373-L.jpg",
 "authors": "Rutger Bregman",
@@ -7912,7 +8101,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"9789082942187"
+]
 },
 {
 "file": "datastory_10.5281_zenodo.4743746.html",
@@ -7949,6 +8142,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The dataset titled \"IoT-23: A labeled dataset with malicious and benign IoT network traffic,\" hosted on Zenodo, has emerged as a valuable resource for both academic research and p…",
 "cover_url": "",
 "authors": "Sebastián García, Agustin Parmisano, María José Erquiaga",
@@ -8041,7 +8236,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.4743746"
+]
 },
 {
 "file": "softwarestory_10.6084_m9.figshare.1164194.v13.html",
@@ -8078,6 +8277,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The graph-tool Python library, released in 2015, has established a significant academic footprint with 225 citations, predominantly from research venues such as arXiv and bioRxiv.",
 "cover_url": "",
 "authors": "Tiago P. Peixoto",
@@ -8166,7 +8367,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.6084/m9.figshare.1164194.v13"
+]
 },
 {
 "file": "articlestory_10.1103_prxquantum.5.037001.html",
@@ -8207,6 +8412,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled \"Quantum Computing for High-Energy Physics: State of the Art and Challenges,\" published in PRX Quantum, has garnered significant academic interest, with 203 cit…",
 "cover_url": "",
 "authors": "Alberto Di Meglio, Karl Jansen, Ivano Tavernelli et al.",
@@ -8341,7 +8548,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1103/prxquantum.5.037001"
+]
 },
 {
 "file": "datastory_10.6084_m9.figshare.1008029.v1.html",
@@ -8381,6 +8592,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The TNO Image Fusion Dataset (2014), hosted on Figshare, has been cited 202 times, demonstrating its significance within the fields of imaging and data fusion.",
 "cover_url": "",
 "authors": "Alexander Toet",
@@ -8469,7 +8682,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.6084/m9.figshare.1008029.v1"
+]
 },
 {
 "file": "articlestory_10.5334_jors.122.html",
@@ -8510,6 +8727,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The software tool \"eofs,\" developed for empirical orthogonal function analysis of meteorological, oceanographic, and climate data, has seen a solid academic reception with 193 cit…",
 "cover_url": "",
 "authors": "Andrew Dawson",
@@ -8598,7 +8817,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5334/jors.122"
+]
 },
 {
 "file": "softwarestory_10.6084_m9.figshare.1092508.v6.html",
@@ -8637,6 +8860,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The software tool PIVlab, designed for time-resolved digital particle image velocimetry in MATLAB, has garnered 191 citations since its release in 2015, indicating significant aca…",
 "cover_url": "",
 "authors": "William Thielicke, Eize J. Stamhuis",
@@ -8726,7 +8951,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.6084/m9.figshare.1092508.v6"
+]
 },
 {
 "file": "articlestory_10.1126_science.abk0989.html",
@@ -8767,6 +8996,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled \"Global urban environmental change drives adaptation in white clover,\" published in Science , has garnered significant scholarly attention, as evidenced by its …",
 "cover_url": "",
 "authors": "James S. Santangelo, Rob W. Ness, Beata Cohan et al.",
@@ -9150,7 +9381,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 2
+"scite_contradicting": 2,
+"version_count": 1,
+"version_dois": [
+"10.1126/science.abk0989"
+]
 },
 {
 "file": "bookstory_10.3998_mpub.15472.html",
@@ -9191,6 +9426,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Measurement of Nontariff Barriers,\" published by the University of Michigan Press in 1998, serves as a vital reference point for scholars and policymakers in the field of interna…",
 "cover_url": "https://www.fulcrum.org/image-service/2v23vv25r1541084731/full/286,/0/default.png",
 "authors": "Alan Deardorff, Robert Stern",
@@ -9282,7 +9519,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3998/mpub.15472"
+]
 },
 {
 "file": "bookstory_10.1007_978-3-319-00026-8.html",
@@ -9313,6 +9554,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication in 2014, \"Opening Science\" has yet to garner citations or community discourse, suggesting limited immediate impact or engagement within academic circles or…",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-319-00026-8",
 "authors": "Sönke Bartling, Sascha Friesike",
@@ -9411,7 +9654,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1007/978-3-319-00026-8"
+]
 },
 {
 "file": "bookstory_10.3998_mpub.11927713.html",
@@ -9452,6 +9699,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of traditional metrics such as citations or community discourse, \"Coronavirus Politics\" published by the University of Michigan Press in 2021 serves as a signi…",
 "cover_url": "",
 "authors": "Scott Greer, Elizabeth King, Elize Fonseca et al.",
@@ -9549,7 +9798,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 2,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3998/mpub.11927713"
+]
 },
 {
 "file": "articlestory_10.1038_nrd.2016.136.html",
@@ -9586,6 +9839,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Asher Mullard's article, \"Parsing clinical success rates,\" published in 2016 in Nature Reviews Drug Discovery, has gained notable traction in the academic community, accumulating …",
 "cover_url": "",
 "authors": "Asher Mullard",
@@ -9680,7 +9935,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/nrd.2016.136"
+]
 },
 {
 "file": "bookstory_10.3998_mpub.17144.html",
@@ -9718,6 +9977,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Quantifying the Impact of Technical Barriers to Trade,\" published by the University of Michigan Press in 2001, serves as a significant reference point in discussions of trade pol…",
 "cover_url": "https://www.fulcrum.org/image-service/qr46r420k1752564628/full/286,/0/default.png",
 "authors": "Keith Maskus, John Wilson, John Wilson",
@@ -9812,7 +10073,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3998/mpub.17144"
+]
 },
 {
 "file": "articlestory_10.7554_eLife.80660.html",
@@ -9853,6 +10118,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The 2023 dataset titled \"A searchable image resource of Drosophila GAL4 driver expression patterns with single neuron resolution\" has made a significant impact in the field of neu…",
 "cover_url": "",
 "authors": "Geoffrey W Meissner, Aljoscha Nern, Zachary Dorman et al.",
@@ -9984,7 +10251,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/elife.80660"
+]
 },
 {
 "file": "articlestory_10.1182_blood.2023022222.html",
@@ -10025,6 +10296,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article \"Causes and consequences of clonal hematopoiesis,\" authored by Lachelle D.",
 "cover_url": "",
 "authors": "Lachelle D. Weeks, Benjamin L. Ebert",
@@ -10131,7 +10404,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 1
+"scite_contradicting": 1,
+"version_count": 1,
+"version_dois": [
+"10.1182/blood.2023022222"
+]
 },
 {
 "file": "articlestory_10.1056_nejmoa2009040.html",
@@ -10174,6 +10451,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled “Super-Spreaders” and Person-to-Person Transmission of Andes Virus in Argentina published in the New England Journal of Medicine has garnered significant academ…",
 "cover_url": "",
 "authors": "Valeria P. Martínez, Nicholas Di Paola, Daniel Oscar Alonso et al.",
@@ -10321,7 +10600,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 2,
-"scite_contradicting": 1
+"scite_contradicting": 1,
+"version_count": 1,
+"version_dois": [
+"10.1056/nejmoa2009040"
+]
 },
 {
 "file": "articlestory_10.12688_f1000research.6555.1.html",
@@ -10358,6 +10641,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article \"The Resource Identification Initiative: A cultural shift in publishing\" has generated considerable attention in the academic sphere, accumulating 135 citations across…",
 "cover_url": "",
 "authors": "Anita Bandrowski, Matthew Brush, Jeffrey S. Grethe et al.",
@@ -10447,7 +10732,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.12688/f1000research.6555.1"
+]
 },
 {
 "file": "bookstory_10.1007_978-981-19-2080-6.html",
@@ -10488,6 +10777,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The \"Handbook of Open, Distance and Digital Education,\" published by Springer Nature Singapore in 2023, has the potential to serve as a vital reference for synthesis in the evolvi…",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-981-19-2080-6",
 "authors": "Olaf Zawacki-Richter, Insung Jung",
@@ -10584,7 +10875,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1007/978-981-19-2080-6"
+]
 },
 {
 "file": "bookstory_10.3726_978-1-4539-1848-7.html",
@@ -10625,6 +10920,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Robin DiAngelo's What Does It Mean to Be White?: Developing White Racial Literacy , published by Peter Lang in the Counterpoints series, has accumulated 130 citations and sits at …",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1054721/large.webp",
 "authors": "Robin DiAngelo",
@@ -10717,7 +11014,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/978-1-4539-1848-7"
+]
 },
 {
 "file": "articlestory_10.1016_j.neuron.2022.09.009.html",
@@ -10758,6 +11059,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article entitled \"A brain atlas of synapse protein lifetime across the mouse lifespan,\" published in Neuron, has garnered significant attention within the academic community, …",
 "cover_url": "",
 "authors": "Edita Bulovaite, Zhen Qiu, Maximilian Kratschke et al.",
@@ -10881,7 +11184,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 7,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1016/j.neuron.2022.09.009"
+]
 },
 {
 "file": "articlestory_10.1038_s41557-023-01379-8.html",
@@ -10920,6 +11227,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research on proteolysis-targeting chimeras (PROTACs) with reduced off-target effects has garnered significant academic attention, evidenced by 123 citations since its release …",
 "cover_url": "",
 "authors": "Tuan M. Nguyen, Vedagopuram Sreekanth, Arghya Deb et al.",
@@ -11018,7 +11327,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 2,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41557-023-01379-8"
+]
 },
 {
 "file": "articlestory_10.1073_pnas.111146798.html",
@@ -11057,6 +11370,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled \"Cytoskeletal microdifferentiation: A mechanism for organizing morphological plasticity in dendrites\" has made a significant impact in the field of neuroscience…",
 "cover_url": "",
 "authors": "Stefanie Kaech, Hema Parmar, Martijn Roelandse et al.",
@@ -11156,7 +11471,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 9,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1073/pnas.111146798"
+]
 },
 {
 "file": "articlestory_10.52570_dgac2025.html",
@@ -11199,6 +11518,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Scientific Report of the 2025 Dietary Guidelines Advisory Committee: Advisory Report to the Secretary of Health and Human Services and Secretary of Agriculture (2024) in Unknown s…",
 "cover_url": "",
 "authors": "",
@@ -11289,7 +11610,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.52570/dgac2025"
+]
 },
 {
 "file": "articlestory_10.1038_s41893-020-0532-7.html",
@@ -11330,6 +11655,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article \"Hydrological limits to carbon capture and storage,\" published in Nature Sustainability, explores critical factors impacting carbon capture technologies.",
 "cover_url": "",
 "authors": "Lorenzo Rosa, Jeffrey A. Reimer, Marjorie Went et al.",
@@ -11428,7 +11755,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41893-020-0532-7"
+]
 },
 {
 "file": "articlestory_10.1016_j.jacc.2022.01.038.html",
@@ -11471,6 +11802,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Effects of Experimental Sleep Restriction on Energy Intake, Energy Expenditure, and Visceral Obesity (2022) in Journal of the American College of Cardiology shows measurable signa…",
 "cover_url": "",
 "authors": "Naima Covassin, Prachi Singh, Shelly McCrady-Spitzer et al.",
@@ -11578,7 +11911,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 3
+"scite_contradicting": 3,
+"version_count": 1,
+"version_dois": [
+"10.1016/j.jacc.2022.01.038"
+]
 },
 {
 "file": "articlestory_10.1101_2020.01.15.908111.html",
@@ -11617,6 +11954,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The \"Rigor and Transparency Index\" represents a significant advancement in evaluating biological and medical science methodologies, having garnered 100 citations since its initial…",
 "cover_url": "",
 "authors": "Joseph Menke, Martijn Roelandse, İbrahim Burak Özyurt et al.",
@@ -11719,7 +12058,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2020.01.15.908111"
+]
 },
 {
 "file": "bookstory_10.5334_bbc.html",
@@ -11760,6 +12103,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"Open: The Philosophy and Practices that are Revolutionizing Education and Science,\" published by Ubiquity Press in 2017, serves as a significant reference point for the …",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781911529002&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Rajiv S. Jhangiani, Robert Biswas-Diener",
@@ -11855,7 +12200,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5334/bbc"
+]
 },
 {
 "file": "articlestory_10.1016_j.socscimed.2019.112499.html",
@@ -11896,6 +12245,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Multilevel versus single-level regression for the analysis of multilevel information: The case of quantitative intersectional analysis (2019) in Social Science & Medicine shows me…",
 "cover_url": "",
 "authors": "Clare R. Evans, George Leckie, Juan Merlo",
@@ -11992,7 +12343,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 2,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1016/j.socscimed.2019.112499"
+]
 },
 {
 "file": "articlestory_10.7554_elife.79714.html",
@@ -12034,6 +12389,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article \"Stable population structure in Europe since the Iron Age, despite high mobility\" published in eLife has generated notable academic interest, evidenced by 93 citations…",
 "cover_url": "",
 "authors": "Margaret L. Antonio, Clemens L. Weiß, Ziyue Gao et al.",
@@ -12230,7 +12587,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 6,
-"scite_contradicting": 2
+"scite_contradicting": 2,
+"version_count": 1,
+"version_dois": [
+"10.7554/elife.79714"
+]
 },
 {
 "file": "articlestory_10.1038_s41588-023-01603-8.html",
@@ -12271,6 +12632,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This research published in Nature Genetics by Sandipan Brahma and Steven Henikoff explores the collaborative dynamics of the BAF chromatin remodeler with RNA polymerase II and tra…",
 "cover_url": "",
 "authors": "Sandipan Brahma, Steven Henikoff",
@@ -12374,7 +12737,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 2,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41588-023-01603-8"
+]
 },
 {
 "file": "articlestory_10.1371_journal.pbio.3002916.html",
@@ -12417,6 +12784,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study titled \"Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance\" has garnered significant attention, evidenced by its 85 citations in various…",
 "cover_url": "",
 "authors": "Bernadeta Dadonaite, Jenny Ahn, Jordan T. Ort et al.",
@@ -12540,7 +12909,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1371/journal.pbio.3002916"
+]
 },
 {
 "file": "articlestory_10.1016_j.isci.2020.101698.html",
@@ -12583,6 +12956,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The paper titled \"The Rigor and Transparency Index Quality Metric for Assessing Biological and Medical Science Methods,\" authored by a team from the University of California, San …",
 "cover_url": "",
 "authors": "Joseph Menke, Martijn Roelandse, İbrahim Burak Özyurt et al.",
@@ -12687,7 +13062,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 6,
-"scite_contradicting": 2
+"scite_contradicting": 2,
+"version_count": 1,
+"version_dois": [
+"10.1016/j.isci.2020.101698"
+]
 },
 {
 "file": "articlestory_10.1038_d41586-019-01643-3.html",
@@ -12728,6 +13107,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article \"Rethinking impact factors: better ways to judge a journal,\" published in Nature by Paul Wouters and colleagues, has been cited 84 times, demonstrating its influence i…",
 "cover_url": "",
 "authors": "Paul Wouters, Cassidy R. Sugimoto, Vincent Larivière et al.",
@@ -12835,7 +13216,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/d41586-019-01643-3"
+]
 },
 {
 "file": "articlestory_10.1371_journal.pcbi.1007128.html",
@@ -12876,6 +13261,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article \"Open collaborative writing with Manubot,\" published in PLoS Computational Biology, showcases a robust commitment to open collaboration, evidenced by its significant c…",
 "cover_url": "",
 "authors": "Daniel Himmelstein, Vincent Rubinetti, David R. Slochower et al.",
@@ -12979,7 +13366,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1371/journal.pcbi.1007128"
+]
 },
 {
 "file": "articlestory_10.3390_su12010142.html",
@@ -13020,6 +13411,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This article has received significant recognition, with a total of 81 citations, indicating its influence in the field of traffic speed prediction using machine learning methods.",
 "cover_url": "",
 "authors": "Charalampos Bratsas, Kleanthis Koupidis, Josep Maria Salanova Grau et al.",
@@ -13116,7 +13509,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3390/su12010142"
+]
 },
 {
 "file": "articlestory_10.1038_s41598-020-63014-7.html",
@@ -13159,6 +13556,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Parity is associated with cognitive function and brain age in both females and males (2020) in Scientific Reports shows measurable signals of attention across scholarly and online…",
 "cover_url": "",
 "authors": "Kaida Ning, Lu Zhao, Meredith Franklin et al.",
@@ -13264,7 +13663,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 26,
-"scite_contradicting": 3
+"scite_contradicting": 3,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41598-020-63014-7"
+]
 },
 {
 "file": "articlestory_10.1126_sciimmunol.abp8966.html",
@@ -13306,6 +13709,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled \"Vaccine breakthrough hypoxemic COVID-19 pneumonia in patients with auto-Abs neutralizing type I IFNs,\" published in Science Immunology, has garnered significan…",
 "cover_url": "",
 "authors": "Paul Bastard, Sara E. Vazquez, Jamin Liu et al.",
@@ -13513,7 +13918,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 3,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1126/sciimmunol.abp8966"
+]
 },
 {
 "file": "articlestory_10.1016_j.devcel.2023.11.004.html",
@@ -13554,6 +13963,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled \"Shaping the brain: The emergence of cortical structure and folding,\" published in Developmental Cell, has achieved significant academic traction, evidenced by …",
 "cover_url": "",
 "authors": "Shyam K. Akula, David Exposito-Alonso, Christopher A. Walsh",
@@ -13656,7 +14067,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1016/j.devcel.2023.11.004"
+]
 },
 {
 "file": "articlestory_10.1075_ijcl.23087.yu.html",
@@ -13697,6 +14112,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The work titled \"Assessing the potential of LLM-assisted annotation for corpus-based pragmatics and discourse analysis,\" published in 2024 in the International Journal of Corpus L…",
 "cover_url": "",
 "authors": "Danni Yu, Luyang Li, Hang Su et al.",
@@ -13788,7 +14205,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 3,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1075/ijcl.23087.yu"
+]
 },
 {
 "file": "articlestory_10.1377_hlthaff.2016.1471.html",
@@ -13828,6 +14249,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Americans Support Price Shopping For Health Care, But Few Actually Seek Out Price Information (2017) in Health Affairs shows measurable signals of attention across scholarly and o…",
 "cover_url": "",
 "authors": "Ateev Mehrotra, Katie Dean, Anna D. Sinaiko et al.",
@@ -13928,7 +14351,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 2,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1377/hlthaff.2016.1471"
+]
 },
 {
 "file": "articlestory_10.1038_s41586-023-06933-5.html",
@@ -13971,6 +14398,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research detailed in the article titled \"Template and target-site recognition by human LINE-1 in retrotransposition,\" published in *Nature*, has garnered significant academic …",
 "cover_url": "",
 "authors": "Akanksha Thawani, Alfredo Jose Florez Ariza, Eva Nogales et al.",
@@ -14073,7 +14502,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 6,
-"scite_contradicting": 1
+"scite_contradicting": 1,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41586-023-06933-5"
+]
 },
 {
 "file": "articlestory_10.1111_j.1460-9568.2004.03503.x.html",
@@ -14111,6 +14544,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research on the intrinsic degeneration of neurons lacking munc18-1 contributes significantly to the understanding of cellular mechanisms in neurodegeneration.",
 "cover_url": "",
 "authors": "Joost H. Heeroma, Martijn Roelandse, Keimpe Wierda et al.",
@@ -14213,7 +14648,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 2,
-"scite_contradicting": 1
+"scite_contradicting": 1,
+"version_count": 1,
+"version_dois": [
+"10.1111/j.1460-9568.2004.03503.x"
+]
 },
 {
 "file": "articlestory_10.1016_j.molcel.2023.10.045.html",
@@ -14252,6 +14691,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research on epigenetic pioneering by SWI/SNF family remodelers, conducted by Kami Ahmad, Sandipan Brahma, and Steven Henikoff, has garnered significant citations, with 65 refe…",
 "cover_url": "",
 "authors": "Kami Ahmad, Sandipan Brahma, Steven Henikoff",
@@ -14352,7 +14793,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 3,
-"scite_contradicting": 1
+"scite_contradicting": 1,
+"version_count": 1,
+"version_dois": [
+"10.1016/j.molcel.2023.10.045"
+]
 },
 {
 "file": "articlestory_10.1038_s41598-021-90639-z.html",
@@ -14391,6 +14836,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study on the seven-day pre-analytical stability of serum and plasma neurofilament light chain has garnered significant attention, being cited 64 times across various disciplin…",
 "cover_url": "",
 "authors": "Patrick Altmann, Markus Ponleitner, Paulus Rommer et al.",
@@ -14500,7 +14947,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 6,
-"scite_contradicting": 2
+"scite_contradicting": 2,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41598-021-90639-z"
+]
 },
 {
 "file": "bookstory_10.1007_978-1-4899-7303-0_2.html",
@@ -14537,6 +14988,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Smith, Turgot, and the ‘Four Stages’ Theory (1977) is an open access scholarly book from Springer Nature with impact that is still emerging in formal metrics.",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-1-4899-7303-0_2",
 "authors": "Ronald L. Meek",
@@ -14627,7 +15080,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1007/978-1-4899-7303-0_2"
+]
 },
 {
 "file": "articlestory_10.7554_eLife.79042.html",
@@ -14669,6 +15126,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study titled \"Hierarchical architecture of dopaminergic circuits enables second-order conditioning in Drosophila,\" published in eLife in 2023, demonstrates a significant advan…",
 "cover_url": "",
 "authors": "Daichi Yamada, Daniel Bushey, Feng Li et al.",
@@ -14779,7 +15238,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 2,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/eLife.79042"
+]
 },
 {
 "file": "bookstory_10.11116_9789461662668.html",
@@ -14817,6 +15280,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Beyond Provenance: New Approaches to Interpreting the Chemistry of Archaeological Copper Alloys\" has established a substantial scholarly footprint, evidenced by its significant c…",
 "cover_url": "",
 "authors": "Mark Pollard",
@@ -14905,7 +15370,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461662668"
+]
 },
 {
 "file": "articlestory_10.1126_scitranslmed.add0499.html",
@@ -14946,6 +15415,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research titled \"Enhanced mTORC1 signaling and protein synthesis in pathologic α-synuclein cellular and animal models of Parkinson’s disease,\" published in 2023 in Science Tra…",
 "cover_url": "",
 "authors": "Mohammed Repon Khan, Xiling Yin, Sung-Ung Kang et al.",
@@ -15056,7 +15527,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1126/scitranslmed.add0499"
+]
 },
 {
 "file": "articlestory_10.1038_s41593-023-01500-7.html",
@@ -15099,6 +15574,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research article titled \"Decoding motor plans using a closed-loop ultrasonic brain–machine interface,\" co-authored by a multidisciplinary team from the California Institute of…",
 "cover_url": "",
 "authors": "Whitney S. Griggs, Sumner L. Norman, Thomas Deffieux et al.",
@@ -15191,7 +15668,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41593-023-01500-7"
+]
 },
 {
 "file": "bookstory_10.11647_OBP.0222.html",
@@ -15229,6 +15710,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite being published in 2020, \"A European Public Investment Outlook\" by Open Book Publishers has shown a promising scholarly uptake, garnering 54 citations, indicating its sign…",
 "cover_url": "https://library.oapen.org/rest/bitstreams/2a1dd993-99da-405e-b14c-5a0522f96b50/retrieve",
 "authors": "Floriana Cerniglia, Francesco Saraceno",
@@ -15318,7 +15801,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11647/OBP.0222"
+]
 },
 {
 "file": "articlestory_10.1523_jneurosci.2872-04.2004.html",
@@ -15357,6 +15844,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study by Martijn Roelandse and Andrew Matus, published in the Journal of Neuroscience, has received notable engagement within the academic community, accumulating 53 citations…",
 "cover_url": "",
 "authors": "Martijn Roelandse, Andrew Matus",
@@ -15452,7 +15941,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 2,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1523/jneurosci.2872-04.2004"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.12.571235.html",
@@ -15492,6 +15985,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The preprint titled \"Age-dependent heterogeneity in the antigenic effects of mutations to influenza hemagglutinin,\" housed on bioRxiv, has generated significant academic engagemen…",
 "cover_url": "",
 "authors": "Frances C. Welsh, Rachel Eguia, Juhye Lee et al.",
@@ -15602,7 +16097,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 2,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.12.12.571235"
+]
 },
 {
 "file": "articlestory_10.1016_j.cell.2023.11.036.html",
@@ -15644,6 +16143,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study led by Neehus et al.",
 "cover_url": "",
 "authors": "Anna‐Lena Neehus, Brenna Carey, Marija Landekic et al.",
@@ -15824,7 +16325,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 3,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1016/j.cell.2023.11.036"
+]
 },
 {
 "file": "articlestory_10.1073_pnas.1607187113.html",
@@ -15864,6 +16369,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research article \"Early somatic mosaicism is a rare cause of long-QT syndrome,\" published in the Proceedings of the National Academy of Sciences in 2016, has gained notable tr…",
 "cover_url": "",
 "authors": "James R. Priest, Charles Gawad, Kristopher M. Kahlig et al.",
@@ -16001,7 +16508,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1073/pnas.1607187113"
+]
 },
 {
 "file": "articlestory_10.1101_2022.02.22.481540.html",
@@ -16038,6 +16549,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The 2022 study titled \"Uncovering circuit mechanisms of current sinks and sources with biophysical simulations of primary visual cortex,\" first released as a preprint on bioRxiv, …",
 "cover_url": "",
 "authors": "Atle E. Rimehaug, A. Stasik, Espen Hagen et al.",
@@ -16111,7 +16624,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 2,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2022.02.22.481540"
+]
 },
 {
 "file": "articlestory_10.7554_elife.87169.html",
@@ -16149,6 +16666,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study \"Uncovering circuit mechanisms of current sinks and sources with biophysical simulations of primary visual cortex\" has emerged as a significant contribution to the under…",
 "cover_url": "",
 "authors": "Atle E. Rimehaug, A. Stasik, Espen Hagen et al.",
@@ -16255,7 +16774,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 5,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/elife.87169"
+]
 },
 {
 "file": "articlestory_10.1126_scitranslmed.adh4529.html",
@@ -16296,6 +16819,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This 2023 study published in Science Translational Medicine explores the enhanced T cell responses to SARS-CoV-2 infection and vaccination in individuals with B cell deficiency.",
 "cover_url": "",
 "authors": "Reza Zonozi, Lucy C. Walters, Aaron Shulkin et al.",
@@ -16419,7 +16944,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 3,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1126/scitranslmed.adh4529"
+]
 },
 {
 "file": "articlestory_10.1016_j.cell.2023.11.010.html",
@@ -16462,6 +16991,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The groundbreaking work titled \"Temporally multiplexed imaging of dynamic signaling networks in living cells,\" published in Cell, has garnered significant academic attention, as e…",
 "cover_url": "",
 "authors": "Yong Qian, Orhan T. Celiker, Zeguan Wang et al.",
@@ -16571,7 +17102,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1016/j.cell.2023.11.010"
+]
 },
 {
 "file": "articlestory_10.1042_bc20100036.html",
@@ -16608,6 +17143,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study by Broeke et al.",
 "cover_url": "",
 "authors": "Jurjen H. Broeke, Martijn Roelandse, Maartje J. Luteijn et al.",
@@ -16706,7 +17243,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1042/bc20100036"
+]
 },
 {
 "file": "bookstory_10.11116_VP_PLU.html",
@@ -16738,6 +17279,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Virtues for the People\" published by Leuven University Press in 2011 has a notable scholarly uptake, evidenced by 46 citations, indicating an increasing engagement within the aca…",
 "cover_url": "",
 "authors": "Geert Roskam",
@@ -16806,7 +17349,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/VP_PLU"
+]
 },
 {
 "file": "bookstory_10.3998_mpub.16284.html",
@@ -16847,6 +17394,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication over two decades ago in 2000, \"Institutions and Investments\" continues to hold significance within its field, garnering a notable scholarly uptake with 43 …",
 "cover_url": "https://www.fulcrum.org/image-service/br86b44011542298568/full/286,/0/default.png",
 "authors": "Jun Fu",
@@ -16931,7 +17480,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3998/mpub.16284"
+]
 },
 {
 "file": "bookstory_10.3998_mpub.11649332.html",
@@ -16968,6 +17521,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite being published in 2020, \"Elizabeth Bishop and the Literary Archive\" has begun to make its mark within academic circles, evidenced by a growing citation count and publishi…",
 "cover_url": "",
 "authors": "Bethany Hicok",
@@ -17030,7 +17585,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3998/mpub.11649332"
+]
 },
 {
 "file": "bookstory_10.11116_9789461661579.html",
@@ -17062,6 +17621,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The scholarly work \"Glass Making in the Greco-Roman World: Results of the ARCHGLASS project,\" published by Leuven University Press in 2015, reflects a solid engagement with the fi…",
 "cover_url": "https://lup.be/wp-content/uploads/2024/01/66353_jpg_rgb_original.jpg",
 "authors": "Patrick Degryse",
@@ -17152,7 +17713,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461661579"
+]
 },
 {
 "file": "bookstory_10.3998_mpub.17801.html",
@@ -17193,6 +17758,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published by the University of Michigan Press in 2003, \"The Role of the Judge in International Trade Regulation\" has made a significant scholarly impact, garnering up to 40 citati…",
 "cover_url": "https://www.fulcrum.org/image-service/r494vk9901591082261/full/286,/0/default.png",
 "authors": "Thomas Cottier, Petros Mavroidis, Patrick Blatter",
@@ -17279,7 +17846,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3998/mpub.17801"
+]
 },
 {
 "file": "articlestory_10.1016_s0306-4522(03)00405-6.html",
@@ -17320,6 +17891,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled \"Focal motility determines the geometry of dendritic spines,\" authored by Martijn Roelandse and colleagues from the Friedrich Miescher Institute, has garnered n…",
 "cover_url": "",
 "authors": "Martijn Roelandse, Arkadiusz Welman, Uta Wagner et al.",
@@ -17416,7 +17989,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1016/s0306-4522(03)00405-6"
+]
 },
 {
 "file": "articlestory_10.1101_2023.11.29.569241.html",
@@ -17454,6 +18031,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The work titled \"Connectomic reconstruction predicts the functional organization of visual inputs to the navigation center of the Drosophila brain\" has made notable contributions …",
 "cover_url": "",
 "authors": "Dustin Garner, Emil Kind, Aljoscha Nern et al.",
@@ -17554,7 +18133,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.11.29.569241"
+]
 },
 {
 "file": "articlestory_10.7554_eLife.85117.html",
@@ -17596,6 +18179,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This study explores how mating activates neuroendocrine pathways that signal hunger in female Drosophila, providing insights into the interplay between reproductive and metabolic …",
 "cover_url": "",
 "authors": "Meghan Laturney, Gabriella R Sterne, Kristin Scott",
@@ -17692,7 +18277,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/eLife.85117"
+]
 },
 {
 "file": "articlestory_10.7554_eLife.85756.html",
@@ -17728,6 +18317,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research presented in \"Neural circuit mechanisms for transforming learned olfactory valences into wind-oriented movement,\" published in eLife in 2023, has generated significan…",
 "cover_url": "",
 "authors": "Yoshinori Aso, Daichi Yamada, Daniel Bushey et al.",
@@ -17836,7 +18427,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 3,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/eLife.85756"
+]
 },
 {
 "file": "articlestory_10.1016_j.tcb.2023.10.013.html",
@@ -17879,6 +18474,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The work \"Metabolic immunity against microbes\" by Sebastian Kreimendahl and Lena Pernas has garnered increasing attention within the academic community, reflected by its 35 citati…",
 "cover_url": "",
 "authors": "Sebastian Kreimendahl, Lena Pernas",
@@ -17975,7 +18572,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1016/j.tcb.2023.10.013"
+]
 },
 {
 "file": "articlestory_10.1101_2024.04.04.588111.html",
@@ -18013,6 +18614,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The preprint titled \"The impact of package selection and versioning on single-cell RNA-seq analysis\" has rapidly emerged as a significant contribution to the field, evidenced by 3…",
 "cover_url": "",
 "authors": "Joseph M. Rich, Lambda Moses, Pétur Helgi Einarsson et al.",
@@ -18115,7 +18718,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2024.04.04.588111"
+]
 },
 {
 "file": "bookstory_10.3998_mpub.16818.html",
@@ -18156,6 +18763,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication over two decades ago, \"Social Dimensions of U.S.",
 "cover_url": "https://www.fulcrum.org/image-service/37720d52t1540994888/full/286,/0/default.png",
 "authors": "Alan Deardorff, Robert Stern",
@@ -18245,7 +18854,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3998/mpub.16818"
+]
 },
 {
 "file": "articlestory_10.1371_journal.pone.0253205.html",
@@ -18282,6 +18895,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled \"Automatic classification of medical image modality and anatomical location using convolutional neural network\" has made a notable impact within the academic co…",
 "cover_url": "",
 "authors": "Chen-Hua Chiang, Chi-Lun Weng, Hung‐Wen Chiu",
@@ -18380,7 +18995,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1371/journal.pone.0253205"
+]
 },
 {
 "file": "articlestory_10.1101_2023.11.30.23299240.html",
@@ -18420,6 +19039,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study by Abousamra et al.",
 "cover_url": "",
 "authors": "Eslam Abousamra, Marlin D Figgins, Trevor Bedford",
@@ -18498,7 +19119,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.11.30.23299240"
+]
 },
 {
 "file": "bookstory_10.3726_b20254.html",
@@ -18536,6 +19161,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2023 by Jeremy Waddington, Torsten Müller, and Kurt Vandaele, Trade Unions in the European Union has established itself as a notable reference in the field of Europea…",
 "cover_url": "https://library.oapen.org/rest/bitstreams/8986f0fa-736b-4b6f-8dca-4c082b63207f/retrieve",
 "authors": "Jeremy Waddington, Torsten Müller, Kurt Vandaele",
@@ -18630,7 +19257,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b20254"
+]
 },
 {
 "file": "articlestory_10.1001_jama.2025.3810.html",
@@ -18670,6 +19301,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study on varenicline for youth nicotine vaping cessation, published in JAMA, showcases significant academic influence with 30 citations across various reputable journals, and …",
 "cover_url": "",
 "authors": "A. Eden Evins, Corinne Cather, Harrison T. Reeder et al.",
@@ -18780,7 +19413,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1001/jama.2025.3810"
+]
 },
 {
 "file": "articlestory_10.1016_j.cub.2023.11.025.html",
@@ -18823,6 +19460,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research article \"Transcriptional and post-transcriptional control of odorant receptor choice in ants,\" published in Current Biology, presents significant findings in the area…",
 "cover_url": "",
 "authors": "Anindita Brahma, Dominic D. Frank, P. Daniel H. Pastor et al.",
@@ -18927,7 +19566,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1016/j.cub.2023.11.025"
+]
 },
 {
 "file": "articlestory_10.1101_2020.02.05.933721.html",
@@ -18969,6 +19612,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study titled \"Protective anti-prion antibodies in human immunoglobulin repertoires\" has made a notable impact in the field of immunology, garnering 30 citations since its rele…",
 "cover_url": "",
 "authors": "Assunta Senatore, Karl Frontzek, Marc Emmenegger et al.",
@@ -19068,7 +19713,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2020.02.05.933721"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.01.568979.html",
@@ -19108,6 +19757,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled \"Structure, interaction, and nervous connectivity of beta cell primary cilia,\" recently released on bioRxiv, has already garnered significant academic attention…",
 "cover_url": "",
 "authors": "Andreas Müller, Nikolai Klena, Song Pang et al.",
@@ -19217,7 +19868,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 4,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.12.01.568979"
+]
 },
 {
 "file": "articlestory_10.15252_emmm.202012739.html",
@@ -19258,6 +19913,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled \"Protective anti‐prion antibodies in human immunoglobulin repertoires,\" published in EMBO Molecular Medicine, has made notable contributions to the field, evide…",
 "cover_url": "",
 "authors": "Assunta Senatore, Karl Frontzek, Marc Emmenegger et al.",
@@ -19373,7 +20030,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 2,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.15252/emmm.202012739"
+]
 },
 {
 "file": "articlestory_10.7554_eLife.98405.html",
@@ -19415,6 +20076,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research article titled \"A split-GAL4 driver line resource for Drosophila neuron types,\" published in eLife, presents a vital resource for the Drosophila neuroscience communit…",
 "cover_url": "",
 "authors": "Geoffrey W Meissner, Allison Vannan, Jennifer Jeter et al.",
@@ -19589,7 +20252,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/eLife.98405"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664327.html",
@@ -19626,6 +20293,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its recent publication in 2021, \"Theory into Practice\" has yet to gain significant traction in terms of academic citations or public discourse, with indicators showing no …",
 "cover_url": "",
 "authors": "Nicholas Cook, Peter Johnson, Hans Zender",
@@ -19700,7 +20369,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664327"
+]
 },
 {
 "file": "articlestory_10.1371_journal.pone.0000000.html",
@@ -19735,6 +20408,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article \"PLoS Journals Sandbox: A Place to Learn and Play\" has made a notable contribution to the academic discourse, evidenced by its 28 citations across various journals.",
 "cover_url": "",
 "authors": "Mike Baehr, Richard Cave, Eddie Dickey et al.",
@@ -19833,7 +20508,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1371/journal.pone.0000000"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.08.570828.html",
@@ -19872,6 +20551,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The preprint titled \"Electrostatic encoding of genome organization principles within single native nucleosomes\" has already garnered significant attention within the academic comm…",
 "cover_url": "",
 "authors": "Sangwoo Park, Advait Athreya, Gustavo Carrizo et al.",
@@ -19966,7 +20647,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.12.08.570828"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.07.565988.html",
@@ -20003,6 +20688,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This research, titled \"Permanent deconstruction of intracellular primary cilia in differentiating granule cell neurons,\" has made significant academic strides with 26 citations si…",
 "cover_url": "",
 "authors": "Carolyn M. Ott, Sandii Constable, Tri Nguyen et al.",
@@ -20073,7 +20760,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.12.07.565988"
+]
 },
 {
 "file": "articlestory_10.2196_37324.html",
@@ -20112,6 +20803,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The work titled \"Establishing Institutional Scores With the Rigor and Transparency Index\" has garnered attention within the scholarly community, reflected in its 26 citations acro…",
 "cover_url": "",
 "authors": "Joseph Menke, Peter Eckmann, İbrahim Burak Özyurt et al.",
@@ -20221,7 +20914,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.2196/37324"
+]
 },
 {
 "file": "articlestory_10.7554_eLife.94168.html",
@@ -20259,6 +20956,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article \"Driver lines for studying associative learning in Drosophila,\" published in eLife, represents a significant contribution to the field of neurobiology, particularly in…",
 "cover_url": "",
 "authors": "Yichun Shuai, Megan Sammons, Gabriella R Sterne et al.",
@@ -20360,7 +21059,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/eLife.94168"
+]
 },
 {
 "file": "bookstory_10.3368_HNAL9672.html",
@@ -20396,6 +21099,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Farm Boys: Lives of Gay Men from the Rural Midwest\" presents a nuanced exploration of the lives of gay men in a specific cultural context.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/9648ddf0-a35a-48a1-896f-fead2f43b02e/retrieve",
 "authors": "Will Fellows",
@@ -20485,7 +21190,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3368/HNAL9672"
+]
 },
 {
 "file": "articlestory_10.1101_2023.11.29.569289.html",
@@ -20525,6 +21234,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study presents a fluorogenic complementation toolkit designed for investigating lipid droplet-organelle interactions, signaling its potential to advance understanding in cellu…",
 "cover_url": "",
 "authors": "Xiao Li, Rico Gamuyao, Ming-Lun Wu et al.",
@@ -20634,7 +21345,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.11.29.569289"
+]
 },
 {
 "file": "articlestory_10.2196_preprints.37324.html",
@@ -20671,6 +21386,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This article presents the results of a large-scale analysis established by the Rigor and Transparency Index, highlighting the quality of scientific reporting.",
 "cover_url": "",
 "authors": "Joseph Menke, Peter Eckmann, İbrahim Burak Özyurt et al.",
@@ -20705,7 +21422,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.2196/preprints.37324"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.12.571160.html",
@@ -20744,6 +21465,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The preprint \"A broadly generalizable stabilization strategy for sarbecovirus fusion machinery vaccines\" has garnered significant attention, with 24 citations recorded on OpenAlex…",
 "cover_url": "",
 "authors": "Jimin Lee, Cameron Stewart, Alexandra Schaefer et al.",
@@ -20848,7 +21571,150 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.12.12.571160"
+]
+},
+{
+"file": "articlestory_10.7554_elife.89373.html",
+"title": "Chromosome-specific maturation of the epigenome in the Drosophila male germline",
+"type": "ArticleStory",
+"doi": "10.7554/elife.89373",
+"year": 2023,
+"venue": "eLife",
+"venue_name": "eLife",
+"publisher": "",
+"concepts": [
+"Biology",
+"Dosage compensation",
+"Germline",
+"Chromatin",
+"Genetics",
+"Histone",
+"Heterochromatin",
+"X chromosome"
+],
+"roles": [
+"High-Visibility Uptake",
+"Computational Reproducibility Enabler"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 24,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": true,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary The article \"Chromosome-specific maturation of the epigenome in the Drosophila male germline,\" published in eLife, has garnered notable academic attention, evidenced by 20 citatio…",
+"cover_url": "",
+"authors": "James T. Anderson, Steven Henikoff, Kami Ahmad",
+"all_authors": [
+"James T. Anderson",
+"Steven Henikoff",
+"Kami Ahmad"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"National Human Genome Research Institute",
+"Howard Hughes Medical Institute",
+"NHGRI NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 14
+},
+{
+"label": "Healthcare",
+"count": 3
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 8
+},
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "Austria",
+"count": 2
+},
+{
+"label": "Sweden",
+"count": 2
+},
+{
+"label": "Canada",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Rockefeller University",
+"count": 2
+},
+{
+"label": "Louisiana State University Health Sciences Center Shreveport",
+"count": 2
+},
+{
+"label": "Umeå University",
+"count": 2
+},
+{
+"label": "Institute of Science and Technology Austria",
+"count": 2
+},
+{
+"label": "University of California, Berkeley",
+"count": 1
+}
+],
+"scite_supporting": 7,
+"scite_contradicting": 0,
+"version_count": 2,
+"version_dois": [
+"10.7554/elife.89373",
+"10.7554/elife.89373.3"
+]
 },
 {
 "file": "bookstory_10.1007_978-3-030-47436-2.html",
@@ -20883,6 +21749,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"Advances in Knowledge Discovery and Data Mining,\" published by Springer International Publishing in 2020, has gained noteworthy citations, reflecting its scholarly uptak…",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-030-47436-2",
 "authors": "Hady W. Lauw, Raymond Chi-Wing Wong, Alexandros Ntoulas et al.",
@@ -20986,7 +21854,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1007/978-3-030-47436-2"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.19.572369.html",
@@ -21023,6 +21895,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The preprint titled \"Phase diversity-based wavefront sensing for fluorescence microscopy\" has garnered attention within the academic community, receiving 22 citations since its av…",
 "cover_url": "",
 "authors": "Courtney Johnson, Min Guo, Magdalena C. Schneider et al.",
@@ -21103,7 +21977,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.12.19.572369"
+]
 },
 {
 "file": "articlestory_10.1371_journal.pone.0281234.html",
@@ -21144,6 +22022,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study \"Maternal serum vitamin D level in early pregnancy and risk for preeclampsia,\" published in PLoS ONE, explores the correlation between maternal vitamin D levels and the …",
 "cover_url": "",
 "authors": "Gunilla Malm, Christian Lindh, Stefan R. Hansson et al.",
@@ -21243,7 +22123,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1371/journal.pone.0281234"
+]
 },
 {
 "file": "articlestory_10.7554_eLife.96084.html",
@@ -21281,6 +22165,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research titled \"Transforming descending input into motor output: An analysis of the Drosophila Male Adult Nerve Cord connectome\" has reached an impressive citation count of 2…",
 "cover_url": "",
 "authors": "Han SJ Cheong, Katharina Eichler, Tomke Stürner et al.",
@@ -21384,7 +22270,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/eLife.96084"
+]
 },
 {
 "file": "bookstory_10.1007_978-3-031-35664-3.html",
@@ -21415,6 +22305,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The upcoming book \"Smart Cities,\" set for publication in 2024 by Springer International Publishing, aims to explore the multifunctional aspects of urban environments that leverage…",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-031-35664-3",
 "authors": "Fateh Belaïd, Anvita Arora",
@@ -21502,7 +22394,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1007/978-3-031-35664-3"
+]
 },
 {
 "file": "articlestory_10.7554_eLife.104764.html",
@@ -21539,6 +22435,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research on cell type-specific driver lines in Drosophila has generated a significant academic footprint, with 20 citations thus far, underscoring its relevance to neuropeptid…",
 "cover_url": "",
 "authors": "Tanya Wolff, Mark Eddison, Nan Chen et al.",
@@ -21646,140 +22544,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
-},
-{
-"file": "articlestory_10.7554_elife.89373.html",
-"title": "Chromosome-specific maturation of the epigenome in the Drosophila male germline",
-"type": "ArticleStory",
-"doi": "10.7554/elife.89373",
-"year": 2023,
-"venue": "eLife",
-"venue_name": "eLife",
-"publisher": "eLife Sciences Publications Ltd",
-"concepts": [
-"Biology",
-"Dosage compensation",
-"Germline",
-"Chromatin",
-"Genetics",
-"Histone",
-"Heterochromatin",
-"X chromosome"
-],
-"roles": [
-"Computational Reproducibility Enabler"
-],
-"is_oa": true,
-"oa_status": "gold",
-"citation_count": 20,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": true,
-"has_reuse": true,
-"excerpt": "Short impact summary The research article titled \"Chromosome-specific maturation of the epigenome in the Drosophila male germline,\" published in eLife in 2023, has garnered significant academic attent…",
-"cover_url": "",
-"authors": "James T. Anderson, Steven Henikoff, Kami Ahmad",
-"all_authors": [
-"James T. Anderson",
-"Steven Henikoff",
-"Kami Ahmad"
-],
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"Hypothesis"
-],
-"has_librarything": false,
-"librarything_rating": null,
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [
-"National Human Genome Research Institute",
-"Howard Hughes Medical Institute",
-"NHGRI NIH HHS"
-],
-"sectors": [
-{
-"label": "Education",
-"count": 14
-},
-{
-"label": "Healthcare",
-"count": 3
-},
-{
-"label": "Facility",
-"count": 1
-},
-{
-"label": "Nonprofit",
-"count": 1
-},
-{
-"label": "Company",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 8
-},
-{
-"label": "United Kingdom",
-"count": 3
-},
-{
-"label": "Austria",
-"count": 2
-},
-{
-"label": "Sweden",
-"count": 2
-},
-{
-"label": "Canada",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "Rockefeller University",
-"count": 2
-},
-{
-"label": "Louisiana State University Health Sciences Center Shreveport",
-"count": 2
-},
-{
-"label": "Umeå University",
-"count": 2
-},
-{
-"label": "Institute of Science and Technology Austria",
-"count": 2
-},
-{
-"label": "University of California, Berkeley",
-"count": 1
-}
-],
-"scite_supporting": 5,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/eLife.104764"
+]
 },
 {
 "file": "articlestory_10.1093_pastj_gtw039.html",
@@ -21816,6 +22585,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Christopher Marsh's work on the best-selling ballads and their imagery in seventeenth-century England has garnered notable academic attention, as evidenced by its 18 citations in …",
 "cover_url": "",
 "authors": "Christopher Marsh",
@@ -21870,7 +22641,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1093/pastj/gtw039"
+]
 },
 {
 "file": "articlestory_10.1007_s10875-023-01629-x.html",
@@ -21912,6 +22687,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Ruxolitinib has emerged as a promising therapeutic agent, demonstrating potential in mitigating multicentric organ autoimmunity in patients diagnosed with autoimmune polyglandular…",
 "cover_url": "",
 "authors": "Romain Lévy, Agathe Escudier, Paul Bastard et al.",
@@ -22021,7 +22798,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1007/s10875-023-01629-x"
+]
 },
 {
 "file": "articlestory_10.1038_s41592-023-02115-3.html",
@@ -22061,6 +22842,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research on \"Thermal-plex: fluidic-free, rapid sequential multiplexed imaging with DNA-encoded thermal channels,\" published in Nature Methods , reveals a novel approach in ima…",
 "cover_url": "",
 "authors": "Hong Fan, Jocelyn Y. Kishi, Ryan N. Delgado et al.",
@@ -22161,7 +22944,139 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41592-023-02115-3"
+]
+},
+{
+"file": "bookstory_10.3998_mpub.9853855.html",
+"title": "Music on the Move",
+"type": "BookStory",
+"doi": "10.3998/mpub.9853855",
+"year": 2020,
+"venue": "University of Michigan Press",
+"venue_name": "",
+"publisher": "University of Michigan Press",
+"concepts": [
+"Visual arts",
+"Art"
+],
+"roles": [
+"Pedagogical Anchor",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 17,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 2,
+"ta_youtube": 3,
+"ta_ol_holdings": 5,
+"ta_otl": true,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Danielle Fosler-Lussier's book, Music on the Move , has established itself as a significant pedagogical resource, with substantial engagement reflected in its 1200 total downloads…",
+"cover_url": "https://library.oapen.org/rest/bitstreams/48e1f3ca-07b5-40b7-995f-3289290aca4b/retrieve",
+"authors": "Danielle Fosler-Lussier",
+"all_authors": [
+"Danielle Fosler-Lussier"
+],
+"institutions": [],
+"download_count": 1200,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Wikipedia",
+"Hypothesis"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"wikipedia": 1,
+"hypothesis": 6
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 11
+},
+{
+"label": "Government",
+"count": 1
+},
+{
+"label": "Healthcare",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 3
+},
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "Canada",
+"count": 1
+},
+{
+"label": "Malaysia",
+"count": 1
+},
+{
+"label": "Bulgaria",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Stony Brook University",
+"count": 1
+},
+{
+"label": "Queen's University",
+"count": 1
+},
+{
+"label": "Universiti Putra Malaysia",
+"count": 1
+},
+{
+"label": "Bulgarian Academy of Sciences",
+"count": 1
+},
+{
+"label": "Universitas Gadjah Mada",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3998/mpub.9853855"
+]
 },
 {
 "file": "bookstory_10.11116_9789461662545.html",
@@ -22202,6 +23117,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its lack of citations and online mentions, \"Brokers of Modernity,\" published by Leuven University Press in 2019, has begun to carve out a niche in scholarly discourse, as …",
 "cover_url": "",
 "authors": "Martin Kohlrausch",
@@ -22283,130 +23200,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
-},
-{
-"file": "bookstory_10.3998_mpub.9853855.html",
-"title": "Music on the Move",
-"type": "BookStory",
-"doi": "10.3998/mpub.9853855",
-"year": 2020,
-"venue": "University of Michigan Press",
-"venue_name": "",
-"publisher": "University of Michigan Press",
-"concepts": [
-"Visual arts",
-"Art"
-],
-"roles": [
-"Commercial Linkage",
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"citation_count": 16,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 3,
-"ta_ol_holdings": 5,
-"ta_otl": true,
-"has_peer_review": false,
-"has_reuse": false,
-"excerpt": "Short impact summary Despite the absence of formal citations or online mentions, \"Music on the Move,\" published by the University of Michigan Press in 2020, remains positioned within a scholarly lands…",
-"cover_url": "https://library.oapen.org/rest/bitstreams/48e1f3ca-07b5-40b7-995f-3289290aca4b/retrieve",
-"authors": "Danielle Fosler-Lussier",
-"all_authors": [
-"Danielle Fosler-Lussier"
-],
-"institutions": [],
-"download_count": 1198,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"Wikipedia",
-"Hypothesis",
-"Blogs"
-],
-"has_librarything": false,
-"librarything_rating": null,
-"platform_counts": {
-"wikipedia": 1,
-"hypothesis": 6
-},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 10
-},
-{
-"label": "Government",
-"count": 1
-},
-{
-"label": "Healthcare",
-"count": 1
-},
-{
-"label": "Facility",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 2
-},
-{
-"label": "United Kingdom",
-"count": 2
-},
-{
-"label": "Canada",
-"count": 1
-},
-{
-"label": "Malaysia",
-"count": 1
-},
-{
-"label": "Bulgaria",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "Stony Brook University",
-"count": 1
-},
-{
-"label": "Queen's University",
-"count": 1
-},
-{
-"label": "Universiti Putra Malaysia",
-"count": 1
-},
-{
-"label": "Bulgarian Academy of Sciences",
-"count": 1
-},
-{
-"label": "Universitas Gadjah Mada",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461662545"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.07.565993.html",
@@ -22445,6 +23243,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This preprint, subsequently published in a leading journal, investigates the role of cilia maintenance in cerebellar granule cell neurogenesis, with significant implications for o…",
 "cover_url": "",
 "authors": "Sandii Constable, Carolyn M. Ott, Andrew L. Lemire et al.",
@@ -22535,7 +23335,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.12.07.565993"
+]
 },
 {
 "file": "articlestory_10.1371_journal.pone.0003059.html",
@@ -22573,6 +23377,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article, titled \"Cre-Dependent Expression of Multiple Transgenes in Isolated Neurons of the Adult Forebrain,\" authored by a team from renowned institutions such as the Max Pla…",
 "cover_url": "",
 "authors": "Sridhara Chakravarthy, Tara Keck, Martijn Roelandse et al.",
@@ -22676,7 +23482,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1371/journal.pone.0003059"
+]
 },
 {
 "file": "articlestory_10.7554_elife.90486.html",
@@ -22717,6 +23527,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled \"Baited reconstruction with 2D template matching for high-resolution structure determination in vitro and in vivo without template bias,\" published in eLife, ha…",
 "cover_url": "",
 "authors": "Bronwyn A. Lucas, Benjamin A. Himes, Nikolaus Grigorieff",
@@ -22814,7 +23626,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/elife.90486"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663993.html",
@@ -22855,6 +23671,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its recent publication in 2021 by Leuven University Press, \"The Global Horizon\" has observed relatively low engagement metrics, with no citations reported.",
 "cover_url": "",
 "authors": "Knut Graw, Samuli Schielke",
@@ -22938,7 +23756,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663993"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.06.570341.html",
@@ -22980,6 +23802,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The preprint titled \"Rapid, concerted switching of the neural code in inferotemporal cortex\" has garnered a notable academic footprint with 14 citations, reflecting its influence …",
 "cover_url": "",
 "authors": "Yuelin Shi, Dasheng Bi, Janis K. Hesse et al.",
@@ -23073,7 +23897,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 3,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.12.06.570341"
+]
 },
 {
 "file": "articlestory_10.7554_eLife.93659.html",
@@ -23112,6 +23940,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This comprehensive neuroanatomical survey of the Drosophila Lobula Plate Tangential Neurons is contributing to the understanding of optic flow sensitivity in the field of neurobio…",
 "cover_url": "",
 "authors": "Arthur Zhao, Aljoscha Nern, Sanna Koskela et al.",
@@ -23181,7 +24011,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/eLife.93659"
+]
 },
 {
 "file": "bookstory_10.11116_EPE_AMP.html",
@@ -23213,6 +24047,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of citations or public discourse, \"Essays on Plato's Epistemology\" by Leuven University Press remains a significant scholarly contribution within its field, sh…",
 "cover_url": "",
 "authors": "Franco Trabattoni",
@@ -23285,7 +24121,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/EPE_AMP"
+]
 },
 {
 "file": "articlestory_10.1038_s41591-026-04206-y.html",
@@ -23325,6 +24165,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research titled \"Predicting onset of symptomatic Alzheimer's disease with plasma p-tau217 clocks,\" published in Nature Medicine , leverages innovative methodologies to predict…",
 "cover_url": "",
 "authors": "Kellen Petersen, Marta Milà-Alomà, Yan Li et al.",
@@ -23455,7 +24297,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41591-026-04206-y"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664655.html",
@@ -23495,6 +24341,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"The Elemental Analysis of Glass Beads,\" published by Leuven University Press in 2022, contributes significantly to the field by demonstrating robust scholarly uptake and…",
 "cover_url": "",
 "authors": "Laure Dussubieux, Heather Walder",
@@ -23588,7 +24436,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664655"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665058.html",
@@ -23629,6 +24481,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"Building Collaborative Governance in Times of Uncertainty,\" published by Leuven University Press in 2023, demonstrates a strong inclination towards scholarly uptake, evi…",
 "cover_url": "",
 "authors": "Geert Bouckaert",
@@ -23711,7 +24565,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665058"
+]
 },
 {
 "file": "bookstory_10.4018_978-1-5225-2788-6.html",
@@ -23749,6 +24607,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book titled \"Research-Based Perspectives on the Psychophysiology of Yoga,\" published by IGI Global in 2018, has generated a noteworthy scholarly uptake, with 12 citations reco…",
 "cover_url": "",
 "authors": "Shirley Telles, Nilkamal Singh",
@@ -23840,7 +24700,144 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.4018/978-1-5225-2788-6"
+]
+},
+{
+"file": "articlestory_10.1038_nphys1170.html",
+"title": "Measured measurement",
+"type": "ArticleStory",
+"doi": "10.1038/nphys1170",
+"year": 2009,
+"venue": "Nature Physics",
+"venue_name": "Nature Physics",
+"publisher": "Springer Nature",
+"concepts": [
+"Physics",
+"Quantum",
+"Quantum tomography",
+"Suite",
+"Quantum measurement",
+"Statistical physics",
+"Quantum mechanics",
+"Quantum state"
+],
+"roles": [
+"Active Public Discourse"
+],
+"is_oa": false,
+"oa_status": "closed",
+"citation_count": 11,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 1,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary The article \"Measured measurement,\" authored by Markus Aspelmeyer and published in *Nature Physics* in 2009, has garnered 11 citations, indicating a measurable academic uptake in …",
+"cover_url": "",
+"authors": "Markus Aspelmeyer",
+"all_authors": [
+"Markus Aspelmeyer"
+],
+"institutions": [
+"Institute for Quantum Optics and Quantum Information Innsbruck"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Bluesky"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {
+"bluesky": 1
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 9
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Government",
+"count": 2
+},
+{
+"label": "Healthcare",
+"count": 1
+},
+{
+"label": "Funder",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 5
+},
+{
+"label": "United States",
+"count": 4
+},
+{
+"label": "Czechia",
+"count": 3
+},
+{
+"label": "Netherlands",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "University of Science and Technology of China",
+"count": 3
+},
+{
+"label": "Shanghai Jiao Tong University",
+"count": 1
+},
+{
+"label": "Jiangxi Normal University",
+"count": 1
+},
+{
+"label": "University of Detroit Mercy",
+"count": 1
+},
+{
+"label": "Czech Academy of Sciences",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/nphys1170"
+]
 },
 {
 "file": "articlestory_10.1038_s41572-025-00674-7.html",
@@ -23879,6 +24876,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled \"COVID-19-associated neurological and psychological manifestations,\" published in Nature Reviews Disease Primers, explores significant neurological and psycholo…",
 "cover_url": "",
 "authors": "Jo Ellen Wilson, Deepti Gurdasani, Raimund Helbok et al.",
@@ -23997,7 +24996,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41572-025-00674-7"
+]
 },
 {
 "file": "articlestory_10.1073_pnas.2316466120.html",
@@ -24035,6 +25038,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research article titled \"Mechanism of eukaryotic origin unwinding is a dual helicase DNA shearing process\" authored by Lance D.",
 "cover_url": "",
 "authors": "Lance D. Langston, Roxana E. Georgescu, Mike O’Donnell",
@@ -24131,7 +25136,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1073/pnas.2316466120"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.09.570606.html",
@@ -24168,6 +25177,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study titled \"Rapid long-distance migration of RPA on single stranded DNA occurs through intersegmental transfer utilizing multivalent interactions,\" published on bioRxiv, sho…",
 "cover_url": "",
 "authors": "Sushil Pangeni, Gargi Biswas, Vikas Kaushik et al.",
@@ -24202,7 +25213,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.12.09.570606"
+]
 },
 {
 "file": "articlestory_10.1002_mrm.29349.html",
@@ -24239,6 +25254,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled \"SENSE EPI reconstruction with 2D phase error correction and channel‐wise noise removal,\" published in 2022 in the journal Magnetic Resonance in Medicine, has g…",
 "cover_url": "",
 "authors": "Elizabeth Powell, Torben Schneider, Marco Battiston et al.",
@@ -24339,135 +25356,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
-},
-{
-"file": "articlestory_10.1038_nphys1170.html",
-"title": "Measured measurement",
-"type": "ArticleStory",
-"doi": "10.1038/nphys1170",
-"year": 2009,
-"venue": "Nature Physics",
-"venue_name": "Nature Physics",
-"publisher": "Springer Nature",
-"concepts": [
-"Physics",
-"Quantum",
-"Quantum tomography",
-"Suite",
-"Quantum measurement",
-"Statistical physics",
-"Quantum mechanics",
-"Quantum state"
-],
-"roles": [
-"Active Public Discourse"
-],
-"is_oa": false,
-"oa_status": "closed",
-"citation_count": 10,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 1,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": false,
-"excerpt": "Short impact summary Markus Aspelmeyer's work, published in Nature Physics, has garnered significant academic attention, as evidenced by its 10 citations across reputable journals such as Optics Commu…",
-"cover_url": "",
-"authors": "Markus Aspelmeyer",
-"all_authors": [
-"Markus Aspelmeyer"
-],
-"institutions": [
-"Institute for Quantum Optics and Quantum Information Innsbruck"
-],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"Bluesky",
-"Wikipedia"
-],
-"has_librarything": false,
-"librarything_rating": null,
-"platform_counts": {
-"bluesky": 1
-},
-"is_top1pct": false,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 9
-},
-{
-"label": "Facility",
-"count": 3
-},
-{
-"label": "Funder",
-"count": 2
-},
-{
-"label": "Healthcare",
-"count": 1
-},
-{
-"label": "Government",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "China",
-"count": 5
-},
-{
-"label": "United States",
-"count": 4
-},
-{
-"label": "Netherlands",
-"count": 3
-},
-{
-"label": "Czechia",
-"count": 3
-}
-],
-"citing_institutions": [
-{
-"label": "University of Science and Technology of China",
-"count": 5
-},
-{
-"label": "University of Amsterdam",
-"count": 3
-},
-{
-"label": "University of Detroit Mercy",
-"count": 3
-},
-{
-"label": "Czech Academy of Sciences",
-"count": 3
-},
-{
-"label": "Jiangxi Normal University",
-"count": 2
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1002/mrm.29349"
+]
 },
 {
 "file": "articlestory_10.1038_s41467-025-67869-0.html",
@@ -24504,6 +25397,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study titled \"Deep Mutational Scanning of FDX1 Identifies Key Structural Determinants of Lipoylation and Cuproptosis,\" published in Nature Communications in 2025, explores cri…",
 "cover_url": "",
 "authors": "Jeffrey C. Hsiao, Douglas M. Warui, Jason J. Kwon et al.",
@@ -24602,7 +25497,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41467-025-67869-0"
+]
 },
 {
 "file": "articlestory_10.1056_NEJMimc1109704.html",
@@ -24642,6 +25541,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study, published in the esteemed New England Journal of Medicine by Anand Vaidya and colleagues, has gained notable traction within the academic community, evidenced by 10 cit…",
 "cover_url": "",
 "authors": "Anand Vaidya, Brigid M. Dolan, Brian L. Edlow et al.",
@@ -24712,7 +25613,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1056/NEJMimc1109704"
+]
 },
 {
 "file": "articlestory_10.1073_pnas.2316964120.html",
@@ -24752,6 +25657,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research article titled \"Protective human antibodies against a conserved epitope in pre- and postfusion influenza hemagglutinin\" has garnered a meaningful academic footprint, …",
 "cover_url": "",
 "authors": "Joel Finney, Annie Park Moseman, Susan Kong et al.",
@@ -24862,7 +25769,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1073/pnas.2316964120"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.15.571964.html",
@@ -24899,6 +25810,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The preprint titled \"Imaging the voltage of neurons distributed across entire brains of larval zebrafish\" has made a noteworthy impact on the academic community, as evidenced by i…",
 "cover_url": "",
 "authors": "Zeguan Wang, Jie Zhang, Panagiotis Symvoulidis et al.",
@@ -24997,7 +25910,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.12.15.571964"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.22.23300468.html",
@@ -25034,6 +25951,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This research presents a novel cell type-aware framework aimed at identifying non-coding variants implicated in Mendelian regulatory disorders.",
 "cover_url": "",
 "authors": "Arthur S. Lee, Lauren J. Ayers, Michael Kosicki et al.",
@@ -25122,7 +26041,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.12.22.23300468"
+]
 },
 {
 "file": "articlestory_10.1007_s00180-017-0762-y.html",
@@ -25159,6 +26082,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article \"Sample selection models for count data in R\" by Karol Wyszynski and Giampiero Marra showcases a significant academic footprint with 9 citations, indicating its releva…",
 "cover_url": "",
 "authors": "Karol Wyszynski, Giampiero Marra",
@@ -25248,7 +26173,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1007/s00180-017-0762-y"
+]
 },
 {
 "file": "articlestory_10.1038_s41556-025-01828-1.html",
@@ -25285,6 +26214,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research article titled \"Interphase chromosome conformation is specified by distinct folding programmes inherited through mitotic chromosomes or the cytoplasm,\" published in N…",
 "cover_url": "",
 "authors": "Allana Schooley, Sergey V. Venev, Vasilisa Aksenova et al.",
@@ -25353,7 +26284,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41556-025-01828-1"
+]
 },
 {
 "file": "bookstory_10.5117_9789462989504.html",
@@ -25391,6 +26326,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The forthcoming book, \"Digital Media Practices in Households,\" published by Routledge in 2025, is positioned to attract scholarly interest in the area of digital media and its imp…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789462989504&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Larissa Hjorth, Kana Ohashi, Jolynna Sinanan et al.",
@@ -25451,7 +26388,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5117/9789462989504"
+]
 },
 {
 "file": "articlestory_10.1080_0015198x.2023.2173506.html",
@@ -25488,6 +26429,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Earning Alpha by Avoiding the Index Rebalancing Crowd (2023) in Financial Analysts Journal shows measurable signals of attention across scholarly and online channels.",
 "cover_url": "",
 "authors": "Robert D. Arnott, Christopher Brightman, Vitali Kalesnik et al.",
@@ -25573,7 +26516,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 6,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1080/0015198x.2023.2173506"
+]
 },
 {
 "file": "articlestory_10.1093_nar_gkad1207.html",
@@ -25612,6 +26559,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This research presents findings on a phage-encoded RNA-binding protein that inhibits the antiviral activity of a toxin-antitoxin system.",
 "cover_url": "",
 "authors": "Chantal K. Guegler, Gabriella I. C. Teodoro, Sriram Srikant et al.",
@@ -25716,7 +26665,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1093/nar/gkad1207"
+]
 },
 {
 "file": "articlestory_10.1111_add.70017.html",
@@ -25747,6 +26700,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The impacts of e‐cigarette flavours: An overview of systematic reviews (2025) in Addiction shows measurable signals of attention across scholarly and online channels.",
 "cover_url": "",
 "authors": "Jonathan Livingstone‐Banks, Nargiz Travis, Monserrat Conde et al.",
@@ -25851,7 +26806,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1111/add.70017"
+]
 },
 {
 "file": "articlestory_10.1128_aac.01193-23.html",
@@ -25888,6 +26847,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study conducted by Lazarus et al.",
 "cover_url": "",
 "authors": "Jacob E. Lazarus, Yin Wang, Matthew K. Waldor et al.",
@@ -25986,7 +26947,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1128/aac.01193-23"
+]
 },
 {
 "file": "articlestory_10.7490_f1000research.1116751.1.html",
@@ -26024,6 +26989,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Rethinking Impact Factors: New Pathways in Journal Metrics\" by Cassidy R.",
 "cover_url": "",
 "authors": "Cassidy R. Sugimoto, Liz Allen, Jeroen Bosman et al.",
@@ -26138,7 +27105,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7490/f1000research.1116751.1"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663078.html",
@@ -26176,6 +27147,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication in 2019 by Leuven University Press, \"European Perspectives for Public Administration\" has not yet gained traction in academic citations or public discourse…",
 "cover_url": "",
 "authors": "Geert Bouckaert, Werner Jann",
@@ -26272,7 +27245,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663078"
+]
 },
 {
 "file": "bookstory_10.3726_b21634.html",
@@ -26306,6 +27283,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2024 by Peter Lang Verlag, Streaming the Formula 1 Rivalry by Raymond Boyle and Richard Haynes has accumulated 8 citations since its release, placing it in the top 1 …",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1376330/large.webp",
 "authors": "Raymond Boyle, Richard Haynes",
@@ -26383,7 +27362,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b21634"
+]
 },
 {
 "file": "bookstory_10.3726_b21769.html",
@@ -26418,6 +27401,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2024 by Peter Lang Verlag as the seventh volume in the Telecollaborative Learning and Virtual Exchange in Education series, Virtual Innovation and Support Networks by…",
 "cover_url": "https://library.oapen.org/rest/bitstreams/cf1e9397-a9c2-45d4-be83-1d2bcdcc458a/retrieve",
 "authors": "Robert O'Dowd, Margarita Vinagre",
@@ -26491,7 +27476,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b21769"
+]
 },
 {
 "file": "articlestory_10.1038_s41556-025-01834-3.html",
@@ -26528,6 +27517,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article \"The G3BP stress-granule proteins reinforce the integrated stress response translation programme,\" authored by Jarrett Smith and David P.",
 "cover_url": "",
 "authors": "Jarrett Smith, David P. Bartel",
@@ -26602,7 +27593,11 @@ window.STORIES_DATA = [
 ],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41556-025-01834-3"
+]
 },
 {
 "file": "articlestory_10.1038_s42003-023-05579-3.html",
@@ -26639,6 +27634,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled \"Structural and biochemical investigations of a HEAT-repeat protein involved in the cytosolic iron-sulfur cluster assembly pathway,\" published in Communications…",
 "cover_url": "",
 "authors": "Sheena Vasquez, Melissa D. Marquez, Edward J. Brignole et al.",
@@ -26739,7 +27736,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/s42003-023-05579-3"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.30.572255.html",
@@ -26778,6 +27779,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The preprint titled \"Pronounced early differentiation underlies zebra finch gonadal germ cell development\" has garnered attention, accumulating 7 citations since its release on bi…",
 "cover_url": "",
 "authors": "Matthew T. Biegler, Kirubel Belay, Wei Wang et al.",
@@ -26819,7 +27822,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.12.30.572255"
+]
 },
 {
 "file": "bookstory_10.3726_b22161.html",
@@ -26855,6 +27862,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2024 by Peter Lang Verlag, Educational Agency and Activism in Linguistic Landscape Studies , edited by Durk Gorter and Edina Krompák, has registered 345 open-access d…",
 "cover_url": "https://library.oapen.org/rest/bitstreams/3b7451a4-beea-4bed-ab42-db539fe8988d/retrieve",
 "authors": "Durk Gorter, Edina Krompák",
@@ -26928,7 +27937,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b22161"
+]
 },
 {
 "file": "articlestory_10.1038_s41592-025-02965-z.html",
@@ -26965,6 +27978,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study, titled \"Glutamate indicators with increased sensitivity and tailored deactivation rates,\" presents innovative advancements in glutamate sensing technologies that enhanc…",
 "cover_url": "",
 "authors": "Abhi Aggarwal, Adrian Negrean, Yang Chen et al.",
@@ -27067,7 +28082,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41592-025-02965-z"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.07.570640.html",
@@ -27104,6 +28123,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The 2023 preprint titled \"Single-cell eQTL mapping in yeast reveals a tradeoff between growth and reproduction\" has garnered notable attention in the academic community, with six …",
 "cover_url": "",
 "authors": "James Boocock, Noah Alexander, Leslie Alamo Tapia et al.",
@@ -27199,7 +28220,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.12.07.570640"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.29.573681.html",
@@ -27238,6 +28263,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The preprint titled \"KMT2A oncoproteins induce epigenetic resistance to targeted therapies\" presents significant findings that have garnered attention in the academic community, w…",
 "cover_url": "",
 "authors": "Derek H. Janssens, M. Durán, Dominik J. Otto et al.",
@@ -27337,7 +28364,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.12.29.573681"
+]
 },
 {
 "file": "articlestory_10.1186_s12864-023-09832-1.html",
@@ -27376,6 +28407,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research article titled \"High-capacity sample multiplexing for single cell chromatin accessibility profiling\" represents a significant advancement in genomic analysis, particu…",
 "cover_url": "",
 "authors": "Gregory T. Booth, Riza M. Daza, Sanjay Srivatsan et al.",
@@ -27460,7 +28493,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1186/s12864-023-09832-1"
+]
 },
 {
 "file": "bookstory_10.1007_978-3-031-38294-9.html",
@@ -27497,6 +28534,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The Wheat Genome represents an important scholarly work published by Springer International Publishing in 2024.",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-031-38294-9",
 "authors": "Rudi Appels, Kellye Eversole, Catherine Feuillet et al.",
@@ -27586,7 +28625,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1007/978-3-031-38294-9"
+]
 },
 {
 "file": "bookstory_10.11116_9789461662514.html",
@@ -27623,6 +28666,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of citation and community discourse metrics, \"Powers of Divergence: An Experimental Approach to Music Performance\" has potential insights within academic circl…",
 "cover_url": "",
 "authors": "Lucia D'Errico",
@@ -27695,7 +28740,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461662514"
+]
 },
 {
 "file": "bookstory_10.11116_9789461662521.html",
@@ -27733,6 +28782,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"Virtual Works – Actual Things,\" published by Leuven University Press in 2018, presents a unique exploration of the intersection between digital and physical realities.",
 "cover_url": "",
 "authors": "Paulo de Assis",
@@ -27795,7 +28846,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461662521"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663139.html",
@@ -27829,6 +28884,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Performing Hysteria,\" published by Leuven University Press in 2020, has yet to generate significant citations or online discourse, indicating a nascent footprint within both acad…",
 "cover_url": "",
 "authors": "Johanna Braun",
@@ -27911,7 +28968,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663139"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663634.html",
@@ -27945,6 +29006,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite having recorded no public engagement or citation metrics, \"Public Administration in Ethiopia,\" published by Leuven University Press in 2020, offers a specialized explorati…",
 "cover_url": "",
 "authors": "Bacha Kebede Debela, Geert Bouckaert, Meheret Ayenew Warota et al.",
@@ -28032,7 +29095,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663634"
+]
 },
 {
 "file": "bookstory_10.5117_9789462983663.html",
@@ -28073,6 +29140,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite being pre-publication, \"Adaptation in the Age of Media Convergence\" has garnered notable attention, indicating its potential influence in the field of media studies.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789462983663&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Johannes Fehrle, Werner Schäfke-Zell",
@@ -28137,7 +29206,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5117/9789462983663"
+]
 },
 {
 "file": "articlestory_10.1016_j.cell.2025.11.030.html",
@@ -28177,6 +29250,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This groundbreaking study published in Cell examines the cellular targets of covalent cancer drugs across the entire mammalian body, showcasing robust institutional backing and a …",
 "cover_url": "",
 "authors": "Zhengyuan Pang, Verina H. Leung, Cailynn C. Wang et al.",
@@ -28273,7 +29348,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1016/j.cell.2025.11.030"
+]
 },
 {
 "file": "articlestory_10.1101_2023.11.30.569486.html",
@@ -28310,6 +29389,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research titled \"Bioorthogonal labeling enables in situ fluorescence imaging of expressed gas vesicle nanostructures,\" authored by Erik Schrunk and colleagues, presents signif…",
 "cover_url": "",
 "authors": "Erik Schrunk, Przemysław Dutka, Robert C. Hurt et al.",
@@ -28364,7 +29445,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.11.30.569486"
+]
 },
 {
 "file": "articlestory_10.1111_oik.10722.html",
@@ -28403,6 +29488,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study titled \"Coordinated distributed experiments in ecology do not consistently reduce heterogeneity in effect size\" presents important findings on the variability of ecologi…",
 "cover_url": "",
 "authors": "Julia Bebout, Jeremy W. Fox",
@@ -28494,7 +29581,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1111/oik.10722"
+]
 },
 {
 "file": "articlestory_10.1136_bmj.a186.html",
@@ -28531,6 +29622,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary David Warriner's article, \"How to Read a Paper: The Basics of Evidence-Based Medicine,\" published in the BMJ in 2008, has been cited 5 times, indicating its relevance in the field…",
 "cover_url": "",
 "authors": "David Warriner",
@@ -28611,7 +29704,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1136/bmj.a186"
+]
 },
 {
 "file": "articlestory_10.3389_feduc.2023.1279921.html",
@@ -28650,6 +29747,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article \"Models of classroom assessment for course-based research experiences,\" published in Frontiers in Education, has received notable scholarly attention, accumulating fiv…",
 "cover_url": "",
 "authors": "David I. Hanauer, Tong Zhang, Mark Graham et al.",
@@ -28890,7 +29989,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3389/feduc.2023.1279921"
+]
 },
 {
 "file": "articlestory_10.3726_jts012024.04.html",
@@ -28929,6 +30032,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2024 in the Journal of Translation Studies , François Massion's article on the transformation of terminology theory and practice in the age of AI has accumulated 5 ci…",
 "cover_url": "",
 "authors": "François Massion",
@@ -28993,7 +30098,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/jts012024.04"
+]
 },
 {
 "file": "articlestory_10.7554_eLife.90049.html",
@@ -29032,6 +30141,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article \"Gender differences in submission behavior exacerbate publication disparities in elite journals,\" published in eLife in 2023, explores critical gender disparities in a…",
 "cover_url": "",
 "authors": "Chaoqun Ni, Isabel Basson, Giovanna Badia et al.",
@@ -29089,7 +30200,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/eLife.90049"
+]
 },
 {
 "file": "bookstory_10.11116_9789461662507.html",
@@ -29122,6 +30237,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"Logic of Experimentation: Rethinking Music Performance Through Artistic Research,\" published by Leuven University Press in 2018, offers a fresh perspective on music perf…",
 "cover_url": "",
 "authors": "Paulo De Assis",
@@ -29172,7 +30289,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461662507"
+]
 },
 {
 "file": "bookstory_10.11116_9789461662835.html",
@@ -29208,6 +30329,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication in 2019 not garnering any recorded citations or social media mentions, \"Mapping Landscapes in Transformation\" by Leuven University Press stands as a work o…",
 "cover_url": "",
 "authors": "Thomas Coomans, Bieke Cattoor, Krista De Jonge",
@@ -29280,7 +30403,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461662835"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663443.html",
@@ -29321,6 +30448,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of citations or broad public discourse at the time of its publication, \"Migration at Work\" offers valuable insights into the intersections of migration and lab…",
 "cover_url": "",
 "authors": "Fiona-Katharina Seiger, Christiane Timmerman, Noel B. Salazar et al.",
@@ -29408,7 +30537,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663443"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664914.html",
@@ -29446,6 +30579,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published by Leuven University Press in 2022, \"Unfinished Histories\" presents a scholarly exploration of historical narratives.",
 "cover_url": "",
 "authors": "Pierre-Philippe Fraiture",
@@ -29516,7 +30651,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664914"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665218.html",
@@ -29556,6 +30695,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2023 by Leuven University Press, \"The Leopard, the Lion, and the Cock\" is a notable work that highlights the author's scholarly contribution, evidenced by its emergin…",
 "cover_url": "",
 "authors": "Matthew Stanard",
@@ -29606,7 +30747,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665218"
+]
 },
 {
 "file": "bookstory_10.11116_GCME_KAD.html",
@@ -29646,6 +30791,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication in 2012 and a current citation count of five, \"Gender and Christianity in Modern Europe\" has demonstrated its relevance within academic circles, particular…",
 "cover_url": "",
 "authors": "Patrick Pasture",
@@ -29712,7 +30859,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/GCME_KAD"
+]
 },
 {
 "file": "articlestory_10.1084_jem.20251584.html",
@@ -29752,6 +30903,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research titled \"Transcription of HIV-1 is heterogenous among authentic latent CD4+ T cell clones\" published in The Journal of Experimental Medicine has garnered significant s…",
 "cover_url": "",
 "authors": "Cíntia Bittar, Ana Rafaela Teixeira, Thiago Y. Oliveira et al.",
@@ -29855,7 +31008,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1084/jem.20251584"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.05.570183.html",
@@ -29892,6 +31049,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The preprint titled \"FITM2 deficiency results in ER lipid accumulation, ER stress, reduced apolipoprotein B lipidation, and VLDL triglyceride secretion in vitro and in mouse liver…",
 "cover_url": "",
 "authors": "Haizhen Wang, Cyrus Nikain, Jaime Amengual et al.",
@@ -29995,7 +31154,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.12.05.570183"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.08.570796.html",
@@ -30035,6 +31198,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The preprint entitled \"Mitotic chromosomes harbor cell type and species-specific structural features within a universal looping architecture\" has garnered attention within the aca…",
 "cover_url": "",
 "authors": "Marlies E. Oomen, A. Nicole Fox, Inma González et al.",
@@ -30127,116 +31292,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
-},
-{
-"file": "articlestory_10.7554_elife.89373.3.html",
-"title": "Chromosome-specific maturation of the epigenome in the Drosophila male germline",
-"type": "ArticleStory",
-"doi": "10.7554/elife.89373.3",
-"year": 2023,
-"venue": "eLife",
-"venue_name": "eLife",
-"publisher": "eLife Sciences Publications Ltd",
-"concepts": [
-"Biology",
-"Dosage compensation",
-"Germline",
-"Chromatin",
-"Genetics",
-"Histone",
-"Heterochromatin",
-"X chromosome"
-],
-"roles": [
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "gold",
-"citation_count": 4,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": true,
-"has_reuse": true,
-"excerpt": "Short impact summary The study titled \"Chromosome-specific maturation of the epigenome in the Drosophila male germline,\" published in eLife, has begun to establish its presence in the academic landsca…",
-"cover_url": "",
-"authors": "James T. Anderson, Steven Henikoff, Kami Ahmad",
-"all_authors": [
-"James T. Anderson",
-"Steven Henikoff",
-"Kami Ahmad"
-],
-"institutions": [
-"Cape Town HVTN Immunology Laboratory / Hutchinson Centre Research Institute of South Africa"
-],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 2
-},
-{
-"label": "Facility",
-"count": 1
-},
-{
-"label": "Nonprofit",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "Austria",
-"count": 1
-},
-{
-"label": "United States",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "Institute of Science and Technology Austria",
-"count": 1
-},
-{
-"label": "Howard Hughes Medical Institute",
-"count": 0
-},
-{
-"label": "Carnegie Institution for Science",
-"count": 0
-},
-{
-"label": "National Heart Lung and Blood Institute",
-"count": 0
-},
-{
-"label": "Johns Hopkins University",
-"count": 0
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.12.08.570796"
+]
 },
 {
 "file": "bookstory_10.11116_9789461662590.html",
@@ -30270,6 +31330,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"Migratie in België in 21 vragen en antwoorden,\" published by Leuven University Press in 2018, serves as a significant resource for understanding migration issues in Belg…",
 "cover_url": "",
 "authors": "Jean-Michel Lafleur, Abdeslam Marfouk",
@@ -30336,7 +31398,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461662590"
+]
 },
 {
 "file": "bookstory_10.11116_9789461662811.html",
@@ -30373,6 +31439,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite limited citations and community discourse, \"Images of Immigrants and Refugees\" offers valuable insights into the portrayal of immigration and refugee issues, showcasing a …",
 "cover_url": "",
 "authors": "Leen d’Haenens, Willem Joris, François Heinderyckx",
@@ -30462,7 +31530,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461662811"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663092.html",
@@ -30497,6 +31569,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"Oil Wealth and Development in Uganda and Beyond,\" published by Leuven University Press in 2019, highlights the complex relationship between oil wealth and socioeconomic …",
 "cover_url": "",
 "authors": "Arnim Langer, Ukoha Ukiwo",
@@ -30588,7 +31662,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663092"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663542.html",
@@ -30629,6 +31707,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Revival After the Great War,\" published by Leuven University Press in 2021, demonstrates a significant commercial linkage, indicating strong engagement from platforms such as Ama…",
 "cover_url": "",
 "authors": "Luc Verpoest, Leen Engelen, Rajesh Heynickx et al.",
@@ -30688,7 +31768,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663542"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664280.html",
@@ -30729,6 +31813,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Christian Masculinity,\" published by Leuven University Press in 2021, explores the nuances of masculinity within Christian contexts.",
 "cover_url": "",
 "authors": "Yvonne Maria Werner",
@@ -30756,7 +31842,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664280"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664778.html",
@@ -30797,6 +31887,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its recent publication in 2022, the book \"Homo Mimeticus\" has yet to generate significant academic citations or community discourse.",
 "cover_url": "",
 "authors": "Nidesh Lawtoo",
@@ -30861,7 +31953,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664778"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665072.html",
@@ -30902,6 +31998,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its recent publication in 2023, \"Silver Empowerment\" stands as a pivotal resource within its field, demonstrating substantial commercial linkage through its availability o…",
 "cover_url": "",
 "authors": "Jasper De Witte, Tine Van Regenmortel",
@@ -30973,7 +32071,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665072"
+]
 },
 {
 "file": "bookstory_10.3726_978-3-0352-6563-7.html",
@@ -31007,6 +32109,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Federico Boccaccini's Lotze et son héritage (Peter Lang Verlag, 2015) is a specialist philosophical monograph dedicated to the thought of Hermann Lotze and his intellectual legacy…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9782875742780&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Federico Boccaccini",
@@ -31067,7 +32171,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/978-3-0352-6563-7"
+]
 },
 {
 "file": "datastory_10.5281_zenodo.3727291.html",
@@ -31104,7 +32212,9 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The COVID-19 Open Research Dataset (CORD-19) has garnered significant academic interest, evidenced by 4 citations in various reputable venues, including bioRxiv and the Journal of…",
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary The COVID-19 Open Research Dataset (CORD-19) has been accessed 16,652 times and viewed 20,217 times, indicating active utilization by researchers and practitioners.",
 "cover_url": "",
 "authors": "Sebastian Kohlmeier, Kyle Lo, Lucy Lu Wang et al.",
 "all_authors": [
@@ -31116,7 +32226,7 @@ window.STORIES_DATA = [
 "institutions": [
 "Allen Institute"
 ],
-"download_count": 16310,
+"download_count": 16652,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
@@ -31150,11 +32260,11 @@ window.STORIES_DATA = [
 "count": 2
 },
 {
-"label": "China",
+"label": "Australia",
 "count": 1
 },
 {
-"label": "Australia",
+"label": "China",
 "count": 1
 }
 ],
@@ -31172,16 +32282,20 @@ window.STORIES_DATA = [
 "count": 0
 },
 {
-"label": "The University of Queensland",
+"label": "Queensland University of Technology",
 "count": 0
 },
 {
-"label": "Guangzhou College of Commerce",
+"label": "Guangzhou Medical University",
 "count": 0
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.3727291"
+]
 },
 {
 "file": "articlestory_10.1038_s41597-023-02782-z.html",
@@ -31220,6 +32334,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The chromosome-level genome assembly of chub mackerel (Scomber japonicus) represents a significant contribution to marine genomics, backed by reputable institutions such as Pukyon…",
 "cover_url": "",
 "authors": "Young Ho Lee, Linelle Abueg, Jin‐Koo Kim et al.",
@@ -31325,7 +32441,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41597-023-02782-z"
+]
 },
 {
 "file": "articlestory_10.1101_2024.01.15.575636.html",
@@ -31363,6 +32483,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This article, titled \"Do organisms need an impact factor?",
 "cover_url": "",
 "authors": "Agata Piękniewska, Nathan Anderson, Martijn Roelandse et al.",
@@ -31454,7 +32576,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2024.01.15.575636"
+]
 },
 {
 "file": "articlestory_10.1101_pdb.prot4664.html",
@@ -31491,6 +32617,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study titled \"Transfecting Cultured Hippocampal Neurons with an Actin-GFP Plasmid,\" authored by Andrew Matus and colleagues, has made a notable impact within the academic comm…",
 "cover_url": "",
 "authors": "Andrew Matus, Virginie Biou, Heike Brinkhaus et al.",
@@ -31558,7 +32686,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/pdb.prot4664"
+]
 },
 {
 "file": "articlestory_10.1371_journal.ppat.1011861.html",
@@ -31598,6 +32730,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research conducted by Russell et al.",
 "cover_url": "",
 "authors": "Magdalena L Russell, Carolyn S. Fish, Sara Drescher et al.",
@@ -31697,7 +32831,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1371/journal.ppat.1011861"
+]
 },
 {
 "file": "articlestory_10.7554_eLife.100947.html",
@@ -31734,6 +32872,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research titled \"Molecular characterization of gustatory second-order neurons reveals integrative mechanisms of gustatory and metabolic information,\" published in eLife , demo…",
 "cover_url": "",
 "authors": "Rubén Mollá-Albaladejo, Manuel Jiménez-Caballero, Juan Antonio Sánchez‐Alcañiz",
@@ -31828,7 +32968,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/eLife.100947"
+]
 },
 {
 "file": "bookstory_10.11116_9789461661883.html",
@@ -31861,6 +33005,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication in 2015 and the absence of citations or social media mentions, \"Experimental Affinities in Music\" presents a noteworthy avenue for exploration within its a…",
 "cover_url": "https://lup.be/wp-content/uploads/2024/01/default_cover.png",
 "authors": "Paulo De Assis",
@@ -31903,7 +33049,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461661883"
+]
 },
 {
 "file": "bookstory_10.11116_9789461662538.html",
@@ -31934,6 +33084,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its release in 2018 through Leuven University Press, \"Transpositions\" has yet to garner significant academic engagement, as evidenced by the absence of citations and onlin…",
 "cover_url": "",
 "authors": "Michael Schwab",
@@ -31990,7 +33142,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461662538"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663184.html",
@@ -32022,6 +33178,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication in 2020, \"Across Anthropology\" has yet to gain significant traction within academic circles, recorded with zero citations.",
 "cover_url": "",
 "authors": "Margareta von Oswald, Jonas Tinius",
@@ -32052,7 +33210,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663184"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663801.html",
@@ -32093,6 +33255,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite having no recorded citations or online discussions, \"The Tacit Dimension\" published by Leuven University Press in 2021 shows evidence of a strong commercial linkage, sugge…",
 "cover_url": "",
 "authors": "Lara Schrijver",
@@ -32169,7 +33333,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663801"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663962.html",
@@ -32209,6 +33377,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Living with History, 1914-1964,\" published by Leuven University Press in 2021, reflects a significant scholarly output in its field, although it has not yet garnered citations or…",
 "cover_url": "",
 "authors": "Nicholas Bullock, Luc Verpoest",
@@ -32270,7 +33440,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663962"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664082.html",
@@ -32311,6 +33485,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Making Home(s) in Displacement,\" published by Leuven University Press in 2021, addresses critical themes of home and belonging amidst forced displacement.",
 "cover_url": "",
 "authors": "Luce Beeckmans, Alessandra Gola, Ashika Singh et al.",
@@ -32381,7 +33557,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664082"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664112.html",
@@ -32422,6 +33602,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its recent publication year of 2021, \"Translation Policies in Legal and Institutional Settings\" has not yet garnered formal citations or online discourse.",
 "cover_url": "",
 "authors": "Marie Bourguignon, Bieke Nouws, Heleen van Gerwen",
@@ -32483,7 +33665,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664112"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664693.html",
@@ -32521,6 +33707,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Absent Presences in the Colonial Archive,\" published by Leuven University Press in 2022, explores themes critical to understanding colonial legacies and their contemporary implic…",
 "cover_url": "",
 "authors": "Irene Hilden",
@@ -32573,7 +33761,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664693"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665249.html",
@@ -32614,6 +33806,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The work titled \"Newcomers Navigating the Welfare State,\" published in 2023 by Leuven University Press, addresses critical elements related to the welfare state and its navigation…",
 "cover_url": "",
 "authors": "Hanne Vandermeerschen, Elsa Mescoli, Jean-Michel Lafleur et al.",
@@ -32676,7 +33870,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665249"
+]
 },
 {
 "file": "bookstory_10.3726_978-3-0352-6544-6.html",
@@ -32718,6 +33916,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2015 by Peter Lang Verlag as part of the long-running Philosophie et Politique / Philosophy and Politics series, Nathan Van Camp's edited volume Redesigning Life enga…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9782875742810&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Nathan Van Camp",
@@ -32770,7 +33970,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/978-3-0352-6544-6"
+]
 },
 {
 "file": "bookstory_10.3726_b11422.html",
@@ -32808,6 +34012,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2017 by Peter Lang Verlag within the established Travail et Société / Work and Society series, Austerity and the Implementation of the Europe 2020 Strategy in Spain b…",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1113360/large.webp",
 "authors": "Javier Ramos, Esther del Campo",
@@ -32873,7 +34079,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b11422"
+]
 },
 {
 "file": "bookstory_10.3726_b11759.html",
@@ -32905,6 +34115,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published by Peter Lang Verlag in 2018, Tracey Wilen-Daugenti's Digital Disruption has found its most tangible footprint outside the formal citation record, circulating through co…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781433149214&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Tracey Wilen-Daugenti",
@@ -32945,7 +34157,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b11759"
+]
 },
 {
 "file": "bookstory_10.3726_b16046.html",
@@ -32983,6 +34199,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Margaret Buck's Renewing the Church-State Partnership for Catholic Education (Peter Lang Verlag, 2020) occupies a specialist niche at the intersection of theology, law, and public…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781789975826&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Margaret Buck",
@@ -33027,7 +34245,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b16046"
+]
 },
 {
 "file": "bookstory_10.3726_b16301.html",
@@ -33061,6 +34283,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published by Peter Lang Verlag in 2019, Hatice Aydın's Digital Marketing Applications occupies a modest but tangible footprint in the digital marketing literature.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9783631802519&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Hatice Aydin",
@@ -33113,7 +34337,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b16301"
+]
 },
 {
 "file": "bookstory_10.3726_b20055.html",
@@ -33151,6 +34379,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published by Peter Lang Verlag in 2023, Luis Martínez-Fernández's When the World Turned Upside Down has established its most tangible footprint as a pedagogical resource, appearin…",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1290258/large.webp",
 "authors": "Luis Martínez-Fernández",
@@ -33207,7 +34437,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b20055"
+]
 },
 {
 "file": "datastory_10.5061_dryad.585t4.html",
@@ -33246,6 +34480,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This dataset explores the landscape of medical-device recalls in the UK, highlighting its significance with 4,631 views and 3,224 downloads, evidencing robust community interest a…",
 "cover_url": "",
 "authors": "Heneghan, C, Thompson, M, Billingsley, M et al.",
@@ -33329,7 +34565,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5061/dryad.585t4"
+]
 },
 {
 "file": "articlestory_10.1007_s11999.0000000000000172.html",
@@ -33366,6 +34606,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Ana‐Maria Vranceanu's research published in Clinical Orthopaedics and Related Research explores the critical link between preoperative pain sensitization and postoperative pillar …",
 "cover_url": "",
 "authors": "Ana‐Maria Vranceanu",
@@ -33416,7 +34658,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1007/s11999.0000000000000172"
+]
 },
 {
 "file": "articlestory_10.1093_jxb_erad431.html",
@@ -33455,6 +34701,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research article \"Carnivorous plant evolution: is a killer defense always the best option?\" by Carl Procko and Joanne Chory is published in the Journal of Experimental Botany,…",
 "cover_url": "",
 "authors": "Carl Procko, Joanne Chory",
@@ -33527,7 +34775,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1093/jxb/erad431"
+]
 },
 {
 "file": "articlestory_10.1101_2023.12.06.23299623.html",
@@ -33566,6 +34818,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The scholarly article titled \"Lack of association between HLA and asymptomatic SARS-CoV-2 infection\" contributes important insights into the intersection of immunology and infecti…",
 "cover_url": "",
 "authors": "Astrid Marchal, Elizabeth T. Cirulli, Iva Neveux et al.",
@@ -33659,7 +34913,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.12.06.23299623"
+]
 },
 {
 "file": "articlestory_10.11116_9789461664419.html",
@@ -33699,6 +34957,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Nadine Schibille's work, *Islamic Glass in the Making*, published by Leuven University Press eBooks, has begun to carve a niche within the academic community, evidenced by two cit…",
 "cover_url": "",
 "authors": "Nadine Schibille",
@@ -33753,7 +35013,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664419"
+]
 },
 {
 "file": "articlestory_10.36591_se-d-4602-15.html",
@@ -33790,6 +35054,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article \"Assessing the Effectiveness of SciScore in Supporting the Reproducibility of Scientific Research\" examines the role of SciScore in promoting reproducibility within sc…",
 "cover_url": "",
 "authors": "Martijn Roelandse, İbrahim Burak Özyurt, Daniel Evanko et al.",
@@ -33888,7 +35154,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.36591/se-d-4602-15"
+]
 },
 {
 "file": "articlestory_10.64898_2025.12.30.696949.html",
@@ -33925,6 +35195,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This preprint presents a novel approach to RNA structure prediction, leveraging a competitive framework that enhances template-based methodologies.",
 "cover_url": "",
 "authors": "Youhan Lee, Shujun He, Toshiyuki Oda et al.",
@@ -34071,7 +35343,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.64898/2025.12.30.696949"
+]
 },
 {
 "file": "bookstory_10.11116_9789461662880.html",
@@ -34106,6 +35382,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Participatiegolven,\" published by Leuven University Press in 2019, explores significant themes surrounding participation in various contexts.",
 "cover_url": "",
 "authors": "Annette Kuhk, Hilde Heynen, Liesbeth Huybrechts et al.",
@@ -34170,7 +35448,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461662880"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663610.html",
@@ -34206,6 +35488,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of citation and community discourse metrics, \"Mongameli Mabona,\" published by Leuven University Press in 2021, demonstrates commercial potential and relevance …",
 "cover_url": "",
 "authors": "Ernst Wolff",
@@ -34252,7 +35536,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663610"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663900.html",
@@ -34293,6 +35581,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2021 by Leuven University Press, \"Evolving as a Digital Scholar\" addresses the contemporary transitions and methodologies within digital scholarship.",
 "cover_url": "",
 "authors": "Wim Van Petegem, JP Bosman, Miné De Klerk et al.",
@@ -34358,7 +35648,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663900"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664174.html",
@@ -34396,6 +35690,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2021 by Leuven University Press, \"A Dark Trace\" currently has a small but significant scholarly uptake, with two recorded citations.",
 "cover_url": "",
 "authors": "Herman Westerink",
@@ -34476,7 +35772,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664174"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664389.html",
@@ -34514,6 +35814,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"At Home in Renaissance Bruges,\" published by Leuven University Press in 2022, explores significant themes related to the cultural and social dynamics of Renaissance Bruges.",
 "cover_url": "",
 "authors": "Julie De Groot",
@@ -34558,7 +35860,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664389"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664419.html",
@@ -34599,6 +35905,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Islamic Glass in the Making\" published by Leuven University Press in 2022, stands at the intersection of academic rigor and commercial linkage, indicating its relevance in both s…",
 "cover_url": "",
 "authors": "Nadine Schibille",
@@ -34661,7 +35969,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664419"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664556.html",
@@ -34702,6 +36014,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of citations and public discourse metrics indicating its reach, \"The Hybrid Practitioner,\" published by Leuven University Press in 2022, reflects a solid engag…",
 "cover_url": "",
 "authors": "Caroline Voet, Eireen Schreurs Schreurs, Helen Thomas",
@@ -34756,7 +36070,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664556"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664679.html",
@@ -34794,6 +36112,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2022, the \"Handbook for Ethiopian Public Administration Program Accreditation\" by Leuven University Press has laid a foundational text aimed at enhancing the standard…",
 "cover_url": "",
 "authors": "Bacha Kebede Debela, Geert Bouckaert, Berhanu Temesgen Eshetu et al.",
@@ -34869,7 +36189,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664679"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664884.html",
@@ -34910,6 +36234,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Aristotle and the Ontology of St.",
 "cover_url": "",
 "authors": "Franziska van Buren",
@@ -34957,7 +36283,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664884"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665140.html",
@@ -34998,6 +36328,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of external citations or online mentions, \"Contested Legacies,\" published by Leuven University Press in 2023, hints at promising engagement in academic discour…",
 "cover_url": "",
 "authors": "Andrea Migotto, Martino Tattara",
@@ -35055,7 +36387,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665140"
+]
 },
 {
 "file": "bookstory_10.11116_SNTSWW.html",
@@ -35093,6 +36429,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite limited citations and online discourse, \"A Small Nation in the Turmoil of the Second World War\" published by Leuven University Press in 2013, demonstrates a considerable c…",
 "cover_url": "",
 "authors": "Herman Van der Wee",
@@ -35145,7 +36483,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/SNTSWW"
+]
 },
 {
 "file": "bookstory_10.3726_978-3-0352-6632-0.html",
@@ -35178,6 +36520,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2016 by Peter Lang Verlag, Forme(s) et modes d'être / Form(s) and Modes of Being , edited by Olivier Malherbe and Sébastien Richard, offers a sustained examination of…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9782875743572&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Olivier Malherbe, Sébastien Richard",
@@ -35227,7 +36571,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/978-3-0352-6632-0"
+]
 },
 {
 "file": "bookstory_10.3726_b13071.html",
@@ -35260,6 +36608,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published by Peter Lang Verlag in 2018, Competition, Community, and Educational Growth by Kristopher Copeland and Garret L.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781433152399&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Kristopher Copeland, Garret L. Castleberry",
@@ -35305,7 +36655,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b13071"
+]
 },
 {
 "file": "bookstory_10.3726_b13149.html",
@@ -35344,6 +36698,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2019 by Peter Lang Verlag as part of the long-running Reimagining Ireland series, The Great Irish Famine and Social Class , edited by Marguerite Corporaal and Peter G…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781788741668&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Marguerite Corporaal, Peter Gray",
@@ -35385,7 +36741,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b13149"
+]
 },
 {
 "file": "bookstory_10.3726_b14667.html",
@@ -35418,6 +36778,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2019 by Peter Lang Verlag, Doug Selwyn's All Children Are All Our Children is an open-access volume in the long-running Counterpoints series that has found its most t…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781433161636&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Doug Selwyn",
@@ -35474,7 +36836,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b14667"
+]
 },
 {
 "file": "bookstory_10.5117_9789463723336.html",
@@ -35512,6 +36878,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The forthcoming book \"Human Trafficking in Medieval Europe,\" set for publication by Routledge in 2025, explores a critical yet under-researched area of historical scholarship.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789463723336&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Christopher Paolella",
@@ -35537,7 +36905,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5117/9789463723336"
+]
 },
 {
 "file": "datastory_10.5281_zenodo.15423474.html",
@@ -35574,6 +36946,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The dataset titled \"Open Access Publishing Patterns 2015–2024: Global Article Output and Modal Shifts\" has garnered significant attention, with 768 views and 1,004 downloads on Ze…",
 "cover_url": "",
 "authors": "Herb, Ulrich",
@@ -35599,7 +36973,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.15423474"
+]
 },
 {
 "file": "articlestory_10.1016_j.cell.2025.11.041.html",
@@ -35636,6 +37014,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study \"Mechanisms of HSV-1 helicase-primase inhibition and replication fork complex assembly,\" published in 2025 in the journal Cell , delves into the intricate mechanisms und…",
 "cover_url": "",
 "authors": "Zishuo Yu, Pradeep Sathyanarayana, Cong Liu et al.",
@@ -35713,7 +37093,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1016/j.cell.2025.11.041"
+]
 },
 {
 "file": "articlestory_10.1016_j.gde.2025.102424.html",
@@ -35750,6 +37134,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article \"Probing neuropsychiatric disorders through in vivo CRISPR screening,\" published in Current Opinion in Genetics & Development in 2025, showcases significant research i…",
 "cover_url": "",
 "authors": "Tuo Shi, Xin Jin",
@@ -35837,7 +37223,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1016/j.gde.2025.102424"
+]
 },
 {
 "file": "articlestory_10.1016_j.jinorgbio.2025.113204.html",
@@ -35877,6 +37267,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article explores the cobalamin-binding domain within cobalamin-dependent radical S-adenosylmethionine enzymes, showcasing a unique intersection of biochemistry and inorganic c…",
 "cover_url": "",
 "authors": "Dante M. Avalos, Catherine L. Drennan",
@@ -35932,7 +37324,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1016/j.jinorgbio.2025.113204"
+]
 },
 {
 "file": "articlestory_10.1038_s41467-026-73694-w.html",
@@ -35969,6 +37365,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Genome-wide association study of cocaine self-administration behavior in Heterogeneous Stock rats (2025) in Nature Communications shows measurable signals of attention across scho…",
 "cover_url": "",
 "authors": "Montana Kay Lara, Lieselot L. G. Carrette, Thiago Missfeldt Sanches et al.",
@@ -36091,7 +37489,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41467-026-73694-w"
+]
 },
 {
 "file": "articlestory_10.1056_nejmcp2516616.html",
@@ -36130,6 +37532,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Childhood Vaccine Hesitancy (2026) in New England Journal of Medicine shows measurable signals of attention across scholarly and online channels.",
 "cover_url": "",
 "authors": "Sean T. O’Leary, Margie Danchin",
@@ -36165,7 +37569,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1056/nejmcp2516616"
+]
 },
 {
 "file": "articlestory_10.1073_pnas.2519395123.html",
@@ -36202,6 +37610,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research article titled \"D-amino acid aminotransferase1 regulates grain chalkiness in rice by modulating endoplasmic reticulum stress response,\" published in the Proceedings o…",
 "cover_url": "",
 "authors": "Hui Dong, Jie Lei, Yunlu Tian et al.",
@@ -36290,7 +37700,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1073/pnas.2519395123"
+]
 },
 {
 "file": "articlestory_10.1080_19392397.2013.791060.html",
@@ -36329,6 +37743,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Chris Rojek's work, titled \" Fame attack: the inflation of celebrity and its consequences \", has been recognized within academic circles, with its citation by the \"PHILANTHROPY Jo…",
 "cover_url": "",
 "authors": "Barry King",
@@ -36371,7 +37787,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1080/19392397.2013.791060"
+]
 },
 {
 "file": "articlestory_10.1126_sciadv.adr4039.html",
@@ -36410,6 +37830,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Ousiometrics: The essence of meaning aligns with a power-danger-structure framework instead of valence-arousal-dominance (2026) in Science Advances shows measurable signals of att…",
 "cover_url": "",
 "authors": "Peter Sheridan Dodds, Thayer Alshaabi, Mikaela Irene Fudolig et al.",
@@ -36455,7 +37877,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1126/sciadv.adr4039"
+]
 },
 {
 "file": "articlestory_10.1126_science.aec7671.html",
@@ -36493,6 +37919,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Home alone: Remote work, isolation, and mental health (2026) in Science shows measurable signals of attention across scholarly and online channels.",
 "cover_url": "",
 "authors": "Natalia Emanuel, Emma Harrington, Amanda Pallais",
@@ -36545,7 +37973,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1126/science.aec7671"
+]
 },
 {
 "file": "articlestory_10.1162_anti.5czb.html",
@@ -36576,6 +38008,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Blaise Agüera y Arcas's work, \"What Is Intelligence?\" has appeared in 1 open citation, indicating an early stage of academic engagement.",
 "cover_url": "",
 "authors": "Blaise Agüera y Arcas",
@@ -36607,7 +38041,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1162/anti.5czb"
+]
 },
 {
 "file": "articlestory_10.64898_2025.12.22.696041.html",
@@ -36646,6 +38084,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The preprint titled \"Stomatal setpoints and environmental responsiveness are sculpted by developmental trajectories\" has garnered initial academic traction, evidenced by a citatio…",
 "cover_url": "",
 "authors": "M. Rath, Nidhi Sharma, Madhav Mani et al.",
@@ -36717,7 +38157,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.64898/2025.12.22.696041"
+]
 },
 {
 "file": "articlestory_10.64898_2025.12.22.696097.html",
@@ -36754,6 +38198,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The preprint titled \"The organization of visual pathways in the Drosophila brain,\" hosted on bioRxiv, showcases contributions from researchers at Janelia Research Campus, Howard H…",
 "cover_url": "",
 "authors": "Judith Hoeller, Arthur Zhao, Aljoscha Nern et al.",
@@ -36815,7 +38261,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.64898/2025.12.22.696097"
+]
 },
 {
 "file": "articlestory_10.64898_2025.12.23.696258.html",
@@ -36852,6 +38302,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study titled \"Coevolutionary constraints of Zika virus nonstructural protein 5 replication and interferon antagonism activities,\" published as a preprint on bioRxiv, has made …",
 "cover_url": "",
 "authors": "R. Blake Richardson, Caroline Kikawa, Amit Garg et al.",
@@ -36928,7 +38380,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.64898/2025.12.23.696258"
+]
 },
 {
 "file": "articlestory_10.64898_2025.12.30.697072.html",
@@ -36967,6 +38423,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The preprint titled \"Extracellular matrix regulates lineage plasticity in prostate cancer through YAP/TEAD\" has been shared on bioRxiv, reflecting growing academic interest in the…",
 "cover_url": "",
 "authors": "Teng Han, Zhen Sun, Matthew Lange et al.",
@@ -37059,7 +38517,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.64898/2025.12.30.697072"
+]
 },
 {
 "file": "articlestory_10.7554_eLife.102345.html",
@@ -37096,6 +38558,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This study provides insights into a brainstem circuit that regulates cough-like airway defensive behaviors in mice, contributing to our understanding of respiratory reflexes and p…",
 "cover_url": "",
 "authors": "Xiaoshan Xu, Xiupeng Nie, Weijia Zhang et al.",
@@ -37130,7 +38594,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/eLife.102345"
+]
 },
 {
 "file": "articlestory_10.7554_elife.107141.html",
@@ -37167,6 +38635,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled \"Biophysical basis for brain folding and misfolding patterns in ferrets and humans,\" published in eLife, marks a significant contribution to neuroscience.",
 "cover_url": "",
 "authors": "Gary P. T. Choi, Chunzi Liu, Sifan Yin et al.",
@@ -37251,7 +38721,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/elife.107141"
+]
 },
 {
 "file": "bookstory_10.1007_978-981-16-2229-8_33.html",
@@ -37288,6 +38762,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The publication titled Smelly Shoes—An Opportunity for Shoe Rack Re-Design addresses a practical issue in everyday life, focusing on a unique re-design opportunity.",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-981-16-2229-8_33",
 "authors": "Vikash Kumar, Sarthak Mittal",
@@ -37321,7 +38797,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1007/978-981-16-2229-8_33"
+]
 },
 {
 "file": "bookstory_10.11116_9789461662965.html",
@@ -37355,6 +38835,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"Tracheal Transplantation,\" published by Leuven University Press in 2019, focuses on a niche yet critical area within medical science.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789461662965&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Pierre Delaere",
@@ -37435,7 +38917,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461662965"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663009.html",
@@ -37473,6 +38959,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite being published in 2019, \"Financing Quality Education for All\" showcases strong potential for sustainability and policy relevance in the field of educational finance, refl…",
 "cover_url": "",
 "authors": "Kristof De Witte, Vitezslav Titl, Oliver Holz et al.",
@@ -37530,7 +39018,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663009"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663245.html",
@@ -37561,6 +39053,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its release in 2020, \"Arrival Cities\" has yet to receive citations or public engagement on platforms such as Wikipedia and Reddit.",
 "cover_url": "",
 "authors": "Burcu Dogramaci, Mareike Hetschold, Laura Karp Lugo et al.",
@@ -37595,7 +39089,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663245"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663481.html",
@@ -37631,6 +39129,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Dialogen over België,\" published by Leuven University Press in 2020, navigates the complex socio-political landscape of Belgium.",
 "cover_url": "",
 "authors": "Elke Brems, Marnix Beyen, Ariane Bazan et al.",
@@ -37677,7 +39177,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663481"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663504.html",
@@ -37718,6 +39222,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication in 2020, \"Strategic Imaginations\" has shown limited scholarly uptake, with no recorded citations or mentions across high-fidelity social platforms.",
 "cover_url": "",
 "authors": "Anke Gilleir, Aude Defurne",
@@ -37765,7 +39271,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663504"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664242.html",
@@ -37803,6 +39313,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The scholarly work titled \"Working Through Colonial Collections,\" published by Leuven University Press in 2022, explores significant themes related to colonial collections, contri…",
 "cover_url": "",
 "authors": "Margareta von Oswald",
@@ -37855,7 +39367,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664242"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664440.html",
@@ -37891,6 +39407,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Although \"Comunidad, pertenencia, extrenjería\" has not generated formal citations or online discussions as of yet, it appears to have established a strong commercial linkage, bein…",
 "cover_url": "",
 "authors": "Eleonora Poggio",
@@ -37935,7 +39453,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664440"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664518.html",
@@ -37976,6 +39498,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2022 by Leuven University Press, \"Plutarch’s Cosmological Ethics\" has yet to gain measurable traction within academic discourse, evidenced by its current citation cou…",
 "cover_url": "",
 "authors": "Bram Demulder",
@@ -38003,7 +39527,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664518"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664532.html",
@@ -38040,6 +39568,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Portraits and Poses,\" published by Leuven University Press in 2022, is a notable academic contribution, enriched by a commercial linkage evidenced by its availability on platform…",
 "cover_url": "",
 "authors": "Beatrijs Vanacker, Lieke van Deinsen",
@@ -38089,7 +39619,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664532"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664990.html",
@@ -38123,6 +39657,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published by Leuven University Press in 2023, \"Tot de bodem\" has yet to make a significant mark in terms of citations and community discourse.",
 "cover_url": "",
 "authors": "Maïka De Keyzer",
@@ -38177,7 +39713,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664990"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665119.html",
@@ -38218,6 +39758,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Although \"The Belgian Photonovel, 1954-1985\" has not yet reported any citations or mentions across various platforms, its association with commercial linkage through outlets like …",
 "cover_url": "",
 "authors": "Clarissa Colangelo",
@@ -38260,7 +39802,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665119"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665256.html",
@@ -38296,6 +39842,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Documenting Ancient Sagalassos,\" published by Leuven University Press in 2023, demonstrates a significant scholarly effort focused on the archaeological site of Sagalassos.",
 "cover_url": "",
 "authors": "Jeroen Poblome",
@@ -38323,7 +39871,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665256"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665515.html",
@@ -38364,6 +39916,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The upcoming publication titled \"Between Conventional and Experimental,\" set to release in 2024 by Leuven University Press, showcases the intersection of traditional and innovativ…",
 "cover_url": "https://lup.be/wp-content/uploads/2024/12/jpg_rgb_original-1-scaled.jpg",
 "authors": "Regine Hess, Inbal Ben-Asher Gitler, Tzafrir Fainholtz et al.",
@@ -38415,7 +39969,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665515"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665522.html",
@@ -38456,6 +40014,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite being a forthcoming title with no current citations or online mentions, \"Architectures of Resistance\" by Leuven University Press is positioned within a landscape of commer…",
 "cover_url": "",
 "authors": "Angeliki Sioli, Nishat Awan, Kristopher Palagi",
@@ -38503,7 +40063,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665522"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665607.html",
@@ -38541,6 +40105,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite being newly published in 2024, \"Pietro Pomponazzi and the Renaissance Theory of the Elements\" showcases significant scholarly potential, indicated by a strong commercial l…",
 "cover_url": "",
 "authors": "Luca Burzelli",
@@ -38584,7 +40150,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665607"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665621.html",
@@ -38618,6 +40188,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the recent publication of \"The Romero Memory\" by Leuven University Press in 2024, the work's visibility remains nascent, with no recorded citations or mentions in digital …",
 "cover_url": "https://lup.be/wp-content/uploads/2024/04/jpg_rgb_original-10-scaled.jpg",
 "authors": "Judith Gruber, Jonas Van Mulder, Kim Christiaens et al.",
@@ -38666,7 +40238,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665621"
+]
 },
 {
 "file": "bookstory_10.11116_NMIE_CII.html",
@@ -38707,6 +40283,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite being published in 2014, \"New Multicultural Identities in Europe\" by Leuven University Press appears to lack significant academic engagement and public discourse, with no …",
 "cover_url": "",
 "authors": "Erkan Toğuşlu",
@@ -38763,7 +40341,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/NMIE_CII"
+]
 },
 {
 "file": "bookstory_10.3726_978-3-0352-6588-0.html",
@@ -38799,6 +40381,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The Point of Philosophy (2016), authored by Ludo Abicht and Hendrik Opdebeeck and published by Peter Lang Verlag, is a modest but purposeful contribution to the philosophy and soc…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9782875743121&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Ludo Abicht, Hendrik Opdebeeck",
@@ -38825,7 +40409,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/978-3-0352-6588-0"
+]
 },
 {
 "file": "bookstory_10.3726_b13225.html",
@@ -38866,6 +40454,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Imagined Cosmopolis (Peter Lang Verlag, 2019), edited by Charlotte Ashby, Grace Brockington, Daniel Laqua, and Sarah Victoria Turner, is an edited volume situated at the intersect…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9783034318709&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Charlotte Ashby, Grace Brockington, Daniel Laqua et al.",
@@ -38919,7 +40509,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b13225"
+]
 },
 {
 "file": "bookstory_10.3726_b18362.html",
@@ -38952,6 +40546,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2025 by Peter Lang Verlag, Samantha Vanderslott's Pro-vax is an early-career contribution to the medical humanities that sits squarely within the global conversation …",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781800794726&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Samantha Vanderslott",
@@ -39028,7 +40624,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b18362"
+]
 },
 {
 "file": "bookstory_10.3998_mpub.14414299.html",
@@ -39068,6 +40668,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The upcoming book Urban Fantasy , published by Lever Press in 2024, stands at the intersection of scholarly discourse and commercial engagement, reflecting a strong potential for …",
 "cover_url": "",
 "authors": "Stefan Ekman",
@@ -39099,7 +40701,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3998/mpub.14414299"
+]
 },
 {
 "file": "bookstory_10.5117_9789462981102.html",
@@ -39140,6 +40746,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Although \"List Cultures\" has yet to receive citations or engage with public discourse through platforms such as Wikipedia or Reddit, it demonstrates potential through its commerci…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789462981102&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Liam Young",
@@ -39192,7 +40800,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5117/9789462981102"
+]
 },
 {
 "file": "bookstory_10.5117_9789463721745.html",
@@ -39233,6 +40845,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The upcoming publication, \"Exceptional Bodies in Early Modern Culture,\" published by Routledge in 2025, aims to contribute meaningfully to scholarly discourse, with initial signs …",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789463721745&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Maja Bondestam",
@@ -39281,7 +40895,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5117/9789463721745"
+]
 },
 {
 "file": "datastory_10.5061_dryad.mq8r2.html",
@@ -39320,6 +40938,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This dataset, published in 2015 on the DRYAD repository by a team from Virginia Tech, investigates the effects of hunting and habitat loss on native carnivore communities in Madag…",
 "cover_url": "",
 "authors": "Farris, Zach J., Golden, Christopher D., Karpanty, Sarah et al.",
@@ -39390,7 +41010,11 @@ window.STORIES_DATA = [
 }
 ],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5061/dryad.mq8r2"
+]
 },
 {
 "file": "articlestory_10.1002_ange.202519203.html",
@@ -39429,6 +41053,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The forthcoming article titled \"Surface Avidity of Anionic Polypeptide Coatings on Layer‐by‐Layer Nanoparticles Target Cancer‐Associated Amino Acid Transporters\" in Angewandte Che…",
 "cover_url": "",
 "authors": "Ivan S. Pires, Margaret M. Billingsley, Ezra Gordon et al.",
@@ -39468,7 +41094,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1002/ange.202519203"
+]
 },
 {
 "file": "articlestory_10.1002_anie.202519203.html",
@@ -39507,6 +41137,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research on the surface avidity of anionic polypeptide coatings on layer‐by‐layer nanoparticles targeting cancer-associated amino acid transporters demonstrates significant po…",
 "cover_url": "",
 "authors": "Ivan S. Pires, Margaret M. Billingsley, Ezra Gordon et al.",
@@ -39552,7 +41184,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1002/anie.202519203"
+]
 },
 {
 "file": "articlestory_10.1007_s10722-026-02786-9.html",
@@ -39591,6 +41227,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This retraction note addresses the publication titled \"Characterization of brown rust resistance in bread wheat using yield related morphological indices,\" originally published in…",
 "cover_url": "",
 "authors": "Anum Iqbal, Beena Alam, Razia Iqbal et al.",
@@ -39622,7 +41260,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1007/s10722-026-02786-9"
+]
 },
 {
 "file": "articlestory_10.1016_j.celrep.2025.116739.html",
@@ -39659,6 +41301,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This study elucidates the role of a ribosome-bound pseudoknot in the HCV coding region, demonstrating its function in enhancing viral growth by modulating viral translation.",
 "cover_url": "",
 "authors": "Han Wan, Harim Jang, Ling Xu et al.",
@@ -39697,7 +41341,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1016/j.celrep.2025.116739"
+]
 },
 {
 "file": "articlestory_10.1038_d41586-026-01558-w.html",
@@ -39736,6 +41384,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article by Max Kozlov, published in Nature, reports on significant developments within the National Institutes of Health (NIH) concerning infectious disease leadership and ong…",
 "cover_url": "",
 "authors": "Max Kozlov",
@@ -39767,7 +41417,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/d41586-026-01558-w"
+]
 },
 {
 "file": "articlestory_10.1038_d41586-026-01723-1.html",
@@ -39802,6 +41456,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The future of science communication is not an article like this (2026) in Nature shows measurable signals of attention across scholarly and online channels.",
 "cover_url": "",
 "authors": "",
@@ -39833,7 +41489,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1038/d41586-026-01723-1"
+]
 },
 {
 "file": "articlestory_10.1080_30700485.2026.2680358.html",
@@ -39868,6 +41528,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Introducing the Journal of Research on Research (J·ROR): aligning constellations and communities (2026) in Journal of Research on Research shows measurable signals of attention ac…",
 "cover_url": "",
 "authors": "G. M. Derrick, Serge P. J. M. Horbach, Bart Penders et al.",
@@ -39907,7 +41569,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1080/30700485.2026.2680358"
+]
 },
 {
 "file": "articlestory_10.1101_2025.09.08.674753.html",
@@ -39942,6 +41608,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research titled \"Generative genomics accurately predicts future experimental results\" represents a significant step in the field of genomics, potentially enhancing experimenta…",
 "cover_url": "",
 "authors": "Gregory Koytiger, Alice M. Walsh, Vaishali Marar et al.",
@@ -39987,7 +41655,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2025.09.08.674753"
+]
 },
 {
 "file": "articlestory_10.1101_pdb.ip28.html",
@@ -40022,6 +41694,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research on imaging actin in transgenic mouse brain tissue slices contributes to the understanding of cellular structures and their dynamics, as evidenced by its foundational …",
 "cover_url": "",
 "authors": "Andrew Matus, Virginie Biou, Heike Brinkhaus et al.",
@@ -40050,7 +41724,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/pdb.ip28"
+]
 },
 {
 "file": "articlestory_10.1111_1365-2435.70303.html",
@@ -40089,6 +41767,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary How vulnerable are amphibians to climate change?",
 "cover_url": "",
 "authors": "Eric A. Riddell, D R Adams, Molly C. Womack",
@@ -40123,7 +41803,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1111/1365-2435.70303"
+]
 },
 {
 "file": "articlestory_10.1128_mbio.02716-25.html",
@@ -40162,6 +41846,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Streptococcus mitis bacteriocins drive contact-dependent lysis of S.",
 "cover_url": "",
 "authors": "João Borralho, João Lança, Joana Bryton et al.",
@@ -40200,7 +41886,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1128/mbio.02716-25"
+]
 },
 {
 "file": "articlestory_10.11575_PRISM_42399.html",
@@ -40239,7 +41929,9 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
-"excerpt": "Short impact summary The article \"OER by Discipline Guide: Reducing Barriers and Building Sustainability for OER Adoption\" highlights the efforts towards enhancing the adoption and sustainability of O…",
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary The article \"OER by Discipline Guide: Reducing Barriers and Building Sustainability for OER Adoption,\" authored by Sarah Adams and Savannah Sillito, aims to enhance the adoption o…",
 "cover_url": "",
 "authors": "Adams, Sarah, Sillito, Savannah",
 "all_authors": [
@@ -40265,7 +41957,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11575/PRISM/42399"
+]
 },
 {
 "file": "articlestory_10.1158_2159-8290.cd-25-1493.html",
@@ -40302,6 +41998,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Trends in Childhood and Adolescent Cancer Incidence Rates in the United States between 2001 and 2022 (2025) in Cancer Discovery shows measurable signals of attention across schola…",
 "cover_url": "",
 "authors": "Meredith S. Shiels, Anika T. Haque, Rena R. Jones et al.",
@@ -40343,7 +42041,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1158/2159-8290.cd-25-1493"
+]
 },
 {
 "file": "articlestory_10.1371_journal.pone.0327344.html",
@@ -40380,6 +42082,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article titled \"Do organisms need an impact factor?\" explores the usage patterns and impact of key biological resources and model organisms.",
 "cover_url": "",
 "authors": "Agata Piękniewska, Martijn Roelandse, K. C. Kent Lloyd et al.",
@@ -40431,7 +42135,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1371/journal.pone.0327344"
+]
 },
 {
 "file": "articlestory_10.23640_07243.5959789.v1.html",
@@ -40466,6 +42174,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The narrative surrounding the task force's work on integrating ORCID into books workflows demonstrates an emerging commitment to enhancing scholarly communications, even in the ab…",
 "cover_url": "",
 "authors": "ORCID, Alice Meadows, Tony Alves et al.",
@@ -40508,7 +42218,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.23640/07243.5959789.v1"
+]
 },
 {
 "file": "articlestory_10.3233_isu-240004.html",
@@ -40547,6 +42261,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The article \"Dotcoms to watch: Addressing the scholarly publishing industry’s challenges through technology\" explores the intersection of technology and the scholarly publishing s…",
 "cover_url": "",
 "authors": "Martijn Roelandse, Adam Day, Tijmen Altena et al.",
@@ -40584,7 +42300,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3233/isu-240004"
+]
 },
 {
 "file": "articlestory_10.48550_arxiv.2603.18161.html",
@@ -40623,6 +42343,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary How LLMs Distort Our Written Language (2026) in arXiv (Cornell University) shows measurable signals of attention across scholarly and online channels.",
 "cover_url": "",
 "authors": "Marwa Abdulhai, Isadora White, Yanming Wan et al.",
@@ -40658,7 +42380,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 1,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.48550/arxiv.2603.18161"
+]
 },
 {
 "file": "articlestory_10.5281_zenodo.11472834.html",
@@ -40693,6 +42419,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The American University of Nigeria has announced its 2024/2025 post-U.T.M.E admission form availability, reflecting the institution's ongoing commitment to academic access and opp…",
 "cover_url": "",
 "authors": "JUDITH",
@@ -40718,7 +42446,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.11472834"
+]
 },
 {
 "file": "articlestory_10.5281_zenodo.7842938.html",
@@ -40753,6 +42485,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The dataset titled \"Nosophora parvipunctalis Hampson 1896\" contributes to the broader understanding of research on this specific species.",
 "cover_url": "",
 "authors": "Singh, Navneet, Ranjan, Rahul, Talukdar, Avishek et al.",
@@ -40784,7 +42518,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.7842938"
+]
 },
 {
 "file": "articlestory_10.5451_unibas-003686587.html",
@@ -40819,6 +42557,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This research by Martijn Roelandse explores the intricate mechanisms of synaptic activity in the formation and maintenance of neuronal circuits, potentially contributing valuable …",
 "cover_url": "",
 "authors": "Martijn Roelandse",
@@ -40844,7 +42584,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5451/unibas-003686587"
+]
 },
 {
 "file": "articlestory_10.64898_2025.12.16.694733.html",
@@ -40879,6 +42623,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research on ectopic engraftment of nociceptive neurons derived from human pluripotent stem cells (hPSCs) presents a novel approach to mitigating pain and promoting joint homeo…",
 "cover_url": "",
 "authors": "Zhuolun Wang, Weixin Zhang, Ju Wang et al.",
@@ -40911,7 +42657,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.64898/2025.12.16.694733"
+]
 },
 {
 "file": "articlestory_10.64898_2025.12.23.696259.html",
@@ -40946,6 +42696,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The preprint titled \"Mechanisms of HSV-1 helicase–primase inhibition and replication fork complex assembly,\" hosted on bioRxiv, presents significant insights into the viral replic…",
 "cover_url": "",
 "authors": "Zishuo Yu, Pradeep Sathyanarayana, C Lui et al.",
@@ -40979,7 +42731,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.64898/2025.12.23.696259"
+]
 },
 {
 "file": "articlestory_10.64898_2025.12.23.696279.html",
@@ -41018,6 +42774,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The study titled Vibrio cholerae serotype impacts pathogenicity, hosted on bioRxiv in 2025, explores the relationship between specific serotypes of Vibrio cholerae and their patho…",
 "cover_url": "",
 "authors": "Franz G. Zingl, Deborah R. Leitner, Bolutife Fakoya et al.",
@@ -41051,7 +42809,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.64898/2025.12.23.696279"
+]
 },
 {
 "file": "articlestory_10.64898_2025.12.24.696395.html",
@@ -41086,6 +42848,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The upcoming article, \"Chromatin profiling for everyone: FFPE-CUTAC for the theory and practice of modern molecular biology,\" represents a significant contribution from leading in…",
 "cover_url": "",
 "authors": "Yiling Xu, Steven Henikoff, Kami Ahmad",
@@ -41113,7 +42877,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.64898/2025.12.24.696395"
+]
 },
 {
 "file": "articlestory_10.64898_2025.12.27.696673.html",
@@ -41152,6 +42920,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research titled \"TMPO promotes cellular dissemination and metastasis in circulating tumor cells\" explores critical mechanisms involved in cancer progression.",
 "cover_url": "",
 "authors": "Arianna Giacobbe, Aleksandar Obradović, Jinqiu Lu et al.",
@@ -41211,7 +42981,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.64898/2025.12.27.696673"
+]
 },
 {
 "file": "articlestory_10.64898_2025.12.31.697091.html",
@@ -41246,6 +43020,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research elucidates how mitochondrial depolarization affects the stability of the vitamin B12 chaperone MMADHC in the cytosol, thereby enhancing MTR activity.",
 "cover_url": "",
 "authors": "Sneha Rath, Zhu Li, Arkajit Guha et al.",
@@ -41276,7 +43052,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.64898/2025.12.31.697091"
+]
 },
 {
 "file": "articlestory_10.7554_eLife.103118.html",
@@ -41315,6 +43095,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": true,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The research article titled \"Age-dependent H3K9 trimethylation by dSetdb1 impairs mitochondrial UPR leading to degeneration of olfactory neurons and loss of olfactory function in …",
 "cover_url": "",
 "authors": "Francisco Muñoz-Carvajal, Nicole Sanhueza, Mario Sanhueza et al.",
@@ -41348,7 +43130,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/eLife.103118"
+]
 },
 {
 "file": "articlestory_10.7554_eLife.107450.html",
@@ -41383,6 +43169,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This article presents an updated catalogue of split-GAL4 driver lines specifically targeting descending neurons in the model organism Drosophila melanogaster.",
 "cover_url": "",
 "authors": "Jessica L. Zung, Shigehiro Namiki, Geoffrey W Meissner et al.",
@@ -41419,7 +43207,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/eLife.107450"
+]
 },
 {
 "file": "articlestory_10.7554_eLife.108439.html",
@@ -41454,6 +43246,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This study elucidates how RadD from Fusobacterium nucleatum engages NKp46, shedding light on its potential role in enhancing antitumor cytotoxicity.",
 "cover_url": "",
 "authors": "Ahmed Rishiq, Johanna Galski, Reem Bsoul et al.",
@@ -41490,7 +43284,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/eLife.108439"
+]
 },
 {
 "file": "articlestory_10.7554_eLife.110392.html",
@@ -41525,6 +43323,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary This article, titled \"Rethinking how research is reviewed and published,\" will be featured in eLife in 2026, signaling a significant contribution to the discourse surrounding acad…",
 "cover_url": "",
 "authors": "Timothy E.J. Behrens, Yamini Dalal, Diane M. Harper",
@@ -41552,7 +43352,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/eLife.110392"
+]
 },
 {
 "file": "articlestory_10.7554_elife.107467.html",
@@ -41587,6 +43391,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The forthcoming article, titled \"G-protein-coupled receptor diversity and evolution in the closest living relatives of metazoa,\" showcases significant research supported by the Hu…",
 "cover_url": "",
 "authors": "Alain Garcia De Las Bayonas, Nicole King",
@@ -41617,7 +43423,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/elife.107467"
+]
 },
 {
 "file": "bookstory_10.11116_9789461662293.html",
@@ -41655,6 +43465,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Plutarch's Science of Natural Problems\" has been positioned as a notable scholarly contribution since its publication by Leuven University Press in 2017.",
 "cover_url": "",
 "authors": "Michiel Meeusen",
@@ -41680,7 +43492,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461662293"
+]
 },
 {
 "file": "bookstory_10.11116_9789461662842.html",
@@ -41713,6 +43529,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary As German as Kafka, published by Leuven University Press in 2019, has not yet generated academic citations or community discourse, highlighting the need for further engagement wit…",
 "cover_url": "",
 "authors": "Lene Rock",
@@ -41740,7 +43558,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461662842"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663023.html",
@@ -41778,6 +43600,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the lack of traditional metrics such as citations or online mentions, \"Militant Jihadism,\" published by Leuven University Press in 2019, presents a significant narrative w…",
 "cover_url": "",
 "authors": "Serafettin Pektas, Johan Leman",
@@ -41806,7 +43630,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663023"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663221.html",
@@ -41836,6 +43664,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite a lack of citations and online discourse, \"The Figure of Knowledge\" remains an exceptional resource within STEM, showcasing its academic integrity through strong commercia…",
 "cover_url": "",
 "authors": "Sebastiaan Loosen, Rajesh Heynickx, Hilde Heynen",
@@ -41865,7 +43695,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663221"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663283.html",
@@ -41899,6 +43733,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Japan’s Book Donation to the University of Louvain, published by Leuven University Press in 2020, stands as a significant contribution to academic discourse, despite having no rec…",
 "cover_url": "",
 "authors": "Jan Schmidt, Willy Vande Walle",
@@ -41930,7 +43766,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663283"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663412.html",
@@ -41967,6 +43807,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite being published in 2020 by Leuven University Press, \"Turkish German Muslims and Comedy Entertainment\" has not yet garnered citations or public discourse across various pla…",
 "cover_url": "",
 "authors": "Benjamin Nickl",
@@ -41996,7 +43838,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663412"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663573.html",
@@ -42028,6 +43874,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite generating no recorded citations or online mentions, the book \"Contact Zones,\" published by Leuven University Press in 2020, serves as a pivotal contribution in its field.",
 "cover_url": "",
 "authors": "Justin Carville, Sigrid Lien",
@@ -42059,7 +43907,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663573"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663788.html",
@@ -42093,6 +43945,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"Fake news in oorlogstijd,\" published by Leuven University Press in 2021, addresses the critical implications and challenges posed by fake news during wartime, reflecting…",
 "cover_url": "",
 "authors": "Bruno Yammine",
@@ -42123,7 +43977,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663788"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663832.html",
@@ -42158,6 +44016,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of online mentions or community engagement, the book \"Spatial Boundaries, Abounding Spaces\" reflects a solid conceptual foundation in its exploration of spatia…",
 "cover_url": "",
 "authors": "Mohit Chandna",
@@ -42185,7 +44045,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663832"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663948.html",
@@ -42225,6 +44089,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its relatively recent publication in 2021 by Leuven University Press, \"Congoville\" has not gained substantial public or academic attention, as indicated by the absence of …",
 "cover_url": "",
 "authors": "Pieter Boons, Sandrine Colard",
@@ -42253,7 +44119,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663948"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663955.html",
@@ -42287,6 +44157,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of citations and community discussions, \"Congoville\" demonstrates potential for commercial engagement through platforms like Amazon and Goodreads.",
 "cover_url": "https://lup.be/wp-content/uploads/2024/01/default_cover.png",
 "authors": "Pieter Boons, Sandrine Colard",
@@ -42313,7 +44185,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663955"
+]
 },
 {
 "file": "bookstory_10.11116_9789461663979.html",
@@ -42353,6 +44229,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of citations and online discourse for the book \"Cold War Triangle,\" it stands out due to its strong commercial linkage, appearing on platforms like Amazon and …",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789461663979&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Renilde Loeckx",
@@ -42378,7 +44256,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461663979"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664020.html",
@@ -42414,6 +44296,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite its recent publication in 2021 by Leuven University Press, the book \"Ubiquity\" has not yet received academic citations or public discourse across major platforms.",
 "cover_url": "",
 "authors": "Jacob W. Lewis, Kyle Parry",
@@ -42444,7 +44328,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664020"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664037.html",
@@ -42481,6 +44369,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite being published in 2021 by Leuven University Press, \"Protagonists of War\" has yet to garner external citations or significant public mentions, indicating a limited visibil…",
 "cover_url": "",
 "authors": "Raymond Fagel",
@@ -42512,7 +44402,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664037"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664051.html",
@@ -42543,6 +44437,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of citations and community discourse, \"De stad op de berg,\" published by Leuven University Press in 2021, indicates potential for future recognition given its …",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789461664051&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Jo Tollebeek, Liesbet Nys",
@@ -42571,7 +44467,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664051"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664129.html",
@@ -42608,6 +44508,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Since its publication in 2021, \"Character Constellations\" has not yet recorded any formal citations, indicating a nascent stage in its academic visibility.",
 "cover_url": "",
 "authors": "Roel Smeets",
@@ -42637,7 +44539,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664129"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664143.html",
@@ -42677,6 +44583,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"Martin Versfeld,\" published by Leuven University Press in 2021, exemplifies a significant scholarly contribution within its domain, despite a noticeable absence of citat…",
 "cover_url": "",
 "authors": "Ernst Wolff",
@@ -42704,7 +44612,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664143"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664297.html",
@@ -42744,6 +44656,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of quantitative engagement metrics, \"A Constellation of Courts,\" published by Leuven University Press in 2021, demonstrates a notable commitment to research in…",
 "cover_url": "",
 "authors": "René Vermeir, Dries Raeymaekers, José Eloy Hortal Muñoz",
@@ -42771,7 +44685,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664297"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664303.html",
@@ -42804,6 +44722,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book *Dies irae*, published by Leuven University Press in 2021, currently lacks documented citations and online discourse, indicating a limited academic reach at this time.",
 "cover_url": "",
 "authors": "Pieter Bergé",
@@ -42829,7 +44749,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664303"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664310.html",
@@ -42866,6 +44790,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite being published by Leuven University Press in 2021, \"Predicting the Past\" remains without citations or online discourse, indicating that it has not yet garnered significan…",
 "cover_url": "",
 "authors": "Michael Boyden",
@@ -42891,7 +44817,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664310"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664495.html",
@@ -42931,6 +44861,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"Leaving Spain,\" published by Leuven University Press in 2022, demonstrates notable commercial reach as evidenced by its presence on platforms such as Amazon and Goodread…",
 "cover_url": "",
 "authors": "Me-Linh Hannah Riemann",
@@ -42960,7 +44892,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664495"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664570.html",
@@ -42997,6 +44933,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of online discourse or citations, the book titled \"Europees burgerschap in de klas\" published by Leuven University Press in 2022 demonstrates significant comme…",
 "cover_url": "",
 "authors": "Griet Galle, Kris Grimonprez",
@@ -43028,7 +44966,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664570"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664631.html",
@@ -43068,6 +45010,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Black Matrilineage, Photography, and Representation,\" published by Leuven University Press in 2022, represents a significant contribution to the discourse surrounding race, gende…",
 "cover_url": "https://lup.be/wp-content/uploads/2024/01/default_cover.png",
 "authors": "Lesly Deschler Canossi, Zoraida Lopez-Diago",
@@ -43097,7 +45041,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664631"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664792.html",
@@ -43132,6 +45080,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Stilte in de klas,\" published by Leuven University Press in 2022, focuses on the significance of silence in educational environments.",
 "cover_url": "https://lup.be/wp-content/uploads/2024/01/jpg_rgb_original-347-scaled.jpg",
 "authors": "Pieter Verstraete",
@@ -43159,7 +45109,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664792"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664815.html",
@@ -43199,6 +45153,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Exploring the Transnational Neighbourhood\" published by Leuven University Press in 2022, demonstrates a significant potential for commercialization, with evidence of listings on …",
 "cover_url": "",
 "authors": "Stephan Ehrig, Britta C. Jung, Gad Schaffer",
@@ -43231,7 +45187,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664815"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664952.html",
@@ -43271,6 +45231,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the recent publication of \"Mobs and Microbes\" by Leuven University Press in 2023 and its current lack of citations and online discussions, its commercial linkage suggests …",
 "cover_url": "",
 "authors": "Leila Marie Farah, Samantha L. Martin",
@@ -43307,7 +45269,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664952"
+]
 },
 {
 "file": "bookstory_10.11116_9789461664976.html",
@@ -43347,6 +45313,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The publication \"Sugar, Spice, and the Not So Nice\" by Leuven University Press showcases a commitment to meaningful research, reflecting its commercial linkages through platforms …",
 "cover_url": "",
 "authors": "Dona Pursall, Eva Van de Wiele",
@@ -43375,7 +45343,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664976"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665096.html",
@@ -43414,6 +45386,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"Islamophobia as a Form of Radicalisation,\" published by Leuven University Press in 2023, embarks on a critical exploration of how Islamophobia may function as a catalyst…",
 "cover_url": "",
 "authors": "Leen d’Haenens, Abdelwahed Mekki-Berrada",
@@ -43442,7 +45416,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665096"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665171.html",
@@ -43479,6 +45457,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Landscapes of Liberation,\" published by Leuven University Press in 2023, marks a significant contribution to its field, primarily through its commercial presence noted on platfor…",
 "cover_url": "",
 "authors": "Noah Oehri",
@@ -43506,7 +45486,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665171"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665195.html",
@@ -43539,6 +45523,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Watching, Waiting,\" published by Leuven University Press in 2023, presents a unique exploration that has yet to generate substantial formal citations or community discourse.",
 "cover_url": "",
 "authors": "Sandra Križić Roban, Ana Šverko",
@@ -43570,7 +45556,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665195"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665232.html",
@@ -43610,6 +45600,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"Modern Etruscans,\" published by Leuven University Press in 2023, represents a significant contribution to the understanding of Etruscan culture.",
 "cover_url": "",
 "authors": "Chiara Zampieri, Martina Piperno, Bart Van den Bossche",
@@ -43641,7 +45633,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665232"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665263.html",
@@ -43678,6 +45674,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Building a White Nation,\" published by Leuven University Press in 2023, offers a critical exploration of the socio-political dynamics surrounding racial identity.",
 "cover_url": "",
 "authors": "Katharina Jörder",
@@ -43706,7 +45704,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665263"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665270.html",
@@ -43743,6 +45745,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book, \"Comics of the New Europe,\" published by Leuven University Press in 2023, explores the cultural and artistic dimensions of comic art in the European context, representin…",
 "cover_url": "",
 "authors": "Martha Kuhlman, José Alaniz",
@@ -43775,7 +45779,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665270"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665324.html",
@@ -43809,6 +45817,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Alles verandert altijd - Herziene editie,\" published by Leuven University Press in 2024, emerges as a compelling narrative within its discipline.",
 "cover_url": "https://lup.be/wp-content/uploads/2024/01/jpg_rgb_original-37-scaled.jpg",
 "authors": "Lieven D'hulst, Chris Van de Poel",
@@ -43838,7 +45848,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665324"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665355.html",
@@ -43878,6 +45892,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The forthcoming book \"An Opaque Mirror For Trajan,\" set to be published by Leuven University Press in 2024, is anticipated to contribute to the scholarly discourse surrounding cla…",
 "cover_url": "",
 "authors": "Laurens van der Wiel",
@@ -43905,7 +45921,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665355"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665409.html",
@@ -43945,6 +45965,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Collecting Asian Art,\" set to be published by Leuven University Press in 2024, indicates a strong commercial potential based on its presence on major retail and review platforms …",
 "cover_url": "",
 "authors": "Markéta Hánová, Yuka Kadoi, Simone Wille",
@@ -43979,7 +46001,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665409"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665416.html",
@@ -44019,6 +46045,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"Francis Alÿs.",
 "cover_url": "",
 "authors": "Gerard-Jan Claes, Stéphane Symons",
@@ -44049,7 +46077,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665416"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665423.html",
@@ -44089,6 +46121,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Muslim Marriage and Non-Marriage,\" published by Leuven University Press in 2023, delves into critical aspects of marital and non-marital experiences within Muslim communities, ad…",
 "cover_url": "",
 "authors": "Julie McBrien, Annelies Moors",
@@ -44118,7 +46152,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665423"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665478.html",
@@ -44158,6 +46196,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The forthcoming book, \"The Legacy of Elise Hall,\" published by Leuven University Press in 2024, represents a significant addition to the academic discourse, although it currently …",
 "cover_url": "",
 "authors": "Kurt Bertels, Adrianne Honnold",
@@ -44191,7 +46231,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665478"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665553.html",
@@ -44225,6 +46269,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary La Monarquía Indiana de Carlos II en la encrujiada is a forthcoming scholarly work published by Leuven University Press in 2024.",
 "cover_url": "https://lup.be/wp-content/uploads/2024/12/jpg_rgb_original-4.jpg",
 "authors": "Juan Jiménez Castillo Jiménez Castillo",
@@ -44252,7 +46298,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665553"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665591.html",
@@ -44289,6 +46339,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Performing by the Book?\" is set to be published by Leuven University Press in 2024, marking a significant contribution to its field.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/52cb54a3-d251-47f6-9b96-79ceb5399b02/retrieve",
 "authors": "Bruno Forment",
@@ -44314,7 +46366,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665591"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665690.html",
@@ -44354,6 +46410,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary \"Re-Imagining Class,\" published by Leuven University Press in 2024, represents a significant scholarly contribution to the discourse on social class, although it currently lacks m…",
 "cover_url": "",
 "authors": "Liesbeth François, Michiel Rys",
@@ -44382,7 +46440,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665690"
+]
 },
 {
 "file": "bookstory_10.11116_9789461665706.html",
@@ -44422,6 +46484,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The forthcoming book, \"Plutarch and Rhetoric,\" published by Leuven University Press in 2024, is poised to contribute significantly to the discourse surrounding the intersection of…",
 "cover_url": "",
 "authors": "Theofanis Tsiampokalos",
@@ -44449,7 +46513,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461665706"
+]
 },
 {
 "file": "bookstory_10.11116_MITA_CII.html",
@@ -44483,6 +46551,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite a lack of community discourse and citations, \"Modern Islamic Thinking and Activism\" serves as a significant mark in the academic exploration of contemporary Islamic though…",
 "cover_url": "",
 "authors": "Erkan Toguslu",
@@ -44510,7 +46580,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/MITA_CII"
+]
 },
 {
 "file": "bookstory_10.11647_OBP.0233.html",
@@ -44540,6 +46614,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Mendl Mann’s 'The Fall of Berlin' has yet to generate significant academic citations or online discourse, reflecting a nascent impact within both scholarly and public domains.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/7625d4f3-bf18-4904-a407-eb48214e1ab5/retrieve",
 "authors": "Mendl Mann",
@@ -44565,7 +46641,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11647/OBP.0233"
+]
 },
 {
 "file": "bookstory_10.2307_j.ctt1v2xsqn.html",
@@ -44602,6 +46682,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The absence of citations, community discourse, and platform presence signifies a nascent stage for the book, indicating potential for growth in visibility and impact within its ac…",
 "cover_url": "",
 "authors": "",
@@ -44625,7 +46707,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.2307/j.ctt1v2xsqn"
+]
 },
 {
 "file": "bookstory_10.2307_j.ctv12sdvgj.html",
@@ -44657,6 +46743,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of citations and mentions in public discourse platforms, \"Body, Capital, and Screens,\" published by Amsterdam University Press in 2020, may serve as a foundati…",
 "cover_url": "",
 "authors": "Christian Bonah, Anja Laukötter",
@@ -44685,7 +46773,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.2307/j.ctv12sdvgj"
+]
 },
 {
 "file": "bookstory_10.3726_978-3-653-02684-9.html",
@@ -44717,6 +46809,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2014 by Peter Lang Verlag, Militär und Gesellschaft in Preußen – Quellen zur Militärsozialisation 1713–1806 is a specialist archival source volume that has accumulate…",
 "cover_url": "https://library.oapen.org/rest/bitstreams/81f8b02f-c67b-4cfb-aeac-9eff4ebb4ddb/retrieve",
 "authors": "Jürgen Kloosterhuis, Bernhard R. Kroener, Klaus Neitmann et al.",
@@ -44745,7 +46839,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/978-3-653-02684-9"
+]
 },
 {
 "file": "bookstory_10.3726_b13395.html",
@@ -44775,6 +46873,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Claudio Canaparo's El mundo de atrás , published by Peter Lang Verlag in 2019, occupies a niche but distinctive position at the intersection of Latin American philosophy, human ec…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781788743655&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Claudio Canaparo",
@@ -44800,7 +46900,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b13395"
+]
 },
 {
 "file": "bookstory_10.3726_b14860.html",
@@ -44830,6 +46934,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2019 by Peter Lang Verlag, Iliana Olmedo's Narrativas periféricas is a specialized scholarly monograph situated within the established Exiles and Transterrados series…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781433163180&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Iliana Olmedo",
@@ -44855,7 +46961,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b14860"
+]
 },
 {
 "file": "bookstory_10.3726_b14917.html",
@@ -44893,6 +47003,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published by Peter Lang Verlag in 2019, James V.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781433163227&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "James V. Grant",
@@ -44918,7 +47030,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b14917"
+]
 },
 {
 "file": "bookstory_10.3726_b15232.html",
@@ -44953,6 +47069,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2019 by Peter Lang Verlag, Hendrik Opdebeeck's The Economy and Meaningfulness is a philosophically oriented monograph that bridges economics and psychology to interro…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9782807609648&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Hendrik Opdebeeck",
@@ -44978,7 +47096,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b15232"
+]
 },
 {
 "file": "bookstory_10.3726_b15269.html",
@@ -45014,6 +47136,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary World War II Re-explored, the 2019 edited volume published by Peter Lang Verlag under the editorship of Jarosław Suchoples, Stephanie James, and Barbara Törnquist-Plewa, occupies …",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9783631777404&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Jarosław Suchoples, Stephanie James, Barbara Törnquist-Plewa",
@@ -45045,7 +47169,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b15269"
+]
 },
 {
 "file": "bookstory_10.3726_b17114.html",
@@ -45078,6 +47206,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2020 by Peter Lang Verlag, Les défis de la diversité culturelle dans le monde du travail au XXIe siècle by Ariane Le Moing, Saïd Ouaked, and Christèle Le Bihan is a s…",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1057947/large.webp",
 "authors": "Ariane Le Moing, Saïd Ouaked, Christèle Le Bihan",
@@ -45107,7 +47237,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b17114"
+]
 },
 {
 "file": "bookstory_10.3726_b18017.html",
@@ -45147,6 +47281,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2024 by Peter Lang Verlag, Samuel Shaw's edited volume Art, Identity and Cosmopolitanism occupies a clearly defined intellectual niche at the intersection of art hist…",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1330533/large.webp",
 "authors": "Samuel Shaw",
@@ -45172,7 +47308,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b18017"
+]
 },
 {
 "file": "bookstory_10.3726_b19581.html",
@@ -45207,6 +47347,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2024 by Peter Lang Verlag, Embodied Books by Darian Goldin Stahl is an early-stage scholarly contribution to the Medical Humanities: Criticism and Creativity series.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781800798182&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Darian Goldin Stahl",
@@ -45232,7 +47374,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b19581"
+]
 },
 {
 "file": "bookstory_10.3726_b20333.html",
@@ -45263,6 +47409,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2024 by Peter Lang Verlag, The Irish Against the War , edited by Marie-Violaine Louvet, is a recently released contribution to Irish studies that currently sits in th…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781803740492&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Marie-Violaine Louvet",
@@ -45288,7 +47436,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b20333"
+]
 },
 {
 "file": "bookstory_10.3726_b20464.html",
@@ -45328,6 +47480,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published by Peter Lang Verlag in 2023, Fire Burning in My Head by David Y.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781636670478&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "David Y. F. Ho",
@@ -45353,7 +47507,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b20464"
+]
 },
 {
 "file": "bookstory_10.3726_b21088.html",
@@ -45393,6 +47551,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2023 by Peter Lang Verlag, Christian Democracy and Labour after World War II by Andrea Maria Locatelli and Cecilia Maria Bravi is an early-stage scholarly contributio…",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1313443/large.webp",
 "authors": "Andrea Maria Locatelli, Cecilia Maria Bravi",
@@ -45419,7 +47579,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b21088"
+]
 },
 {
 "file": "bookstory_10.3726_b21156.html",
@@ -45459,6 +47623,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2023 by Peter Lang Verlag, Judith Summerfield's Compositions, A Life is a work of autoethnographic life writing that occupies a distinctive space at the intersection …",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1311827/large.webp",
 "authors": "Judith Summerfield",
@@ -45484,7 +47650,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b21156"
+]
 },
 {
 "file": "bookstory_10.3726_b21679.html",
@@ -45512,6 +47682,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2024 by Peter Lang Verlag, Contemporary Issues on Adolescents and Counseling by Ruth A.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781636670706&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Ruth A. Aderanti, Abiodun M. Gesinde",
@@ -45538,7 +47710,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b21679"
+]
 },
 {
 "file": "bookstory_10.3726_b21753.html",
@@ -45574,6 +47750,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2024 by Peter Lang Verlag, Robert C.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781433195631&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Robert Sweeny",
@@ -45599,7 +47777,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b21753"
+]
 },
 {
 "file": "bookstory_10.3726_b21758.html",
@@ -45630,6 +47812,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published by Peter Lang Verlag in 2024, Luc de Brabandere's The Art of Thinking in a Digital World is a recently issued work with early but meaningful signs of pedagogical uptake,…",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1436624/large.webp",
 "authors": "Luc de Brabandere",
@@ -45659,7 +47843,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b21758"
+]
 },
 {
 "file": "bookstory_10.3726_b21787.html",
@@ -45696,6 +47884,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published in 2024 by Peter Lang Verlag, Silvia Carbone's Knowledge and Practical Knowledge is an early-stage scholarly contribution to the intersection of knowledge management, or…",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1438907/large.webp",
 "authors": "Silvia Carbone",
@@ -45721,7 +47911,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3726/b21787"
+]
 },
 {
 "file": "bookstory_10.5117_9789089647191.html",
@@ -45749,6 +47943,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of measurable public discourse and citation activity, \"Women in the Silent Cinema\" published by Amsterdam University Press in 2017 serves as a significant refe…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789089647191&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Annette Förster",
@@ -45778,7 +47974,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5117/9789089647191"
+]
 },
 {
 "file": "bookstory_10.5117_9789462986206.html",
@@ -45818,6 +48018,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The forthcoming book, \"Zootechnologies,\" published by Routledge in 2025, presents a novel exploration of the intersection between technology and animal husbandry.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789462986206&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Sebastian Vehlken",
@@ -45843,7 +48045,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5117/9789462986206"
+]
 },
 {
 "file": "bookstory_10.5117_9789463724012.html",
@@ -45871,6 +48077,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The book \"Islam in a Secular State,\" set to be published by Routledge in 2025, aims to explore the interplay between Islamic practices and secular governance.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789463724012&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Walid Jumblatt Abdullah",
@@ -45900,7 +48108,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5117/9789463724012"
+]
 },
 {
 "file": "bookstory_10.5703_1288284317628.html",
@@ -45940,6 +48152,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Published by Purdue University in 2006, \"Sisters in Science\" has not yet garnered citations or public discourse in high-fidelity social media platforms.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/d618778c-cb80-4296-bbc4-14f15cdc3052/retrieve",
 "authors": "Diann Jordan",
@@ -45969,7 +48183,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5703/1288284317628"
+]
 },
 {
 "file": "bookstory_10.7765_9781526137760.html",
@@ -45997,6 +48215,8 @@ window.STORIES_DATA = [
 "ta_otl": true,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary Despite the publication year being 2018, \"The International Politics of the Middle East\" has yet to generate notable academic citations or public discourse in online platforms.",
 "cover_url": "",
 "authors": "Raymond Hinnebusch",
@@ -46027,7 +48247,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7765/9781526137760"
+]
 },
 {
 "file": "datastory_10.23640_07243.5259502.v1.html",
@@ -46058,6 +48282,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The dataset titled \"ORCID in Book Workflows: Survey\" is a foundational research output available on Figshare.",
 "cover_url": "",
 "authors": "terence smyre, 0000-0001-7094-8102, Smyre, Terence et al.",
@@ -46107,7 +48333,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.23640/07243.5259502.v1"
+]
 },
 {
 "file": "datastory_10.25378_janelia.23816295.html",
@@ -46142,6 +48372,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The dataset titled \"Drosophila GAL4 brain imagery\" from the Janelia Research Repository provides foundational insights into Drosophila neurobiology and serves as a crucial resourc…",
 "cover_url": "",
 "authors": "Meissner, Geoffrey, Nern, Aljoscha, Dorman, Zachary et al.",
@@ -46203,103 +48435,12 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
-},
-{
-"file": "datastory_10.25378_janelia.23816295.v1.html",
-"title": "Drosophila GAL4 brain imagery",
-"type": "DataStory",
-"doi": "10.25378/janelia.23816295.v1",
-"year": 2023,
-"venue": "Figshare",
-"venue_name": "Figshare",
-"publisher": "Digital Science",
-"concepts": [
-"Neuroscience",
-"Biology",
-"Computer science",
-"Neuron",
-"Artificial intelligence",
-"Computational biology",
-"Key (lock)",
-"Cell type"
-],
-"roles": [],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 0,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 1,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": false,
-"excerpt": "Short impact summary The dataset titled \"Drosophila GAL4 brain imagery\" represents a significant contribution to the field of neurobiology and genetic research, hosted on Figshare.",
-"cover_url": "",
-"authors": "Meissner, Geoffrey, Nern, Aljoscha, Dorman, Zachary et al.",
-"all_authors": [
-"Meissner, Geoffrey",
-"Nern, Aljoscha",
-"Dorman, Zachary",
-"DePasquale, Gina M",
-"Forster, Kaitlyn",
-"Gibney, Theresa",
-"K Hausenfluck, Joanna",
-"He, Yisheng",
-"Iyer, Nirmala",
-"Jeter, Jennifer",
-"Johnson, Lauren",
-"Johnston, Rebecca M",
-"Lee, Kelley",
-"Melton, Brian",
-"Yarbrough, Brianna",
-"Zugates, Christopher T",
-"Clements, Jody",
-"Goina, Cristian",
-"Otsuna, Hideo",
-"Rokicki, Konrad",
-"Svirskas, Rob",
-"Aso, Yoshinori",
-"Card, Gwyneth M",
-"Dickson, Barry J",
-"Ehrhardt, Erica",
-"Goldammer, Jens",
-"Ito, Masayoshi",
-"Kainmueller, Dagmar",
-"Korff, Wyatt",
-"Mais, Lisa",
-"Minegishi, Ryo",
-"Namiki, Shigehiro",
-"Rubin, Gerald M.",
-"Sterne, Gabriella",
-"Wolff, Tanya",
-"Malkesman, Oz",
-"FlyLight Project Team"
-],
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [],
-"countries": [],
-"citing_institutions": [],
-"scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 2,
+"version_dois": [
+"10.25378/janelia.23816295",
+"10.25378/janelia.23816295.v1"
+]
 },
 {
 "file": "datastory_10.5281_zenodo.10875062.html",
@@ -46334,6 +48475,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The FISBe dataset represents a significant advancement in the instance segmentation of long-range thin filamentous structures.",
 "cover_url": "",
 "authors": "Mais, Lisa, Hirsch, Peter, Managan, Claire et al.",
@@ -46367,7 +48510,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.10875062"
+]
 },
 {
 "file": "datastory_10.5281_zenodo.11472834.html",
@@ -46402,6 +48549,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The American University of Nigeria's announcement regarding the 2024/2025 Post-U.T.M.E Admission Form highlights its ongoing commitment to supporting prospective students through …",
 "cover_url": "",
 "authors": "JUDITH",
@@ -46427,7 +48576,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.11472834"
+]
 },
 {
 "file": "datastory_10.5281_zenodo.17442025.html",
@@ -46462,6 +48615,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The dataset titled \"Classification of research publications based on data from OpenAlex\" serves as a significant research output shared on Zenodo.",
 "cover_url": "",
 "authors": "Van Eck, Nees Jan",
@@ -46489,7 +48644,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.17442025"
+]
 },
 {
 "file": "datastory_10.5281_zenodo.7821611.html",
@@ -46517,6 +48676,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The CORDA dataset, hosted on Zenodo and authored by a collaborative team from leading cardiology institutions, has garnered attention with 762 views and 351 downloads, indicating …",
 "cover_url": "",
 "authors": "Marta Alesina, Carlo Alberto Barbano, Claudio Berzovini et al.",
@@ -46570,7 +48731,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.7821611"
+]
 },
 {
 "file": "datastory_10.5281_zenodo.7842938.html",
@@ -46605,6 +48770,8 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
 "excerpt": "Short impact summary The dataset titled \"Nosophora parvipunctalis Hampson 1896 (2022)\" available on Zenodo has garnered significant attention, with 50 views and 24 downloads, indicating an emerging in…",
 "cover_url": "",
 "authors": "Singh, Navneet, Ranjan, Rahul, Talukdar, Avishek et al.",
@@ -46636,7 +48803,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.7842938"
+]
 },
 {
 "file": "softwarestory_10.5281_zenodo.3559815.html",
@@ -46671,7 +48842,9 @@ window.STORIES_DATA = [
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": true,
-"excerpt": "Short impact summary The software tool stineb/rpmodel by Benjamin Stocker, associated with ETH Zurich, has seen a noteworthy engagement, with over 1,101 views and 222 downloads on Zenodo, indicating a…",
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary The software tool \"stineb/rpmodel,\" authored by Benjamin Stocker from ETH Zurich, has garnered a total of 225 downloads since its release in 2019.",
 "cover_url": "",
 "authors": "Stocker, Benjamin",
 "all_authors": [
@@ -46680,7 +48853,7 @@ window.STORIES_DATA = [
 "institutions": [
 "ETH Zurich"
 ],
-"download_count": 222,
+"download_count": 225,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
@@ -46698,7 +48871,11 @@ window.STORIES_DATA = [
 "countries": [],
 "citing_institutions": [],
 "scite_supporting": 0,
-"scite_contradicting": 0
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.3559815"
+]
 }
 ];
-window.STORIES_STATS = {"total": 401, "total_articles": 190, "total_books": 185, "total_data": 19, "total_software": 7, "total_oa": 336, "pct_oa": 84, "total_citations": 161553, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 399, "total_articles": 189, "total_books": 185, "total_data": 18, "total_software": 7, "total_oa": 334, "pct_oa": 84, "total_citations": 161680, "num_disciplines": 30};

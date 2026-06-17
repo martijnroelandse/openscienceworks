@@ -737,6 +737,12 @@
       gap: 0.3rem;
       margin-top: auto;
     }
+    .version-hint {
+      margin-top: 0.35rem;
+      font-size: 0.74rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
     .tag {
       display: inline-block;
       padding: 0.18rem 0.55rem;
@@ -751,6 +757,7 @@
     .tag-sdg     { background: #dcfce7; color: #166534; }
     .tag-teach   { background: #e0f2fe; color: #0369a1; }
     .tag-lt      { background: #fef9c3; color: #92400e; border: 1px solid #fde68a; font-weight: 600; }
+    .tag-version { background: #f3f4f6; color: #374151; border: 1px dashed #d1d5db; }
 
     .card-footer {
       display: flex;
@@ -1246,6 +1253,7 @@ function renderCards(stories) {
       s.has_sdgs     ? `<span class="tag tag-sdg">SDGs</span>` : "",
       s.has_teaching ? `<span class="tag tag-teach">Teaching</span>` : "",
       s.librarything_rating ? `<span class="tag tag-lt">${esc(String(s.librarything_rating))}/10</span>` : "",
+      (s.version_count && s.version_count > 1) ? `<span class="tag tag-version">${fmt(s.version_count)} versions merged</span>` : "",
     ].join("");
 
     const excerpt = s.excerpt ? `<p class="card-excerpt">${esc(s.excerpt)}</p>` : "";
@@ -1260,6 +1268,9 @@ function renderCards(stories) {
       <div class="card-meta">${meta}</div>
       ${excerpt}
       <div class="card-tags">${conceptTags}${roleTags}${extraTags}</div>
+      ${(s.version_count && s.version_count > 1 && Array.isArray(s.version_dois))
+        ? `<div class="version-hint" title="${esc(s.version_dois.join(', '))}">Includes versioned DOI records</div>`
+        : ""}
       <div class="card-footer">
         <span><span class="cit-count">${fmt(s.citation_count)}</span> citations</span>
         ${(s.download_count||0) > 0 ? `<span><span class="cit-count">${fmt(s.download_count)}</span> downloads</span>` : attn}
