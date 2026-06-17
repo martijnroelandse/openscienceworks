@@ -790,6 +790,138 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "datastory_10.48550_arxiv.1207.7214.html",
+"title": "Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC",
+"type": "DataStory",
+"doi": "10.48550/arxiv.1207.7214",
+"year": 2012,
+"venue": "arXiv",
+"venue_name": "arXiv",
+"publisher": "Cornell University",
+"concepts": [
+"Physics",
+"Particle physics",
+"Higgs boson",
+"Large Hadron Collider",
+"Standard Model (mathematical formulation)",
+"Atlas (anatomy)",
+"Atlas detector",
+"Nuclear physics"
+],
+"roles": [
+"Scholarly Uptake",
+"High-Visibility Uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 10707,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 1,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary The ATLAS Collaboration's 2012 report on the observation of a new boson consistent with the Standard Model Higgs boson stands as one of the most consequential publications in mode…",
+"cover_url": "",
+"authors": "The ATLAS Collaboration",
+"all_authors": [
+"The ATLAS Collaboration"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 10
+},
+{
+"label": "Facility",
+"count": 6
+},
+{
+"label": "Healthcare",
+"count": 3
+},
+{
+"label": "Company",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Germany",
+"count": 4
+},
+{
+"label": "United States",
+"count": 4
+},
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "Italy",
+"count": 3
+},
+{
+"label": "Switzerland",
+"count": 3
+}
+],
+"citing_institutions": [
+{
+"label": "University of Minho",
+"count": 1
+},
+{
+"label": "Rutgers, The State University of New Jersey",
+"count": 1
+},
+{
+"label": "Paul Scherrer Institute",
+"count": 1
+},
+{
+"label": "University of Southampton",
+"count": 0
+},
+{
+"label": "Uppsala University",
+"count": 0
+}
+],
+"scite_supporting": 136,
+"scite_contradicting": 5,
+"version_count": 1,
+"version_dois": [
+"10.48550/arxiv.1207.7214"
+]
+},
+{
 "file": "articlestory_10.1016_j.physletb.2012.08.020.html",
 "title": "Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC",
 "type": "ArticleStory",
@@ -21764,6 +21896,145 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "articlestory_10.7554_elife.89373.html",
+"title": "Chromosome-specific maturation of the epigenome in the Drosophila male germline",
+"type": "ArticleStory",
+"doi": "10.7554/elife.89373",
+"year": 2023,
+"venue": "eLife",
+"venue_name": "eLife",
+"publisher": "",
+"concepts": [
+"Biology",
+"Dosage compensation",
+"Germline",
+"Chromatin",
+"Genetics",
+"Histone",
+"Heterochromatin",
+"X chromosome"
+],
+"roles": [
+"High-Visibility Uptake",
+"Computational Reproducibility Enabler"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 24,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": true,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary The article \"Chromosome-specific maturation of the epigenome in the Drosophila male germline,\" published in eLife, has garnered notable academic attention, evidenced by 20 citatio…",
+"cover_url": "",
+"authors": "James T. Anderson, Steven Henikoff, Kami Ahmad",
+"all_authors": [
+"James T. Anderson",
+"Steven Henikoff",
+"Kami Ahmad"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"National Human Genome Research Institute",
+"Howard Hughes Medical Institute",
+"NHGRI NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 14
+},
+{
+"label": "Healthcare",
+"count": 3
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 8
+},
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "Austria",
+"count": 2
+},
+{
+"label": "Sweden",
+"count": 2
+},
+{
+"label": "Canada",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Rockefeller University",
+"count": 2
+},
+{
+"label": "Louisiana State University Health Sciences Center Shreveport",
+"count": 2
+},
+{
+"label": "Umeå University",
+"count": 2
+},
+{
+"label": "Institute of Science and Technology Austria",
+"count": 2
+},
+{
+"label": "University of California, Berkeley",
+"count": 1
+}
+],
+"scite_supporting": 7,
+"scite_contradicting": 0,
+"version_count": 2,
+"version_dois": [
+"10.7554/elife.89373",
+"10.7554/elife.89373.3"
+]
+},
+{
 "file": "bookstory_10.1007_978-3-030-47436-2.html",
 "title": "Advances in Knowledge Discovery and Data Mining",
 "type": "BookStory",
@@ -22595,144 +22866,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.7554/eLife.104764"
-]
-},
-{
-"file": "articlestory_10.7554_elife.89373.html",
-"title": "Chromosome-specific maturation of the epigenome in the Drosophila male germline",
-"type": "ArticleStory",
-"doi": "10.7554/elife.89373",
-"year": 2023,
-"venue": "eLife",
-"venue_name": "eLife",
-"publisher": "",
-"concepts": [
-"Biology",
-"Dosage compensation",
-"Germline",
-"Chromatin",
-"Genetics",
-"Histone",
-"Heterochromatin",
-"X chromosome"
-],
-"roles": [
-"High-Visibility Uptake",
-"Computational Reproducibility Enabler"
-],
-"is_oa": true,
-"oa_status": "gold",
-"citation_count": 20,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": true,
-"has_reuse": true,
-"has_certified_repository": false,
-"has_open_repository": true,
-"excerpt": "Short impact summary The article \"Chromosome-specific maturation of the epigenome in the Drosophila male germline,\" published in eLife, has garnered notable academic attention, evidenced by 20 citatio…",
-"cover_url": "",
-"authors": "James T. Anderson, Steven Henikoff, Kami Ahmad",
-"all_authors": [
-"James T. Anderson",
-"Steven Henikoff",
-"Kami Ahmad"
-],
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [
-"National Human Genome Research Institute",
-"Howard Hughes Medical Institute",
-"NHGRI NIH HHS"
-],
-"sectors": [
-{
-"label": "Education",
-"count": 14
-},
-{
-"label": "Healthcare",
-"count": 3
-},
-{
-"label": "Nonprofit",
-"count": 1
-},
-{
-"label": "Facility",
-"count": 1
-},
-{
-"label": "Company",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 8
-},
-{
-"label": "United Kingdom",
-"count": 3
-},
-{
-"label": "Austria",
-"count": 2
-},
-{
-"label": "Sweden",
-"count": 2
-},
-{
-"label": "Canada",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "Rockefeller University",
-"count": 2
-},
-{
-"label": "Louisiana State University Health Sciences Center Shreveport",
-"count": 2
-},
-{
-"label": "Umeå University",
-"count": 2
-},
-{
-"label": "Institute of Science and Technology Austria",
-"count": 2
-},
-{
-"label": "University of California, Berkeley",
-"count": 1
-}
-],
-"scite_supporting": 7,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.7554/elife.89373"
 ]
 },
 {
@@ -32497,6 +32630,87 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "datastory_10.5061_dryad.k3j9kd5b8.html",
+"title": "Uncovering circuit mechanisms of current sinks and sources with biophysical simulations of primary visual cortex",
+"type": "DataStory",
+"doi": "10.5061/dryad.k3j9kd5b8",
+"year": 2022,
+"venue": "Dryad",
+"venue_name": "Dryad",
+"publisher": "Dryad",
+"concepts": [
+"Neuroscience",
+"Visual cortex",
+"Local field potential",
+"Computer science",
+"Current (fluid)",
+"Dynamics (music)",
+"Neuronal firing",
+"Cortex (anatomy)"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 4,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary This dataset, deposited on Dryad in 2022 in support of biophysical simulations of primary visual cortex, has accumulated 361 views and 38 downloads, attracted 4 scholarly citation…",
+"cover_url": "",
+"authors": "Rimehaug, Atle, Stasik, Alexander, Hagen, Espen et al.",
+"all_authors": [
+"Rimehaug, Atle",
+"Stasik, Alexander",
+"Hagen, Espen",
+"Billeh, Yazan",
+"Siegle, Josh",
+"Dai, Kael",
+"Olsen, Shawn",
+"Koch, Christof",
+"Einevoll, Gaute",
+"Arkhipov, Anton"
+],
+"institutions": [
+"University of Oslo",
+"Norwegian University of Life Sciences",
+"Allen Institute for Brain Science"
+],
+"download_count": 38,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5061/dryad.k3j9kd5b8"
+]
+},
+{
 "file": "datastory_10.5281_zenodo.3727291.html",
 "title": "COVID-19 Open Research Dataset (CORD-19)",
 "type": "DataStory",
@@ -34760,6 +34974,131 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.3726/b20055"
+]
+},
+{
+"file": "datastory_10.48550_arxiv.2305.08339.html",
+"title": "Assessing the potential of LLM-assisted annotation for corpus-based pragmatics and discourse analysis: The case of apology",
+"type": "DataStory",
+"doi": "10.48550/arxiv.2305.08339",
+"year": 2023,
+"venue": "arXiv",
+"venue_name": "arXiv",
+"publisher": "Cornell University",
+"concepts": [
+"Annotation",
+"Computer science",
+"Natural language processing",
+"Chatbot",
+"Artificial intelligence",
+"Grammar",
+"Function (biology)",
+"Process (computing)"
+],
+"roles": [
+"High-Visibility Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 3,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary This 2023 preprint by Danni Yu, Luyang Li, Hang Su, and Matteo Fuoli investigates whether large language models can meaningfully assist corpus annotation for pragmatic and discour…",
+"cover_url": "",
+"authors": "Danni Yu, Luyang Li, Hang Su et al.",
+"all_authors": [
+"Danni Yu",
+"Luyang Li",
+"Hang Su",
+"Fuoli, Matteo"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "France",
+"count": 1
+},
+{
+"label": "Netherlands",
+"count": 1
+},
+{
+"label": "Singapore",
+"count": 1
+},
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "Hong Kong",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Hong Kong Polytechnic University",
+"count": 1
+},
+{
+"label": "National University of Singapore",
+"count": 0
+},
+{
+"label": "Pennsylvania State University",
+"count": 0
+},
+{
+"label": "Institut d'Etudes Politiques de Paris",
+"count": 0
+},
+{
+"label": "Centre de Recherche en Économie et Statistique",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.48550/arxiv.2305.08339"
 ]
 },
 {
@@ -41322,6 +41661,197 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.24435/materialscloud:3k-4e"
+]
+},
+{
+"file": "datastory_10.5061_dryad.26bv4.html",
+"title": "Data from: Novel predators reshape holozoan phylogeny and reveal the presence of a two-component signalling system in the ancestor of animals",
+"type": "DataStory",
+"doi": "10.5061/dryad.26bv4",
+"year": 2017,
+"venue": "Dryad",
+"venue_name": "Dryad",
+"publisher": "Dryad",
+"concepts": [
+"Multicellular organism",
+"Biology",
+"Most recent common ancestor",
+"Phylogenetics",
+"Evolutionary biology",
+"Gene",
+"Repertoire",
+"ENCODE"
+],
+"roles": [
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Life below water"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary This Dryad dataset, deposited in 2017 by an international team led from the University of British Columbia, underpins phylogenomic and genomic analyses of novel holozoan predators…",
+"cover_url": "",
+"authors": "Hehenberger, Elisabeth, Tikhonenkov, Denis V., Kolisko, Martin et al.",
+"all_authors": [
+"Hehenberger, Elisabeth",
+"Tikhonenkov, Denis V.",
+"Kolisko, Martin",
+"del Campo, Javier",
+"Esaulov, Anton S.",
+"Mylnikov, Alexander P.",
+"Keeling, Patrick J."
+],
+"institutions": [
+"University of British Columbia",
+"Russian Academy of Sciences",
+"Czech Academy of Sciences",
+"Penza State University"
+],
+"download_count": 147,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of California, Berkeley",
+"count": 0
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5061/dryad.26bv4"
+]
+},
+{
+"file": "datastory_10.5061_dryad.cz8w9gj8w.html",
+"title": "Data and code from: Coordinated distributed experiments in ecology do not consistently reduce heterogeneity in effect size",
+"type": "DataStory",
+"doi": "10.5061/dryad.cz8w9gj8w",
+"year": 2024,
+"venue": "Dryad",
+"venue_name": "Dryad",
+"publisher": "Dryad",
+"concepts": [
+"Pairwise comparison",
+"Study heterogeneity",
+"Variance (accounting)",
+"Spatial heterogeneity",
+"Statistics",
+"Sample size determination",
+"Econometrics",
+"Ecology"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary This dataset, deposited on Dryad in 2024 by Julia Bebout (University of California San Diego) and Jeremy W.",
+"cover_url": "",
+"authors": "Bebout, Julia, Fox, Jeremy",
+"all_authors": [
+"Bebout, Julia",
+"Fox, Jeremy"
+],
+"institutions": [
+"University of California San Diego",
+"University of Calgary"
+],
+"download_count": 11,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Canada",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Calgary",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5061/dryad.cz8w9gj8w"
 ]
 },
 {
@@ -49167,9 +49697,316 @@ window.STORIES_DATA = [
 "citing_institutions": [],
 "scite_supporting": 0,
 "scite_contradicting": 0,
+"version_count": 2,
+"version_dois": [
+"10.25378/janelia.23816295",
+"10.25378/janelia.23816295.v1"
+]
+},
+{
+"file": "datastory_10.48550_arxiv.1702.01751.html",
+"title": "A massive, quiescent galaxy at redshift of z=3.717",
+"type": "DataStory",
+"doi": "10.48550/arxiv.1702.01751",
+"year": 2017,
+"venue": "Leiden Repository",
+"venue_name": "Leiden Repository",
+"publisher": "Leiden University",
+"concepts": [
+"Physics",
+"Astrophysics",
+"Galaxy",
+"Astronomy",
+"Billion years",
+"Redshift",
+"Universe",
+"Stars"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary This preprint by Glazebrook and collaborators reports the discovery of a massive, quiescent galaxy at redshift z=3.717, placing it among the earliest known \"dead\" galaxies in the …",
+"cover_url": "",
+"authors": "Glazebrook, Karl, Schreiber, Corentin, Labbé, Ivo et al.",
+"all_authors": [
+"Glazebrook, Karl",
+"Schreiber, Corentin",
+"Labbé, Ivo",
+"Nanayakkara, Themiya",
+"Kacprzak, Glenn G.",
+"Oesch, Pascal A.",
+"Papovich, Casey",
+"Spitler, Lee R",
+"Straatman, Caroline M. S.",
+"Tran, Kim-Vy H.",
+"Yuan, Tiantian"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 1,
+"scite_contradicting": 0,
 "version_count": 1,
 "version_dois": [
-"10.25378/janelia.23816295"
+"10.48550/arxiv.1702.01751"
+]
+},
+{
+"file": "datastory_10.5061_dryad.51c59zwf1.html",
+"title": "Enhanced mTORC1 signaling and protein synthesis in pathologic alpha-synuclein cellular and animal models of Parkinson’s disease",
+"type": "DataStory",
+"doi": "10.5061/dryad.51c59zwf1",
+"year": 2023,
+"venue": "Dryad",
+"venue_name": "Dryad",
+"publisher": "Dryad",
+"concepts": [
+"mTORC1",
+"Proteostasis",
+"PI3K/AKT/mTOR pathway",
+"Pathogenesis",
+"Neurodegeneration",
+"Cell biology",
+"Biology",
+"Mechanism (biology)"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary This Dryad dataset, deposited in 2023 by a large team at Johns Hopkins University led by Ted and Valina Dawson, underpins research into how dysregulated mTORC1 signaling and aberr…",
+"cover_url": "",
+"authors": "Dawson, Ted, Dawson, Valina, Khan, Mohammed et al.",
+"all_authors": [
+"Dawson, Ted",
+"Dawson, Valina",
+"Khan, Mohammed",
+"Yin, Xiling",
+"Kang, Sung-Ung",
+"Mitra, Jaba",
+"Wang, Hu",
+"Rhy, Taekyung",
+"Brahmachari, Saurav",
+"Karuppagounder, Senthilkumar",
+"Kimura, Yasuyoshi",
+"Jhaldiyal, Aanishaa",
+"Kim, Hyun Hee",
+"Gu, Hao",
+"Chen, Rong",
+"Redding-Ochoa, Javier",
+"Troncoso, Juan",
+"Na, Chan Hyun",
+"Ha, Taekjip"
+],
+"institutions": [
+"Johns Hopkins University"
+],
+"download_count": 16,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5061/dryad.51c59zwf1"
+]
+},
+{
+"file": "datastory_10.5061_dryad.m63xsj454.html",
+"title": "Data for: Emergent dynamics of adult stem cell lineages from single nucleus and single cell RNA-Seq of Drosophila testes",
+"type": "DataStory",
+"doi": "10.5061/dryad.m63xsj454",
+"year": 2023,
+"venue": "Dryad",
+"venue_name": "Dryad",
+"publisher": "Dryad",
+"concepts": [
+"Germline",
+"Biology",
+"Somatic cell",
+"Drosophila melanogaster",
+"Germ cell",
+"Chromatin",
+"Stem cell",
+"Cell biology"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary This Dryad dataset, supporting a single-nucleus and single-cell RNA-sequencing study of adult stem cell lineages in Drosophila testes, has accumulated 781 views and 247 downloads …",
+"cover_url": "",
+"authors": "DiNardo, Stephen, Fuller, Margaret, Raz, Amelie",
+"all_authors": [
+"DiNardo, Stephen",
+"Fuller, Margaret",
+"Raz, Amelie"
+],
+"institutions": [
+"California University of Pennsylvania",
+"Stanford University",
+"Massachusetts Institute of Technology"
+],
+"download_count": 247,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5061/dryad.m63xsj454"
+]
+},
+{
+"file": "datastory_10.5061_dryad.w3r22816p.html",
+"title": "Home alone: Remote work, isolation, and mental health",
+"type": "DataStory",
+"doi": "10.5061/dryad.w3r22816p",
+"year": 2026,
+"venue": "Dryad",
+"venue_name": "Dryad",
+"publisher": "Dryad",
+"concepts": [
+"Mental health",
+"Work (physics)",
+"Isolation (microbiology)",
+"Mental distress",
+"Distress",
+"Pandemic",
+"Psychological distress",
+"Psychology"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary This dataset, deposited on Dryad and associated with the study \"Home alone: Remote work, isolation, and mental health\" by Natalia Emanuel, Amanda Pallais, and Emma Harrington, is …",
+"cover_url": "",
+"authors": "Natalia Emanuel, Amanda Pallais, Emma Harrington",
+"all_authors": [
+"Natalia Emanuel",
+"Amanda Pallais",
+"Emma Harrington"
+],
+"institutions": [
+"Federal Reserve Bank of New York",
+"Harvard University Press",
+"University of Virginia"
+],
+"download_count": 4,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5061/dryad.w3r22816p"
 ]
 },
 {
@@ -49608,4 +50445,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 407, "total_articles": 190, "total_books": 185, "total_data": 25, "total_software": 7, "total_oa": 342, "pct_oa": 84, "total_citations": 161749, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 416, "total_articles": 190, "total_books": 185, "total_data": 34, "total_software": 7, "total_oa": 351, "pct_oa": 84, "total_citations": 172469, "num_disciplines": 30};
