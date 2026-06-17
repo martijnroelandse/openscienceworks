@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About — openscience.works</title>
-  <meta name="description" content="openscience.works turns fragmented research signals into structured impact narratives. Built on 25+ open data sources, transparent methods, and open infrastructure.">
+  <meta name="description" content="openscience.works turns fragmented research signals into structured impact narratives. Built on 30+ open data sources, transparent methods, and open infrastructure.">
   <link rel="icon" type="image/png" href="openscience.works%20logos/openscience.works%20icon.png">
   <style>
     *, *::before, *::after { box-sizing: border-box; }
@@ -264,9 +264,9 @@
       <h1><b>openscience</b><span class="dot">.</span><span style="font-weight:400;">works</span></h1>
       <p class="hero-tagline">Turning data into impact narratives.</p>
       <div class="hero-stats">
-        <div class="stat-pill"><span class="num">25+</span>&nbsp;data sources</div>
+        <div class="stat-pill"><span class="num">30+</span>&nbsp;data sources</div>
         <div class="stat-pill"><span class="num">4</span>&nbsp;story types</div>
-        <div class="stat-pill"><span class="num">260</span>&nbsp;impact stories</div>
+        <div class="stat-pill"><span class="num" id="hero-stat-stories">407</span>&nbsp;impact stories</div>
         <div class="stat-pill"><span class="num">100%</span>&nbsp;open infrastructure</div>
       </div>
       <div class="hero-links">
@@ -331,12 +331,12 @@
       <div class="pipeline-step">
         <div class="pipeline-num">01 · Connect</div>
         <h3>Aggregate</h3>
-        <p>Ingest metadata and signals from 25+ trusted open APIs and repositories in real time.</p>
+        <p>Ingest metadata and signals from 30+ trusted open data sources and repositories.</p>
         <div class="pipeline-details">
           <span>OpenAlex, Crossref, DataCite</span>
-          <span>OAPEN, DOAB, Europe PMC</span>
-          <span>Zenodo, Figshare, Dryad</span>
-          <span>Public web &amp; social platforms</span>
+          <span>OAPEN, DOAB, Europe PMC, re3data.org</span>
+          <span>Repository deposits via DataCite</span>
+          <span>Social, annotation &amp; web mentions</span>
         </div>
       </div>
       <div class="pipeline-step">
@@ -379,7 +379,7 @@
   <div class="section-label">Data provenance</div>
   <div class="card">
     <h2>Data Sources &amp; Integrations</h2>
-    <p style="color:var(--muted);margin-bottom:1.25rem;">Traditional academic metrics only tell a fraction of the story. openscience.works aggregates signals from 25+ trusted open sources across six dimensions.</p>
+    <p style="color:var(--muted);margin-bottom:1.25rem;">Traditional academic metrics only tell a fraction of the story. openscience.works aggregates signals from 30+ trusted open sources across seven dimensions — APIs where available, curated feeds and citation links elsewhere.</p>
     <div class="sources-grid">
       <div class="source-cat">
         <div class="source-cat-label">🎓 Academic Impact</div>
@@ -405,9 +405,10 @@
       <div class="source-cat">
         <div class="source-cat-label">🔬 Stewardship</div>
         <div class="source-cat-title">Linked Data &amp; Reproducibility</div>
-        <div class="source-cat-desc">Linked datasets, software repositories, clinical trials, and funding.</div>
+        <div class="source-cat-desc">Clinical trials and funding from Europe PMC; repository stewardship profiles from the <strong>re3data.org</strong> registry API. Zenodo, Figshare, and Dryad deposits are linked through DataCite and Crossref citations — not separate repository API feeds.</div>
         <div class="source-names">
           <span class="source-chip">Europe PMC</span>
+          <span class="source-chip">re3data.org</span>
           <span class="source-chip">Zenodo</span>
           <span class="source-chip">Figshare</span>
           <span class="source-chip">Dryad</span>
@@ -416,12 +417,22 @@
       <div class="source-cat">
         <div class="source-cat-label">📖 Teaching &amp; Education</div>
         <div class="source-cat-title">Pedagogical Adoption</div>
-        <div class="source-cat-desc">Syllabi citations, reading lists, library holdings, and lecture mentions.</div>
+        <div class="source-cat-desc">Syllabi citations, OER listings, reading lists, library holdings, and lecture mentions. WorldCat links are generated search URLs rather than live holdings API data.</div>
         <div class="source-names">
           <span class="source-chip">Open Library</span>
           <span class="source-chip">WorldCat</span>
           <span class="source-chip">YouTube</span>
           <span class="source-chip">OpenCourseWare</span>
+          <span class="source-chip">OER listings</span>
+        </div>
+      </div>
+      <div class="source-cat">
+        <div class="source-cat-label">📚 Reader Reception</div>
+        <div class="source-cat-title">Community &amp; Trade Readership</div>
+        <div class="source-cat-desc">BookStory reader-reception signals: community ratings and catalogue enrichment via LibraryThing and Google Books APIs. Amazon and Goodreads appear as generated search links only.</div>
+        <div class="source-names">
+          <span class="source-chip">LibraryThing</span>
+          <span class="source-chip">Google Books</span>
         </div>
       </div>
       <div class="source-cat">
@@ -432,6 +443,7 @@
           <span class="source-chip">Wikipedia</span>
           <span class="source-chip">Reddit</span>
           <span class="source-chip">Bluesky</span>
+          <span class="source-chip">Hypothesis</span>
           <span class="source-chip">StackExchange</span>
           <span class="source-chip">Blogs</span>
           <span class="source-chip">Podcasts</span>
@@ -440,12 +452,13 @@
       <div class="source-cat">
         <div class="source-cat-label">🛡️ Research Integrity</div>
         <div class="source-cat-title">Integrity &amp; Citation Context</div>
-        <div class="source-cat-desc">Flagging retractions and corrections; classifying citation intent via scite.ai.</div>
+        <div class="source-cat-desc">Retraction Watch (curated database), live PubPeer threads, Crossmark corrections via Crossref, scite.ai citation intent, and Sciety community reviews for preprints.</div>
         <div class="source-names">
           <span class="source-chip">Retraction Watch</span>
           <span class="source-chip">PubPeer</span>
           <span class="source-chip">Crossmark</span>
           <span class="source-chip">scite.ai</span>
+          <span class="source-chip">Sciety</span>
         </div>
       </div>
     </div>
@@ -673,6 +686,16 @@
   </nav>
   <p class="site-footer-legal">© 2026 openscience.works · martijnroelandse.dev b.v. · KVK 84477547</p>
 </footer>
+
+<script src="stories_data.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const st = window.STORIES_STATS;
+  if (!st) return;
+  const el = document.getElementById("hero-stat-stories");
+  if (el) el.textContent = st.total;
+});
+</script>
 
 </body>
 </html>

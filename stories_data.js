@@ -21764,145 +21764,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "articlestory_10.7554_elife.89373.html",
-"title": "Chromosome-specific maturation of the epigenome in the Drosophila male germline",
-"type": "ArticleStory",
-"doi": "10.7554/elife.89373",
-"year": 2023,
-"venue": "eLife",
-"venue_name": "eLife",
-"publisher": "",
-"concepts": [
-"Biology",
-"Dosage compensation",
-"Germline",
-"Chromatin",
-"Genetics",
-"Histone",
-"Heterochromatin",
-"X chromosome"
-],
-"roles": [
-"High-Visibility Uptake",
-"Computational Reproducibility Enabler"
-],
-"is_oa": true,
-"oa_status": "gold",
-"citation_count": 24,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": true,
-"has_reuse": true,
-"has_certified_repository": false,
-"has_open_repository": true,
-"excerpt": "Short impact summary The article \"Chromosome-specific maturation of the epigenome in the Drosophila male germline,\" published in eLife, has garnered notable academic attention, evidenced by 20 citatio…",
-"cover_url": "",
-"authors": "James T. Anderson, Steven Henikoff, Kami Ahmad",
-"all_authors": [
-"James T. Anderson",
-"Steven Henikoff",
-"Kami Ahmad"
-],
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [
-"National Human Genome Research Institute",
-"Howard Hughes Medical Institute",
-"NHGRI NIH HHS"
-],
-"sectors": [
-{
-"label": "Education",
-"count": 14
-},
-{
-"label": "Healthcare",
-"count": 3
-},
-{
-"label": "Nonprofit",
-"count": 1
-},
-{
-"label": "Facility",
-"count": 1
-},
-{
-"label": "Company",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 8
-},
-{
-"label": "United Kingdom",
-"count": 3
-},
-{
-"label": "Austria",
-"count": 2
-},
-{
-"label": "Sweden",
-"count": 2
-},
-{
-"label": "Canada",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "Rockefeller University",
-"count": 2
-},
-{
-"label": "Louisiana State University Health Sciences Center Shreveport",
-"count": 2
-},
-{
-"label": "Umeå University",
-"count": 2
-},
-{
-"label": "Institute of Science and Technology Austria",
-"count": 2
-},
-{
-"label": "University of California, Berkeley",
-"count": 1
-}
-],
-"scite_supporting": 7,
-"scite_contradicting": 0,
-"version_count": 2,
-"version_dois": [
-"10.7554/elife.89373",
-"10.7554/elife.89373.3"
-]
-},
-{
 "file": "bookstory_10.1007_978-3-030-47436-2.html",
 "title": "Advances in Knowledge Discovery and Data Mining",
 "type": "BookStory",
@@ -22734,6 +22595,144 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.7554/eLife.104764"
+]
+},
+{
+"file": "articlestory_10.7554_elife.89373.html",
+"title": "Chromosome-specific maturation of the epigenome in the Drosophila male germline",
+"type": "ArticleStory",
+"doi": "10.7554/elife.89373",
+"year": 2023,
+"venue": "eLife",
+"venue_name": "eLife",
+"publisher": "",
+"concepts": [
+"Biology",
+"Dosage compensation",
+"Germline",
+"Chromatin",
+"Genetics",
+"Histone",
+"Heterochromatin",
+"X chromosome"
+],
+"roles": [
+"High-Visibility Uptake",
+"Computational Reproducibility Enabler"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 20,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": true,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary The article \"Chromosome-specific maturation of the epigenome in the Drosophila male germline,\" published in eLife, has garnered notable academic attention, evidenced by 20 citatio…",
+"cover_url": "",
+"authors": "James T. Anderson, Steven Henikoff, Kami Ahmad",
+"all_authors": [
+"James T. Anderson",
+"Steven Henikoff",
+"Kami Ahmad"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"National Human Genome Research Institute",
+"Howard Hughes Medical Institute",
+"NHGRI NIH HHS"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 14
+},
+{
+"label": "Healthcare",
+"count": 3
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 8
+},
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "Austria",
+"count": 2
+},
+{
+"label": "Sweden",
+"count": 2
+},
+{
+"label": "Canada",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Rockefeller University",
+"count": 2
+},
+{
+"label": "Louisiana State University Health Sciences Center Shreveport",
+"count": 2
+},
+{
+"label": "Umeå University",
+"count": 2
+},
+{
+"label": "Institute of Science and Technology Austria",
+"count": 2
+},
+{
+"label": "University of California, Berkeley",
+"count": 1
+}
+],
+"scite_supporting": 7,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7554/elife.89373"
 ]
 },
 {
@@ -49168,10 +49167,9 @@ window.STORIES_DATA = [
 "citing_institutions": [],
 "scite_supporting": 0,
 "scite_contradicting": 0,
-"version_count": 2,
+"version_count": 1,
 "version_dois": [
-"10.25378/janelia.23816295",
-"10.25378/janelia.23816295.v1"
+"10.25378/janelia.23816295"
 ]
 },
 {
@@ -49610,4 +49608,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 407, "total_articles": 190, "total_books": 185, "total_data": 25, "total_software": 7, "total_oa": 342, "pct_oa": 84, "total_citations": 161753, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 407, "total_articles": 190, "total_books": 185, "total_data": 25, "total_software": 7, "total_oa": 342, "pct_oa": 84, "total_citations": 161749, "num_disciplines": 30};
