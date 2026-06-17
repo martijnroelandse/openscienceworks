@@ -18861,6 +18861,75 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "datastory_10.22002_rwdfx-j4z76.html",
+"title": "The impact of package selection and versioning on single-cell RNA-seq analysis",
+"type": "DataStory",
+"doi": "10.22002/rwdfx-j4z76",
+"year": 2025,
+"venue": "CaltechDATA",
+"venue_name": "CaltechDATA",
+"publisher": "Unknown",
+"concepts": [
+"Computer science",
+"Selection (genetic algorithm)",
+"Software versioning",
+"Data mining",
+"R package",
+"Database",
+"Data analysis",
+"Software"
+],
+"roles": [
+"Dataset Reference Backbone"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 35,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary This dataset, deposited in CaltechDATA by Joseph Rich and Lior Pachter, serves as the computational backbone for research examining how software package selection and version diff…",
+"cover_url": "",
+"authors": "Rich, Joseph, Pachter, Lior",
+"all_authors": [
+"Rich, Joseph",
+"Pachter, Lior"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.22002/rwdfx-j4z76"
+]
+},
+{
 "file": "articlestory_10.1371_journal.pone.0253205.html",
 "title": "Automatic classification of medical image modality and anatomical location using convolutional neural network",
 "type": "ArticleStory",
@@ -21349,6 +21418,123 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.1101/2023.11.29.569289"
+]
+},
+{
+"file": "articlestory_10.18154_rwth-2025-00578.html",
+"title": "Quantum Computing for High-Energy Physics : State of the Art and Challenges",
+"type": "ArticleStory",
+"doi": "10.18154/rwth-2025-00578",
+"year": 2024,
+"venue": "RWTH Publications (RWTH Aachen)",
+"venue_name": "RWTH Publications (RWTH Aachen)",
+"publisher": "",
+"concepts": [
+"Quantum computer",
+"Physics",
+"State (computer science)",
+"Computer science",
+"Theoretical physics",
+"Quantum",
+"Quantum mechanics",
+"Quantum entanglement"
+],
+"roles": [
+"Pedagogical Anchor",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 25,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Affordable and clean energy"
+],
+"has_teaching": true,
+"ta_ocw": 6,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary This large-scale community review of quantum computing applications in high-energy physics has accumulated 25 citations since its publication, establishing itself as a substantive…",
+"cover_url": "",
+"authors": "Di Meglio, Alberto, Jansen, Karl, Tavernelli, Ivano et al.",
+"all_authors": [
+"Di Meglio, Alberto",
+"Jansen, Karl",
+"Tavernelli, Ivano",
+"Alexandrou, Constantia",
+"Arunachalam, Srinivasan",
+"Bauer, Christian W.",
+"Borras, Kerstin",
+"Carrazza, Stefano",
+"Crippa, Arianna",
+"Croft, Vincent",
+"de Putter, Roland",
+"Delgado, Andrea",
+"Dunjko, Vedran",
+"Egger, Daniel J.",
+"Fernández-Combarro, Elias",
+"Fuchs, Elina",
+"Funcke, Lena",
+"González-Cuadra, Daniel",
+"Grossi, Michele",
+"Halimeh, Jad C.",
+"Holmes, Zoë",
+"Kühn, Stefan",
+"Lacroix, Denis",
+"Lewis, Randy",
+"Lucchesi, Donatella",
+"Martinez, Miriam Lucio",
+"Meloni, Federico",
+"Mezzacapo, Antonio",
+"Montangero, Simone",
+"Nagano, Lento",
+"Pascuzzi, Vincent R.",
+"Radescu, Voica",
+"Ortega, Enrique Rico",
+"Roggero, Alessandro",
+"Schuhmacher, Julian",
+"Seixas, Joao",
+"Silvi, Pietro",
+"Spentzouris, Panagiotis",
+"Tacchino, Francesco",
+"Temme, Kristan",
+"Terashi, Koji",
+"Tura, Jordi",
+"Tüysüz, Cenk",
+"Vallecorsa, Sofia",
+"Wiese, Uwe-Jens",
+"Yoo, Shinjae",
+"Zhang, Jinglei"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.18154/rwth-2025-00578"
 ]
 },
 {
@@ -24707,6 +24893,140 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "datastory_10.25378_janelia.13114499.v1.html",
+"title": "Isotropic 3D electron microscopy reference data of isolated murine pancreatic islets treated with high glucose (jrc_mus-pancreas-1)",
+"type": "DataStory",
+"doi": "10.25378/janelia.13114499.v1",
+"year": 2020,
+"venue": "Figshare",
+"venue_name": "Figshare",
+"publisher": "Digital Science",
+"concepts": [
+"Islet",
+"Cell biology",
+"Pancreatic islets",
+"Electron microscope",
+"Chemistry",
+"Organelle",
+"BETA (programming language)",
+"Beta cell"
+],
+"roles": [
+"High-Visibility Uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 12,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary Released in 2020 by researchers at Janelia Research Campus, this isotropic 3D electron microscopy dataset of high-glucose-treated murine pancreatic islets has accumulated 12 citat…",
+"cover_url": "",
+"authors": "Xu, C. Shan, Pang, Song, Bennett, Davis et al.",
+"all_authors": [
+"Xu, C. Shan",
+"Pang, Song",
+"Bennett, Davis",
+"Mueller, Andreas",
+"Solimena, Michele",
+"Hess, Harald"
+],
+"institutions": [
+"Janelia Research Campus"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Education",
+"count": 2
+},
+{
+"label": "Government",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Italy",
+"count": 2
+},
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "Canada",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Cooper Union",
+"count": 0
+},
+{
+"label": "Heinrich Heine University Düsseldorf",
+"count": 0
+},
+{
+"label": "Center for Systems Biology Dresden",
+"count": 0
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 0
+},
+{
+"label": "German Center for Diabetes Research",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.25378/janelia.13114499.v1"
+]
+},
+{
 "file": "articlestory_10.1038_nphys1170.html",
 "title": "Measured measurement",
 "type": "ArticleStory",
@@ -25247,8 +25567,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -40902,6 +41222,110 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "datastory_10.24435_materialscloud:3k-4e.html",
+"title": "Density functional Bogoliubov-de Gennes theory for superconductors implemented in the SIESTA code",
+"type": "DataStory",
+"doi": "10.24435/materialscloud:3k-4e",
+"year": 2024,
+"venue": "NCCR MARVEL",
+"venue_name": "NCCR MARVEL",
+"publisher": "Unknown",
+"concepts": [
+"Superconductivity",
+"SIESTA (computer program)",
+"Density functional theory",
+"Physics",
+"Basis (linear algebra)",
+"Charge (physics)",
+"Code (set theory)",
+"Statistical physics"
+],
+"roles": [
+"Active Public Discourse"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary This research dataset, deposited on the NCCR MARVEL Materials Cloud platform in 2024, supports the implementation of density functional Bogoliubov-de Gennes theory for superconduc…",
+"cover_url": "",
+"authors": "Reho, Riccardo, Wittemeier, Nils, Kole, Arnold Herman et al.",
+"all_authors": [
+"Reho, Riccardo",
+"Wittemeier, Nils",
+"Kole, Arnold Herman",
+"Ordejón, Pablo",
+"Zanolli, Zeila"
+],
+"institutions": [
+"Utrecht University",
+"Institut Català de Nanociència i Nanotecnologia"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Stack Exchange"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Netherlands",
+"count": 1
+},
+{
+"label": "Spain",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Utrecht University",
+"count": 0
+},
+{
+"label": "Institut Català de Nanociència i Nanotecnologia",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.24435/materialscloud:3k-4e"
+]
+},
+{
 "file": "datastory_10.5061_dryad.mq8r2.html",
 "title": "Data from: Hunting, exotic carnivores, and habitat loss: anthropogenic effects on a native carnivore community, Madagascar",
 "type": "DataStory",
@@ -48254,6 +48678,83 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "datastory_10.22002_pa710-cdn95.html",
+"title": "Dataset for: Decoding Motor Plans Using a Closed-Loop Ultrasonic Brain-Machine Interface",
+"type": "DataStory",
+"doi": "10.22002/pa710-cdn95",
+"year": 2022,
+"venue": "CaltechDATA",
+"venue_name": "CaltechDATA",
+"publisher": "Unknown",
+"concepts": [
+"Ultrasonic sensor",
+"Interface (matter)",
+"Metadata",
+"Computer science",
+"Computer vision",
+"Decoding methods",
+"Session (web analytics)",
+"Artificial intelligence"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary This dataset underpins a landmark study on closed-loop ultrasonic brain-machine interfaces and has been directly reused in two downstream scholarly contexts, including a publicati…",
+"cover_url": "",
+"authors": "Griggs, Whitney, Norman, Sumner, Deffieux, Thomas et al.",
+"all_authors": [
+"Griggs, Whitney",
+"Norman, Sumner",
+"Deffieux, Thomas",
+"Segura, Florian",
+"Osmanski, Bruno-Félix",
+"Chau, Geeling",
+"Christopoulos, Vasileios",
+"Liu, Charles",
+"Tanter, Mickael",
+"Shapiro, Mikhail G.",
+"Andersen, Richard A.",
+"California Institute of Technology"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.22002/pa710-cdn95"
+]
+},
+{
 "file": "datastory_10.23640_07243.5259502.v1.html",
 "title": "ORCID in Book Workflows: Survey",
 "type": "DataStory",
@@ -48337,6 +48838,237 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.23640/07243.5259502.v1"
+]
+},
+{
+"file": "datastory_10.24435_materialscloud:1b-aa.html",
+"title": "One dimensional edge localized YSR states in CrCl₃ on NbSe₂",
+"type": "DataStory",
+"doi": "10.24435/materialscloud:1b-aa",
+"year": 2025,
+"venue": "NCCR MARVEL",
+"venue_name": "NCCR MARVEL",
+"publisher": "Unknown",
+"concepts": [
+"Condensed matter physics",
+"Ferromagnetism",
+"Enhanced Data Rates for GSM Evolution",
+"Monolayer",
+"Scanning tunneling microscope",
+"Heterojunction",
+"Physics",
+"Coupling (piping)"
+],
+"roles": [
+"Active Public Discourse"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary This 2025 dataset from Utrecht University, deposited on the NCCR MARVEL Materials Cloud platform, supports experimental and computational research into one-dimensional Yu-Shiba-Ru…",
+"cover_url": "",
+"authors": "Cuperus, Jan P., Kole, Arnold H., Botello-Méndez, Andrés R. et al.",
+"all_authors": [
+"Cuperus, Jan P.",
+"Kole, Arnold H.",
+"Botello-Méndez, Andrés R.",
+"Zanolli, Zeila",
+"Vanmaekelbergh, Daniel",
+"Swart, Ingmar"
+],
+"institutions": [
+"Utrecht University"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Stack Exchange"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.24435/materialscloud:1b-aa"
+]
+},
+{
+"file": "datastory_10.24435_materialscloud:aa-2q.html",
+"title": "One dimensional edge localized YSR states in CrCl₃ on NbSe₂",
+"type": "DataStory",
+"doi": "10.24435/materialscloud:aa-2q",
+"year": 2025,
+"venue": "NCCR MARVEL",
+"venue_name": "NCCR MARVEL",
+"publisher": "Unknown",
+"concepts": [
+"Condensed matter physics",
+"Ferromagnetism",
+"Enhanced Data Rates for GSM Evolution",
+"Monolayer",
+"Scanning tunneling microscope",
+"Heterojunction",
+"Physics",
+"Coupling (piping)"
+],
+"roles": [
+"Active Public Discourse"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary This 2025 research dataset, deposited on Materials Cloud under the NCCR MARVEL initiative by a team from Utrecht University, supports experimental and computational investigations…",
+"cover_url": "",
+"authors": "Cuperus, Jan P., Kole, Arnold H., Botello-Méndez, Andrés R. et al.",
+"all_authors": [
+"Cuperus, Jan P.",
+"Kole, Arnold H.",
+"Botello-Méndez, Andrés R.",
+"Zanolli, Zeila",
+"Vanmaekelbergh, Daniel",
+"Swart, Ingmar"
+],
+"institutions": [
+"Utrecht University"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Stack Exchange"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.24435/materialscloud:aa-2q"
+]
+},
+{
+"file": "datastory_10.24435_materialscloud:p7-r3.html",
+"title": "Density functional Bogoliubov-de Gennes theory for superconductors implemented in the SIESTA code",
+"type": "DataStory",
+"doi": "10.24435/materialscloud:p7-r3",
+"year": 2024,
+"venue": "NCCR MARVEL",
+"venue_name": "NCCR MARVEL",
+"publisher": "Unknown",
+"concepts": [
+"Superconductivity",
+"SIESTA (computer program)",
+"Density functional theory",
+"Physics",
+"Basis (linear algebra)",
+"Charge (physics)",
+"Code (set theory)",
+"Statistical physics"
+],
+"roles": [
+"Active Public Discourse"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary This 2024 research dataset, deposited on the NCCR MARVEL Materials Cloud platform by a collaborative team from Utrecht University and the Institut Català de Nanociència i Nanotecn…",
+"cover_url": "",
+"authors": "Reho, Riccardo, Wittemeier, Nils, Kole, Arnold Herman et al.",
+"all_authors": [
+"Reho, Riccardo",
+"Wittemeier, Nils",
+"Kole, Arnold Herman",
+"Ordejón, Pablo",
+"Zanolli, Zeila"
+],
+"institutions": [
+"Utrecht University",
+"Institut Català de Nanociència i Nanotecnologia"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Stack Exchange"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.24435/materialscloud:p7-r3"
 ]
 },
 {
@@ -48878,4 +49610,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 399, "total_articles": 189, "total_books": 185, "total_data": 18, "total_software": 7, "total_oa": 334, "pct_oa": 84, "total_citations": 161680, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 407, "total_articles": 190, "total_books": 185, "total_data": 25, "total_software": 7, "total_oa": 342, "pct_oa": 84, "total_citations": 161753, "num_disciplines": 30};
