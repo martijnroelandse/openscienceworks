@@ -25672,6 +25672,146 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "datastory_10.5281_ZENODO.6366082.html",
+"title": "APT: Animal Part Tracker v0.3.4",
+"type": "DataStory",
+"doi": "10.5281/ZENODO.6366082",
+"year": 2022,
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
+"concepts": [
+"Computer science",
+"Workstation",
+"Tracking (education)",
+"Graphical user interface",
+"Software",
+"Interface (matter)",
+"Scripting language",
+"Extensibility"
+],
+"roles": [
+"Rapid Uptake",
+"High-Visibility Uptake",
+"Computational Reproducibility Enabler"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 11,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary APT (Animal Part Tracker), developed primarily at Janelia Research Campus, is a neural-network-based pose-estimation tool for tracking body parts of animals in video.",
+"cover_url": "",
+"authors": "Kabra, Mayank, Lee, Allen, Robie, Alice et al.",
+"all_authors": [
+"Kabra, Mayank",
+"Lee, Allen",
+"Robie, Alice",
+"Egnor, Roian",
+"Huston, Stephen",
+"Rodriguez, Ivan Felipe",
+"Edwards, Austin",
+"Branson, Kristin"
+],
+"institutions": [
+"Janelia Research Campus",
+"Learning Through an Expanded Arts Program",
+"John Brown University"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Facility",
+"count": 9
+},
+{
+"label": "Education",
+"count": 7
+},
+{
+"label": "Healthcare",
+"count": 5
+},
+{
+"label": "Nonprofit",
+"count": 2
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 11
+},
+{
+"label": "United Kingdom",
+"count": 3
+},
+{
+"label": "Israel",
+"count": 3
+},
+{
+"label": "Germany",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Janelia Research Campus",
+"count": 3
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 2
+},
+{
+"label": "Harvard University",
+"count": 2
+},
+{
+"label": "University of Rochester Medical Center",
+"count": 1
+},
+{
+"label": "Technion – Israel Institute of Technology",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/ZENODO.6366082"
+]
+},
+{
 "file": "articlestory_10.1002_mrm.29349.html",
 "title": "SENSE EPI reconstruction with 2D phase error correction and channel‐wise noise removal",
 "type": "ArticleStory",
@@ -35230,6 +35370,145 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "datastory_10.5281_zenodo.1490628.html",
+"title": "open2c/distiller-nf: v0.3.4",
+"type": "DataStory",
+"doi": "10.5281/zenodo.1490628",
+"year": 2022,
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
+"concepts": [
+"Nucleofection",
+"Gestational period",
+"TSG101",
+"Diafiltration",
+"Dysgeusia",
+"Liquation",
+"Fusible alloy",
+"Triacetin"
+],
+"roles": [
+"High-Visibility Uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 3,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary distiller-nf (v0.3.4) is an open-source Nextflow pipeline developed by the open2c consortium for processing Hi-C sequencing data.",
+"cover_url": "",
+"authors": "Goloborodko, Anton, Venev, Sergey, Spracklin, George et al.",
+"all_authors": [
+"Goloborodko, Anton",
+"Venev, Sergey",
+"Spracklin, George",
+"Nezar Abdennur",
+"Agalitsyna",
+"Shaytan, Alexey",
+"Flyamer, Ilya",
+"Di Tommaso, Paolo",
+"Sergey-Kolchenko"
+],
+"institutions": [
+"Institute of Molecular Biotechnology",
+"University of Massachusetts Chan Medical School",
+"Moscow Institute of Thermal Technology"
+],
+"download_count": 287,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+},
+{
+"label": "Healthcare",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Other",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 3
+},
+{
+"label": "CM",
+"count": 1
+},
+{
+"label": "Pakistan",
+"count": 1
+},
+{
+"label": "Hungary",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Southern California",
+"count": 1
+},
+{
+"label": "California Southern University",
+"count": 0
+},
+{
+"label": "Stowers Institute for Medical Research",
+"count": 0
+},
+{
+"label": "University of Massachusetts Chan Medical School",
+"count": 0
+},
+{
+"label": "Massachusetts Institute of Technology",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.1490628"
+]
+},
+{
 "file": "articlestory_10.1007_s11999.0000000000000172.html",
 "title": "CORR Insights®: Preoperative Pain Sensitization Is Associated With Postoperative Pillar Pain After Open Carpal Tunnel Release",
 "type": "ArticleStory",
@@ -37567,6 +37846,134 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.5117/9789463723336"
+]
+},
+{
+"file": "datastory_10.5281_zenodo.14609841.html",
+"title": "JaneliaSciComp/workstation: 9.20.1",
+"type": "DataStory",
+"doi": "10.5281/zenodo.14609841",
+"year": 2025,
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
+"concepts": [],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 2,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary JaneliaSciComp/workstation 9.20.1 is a specialized scientific software tool developed primarily at Janelia Research Campus, with 156 downloads and 500 views recorded on Zenodo sin…",
+"cover_url": "",
+"authors": "Konrad Rokicki, L Foster, Donald J. Olbris et al.",
+"all_authors": [
+"Konrad Rokicki",
+"L Foster",
+"Donald J. Olbris",
+"porterbot",
+"Christopher Bruns",
+"seandmurphy",
+"Cristian Goina",
+"Eric T. Trautman",
+"parvathama",
+"Surbhi Singh",
+"Patrick Edson",
+"Todd Safford",
+"Yang Yu",
+"Marwan Zouinkhi",
+"Jody Clements",
+"Cameron Arshadi",
+"Yang",
+"Philip Hubbard"
+],
+"institutions": [
+"Janelia Research Campus",
+"Freddie Mac (United States)",
+"Learning Through an Expanded Arts Program",
+"Howard Hughes Medical Institute"
+],
+"download_count": 156,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Company",
+"count": 2
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "Australia",
+"count": 2
+},
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "Germany",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "Howard Hughes Medical Institute",
+"count": 0
+},
+{
+"label": "Brain (Germany)",
+"count": 0
+},
+{
+"label": "University of California, Berkeley",
+"count": 0
+},
+{
+"label": "Columbia University",
+"count": 0
+},
+{
+"label": "Allen Institute for Brain Science",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.14609841"
 ]
 },
 {
@@ -41967,6 +42374,129 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.5061/dryad.mq8r2"
+]
+},
+{
+"file": "datastory_10.5281_ZENODO.10970119.html",
+"title": "pybbi",
+"type": "DataStory",
+"doi": "10.5281/ZENODO.10970119",
+"year": 2024,
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
+"concepts": [
+"Computer science",
+"Zoom",
+"Artificial intelligence",
+"Mathematics",
+"Noise (video)",
+"Frame (networking)",
+"Algorithm",
+"Set (abstract data type)"
+],
+"roles": [
+"High-Visibility Uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary pybbi, a Python software tool for reading genomic bigBed and bigWig files developed by Nezar Abdennur, has attracted early but high-quality scholarly attention since its 2024 rele…",
+"cover_url": "",
+"authors": "Abdennur, Nezar",
+"all_authors": [
+"Abdennur, Nezar"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Healthcare",
+"count": 1
+},
+{
+"label": "Other",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "CM",
+"count": 1
+},
+{
+"label": "United States",
+"count": 1
+},
+{
+"label": "Hungary",
+"count": 1
+},
+{
+"label": "Pakistan",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Massachusetts Institute of Technology",
+"count": 0
+},
+{
+"label": "Health and Human Development (2HD) Research Network",
+"count": 0
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 0
+},
+{
+"label": "National Institute of Child Health",
+"count": 0
+},
+{
+"label": "University of Massachusetts Chan Medical School",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/ZENODO.10970119"
 ]
 },
 {
@@ -50150,6 +50680,293 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "datastory_10.5281_zenodo.13993815.html",
+"title": "dms-vep/Flu_H5_American-Wigeon_South-Carolina_2021-H5N1_DMS: Flu_H5_American-Wigeon_South-Carolina_2021-H5N1_DMS_PLOSbiology",
+"type": "DataStory",
+"doi": "10.5281/zenodo.13993815",
+"year": 2024,
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
+"concepts": [
+"Computer science",
+"Identification (biology)",
+"Work (physics)",
+"Biology",
+"Context (archaeology)",
+"Engineering",
+"Product (mathematics)",
+"Process (computing)"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary This software tool, released in 2024 by Bernadeta Dadonaite, Jesse Bloom, Will Hannon, and a collaborator, provides the computational pipeline underlying a deep mutational scannin…",
+"cover_url": "",
+"authors": "Bernadeta Dadonaite, Jesse Bloom, Will Hannon et al.",
+"all_authors": [
+"Bernadeta Dadonaite",
+"Jesse Bloom",
+"Will Hannon",
+"jennyahn0"
+],
+"institutions": [
+"Howard Hughes Medical Institute",
+"Cape Town HVTN Immunology Laboratory / Hutchinson Centre Research Institute of South Africa"
+],
+"download_count": 46,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.13993815"
+]
+},
+{
+"file": "datastory_10.5281_zenodo.15784610.html",
+"title": "Essential meaning word scores for ousiometric framework of Goodness-Power-Aggression-Danger-Structure (GPADS)",
+"type": "DataStory",
+"doi": "10.5281/zenodo.15784610",
+"year": 2026,
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
+"concepts": [
+"Word (group theory)",
+"Meaning (existential)",
+"Space (punctuation)",
+"Power (physics)",
+"Linguistics",
+"Natural language processing",
+"Artificial intelligence",
+"Goodness of fit"
+],
+"roles": [
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Reduced inequalities"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary Released in 2026 by Peter Sheridan Dodds at the University of Vermont, this dataset provides essential meaning word scores underpinning the ousiometric GPADS framework — a multidi…",
+"cover_url": "",
+"authors": "Dodds, Peter Sheridan",
+"all_authors": [
+"Dodds, Peter Sheridan"
+],
+"institutions": [
+"University of Vermont"
+],
+"download_count": 32,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.15784610"
+]
+},
+{
+"file": "datastory_10.5281_zenodo.16953724.html",
+"title": "Archetypometrics dataset",
+"type": "DataStory",
+"doi": "10.5281/zenodo.16953724",
+"year": 2025,
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
+"concepts": [
+"Python (programming language)",
+"Computer science",
+"Current (fluid)",
+"Data mining",
+"MATLAB",
+"Programming language",
+"Data structure",
+"Data collection"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary The Archetypometrics dataset, released in 2025 by Peter Sheridan Dodds of the University of Vermont, has accumulated 194 downloads and 220 views since publication, and has been in…",
+"cover_url": "",
+"authors": "Dodds, Peter Sheridan",
+"all_authors": [
+"Dodds, Peter Sheridan"
+],
+"institutions": [
+"University of Vermont"
+],
+"download_count": 194,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.16953724"
+]
+},
+{
+"file": "datastory_10.5281_zenodo.17117974.html",
+"title": "Archetypometrics, a Pragmateia: Empirical Determination of the Fundamental Archetypes of Fictional Characters",
+"type": "DataStory",
+"doi": "10.5281/zenodo.17117974",
+"year": 2025,
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
+"concepts": [
+"Archetype",
+"Storytelling",
+"Computer science",
+"Quality (philosophy)",
+"Personality",
+"Narrative",
+"Epistemology",
+"Laptop"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary Published in 2025 and openly accessible via Zenodo, Archetypometrics, a Pragmateia has attracted over 3,100 downloads and nearly 1,000 views since its release, signaling robust ea…",
+"cover_url": "",
+"authors": "Dodds, Peter Sheridan, Zimmerman, Julia Witte, Beauregard, Calla G. et al.",
+"all_authors": [
+"Dodds, Peter Sheridan",
+"Zimmerman, Julia Witte",
+"Beauregard, Calla G.",
+"Fehr, Ashley M. A.",
+"Fudolig, Mikaela Irene",
+"Tangherlini, Timothy R.",
+"Danforth, Christopher M."
+],
+"institutions": [
+"University of Vermont",
+"University of California, Berkeley"
+],
+"download_count": 3107,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.17117974"
+]
+},
+{
 "file": "datastory_10.5281_zenodo.17442025.html",
 "title": "Classification of research publications based on data from OpenAlex",
 "type": "DataStory",
@@ -50215,6 +51032,78 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.5281/zenodo.17442025"
+]
+},
+{
+"file": "datastory_10.5281_zenodo.19900975.html",
+"title": "QuantaPep v4.0: Autonomous Genotype-Aware Peptide Discovery at Industrial Scale",
+"type": "DataStory",
+"doi": "10.5281/zenodo.19900975",
+"year": 2026,
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
+"concepts": [
+"Scalability",
+"Computer science",
+"Artificial intelligence",
+"Population",
+"Data mining",
+"Machine learning",
+"Computational biology",
+"Drug discovery"
+],
+"roles": [
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Industry, innovation and infrastructure"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary QuantaPep v4.0, a preprint deposited on Zenodo in 2026 by Adam Werderits of Stevenage Bioscience Catalyst, proposes an autonomous, genotype-aware pipeline for peptide discovery de…",
+"cover_url": "",
+"authors": "Adam Werderits",
+"all_authors": [
+"Adam Werderits"
+],
+"institutions": [
+"Stevenage Bioscience Catalyst"
+],
+"download_count": 8,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.19900975"
 ]
 },
 {
@@ -50445,4 +51334,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 416, "total_articles": 190, "total_books": 185, "total_data": 34, "total_software": 7, "total_oa": 351, "pct_oa": 84, "total_citations": 172469, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 425, "total_articles": 190, "total_books": 185, "total_data": 43, "total_software": 7, "total_oa": 360, "pct_oa": 85, "total_citations": 172486, "num_disciplines": 30};
