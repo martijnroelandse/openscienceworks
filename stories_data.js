@@ -94,6 +94,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 9,
 "bluesky": 2,
@@ -251,14 +253,18 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "Bluesky",
-"Hypothesis"
+"Hypothesis",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 1,
 "bluesky": 1,
-"hypothesis": 2
+"hypothesis": 2,
+"news": 1
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -425,6 +431,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 8,
 "bluesky": 1,
@@ -577,6 +585,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": true,
 "librarything_rating": 9.2,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 1,
 "news": 4
@@ -719,6 +729,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 5,
 "bluesky": 2,
@@ -787,138 +799,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.1056/NEJMoa2021436"
-]
-},
-{
-"file": "datastory_10.48550_arxiv.1207.7214.html",
-"title": "Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC",
-"type": "DataStory",
-"doi": "10.48550/arxiv.1207.7214",
-"year": 2012,
-"venue": "arXiv",
-"venue_name": "arXiv",
-"publisher": "Cornell University",
-"concepts": [
-"Physics",
-"Particle physics",
-"Higgs boson",
-"Large Hadron Collider",
-"Standard Model (mathematical formulation)",
-"Atlas (anatomy)",
-"Atlas detector",
-"Nuclear physics"
-],
-"roles": [
-"Scholarly Uptake",
-"High-Visibility Uptake"
-],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 10707,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 1,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": false,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary The ATLAS Collaboration's 2012 report on the observation of a new boson consistent with the Standard Model Higgs boson stands as one of the most consequential publications in mode…",
-"cover_url": "",
-"authors": "The ATLAS Collaboration",
-"all_authors": [
-"The ATLAS Collaboration"
-],
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 10
-},
-{
-"label": "Facility",
-"count": 6
-},
-{
-"label": "Healthcare",
-"count": 3
-},
-{
-"label": "Company",
-"count": 1
-},
-{
-"label": "Government",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "Germany",
-"count": 4
-},
-{
-"label": "United States",
-"count": 4
-},
-{
-"label": "United Kingdom",
-"count": 3
-},
-{
-"label": "Italy",
-"count": 3
-},
-{
-"label": "Switzerland",
-"count": 3
-}
-],
-"citing_institutions": [
-{
-"label": "University of Minho",
-"count": 1
-},
-{
-"label": "Rutgers, The State University of New Jersey",
-"count": 1
-},
-{
-"label": "Paul Scherrer Institute",
-"count": 1
-},
-{
-"label": "University of Southampton",
-"count": 0
-},
-{
-"label": "Uppsala University",
-"count": 0
-}
-],
-"scite_supporting": 136,
-"scite_contradicting": 5,
-"version_count": 1,
-"version_dois": [
-"10.48550/arxiv.1207.7214"
 ]
 },
 {
@@ -3919,6 +3799,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 10,
 "hypothesis": 1
@@ -4089,6 +3971,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "substack": 1,
 "news": 3
@@ -4210,7 +4094,7 @@ window.STORIES_DATA = [
 ],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 2,
+"ta_youtube": 4,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": true,
@@ -4271,12 +4155,16 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Bluesky",
-"Stack Exchange"
+"Stack Exchange",
+"News"
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
-"bluesky": 2
+"bluesky": 2,
+"news": 5
 },
 "is_top1pct": true,
 "is_top10pct": true,
@@ -4438,6 +4326,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 3
 },
@@ -4586,6 +4476,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -4823,6 +4715,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 3,
 "news": 1
@@ -4976,6 +4870,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 5,
 "bluesky": 3,
@@ -5120,6 +5016,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": true,
 "librarything_rating": 8.5,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 1,
 "hypothesis": 1,
@@ -5259,6 +5157,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -5375,7 +5275,7 @@ window.STORIES_DATA = [
 ],
 "has_teaching": true,
 "ta_ocw": 5,
-"ta_youtube": 4,
+"ta_youtube": 3,
 "ta_ol_holdings": 19,
 "ta_otl": false,
 "has_peer_review": false,
@@ -5394,11 +5294,20 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"News",
 "LibraryThing"
 ],
 "has_librarything": true,
 "librarything_rating": 8.3,
-"platform_counts": {},
+"has_award": true,
+"awards": [
+"Financial Times and Goldman Sachs Business Book of the Year Award (2014)",
+"Spear's Book Award Shortlist (Business, 2014)",
+"Waterstones Book of the Year shortlist (2014)"
+],
+"platform_counts": {
+"news": 5
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -5548,6 +5457,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 1,
 "news": 1
@@ -5746,6 +5657,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 2
 },
@@ -5890,6 +5803,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": true,
 "is_top10pct": true,
@@ -6029,6 +5944,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -6182,6 +6099,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -6326,6 +6245,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "hypothesis": 2
 },
@@ -6470,6 +6391,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 2
 },
@@ -6607,6 +6530,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": true,
 "is_top10pct": true,
@@ -6744,6 +6669,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "podcast": 3
 },
@@ -6876,6 +6803,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -7011,6 +6940,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -7153,6 +7084,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 1
 },
@@ -7291,6 +7224,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -7422,6 +7357,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": true,
 "librarything_rating": 10.0,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 1,
 "news": 5
@@ -7570,6 +7507,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -7700,6 +7639,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -7854,6 +7795,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 5
 },
@@ -8020,10 +7963,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"has_award": false,
+"awards": [],
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -8156,6 +8105,11 @@ window.STORIES_DATA = [
 ],
 "has_librarything": true,
 "librarything_rating": 8.4,
+"has_award": true,
+"awards": [
+"Goodreads Choice Award Nominee (History & Biography, 2020)",
+"Independent Booksellers' Book Prize Shortlist (Non-Fiction, 2021)"
+],
 "platform_counts": {
 "bluesky": 30,
 "wikipedia": 4
@@ -8294,6 +8248,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -8425,6 +8381,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -8606,6 +8564,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -8740,6 +8700,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -8875,6 +8837,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -9009,6 +8973,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -9434,6 +9400,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 4,
 "news": 1
@@ -9577,6 +9545,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -9709,6 +9679,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 2,
 "bluesky": 1
@@ -9854,6 +9826,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 3
 },
@@ -9990,6 +9964,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "substack": 4,
 "news": 1
@@ -10129,6 +10105,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -10304,6 +10282,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "hypothesis": 1
 },
@@ -10453,6 +10433,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 2,
 "hypothesis": 1,
@@ -10647,6 +10629,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 2,
 "bluesky": 4,
@@ -10811,6 +10795,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -10931,6 +10917,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "bluesky": 1
 },
@@ -11070,6 +11058,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -11236,6 +11226,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "podcast": 1
 },
@@ -11397,6 +11389,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "reddit": 1,
 "news": 1
@@ -11527,6 +11521,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -11666,6 +11662,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "podcast": 1
 },
@@ -11811,6 +11809,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 2
 },
@@ -11963,6 +11963,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "podcast": 2,
 "news": 1
@@ -12114,6 +12116,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "hypothesis": 8
 },
@@ -12255,6 +12259,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "bluesky": 1,
 "hypothesis": 9
@@ -12397,6 +12403,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "blog": 1
 },
@@ -12637,6 +12645,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 3
 },
@@ -12787,6 +12797,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 1,
 "news": 1
@@ -12959,6 +12971,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "bluesky": 1
 },
@@ -13114,6 +13128,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -13272,6 +13288,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -13420,6 +13438,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": true,
 "is_top10pct": true,
@@ -13567,6 +13587,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -13716,6 +13738,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "substack": 1,
 "news": 1
@@ -13968,6 +13992,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "reddit": 1
 },
@@ -14117,6 +14143,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 1
 },
@@ -14263,6 +14291,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -14407,6 +14437,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "blog": 1
 },
@@ -14555,6 +14587,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -14706,6 +14740,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -14845,6 +14881,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -15001,6 +15039,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -15140,6 +15180,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "substack": 1
 },
@@ -15288,6 +15330,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "hypothesis": 1
 },
@@ -15428,6 +15472,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -15583,6 +15629,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -15739,6 +15787,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -15859,6 +15909,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -15997,6 +16049,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -16153,6 +16207,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -16377,6 +16433,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": true,
 "is_top10pct": true,
@@ -16556,6 +16614,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 1,
 "podcast": 1,
@@ -16706,6 +16766,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -16826,6 +16888,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -16996,6 +17060,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -17152,6 +17218,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 1
 },
@@ -17301,6 +17369,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -17427,6 +17497,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -17542,6 +17614,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -17673,6 +17747,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 1
 },
@@ -17769,6 +17845,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -17908,6 +17986,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -18047,6 +18127,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -18193,6 +18275,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -18272,6 +18356,139 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.1515_9781501769023.html",
+"title": "Ecological States",
+"type": "BookStory",
+"doi": "10.1515/9781501769023",
+"year": 2023,
+"venue": "Cornell University Press",
+"venue_name": "",
+"publisher": "Cornell University Press",
+"concepts": [
+"Ecology",
+"Geography",
+"Environmental science",
+"Biology"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 38,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Ecological States (2023), published by Cornell University Press.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/88bf9a37-ce8d-4ecb-8790-88f70c0c25ea/retrieve",
+"authors": "Jesse Rodenbiker",
+"all_authors": [
+"Jesse Rodenbiker"
+],
+"institutions": [],
+"download_count": 282,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
+],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 34
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Nonprofit",
+"count": 2
+},
+{
+"label": "Other",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 16
+},
+{
+"label": "China",
+"count": 11
+},
+{
+"label": "Hong Kong",
+"count": 6
+},
+{
+"label": "United Kingdom",
+"count": 4
+},
+{
+"label": "Australia",
+"count": 4
+}
+],
+"citing_institutions": [
+{
+"label": "New York University",
+"count": 2
+},
+{
+"label": "Xi'an Jiaotong University",
+"count": 2
+},
+{
+"label": "University of Hong Kong",
+"count": 2
+},
+{
+"label": "University College London",
+"count": 2
+},
+{
+"label": "University of Colorado Boulder",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1515/9781501769023"
+]
+},
+{
 "file": "articlestory_10.7554_eLife.85117.html",
 "title": "Mating activates neuroendocrine pathways signaling hunger in Drosophila females",
 "type": "ArticleStory",
@@ -18329,6 +18546,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -18477,6 +18696,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "hypothesis": 2
 },
@@ -18626,6 +18847,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -18774,6 +18997,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "hypothesis": 1
 },
@@ -18912,6 +19137,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -18993,72 +19220,133 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "datastory_10.22002_rwdfx-j4z76.html",
-"title": "The impact of package selection and versioning on single-cell RNA-seq analysis",
-"type": "DataStory",
-"doi": "10.22002/rwdfx-j4z76",
-"year": 2025,
-"venue": "CaltechDATA",
-"venue_name": "CaltechDATA",
-"publisher": "Unknown",
+"file": "bookstory_10.1017_9781009383981.html",
+"title": "Democracy and Empire",
+"type": "BookStory",
+"doi": "10.1017/9781009383981",
+"year": 2023,
+"venue": "Cambridge University Press",
+"venue_name": "",
+"publisher": "Cambridge University Press",
 "concepts": [
-"Computer science",
-"Selection (genetic algorithm)",
-"Software versioning",
-"Data mining",
-"R package",
-"Database",
-"Data analysis",
-"Software"
+"Empire",
+"Sovereignty",
+"Democracy",
+"Politics",
+"Capitalism",
+"Popular sovereignty",
+"Ideology",
+"Political economy"
 ],
 "roles": [
-"Dataset Reference Backbone"
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "green",
-"citation_count": 35,
+"oa_status": "gold",
+"citation_count": 34,
 "event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Decent work and economic growth"
+],
+"has_teaching": true,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
 "has_certified_repository": false,
-"has_open_repository": true,
-"excerpt": "Short impact summary This dataset, deposited in CaltechDATA by Joseph Rich and Lior Pachter, serves as the computational backbone for research examining how software package selection and version diff…",
-"cover_url": "",
-"authors": "Rich, Joseph, Pachter, Lior",
+"has_open_repository": false,
+"excerpt": "Short impact summary Democracy and Empire (2023), published by Cambridge University Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781009383998&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Inés Valdez",
 "all_authors": [
-"Rich, Joseph",
-"Pachter, Lior"
+"Inés Valdez"
 ],
-"institutions": [],
+"institutions": [
+"Johns Hopkins University"
+],
 "download_count": 0,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
 "librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Political Science"
+],
 "platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
+"is_top1pct": true,
+"is_top10pct": true,
 "risk_retracted": false,
 "risk_eoc": false,
 "risk_pubpeer": 0,
 "funders": [],
-"sectors": [],
-"countries": [],
-"citing_institutions": [],
+"sectors": [
+{
+"label": "Education",
+"count": 22
+},
+{
+"label": "Facility",
+"count": 3
+}
+],
+"countries": [
+{
+"label": "United States of America",
+"count": 11
+},
+{
+"label": "Canada",
+"count": 7
+},
+{
+"label": "United Kingdom of Great Britain and Northern Ireland",
+"count": 2
+},
+{
+"label": "Argentina",
+"count": 1
+},
+{
+"label": "Australia",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Johns Hopkins University",
+"count": 5
+},
+{
+"label": "McGill University",
+"count": 4
+},
+{
+"label": "The Ohio State University",
+"count": 2
+},
+{
+"label": "Rutgers, The State University of New Jersey",
+"count": 1
+},
+{
+"label": "Southern Illinois University Carbondale",
+"count": 1
+}
+],
 "scite_supporting": 0,
 "scite_contradicting": 0,
 "version_count": 1,
 "version_dois": [
-"10.22002/rwdfx-j4z76"
+"10.1017/9781009383981"
 ]
 },
 {
@@ -19120,6 +19408,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "blog": 1
 },
@@ -19262,6 +19552,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -19382,6 +19674,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 4
 },
@@ -19535,6 +19829,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "podcast": 3,
 "news": 3
@@ -19687,6 +19983,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -19846,6 +20144,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "hypothesis": 5
 },
@@ -19997,6 +20297,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -20149,6 +20451,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "hypothesis": 1
 },
@@ -20376,6 +20680,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -20514,6 +20820,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 3
 },
@@ -20639,6 +20947,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -20778,6 +21088,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -20913,6 +21225,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -21033,6 +21347,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "bluesky": 1
 },
@@ -21184,6 +21500,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -21319,6 +21637,10 @@ window.STORIES_DATA = [
 ],
 "has_librarything": true,
 "librarything_rating": 8.1,
+"has_award": true,
+"awards": [
+"Lambda Literary Award Nominee (Gay Men's Studies, 1996)"
+],
 "platform_counts": {
 "news": 1
 },
@@ -21472,6 +21794,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -21553,123 +21877,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "articlestory_10.18154_rwth-2025-00578.html",
-"title": "Quantum Computing for High-Energy Physics : State of the Art and Challenges",
-"type": "ArticleStory",
-"doi": "10.18154/rwth-2025-00578",
-"year": 2024,
-"venue": "RWTH Publications (RWTH Aachen)",
-"venue_name": "RWTH Publications (RWTH Aachen)",
-"publisher": "",
-"concepts": [
-"Quantum computer",
-"Physics",
-"State (computer science)",
-"Computer science",
-"Theoretical physics",
-"Quantum",
-"Quantum mechanics",
-"Quantum entanglement"
-],
-"roles": [
-"Pedagogical Anchor",
-"Sustainability & Policy Relevance"
-],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 25,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Affordable and clean energy"
-],
-"has_teaching": true,
-"ta_ocw": 6,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": false,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary This large-scale community review of quantum computing applications in high-energy physics has accumulated 25 citations since its publication, establishing itself as a substantive…",
-"cover_url": "",
-"authors": "Di Meglio, Alberto, Jansen, Karl, Tavernelli, Ivano et al.",
-"all_authors": [
-"Di Meglio, Alberto",
-"Jansen, Karl",
-"Tavernelli, Ivano",
-"Alexandrou, Constantia",
-"Arunachalam, Srinivasan",
-"Bauer, Christian W.",
-"Borras, Kerstin",
-"Carrazza, Stefano",
-"Crippa, Arianna",
-"Croft, Vincent",
-"de Putter, Roland",
-"Delgado, Andrea",
-"Dunjko, Vedran",
-"Egger, Daniel J.",
-"Fernández-Combarro, Elias",
-"Fuchs, Elina",
-"Funcke, Lena",
-"González-Cuadra, Daniel",
-"Grossi, Michele",
-"Halimeh, Jad C.",
-"Holmes, Zoë",
-"Kühn, Stefan",
-"Lacroix, Denis",
-"Lewis, Randy",
-"Lucchesi, Donatella",
-"Martinez, Miriam Lucio",
-"Meloni, Federico",
-"Mezzacapo, Antonio",
-"Montangero, Simone",
-"Nagano, Lento",
-"Pascuzzi, Vincent R.",
-"Radescu, Voica",
-"Ortega, Enrique Rico",
-"Roggero, Alessandro",
-"Schuhmacher, Julian",
-"Seixas, Joao",
-"Silvi, Pietro",
-"Spentzouris, Panagiotis",
-"Tacchino, Francesco",
-"Temme, Kristan",
-"Terashi, Koji",
-"Tura, Jordi",
-"Tüysüz, Cenk",
-"Vallecorsa, Sofia",
-"Wiese, Uwe-Jens",
-"Yoo, Shinjae",
-"Zhang, Jinglei"
-],
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [],
-"countries": [],
-"citing_institutions": [],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.18154/rwth-2025-00578"
-]
-},
-{
 "file": "articlestory_10.2196_preprints.37324.html",
 "title": "Establishing Institutional Scores With the Rigor and Transparency Index: Large-scale Analysis of Scientific Reporting Quality (Preprint)",
 "type": "ArticleStory",
@@ -21729,6 +21936,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -21813,6 +22022,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -21949,6 +22160,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -22096,6 +22309,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -22179,6 +22394,151 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.31389_lsepress.rpg.html",
+"title": "Renegotiating Patriarchy: Gender, Agency and the Bangladesh Paradox",
+"type": "BookStory",
+"doi": "10.31389/lsepress.rpg",
+"year": 2024,
+"venue": "LSE Press",
+"venue_name": "",
+"publisher": "LSE Press",
+"concepts": [
+"Patriarchy",
+"Agency (philosophy)",
+"Gender studies",
+"Sociology",
+"Political science",
+"Social science"
+],
+"roles": [
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 23,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Gender equality"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 1,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Renegotiating Patriarchy: Gender, Agency and the Bangladesh Paradox (2024), published by LSE Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781911712220&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Naila Kabeer",
+"all_authors": [
+"Naila Kabeer"
+],
+"institutions": [],
+"download_count": 5415,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Bluesky",
+"News",
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Political Science"
+],
+"platform_counts": {
+"bluesky": 1,
+"news": 4
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"The London School of Economics and Political Science"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 19
+},
+{
+"label": "Nonprofit",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Government",
+"count": 2
+},
+{
+"label": "Other",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Bangladesh",
+"count": 7
+},
+{
+"label": "United Kingdom of Great Britain and Northern Ireland",
+"count": 7
+},
+{
+"label": "United States of America",
+"count": 5
+},
+{
+"label": "Jordan",
+"count": 2
+},
+{
+"label": "Kenya",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "North South University",
+"count": 3
+},
+{
+"label": "Shahjalal University of Science and Technology",
+"count": 2
+},
+{
+"label": "Independent University, Bangladesh",
+"count": 2
+},
+{
+"label": "Boston University",
+"count": 1
+},
+{
+"label": "University of Jordan",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.31389/lsepress.rpg"
+]
+},
+{
 "file": "articlestory_10.1101_2023.12.19.572369.html",
 "title": "Phase diversity-based wavefront sensing for fluorescence microscopy",
 "type": "ArticleStory",
@@ -22237,6 +22597,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -22363,6 +22725,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -22514,6 +22878,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -22642,6 +23008,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -22780,6 +23148,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "hypothesis": 2
 },
@@ -22869,6 +23239,138 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.1017_9781009305815.html",
+"title": "States-in-Waiting",
+"type": "BookStory",
+"doi": "10.1017/9781009305815",
+"year": 2024,
+"venue": "Cambridge University Press",
+"venue_name": "",
+"publisher": "Cambridge University Press",
+"concepts": [
+"History",
+"Geography"
+],
+"roles": [
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "bronze",
+"citation_count": 20,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Reduced inequalities"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 3,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary States-in-Waiting (2024), published by Cambridge University Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781009305846&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Lydia Walker",
+"all_authors": [
+"Lydia Walker"
+],
+"institutions": [
+"The Ohio State University"
+],
+"download_count": 669,
+"series_name": "Global and International History",
+"series_id": null,
+"belongs_to_series": true,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History"
+],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 15
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Government",
+"count": 1
+},
+{
+"label": "Company",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 11
+},
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "Germany",
+"count": 1
+},
+{
+"label": "India",
+"count": 1
+},
+{
+"label": "France",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Washington",
+"count": 9
+},
+{
+"label": "The Ohio State University",
+"count": 1
+},
+{
+"label": "New York University",
+"count": 1
+},
+{
+"label": "École des hautes études en sciences sociales",
+"count": 1
+},
+{
+"label": "Leiden University",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1017/9781009305815"
+]
+},
+{
 "file": "articlestory_10.1093_pastj_gtw039.html",
 "title": "Best-Selling Ballads and their Pictures in Seventeenth-Century England",
 "type": "ArticleStory",
@@ -22921,6 +23423,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -22963,6 +23467,138 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.1093/pastj/gtw039"
+]
+},
+{
+"file": "bookstory_10.5040_9781350237674.html",
+"title": "Economic Diversification in Nigeria",
+"type": "BookStory",
+"doi": "10.5040/9781350237674",
+"year": 2022,
+"venue": "Bloomsbury Publishing Plc.",
+"venue_name": "",
+"publisher": "Bloomsbury Publishing Plc.",
+"concepts": [
+"Diversification (marketing strategy)",
+"Subsistence agriculture",
+"Curse",
+"Agriculture",
+"Politics",
+"Situated",
+"Agricultural diversification",
+"Development economics"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 19,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 2,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Economic Diversification in Nigeria (2022), published by Bloomsbury Publishing Plc..",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781350237674&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Zainab Usman",
+"all_authors": [
+"Zainab Usman"
+],
+"institutions": [],
+"download_count": 4139,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"News",
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Political Science"
+],
+"platform_counts": {
+"news": 4
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 17
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Other",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United Kingdom of Great Britain and Northern Ireland",
+"count": 5
+},
+{
+"label": "Nigeria",
+"count": 4
+},
+{
+"label": "Germany",
+"count": 3
+},
+{
+"label": "Mexico",
+"count": 3
+},
+{
+"label": "Finland",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "University of London",
+"count": 3
+},
+{
+"label": "SOAS University of London",
+"count": 3
+},
+{
+"label": "Universidad de Londres",
+"count": 3
+},
+{
+"label": "University of Helsinki",
+"count": 2
+},
+{
+"label": "University of Indonesia",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5040/9781350237674"
 ]
 },
 {
@@ -23039,6 +23675,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -23186,6 +23824,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -23269,6 +23909,374 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.1525_luminos.162.html",
+"title": "A Life of Worry: Politics, Mental Health, and Vietnam’s Age of Anxiety",
+"type": "BookStory",
+"doi": "10.1525/luminos.162",
+"year": 2023,
+"venue": "University of California Press",
+"venue_name": "",
+"publisher": "University of California Press",
+"concepts": [
+"Prosperity",
+"Worry",
+"Ho chi minh",
+"Politics",
+"Anxiety",
+"Mental health",
+"Curiosity",
+"Psychology"
+],
+"roles": [
+"Pedagogical Anchor",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 18,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Decent work and economic growth"
+],
+"has_teaching": true,
+"ta_ocw": 1,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary A Life of Worry: Politics, Mental Health, and Vietnam’s Age of Anxiety (2023), published by University of California Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780520392168&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Allen L. Tran",
+"all_authors": [
+"Allen L. Tran"
+],
+"institutions": [
+"Bucknell University"
+],
+"download_count": 5125,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 17
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 14
+},
+{
+"label": "Germany",
+"count": 3
+},
+{
+"label": "China",
+"count": 1
+},
+{
+"label": "Peru",
+"count": 1
+},
+{
+"label": "Indonesia",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of California, Riverside",
+"count": 12
+},
+{
+"label": "Leipzig University",
+"count": 1
+},
+{
+"label": "NIOD Institute for War, Holocaust and Genocide Studies",
+"count": 1
+},
+{
+"label": "Bielefeld University",
+"count": 1
+},
+{
+"label": "Guangdong Polytechnic Normal University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1525/luminos.162"
+]
+},
+{
+"file": "bookstory_10.7551_mitpress_15191.001.0001.html",
+"title": "Mortevivum",
+"type": "BookStory",
+"doi": "10.7551/mitpress/15191.001.0001",
+"year": 2024,
+"venue": "The MIT Press",
+"venue_name": "",
+"publisher": "The MIT Press",
+"concepts": [
+"Genocide",
+"Colonialism",
+"History",
+"White (mutation)",
+"Photography",
+"Gender studies",
+"Genealogy",
+"Art"
+],
+"roles": [
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 18,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 1,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Mortevivum (2024), published by The MIT Press.",
+"cover_url": "",
+"authors": "Kimberly Juanita Brown",
+"all_authors": [
+"Kimberly Juanita Brown"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Substack",
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Multimodal"
+],
+"platform_counts": {
+"substack": 1
+},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "Canada",
+"count": 1
+},
+{
+"label": "United States of America",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "American University",
+"count": 1
+},
+{
+"label": "Queen's University",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7551/mitpress/15191.001.0001"
+]
+},
+{
+"file": "bookstory_10.1515_9780295750507.html",
+"title": "Upland Geopolitics",
+"type": "BookStory",
+"doi": "10.1515/9780295750507",
+"year": 2022,
+"venue": "University of Washington Press",
+"venue_name": "",
+"publisher": "University of Washington Press",
+"concepts": [
+"Geopolitics",
+"Geography",
+"Political science",
+"Politics",
+"Law"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 17,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Upland Geopolitics (2022), published by University of Washington Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780295750507&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Michael B. Dwyer",
+"all_authors": [
+"Michael B. Dwyer"
+],
+"institutions": [],
+"download_count": 33,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 16
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Other",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Archive",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 9
+},
+{
+"label": "Netherlands",
+"count": 7
+},
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "Colombia",
+"count": 1
+},
+{
+"label": "BO",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Erasmus University Rotterdam",
+"count": 2
+},
+{
+"label": "Indiana University",
+"count": 2
+},
+{
+"label": "Rutgers, The State University of New Jersey",
+"count": 1
+},
+{
+"label": "The University of Melbourne",
+"count": 1
+},
+{
+"label": "University of Montana",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1515/9780295750507"
+]
+},
+{
 "file": "bookstory_10.3998_mpub.9853855.html",
 "title": "Music on the Move",
 "type": "BookStory",
@@ -23317,6 +24325,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 1,
 "hypothesis": 6
@@ -23453,6 +24463,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -23525,6 +24537,130 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.1525_luminos.209.html",
+"title": "Mal-Nutrition: Maternal Health Science and the Reproduction of Harm",
+"type": "BookStory",
+"doi": "10.1525/luminos.209",
+"year": 2024,
+"venue": "University of California Press",
+"venue_name": "",
+"publisher": "University of California Press",
+"concepts": [
+"Harm",
+"Reproduction",
+"Do no harm",
+"Medicine",
+"Environmental health",
+"Psychology",
+"Biology",
+"Psychiatry"
+],
+"roles": [
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 16,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Zero hunger"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 1,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Mal-Nutrition: Maternal Health Science and the Reproduction of Harm (2024), published by University of California Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780520404427&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Emily Yates-Doerr",
+"all_authors": [
+"Emily Yates-Doerr"
+],
+"institutions": [],
+"download_count": 1996,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology"
+],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 15
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 13
+},
+{
+"label": "WS",
+"count": 1
+},
+{
+"label": "Mexico",
+"count": 1
+},
+{
+"label": "Brazil",
+"count": 1
+},
+{
+"label": "Denmark",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of California, Riverside",
+"count": 11
+},
+{
+"label": "Purdue University West Lafayette",
+"count": 1
+},
+{
+"label": "Aarhus University",
+"count": 1
+},
+{
+"label": "Rochester Institute of Technology",
+"count": 0
+},
+{
+"label": "National University of Samoa",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1525/luminos.209"
+]
+},
+{
 "file": "articlestory_10.1101_2023.12.07.565993.html",
 "title": "Programmed withdrawal of cilia maintenance followed by centriole capping leads to permanent cilia loss during cerebellar granule cell neurogenesis",
 "type": "ArticleStory",
@@ -23583,6 +24719,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -23726,6 +24864,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -23865,6 +25005,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 1
 },
@@ -24008,6 +25150,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -24143,6 +25287,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 2
 },
@@ -24287,6 +25433,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -24336,6 +25484,142 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.3998_mpub.12255695.html",
+"title": "Twining",
+"type": "BookStory",
+"doi": "10.3998/mpub.12255695",
+"year": 2021,
+"venue": "Amherst College Press",
+"venue_name": "",
+"publisher": "Amherst College Press",
+"concepts": [
+"Hypertext",
+"Storytelling",
+"Process (computing)",
+"Computer science",
+"World Wide Web",
+"Art",
+"Literature",
+"Narrative"
+],
+"roles": [
+"Commercial Linkage",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 14,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 1,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Twining (2021), published by Amherst College Press.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/2759a31f-6fcc-423a-b9e8-393070281c02/retrieve",
+"authors": "Anastasia Salter, Stuart Moulthrop",
+"all_authors": [
+"Anastasia Salter",
+"Stuart Moulthrop"
+],
+"institutions": [
+"Amherst College"
+],
+"download_count": 2749,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": 10.0,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 10
+},
+{
+"label": "Company",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States of America",
+"count": 8
+},
+{
+"label": "United Kingdom of Great Britain and Northern Ireland",
+"count": 2
+},
+{
+"label": "Canada",
+"count": 1
+},
+{
+"label": "India",
+"count": 1
+},
+{
+"label": "Italy",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Central Florida",
+"count": 2
+},
+{
+"label": "Seagate (United States)",
+"count": 2
+},
+{
+"label": "Bhavnagar University",
+"count": 1
+},
+{
+"label": "Davidson College",
+"count": 1
+},
+{
+"label": "University of Alberta",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3998/mpub.12255695"
+]
+},
+{
 "file": "bookstory_10.11116_EPE_AMP.html",
 "title": "Essays on Plato’s Epistemology",
 "type": "BookStory",
@@ -24381,6 +25665,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -24532,6 +25818,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "bluesky": 1,
 "news": 1
@@ -24678,6 +25966,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -24815,6 +26105,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -24944,6 +26236,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -25025,25 +26319,26 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "datastory_10.25378_janelia.13114499.v1.html",
-"title": "Isotropic 3D electron microscopy reference data of isolated murine pancreatic islets treated with high glucose (jrc_mus-pancreas-1)",
+"file": "datastory_10.48550_arxiv.1207.7214.html",
+"title": "Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC",
 "type": "DataStory",
-"doi": "10.25378/janelia.13114499.v1",
-"year": 2020,
-"venue": "Figshare",
-"venue_name": "Figshare",
-"publisher": "Digital Science",
+"doi": "10.48550/arxiv.1207.7214",
+"year": 2012,
+"venue": "arXiv",
+"venue_name": "arXiv",
+"publisher": "Cornell University",
 "concepts": [
-"Islet",
-"Cell biology",
-"Pancreatic islets",
-"Electron microscope",
-"Chemistry",
-"Organelle",
-"BETA (programming language)",
-"Beta cell"
+"Physics",
+"Particle physics",
+"Higgs boson",
+"Large Hadron Collider",
+"Standard Model (mathematical formulation)",
+"Atlas (anatomy)",
+"Atlas detector",
+"Nuclear physics"
 ],
 "roles": [
+"Scholarly Uptake",
 "High-Visibility Uptake"
 ],
 "is_oa": true,
@@ -25052,29 +26347,22 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_reuse": false,
 "has_certified_repository": false,
-"has_open_repository": true,
-"excerpt": "Short impact summary Released in 2020 by researchers at Janelia Research Campus, this isotropic 3D electron microscopy dataset of high-glucose-treated murine pancreatic islets has accumulated 12 citat…",
+"has_open_repository": false,
+"excerpt": "Short impact summary The ATLAS Collaboration's 2012 report on the observation of a new boson consistent with the Standard Model Higgs boson stands as one of the most consequential publications in mode…",
 "cover_url": "",
-"authors": "Xu, C. Shan, Pang, Song, Bennett, Davis et al.",
+"authors": "The ATLAS Collaboration",
 "all_authors": [
-"Xu, C. Shan",
-"Pang, Song",
-"Bennett, Davis",
-"Mueller, Andreas",
-"Solimena, Michele",
-"Hess, Harald"
+"The ATLAS Collaboration"
 ],
-"institutions": [
-"Janelia Research Campus"
-],
+"institutions": [],
 "download_count": 0,
 "series_name": null,
 "series_id": null,
@@ -25082,6 +26370,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -25091,71 +26381,75 @@ window.STORIES_DATA = [
 "funders": [],
 "sectors": [
 {
-"label": "Healthcare",
-"count": 2
+"label": "Education",
+"count": 12
 },
 {
 "label": "Facility",
-"count": 2
+"count": 8
 },
 {
-"label": "Education",
-"count": 2
-},
-{
-"label": "Government",
-"count": 1
+"label": "Healthcare",
+"count": 3
 },
 {
 "label": "Company",
+"count": 1
+},
+{
+"label": "Government",
 "count": 1
 }
 ],
 "countries": [
 {
-"label": "Italy",
-"count": 2
+"label": "Switzerland",
+"count": 5
 },
 {
 "label": "Germany",
-"count": 2
+"count": 5
 },
 {
-"label": "United States",
-"count": 2
+"label": "Italy",
+"count": 4
 },
 {
-"label": "Canada",
-"count": 1
+"label": "United States of America",
+"count": 4
+},
+{
+"label": "United Kingdom of Great Britain and Northern Ireland",
+"count": 3
 }
 ],
 "citing_institutions": [
 {
-"label": "Cooper Union",
-"count": 0
+"label": "Paul Scherrer Institute",
+"count": 3
 },
 {
-"label": "Heinrich Heine University Düsseldorf",
-"count": 0
+"label": "European Organization for Nuclear Research",
+"count": 3
 },
 {
-"label": "Center for Systems Biology Dresden",
-"count": 0
+"label": "Vietnam National University Ho Chi Minh City",
+"count": 2
 },
 {
-"label": "Howard Hughes Medical Institute",
-"count": 0
+"label": "University of Freiburg",
+"count": 2
 },
 {
-"label": "German Center for Diabetes Research",
-"count": 0
+"label": "Istituto Nazionale di Fisica Nucleare, Sezione di Bologna",
+"count": 2
 }
 ],
-"scite_supporting": 0,
-"scite_contradicting": 0,
+"scite_supporting": 136,
+"scite_contradicting": 5,
 "version_count": 1,
 "version_dois": [
-"10.25378/janelia.13114499.v1"
+"10.48550/arxiv.1207.7214"
 ]
 },
 {
@@ -25186,9 +26480,9 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
-"ta_youtube": 1,
+"ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
@@ -25213,6 +26507,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "bluesky": 1
 },
@@ -25371,6 +26667,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "bluesky": 1,
 "news": 2
@@ -25512,6 +26810,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 3
 },
@@ -25654,6 +26954,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -25735,6 +27037,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -25872,6 +27176,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -26015,6 +27321,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -26155,6 +27463,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -26286,6 +27596,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -26426,6 +27738,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 1
 },
@@ -26585,6 +27899,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -26637,6 +27953,285 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.1101/2023.12.22.23300468"
+]
+},
+{
+"file": "bookstory_10.11647_obp.0339.html",
+"title": "Decolonial Ecologies",
+"type": "BookStory",
+"doi": "10.11647/obp.0339",
+"year": 2023,
+"venue": "Open Book Publishers",
+"venue_name": "",
+"publisher": "Open Book Publishers",
+"concepts": [
+"Textuality",
+"Indigenous",
+"Enlightenment",
+"Vision",
+"Natural (archaeology)",
+"Art",
+"Sculpture",
+"Politics"
+],
+"roles": [
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 10,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Decolonial Ecologies (2023), published by Open Book Publishers.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781800649743&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Joanna Page",
+"all_authors": [
+"Joanna Page"
+],
+"institutions": [
+"University of Cambridge"
+],
+"download_count": 5104,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Spain",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Universitat de Girona",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11647/obp.0339"
+]
+},
+{
+"file": "bookstory_10.1525_9780520384521.html",
+"title": "At the Edges of Sleep",
+"type": "BookStory",
+"doi": "10.1525/9780520384521",
+"year": 2022,
+"venue": "University of California Press",
+"venue_name": "",
+"publisher": "University of California Press",
+"concepts": [
+"Filmmaking",
+"Sleep (system call)",
+"Subject (documents)",
+"Film director",
+"Aesthetics",
+"Subject matter",
+"Meaning (existential)",
+"Movie theater"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 10,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary At the Edges of Sleep (2022), published by University of California Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780520384521&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Jean Ma",
+"all_authors": [
+"Jean Ma"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States of America",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Stanford University",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1525/9780520384521"
+]
+},
+{
+"file": "bookstory_10.21627_2019bq.html",
+"title": "Black Quotidian: Everyday History in African-American Newspapers",
+"type": "BookStory",
+"doi": "10.21627/2019bq",
+"year": 2019,
+"venue": "Stanford University Press",
+"venue_name": "",
+"publisher": "Stanford University Press",
+"concepts": [
+"Newspaper",
+"History",
+"Geography",
+"Ethnology",
+"Genealogy",
+"Media studies",
+"Sociology"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 10,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Black Quotidian: Everyday History in African-American Newspapers (2019), published by Stanford University Press.",
+"cover_url": "",
+"authors": "Matthew F. Delmont",
+"all_authors": [
+"Matthew F. Delmont"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Multimodal"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States of America",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Association of Research Libraries",
+"count": 1
+},
+{
+"label": "New York University",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.21627/2019bq"
 ]
 },
 {
@@ -26695,6 +28290,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -26836,6 +28433,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -26938,6 +28537,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -26984,6 +28585,122 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.5117/9789462989504"
+]
+},
+{
+"file": "bookstory_10.5744_9781683401988.html",
+"title": "Writing the New World: The Politics of Natural History in the Early Spanish Empire",
+"type": "BookStory",
+"doi": "10.5744/9781683401988",
+"year": 2021,
+"venue": "University of Florida Press",
+"venue_name": "",
+"publisher": "University of Florida Press",
+"concepts": [
+"Politics",
+"Modernity",
+"Empire",
+"Colonialism",
+"Narrative",
+"Faith",
+"History",
+"Context (archaeology)"
+],
+"roles": [
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 9,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Life in Land"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 4,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Writing the New World: The Politics of Natural History in the Early Spanish Empire (2021), published by University of Florida Press.",
+"cover_url": "",
+"authors": "Mauro Jose Caraccioli",
+"all_authors": [
+"Mauro Jose Caraccioli"
+],
+"institutions": [],
+"download_count": 1153,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 6
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 4
+},
+{
+"label": "Italy",
+"count": 1
+},
+{
+"label": "Portugal",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Virginia Tech",
+"count": 3
+},
+{
+"label": "University of Turin",
+"count": 1
+},
+{
+"label": "Michigan State University",
+"count": 1
+},
+{
+"label": "Centro Interuniversitário de História das Ciências e da Tecnologia",
+"count": 0
+},
+{
+"label": "University of Lisbon",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5744/9781683401988"
 ]
 },
 {
@@ -27044,6 +28761,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "substack": 1
 },
@@ -27177,6 +28896,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -27317,6 +29038,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "podcast": 1
 },
@@ -27463,6 +29186,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -27623,6 +29348,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -27758,6 +29485,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -27844,6 +29573,133 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.11647_obp.0396.html",
+"title": "The Diagrammatics of ‘Race’",
+"type": "BookStory",
+"doi": "10.11647/obp.0396",
+"year": 2024,
+"venue": "Open Book Publishers",
+"venue_name": "",
+"publisher": "Open Book Publishers",
+"concepts": [
+"Kinship",
+"Family tree",
+"Race (biology)",
+"Humanity",
+"Ideology",
+"Eugenics",
+"Genealogy",
+"Categorization"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 8,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary The Diagrammatics of ‘Race’ (2024), published by Open Book Publishers.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781805112631&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Marianne Sommer",
+"all_authors": [
+"Marianne Sommer"
+],
+"institutions": [
+"Pennsylvania State University"
+],
+"download_count": 3048,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 6
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "Switzerland",
+"count": 1
+},
+{
+"label": "Austria",
+"count": 1
+},
+{
+"label": "India",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Technische Universität Dresden",
+"count": 1
+},
+{
+"label": "Virginia Tech",
+"count": 1
+},
+{
+"label": "University of Lucerne",
+"count": 1
+},
+{
+"label": "Leibniz Institute of European History",
+"count": 1
+},
+{
+"label": "Graz University of Technology",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11647/obp.0396"
+]
+},
+{
 "file": "bookstory_10.3726_b21634.html",
 "title": "Streaming the Formula 1 Rivalry",
 "type": "BookStory",
@@ -27892,6 +29748,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": true,
 "is_top10pct": true,
@@ -28010,6 +29868,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -28130,6 +29990,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -28255,6 +30117,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -28403,6 +30267,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -28418,6 +30284,119 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.1101/2023.12.30.572255"
+]
+},
+{
+"file": "bookstory_10.1017_9781009486682.html",
+"title": "Foreign in Two Homelands",
+"type": "BookStory",
+"doi": "10.1017/9781009486682",
+"year": 2024,
+"venue": "Cambridge University Press",
+"venue_name": "",
+"publisher": "Cambridge University Press",
+"concepts": [
+"Political science",
+"History"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 7,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Foreign in Two Homelands (2024), published by Cambridge University Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781009486699&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Michelle Lynn Kahn",
+"all_authors": [
+"Michelle Lynn Kahn"
+],
+"institutions": [
+"University of Richmond"
+],
+"download_count": 0,
+"series_name": "Publications of the German Historical Institute",
+"series_id": null,
+"belongs_to_series": true,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 6
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 4
+},
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "Turkey",
+"count": 1
+},
+{
+"label": "Iran",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Richmond",
+"count": 3
+},
+{
+"label": "University of Erfurt",
+"count": 1
+},
+{
+"label": "Erzincan Binali Yıldırım University",
+"count": 1
+},
+{
+"label": "Heidelberg University",
+"count": 0
+},
+{
+"label": "Heidelberg University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1017/9781009486682"
 ]
 },
 {
@@ -28471,6 +30450,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -28621,6 +30602,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -28740,6 +30723,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "hypothesis": 6
 },
@@ -28882,6 +30867,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -29026,6 +31013,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -29152,6 +31141,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "hypothesis": 2,
 "news": 7
@@ -29276,6 +31267,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -29390,6 +31383,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -29496,6 +31491,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -29619,6 +31616,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -29694,6 +31693,222 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.11647_obp.0145.html",
+"title": "Image, Knife, and Gluepot",
+"type": "BookStory",
+"doi": "10.11647/obp.0145",
+"year": 2019,
+"venue": "Open Book Publishers",
+"venue_name": "",
+"publisher": "Open Book Publishers",
+"concepts": [
+"Fifteenth",
+"Materiality (auditing)",
+"Afterlife",
+"Art",
+"Publishing",
+"Art history",
+"Visual arts",
+"TRACE (psycholinguistics)"
+],
+"roles": [
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 6,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Image, Knife, and Gluepot (2019), published by Open Book Publishers.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781783745173&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Kathryn M. Rudy",
+"all_authors": [
+"Kathryn M. Rudy"
+],
+"institutions": [
+"University of St Andrews"
+],
+"download_count": 6215,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 5
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Denmark",
+"count": 1
+},
+{
+"label": "Spain",
+"count": 1
+},
+{
+"label": "United Kingdom of Great Britain and Northern Ireland",
+"count": 1
+},
+{
+"label": "Russian Federation",
+"count": 1
+},
+{
+"label": "United States of America",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Universidad Complutense de Madrid",
+"count": 1
+},
+{
+"label": "Russian State University for the Humanities",
+"count": 1
+},
+{
+"label": "Loughborough University",
+"count": 1
+},
+{
+"label": "Aarhus University",
+"count": 1
+},
+{
+"label": "Open Book Publishers",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11647/obp.0145"
+]
+},
+{
+"file": "bookstory_10.3998_mpub.12584348.html",
+"title": "Owning My Masters (Mastered)",
+"type": "BookStory",
+"doi": "10.3998/mpub.12584348",
+"year": 2024,
+"venue": "University of Michigan Press",
+"venue_name": "",
+"publisher": "University of Michigan Press",
+"concepts": [
+"History"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 6,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Owning My Masters (Mastered) (2024), published by University of Michigan Press.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/fb98d143-99e1-46b6-bd8b-af1e50e87ecf/retrieve",
+"authors": "A.D. Carson",
+"all_authors": [
+"A.D. Carson"
+],
+"institutions": [],
+"download_count": 35,
+"series_name": "Tracking Pop",
+"series_id": null,
+"belongs_to_series": true,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Multimodal"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 5
+}
+],
+"countries": [
+{
+"label": "United States of America",
+"count": 5
+}
+],
+"citing_institutions": [
+{
+"label": "University of Virginia",
+"count": 4
+},
+{
+"label": "University of California System",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3998/mpub.12584348"
+]
+},
+{
 "file": "bookstory_10.5117_9789462983663.html",
 "title": "Adaptation in the Age of Media Convergence",
 "type": "BookStory",
@@ -29752,6 +31967,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -29876,6 +32093,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -30003,6 +32222,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -30101,6 +32322,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "blog": 1
 },
@@ -30230,6 +32453,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -30509,6 +32734,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -30640,6 +32867,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -30754,6 +32983,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -30845,6 +33076,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -30941,6 +33174,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -31059,6 +33294,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -31187,6 +33424,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -31303,6 +33542,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -31401,6 +33642,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -31526,6 +33769,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -31672,6 +33917,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -31814,6 +34061,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -31942,6 +34191,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -32049,6 +34300,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -32178,6 +34431,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -32322,6 +34577,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 2
 },
@@ -32423,6 +34680,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -32498,6 +34757,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 3
 },
@@ -32609,6 +34870,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -32670,6 +34933,244 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.1515_9780295753317.html",
+"title": "Kernels of Resistance",
+"type": "BookStory",
+"doi": "10.1515/9780295753317",
+"year": 2024,
+"venue": "University of Washington Press",
+"venue_name": "",
+"publisher": "University of Washington Press",
+"concepts": [
+"Resistance (ecology)",
+"Computer science",
+"Biology",
+"Ecology"
+],
+"roles": [
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 4,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Climate action"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 3,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Kernels of Resistance (2024), published by University of Washington Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780295753317&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Liza Grandia",
+"all_authors": [
+"Liza Grandia"
+],
+"institutions": [],
+"download_count": 181,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "Malaysia",
+"count": 1
+},
+{
+"label": "China",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University at Buffalo, State University of New York",
+"count": 1
+},
+{
+"label": "Virginia Tech",
+"count": 1
+},
+{
+"label": "University of Malaya",
+"count": 0
+},
+{
+"label": "Guangdong University of Foreign Studies",
+"count": 0
+},
+{
+"label": "HELP University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1515/9780295753317"
+]
+},
+{
+"file": "bookstory_10.1525_luminos.183.html",
+"title": "Muddy Thinking in the Mississippi River Delta: A Call for Reclamation",
+"type": "BookStory",
+"doi": "10.1525/luminos.183",
+"year": 2024,
+"venue": "University of California Press",
+"venue_name": "",
+"publisher": "University of California Press",
+"concepts": [
+"Land reclamation",
+"Mississippi delta",
+"River delta",
+"Delta",
+"Hydrology (agriculture)",
+"Geography",
+"Environmental science",
+"Water resource management"
+],
+"roles": [
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 4,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Climate action"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Muddy Thinking in the Mississippi River Delta: A Call for Reclamation (2024), published by University of California Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780520397200&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Ned Randolph",
+"all_authors": [
+"Ned Randolph"
+],
+"institutions": [
+"University of California San Diego"
+],
+"download_count": 2035,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 4
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "Ireland",
+"count": 1
+},
+{
+"label": "LK",
+"count": 1
+},
+{
+"label": "TT",
+"count": 1
+},
+{
+"label": "Australia",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Assam University",
+"count": 1
+},
+{
+"label": "Tulane University",
+"count": 1
+},
+{
+"label": "SUNY College of Environmental Science and Forestry",
+"count": 0
+},
+{
+"label": "Purchase College",
+"count": 0
+},
+{
+"label": "Atlantic Technological University",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1525/luminos.183"
+]
+},
+{
 "file": "bookstory_10.3726_978-3-0352-6563-7.html",
 "title": "Lotze et son héritage",
 "type": "BookStory",
@@ -32717,6 +35218,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -32767,87 +35270,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.3726/978-3-0352-6563-7"
-]
-},
-{
-"file": "datastory_10.5061_dryad.k3j9kd5b8.html",
-"title": "Uncovering circuit mechanisms of current sinks and sources with biophysical simulations of primary visual cortex",
-"type": "DataStory",
-"doi": "10.5061/dryad.k3j9kd5b8",
-"year": 2022,
-"venue": "Dryad",
-"venue_name": "Dryad",
-"publisher": "Dryad",
-"concepts": [
-"Neuroscience",
-"Visual cortex",
-"Local field potential",
-"Computer science",
-"Current (fluid)",
-"Dynamics (music)",
-"Neuronal firing",
-"Cortex (anatomy)"
-],
-"roles": [
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "green",
-"citation_count": 4,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_reuse": false,
-"has_certified_repository": false,
-"has_open_repository": true,
-"excerpt": "Short impact summary This dataset, deposited on Dryad in 2022 in support of biophysical simulations of primary visual cortex, has accumulated 361 views and 38 downloads, attracted 4 scholarly citation…",
-"cover_url": "",
-"authors": "Rimehaug, Atle, Stasik, Alexander, Hagen, Espen et al.",
-"all_authors": [
-"Rimehaug, Atle",
-"Stasik, Alexander",
-"Hagen, Espen",
-"Billeh, Yazan",
-"Siegle, Josh",
-"Dai, Kael",
-"Olsen, Shawn",
-"Koch, Christof",
-"Einevoll, Gaute",
-"Arkhipov, Anton"
-],
-"institutions": [
-"University of Oslo",
-"Norwegian University of Life Sciences",
-"Allen Institute for Brain Science"
-],
-"download_count": 38,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [],
-"countries": [],
-"citing_institutions": [],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.5061/dryad.k3j9kd5b8"
 ]
 },
 {
@@ -32906,6 +35328,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -33049,6 +35473,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 2
 },
@@ -33195,6 +35621,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -33309,6 +35737,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -33440,6 +35870,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -33563,6 +35995,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -33694,6 +36128,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -33775,6 +36211,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -33868,6 +36306,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -33948,6 +36388,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -34067,6 +36509,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -34177,6 +36621,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -34293,6 +36739,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -34396,6 +36844,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
@@ -34498,6 +36948,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -34605,6 +37057,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -34702,6 +37156,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -34804,6 +37260,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -34888,6 +37346,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -34972,6 +37432,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -35070,6 +37532,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -35114,6 +37578,219 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.3726/b20055"
+]
+},
+{
+"file": "bookstory_10.3998_mpub.11923978.html",
+"title": "A Sense of Brutality",
+"type": "BookStory",
+"doi": "10.3998/mpub.11923978",
+"year": 2020,
+"venue": "Amherst College Press",
+"venue_name": "",
+"publisher": "Amherst College Press",
+"concepts": [
+"Police brutality",
+"Sense (electronics)",
+"Psychology",
+"Criminology",
+"Engineering",
+"Electrical engineering"
+],
+"roles": [
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 3,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Peace, Justice and strong institutions"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 1,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary A Sense of Brutality (2020), published by Amherst College Press.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/03c880bb-72d7-4f24-bc16-ea8ff607d01c/retrieve",
+"authors": "Carlos Sánchez",
+"all_authors": [
+"Carlos Sánchez"
+],
+"institutions": [],
+"download_count": 1654,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Political Science"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+}
+],
+"countries": [
+{
+"label": "Chile",
+"count": 1
+},
+{
+"label": "Netherlands",
+"count": 1
+},
+{
+"label": "United States of America",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Tarapacá",
+"count": 1
+},
+{
+"label": "Wichita State University",
+"count": 1
+},
+{
+"label": "Metropolitan University of Technology",
+"count": 1
+},
+{
+"label": "Vrije Universiteit Amsterdam",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3998/mpub.11923978"
+]
+},
+{
+"file": "bookstory_10.7551_mitpress_12089.001.0001.html",
+"title": "Sex Sounds",
+"type": "BookStory",
+"doi": "10.7551/mitpress/12089.001.0001",
+"year": 2022,
+"venue": "The MIT Press",
+"venue_name": "",
+"publisher": "The MIT Press",
+"concepts": [
+"Electronic music",
+"Popular music",
+"Musical",
+"Studio",
+"Art",
+"Electroacoustic music",
+"Music history",
+"Period (music)"
+],
+"roles": [
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 3,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Reduced inequalities"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 3,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Sex Sounds (2022), published by The MIT Press.",
+"cover_url": "",
+"authors": "Danielle Shlomit Sofer",
+"all_authors": [
+"Danielle Shlomit Sofer"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": "The MIT Press",
+"series_id": null,
+"belongs_to_series": true,
+"mention_platforms": [
+"Substack",
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies"
+],
+"platform_counts": {
+"substack": 1
+},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "Austria",
+"count": 1
+},
+{
+"label": "United States of America",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Duke University",
+"count": 1
+},
+{
+"label": "University of Music and Performing Arts Graz",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.7551/mitpress/12089.001.0001"
 ]
 },
 {
@@ -35173,6 +37850,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -35196,6 +37875,10 @@ window.STORIES_DATA = [
 "count": 1
 },
 {
+"label": "Hong Kong",
+"count": 1
+},
+{
 "label": "Netherlands",
 "count": 1
 },
@@ -35204,34 +37887,30 @@ window.STORIES_DATA = [
 "count": 1
 },
 {
-"label": "United States",
-"count": 1
-},
-{
-"label": "Hong Kong",
+"label": "United States of America",
 "count": 1
 }
 ],
 "citing_institutions": [
+{
+"label": "Pennsylvania State University",
+"count": 1
+},
 {
 "label": "Hong Kong Polytechnic University",
 "count": 1
 },
 {
 "label": "National University of Singapore",
-"count": 0
+"count": 1
 },
 {
-"label": "Pennsylvania State University",
-"count": 0
+"label": "Utrecht University",
+"count": 1
 },
 {
 "label": "Institut d'Etudes Politiques de Paris",
-"count": 0
-},
-{
-"label": "Centre de Recherche en Économie et Statistique",
-"count": 0
+"count": 1
 }
 ],
 "scite_supporting": 0,
@@ -35297,6 +37976,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -35432,6 +38113,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -35561,6 +38244,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -35657,6 +38342,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -35806,6 +38493,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -35912,6 +38601,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -36012,6 +38703,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -36208,6 +38901,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 1
 },
@@ -36341,6 +39036,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -36443,6 +39140,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -36537,6 +39236,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -36643,6 +39344,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -36767,6 +39470,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -36863,6 +39568,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 1,
 "news": 1
@@ -36971,6 +39678,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -37074,6 +39783,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -37189,6 +39900,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -37284,6 +39997,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -37386,6 +40101,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -37424,6 +40141,192 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.11116/SNTSWW"
+]
+},
+{
+"file": "bookstory_10.1515_9781501773853.html",
+"title": "Poet-Monks",
+"type": "BookStory",
+"doi": "10.1515/9781501773853",
+"year": 2024,
+"venue": "Cornell University Press",
+"venue_name": "",
+"publisher": "Cornell University Press",
+"concepts": [
+"Philosophy",
+"Psychology"
+],
+"roles": [
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 2,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 2,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Poet-Monks (2024), published by Cornell University Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781501773853&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Thomas J. Mazanec",
+"all_authors": [
+"Thomas J. Mazanec"
+],
+"institutions": [],
+"download_count": 2702,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States of America",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "University of California, Santa Barbara",
+"count": 1
+},
+{
+"label": "University of St. Thomas - Minnesota",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1515/9781501773853"
+]
+},
+{
+"file": "bookstory_10.1525_9780520380196.html",
+"title": "Knowing about Genocide",
+"type": "BookStory",
+"doi": "10.1525/9780520380196",
+"year": 2021,
+"venue": "University of California Press",
+"venue_name": "",
+"publisher": "University of California Press",
+"concepts": [
+"Genocide",
+"Denial",
+"Armenian",
+"Disinformation",
+"Context (archaeology)",
+"Human rights",
+"Hegemony",
+"Politics"
+],
+"roles": [
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 2,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Peace, Justice and strong institutions"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Knowing about Genocide (2021), published by University of California Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780520380196&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Joachim J. Savelsberg",
+"all_authors": [
+"Joachim J. Savelsberg"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "University of Minnesota",
+"count": 1
+},
+{
+"label": "Hamilton College",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1525/9780520380196"
 ]
 },
 {
@@ -37474,6 +40377,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -37562,6 +40467,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -37652,6 +40559,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -37731,6 +40640,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -37831,6 +40742,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -37846,6 +40759,142 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.5117/9789463723336"
+]
+},
+{
+"file": "datastory_10.25378_janelia.13114499.v1.html",
+"title": "Isotropic 3D electron microscopy reference data of isolated murine pancreatic islets treated with high glucose (jrc_mus-pancreas-1)",
+"type": "DataStory",
+"doi": "10.25378/janelia.13114499.v1",
+"year": 2020,
+"venue": "Figshare",
+"venue_name": "Figshare",
+"publisher": "Digital Science",
+"concepts": [
+"Islet",
+"Cell biology",
+"Pancreatic islets",
+"Electron microscope",
+"Chemistry",
+"Organelle",
+"BETA (programming language)",
+"Beta cell"
+],
+"roles": [
+"High-Visibility Uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 2,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary Released in 2020 by researchers at Janelia Research Campus, this isotropic 3D electron microscopy dataset of high-glucose-treated murine pancreatic islets has accumulated 12 citat…",
+"cover_url": "",
+"authors": "Xu, C. Shan, Pang, Song, Bennett, Davis et al.",
+"all_authors": [
+"Xu, C. Shan",
+"Pang, Song",
+"Bennett, Davis",
+"Mueller, Andreas",
+"Solimena, Michele",
+"Hess, Harald"
+],
+"institutions": [
+"Janelia Research Campus"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+},
+{
+"label": "Facility",
+"count": 2
+},
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Company",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "Italy",
+"count": 2
+},
+{
+"label": "United States of America",
+"count": 2
+},
+{
+"label": "Canada",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Howard Hughes Medical Institute",
+"count": 2
+},
+{
+"label": "Janelia Research Campus",
+"count": 2
+},
+{
+"label": "Max Delbrück Center",
+"count": 2
+},
+{
+"label": "Yale University",
+"count": 2
+},
+{
+"label": "Human Technopole",
+"count": 2
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.25378/janelia.13114499.v1"
 ]
 },
 {
@@ -37912,6 +40961,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -38027,6 +41078,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -38114,6 +41167,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -38216,6 +41271,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -38352,6 +41409,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -38498,6 +41557,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "podcast": 1,
 "news": 1
@@ -38620,6 +41681,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "podcast": 1,
 "news": 2
@@ -38724,6 +41787,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -38826,6 +41891,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -38928,6 +41995,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "blog": 1,
 "news": 1
@@ -39009,6 +42078,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "bluesky": 9,
 "blog": 1
@@ -39093,6 +42164,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 5
 },
@@ -39168,6 +42241,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -39284,6 +42359,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -39395,6 +42472,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -39532,6 +42611,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -39648,6 +42729,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -39728,6 +42811,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "hypothesis": 1
 },
@@ -39849,6 +42934,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 2
 },
@@ -39916,6 +43003,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -40045,6 +43134,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -40140,6 +43231,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -40214,6 +43307,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -40304,6 +43399,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -40394,6 +43491,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -40488,6 +43587,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -40579,6 +43680,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -40652,6 +43755,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -40738,6 +43843,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -40839,6 +43946,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -40923,6 +44032,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -41000,6 +44111,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -41097,6 +44210,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -41186,6 +44301,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -41275,6 +44392,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -41364,6 +44483,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -41410,6 +44531,162 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.11116/NMIE_CII"
+]
+},
+{
+"file": "bookstory_10.1515_9781501777394.html",
+"title": "Border of Water and Ice",
+"type": "BookStory",
+"doi": "10.1515/9781501777394",
+"year": 2024,
+"venue": "Cornell University Press",
+"venue_name": "",
+"publisher": "Cornell University Press",
+"concepts": [
+"Geology",
+"Geography"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 1,
+"ta_youtube": 2,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Border of Water and Ice (2024), published by Cornell University Press.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/ce06a01a-5213-43e9-adac-d3cb0d7bbcdb/retrieve",
+"authors": "Joseph A. Seeley",
+"all_authors": [
+"Joseph A. Seeley"
+],
+"institutions": [],
+"download_count": 659,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1515/9781501777394"
+]
+},
+{
+"file": "bookstory_10.1525_luminos.193.html",
+"title": "Making Sense: Language, Ethics, and Understanding in Deaf Nepal",
+"type": "BookStory",
+"doi": "10.1525/luminos.193",
+"year": 2024,
+"venue": "University of California Press",
+"venue_name": "",
+"publisher": "University of California Press",
+"concepts": [
+"Linguistics",
+"Psychology",
+"Sociology",
+"Philosophy"
+],
+"roles": [
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 1,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Making Sense: Language, Ethics, and Understanding in Deaf Nepal (2024), published by University of California Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780520399235&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "E. Mara Green",
+"all_authors": [
+"E. Mara Green"
+],
+"institutions": [],
+"download_count": 1304,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Memphis",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1525/luminos.193"
 ]
 },
 {
@@ -41463,6 +44740,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -41540,6 +44819,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -41627,6 +44908,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -41752,6 +45035,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 3,
 "news": 1
@@ -41827,6 +45112,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -41926,6 +45213,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -42026,6 +45315,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -42045,22 +45336,22 @@ window.STORIES_DATA = [
 ],
 "countries": [
 {
-"label": "Netherlands",
+"label": "Spain",
 "count": 1
 },
 {
-"label": "Spain",
+"label": "Netherlands",
 "count": 1
 }
 ],
 "citing_institutions": [
 {
 "label": "Utrecht University",
-"count": 0
+"count": 1
 },
 {
 "label": "Institut Català de Nanociència i Nanotecnologia",
-"count": 0
+"count": 1
 }
 ],
 "scite_supporting": 0,
@@ -42134,6 +45425,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -42153,18 +45446,18 @@ window.STORIES_DATA = [
 ],
 "countries": [
 {
-"label": "United States",
+"label": "United States of America",
 "count": 1
 }
 ],
 "citing_institutions": [
 {
-"label": "University of California, Berkeley",
-"count": 0
+"label": "Howard Hughes Medical Institute",
+"count": 1
 },
 {
-"label": "Howard Hughes Medical Institute",
-"count": 0
+"label": "University of California, Berkeley",
+"count": 1
 }
 ],
 "scite_supporting": 0,
@@ -42229,6 +45522,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -42324,6 +45619,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -42427,6 +45724,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -42564,6 +45863,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -42648,6 +45949,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -42732,6 +46035,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -42807,6 +46112,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -42886,6 +46193,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "podcast": 1,
 "news": 2
@@ -42957,6 +46266,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "substack": 1,
 "blog": 2,
@@ -43038,6 +46349,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "substack": 1,
 "blog": 1
@@ -43125,6 +46438,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "substack": 2
 },
@@ -43196,6 +46511,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -43273,6 +46590,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "blog": 1
 },
@@ -43352,6 +46671,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "podcast": 1,
 "news": 1
@@ -43429,6 +46750,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -43507,6 +46830,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "podcast": 1
 },
@@ -43602,6 +46927,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -43622,6 +46949,125 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.1371/journal.pone.0327344"
+]
+},
+{
+"file": "articlestory_10.18154_rwth-2025-00578.html",
+"title": "Quantum Computing for High-Energy Physics : State of the Art and Challenges",
+"type": "ArticleStory",
+"doi": "10.18154/rwth-2025-00578",
+"year": 2024,
+"venue": "RWTH Publications (RWTH Aachen)",
+"venue_name": "RWTH Publications (RWTH Aachen)",
+"publisher": "",
+"concepts": [
+"Quantum computer",
+"Physics",
+"State (computer science)",
+"Computer science",
+"Theoretical physics",
+"Quantum",
+"Quantum mechanics",
+"Quantum entanglement"
+],
+"roles": [
+"Pedagogical Anchor",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Affordable and clean energy"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary This large-scale community review of quantum computing applications in high-energy physics has accumulated 25 citations since its publication, establishing itself as a substantive…",
+"cover_url": "",
+"authors": "Di Meglio, Alberto, Jansen, Karl, Tavernelli, Ivano et al.",
+"all_authors": [
+"Di Meglio, Alberto",
+"Jansen, Karl",
+"Tavernelli, Ivano",
+"Alexandrou, Constantia",
+"Arunachalam, Srinivasan",
+"Bauer, Christian W.",
+"Borras, Kerstin",
+"Carrazza, Stefano",
+"Crippa, Arianna",
+"Croft, Vincent",
+"de Putter, Roland",
+"Delgado, Andrea",
+"Dunjko, Vedran",
+"Egger, Daniel J.",
+"Fernández-Combarro, Elias",
+"Fuchs, Elina",
+"Funcke, Lena",
+"González-Cuadra, Daniel",
+"Grossi, Michele",
+"Halimeh, Jad C.",
+"Holmes, Zoë",
+"Kühn, Stefan",
+"Lacroix, Denis",
+"Lewis, Randy",
+"Lucchesi, Donatella",
+"Martinez, Miriam Lucio",
+"Meloni, Federico",
+"Mezzacapo, Antonio",
+"Montangero, Simone",
+"Nagano, Lento",
+"Pascuzzi, Vincent R.",
+"Radescu, Voica",
+"Ortega, Enrique Rico",
+"Roggero, Alessandro",
+"Schuhmacher, Julian",
+"Seixas, Joao",
+"Silvi, Pietro",
+"Spentzouris, Panagiotis",
+"Tacchino, Francesco",
+"Temme, Kristan",
+"Terashi, Koji",
+"Tura, Jordi",
+"Tüysüz, Cenk",
+"Vallecorsa, Sofia",
+"Wiese, Uwe-Jens",
+"Yoo, Shinjae",
+"Zhang, Jinglei"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.18154/rwth-2025-00578"
 ]
 },
 {
@@ -43690,6 +47136,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -43772,6 +47220,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -43850,6 +47300,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "substack": 1
 },
@@ -43918,6 +47370,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -43990,6 +47444,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -44056,6 +47512,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -44129,6 +47587,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -44203,6 +47663,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -44279,6 +47741,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -44349,6 +47813,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -44453,6 +47919,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -44524,6 +47992,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -44597,6 +48067,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -44679,6 +48151,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -44752,6 +48226,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -44824,6 +48300,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -44893,6 +48371,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -44964,6 +48444,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -45028,6 +48510,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -45100,6 +48584,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -45165,6 +48651,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -45236,6 +48724,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": true,
 "librarything_rating": 6.0,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -45306,6 +48796,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -45376,6 +48868,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -45446,6 +48940,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -45515,6 +49011,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -45591,6 +49089,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -45657,6 +49157,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -45728,6 +49230,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -45796,6 +49300,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -45872,6 +49378,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -45939,6 +49447,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": true,
 "librarything_rating": 8.0,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -46007,6 +49517,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -46082,6 +49594,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -46157,6 +49671,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -46221,6 +49737,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -46289,6 +49807,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -46360,6 +49880,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -46433,6 +49955,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -46510,6 +50034,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -46579,6 +50105,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -46654,6 +50182,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -46735,6 +50265,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -46815,6 +50347,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -46886,6 +50420,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -46956,6 +50492,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -47025,6 +50563,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -47101,6 +50641,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -47173,6 +50715,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -47247,6 +50791,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -47317,6 +50863,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -47391,6 +50939,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -47468,6 +51018,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -47547,6 +51099,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -47621,6 +51175,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -47699,6 +51255,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -47768,6 +51326,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -47838,6 +51398,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -47910,6 +51472,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -47983,6 +51547,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -48052,6 +51618,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -48113,6 +51681,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -48128,6 +51698,79 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.11647/OBP.0233"
+]
+},
+{
+"file": "bookstory_10.21627_2024hd.html",
+"title": "Harlem in Disorder: A Spatial History of How Racial Violence Changed in 1935",
+"type": "BookStory",
+"doi": "10.21627/2024hd",
+"year": 2024,
+"venue": "Stanford University Press",
+"venue_name": "",
+"publisher": "Stanford University Press",
+"concepts": [
+"Harlem Renaissance",
+"Psychology",
+"History",
+"Art history",
+"Performance art"
+],
+"roles": [
+"Sustainability & Policy Relevance"
+],
+"is_oa": null,
+"oa_status": "",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Gender equality"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Harlem in Disorder: A Spatial History of How Racial Violence Changed in 1935 (2024), published by Stanford University Press.",
+"cover_url": "",
+"authors": "Stephen Robertson",
+"all_authors": [
+"Stephen Robertson"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Multimodal"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.21627/2024hd"
 ]
 },
 {
@@ -48179,6 +51822,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -48245,6 +51890,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -48311,6 +51958,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -48372,6 +52021,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -48433,6 +52084,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -48502,6 +52155,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -48568,6 +52223,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -48639,6 +52296,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 1
 },
@@ -48709,6 +52368,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -48780,6 +52441,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -48846,6 +52509,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -48908,6 +52573,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -48979,6 +52646,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -49051,6 +52720,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -49122,6 +52793,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -49182,6 +52855,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -49249,6 +52924,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -49313,6 +52990,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 3
 },
@@ -49383,6 +53062,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -49398,6 +53079,81 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.3726/b21787"
+]
+},
+{
+"file": "bookstory_10.3998_mpub.14469549.html",
+"title": "Abortion Pills",
+"type": "BookStory",
+"doi": "10.3998/mpub.14469549",
+"year": 2024,
+"venue": "Amherst College Press",
+"venue_name": "",
+"publisher": "Amherst College Press",
+"concepts": [
+"Pill",
+"Abortion",
+"Medicine",
+"Pregnancy",
+"Biology",
+"Pharmacology",
+"Genetics"
+],
+"roles": [
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Gender equality"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Abortion Pills (2024), published by Amherst College Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781943208852&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Carrie Baker",
+"all_authors": [
+"Carrie Baker"
+],
+"institutions": [],
+"download_count": 179,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History; Political Science"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.3998/mpub.14469549"
 ]
 },
 {
@@ -49444,6 +53200,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "wikipedia": 2
 },
@@ -49517,6 +53275,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -49578,6 +53338,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -49653,6 +53415,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -49717,6 +53481,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": true,
 "librarything_rating": 7.0,
+"has_award": false,
+"awards": [],
 "platform_counts": {
 "news": 1
 },
@@ -49734,6 +53500,73 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.7765/9781526137760"
+]
+},
+{
+"file": "bookstory_isbn_9781954622296.html",
+"title": "Deaf mobility studies: Exploring international networks, tourism, and migration",
+"type": "BookStory",
+"doi": "9781954622296",
+"year": 2024,
+"venue": "Gallaudet University Press",
+"venue_name": "",
+"publisher": "Gallaudet University Press",
+"concepts": [],
+"roles": [],
+"is_oa": true,
+"oa_status": "gold",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Deaf mobility studies: Exploring international networks, tourism, and migration (2024), published by Gallaudet University Press.",
+"cover_url": "",
+"authors": "Annelies Kusters, Erin Moriarty, Amandine Le Maire et al.",
+"all_authors": [
+"Annelies Kusters",
+"Erin Moriarty",
+"Amandine Le Maire",
+"Sanchayeeta Iyer",
+"Steven Emery"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Multimodal"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"9781954622296"
 ]
 },
 {
@@ -49796,6 +53629,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -49811,6 +53646,77 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.22002/pa710-cdn95"
+]
+},
+{
+"file": "datastory_10.22002_rwdfx-j4z76.html",
+"title": "The impact of package selection and versioning on single-cell RNA-seq analysis",
+"type": "DataStory",
+"doi": "10.22002/rwdfx-j4z76",
+"year": 2025,
+"venue": "CaltechDATA",
+"venue_name": "CaltechDATA",
+"publisher": "Unknown",
+"concepts": [
+"Computer science",
+"Selection (genetic algorithm)",
+"Software versioning",
+"Data mining",
+"R package",
+"Database",
+"Data analysis",
+"Software"
+],
+"roles": [
+"Dataset Reference Backbone"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary This dataset, deposited in CaltechDATA by Joseph Rich and Lior Pachter, serves as the computational backbone for research examining how software package selection and version diff…",
+"cover_url": "",
+"authors": "Rich, Joseph, Pachter, Lior",
+"all_authors": [
+"Rich, Joseph",
+"Pachter, Lior"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.22002/rwdfx-j4z76"
 ]
 },
 {
@@ -49882,6 +53788,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -49959,6 +53867,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -50036,6 +53946,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -50113,6 +54025,8 @@ window.STORIES_DATA = [
 ],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -50215,6 +54129,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -50292,6 +54208,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -50375,10 +54293,16 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [],
+"mention_platforms": [
+"News"
+],
 "has_librarything": false,
 "librarything_rating": null,
-"platform_counts": {},
+"has_award": false,
+"awards": [],
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -50393,6 +54317,89 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.5061/dryad.51c59zwf1"
+]
+},
+{
+"file": "datastory_10.5061_dryad.k3j9kd5b8.html",
+"title": "Uncovering circuit mechanisms of current sinks and sources with biophysical simulations of primary visual cortex",
+"type": "DataStory",
+"doi": "10.5061/dryad.k3j9kd5b8",
+"year": 2022,
+"venue": "Dryad",
+"venue_name": "Dryad",
+"publisher": "Dryad",
+"concepts": [
+"Neuroscience",
+"Visual cortex",
+"Local field potential",
+"Computer science",
+"Current (fluid)",
+"Dynamics (music)",
+"Neuronal firing",
+"Cortex (anatomy)"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_reuse": false,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary This dataset, deposited on Dryad in 2022 in support of biophysical simulations of primary visual cortex, has accumulated 361 views and 38 downloads, attracted 4 scholarly citation…",
+"cover_url": "",
+"authors": "Rimehaug, Atle, Stasik, Alexander, Hagen, Espen et al.",
+"all_authors": [
+"Rimehaug, Atle",
+"Stasik, Alexander",
+"Hagen, Espen",
+"Billeh, Yazan",
+"Siegle, Josh",
+"Dai, Kael",
+"Olsen, Shawn",
+"Koch, Christof",
+"Einevoll, Gaute",
+"Arkhipov, Anton"
+],
+"institutions": [
+"University of Oslo",
+"Norwegian University of Life Sciences",
+"Allen Institute for Brain Science"
+],
+"download_count": 38,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5061/dryad.k3j9kd5b8"
 ]
 },
 {
@@ -50450,6 +54457,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -50493,8 +54502,8 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
+"has_teaching": true,
+"ta_ocw": 1,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
@@ -50522,6 +54531,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -50596,6 +54607,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -50662,6 +54675,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -50734,6 +54749,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -50806,6 +54823,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -50874,6 +54893,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -50949,6 +54970,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -51017,6 +55040,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -51089,6 +55114,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -51176,6 +55203,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -51248,6 +55277,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -51316,6 +55347,8 @@ window.STORIES_DATA = [
 "mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
+"has_award": false,
+"awards": [],
 "platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
@@ -51334,4 +55367,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 425, "total_articles": 190, "total_books": 185, "total_data": 43, "total_software": 7, "total_oa": 360, "pct_oa": 85, "total_citations": 172486, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 454, "total_articles": 190, "total_books": 214, "total_data": 43, "total_software": 7, "total_oa": 386, "pct_oa": 85, "total_citations": 162020, "num_disciplines": 30};

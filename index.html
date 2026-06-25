@@ -830,6 +830,7 @@
       </p>
       <div class="hero-links">
         <a href="#explorer" class="btn btn-primary" onclick="document.getElementById('explorer').scrollIntoView({behavior:'smooth'}); return false;" style="background:#F2C94C;color:#111827;">Browse stories ↓</a>
+        <a href="openscience_institutional_portfolio.html" class="btn btn-outline">ACLS 2026 finalists ↗</a>
         <a href="about.html" class="btn btn-outline">About us</a>
       </div>
     </div>
@@ -1101,6 +1102,7 @@ function buildFacetCounts(stories) {
     if ((s.ta_youtube||0)>0)     counts.features["Video lectures"]      = (counts.features["Video lectures"]||0)+1;
     if ((s.ta_ol_holdings||0)>0) counts.features["Library holdings"]    = (counts.features["Library holdings"]||0)+1;
     if (s.ta_otl)                counts.features["Open textbook (OTL)"] = (counts.features["Open textbook (OTL)"]||0)+1;
+    if (s.has_award)             counts.features["Award winner"]        = (counts.features["Award winner"]||0)+1;
     for (const inst of (s.institutions||[])) counts.institution[inst] = (counts.institution[inst]||0)+1;
   }
   return counts;
@@ -1180,6 +1182,7 @@ function filterStories(stories) {
       if ((s.ta_youtube||0)>0)     feats.add("Video lectures");
       if ((s.ta_ol_holdings||0)>0) feats.add("Library holdings");
       if (s.ta_otl)                feats.add("Open textbook (OTL)");
+      if (s.has_award)             feats.add("Award winner");
       if (![...state.filters.features].every(f => feats.has(f))) return false;
     }
     if (state.filters.venue.size && !state.filters.venue.has(s.venue)) return false;
@@ -1343,7 +1346,7 @@ function renderFacets(allStories, filtered) {
 
   // Signals grouped: scholarly integrity first, then teaching/adoption
   const featOrder = [
-    "SDG-linked", "Peer reviewed", "Data / code linked", "Has downloads",
+    "Award winner", "SDG-linked", "Peer reviewed", "Data / code linked", "Has downloads",
     "OCW / syllabi", "Video lectures", "Library holdings", "Open textbook (OTL)",
   ];
   renderFacetGroup("fo-features", "features", allC.features, filtC.features,
