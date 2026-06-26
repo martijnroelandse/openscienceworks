@@ -18379,9 +18379,9 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 2,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
@@ -18429,17 +18429,17 @@ window.STORIES_DATA = [
 "count": 2
 },
 {
-"label": "Other",
+"label": "Government",
 "count": 1
 },
 {
-"label": "Government",
+"label": "Other",
 "count": 1
 }
 ],
 "countries": [
 {
-"label": "United States",
+"label": "United States of America",
 "count": 16
 },
 {
@@ -18451,33 +18451,33 @@ window.STORIES_DATA = [
 "count": 6
 },
 {
-"label": "United Kingdom",
+"label": "Australia",
 "count": 4
 },
 {
-"label": "Australia",
+"label": "United Kingdom of Great Britain and Northern Ireland",
 "count": 4
 }
 ],
 "citing_institutions": [
 {
-"label": "New York University",
-"count": 2
+"label": "The University of Melbourne",
+"count": 3
 },
 {
-"label": "Xi'an Jiaotong University",
-"count": 2
+"label": "New York University",
+"count": 3
 },
 {
 "label": "University of Hong Kong",
-"count": 2
+"count": 3
 },
 {
-"label": "University College London",
-"count": 2
+"label": "Wageningen University & Research",
+"count": 3
 },
 {
-"label": "University of Colorado Boulder",
+"label": "Rutgers, The State University of New Jersey",
 "count": 2
 }
 ],
@@ -23265,7 +23265,7 @@ window.STORIES_DATA = [
 ],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 3,
 "ta_ol_holdings": 3,
 "ta_otl": false,
 "has_peer_review": false,
@@ -23311,21 +23311,21 @@ window.STORIES_DATA = [
 "count": 2
 },
 {
-"label": "Government",
+"label": "Company",
 "count": 1
 },
 {
-"label": "Company",
+"label": "Government",
 "count": 1
 }
 ],
 "countries": [
 {
-"label": "United States",
+"label": "United States of America",
 "count": 11
 },
 {
-"label": "United Kingdom",
+"label": "United Kingdom of Great Britain and Northern Ireland",
 "count": 2
 },
 {
@@ -23333,11 +23333,11 @@ window.STORIES_DATA = [
 "count": 1
 },
 {
-"label": "India",
+"label": "France",
 "count": 1
 },
 {
-"label": "France",
+"label": "India",
 "count": 1
 }
 ],
@@ -23347,19 +23347,19 @@ window.STORIES_DATA = [
 "count": 9
 },
 {
-"label": "The Ohio State University",
-"count": 1
-},
-{
-"label": "New York University",
-"count": 1
-},
-{
-"label": "École des hautes études en sciences sociales",
-"count": 1
-},
-{
 "label": "Leiden University",
+"count": 1
+},
+{
+"label": "Federal Foreign Office",
+"count": 1
+},
+{
+"label": "Mahindra Group (India)",
+"count": 1
+},
+{
+"label": "King's College London",
 "count": 1
 }
 ],
@@ -23990,7 +23990,7 @@ window.STORIES_DATA = [
 ],
 "countries": [
 {
-"label": "United States",
+"label": "United States of America",
 "count": 14
 },
 {
@@ -24002,11 +24002,11 @@ window.STORIES_DATA = [
 "count": 1
 },
 {
-"label": "Peru",
+"label": "Indonesia",
 "count": 1
 },
 {
-"label": "Indonesia",
+"label": "Netherlands",
 "count": 1
 }
 ],
@@ -24016,7 +24016,7 @@ window.STORIES_DATA = [
 "count": 12
 },
 {
-"label": "Leipzig University",
+"label": "Udayana University",
 "count": 1
 },
 {
@@ -24024,12 +24024,12 @@ window.STORIES_DATA = [
 "count": 1
 },
 {
-"label": "Bielefeld University",
+"label": "Universidad Peruana Cayetano Heredia",
 "count": 1
 },
 {
-"label": "Guangdong Polytechnic Normal University",
-"count": 0
+"label": "Bielefeld University",
+"count": 1
 }
 ],
 "scite_supporting": 0,
@@ -24167,9 +24167,9 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 2,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
@@ -24209,11 +24209,11 @@ window.STORIES_DATA = [
 "count": 16
 },
 {
-"label": "Facility",
+"label": "Archive",
 "count": 1
 },
 {
-"label": "Other",
+"label": "Facility",
 "count": 1
 },
 {
@@ -24221,13 +24221,13 @@ window.STORIES_DATA = [
 "count": 1
 },
 {
-"label": "Archive",
+"label": "Other",
 "count": 1
 }
 ],
 "countries": [
 {
-"label": "United States",
+"label": "United States of America",
 "count": 9
 },
 {
@@ -24235,21 +24235,25 @@ window.STORIES_DATA = [
 "count": 7
 },
 {
-"label": "United Kingdom",
+"label": "United Kingdom of Great Britain and Northern Ireland",
 "count": 2
 },
 {
-"label": "Colombia",
+"label": "Australia",
 "count": 1
 },
 {
-"label": "BO",
+"label": "Azerbaijan",
 "count": 1
 }
 ],
 "citing_institutions": [
 {
 "label": "Erasmus University Rotterdam",
+"count": 5
+},
+{
+"label": "University of Cambridge",
 "count": 2
 },
 {
@@ -24261,11 +24265,7 @@ window.STORIES_DATA = [
 "count": 1
 },
 {
-"label": "The University of Melbourne",
-"count": 1
-},
-{
-"label": "University of Montana",
+"label": "University of North Carolina at Chapel Hill",
 "count": 1
 }
 ],
@@ -24569,7 +24569,7 @@ window.STORIES_DATA = [
 ],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 1,
 "ta_ol_holdings": 1,
 "ta_otl": false,
 "has_peer_review": false,
@@ -24611,16 +24611,8 @@ window.STORIES_DATA = [
 ],
 "countries": [
 {
-"label": "United States",
+"label": "United States of America",
 "count": 13
-},
-{
-"label": "WS",
-"count": 1
-},
-{
-"label": "Mexico",
-"count": 1
 },
 {
 "label": "Brazil",
@@ -24628,6 +24620,14 @@ window.STORIES_DATA = [
 },
 {
 "label": "Denmark",
+"count": 1
+},
+{
+"label": "Mexico",
+"count": 1
+},
+{
+"label": "Samoa",
 "count": 1
 }
 ],
@@ -24637,7 +24637,11 @@ window.STORIES_DATA = [
 "count": 11
 },
 {
-"label": "Purdue University West Lafayette",
+"label": "Universidad de Guanajuato",
+"count": 1
+},
+{
+"label": "Rochester Institute of Technology",
 "count": 1
 },
 {
@@ -24645,12 +24649,8 @@ window.STORIES_DATA = [
 "count": 1
 },
 {
-"label": "Rochester Institute of Technology",
-"count": 0
-},
-{
-"label": "National University of Samoa",
-"count": 0
+"label": "Purdue University West Lafayette",
+"count": 1
 }
 ],
 "scite_supporting": 0,
@@ -27987,8 +27987,8 @@ window.STORIES_DATA = [
 "Quality Education"
 ],
 "has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 0,
+"ta_ocw": 5,
+"ta_youtube": 1,
 "ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
@@ -28009,6 +28009,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"News",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -28017,7 +28018,9 @@ window.STORIES_DATA = [
 "awards": [
 "ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
 ],
-"platform_counts": {},
+"platform_counts": {
+"news": 1
+},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -28662,7 +28665,7 @@ window.STORIES_DATA = [
 ],
 "countries": [
 {
-"label": "United States",
+"label": "United States of America",
 "count": 4
 },
 {
@@ -28680,20 +28683,20 @@ window.STORIES_DATA = [
 "count": 3
 },
 {
+"label": "University of Lisbon",
+"count": 1
+},
+{
+"label": "Centro Interuniversitário de História das Ciências e da Tecnologia",
+"count": 1
+},
+{
 "label": "University of Turin",
 "count": 1
 },
 {
 "label": "Michigan State University",
 "count": 1
-},
-{
-"label": "Centro Interuniversitário de História das Ciências e da Tecnologia",
-"count": 0
-},
-{
-"label": "University of Lisbon",
-"count": 0
 }
 ],
 "scite_supporting": 0,
@@ -29654,15 +29657,15 @@ window.STORIES_DATA = [
 "count": 2
 },
 {
-"label": "United States",
+"label": "United States of America",
 "count": 2
 },
 {
-"label": "Switzerland",
+"label": "Austria",
 "count": 1
 },
 {
-"label": "Austria",
+"label": "Switzerland",
 "count": 1
 },
 {
@@ -29672,11 +29675,11 @@ window.STORIES_DATA = [
 ],
 "citing_institutions": [
 {
-"label": "Technische Universität Dresden",
+"label": "Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology",
 "count": 1
 },
 {
-"label": "Virginia Tech",
+"label": "SRM Institute of Science and Technology",
 "count": 1
 },
 {
@@ -29684,11 +29687,11 @@ window.STORIES_DATA = [
 "count": 1
 },
 {
-"label": "Leibniz Institute of European History",
+"label": "Chennai Mathematical Institute",
 "count": 1
 },
 {
-"label": "Graz University of Technology",
+"label": "Washington University in St. Louis",
 "count": 1
 }
 ],
@@ -30308,9 +30311,9 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 1,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
@@ -30354,7 +30357,7 @@ window.STORIES_DATA = [
 ],
 "countries": [
 {
-"label": "United States",
+"label": "United States of America",
 "count": 4
 },
 {
@@ -30362,11 +30365,11 @@ window.STORIES_DATA = [
 "count": 2
 },
 {
-"label": "Turkey",
+"label": "Iran, Islamic Republic of",
 "count": 1
 },
 {
-"label": "Iran",
+"label": "Turkey",
 "count": 1
 }
 ],
@@ -30376,20 +30379,20 @@ window.STORIES_DATA = [
 "count": 3
 },
 {
-"label": "University of Erfurt",
-"count": 1
-},
-{
 "label": "Erzincan Binali Yıldırım University",
 "count": 1
 },
 {
-"label": "Heidelberg University",
-"count": 0
+"label": "University of Erfurt",
+"count": 1
 },
 {
 "label": "Heidelberg University",
-"count": 0
+"count": 1
+},
+{
+"label": "University of Kurdistan",
+"count": 1
 }
 ],
 "scite_supporting": 0,
@@ -35003,19 +35006,31 @@ window.STORIES_DATA = [
 ],
 "countries": [
 {
-"label": "United States",
+"label": "United States of America",
 "count": 2
-},
-{
-"label": "Malaysia",
-"count": 1
 },
 {
 "label": "China",
 "count": 1
+},
+{
+"label": "Malaysia",
+"count": 1
 }
 ],
 "citing_institutions": [
+{
+"label": "HELP University",
+"count": 1
+},
+{
+"label": "Guangdong University of Foreign Studies",
+"count": 1
+},
+{
+"label": "University of Malaya",
+"count": 1
+},
 {
 "label": "University at Buffalo, State University of New York",
 "count": 1
@@ -35023,18 +35038,6 @@ window.STORIES_DATA = [
 {
 "label": "Virginia Tech",
 "count": 1
-},
-{
-"label": "University of Malaya",
-"count": 0
-},
-{
-"label": "Guangdong University of Foreign Studies",
-"count": 0
-},
-{
-"label": "HELP University",
-"count": 0
 }
 ],
 "scite_supporting": 0,
@@ -35121,29 +35124,29 @@ window.STORIES_DATA = [
 ],
 "countries": [
 {
-"label": "United States",
+"label": "United States of America",
 "count": 2
+},
+{
+"label": "Australia",
+"count": 1
 },
 {
 "label": "Ireland",
 "count": 1
 },
 {
-"label": "LK",
+"label": "India",
 "count": 1
 },
 {
-"label": "TT",
-"count": 1
-},
-{
-"label": "Australia",
+"label": "Sri Lanka",
 "count": 1
 }
 ],
 "citing_institutions": [
 {
-"label": "Assam University",
+"label": "Purchase College",
 "count": 1
 },
 {
@@ -35152,15 +35155,15 @@ window.STORIES_DATA = [
 },
 {
 "label": "SUNY College of Environmental Science and Forestry",
-"count": 0
+"count": 1
 },
 {
-"label": "Purchase College",
-"count": 0
+"label": "University of Sri Jayewardenepura",
+"count": 1
 },
 {
-"label": "Atlantic Technological University",
-"count": 0
+"label": "University of Moratuwa",
+"count": 1
 }
 ],
 "scite_supporting": 0,
@@ -40266,7 +40269,7 @@ window.STORIES_DATA = [
 ],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 1,
 "ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
@@ -40308,7 +40311,7 @@ window.STORIES_DATA = [
 ],
 "countries": [
 {
-"label": "United States",
+"label": "United States of America",
 "count": 2
 }
 ],
@@ -44672,7 +44675,7 @@ window.STORIES_DATA = [
 ],
 "countries": [
 {
-"label": "United States",
+"label": "United States of America",
 "count": 1
 }
 ],
@@ -53112,7 +53115,7 @@ window.STORIES_DATA = [
 ],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 4,
 "ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
@@ -53131,6 +53134,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"News",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -53139,7 +53143,9 @@ window.STORIES_DATA = [
 "awards": [
 "ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History; Political Science"
 ],
-"platform_counts": {},
+"platform_counts": {
+"news": 11
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
