@@ -318,8 +318,9 @@
                         
                             <div><strong>Publisher:</strong> 
                                 
-                                    Peter Lang Verlag
+                                    
                                 
+                                <span id="publisher-value" data-publisher-label="Peter Lang Verlag">Peter Lang Verlag</span>
                             </div>
                         
                             <div><strong>Publication year:</strong> 
@@ -616,6 +617,10 @@
                     <li><strong>OA basis:</strong> no open-access signals found</li>
                     
                     
+                    
+                    
+                    
+                    
 
                     
                     
@@ -903,7 +908,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-01T15:00:16+00:00
+                    Generated on 2026-09-01T16:14:15+00:00
                 </div>
                 
             </div>
@@ -1244,6 +1249,65 @@
         var el = document.getElementById(id);
         if (el) observer.observe(el);
     });
+})();
+</script>
+<script>
+(function() {
+    var el = document.getElementById('publisher-value');
+    if (!el) return;
+
+    var label = (el.getAttribute('data-publisher-label') || '').trim();
+    if (!label || label.toLowerCase() === 'unknown') return;
+
+    function norm(s) {
+        return String(s || '').trim().toLowerCase().replace(/\s+/g, ' ');
+    }
+
+    function parseStoriesData(jsText) {
+        var marker = 'window.STORIES_DATA =';
+        var markerIdx = jsText.indexOf(marker);
+        if (markerIdx === -1) return [];
+        var start = jsText.indexOf('[', markerIdx);
+        if (start === -1) return [];
+        var endMarker = 'window.STORIES_STATS =';
+        var endMarkerIdx = jsText.indexOf(endMarker, start);
+        if (endMarkerIdx === -1) return [];
+        var end = jsText.lastIndexOf(';', endMarkerIdx - 1);
+        if (end === -1 || end <= start) return [];
+        var raw = jsText.slice(start, end).trim();
+        try {
+            var data = JSON.parse(raw);
+            return Array.isArray(data) ? data : [];
+        } catch (_err) {
+            return [];
+        }
+    }
+
+    fetch('stories_data.js')
+        .then(function(res) { return res.ok ? res.text() : ''; })
+        .then(function(jsText) {
+            if (!jsText) return;
+            var stories = parseStoriesData(jsText);
+            if (!stories.length) return;
+
+            var target = norm(label);
+            var matches = stories.filter(function(story) {
+                var publisher = norm(story.publisher || story.venue || '');
+                return publisher && publisher === target;
+            }).length;
+
+            if (matches <= 1) return;
+
+            var link = document.createElement('a');
+            link.href = 'index.html?view=publisher&publisher=' + encodeURIComponent(label);
+            link.textContent = label;
+            link.style.color = '#1d4ed8';
+            link.style.textDecoration = 'none';
+            link.title = 'Open publisher dashboard (' + matches + ' stories)';
+            el.textContent = '';
+            el.appendChild(link);
+        })
+        .catch(function() {});
 })();
 </script>
 </body>
