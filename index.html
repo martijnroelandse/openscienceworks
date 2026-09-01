@@ -532,6 +532,42 @@
       display: flex; gap: 0.75rem; flex-wrap: wrap; }
     .pf-risk-item { display: flex; align-items: center; gap: 0.3rem; }
     .pf-risk-n { font-weight: 800; }
+    .pf-qa-box {
+      margin-top: 0.45rem;
+      border-radius: 0.65rem;
+      border: 1px solid #fdba74;
+      background: #fff7ed;
+      padding: 0.8rem 0.95rem;
+      color: #9a3412;
+      font-size: 0.82rem;
+    }
+    .pf-qa-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      margin-bottom: 0.45rem;
+    }
+    .pf-qa-title { font-weight: 700; }
+    .pf-qa-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      border: 1px solid #fdba74;
+      border-radius: 999px;
+      padding: 0.1rem 0.5rem;
+      white-space: nowrap;
+    }
+    .pf-qa-badge.ok {
+      border-color: #86efac;
+      color: #166534;
+      background: #f0fdf4;
+    }
+    .pf-qa-summary { margin: 0.25rem 0 0.55rem; line-height: 1.45; }
+    .pf-qa-list { margin: 0; padding-left: 1rem; line-height: 1.5; }
+    .pf-qa-list li { margin: 0.15rem 0; }
+    .pf-qa-meta { color: #7c2d12; font-size: 0.74rem; margin-top: 0.45rem; }
 
     .pf-quality-row { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.4rem; }
     .pf-qbadge { display: inline-flex; align-items: center; gap: 0.3rem;
@@ -1424,6 +1460,9 @@ function computePortfolioSummary(stories) {
   let riskRetracted = 0, riskEoc = 0, riskPubpeer = 0;
   let top1pct = 0, top10pct = 0;
   let sciteSupporting = 0, sciteContradicting = 0;
+  let claimGapCount = 0;
+  const claimGapPublishers = {};
+  const claimGapItems = [];
 
   for (const s of stories) {
     byType[s.type] = (byType[s.type] || 0) + 1;
@@ -1462,6 +1501,17 @@ function computePortfolioSummary(stories) {
     if (s.is_top10pct) top10pct++;
     sciteSupporting    += s.scite_supporting    || 0;
     sciteContradicting += s.scite_contradicting || 0;
+    if (s.oa_claimed_not_in_doab) {
+      claimGapCount++;
+      const pubLabel = s.publisher || s.venue || "(unknown publisher)";
+      claimGapPublishers[pubLabel] = (claimGapPublishers[pubLabel] || 0) + 1;
+      claimGapItems.push({
+        title: s.title,
+        file: s.file,
+        publisher: pubLabel,
+        source: s.oa_provenance_source || "Publisher-claimed",
+      });
+    }
     for (const r of (s.roles || []))
       roleFreq[r] = (roleFreq[r] || 0) + 1;
   }
@@ -1474,6 +1524,8 @@ function computePortfolioSummary(stories) {
   const topCountries     = _sort(countryTotals, 8);
   const topInstitutions  = _sort(instTotals, 8);
   const topItems         = [...stories].sort((a,b)=>(b.citation_count||0)-(a.citation_count||0)).slice(0,5);
+  const topGapPublishers = _sort(claimGapPublishers, 8);
+  const topGapItems = claimGapItems.slice(0, 8);
   // roles: sort by ROLE_ORDER first, then by frequency for any unlisted roles
   const topRoles = Object.entries(roleFreq)
     .sort((a, b) => {
@@ -1496,10 +1548,11 @@ function computePortfolioSummary(stories) {
     topRoles,
     riskRetracted, riskEoc, riskPubpeer,
     top1pct, top10pct, sciteSupporting, sciteContradicting,
+    claimGapCount, topGapPublishers, topGapItems,
   };
 }
 
-function renderPortfolioCard(p, groupLabel) {
+function renderPortfolioCard(p, groupLabel, groupKey) {
   const { total, byType, totalCit, totalDl, oaCount,
           sdgCount, teachCount, prCount, reuseCount,
           ocwCount, ytCount, olCount, otlCount,
@@ -1507,7 +1560,8 @@ function renderPortfolioCard(p, groupLabel) {
           topPlatforms, topFunders, topSectors, topCountries, topInstitutions, topItems,
           topRoles,
           riskRetracted, riskEoc, riskPubpeer,
-          top1pct, top10pct, sciteSupporting, sciteContradicting } = p;
+          top1pct, top10pct, sciteSupporting, sciteContradicting,
+          claimGapCount, topGapPublishers, topGapItems } = p;
   const pctOA = total ? Math.round(100 * oaCount / total) : 0;
 
   // ── stats row ──
@@ -1643,6 +1697,30 @@ function renderPortfolioCard(p, groupLabel) {
        <div class="pf-section-label">Integrity &amp; risk signals</div>
        <div class="pf-risk-box">${riskItems.join("")}</div>`
     : "";
+  const showPublisherQa = groupKey === "publisher";
+  const qaTopPublishers = (topGapPublishers || []).slice(0, 5)
+    .map(([name, count]) => `<li><span>${escHtml(name)}</span> <strong>${fmt(count)}</strong></li>`)
+    .join("");
+  const qaTopWorks = (topGapItems || []).slice(0, 5)
+    .map(item => `<li><a href="${escHtml(item.file)}" target="_blank">${escHtml(item.title)}</a></li>`)
+    .join("");
+  const publisherQaHtml = showPublisherQa
+    ? `<hr class="pf-divider">
+       <div class="pf-section-label">Publisher QA</div>
+       <div class="pf-qa-box">
+         <div class="pf-qa-head">
+           <span class="pf-qa-title">Claimed OA not in DOAB</span>
+           <span class="pf-qa-badge ${claimGapCount > 0 ? "" : "ok"}">${claimGapCount > 0 ? "Needs verification" : "No gaps flagged"}</span>
+         </div>
+         <p class="pf-qa-summary">
+           ${claimGapCount > 0
+             ? `${fmt(claimGapCount)} work${claimGapCount === 1 ? "" : "s"} in this selection are marked OA by publisher metadata but have no DOAB confirmation.`
+             : "No works in this current publisher selection are flagged as claimed OA without DOAB confirmation."}
+         </p>
+         ${claimGapCount > 0 && qaTopPublishers ? `<ul class="pf-qa-list">${qaTopPublishers}</ul>` : ""}
+         ${claimGapCount > 0 && qaTopWorks ? `<div class="pf-qa-meta">Examples:</div><ul class="pf-qa-list">${qaTopWorks}</ul>` : ""}
+       </div>`
+    : "";
 
   // ── concept cloud ──
   const maxFreq = topConcepts.length ? topConcepts[0][1] : 1;
@@ -1712,6 +1790,7 @@ function renderPortfolioCard(p, groupLabel) {
       <div class="concept-cloud">${cloudHtml}</div>` : ""}
 
       ${riskHtml}
+      ${publisherQaHtml}
     </div>`;
 }
 
@@ -1775,7 +1854,7 @@ function renderAgg(stories, groupKey) {
 
   // Portfolio summary for the full filtered set
   const pSummary = computePortfolioSummary(stories);
-  const pfCard   = renderPortfolioCard(pSummary, label);
+  const pfCard   = renderPortfolioCard(pSummary, label, groupKey);
 
   function th(lbl, sortKey, title="") {
     const active = state.aggSort.key === sortKey;
