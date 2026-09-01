@@ -1140,7 +1140,11 @@ function buildFacetCounts(stories) {
     if (s.year) counts.year[s.year] = (counts.year[s.year]||0)+1;
     if (s.has_sdgs)              counts.features["SDG-linked"]          = (counts.features["SDG-linked"]||0)+1;
     if (s.has_peer_review)       counts.features["Peer reviewed"]       = (counts.features["Peer reviewed"]||0)+1;
+    if (s.has_prism_context)     counts.features["PRISM context"]       = (counts.features["PRISM context"]||0)+1;
+    if (s.has_prism_peer_review) counts.features["PRISM peer reviews"]  = (counts.features["PRISM peer reviews"]||0)+1;
     if (s.has_reuse)             counts.features["Data / code linked"]  = (counts.features["Data / code linked"]||0)+1;
+    if (s.has_openaire_reach)    counts.features["OpenAIRE reach"]      = (counts.features["OpenAIRE reach"]||0)+1;
+    if (s.has_openaire_open_instance) counts.features["OpenAIRE open instances"] = (counts.features["OpenAIRE open instances"]||0)+1;
     if ((s.download_count||0)>0) counts.features["Has downloads"]       = (counts.features["Has downloads"]||0)+1;
     if ((s.ta_ocw||0)>0)         counts.features["OCW / syllabi"]       = (counts.features["OCW / syllabi"]||0)+1;
     if ((s.ta_youtube||0)>0)     counts.features["Video lectures"]      = (counts.features["Video lectures"]||0)+1;
@@ -1222,7 +1226,11 @@ function filterStories(stories) {
       const feats = new Set();
       if (s.has_sdgs)              feats.add("SDG-linked");
       if (s.has_peer_review)       feats.add("Peer reviewed");
+      if (s.has_prism_context)     feats.add("PRISM context");
+      if (s.has_prism_peer_review) feats.add("PRISM peer reviews");
       if (s.has_reuse)             feats.add("Data / code linked");
+      if (s.has_openaire_reach)    feats.add("OpenAIRE reach");
+      if (s.has_openaire_open_instance) feats.add("OpenAIRE open instances");
       if ((s.download_count||0)>0) feats.add("Has downloads");
       if ((s.ta_ocw||0)>0)         feats.add("OCW / syllabi");
       if ((s.ta_youtube||0)>0)     feats.add("Video lectures");
@@ -1399,7 +1407,8 @@ function renderFacets(allStories, filtered) {
 
   // Signals grouped: scholarly integrity first, then teaching/adoption
   const featOrder = [
-    "Award winner", "SDG-linked", "Peer reviewed", "Data / code linked", "Has downloads",
+    "Award winner", "SDG-linked", "Peer reviewed", "PRISM context", "PRISM peer reviews",
+    "OpenAIRE reach", "OpenAIRE open instances", "Data / code linked", "Has downloads",
     "OCW / syllabi", "Video lectures", "Library holdings", "Open textbook (OTL)",
   ];
   renderFacetGroup("fo-features", "features", allC.features, filtC.features,
