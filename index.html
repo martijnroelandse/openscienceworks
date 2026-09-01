@@ -1221,7 +1221,11 @@ function filterStories(stories) {
       if (s.has_award)             feats.add("Award winner");
       if (![...state.filters.features].every(f => feats.has(f))) return false;
     }
-    if (state.filters.venue.size && !state.filters.venue.has(s.venue)) return false;
+    if (state.filters.venue.size) {
+      const venueVal = s.venue || "";
+      const publisherVal = s.publisher || "";
+      if (![...state.filters.venue].every(v => v === venueVal || v === publisherVal)) return false;
+    }
     if (state.filters.series.size) {
       const seriesKey = s.series_name || "(no series)";
       if (!state.filters.series.has(seriesKey)) return false;

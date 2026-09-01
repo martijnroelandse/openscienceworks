@@ -1318,7 +1318,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-01T16:13:32+00:00
+                    Generated on 2026-09-01T16:22:17+00:00
                 </div>
                 
             </div>
@@ -1693,12 +1693,40 @@
         }
     }
 
+    function enablePublisherLink(count) {
+        var link = document.createElement('a');
+        link.href = 'index.html?view=publisher&publisher=' + encodeURIComponent(label);
+        link.textContent = label;
+        link.style.color = '#1d4ed8';
+        link.style.textDecoration = 'none';
+        if (typeof count === 'number' && count > 1) {
+            link.title = 'Open publisher dashboard (' + count + ' stories)';
+        } else {
+            link.title = 'Open publisher dashboard';
+        }
+        el.textContent = '';
+        el.appendChild(link);
+    }
+
+    // Local file previews (file://) often block fetch(). In that case we still
+    // provide direct navigation to the publisher dashboard.
+    if (window.location.protocol === 'file:') {
+        enablePublisherLink();
+        return;
+    }
+
     fetch('stories_data.js')
         .then(function(res) { return res.ok ? res.text() : ''; })
         .then(function(jsText) {
-            if (!jsText) return;
+            if (!jsText) {
+                enablePublisherLink();
+                return;
+            }
             var stories = parseStoriesData(jsText);
-            if (!stories.length) return;
+            if (!stories.length) {
+                enablePublisherLink();
+                return;
+            }
 
             var target = norm(label);
             var matches = stories.filter(function(story) {
@@ -1707,17 +1735,11 @@
             }).length;
 
             if (matches <= 1) return;
-
-            var link = document.createElement('a');
-            link.href = 'index.html?view=publisher&publisher=' + encodeURIComponent(label);
-            link.textContent = label;
-            link.style.color = '#1d4ed8';
-            link.style.textDecoration = 'none';
-            link.title = 'Open publisher dashboard (' + matches + ' stories)';
-            el.textContent = '';
-            el.appendChild(link);
+            enablePublisherLink(matches);
         })
-        .catch(function() {});
+        .catch(function() {
+            enablePublisherLink();
+        });
 })();
 </script>
 </body>
