@@ -1,0 +1,2496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gabriela Biedebach — openscience.works</title>
+  <meta name="description" content="Gabriela Biedebach has 1 publication in the openscience.works collection.">
+  <link rel="icon" type="image/png" href="openscience.works%20logos/openscience.works%20icon.png">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --bg:            #f3f4f6;
+      --surface:       #ffffff;
+      --border:        #e5e7eb;
+      --text:          #111827;
+      --muted:         #6b7280;
+      --accent:        #2E4563;
+      --accent-light:  #e8edf3;
+      --fold:          #F2C94C;
+      --c-article:     #3C5A7F;
+      --c-book:        #B34444;
+      --c-data:        #34675A;
+      --c-software:    #6A4FA3;
+      --radius:        0.9rem;
+      --shadow:        0 4px 24px rgba(15,23,42,0.08);
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Montserrat, sans-serif;
+      background: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6;
+    }
+
+    /* ── SITE NAV ────────────────────────────────────────── */
+    .site-nav {
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 0.6rem 1.5rem; display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.6rem;
+      text-decoration: none; color: var(--text); font-weight: 700; font-size: 1rem;
+    }
+    .site-nav-brand img { width: 32px; height: 32px; object-fit: contain; }
+    .brand-dot { color: var(--fold); }
+    .site-nav-links { display: flex; gap: 0.25rem; }
+    .site-nav-links a {
+      padding: 0.4rem 0.85rem; border-radius: 0.4rem; font-size: 0.88rem; font-weight: 500;
+      text-decoration: none; color: var(--muted); transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: var(--bg); color: var(--text); }
+    .site-nav-links a.active { background: var(--accent-light); color: var(--accent); }
+
+    /* ── LAYOUT ──────────────────────────────────────────── */
+    .page { max-width: 1020px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .card {
+      background: var(--surface); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 1.5rem 1.75rem; margin-bottom: 1.75rem;
+    }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+
+    /* ── AUTHOR HEADER ───────────────────────────────────── */
+    .author-header {
+      display: flex; gap: 1.5rem; align-items: flex-start;
+    }
+    .author-avatar {
+      width: 72px; height: 72px; border-radius: 50%; flex-shrink: 0;
+      background: var(--accent-light); display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; font-weight: 700; color: var(--accent); border: 3px solid var(--fold);
+    }
+    .author-meta { flex: 1; min-width: 0; }
+    .author-name {
+      font-size: 2rem; font-weight: 700; line-height: 1.2; margin: 0 0 0.3rem 0;
+      color: var(--text);
+    }
+    .author-sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.6rem; }
+    .orcid-badge {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      background: #a6ce39; color: white; padding: 0.2rem 0.55rem; border-radius: 999px;
+      font-size: 0.72rem; font-weight: 700; text-decoration: none; text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .orcid-badge svg { width: 14px; height: 14px; fill: white; flex-shrink: 0; }
+    .type-pill {
+      display: inline-block; padding: 0.15rem 0.55rem; border-radius: 999px;
+      font-size: 0.75rem; font-weight: 600; margin: 0 0.2rem 0.2rem 0;
+    }
+    .type-article  { background: #dbeafe; color: var(--c-article); }
+    .type-book     { background: #fee2e2; color: var(--c-book); }
+    .type-data     { background: #d1fae5; color: var(--c-data); }
+    .type-software { background: #ede9fe; color: var(--c-software); }
+
+    /* ── STAT BOXES ──────────────────────────────────────── */
+    .stats-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.25rem; }
+    .stat-box {
+      background: var(--bg); border-radius: 0.6rem; padding: 0.75rem 1rem;
+      min-width: 110px; text-align: center; flex: 1;
+    }
+    .stat-box .val { font-size: 1.6rem; font-weight: 700; color: var(--accent); line-height: 1; }
+    .stat-box .lbl { font-size: 0.72rem; color: var(--muted); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* ── SECTION HEADINGS ────────────────────────────────── */
+    h2 { font-size: 1.1rem; font-weight: 700; margin: 0 0 1rem 0; color: var(--text); }
+    h2 .count { font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-left: 0.4rem; }
+
+    /* ── PUB CARDS ───────────────────────────────────────── */
+    .pub-list { display: flex; flex-direction: column; gap: 0.85rem; }
+    .pub-card {
+      border: 1px solid var(--border); border-radius: 0.65rem; padding: 1rem 1.1rem;
+      display: flex; gap: 1rem; align-items: flex-start; text-decoration: none; color: inherit;
+      transition: box-shadow 0.15s, border-color 0.15s; background: var(--surface);
+    }
+    .pub-card:hover { box-shadow: 0 4px 16px rgba(15,23,42,0.12); border-color: #cbd5e1; }
+    .pub-type-stripe {
+      width: 4px; border-radius: 2px; flex-shrink: 0; align-self: stretch; min-height: 40px;
+    }
+    .stripe-article  { background: var(--c-article); }
+    .stripe-book     { background: var(--c-book); }
+    .stripe-data     { background: var(--c-data); }
+    .stripe-software { background: var(--c-software); }
+    .pub-body { flex: 1; min-width: 0; }
+    .pub-title { font-size: 0.95rem; font-weight: 600; line-height: 1.35; margin: 0 0 0.3rem 0; }
+    .pub-meta { font-size: 0.78rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; }
+    .pub-signals { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.4rem; }
+    .sig-pill {
+      display: inline-flex; align-items: center; gap: 0.25rem;
+      font-size: 0.72rem; padding: 0.1rem 0.45rem; border-radius: 999px; font-weight: 500;
+    }
+    .sig-blue   { background: #dbeafe; color: #1e40af; }
+    .sig-amber  { background: #fef3c7; color: #b45309; }
+    .sig-green  { background: #d1fae5; color: #065f46; }
+    .sig-purple { background: #ede9fe; color: #5b21b6; }
+    .sig-gray   { background: var(--bg); color: var(--muted); }
+    .oa-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #a6ce39; margin-right: 2px; }
+
+    /* ── TIMELINE CHART ──────────────────────────────────── */
+    .chart-wrap { position: relative; height: 160px; }
+
+    /* ── INSTITUTION LIST ────────────────────────────────── */
+    .inst-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .inst-tag {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 999px;
+      font-size: 0.8rem; padding: 0.2rem 0.65rem; color: var(--muted);
+    }
+
+    /* ── CO-AUTHOR LIST ──────────────────────────────────── */
+    .coauthor-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .coauthor-pill {
+      background: var(--accent-light); color: var(--accent); border-radius: 999px;
+      font-size: 0.82rem; padding: 0.2rem 0.7rem; font-weight: 500;
+      white-space: nowrap;
+    }
+    .coauthor-pill a { color: inherit; text-decoration: none; }
+    .coauthor-pill a:hover { text-decoration: underline; }
+    .coauthor-count { font-size: 0.72rem; color: var(--muted); margin-left: 0.25rem; }
+
+    /* ── TEACHING & OPEN SCIENCE SIGNALS ────────────────── */
+    .signals-section { margin-bottom: 0.5rem; }
+    .signals-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.07em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 0.55rem;
+    }
+    .signals-pills { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .signal-pill {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--accent-light); color: var(--accent);
+      border-radius: 999px; font-size: 0.8rem; font-weight: 500;
+      padding: 0.25rem 0.75rem;
+    }
+    .signal-pill .pill-count {
+      background: var(--accent); color: #fff;
+      border-radius: 999px; font-size: 0.72rem; font-weight: 700;
+      padding: 0.05rem 0.45rem; min-width: 1.4rem; text-align: center;
+    }
+
+    /* ── AUTHOR STRENGTHS ───────────────────────────────── */
+    .strengths-list { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .strength-badge {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      background: var(--surface); border: 1.5px solid var(--accent);
+      color: var(--accent); border-radius: 999px;
+      font-size: 0.78rem; font-weight: 600; padding: 0.25rem 0.75rem;
+    }
+
+    /* ── SCIENCE STEWARDSHIP ─────────────────────────────── */
+    .stewardship-grid {
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .stewardship-row { display: flex; flex-direction: column; gap: 0.3rem; }
+    .stewardship-row-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .stewardship-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .stewardship-pill {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 0.45rem; font-size: 0.78rem; padding: 0.2rem 0.6rem;
+      color: var(--text); text-decoration: none;
+    }
+    .stewardship-pill:hover { border-color: var(--accent); color: var(--accent); }
+    .stewardship-pill .pill-icon { font-size: 0.85rem; }
+
+    /* ── DOMINANT CONCEPTS ───────────────────────────────── */
+    .concepts-cloud { display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: baseline; }
+    .concept-tag {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+      color: var(--text); font-weight: 500; line-height: 1;
+      padding: 0.25rem 0.65rem; white-space: nowrap;
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .author-header { flex-direction: column; gap: 1rem; }
+      .stats-row { gap: 0.6rem; }
+      .stat-box { min-width: 80px; }
+    }
+
+    @media print {
+      .site-nav { display: none !important; }
+      body { background: white !important; }
+      .card { box-shadow: none !important; border: 1px solid var(--border) !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── SITE NAV ─────────────────────────────────────────────────────────── -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works icon">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div class="site-nav-links">
+    <a href="index.html">Stories</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<!-- ── PAGE ─────────────────────────────────────────────────────────────── -->
+<div class="page">
+
+  <!-- HEADER CARD -->
+  <div class="card">
+    <div class="author-header">
+      <div class="author-avatar">G</div>
+      <div class="author-meta">
+        <h1 class="author-name">Gabriela Biedebach</h1>
+        <div class="author-sub">
+          2022 &nbsp;·&nbsp;
+          
+            <span class="type-pill type-article">ArticleStory</span>
+          
+        </div>
+        
+        
+
+        <div class="stats-row">
+          <div class="stat-box">
+            <div class="val">1</div>
+            <div class="lbl">Publication</div>
+          </div>
+          <div class="stat-box">
+            <div class="val">189</div>
+            <div class="lbl">Citations</div>
+          </div>
+          <div class="stat-box">
+            <div class="val">4</div>
+            <div class="lbl">Mentions</div>
+          </div>
+          <div class="stat-box">
+            <div class="val">1/1</div>
+            <div class="lbl">Open Access</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROW: TIMELINE (full width) -->
+  <div class="card">
+    <h2>Timeline</h2>
+    
+      <div class="chart-wrap">
+        <canvas id="timeline-chart"></canvas>
+      </div>
+      
+    
+  </div>
+
+  <!-- ROW: [Strengths + Signals stacked left] [Stewardship right] -->
+  
+  
+  
+  <div class="grid-2">
+
+    <!-- LEFT COLUMN: Strengths on top, Open Science & Teaching Signals below -->
+    <div style="display:flex; flex-direction:column; gap:1rem;">
+
+      
+      <div class="card" style="flex:0 0 auto;">
+        <h2>Author Strengths</h2>
+        <div class="strengths-list">
+          
+            <span class="strength-badge">Data Publisher</span>
+          
+            <span class="strength-badge">Open Access Champion</span>
+          
+            <span class="strength-badge">Funded Researcher</span>
+          
+            <span class="strength-badge">High-Impact</span>
+          
+            <span class="strength-badge">SDG-Aligned</span>
+          
+        </div>
+      </div>
+      
+
+      
+      <div class="card" style="flex:1 1 auto;">
+        <h2>Open Science &amp; Teaching Signals</h2>
+        <div class="signals-pills">
+          
+            <span class="signal-pill"><span class="pill-count">1</span> Open Access</span>
+          
+          
+          
+            <span class="signal-pill"><span class="pill-count">1</span> SDG-linked</span>
+          
+          
+          
+          
+          
+            <span class="signal-pill"><span class="pill-count">4</span> Wikipedia mentions</span>
+          
+        </div>
+      </div>
+      
+
+    </div>
+
+    <!-- RIGHT COLUMN: Science Stewardship -->
+    
+    <div class="card">
+      <h2>Science Stewardship</h2>
+      <div class="stewardship-grid">
+
+        
+        <div class="stewardship-row">
+          <div class="stewardship-row-label">Shared Data &amp; Code</div>
+          <div class="stewardship-pills">
+            
+              <a class="stewardship-pill" href="https://doi.org/10.32614/cran.package.cardata" target="_blank" rel="noopener">
+                <span class="pill-icon">📦</span>Crossref Dataset Citation
+              </a>
+            
+            
+          </div>
+        </div>
+        
+
+        
+
+        
+        <div class="stewardship-row">
+          <div class="stewardship-row-label">Funding</div>
+          <div class="stewardship-pills">
+            
+              <span class="stewardship-pill"><span class="pill-icon">🏛</span>Natural Environment Research Council</span>
+            
+            
+          </div>
+        </div>
+        
+
+        
+
+      </div>
+    </div>
+    
+
+  </div>
+  
+
+  <!-- ROW: CO-AUTHORS (full width) -->
+  <div class="card">
+    <h2>Co-authors in this collection <span class="count">(286)</span></h2>
+    
+      <div class="coauthor-list">
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-3368-1346.html">A. Z. Andis Arietta</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-9180-6998.html">Aapo Kahilainen</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_aaron-s-paratore.html">Aaron S. Paratore</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-3900-2818.html">Acer VanWallendael</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-4423-8729.html">Adam B. Roddy</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-4249-864X.html">Adam C. Schneider</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-9393-7449.html">Adriana Puentes</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-0509-2085.html">Adrián Lázaro-Lobo</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-6741-3470.html">Aimée T. Classen</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-8217-6146.html">Aiying Wang</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-0781-9356.html">Aleeza C. Gerstein</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_alex-r-mahmoud.html">Alex R. Mahmoud</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_alex-t-tong.html">Alex T. Tong</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-5993-2513.html">Alexis D. Smith</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-1096-7579.html">Alfonso Benítez-Mora</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-4101-2257.html">Amanda J. Gorton</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_amy-g-foster.html">Amy G. Foster</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-9668-6593.html">Amy L. Parachnowitsch</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-6239-2933.html">Amy M. Savage</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-3153-6898.html">Andrew J. Crawford</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-2800-046X.html">André Henriques</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-2331-7874.html">Angela M. Chilton</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-2041-7762.html">Angela T. Moles</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5468-5426.html">Anna Bucharová</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-9379-8765.html">Anna Kirschbaum</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-0703-5850.html">Anna-Liisa Laine</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-4764-1302.html">Anneke Golemiec</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-7094-5729.html">Anthony Piot</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5239-2080.html">Antonella Soro</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-2203-0214.html">Ava R. Howard</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-3550-1070.html">Ayco J. M. Tack</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-8628-4013.html">Beata Cohan</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-0349-278X.html">Benjamin Hamilton</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-2071-6076.html">Benjamin J. M. Jarrett</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-2294-6003.html">Benjamin J. Rivera</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_briana-burt.html">Briana Burt</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-0340-9488.html">Brook T. Moyers</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_camila-cordoba-fradinger.html">Camila Cordoba Fradinger</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-4197-8588.html">Caragh G. Threlfall</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0009-0002-1664-0021.html">Caralee A. Shepard</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5330-4505.html">Carlos Iván Espinosa</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-9787-3451.html">Carlos Iñiguez-Armijos</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-1223-7761.html">Carlos Lara</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-4980-4344.html">Carlos N. Ibarra-Cerdeña</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-3731-9678.html">Carly D. Ziter</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-3331-9881.html">Carolina A. León</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-1108-8514.html">Chris Lee</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-2866-2869.html">Christian Lampei</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-5986-8646.html">Christopher J. Frost</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-5783-9833.html">Christopher M. Moore</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_christopher-r-mackin.html">Christopher R. Mackin</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_cindy-m-prashad.html">Cindy M. Prashad</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-0493-1796.html">Clare Dean</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-0955-0688.html">Colin J. Garroway</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-7100-9542.html">Connor R. Fitzpatrick</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_cory-a-barker.html">Cory A. Barker</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-8294-7924.html">Cristina Branquinho</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_cristina-ornelas.html">Cristina Ornelas</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-5679-4610.html">César González-Lagos</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5927-4781.html">D. Nayeli Martínez</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-8745-3827.html">Danica C. Levesque</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-7552-5539.html">Daniel N. Anstett</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-1478-3387.html">David Bickford</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-2063-9955.html">Davide M. Dominoni</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_deleon-s-leandro.html">Deleon S. Leandro</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-5732-5656.html">Derek Denney</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5944-0743.html">Diana J. Rennison</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-4289-8125.html">Diego Carmona</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-6132-2738.html">Diego F. Cisneros-Heredia</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-6673-4475.html">Dieter F. Hochuli</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-3320-7505.html">Dries Bonte</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0009-0002-7052-7513.html">E. Binney Girdler</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-3212-9688.html">Edeline Gagnon</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-3862-1024.html">Ek del-Val</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_eleftherios-k-deligiannis.html">Eleftherios K. Deligiannis</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-6732-565X.html">Elizabeth J. Carlen</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-0087-1338.html">Emily J. Austen</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5416-4233.html">Emily K. Meineke</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-3906-3044.html">Emily S. Minor</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-8747-7212.html">Emmanuel Tergemina</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-3006-645X.html">Erica L. Larson</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-0696-2361.html">Erika Rodríguez-Muñoz</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5222-4837.html">Estela Quintero-Vallejo</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5054-7245.html">Eunice Kariñho-Betancourt</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-7862-2262.html">Felipe Aoki-Gonçalves</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-0660-0627.html">Fernanda Baena-Díaz</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-7831-1162.html">Filipa Grilo</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-0165-9643.html">Frauke Garbsch</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-3084-3928.html">Fábio Angeoletto</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-1427-5315.html">Gareth R. Hopkins</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0009-0002-8684-7204.html">Georgianna Silveira</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-7999-6186.html">Giada Centenaro</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_giuditta-migiani.html">Giuditta Migiani</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_glen-r-hood.html">Glen R. Hood</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-2704-8288.html">Gonzalo Rivas-Torres</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-3632-9102.html">Gustaf Granath</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-9112-5121.html">Gwylim S. Blackburn</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5959-3256.html">H.A. Baylis</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_hannah-b-corney.html">Hannah B. Corney</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-4889-1936.html">Hannah Locke</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_hayden-t-fargo.html">Hayden T. Fargo</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_ibrahim-cisse.html">Ibrahim Cisse</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-9344-6348.html">Ilga Porth</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_indra-starke-ottich.html">Indra Starke-Ottich</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_isaac-a-manju.html">Isaac A. Manju</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-5723-4068.html">Iva Njunjić</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-4607-8140.html">Izan Chalen</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-1650-2008.html">J. F. Scheepens</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5921-3516.html">J. Tristian Wiles</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-2665-1971.html">Jacintha Ellers</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_jackie-alvarez.html">Jackie Álvarez</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-9270-2285.html">Jacqui A. Shykoff</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-0679-2603.html">Jaime A. Chaves</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-7713-8591.html">Jalene M. LaMontagne</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-4110-1516.html">James F. Cahill</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5921-2548.html">James S. Santangelo</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-7600-5594.html">Janine Mariën</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0009-0005-6207-0463.html">Jared L. Scott</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-8067-4341.html">Jason Munshi-South</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_jennifer-h-le.html">Jennifer H. Le</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-8249-8057.html">Jennifer K. Rowntree</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5630-0921.html">Jeremy B. Yoder</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-8726-2614.html">Jeremy Lundholm</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_jesse-r-bragger.html">Jesse R. Bragger</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-5281-2316.html">Jessica D. Stephens</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_jiahe-yao.html">Jiahe Yao</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-7726-6216.html">Jianqiang Wu</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-3199-0372.html">Jiao Qu</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-3253-8142.html">Jill T. Anderson</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_jingxiong-zhang.html">Jingxiong Zhang</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-0319-515X.html">Joanna S. Griffiths</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-3701-2115.html">Jonathan Richardson</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-2732-7495.html">Joost A. M. Raeymaekers</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_jorge-c-bresciano.html">Jorge C. Bresciano</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_joseph-anderson.html">Joseph Anderson</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_joyce-m-hardin.html">Joyce M. Hardin</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-1368-1805.html">João Carlos Pena</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-6366-7596.html">Juan E. Zurita</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-4157-6431.html">Juan Fornoni</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-5829-8338.html">Juan Núñez-Farfán</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-0789-871X.html">Julia Anstett</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5214-6576.html">Julia D. Monk</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_julia-m-beliz.html">Julia M. Beliz</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-5375-7689.html">Juraj Paule</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-2666-9979.html">Justin R. Fulkerson</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-6601-2376.html">Justyna Szulc</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-3748-0939.html">Jéssica C. de Faria Falcão</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-6195-7867.html">Jörg G. Stephan</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-0815-5037.html">Kaitlin Stack Whitney</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-8860-3396.html">Karen Dyson</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_katelyn-d-campbell.html">Katelyn D. Campbell</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-8994-7863.html">Katherine A. Hovanes</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-2795-5213.html">Kathryn A. Hodgins</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-2291-0190.html">Katie V. Spellman</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-1487-3254.html">Ken Thompson</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-2523-5469.html">Kenneth D. Whitney</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-8338-3638.html">Kenneth M. Olsen</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-4421-2243.html">Kerri M. Crawford</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-3666-0700.html">Kiyoko M. Gotanda</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_krista-raveala.html">Krista Raveala</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-0464-7720.html">Kristien I. Brans</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0009-0002-8928-7134.html">Kristina M. Chomiak</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_laura-s-rossi.html">Laura S. Rossi</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-8455-3029.html">Lauren A. Kirn</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0009-0007-2245-1880.html">Leah Flaherty</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_lila-elizabeth-l-merritt.html">Lila Elizabeth L. Merritt</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-5548-6448.html">Liliana Essi</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_lilibeth-toledo-chelala.html">Lilibeth Toledo-Chelala</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-0406-7985.html">Lindsay S. Miles</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_lizet-solis-gabriel.html">Lizet Solis-Gabriel</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5403-5650.html">Luis Y. Santiago-Rosario</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_lea-uroy.html">Léa Uroy</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-1560-5689.html">Mae Johnson</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-2537-3490.html">Mannfred M. A. Boehm</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_manon-jeannot.html">Manon Jeannot</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-1044-3820.html">Manuel E. Lequerica Támara</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-9719-0522.html">Marc T. J. Johnson</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-9533-4350.html">Margarete A Dettlaff</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-8423-9494.html">Mariana Chávez-Pesqueira</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-1920-309X.html">Marina Alberti</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-1140-943X.html">Marina Martínez-Bartolomé</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-5431-8637.html">Mark D. E. Fellowes</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-7355-5846.html">Marta Szulkin</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-1283-4654.html">Martijn L. Vandegehuchte</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-7168-4660.html">Martin T. Lockett</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_mary-t-k-arroyo.html">Mary T. K. Arroyo</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-9967-355X.html">María Clara Castellanos</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_maria-francisca-flores.html">María Francisca Flores</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-1444-365X.html">Mattheau S. Comerford</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-7336-2622.html">Matthew P. Josephson</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-7767-8926.html">Matthew P. Zuellig</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-8777-9445.html">Maureen Murúa</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-8077-7765.html">Maxime Dahirel</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-7592-1512.html">Meen Chel Jung</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-5363-5358.html">Megan K. Ljubotina</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_melisa-neila.html">Melisa Neila</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-1760-6925.html">Melissa Hernández-Poveda</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-6229-0347.html">Menno Schilthuizen</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-2493-9269.html">Michael G. Just</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-0101-5274.html">Michelle F. DiLeo</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-4312-202X.html">Milton Cézar Ribeiro</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_mireille-golemiec.html">Mireille Golemiec</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-9746-5191.html">Miriam Muñoz-Rojas</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0009-0007-3542-3352.html">Miriam Wiesmeier</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_mischa-m-giasson.html">Mischa M. Giasson</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-8526-3824.html">Mitra Mohammadi Bazargani</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-6215-6498.html">Mohsen Falahati-Anbaran</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_moises-e-dominguez-lopez.html">Moisés E. Domínguez-López</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_molly-c-hetherington-rauth.html">Molly C. Hetherington-Rauth</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_montana-l-warbrick.html">Montana L. Warbrick</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-6220-6731.html">Nathan J. Sanders</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_nian-wang.html">Nian Wang</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_nicholas-d-poulos.html">Nicholas D. Poulos</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-6180-9888.html">Nicholas J. Deacon</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-2850-2307.html">Nigel R. Andrew</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-4745-438X.html">Nora Mitchell</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-5408-5212.html">Octávio S. Paulo</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-1764-5708.html">Oscar W. Johnson</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_otto-s-kailing.html">Otto S. Kailing</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_ourania-nikolaidis.html">Ourania Nikolaidis</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_owen-yoshida.html">Owen Yoshida</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-4056-5300.html">Panagiotis Theodorou</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_paola-jara-arancio.html">Paola Jara-Arancio</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-9167-6027.html">Paula Andrea Morales-Morales</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-1078-0587.html">Paula M. Vidal</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-3246-0282.html">Pedro E. Gundel</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-5571-9619.html">Pedro Pinho</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5629-8067.html">Pedro R. Peres-Neto</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_peta-brom.html">Peta Brom</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-7444-4988.html">Peter Nosko</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_philip-p-johnson.html">Philip P. Johnson</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-4025-9338.html">Philips Akinwole</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-7196-9754.html">Pádraic J. Flood</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-6310-1699.html">Raina Fitzpatrick</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5324-2033.html">Raúl Román</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_reagan-a-johnson.html">Reagan A. Johnson</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-7534-5941.html">Rebecca A. Zufall</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-1794-2101.html">Regina Karousou</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5234-3131.html">Richard P. Shefferson</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-7313-8236.html">Rob W. Ness</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_robert-de-haan.html">Robert De Haan</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-0049-5539.html">Robin M. Tinghitella</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_samreen-munim.html">Samreen Munim</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-5443-3491.html">Santiago David</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-8400-4740.html">Santiago Salinas</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-3305-6954.html">Sarah J. Hill</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0009-0001-1023-1182.html">Savannah L. Draud</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5746-6536.html">Shannon M. Murphy</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-0174-3303.html">Sharon E. Zytynska</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-1558-8073.html">Shunsuke Utsumi</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_sierra-c-hubbard.html">Sierra C. Hubbard</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-3859-1400.html">Simon G. Innes</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_sophie-koch.html">Sophie Koch</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-7746-3199.html">Spyros Gkelis</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-3369-0354.html">Stephan Greiner</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5976-1133.html">Stephen B. Heard</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-6608-9912.html">Stephen P. Bonser</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-6793-5068.html">Steve M. Raciti</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_summer-a-shaheed.html">Summer A. Shaheed</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-6503-9799.html">Susana M. Wadgymar</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_takayuki-ohgushi.html">Takayuki Ohgushi</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_tayler-d-tate.html">Tayler D. Tate</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-2298-6670.html">Thomas MacGillavry</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-4795-7534.html">Thomas Merritt</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-0924-3637.html">Tianhua He</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-7842-9075.html">Tiffany C Longo</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-0868-1352.html">Tiffany Scholier</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-2238-2161.html">Tracy L. Fuentes</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-2039-5989.html">Travis J. Ryan</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-2050-9026.html">Vania Jiménez-Lobato</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-7284-6975.html">Vera Pfeiffer</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-7928-9043.html">Wan-Jin Liao</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_wendy-mendoza-arroyo.html">Wendy Mendoza-Arroyo</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-1697-6916.html">William Godsoe</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-3641-5120.html">Windsor E. Aguirre</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-4795-8940.html">Xiaoyong Chen</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-3474-3043.html">Xin Tong</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_yoshino-ando.html">Yoshino Ando</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-5405-3034.html">Yuanyuan Ding</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0003-4937-2350.html">Yunting Lei</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-2246-9251.html">Zhaogui Yan</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-5252-4813.html">Zhigang Zhao</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-7103-5153.html">Zoe A. Xirocostas</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0001-9945-1191.html">Ángela M. Parody-Merino</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_italo-tamburrino.html">Ítalo Tamburrino</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+          <span class="coauthor-pill">
+            
+              <a href="authorstory_0000-0002-7841-6933.html">Øystein H. Opedal</a>
+            
+            <span class="coauthor-count">×1</span>
+          </span>
+        
+      </div>
+    
+  </div>
+
+  <!-- ROW: DOMINANT CONCEPTS (full width) -->
+  
+  <div class="card">
+    <h2>Dominant Concepts</h2>
+    <div class="concepts-cloud">
+      
+        
+        <span class="concept-tag" style="font-size: 0.80rem;" title="0.8 across publications">Urbanization</span>
+      
+        
+        <span class="concept-tag" style="font-size: 0.79rem;" title="0.61 across publications">Adaptation (eye)</span>
+      
+        
+        <span class="concept-tag" style="font-size: 0.79rem;" title="0.54 across publications">Geography</span>
+      
+        
+        <span class="concept-tag" style="font-size: 0.78rem;" title="0.51 across publications">Biology</span>
+      
+        
+        <span class="concept-tag" style="font-size: 0.78rem;" title="0.5 across publications">Environmental change</span>
+      
+    </div>
+  </div>
+  
+
+  <!-- PUBLICATIONS -->
+  <div class="card">
+    <h2>Publications <span class="count">(1)</span></h2>
+    <div class="pub-list">
+      
+      <a class="pub-card" href="articlestory_10.1126_science.abk0989.html" >
+        <div class="pub-type-stripe stripe-article"></div>
+        <div class="pub-body">
+          <div class="pub-title">Global urban environmental change drives adaptation in white clover</div>
+          <div class="pub-meta">
+            <span>2022</span>
+            <span>Science</span>
+            <span class="type-pill type-article" style="font-size:0.7rem; padding:0.05rem 0.4rem;">Article</span>
+          </div>
+          <div class="pub-signals">
+            
+              <span class="sig-pill sig-blue">📖 189 citations</span>
+            
+            
+              <span class="sig-pill sig-amber">📢 4 mentions</span>
+            
+            
+              <span class="sig-pill sig-green"><span class="oa-dot"></span>Open Access</span>
+            
+          </div>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+<script>
+// ── Timeline chart ────────────────────────────────────────────────────────
+(function() {
+  const rawData = [{"year": 2022, "article": 1, "book": 0, "data": 0, "software": 0}];
+  if (!rawData || rawData.length === 0) return;
+
+  const labels = rawData.map(d => d.year);
+  const datasets = {
+    article:  { label: 'Article',  color: '#3C5A7F', data: rawData.map(d => d.article  || 0) },
+    book:     { label: 'Book',     color: '#B34444', data: rawData.map(d => d.book     || 0) },
+    data:     { label: 'Data',     color: '#34675A', data: rawData.map(d => d.data     || 0) },
+    software: { label: 'Software', color: '#6A4FA3', data: rawData.map(d => d.software || 0) },
+  };
+
+  // Only include types present in this author's data
+  const activeTypes = ["article"];
+  const chartDatasets = activeTypes.map(t => ({
+    label: datasets[t].label,
+    backgroundColor: datasets[t].color,
+    data: datasets[t].data,
+    borderRadius: 3,
+  }));
+
+  new Chart(document.getElementById('timeline-chart'), {
+    type: 'bar',
+    data: { labels, datasets: chartDatasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: activeTypes.length > 1, position: 'bottom',
+        labels: { font: { size: 11 }, boxWidth: 10, padding: 8 } } },
+      scales: {
+        x: { stacked: true, grid: { display: false }, ticks: { font: { size: 11 } } },
+        y: { stacked: true, beginAtZero: true, ticks: { stepSize: 1, font: { size: 11 } },
+             grid: { color: '#f0f0f0' } }
+      }
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
