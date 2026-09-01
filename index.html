@@ -1934,8 +1934,7 @@ function setAggSort(key) {
 
 function setView(v) {
   state.view = v;
-  document.querySelectorAll(".view-btn").forEach(b => b.classList.remove("active"));
-  document.getElementById("vbtn-" + v).classList.add("active");
+  syncViewButtons();
   update();
 }
 
@@ -1946,6 +1945,32 @@ function drillInto(facetKey, idx) {
   state.filters[facetKey].clear();
   state.filters[facetKey].add(val);
   update();
+}
+
+function syncViewButtons() {
+  document.querySelectorAll(".view-btn").forEach(b => b.classList.remove("active"));
+  const btn = document.getElementById("vbtn-" + state.view);
+  if (btn) btn.classList.add("active");
+}
+
+function applyUrlState() {
+  const params = new URLSearchParams(window.location.search || "");
+  const q = normalizeSearchQuery(params.get("q") || "");
+  const publisher = (params.get("publisher") || "").trim();
+  const view = (params.get("view") || "").trim();
+
+  if (q) state.query = q;
+  if (publisher) state.filters.venue.add(publisher);
+
+  const allowedViews = new Set(["stories", "institution", "publisher", "series", "authors"]);
+  if (allowedViews.has(view)) {
+    state.view = view;
+  } else if (publisher) {
+    state.view = "publisher";
+  }
+
+  const searchInput = document.getElementById("searchInput");
+  if (searchInput) searchInput.value = state.query;
 }
 
 // ── interactions ──────────────────────────────────────────────────────────
@@ -2073,6 +2098,8 @@ document.getElementById("sortSelect").addEventListener("change", e => {
 
 // ── init ──────────────────────────────────────────────────────────────────
 renderHeroStats();
+applyUrlState();
+syncViewButtons();
 update();
 </script>
 </body>
