@@ -27,6 +27,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 45589,
 "event_count": 0,
 "has_sdgs": false,
@@ -185,6 +191,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 44520,
 "event_count": 0,
 "has_sdgs": false,
@@ -349,6 +361,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 17937,
 "event_count": 0,
 "has_sdgs": true,
@@ -541,8 +559,11 @@ window.STORIES_DATA = [
 "Reference Point for Synthesis",
 "Evidence-bearing Reference"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 11609,
 "event_count": 0,
 "has_sdgs": false,
@@ -694,6 +715,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 10910,
 "event_count": 0,
 "has_sdgs": false,
@@ -823,6 +850,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 10397,
 "event_count": 0,
 "has_sdgs": false,
@@ -3909,6 +3942,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "bronze",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 9070,
 "event_count": 0,
 "has_sdgs": true,
@@ -4083,6 +4122,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 7726,
 "event_count": 0,
 "has_sdgs": true,
@@ -4255,6 +4300,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "bronze",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 3061,
 "event_count": 0,
 "has_sdgs": true,
@@ -4437,6 +4488,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1738,
 "event_count": 0,
 "has_sdgs": true,
@@ -4581,6 +4638,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1502,
 "event_count": 0,
 "has_sdgs": false,
@@ -4826,6 +4889,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1493,
 "event_count": 0,
 "has_sdgs": true,
@@ -4977,8 +5046,14 @@ window.STORIES_DATA = [
 "Commercial Linkage",
 "Reference Point for Synthesis"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 1481,
 "event_count": 0,
 "has_sdgs": false,
@@ -5124,6 +5199,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1346,
 "event_count": 0,
 "has_sdgs": false,
@@ -5262,8 +5343,11 @@ window.STORIES_DATA = [
 "Pedagogical Anchor",
 "Sustainability & Policy Relevance"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 999,
 "event_count": 0,
 "has_sdgs": true,
@@ -5411,6 +5495,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 787,
 "event_count": 0,
 "has_sdgs": false,
@@ -5569,6 +5659,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 735,
 "event_count": 0,
 "has_sdgs": true,
@@ -5767,6 +5863,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 688,
 "event_count": 0,
 "has_sdgs": false,
@@ -5904,6 +6006,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 540,
 "event_count": 0,
 "has_sdgs": true,
@@ -6044,6 +6152,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 528,
 "event_count": 0,
 "has_sdgs": true,
@@ -6179,6 +6293,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 512,
 "event_count": 0,
 "has_sdgs": false,
@@ -6340,6 +6460,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 511,
 "event_count": 0,
 "has_sdgs": true,
@@ -6476,6 +6602,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 457,
 "event_count": 0,
 "has_sdgs": false,
@@ -6634,6 +6766,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 393,
 "event_count": 0,
 "has_sdgs": true,
@@ -6771,6 +6909,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 369,
 "event_count": 0,
 "has_sdgs": false,
@@ -6907,8 +7051,11 @@ window.STORIES_DATA = [
 "Sociology"
 ],
 "roles": [],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 358,
 "event_count": 0,
 "has_sdgs": false,
@@ -7045,6 +7192,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 336,
 "event_count": 0,
 "has_sdgs": false,
@@ -7182,6 +7335,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 329,
 "event_count": 0,
 "has_sdgs": true,
@@ -7326,6 +7485,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 320,
 "event_count": 0,
 "has_sdgs": true,
@@ -7459,6 +7624,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 306,
 "event_count": 0,
 "has_sdgs": false,
@@ -7603,6 +7774,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 286,
 "event_count": 0,
 "has_sdgs": true,
@@ -7744,6 +7918,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "diamond",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 257,
 "event_count": 0,
 "has_sdgs": false,
@@ -7880,6 +8060,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 255,
 "event_count": 0,
 "has_sdgs": false,
@@ -8040,6 +8226,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 238,
 "event_count": 0,
 "has_sdgs": true,
@@ -8205,8 +8397,11 @@ window.STORIES_DATA = [
 "Philosophical anthropology"
 ],
 "roles": [],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 237,
 "event_count": 0,
 "has_sdgs": false,
@@ -8350,6 +8545,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 228,
 "event_count": 0,
 "has_sdgs": false,
@@ -8487,6 +8688,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 225,
 "event_count": 0,
 "has_sdgs": false,
@@ -8622,6 +8829,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 203,
 "event_count": 0,
 "has_sdgs": true,
@@ -8806,6 +9019,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 202,
 "event_count": 0,
 "has_sdgs": false,
@@ -8941,6 +9160,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 193,
 "event_count": 0,
 "has_sdgs": true,
@@ -9078,6 +9303,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 191,
 "event_count": 0,
 "has_sdgs": false,
@@ -9214,6 +9445,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 189,
 "event_count": 0,
 "has_sdgs": true,
@@ -9646,6 +9883,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 163,
 "event_count": 0,
 "has_sdgs": true,
@@ -9778,6 +10018,11 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "OpenAlex/Crossref",
+"oa_provenance_sources": [
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 160,
 "event_count": 0,
 "has_sdgs": false,
@@ -9923,6 +10168,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 159,
 "event_count": 0,
 "has_sdgs": true,
@@ -10067,6 +10318,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "bronze",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 157,
 "event_count": 0,
 "has_sdgs": false,
@@ -10205,6 +10462,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 153,
 "event_count": 0,
 "has_sdgs": true,
@@ -10350,6 +10610,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 150,
 "event_count": 0,
 "has_sdgs": false,
@@ -10528,6 +10794,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 148,
 "event_count": 0,
 "has_sdgs": true,
@@ -10685,6 +10957,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "bronze",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 142,
 "event_count": 0,
 "has_sdgs": true,
@@ -10879,6 +11157,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 135,
 "event_count": 0,
 "has_sdgs": false,
@@ -11015,6 +11299,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 135,
 "event_count": 0,
 "has_sdgs": true,
@@ -11158,8 +11448,11 @@ window.STORIES_DATA = [
 "Reference Point for Synthesis",
 "Sustainability & Policy Relevance"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 130,
 "event_count": 0,
 "has_sdgs": true,
@@ -11303,6 +11596,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 123,
 "event_count": 0,
 "has_sdgs": false,
@@ -11473,6 +11772,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 123,
 "event_count": 0,
 "has_sdgs": false,
@@ -11618,6 +11923,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 123,
 "event_count": 0,
 "has_sdgs": false,
@@ -11766,6 +12077,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 117,
 "event_count": 0,
 "has_sdgs": true,
@@ -11905,6 +12219,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 113,
 "event_count": 0,
 "has_sdgs": true,
@@ -12054,6 +12371,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 110,
 "event_count": 0,
 "has_sdgs": true,
@@ -12210,6 +12533,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 100,
 "event_count": 0,
 "has_sdgs": false,
@@ -12359,6 +12688,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 100,
 "event_count": 0,
 "has_sdgs": true,
@@ -12503,6 +12838,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 97,
 "event_count": 0,
 "has_sdgs": true,
@@ -12649,6 +12990,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 93,
 "event_count": 0,
 "has_sdgs": true,
@@ -12896,6 +13243,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 87,
 "event_count": 0,
 "has_sdgs": false,
@@ -13048,6 +13401,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 85,
 "event_count": 0,
 "has_sdgs": true,
@@ -13222,6 +13581,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 84,
 "event_count": 0,
 "has_sdgs": true,
@@ -13375,6 +13740,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 84,
 "event_count": 0,
 "has_sdgs": true,
@@ -13531,6 +13902,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 83,
 "event_count": 0,
 "has_sdgs": true,
@@ -13683,6 +14060,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 81,
 "event_count": 0,
 "has_sdgs": true,
@@ -13829,6 +14212,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 74,
 "event_count": 0,
 "has_sdgs": true,
@@ -13985,6 +14374,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "bronze",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 74,
 "event_count": 0,
 "has_sdgs": true,
@@ -14241,6 +14636,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 73,
 "event_count": 0,
 "has_sdgs": true,
@@ -14392,6 +14793,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 71,
 "event_count": 0,
 "has_sdgs": true,
@@ -14533,6 +14940,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 71,
 "event_count": 0,
 "has_sdgs": false,
@@ -14682,6 +15092,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 67,
 "event_count": 0,
 "has_sdgs": true,
@@ -14832,6 +15248,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 67,
 "event_count": 0,
 "has_sdgs": false,
@@ -14981,6 +15403,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 65,
 "event_count": 0,
 "has_sdgs": false,
@@ -15128,6 +15556,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 64,
 "event_count": 0,
 "has_sdgs": false,
@@ -15280,8 +15714,11 @@ window.STORIES_DATA = [
 "roles": [
 "Scholarly Uptake"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 61,
 "event_count": 0,
 "has_sdgs": false,
@@ -15420,6 +15857,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 60,
 "event_count": 0,
 "has_sdgs": true,
@@ -15578,6 +16021,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 59,
 "event_count": 0,
 "has_sdgs": false,
@@ -15713,6 +16163,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 56,
 "event_count": 0,
 "has_sdgs": true,
@@ -15874,6 +16327,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 54,
 "event_count": 0,
 "has_sdgs": true,
@@ -16014,6 +16473,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "diamond",
+"oa_provenance_source": "OAPEN",
+"oa_provenance_sources": [
+"OAPEN",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 54,
 "event_count": 0,
 "has_sdgs": false,
@@ -16150,6 +16616,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "bronze",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 53,
 "event_count": 0,
 "has_sdgs": false,
@@ -16291,6 +16763,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 52,
 "event_count": 0,
 "has_sdgs": true,
@@ -16451,6 +16929,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 51,
 "event_count": 0,
 "has_sdgs": true,
@@ -16681,6 +17165,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "bronze",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 50,
 "event_count": 0,
 "has_sdgs": false,
@@ -16863,6 +17353,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 50,
 "event_count": 0,
 "has_sdgs": false,
@@ -16982,6 +17478,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 50,
 "event_count": 0,
 "has_sdgs": false,
@@ -17135,6 +17637,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 48,
 "event_count": 0,
 "has_sdgs": true,
@@ -17309,6 +17817,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 47,
 "event_count": 0,
 "has_sdgs": true,
@@ -17465,6 +17979,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "bronze",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 47,
 "event_count": 0,
 "has_sdgs": false,
@@ -17603,6 +18123,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 46,
 "event_count": 0,
 "has_sdgs": false,
@@ -17718,6 +18244,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 43,
 "event_count": 0,
 "has_sdgs": true,
@@ -17847,6 +18376,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 41,
 "event_count": 0,
 "has_sdgs": true,
@@ -17951,6 +18486,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 40,
 "event_count": 0,
 "has_sdgs": false,
@@ -18082,6 +18624,15 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OAPEN",
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 40,
 "event_count": 0,
 "has_sdgs": false,
@@ -18224,6 +18775,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 40,
 "event_count": 0,
 "has_sdgs": true,
@@ -18359,6 +18913,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 39,
 "event_count": 0,
 "has_sdgs": true,
@@ -18503,6 +19060,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 39,
 "event_count": 0,
 "has_sdgs": false,
@@ -18651,6 +19214,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 37,
 "event_count": 0,
 "has_sdgs": true,
@@ -18793,6 +19362,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 37,
 "event_count": 0,
 "has_sdgs": false,
@@ -18950,6 +19525,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 35,
 "event_count": 0,
 "has_sdgs": true,
@@ -19094,6 +19675,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 35,
 "event_count": 0,
 "has_sdgs": false,
@@ -19243,6 +19830,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 35,
 "event_count": 0,
 "has_sdgs": true,
@@ -19379,6 +19969,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 33,
 "event_count": 0,
 "has_sdgs": false,
@@ -19523,6 +20119,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 32,
 "event_count": 0,
 "has_sdgs": true,
@@ -19649,6 +20251,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OAPEN",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 32,
 "event_count": 0,
 "has_sdgs": false,
@@ -19789,6 +20399,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 30,
 "event_count": 0,
 "has_sdgs": true,
@@ -19950,6 +20566,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 30,
 "event_count": 0,
 "has_sdgs": true,
@@ -20104,6 +20726,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 30,
 "event_count": 0,
 "has_sdgs": true,
@@ -20251,6 +20879,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 30,
 "event_count": 0,
 "has_sdgs": true,
@@ -20407,6 +21041,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 30,
 "event_count": 0,
 "has_sdgs": true,
@@ -20574,6 +21214,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 29,
 "event_count": 0,
 "has_sdgs": true,
@@ -20795,6 +21441,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 29,
 "event_count": 0,
 "has_sdgs": false,
@@ -20910,6 +21562,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 28,
 "event_count": 0,
 "has_sdgs": true,
@@ -21055,6 +21713,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 27,
 "event_count": 0,
 "has_sdgs": true,
@@ -21196,6 +21860,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 26,
 "event_count": 0,
 "has_sdgs": false,
@@ -21313,6 +21983,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 26,
 "event_count": 0,
 "has_sdgs": false,
@@ -21468,6 +22144,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 26,
 "event_count": 0,
 "has_sdgs": false,
@@ -21611,6 +22293,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OAPEN",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 26,
 "event_count": 0,
 "has_sdgs": true,
@@ -21750,6 +22439,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 25,
 "event_count": 0,
 "has_sdgs": true,
@@ -21906,6 +22601,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 25,
 "event_count": 0,
 "has_sdgs": false,
@@ -21985,6 +22686,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 24,
 "event_count": 0,
 "has_sdgs": true,
@@ -22137,6 +22844,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 24,
 "event_count": 0,
 "has_sdgs": false,
@@ -22273,8 +22986,11 @@ window.STORIES_DATA = [
 "Commercial Linkage",
 "Scholarly Uptake"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 23,
 "event_count": 0,
 "has_sdgs": false,
@@ -22418,6 +23134,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "bronze",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 23,
 "event_count": 0,
 "has_sdgs": true,
@@ -22558,6 +23282,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 22,
 "event_count": 0,
 "has_sdgs": false,
@@ -22685,6 +23415,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 22,
 "event_count": 0,
 "has_sdgs": true,
@@ -22832,6 +23568,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 21,
 "event_count": 0,
 "has_sdgs": false,
@@ -22974,6 +23716,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "OAPEN",
+"oa_provenance_sources": [
+"OAPEN",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 21,
 "event_count": 0,
 "has_sdgs": false,
@@ -23106,6 +23855,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 20,
 "event_count": 0,
 "has_sdgs": false,
@@ -23258,6 +24013,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 19,
 "event_count": 0,
 "has_sdgs": false,
@@ -23360,6 +24121,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 18,
 "event_count": 0,
 "has_sdgs": true,
@@ -23517,6 +24284,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 18,
 "event_count": 0,
 "has_sdgs": true,
@@ -23666,6 +24439,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 18,
 "event_count": 0,
 "has_sdgs": true,
@@ -23792,6 +24572,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 17,
 "event_count": 0,
 "has_sdgs": false,
@@ -23930,6 +24718,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 17,
 "event_count": 0,
 "has_sdgs": true,
@@ -24052,6 +24847,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "OAPEN",
+"oa_provenance_sources": [
+"OAPEN",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 17,
 "event_count": 0,
 "has_sdgs": false,
@@ -24189,6 +24991,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 16,
 "event_count": 0,
 "has_sdgs": true,
@@ -24317,6 +25125,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 15,
 "event_count": 0,
 "has_sdgs": true,
@@ -24455,6 +25269,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 15,
 "event_count": 0,
 "has_sdgs": false,
@@ -24605,6 +25425,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 15,
 "event_count": 0,
 "has_sdgs": true,
@@ -24751,6 +25577,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 15,
 "event_count": 0,
 "has_sdgs": true,
@@ -24883,6 +25715,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 14,
 "event_count": 0,
 "has_sdgs": true,
@@ -25024,6 +25862,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 14,
 "event_count": 0,
 "has_sdgs": true,
@@ -25135,6 +25979,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 13,
 "event_count": 0,
 "has_sdgs": false,
@@ -25253,6 +26103,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 12,
 "event_count": 0,
 "has_sdgs": true,
@@ -25431,6 +26287,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 12,
 "event_count": 0,
 "has_sdgs": true,
@@ -25573,6 +26435,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 12,
 "event_count": 0,
 "has_sdgs": true,
@@ -25699,8 +26567,11 @@ window.STORIES_DATA = [
 "Scholarly Uptake",
 "Sustainability & Policy Relevance"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 12,
 "event_count": 0,
 "has_sdgs": true,
@@ -25839,6 +26710,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 12,
 "event_count": 0,
 "has_sdgs": false,
@@ -25974,6 +26851,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 12,
 "event_count": 0,
 "has_sdgs": false,
@@ -26110,6 +26993,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 12,
 "event_count": 0,
 "has_sdgs": false,
@@ -26243,6 +27132,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 11,
 "event_count": 0,
 "has_sdgs": false,
@@ -26378,6 +27270,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 11,
 "event_count": 0,
 "has_sdgs": true,
@@ -26544,6 +27439,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 11,
 "event_count": 0,
 "has_sdgs": false,
@@ -26685,6 +27586,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 11,
 "event_count": 0,
 "has_sdgs": false,
@@ -26765,6 +27672,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 11,
 "event_count": 0,
 "has_sdgs": true,
@@ -26861,6 +27775,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 11,
 "event_count": 0,
 "has_sdgs": false,
@@ -26998,6 +27918,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 11,
 "event_count": 0,
 "has_sdgs": false,
@@ -27138,6 +28064,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 10,
 "event_count": 0,
 "has_sdgs": false,
@@ -27283,6 +28215,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 10,
 "event_count": 0,
 "has_sdgs": false,
@@ -27427,6 +28365,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 10,
 "event_count": 0,
 "has_sdgs": true,
@@ -27545,6 +28486,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 10,
 "event_count": 0,
 "has_sdgs": true,
@@ -27702,6 +28649,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 10,
 "event_count": 0,
 "has_sdgs": false,
@@ -27845,6 +28798,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 10,
 "event_count": 0,
 "has_sdgs": false,
@@ -27978,6 +28937,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 9,
 "event_count": 0,
 "has_sdgs": false,
@@ -28112,6 +29077,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 9,
 "event_count": 0,
 "has_sdgs": false,
@@ -28226,6 +29197,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 9,
 "event_count": 0,
 "has_sdgs": false,
@@ -28332,6 +29309,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 9,
 "event_count": 0,
 "has_sdgs": true,
@@ -28447,6 +29432,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 8,
 "event_count": 0,
 "has_sdgs": false,
@@ -28577,6 +29568,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 8,
 "event_count": 0,
 "has_sdgs": true,
@@ -28722,6 +29719,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 8,
 "event_count": 0,
 "has_sdgs": false,
@@ -28871,6 +29874,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 8,
 "event_count": 0,
 "has_sdgs": false,
@@ -29015,6 +30024,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 8,
 "event_count": 0,
 "has_sdgs": false,
@@ -29168,6 +30183,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 8,
 "event_count": 0,
 "has_sdgs": false,
@@ -29292,6 +30315,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 8,
 "event_count": 0,
 "has_sdgs": false,
@@ -29433,6 +30462,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 8,
 "event_count": 0,
 "has_sdgs": false,
@@ -29557,6 +30593,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 8,
 "event_count": 0,
 "has_sdgs": false,
@@ -29675,6 +30717,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OAPEN",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 8,
 "event_count": 0,
 "has_sdgs": true,
@@ -29795,6 +30845,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 8,
 "event_count": 0,
 "has_sdgs": false,
@@ -29917,6 +30973,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 7,
 "event_count": 0,
 "has_sdgs": false,
@@ -30036,6 +31098,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 7,
 "event_count": 0,
 "has_sdgs": false,
@@ -30181,6 +31249,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 7,
 "event_count": 0,
 "has_sdgs": true,
@@ -30268,6 +31342,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OAPEN",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 7,
 "event_count": 0,
 "has_sdgs": false,
@@ -30386,6 +31468,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 6,
 "event_count": 0,
 "has_sdgs": false,
@@ -30533,6 +31621,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 6,
 "event_count": 0,
 "has_sdgs": false,
@@ -30673,6 +31767,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 6,
 "event_count": 0,
 "has_sdgs": true,
@@ -30819,6 +31919,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 6,
 "event_count": 0,
 "has_sdgs": true,
@@ -30950,6 +32056,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OAPEN",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 6,
 "event_count": 0,
 "has_sdgs": false,
@@ -31082,6 +32196,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 6,
 "event_count": 0,
 "has_sdgs": true,
@@ -31202,6 +32322,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 6,
 "event_count": 0,
 "has_sdgs": false,
@@ -31306,6 +32432,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 6,
 "event_count": 0,
 "has_sdgs": false,
@@ -31430,6 +32562,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 6,
 "event_count": 0,
 "has_sdgs": false,
@@ -31564,6 +32702,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 6,
 "event_count": 0,
 "has_sdgs": true,
@@ -31676,6 +32820,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 6,
 "event_count": 0,
 "has_sdgs": true,
@@ -31801,6 +32951,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 5,
 "event_count": 0,
 "has_sdgs": true,
@@ -31944,6 +33100,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 5,
 "event_count": 0,
 "has_sdgs": false,
@@ -32043,6 +33205,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 5,
 "event_count": 0,
 "has_sdgs": true,
@@ -32181,6 +33346,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 5,
 "event_count": 0,
 "has_sdgs": false,
@@ -32306,6 +33474,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 5,
 "event_count": 0,
 "has_sdgs": true,
@@ -32593,6 +33767,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 5,
 "event_count": 0,
 "has_sdgs": true,
@@ -32704,6 +33881,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 5,
 "event_count": 0,
 "has_sdgs": true,
@@ -32804,6 +33987,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 5,
 "event_count": 0,
 "has_sdgs": false,
@@ -32898,6 +34087,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 5,
 "event_count": 0,
 "has_sdgs": false,
@@ -33017,6 +34212,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 5,
 "event_count": 0,
 "has_sdgs": true,
@@ -33152,6 +34353,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 5,
 "event_count": 0,
 "has_sdgs": false,
@@ -33268,6 +34475,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 5,
 "event_count": 0,
 "has_sdgs": true,
@@ -33366,6 +34580,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 5,
 "event_count": 0,
 "has_sdgs": true,
@@ -33476,6 +34696,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 5,
 "event_count": 0,
 "has_sdgs": true,
@@ -33595,6 +34822,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 5,
 "event_count": 0,
 "has_sdgs": false,
@@ -33713,6 +34946,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 5,
 "event_count": 0,
 "has_sdgs": true,
@@ -33802,6 +35041,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 4,
 "event_count": 0,
 "has_sdgs": true,
@@ -33952,6 +35194,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 4,
 "event_count": 0,
 "has_sdgs": false,
@@ -34101,6 +35349,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 4,
 "event_count": 0,
 "has_sdgs": true,
@@ -34235,6 +35489,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "bronze",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 4,
 "event_count": 0,
 "has_sdgs": true,
@@ -34346,6 +35606,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 4,
 "event_count": 0,
 "has_sdgs": true,
@@ -34478,6 +35744,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 4,
 "event_count": 0,
 "has_sdgs": true,
@@ -34618,6 +35890,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 4,
 "event_count": 0,
 "has_sdgs": true,
@@ -34726,6 +36004,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 4,
 "event_count": 0,
 "has_sdgs": true,
@@ -34802,6 +36086,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 4,
 "event_count": 0,
 "has_sdgs": true,
@@ -34915,6 +36205,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 4,
 "event_count": 0,
 "has_sdgs": true,
@@ -35034,6 +36331,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 4,
 "event_count": 0,
 "has_sdgs": true,
@@ -35152,8 +36456,11 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance",
 "Scholarly Uptake"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 4,
 "event_count": 0,
 "has_sdgs": true,
@@ -35261,6 +36568,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": true,
@@ -35414,6 +36727,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": false,
@@ -35550,6 +36869,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": false,
@@ -35663,6 +36985,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": true,
@@ -35809,6 +37137,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": false,
@@ -35944,6 +37278,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": false,
@@ -36025,6 +37365,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": false,
@@ -36121,6 +37467,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": false,
@@ -36198,6 +37550,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": true,
@@ -36322,6 +37680,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": true,
@@ -36432,6 +37796,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": true,
@@ -36551,6 +37921,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": true,
@@ -36660,6 +38036,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": false,
@@ -36759,6 +38141,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": true,
@@ -36871,6 +38260,11 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "OpenAlex/Crossref",
+"oa_provenance_sources": [
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": true,
@@ -36969,6 +38363,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": true,
@@ -37074,8 +38474,11 @@ window.STORIES_DATA = [
 "Pedagogical Anchor",
 "Scholarly Uptake"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": false,
@@ -37160,8 +38563,11 @@ window.STORIES_DATA = [
 "Commercial Linkage",
 "Scholarly Uptake"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": false,
@@ -37246,8 +38652,11 @@ window.STORIES_DATA = [
 "Pedagogical Anchor",
 "Scholarly Uptake"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": false,
@@ -37344,8 +38753,11 @@ window.STORIES_DATA = [
 "Pedagogical Anchor",
 "Scholarly Uptake"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": false,
@@ -37448,6 +38860,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": true,
@@ -37574,6 +38992,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": true,
@@ -37704,6 +39128,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 3,
 "event_count": 0,
 "has_sdgs": false,
@@ -37845,6 +39275,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": false,
@@ -37940,6 +39373,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": true,
@@ -38059,6 +39498,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": true,
@@ -38200,6 +39645,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": true,
@@ -38301,6 +39752,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": false,
@@ -38444,6 +39901,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": false,
@@ -38631,6 +40094,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": true,
@@ -38739,6 +40208,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": true,
@@ -38834,6 +40309,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": true,
@@ -38947,6 +40428,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": false,
@@ -39071,6 +40558,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": true,
@@ -39164,6 +40657,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": true,
@@ -39275,6 +40774,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": true,
@@ -39377,6 +40882,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": false,
@@ -39499,6 +41010,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": true,
@@ -39595,6 +41112,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": true,
@@ -39700,6 +41224,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": false,
@@ -39791,6 +41321,15 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OAPEN",
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": false,
@@ -39885,6 +41424,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": true,
@@ -39974,8 +41520,11 @@ window.STORIES_DATA = [
 "Commercial Linkage",
 "Scholarly Uptake"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": false,
@@ -40064,8 +41613,11 @@ window.STORIES_DATA = [
 "Commercial Linkage",
 "Scholarly Uptake"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": false,
@@ -40158,6 +41710,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": false,
@@ -40240,6 +41798,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": false,
@@ -40342,6 +41906,11 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "OpenAlex/Crossref",
+"oa_provenance_sources": [
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": false,
@@ -40412,6 +41981,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": false,
@@ -40539,6 +42114,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": false,
@@ -40678,6 +42259,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": false,
@@ -40748,6 +42335,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": true,
@@ -40875,6 +42468,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 2,
 "event_count": 0,
 "has_sdgs": false,
@@ -40995,6 +42594,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -41117,6 +42722,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -41250,6 +42861,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -41352,6 +42969,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -41519,6 +43142,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -41601,6 +43227,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -41734,6 +43366,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -41823,6 +43458,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -41916,6 +43557,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -42007,6 +43651,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -42083,6 +43730,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -42201,6 +43854,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -42307,6 +43966,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -42428,6 +44093,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -42567,6 +44238,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -42646,6 +44323,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -42773,8 +44456,11 @@ window.STORIES_DATA = [
 "Commercial Linkage",
 "Scholarly Uptake"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -42848,6 +44534,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -42974,6 +44667,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -43072,6 +44771,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -43148,6 +44853,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -43243,6 +44954,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -43338,6 +45055,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -43432,6 +45155,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -43525,6 +45254,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -43597,6 +45332,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -43690,6 +45431,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -43791,6 +45538,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -43879,6 +45633,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -43953,6 +45713,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -44053,6 +45819,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -44148,6 +45920,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -44231,6 +46009,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -44328,6 +46112,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -44428,6 +46218,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -44516,8 +46313,11 @@ window.STORIES_DATA = [
 "Pedagogical Anchor",
 "Scholarly Uptake"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -44589,8 +46389,11 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance",
 "Scholarly Uptake"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -44683,8 +46486,11 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance",
 "Scholarly Uptake"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -44809,6 +46615,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -44889,6 +46701,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -44988,8 +46806,11 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance",
 "Scholarly Uptake"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -45085,6 +46906,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -45191,6 +47018,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -45315,6 +47148,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -45421,6 +47260,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -45510,6 +47355,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -45627,6 +47478,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -45752,6 +47609,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -45831,6 +47694,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -45907,6 +47776,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -46002,6 +47877,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -46093,6 +47974,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": true,
@@ -46185,6 +48072,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -46277,6 +48170,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -46367,6 +48266,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -46458,6 +48363,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -46549,6 +48460,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 1,
 "event_count": 0,
 "has_sdgs": false,
@@ -46620,6 +48537,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -46706,6 +48629,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -46798,6 +48727,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "bronze",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -46876,6 +48811,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -46959,6 +48900,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -47035,6 +48979,9 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -47109,6 +49056,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -47191,6 +49144,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -47279,6 +49238,9 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": false,
 "oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -47352,6 +49314,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -47433,6 +49401,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -47518,6 +49492,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -47591,6 +49571,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -47677,6 +49663,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -47774,6 +49766,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -47890,6 +49888,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -47977,6 +49981,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "diamond",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -48061,6 +50071,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -48141,6 +50157,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -48209,6 +50231,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -48283,6 +50311,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -48351,6 +50385,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -48426,6 +50466,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -48504,6 +50550,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -48582,6 +50634,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -48654,6 +50712,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -48758,6 +50822,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -48833,6 +50903,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -48911,6 +50987,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -48990,6 +51072,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -49069,6 +51157,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -49139,6 +51233,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -49215,6 +51315,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -49343,6 +51451,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -49411,6 +51525,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -49482,6 +51602,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -49550,6 +51676,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -49621,6 +51753,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -49697,6 +51835,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -49766,6 +51910,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -49837,6 +51987,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -49912,6 +52068,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -49985,6 +52147,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -50055,6 +52223,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -50129,6 +52303,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -50200,6 +52381,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -50275,6 +52462,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -50345,6 +52538,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -50418,6 +52618,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -50493,6 +52699,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -50568,6 +52780,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -50638,6 +52856,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -50708,6 +52932,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -50779,6 +53009,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -50853,6 +53089,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -50932,6 +53174,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -51004,6 +53252,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -51079,6 +53333,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -51159,6 +53419,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -51243,6 +53509,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -51318,6 +53590,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -51393,6 +53671,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -51459,6 +53743,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -51538,6 +53828,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -51616,6 +53912,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -51689,6 +53991,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -51761,6 +54069,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -51838,6 +54152,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -51913,6 +54233,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -51995,6 +54321,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -52073,6 +54406,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -52150,6 +54489,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -52225,6 +54570,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -52299,6 +54651,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OAPEN",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -52370,6 +54730,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -52446,6 +54812,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -52517,6 +54889,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -52582,6 +54960,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "OAPEN",
+"oa_provenance_sources": [
+"OAPEN",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -52653,6 +55038,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -52777,6 +55169,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "ACLS/Arcadia rule",
+"oa_provenance_sources": [
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -52872,6 +55270,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -52962,8 +55367,15 @@ window.STORIES_DATA = [
 "roles": [
 "Scholarly Uptake"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -53056,8 +55468,15 @@ window.STORIES_DATA = [
 "roles": [
 "Sustainability & Policy Relevance"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -53132,8 +55551,14 @@ window.STORIES_DATA = [
 "roles": [
 "Commercial Linkage"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -53197,6 +55622,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -53269,6 +55700,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -53410,6 +55848,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OAPEN",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -53474,8 +55920,11 @@ window.STORIES_DATA = [
 "roles": [
 "Commercial Linkage"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -53537,8 +55986,11 @@ window.STORIES_DATA = [
 "roles": [
 "Commercial Linkage"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -53606,8 +56058,11 @@ window.STORIES_DATA = [
 "Pedagogical Anchor",
 "Sustainability & Policy Relevance"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -53674,8 +56129,11 @@ window.STORIES_DATA = [
 "Pedagogical Anchor",
 "Sustainability & Policy Relevance"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -53745,6 +56203,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "bronze",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -53815,8 +56279,11 @@ window.STORIES_DATA = [
 "Commercial Linkage",
 "Sustainability & Policy Relevance"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -53892,8 +56359,11 @@ window.STORIES_DATA = [
 "Pedagogical Anchor",
 "Sustainability & Policy Relevance"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -53960,8 +56430,11 @@ window.STORIES_DATA = [
 "Pedagogical Anchor",
 "Sustainability & Policy Relevance"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -54026,8 +56499,11 @@ window.STORIES_DATA = [
 "Linguistics"
 ],
 "roles": [],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -54097,8 +56573,11 @@ window.STORIES_DATA = [
 "Pedagogical Anchor",
 "Sustainability & Policy Relevance"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -54170,8 +56649,11 @@ window.STORIES_DATA = [
 "Commercial Linkage",
 "Sustainability & Policy Relevance"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -54244,8 +56726,11 @@ window.STORIES_DATA = [
 "Pedagogical Anchor",
 "Sustainability & Policy Relevance"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -54307,8 +56792,11 @@ window.STORIES_DATA = [
 "Psychology"
 ],
 "roles": [],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -54375,8 +56863,11 @@ window.STORIES_DATA = [
 "Pedagogical Anchor",
 "Sustainability & Policy Relevance"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -54441,8 +56932,11 @@ window.STORIES_DATA = [
 "roles": [
 "Pedagogical Anchor"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -54515,8 +57009,11 @@ window.STORIES_DATA = [
 "roles": [
 "Commercial Linkage"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -54586,6 +57083,15 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OAPEN",
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -54687,6 +57193,15 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OAPEN",
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -54814,6 +57329,15 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OAPEN",
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -54906,6 +57430,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -54982,6 +57513,13 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -55105,6 +57643,11 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "OpenAlex/Crossref",
+"oa_provenance_sources": [
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -55180,6 +57723,11 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "OpenAlex/Crossref",
+"oa_provenance_sources": [
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -55241,8 +57789,11 @@ window.STORIES_DATA = [
 "roles": [
 "Commercial Linkage"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": false,
+"oa_status": "unknown",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -55315,6 +57866,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -55388,6 +57945,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OAPEN",
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -55465,6 +58030,14 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -55566,8 +58139,14 @@ window.STORIES_DATA = [
 "Scholarly Uptake",
 "Sustainability & Policy Relevance"
 ],
-"is_oa": null,
-"oa_status": "",
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "ACLS/Arcadia rule",
+"oa_provenance_sources": [
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -55661,6 +58240,11 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "OpenAlex/Crossref",
+"oa_provenance_sources": [
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -55725,6 +58309,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "gold",
+"oa_provenance_source": "ACLS/Arcadia rule",
+"oa_provenance_sources": [
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -55803,6 +58393,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -55921,6 +58517,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -56002,6 +58604,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -56067,6 +58675,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -56161,6 +58775,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -56240,6 +58860,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -56319,6 +58945,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -56396,6 +59028,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -56501,6 +59139,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -56579,6 +59223,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -56673,6 +59323,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -56754,6 +59410,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -56828,6 +59490,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -56902,6 +59570,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -56978,6 +59652,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -57046,6 +59726,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -57122,6 +59808,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -57194,6 +59886,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -57264,6 +59962,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -57341,6 +60045,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -57413,6 +60123,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -57487,6 +60203,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -57552,6 +60274,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -57648,6 +60376,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -57722,6 +60456,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -57796,6 +60536,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -57874,6 +60620,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -57944,6 +60696,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -58024,6 +60782,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -58102,6 +60866,12 @@ window.STORIES_DATA = [
 "roles": [],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": false,
@@ -58172,6 +60942,12 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
 "citation_count": 0,
 "event_count": 0,
 "has_sdgs": true,
@@ -58222,4 +60998,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 483, "total_articles": 190, "total_books": 214, "total_data": 72, "total_software": 7, "total_oa": 415, "pct_oa": 86, "total_citations": 186117, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 483, "total_articles": 190, "total_books": 214, "total_data": 72, "total_software": 7, "total_oa": 420, "pct_oa": 87, "total_citations": 186117, "num_disciplines": 30};
