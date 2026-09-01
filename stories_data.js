@@ -16020,7 +16020,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -18485,7 +18485,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "green",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -18623,7 +18623,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -20250,7 +20250,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -23133,7 +23133,7 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "bronze",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -24571,7 +24571,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -29308,7 +29308,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "green",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -30182,7 +30182,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -30716,7 +30716,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -31341,7 +31341,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -32055,7 +32055,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -38140,7 +38140,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "green",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -41111,7 +41111,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "green",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -41320,7 +41320,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -44533,7 +44533,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -45537,7 +45537,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "green",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -52302,7 +52302,7 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -52537,7 +52537,7 @@ window.STORIES_DATA = [
 "Commercial Linkage"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -54569,7 +54569,7 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "green",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -55847,7 +55847,7 @@ window.STORIES_DATA = [
 "Commercial Linkage"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -57082,7 +57082,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -57192,7 +57192,7 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -57944,7 +57944,7 @@ window.STORIES_DATA = [
 "Sustainability & Policy Relevance"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
@@ -58029,7 +58029,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake"
 ],
 "is_oa": true,
-"oa_status": "hybrid",
+"oa_status": "gold",
 "oa_provenance_source": "DOAB",
 "oa_provenance_sources": [
 "DOAB",
