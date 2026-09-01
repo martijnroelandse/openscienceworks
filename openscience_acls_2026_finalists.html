@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ACLS 2026 Finalists — Portfolio Dashboard</title>
+    <style>
+        /* ── Base ── */
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+               background: #f3f4f6; color: #111827; margin: 0; padding: 0; }
+        .page { max-width: 1100px; margin: auto; padding: 1.5rem 2rem 4rem; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem;
+                box-shadow: 0 10px 30px rgba(15,23,42,.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 1.75rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1/-1; }
+
+        /* ── Typography ── */
+        h2 { margin-top: 0; font-size: 1.15rem; color: #111827;
+             display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
+        h2 span:first-child { flex: 1; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .section-label { font-size: .65rem; font-weight: 700; text-transform: uppercase;
+                         letter-spacing: .1em; color: #9ca3af; margin-bottom: .5rem; margin-top: .25rem; }
+
+        /* ── Tags / Badges ── */
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8;
+               padding: .15rem .5rem; border-radius: 999px; font-size: .82rem;
+               margin: .1rem .15rem .1rem 0; font-weight: 500; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca;
+                 padding: .15rem .55rem; border-radius: 999px; font-size: .72rem; font-weight: 500;
+                 white-space: nowrap; flex-shrink: 0; }
+
+        /* ── Site nav ── */
+        .site-nav { background: white; border-bottom: 1px solid #e5e7eb;
+                    padding: .55rem 2rem; display: flex; align-items: center;
+                    justify-content: space-between; position: sticky; top: 0; z-index: 200; }
+        .site-nav-brand { display: flex; align-items: center; gap: .55rem;
+                          text-decoration: none; color: #111827; font-weight: 700; font-size: .95rem; }
+        .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+        .brand-dot { color: #F2C94C; }
+        .site-nav-right { display: flex; align-items: center; gap: .75rem; }
+        .site-nav-links { display: flex; gap: .2rem; }
+        .site-nav-links a { padding: .35rem .8rem; border-radius: .4rem; font-size: .85rem;
+                            font-weight: 500; text-decoration: none; color: #6b7280;
+                            transition: background .15s, color .15s; }
+        .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+        .print-btn { display: flex; align-items: center; gap: .4rem; padding: .4rem .9rem;
+                     background: #2563eb; color: white; border: none; border-radius: .45rem;
+                     font-size: .82rem; font-weight: 600; cursor: pointer;
+                     box-shadow: 0 2px 8px rgba(37,99,235,.3); transition: background .15s; }
+        .print-btn:hover { background: #1d4ed8; }
+        .print-btn svg { flex-shrink: 0; }
+
+        /* ── Hero ── */
+        .hero { padding: 1.75rem 2rem; background: white; margin-bottom: 1.75rem;
+                border-bottom: 1px solid #e5e7eb; }
+        .hero-inner { max-width: 1100px; margin: 0 auto;
+                      display: flex; align-items: center; gap: 1.75rem; }
+        .hero-logo { width: 80px; height: 80px; object-fit: contain; flex-shrink: 0; }
+        .hero-title { font-size: 1.8rem; font-weight: 800; line-height: 1.2; margin: 0 0 .4rem; }
+        .hero-meta { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap;
+                     font-size: .9rem; color: #6b7280; }
+        .hero-type-badge { display: inline-flex; align-items: center; gap: .3rem;
+                           padding: .2rem .6rem; border-radius: 999px; font-size: .78rem;
+                           font-weight: 600; background: #f3f4f6; color: #374151;
+                           border: 1px solid #e5e7eb; }
+
+        /* ── Stats strip ── */
+        .stats-strip { display: grid; grid-template-columns: repeat(4,1fr); background: white;
+                       border-radius: .9rem; box-shadow: 0 10px 30px rgba(15,23,42,.08);
+                       margin-bottom: 1.75rem; overflow: hidden; }
+        .stats-strip-item { padding: 1rem 1.25rem; text-align: center; border-right: 1px solid #f3f4f6; }
+        .stats-strip-item:last-child { border-right: none; }
+        .stats-strip-num { font-size: 1.7rem; font-weight: 800; color: #2563eb; line-height: 1.1; }
+        .stats-strip-label { font-size: .68rem; color: #6b7280; text-transform: uppercase;
+                             letter-spacing: .06em; margin-top: .25rem; }
+        .stats-strip-sub { font-size: .65rem; color: #b45309; font-weight: 700; margin-top: .2rem; }
+        @media(max-width:640px) { .stats-strip { grid-template-columns: repeat(2,1fr); } }
+
+        /* ── Stat box (secondary stats) ── */
+        .stat-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: .75rem;
+                    padding: 1.1rem; text-align: center; }
+        .stat-number { font-size: 2rem; font-weight: 800; color: #0f172a; line-height: 1; margin-bottom: .2rem; }
+        .stat-label { font-size: .75rem; color: #64748b; text-transform: uppercase;
+                      letter-spacing: .05em; font-weight: 600; }
+
+        /* ── Risk card ── */
+        .risk-card { border: 2px solid #dc2626; background: #fff5f5; }
+        .risk-card h2 { color: #991b1b; }
+
+        /* ── Platform mentions ── */
+        .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px,1fr)); gap: 1rem; }
+        .platform-box { background: white; border-radius: .75rem; padding: 1rem;
+                        text-align: center; border: 1px solid #e2e8f0; border-top-width: 3px; }
+        .platform-num { font-size: 1.8rem; font-weight: 800; line-height: 1; margin-bottom: .25rem; }
+        .platform-lbl { font-size: .72rem; color: #6b7280; text-transform: uppercase;
+                        letter-spacing: .05em; font-weight: 600; }
+
+        /* ── Role pills (same as story pages) ── */
+        .roles-domain { margin-bottom: .85rem; }
+        .roles-domain:last-of-type { margin-bottom: 0; }
+        .roles-domain-label { font-size: .62rem; font-weight: 700; text-transform: uppercase;
+                              letter-spacing: .07em; margin-bottom: .4rem; }
+        .roles-row { display: flex; flex-wrap: wrap; gap: .35rem; }
+        .role-pill { position: relative; display: inline-flex; align-items: center; gap: .3rem;
+                     padding: .28rem .65rem .28rem .45rem; border-radius: 999px;
+                     font-size: .78rem; font-weight: 600; border: 1.5px solid; }
+        .role-pill-academic   { background: #eff6ff; color: #1e40af; border-color: #bfdbfe; }
+        .role-pill-readership { background: #f5f3ff; color: #4c1d95; border-color: #ddd6fe; }
+        .role-pill-public     { background: #fffbeb; color: #92400e; border-color: #fde68a; }
+        .role-pill-practical  { background: #f0fdf4; color: #065f46; border-color: #bbf7d0; }
+        .role-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+        .role-score { font-size: .6rem; font-weight: 700; padding: .05rem .3rem;
+                      border-radius: 999px; margin-left: .1rem; background: rgba(0,0,0,.06); }
+
+        /* ── Chart cards ── */
+        .chart-card { padding: 1.25rem 1.5rem; }
+        .chart-card h2 { font-size: 1rem; margin-bottom: .15rem; }
+        .chart-wrap { height: 200px; width: 100%; margin-top: .75rem; }
+
+        /* ── Table ── */
+        table { width: 100%; border-collapse: collapse; font-size: .84rem; margin-top: .75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: .55rem .65rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; position: sticky; top: 0; z-index: 10; }
+        tr:hover td { background: #f9fafb; }
+        .table-scroll { max-height: 520px; overflow-y: auto; border-radius: .5rem; border: 1px solid #e5e7eb; }
+        .table-scroll table { margin-top: 0; }
+        .table-scroll th, .table-scroll td { border-left: none; border-right: none; }
+        .table-scroll tr:first-child th { border-top: none; }
+
+        /* ── Works table filters ── */
+        .works-filters { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: .75rem 0 .25rem; }
+        .works-filter-btn { border: 1px solid #e5e7eb; background: #fff; color: #4b5563;
+                            border-radius: 999px; padding: .28rem .75rem; font-size: .78rem;
+                            font-weight: 600; cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
+        .works-filter-btn:hover { background: #f9fafb; color: #111827; }
+        .works-filter-btn.is-active { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+        .works-filter-count { font-size: .78rem; color: #6b7280; margin-left: auto; }
+        .award-pill { display: inline-flex; align-items: center; gap: .25rem; background: #fef9c3;
+                      color: #92400e; border: 1px solid #fde68a; border-radius: 999px;
+                      padding: .1rem .45rem; font-size: .72rem; font-weight: 600; white-space: nowrap; }
+        .award-list { margin: 0; padding-left: 1rem; font-size: .75rem; color: #6b7280; }
+        tr.is-hidden-by-filter { display: none; }
+
+        /* ── List rows ── */
+        .list-row { display: flex; justify-content: space-between; align-items: center;
+                    border-bottom: 1px solid #f3f4f6; padding: .4rem 0; }
+        .list-row:last-child { border-bottom: none; }
+
+        /* ── Footer ── */
+        footer { margin-top: 3rem; padding: 1.5rem 0 3rem;
+                 border-top: 1px solid #e5e7eb; color: #9ca3af; font-size: .82rem; }
+
+        /* ── Print ── */
+        @media print {
+            .site-nav, .print-btn { display: none !important; }
+            body { background: white !important; padding: 0; }
+            .page { max-width: 100% !important; padding: 1rem; }
+            .hero { border: none; padding: 1rem 0; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; }
+            .stats-strip { box-shadow: none !important; border: 1px solid #e5e7eb !important; }
+            .grid-2, .grid-3, .grid-4 { display: grid !important; }
+            tr { page-break-inside: avoid; }
+            thead { display: table-header-group; }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div class="site-nav-right">
+    <div class="site-nav-links">
+      <a href="index.html">← All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="print-btn" onclick="window.print()">
+      <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+      </svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-inner">
+    <img class="hero-logo" src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <div>
+      <h1 class="hero-title">ACLS 2026 Finalists</h1>
+      <div class="hero-meta">
+        <span>Portfolio analysis of <strong>29</strong> works</span>
+        
+        <span class="hero-type-badge">29 Books</span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+
+  
+  <div class="section-label">Portfolio narrative</div>
+  <section class="card">
+    <h2><span>The Story So Far</span></h2>
+    <div style="line-height:1.65;"><h3 class='story-subheading'>Executive Summary</h3><p class='story-text'>The ACLS 2026 Finalists encompasses 29 works that have collectively generated significant scholarly and public impact. Anchored predominantly in History, Politics, and Political science, this collection has amassed a highly concentrated thematic footprint.</p><p class='story-text'>Commitment to open knowledge sharing is a defining characteristic of this dataset. An impressive 100% of the portfolio is available via Open Access, ensuring global accessibility.</p><p class='story-text'>The impact of these works is geographically and institutionally diverse. Noteworthy engagement extends beyond standard academia, with measurable uptake in the Facility and Nonprofit sectors. Supported by foundational backing from Arcadia, this portfolio demonstrates both rapid public uptake and sustained relevance as a methodological anchor for future synthesis.</p></div>
+    
+    <div class="muted" style="margin-top:.8rem;">
+      Funder context: this prize dashboard is supported by Arcadia.
+      Contact:
+      
+      <a href="https://www.acls.org/sarah-mckee/" target="_blank" rel="noopener noreferrer">Sarah McKee</a>
+      
+      .
+      
+      More on the prize:
+      <a href="https://www.acls.org/programs/open-access-book-prize/" target="_blank" rel="noopener noreferrer">ACLS Open Access Book Prize</a>.
+      
+    </div>
+    
+    <div class="muted" style="margin-top:.45rem;">
+      Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
+    </div>
+  </section>
+  
+
+  
+
+  <!-- Key metrics strip -->
+  <div class="section-label">Key metrics</div>
+  <div class="stats-strip">
+    <div class="stats-strip-item">
+      <div class="stats-strip-num">165</div>
+      <div class="stats-strip-label">Total Citations</div>
+      
+      <div class="stats-strip-sub">🏆 6 in Top 1%</div>
+      
+    </div>
+    <div class="stats-strip-item">
+      <div class="stats-strip-num">1</div>
+      <div class="stats-strip-label">Online Mentions</div>
+    </div>
+    <div class="stats-strip-item">
+      
+      <div class="stats-strip-num">100%</div>
+      <div class="stats-strip-label">Open Access</div>
+      <div style="font-size:.65rem;color:#6b7280;margin-top:.2rem;">29 of 29 works</div>
+    </div>
+    <div class="stats-strip-item">
+      <div class="stats-strip-num">15</div>
+      <div class="stats-strip-label">Citing Countries</div>
+    </div>
+    
+    <div class="stats-strip-item">
+      <div class="stats-strip-num">29</div>
+      <div class="stats-strip-label">With awards</div>
+    </div>
+    
+  </div>
+
+  
+  <div class="section-label">OA provenance</div>
+  <section class="card">
+    <h2><span>Open Access Provenance</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:1rem;">Primary source used to classify OA per work.</div>
+    <div class="platform-grid">
+      
+      <div class="platform-box" style="border-top-color:#64748b;">
+        <div class="platform-num" style="color:#334155;">16</div>
+        <div class="platform-lbl">Publisher-claimed</div>
+      </div>
+      
+      <div class="platform-box" style="border-top-color:#64748b;">
+        <div class="platform-num" style="color:#334155;">13</div>
+        <div class="platform-lbl">DOAB</div>
+      </div>
+      
+    </div>
+  </section>
+  
+
+  
+
+  
+
+  <!-- Charts -->
+  <div class="section-label">Citation &amp; attention landscape</div>
+  <div class="grid-2" style="margin-bottom:0;">
+    <section class="card chart-card" style="margin-bottom:0;">
+      <h2><span>Citation Timeline</span></h2>
+      <div class="muted" style="margin-top:-.15rem;font-size:.8rem;">Annual citation counts across the portfolio.</div>
+      <div class="chart-wrap">
+        <canvas id="citationChart" data-labels="[&#34;2021&#34;, &#34;2022&#34;, &#34;2023&#34;, &#34;2024&#34;, &#34;2025&#34;, &#34;2026&#34;]" data-values="[4, 11, 24, 40, 151, 94]"></canvas>
+      </div>
+    </section>
+    <div class="grid-2" style="margin-bottom:0;gap:1rem;">
+      <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
+        <h2 style="font-size:.95rem;"><span>Citing Sectors</span> <span class="badge">ROR</span></h2>
+        <div class="chart-wrap" style="height:170px;"><canvas id="sectorChart" data-labels="[&#34;Education&#34;, &#34;Facility&#34;, &#34;Healthcare&#34;, &#34;Archive&#34;, &#34;Nonprofit&#34;, &#34;Other&#34;, &#34;Government&#34;, &#34;Company&#34;]" data-values="[235, 13, 1, 1, 13, 4, 4, 4]"></canvas></div>
+      </section>
+      <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
+        <h2 style="font-size:.95rem;"><span>Citation Context</span> <span class="badge">scite</span></h2>
+        <div class="chart-wrap" style="height:170px;"><canvas id="sciteChart" data-labels="[&#34;Supporting&#34;, &#34;Mentioning&#34;, &#34;Contradicting&#34;]" data-values="[0, 18, 0]"></canvas></div>
+      </section>
+      <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
+        <h2 style="font-size:.95rem;"><span>Work Types</span> <span class="badge">OpenAlex</span></h2>
+        <div class="chart-wrap" style="height:170px;"><canvas id="wtChart" data-labels="[&#34;Book-Chapter&#34;, &#34;Article&#34;, &#34;Book&#34;, &#34;Paratext&#34;, &#34;Book-Review&#34;, &#34;Editorial&#34;, &#34;Reference-Entry&#34;, &#34;Other&#34;, &#34;Preprint&#34;, &#34;Conference-Paper&#34;, &#34;Report&#34;]" data-values="[94, 175, 12, 12, 4, 1, 4, 7, 8, 6, 1]"></canvas></div>
+      </section>
+      <section class="card chart-card" style="margin-bottom:0;padding:1.1rem;">
+        <h2 style="font-size:.95rem;"><span>Top Venues</span> <span class="badge">OpenAlex</span></h2>
+        <div class="chart-wrap" style="height:170px;"><canvas id="venueChart" data-labels="[&#34;SSRN Electronic Journal&#34;, &#34;The Journal of Peasant Studies&#34;, &#34;Cambridge University Press eBooks&#34;, &#34;Critical Review of International Social and Political Philosophy&#34;, &#34;Globalizations&#34;, &#34;Environment and Planning E Nature and Space&#34;]" data-values="[8, 7, 7, 7, 4, 4]"></canvas></div>
+      </section>
+    </div>
+  </div>
+  <div style="margin-bottom:1.75rem;"></div>
+
+  <!-- Community -->
+  <div class="section-label">Community engagement &amp; public discourse</div>
+  <section class="card">
+    <h2><span>Online Mentions by Platform</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:1.25rem;">Breakdown across platforms for the entire portfolio.</div>
+    <div class="platform-grid">
+      <div class="platform-box" style="border-top-color:#64748b;">
+        <div class="platform-num" style="color:#334155;">0</div>
+        <div class="platform-lbl">Wikipedia</div>
+      </div>
+      <div class="platform-box" style="border-top-color:#ea580c;">
+        <div class="platform-num" style="color:#c2410c;">0</div>
+        <div class="platform-lbl">Reddit</div>
+      </div>
+      <div class="platform-box" style="border-top-color:#0ea5e9;">
+        <div class="platform-num" style="color:#0369a1;">1</div>
+        <div class="platform-lbl">Bluesky</div>
+      </div>
+      <div class="platform-box" style="border-top-color:#eab308;">
+        <div class="platform-num" style="color:#a16207;">0</div>
+        <div class="platform-lbl">StackExchange</div>
+      </div>
+      <div class="platform-box" style="border-top-color:#db2777;">
+        <div class="platform-num" style="color:#be185d;">0</div>
+        <div class="platform-lbl">Expert Annotations</div>
+      </div>
+      <div class="platform-box" style="border-top-color:#16a34a;">
+        <div class="platform-num" style="color:#15803d;">7</div>
+        <div class="platform-lbl">News Media</div>
+      </div>
+    </div>
+  </section>
+
+  
+  <div class="section-label">Teaching, practice &amp; library</div>
+  <section class="card">
+    <h2><span>Teaching, Practice &amp; Library Adoption</span></h2>
+    <div class="grid-3" style="margin-bottom:0;margin-top:1rem;">
+      <div class="stat-box">
+        <div class="stat-number">25</div>
+        <div class="stat-label">Library Holdings</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">12</div>
+        <div class="stat-label">Syllabi / OCW</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number" style="color:#dc2626;">23</div>
+        <div class="stat-label">Edu Video Lectures</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">0</div>
+        <div class="stat-label">OER / Open Texts</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">1</div>
+        <div class="stat-label">Formal Reviews</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">110</div>
+        <div class="stat-label">Chapter Cites</div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Concepts / Roles / Geo -->
+  <div class="section-label">Thematic &amp; impact profile</div>
+  <div class="grid-2">
+    <section class="card" style="margin-bottom:0;">
+      <h2><span>Dominant Concepts</span> <span class="badge">OpenAlex</span></h2>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Weighted by AI confidence score.</div>
+      <div>
+        
+          <span class="tag">History</span>
+        
+          <span class="tag">Politics</span>
+        
+          <span class="tag">Political science</span>
+        
+          <span class="tag">Sociology</span>
+        
+          <span class="tag">Geography</span>
+        
+          <span class="tag tag-soft">Psychology</span>
+        
+          <span class="tag tag-soft">Art</span>
+        
+          <span class="tag tag-soft">Visual arts</span>
+        
+          <span class="tag tag-soft">Literature</span>
+        
+          <span class="tag tag-soft">Genocide</span>
+        
+          <span class="tag tag-soft">Empire</span>
+        
+          <span class="tag tag-soft">Gender studies</span>
+        
+          <span class="tag tag-soft">Genealogy</span>
+        
+          <span class="tag tag-soft">Biology</span>
+        
+          <span class="tag tag-soft">Law</span>
+        
+          <span class="tag tag-soft">Ideology</span>
+        
+          <span class="tag tag-soft">Aesthetics</span>
+        
+          <span class="tag tag-soft">Philosophy</span>
+        
+          <span class="tag tag-soft">Colonialism</span>
+        
+          <span class="tag tag-soft">Context (archaeology)</span>
+        
+      </div>
+    </section>
+
+    <section class="card" style="margin-bottom:0;">
+      <h2><span>Inferred Portfolio Roles</span></h2>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Cumulative heuristic classification across all works.</div>
+      
+      <div class="roles-row">
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Scholarly uptake
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">13.6</span>
+          </span>
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Sustainability & policy relevance
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">10.5</span>
+          </span>
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Commercial linkage
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">0.9</span>
+          </span>
+        
+          
+          
+          
+          
+          
+          <span class="role-pill role-pill-academic">
+            <span class="role-dot" style="background:#3b82f6;"></span>
+            Pedagogical anchor
+            <span class="role-score" style="background:#dbeafe;color:#1d4ed8;">0.6</span>
+          </span>
+        
+      </div>
+      
+    </section>
+  </div>
+
+  <div class="grid-2">
+    <section class="card" style="margin-bottom:0;">
+      <h2><span>Top Citing Countries</span> <span class="badge">OpenAlex</span></h2>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Based on author affiliations of citing works.</div>
+      <div>
+        
+          <span class="tag">United States (131)</span>
+        
+          <span class="tag">United Kingdom (29)</span>
+        
+          <span class="tag">China (17)</span>
+        
+          <span class="tag">Netherlands (17)</span>
+        
+          <span class="tag">Canada (16)</span>
+        
+          <span class="tag tag-soft">Germany (14)</span>
+        
+          <span class="tag tag-soft">Australia (7)</span>
+        
+          <span class="tag tag-soft">Bangladesh (7)</span>
+        
+          <span class="tag tag-soft">Hong Kong (6)</span>
+        
+          <span class="tag tag-soft">Nigeria (6)</span>
+        
+          <span class="tag tag-soft">India (5)</span>
+        
+          <span class="tag tag-soft">Mexico (5)</span>
+        
+          <span class="tag tag-soft">Indonesia (4)</span>
+        
+          <span class="tag tag-soft">Spain (3)</span>
+        
+          <span class="tag tag-soft">New Zealand (3)</span>
+        
+      </div>
+    </section>
+    <section class="card" style="margin-bottom:0;">
+      <h2><span>Top Citing Institutions</span> <span class="badge">ROR / OpenAlex</span></h2>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Canonical names based on author affiliations.</div>
+      <div>
+        
+          <span class="tag">University of California, Riverside (23)</span>
+        
+          <span class="tag">University of Washington (10)</span>
+        
+          <span class="tag">Virginia Tech (5)</span>
+        
+          <span class="tag">Erasmus University Rotterdam (5)</span>
+        
+          <span class="tag">The University of Melbourne (5)</span>
+        
+          <span class="tag tag-soft">Johns Hopkins University (5)</span>
+        
+          <span class="tag tag-soft">Rutgers, The State University of New Jersey (4)</span>
+        
+          <span class="tag tag-soft">Wageningen University & Research (4)</span>
+        
+          <span class="tag tag-soft">University College London (4)</span>
+        
+          <span class="tag tag-soft">New York University (4)</span>
+        
+          <span class="tag tag-soft">University of Virginia (4)</span>
+        
+          <span class="tag tag-soft">McGill University (4)</span>
+        
+          <span class="tag tag-soft">University of London (4)</span>
+        
+          <span class="tag tag-soft">Indiana University (3)</span>
+        
+          <span class="tag tag-soft">Leiden University (3)</span>
+        
+      </div>
+    </section>
+  </div>
+
+  <div class="grid-2">
+    <section class="card span-full" style="margin-bottom:0;">
+      <h2><span>Top Funders</span> <span class="badge">Europe PMC</span></h2>
+      <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Number of distinct works supported.</div>
+      <div>
+        
+          
+            <span class="tag tag-soft">The London School of Economics and Political Science (1)</span>
+          
+        
+      </div>
+    </section>
+    
+  </div>
+
+  <!-- Authors -->
+  <div class="section-label">Contributors</div>
+  <section class="card">
+    <h2><span>Core Authors</span> <span class="badge">Portfolio</span></h2>
+    <div class="muted" style="margin-top:-.2rem;margin-bottom:.9rem;">Authors with more than one work in this dataset.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.4rem 1.5rem;">
+      
+        <div class="muted">No authors have multiple works in this dataset.</div>
+      
+    </div>
+  </section>
+
+  <!-- Works table -->
+  <div class="section-label">Included works</div>
+  <section class="card">
+    <h2><span>All Works</span> <span class="badge" id="worksTotalBadge">29 total</span></h2>
+    
+    <div class="works-filters" id="worksFilters">
+      <button type="button" class="works-filter-btn is-active" data-award-filter="all">All works</button>
+      <button type="button" class="works-filter-btn" data-award-filter="awarded">Award winners</button>
+      <button type="button" class="works-filter-btn" data-award-filter="unawarded">Without awards</button>
+      <span class="works-filter-count" id="worksFilterCount">29 shown</span>
+    </div>
+    
+    <div class="table-scroll">
+      <table id="worksTable">
+        <thead>
+          <tr><th>Year</th><th>Type</th><th>Title</th><th>DOI</th><th>Awards</th><th>Citations</th><th>Mentions</th></tr>
+        </thead>
+        <tbody>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2023</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.1515_9781501769023.html" style="color:#111827;text-decoration:none;font-weight:500;">Ecological States</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.1515_9781501769023.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1515/9781501769023</a>
+              <a href="https://doi.org/10.1515/9781501769023" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">40</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.1017_9781009305815.html" style="color:#111827;text-decoration:none;font-weight:500;">States-in-Waiting</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.1017_9781009305815.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1017/9781009305815</a>
+              <a href="https://doi.org/10.1017/9781009305815" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">23</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2023</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.1525_luminos.162.html" style="color:#111827;text-decoration:none;font-weight:500;">A Life of Worry: Politics, Mental Health, and Vietnam’s Age of Anxiety</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.1525_luminos.162.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1525/luminos.162</a>
+              <a href="https://doi.org/10.1525/luminos.162" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">18</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.1525_luminos.209.html" style="color:#111827;text-decoration:none;font-weight:500;">Mal-Nutrition: Maternal Health Science and the Reproduction of Harm</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.1525_luminos.209.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1525/luminos.209</a>
+              <a href="https://doi.org/10.1525/luminos.209" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">17</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2022</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.1515_9780295750507.html" style="color:#111827;text-decoration:none;font-weight:500;">Upland Geopolitics</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.1515_9780295750507.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1515/9780295750507</a>
+              <a href="https://doi.org/10.1515/9780295750507" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">17</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2023</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.11647_obp.0339.html" style="color:#111827;text-decoration:none;font-weight:500;">Decolonial Ecologies</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.11647_obp.0339.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.11647/obp.0339</a>
+              <a href="https://doi.org/10.11647/obp.0339" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">11</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2021</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.5744_9781683401988.html" style="color:#111827;text-decoration:none;font-weight:500;">Writing the New World: The Politics of Natural History in the Early Spanish Empire</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.5744_9781683401988.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.5744/9781683401988</a>
+              <a href="https://doi.org/10.5744/9781683401988" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">9</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.11647_obp.0396.html" style="color:#111827;text-decoration:none;font-weight:500;">The Diagrammatics of ‘Race’</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.11647_obp.0396.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.11647/obp.0396</a>
+              <a href="https://doi.org/10.11647/obp.0396" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">8</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.1017_9781009486682.html" style="color:#111827;text-decoration:none;font-weight:500;">Foreign in Two Homelands</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.1017_9781009486682.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1017/9781009486682</a>
+              <a href="https://doi.org/10.1017/9781009486682" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">8</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.1515_9780295753317.html" style="color:#111827;text-decoration:none;font-weight:500;">Kernels of Resistance</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.1515_9780295753317.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1515/9780295753317</a>
+              <a href="https://doi.org/10.1515/9780295753317" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">5</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.1525_luminos.183.html" style="color:#111827;text-decoration:none;font-weight:500;">Muddy Thinking in the Mississippi River Delta: A Call for Reclamation</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.1525_luminos.183.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1525/luminos.183</a>
+              <a href="https://doi.org/10.1525/luminos.183" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">4</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.1515_9781501777394.html" style="color:#111827;text-decoration:none;font-weight:500;">Border of Water and Ice</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.1515_9781501777394.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1515/9781501777394</a>
+              <a href="https://doi.org/10.1515/9781501777394" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">2</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2021</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.1525_9780520380196.html" style="color:#111827;text-decoration:none;font-weight:500;">Knowing about Genocide</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.1525_9780520380196.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1525/9780520380196</a>
+              <a href="https://doi.org/10.1525/9780520380196" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">2</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.1525_luminos.193.html" style="color:#111827;text-decoration:none;font-weight:500;">Making Sense: Language, Ethics, and Understanding in Deaf Nepal</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.1525_luminos.193.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1525/luminos.193</a>
+              <a href="https://doi.org/10.1525/luminos.193" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">1</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.3998_mpub.14469549.html" style="color:#111827;text-decoration:none;font-weight:500;">Abortion Pills</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3998_mpub.14469549.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3998/mpub.14469549</a>
+              <a href="https://doi.org/10.3998/mpub.14469549" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History; Political Science">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2022</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.1525_9780520384521.html" style="color:#111827;text-decoration:none;font-weight:500;">At the Edges of Sleep</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.1525_9780520384521.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1525/9780520384521</a>
+              <a href="https://doi.org/10.1525/9780520384521" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2019</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.11647_obp.0145.html" style="color:#111827;text-decoration:none;font-weight:500;">Image, Knife, and Gluepot</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.11647_obp.0145.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.11647/obp.0145</a>
+              <a href="https://doi.org/10.11647/obp.0145" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.1515_9781501773853.html" style="color:#111827;text-decoration:none;font-weight:500;">Poet-Monks</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.1515_9781501773853.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1515/9781501773853</a>
+              <a href="https://doi.org/10.1515/9781501773853" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2022</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.7551_mitpress_12089.001.0001.html" style="color:#111827;text-decoration:none;font-weight:500;">Sex Sounds</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.7551_mitpress_12089.001.0001.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7551/mitpress/12089.001.0001</a>
+              <a href="https://doi.org/10.7551/mitpress/12089.001.0001" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2021</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.3998_mpub.12255695.html" style="color:#111827;text-decoration:none;font-weight:500;">Twining</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3998_mpub.12255695.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3998/mpub.12255695</a>
+              <a href="https://doi.org/10.3998/mpub.12255695" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Literary/Media Studies">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2019</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.21627_2019bq.html" style="color:#111827;text-decoration:none;font-weight:500;">Black Quotidian: Everyday History in African-American Newspapers</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.21627_2019bq.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.21627/2019bq</a>
+              <a href="https://doi.org/10.21627/2019bq" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Multimodal">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_isbn_9781954622296.html" style="color:#111827;text-decoration:none;font-weight:500;">Deaf mobility studies: Exploring international networks, tourism, and migration</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_isbn_9781954622296.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">9781954622296</a>
+              <a href="https://doi.org/9781954622296" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Multimodal">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.21627_2024hd.html" style="color:#111827;text-decoration:none;font-weight:500;">Harlem in Disorder: A Spatial History of How Racial Violence Changed in 1935</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.21627_2024hd.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.21627/2024hd</a>
+              <a href="https://doi.org/10.21627/2024hd" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Multimodal">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.7551_mitpress_15191.001.0001.html" style="color:#111827;text-decoration:none;font-weight:500;">Mortevivum</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.7551_mitpress_15191.001.0001.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.7551/mitpress/15191.001.0001</a>
+              <a href="https://doi.org/10.7551/mitpress/15191.001.0001" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Multimodal">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.3998_mpub.12584348.html" style="color:#111827;text-decoration:none;font-weight:500;">Owning My Masters (Mastered)</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3998_mpub.12584348.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3998/mpub.12584348</a>
+              <a href="https://doi.org/10.3998/mpub.12584348" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Multimodal">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2023</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.1017_9781009383981.html" style="color:#111827;text-decoration:none;font-weight:500;">Democracy and Empire</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.1017_9781009383981.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.1017/9781009383981</a>
+              <a href="https://doi.org/10.1017/9781009383981" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Political Science">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2022</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.5040_9781350237674.html" style="color:#111827;text-decoration:none;font-weight:500;">Economic Diversification in Nigeria</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.5040_9781350237674.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.5040/9781350237674</a>
+              <a href="https://doi.org/10.5040/9781350237674" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Political Science">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2024</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.31389_lsepress.rpg.html" style="color:#111827;text-decoration:none;font-weight:500;">Renegotiating Patriarchy: Gender, Agency and the Bangladesh Paradox</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.31389_lsepress.rpg.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.31389/lsepress.rpg</a>
+              <a href="https://doi.org/10.31389/lsepress.rpg" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Political Science">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">1</td>
+          </tr>
+          
+          <tr data-has-award="1">
+            <td style="white-space:nowrap;">2020</td>
+            <td><span class="badge" style="background:#f3f4f6;color:#4b5563;">Book</span></td>
+            <td>
+              
+              <a href="bookstory_10.3998_mpub.11923978.html" style="color:#111827;text-decoration:none;font-weight:500;">A Sense of Brutality</a>
+              
+            </td>
+            <td>
+              
+              <a href="bookstory_10.3998_mpub.11923978.html" style="color:#2563eb;text-decoration:none;font-size:.8rem;">10.3998/mpub.11923978</a>
+              <a href="https://doi.org/10.3998/mpub.11923978" target="_blank" title="Open DOI" style="margin-left:.35rem;font-size:.72rem;color:#6b7280;text-decoration:none;">↗</a>
+              
+            </td>
+            
+            <td>
+              
+                
+                <span class="award-pill" title="ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Political Science">🏆 Award</span>
+                
+              
+            </td>
+            
+            <td style="text-align:right;font-weight:600;">0</td>
+            <td style="text-align:right;">0</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem;">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color:#9ca3af;flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;font-weight:600;text-decoration:none;">Read the Methodology &amp; Legend ↗</a></span>
+    </div>
+    <div style="padding-left:1.35rem;">Generated on 2026-09-01 13:21:33 UTC</div>
+  </footer>
+
+</div><!-- /page -->
+
+<script>
+const DOUGHNUT_OPTS = {
+  responsive: true, maintainAspectRatio: false, cutout: '68%',
+  plugins: { legend: { position: 'right', labels: { boxWidth: 9, padding: 8, font: { size: 10 } } } }
+};
+const PALETTE = ['#2563eb','#0d9488','#6366f1','#f59e0b','#ec4899','#0ea5e9','#8b5cf6','#14b8a6'];
+
+function makeDoughnut(id, palette) {
+  const canvas = document.getElementById(id); if (!canvas) return;
+  const labels = JSON.parse(canvas.getAttribute('data-labels'));
+  const data   = JSON.parse(canvas.getAttribute('data-values'));
+  if (!data.length || data.reduce((a,b)=>a+b,0)===0) {
+    canvas.parentElement.innerHTML = '<div style="display:flex;align-items:center;height:100%;color:#9ca3af;font-size:.82rem;">No data available.</div>';
+    return;
+  }
+  new Chart(canvas.getContext('2d'), {
+    type: 'doughnut',
+    data: { labels, datasets: [{ data, backgroundColor: palette || PALETTE, borderWidth: 0 }] },
+    options: DOUGHNUT_OPTS
+  });
+}
+
+// Citation timeline
+(function(){
+  const canvas = document.getElementById('citationChart'); if (!canvas) return;
+  const labels = JSON.parse(canvas.getAttribute('data-labels'));
+  const data   = JSON.parse(canvas.getAttribute('data-values'));
+  new Chart(canvas.getContext('2d'), {
+    type: 'bar',
+    data: { labels, datasets: [{ label: 'Citations', data, backgroundColor: '#2563eb', borderRadius: 4 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: {
+        y: { beginAtZero: true, border: { display: false }, grid: { color: '#f3f4f6' } },
+        x: { grid: { display: false }, border: { display: false } }
+      },
+      plugins: { legend: { display: false } }
+    }
+  });
+})();
+
+makeDoughnut('sectorChart');
+makeDoughnut('sciteChart', ['#16a34a','#9ca3af','#dc2626']);
+makeDoughnut('wtChart');
+makeDoughnut('venueChart');
+
+(function(){
+  const filters = document.getElementById('worksFilters');
+  const table = document.getElementById('worksTable');
+  const countEl = document.getElementById('worksFilterCount');
+  if (!filters || !table) return;
+
+  const rows = Array.from(table.querySelectorAll('tbody tr'));
+  let mode = 'all';
+
+  function applyAwardFilter(nextMode) {
+    mode = nextMode;
+    filters.querySelectorAll('[data-award-filter]').forEach((btn) => {
+      btn.classList.toggle('is-active', btn.getAttribute('data-award-filter') === mode);
+    });
+
+    let shown = 0;
+    rows.forEach((row) => {
+      const hasAward = row.getAttribute('data-has-award') === '1';
+      let visible = true;
+      if (mode === 'awarded') visible = hasAward;
+      if (mode === 'unawarded') visible = !hasAward;
+      row.classList.toggle('is-hidden-by-filter', !visible);
+      if (visible) shown += 1;
+    });
+
+    if (countEl) countEl.textContent = `${shown} shown`;
+  }
+
+  filters.addEventListener('click', (event) => {
+    const btn = event.target.closest('[data-award-filter]');
+    if (!btn) return;
+    applyAwardFilter(btn.getAttribute('data-award-filter') || 'all');
+  });
+})();
+</script>
+</body>
+</html>
