@@ -46,8 +46,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": true,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The scholarly article titled \"Array programming with NumPy,\" published in Nature in 2020, has garnered significant academic attention, with over 23,477 citations to date.",
@@ -589,7 +589,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -5112,11 +5112,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 4,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book \"Data Feminism,\" published by The MIT Press in 2020, has emerged as a significant reference point for synthesizing discussions around feminist data studies.",
@@ -5419,7 +5419,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -6099,8 +6099,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite being published in 2016, \"Human Pose Estimation via Convolutional Part Heatmap Regression\" has established itself as a significant reference point in its field, evidenced …",
@@ -6879,8 +6879,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book \"Integrated Risk and Uncertainty Assessment of Climate Change Response Policies,\" published by Cambridge University Press in 2015, serves as a crucial reference point for…",
@@ -7755,12 +7755,12 @@ window.STORIES_DATA = [
 "ta_youtube": 1,
 "ta_ol_holdings": 5,
 "ta_otl": false,
-"has_peer_review": true,
-"has_prism_context": true,
-"has_prism_peer_review": true,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication in 2017, the book \"Against Meritocracy\" has established itself as a significant reference point, receiving an impressive 306 citations in academic literatu…",
@@ -10069,8 +10069,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Measurement of Nontariff Barriers,\" published by the University of Michigan Press in 1998, serves as a vital reference point for scholars and policymakers in the field of interna…",
@@ -10205,11 +10205,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 2,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication in 2014, \"Opening Science\" has yet to garner citations or community discourse, suggesting limited immediate impact or engagement within academic circles or…",
@@ -10361,12 +10361,12 @@ window.STORIES_DATA = [
 "ta_youtube": 3,
 "ta_ol_holdings": 3,
 "ta_otl": true,
-"has_peer_review": true,
-"has_prism_context": true,
-"has_prism_peer_review": true,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of traditional metrics such as citations or community discourse, \"Coronavirus Politics\" published by the University of Michigan Press in 2021 serves as a signi…",
@@ -10664,7 +10664,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -11524,8 +11524,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The \"Handbook of Open, Distance and Digital Education,\" published by Springer Nature Singapore in 2023, has the potential to serve as a vital reference for synthesis in the evolvi…",
@@ -11676,7 +11676,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -12946,11 +12946,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book \"Open: The Philosophy and Practices that are Revolutionizing Education and Science,\" published by Ubiquity Press in 2017, serves as a significant reference point for the …",
@@ -16044,7 +16044,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -16361,8 +16361,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Beyond Provenance: New Approaches to Interpreting the Chemistry of Archaeological Copper Alloys\" has established a substantial scholarly footprint, evidenced by its significant c…",
@@ -16822,11 +16822,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite being published in 2020, \"A European Public Investment Outlook\" by Open Book Publishers has shown a promising scholarly uptake, garnering 54 citations, indicating its sign…",
@@ -18511,11 +18511,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Virtues for the People\" published by Leuven University Press in 2011 has a notable scholarly uptake, evidenced by 46 citations, indicating an increasing engagement within the aca…",
@@ -18638,8 +18638,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication over two decades ago in 2000, \"Institutions and Investments\" continues to hold significance within its field, garnering a notable scholarly uptake with 43 …",
@@ -18777,8 +18777,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite being published in 2020, \"Elizabeth Bishop and the Literary Archive\" has begun to make its mark within academic circles, evidenced by a growing citation count and publishi…",
@@ -18890,8 +18890,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The scholarly work \"Glass Making in the Greco-Roman World: Results of the ARCHGLASS project,\" published by Leuven University Press in 2015, reflects a solid engagement with the fi…",
@@ -18993,155 +18993,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "bookstory_10.1515_9781501769023.html",
-"title": "Ecological States",
-"type": "BookStory",
-"doi": "10.1515/9781501769023",
-"year": 2023,
-"venue": "Cornell University Press",
-"venue_name": "",
-"publisher": "Cornell University Press",
-"concepts": [
-"Ecology",
-"Geography",
-"Environmental science",
-"Biology"
-],
-"roles": [
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "gold",
-"oa_provenance_source": "DOAB",
-"oa_provenance_sources": [
-"DOAB",
-"OAPEN",
-"Publisher-claimed",
-"ACLS/Arcadia rule",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 40,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 2,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Ecological States (2023), published by Cornell University Press.",
-"cover_url": "https://library.oapen.org/rest/bitstreams/88bf9a37-ce8d-4ecb-8790-88f70c0c25ea/retrieve",
-"authors": "Jesse Rodenbiker",
-"all_authors": [
-"Jesse Rodenbiker"
-],
-"institutions": [],
-"download_count": 282,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"News",
-"LibraryThing"
-],
-"has_librarything": true,
-"librarything_rating": null,
-"has_award": true,
-"awards": [
-"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
-],
-"platform_counts": {
-"news": 1
-},
-"is_top1pct": true,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 36
-},
-{
-"label": "Facility",
-"count": 3
-},
-{
-"label": "Nonprofit",
-"count": 3
-},
-{
-"label": "Government",
-"count": 1
-},
-{
-"label": "Other",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 16
-},
-{
-"label": "China",
-"count": 13
-},
-{
-"label": "United Kingdom",
-"count": 6
-},
-{
-"label": "Hong Kong",
-"count": 6
-},
-{
-"label": "Australia",
-"count": 4
-}
-],
-"citing_institutions": [
-{
-"label": "Wageningen University & Research",
-"count": 4
-},
-{
-"label": "The University of Melbourne",
-"count": 3
-},
-{
-"label": "University College London",
-"count": 3
-},
-{
-"label": "New York University",
-"count": 3
-},
-{
-"label": "University of Hong Kong",
-"count": 3
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1515/9781501769023"
-]
-},
-{
 "file": "bookstory_10.3998_mpub.17801.html",
 "title": "The Role of the Judge in International Trade Regulation",
 "type": "BookStory",
@@ -19185,8 +19036,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Published by the University of Michigan Press in 2003, \"The Role of the Judge in International Trade Regulation\" has made a significant scholarly impact, garnering up to 40 citati…",
@@ -20268,8 +20119,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication over two decades ago, \"Social Dimensions of U.S.",
@@ -20701,11 +20552,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 3,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Published in 2023 by Jeremy Waddington, Torsten Müller, and Kurt Vandaele, Trade Unions in the European Union has established itself as a notable reference in the field of Europea…",
@@ -21917,11 +21768,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its recent publication in 2021, \"Theory into Practice\" has yet to gain significant traction in terms of academic citations or public discourse, with indicators showing no …",
@@ -22796,11 +22647,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Farm Boys: Lives of Gay Men from the Rural Midwest\" presents a nuanced exploration of the lives of gay men in a specific cultural context.",
@@ -23508,7 +23359,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -23621,153 +23472,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.1007/978-3-030-47436-2"
-]
-},
-{
-"file": "bookstory_10.1017_9781009305815.html",
-"title": "States-in-Waiting",
-"type": "BookStory",
-"doi": "10.1017/9781009305815",
-"year": 2024,
-"venue": "Cambridge University Press",
-"venue_name": "",
-"publisher": "Cambridge University Press",
-"concepts": [
-"History",
-"Geography"
-],
-"roles": [
-"Scholarly Uptake",
-"Sustainability & Policy Relevance"
-],
-"is_oa": true,
-"oa_status": "gold",
-"oa_provenance_source": "DOAB",
-"oa_provenance_sources": [
-"DOAB",
-"Publisher-claimed",
-"ACLS/Arcadia rule",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 23,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Reduced inequalities"
-],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 3,
-"ta_ol_holdings": 3,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": true,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary States-in-Waiting (2024), published by Cambridge University Press.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781009305846&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-"authors": "Lydia Walker",
-"all_authors": [
-"Lydia Walker"
-],
-"institutions": [
-"The Ohio State University"
-],
-"download_count": 669,
-"series_name": "Global and International History",
-"series_id": null,
-"belongs_to_series": true,
-"mention_platforms": [
-"News",
-"LibraryThing"
-],
-"has_librarything": true,
-"librarything_rating": null,
-"has_award": true,
-"awards": [
-"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History"
-],
-"platform_counts": {
-"news": 1
-},
-"is_top1pct": true,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 20
-},
-{
-"label": "Company",
-"count": 1
-},
-{
-"label": "Facility",
-"count": 1
-},
-{
-"label": "Government",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 13
-},
-{
-"label": "United Kingdom",
-"count": 2
-},
-{
-"label": "India",
-"count": 2
-},
-{
-"label": "Netherlands",
-"count": 2
-},
-{
-"label": "Switzerland",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "University of Washington",
-"count": 10
-},
-{
-"label": "Leiden University",
-"count": 2
-},
-{
-"label": "Federal Foreign Office",
-"count": 1
-},
-{
-"label": "Mahindra Group (India)",
-"count": 1
-},
-{
-"label": "University of Fribourg",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1017/9781009305815"
 ]
 },
 {
@@ -24260,8 +23964,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The upcoming book \"Smart Cities,\" set for publication in 2024 by Springer International Publishing, aims to explore the multifunctional aspects of urban environments that leverage…",
@@ -24958,433 +24662,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "bookstory_10.1525_luminos.162.html",
-"title": "A Life of Worry: Politics, Mental Health, and Vietnam’s Age of Anxiety",
-"type": "BookStory",
-"doi": "10.1525/luminos.162",
-"year": 2023,
-"venue": "University of California Press",
-"venue_name": "",
-"publisher": "University of California Press",
-"concepts": [
-"Prosperity",
-"Worry",
-"Ho chi minh",
-"Politics",
-"Anxiety",
-"Mental health",
-"Curiosity",
-"Psychology"
-],
-"roles": [
-"Pedagogical Anchor",
-"Scholarly Uptake",
-"Sustainability & Policy Relevance"
-],
-"is_oa": true,
-"oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"ACLS/Arcadia rule",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": true,
-"citation_count": 18,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Decent work and economic growth"
-],
-"has_teaching": true,
-"ta_ocw": 1,
-"ta_youtube": 0,
-"ta_ol_holdings": 2,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": true,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary A Life of Worry: Politics, Mental Health, and Vietnam’s Age of Anxiety (2023), published by University of California Press.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780520392168&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-"authors": "Allen L. Tran",
-"all_authors": [
-"Allen L. Tran"
-],
-"institutions": [
-"Bucknell University"
-],
-"download_count": 5125,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"LibraryThing"
-],
-"has_librarything": true,
-"librarything_rating": null,
-"has_award": true,
-"awards": [
-"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology"
-],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 17
-},
-{
-"label": "Facility",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 14
-},
-{
-"label": "Germany",
-"count": 3
-},
-{
-"label": "China",
-"count": 1
-},
-{
-"label": "Indonesia",
-"count": 1
-},
-{
-"label": "Netherlands",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "University of California, Riverside",
-"count": 12
-},
-{
-"label": "Udayana University",
-"count": 1
-},
-{
-"label": "NIOD Institute for War, Holocaust and Genocide Studies",
-"count": 1
-},
-{
-"label": "Universidad Peruana Cayetano Heredia",
-"count": 1
-},
-{
-"label": "Bielefeld University",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1525/luminos.162"
-]
-},
-{
-"file": "bookstory_10.1515_9780295750507.html",
-"title": "Upland Geopolitics",
-"type": "BookStory",
-"doi": "10.1515/9780295750507",
-"year": 2022,
-"venue": "University of Washington Press",
-"venue_name": "",
-"publisher": "University of Washington Press",
-"concepts": [
-"Geopolitics",
-"Geography",
-"Political science",
-"Politics",
-"Law"
-],
-"roles": [
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "gold",
-"oa_provenance_source": "DOAB",
-"oa_provenance_sources": [
-"DOAB",
-"Publisher-claimed",
-"ACLS/Arcadia rule",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 17,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 2,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Upland Geopolitics (2022), published by University of Washington Press.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780295750507&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-"authors": "Michael B. Dwyer",
-"all_authors": [
-"Michael B. Dwyer"
-],
-"institutions": [],
-"download_count": 33,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"LibraryThing"
-],
-"has_librarything": true,
-"librarything_rating": null,
-"has_award": true,
-"awards": [
-"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology"
-],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 16
-},
-{
-"label": "Archive",
-"count": 1
-},
-{
-"label": "Facility",
-"count": 1
-},
-{
-"label": "Nonprofit",
-"count": 1
-},
-{
-"label": "Other",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 9
-},
-{
-"label": "Netherlands",
-"count": 7
-},
-{
-"label": "United Kingdom",
-"count": 2
-},
-{
-"label": "Australia",
-"count": 1
-},
-{
-"label": "Azerbaijan",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "Erasmus University Rotterdam",
-"count": 5
-},
-{
-"label": "University of Cambridge",
-"count": 2
-},
-{
-"label": "Indiana University",
-"count": 2
-},
-{
-"label": "Rutgers, The State University of New Jersey",
-"count": 1
-},
-{
-"label": "University of North Carolina at Chapel Hill",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1515/9780295750507"
-]
-},
-{
-"file": "bookstory_10.1525_luminos.209.html",
-"title": "Mal-Nutrition: Maternal Health Science and the Reproduction of Harm",
-"type": "BookStory",
-"doi": "10.1525/luminos.209",
-"year": 2024,
-"venue": "University of California Press",
-"venue_name": "",
-"publisher": "University of California Press",
-"concepts": [
-"Harm",
-"Reproduction",
-"Do no harm",
-"Medicine",
-"Environmental health",
-"Psychology",
-"Biology",
-"Psychiatry"
-],
-"roles": [
-"Scholarly Uptake",
-"Sustainability & Policy Relevance"
-],
-"is_oa": true,
-"oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"ACLS/Arcadia rule",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": true,
-"citation_count": 17,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Zero hunger"
-],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 1,
-"ta_ol_holdings": 1,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": true,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Mal-Nutrition: Maternal Health Science and the Reproduction of Harm (2024), published by University of California Press.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780520404427&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-"authors": "Emily Yates-Doerr",
-"all_authors": [
-"Emily Yates-Doerr"
-],
-"institutions": [],
-"download_count": 1996,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"LibraryThing"
-],
-"has_librarything": true,
-"librarything_rating": null,
-"has_award": true,
-"awards": [
-"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology"
-],
-"platform_counts": {},
-"is_top1pct": true,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 17
-},
-{
-"label": "Healthcare",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 15
-},
-{
-"label": "Brazil",
-"count": 1
-},
-{
-"label": "Denmark",
-"count": 1
-},
-{
-"label": "Mexico",
-"count": 1
-},
-{
-"label": "Samoa",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "University of California, Riverside",
-"count": 11
-},
-{
-"label": "Universidad de Guanajuato",
-"count": 1
-},
-{
-"label": "University of Kansas",
-"count": 1
-},
-{
-"label": "Rochester Institute of Technology",
-"count": 1
-},
-{
-"label": "Aarhus University",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1525/luminos.209"
-]
-},
-{
 "file": "bookstory_10.3998_mpub.9853855.html",
 "title": "Music on the Move",
 "type": "BookStory",
@@ -25423,8 +24700,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Music on the Move,\" authored by Danielle Fosler-Lussier and published by the University of Michigan Press in 2020, has garnered significant academic interest with 17 citations.",
@@ -25569,11 +24846,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its lack of citations and online mentions, \"Brokers of Modernity,\" published by Leuven University Press in 2019, has begun to carve out a niche in scholarly discourse, as …",
@@ -26171,11 +25448,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its recent publication in 2021 by Leuven University Press, \"The Global Horizon\" has observed relatively low engagement metrics, with no citations reported.",
@@ -26583,11 +25860,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of citations or public discourse, \"Essays on Plato's Epistemology\" by Leuven University Press remains a significant scholarly contribution within its field, sh…",
@@ -26901,11 +26178,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book \"The Elemental Analysis of Glass Beads,\" published by Leuven University Press in 2022, contributes significantly to the field by demonstrating robust scholarly uptake and…",
@@ -27053,11 +26330,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book \"Building Collaborative Governance in Times of Uncertainty,\" published by Leuven University Press in 2023, demonstrates a strong inclination towards scholarly uptake, evi…",
@@ -27191,7 +26468,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -28281,114 +27558,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.1101/2023.12.09.570606"
-]
-},
-{
-"file": "bookstory_10.11647_obp.0339.html",
-"title": "Decolonial Ecologies",
-"type": "BookStory",
-"doi": "10.11647/obp.0339",
-"year": 2023,
-"venue": "Open Book Publishers",
-"venue_name": "",
-"publisher": "Open Book Publishers",
-"concepts": [
-"Textuality",
-"Indigenous",
-"Enlightenment",
-"Vision",
-"Natural (archaeology)",
-"Art",
-"Sculpture",
-"Politics"
-],
-"roles": [
-"Scholarly Uptake",
-"Sustainability & Policy Relevance"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"ACLS/Arcadia rule",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": true,
-"citation_count": 11,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Quality Education"
-],
-"has_teaching": true,
-"ta_ocw": 5,
-"ta_youtube": 1,
-"ta_ol_holdings": 2,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Decolonial Ecologies (2023), published by Open Book Publishers.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781800649743&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-"authors": "Joanna Page",
-"all_authors": [
-"Joanna Page"
-],
-"institutions": [
-"University of Cambridge"
-],
-"download_count": 5104,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"News",
-"LibraryThing"
-],
-"has_librarything": true,
-"librarything_rating": null,
-"has_award": true,
-"awards": [
-"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
-],
-"platform_counts": {
-"news": 1
-},
-"is_top1pct": false,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "Spain",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "Universitat de Girona",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.11647/obp.0339"
 ]
 },
 {
@@ -29893,11 +29062,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The forthcoming book, \"Digital Media Practices in Households,\" published by Routledge in 2025, is positioned to attract scholarly interest in the area of digital media and its imp…",
@@ -29966,134 +29135,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.5117/9789462989504"
-]
-},
-{
-"file": "bookstory_10.5744_9781683401988.html",
-"title": "Writing the New World: The Politics of Natural History in the Early Spanish Empire",
-"type": "BookStory",
-"doi": "10.5744/9781683401988",
-"year": 2021,
-"venue": "University of Florida Press",
-"venue_name": "",
-"publisher": "University of Florida Press",
-"concepts": [
-"Politics",
-"Modernity",
-"Empire",
-"Colonialism",
-"Narrative",
-"Faith",
-"History",
-"Context (archaeology)"
-],
-"roles": [
-"Sustainability & Policy Relevance",
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "gold",
-"oa_provenance_source": "DOAB",
-"oa_provenance_sources": [
-"DOAB",
-"Publisher-claimed",
-"ACLS/Arcadia rule",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 9,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Life in Land"
-],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 4,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Writing the New World: The Politics of Natural History in the Early Spanish Empire (2021), published by University of Florida Press.",
-"cover_url": "",
-"authors": "Mauro Jose Caraccioli",
-"all_authors": [
-"Mauro Jose Caraccioli"
-],
-"institutions": [],
-"download_count": 1153,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"LibraryThing"
-],
-"has_librarything": true,
-"librarything_rating": null,
-"has_award": true,
-"awards": [
-"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
-],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 6
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 4
-},
-{
-"label": "Italy",
-"count": 1
-},
-{
-"label": "Portugal",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "Virginia Tech",
-"count": 3
-},
-{
-"label": "University of Lisbon",
-"count": 1
-},
-{
-"label": "Centro Interuniversitário de História das Ciências e da Tecnologia",
-"count": 1
-},
-{
-"label": "University of Turin",
-"count": 1
-},
-{
-"label": "Michigan State University",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.5744/9781683401988"
 ]
 },
 {
@@ -30874,135 +29915,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "bookstory_10.1017_9781009486682.html",
-"title": "Foreign in Two Homelands",
-"type": "BookStory",
-"doi": "10.1017/9781009486682",
-"year": 2024,
-"venue": "Cambridge University Press",
-"venue_name": "",
-"publisher": "Cambridge University Press",
-"concepts": [
-"Political science",
-"History"
-],
-"roles": [
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "gold",
-"oa_provenance_source": "DOAB",
-"oa_provenance_sources": [
-"DOAB",
-"Publisher-claimed",
-"ACLS/Arcadia rule",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 8,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 1,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": true,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Foreign in Two Homelands (2024), published by Cambridge University Press.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781009486699&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-"authors": "Michelle Lynn Kahn",
-"all_authors": [
-"Michelle Lynn Kahn"
-],
-"institutions": [
-"University of Richmond"
-],
-"download_count": 0,
-"series_name": "Publications of the German Historical Institute",
-"series_id": null,
-"belongs_to_series": true,
-"mention_platforms": [
-"LibraryThing"
-],
-"has_librarything": true,
-"librarything_rating": null,
-"has_award": true,
-"awards": [
-"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History"
-],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 7
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 4
-},
-{
-"label": "Germany",
-"count": 2
-},
-{
-"label": "United Kingdom",
-"count": 1
-},
-{
-"label": "Iran",
-"count": 1
-},
-{
-"label": "Netherlands",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "University of Richmond",
-"count": 3
-},
-{
-"label": "Erzincan Binali Yıldırım University",
-"count": 1
-},
-{
-"label": "Utrecht University",
-"count": 1
-},
-{
-"label": "University of Erfurt",
-"count": 1
-},
-{
-"label": "University of Derby",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1017/9781009486682"
-]
-},
-{
 "file": "bookstory_10.11116_9789461663078.html",
 "title": "European Perspectives for Public Administration",
 "type": "BookStory",
@@ -31043,11 +29955,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication in 2019 by Leuven University Press, \"European Perspectives for Public Administration\" has not yet gained traction in academic citations or public discourse…",
@@ -31155,144 +30067,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "bookstory_10.11647_obp.0396.html",
-"title": "The Diagrammatics of ‘Race’",
-"type": "BookStory",
-"doi": "10.11647/obp.0396",
-"year": 2024,
-"venue": "Open Book Publishers",
-"venue_name": "",
-"publisher": "Open Book Publishers",
-"concepts": [
-"Kinship",
-"Family tree",
-"Race (biology)",
-"Humanity",
-"Ideology",
-"Eugenics",
-"Genealogy",
-"Categorization"
-],
-"roles": [
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"ACLS/Arcadia rule",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": true,
-"citation_count": 8,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary The Diagrammatics of ‘Race’ (2024), published by Open Book Publishers.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781805112631&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-"authors": "Marianne Sommer",
-"all_authors": [
-"Marianne Sommer"
-],
-"institutions": [
-"Pennsylvania State University"
-],
-"download_count": 3048,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"LibraryThing"
-],
-"has_librarything": true,
-"librarything_rating": null,
-"has_award": true,
-"awards": [
-"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology"
-],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 7
-},
-{
-"label": "Facility",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "Germany",
-"count": 2
-},
-{
-"label": "United States",
-"count": 2
-},
-{
-"label": "Austria",
-"count": 1
-},
-{
-"label": "Switzerland",
-"count": 1
-},
-{
-"label": "India",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology",
-"count": 1
-},
-{
-"label": "SRM Institute of Science and Technology",
-"count": 1
-},
-{
-"label": "University of Lucerne",
-"count": 1
-},
-{
-"label": "Chennai Mathematical Institute",
-"count": 1
-},
-{
-"label": "Washington University in St. Louis",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.11647/obp.0396"
-]
-},
-{
 "file": "bookstory_10.3726_b21634.html",
 "title": "Streaming the Formula 1 Rivalry",
 "type": "BookStory",
@@ -31332,7 +30106,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -31461,10 +30235,10 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 3,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -31592,8 +30366,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": true,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
 "excerpt": "Short impact summary The COVID-19 Open Research Dataset (CORD-19) has recorded 17,302 downloads and 20,594 views, indicating significant engagement from the research community.",
@@ -32104,11 +30878,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Published in 2024 by Peter Lang Verlag, Educational Agency and Activism in Linguistic Landscape Studies , edited by Durk Gorter and Edina Krompák, has registered 345 open-access d…",
@@ -32838,11 +31612,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The Wheat Genome represents an important scholarly work published by Springer International Publishing in 2024.",
@@ -32985,8 +31759,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of citation and community discourse metrics, \"Powers of Divergence: An Experimental Approach to Music Performance\" has potential insights within academic circl…",
@@ -33113,8 +31887,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book \"Virtual Works – Actual Things,\" published by Leuven University Press in 2018, presents a unique exploration of the intersection between digital and physical realities.",
@@ -33224,11 +31998,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Performing Hysteria,\" published by Leuven University Press in 2020, has yet to generate significant citations or online discourse, indicating a nascent footprint within both acad…",
@@ -33358,11 +32132,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite having recorded no public engagement or citation metrics, \"Public Administration in Ethiopia,\" published by Leuven University Press in 2020, offers a specialized explorati…",
@@ -33507,8 +32281,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite being pre-publication, \"Adaptation in the Age of Media Convergence\" has garnered notable attention, indicating its potential influence in the field of media studies.",
@@ -34823,11 +33597,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 1,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book \"Logic of Experimentation: Rethinking Music Performance Through Artistic Research,\" published by Leuven University Press in 2018, offers a fresh perspective on music perf…",
@@ -34927,11 +33701,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication in 2019 not garnering any recorded citations or social media mentions, \"Mapping Landscapes in Transformation\" by Leuven University Press stands as a work o…",
@@ -35058,11 +33832,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 2,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of citations or broad public discourse at the time of its publication, \"Migration at Work\" offers valuable insights into the intersections of migration and lab…",
@@ -35201,11 +33975,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Published by Leuven University Press in 2022, \"Unfinished Histories\" presents a scholarly exploration of historical narratives.",
@@ -35330,11 +34104,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Published in 2023 by Leuven University Press, \"The Leopard, the Lion, and the Cock\" is a notable work that highlights the author's scholarly contribution, evidenced by its emergin…",
@@ -35438,11 +34212,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication in 2012 and a current citation count of five, \"Gender and Christianity in Modern Europe\" has demonstrated its relevance within academic circles, particular…",
@@ -35517,133 +34291,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.11116/GCME_KAD"
-]
-},
-{
-"file": "bookstory_10.1515_9780295753317.html",
-"title": "Kernels of Resistance",
-"type": "BookStory",
-"doi": "10.1515/9780295753317",
-"year": 2024,
-"venue": "University of Washington Press",
-"venue_name": "",
-"publisher": "University of Washington Press",
-"concepts": [
-"Resistance (ecology)",
-"Computer science",
-"Biology",
-"Ecology"
-],
-"roles": [
-"Sustainability & Policy Relevance",
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"ACLS/Arcadia rule",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": true,
-"citation_count": 5,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Climate action"
-],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 3,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Kernels of Resistance (2024), published by University of Washington Press.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780295753317&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-"authors": "Liza Grandia",
-"all_authors": [
-"Liza Grandia"
-],
-"institutions": [],
-"download_count": 181,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"LibraryThing"
-],
-"has_librarything": true,
-"librarything_rating": null,
-"has_award": true,
-"awards": [
-"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
-],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 3
-},
-{
-"label": "Nonprofit",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 3
-},
-{
-"label": "China",
-"count": 1
-},
-{
-"label": "Malaysia",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "HELP University",
-"count": 1
-},
-{
-"label": "International Food Policy Research Institute",
-"count": 1
-},
-{
-"label": "Guangdong University of Foreign Studies",
-"count": 1
-},
-{
-"label": "University of Malaya",
-"count": 1
-},
-{
-"label": "University at Buffalo, State University of New York",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1515/9780295753317"
 ]
 },
 {
@@ -36375,11 +35022,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book \"Migratie in België in 21 vragen en antwoorden,\" published by Leuven University Press in 2018, serves as a significant resource for understanding migration issues in Belg…",
@@ -36496,11 +35143,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 1,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite limited citations and community discourse, \"Images of Immigrants and Refugees\" offers valuable insights into the portrayal of immigration and refugee issues, showcasing a …",
@@ -36638,11 +35285,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 1,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book \"Oil Wealth and Development in Uganda and Beyond,\" published by Leuven University Press in 2019, highlights the complex relationship between oil wealth and socioeconomic …",
@@ -36788,11 +35435,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Revival After the Great War,\" published by Leuven University Press in 2021, demonstrates a significant commercial linkage, indicating strong engagement from platforms such as Ama…",
@@ -36906,11 +35553,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Christian Masculinity,\" published by Leuven University Press in 2021, explores the nuances of masculinity within Christian contexts.",
@@ -36992,11 +35639,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its recent publication in 2022, the book \"Homo Mimeticus\" has yet to generate significant academic citations or community discourse.",
@@ -37116,11 +35763,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its recent publication in 2023, \"Silver Empowerment\" stands as a pivotal resource within its field, demonstrating substantial commercial linkage through its availability o…",
@@ -37203,143 +35850,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "bookstory_10.1525_luminos.183.html",
-"title": "Muddy Thinking in the Mississippi River Delta: A Call for Reclamation",
-"type": "BookStory",
-"doi": "10.1525/luminos.183",
-"year": 2024,
-"venue": "University of California Press",
-"venue_name": "",
-"publisher": "University of California Press",
-"concepts": [
-"Land reclamation",
-"Mississippi delta",
-"River delta",
-"Delta",
-"Hydrology (agriculture)",
-"Geography",
-"Environmental science",
-"Water resource management"
-],
-"roles": [
-"Sustainability & Policy Relevance",
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"ACLS/Arcadia rule",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": true,
-"citation_count": 4,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Climate action"
-],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 2,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": true,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Muddy Thinking in the Mississippi River Delta: A Call for Reclamation (2024), published by University of California Press.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780520397200&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-"authors": "Ned Randolph",
-"all_authors": [
-"Ned Randolph"
-],
-"institutions": [
-"University of California San Diego"
-],
-"download_count": 2035,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"LibraryThing"
-],
-"has_librarything": true,
-"librarything_rating": null,
-"has_award": true,
-"awards": [
-"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
-],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 4
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 2
-},
-{
-"label": "Australia",
-"count": 1
-},
-{
-"label": "Ireland",
-"count": 1
-},
-{
-"label": "India",
-"count": 1
-},
-{
-"label": "Sri Lanka",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "Purchase College",
-"count": 1
-},
-{
-"label": "Tulane University",
-"count": 1
-},
-{
-"label": "SUNY College of Environmental Science and Forestry",
-"count": 1
-},
-{
-"label": "University of Sri Jayewardenepura",
-"count": 1
-},
-{
-"label": "University of Moratuwa",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1525/luminos.183"
-]
-},
-{
 "file": "bookstory_10.3726_978-3-0352-6563-7.html",
 "title": "Lotze et son héritage",
 "type": "BookStory",
@@ -37376,7 +35886,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -38221,8 +36731,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication in 2015 and the absence of citations or social media mentions, \"Experimental Affinities in Music\" presents a noteworthy avenue for exploration within its a…",
@@ -38312,8 +36822,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its release in 2018 through Leuven University Press, \"Transpositions\" has yet to garner significant academic engagement, as evidenced by the absence of citations and onlin…",
@@ -38415,11 +36925,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 2,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication in 2020, \"Across Anthropology\" has yet to gain significant traction within academic circles, recorded with zero citations.",
@@ -38504,11 +37014,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite having no recorded citations or online discussions, \"The Tacit Dimension\" published by Leuven University Press in 2021 shows evidence of a strong commercial linkage, sugge…",
@@ -38638,11 +37148,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Living with History, 1914-1964,\" published by Leuven University Press in 2021, reflects a significant scholarly output in its field, although it has not yet garnered citations or…",
@@ -38758,11 +37268,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Making Home(s) in Displacement,\" published by Leuven University Press in 2021, addresses critical themes of home and belonging amidst forced displacement.",
@@ -38887,11 +37397,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its recent publication year of 2021, \"Translation Policies in Legal and Institutional Settings\" has not yet garnered formal citations or online discourse.",
@@ -39004,11 +37514,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Absent Presences in the Colonial Archive,\" published by Leuven University Press in 2022, explores themes critical to understanding colonial legacies and their contemporary implic…",
@@ -39116,11 +37626,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The work titled \"Newcomers Navigating the Welfare State,\" published in 2023 by Leuven University Press, addresses critical elements related to the welfare state and its navigation…",
@@ -39240,8 +37750,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Published in 2015 by Peter Lang Verlag as part of the long-running Philosophie et Politique / Philosophy and Politics series, Nathan Van Camp's edited volume Redesigning Life enga…",
@@ -39348,7 +37858,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -39460,7 +37970,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -39553,7 +38063,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -39646,7 +38156,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -39751,7 +38261,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -41132,11 +39642,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 1,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Participatiegolven,\" published by Leuven University Press in 2019, explores significant themes surrounding participation in various contexts.",
@@ -41250,11 +39760,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of citation and community discourse metrics, \"Mongameli Mabona,\" published by Leuven University Press in 2021, demonstrates commercial potential and relevance …",
@@ -41355,11 +39865,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Published in 2021 by Leuven University Press, \"Evolving as a Digital Scholar\" addresses the contemporary transitions and methodologies within digital scholarship.",
@@ -41476,11 +39986,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Published in 2021 by Leuven University Press, \"A Dark Trace\" currently has a small but significant scholarly uptake, with two recorded citations.",
@@ -41612,11 +40122,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"At Home in Renaissance Bruges,\" published by Leuven University Press in 2022, explores significant themes related to the cultural and social dynamics of Renaissance Bruges.",
@@ -41715,11 +40225,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Islamic Glass in the Making\" published by Leuven University Press in 2022, stands at the intersection of academic rigor and commercial linkage, indicating its relevance in both s…",
@@ -41836,11 +40346,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of citations and public discourse metrics indicating its reach, \"The Hybrid Practitioner,\" published by Leuven University Press in 2022, reflects a solid engag…",
@@ -41946,11 +40456,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Published in 2022, the \"Handbook for Ethiopian Public Administration Program Accreditation\" by Leuven University Press has laid a foundational text aimed at enhancing the standard…",
@@ -42080,11 +40590,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Aristotle and the Ontology of St.",
@@ -42187,11 +40697,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of external citations or online mentions, \"Contested Legacies,\" published by Leuven University Press in 2023, hints at promising engagement in academic discour…",
@@ -42300,11 +40810,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite limited citations and online discourse, \"A Small Nation in the Turmoil of the Second World War\" published by Leuven University Press in 2013, demonstrates a considerable c…",
@@ -42368,213 +40878,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "bookstory_10.1515_9781501777394.html",
-"title": "Border of Water and Ice",
-"type": "BookStory",
-"doi": "10.1515/9781501777394",
-"year": 2024,
-"venue": "Cornell University Press",
-"venue_name": "",
-"publisher": "Cornell University Press",
-"concepts": [
-"Geology",
-"Geography"
-],
-"roles": [
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "gold",
-"oa_provenance_source": "DOAB",
-"oa_provenance_sources": [
-"DOAB",
-"OAPEN",
-"Publisher-claimed",
-"ACLS/Arcadia rule",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 2,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": true,
-"ta_ocw": 1,
-"ta_youtube": 2,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": true,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Border of Water and Ice (2024), published by Cornell University Press.",
-"cover_url": "https://library.oapen.org/rest/bitstreams/ce06a01a-5213-43e9-adac-d3cb0d7bbcdb/retrieve",
-"authors": "Joseph A. Seeley",
-"all_authors": [
-"Joseph A. Seeley"
-],
-"institutions": [],
-"download_count": 659,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"LibraryThing"
-],
-"has_librarything": true,
-"librarything_rating": null,
-"has_award": true,
-"awards": [
-"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History"
-],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 2
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 2
-}
-],
-"citing_institutions": [
-{
-"label": "University of Iowa",
-"count": 1
-},
-{
-"label": "Massachusetts Institute of Technology",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1515/9781501777394"
-]
-},
-{
-"file": "bookstory_10.1525_9780520380196.html",
-"title": "Knowing about Genocide",
-"type": "BookStory",
-"doi": "10.1525/9780520380196",
-"year": 2021,
-"venue": "University of California Press",
-"venue_name": "",
-"publisher": "University of California Press",
-"concepts": [
-"Genocide",
-"Denial",
-"Armenian",
-"Disinformation",
-"Context (archaeology)",
-"Human rights",
-"Hegemony",
-"Politics"
-],
-"roles": [
-"Sustainability & Policy Relevance",
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"ACLS/Arcadia rule",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": true,
-"citation_count": 2,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Peace, Justice and strong institutions"
-],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 1,
-"ta_ol_holdings": 2,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Knowing about Genocide (2021), published by University of California Press.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780520380196&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-"authors": "Joachim J. Savelsberg",
-"all_authors": [
-"Joachim J. Savelsberg"
-],
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"LibraryThing"
-],
-"has_librarything": true,
-"librarything_rating": null,
-"has_award": true,
-"awards": [
-"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History"
-],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 2
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 2
-}
-],
-"citing_institutions": [
-{
-"label": "University of Minnesota",
-"count": 1
-},
-{
-"label": "Hamilton College",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1525/9780520380196"
-]
-},
-{
 "file": "bookstory_10.3726_978-3-0352-6632-0.html",
 "title": "Forme(s) et modes d’être / Form(s) and Modes of Being",
 "type": "BookStory",
@@ -42610,7 +40913,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -42707,7 +41010,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -42809,8 +41112,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Published in 2019 by Peter Lang Verlag as part of the long-running Reimagining Ireland series, The Great Irish Famine and Social Class , edited by Marguerite Corporaal and Peter G…",
@@ -42901,7 +41204,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -43012,8 +41315,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The forthcoming book \"Human Trafficking in Medieval Europe,\" set for publication by Routledge in 2025, explores a critical yet under-researched area of historical scholarship.",
@@ -45650,7 +43953,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -45733,11 +44036,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book \"Tracheal Transplantation,\" published by Leuven University Press in 2019, focuses on a niche yet critical area within medical science.",
@@ -45869,11 +44172,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 1,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite being published in 2019, \"Financing Quality Education for All\" showcases strong potential for sustainability and policy relevance in the field of educational finance, refl…",
@@ -45975,11 +44278,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 2,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its release in 2020, \"Arrival Cities\" has yet to receive citations or public engagement on platforms such as Wikipedia and Reddit.",
@@ -46063,11 +44366,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 1,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Dialogen over België,\" published by Leuven University Press in 2020, navigates the complex socio-political landscape of Belgium.",
@@ -46168,11 +44471,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its publication in 2020, \"Strategic Imaginations\" has shown limited scholarly uptake, with no recorded citations or mentions across high-fidelity social platforms.",
@@ -46271,11 +44574,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The scholarly work titled \"Working Through Colonial Collections,\" published by Leuven University Press in 2022, explores significant themes related to colonial collections, contri…",
@@ -46377,11 +44680,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Although \"Comunidad, pertenencia, extrenjería\" has not generated formal citations or online discussions as of yet, it appears to have established a strong commercial linkage, bein…",
@@ -46480,11 +44783,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Published in 2022 by Leuven University Press, \"Plutarch’s Cosmological Ethics\" has yet to gain measurable traction within academic discourse, evidenced by its current citation cou…",
@@ -46562,11 +44865,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Portraits and Poses,\" published by Leuven University Press in 2022, is a notable academic contribution, enriched by a commercial linkage evidenced by its availability on platform…",
@@ -46663,11 +44966,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Published by Leuven University Press in 2023, \"Tot de bodem\" has yet to make a significant mark in terms of citations and community discourse.",
@@ -46777,11 +45080,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Although \"The Belgian Photonovel, 1954-1985\" has not yet reported any citations or mentions across various platforms, its association with commercial linkage through outlets like …",
@@ -46873,11 +45176,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Documenting Ancient Sagalassos,\" published by Leuven University Press in 2023, demonstrates a significant scholarly effort focused on the archaeological site of Sagalassos.",
@@ -46959,11 +45262,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The upcoming publication titled \"Between Conventional and Experimental,\" set to release in 2024 by Leuven University Press, showcases the intersection of traditional and innovativ…",
@@ -47069,11 +45372,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite being a forthcoming title with no current citations or online mentions, \"Architectures of Resistance\" by Leuven University Press is positioned within a landscape of commer…",
@@ -47172,11 +45475,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite being newly published in 2024, \"Pietro Pomponazzi and the Renaissance Theory of the Elements\" showcases significant scholarly potential, indicated by a strong commercial l…",
@@ -47270,7 +45573,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -47374,11 +45677,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite being published in 2014, \"New Multicultural Identities in Europe\" by Leuven University Press appears to lack significant academic engagement and public discourse, with no …",
@@ -47446,105 +45749,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "bookstory_10.1525_luminos.193.html",
-"title": "Making Sense: Language, Ethics, and Understanding in Deaf Nepal",
-"type": "BookStory",
-"doi": "10.1525/luminos.193",
-"year": 2024,
-"venue": "University of California Press",
-"venue_name": "",
-"publisher": "University of California Press",
-"concepts": [
-"Linguistics",
-"Psychology",
-"Sociology",
-"Philosophy"
-],
-"roles": [
-"Sustainability & Policy Relevance",
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"ACLS/Arcadia rule",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": true,
-"citation_count": 1,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Quality Education"
-],
-"has_teaching": true,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 2,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": true,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Making Sense: Language, Ethics, and Understanding in Deaf Nepal (2024), published by University of California Press.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780520399235&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-"authors": "E. Mara Green",
-"all_authors": [
-"E. Mara Green"
-],
-"institutions": [],
-"download_count": 1304,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"LibraryThing"
-],
-"has_librarything": true,
-"librarything_rating": null,
-"has_award": true,
-"awards": [
-"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology"
-],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "University of Memphis",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1525/luminos.193"
-]
-},
-{
 "file": "bookstory_10.3726_978-3-0352-6588-0.html",
 "title": "The Point of Philosophy",
 "type": "BookStory",
@@ -47583,7 +45787,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -47665,7 +45869,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -47766,7 +45970,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -47897,11 +46101,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 1,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The upcoming book Urban Fantasy , published by Lever Press in 2024, stands at the intersection of scholarly discourse and commercial engagement, reflecting a strong potential for …",
@@ -47990,8 +46194,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Although \"List Cultures\" has yet to receive citations or engage with public discourse through platforms such as Wikipedia or Reddit, it demonstrates potential through its commerci…",
@@ -48098,7 +46302,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -52759,6 +50963,150 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.1017_9781009305815.html",
+"title": "States-in-Waiting",
+"type": "BookStory",
+"doi": "10.1017/9781009305815",
+"year": 2024,
+"venue": "Cambridge University Press",
+"venue_name": "",
+"publisher": "Cambridge University Press",
+"concepts": [
+"History",
+"Geography"
+],
+"roles": [
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Reduced inequalities"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 3,
+"ta_ol_holdings": 3,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary States-in-Waiting (2024), published by Cambridge University Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781009305846&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Lydia Walker",
+"all_authors": [
+"Lydia Walker"
+],
+"institutions": [
+"The Ohio State University"
+],
+"download_count": 669,
+"series_name": "Global and International History",
+"series_id": null,
+"belongs_to_series": true,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History"
+],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 20
+},
+{
+"label": "Company",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Government",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 13
+},
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "India",
+"count": 2
+},
+{
+"label": "Netherlands",
+"count": 2
+},
+{
+"label": "Switzerland",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Washington",
+"count": 10
+},
+{
+"label": "Leiden University",
+"count": 2
+},
+{
+"label": "Federal Foreign Office",
+"count": 1
+},
+{
+"label": "Mahindra Group (India)",
+"count": 1
+},
+{
+"label": "University of Fribourg",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1017/9781009305815"
+]
+},
+{
 "file": "bookstory_10.1017_9781009383981.html",
 "title": "Democracy and Empire",
 "type": "BookStory",
@@ -52803,11 +51151,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Democracy and Empire (2023), published by Cambridge University Press.",
@@ -52901,6 +51249,135 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.1017_9781009486682.html",
+"title": "Foreign in Two Homelands",
+"type": "BookStory",
+"doi": "10.1017/9781009486682",
+"year": 2024,
+"venue": "Cambridge University Press",
+"venue_name": "",
+"publisher": "Cambridge University Press",
+"concepts": [
+"Political science",
+"History"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 1,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Foreign in Two Homelands (2024), published by Cambridge University Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781009486699&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Michelle Lynn Kahn",
+"all_authors": [
+"Michelle Lynn Kahn"
+],
+"institutions": [
+"University of Richmond"
+],
+"download_count": 0,
+"series_name": "Publications of the German Historical Institute",
+"series_id": null,
+"belongs_to_series": true,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 7
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 4
+},
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "United Kingdom",
+"count": 1
+},
+{
+"label": "Iran",
+"count": 1
+},
+{
+"label": "Netherlands",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Richmond",
+"count": 3
+},
+{
+"label": "Erzincan Binali Yıldırım University",
+"count": 1
+},
+{
+"label": "Utrecht University",
+"count": 1
+},
+{
+"label": "University of Erfurt",
+"count": 1
+},
+{
+"label": "University of Derby",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1017/9781009486682"
+]
+},
+{
 "file": "bookstory_10.11116_9789461662293.html",
 "title": "Plutarch's Science of Natural Problems",
 "type": "BookStory",
@@ -52944,8 +51421,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Plutarch's Science of Natural Problems\" has been positioned as a notable scholarly contribution since its publication by Leuven University Press in 2017.",
@@ -53017,11 +51494,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 1,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary As German as Kafka, published by Leuven University Press in 2019, has not yet generated academic citations or community discourse, highlighting the need for further engagement wit…",
@@ -53100,11 +51577,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 1,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite the lack of traditional metrics such as citations or online mentions, \"Militant Jihadism,\" published by Leuven University Press in 2019, presents a significant narrative w…",
@@ -53176,11 +51653,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 2,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite a lack of citations and online discourse, \"The Figure of Knowledge\" remains an exceptional resource within STEM, showcasing its academic integrity through strong commercia…",
@@ -53257,11 +51734,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Japan’s Book Donation to the University of Louvain, published by Leuven University Press in 2020, stands as a significant contribution to academic discourse, despite having no rec…",
@@ -53343,11 +51820,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite being published in 2020 by Leuven University Press, \"Turkish German Muslims and Comedy Entertainment\" has not yet garnered citations or public discourse across various pla…",
@@ -53422,11 +51899,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite generating no recorded citations or online mentions, the book \"Contact Zones,\" published by Leuven University Press in 2020, serves as a pivotal contribution in its field.",
@@ -53505,11 +51982,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book \"Fake news in oorlogstijd,\" published by Leuven University Press in 2021, addresses the critical implications and challenges posed by fake news during wartime, reflecting…",
@@ -53588,11 +52065,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of online mentions or community engagement, the book \"Spatial Boundaries, Abounding Spaces\" reflects a solid conceptual foundation in its exploration of spatia…",
@@ -53676,7 +52153,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -53756,7 +52233,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -53841,8 +52318,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of citations and online discourse for the book \"Cold War Triangle,\" it stands out due to its strong commercial linkage, appearing on platforms like Amazon and …",
@@ -53917,11 +52394,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite its recent publication in 2021 by Leuven University Press, the book \"Ubiquity\" has not yet received academic citations or public discourse across major platforms.",
@@ -54002,11 +52479,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite being published in 2021 by Leuven University Press, \"Protagonists of War\" has yet to garner external citations or significant public mentions, indicating a limited visibil…",
@@ -54086,8 +52563,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of citations and community discourse, \"De stad op de berg,\" published by Leuven University Press in 2021, indicates potential for future recognition given its …",
@@ -54166,11 +52643,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Since its publication in 2021, \"Character Constellations\" has not yet recorded any formal citations, indicating a nascent stage in its academic visibility.",
@@ -54253,11 +52730,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book \"Martin Versfeld,\" published by Leuven University Press in 2021, exemplifies a significant scholarly contribution within its domain, despite a noticeable absence of citat…",
@@ -54338,11 +52815,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of quantitative engagement metrics, \"A Constellation of Courts,\" published by Leuven University Press in 2021, demonstrates a notable commitment to research in…",
@@ -54416,11 +52893,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book *Dies irae*, published by Leuven University Press in 2021, currently lacks documented citations and online discourse, indicating a limited academic reach at this time.",
@@ -54496,11 +52973,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite being published by Leuven University Press in 2021, \"Predicting the Past\" remains without citations or online discourse, indicating that it has not yet garnered significan…",
@@ -54579,11 +53056,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book \"Leaving Spain,\" published by Leuven University Press in 2022, demonstrates notable commercial reach as evidenced by its presence on platforms such as Amazon and Goodread…",
@@ -54663,11 +53140,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of online discourse or citations, the book titled \"Europees burgerschap in de klas\" published by Leuven University Press in 2022 demonstrates significant comme…",
@@ -54752,11 +53229,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Black Matrilineage, Photography, and Representation,\" published by Leuven University Press in 2022, represents a significant contribution to the discourse surrounding race, gende…",
@@ -54834,11 +53311,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Stilte in de klas,\" published by Leuven University Press in 2022, focuses on the significance of silence in educational environments.",
@@ -54919,11 +53396,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Exploring the Transnational Neighbourhood\" published by Leuven University Press in 2022, demonstrates a significant potential for commercialization, with evidence of listings on …",
@@ -55009,11 +53486,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite the recent publication of \"Mobs and Microbes\" by Leuven University Press in 2023 and its current lack of citations and online discussions, its commercial linkage suggests …",
@@ -55103,11 +53580,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The publication \"Sugar, Spice, and the Not So Nice\" by Leuven University Press showcases a commitment to meaningful research, reflecting its commercial linkages through platforms …",
@@ -55188,11 +53665,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book \"Islamophobia as a Form of Radicalisation,\" published by Leuven University Press in 2023, embarks on a critical exploration of how Islamophobia may function as a catalyst…",
@@ -55271,11 +53748,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Landscapes of Liberation,\" published by Leuven University Press in 2023, marks a significant contribution to its field, primarily through its commercial presence noted on platfor…",
@@ -55349,11 +53826,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Watching, Waiting,\" published by Leuven University Press in 2023, presents a unique exploration that has yet to generate substantial formal citations or community discourse.",
@@ -55438,11 +53915,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book \"Modern Etruscans,\" published by Leuven University Press in 2023, represents a significant contribution to the understanding of Etruscan culture.",
@@ -55524,11 +54001,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Building a White Nation,\" published by Leuven University Press in 2023, offers a critical exploration of the socio-political dynamics surrounding racial identity.",
@@ -55607,11 +54084,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book, \"Comics of the New Europe,\" published by Leuven University Press in 2023, explores the cultural and artistic dimensions of comic art in the European context, representin…",
@@ -55691,11 +54168,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Alles verandert altijd - Herziene editie,\" published by Leuven University Press in 2024, emerges as a compelling narrative within its discipline.",
@@ -55778,11 +54255,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The forthcoming book \"An Opaque Mirror For Trajan,\" set to be published by Leuven University Press in 2024, is anticipated to contribute to the scholarly discourse surrounding cla…",
@@ -55863,11 +54340,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Collecting Asian Art,\" set to be published by Leuven University Press in 2024, indicates a strong commercial potential based on its presence on major retail and review platforms …",
@@ -55956,11 +54433,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The book \"Francis Alÿs.",
@@ -56044,11 +54521,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Muslim Marriage and Non-Marriage,\" published by Leuven University Press in 2023, delves into critical aspects of marital and non-marital experiences within Muslim communities, ad…",
@@ -56131,11 +54608,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The forthcoming book, \"The Legacy of Elise Hall,\" published by Leuven University Press in 2024, represents a significant addition to the academic discourse, although it currently …",
@@ -56217,11 +54694,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary La Monarquía Indiana de Carlos II en la encrujiada is a forthcoming scholarly work published by Leuven University Press in 2024.",
@@ -56301,11 +54778,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Performing by the Book?\" is set to be published by Leuven University Press in 2024, marking a significant contribution to its field.",
@@ -56384,11 +54861,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary \"Re-Imagining Class,\" published by Leuven University Press in 2024, represents a significant scholarly contribution to the discourse on social class, although it currently lacks m…",
@@ -56470,11 +54947,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The forthcoming book, \"Plutarch and Rhetoric,\" published by Leuven University Press in 2024, is poised to contribute significantly to the discourse surrounding the intersection of…",
@@ -56549,11 +55026,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite a lack of community discourse and citations, \"Modern Islamic Thinking and Activism\" serves as a significant mark in the academic exploration of contemporary Islamic though…",
@@ -56625,11 +55102,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Mendl Mann’s 'The Fall of Berlin' has yet to generate significant academic citations or online discourse, reflecting a nascent impact within both scholarly and public domains.",
@@ -56712,8 +55189,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Image, Knife, and Gluepot (2019), published by Open Book Publishers.",
@@ -56807,6 +55284,671 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.11647_obp.0339.html",
+"title": "Decolonial Ecologies",
+"type": "BookStory",
+"doi": "10.11647/obp.0339",
+"year": 2023,
+"venue": "Open Book Publishers",
+"venue_name": "",
+"publisher": "Open Book Publishers",
+"concepts": [
+"Textuality",
+"Indigenous",
+"Enlightenment",
+"Vision",
+"Natural (archaeology)",
+"Art",
+"Sculpture",
+"Politics"
+],
+"roles": [
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": true,
+"ta_ocw": 5,
+"ta_youtube": 1,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Decolonial Ecologies (2023), published by Open Book Publishers.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781800649743&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Joanna Page",
+"all_authors": [
+"Joanna Page"
+],
+"institutions": [
+"University of Cambridge"
+],
+"download_count": 5104,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"News",
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
+],
+"platform_counts": {
+"news": 1
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Spain",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Universitat de Girona",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11647/obp.0339"
+]
+},
+{
+"file": "bookstory_10.11647_obp.0396.html",
+"title": "The Diagrammatics of ‘Race’",
+"type": "BookStory",
+"doi": "10.11647/obp.0396",
+"year": 2024,
+"venue": "Open Book Publishers",
+"venue_name": "",
+"publisher": "Open Book Publishers",
+"concepts": [
+"Kinship",
+"Family tree",
+"Race (biology)",
+"Humanity",
+"Ideology",
+"Eugenics",
+"Genealogy",
+"Categorization"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary The Diagrammatics of ‘Race’ (2024), published by Open Book Publishers.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781805112631&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Marianne Sommer",
+"all_authors": [
+"Marianne Sommer"
+],
+"institutions": [
+"Pennsylvania State University"
+],
+"download_count": 3048,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 7
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "Austria",
+"count": 1
+},
+{
+"label": "Switzerland",
+"count": 1
+},
+{
+"label": "India",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology",
+"count": 1
+},
+{
+"label": "SRM Institute of Science and Technology",
+"count": 1
+},
+{
+"label": "University of Lucerne",
+"count": 1
+},
+{
+"label": "Chennai Mathematical Institute",
+"count": 1
+},
+{
+"label": "Washington University in St. Louis",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11647/obp.0396"
+]
+},
+{
+"file": "bookstory_10.1515_9780295750507.html",
+"title": "Upland Geopolitics",
+"type": "BookStory",
+"doi": "10.1515/9780295750507",
+"year": 2022,
+"venue": "University of Washington Press",
+"venue_name": "",
+"publisher": "University of Washington Press",
+"concepts": [
+"Geopolitics",
+"Geography",
+"Political science",
+"Politics",
+"Law"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 2,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Upland Geopolitics (2022), published by University of Washington Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780295750507&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Michael B. Dwyer",
+"all_authors": [
+"Michael B. Dwyer"
+],
+"institutions": [],
+"download_count": 33,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 16
+},
+{
+"label": "Archive",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Nonprofit",
+"count": 1
+},
+{
+"label": "Other",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 9
+},
+{
+"label": "Netherlands",
+"count": 7
+},
+{
+"label": "United Kingdom",
+"count": 2
+},
+{
+"label": "Australia",
+"count": 1
+},
+{
+"label": "Azerbaijan",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Erasmus University Rotterdam",
+"count": 5
+},
+{
+"label": "University of Cambridge",
+"count": 2
+},
+{
+"label": "Indiana University",
+"count": 2
+},
+{
+"label": "Rutgers, The State University of New Jersey",
+"count": 1
+},
+{
+"label": "University of North Carolina at Chapel Hill",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1515/9780295750507"
+]
+},
+{
+"file": "bookstory_10.1515_9780295753317.html",
+"title": "Kernels of Resistance",
+"type": "BookStory",
+"doi": "10.1515/9780295753317",
+"year": 2024,
+"venue": "University of Washington Press",
+"venue_name": "",
+"publisher": "University of Washington Press",
+"concepts": [
+"Resistance (ecology)",
+"Computer science",
+"Biology",
+"Ecology"
+],
+"roles": [
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Climate action"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 3,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Kernels of Resistance (2024), published by University of Washington Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780295753317&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Liza Grandia",
+"all_authors": [
+"Liza Grandia"
+],
+"institutions": [],
+"download_count": 181,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 3
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 3
+},
+{
+"label": "China",
+"count": 1
+},
+{
+"label": "Malaysia",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "HELP University",
+"count": 1
+},
+{
+"label": "International Food Policy Research Institute",
+"count": 1
+},
+{
+"label": "Guangdong University of Foreign Studies",
+"count": 1
+},
+{
+"label": "University of Malaya",
+"count": 1
+},
+{
+"label": "University at Buffalo, State University of New York",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1515/9780295753317"
+]
+},
+{
+"file": "bookstory_10.1515_9781501769023.html",
+"title": "Ecological States",
+"type": "BookStory",
+"doi": "10.1515/9781501769023",
+"year": 2023,
+"venue": "Cornell University Press",
+"venue_name": "",
+"publisher": "Cornell University Press",
+"concepts": [
+"Ecology",
+"Geography",
+"Environmental science",
+"Biology"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OAPEN",
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 2,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Ecological States (2023), published by Cornell University Press.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/88bf9a37-ce8d-4ecb-8790-88f70c0c25ea/retrieve",
+"authors": "Jesse Rodenbiker",
+"all_authors": [
+"Jesse Rodenbiker"
+],
+"institutions": [],
+"download_count": 282,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
+],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 36
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Nonprofit",
+"count": 3
+},
+{
+"label": "Government",
+"count": 1
+},
+{
+"label": "Other",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 16
+},
+{
+"label": "China",
+"count": 13
+},
+{
+"label": "United Kingdom",
+"count": 6
+},
+{
+"label": "Hong Kong",
+"count": 6
+},
+{
+"label": "Australia",
+"count": 4
+}
+],
+"citing_institutions": [
+{
+"label": "Wageningen University & Research",
+"count": 4
+},
+{
+"label": "The University of Melbourne",
+"count": 3
+},
+{
+"label": "University College London",
+"count": 3
+},
+{
+"label": "New York University",
+"count": 3
+},
+{
+"label": "University of Hong Kong",
+"count": 3
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1515/9781501769023"
+]
+},
+{
 "file": "bookstory_10.1515_9781501773853.html",
 "title": "Poet-Monks",
 "type": "BookStory",
@@ -56846,8 +55988,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Poet-Monks (2024), published by Cornell University Press.",
@@ -56907,6 +56049,213 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.1515_9781501777394.html",
+"title": "Border of Water and Ice",
+"type": "BookStory",
+"doi": "10.1515/9781501777394",
+"year": 2024,
+"venue": "Cornell University Press",
+"venue_name": "",
+"publisher": "Cornell University Press",
+"concepts": [
+"Geology",
+"Geography"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"OAPEN",
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": true,
+"ta_ocw": 1,
+"ta_youtube": 2,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Border of Water and Ice (2024), published by Cornell University Press.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/ce06a01a-5213-43e9-adac-d3cb0d7bbcdb/retrieve",
+"authors": "Joseph A. Seeley",
+"all_authors": [
+"Joseph A. Seeley"
+],
+"institutions": [],
+"download_count": 659,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "University of Iowa",
+"count": 1
+},
+{
+"label": "Massachusetts Institute of Technology",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1515/9781501777394"
+]
+},
+{
+"file": "bookstory_10.1525_9780520380196.html",
+"title": "Knowing about Genocide",
+"type": "BookStory",
+"doi": "10.1525/9780520380196",
+"year": 2021,
+"venue": "University of California Press",
+"venue_name": "",
+"publisher": "University of California Press",
+"concepts": [
+"Genocide",
+"Denial",
+"Armenian",
+"Disinformation",
+"Context (archaeology)",
+"Human rights",
+"Hegemony",
+"Politics"
+],
+"roles": [
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Peace, Justice and strong institutions"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 1,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Knowing about Genocide (2021), published by University of California Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780520380196&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Joachim J. Savelsberg",
+"all_authors": [
+"Joachim J. Savelsberg"
+],
+"institutions": [],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 2
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+}
+],
+"citing_institutions": [
+{
+"label": "University of Minnesota",
+"count": 1
+},
+{
+"label": "Hamilton College",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1525/9780520380196"
+]
+},
+{
 "file": "bookstory_10.1525_9780520384521.html",
 "title": "At the Edges of Sleep",
 "type": "BookStory",
@@ -56950,8 +56299,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary At the Edges of Sleep (2022), published by University of California Press.",
@@ -57011,6 +56360,523 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.1525_luminos.162.html",
+"title": "A Life of Worry: Politics, Mental Health, and Vietnam’s Age of Anxiety",
+"type": "BookStory",
+"doi": "10.1525/luminos.162",
+"year": 2023,
+"venue": "University of California Press",
+"venue_name": "",
+"publisher": "University of California Press",
+"concepts": [
+"Prosperity",
+"Worry",
+"Ho chi minh",
+"Politics",
+"Anxiety",
+"Mental health",
+"Curiosity",
+"Psychology"
+],
+"roles": [
+"Pedagogical Anchor",
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Decent work and economic growth"
+],
+"has_teaching": true,
+"ta_ocw": 1,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary A Life of Worry: Politics, Mental Health, and Vietnam’s Age of Anxiety (2023), published by University of California Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780520392168&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Allen L. Tran",
+"all_authors": [
+"Allen L. Tran"
+],
+"institutions": [
+"Bucknell University"
+],
+"download_count": 5125,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 17
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 14
+},
+{
+"label": "Germany",
+"count": 3
+},
+{
+"label": "China",
+"count": 1
+},
+{
+"label": "Indonesia",
+"count": 1
+},
+{
+"label": "Netherlands",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of California, Riverside",
+"count": 12
+},
+{
+"label": "Udayana University",
+"count": 1
+},
+{
+"label": "NIOD Institute for War, Holocaust and Genocide Studies",
+"count": 1
+},
+{
+"label": "Universidad Peruana Cayetano Heredia",
+"count": 1
+},
+{
+"label": "Bielefeld University",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1525/luminos.162"
+]
+},
+{
+"file": "bookstory_10.1525_luminos.183.html",
+"title": "Muddy Thinking in the Mississippi River Delta: A Call for Reclamation",
+"type": "BookStory",
+"doi": "10.1525/luminos.183",
+"year": 2024,
+"venue": "University of California Press",
+"venue_name": "",
+"publisher": "University of California Press",
+"concepts": [
+"Land reclamation",
+"Mississippi delta",
+"River delta",
+"Delta",
+"Hydrology (agriculture)",
+"Geography",
+"Environmental science",
+"Water resource management"
+],
+"roles": [
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Climate action"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Muddy Thinking in the Mississippi River Delta: A Call for Reclamation (2024), published by University of California Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780520397200&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Ned Randolph",
+"all_authors": [
+"Ned Randolph"
+],
+"institutions": [
+"University of California San Diego"
+],
+"download_count": 2035,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 4
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 2
+},
+{
+"label": "Australia",
+"count": 1
+},
+{
+"label": "Ireland",
+"count": 1
+},
+{
+"label": "India",
+"count": 1
+},
+{
+"label": "Sri Lanka",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Purchase College",
+"count": 1
+},
+{
+"label": "Tulane University",
+"count": 1
+},
+{
+"label": "SUNY College of Environmental Science and Forestry",
+"count": 1
+},
+{
+"label": "University of Sri Jayewardenepura",
+"count": 1
+},
+{
+"label": "University of Moratuwa",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1525/luminos.183"
+]
+},
+{
+"file": "bookstory_10.1525_luminos.193.html",
+"title": "Making Sense: Language, Ethics, and Understanding in Deaf Nepal",
+"type": "BookStory",
+"doi": "10.1525/luminos.193",
+"year": 2024,
+"venue": "University of California Press",
+"venue_name": "",
+"publisher": "University of California Press",
+"concepts": [
+"Linguistics",
+"Psychology",
+"Sociology",
+"Philosophy"
+],
+"roles": [
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 2,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Making Sense: Language, Ethics, and Understanding in Deaf Nepal (2024), published by University of California Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780520399235&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "E. Mara Green",
+"all_authors": [
+"E. Mara Green"
+],
+"institutions": [],
+"download_count": 1304,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Memphis",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1525/luminos.193"
+]
+},
+{
+"file": "bookstory_10.1525_luminos.209.html",
+"title": "Mal-Nutrition: Maternal Health Science and the Reproduction of Harm",
+"type": "BookStory",
+"doi": "10.1525/luminos.209",
+"year": 2024,
+"venue": "University of California Press",
+"venue_name": "",
+"publisher": "University of California Press",
+"concepts": [
+"Harm",
+"Reproduction",
+"Do no harm",
+"Medicine",
+"Environmental health",
+"Psychology",
+"Biology",
+"Psychiatry"
+],
+"roles": [
+"Scholarly Uptake",
+"Sustainability & Policy Relevance"
+],
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Zero hunger"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 1,
+"ta_ol_holdings": 1,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Mal-Nutrition: Maternal Health Science and the Reproduction of Harm (2024), published by University of California Press.",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780520404427&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"authors": "Emily Yates-Doerr",
+"all_authors": [
+"Emily Yates-Doerr"
+],
+"institutions": [],
+"download_count": 1996,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Anthropology"
+],
+"platform_counts": {},
+"is_top1pct": true,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 17
+},
+{
+"label": "Healthcare",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 15
+},
+{
+"label": "Brazil",
+"count": 1
+},
+{
+"label": "Denmark",
+"count": 1
+},
+{
+"label": "Mexico",
+"count": 1
+},
+{
+"label": "Samoa",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of California, Riverside",
+"count": 11
+},
+{
+"label": "Universidad de Guanajuato",
+"count": 1
+},
+{
+"label": "University of Kansas",
+"count": 1
+},
+{
+"label": "Rochester Institute of Technology",
+"count": 1
+},
+{
+"label": "Aarhus University",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1525/luminos.209"
+]
+},
+{
 "file": "bookstory_10.21627_2019bq.html",
 "title": "Black Quotidian: Everyday History in African-American Newspapers",
 "type": "BookStory",
@@ -57050,11 +56916,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Black Quotidian: Everyday History in African-American Newspapers (2019), published by Stanford University Press.",
@@ -57157,11 +57023,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Harlem in Disorder: A Spatial History of How Racial Violence Changed in 1935 (2024), published by Stanford University Press.",
@@ -57241,7 +57107,7 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
 "has_openaire_reach": false,
@@ -57314,11 +57180,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of citations and mentions in public discourse platforms, \"Body, Capital, and Screens,\" published by Amsterdam University Press in 2020, may serve as a foundati…",
@@ -57398,12 +57264,12 @@ window.STORIES_DATA = [
 "ta_youtube": 1,
 "ta_ol_holdings": 0,
 "ta_otl": false,
-"has_peer_review": true,
-"has_prism_context": true,
-"has_prism_peer_review": true,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Renegotiating Patriarchy: Gender, Agency and the Bangladesh Paradox (2024), published by LSE Press.",
@@ -57550,10 +57416,10 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 4,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -57626,7 +57492,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -57696,7 +57562,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -57774,7 +57640,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -57849,7 +57715,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -57928,8 +57794,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary World War II Re-explored, the 2019 edited volume published by Peter Lang Verlag under the editorship of Jarosław Suchoples, Stephanie James, and Barbara Törnquist-Plewa, occupies …",
@@ -58007,7 +57873,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -58091,7 +57957,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -58166,7 +58032,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -58237,7 +58103,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -58317,7 +58183,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -58397,7 +58263,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -58478,7 +58344,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -58546,7 +58412,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -58623,7 +58489,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -58694,7 +58560,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -58775,7 +58641,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -58856,11 +58722,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary A Sense of Brutality (2020), published by Amherst College Press.",
@@ -58970,11 +58836,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Twining (2021), published by Amherst College Press.",
@@ -59108,11 +58974,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Owning My Masters (Mastered) (2024), published by University of Michigan Press.",
@@ -59209,15 +59075,15 @@ window.STORIES_DATA = [
 ],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 0,
+"ta_youtube": 4,
 "ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Abortion Pills (2024), published by Amherst College Press.",
@@ -59232,6 +59098,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
+"News",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -59240,7 +59107,9 @@ window.STORIES_DATA = [
 "awards": [
 "ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — History; Political Science"
 ],
-"platform_counts": {},
+"platform_counts": {
+"news": 8
+},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -59298,11 +59167,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Economic Diversification in Nigeria (2022), published by Bloomsbury Publishing Plc..",
@@ -59433,8 +59302,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite the absence of measurable public discourse and citation activity, \"Women in the Silent Cinema\" published by Amsterdam University Press in 2017 serves as a significant refe…",
@@ -59519,8 +59388,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The forthcoming book, \"Zootechnologies,\" published by Routledge in 2025, presents a novel exploration of the intersection between technology and animal husbandry.",
@@ -59587,7 +59456,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -59669,8 +59538,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": true,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
 "excerpt": "Short impact summary The software tool \"stineb/rpmodel,\" developed by Benjamin Stocker from ETH Zurich, has garnered 272 downloads and 1,274 views since its release in 2019.",
@@ -59753,10 +59622,10 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 5,
 "ta_otl": true,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -59795,6 +59664,134 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.5703/1288284317628"
+]
+},
+{
+"file": "bookstory_10.5744_9781683401988.html",
+"title": "Writing the New World: The Politics of Natural History in the Early Spanish Empire",
+"type": "BookStory",
+"doi": "10.5744/9781683401988",
+"year": 2021,
+"venue": "University of Florida Press",
+"venue_name": "",
+"publisher": "University of Florida Press",
+"concepts": [
+"Politics",
+"Modernity",
+"Empire",
+"Colonialism",
+"Narrative",
+"Faith",
+"History",
+"Context (archaeology)"
+],
+"roles": [
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "DOAB",
+"oa_provenance_sources": [
+"DOAB",
+"Publisher-claimed",
+"ACLS/Arcadia rule",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 0,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Life in Land"
+],
+"has_teaching": true,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 4,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Writing the New World: The Politics of Natural History in the Early Spanish Empire (2021), published by University of Florida Press.",
+"cover_url": "",
+"authors": "Mauro Jose Caraccioli",
+"all_authors": [
+"Mauro Jose Caraccioli"
+],
+"institutions": [],
+"download_count": 1153,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"LibraryThing"
+],
+"has_librarything": true,
+"librarything_rating": null,
+"has_award": true,
+"awards": [
+"ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
+],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 6
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 4
+},
+{
+"label": "Italy",
+"count": 1
+},
+{
+"label": "Portugal",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Virginia Tech",
+"count": 3
+},
+{
+"label": "University of Lisbon",
+"count": 1
+},
+{
+"label": "Centro Interuniversitário de História das Ciências e da Tecnologia",
+"count": 1
+},
+{
+"label": "University of Turin",
+"count": 1
+},
+{
+"label": "Michigan State University",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5744/9781683401988"
 ]
 },
 {
@@ -59842,11 +59839,11 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": true,
+"has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Sex Sounds (2022), published by The MIT Press.",
@@ -59958,7 +59955,7 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
+"has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
@@ -60058,8 +60055,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
+"has_openaire_reach": false,
+"has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Despite the publication year being 2018, \"The International Politics of the Middle East\" has yet to generate notable academic citations or public discourse in online platforms.",
@@ -62930,4 +62927,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 483, "total_articles": 190, "total_books": 214, "total_data": 72, "total_software": 7, "total_oa": 420, "pct_oa": 87, "total_citations": 186117, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 483, "total_articles": 190, "total_books": 214, "total_data": 72, "total_software": 7, "total_oa": 420, "pct_oa": 87, "total_citations": 185952, "num_disciplines": 30};

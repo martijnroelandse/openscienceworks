@@ -322,9 +322,8 @@
                         
                             <div><strong>Publisher:</strong> 
                                 
-                                    
+                                    Springer Nature
                                 
-                                <span id="publisher-value" data-publisher-label="Springer Nature">Springer Nature</span>
                             </div>
                         
                             <div><strong>Publication year:</strong> 
@@ -392,9 +391,6 @@
 <p class="story-text">The article's impact is further demonstrated through its inclusion in diverse scholarly venues, such as *Optics Communications* and *Chinese Physics B*, among others. This intertextuality underscores its interdisciplinary appeal and adaptability across various fields linked to quantum physics. The diverse citation landscape illustrates how concepts from the article have been vital for advancing discussions on quantum state transformations and statistical mechanics.</p>
 <p class="story-text">In addition to academic citations, the work has sparked discussions within the scientific community, evidenced by a mention on the platform Bluesky. This active engagement indicates that the article continues to resonate with contemporary discourse, inviting both critique and expansion of its themes. Furthermore, the article has been utilized as a teaching resource, with links appearing in educational videos, highlighting its role in informing new generations of researchers in quantum physics.</p>
 <p class="story-text">Overall, "Measured measurement" not only enhances our understanding of quantum mechanics but also exemplifies how pivotal research can cross disciplinary boundaries, fostering dialogue and inquiry in various domains related to physics and measurement. Its legacy continues as it influences both current research and educational pathways in the field.</p></div>
-            <div class="muted" style="margin-top:0.6rem;">
-                Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
-            </div>
         </section>
         
 
@@ -564,7 +560,6 @@
             
             
             
-            
                 
                 
                 
@@ -602,10 +597,8 @@
                         
                         
                         
-                        
-                        
                         <span class="role-pill role-pill-public" data-opacity="0.75"
-                              data-tip="Active public discourse — Actively discussed across public and community platforms. (score 0.42)">
+                              data-tip="Active public discourse — heuristic signal (score 0.42)">
                             <span class="role-dot" data-bg="#f59e0b"></span>
                             Active public discourse
                             <span class="role-strength" data-bg="#fef3c7" data-color="#92400e">Emerging</span>
@@ -639,20 +632,8 @@
             <section class="card" style="margin-bottom:0;" id="sec-access">
                 <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
                 <ul class="metric-list">
-                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1038/nphys1170" target="_blank">10.1038/nphys1170</a></li>
-                    <li><strong>OA status:</strong> Closed</li>
-                    
-                    <li><strong>OA source:</strong> Closed/Unknown</li>
-                    
-                    
-                        
-                            
-                        
-                    
-                    <li><strong>OA basis:</strong> no open-access signals found</li>
-                    
-                    
-                    
+                    <li><strong><a class="author-link" href="authorstory_y-doi.html">DOI:</a></strong> <a href="https://doi.org/10.1038/nphys1170" target="_blank">10.1038/nphys1170</a></li>
+                    <li><strong>OA status:</strong> Unknown</li>
                     
                     
                     
@@ -907,13 +888,6 @@
         
 
         <div class="grid-2">
-            
-            
-            
-            
-            
-            
-            
             
 
             
@@ -1206,7 +1180,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-01T20:47:51+00:00
+                    Generated on 2026-06-24T01:00:36+00:00
                 </div>
                 
             </div>
@@ -1547,87 +1521,6 @@
         var el = document.getElementById(id);
         if (el) observer.observe(el);
     });
-})();
-</script>
-<script>
-(function() {
-    var el = document.getElementById('publisher-value');
-    if (!el) return;
-
-    var label = (el.getAttribute('data-publisher-label') || '').trim();
-    if (!label || label.toLowerCase() === 'unknown') return;
-
-    function norm(s) {
-        return String(s || '').trim().toLowerCase().replace(/\s+/g, ' ');
-    }
-
-    function parseStoriesData(jsText) {
-        var marker = 'window.STORIES_DATA =';
-        var markerIdx = jsText.indexOf(marker);
-        if (markerIdx === -1) return [];
-        var start = jsText.indexOf('[', markerIdx);
-        if (start === -1) return [];
-        var endMarker = 'window.STORIES_STATS =';
-        var endMarkerIdx = jsText.indexOf(endMarker, start);
-        if (endMarkerIdx === -1) return [];
-        var end = jsText.lastIndexOf(';', endMarkerIdx - 1);
-        if (end === -1 || end <= start) return [];
-        var raw = jsText.slice(start, end).trim();
-        try {
-            var data = JSON.parse(raw);
-            return Array.isArray(data) ? data : [];
-        } catch (_err) {
-            return [];
-        }
-    }
-
-    function enablePublisherLink(count) {
-        var link = document.createElement('a');
-        link.href = 'index.html?view=publisher&publisher=' + encodeURIComponent(label);
-        link.textContent = label;
-        link.style.color = '#1d4ed8';
-        link.style.textDecoration = 'none';
-        if (typeof count === 'number' && count > 1) {
-            link.title = 'Open publisher dashboard (' + count + ' stories)';
-        } else {
-            link.title = 'Open publisher dashboard';
-        }
-        el.textContent = '';
-        el.appendChild(link);
-    }
-
-    // Local file previews (file://) often block fetch(). In that case we still
-    // provide direct navigation to the publisher dashboard.
-    if (window.location.protocol === 'file:') {
-        enablePublisherLink();
-        return;
-    }
-
-    fetch('stories_data.js')
-        .then(function(res) { return res.ok ? res.text() : ''; })
-        .then(function(jsText) {
-            if (!jsText) {
-                enablePublisherLink();
-                return;
-            }
-            var stories = parseStoriesData(jsText);
-            if (!stories.length) {
-                enablePublisherLink();
-                return;
-            }
-
-            var target = norm(label);
-            var matches = stories.filter(function(story) {
-                var publisher = norm(story.publisher || story.venue || '');
-                return publisher && publisher === target;
-            }).length;
-
-            if (matches <= 1) return;
-            enablePublisherLink(matches);
-        })
-        .catch(function() {
-            enablePublisherLink();
-        });
 })();
 </script>
 </body>

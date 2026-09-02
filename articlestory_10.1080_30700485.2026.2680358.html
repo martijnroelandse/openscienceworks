@@ -202,13 +202,13 @@
   font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;}
 .sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
 .sig-pill:hover{opacity:.75;}
-.sig-red   {background:#f7ebeb;color:#B34444;}
-.sig-slate {background:#f3f4f6;color:#6b7280;}
-.sig-indigo{background:#f0ecf9;color:#6A4FA3;}
-.sig-teal  {background:#e8f2ef;color:#34675A;}
-.sig-amber {background:#fef3c7;color:#92400e;}
-.sig-blue  {background:#ebf0f7;color:#3C5A7F;}
-.sig-green {background:#e8f2ef;color:#34675A;}
+.sig-red   {background:#fee2e2;color:#b91c1c;}
+.sig-slate {background:#f1f5f9;color:#475569;}
+.sig-indigo{background:#e0e7ff;color:#4338ca;}
+.sig-teal  {background:#ccfbf1;color:#0f766e;}
+.sig-amber {background:#fef3c7;color:#b45309;}
+.sig-blue  {background:#dbeafe;color:#1d4ed8;}
+.sig-green {background:#dcfce7;color:#166534;}
 .cover-fallback{
   width:110px;height:155px;border-radius:.55rem;
   border:1px solid #dbe7f3;
@@ -278,17 +278,9 @@
                     <div>
                         <h1 class="hero-title">Introducing the Journal of Research on Research (J·ROR): aligning constellations and communities</h1>
                         
-                        <div class="im-signals-pills" style="margin-top: 0.75rem; margin-bottom: 0.5rem;">
-
+                                                
+                        <div style="display: flex; flex-wrap: wrap; margin-top: 0.75rem; margin-bottom: 0.5rem; gap: 0.4rem;">
                             
-                                <span class="sig-pill sig-slate" title="Open access: Hybrid">
-                                    <svg class="sig-oa-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <rect x="5" y="11" width="14" height="10" rx="2"/>
-                                        <path d="M7 11V7a5 5 0 0 1 9.5-2.2"/>
-                                        <path d="M16.5 4.8V11"/>
-                                    </svg>
-                                    Open Access · Hybrid
-                                </span>
                             
 
                             
@@ -306,9 +298,7 @@
                             
 
                             
-
                             
-
                             
 
                         </div>
@@ -331,9 +321,8 @@
                         
                             <div><strong>Publisher:</strong> 
                                 
-                                    
+                                    Unknown
                                 
-                                <span id="publisher-value" data-publisher-label="Unknown">Unknown</span>
                             </div>
                         
                             <div><strong>Publication year:</strong> 
@@ -391,9 +380,6 @@
 <p class="story-text">Crossref Event Data does not currently surface online mentions for this DOI, which is common and not necessarily meaningful on its own. Event Data is not a proxy for quality; instead it highlights where the DOI is being linked, referenced, or discussed outside formal reference lists, and can be a starting point for qualitative follow-up.</p>
 <p class="story-text">Open access status is not yet resolved in the current pipeline output. Accessibility is often a practical determinant of downstream reuse, including teaching use, replication, meta-analysis, and incorporation into review literature, especially when the best-available full text can be reached directly.</p>
 <p class="story-text">Finally, citation-context services provide a complementary lens on how a paper is used in arguments and evidence chains. scite coverage is not available in the current pipeline output. <a href="https://scite.ai/reports/10.1080/30700485.2026.2680358" target="_blank" rel="noopener noreferrer">View scite report</a>.</p></div>
-            <div class="muted" style="margin-top:0.6rem;">
-                Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
-            </div>
         </section>
         
 
@@ -524,26 +510,8 @@
             <section class="card" style="margin-bottom:0;" id="sec-access">
                 <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
                 <ul class="metric-list">
-                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1080/30700485.2026.2680358" target="_blank">10.1080/30700485.2026.2680358</a></li>
-                    <li><strong>OA status:</strong> Hybrid</li>
-                    
-                    <li><strong>OA source:</strong> Publisher-claimed</li>
-                    
-                    
-                        
-                            
-                        
-                    
-                        
-                            
-                        
-                    
-                    <li><strong>OA basis:</strong> OpenAlex/Crossref access flag is OA, OpenAlex/Crossref OA status: HYBRID</li>
-                    
-                    <li><strong>OA evidence chain:</strong> Publisher-claimed → OpenAlex/Crossref</li>
-                    
-                    
-                    
+                    <li><strong><a class="author-link" href="authorstory_y-doi.html">DOI:</a></strong> <a href="https://doi.org/10.1080/30700485.2026.2680358" target="_blank">10.1080/30700485.2026.2680358</a></li>
+                    <li><strong>OA status:</strong> Unknown</li>
                     
                     
                     
@@ -601,13 +569,6 @@
         
 
         <div class="grid-2">
-            
-            
-            
-            
-            
-            
-            
             
 
             
@@ -905,7 +866,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-01T20:48:05+00:00
+                    Generated on 2026-06-15T15:26:29+00:00
                 </div>
                 
             </div>
@@ -1246,87 +1207,6 @@
         var el = document.getElementById(id);
         if (el) observer.observe(el);
     });
-})();
-</script>
-<script>
-(function() {
-    var el = document.getElementById('publisher-value');
-    if (!el) return;
-
-    var label = (el.getAttribute('data-publisher-label') || '').trim();
-    if (!label || label.toLowerCase() === 'unknown') return;
-
-    function norm(s) {
-        return String(s || '').trim().toLowerCase().replace(/\s+/g, ' ');
-    }
-
-    function parseStoriesData(jsText) {
-        var marker = 'window.STORIES_DATA =';
-        var markerIdx = jsText.indexOf(marker);
-        if (markerIdx === -1) return [];
-        var start = jsText.indexOf('[', markerIdx);
-        if (start === -1) return [];
-        var endMarker = 'window.STORIES_STATS =';
-        var endMarkerIdx = jsText.indexOf(endMarker, start);
-        if (endMarkerIdx === -1) return [];
-        var end = jsText.lastIndexOf(';', endMarkerIdx - 1);
-        if (end === -1 || end <= start) return [];
-        var raw = jsText.slice(start, end).trim();
-        try {
-            var data = JSON.parse(raw);
-            return Array.isArray(data) ? data : [];
-        } catch (_err) {
-            return [];
-        }
-    }
-
-    function enablePublisherLink(count) {
-        var link = document.createElement('a');
-        link.href = 'index.html?view=publisher&publisher=' + encodeURIComponent(label);
-        link.textContent = label;
-        link.style.color = '#1d4ed8';
-        link.style.textDecoration = 'none';
-        if (typeof count === 'number' && count > 1) {
-            link.title = 'Open publisher dashboard (' + count + ' stories)';
-        } else {
-            link.title = 'Open publisher dashboard';
-        }
-        el.textContent = '';
-        el.appendChild(link);
-    }
-
-    // Local file previews (file://) often block fetch(). In that case we still
-    // provide direct navigation to the publisher dashboard.
-    if (window.location.protocol === 'file:') {
-        enablePublisherLink();
-        return;
-    }
-
-    fetch('stories_data.js')
-        .then(function(res) { return res.ok ? res.text() : ''; })
-        .then(function(jsText) {
-            if (!jsText) {
-                enablePublisherLink();
-                return;
-            }
-            var stories = parseStoriesData(jsText);
-            if (!stories.length) {
-                enablePublisherLink();
-                return;
-            }
-
-            var target = norm(label);
-            var matches = stories.filter(function(story) {
-                var publisher = norm(story.publisher || story.venue || '');
-                return publisher && publisher === target;
-            }).length;
-
-            if (matches <= 1) return;
-            enablePublisherLink(matches);
-        })
-        .catch(function() {
-            enablePublisherLink();
-        });
 })();
 </script>
 </body>
