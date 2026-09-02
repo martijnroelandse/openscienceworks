@@ -738,6 +738,7 @@
     .oa-hybrid { background: #e0f2fe; color: #0369a1; }
     .oa-green  { background: #dcfce7; color: #166534; }
     .oa-bronze { background: #ffedd5; color: #9a3412; }
+    .oa-diamond { background: #ede9fe; color: #5b21b6; }
     .oa-closed { background: #f3f4f6; color: #6b7280; }
 
     .card-title {
@@ -1032,15 +1033,15 @@ function fmt(n) {
 }
 
 function oaLabel(s) {
-  const m = { gold:"Gold OA", hybrid:"Hybrid OA", green:"Green OA", bronze:"Bronze OA", closed:"Closed", "":"Unknown" };
+  const m = { gold:"Gold OA", hybrid:"Hybrid OA", green:"Green OA", bronze:"Bronze OA", diamond:"Diamond OA", closed:"Closed", "":"Unknown" };
   return m[s] || (s ? s.charAt(0).toUpperCase()+s.slice(1) : "Unknown");
 }
 function oaClass(s) {
-  const m = { gold:"oa-gold", hybrid:"oa-hybrid", green:"oa-green", bronze:"oa-bronze", closed:"oa-closed" };
+  const m = { gold:"oa-gold", hybrid:"oa-hybrid", green:"oa-green", bronze:"oa-bronze", diamond:"oa-diamond", closed:"oa-closed" };
   return m[s] || "oa-closed";
 }
 function oaColor(s) {
-  const m = { gold:"#f59e0b", hybrid:"#0ea5e9", green:"#22c55e", bronze:"#f97316", closed:"#9ca3af" };
+  const m = { gold:"#f59e0b", hybrid:"#0ea5e9", green:"#22c55e", bronze:"#f97316", diamond:"#8b5cf6", closed:"#9ca3af" };
   return m[s] || "#9ca3af";
 }
 function typeClass(t) {
@@ -1373,7 +1374,7 @@ function renderFacets(allStories, filtered) {
     Object.keys(allC.type).sort()
   );
 
-  const oaOrder = ["gold","hybrid","green","bronze","closed",""];
+  const oaOrder = ["gold","hybrid","green","bronze","diamond","closed",""];
   renderFacetGroup("fo-oa", "oa", allC.oa, filtC.oa,
     k => `<span class="oa-dot" style="background:${oaColor(k)}"></span>${oaLabel(k)}`,
     oaOrder.filter(k => allC.oa[k])
