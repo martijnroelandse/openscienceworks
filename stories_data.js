@@ -47179,95 +47179,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "datastory_10.5281_zenodo.17128112.html",
-"title": "Archetypometrics, a Pragmateia: Empirical Determination of the Fundamental Archetypes of Fictional Characters",
-"type": "DataStory",
-"doi": "10.5281/zenodo.17128112",
-"year": 2025,
-"venue": "Zenodo",
-"venue_name": "Zenodo",
-"publisher": "CERN",
-"concepts": [
-"Archetype",
-"Storytelling",
-"Computer science",
-"Quality (philosophy)",
-"Personality",
-"Narrative",
-"Epistemology",
-"Laptop"
-],
-"roles": [
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 1,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": true,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
-"has_certified_repository": false,
-"has_open_repository": true,
-"excerpt": "Short impact summary The article titled \"Archetypometrics, a Pragmateia: Empirical Determination of the Fundamental Archetypes of Fictional Characters,\" published in 2025, demonstrates early scholarly…",
-"cover_url": "",
-"authors": "Dodds, Peter Sheridan, Zimmerman, Julia Witte, Beauregard, Calla G. et al.",
-"all_authors": [
-"Dodds, Peter Sheridan",
-"Zimmerman, Julia Witte",
-"Beauregard, Calla G.",
-"Fehr, Ashley M. A.",
-"Fudolig, Mikaela Irene",
-"Tangherlini, Timothy R.",
-"Danforth, Christopher M."
-],
-"institutions": [
-"University of Vermont",
-"University of California, Berkeley"
-],
-"download_count": 3232,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [],
-"countries": [],
-"citing_institutions": [],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.5281/zenodo.17128112"
-]
-},
-{
 "file": "datastory_10.6084_m9.figshare.1403592.html",
 "title": "Creolimax fragrantissima genome data",
 "type": "DataStory",
@@ -47979,10 +47890,10 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "datastory_10.6084_m9.figshare.8216291.html",
+"file": "datastory_10.6084_m9.figshare.8216291.v2.html",
 "title": "Choanoeca flexa transcriptome and predicted nonredundant proteome",
 "type": "DataStory",
-"doi": "10.6084/m9.figshare.8216291",
+"doi": "10.6084/m9.figshare.8216291.v2",
 "year": 2019,
 "venue": "Figshare",
 "venue_name": "Figshare",
@@ -47990,14 +47901,16 @@ window.STORIES_DATA = [
 "concepts": [
 "Transcriptome",
 "Proteome",
-"Computational biology",
 "Biology",
-"Bioinformatics",
+"Computational biology",
 "Genetics",
-"Gene expression",
-"Gene"
+"Proteomics",
+"Cell biology",
+"Gene expression"
 ],
-"roles": [],
+"roles": [
+"Sustainability & Policy Relevance"
+],
 "is_oa": true,
 "oa_status": "green",
 "oa_provenance_source": "Publisher-claimed",
@@ -48008,8 +47921,10 @@ window.STORIES_DATA = [
 "oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
+"has_sdgs": true,
+"sdg_ids": [
+"Zero hunger"
+],
 "has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
@@ -48018,16 +47933,16 @@ window.STORIES_DATA = [
 "has_peer_review": false,
 "has_prism_context": false,
 "has_prism_peer_review": false,
-"has_reuse": true,
+"has_reuse": false,
 "has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary The dataset titled \"Choanoeca flexa transcriptome and predicted nonredundant proteome,\" made accessible in 2019, presents a valuable resource for researchers working in computatio…",
+"excerpt": "Short impact summary The dataset titled \"Choanoeca flexa transcriptome and predicted nonredundant proteome\" has garnered attention within the academic community, evidenced by a citation in a notable j…",
 "cover_url": "",
-"authors": "Thibaut Brunet",
+"authors": "Brunet, Thibaut",
 "all_authors": [
-"Thibaut Brunet"
+"Brunet, Thibaut"
 ],
 "institutions": [],
 "download_count": 5,
@@ -48046,14 +47961,36 @@ window.STORIES_DATA = [
 "risk_eoc": false,
 "risk_pubpeer": 0,
 "funders": [],
-"sectors": [],
-"countries": [],
-"citing_institutions": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of California, Berkeley",
+"count": 0
+},
+{
+"label": "Howard Hughes Medical Institute",
+"count": 0
+}
+],
 "scite_supporting": 0,
 "scite_contradicting": 0,
-"version_count": 2,
+"version_count": 1,
 "version_dois": [
-"10.6084/m9.figshare.8216291",
 "10.6084/m9.figshare.8216291.v2"
 ]
 },
@@ -60662,188 +60599,10 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "datastory_10.24435_materialscloud:aa-2q.html",
-"title": "One dimensional edge localized YSR states in CrCl₃ on NbSe₂",
-"type": "DataStory",
-"doi": "10.24435/materialscloud:aa-2q",
-"year": 2025,
-"venue": "NCCR MARVEL",
-"venue_name": "NCCR MARVEL",
-"publisher": "Unknown",
-"concepts": [
-"Condensed matter physics",
-"Ferromagnetism",
-"Enhanced Data Rates for GSM Evolution",
-"Monolayer",
-"Scanning tunneling microscope",
-"Heterojunction",
-"Physics",
-"Coupling (piping)"
-],
-"roles": [
-"Active Public Discourse"
-],
-"is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 0,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": true,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary This 2025 research dataset, deposited on Materials Cloud under the NCCR MARVEL initiative by a team from Utrecht University, supports experimental and computational investigations…",
-"cover_url": "",
-"authors": "Cuperus, Jan P., Kole, Arnold H., Botello-Méndez, Andrés R. et al.",
-"all_authors": [
-"Cuperus, Jan P.",
-"Kole, Arnold H.",
-"Botello-Méndez, Andrés R.",
-"Zanolli, Zeila",
-"Vanmaekelbergh, Daniel",
-"Swart, Ingmar"
-],
-"institutions": [
-"Utrecht University"
-],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"Stack Exchange"
-],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [],
-"countries": [],
-"citing_institutions": [],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.24435/materialscloud:aa-2q"
-]
-},
-{
-"file": "datastory_10.24435_materialscloud:p7-r3.html",
-"title": "Density functional Bogoliubov-de Gennes theory for superconductors implemented in the SIESTA code",
-"type": "DataStory",
-"doi": "10.24435/materialscloud:p7-r3",
-"year": 2024,
-"venue": "NCCR MARVEL",
-"venue_name": "NCCR MARVEL",
-"publisher": "Unknown",
-"concepts": [
-"Superconductivity",
-"SIESTA (computer program)",
-"Density functional theory",
-"Physics",
-"Basis (linear algebra)",
-"Charge (physics)",
-"Code (set theory)",
-"Statistical physics"
-],
-"roles": [
-"Active Public Discourse"
-],
-"is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 0,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": true,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary This 2024 research dataset, deposited on the NCCR MARVEL Materials Cloud platform by a collaborative team from Utrecht University and the Institut Català de Nanociència i Nanotecn…",
-"cover_url": "",
-"authors": "Reho, Riccardo, Wittemeier, Nils, Kole, Arnold Herman et al.",
-"all_authors": [
-"Reho, Riccardo",
-"Wittemeier, Nils",
-"Kole, Arnold Herman",
-"Ordejón, Pablo",
-"Zanolli, Zeila"
-],
-"institutions": [
-"Utrecht University",
-"Institut Català de Nanociència i Nanotecnologia"
-],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"Stack Exchange"
-],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [],
-"countries": [],
-"citing_institutions": [],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.24435/materialscloud:p7-r3"
-]
-},
-{
-"file": "datastory_10.25378_janelia.23816295.html",
+"file": "datastory_10.25378_janelia.23816295.v1.html",
 "title": "Drosophila GAL4 brain imagery",
 "type": "DataStory",
-"doi": "10.25378/janelia.23816295",
+"doi": "10.25378/janelia.23816295.v1",
 "year": 2023,
 "venue": "Figshare",
 "venue_name": "Figshare",
@@ -60879,12 +60638,12 @@ window.STORIES_DATA = [
 "has_peer_review": false,
 "has_prism_context": false,
 "has_prism_peer_review": false,
-"has_reuse": true,
+"has_reuse": false,
 "has_openaire_reach": false,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary The dataset titled \"Drosophila GAL4 brain imagery\" from the Janelia Research Repository provides foundational insights into Drosophila neurobiology and serves as a crucial resourc…",
+"excerpt": "Short impact summary The dataset titled \"Drosophila GAL4 brain imagery\" represents a significant contribution to the field of neurobiology and genetic research, hosted on Figshare.",
 "cover_url": "",
 "authors": "Meissner, Geoffrey, Nern, Aljoscha, Dorman, Zachary et al.",
 "all_authors": [
@@ -60948,9 +60707,8 @@ window.STORIES_DATA = [
 "citing_institutions": [],
 "scite_supporting": 0,
 "scite_contradicting": 0,
-"version_count": 2,
+"version_count": 1,
 "version_dois": [
-"10.25378/janelia.23816295",
 "10.25378/janelia.23816295.v1"
 ]
 },
@@ -61492,84 +61250,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "datastory_10.5281_zenodo.11472834.html",
-"title": "American University of Nigeria, Adamawa State Post-U.T.M.E Admission Form for 2024/2025 is out call 09125210477 For More Details On How to Apply And Register Online.Also Sales Of I.J.M.B Form,J.U.P.E.B Form,Predegree Form,Change Of Institution Form,Transfer Form Is still Ongoing Contact office of the admin On 09125210477 For more information on how to purchase the form and register online,for admission assistance and payment of school fee [TUITION FEE AND ACCEPTANCE FEE].",
-"type": "DataStory",
-"doi": "10.5281/zenodo.11472834",
-"year": 2024,
-"venue": "Zenodo",
-"venue_name": "Zenodo",
-"publisher": "CERN",
-"concepts": [
-"Nucleofection",
-"Gestational period",
-"TSG101",
-"Liquation",
-"Diafiltration",
-"Dysgeusia",
-"Emperipolesis",
-"Hyporeflexia"
-],
-"roles": [],
-"is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 0,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary The American University of Nigeria's announcement regarding the 2024/2025 Post-U.T.M.E Admission Form highlights its ongoing commitment to supporting prospective students through …",
-"cover_url": "",
-"authors": "JUDITH",
-"all_authors": [
-"JUDITH"
-],
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [],
-"countries": [],
-"citing_institutions": [],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.5281/zenodo.11472834"
-]
-},
-{
 "file": "datastory_10.5281_zenodo.13993815.html",
 "title": "dms-vep/Flu_H5_American-Wigeon_South-Carolina_2021-H5N1_DMS: Flu_H5_American-Wigeon_South-Carolina_2021-H5N1_DMS_PLOSbiology",
 "type": "DataStory",
@@ -61818,93 +61498,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "datastory_10.5281_zenodo.17117974.html",
-"title": "Archetypometrics, a Pragmateia: Empirical Determination of the Fundamental Archetypes of Fictional Characters",
-"type": "DataStory",
-"doi": "10.5281/zenodo.17117974",
-"year": 2025,
-"venue": "Zenodo",
-"venue_name": "Zenodo",
-"publisher": "CERN",
-"concepts": [
-"Archetype",
-"Storytelling",
-"Computer science",
-"Quality (philosophy)",
-"Personality",
-"Narrative",
-"Epistemology",
-"Laptop"
-],
-"roles": [],
-"is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 0,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": true,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
-"has_certified_repository": false,
-"has_open_repository": true,
-"excerpt": "Short impact summary Published in 2025 and openly accessible via Zenodo, Archetypometrics, a Pragmateia has attracted over 3,100 downloads and nearly 1,000 views since its release, signaling robust ea…",
-"cover_url": "",
-"authors": "Dodds, Peter Sheridan, Zimmerman, Julia Witte, Beauregard, Calla G. et al.",
-"all_authors": [
-"Dodds, Peter Sheridan",
-"Zimmerman, Julia Witte",
-"Beauregard, Calla G.",
-"Fehr, Ashley M. A.",
-"Fudolig, Mikaela Irene",
-"Tangherlini, Timothy R.",
-"Danforth, Christopher M."
-],
-"institutions": [
-"University of Vermont",
-"University of California, Berkeley"
-],
-"download_count": 3107,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [],
-"countries": [],
-"citing_institutions": [],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.5281/zenodo.17117974"
-]
-},
-{
 "file": "datastory_10.5281_zenodo.17442025.html",
 "title": "Classification of research publications based on data from OpenAlex",
 "type": "DataStory",
@@ -62066,90 +61659,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.5281/zenodo.19900975"
-]
-},
-{
-"file": "datastory_10.5281_zenodo.19900976.html",
-"title": "QuantaPep v4.0: Autonomous Genotype-Aware Peptide Discovery at Industrial Scale",
-"type": "DataStory",
-"doi": "10.5281/zenodo.19900976",
-"year": 2026,
-"venue": "Zenodo",
-"venue_name": "Zenodo",
-"publisher": "CERN",
-"concepts": [
-"Scalability",
-"Computer science",
-"Artificial intelligence",
-"Population",
-"Data mining",
-"Machine learning",
-"Computational biology",
-"Drug discovery"
-],
-"roles": [
-"Sustainability & Policy Relevance"
-],
-"is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 0,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Industry, innovation and infrastructure"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
-"has_certified_repository": false,
-"has_open_repository": true,
-"excerpt": "Short impact summary The article \"QuantaPep v4.0: Autonomous Genotype-Aware Peptide Discovery at Industrial Scale\" presents a novel approach to peptide discovery through the integration of advanced co…",
-"cover_url": "",
-"authors": "Adam Werderits",
-"all_authors": [
-"Adam Werderits"
-],
-"institutions": [
-"Stevenage Bioscience Catalyst"
-],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [],
-"countries": [],
-"citing_institutions": [],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.5281/zenodo.19900976"
 ]
 },
 {
@@ -62333,90 +61842,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.5281/zenodo.7842938"
-]
-},
-{
-"file": "datastory_10.5281_zenodo.7842939.html",
-"title": "Nosophora parvipunctalis Hampson 1896",
-"type": "DataStory",
-"doi": "10.5281/zenodo.7842939",
-"year": 2022,
-"venue": "Zenodo",
-"venue_name": "Zenodo",
-"publisher": "CERN",
-"concepts": [
-"Table (database)",
-"Ancient history",
-"History",
-"Geography",
-"South asia",
-"Natural (archaeology)",
-"Interpretation (philosophy)",
-"Theology"
-],
-"roles": [],
-"is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 0,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": true,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
-"has_certified_repository": false,
-"has_open_repository": true,
-"excerpt": "Short impact summary The scholarly article titled \"Nosophora parvipunctalis Hampson 1896\" appears to have limited engagement within the academic community, with no recorded citations or mentions in re…",
-"cover_url": "",
-"authors": "Singh, Navneet, Ranjan, Rahul, Talukdar, Avishek et al.",
-"all_authors": [
-"Singh, Navneet",
-"Ranjan, Rahul",
-"Talukdar, Avishek",
-"Joshi, Rahul",
-"Kirti, Jagbir Singh",
-"Chandra, Kailash",
-"Mally, Richard"
-],
-"institutions": [],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [],
-"countries": [],
-"citing_institutions": [],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.5281/zenodo.7842939"
 ]
 },
 {
@@ -62927,3 +62352,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
+window.STORIES_STATS = {"total": 476, "total_articles": 190, "total_books": 214, "total_data": 65, "total_software": 7, "total_oa": 413, "pct_oa": 87, "total_citations": 185951, "num_disciplines": 30};
