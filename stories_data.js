@@ -15361,6 +15361,167 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "articlestory_10.1038_s41598-021-90639-z.html",
+"title": "Seven day pre-analytical stability of serum and plasma neurofilament light chain",
+"type": "ArticleStory",
+"doi": "10.1038/s41598-021-90639-z",
+"year": 2021,
+"venue": "Scientific Reports",
+"venue_name": "Scientific Reports",
+"publisher": "Springer Nature",
+"concepts": [
+"Intraclass correlation",
+"Biomarker",
+"Repeatability",
+"Coefficient of variation",
+"Chemistry",
+"Medicine",
+"Blood plasma",
+"Chromatography"
+],
+"roles": [
+"High-Visibility Uptake",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "gold",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 68,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Seven day pre-analytical stability of serum and plasma neurofilament light chain (2021) in Scientific Reports.",
+"cover_url": "",
+"authors": "Patrick Altmann, Markus Ponleitner, Paulus Rommer et al.",
+"all_authors": [
+"Patrick Altmann",
+"Markus Ponleitner",
+"Paulus Rommer",
+"Helmuth Haslacher",
+"Patrick Mucher",
+"Fritz Leutmezer",
+"Axel Petzold",
+"Christoph Wotawa",
+"Rupert Lanzenberger",
+"Thomas Berger",
+"Henrik Zetterberg",
+"Gabriel Bsteh"
+],
+"institutions": [
+"Medical University of Vienna",
+"National Hospital for Neurology and Neurosurgery",
+"Sahlgrenska University Hospital"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"Medical Research Council"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 65
+},
+{
+"label": "Healthcare",
+"count": 48
+},
+{
+"label": "Facility",
+"count": 29
+},
+{
+"label": "Government",
+"count": 15
+},
+{
+"label": "Nonprofit",
+"count": 12
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 33
+},
+{
+"label": "United Kingdom",
+"count": 23
+},
+{
+"label": "Germany",
+"count": 21
+},
+{
+"label": "Sweden",
+"count": 13
+},
+{
+"label": "Italy",
+"count": 11
+}
+],
+"citing_institutions": [
+{
+"label": "University College London",
+"count": 3
+},
+{
+"label": "Medical University of Vienna",
+"count": 2
+},
+{
+"label": "University of Gothenburg",
+"count": 2
+},
+{
+"label": "University of Pittsburgh",
+"count": 2
+},
+{
+"label": "National Hospital for Neurology and Neurosurgery",
+"count": 2
+}
+],
+"scite_supporting": 7,
+"scite_contradicting": 2,
+"version_count": 1,
+"version_dois": [
+"10.1038/s41598-021-90639-z"
+]
+},
+{
 "file": "articlestory_10.1038_s41586-023-06933-5.html",
 "title": "Template and target-site recognition by human LINE-1 in retrotransposition",
 "type": "ArticleStory",
@@ -15839,28 +16000,30 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "articlestory_10.1038_s41598-021-90639-z.html",
-"title": "Seven day pre-analytical stability of serum and plasma neurofilament light chain",
+"file": "articlestory_10.7554_eLife.79042.html",
+"title": "Hierarchical architecture of dopaminergic circuits enables second-order conditioning in Drosophila",
 "type": "ArticleStory",
-"doi": "10.1038/s41598-021-90639-z",
-"year": 2021,
-"venue": "Scientific Reports",
-"venue_name": "Scientific Reports",
-"publisher": "Springer Nature",
+"doi": "10.7554/eLife.79042",
+"year": 2023,
+"venue": "eLife",
+"venue_name": "eLife",
+"publisher": "eLife Sciences Publications Ltd",
 "concepts": [
-"Intraclass correlation",
-"Biomarker",
-"Repeatability",
-"Coefficient of variation",
-"Chemistry",
-"Medicine",
-"Blood plasma",
-"Chromatography"
+"Neuroscience",
+"Dopaminergic",
+"Mushroom bodies",
+"Dopamine",
+"Interneuron",
+"Feed forward",
+"Excitatory postsynaptic potential",
+"Optogenetics"
 ],
 "roles": [
-"Active Public Discourse",
+"Rapid Uptake",
+"High-Visibility Uptake",
 "Scholarly Uptake",
-"Reference Point for Synthesis"
+"Sustainability & Policy Relevance",
+"Active Public Discourse"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -15870,58 +16033,57 @@ window.STORIES_DATA = [
 "OpenAlex/Crossref"
 ],
 "oa_claimed_not_in_doab": false,
-"citation_count": 64,
+"citation_count": 62,
 "event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
+"has_sdgs": true,
+"sdg_ids": [
+"Quality Education"
+],
 "has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
 "ta_ol_holdings": 0,
 "ta_otl": false,
-"has_peer_review": false,
+"has_peer_review": true,
 "has_prism_context": false,
 "has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
+"has_reuse": true,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Seven day pre-analytical stability of serum and plasma neurofilament light chain in Scientific Reports.",
+"excerpt": "Short impact summary Hierarchical architecture of dopaminergic circuits enables second-order conditioning in Drosophila (2023) in eLife.",
 "cover_url": "",
-"authors": "Patrick Altmann, Markus Ponleitner, Paulus Rommer et al.",
+"authors": "Daichi Yamada, Daniel Bushey, Feng Li et al.",
 "all_authors": [
-"Patrick Altmann",
-"Markus Ponleitner",
-"Paulus Rommer",
-"Helmuth Haslacher",
-"Patrick Mucher",
-"Fritz Leutmezer",
-"Axel Petzold",
-"Christoph Wotawa",
-"Rupert Lanzenberger",
-"Thomas Berger",
-"Henrik Zetterberg",
-"Gabriel Bsteh"
+"Daichi Yamada",
+"Daniel Bushey",
+"Feng Li",
+"Karen L Hibbard",
+"Megan Sammons",
+"Jan Funke",
+"Ashok Litwin-Kumar",
+"Toshihide Hige",
+"Yoshinori Aso"
 ],
 "institutions": [
-"Medical University of Vienna",
-"National Hospital for Neurology and Neurosurgery",
-"Sahlgrenska University Hospital"
+"University of North Carolina at Chapel Hill",
+"Howard Hughes Medical Institute",
+"Columbia University"
 ],
 "download_count": 0,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"News"
+"Hypothesis"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
 "platform_counts": {
-"news": 1
+"hypothesis": 1
 },
 "is_top1pct": false,
 "is_top10pct": true,
@@ -15929,79 +16091,83 @@ window.STORIES_DATA = [
 "risk_eoc": false,
 "risk_pubpeer": 0,
 "funders": [
-"Medical Research Council"
+"NIDCD NIH HHS",
+"National Science Foundation",
+"Japan Society for the Promotion of Science",
+"NIBIB NIH HHS",
+"Simons Foundation"
 ],
 "sectors": [
 {
 "label": "Education",
-"count": 61
-},
-{
-"label": "Healthcare",
-"count": 38
+"count": 46
 },
 {
 "label": "Facility",
-"count": 27
+"count": 39
 },
 {
-"label": "Funder",
-"count": 16
+"label": "Company",
+"count": 7
 },
 {
-"label": "Government",
-"count": 12
+"label": "Healthcare",
+"count": 6
+},
+{
+"label": "Nonprofit",
+"count": 5
 }
 ],
 "countries": [
 {
 "label": "United States",
-"count": 30
-},
-{
-"label": "United Kingdom",
-"count": 22
+"count": 34
 },
 {
 "label": "Germany",
-"count": 18
+"count": 22
 },
 {
-"label": "Sweden",
-"count": 13
+"label": "United Kingdom",
+"count": 7
 },
 {
-"label": "Italy",
-"count": 10
+"label": "Australia",
+"count": 6
+},
+{
+"label": "Hungary",
+"count": 5
 }
 ],
 "citing_institutions": [
 {
-"label": "University College London",
-"count": 18
+"label": "Janelia Research Campus",
+"count": 6
 },
 {
-"label": "University of Gothenburg",
-"count": 12
+"label": "Howard Hughes Medical Institute",
+"count": 6
 },
 {
-"label": "National Hospital for Neurology and Neurosurgery",
-"count": 12
+"label": "University of Göttingen",
+"count": 3
 },
 {
-"label": "UK Dementia Research Institute",
-"count": 10
+"label": "University of Cologne",
+"count": 3
 },
 {
-"label": "Sahlgrenska University Hospital",
-"count": 9
+"label": "University of North Carolina at Chapel Hill",
+"count": 2
 }
 ],
-"scite_supporting": 6,
-"scite_contradicting": 2,
+"scite_supporting": 2,
+"scite_contradicting": 0,
 "version_count": 1,
 "version_dois": [
-"10.1038/s41598-021-90639-z"
+"10.7554/eLife.79042"
 ]
 },
 {
@@ -16144,176 +16310,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.1007/978-1-4899-7303-0_2"
-]
-},
-{
-"file": "articlestory_10.7554_eLife.79042.html",
-"title": "Hierarchical architecture of dopaminergic circuits enables second-order conditioning in Drosophila",
-"type": "ArticleStory",
-"doi": "10.7554/eLife.79042",
-"year": 2023,
-"venue": "eLife",
-"venue_name": "eLife",
-"publisher": "eLife Sciences Publications Ltd",
-"concepts": [
-"Neuroscience",
-"Dopaminergic",
-"Mushroom bodies",
-"Dopamine",
-"Interneuron",
-"Feed forward",
-"Excitatory postsynaptic potential",
-"Optogenetics"
-],
-"roles": [
-"Scholarly Uptake",
-"Rapid Uptake",
-"Sustainability & Policy Relevance",
-"Reference Point for Synthesis"
-],
-"is_oa": true,
-"oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 60,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Quality Education"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": true,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": true,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Hierarchical architecture of dopaminergic circuits enables second-order conditioning in Drosophila (2023) in eLife.",
-"cover_url": "",
-"authors": "Daichi Yamada, Daniel Bushey, Feng Li et al.",
-"all_authors": [
-"Daichi Yamada",
-"Daniel Bushey",
-"Feng Li",
-"Karen L Hibbard",
-"Megan Sammons",
-"Jan Funke",
-"Ashok Litwin-Kumar",
-"Toshihide Hige",
-"Yoshinori Aso"
-],
-"institutions": [
-"University of North Carolina at Chapel Hill",
-"Howard Hughes Medical Institute",
-"Columbia University"
-],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"Hypothesis"
-],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {
-"hypothesis": 1
-},
-"is_top1pct": false,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [
-"NIDCD NIH HHS",
-"National Science Foundation",
-"Japan Society for the Promotion of Science",
-"NIBIB NIH HHS",
-"Simons Foundation"
-],
-"sectors": [
-{
-"label": "Education",
-"count": 44
-},
-{
-"label": "Facility",
-"count": 39
-},
-{
-"label": "Company",
-"count": 7
-},
-{
-"label": "Healthcare",
-"count": 6
-},
-{
-"label": "Nonprofit",
-"count": 5
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 34
-},
-{
-"label": "Germany",
-"count": 21
-},
-{
-"label": "United Kingdom",
-"count": 7
-},
-{
-"label": "Australia",
-"count": 6
-},
-{
-"label": "Hungary",
-"count": 5
-}
-],
-"citing_institutions": [
-{
-"label": "Howard Hughes Medical Institute",
-"count": 6
-},
-{
-"label": "Janelia Research Campus",
-"count": 6
-},
-{
-"label": "University of Cologne",
-"count": 3
-},
-{
-"label": "University of North Carolina at Chapel Hill",
-"count": 2
-},
-{
-"label": "University of Göttingen",
-"count": 2
-}
-],
-"scite_supporting": 2,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.7554/eLife.79042"
 ]
 },
 {
@@ -22035,7 +22031,6 @@ window.STORIES_DATA = [
 "Philosophy"
 ],
 "roles": [
-"Commercial Linkage",
 "Scholarly Uptake"
 ],
 "is_oa": true,
@@ -22052,15 +22047,15 @@ window.STORIES_DATA = [
 "sdg_ids": [],
 "has_teaching": true,
 "ta_ocw": 0,
-"ta_youtube": 1,
+"ta_youtube": 2,
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": false,
+"has_prism_context": true,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Theory into practice (2021), published by Leuven University Press, has been cited 29 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
@@ -22076,16 +22071,12 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"News"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {
-"news": 3
-},
+"platform_counts": {},
 "is_top1pct": true,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -22134,7 +22125,7 @@ window.STORIES_DATA = [
 "count": 1
 },
 {
-"label": "City, University of London",
+"label": "University of Perugia",
 "count": 1
 }
 ],
@@ -23782,7 +23773,6 @@ window.STORIES_DATA = [
 "Information retrieval"
 ],
 "roles": [
-"Commercial Linkage",
 "Scholarly Uptake"
 ],
 "is_oa": false,
@@ -23794,20 +23784,20 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 9,
+"ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": false,
+"has_openaire_reach": true,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Advances in Knowledge Discovery and Data Mining (2020), published by Springer International Publishing, has been cited 23 times — enough that OpenAlex puts it in the top 10% of wo…",
+"excerpt": "Short impact summary Advances in Knowledge Discovery and Data Mining (2020), published by Springer Nature, has been cited 23 times — enough that OpenAlex puts it in the top 10% of works in its field a…",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-030-47436-2",
 "authors": "Hady W. Lauw, Raymond Chi-Wing Wong, Alexandros Ntoulas et al.",
 "all_authors": [
@@ -23818,27 +23808,17 @@ window.STORIES_DATA = [
 "See-Kiong Ng",
 "Sinno Jialin Pan"
 ],
-"institutions": [
-"Singapore Management University",
-"Hong Kong University of Science and Technology",
-"National and Kapodistrian University of Athens",
-"National University of Singapore",
-"Nanyang Technological University"
-],
+"institutions": [],
 "download_count": 0,
 "series_name": "Lecture notes in computer science",
 "series_id": "https://openalex.org/S106296714",
 "belongs_to_series": true,
-"mention_platforms": [
-"News"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {
-"news": 1
-},
+"platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -23907,7 +23887,7 @@ window.STORIES_DATA = [
 "count": 1
 },
 {
-"label": "Guangdong University of Technology",
+"label": "University of Córdoba",
 "count": 1
 }
 ],
@@ -31467,7 +31447,7 @@ window.STORIES_DATA = [
 },
 {
 "file": "articlestory_10.1128_aac.01193-23.html",
-"title": "Divergent genetic landscapes drive lower levels of AmpC induction and stable de-repression in <i>Serratia marcescens</i> compared to <i>Enterobacter cloacae</i>",
+"title": "Divergent genetic landscapes drive lower levels of AmpC induction and stable de-repression in Serratia marcescens compared to Enterobacter cloacae",
 "type": "ArticleStory",
 "doi": "10.1128/aac.01193-23",
 "year": 2023,
@@ -31508,8 +31488,8 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Divergent genetic landscapes drive lower levels of AmpC induction and stable de-repression in Serratia marcescens compared to Enterobacter cloacae (2023) in Antimicrobial Agents a…",
@@ -31529,16 +31509,12 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"News"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {
-"news": 1
-},
+"platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -31560,7 +31536,7 @@ window.STORIES_DATA = [
 },
 {
 "label": "Facility",
-"count": 2
+"count": 4
 },
 {
 "label": "Government",
@@ -31573,7 +31549,7 @@ window.STORIES_DATA = [
 "count": 2
 },
 {
-"label": "Brazil",
+"label": "China",
 "count": 2
 },
 {
@@ -31581,7 +31557,7 @@ window.STORIES_DATA = [
 "count": 2
 },
 {
-"label": "China",
+"label": "Brazil",
 "count": 2
 },
 {
@@ -31591,7 +31567,7 @@ window.STORIES_DATA = [
 ],
 "citing_institutions": [
 {
-"label": "Universidade de São Paulo",
+"label": "Laboratório Associado TERRA",
 "count": 1
 },
 {
@@ -31599,11 +31575,11 @@ window.STORIES_DATA = [
 "count": 1
 },
 {
-"label": "University Hospital Schleswig-Holstein",
-"count": 0
+"label": "Universidade de São Paulo",
+"count": 1
 },
 {
-"label": "German Center for Lung Research",
+"label": "University Hospital Schleswig-Holstein",
 "count": 0
 },
 {
@@ -33277,6 +33253,127 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "articlestory_10.1101_2023.11.30.569486.html",
+"title": "Bioorthogonal labeling enables in situ fluorescence imaging of expressed gas vesicle nanostructures",
+"type": "ArticleStory",
+"doi": "10.1101/2023.11.30.569486",
+"year": 2023,
+"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
+"publisher": "Cold Spring Harbor Laboratory",
+"concepts": [
+"Bioorthogonal chemistry",
+"Fluorescence",
+"Vesicle",
+"Chemistry",
+"Fluorescence microscope",
+"Biophysics",
+"In situ",
+"Protein subunit"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 6,
+"event_count": 0,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary Bioorthogonal labeling enables in situ fluorescence imaging of expressed gas vesicle nanostructures (2023) in bioRxiv (Cold Spring Harbor Laboratory).",
+"cover_url": "",
+"authors": "Erik Schrunk, Przemysław Dutka, Robert C. Hurt et al.",
+"all_authors": [
+"Erik Schrunk",
+"Przemysław Dutka",
+"Robert C. Hurt",
+"Di Wu",
+"Mikhail G. Shapiro"
+],
+"institutions": [
+"Pasadena City College"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+},
+{
+"label": "Facility",
+"count": 1
+},
+{
+"label": "Healthcare",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "China",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Changsha Central Hospital",
+"count": 0
+},
+{
+"label": "University of South China",
+"count": 0
+},
+{
+"label": "Changsha Medical University",
+"count": 0
+},
+{
+"label": "Hengyang Academy of Agricultural Sciences",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1101/2023.11.30.569486"
+]
+},
+{
 "file": "articlestory_10.1101_2023.12.07.570640.html",
 "title": "Single-cell eQTL mapping in yeast reveals a tradeoff between growth and reproduction",
 "type": "ArticleStory",
@@ -33580,6 +33677,151 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.1101/2023.12.29.573681"
+]
+},
+{
+"file": "articlestory_10.1111_oik.10722.html",
+"title": "Coordinated distributed experiments in ecology do not consistently reduce heterogeneity in effect size",
+"type": "ArticleStory",
+"doi": "10.1111/oik.10722",
+"year": 2024,
+"venue": "Oikos",
+"venue_name": "Oikos",
+"publisher": "wiley",
+"concepts": [
+"Study heterogeneity",
+"Spatial heterogeneity",
+"Sample size determination",
+"Meta-analysis",
+"Pairwise comparison",
+"Statistics",
+"Ecology",
+"Variance (accounting)"
+],
+"roles": [
+"Sustainability & Policy Relevance"
+],
+"is_oa": false,
+"oa_status": "closed",
+"oa_provenance_source": "Closed/Unknown",
+"oa_provenance_sources": [],
+"oa_claimed_not_in_doab": false,
+"citation_count": 6,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Life in Land"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": true,
+"has_openaire_reach": true,
+"has_openaire_open_instance": false,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary Coordinated distributed experiments in ecology do not consistently reduce heterogeneity in effect size (2024) in Oikos.",
+"cover_url": "",
+"authors": "Julia Bebout, Jeremy W. Fox",
+"all_authors": [
+"Julia Bebout",
+"Jeremy W. Fox"
+],
+"institutions": [
+"University of Calgary"
+],
+"download_count": 0,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [
+"Blogs"
+],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {
+"blog": 1
+},
+"is_top1pct": false,
+"is_top10pct": true,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Education",
+"count": 6
+},
+{
+"label": "Government",
+"count": 3
+},
+{
+"label": "Facility",
+"count": 3
+},
+{
+"label": "Nonprofit",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "United States",
+"count": 4
+},
+{
+"label": "Germany",
+"count": 2
+},
+{
+"label": "Canada",
+"count": 2
+},
+{
+"label": "China",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Calgary",
+"count": 1
+},
+{
+"label": "University of South Florida",
+"count": 1
+},
+{
+"label": "Bielefeld University",
+"count": 0
+},
+{
+"label": "University of Münster",
+"count": 0
+},
+{
+"label": "Friedrich Schiller University Jena",
+"count": 0
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.1111/oik.10722"
 ]
 },
 {
@@ -34800,260 +35042,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "articlestory_10.1101_2023.11.30.569486.html",
-"title": "Bioorthogonal labeling enables in situ fluorescence imaging of expressed gas vesicle nanostructures",
-"type": "ArticleStory",
-"doi": "10.1101/2023.11.30.569486",
-"year": 2023,
-"venue": "bioRxiv (Cold Spring Harbor Laboratory)",
-"venue_name": "bioRxiv (Cold Spring Harbor Laboratory)",
-"publisher": "Cold Spring Harbor Laboratory",
-"concepts": [
-"Bioorthogonal chemistry",
-"Fluorescence",
-"Vesicle",
-"Chemistry",
-"Fluorescence microscope",
-"Biophysics",
-"In situ",
-"Protein subunit"
-],
-"roles": [
-"Active Public Discourse"
-],
-"is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 5,
-"event_count": 0,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Bioorthogonal labeling enables in situ fluorescence imaging of expressed gas vesicle nanostructures in bioRxiv (Cold Spring Harbor Laboratory).",
-"cover_url": "",
-"authors": "Erik Schrunk, Przemysław Dutka, Robert C. Hurt et al.",
-"all_authors": [
-"Erik Schrunk",
-"Przemysław Dutka",
-"Robert C. Hurt",
-"Di Wu",
-"Mikhail G. Shapiro"
-],
-"institutions": [
-"Pasadena City College"
-],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Healthcare",
-"count": 1
-},
-{
-"label": "Education",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "China",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "University of South China",
-"count": 1
-},
-{
-"label": "Changsha Central Hospital",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1101/2023.11.30.569486"
-]
-},
-{
-"file": "articlestory_10.1111_oik.10722.html",
-"title": "Coordinated distributed experiments in ecology do not consistently reduce heterogeneity in effect size",
-"type": "ArticleStory",
-"doi": "10.1111/oik.10722",
-"year": 2024,
-"venue": "Oikos",
-"venue_name": "Oikos",
-"publisher": "wiley",
-"concepts": [
-"Study heterogeneity",
-"Spatial heterogeneity",
-"Sample size determination",
-"Meta-analysis",
-"Pairwise comparison",
-"Statistics",
-"Ecology",
-"Variance (accounting)"
-],
-"roles": [
-"Sustainability & Policy Relevance"
-],
-"is_oa": false,
-"oa_status": "closed",
-"oa_provenance_source": "Closed/Unknown",
-"oa_provenance_sources": [],
-"oa_claimed_not_in_doab": false,
-"citation_count": 5,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Life in Land"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": true,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Coordinated distributed experiments in ecology do not consistently reduce heterogeneity in effect size (2024) in Oikos.",
-"cover_url": "",
-"authors": "Julia Bebout, Jeremy W. Fox",
-"all_authors": [
-"Julia Bebout",
-"Jeremy W. Fox"
-],
-"institutions": [
-"University of Calgary"
-],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [
-"Blogs"
-],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {
-"blog": 1
-},
-"is_top1pct": false,
-"is_top10pct": true,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Education",
-"count": 5
-},
-{
-"label": "Facility",
-"count": 2
-},
-{
-"label": "Government",
-"count": 2
-},
-{
-"label": "Nonprofit",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "United States",
-"count": 3
-},
-{
-"label": "Germany",
-"count": 2
-},
-{
-"label": "Canada",
-"count": 2
-},
-{
-"label": "Spain",
-"count": 1
-},
-{
-"label": "France",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "University of Calgary",
-"count": 1
-},
-{
-"label": "University of South Florida",
-"count": 1
-},
-{
-"label": "Bielefeld University",
-"count": 0
-},
-{
-"label": "Friedrich Schiller University Jena",
-"count": 0
-},
-{
-"label": "University of Münster",
-"count": 0
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.1111/oik.10722"
-]
-},
-{
 "file": "articlestory_10.1136_bmj.a186.html",
 "title": "How to Read a Paper: The Basics of Evidence-Based Medicine",
 "type": "ArticleStory",
@@ -35858,7 +35846,6 @@ window.STORIES_DATA = [
 "Art"
 ],
 "roles": [
-"Commercial Linkage",
 "Scholarly Uptake"
 ],
 "is_oa": true,
@@ -35873,17 +35860,17 @@ window.STORIES_DATA = [
 "event_count": 0,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 1,
+"ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": false,
+"has_prism_context": true,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Logic of Experimentation: Rethinking Music Performance Through Artistic Research (2018), published by Leuven University Press, has been cited 5 times.",
@@ -35914,10 +35901,18 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 2
+"count": 4
 }
 ],
 "countries": [
+{
+"label": "Belgium",
+"count": 1
+},
+{
+"label": "United Kingdom",
+"count": 1
+},
 {
 "label": "Portugal",
 "count": 1
@@ -35928,6 +35923,14 @@ window.STORIES_DATA = [
 }
 ],
 "citing_institutions": [
+{
+"label": "KU Leuven",
+"count": 1
+},
+{
+"label": "University of Oxford",
+"count": 1
+},
 {
 "label": "University of Aveiro",
 "count": 1
@@ -40020,6 +40023,105 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "bookstory_10.11116_9789461664389.html",
+"title": "At Home in Renaissance Bruges",
+"type": "BookStory",
+"doi": "10.11116/9789461664389",
+"year": 2022,
+"venue": "Leuven University Press",
+"venue_name": "",
+"publisher": "Leuven University Press",
+"concepts": [
+"The Renaissance",
+"Art",
+"History",
+"Ancient history",
+"Art history"
+],
+"roles": [
+"Sustainability & Policy Relevance",
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "hybrid",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": true,
+"citation_count": 3,
+"event_count": 0,
+"has_sdgs": true,
+"sdg_ids": [
+"Sustainable cities and communities"
+],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": true,
+"has_prism_peer_review": false,
+"has_reuse": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
+"has_certified_repository": false,
+"has_open_repository": false,
+"excerpt": "Short impact summary At Home in Renaissance Bruges (2022), published by Leuven University Press, has been cited 3 times.",
+"cover_url": "",
+"authors": "Julie De Groot",
+"all_authors": [
+"Julie De Groot"
+],
+"institutions": [],
+"download_count": 4918,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [
+"KU Leuven",
+"Fondation Universitaire de Belgique",
+"University of Antwerp"
+],
+"sectors": [
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Portugal",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "University of Minho",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.11116/9789461664389"
+]
+},
+{
 "file": "bookstory_10.11116_9789461664693.html",
 "title": "Absent Presences in the Colonial Archive",
 "type": "BookStory",
@@ -42844,106 +42946,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.11116/9789461664174"
-]
-},
-{
-"file": "bookstory_10.11116_9789461664389.html",
-"title": "At Home in Renaissance Bruges",
-"type": "BookStory",
-"doi": "10.11116/9789461664389",
-"year": 2022,
-"venue": "Leuven University Press",
-"venue_name": "",
-"publisher": "Leuven University Press",
-"concepts": [
-"The Renaissance",
-"Art",
-"History",
-"Ancient history",
-"Art history"
-],
-"roles": [
-"Commercial Linkage",
-"Sustainability & Policy Relevance",
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": true,
-"citation_count": 2,
-"event_count": 0,
-"has_sdgs": true,
-"sdg_ids": [
-"Sustainable cities and communities"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary At Home in Renaissance Bruges (2022), published by Leuven University Press, has been cited 2 times.",
-"cover_url": "",
-"authors": "Julie De Groot",
-"all_authors": [
-"Julie De Groot"
-],
-"institutions": [],
-"download_count": 4918,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [
-"KU Leuven",
-"Fondation Universitaire de Belgique",
-"University of Antwerp"
-],
-"sectors": [
-{
-"label": "Education",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "Portugal",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "University of Minho",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.11116/9789461664389"
 ]
 },
 {
@@ -49141,12 +49143,12 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": false,
+"has_openaire_reach": true,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Pro-vax (2025), published by Peter Lang Verlag, has been cited 1 time.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781800794726&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781800794719&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Samantha Vanderslott",
 "all_authors": [
 "Samantha Vanderslott"
@@ -49170,25 +49172,21 @@ window.STORIES_DATA = [
 "funders": [],
 "sectors": [
 {
+"label": "Education",
+"count": 1
+},
+{
 "label": "Facility",
 "count": 1
 },
 {
 "label": "Healthcare",
 "count": 1
-},
-{
-"label": "Education",
-"count": 1
 }
 ],
 "countries": [
 {
-"label": "Vietnam",
-"count": 1
-},
-{
-"label": "NP",
+"label": "Indonesia",
 "count": 1
 },
 {
@@ -49196,17 +49194,25 @@ window.STORIES_DATA = [
 "count": 1
 },
 {
-"label": "Indonesia",
+"label": "Vietnam",
+"count": 1
+},
+{
+"label": "NP",
 "count": 1
 }
 ],
 "citing_institutions": [
 {
-"label": "Kathmandu University",
+"label": "University of Indonesia",
 "count": 0
 },
 {
-"label": "University of Oxford",
+"label": "Oxford University Clinical Research Unit Indonesia",
+"count": 0
+},
+{
+"label": "Kathmandu University",
 "count": 0
 },
 {
@@ -49214,11 +49220,7 @@ window.STORIES_DATA = [
 "count": 0
 },
 {
-"label": "Hospital for Tropical Diseases",
-"count": 0
-},
-{
-"label": "Oxford University Clinical Research Unit Indonesia",
+"label": "University of Oxford",
 "count": 0
 }
 ],
@@ -62849,4 +62851,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 482, "total_articles": 190, "total_books": 214, "total_data": 71, "total_software": 7, "total_oa": 419, "pct_oa": 87, "total_citations": 186267, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 482, "total_articles": 190, "total_books": 214, "total_data": 71, "total_software": 7, "total_oa": 419, "pct_oa": 87, "total_citations": 186276, "num_disciplines": 30};
