@@ -7439,7 +7439,7 @@ window.STORIES_DATA = [
 "Scholarly Uptake",
 "Infrastructure Dataset",
 "High-Visibility Uptake",
-"Sustainability & Policy Relevance"
+"Pedagogical Anchor"
 ],
 "is_oa": true,
 "oa_status": "green",
@@ -7449,8 +7449,10 @@ window.STORIES_DATA = [
 "OpenAlex/Crossref"
 ],
 "oa_claimed_not_in_doab": false,
-"citation_count": 329,
+"citation_count": 363,
 "event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
 "has_sdgs": true,
 "sdg_ids": [
 "Gender equality"
@@ -7464,10 +7466,10 @@ window.STORIES_DATA = [
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": true,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
 "has_certified_repository": false,
-"has_open_repository": false,
+"has_open_repository": true,
 "excerpt": "Short impact summary The Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS) (2018) in Zenodo.",
 "cover_url": "",
 "authors": "Steven R. Livingstone, Frank Russo",
@@ -7479,12 +7481,13 @@ window.STORIES_DATA = [
 "University of Wisconsin–River Falls",
 "Toronto Metropolitan University"
 ],
-"download_count": 1265541,
+"download_count": 1315426,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia"
+"Wikipedia",
+"Event Data Status"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -7502,19 +7505,19 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 288
+"count": 325
 },
 {
 "label": "Company",
-"count": 35
+"count": 36
 },
 {
 "label": "Facility",
-"count": 29
+"count": 30
 },
 {
 "label": "Government",
-"count": 11
+"count": 16
 },
 {
 "label": "Healthcare",
@@ -7524,15 +7527,15 @@ window.STORIES_DATA = [
 "countries": [
 {
 "label": "China",
-"count": 79
+"count": 88
 },
 {
 "label": "India",
-"count": 67
+"count": 73
 },
 {
 "label": "United States",
-"count": 48
+"count": 52
 },
 {
 "label": "United Kingdom",
@@ -7540,10 +7543,14 @@ window.STORIES_DATA = [
 },
 {
 "label": "Japan",
-"count": 17
+"count": 19
 }
 ],
 "citing_institutions": [
+{
+"label": "South China University of Technology",
+"count": 5
+},
 {
 "label": "Vellore Institute of Technology University",
 "count": 4
@@ -7553,16 +7560,12 @@ window.STORIES_DATA = [
 "count": 4
 },
 {
-"label": "South China University of Technology",
-"count": 4
-},
-{
-"label": "Amrita Vishwa Vidyapeetham",
-"count": 4
-},
-{
 "label": "Zhejiang Lab",
-"count": 3
+"count": 4
+},
+{
+"label": "SRM Institute of Science and Technology",
+"count": 4
 }
 ],
 "scite_supporting": 0,
@@ -10185,8 +10188,9 @@ window.STORIES_DATA = [
 "Computer science"
 ],
 "roles": [
-"Commercial Linkage",
-"Reference Point for Synthesis"
+"Active Public Discourse",
+"Reference Point for Synthesis",
+"Public Visibility & Knowledge Base"
 ],
 "is_oa": true,
 "oa_status": "gold",
@@ -10195,8 +10199,10 @@ window.STORIES_DATA = [
 "OpenAlex/Crossref"
 ],
 "oa_claimed_not_in_doab": false,
-"citation_count": 160,
+"citation_count": 165,
 "event_count": 0,
+"event_data_status": "historical_archive",
+"archived_event_count": 200,
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
@@ -10205,14 +10211,14 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": false,
+"has_prism_context": true,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Opening Science (2014), published by Springer International Publishing, has been cited 160 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
+"excerpt": "Short impact summary Opening Science (2014), published by Springer Nature, has been cited 165 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-319-00026-8",
 "authors": "Sönke Bartling, Sascha Friesike",
 "all_authors": [
@@ -10229,7 +10235,8 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia",
-"Bluesky"
+"Bluesky",
+"Event Data Status"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -10248,37 +10255,37 @@ window.STORIES_DATA = [
 "sectors": [
 {
 "label": "Education",
-"count": 120
+"count": 128
 },
 {
 "label": "Facility",
-"count": 36
+"count": 39
 },
 {
 "label": "Nonprofit",
-"count": 14
+"count": 15
 },
 {
 "label": "Company",
-"count": 7
+"count": 8
 },
 {
-"label": "Healthcare",
-"count": 5
+"label": "Government",
+"count": 8
 }
 ],
 "countries": [
 {
 "label": "Germany",
-"count": 27
+"count": 29
 },
 {
 "label": "United States",
-"count": 26
+"count": 28
 },
 {
 "label": "United Kingdom",
-"count": 23
+"count": 25
 },
 {
 "label": "Spain",
@@ -10286,20 +10293,16 @@ window.STORIES_DATA = [
 },
 {
 "label": "Italy",
-"count": 15
+"count": 19
 }
 ],
 "citing_institutions": [
 {
 "label": "Institute of Nanostructured Materials",
-"count": 4
+"count": 6
 },
 {
 "label": "Universidad de Zaragoza",
-"count": 3
-},
-{
-"label": "North Carolina State University",
 "count": 3
 },
 {
@@ -10308,6 +10311,10 @@ window.STORIES_DATA = [
 },
 {
 "label": "Universidade Aberta",
+"count": 2
+},
+{
+"label": "University of Göttingen",
 "count": 2
 }
 ],
@@ -47006,7 +47013,9 @@ window.STORIES_DATA = [
 "Archaeology"
 ],
 "roles": [
-"Commercial Linkage",
+"High-Visibility Uptake",
+"Active Public Discourse",
+"Pedagogical Anchor",
 "Scholarly Uptake"
 ],
 "is_oa": false,
@@ -47016,22 +47025,24 @@ window.STORIES_DATA = [
 "oa_claimed_not_in_doab": false,
 "citation_count": 1,
 "event_count": 0,
+"event_data_status": "historical_archive",
+"archived_event_count": 5,
 "has_sdgs": false,
 "sdg_ids": [],
 "has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 1,
-"ta_ol_holdings": 0,
+"ta_ol_holdings": 4,
 "ta_otl": false,
 "has_peer_review": false,
 "has_prism_context": false,
 "has_prism_peer_review": false,
 "has_reuse": false,
-"has_openaire_reach": false,
+"has_openaire_reach": true,
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Smelly Shoes—An Opportunity for Shoe Rack Re-Design (2022), published by Springer Nature Singapore, has been cited 1 time.",
+"excerpt": "Short impact summary Smelly Shoes—An Opportunity for Shoe Rack Re-Design (2022), published by Springer Nature, has been cited 1 time.",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-981-16-2229-8_33",
 "authors": "Vikash Kumar, Sarthak Mittal",
 "all_authors": [
@@ -47047,6 +47058,7 @@ window.STORIES_DATA = [
 "belongs_to_series": true,
 "mention_platforms": [
 "Wikipedia",
+"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -62851,4 +62863,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 482, "total_articles": 190, "total_books": 214, "total_data": 71, "total_software": 7, "total_oa": 419, "pct_oa": 87, "total_citations": 186276, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 482, "total_articles": 190, "total_books": 214, "total_data": 71, "total_software": 7, "total_oa": 419, "pct_oa": 87, "total_citations": 186315, "num_disciplines": 30};
