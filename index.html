@@ -980,6 +980,8 @@
         <button class="view-btn"        id="vbtn-series"        onclick="setView('series')">By series</button>
         <button class="view-btn"        id="vbtn-authors"       onclick="setView('authors')">Authors</button>
       </div>
+      <button class="view-btn" id="copyLinkBtn" type="button" onclick="copyDashboardLink()"
+              title="Copy a link to this exact view (updates as new works are added)">Copy link</button>
       <div class="active-filters" id="activeFilters"></div>
     </div>
     <div class="author-matches" id="authorMatches" style="display:none;"></div>
@@ -1986,24 +1988,66 @@ function syncViewButtons() {
   if (btn) btn.classList.add("active");
 }
 
+// Query-string params that map onto a story filter facet, so a filtered view
+// (e.g. "By publisher → University of Michigan Press") is a shareable link that
+// stays current as new works are added.
+const URL_FILTER_PARAMS = { publisher: "venue", institution: "institution", funder: "funder", series: "series" };
+
 function applyUrlState() {
   const params = new URLSearchParams(window.location.search || "");
   const q = normalizeSearchQuery(params.get("q") || "");
-  const publisher = (params.get("publisher") || "").trim();
   const view = (params.get("view") || "").trim();
 
   if (q) state.query = q;
-  if (publisher) state.filters.venue.add(publisher);
+
+  let sawFilter = null;
+  for (const [param, facet] of Object.entries(URL_FILTER_PARAMS)) {
+    for (const val of params.getAll(param)) {
+      const clean = val.trim();
+      if (clean) { state.filters[facet].add(clean); sawFilter = view || (param === "publisher" ? "publisher" : "stories"); }
+    }
+  }
 
   const allowedViews = new Set(["stories", "institution", "funder", "publisher", "series", "authors"]);
   if (allowedViews.has(view)) {
     state.view = view;
-  } else if (publisher) {
+  } else if (params.get("publisher")) {
     state.view = "publisher";
   }
 
   const searchInput = document.getElementById("searchInput");
   if (searchInput) searchInput.value = state.query;
+}
+
+// Reflect the current view + filters back into the address bar (no reload) so
+// the URL is always copy-pasteable.
+function writeUrlState() {
+  const params = new URLSearchParams();
+  if (state.view && state.view !== "stories") params.set("view", state.view);
+  if (state.query) params.set("q", state.query);
+  for (const [param, facet] of Object.entries(URL_FILTER_PARAMS)) {
+    for (const val of state.filters[facet]) params.append(param, val);
+  }
+  const qs = params.toString();
+  const url = window.location.pathname + (qs ? "?" + qs : "");
+  try { window.history.replaceState(null, "", url); } catch (_) {}
+}
+
+function copyDashboardLink() {
+  writeUrlState();
+  const btn = document.getElementById("copyLinkBtn");
+  const done = (ok) => {
+    if (!btn) return;
+    const original = btn.textContent;
+    btn.textContent = ok ? "Link copied" : "Copy failed";
+    setTimeout(() => { btn.textContent = original; }, 1600);
+  };
+  const href = window.location.href;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(href).then(() => done(true), () => done(false));
+  } else {
+    done(false);
+  }
 }
 
 // ── interactions ──────────────────────────────────────────────────────────
@@ -2069,6 +2113,7 @@ function update() {
     document.getElementById("resultsCount").textContent = `${shown.length} author${shown.length !== 1 ? "s" : ""}`;
   }
   if (typeof initRoleTooltips === "function") initRoleTooltips();
+  writeUrlState();
 }
 
 // ── author view ───────────────────────────────────────────────────────────
