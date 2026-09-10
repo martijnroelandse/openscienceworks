@@ -107,7 +107,6 @@ window.STORIES_DATA = [
 "Hypothesis",
 "Reddit",
 "News",
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -302,8 +301,7 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "Bluesky",
-"Hypothesis",
-"Event Data Status"
+"Hypothesis"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -501,9 +499,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -658,7 +654,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -816,7 +811,6 @@ window.STORIES_DATA = [
 "belongs_to_series": true,
 "mention_platforms": [
 "Wikipedia",
-"Event Data Status",
 "Blogs",
 "LibraryThing"
 ],
@@ -3914,7 +3908,6 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "Hypothesis",
-"Event Data Status",
 "Reddit"
 ],
 "has_librarything": false,
@@ -4069,8 +4062,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Hypothesis",
-"Event Data Status"
+"Hypothesis"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -4266,8 +4258,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Substack",
-"Event Data Status"
+"Substack"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -4463,8 +4454,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Bluesky",
-"Event Data Status"
+"Bluesky"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -4650,7 +4640,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Hypothesis",
-"Event Data Status",
 "Blogs",
 "Wikipedia",
 "Reddit"
@@ -4813,9 +4802,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -4968,7 +4955,6 @@ window.STORIES_DATA = [
 "Substack",
 "Wikipedia",
 "Hypothesis",
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -5204,7 +5190,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia",
-"Event Data Status",
 "Reddit"
 ],
 "has_librarything": false,
@@ -5368,7 +5353,6 @@ window.STORIES_DATA = [
 "Bluesky",
 "Reddit",
 "News",
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -5527,9 +5511,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -5690,9 +5672,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -5895,9 +5875,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -6049,9 +6027,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -6203,9 +6179,7 @@ window.STORIES_DATA = [
 "series_name": "Lecture notes in computer science",
 "series_id": "https://openalex.org/S106296714",
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -6355,9 +6329,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -6524,9 +6496,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -6686,9 +6656,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -6836,9 +6804,7 @@ window.STORIES_DATA = [
 "series_name": "Climate Change 2014: Mitigation of Climate Change",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -6988,8 +6954,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Podcasts",
-"Event Data Status"
+"Podcasts"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -7147,8 +7112,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia",
-"Event Data Status"
+"Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -7439,9 +7403,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -7588,9 +7550,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -7737,7 +7697,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia",
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -7893,7 +7852,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "News",
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -8038,9 +7996,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -8207,7 +8163,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "News",
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -8388,9 +8343,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -8688,9 +8641,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -8881,8 +8832,7 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Podcasts",
-"Substack",
-"Event Data Status"
+"Substack"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -9036,9 +8986,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -9185,9 +9133,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -9337,9 +9283,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -9487,9 +9431,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -9937,7 +9879,6 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "News",
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -10088,8 +10029,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Substack",
-"Event Data Status"
+"Substack"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -10238,7 +10178,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Bluesky",
-"Event Data Status",
 "Wikipedia"
 ],
 "has_librarything": false,
@@ -10402,7 +10341,6 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "News",
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -10554,9 +10492,7 @@ window.STORIES_DATA = [
 "series_name": "Studies in International Economics",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -10708,8 +10644,7 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "Hypothesis",
-"Reddit",
-"Event Data Status"
+"Reddit"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -10921,9 +10856,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -11046,9 +10979,7 @@ window.STORIES_DATA = [
 "series_name": "Studies in International Economics",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -11201,8 +11132,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Bluesky",
-"Event Data Status"
+"Bluesky"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -11350,9 +11280,7 @@ window.STORIES_DATA = [
 "series_name": "Counterpoints",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -11506,7 +11434,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -11696,8 +11623,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Hypothesis",
-"Event Data Status"
+"Hypothesis"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -11862,8 +11788,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Podcasts",
-"Event Data Status"
+"Podcasts"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -12013,8 +11938,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Podcasts",
-"Event Data Status"
+"Podcasts"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -12193,8 +12117,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Podcasts",
-"Event Data Status"
+"Podcasts"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -12355,7 +12278,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "News",
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -12526,7 +12448,6 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Reddit",
 "News",
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -12690,8 +12611,7 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Bluesky",
-"Hypothesis",
-"Event Data Status"
+"Hypothesis"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -12849,8 +12769,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia",
-"Event Data Status"
+"Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -13012,8 +12931,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Blogs",
-"Event Data Status"
+"Blogs"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -13170,8 +13088,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia",
-"Event Data Status"
+"Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -13342,7 +13259,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Reddit",
 "Blogs"
 ],
@@ -13501,7 +13417,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Wikipedia",
 "Hypothesis",
 "Blogs"
@@ -13669,9 +13584,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -13829,9 +13742,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -14005,7 +13916,6 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Bluesky",
 "News",
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -14171,8 +14081,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Substack",
-"Event Data Status"
+"Substack"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -14331,9 +14240,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -14608,7 +14515,6 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Reddit",
 "News",
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -14771,8 +14677,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Blogs",
-"Event Data Status"
+"Blogs"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -14936,9 +14841,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -15094,7 +14997,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "News",
-"Event Data Status",
 "Wikipedia",
 "Blogs"
 ],
@@ -15360,7 +15262,6 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "News",
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -15532,9 +15433,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -15689,9 +15588,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -15836,8 +15733,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": true,
 "mention_platforms": [
-"Substack",
-"Event Data Status"
+"Substack"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -15978,9 +15874,7 @@ window.STORIES_DATA = [
 "series_name": "Studies in Archaeological Sciences",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -16141,8 +16035,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Hypothesis",
-"Event Data Status"
+"Hypothesis"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -16382,7 +16275,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Hypothesis"
 ],
 "has_librarything": false,
@@ -16541,9 +16433,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -16702,7 +16592,6 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "News",
-"Event Data Status",
 "Blogs",
 "Hypothesis",
 "Reddit"
@@ -16862,9 +16751,7 @@ window.STORIES_DATA = [
 "series_name": "Open reports series",
 "series_id": "https://openalex.org/S4210220030",
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -17048,8 +16935,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Podcasts",
-"Event Data Status"
+"Podcasts"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -17223,9 +17109,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -17378,7 +17262,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -17541,7 +17424,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Podcasts",
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -17716,9 +17598,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -17875,9 +17755,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -18044,7 +17922,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Reddit"
 ],
 "has_librarything": false,
@@ -18207,9 +18084,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -18389,7 +18264,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "News",
-"Event Data Status",
 "Hypothesis",
 "Blogs"
 ],
@@ -18535,9 +18409,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -18669,9 +18541,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -18820,9 +18690,7 @@ window.STORIES_DATA = [
 "series_name": "Studies in International Economics",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -18967,7 +18835,6 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Wikipedia",
 "News",
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -19083,9 +18950,7 @@ window.STORIES_DATA = [
 "series_name": "Studies in Archaeological Sciences",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -19228,7 +19093,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -19379,9 +19243,7 @@ window.STORIES_DATA = [
 "series_name": "Studies in International Economics",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -19527,7 +19389,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -19681,8 +19542,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Blogs",
-"Event Data Status"
+"Blogs"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -19842,8 +19702,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Hypothesis",
-"Event Data Status"
+"Hypothesis"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -19998,9 +19857,7 @@ window.STORIES_DATA = [
 "series_name": "Studies in International Economics",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -20157,9 +20014,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -20327,8 +20182,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Hypothesis",
-"Event Data Status"
+"Hypothesis"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -20521,8 +20375,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Bluesky",
-"Event Data Status"
+"Bluesky"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -20682,9 +20535,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -20838,7 +20689,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -20971,7 +20821,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Bluesky",
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -21129,7 +20978,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Substack",
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -21242,9 +21090,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -21399,7 +21245,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Bluesky",
-"Event Data Status",
 "Hypothesis",
 "Blogs"
 ],
@@ -21557,7 +21402,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News",
 "LibraryThing"
 ],
@@ -21723,9 +21567,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -21880,9 +21722,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -22052,7 +21892,6 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Hypothesis",
 "News",
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -22210,7 +22049,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": true,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -22355,9 +22193,7 @@ window.STORIES_DATA = [
 "series_name": "Lecture notes in computer science",
 "series_id": "https://openalex.org/S106296714",
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -22500,9 +22336,7 @@ window.STORIES_DATA = [
 "series_name": "Studies in energy, resource and environmental economics",
 "series_id": "https://openalex.org/S4393919257",
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -22655,9 +22489,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -22806,7 +22638,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -22970,9 +22801,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -23128,9 +22957,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -23282,9 +23109,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -23403,9 +23228,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -23559,7 +23382,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -23696,7 +23518,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -23851,7 +23672,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -23986,8 +23806,7 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia",
-"Hypothesis",
-"Event Data Status"
+"Hypothesis"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -24144,7 +23963,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Hypothesis",
-"Event Data Status",
 "Reddit",
 "Blogs"
 ],
@@ -24307,7 +24125,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Wikipedia"
 ],
 "has_librarything": false,
@@ -24542,9 +24359,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -24697,9 +24512,7 @@ window.STORIES_DATA = [
 "series_name": "MODID-19febebe56a:Leuven University Press",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -24846,9 +24659,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -24983,9 +24794,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -25126,7 +24935,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -25271,9 +25079,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -25433,7 +25239,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -25589,7 +25394,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -25746,9 +25550,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -25923,7 +25725,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Bluesky",
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -26101,7 +25902,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Hypothesis"
 ],
 "has_librarything": false,
@@ -26250,8 +26050,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Bluesky",
-"Event Data Status"
+"Bluesky"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -26400,7 +26199,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -26557,8 +26355,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia",
-"Event Data Status"
+"Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -26715,9 +26512,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -26867,9 +26662,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -27009,9 +26802,7 @@ window.STORIES_DATA = [
 "series_name": "Advances in medical diagnosis, treatment, and care (AMDTC) book series",
 "series_id": "https://openalex.org/S4210196384",
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -27168,8 +26959,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Hypothesis",
-"Event Data Status"
+"Hypothesis"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -27337,9 +27127,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -27493,7 +27281,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News",
 "LibraryThing"
 ],
@@ -27599,7 +27386,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -27716,9 +27502,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -27869,9 +27653,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -28041,9 +27823,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -28217,9 +27997,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -28371,8 +28149,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia",
-"Event Data Status"
+"Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -28522,9 +28299,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -28654,7 +28429,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -28763,9 +28537,7 @@ window.STORIES_DATA = [
 "series_name": "Telecollaborative learning and Virtual Exchange in Education",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -28900,7 +28672,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -29036,9 +28807,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -29186,8 +28955,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Substack",
-"Event Data Status"
+"Substack"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -29358,7 +29126,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -29515,7 +29282,6 @@ window.STORIES_DATA = [
 "belongs_to_series": true,
 "mention_platforms": [
 "Hypothesis",
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -29662,9 +29428,7 @@ window.STORIES_DATA = [
 "series_name": "Communication, Sport, and Society",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -29801,9 +29565,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -29957,9 +29719,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -30120,9 +29880,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -30275,9 +30033,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -30422,7 +30178,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": true,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -30557,7 +30312,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -30713,7 +30467,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -30855,9 +30608,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -30997,9 +30748,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -31148,7 +30897,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Podcasts",
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -31303,9 +31051,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -31447,7 +31193,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Wikipedia"
 ],
 "has_librarything": false,
@@ -31585,9 +31330,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -31707,7 +31450,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -31845,9 +31587,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -31996,9 +31736,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -32149,7 +31887,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Hypothesis",
-"Event Data Status",
 "Wikipedia"
 ],
 "has_librarything": false,
@@ -32308,9 +32045,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -32456,8 +32191,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Blogs",
-"Event Data Status"
+"Blogs"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -32606,8 +32340,7 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Blogs",
-"Bluesky",
-"Event Data Status"
+"Bluesky"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -32902,9 +32635,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -33044,9 +32775,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -33184,9 +32913,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -33322,9 +33049,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -33457,9 +33182,7 @@ window.STORIES_DATA = [
 "series_name": "MODID-19febebe56a:Leuven University Press",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -33596,7 +33319,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -33745,9 +33467,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -33878,9 +33598,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -34012,7 +33730,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -34138,7 +33855,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": true,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -34249,9 +33965,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -34388,8 +34102,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Hypothesis",
-"Event Data Status"
+"Hypothesis"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -34535,9 +34248,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -34675,9 +34386,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -34829,8 +34538,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Hypothesis",
-"Event Data Status"
+"Hypothesis"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -34993,7 +34701,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "News",
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -35140,9 +34847,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -35274,9 +34979,7 @@ window.STORIES_DATA = [
 "series_name": "MODID-19febebe56a:Leuven University Press",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -35402,7 +35105,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Wikipedia"
 ],
 "has_librarything": false,
@@ -35535,9 +35237,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -35680,9 +35380,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -35805,9 +35503,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -35930,9 +35626,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -36106,9 +35800,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -36267,9 +35959,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -36410,7 +36100,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Wikipedia"
 ],
 "has_librarything": false,
@@ -36582,9 +36271,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -36739,7 +36426,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Hypothesis"
 ],
 "has_librarything": false,
@@ -36893,9 +36579,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -37041,9 +36725,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -37163,9 +36845,7 @@ window.STORIES_DATA = [
 "series_name": "Images of immigrants and refugees in Western Europe. Media representations, public opinion, and refugees’ experiences, Chapt. 2, (21-36)",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -37307,9 +36987,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -37456,9 +37134,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -37578,8 +37254,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia",
-"Event Data Status"
+"Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -37695,9 +37370,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -37785,7 +37458,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News",
 "Wikipedia"
 ],
@@ -37926,9 +37598,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -38060,7 +37730,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -38186,9 +37855,7 @@ window.STORIES_DATA = [
 "series_name": "Philosophie et Politique / Philosophy and Politics",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -38302,9 +37969,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -38421,9 +38086,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -38566,9 +38229,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -38699,7 +38360,6 @@ window.STORIES_DATA = [
 "mention_platforms": [
 "Blogs",
 "Substack",
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -38843,7 +38503,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -38999,7 +38658,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Hypothesis"
 ],
 "has_librarything": false,
@@ -39126,9 +38784,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -39256,8 +38912,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Podcasts",
-"Event Data Status"
+"Podcasts"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -39432,9 +39087,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -39576,9 +39229,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -39731,9 +39382,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -39871,9 +39520,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -40017,9 +39664,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -40114,9 +39759,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -40223,9 +39866,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -40318,7 +39959,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -40444,9 +40084,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -40570,9 +40208,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -40702,9 +40338,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -40821,9 +40455,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -40933,9 +40565,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -41063,9 +40693,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -41182,9 +40810,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -41302,9 +40928,7 @@ window.STORIES_DATA = [
 "series_name": "Philosophie et Politique / Philosophy and Politics",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -41422,9 +41046,7 @@ window.STORIES_DATA = [
 "series_name": "Travail et Société / Work and Society",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -41536,9 +41158,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -41627,9 +41247,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -41737,7 +41355,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -41852,7 +41469,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -41980,7 +41596,6 @@ window.STORIES_DATA = [
 "belongs_to_series": true,
 "mention_platforms": [
 "Substack",
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -42094,9 +41709,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -42234,9 +41847,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -42383,9 +41994,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -42516,9 +42125,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -42695,8 +42302,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Podcasts",
-"Event Data Status"
+"Podcasts"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -42838,9 +42444,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -42964,9 +42568,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -43138,9 +42740,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -43266,9 +42866,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -43398,9 +42996,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -43643,9 +43239,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -43789,9 +43383,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -43915,9 +43507,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -44045,9 +43635,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -44161,7 +43749,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": true,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -44271,9 +43858,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -44393,9 +43978,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -44524,7 +44107,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia",
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -44645,7 +44227,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -44756,9 +44337,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -44862,7 +44441,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Wikipedia"
 ],
 "has_librarything": false,
@@ -44968,7 +44546,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -45071,7 +44648,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -45182,7 +44758,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -45279,9 +44854,7 @@ window.STORIES_DATA = [
 "series_name": "Philosophie et Politique / Philosophy and Politics",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -45379,9 +44952,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -45483,9 +45054,7 @@ window.STORIES_DATA = [
 "series_name": "Reimagining Ireland",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -45577,9 +45146,7 @@ window.STORIES_DATA = [
 "series_name": "Counterpoints",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -45694,9 +45261,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -45824,9 +45389,7 @@ window.STORIES_DATA = [
 "series_name": "MODID-d66f183fd58:Amsterdam University Press",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -45915,9 +45478,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -46064,9 +45625,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -46213,9 +45772,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -46356,9 +45913,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -46458,9 +46013,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -46601,9 +46154,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -46735,9 +46286,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -46879,9 +46428,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -46995,7 +46542,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -47152,9 +46698,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -47299,9 +46843,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -47424,8 +46966,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Blogs",
-"Event Data Status"
+"Blogs"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -47551,7 +47092,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -47646,9 +47186,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -47772,9 +47310,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -47903,9 +47439,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -48053,8 +47587,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Hypothesis",
-"Event Data Status"
+"Hypothesis"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -48187,9 +47720,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -48307,7 +47838,6 @@ window.STORIES_DATA = [
 "belongs_to_series": true,
 "mention_platforms": [
 "Wikipedia",
-"Event Data Status",
 "Blogs"
 ],
 "has_librarything": false,
@@ -48396,9 +47926,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -48519,9 +48047,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -48658,7 +48184,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Wikipedia"
 ],
 "has_librarything": false,
@@ -48747,9 +48272,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -48852,9 +48375,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -48958,9 +48479,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -49067,9 +48586,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -49174,9 +48691,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -49263,7 +48778,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Wikipedia"
 ],
 "has_librarything": false,
@@ -49364,9 +48878,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -49481,9 +48993,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -49580,9 +49090,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -49672,9 +49180,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -49784,9 +49290,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -49888,9 +49392,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -49992,9 +49494,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -50096,9 +49596,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -50212,7 +49710,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -50308,9 +49805,7 @@ window.STORIES_DATA = [
 "series_name": "Philosophie et Politique / Philosophy and Politics",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -50398,9 +49893,7 @@ window.STORIES_DATA = [
 "series_name": "Internationalism and the Arts",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -50498,9 +49991,7 @@ window.STORIES_DATA = [
 "series_name": "Medical Humanities: Criticism and Creativity",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -50639,7 +50130,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": true,
 "mention_platforms": [
-"Event Data Status",
 "Wikipedia"
 ],
 "has_librarything": false,
@@ -50745,7 +50235,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Wikipedia",
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -50835,9 +50324,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -50946,9 +50433,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -51060,9 +50545,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -51186,9 +50669,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -51317,9 +50798,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -51471,9 +50950,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -51582,9 +51059,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -51691,9 +51166,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -51809,9 +51282,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -51907,9 +51378,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -52014,9 +51483,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -52119,9 +51586,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -52223,9 +51688,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -52329,9 +51792,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -52433,9 +51894,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -52538,9 +51997,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -52643,9 +52100,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -52728,9 +52183,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -52879,9 +52332,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -52973,9 +52424,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -53065,9 +52514,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -53152,7 +52599,6 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Podcasts",
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -53272,9 +52718,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -53393,8 +52837,7 @@ window.STORIES_DATA = [
 "belongs_to_series": false,
 "mention_platforms": [
 "Blogs",
-"Substack",
-"Event Data Status"
+"Substack"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -53493,9 +52936,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -53597,9 +53038,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -53700,8 +53139,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Substack",
-"Event Data Status"
+"Substack"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -53784,9 +53222,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -53881,8 +53317,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Blogs",
-"Event Data Status"
+"Blogs"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -53973,8 +53408,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Podcasts",
-"Event Data Status"
+"Podcasts"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -54061,9 +53495,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -54156,8 +53588,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Podcasts",
-"Event Data Status"
+"Podcasts"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -54305,9 +53736,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -54440,9 +53869,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -54539,9 +53966,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -54633,9 +54058,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -54703,9 +54126,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -54795,9 +54216,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -54884,8 +54303,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Substack",
-"Event Data Status"
+"Substack"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -54968,9 +54386,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -55059,9 +54475,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -55150,9 +54564,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -55241,9 +54653,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -55325,9 +54735,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -55409,9 +54817,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -55497,9 +54903,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -55585,9 +54989,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -55677,9 +55079,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -55759,9 +55159,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -55852,9 +55250,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -55945,9 +55341,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -56033,9 +55427,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -56170,9 +55562,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -56258,9 +55648,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -56345,9 +55733,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -56467,9 +55853,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -56620,9 +56004,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -56792,9 +56174,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -56939,9 +56319,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -57035,9 +56413,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -57123,9 +56499,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -57226,9 +56600,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -57320,9 +56692,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -57439,9 +56809,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -57523,9 +56891,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -57608,9 +56974,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -57687,9 +57051,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -57774,7 +57136,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Wikipedia",
 "LibraryThing"
 ],
@@ -57859,9 +57220,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -57945,7 +57304,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Wikipedia"
 ],
 "has_librarything": false,
@@ -58030,9 +57388,7 @@ window.STORIES_DATA = [
 "series_name": "MODID-19febebe56a:Leuven University Press",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -58123,7 +57479,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Wikipedia"
 ],
 "has_librarything": false,
@@ -58204,9 +57559,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -58289,9 +57642,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -58381,7 +57732,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "Wikipedia"
 ],
 "has_librarything": false,
@@ -58465,7 +57815,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -58549,9 +57898,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -58640,9 +57987,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -58730,9 +58075,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -58810,9 +58153,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -58897,9 +58238,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -58986,9 +58325,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -59078,9 +58415,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -59162,9 +58497,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -59253,9 +58586,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -59348,7 +58679,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -59443,9 +58773,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -59528,9 +58856,7 @@ window.STORIES_DATA = [
 "series_name": "Islamophobia as a Form of Radicalisation Perspectives on Media, Academia and Socio-political Scapes from Europe and Canada",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -59612,9 +58938,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -59696,9 +59020,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -59787,9 +59109,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -59875,9 +59195,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -59962,7 +59280,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -60047,9 +59364,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -60137,9 +59452,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -60229,7 +59542,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -60324,9 +59636,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -60414,9 +59724,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -60507,7 +59815,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News",
 "Wikipedia"
 ],
@@ -60593,9 +59900,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -60681,9 +59986,7 @@ window.STORIES_DATA = [
 "series_name": "Orpheus Institute Series",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -60768,9 +60071,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -60857,9 +60158,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -60940,9 +60239,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -61017,9 +60314,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -61102,7 +60397,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -61184,9 +60478,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -61266,9 +60558,7 @@ window.STORIES_DATA = [
 "series_name": "Quellen, Findbuecher und Inventare des Brandenburgischen Landeshauptarchivs",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -61338,9 +60628,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -61410,9 +60698,7 @@ window.STORIES_DATA = [
 "series_name": "Exiles and Transterrados",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -61490,9 +60776,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -61567,9 +60851,7 @@ window.STORIES_DATA = [
 "series_name": "Philosophie et Politique / Philosophy and Politics",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -61652,8 +60934,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia",
-"Event Data Status"
+"Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -61735,9 +61016,7 @@ window.STORIES_DATA = [
 "series_name": "Travail et Société / Work and Society",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -61818,9 +61097,7 @@ window.STORIES_DATA = [
 "series_name": "Internationalism and the Arts",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -61897,9 +61174,7 @@ window.STORIES_DATA = [
 "series_name": "Medical Humanities: Criticism and Creativity",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -61972,9 +61247,7 @@ window.STORIES_DATA = [
 "series_name": "Reimagining Ireland",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -62055,9 +61328,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -62139,9 +61410,7 @@ window.STORIES_DATA = [
 "series_name": "Travail et Société / Work and Society",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -62222,9 +61491,7 @@ window.STORIES_DATA = [
 "series_name": "Counterpoints",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -62295,9 +61562,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -62374,9 +61639,7 @@ window.STORIES_DATA = [
 "series_name": "Visual Communication",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -62448,7 +61711,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -62529,9 +61791,7 @@ window.STORIES_DATA = [
 "series_name": "Travail et Société / Work and Society",
 "series_id": null,
 "belongs_to_series": true,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -62617,7 +61877,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News",
 "LibraryThing"
 ],
@@ -62695,8 +61954,7 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Wikipedia",
-"Event Data Status"
+"Wikipedia"
 ],
 "has_librarything": false,
 "librarything_rating": null,
@@ -62768,7 +62026,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -62854,9 +62111,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -62946,7 +62201,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -63024,7 +62278,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News",
 "LibraryThing"
 ],
@@ -63204,9 +62457,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -63287,9 +62538,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -63389,9 +62638,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -63478,9 +62725,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -63567,9 +62812,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -63656,9 +62899,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -63776,9 +63017,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -63880,7 +63119,6 @@ window.STORIES_DATA = [
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"Event Data Status",
 "News"
 ],
 "has_librarything": false,
@@ -63977,9 +63215,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -64065,9 +63301,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -64153,9 +63387,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -64247,9 +63479,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -64331,9 +63561,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -64415,9 +63643,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -64499,9 +63725,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -64602,9 +63826,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -64695,9 +63917,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -64777,9 +63997,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -64860,9 +64078,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -64948,9 +64164,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
@@ -65030,9 +64244,7 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"Event Data Status"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
