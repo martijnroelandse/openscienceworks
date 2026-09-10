@@ -388,6 +388,8 @@
             Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
             <details><summary>Retained sources</summary><ul>
             
+                <li>narrative</li>
+            
                 <li>news_coverage</li>
             
             </ul></details>
@@ -483,10 +485,10 @@
                             <div class="im-spark">
                                 <div class="im-spark-chart">
                                     <canvas id="impactSparkline"
-                                        data-labels="[2001, 2005, 2008, 2011, 2012, 2014, 2015, 2020, 2023]"
-                                        data-values="[1, 1, 1, 1, 1, 1, 1, 1, 21]"></canvas>
+                                        data-labels="[2020, 2023]"
+                                        data-values="[1, 21]"></canvas>
                                 </div>
-                                <div class="im-spark-range">2001–2023</div>
+                                <div class="im-spark-range">2020–2023</div>
                             </div>
                             
                         </div>
@@ -839,8 +841,8 @@
             <!-- Citation timeline -->
             <div style="height:180px;width:100%;margin-bottom:1.25rem;">
                 <canvas id="citationChart"
-                    data-labels="[2001, 2005, 2008, 2011, 2012, 2014, 2015, 2020, 2023]"
-                    data-values="[1, 1, 1, 1, 1, 1, 1, 1, 21]">
+                    data-labels="[2020, 2023]"
+                    data-values="[1, 21]">
                 </canvas>
             </div>
 
@@ -1316,10 +1318,12 @@
         
         <section class="card no-print" id="sec-citations-table">
             <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
-            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.75rem;"
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.35rem;"
                  data-total="29">
-                29 citing works (most recent first)
+                29 most recent citing works (newest first)
             </div>
+            
+            
             <div class="table-scroll-wrapper">
                 <table id="cit-table">
                     <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
@@ -1547,7 +1551,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T13:56:51+00:00
+                    Generated on 2026-09-10T15:39:21+00:00
                 </div>
                 
             </div>
@@ -1636,7 +1640,7 @@
             var perPage = 25;
             if (total <= perPage) {
                 if (summary) {
-                    summary.textContent = total + ' citing works (most recent first)';
+                    summary.textContent = total + ' most recent citing works (newest first)';
                 }
                 return;
             }
@@ -1652,7 +1656,7 @@
                 }
                 info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
                 if (summary) {
-                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                    summary.textContent = total + ' most recent citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
                 }
                 btns.innerHTML = '';
                 var prev = document.createElement('button');

@@ -762,10 +762,10 @@ window.STORIES_DATA = [
 ],
 "roles": [
 "Active Public Discourse",
-"Commercial Linkage",
 "Reference Point for Synthesis",
 "Evidence-bearing Reference",
-"Public Visibility & Knowledge Base"
+"Public Visibility & Knowledge Base",
+"High-Visibility Uptake"
 ],
 "is_oa": false,
 "oa_status": "closed",
@@ -781,7 +781,7 @@ window.STORIES_DATA = [
 "has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 1,
-"ta_ol_holdings": 4,
+"ta_ol_holdings": 1,
 "ta_otl": false,
 "has_peer_review": false,
 "has_prism_context": false,
@@ -10151,7 +10151,7 @@ window.STORIES_DATA = [
 "has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 2,
+"ta_ol_holdings": 1,
 "ta_otl": false,
 "has_peer_review": false,
 "has_prism_context": true,
@@ -10479,7 +10479,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary This book has become a reference point for scholarship on non-tariff barriers in international trade.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780472023479&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780472109319&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Alan Deardorff, Robert Stern",
 "all_authors": [
 "Alan Deardorff",
@@ -10868,7 +10868,28 @@ window.STORIES_DATA = [
 "risk_eoc": false,
 "risk_pubpeer": 0,
 "funders": [],
-"sectors": [],
+"sectors": [
+{
+"label": "Education",
+"count": 194
+},
+{
+"label": "Facility",
+"count": 129
+},
+{
+"label": "Company",
+"count": 28
+},
+{
+"label": "Government",
+"count": 25
+},
+{
+"label": "Other",
+"count": 18
+}
+],
 "countries": [
 {
 "label": "United States",
@@ -16726,10 +16747,10 @@ window.STORIES_DATA = [
 "archived_event_count": 36,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
+"ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
 "has_prism_context": true,
@@ -17235,10 +17256,10 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Decent work and economic growth"
 ],
-"has_teaching": true,
+"has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 2,
+"ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_prism_context": true,
@@ -19846,7 +19867,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Social Dimensions of U.S.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780472023400&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780472110995&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Alan Deardorff, Robert Stern",
 "all_authors": [
 "Alan Deardorff",
@@ -22036,7 +22057,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary States-in-Waiting has already achieved unusually strong scholarly traction for a 2024 book, with 24 OpenAlex citations placing it in the top 1% of works in its field and year.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781009305846&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781009305822&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Lydia Walker",
 "all_authors": [
 "Lydia Walker"
@@ -22164,10 +22185,10 @@ window.STORIES_DATA = [
 "archived_event_count": 6,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
+"ta_ol_holdings": 9,
 "ta_otl": false,
 "has_peer_review": false,
 "has_prism_context": false,
@@ -22312,7 +22333,7 @@ window.STORIES_DATA = [
 "has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 3,
-"ta_ol_holdings": 0,
+"ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
 "has_prism_context": false,
@@ -26789,7 +26810,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Research-Based Perspectives on the Psychophysiology of Yoga has generated a modest but meaningful scholarly footprint since its 2018 publication.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781522527893&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781522527886&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Shirley Telles, Nilkamal Singh",
 "all_authors": [
 "Shirley Telles",
@@ -27234,6 +27255,7 @@ window.STORIES_DATA = [
 "Politics"
 ],
 "roles": [
+"Pedagogical Anchor",
 "Scholarly Uptake",
 "Sustainability & Policy Relevance"
 ],
@@ -27257,7 +27279,7 @@ window.STORIES_DATA = [
 "has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 1,
-"ta_ol_holdings": 0,
+"ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
 "has_prism_context": true,
@@ -27268,7 +27290,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Decolonial Ecologies shows clear early scholarly uptake: it has 11 OpenAlex citations and is in the top 10% most-cited works for its field and year.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781800649743&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781800649736&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Joanna Page",
 "all_authors": [
 "Joanna Page"
@@ -29551,7 +29573,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Digital Media Practices in Households shows an early but clear scholarly footprint, with 9 OpenAlex citations and 96 recorded downloads.",
-"cover_url": "",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789462989504&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Larissa Hjorth, Kana Ohashi, Jolynna Sinanan et al.",
 "all_authors": [
 "Larissa Hjorth",
@@ -30132,7 +30154,6 @@ window.STORIES_DATA = [
 "History"
 ],
 "roles": [
-"Pedagogical Anchor",
 "Scholarly Uptake"
 ],
 "is_oa": true,
@@ -30154,7 +30175,7 @@ window.STORIES_DATA = [
 "has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 1,
-"ta_ol_holdings": 2,
+"ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
 "has_prism_context": true,
@@ -30440,10 +30461,10 @@ window.STORIES_DATA = [
 "archived_event_count": null,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
+"ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
 "has_prism_context": true,
@@ -30454,7 +30475,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Published in 2024 by Open Book Publishers, The Diagrammatics of ‘Race’ is already showing clear scholarly use: it has 8 OpenAlex citations and 3,391 recorded downloads.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781805112631&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781805112600&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Marianne Sommer",
 "all_authors": [
 "Marianne Sommer"
@@ -31403,6 +31424,7 @@ window.STORIES_DATA = [
 "TRACE (psycholinguistics)"
 ],
 "roles": [
+"Pedagogical Anchor",
 "Sustainability & Policy Relevance",
 "Scholarly Uptake"
 ],
@@ -31426,10 +31448,10 @@ window.STORIES_DATA = [
 "has_teaching": true,
 "ta_ocw": 2,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
+"ta_ol_holdings": 4,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": false,
+"has_prism_context": true,
 "has_prism_peer_review": false,
 "has_reuse": false,
 "has_openaire_reach": true,
@@ -31437,7 +31459,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Rudy’s Image, Knife, and Gluepot shows a strong early impact profile for a scholarly book: it has 7 citations, 6,453 recorded downloads, and two teaching-adoption listings in open courseware resources…",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781783745197&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781783745166&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Kathryn M. Rudy",
 "all_authors": [
 "Kathryn M. Rudy"
@@ -33952,7 +33974,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Adaptation in the Age of Media Convergence is already showing early scholarly uptake alongside substantial open-access use.",
-"cover_url": "",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789462983663&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Johannes Fehrle, Werner Schäfke-Zell",
 "all_authors": [
 "Johannes Fehrle",
@@ -41137,7 +41159,7 @@ window.STORIES_DATA = [
 "has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 5,
-"ta_ol_holdings": 1,
+"ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
 "has_prism_context": false,
@@ -45251,7 +45273,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Zootechnologies is showing an early but credible impact profile.",
-"cover_url": "",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789462986206&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Sebastian Vehlken",
 "all_authors": [
 "Sebastian Vehlken"
@@ -45379,7 +45401,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Human Trafficking in Medieval Europe is already showing early scholarly uptake and clear reader interest.",
-"cover_url": "",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789463723336&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Christopher Paolella",
 "all_authors": [
 "Christopher Paolella"
@@ -47796,6 +47818,7 @@ window.STORIES_DATA = [
 "roles": [
 "High-Visibility Uptake",
 "Active Public Discourse",
+"Pedagogical Anchor",
 "Scholarly Uptake"
 ],
 "is_oa": false,
@@ -47812,7 +47835,7 @@ window.STORIES_DATA = [
 "has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 1,
-"ta_ol_holdings": 0,
+"ta_ol_holdings": 4,
 "ta_otl": false,
 "has_peer_review": false,
 "has_prism_context": false,
@@ -49478,7 +49501,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary This 2024 scholarly book is showing an early but concrete sign of scholarly uptake: it has been cited once, in a 2025 journal article on Christian leadership and social-ecological…",
-"cover_url": "https://lup.be/wp-content/uploads/2024/01/default_cover.png",
+"cover_url": "",
 "authors": "Judith Gruber, Jonas Van Mulder, Kim Christiaens et al.",
 "all_authors": [
 "Judith Gruber",
@@ -49981,7 +50004,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Pro-vax , published in 2025 by Peter Lang Verlag as part of the Medical Humanities series, addresses vaccine activism and public engagement around vaccination.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781800794726&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781800794719&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Samantha Vanderslott",
 "all_authors": [
 "Samantha Vanderslott"
@@ -50212,7 +50235,7 @@ window.STORIES_DATA = [
 "has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 4,
-"ta_ol_holdings": 0,
+"ta_ol_holdings": 1,
 "ta_otl": false,
 "has_peer_review": false,
 "has_prism_context": true,
@@ -50306,7 +50329,7 @@ window.STORIES_DATA = [
 "ta_ol_holdings": 0,
 "ta_otl": false,
 "has_peer_review": false,
-"has_prism_context": false,
+"has_prism_context": true,
 "has_prism_peer_review": false,
 "has_reuse": false,
 "has_openaire_reach": true,
@@ -50314,7 +50337,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary List Cultures is still an early-impact scholarly book, but the record already shows a small yet meaningful footprint: one citation in OpenAlex, one teaching-related listing, and a…",
-"cover_url": "",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789462981102&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Liam Young",
 "all_authors": [
 "Liam Young"
@@ -50423,7 +50446,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Exceptional Bodies in Early Modern Culture is showing an early but meaningful scholarly footprint.",
-"cover_url": "",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789463721745&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Maja Bondestam",
 "all_authors": [
 "Maja Bondestam"
@@ -57548,7 +57571,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Congoville is showing early but meaningful reach as an open-access scholarly book in the humanities and art, with 790 recorded downloads and at least one documented teaching-relat…",
-"cover_url": "https://lup.be/wp-content/uploads/2024/01/default_cover.png",
+"cover_url": "",
 "authors": "Pieter Boons, Sandrine Colard",
 "all_authors": [
 "Pieter Boons",
@@ -58404,7 +58427,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Black Matrilineage, Photography, and Representation shows early but meaningful reach for a 2022 scholarly book: it has been downloaded 2,437 times, is available in open access for…",
-"cover_url": "https://lup.be/wp-content/uploads/2024/01/default_cover.png",
+"cover_url": "",
 "authors": "Lesly Deschler Canossi, Zoraida Lopez-Diago",
 "all_authors": [
 "Lesly Deschler Canossi",
@@ -60289,10 +60312,10 @@ window.STORIES_DATA = [
 "archived_event_count": null,
 "has_sdgs": false,
 "sdg_ids": [],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
+"ta_ol_holdings": 3,
 "ta_otl": false,
 "has_peer_review": false,
 "has_prism_context": true,
@@ -60755,7 +60778,7 @@ window.STORIES_DATA = [
 "has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 1,
+"ta_ol_holdings": 3,
 "ta_otl": false,
 "has_peer_review": false,
 "has_prism_context": false,
@@ -61237,7 +61260,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The Irish Against the War is a 2024 scholarly monograph published by Peter Lang Verlag as part of the established Reimagining Ireland series.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781803740492&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781803740485&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Marie-Violaine Louvet",
 "all_authors": [
 "Marie-Violaine Louvet"
@@ -61318,7 +61341,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Published in 2023 by Peter Lang Verlag, Fire Burning in My Head is a clinical psychology monograph that bridges spirituality and mental health through the author's introspective c…",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781636670478&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781636670461&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "David Y. F. Ho",
 "all_authors": [
 "David Y. F. Ho"
@@ -61551,7 +61574,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Contemporary Issues on Adolescents and Counseling , published by Peter Lang Verlag in 2024, addresses a critical phase of human development through the lens of counseling psycholo…",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781636670706&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781636670690&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Ruth A. Aderanti, Abiodun M. Gesinde",
 "all_authors": [
 "Ruth A. Aderanti",
@@ -61615,10 +61638,10 @@ window.STORIES_DATA = [
 "sdg_ids": [
 "Quality Education"
 ],
-"has_teaching": false,
+"has_teaching": true,
 "ta_ocw": 0,
 "ta_youtube": 0,
-"ta_ol_holdings": 0,
+"ta_ol_holdings": 2,
 "ta_otl": false,
 "has_peer_review": false,
 "has_prism_context": false,
@@ -61629,7 +61652,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Published in 2024 by Peter Lang Verlag, Digital Visual Art Education addresses a gap in scholarly literature by proposing a unified framework for studying digital media in visual …",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781433195631&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781433195624&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Robert Sweeny",
 "all_authors": [
 "Robert Sweeny"
@@ -62015,7 +62038,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Islam in a Secular State is a 2025 scholarly book by Walid Jumblatt Abdullah with an early and still limited impact record.",
-"cover_url": "",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789463724012&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Walid Jumblatt Abdullah",
 "all_authors": [
 "Walid Jumblatt Abdullah"

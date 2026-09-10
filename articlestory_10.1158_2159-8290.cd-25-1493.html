@@ -375,6 +375,16 @@
             </div>
         </header>
         
+        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
+            <strong>Previously recorded evidence retained.</strong>
+            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
+            <details><summary>Retained sources</summary><ul>
+            
+                <li>narrative</li>
+            
+            </ul></details>
+        </aside>
+        
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
         
@@ -1287,10 +1297,12 @@
         
         <section class="card no-print" id="sec-citations-table">
             <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
-            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.75rem;"
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.35rem;"
                  data-total="2">
-                2 citing works (most recent first)
+                2 most recent citing works (newest first)
             </div>
+            
+            
             <div class="table-scroll-wrapper">
                 <table id="cit-table">
                     <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
@@ -1329,7 +1341,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T13:56:23+00:00
+                    Generated on 2026-09-10T15:38:52+00:00
                 </div>
                 
             </div>
@@ -1418,7 +1430,7 @@
             var perPage = 25;
             if (total <= perPage) {
                 if (summary) {
-                    summary.textContent = total + ' citing works (most recent first)';
+                    summary.textContent = total + ' most recent citing works (newest first)';
                 }
                 return;
             }
@@ -1434,7 +1446,7 @@
                 }
                 info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
                 if (summary) {
-                    summary.textContent = total + ' citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                    summary.textContent = total + ' most recent citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
                 }
                 btns.innerHTML = '';
                 var prev = document.createElement('button');
