@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -373,15 +391,7 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -425,12 +435,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This 2012 ATLAS article is a major scholarly reference point in particle physics: it has accrued 10,875 citations and sits in the top 1% of works for its field and year. The record shows broad downstream reuse across articles, preprints, conference papers, dissertations, and reviews, alongside signs of teaching and public-facing uptake.</p>
+<p class="story-text">Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC (2012) in Physics Letters B. 10875 citations.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Published in Physics Letters B, this paper reports the ATLAS search for the Standard Model Higgs boson in proton-proton collisions at the Large Hadron Collider and was part of the first widely recognized evidence for a new particle consistent with the Higgs boson. Its influence is reflected most strongly in scholarly uptake: the citation count is very high, and the normalized percentile places it among the most-cited papers of its field and year.</p>
-<p class="story-text">The downstream research record is especially broad. The work has been reused in thousands of later publications, led primarily by journal articles but also by preprints, conference papers, book chapters, dissertations, reports, and reviews. The citing literature is concentrated in core high-energy-physics venues such as Physical Review D, Journal of High Energy Physics, Physics Letters B, and The European Physical Journal C, showing that the article continues to function as a canonical experimental reference for collider physics, Higgs studies, and related detector and theory work.</p>
-<p class="story-text">There are also clear signs that the paper has moved beyond specialist citation. Wikipedia mentions connect it to reference pages on fundamental-particle physics and discovery timelines, and the record includes a small amount of Hypothesis annotation. Teaching-adoption evidence is present as well: the paper is explicitly linked in several YouTube videos aimed at explaining the Higgs boson and field theory to broader audiences. Taken together, these signals suggest that the article serves not only as a research landmark but also as a durable explanatory anchor for public and pedagogical discussion.</p>
-<p class="story-text">The citing landscape is international and institutionally concentrated in major research universities, laboratories, and facilities, with particularly strong representation from the United States and several European and Asian research systems. Scite also shows substantial supporting citation statements, with a small number of contradictory ones, indicating that the paper is actively engaged in the literature rather than merely being referenced ceremonially. Overall, the record depicts a foundational experiment whose impact is sustained through both ongoing technical reuse and its status as a historical milestone in particle physics.</p></div>
+<p class="story-text">Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC (2012) in Physics Letters B is authored by G. Aad, T. Abajyan and B. Abbott. Topics: Physics, Particle physics, Higgs boson, Large Hadron Collider and Standard Model (mathematical formulation).</p>
+<p class="story-text">10875 citations (OpenAlex). Citations peaked in 2013 with 1352 citing works. Citing venues include Physical review. D/Physical review. D., Journal of High Energy Physics and Physical review. D. Particles, fields, gravitation, and cosmology/Physical review. D. Particles and fields.</p>
+<p class="story-text">It is discussed on Wikipedia (10 mentions) and Hypothes.is (1 mention). 11 online mentions.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -28672,7 +28681,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:38:26+00:00
+                    Generated on 2026-09-10T21:42:22+00:00
                 </div>
                 
             </div>

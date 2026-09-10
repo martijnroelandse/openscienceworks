@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -368,24 +386,19 @@
                 
                 <div class="cover-wrap">
                     
-                    <img src="https://books.google.com/books/content?vid=ISBN9781643150642&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+                    <img src="https://books.google.com/books/content?vid=ISBN9781643150642&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Urban Fantasy" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-                <li>news_coverage</li>
-            
-            </ul></details>
-        </aside>
+        
+        
+        <details class="no-print" style="margin:.6rem 0 0; font-size:.78rem; color:#6b7280;">
+            <summary style="cursor:pointer; list-style:none;">Some figures carried over from the previous check (news_coverage)</summary>
+            <p style="margin:.4rem 0 0; max-width:60ch;">A source did not respond during the latest refresh, so its previously recorded value is shown rather than being cleared. Not re-verified this run.</p>
+        </details>
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -431,12 +444,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Stefan Ekman’s <i>Urban Fantasy</i> is already showing a broad early reach: it has been downloaded 325 times, appears in four YouTube discussions or interviews, and has attracted three Wikipedia mentions. Scholarly uptake is still at an early stage, with one OpenAlex citation recorded, but the book’s public and teaching-oriented footprint suggests active engagement beyond the academic monograph circuit.</p>
+<p class="story-text">Urban Fantasy (2024), published by Lever Press, has been cited 1 time. Beyond that, it has been downloaded 325 times and is used in teaching.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text"><i>Urban Fantasy</i> stands out as a timely synthesis of a genre that sits at the intersection of fantasy, modernity, and contemporary culture. The record shows immediate uptake in public-facing and pedagogical contexts: four YouTube videos discuss the book or feature the author, indicating that it is being used to introduce, explain, and debate urban fantasy for wider audiences. This is complemented by 325 recorded downloads through OAPEN, which points to sustained reader interest and accessible circulation.</p>
-<p class="story-text">The book’s visibility also extends into community reference spaces, with three Wikipedia mentions across pages related to urban fantasy and associated works. While these mentions are not citations, they do suggest that the book has entered the broader informational ecosystem around the genre. The surrounding signals—one citation in OpenAlex and a small but growing attention record—fit an early-stage scholarly impact profile: the book is being noticed, discussed, and used, even as formal citation accumulation is still limited.</p>
-<p class="story-text">Thematically, the work aligns with questions of sustainable cities and communities, and its concept profile connects it to modernity, fantasy, literature, aesthetics, philosophy, and epistemology. That combination helps explain its reach across both academic and public audiences: it is not only a historical and theoretical study, but also a framing tool for understanding how fantastical narratives interact with contemporary urban life. In that sense, the book is functioning as both scholarship and an interpretive reference point.</p>
-<p class="story-text">Overall, the evidence points to a book with clear public and pedagogical traction, open availability, and emerging scholarly recognition. The citation base remains modest, so the long-term academic influence is still developing, but the current record already shows that <i>Urban Fantasy</i> is being read, discussed, and used in ways that extend beyond specialist scholarship.</p></div>
+<p class="story-text">Urban Fantasy by Stefan Ekman was published by Lever Press in 2024. Conceptually, the work connects to Modernity, Fantasy, MAGIC (telescope), Art and Aesthetics.</p>
+<p class="story-text">OpenAlex records 1 citation.</p>
+<p class="story-text">In teaching, it is discussed in 4 recorded lectures. It is discussed on Wikipedia (3 mentions). It has been downloaded 325 times via OAPEN. It is recorded in 1 library collection. A further 3 mentions appear in other attention signals. Its subject matter aligns with Sustainable cities and communities among the Sustainable Development Goals.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1380,7 +1392,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:38+00:00
+                    Generated on 2026-09-10T21:43:22+00:00
                 </div>
                 
             </div>

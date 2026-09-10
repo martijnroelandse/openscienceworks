@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -373,15 +391,7 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -414,12 +424,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This 2024 eLife Sciences Publications Ltd article is already showing early scholarly uptake, with 2 citations and 2 documented downstream reuse events. The citing record suggests interest from connectomics and insect neurobiology communities, while the work remains in an early phase of diffusion.</p>
+<p class="story-text">A comprehensive neuroanatomical survey of the Drosophila Lobula Plate Tangential Neurons with predictions for their optic flow sensitivity (2024) in eLife Sciences Publications Ltd. 2 citations.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Arthur Zhao and colleagues present a comprehensive neuroanatomical survey of Drosophila lobula plate tangential neurons, extending prior work on optic-flow-sensitive circuits in flying insects. Published in eLife Sciences Publications Ltd in 2024 and distributed as open access, the article combines anatomical analysis with predictions about how these neurons may respond to optic flow, making it relevant to neuroscience, sensory systems, and insect neurobiology.</p>
-<p class="story-text">The clearest impact signal so far is scholarly rather than public: the work has 2 citations in OpenAlex and has been reused in 2 downstream works, including both preprints and an article. That pattern points to early incorporation into ongoing research rather than broad public discussion. The citation landscape is still small, so the record supports a cautious reading: the paper is beginning to circulate within a focused technical community, but the evidence is still thin.</p>
-<p class="story-text">The citing works cluster around related neuroscience and connectomics topics, including a later article on controlled flight and preprints on visuomotor transformation and connectome analysis. This suggests the paper is being drawn on as part of a broader effort to understand how neural circuits support flight control and visual processing in flies. The downstream record is consistent with reuse by researchers working on mechanistic and computational questions in nervous-system organization.</p>
-<p class="story-text">Other signals remain limited. Scite records one mentioning reference, but there is no documented public event archive activity in the provided record. Taken together, the available evidence indicates a nascent but credible research footprint, with the strongest momentum coming from direct scholarly reuse and citation rather than from wider public attention.</p></div>
+<p class="story-text">A comprehensive neuroanatomical survey of the Drosophila Lobula Plate Tangential Neurons with predictions for their optic flow sensitivity (2024) in eLife Sciences Publications Ltd is authored by Arthur Zhao, Aljoscha Nern and Sanna Koskela. Topics: Neuroscience, Biology, Sensory system, Drosophila (subgenus) and Receptive field.</p>
+<p class="story-text">2 citations (OpenAlex). Citations peaked in 2024 with 1 citing works. Citing venues include bioRxiv (Cold Spring Harbor Laboratory) and eLife Sciences Publications Ltd.</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1206,7 +1215,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:10+00:00
+                    Generated on 2026-09-10T21:42:55+00:00
                 </div>
                 
             </div>

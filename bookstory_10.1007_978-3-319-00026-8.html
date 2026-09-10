@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -368,24 +386,19 @@
                 
                 <div class="cover-wrap">
                     
-                    <img src="https://media.springernature.com/full/springer-static/cover-hires/book/978-3-319-00026-8" alt="Cover" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+                    <img src="https://media.springernature.com/full/springer-static/cover-hires/book/978-3-319-00026-8" alt="Cover of Opening Science" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-                <li>social_mentions.bluesky</li>
-            
-            </ul></details>
-        </aside>
+        
+        
+        <details class="no-print" style="margin:.6rem 0 0; font-size:.78rem; color:#6b7280;">
+            <summary style="cursor:pointer; list-style:none;">Some figures carried over from the previous check (social_mentions.bluesky)</summary>
+            <p style="margin:.4rem 0 0; max-width:60ch;">A source did not respond during the latest refresh, so its previously recorded value is shown rather than being cleared. Not re-verified this run.</p>
+        </details>
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -431,13 +444,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Opening Science has become a widely used and often cited reference point in the open science conversation. The book has 165 OpenAlex citations, placing it in the top 10% of works in its field and year, and it has also accumulated 12,848 downloads, indicating sustained readership well beyond a purely scholarly audience.</p>
+<p class="story-text">Opening Science (2014), published by Springer Nature, has been cited 165 times — enough that OpenAlex puts it in the top 10% of works in its field and year. Beyond that, it has been downloaded 12,848 times and is discussed on Bluesky.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Published by Springer Nature in 2014, Opening Science captured a moment when internet-enabled collaboration, sharing, and publishing practices were reshaping research culture. Its influence is visible not only in citation counts, but in the way later work continues to return to it as a synthesis point for questions about openness, scholarly communication, research data management, and reproducibility.</p>
-<p class="story-text">The citation record shows clear academic uptake across a broad range of work types, led by journal articles and book chapters, with additional citations in preprints, conference papers, books, and dissertations. The strongest thematic connections cluster around research data management practices, scientific computing and data management, scientometrics and bibliometrics, and academic publishing and open access. This pattern suggests the book has functioned as a framework for multiple strands of open science scholarship rather than as a narrowly disciplinary text.</p>
-<p class="story-text">The audience also appears geographically and institutionally distributed. Citing work comes from a wide range of countries, with especially visible activity in Germany, the United States, the United Kingdom, Spain, and Italy, and it is concentrated in educational institutions while also reaching nonprofit, government, company, and healthcare settings. The recurring presence of authors such as Mario Pagliaro, Stephen Pinfield, and Ernest Abadal further indicates that the book has remained relevant within ongoing debates about scholarly publishing and research infrastructure.</p>
-<p class="story-text">Reception beyond formal citation is also strong. OpenAlex records 200 Wikipedia mentions, pointing to substantial public visibility and use as a knowledge source, while library holdings and the subject classifications linked to the book show that it has been taken up in collections relevant to networked science and Web 2.0. The record does not show event data in the available sources, so the clearest evidence of impact here comes from scholarly citation, sustained downloading, and persistent presence in public knowledge environments.</p>
-<p class="story-text">Overall, Opening Science stands out as an early and durable synthesis of the changing research landscape. Its impact is not limited to one audience or one channel: it is cited in scholarly debates, downloaded as a practical resource, and used in public-facing knowledge systems, marking it as a foundational text in the evolving field of open science.</p></div>
+<p class="story-text">Opening Science by Sönke Bartling and Sascha Friesike was published by Springer Nature in 2014. Conceptually, the work connects to Computer science.</p>
+<p class="story-text">OpenAlex records 165 citations. That places it in the top 10% of works in its field and year of publication. Citations peaked in 2020 with 27 citing works. Notable citing venues include Publications, El Profesional de la Informacion and Preprints.org. The citing works include 103 journal articles, 22 book chapters and 19 preprints. They come from 40 countries, led by Germany, the United States and the United Kingdom.</p>
+<p class="story-text">It is discussed on Bluesky (1 mention). It has been downloaded 12,848 times via OAPEN. It is recorded in 1 library collection. A further 1 mention appear in other attention signals.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -2149,7 +2160,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:14+00:00
+                    Generated on 2026-09-10T21:42:58+00:00
                 </div>
                 
             </div>

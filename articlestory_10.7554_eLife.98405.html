@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -377,15 +395,7 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -427,12 +437,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This eLife Sciences Publications Ltd resource paper has clear early uptake for a methods-heavy Drosophila neuroscience toolset: it is in the top 10% of its field and year, has 16 OpenAlex citations, and shows 17 documented downstream reuse instances. The journal’s assessment calls it “valuable” with “convincing” evidence, and the citation pattern is especially notable for rapid adoption through preprints and papers in high-visibility venues.</p>
+<p class="story-text">A split-GAL4 driver line resource for Drosophila neuron types (2024) in eLife Sciences Publications Ltd. eLife Sciences Publications Ltd: significantie=Valuable, bewijs=Convincing.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">A split-GAL4 driver line resource for Drosophila neuron types is best understood as enabling infrastructure for circuit neuroscience rather than as a single hypothesis-driven study. The paper introduces a large collection of split-GAL4 lines for adult and larval Drosophila central nervous system cell types, along with an online search engine that helps researchers identify useful expression patterns. That combination of biological resource and searchable access appears to be the core of its impact: the work is already being reused downstream and cited by studies focused on Drosophila neurobiology, connectomics, optogenetics, sleep, and circuit dissection.</p>
-<p class="story-text">The citation record suggests unusually fast community take-up for a resource article. Most of the citing works are preprints, and the citing venues include bioRxiv as well as eLife Sciences Publications Ltd, Nature, Cell, Current Biology, and other established journals. That pattern is consistent with the paper serving as a methodological anchor: researchers appear to be incorporating the driver lines and associated search tools early in project development, before or alongside formal publication.</p>
-<p class="story-text">The downstream reuse signals reinforce that reading. The record shows 17 documented reuse instances, including one dataset citation, and the article is associated with 24 RRID entries, indicating structured reuse of the resource in the literature. Funding from NIH and Howard Hughes Medical Institute also fits a platform-building effort aimed at broad community use rather than a narrow application. Together, these signals point to a well-curated tool paper that is already shaping how other groups target and manipulate Drosophila neurons.</p>
-<p class="story-text">At the same time, the broader attention record is comparatively quiet: there are no captured event-data mentions in the available sources, so the strongest evidence comes from scholarly reuse and citation behavior rather than public discussion. That does not weaken the main story. For a resource paper, the clearest marker of significance is whether other researchers adopt it, and here the evidence shows both breadth and speed of uptake. The eLife Sciences Publications Ltd assessment is aligned with that picture, describing the study as valuable and the evidence as convincing.</p></div>
+<p class="story-text">A split-GAL4 driver line resource for Drosophila neuron types (2024) in eLife Sciences Publications Ltd is authored by Geoffrey W Meissner, Allison Vannan and Jennifer Jeter. Topics: Drosophila (subgenus), Resource (disambiguation), Line (geometry), Computer science and Cell biology.</p>
+<p class="story-text">16 citations (OpenAlex). Citations peaked in 2025 with 12 citing works. Citing venues include bioRxiv (Cold Spring Harbor Laboratory), eLife Sciences Publications Ltd and Nature.</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -2757,7 +2766,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:11+00:00
+                    Generated on 2026-09-10T21:42:56+00:00
                 </div>
                 
             </div>

@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -368,30 +386,14 @@
                 
                 <div class="cover-wrap">
                     
-                    <div class="cover-fallback" aria-label="Cover unavailable">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                            <path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3V4z"></path>
-                            <path d="M8 20h11"></path>
-                            <path d="M8 8h7M8 12h7"></path>
-                        </svg>
-                        <div class="cover-fallback-title">Cover pending</div>
-                        <div class="cover-fallback-sub">Image not yet available</div>
-                    </div>
+                    <img src="https://library.oapen.org/rest/bitstreams/ca51313b-5bd9-4877-ad6c-63898790c03b/retrieve" alt="Cover of Between Conventional and Experimental" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -435,12 +437,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Between Conventional and Experimental is already showing a modest but credible early impact profile: it has 1 OpenAlex citation, 1,472 recorded downloads, and open-access availability through an open repository instance. Its strongest signals point to active use and initial scholarly uptake, alongside thematic relevance to sustainable cities and communities.</p>
+<p class="story-text">Between Conventional and Experimental (2024), published by Leuven University Press, has been cited 1 time. Beyond that, it has been downloaded 1,472 times.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Published by Leuven University Press in 2024, <em>Between Conventional and Experimental</em> examines mass housing and prefabrication as major forces in modern architecture, with emphasis on Europe and Israel. The book’s subject matter aligns closely with its observed impact pattern: it is being downloaded regularly, it has begun to be cited in scholarly literature, and it carries an SDG alignment with sustainable cities and communities, suggesting relevance to both architectural history and contemporary housing debates.</p>
-<p class="story-text">The most immediate sign of reach is usage. OAPEN reports 1,472 downloads, indicating sustained reading interest rather than a purely archival presence. The monthly record shows continued uptake across the year, which is consistent with a book that is being consulted by readers beyond its initial release period. OpenAIRE also identifies an open instance for the work, supporting discoverability and access.</p>
-<p class="story-text">Scholarly uptake is early but visible. OpenAlex records 1 citation, and the citing work appeared in 2025 in <em>Architecture Structures and Construction</em>. While the citation base is still small, it signals that the book is already entering related research conversations. The citing article’s topics differ from the book’s core subject matter, suggesting that the book’s ideas may be traveling into adjacent applied and engineering-oriented discussions.</p>
-<p class="story-text">The record also shows institutional and funding support from KU Leuven, Sapir College, and the Technion - Israel Institute of Technology. Combined with the book’s open-access status and subject focus on prefabrication, exhibition, and the built environment, these signals suggest a publication positioned for cross-disciplinary relevance. Public event data are unavailable in the current record, so the impact picture here is best read as early scholarly and usage evidence rather than broad public attention.</p></div>
+<p class="story-text">Between Conventional and Experimental by Regine Hess, Inbal Ben-Asher Gitler, Tzafrir Fainholtz and others was published by Leuven University Press in 2024. Conceptually, the work connects to Prefabrication, Exhibition, Architecture, Architectural engineering and Context (archaeology).</p>
+<p class="story-text">OpenAlex records 1 citation. Notable citing venues include Architecture Structures and Construction. The citing authors are based in the United States.</p>
+<p class="story-text">It has been downloaded 1,472 times via OAPEN. Its subject matter aligns with Sustainable cities and communities among the Sustainable Development Goals. The work was funded by KU Leuven, Sapir College and Technion - Israel Institute of Technology.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1137,7 +1138,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:26+00:00
+                    Generated on 2026-09-10T21:43:11+00:00
                 </div>
                 
             </div>

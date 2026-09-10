@@ -226,17 +226,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -375,15 +393,7 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -412,13 +422,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This 2005 scholarly article presents a neuroscience-focused account of how synaptic activity contributes to the formation and maintenance of neuronal circuits. The record shows a quiet but discoverable footprint: the work is openly available through a university repository, is indexed in repository networks, and has been assigned concept terms that place it squarely in the literature on filopodia, dendritic filopodia, dendritic spines, and live-cell imaging. Citation and online attention indicators are currently minimal in the available record.</p>
+<p class="story-text">Synaptic activity and the formation and maintenance of neuronal circuits (2005) in edoc (University of Basel).</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Martijn Roelandse’s article addresses a foundational question in neurobiology: how neurons develop and stabilize their connections as circuits emerge. The abstract emphasizes the transition from highly dynamic, actin-rich growth cones and filopodia during development to more stable structures such as axonal varicosities and dendritic spines, framing synaptic activity as part of the process that shapes neuronal architecture. That thematic emphasis is consistent with the work’s concept profile, which highlights filopodia, dendritic filopodia, dendritic spine, neurite biology, and live-cell imaging.</p>
-<p class="story-text">In terms of visibility, the strongest signals are infrastructural rather than conversational. The article is available as green open access in the University of Basel repository and appears in OpenAIRE with multiple repository instances, including one open instance. This suggests the work has been preserved and made accessible through institutional channels, which can support reuse in research and teaching even when downstream attention is limited.</p>
-<p class="story-text">The citation record in the available sources is sparse: OpenAlex currently reports no citations for this work, and scite does not show citation activity either. Event-data and public-discourse signals are likewise absent or unavailable in the record provided. Taken together, this points to a record that is still early or lightly tracked rather than one with well-documented scholarly uptake.</p>
-<p class="story-text">There are a few additional signs of discoverability, but they do not change the overall picture. WorldCat holds a library record for the title, and DataCite reports zero recorded views and downloads in the supplied digest. The result is a modest impact profile centered on accessibility and subject relevance, with the evidence base currently stronger for preservation and indexing than for measured citation or public attention.</p>
-<p class="story-text">Because the available signals are limited, the most careful reading is that this article contributes to a well-defined neuroscience topic area and is preserved in open repository infrastructure, while its measurable external reach remains thin in the current record. Absence of stronger indicators here should be read as limited observed uptake in the sources harvested, not as a judgment on the article’s scientific value.</p></div>
+<p class="story-text">Synaptic activity and the formation and maintenance of neuronal circuits (2005) in edoc (University of Basel) is authored by Martijn Roelandse. Topics: Filopodia, Dendritic filopodia, Biology, Dendritic spine and Dendrite (mathematics).</p>
+<p class="story-text">No citations yet.</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -772,7 +780,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:03+00:00
+                    Generated on 2026-09-10T21:42:49+00:00
                 </div>
                 
             </div>

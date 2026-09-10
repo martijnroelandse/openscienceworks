@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -376,22 +394,14 @@
                 
                 <div class="cover-wrap">
                     
-                    <img src="https://books.google.com/books/content?vid=ISBN9781800798182&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+                    <img src="https://books.google.com/books/content?vid=ISBN9781800798182&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Embodied Books" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -433,17 +443,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text"><em>Embodied Books</em> (2024) is a recent scholarly monograph examining how handmade artists' books engage the senses to communicate lived experiences of illness and disability. Published in the Medical Humanities series at Peter Lang Verlag, the work has begun to circulate in educational contexts, with documented teaching use and library holdings. Citation accumulation is still in its earliest stages, reflecting the book's recent publication date rather than lack of scholarly merit.</p>
-
+<p class="story-text">Embodied Books (2024), published by Peter Lang Verlag, has no recorded citations yet, but it is used in teaching.</p>
 <h3 class="story-subheading">Full narrative</h3>
-
-<p class="story-text">Darian Goldin Stahl's <em>Embodied Books</em> investigates the intersection of material book arts, embodied cognition, and health humanities—a timely contribution to scholarship that bridges artistic practice and lived experience of disability and illness. The work draws on the theoretical foundation that handmade artists' books, through their tactile and sensory properties, can open readers to dimensions of illness experience that conventional texts cannot access. This argument is framed around the concept of embodied knowledge, positioning the physical artifact of the book itself as a medium of communication rather than mere container.</p>
-
-<p class="story-text">The book appears early in its scholarly lifecycle, with no citations yet recorded in OpenAlex. However, the absence of citations at this stage reflects the work's 2024 publication date rather than lack of scholarly or professional recognition. More informative are the emerging signals of pedagogical adoption and professional engagement. The work has been presented by the author in a recorded lecture through the University of Toronto's Continuing Professional Development program in the Faculty of Medicine, and holds two library locations in Open Library, indicating acquisition by academic institutions. These signals suggest the work is beginning to reach educators and students in health humanities and medical humanities curricula.</p>
-
-<p class="story-text"><em>Embodied Books</em> sits within the "Medical Humanities: Criticism and Creativity" series (ISSN 2504-5229), positioning it alongside peer volumes such as <em>Breast Cancer Inside Out</em> (2021) and <em>Moving along</em> (2023). This series placement situates the work within an established conversation about artistic and creative approaches to health and medicine—a field where accessibility to lived experience and alternative modes of representation are increasingly recognized as scholarly contributions.</p>
-
-<p class="story-text">The work demonstrates alignment with Quality Education (SDG 4) in its framing, suggesting relevance to educational accessibility and inclusive pedagogies. Though formal citation metrics remain at zero, the early teaching adoption and professional library acquisition indicate the work is functioning as a pedagogical anchor in medical humanities and health studies contexts. As the work matures in the scholarly record, its influence on research, teaching, and creative practice in health humanities will become more fully traceable.</p></div>
+<p class="story-text">Embodied Books by Darian Goldin Stahl was published by Peter Lang Verlag in 2024. It is part of the Medical Humanities: Criticism and Creativity series. Conceptually, the work connects to Embodied cognition, Computer science and Artificial intelligence.</p>
+<p class="story-text">OpenAlex records no citations for the book so far.</p>
+<p class="story-text">In teaching, it is listed in 1 open course syllabus and discussed in 1 recorded lecture. It is recorded in 2 library collections. Its subject matter aligns with Quality Education among the Sustainable Development Goals.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1051,7 +1055,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:35+00:00
+                    Generated on 2026-09-10T21:43:19+00:00
                 </div>
                 
             </div>

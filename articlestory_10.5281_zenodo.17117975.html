@@ -226,17 +226,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -379,17 +397,12 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-                <li>usage_counts</li>
-            
-            </ul></details>
-        </aside>
+        
+        
+        <details class="no-print" style="margin:.6rem 0 0; font-size:.78rem; color:#6b7280;">
+            <summary style="cursor:pointer; list-style:none;">Some figures carried over from the previous check (usage_counts)</summary>
+            <p style="margin:.4rem 0 0; max-width:60ch;">A source did not respond during the latest refresh, so its previously recorded value is shown rather than being cleared. Not re-verified this run.</p>
+        </details>
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -418,13 +431,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This 2025 scholarly article is already showing clear signs of use through 3,276 downloads and 1,075 views, suggesting substantial interest in its empirical framework for fictional-character archetypes. The citation record is still at 0 in OpenAlex, so its scholarly uptake appears early rather than established.</p>
+<p class="story-text">Archetypometrics, a Pragmateia: Empirical Determination of the Fundamental Archetypes of Fictional Characters (2025) in Zenodo. 3276 downloads.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">The article, published in Zenodo, presents an empirically grounded account of character archetypes across film, television, and literature, and it is positioned at the intersection of storytelling, narrative analysis, personality, and computational methods. The author team spans the University of Vermont and the University of California, Berkeley, indicating a collaborative effort across institutions with related strengths in complex-systems and humanities-oriented research.</p>
-<p class="story-text">The strongest impact signal in the record is usage: the work has been downloaded 3,276 times and viewed 1,075 times. That level of attention points to active reading and reuse interest, especially for a text that appears to serve both as a conceptual argument and as a framework for further analysis. The associated Zenodo dataset is explicitly linked as a related resource, reinforcing that the article is part of a broader research object rather than a standalone publication.</p>
-<p class="story-text">Scholarly citation evidence remains minimal so far, with 0 citations recorded in OpenAlex and no scite citation activity captured. That means the article’s longer-term academic influence is not yet visible in the citation layer, even though the usage data show that the work is circulating. In this early stage, the record supports a narrative of attention and accessibility more than one of established citation-based influence.</p>
-<p class="story-text">Repository and stewardship signals are comparatively strong. The work is deposited in Zenodo, which is registered as an open repository with DOI support, and OpenAIRE identifies multiple open instances for the article and its related records. Crossref data-citation processing also reports successful dataset-citation handling, which suggests the surrounding research materials are structured in a way that can support reuse and attribution over time.</p>
-<p class="story-text">Teaching-adoption evidence is limited in this record: WorldCat holdings are listed, but no course or classroom adoption metrics are provided here. Public discourse signals are also sparse, with archive access unavailable for event-data coverage. Overall, the article presently reads as a highly accessible and actively consulted contribution whose broader scholarly impact is still in the earliest phases of accumulation.</p></div>
+<p class="story-text">Archetypometrics, a Pragmateia: Empirical Determination of the Fundamental Archetypes of Fictional Characters (2025) in Zenodo is authored by Dodds, Peter Sheridan, Zimmerman, Julia Witte and Beauregard, Calla G.. Topics: Archetype, Storytelling, Computer science, Quality (philosophy) and Personality.</p>
+<p class="story-text">No citations yet.</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -865,7 +876,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:53:51+00:00
+                    Generated on 2026-09-10T21:42:47+00:00
                 </div>
                 
             </div>

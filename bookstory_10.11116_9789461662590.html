@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -368,30 +386,14 @@
                 
                 <div class="cover-wrap">
                     
-                    <div class="cover-fallback" aria-label="Cover unavailable">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                            <path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3V4z"></path>
-                            <path d="M8 20h11"></path>
-                            <path d="M8 8h7M8 12h7"></path>
-                        </svg>
-                        <div class="cover-fallback-title">Cover pending</div>
-                        <div class="cover-fallback-sub">Image not yet available</div>
-                    </div>
+                    <img src="https://library.oapen.org/rest/bitstreams/7dee36a8-1a7d-46d6-a8ff-08f9bb1624b3/retrieve" alt="Cover of Migratie in België in 21 vragen en antwoorden" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -437,12 +439,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This concise, policy-oriented book has begun to circulate beyond its initial publication context: OpenAlex records 4 citations, OAPEN reports 52 downloads, and the book is associated with one teaching-use signal in a University of Liège video. Its strongest footprint is in Belgian scholarship and applied fields, especially around migration, inequality, health, education, and social policy.</p>
+<p class="story-text">Migratie in België in 21 vragen en antwoorden (2018), published by Leuven University Press, has been cited 4 times. Beyond that, it is used in teaching.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Migratie in België in 21 vragen en antwoorden has an early but visible impact profile for a scholarly book. The citation record is modest, with 4 OpenAlex citations, but those citations already show reach into different domains rather than a single narrow niche. The citing works include articles and a book chapter published in venues spanning education, ageing, medicine, and criminology, suggesting that the book’s migration overview is being used as a reference point in broader discussions of social conditions and public policy in Belgium.</p>
-<p class="story-text">Usage evidence complements the citation record. OAPEN reports 52 downloads, with activity concentrated in the first two tracked months, indicating that the book was accessed soon after release and continued to attract readers in the short term. The book is also available in open form through multiple repository instances, which likely supports discoverability and reuse. This kind of access matters for a work framed around public understanding and policy relevance.</p>
-<p class="story-text">The surrounding signals point to a clear societal orientation. The book aligns with the SDG theme of Reduced inequalities, and the funding record names the Koning Boudewijnstichting. Together with the subject matter itself, these signals position the book as a resource for evidence-based debate on migration in Belgium. The abstract and the cited contexts both suggest that it addresses questions that are politically and socially salient, rather than remaining within a purely disciplinary audience.</p>
-<p class="story-text">Teaching and public-facing uptake are present as well, though still limited in the record. One YouTube video from Université de Liège discusses the book, and WorldCat holdings indicate library visibility. Scite also shows one supporting citation statement among 11 total mentions, reinforcing that the book is being used as a source in scholarly writing. Overall, the record indicates a work with early but meaningful uptake, strongest in Belgium and in fields concerned with inequality, migration, and applied social analysis.</p></div>
+<p class="story-text">Migratie in België in 21 vragen en antwoorden by Jean-Michel Lafleur and Abdeslam Marfouk was published by Leuven University Press in 2018. Conceptually, the work connects to Philosophy.</p>
+<p class="story-text">OpenAlex records 4 citations. Citations peaked in 2021 with 2 citing works. Notable citing venues include Language Testing, Ageing International and Frontiers in Medicine. Of 11 citation statements scite has classified, 1 support its claims, 7 mention it in passing, and none contradict it. The citing works include 3 journal articles and 1 book chapter. The citing authors are based in Belgium.</p>
+<p class="story-text">In teaching, it is discussed in 1 recorded lecture. It has been downloaded 52 times via OAPEN. Its subject matter aligns with Reduced inequalities among the Sustainable Development Goals. The work was funded by Koning Boudewijnstichting.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1285,7 +1286,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:15+00:00
+                    Generated on 2026-09-10T21:43:00+00:00
                 </div>
                 
             </div>

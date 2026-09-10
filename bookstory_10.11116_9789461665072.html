@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -368,30 +386,14 @@
                 
                 <div class="cover-wrap">
                     
-                    <div class="cover-fallback" aria-label="Cover unavailable">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                            <path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3V4z"></path>
-                            <path d="M8 20h11"></path>
-                            <path d="M8 8h7M8 12h7"></path>
-                        </svg>
-                        <div class="cover-fallback-title">Cover pending</div>
-                        <div class="cover-fallback-sub">Image not yet available</div>
-                    </div>
+                    <img src="https://library.oapen.org/rest/bitstreams/fa5d7f94-9ee0-4a6c-93ac-81d59aa00445/retrieve" alt="Cover of Silver Empowerment" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -435,13 +437,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Silver Empowerment shows an early but meaningful impact profile: it has been downloaded 2,448 times, cited 4 times, and linked to an active policy-relevant conversation on empowerment and reduced inequalities in later life. The record also shows funded support from KU Leuven, the be.Source KU Leuven Chair on empowerment of underprivileged elderly, and HIVA – KU Leuven, suggesting the book sits within an established research and practice agenda.</p>
+<p class="story-text">Silver Empowerment (2023), published by Leuven University Press, has been cited 4 times. Beyond that, it has been downloaded 2,448 times.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Silver Empowerment, published by Leuven University Press in 2023, advances the idea of “silver empowerment” as a way to rethink ageing through strengths, dignity, inclusion, and social connection rather than decline alone. The book is openly available in hybrid form and has already attracted sustained use, with OAPEN reporting 2,448 downloads. That level of access-based uptake indicates that the book is reaching readers beyond its immediate publication context.</p>
-<p class="story-text">Scholarly citation evidence is still modest, with 4 citations recorded in OpenAlex, so the book’s citation footprint should be read as an emerging signal rather than a mature one. Even so, the citing literature shows that its framing is being taken up in adjacent work on loneliness, psychosocial well-being in older age, and psychological empowerment. The strongest concentration appears in gerontology and social work, including repeated citation in the Journal of Gerontological Social Work, which suggests the book is informing ongoing conceptual and measurement work in this area.</p>
-<p class="story-text">The citation landscape is also notable for its thematic alignment with public policy and applied practice. Recorded citing works connect the book to health disparities, community health and development, and implementation-oriented health policy research, as well as a chapter on social isolation and bio-psychosocial well-being in later life. This pattern fits the book’s core message: empowerment in ageing is being treated not only as a scholarly concept, but as a practical lens for designing more inclusive support systems.</p>
-<p class="story-text">The broader record reinforces that interpretation. The book is associated with the SDG theme of Reduced inequalities, and the funding trail points to institutional investment in empowerment for underserved older adults. Taken together, the evidence suggests that Silver Empowerment is already serving as a reference point for researchers and practitioners working on ageing, loneliness, dignity, and inclusion, with its influence currently strongest in applied gerontology and education-oriented discourse.</p>
-<p class="story-text">Because the citation count is still low, the safest reading is that this is an emerging and interdisciplinary impact story: strong on downloads and conceptually aligned with active research and policy conversations, with scholarly uptake beginning to build through a small but relevant set of citing works.</p></div>
+<p class="story-text">Silver Empowerment by Jasper De Witte and Tine Van Regenmortel was published by Leuven University Press in 2023. Conceptually, the work connects to Empowerment, Loneliness, Vulnerability (computing), Population ageing and Dignity.</p>
+<p class="story-text">OpenAlex records 4 citations. Citations peaked in 2024 with 2 citing works. Notable citing venues include Journal of Gerontological Social Work, Studies on adult learning and education/Studies on Adult Learning and Education and Journal of Family Issues. The citing works include 3 journal articles and 1 book chapter. They come from 3 countries, led by Belgium, the Netherlands and Italy.</p>
+<p class="story-text">It has been downloaded 2,448 times via OAPEN. Its subject matter aligns with Reduced inequalities among the Sustainable Development Goals. The work was funded by KU Leuven, be.Source KU Leuven Chair  ‘Empowerment of underprivileged elderly’ and HIVA – KU Leuven.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1252,7 +1252,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:23+00:00
+                    Generated on 2026-09-10T21:43:08+00:00
                 </div>
                 
             </div>

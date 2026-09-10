@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -373,17 +391,12 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-                <li>news_coverage</li>
-            
-            </ul></details>
-        </aside>
+        
+        
+        <details class="no-print" style="margin:.6rem 0 0; font-size:.78rem; color:#6b7280;">
+            <summary style="cursor:pointer; list-style:none;">Some figures carried over from the previous check (news_coverage)</summary>
+            <p style="margin:.4rem 0 0; max-width:60ch;">A source did not respond during the latest refresh, so its previously recorded value is shown rather than being cleared. Not re-verified this run.</p>
+        </details>
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -427,12 +440,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This 2025 Journal of Experimental Medicine article is already attracting early scholarly attention for its analysis of authentic latent CD4+ T cell clones carrying intact HIV-1 proviruses. The record shows one OpenAlex citation, two documented downstream reuse signals, and scite evidence that the paper is being cited in both supporting and mentioning contexts. Its citation footprint is still small, but the surrounding reuse suggests the work is entering the research conversation on HIV persistence and latency.</p>
+<p class="story-text">Transcription of HIV-1 is heterogenous among authentic latent CD4+ T cell clones (2025) in The Journal of Experimental Medicine. 1 news article(s) about the work (Rockefeller University Press).</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">The article addresses a core problem in HIV cure research: how latent, intact proviruses persist in CD4+ T cells despite antiretroviral therapy. By examining clones expanded from single reservoir cells, the study focuses on the heterogeneity of HIV-1 transcription within an authentic latent compartment, a topic with clear relevance to strategies aimed at reactivating or eliminating reservoir cells.</p>
-<p class="story-text">The strongest impact signals are still early, but they are notable. OpenAlex records one citation, while scite reports multiple citation statements with both supporting and mentioning use. In addition, the downstream reuse graph shows two documented reuses, including an article mention in Europe PMC. Together, these indicators suggest that the paper is being taken up by researchers working on HIV persistence, reservoir biology, and latency-reversing approaches.</p>
-<p class="story-text">The citing landscape also points to interdisciplinary and translational interest. The work is being cited in venues that span HIV-focused review, infectious disease, and broader biomedical journals, including Current Opinion in HIV and AIDS, The Journal of Infectious Diseases, Molecules, Nature, and a bioRxiv preprint. That pattern is consistent with a study whose findings may inform both mechanistic reservoir research and the development or evaluation of latency-targeting interventions.</p>
-<p class="story-text">The article’s stewardship record shows substantial funding support, including awards from the Bill and Melinda Gates Foundation and the National Institutes of Health, which fits the project’s relevance to major HIV cure efforts. Public-discourse signals are sparse, and no platform-specific attention is recorded in the available archive. Overall, the evidence supports an emerging scholarly profile: the paper is not yet heavily cited, but it is already being incorporated into related HIV research and review literature.</p></div>
+<p class="story-text">Transcription of HIV-1 is heterogenous among authentic latent CD4+ T cell clones (2025) in The Journal of Experimental Medicine is authored by Cíntia Bittar, Ana Rafaela Teixeira and Thiago Y. Oliveira. Topics: clone (Java method), Biology, Gene, Transcription (linguistics) and Genetics.</p>
+<p class="story-text">1 citations (OpenAlex). Citing venues include Current Opinion in HIV and AIDS, Molecules and Nature.</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1775,7 +1787,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:38:40+00:00
+                    Generated on 2026-09-10T21:42:28+00:00
                 </div>
                 
             </div>

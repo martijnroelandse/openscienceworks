@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -368,30 +386,14 @@
                 
                 <div class="cover-wrap">
                     
-                    <div class="cover-fallback" aria-label="Cover unavailable">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                            <path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3V4z"></path>
-                            <path d="M8 20h11"></path>
-                            <path d="M8 8h7M8 12h7"></path>
-                        </svg>
-                        <div class="cover-fallback-title">Cover pending</div>
-                        <div class="cover-fallback-sub">Image not yet available</div>
-                    </div>
+                    <img src="https://library.oapen.org/rest/bitstreams/ba17a8c1-5ea6-4860-a3d0-4d29b5df0ba1/retrieve" alt="Cover of Mapping Landscapes in Transformation" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -433,13 +435,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This book shows strong early use and visibility: it has been downloaded 2,007 times and has already been cited 5 times in the scholarly record. It also appears in public knowledge infrastructure through multiple Wikipedia mentions, indicating reach beyond specialist audiences.</p>
+<p class="story-text">Mapping Landscapes in Transformation (2019), published by Leuven University Press, has been cited 5 times. Beyond that, it has been downloaded 2,007 times.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Mapping Landscapes in Transformation addresses a timely intersection of historical landscape research, mapping practice, and digital method development. Published by Leuven University Press in 2019 and authored by Thomas Coomans, Bieke Cattoor, and Krista De Jonge, the book has begun to register impact in both scholarly and public-facing contexts. The record shows 2,007 downloads, suggesting sustained reader interest and active consultation of the work.</p>
-<p class="story-text">Its citation profile remains modest but meaningful for a book published in 2019: OpenAlex records 5 citations, with citing works appearing from 2021 through 2023. Those citations come from a small but diverse set of venues, including archaeology, geoscience, policy, and landscape scholarship, which suggests that the book’s methods and arguments are being drawn into adjacent research conversations rather than remaining confined to a single niche.</p>
-<p class="story-text">The citing literature points most clearly to uptake in landscape archaeology, environmental analysis, and cartographic practice. Several citing works engage digital elevation models, remote sensing, cultural heritage, and landscape detection, aligning closely with the book’s emphasis on innovation in mapping methods and on combining digital tools with critical reflection. This pattern indicates that the book is serving as a reference point for researchers working with spatial data and historical landscape interpretation.</p>
-<p class="story-text">The public record also shows visibility in knowledge bases, with Wikipedia mentions recorded for the work. That kind of attention does not substitute for citation impact, but it does indicate that the book has entered broader informational ecosystems. Taken together, the evidence portrays a book with clear methodological relevance, growing scholarly uptake, and notable public discoverability, even though the citation base is still relatively early.</p>
-<p class="story-text">Open access availability likely supports this reach: the record identifies the book as openly accessible through the listed repository instances. No event data are available in the digest, so the impact story here rests on downloads, citations, and public knowledge-base visibility rather than on documented talks, media coverage, or event-driven dissemination.</p></div>
+<p class="story-text">Mapping Landscapes in Transformation by Thomas Coomans, Bieke Cattoor and Krista De Jonge was published by Leuven University Press in 2019. Conceptually, the work connects to Transformation (genetics), Geography, Computer science, Biology and Biochemistry.</p>
+<p class="story-text">OpenAlex records 5 citations. Citations peaked in 2023 with 3 citing works. Notable citing venues include Archaeological and Anthropological Sciences, Journal of Archaeological Science and Landscape series. The citing works include 4 journal articles and 1 book chapter. They come from 4 countries, led by Italy, Colombia and Poland.</p>
+<p class="story-text">It has been downloaded 2,007 times via OAPEN.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1205,7 +1205,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:16+00:00
+                    Generated on 2026-09-10T21:43:00+00:00
                 </div>
                 
             </div>

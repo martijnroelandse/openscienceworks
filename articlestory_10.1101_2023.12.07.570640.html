@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -375,15 +393,7 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -425,12 +435,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This preprint has already drawn early scholarly attention and reuse: it has 5 citations, 7 documented downstream reuses, and 6 online mentions, suggesting that the method and findings are beginning to circulate within the eQTL and single-cell transcriptomics communities.</p>
+<p class="story-text">Single-cell eQTL mapping in yeast reveals a tradeoff between growth and reproduction (2023) in bioRxiv (Cold Spring Harbor Laboratory). Community discussion on: hypothesis (6).</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Boocock and colleagues present an early but visible contribution to genetic mapping in yeast by showing how single-cell RNA sequencing can be used in a “one-pot” eQTL workflow. The paper addresses a central limitation of bulk expression studies: cell-state differences can mask how noncoding variants influence gene expression. By applying the approach to more than 100,000 single cells across three crosses, the study points to a tradeoff between growth and reproduction and frames single-cell eQTL mapping as a practical way to resolve state-specific genetic effects.</p>
-<p class="story-text">The record suggests that the work has resonated quickly in adjacent methodological and biological research. Its citing papers include later studies on trans-eQTL hotspots, scalable eQTL mapping using single-nucleus RNA sequencing, and single-cell transcriptomics in yeast, indicating that the paper is being read both as a technical proof of concept and as part of a broader effort to extend eQTL methods. The reuse record also shows uptake in research articles, preprints, and Europe PMC article mentions, which is consistent with a method that is being discussed, adapted, and cited across related lines of work.</p>
-<p class="story-text">Public discussion is present but modest and concentrated on Hypothesis annotations tied to the preprint, including reviewer responses and reader questions about sparsity and cell-cycle signal interpretation. That pattern suggests engaged technical scrutiny rather than broad public-facing attention. The available evidence therefore supports an interpretation of early, specialized impact: the paper is not yet heavily cited, but it is already being used as a reference point for subsequent method development and for discussion of single-cell approaches to gene regulation in yeast.</p>
-<p class="story-text">The publication path also reinforces its visibility. Although first posted as a preprint, it later appeared in a peer-reviewed version, and the record shows open access dissemination through multiple repository instances. Taken together, the evidence portrays a methodologically influential study with growing scholarly reuse, especially in the developing area of single-cell eQTL mapping.</p></div>
+<p class="story-text">Single-cell eQTL mapping in yeast reveals a tradeoff between growth and reproduction (2023) in bioRxiv (Cold Spring Harbor Laboratory) is authored by James Boocock, Noah Alexander and Leslie Alamo Tapia. Topics: Biology, Expression quantitative trait loci, Genetics, Gene and Quantitative trait locus.</p>
+<p class="story-text">5 citations (OpenAlex). Citations peaked in 2024 with 3 citing works. Citing venues include bioRxiv (Cold Spring Harbor Laboratory), PLoS Biology and Cell Genomics.</p>
+<p class="story-text">It is discussed on Hypothes.is (6 mentions). 6 online mentions.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1489,7 +1498,7 @@ Boocock and colleagues present an approach whereby eQTL analysis can be carried 
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:38:44+00:00
+                    Generated on 2026-09-10T21:42:32+00:00
                 </div>
                 
             </div>

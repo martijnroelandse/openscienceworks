@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -368,32 +386,19 @@
                 
                 <div class="cover-wrap">
                     
-                    <div class="cover-fallback" aria-label="Cover unavailable">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                            <path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3V4z"></path>
-                            <path d="M8 20h11"></path>
-                            <path d="M8 8h7M8 12h7"></path>
-                        </svg>
-                        <div class="cover-fallback-title">Cover pending</div>
-                        <div class="cover-fallback-sub">Image not yet available</div>
-                    </div>
+                    <img src="https://library.oapen.org/rest/bitstreams/9a116c69-9db9-4759-8e6d-94ece1f69a8a/retrieve" alt="Cover of Aristotle and the Ontology of St. Bonaventure" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-                <li>news_coverage</li>
-            
-            </ul></details>
-        </aside>
+        
+        
+        <details class="no-print" style="margin:.6rem 0 0; font-size:.78rem; color:#6b7280;">
+            <summary style="cursor:pointer; list-style:none;">Some figures carried over from the previous check (news_coverage)</summary>
+            <p style="margin:.4rem 0 0; max-width:60ch;">A source did not respond during the latest refresh, so its previously recorded value is shown rather than being cleared. Not re-verified this run.</p>
+        </details>
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -439,12 +444,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Aristotle and the Ontology of St. Bonaventure is already showing early scholarly uptake, with 2 citations in OpenAlex and two 2025 citing works that return to Bonaventure’s metaphysics, Christology, and theology. That citation pattern, together with 2,098 recorded OAPEN downloads, suggests the book is being actively read as a resource for specialist research while remaining in an early stage of citation accumulation.</p>
+<p class="story-text">Aristotle and the Ontology of St. Bonaventure (2023), published by Leuven University Press, has been cited 2 times. Beyond that, it has been downloaded 2,098 times.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Franziska van Buren’s book contributes to medieval philosophy by reexamining Bonaventure through Aristotle rather than treating him simply as an anti-Aristotelian or narrowly Neo-platonic thinker. The subject matter is strongly aligned with ontology, interpretation, epistemology, and the history of philosophy, and the record shows that the work has already entered current scholarly conversations on Bonaventure’s theology and metaphysics.</p>
-<p class="story-text">The most concrete impact signal is citation uptake: OpenAlex records 2 citations, both in 2025. One citing work is a journal article in Religions on Bonaventure’s Christology; the other is a dissertation on wisdom, metaphysics, and religion in Bonaventure’s Collationes in Hexaëmeron. Taken together, these uses indicate that the book is being drawn into closely related research areas rather than only cited as background reading.</p>
-<p class="story-text">Usage evidence is stronger than the citation count alone might suggest. The book has 2,098 OAPEN downloads, which points to sustained reading and access through open and hybrid dissemination channels. OpenAIRE also records multiple repository instances, including open copies, and the book is listed as hybrid open access, supporting discoverability and reuse across institutional and library platforms.</p>
-<p class="story-text">The surrounding record also indicates scholarly and educational positioning. Funding support is attributed to KU Leuven and the European Research Council, and the book aligns with the SDG theme of Quality Education. A WorldCat holding signal further suggests library visibility, while the limited but real citation trail indicates that the book is beginning to circulate within the community studying medieval philosophy and theology. Overall, the evidence points to a specialized monograph with clear early scholarly relevance and active readership, even though its citation base is still modest.</p></div>
+<p class="story-text">Aristotle and the Ontology of St. Bonaventure by Franziska van Buren was published by Leuven University Press in 2023. Conceptually, the work connects to Aristotelianism, Philosophy, Ontology, Scholarship and Interpretation (philosophy).</p>
+<p class="story-text">OpenAlex records 2 citations. Notable citing venues include Religions. The citing works include 1 journal article and 1 dissertation. The citing authors are based in the United States.</p>
+<p class="story-text">It has been downloaded 2,098 times via OAPEN. Its subject matter aligns with Quality Education among the Sustainable Development Goals. The work was funded by KU Leuven and European Research Council.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1209,7 +1213,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:23+00:00
+                    Generated on 2026-09-10T21:43:08+00:00
                 </div>
                 
             </div>

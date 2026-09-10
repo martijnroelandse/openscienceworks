@@ -53,7 +53,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Highly accurate protein structure prediction with AlphaFold has had exceptionally strong scholarly impact, with 42,952 OpenAlex citations and a top 1% citation standing for its ye…",
+"excerpt": "Short impact summary Highly accurate protein structure prediction with AlphaFold (2021) in Nature.",
 "cover_url": "",
 "authors": "John Jumper, Richard Evans, Alexander Pritzel et al.",
 "all_authors": [
@@ -251,7 +251,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Array programming with NumPy has become a highly influential scholarly reference, with 23,646 citations in OpenAlex and a top 1% field- and year-normalized standing.",
+"excerpt": "Short impact summary Array programming with NumPy (2020) in Nature.",
 "cover_url": "",
 "authors": "Charles R. Harris, K. Jarrod Millman, Stéfan J. van der Walt et al.",
 "all_authors": [
@@ -442,7 +442,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This early Wuhan analysis became a foundational COVID-19 paper: it has drawn 18,005 citations, placing it in the top 1% of works in its field and year.",
+"excerpt": "Short impact summary Early Transmission Dynamics in Wuhan, China, of Novel Coronavirus–Infected Pneumonia (2020) in New England Journal of Medicine.",
 "cover_url": "",
 "authors": "Qun Li, Xuhua Guan, Peng Wu et al.",
 "all_authors": [
@@ -642,7 +642,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Thomas Piketty’s Capital in the Twenty-First Century has become a major reference point in contemporary scholarship on inequality and political economy.",
+"excerpt": "Short impact summary Capital in the Twenty-First Century (2014), published by Harvard University Press, has been cited 13,766 times — enough that OpenAlex puts it in the top 1% of works in its field a…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9780674430006&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Thomas Piketty",
 "all_authors": [
@@ -791,7 +791,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary An Introduction to Statistical Learning has become a major reference point in statistical learning and machine learning, with 11,921 OpenAlex citations and top 1% standing for its…",
+"excerpt": "Short impact summary An Introduction to Statistical Learning (2013), published by Springer Nature, has been cited 11,921 times — enough that OpenAlex puts it in the top 1% of works in its field and ye…",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-1-4614-7138-7",
 "authors": "Gareth James, Daniela Witten, Trevor Hastie et al.",
 "all_authors": [
@@ -952,7 +952,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2012 ATLAS article is a major scholarly reference point in particle physics: it has accrued 10,875 citations and sits in the top 1% of works for its field and year.",
+"excerpt": "Short impact summary Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC (2012) in Physics Letters B.",
 "cover_url": "",
 "authors": "G. Aad, T. Abajyan, B. Abbott et al.",
 "all_authors": [
@@ -4050,7 +4050,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This randomized trial became a major clinical reference point in Covid-19 care: it has accumulated 9,985 OpenAlex citations and sits in the top 1% of cited works for its field and…",
+"excerpt": "Short impact summary Dexamethasone in Hospitalized Patients with Covid-19 (2020) in New England Journal of Medicine.",
 "cover_url": "",
 "authors": "The RECOVERY Collaborative Group",
 "all_authors": [
@@ -4208,7 +4208,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2017 New England Journal of Medicine trial has become a major reference point for anti-inflammatory cardiovascular therapy.",
+"excerpt": "Short impact summary Antiinflammatory Therapy with Canakinumab for Atherosclerotic Disease (2017) in New England Journal of Medicine.",
 "cover_url": "",
 "authors": "Paul M. Ridker, Giulia Renda, Tom Thurén et al.",
 "all_authors": [
@@ -4401,7 +4401,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2020 New England Journal of Medicine trial has become a major reference point in COVID-19 therapeutics, with 7,760 citations and placement in the top 1% most-cited papers for…",
+"excerpt": "Short impact summary Remdesivir for the Treatment of Covid-19 — Final Report (2020) in New England Journal of Medicine.",
 "cover_url": "",
 "authors": "John H. Beigel, Kay M Tomashek, Lori E. Dodd et al.",
 "all_authors": [
@@ -4601,7 +4601,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This randomized prostate-cancer screening trial has had exceptional scholarly reach: it has been cited 2,932 times and sits in the top 1% of works for its field and year.",
+"excerpt": "Short impact summary Mortality Results from a Randomized Prostate-Cancer Screening Trial (2009) in New England Journal of Medicine.",
 "cover_url": "",
 "authors": "Gerald L. Andriole, E. David Crawford, Robert L. Grubb et al.",
 "all_authors": [
@@ -4784,7 +4784,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary Cantera has become a major software method anchor for chemical kinetics, thermodynamics, and transport modeling, with 1,738 OpenAlex citations and 1,741 documented downstream reus…",
+"excerpt": "Short impact summary Cantera: An Object-oriented Software Toolkit for Chemical Kinetics, Thermodynamics, and Transport Processes (2018) in Zenodo.",
 "cover_url": "",
 "authors": "David G. Goodwin, Raymond L. Speth, Harry K. Moffat et al.",
 "all_authors": [
@@ -4939,7 +4939,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Data Feminism has become a widely cited reference point for scholarship on the ethics and politics of data, with 1,645 OpenAlex citations and top-1% citation standing for its year…",
+"excerpt": "Short impact summary Data Feminism (2020), published by The MIT Press, has been cited 1,645 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
 "cover_url": "",
 "authors": "Catherine D'Ignazio, Lauren F. Klein",
 "all_authors": [
@@ -5096,7 +5096,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Nature article has had substantial scholarly impact, with 1,513 OpenAlex citations and a top 1% field- and year-normalized citation standing.",
+"excerpt": "Short impact summary A physical, genetic and functional sequence assembly of the barley genome (2012) in Nature.",
 "cover_url": "",
 "authors": "Klaus Mayer, Thomas Nussbaumer, Heidrun Gundlach et al.",
 "all_authors": [
@@ -5331,7 +5331,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This article was retracted, but it still left a substantial imprint on the COVID-19 literature: it has accrued 1,495 citations and sits in the top 1% of cited works for its field …",
+"excerpt": "Short impact summary RETRACTED: Cardiovascular Disease, Drug Therapy, and Mortality in Covid-19 (2020) in New England Journal of Medicine.",
 "cover_url": "",
 "authors": "Mandeep R. Mehra, Sapan S. Desai, SreyRam Kuy et al.",
 "all_authors": [
@@ -5492,7 +5492,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary LMFIT has developed into a widely used software method anchor for Python-based non-linear least-squares fitting.",
+"excerpt": "Short impact summary LMFIT: Non-Linear Least-Square Minimization and Curve-Fitting for Python (2014) in Zenodo.",
 "cover_url": "",
 "authors": "M. Newville, Till Stensitzki, Daniel B. Allen et al.",
 "all_authors": [
@@ -5648,7 +5648,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2019 Nature article has accumulated 818 citations, placing it in the top 1% of works for its field and year.",
+"excerpt": "Short impact summary Committed emissions from existing energy infrastructure jeopardize 1.5 °C climate target (2019) in Nature.",
 "cover_url": "",
 "authors": "Dan Tong, Qiang Zhang, Yixuan Zheng et al.",
 "all_authors": [
@@ -5810,7 +5810,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Human Health and Ocean Pollution has achieved substantial scholarly uptake, with 762 citations in OpenAlex and standing in the top 1% of cited works for its field and year.",
+"excerpt": "Short impact summary Human Health and Ocean Pollution (2020) in Annals of Global Health.",
 "cover_url": "",
 "authors": "Philip J. Landrigan, John J. Stegeman, Lora E. Fleming et al.",
 "all_authors": [
@@ -6014,7 +6014,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary carData: Companion to Applied Regression Data Sets has accrued substantial scholarly uptake, with 632 citations in OpenAlex and 686 documented downstream reuses.",
+"excerpt": "Short impact summary carData: Companion to Applied Regression Data Sets (2017) in Unknown.",
 "cover_url": "",
 "authors": "John Fox, Sanford Weisberg, Bradley S. Price",
 "all_authors": [
@@ -6165,7 +6165,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2016 Springer Nature book chapter has become a clear reference point in human pose estimation, with 544 OpenAlex citations and top-1% citation standing for its field and year…",
+"excerpt": "Short impact summary Human Pose Estimation via Convolutional Part Heatmap Regression (2016), published by Springer Nature, has been cited 544 times — enough that OpenAlex puts it in the top 1% of work…",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-319-46478-7_44",
 "authors": "Adrian Bulat, Georgios Tzimiropoulos",
 "all_authors": [
@@ -6314,7 +6314,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary PyPSA has established itself as a widely reused software method anchor for power system analysis, with 529 citations in OpenAlex and 529 documented downstream reuses.",
+"excerpt": "Short impact summary PyPSA: Python for Power System Analysis (2026) in Zenodo.",
 "cover_url": "",
 "authors": "Brown, Tom, Jonas Hörsch, David Schlachtberger",
 "all_authors": [
@@ -6459,7 +6459,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary ESA WorldCover 10 m 2020 v100 has become a widely reused reference dataset for global land-cover mapping, with 522 citations, 591 documented downstream reuse instances, and strong…",
+"excerpt": "Short impact summary ESA WorldCover 10 m 2020 v100 (2021) in Zenodo.",
 "cover_url": "",
 "authors": "Daniele Zanaga, Ruben Van De Kerchove, Wanda De Keersmaecker et al.",
 "all_authors": [
@@ -6626,7 +6626,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary The Global Wood Density Database has achieved clear scholarly uptake, with 457 citations in OpenAlex and 466 documented downstream reuse events.",
+"excerpt": "Short impact summary Global Wood Density Database (2009) in Dryad.",
 "cover_url": "",
 "authors": "AE Zanne, Gabriela López‐González, David A. Coomes et al.",
 "all_authors": [
@@ -6793,7 +6793,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This IPCC book chapter has become a major reference point for how climate change response policies are framed under risk and uncertainty.",
+"excerpt": "Short impact summary Integrated Risk and Uncertainty Assessment of Climate Change Response Policies (2015), published by Cambridge University Press, has been cited 393 times — enough that OpenAlex put…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781107058217&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Intergovernmental Panel on Climate Change",
 "all_authors": [
@@ -6940,7 +6940,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2017 review has achieved clear scholarly uptake in stroke rehabilitation and motor control, with 389 citations and field-normalized standing in the top 10% for its year.",
+"excerpt": "Short impact summary Motor compensation and its effects on neural reorganization after stroke (2017) in Nature reviews.",
 "cover_url": "",
 "authors": "Theresa A. Jones",
 "all_authors": [
@@ -7096,7 +7096,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary The Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS) has become a widely used reference dataset for emotion-related audio-visual research, with 363 citations i…",
+"excerpt": "Short impact summary The Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS) (2018) in Zenodo.",
 "cover_url": "",
 "authors": "Steven R. Livingstone, Frank Russo",
 "all_authors": [
@@ -7391,7 +7391,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary The Global Aridity Index and Potential Evapotranspiration (ET0) Climate Database v2 has become a widely used reference dataset for climate, hydrology, and dryland research.",
+"excerpt": "Short impact summary Global Aridity Index and Potential Evapotranspiration (ET0) Climate Database v2 (2019) in Figshare.",
 "cover_url": "",
 "authors": "Antonio Trabucco, Robert J. Zomer",
 "all_authors": [
@@ -7537,7 +7537,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary Effsize has established itself as a durable software method anchor for effect size computation, with 328 scholarly citations and 350 documented downstream reuses.",
+"excerpt": "Short impact summary Effsize - a package for efficient effect size computation (2016) in Zenodo.",
 "cover_url": "",
 "authors": "Marco Torchiano",
 "all_authors": [
@@ -7682,7 +7682,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Jo Littler’s Against Meritocracy has become a widely cited reference point in debates about merit, inequality, and neoliberal legitimation.",
+"excerpt": "Short impact summary Against Meritocracy (2017), published by Taylor & Francis, has been cited 319 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781315712802&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Jo Littler",
 "all_authors": [
@@ -7834,7 +7834,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2004 Nature article has had clear and durable scholarly uptake, with 288 citations and a field- and year-normalized standing in the top 10% of cited works.",
+"excerpt": "Short impact summary A FADD-dependent innate immune mechanism in mammalian cells (2004) in Nature.",
 "cover_url": "",
 "authors": "Siddharth Balachandran, Emmanuel Thomas, Glen N. Barber",
 "all_authors": [
@@ -7984,7 +7984,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Teachers’ Competencies has shown substantial scholarly uptake since its 2010 publication, with 264 citations in OpenAlex and a field- and year-normalized standing in the top 10% o…",
+"excerpt": "Short impact summary Teachers’ Competencies (2010) in Cultura.",
 "cover_url": "",
 "authors": "K. Selvi, Peter Lang",
 "all_authors": [
@@ -8132,7 +8132,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2017 Nature article has clear scholarly uptake, with 262 citations in OpenAlex and a field- and year-normalized standing in the top 1% of cited works.",
+"excerpt": "Short impact summary A massive, quiescent galaxy at a redshift of 3.717 (2017) in Nature.",
 "cover_url": "",
 "authors": "Karl Glazebrook, C. Schreiber, Ivo Labbé et al.",
 "all_authors": [
@@ -8302,7 +8302,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary The COVID-19 CT Lung and Infection Segmentation Dataset has become a widely used reference point for COVID-19 imaging research, with 240 citations in OpenAlex, 287 documented down…",
+"excerpt": "Short impact summary COVID-19 CT Lung and Infection Segmentation Dataset (2020) in Zenodo.",
 "cover_url": "",
 "authors": "Jun Ma, Cheng Ge, Yixin Wang et al.",
 "all_authors": [
@@ -8626,7 +8626,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary IoT-23 has become a widely used reference dataset for IoT security research, with 235 scholarly citations, 10,893 downloads, and 282 documented downstream reuses.",
+"excerpt": "Short impact summary IoT-23: A labeled dataset with malicious and benign IoT network traffic (2020) in Zenodo.",
 "cover_url": "",
 "authors": "Sebastián García, Agustin Parmisano, María José Erquiaga",
 "all_authors": [
@@ -8777,7 +8777,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2020 New England Journal of Medicine article has shown clear scholarly uptake, with 226 citations in OpenAlex and a high percentile standing in its field-year context.",
+"excerpt": "Short impact summary “Super-Spreaders” and Person-to-Person Transmission of Andes Virus in Argentina (2020) in New England Journal of Medicine.",
 "cover_url": "",
 "authors": "Valeria P. Martínez, Nicholas Di Paola, Daniel Oscar Alonso et al.",
 "all_authors": [
@@ -8975,7 +8975,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary The graph-tool python library has clear scholarly uptake and functions as a software method anchor for graph and network analysis.",
+"excerpt": "Short impact summary The graph-tool python library (2015) in Figshare.",
 "cover_url": "",
 "authors": "Tiago P. Peixoto",
 "all_authors": [
@@ -9122,7 +9122,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary The TNO Image Fusion Dataset shows clear scholarly uptake as a reusable reference resource for multimodal image fusion: it has 202 citations in OpenAlex and 216 documented downstr…",
+"excerpt": "Short impact summary TNO Image Fusion Dataset (2014) in Figshare.",
 "cover_url": "",
 "authors": "Alexander Toet",
 "all_authors": [
@@ -9269,7 +9269,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary PIVlab has established itself as a widely reused MATLAB-based workflow for particle image velocimetry, with 191 scholarly citations and 199 documented downstream reuses.",
+"excerpt": "Short impact summary PIVlab - Time-Resolved Digital Particle Image Velocimetry Tool for MATLAB (2015) in Figshare.",
 "cover_url": "",
 "authors": "William Thielicke, Eize J. Stamhuis",
 "all_authors": [
@@ -9418,7 +9418,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary eofs has achieved clear scholarly uptake as a practical Python tool for empirical orthogonal function analysis in meteorology, oceanography, and climate science.",
+"excerpt": "Short impact summary eofs: A Library for EOF Analysis of Meteorological, Oceanographic, and Climate Data (2016) in Journal of Open Research Software.",
 "cover_url": "",
 "authors": "Andrew Dawson",
 "all_authors": [
@@ -9568,7 +9568,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2022 Science article has shown unusually strong scholarly reach, with 179 citations and field- and year-normalized placement in the top 1% of cited work.",
+"excerpt": "Short impact summary Global urban environmental change drives adaptation in white clover (2022) in Science.",
 "cover_url": "",
 "authors": "James S. Santangelo, Rob W. Ness, Beata Cohan et al.",
 "all_authors": [
@@ -10017,7 +10017,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2016 Nature Reviews Drug Discovery article has seen clear scholarly uptake, with 165 citations in OpenAlex and a field-and-year standing in the top 10% most cited.",
+"excerpt": "Short impact summary Parsing clinical success rates (2016) in Nature Reviews Drug Discovery.",
 "cover_url": "",
 "authors": "Asher Mullard",
 "all_authors": [
@@ -10161,7 +10161,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Opening Science has become a widely used and often cited reference point in the open science conversation.",
+"excerpt": "Short impact summary Opening Science (2014), published by Springer Nature, has been cited 165 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-319-00026-8",
 "authors": "Sönke Bartling, Sascha Friesike",
 "all_authors": [
@@ -10320,7 +10320,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Coronavirus Politics has had unusually strong scholarly reach for a 2021 book, with 165 citations and top 1% standing for its field and year.",
+"excerpt": "Short impact summary Coronavirus Politics (2021), published by University of Michigan Press, has been cited 165 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9780472038626&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Scott Greer, Elizabeth King, Elize Fonseca et al.",
 "all_authors": [
@@ -10478,7 +10478,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This book has become a reference point for scholarship on non-tariff barriers in international trade.",
+"excerpt": "Short impact summary Measurement of Nontariff Barriers (1998), published by University of Michigan Press, has been cited 164 times — enough that OpenAlex puts it in the top 10% of works in its field a…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9780472109319&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Alan Deardorff, Robert Stern",
 "all_authors": [
@@ -10626,7 +10626,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Blood article on clonal hematopoiesis has seen clear scholarly uptake, with 161 citations and a field- and year-normalized standing in the top 1% of outputs.",
+"excerpt": "Short impact summary Causes and consequences of clonal hematopoiesis (2023) in Blood.",
 "cover_url": "",
 "authors": "Lachelle D. Weeks, Benjamin L. Ebert",
 "all_authors": [
@@ -10788,7 +10788,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2024 PRX Quantum review has drawn clear scholarly attention, with 160 citations in OpenAlex and a top 1% field- and year-normalized standing.",
+"excerpt": "Short impact summary Quantum Computing for High-Energy Physics: State of the Art and Challenges (2024) in PRX Quantum.",
 "cover_url": "",
 "authors": "Alberto Di Meglio, Karl Jansen, Ivano Tavernelli et al.",
 "all_authors": [
@@ -10987,7 +10987,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Keith Maskus and John Wilson’s Quantifying the Impact of Technical Barriers to Trade has become a clear reference point in international trade scholarship.",
+"excerpt": "Short impact summary Quantifying the Impact of Technical Barriers to Trade (2001), published by University of Michigan Press, has been cited 153 times — enough that OpenAlex puts it in the top 10% of …",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9780472112470&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Keith Maskus, John Wilson, John Wilson",
 "all_authors": [
@@ -11137,7 +11137,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary The Handbook of Open, Distance and Digital Education is already functioning as a reference point in its field.",
+"excerpt": "Short impact summary Handbook of Open, Distance and Digital Education (2023), published by Springer Nature, has been cited 147 times.",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-981-19-2080-6",
 "authors": "Olaf Zawacki-Richter, Insung Jung",
 "all_authors": [
@@ -11290,7 +11290,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Robin DiAngelo's 2016 scholarly book What Does It Mean to Be White?",
+"excerpt": "Short impact summary What Does It Mean to Be White?",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781433131103&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Robin DiAngelo",
 "all_authors": [
@@ -11437,7 +11437,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2001 Proceedings of the National Academy of Sciences article has sustained scholarly influence, with 126 citations in OpenAlex, 127 documented downstream reuses, and 9 scite …",
+"excerpt": "Short impact summary Cytoskeletal microdifferentiation: A mechanism for organizing morphological plasticity in dendrites (2001) in Proceedings of the National Academy of Sciences.",
 "cover_url": "",
 "authors": "Stefanie Kaech, Hema Parmar, Martijn Roelandse et al.",
 "all_authors": [
@@ -11594,7 +11594,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This eLife article has shown unusually strong scholarly uptake for a 2023 resource paper, with 126 OpenAlex citations and a field- and year-normalized standing in the top 1% of ci…",
+"excerpt": "Short impact summary A searchable image resource of Drosophila GAL4 driver expression patterns with single neuron resolution (2023) in eLife.",
 "cover_url": "",
 "authors": "Geoffrey W Meissner, Aljoscha Nern, Zachary Dorman et al.",
 "all_authors": [
@@ -11787,7 +11787,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This experimental sleep-restriction study has become a clear scholarly reference point in sleep and obesity research.",
+"excerpt": "Short impact summary Effects of Experimental Sleep Restriction on Energy Intake, Energy Expenditure, and Visceral Obesity (2022) in Journal of the American College of Cardiology.",
 "cover_url": "",
 "authors": "Naima Covassin, Prachi Singh, Shelly McCrady-Spitzer et al.",
 "all_authors": [
@@ -11949,7 +11949,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This advisory report has seen clear scholarly uptake: OpenAlex records 124 citations and 133 documented downstream reuse events, with most reuse coming from journal articles and r…",
+"excerpt": "Short impact summary Scientific Report of the 2025 Dietary Guidelines Advisory Committee: Advisory Report to the Secretary of Health and Human Services and Secretary of Agriculture (2024) in Unknown.",
 "cover_url": "",
 "authors": "",
 "all_authors": [],
@@ -12099,7 +12099,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Neuron article has seen clear scholarly uptake, with 122 OpenAlex citations and a field- and year-normalized standing in the top 1% of cited works.",
+"excerpt": "Short impact summary A brain atlas of synapse protein lifetime across the mouse lifespan (2022) in Neuron.",
 "cover_url": "",
 "authors": "Edita Bulovaite, Zhen Qiu, Maximilian Kratschke et al.",
 "all_authors": [
@@ -12281,7 +12281,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Published in Nature Sustainability in 2020, this article has accumulated 121 citations and sits in the top 10% of cited papers for its field and year, indicating strong scholarly …",
+"excerpt": "Short impact summary Hydrological limits to carbon capture and storage (2020) in Nature Sustainability.",
 "cover_url": "",
 "authors": "Lorenzo Rosa, Jeffrey A. Reimer, Marjorie Went et al.",
 "all_authors": [
@@ -12437,7 +12437,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 Nature Chemistry article has been taken up strongly in the scholarly record, with 109 citations and field- and year-normalized standing in the top 1% of its cohort.",
+"excerpt": "Short impact summary Proteolysis-targeting chimeras with reduced off-targets (2023) in Nature Chemistry.",
 "cover_url": "",
 "authors": "Tuan M. Nguyen, Vedagopuram Sreekanth, Arghya Deb et al.",
 "all_authors": [
@@ -12616,7 +12616,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Open: The Philosophy and Practices that are Revolutionizing Education and Science has clear scholarly traction and active use.",
+"excerpt": "Short impact summary Open: The Philosophy and Practices that are Revolutionizing Education and Science (2017), published by Ubiquity Press, has been cited 103 times — enough that OpenAlex puts it in t…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781911529002&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Kwantlen Polytechnic University, CA, Rajiv S. Jhangiani, Robert Biswas-Diener et al.",
 "all_authors": [
@@ -12774,7 +12774,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 Nature Genetics article has seen strong scholarly uptake, with 95 citations and a field- and year-normalized standing in the top 10% of papers.",
+"excerpt": "Short impact summary The BAF chromatin remodeler synergizes with RNA polymerase II and transcription factors to evict nucleosomes (2023) in Nature Genetics.",
 "cover_url": "",
 "authors": "Sandipan Brahma, Steven Henikoff",
 "all_authors": [
@@ -12934,7 +12934,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2019 article has achieved clear scholarly uptake, with 93 OpenAlex citations and standing in the top 10% of works for its field and year.",
+"excerpt": "Short impact summary Multilevel versus single-level regression for the analysis of multilevel information: The case of quantitative intersectional analysis (2019) in Social Science & Medicine.",
 "cover_url": "",
 "authors": "Clare R. Evans, George Leckie, Juan Merlo",
 "all_authors": [
@@ -13093,7 +13093,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 review in Developmental Cell has drawn substantial scholarly attention, with 91 citations and standing in the top 1% of cited papers for its field and year.",
+"excerpt": "Short impact summary Shaping the brain: The emergence of cortical structure and folding (2023) in Developmental Cell.",
 "cover_url": "",
 "authors": "Shyam K. Akula, David Exposito-Alonso, Christopher A. Walsh",
 "all_authors": [
@@ -13255,7 +13255,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2019 Nature article has clear scholarly uptake: it has been cited 89 times in OpenAlex and sits in the top 10% most-cited works for its field and year.",
+"excerpt": "Short impact summary Rethinking impact factors: better ways to judge a journal (2019) in Nature.",
 "cover_url": "",
 "authors": "Paul Wouters, Cassidy R. Sugimoto, Vincent Larivière et al.",
 "all_authors": [
@@ -13420,7 +13420,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2020 iScience article has clear scholarly traction: it has been cited 88 times, places in the top 10% of cited works for its field and year, and has 90 documented downstream …",
+"excerpt": "Short impact summary The Rigor and Transparency Index Quality Metric for Assessing Biological and Medical Science Methods (2020) in iScience.",
 "cover_url": "",
 "authors": "Joseph Menke, Martijn Roelandse, İbrahim Burak Özyurt et al.",
 "all_authors": [
@@ -13583,7 +13583,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary Open collaborative writing with Manubot has achieved strong scholarly uptake: it has 84 citations in OpenAlex, places in the top 1% of cited works for its field and year, and show…",
+"excerpt": "Short impact summary Open collaborative writing with Manubot (2019) in PLoS Computational Biology.",
 "cover_url": "",
 "authors": "Daniel Himmelstein, Vincent Rubinetti, David R. Slochower et al.",
 "all_authors": [
@@ -13744,7 +13744,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2019 article has seen clear scholarly uptake, with 83 citations in OpenAlex and a field- and year-normalized standing in the top 10% of its cohort.",
+"excerpt": "Short impact summary A Comparison of Machine Learning Methods for the Prediction of Traffic Speed in Urban Places (2019) in Sustainability.",
 "cover_url": "",
 "authors": "Charalampos Bratsas, Kleanthis Koupidis, Josep Maria Salanova Grau et al.",
 "all_authors": [
@@ -13900,7 +13900,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This PLoS Biology article has already shown unusually strong scholarly uptake for a 2024 publication, with 76 OpenAlex citations placing it in the top 1% of papers in its field an…",
+"excerpt": "Short impact summary Deep mutational scanning of H5 hemagglutinin to inform influenza virus surveillance (2024) in PLoS Biology.",
 "cover_url": "",
 "authors": "Bernadeta Dadonaite, Jenny Ahn, Jordan T. Ort et al.",
 "all_authors": [
@@ -14081,7 +14081,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2020 Scientific Reports article has attracted substantial scholarly attention, with 75 OpenAlex citations and a field- and year-normalized standing in the top 10% of works.",
+"excerpt": "Short impact summary Parity is associated with cognitive function and brain age in both females and males (2020) in Scientific Reports.",
 "cover_url": "",
 "authors": "Kaida Ning, Lu Zhao, Meredith Franklin et al.",
 "all_authors": [
@@ -14244,7 +14244,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Molecular Cell article has accumulated 73 OpenAlex citations and sits in the top 10% of its field and year, indicating strong early scholarly uptake.",
+"excerpt": "Short impact summary Epigenetic pioneering by SWI/SNF family remodelers (2023) in Molecular Cell.",
 "cover_url": "",
 "authors": "Kami Ahmad, Sandipan Brahma, Steven Henikoff",
 "all_authors": [
@@ -14404,7 +14404,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2022 Science Immunology article has drawn clear scholarly attention, with 73 citations and standing in the top 10% most-cited papers for its field and year.",
+"excerpt": "Short impact summary Vaccine breakthrough hypoxemic COVID-19 pneumonia in patients with auto-Abs neutralizing type I IFNs (2022) in Science Immunology.",
 "cover_url": "",
 "authors": "Paul Bastard, Sara E. Vazquez, Jamin Liu et al.",
 "all_authors": [
@@ -14678,7 +14678,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Health Affairs article has drawn substantial scholarly attention, with 72 citations and field-normalized standing in the top 1% for its year.",
+"excerpt": "Short impact summary Americans Support Price Shopping For Health Care, But Few Actually Seek Out Price Information (2017) in Health Affairs.",
 "cover_url": "",
 "authors": "Ateev Mehrotra, Katie Dean, Anna D. Sinaiko et al.",
 "all_authors": [
@@ -14836,7 +14836,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2004 neuroscience article has sustained scholarly uptake, with 68 citations in OpenAlex and 69 documented downstream reuse events.",
+"excerpt": "Short impact summary Trophic support delays but does not prevent cell‐intrinsic degeneration of neurons deficient for munc18‐1 (2004) in European Journal of Neuroscience.",
 "cover_url": "",
 "authors": "Joost H. Heeroma, Martijn Roelandse, Keimpe Wierda et al.",
 "all_authors": [
@@ -15000,7 +15000,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Nature article has already attracted substantial scholarly attention, with 67 citations and standing in the top 1% most-cited papers for its field and year.",
+"excerpt": "Short impact summary Template and target-site recognition by human LINE-1 in retrotransposition (2023) in Nature.",
 "cover_url": "",
 "authors": "Akanksha Thawani, Alfredo Jose Florez Ariza, Eva Nogales et al.",
 "all_authors": [
@@ -15162,7 +15162,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 eLife article has seen strong and rapid scholarly uptake, with 67 OpenAlex citations placing it in the top 1% of works in its field and year.",
+"excerpt": "Short impact summary Stable population structure in Europe since the Iron Age, despite high mobility (2023) in eLife.",
 "cover_url": "",
 "authors": "Margaret L. Antonio, Clemens L. Weiß, Ziyue Gao et al.",
 "all_authors": [
@@ -15428,7 +15428,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2021 Scientific Reports article has become a clear reference point for neurofilament light chain (NfL) research, with 64 OpenAlex citations placing it in the top 10% of works…",
+"excerpt": "Short impact summary Seven day pre-analytical stability of serum and plasma neurofilament light chain (2021) in Scientific Reports.",
 "cover_url": "",
 "authors": "Patrick Altmann, Markus Ponleitner, Paulus Rommer et al.",
 "all_authors": [
@@ -15591,7 +15591,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This article has attracted strong scholarly uptake: OpenAlex records 64 citations, placing it in the top 1% of works in its field and year.",
+"excerpt": "Short impact summary Assessing the potential of LLM-assisted annotation for corpus-based pragmatics and discourse analysis (2024) in International Journal of Corpus Linguistics.",
 "cover_url": "",
 "authors": "Danni Yu, Luyang Li, Hang Su et al.",
 "all_authors": [
@@ -15740,7 +15740,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Meek’s Smith, Turgot, and the ‘Four Stages’ Theory has generated clear scholarly uptake, with 61 OpenAlex citations and field-normalized standing in the top 1% for its year and discipline.",
+"excerpt": "Short impact summary Smith, Turgot, and the ‘Four Stages’ Theory (1977), published by Springer Nature, has been cited 61 times — enough that OpenAlex puts it in the top 1% of works in its field and ye…",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-1-4899-7303-0_2",
 "authors": "Ronald L. Meek",
 "all_authors": [
@@ -15884,8 +15884,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Mark Pollard’s Beyond Provenance: New Approaches to Interpreting the Chemistry of Archaeological Copper Alloys shows strong scholarly uptake: it has 61 citations in OpenAlex and s…",
-"cover_url": "",
+"excerpt": "Short impact summary Beyond Provenance: New Approaches to Interpreting the Chemistry of Archaeological Copper Alloys (2018), published by Leuven University Press, has been cited 61 times — enough that…",
+"cover_url": "https://library.oapen.org/rest/bitstreams/0f3e6db6-19d3-4f41-8ce7-ea719a76fb69/retrieve",
 "authors": "Mark Pollard",
 "all_authors": [
 "Mark Pollard"
@@ -16032,7 +16032,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This article has seen strong scholarly uptake, with 60 citations and a field-normalized standing in the top 10% for its year and discipline.",
+"excerpt": "Short impact summary Hierarchical architecture of dopaminergic circuits enables second-order conditioning in Drosophila (2023) in eLife.",
 "cover_url": "",
 "authors": "Daichi Yamada, Daniel Bushey, Feng Li et al.",
 "all_authors": [
@@ -16200,7 +16200,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Cell article has already shown clear scholarly traction: it is in the top 10% of cited works for its field and year, with 59 OpenAlex citations, 60 documented downstream reus…",
+"excerpt": "Short impact summary Human inherited CCR2 deficiency underlies progressive polycystic lung disease (2023) in Cell.",
 "cover_url": "",
 "authors": "Anna‐Lena Neehus, Brenna Carey, Marija Landekic et al.",
 "all_authors": [
@@ -16440,7 +16440,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2004 Journal of Neuroscience article has become a recognizable reference point in synaptic plasticity research, with 55 OpenAlex citations, 56 documented downstream reuses, a…",
+"excerpt": "Short impact summary Hypothermia-Associated Loss of Dendritic Spines (2004) in Journal of Neuroscience.",
 "cover_url": "",
 "authors": "Martijn Roelandse, Andrew Matus",
 "all_authors": [
@@ -16592,7 +16592,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Cell article has already shown strong scholarly traction, with 54 OpenAlex citations placing it in the top 10% of works for its field and year.",
+"excerpt": "Short impact summary Temporally multiplexed imaging of dynamic signaling networks in living cells (2023) in Cell.",
 "cover_url": "",
 "authors": "Yong Qian, Orhan T. Celiker, Zeguan Wang et al.",
 "all_authors": [
@@ -16760,7 +16760,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary A European Public Investment Outlook shows strong scholarly and usage impact.",
+"excerpt": "Short impact summary A European Public Investment Outlook (2020), published by Open Book Publishers, has been cited 54 times — enough that OpenAlex puts it in the top 1% of works in its field and year…",
 "cover_url": "https://library.oapen.org/rest/bitstreams/2a1dd993-99da-405e-b14c-5a0522f96b50/retrieve",
 "authors": "Floriana Cerniglia, Francesco Saraceno",
 "all_authors": [
@@ -16909,7 +16909,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2016 PNAS article has accumulated 51 citations and sits in the top 10% of cited papers for its field and year, indicating clear scholarly uptake.",
+"excerpt": "Short impact summary Early somatic mosaicism is a rare cause of long-QT syndrome (2016) in Proceedings of the National Academy of Sciences.",
 "cover_url": "",
 "authors": "James R. Priest, Charles Gawad, Kristopher M. Kahlig et al.",
 "all_authors": [
@@ -17098,7 +17098,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2023 Science Translational Medicine article has already shown strong scholarly traction, with 51 OpenAlex citations and a field- and year-normalized standing in the top 10% o…",
+"excerpt": "Short impact summary Enhanced mTORC1 signaling and protein synthesis in pathologic α-synuclein cellular and animal models of Parkinson’s disease (2023) in Science Translational Medicine.",
 "cover_url": "",
 "authors": "Mohammed Repon Khan, Xiling Yin, Sung-Ung Kang et al.",
 "all_authors": [
@@ -17269,7 +17269,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Democracy and Empire shows strong scholarly uptake, with 51 citations and standing in the top 1% of works in its field and publication year.",
+"excerpt": "Short impact summary Democracy and Empire (2023), published by Cambridge University Press, has been cited 51 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781009383998&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Inés Valdez",
 "all_authors": [
@@ -17413,7 +17413,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This JAMA randomized clinical trial has already achieved notable scholarly traction, with 48 OpenAlex citations and a field-and-year standing in the top 1% most cited.",
+"excerpt": "Short impact summary Varenicline for Youth Nicotine Vaping Cessation (2025) in JAMA.",
 "cover_url": "",
 "authors": "A. Eden Evins, Corinne Cather, Harrison T. Reeder et al.",
 "all_authors": [
@@ -17586,7 +17586,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This article has been cited 48 times and sits in the top 10% most-cited papers for its field and publication year, indicating clear scholarly uptake.",
+"excerpt": "Short impact summary The Resource Identification Initiative: A cultural shift in publishing (2015) in F1000Research.",
 "cover_url": "",
 "authors": "Anita Bandrowski, Matthew Brush, Jeffrey S. Grethe et al.",
 "all_authors": [
@@ -17753,7 +17753,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2023 eLife article has already seen clear academic uptake, with 48 OpenAlex citations and a field- and year-normalized standing in the top 10% most cited.",
+"excerpt": "Short impact summary Uncovering circuit mechanisms of current sinks and sources with biophysical simulations of primary visual cortex (2023) in eLife.",
 "cover_url": "",
 "authors": "Atle E. Rimehaug, A. Stasik, Espen Hagen et al.",
 "all_authors": [
@@ -17917,7 +17917,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2023 Nature Neuroscience article has accumulated 47 citations in OpenAlex and sits in the top 10% most-cited papers for its field and year, indicating strong early scholarly …",
+"excerpt": "Short impact summary Decoding motor plans using a closed-loop ultrasonic brain–machine interface (2023) in Nature Neuroscience.",
 "cover_url": "",
 "authors": "Whitney S. Griggs, Sumner L. Norman, Thomas Deffieux et al.",
 "all_authors": [
@@ -18084,7 +18084,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2010 Biology of the Cell article has accrued 47 citations in OpenAlex and shows a broader reuse footprint, with 50 downstream reuses recorded across articles, chapters, prepr…",
+"excerpt": "Short impact summary Munc18 and Munc13 regulate early neurite outgrowth (2010) in Biology of the Cell.",
 "cover_url": "",
 "authors": "Jurjen H. Broeke, Martijn Roelandse, Maartje J. Luteijn et al.",
 "all_authors": [
@@ -18241,7 +18241,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 Science Translational Medicine article has already shown strong scholarly traction: it is in the top 10% of cited papers for its field and year, with 46 citations in Ope…",
+"excerpt": "Short impact summary T cell responses to SARS-CoV-2 infection and vaccination are elevated in B cell deficiency and reduce risk of severe COVID-19 (2023) in Science Translational Medicine.",
 "cover_url": "",
 "authors": "Reza Zonozi, Lucy C. Walters, Aaron Shulkin et al.",
 "all_authors": [
@@ -18419,7 +18419,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Virtues for the People has attracted clear scholarly attention, with 46 citations and a standing in the top 10% of cited works for its field and year.",
+"excerpt": "Short impact summary Virtues for the People (2011), published by Leuven University Press, has been cited 46 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789461661180&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Geert Roskam",
 "all_authors": [
@@ -18547,7 +18547,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 review has shown clear academic uptake: it is cited 43 times, placing it in the top 10% of papers in its field and year.",
+"excerpt": "Short impact summary Metabolic immunity against microbes (2023) in Trends in Cell Biology.",
 "cover_url": "",
 "authors": "Sebastian Kreimendahl, Lena Pernas",
 "all_authors": [
@@ -18700,7 +18700,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Institutions and Investments has a clear scholarly footprint: OpenAlex records 43 citations, placing it in the top 10% of works in its field and year.",
+"excerpt": "Short impact summary Institutions and Investments (2000), published by University of Michigan Press, has been cited 43 times — enough that OpenAlex puts it in the top 10% of works in its field and yea…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9780472111787&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Jun Fu",
 "all_authors": [
@@ -18842,7 +18842,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Bethany Hicok’s Elizabeth Bishop and the Literary Archive has generated strong scholarly traction, with 42 OpenAlex citations placing it in the top 1% of books in its field and ye…",
+"excerpt": "Short impact summary Elizabeth Bishop and the Literary Archive (2020), published by Lever Press, has been cited 42 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781643150116&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Bethany Hicok",
 "all_authors": [
@@ -18960,7 +18960,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This scholarly book has established clear academic uptake, with 40 citations in OpenAlex and field-normalized standing in the top 10% for its year.",
+"excerpt": "Short impact summary Glass Making in the Greco-Roman World: Results of the ARCHGLASS project (2015), published by Leuven University Press, has been cited 40 times — enough that OpenAlex puts it in the…",
 "cover_url": "https://lup.be/wp-content/uploads/2024/01/66353_jpg_rgb_original.jpg",
 "authors": "Patrick Degryse",
 "all_authors": [
@@ -19102,7 +19102,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Ecological States has already found clear scholarly traction, with 40 OpenAlex citations placing it in the top 1% of works in its field and publication year.",
+"excerpt": "Short impact summary Ecological States (2023), published by Cornell University Press, has been cited 40 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/88bf9a37-ce8d-4ecb-8790-88f70c0c25ea/retrieve",
 "authors": "Jesse Rodenbiker",
 "all_authors": [
@@ -19251,7 +19251,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2003 scholarly book has shown clear academic uptake, with 40 citations in OpenAlex and a top-10%-for-year-and-field percentile standing.",
+"excerpt": "Short impact summary The Role of the Judge in International Trade Regulation (2003), published by University of Michigan Press, has been cited 40 times — enough that OpenAlex puts it in the top 10% of…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9780472024995&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Thomas Cottier, Petros Mavroidis, Patrick Blatter",
 "all_authors": [
@@ -19392,7 +19392,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2003 Neuroscience article has seen clear scholarly uptake, with 39 OpenAlex citations and 40 documented downstream reuses.",
+"excerpt": "Short impact summary Focal motility determines the geometry of dendritic spines☆ (2003) in Neuroscience.",
 "cover_url": "",
 "authors": "Martijn Roelandse, Arkadiusz Welman, Uta Wagner et al.",
 "all_authors": [
@@ -19545,7 +19545,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2021 PLoS ONE article has shown clear scholarly uptake in medical-imaging and AI research, with 36 citations in OpenAlex, placement in the top 10% of its field and year, and …",
+"excerpt": "Short impact summary Automatic classification of medical image modality and anatomical location using convolutional neural network (2021) in PLoS ONE.",
 "cover_url": "",
 "authors": "Chen-Hua Chiang, Chi-Lun Weng, Hung‐Wen Chiu",
 "all_authors": [
@@ -19701,7 +19701,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 eLife article has seen strong scholarly uptake for a recent neuroscience study, with 36 citations in OpenAlex and a field- and year-normalized standing in the top 10% mo…",
+"excerpt": "Short impact summary Neural circuit mechanisms for transforming learned olfactory valences into wind-oriented movement (2023) in eLife.",
 "cover_url": "",
 "authors": "Yoshinori Aso, Daichi Yamada, Daniel Bushey et al.",
 "all_authors": [
@@ -20014,7 +20014,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 Current Biology article has built a clear early scholarly footprint, with 33 OpenAlex citations, placement in the top 10% most-cited papers for its field and year, and 3…",
+"excerpt": "Short impact summary Transcriptional and post-transcriptional control of odorant receptor choice in ants (2023) in Current Biology.",
 "cover_url": "",
 "authors": "Anindita Brahma, Dominic D. Frank, P. Daniel H. Pastor et al.",
 "all_authors": [
@@ -20177,7 +20177,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint has seen rapid uptake in the single-cell analysis community, with 33 citations recorded in OpenAlex and 35 documented downstream reuse events across articles, prepri…",
+"excerpt": "Short impact summary The impact of package selection and versioning on single-cell RNA-seq analysis (2024) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Joseph M. Rich, Lambda Moses, Pétur Helgi Einarsson et al.",
 "all_authors": [
@@ -20343,7 +20343,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Nature Medicine article has already shown strong scholarly traction: it has 31 OpenAlex citations, sits in the top 1% of works in its field and year, and has been reused in 3…",
+"excerpt": "Short impact summary Predicting onset of symptomatic Alzheimerʼs disease with plasma p-tau217 clocks (2026) in Nature Medicine.",
 "cover_url": "",
 "authors": "Kellen K. Petersen, Marta Milà-Alomà, Yan Li et al.",
 "all_authors": [
@@ -20541,7 +20541,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This study has seen strong scholarly uptake for a 2023 eLife article, with 29 OpenAlex citations and placement in the top 10% of papers in its field and year.",
+"excerpt": "Short impact summary Mating activates neuroendocrine pathways signaling hunger in Drosophila females (2023) in eLife.",
 "cover_url": "",
 "authors": "Meghan Laturney, Gabriella R Sterne, Kristin Scott",
 "all_authors": [
@@ -20696,8 +20696,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This open-access scholarly book has clear evidence of academic uptake and usage.",
-"cover_url": "",
+"excerpt": "Short impact summary Theory into practice (2021), published by Leuven University Press, has been cited 29 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/1df04a46-3f87-4ff0-accf-0544a4438808/retrieve",
 "authors": "Nicholas Cook, Peter Johnson, Hans Zender",
 "all_authors": [
 "Nicholas Cook",
@@ -20829,7 +20829,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Renegotiating Patriarchy: Gender, Agency and the Bangladesh Paradox has already attracted measurable scholarly attention, with 29 OpenAlex citations placing it in the top 1% of ci…",
+"excerpt": "Short impact summary Renegotiating Patriarchy: Gender, Agency and the Bangladesh Paradox (2024), published by LSE Press, has been cited 29 times — enough that OpenAlex puts it in the top 1% of works i…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781911712220&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Naila Kabeer",
 "all_authors": [
@@ -20986,7 +20986,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Mortevivum has already established measurable scholarly uptake, with 29 OpenAlex citations placing it in the top 1% most-cited works for its field and year.",
+"excerpt": "Short impact summary Mortevivum (2024), published by The MIT Press, has been cited 29 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
 "cover_url": "",
 "authors": "Kimberly Juanita Brown",
 "all_authors": [
@@ -21086,7 +21086,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2006 PLoS ONE article has sustained scholarly uptake, with 28 OpenAlex citations and a field- and year-normalized standing in the top 10% of cited works.",
+"excerpt": "Short impact summary PLoS Journals Sandbox: A Place to Learn and Play (2006) in PLoS ONE.",
 "cover_url": "",
 "authors": "Mike Baehr, Richard Cave, Eddie Dickey et al.",
 "all_authors": [
@@ -21244,7 +21244,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This article has shown clear scholarly uptake, with 27 citations and a field- and year-normalized standing in the top 10% of its cohort.",
+"excerpt": "Short impact summary Establishing Institutional Scores With the Rigor and Transparency Index: Large-scale Analysis of Scientific Reporting Quality (2022) in Journal of Medical Internet Research.",
 "cover_url": "",
 "authors": "Joseph Menke, Peter Eckmann, İbrahim Burak Özyurt et al.",
 "all_authors": [
@@ -21411,7 +21411,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Will Fellows’ Farm Boys: Lives of Gay Men from the Rural Midwest shows a durable and well-rounded impact record: it has been downloaded 9,555 times through OAPEN, cited 26 times i…",
+"excerpt": "Short impact summary Farm Boys: Lives of Gay Men from the Rural Midwest (1998), published by The University of Wisconsin Press, has been cited 26 times.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/9648ddf0-a35a-48a1-896f-fead2f43b02e/retrieve",
 "authors": "Will Fellows",
 "all_authors": [
@@ -21559,7 +21559,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Published in 2023 in the Journal of Clinical Immunology, this study has already accumulated 25 citations and sits in the top 10% most-cited papers for its field and year.",
+"excerpt": "Short impact summary Ruxolitinib Rescues Multiorgan Clinical Autoimmunity in Patients with APS-1 (2023) in Journal of Clinical Immunology.",
 "cover_url": "",
 "authors": "Romain Lévy, Agathe Escudier, Paul Bastard et al.",
 "all_authors": [
@@ -21725,7 +21725,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 PLoS ONE case-control study has already attracted measurable scholarly attention, with 24 citations and a field- and year-normalized standing in the top 10% of outputs.",
+"excerpt": "Short impact summary Maternal serum vitamin D level in early pregnancy and risk for preeclampsia: A case-control study in Southern Sweden (2023) in PLoS ONE.",
 "cover_url": "",
 "authors": "Gunilla Malm, Christian Lindh, Stefan R. Hansson et al.",
 "all_authors": [
@@ -21881,7 +21881,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2020 EMBO Molecular Medicine article has attracted steady scholarly attention, with 24 citations in OpenAlex and a high field- and year-normalized percentile standing.",
+"excerpt": "Short impact summary Protective anti‐prion antibodies in human immunoglobulin repertoires (2020) in EMBO Molecular Medicine.",
 "cover_url": "",
 "authors": "Assunta Senatore, Karl Frontzek, Marc Emmenegger et al.",
 "all_authors": [
@@ -22056,7 +22056,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary States-in-Waiting has already achieved unusually strong scholarly traction for a 2024 book, with 24 OpenAlex citations placing it in the top 1% of works in its field and year.",
+"excerpt": "Short impact summary States-in-Waiting (2024), published by Cambridge University Press, has been cited 24 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781009305822&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Lydia Walker",
 "all_authors": [
@@ -22198,7 +22198,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Advances in Knowledge Discovery and Data Mining has achieved clear scholarly uptake since its 2020 publication, with 23 OpenAlex citations and a field-year percentile that places …",
+"excerpt": "Short impact summary Advances in Knowledge Discovery and Data Mining (2020), published by Springer Nature, has been cited 23 times — enough that OpenAlex puts it in the top 10% of works in its field a…",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-030-47436-2",
 "authors": "Hady W. Lauw, Raymond Chi-Wing Wong, Alexandros Ntoulas et al.",
 "all_authors": [
@@ -22343,7 +22343,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Smart Cities (2024) by Fateh Belaïd and Anvita Arora is showing early but meaningful scholarly traction: it is already in the top 10% of cited works for its field and year, with 2…",
+"excerpt": "Short impact summary Smart Cities (2024), published by Springer Nature, has been cited 22 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-031-35664-3",
 "authors": "Fateh Belaïd, Anvita Arora",
 "all_authors": [
@@ -22487,7 +22487,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Nature Communications article has already seen measurable scholarly uptake, with 21 citations and a field- and year-normalized standing in the top 10% of papers.",
+"excerpt": "Short impact summary Deep Mutational Scanning of FDX1 Identifies Key Structural Determinants of Lipoylation and Cuproptosis (2025) in Nature Communications.",
 "cover_url": "",
 "authors": "Jeffrey C. Hsiao, Douglas M. Warui, Jason J. Kwon et al.",
 "all_authors": [
@@ -22647,7 +22647,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Zainab Usman’s Economic Diversification in Nigeria shows clear scholarly traction: it has 21 citations, places in the top 10% of cited works for its field and year, and has been d…",
+"excerpt": "Short impact summary Economic Diversification in Nigeria (2022), published by Bloomsbury Publishing Plc., has been cited 21 times — enough that OpenAlex puts it in the top 10% of works in its field an…",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781350237674&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Zainab Usman",
 "all_authors": [
@@ -22791,7 +22791,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2024 eLife article has already become a visible reference point in Drosophila neuroscience.",
+"excerpt": "Short impact summary Transforming descending input into motor output: An analysis of the Drosophila Male Adult Nerve Cord connectome (2024) in eLife.",
 "cover_url": "",
 "authors": "Han SJ Cheong, Katharina Eichler, Tomke Stürner et al.",
 "all_authors": [
@@ -22963,7 +22963,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2023 eLife article has seen clear scholarly uptake: OpenAlex records 18 citations, placing it in the top 10% of cited works for its field and year.",
+"excerpt": "Short impact summary Chromosome-specific maturation of the epigenome in the Drosophila male germline (2023) in eLife.",
 "cover_url": "",
 "authors": "James T. Anderson, Steven Henikoff, Kami Ahmad",
 "all_authors": [
@@ -23117,7 +23117,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Christopher Marsh’s Best-Selling Ballads and their Pictures in Seventeenth-Century England shows clear scholarly uptake.",
+"excerpt": "Short impact summary Best-Selling Ballads and their Pictures in Seventeenth-Century England (2016) in Past & Present.",
 "cover_url": "",
 "authors": "Christopher Marsh",
 "all_authors": [
@@ -23228,7 +23228,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary Thermal-plex shows clear scholarly uptake: it has 18 OpenAlex citations, places in the top 10% of papers in its field and year, and has 19 documented downstream reuses.",
+"excerpt": "Short impact summary Thermal-plex: fluidic-free, rapid sequential multiplexed imaging with DNA-encoded thermal channels (2023) in Nature Methods.",
 "cover_url": "",
 "authors": "Hong Fan, Jocelyn Y. Kishi, Ryan N. Delgado et al.",
 "all_authors": [
@@ -23389,7 +23389,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary A Life of Worry: Politics, Mental Health, and Vietnam’s Age of Anxiety shows strong early scholarly uptake and unusually active use for a 2023 academic book.",
+"excerpt": "Short impact summary A Life of Worry: Politics, Mental Health, and Vietnam’s Age of Anxiety (2023), published by University of California Press, has been cited 18 times — enough that OpenAlex puts it …",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9780520392168&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Allen L. Tran",
 "all_authors": [
@@ -23527,7 +23527,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Upland Geopolitics has already shown clear scholarly uptake, with 17 OpenAlex citations and a field-normalized standing in the top 10% for its year.",
+"excerpt": "Short impact summary Upland Geopolitics (2022), published by University of Washington Press, has been cited 17 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9780295750507&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Michael B. Dwyer",
 "all_authors": [
@@ -23681,7 +23681,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Emily Yates-Doerr’s Mal-Nutrition: Maternal Health Science and the Reproduction of Harm shows clear early scholarly uptake, with 17 OpenAlex citations and a field- and year-normal…",
+"excerpt": "Short impact summary Mal-Nutrition: Maternal Health Science and the Reproduction of Harm (2024), published by University of California Press, has been cited 17 times — enough that OpenAlex puts it in …",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9780520404427&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Emily Yates-Doerr",
 "all_authors": [
@@ -23814,7 +23814,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Music on the Move has clear evidence of scholarly and teaching impact.",
+"excerpt": "Short impact summary Music on the Move (2020), published by University of Michigan Press, has been cited 17 times.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/48e1f3ca-07b5-40b7-995f-3289290aca4b/retrieve",
 "authors": "Danielle Fosler-Lussier",
 "all_authors": [
@@ -23963,7 +23963,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint has shown clear early scholarly uptake, with 16 citations and downstream reuse across articles, preprints, book chapters, and a biomedical article mention.",
+"excerpt": "Short impact summary Rigor and Transparency Index, a new metric of quality for assessing biological and medical science methods (2020) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Joseph Menke, Martijn Roelandse, İbrahim Burak Özyurt et al.",
 "all_authors": [
@@ -24122,7 +24122,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2008 PLoS ONE article has shown steady scholarly uptake in neuroscience, with 16 citations in OpenAlex, 17 documented instances of downstream reuse, and at least one supporti…",
+"excerpt": "Short impact summary Cre-Dependent Expression of Multiple Transgenes in Isolated Neurons of the Adult Forebrain (2008) in PLoS ONE.",
 "cover_url": "",
 "authors": "Sridhara Chakravarthy, Tara Keck, Martijn Roelandse et al.",
 "all_authors": [
@@ -24283,7 +24283,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This eLife resource paper has clear early uptake for a methods-heavy Drosophila neuroscience toolset: it is in the top 10% of its field and year, has 16 OpenAlex citations, and sh…",
+"excerpt": "Short impact summary A split-GAL4 driver line resource for Drosophila neuron types (2024) in eLife.",
 "cover_url": "",
 "authors": "Geoffrey W Meissner, Allison Vannan, Jennifer Jeter et al.",
 "all_authors": [
@@ -24520,8 +24520,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Brokers of Modernity has seen clear scholarly uptake, with 16 OpenAlex citations and a citation profile that places it in the top 10% of works in its field and year.",
-"cover_url": "",
+"excerpt": "Short impact summary Brokers of Modernity (2019), published by Leuven University Press, has been cited 16 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/ce59d3cf-cfda-459d-8fab-896e34a873d9/retrieve",
 "authors": "Martin Kohlrausch",
 "all_authors": [
 "Martin Kohlrausch"
@@ -24666,8 +24666,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary The Global Horizon has shown clear scholarly uptake, with 15 citations in OpenAlex and a field-normalized percentile of 0.67458987, alongside 1,019 OAPEN downloads that indicate s…",
-"cover_url": "",
+"excerpt": "Short impact summary The Global Horizon (2021), published by Leuven University Press, has been cited 15 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/41fe2dc7-1d65-47bb-a4df-3fa02513d600/retrieve",
 "authors": "Knut Graw, Samuli Schielke",
 "all_authors": [
 "Knut Graw",
@@ -24804,7 +24804,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Essays on Plato’s Epistemology has seen clear scholarly uptake, with 15 citations in OpenAlex and a field-normalized standing in the top 10% for its year.",
+"excerpt": "Short impact summary Essays on Plato’s Epistemology (2016), published by Leuven University Press, has been cited 15 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
 "cover_url": "",
 "authors": "Franco Trabattoni",
 "all_authors": [
@@ -24941,7 +24941,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Twining shows strong early scholarly uptake and substantial open-access reach: it has 15 citations, places in the top 10% most-cited works for its field and year, and has recorded…",
+"excerpt": "Short impact summary Twining (2021), published by Amherst College Press, has been cited 15 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/2759a31f-6fcc-423a-b9e8-393070281c02/retrieve",
 "authors": "Anastasia Salter, Stuart Moulthrop",
 "all_authors": [
@@ -25086,7 +25086,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2025 Nature Cell Biology article has already attracted measurable scholarly uptake, with 14 OpenAlex citations and standing in the top 10% of papers in its field and year.",
+"excerpt": "Short impact summary The G3BP stress-granule proteins reinforce the integrated stress response translation programme (2025) in Nature Cell Biology.",
 "cover_url": "",
 "authors": "Jarrett Smith, David P. Bartel",
 "all_authors": [
@@ -25236,7 +25236,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Drosophila connectomics preprint shows clear scholarly uptake: it has 14 citations in OpenAlex, 16 documented downstream reuses, and evidence of rapid early attention, with m…",
+"excerpt": "Short impact summary Connectomic reconstruction predicts the functional organization of visual inputs to the navigation center of the Drosophila brain (2023) in bioRxiv (Cold Spring Harbor Laboratory)…",
 "cover_url": "",
 "authors": "Dustin Garner, Emil Kind, Aljoscha Nern et al.",
 "all_authors": [
@@ -25394,7 +25394,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This bioRxiv preprint has already drawn measurable scholarly attention, with 14 OpenAlex citations, 12 scite citation statements, and 16 documented downstream reuse instances.",
+"excerpt": "Short impact summary Rapid, concerted switching of the neural code in inferotemporal cortex (2023) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Yuelin Shi, Dasheng Bi, Janis K. Hesse et al.",
 "all_authors": [
@@ -25548,7 +25548,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Nature Cell Biology article has already shown measurable scholarly traction, with 13 citations, 14 documented downstream reuses, and a field- and year-normalized position in …",
+"excerpt": "Short impact summary Interphase chromosome conformation is specified by distinct folding programmes inherited through mitotic chromosomes or the cytoplasm (2025) in Nature Cell Biology.",
 "cover_url": "",
 "authors": "Allana Schooley, Sergey V. Venev, Vasilisa Aksenova et al.",
 "all_authors": [
@@ -25709,7 +25709,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2025 Nature Reviews Disease Primers article on COVID-19-associated neurological and psychological manifestations is already drawing measurable scholarly attention: it has 13 …",
+"excerpt": "Short impact summary COVID-19-associated neurological and psychological manifestations (2025) in Nature Reviews Disease Primers.",
 "cover_url": "",
 "authors": "Jo Ellen Wilson, Deepti Gurdasani, Raimund Helbok et al.",
 "all_authors": [
@@ -25885,7 +25885,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This influenza preprint has already seen clear scholarly uptake: OpenAlex records 13 citations, most of them appearing in preprints and other research outputs, and the work has al…",
+"excerpt": "Short impact summary Age-dependent heterogeneity in the antigenic effects of mutations to influenza hemagglutinin (2023) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Frances C. Welsh, Rachel Eguia, Juhye Lee et al.",
 "all_authors": [
@@ -26057,7 +26057,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2009 Nature Physics article has accumulated measurable academic uptake, with 12 citations and a field- and year-normalized standing in the top 10% of cited works.",
+"excerpt": "Short impact summary Measured measurement (2009) in Nature Physics.",
 "cover_url": "",
 "authors": "Markus Aspelmeyer",
 "all_authors": [
@@ -26204,7 +26204,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Published in Proceedings of the National Academy of Sciences , this 2023 article has already drawn measurable scholarly attention, with 12 OpenAlex citations and 13 documented dow…",
+"excerpt": "Short impact summary Mechanism of eukaryotic origin unwinding is a dual helicase DNA shearing process (2023) in Proceedings of the National Academy of Sciences.",
 "cover_url": "",
 "authors": "Lance D. Langston, Roxana E. Georgescu, Mike O’Donnell",
 "all_authors": [
@@ -26359,7 +26359,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 eLife article has already shown clear scholarly uptake, with 12 OpenAlex citations and a field-normalized standing that places it in the upper tier of comparable outputs…",
+"excerpt": "Short impact summary Baited reconstruction with 2D template matching for high-resolution structure determination in vitro and in vivo without template bias (2023) in eLife.",
 "cover_url": "",
 "authors": "Bronwyn A. Lucas, Benjamin A. Himes, Nikolaus Grigorieff",
 "all_authors": [
@@ -26519,8 +26519,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary The Elemental Analysis of Glass Beads has achieved clear scholarly traction since its 2022 publication, with 12 citations placing it in the top 10% of cited works for its field an…",
-"cover_url": "",
+"excerpt": "Short impact summary The Elemental Analysis of Glass Beads (2022), published by Leuven University Press, has been cited 12 times — enough that OpenAlex puts it in the top 10% of works in its field and…",
+"cover_url": "https://library.oapen.org/rest/bitstreams/2b8735e5-d760-4392-88d4-6870e0e047df/retrieve",
 "authors": "Laure Dussubieux, Heather Walder",
 "all_authors": [
 "Laure Dussubieux",
@@ -26672,8 +26672,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Building Collaborative Governance in Times of Uncertainty has attracted measurable scholarly attention, with 12 citations in OpenAlex and a field-normalized standing in the top 1%…",
-"cover_url": "",
+"excerpt": "Short impact summary Building Collaborative Governance in Times of Uncertainty (2023), published by Leuven University Press, has been cited 12 times — enough that OpenAlex puts it in the top 1% of wor…",
+"cover_url": "https://library.oapen.org/rest/bitstreams/cca91235-cd00-4a0c-b0ee-93fdcaadc864/retrieve",
 "authors": "Geert Bouckaert",
 "all_authors": [
 "Geert Bouckaert"
@@ -26809,7 +26809,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Research-Based Perspectives on the Psychophysiology of Yoga has generated a modest but meaningful scholarly footprint since its 2018 publication.",
+"excerpt": "Short impact summary Research-Based Perspectives on the Psychophysiology of Yoga (2018), published by IGI Global Publishing, has been cited 12 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781522527886&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Shirley Telles, Nilkamal Singh",
 "all_authors": [
@@ -26959,7 +26959,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This eLife article has already shown clear scholarly uptake.",
+"excerpt": "Short impact summary Cell type-specific driver lines targeting the Drosophila central complex and their use to investigate neuropeptide expression and sleep regulation (2025) in eLife.",
 "cover_url": "",
 "authors": "Tanya Wolff, Mark Eddison, Nan Chen et al.",
 "all_authors": [
@@ -27124,7 +27124,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2024 eLife article is already showing clear scholarly traction: it sits in the top 10% of cited works for its field and year, has 11 OpenAlex citations, and has been reused i…",
+"excerpt": "Short impact summary Driver lines for studying associative learning in Drosophila (2024) in eLife.",
 "cover_url": "",
 "authors": "Yichun Shuai, Megan Sammons, Gabriella R Sterne et al.",
 "all_authors": [
@@ -27289,7 +27289,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Decolonial Ecologies shows clear early scholarly uptake: it has 11 OpenAlex citations and is in the top 10% most-cited works for its field and year.",
+"excerpt": "Short impact summary Decolonial Ecologies (2023), published by Open Book Publishers, has been cited 11 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781800649736&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Joanna Page",
 "all_authors": [
@@ -27396,7 +27396,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary At the Edges of Sleep shows clear scholarly uptake for a 2022 monograph, with 11 citations in OpenAlex and field-normalized standing in the top 10% for its year.",
+"excerpt": "Short impact summary At the Edges of Sleep (2022), published by University of California Press, has been cited 11 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9780520384521&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Jean Ma",
 "all_authors": [
@@ -27502,7 +27502,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary APT: Animal Part Tracker v0.3.4 shows clear scholarly uptake for a software tool focused on animal pose tracking.",
+"excerpt": "Short impact summary APT: Animal Part Tracker v0.3.4 (2022) in Zenodo.",
 "cover_url": "",
 "authors": "Kabra, Mayank, Lee, Allen, Robie, Alice et al.",
 "all_authors": [
@@ -27654,7 +27654,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Magnetic Resonance in Medicine article has accumulated 10 OpenAlex citations and shows early but substantive scholarly uptake, including 10 documented downstream reuses and t…",
+"excerpt": "Short impact summary SENSE EPI reconstruction with 2D phase error correction and channel‐wise noise removal (2022) in Magnetic Resonance in Medicine.",
 "cover_url": "",
 "authors": "Elizabeth Powell, Torben Schneider, Marco Battiston et al.",
 "all_authors": [
@@ -27813,7 +27813,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 PNAS article has shown clear early scholarly uptake, with 10 citations in OpenAlex, a high citation percentile for its year, and 10 documented downstream reuse instances…",
+"excerpt": "Short impact summary Protective human antibodies against a conserved epitope in pre- and postfusion influenza hemagglutinin (2023) in Proceedings of the National Academy of Sciences.",
 "cover_url": "",
 "authors": "Joel Finney, Annie Park Moseman, Susan Kong et al.",
 "all_authors": [
@@ -27980,7 +27980,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This preprint has already shown measurable scholarly uptake, with 10 citations in OpenAlex, 11 documented downstream reuse events, and 4 supporting citation statements in scite.",
+"excerpt": "Short impact summary Structure, interaction, and nervous connectivity of beta cell primary cilia (2023) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Andreas Müller, Nikolai Klena, Song Pang et al.",
 "all_authors": [
@@ -28150,7 +28150,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This preprint has already attracted measurable scholarly attention, with 10 OpenAlex citations and 11 documented downstream reuse events across articles, preprints, and a review.",
+"excerpt": "Short impact summary Imaging the voltage of neurons distributed across entire brains of larval zebrafish (2023) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Zeguan Wang, Jie Zhang, Panagiotis Symvoulidis et al.",
 "all_authors": [
@@ -28310,8 +28310,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Herman Westerink’s A Dark Trace shows clear scholarly and educational reach: it has 10 OpenAlex citations, 22,750 recorded downloads through OAPEN, and evidence of use across psyc…",
-"cover_url": "",
+"excerpt": "Short impact summary A Dark Trace (2021), published by Leuven University Press, has been cited 10 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/2be9516c-6cf1-4927-8f8d-3ebd964b77ad/retrieve",
 "authors": "Herman Westerink",
 "all_authors": [
 "Herman Westerink"
@@ -28439,7 +28439,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Black Quotidian has generated measurable scholarly uptake, with 10 OpenAlex citations and a field-normalized standing in the upper tier of its year.",
+"excerpt": "Short impact summary Black Quotidian: Everyday History in African-American Newspapers (2019), published by Stanford University Press, has been cited 10 times.",
 "cover_url": "",
 "authors": "Matthew F. Delmont",
 "all_authors": [
@@ -28547,7 +28547,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Virtual Innovation and Support Networks, the seventh volume in Peter Lang's established Telecollaborative Learning and Virtual Exchange in Education series, demonstrates measurabl…",
+"excerpt": "Short impact summary Virtual Innovation and Support Networks (2024), published by Peter Lang Verlag, has been cited 10 times — enough that OpenAlex puts it in the top 10% of works in its field and yea…",
 "cover_url": "https://library.oapen.org/rest/bitstreams/cf1e9397-a9c2-45d4-be83-1d2bcdcc458a/retrieve",
 "authors": "Robert O'Dowd, Margarita Vinagre",
 "all_authors": [
@@ -28682,7 +28682,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Writing the New World has shown clear scholarly uptake and strong use in the field.",
+"excerpt": "Short impact summary Writing the New World: The Politics of Natural History in the Early Spanish Empire (2021), published by University of Florida Press, has been cited 10 times — enough that OpenAlex…",
 "cover_url": "",
 "authors": "Mauro Jose Caraccioli",
 "all_authors": [
@@ -28815,7 +28815,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2017 tutorial on SemiParSampleSel shows clear early reuse in applied and methodological research: the article has 9 citations and 9 documented downstream works, with follow-o…",
+"excerpt": "Short impact summary Sample selection models for count data in R (2017) in Computational Statistics.",
 "cover_url": "",
 "authors": "Karol Wyszynski, Giampiero Marra",
 "all_authors": [
@@ -28959,7 +28959,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This article is showing an early but visible impact pattern: 9 citations, 9 documented downstream reuses, and 6 scite-cited statements that support its claims.",
+"excerpt": "Short impact summary Earning Alpha by Avoiding the Index Rebalancing Crowd (2023) in Financial Analysts Journal.",
 "cover_url": "",
 "authors": "Robert D. Arnott, Christopher Brightman, Vitali Kalesnik et al.",
 "all_authors": [
@@ -29107,7 +29107,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2019 open-access article has already generated an early but meaningful scholarly footprint: 9 citations, 9 documented downstream reuse instances, and a small amount of public…",
+"excerpt": "Short impact summary Rethinking Impact Factors: New Pathways in Journal Metrics (2019) in Faculty of 1000 Research Ltd.",
 "cover_url": "",
 "authors": "Cassidy R. Sugimoto, Liz Allen, Jeroen Bosman et al.",
 "all_authors": [
@@ -29284,7 +29284,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary The Wheat Genome is already showing clear early uptake: it has been downloaded 1,336 times, has 9 scholarly citations, and has attracted a small amount of community discussion and…",
+"excerpt": "Short impact summary The Wheat Genome (2024), published by Springer Nature, has been cited 9 times.",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-031-38294-9",
 "authors": "Rudi Appels, Kellye Eversole, Catherine Feuillet et al.",
 "all_authors": [
@@ -29438,7 +29438,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Streaming the Formula 1 Rivalry by Raymond Boyle and Richard Haynes (Peter Lang Verlag, 2024) has accumulated 9 citations within two years of publication, with uptake accelerating…",
+"excerpt": "Short impact summary Streaming the Formula 1 Rivalry (2024), published by Peter Lang Verlag, has been cited 9 times.",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1376330/large.webp",
 "authors": "Raymond Boyle, Richard Haynes",
 "all_authors": [
@@ -29572,7 +29572,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Digital Media Practices in Households shows an early but clear scholarly footprint, with 9 OpenAlex citations and 96 recorded downloads.",
+"excerpt": "Short impact summary Digital Media Practices in Households (2025), published by Taylor & Francis, has been cited 9 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789462989504&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Larissa Hjorth, Kana Ohashi, Jolynna Sinanan et al.",
 "all_authors": [
@@ -29706,7 +29706,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Cell article is already showing early methodological uptake: it has 8 OpenAlex citations, 9 documented reuse events, and a notable downstream footprint in review and methods-…",
+"excerpt": "Short impact summary Mapping cellular targets of covalent cancer drugs in the entire mammalian body (2025) in Cell.",
 "cover_url": "",
 "authors": "Zhengyuan Pang, Verina H. Leung, Cailynn C. Wang et al.",
 "all_authors": [
@@ -29881,7 +29881,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 Nucleic Acids Research article is already showing early scholarly uptake: OpenAlex records 8 citations and the reuse graph documents 9 downstream reuses, including artic…",
+"excerpt": "Short impact summary A phage-encoded RNA-binding protein inhibits the antiviral activity of a toxin–antitoxin system (2023) in Nucleic Acids Research.",
 "cover_url": "",
 "authors": "Chantal K. Guegler, Gabriella I. C. Teodoro, Sriram Srikant et al.",
 "all_authors": [
@@ -30038,7 +30038,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 Antimicrobial Agents and Chemotherapy article is showing early scholarly uptake, with 8 OpenAlex citations and 9 documented downstream reuse events.",
+"excerpt": "Short impact summary Divergent genetic landscapes drive lower levels of AmpC induction and stable de-repression in Serratia marcescens compared to Enterobacter cloacae (2023) in Antimicrobial Agents a…",
 "cover_url": "",
 "authors": "Jacob E. Lazarus, Yin Wang, Matthew K. Waldor et al.",
 "all_authors": [
@@ -30185,7 +30185,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Foreign in Two Homelands is showing an early but real scholarly footprint: it has 8 citations in OpenAlex, with recent uptake concentrated in migration, diaspora, and German histo…",
+"excerpt": "Short impact summary Foreign in Two Homelands (2024), published by Cambridge University Press, has been cited 8 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781009486712&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Michelle Lynn Kahn",
 "all_authors": [
@@ -30320,8 +30320,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This scholarly book is showing an early but meaningful uptake in the public administration literature.",
-"cover_url": "",
+"excerpt": "Short impact summary European Perspectives for Public Administration (2019), published by Leuven University Press, has been cited 8 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/c6bd9177-91b9-479c-af13-814aaa2ec3dc/retrieve",
 "authors": "Geert Bouckaert, Werner Jann",
 "all_authors": [
 "Geert Bouckaert",
@@ -30474,7 +30474,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Published in 2024 by Open Book Publishers, The Diagrammatics of ‘Race’ is already showing clear scholarly use: it has 8 OpenAlex citations and 3,391 recorded downloads.",
+"excerpt": "Short impact summary The Diagrammatics of ‘Race’ (2024), published by Open Book Publishers, has been cited 8 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781805112600&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Marianne Sommer",
 "all_authors": [
@@ -30613,7 +30613,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary CORD-19 shows clear early uptake as a shared research resource: the record includes 17,363 downloads, 20,627 views, 4 OpenAlex citations, and 4 documented downstream reuses.",
+"excerpt": "Short impact summary COVID-19 Open Research Dataset (CORD-19) (2020) in Zenodo.",
 "cover_url": "",
 "authors": "Sebastian Kohlmeier, Kyle Lo, Lucy Lu Wang et al.",
 "all_authors": [
@@ -30747,7 +30747,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 open-access study provides an early but meaningful signal of scholarly uptake for a structural and biochemical analysis of Met18, a HEAT-repeat protein in the cytosolic …",
+"excerpt": "Short impact summary Structural and biochemical investigations of a HEAT-repeat protein involved in the cytosolic iron-sulfur cluster assembly pathway (2023) in Communications Biology.",
 "cover_url": "",
 "authors": "Sheena Vasquez, Melissa D. Marquez, Edward J. Brignole et al.",
 "all_authors": [
@@ -30901,7 +30901,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This NEJM article on childhood vaccine hesitancy shows an early but clear uptake signal: it has 7 citations and has already been reused in 8 downstream records.",
+"excerpt": "Short impact summary Childhood Vaccine Hesitancy (2026) in New England Journal of Medicine.",
 "cover_url": "",
 "authors": "Sean T. O’Leary, Margie Danchin",
 "all_authors": [
@@ -31044,7 +31044,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint has already shown early scholarly uptake and downstream reuse.",
+"excerpt": "Short impact summary Electrostatic encoding of genome organization principles within single native nucleosomes (2023) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Sangwoo Park, Advait Athreya, Gustavo Carrizo et al.",
 "all_authors": [
@@ -31200,8 +31200,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Performing Hysteria has already shown a clear footprint as an openly accessible scholarly book, with strong download activity, early citation uptake, and visible circulation in pu…",
-"cover_url": "",
+"excerpt": "Short impact summary Performing Hysteria (2020), published by Leuven University Press, has been cited 7 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/40ce4695-b706-4eac-a4b9-d4ed091eb09a/retrieve",
 "authors": "Johanna Braun",
 "all_authors": [
 "Johanna Braun"
@@ -31340,8 +31340,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Michael Boyden’s Predicting the Past is showing an early but meaningful scholarly footprint.",
-"cover_url": "",
+"excerpt": "Short impact summary Predicting the Past (2021), published by Leuven University Press, has been cited 7 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/cf5e5193-20bc-4022-96d6-420a4bbcd8b3/retrieve",
 "authors": "Michael Boyden",
 "all_authors": [
 "Michael Boyden"
@@ -31458,7 +31458,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Rudy’s Image, Knife, and Gluepot shows a strong early impact profile for a scholarly book: it has 7 citations, 6,453 recorded downloads, and two teaching-adoption listings in open courseware resources…",
+"excerpt": "Short impact summary Image, Knife, and Gluepot (2019), published by Open Book Publishers, has been cited 7 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781783745166&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Kathryn M. Rudy",
 "all_authors": [
@@ -31597,7 +31597,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Published in 2024 by Peter Lang Verlag, this edited collection on educational agency and activism in linguistic landscape studies has accumulated 345 downloads and seven scholarly…",
+"excerpt": "Short impact summary Educational Agency and Activism in Linguistic Landscape Studies (2024), published by Peter Lang Verlag, has been cited 7 times.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/3b7451a4-beea-4bed-ab42-db539fe8988d/retrieve",
 "authors": "Durk Gorter, Edina Krompák",
 "all_authors": [
@@ -31728,7 +31728,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Cell article is already showing an early but focused research footprint: it has 6 citations, 7 documented downstream reuse events, and signs of methodological uptake, includi…",
+"excerpt": "Short impact summary Mechanisms of HSV-1 helicase-primase inhibition and replication fork complex assembly (2025) in Cell.",
 "cover_url": "",
 "authors": "Zishuo Yu, Pradeep Sathyanarayana, Cong Liu et al.",
 "all_authors": [
@@ -31890,7 +31890,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2020 preprint has an early but varied impact record: it has 6 citations, 8 documented downstream reuse events, 2 online mentions, and a small amount of community discussion.",
+"excerpt": "Short impact summary Structural modeling of 2019-novel coronavirus (nCoV) spike protein reveals a proteolytically-sensitive activation loop as a distinguishing feature compared to SARS-CoV and related…",
 "cover_url": "",
 "authors": "Javier A. Jaimes, Nicole M. André, Jean K. Millet et al.",
 "all_authors": [
@@ -32038,7 +32038,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 preprint is showing early but focused scholarly uptake: it has 6 citations, 7 documented downstream reuse events, and is being cited by recent reviews and research artic…",
+"excerpt": "Short impact summary KMT2A oncoproteins induce epigenetic resistance to targeted therapies (2023) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Derek H. Janssens, M. Durán, Dominik J. Otto et al.",
 "all_authors": [
@@ -32198,7 +32198,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2024 Oikos article has an early but visible scholarly footprint: it has been cited 6 times and its accompanying Dryad dataset has already been reused in 6 downstream articles…",
+"excerpt": "Short impact summary Coordinated distributed experiments in ecology do not consistently reduce heterogeneity in effect size (2024) in Oikos.",
 "cover_url": "",
 "authors": "Julia Bebout, Jeremy W. Fox",
 "all_authors": [
@@ -32343,7 +32343,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This article is already drawing an early scholarly response: it has 6 citations, 7 documented downstream reuse events, and 1 PubPeer thread, suggesting both uptake and post-public…",
+"excerpt": "Short impact summary Home alone: Remote work, isolation, and mental health (2026) in Science.",
 "cover_url": "",
 "authors": "Natalia Emanuel, Emma Harrington, Amanda Pallais",
 "all_authors": [
@@ -32492,7 +32492,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 Frontiers in Education article is an early but credible scholarly contribution to course-based research pedagogy.",
+"excerpt": "Short impact summary Models of classroom assessment for course-based research experiences (2023) in Frontiers in Education.",
 "cover_url": "",
 "authors": "David I. Hanauer, Tong Zhang, Mark Graham et al.",
 "all_authors": [
@@ -32786,7 +32786,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Massion's 2024 article on terminology theory in the age of artificial intelligence has accumulated 6 citations within two years of publication, with downstream reuse spanning tran…",
+"excerpt": "Short impact summary Terminology in the Age of AI: The Transformation of Terminology Theory and Practice (2024) in Journal of Translation Studies.",
 "cover_url": "",
 "authors": "François Massion",
 "all_authors": [
@@ -32922,8 +32922,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This book is showing an early but credible scholarly impact: OpenAlex records 6 citations, with uptake appearing steadily from 2020 through 2023.",
-"cover_url": "",
+"excerpt": "Short impact summary Powers of Divergence: An Experimental Approach to Music Performance (2018), published by Leuven University Press, has been cited 6 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/723ac11d-b508-4f78-8631-500ab28b2d10/retrieve",
 "authors": "Lucia D'Errico",
 "all_authors": [
 "Lucia D'Errico"
@@ -33060,8 +33060,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Published by Leuven University Press in 2018 and supported by European Research Council funding, Virtual Works – Actual Things has begun to register scholarly uptake, with 6 citat…",
-"cover_url": "",
+"excerpt": "Short impact summary Virtual Works – Actual Things (2018), published by Leuven University Press, has been cited 6 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/b9db8a04-52e1-48be-95ac-d6d5ec39a012/retrieve",
 "authors": "Paulo de Assis",
 "all_authors": [
 "Paulo de Assis"
@@ -33187,8 +33187,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Financing Quality Education for All shows clear early scholarly uptake and strong evidence of active use.",
-"cover_url": "",
+"excerpt": "Short impact summary Financing Quality Education for All (2019), published by Leuven University Press, has been cited 6 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/8f95eebe-42c7-4b4e-b73e-e2ee4ab28eac/retrieve",
 "authors": "Kristof De Witte, Vitezslav Titl, Oliver Holz et al.",
 "all_authors": [
 "Kristof De Witte",
@@ -33326,8 +33326,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Public Administration in Ethiopia is showing an early but meaningful scholarly footprint, paired with substantial usage.",
-"cover_url": "",
+"excerpt": "Short impact summary Public Administration in Ethiopia (2020), published by Leuven University Press, has been cited 6 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/a4ac966e-1faf-424d-a20b-0b769b60cdcd/retrieve",
 "authors": "Bacha Kebede Debela, Geert Bouckaert, Meheret Ayenew Warota et al.",
 "all_authors": [
 "Bacha Kebede Debela",
@@ -33474,8 +33474,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary The Hybrid Practitioner is showing an early but meaningful impact profile in architectural scholarship and teaching.",
-"cover_url": "",
+"excerpt": "Short impact summary The Hybrid Practitioner (2022), published by Leuven University Press, has been cited 6 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/b761b55c-8fcc-4da6-a159-ea9880f2cb09/retrieve",
 "authors": "Caroline Voet, Eireen Schreurs Schreurs, Helen Thomas",
 "all_authors": [
 "Caroline Voet",
@@ -33609,8 +33609,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Unfinished Histories is showing clear early use: it has been downloaded 4,353 times and has already been cited 6 times.",
-"cover_url": "",
+"excerpt": "Short impact summary Unfinished Histories (2022), published by Leuven University Press, has been cited 6 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/a9287ae4-8271-4096-ad3f-472f616c4e86/retrieve",
 "authors": "Pierre-Philippe Fraiture",
 "all_authors": [
 "Pierre-Philippe Fraiture"
@@ -33740,7 +33740,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Kernels of Resistance is showing an early but credible impact profile: it has already been cited 6 times, downloaded 192 times, and it aligns with climate action and sustainabilit…",
+"excerpt": "Short impact summary Kernels of Resistance (2024), published by University of Washington Press, has been cited 6 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9780295753317&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Liza Grandia",
 "all_authors": [
@@ -33865,7 +33865,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Carson’s Owning My Masters (Mastered) is already showing early scholarly and public reach.",
+"excerpt": "Short impact summary Owning My Masters (Mastered) (2024), published by University of Michigan Press, has been cited 6 times.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/fb98d143-99e1-46b6-bd8b-af1e50e87ecf/retrieve",
 "authors": "A.D. Carson",
 "all_authors": [
@@ -33973,7 +33973,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Adaptation in the Age of Media Convergence is already showing early scholarly uptake alongside substantial open-access use.",
+"excerpt": "Short impact summary Adaptation in the Age of Media Convergence (2025), published by Taylor & Francis, has been cited 6 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789462983663&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Johannes Fehrle, Werner Schäfke-Zell",
 "all_authors": [
@@ -34094,7 +34094,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint has already shown early scholarly uptake and community attention.",
+"excerpt": "Short impact summary Protective anti-prion antibodies in human immunoglobulin repertoires (2020) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Assunta Senatore, Karl Frontzek, Marc Emmenegger et al.",
 "all_authors": [
@@ -34253,7 +34253,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This SARS-CoV-2 forecasting preprint has begun to attract scholarly attention: OpenAlex records 5 citations, and the reuse record shows 7 downstream uses, including later articles…",
+"excerpt": "Short impact summary Fitness models provide accurate short-term forecasts of SARS-CoV-2 variant frequency (2023) in medRxiv.",
 "cover_url": "",
 "authors": "Eslam Abousamra, Marlin D Figgins, Trevor Bedford",
 "all_authors": [
@@ -34388,7 +34388,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint has already attracted an early scholarly audience, with 5 citations in OpenAlex and 7 documented downstream reuse events.",
+"excerpt": "Short impact summary Programmed withdrawal of cilia maintenance followed by centriole capping leads to permanent cilia loss during cerebellar granule cell neurogenesis (2023) in bioRxiv (Cold Spring H…",
 "cover_url": "",
 "authors": "Sandii Constable, Carolyn M. Ott, Andrew L. Lemire et al.",
 "all_authors": [
@@ -34539,7 +34539,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint has already drawn early scholarly attention and reuse: it has 5 citations, 7 documented downstream reuses, and 6 online mentions, suggesting that the method and find…",
+"excerpt": "Short impact summary Single-cell eQTL mapping in yeast reveals a tradeoff between growth and reproduction (2023) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "James Boocock, Noah Alexander, Leslie Alamo Tapia et al.",
 "all_authors": [
@@ -34694,7 +34694,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 preprint has already drawn early scholarly and public attention around a vaccine strategy aimed at the conserved S2 fusion machinery of sarbecoviruses.",
+"excerpt": "Short impact summary A broadly generalizable stabilization strategy for sarbecovirus fusion machinery vaccines (2023) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Jimin Lee, Cameron Stewart, Alexandra Schaefer et al.",
 "all_authors": [
@@ -34858,7 +34858,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This BMJ article has an early but visible scholarly footprint: OpenAlex records 5 citations, and the reuse graph shows 5 downstream works drawing on it.",
+"excerpt": "Short impact summary How to Read a Paper: The Basics of Evidence-Based Medicine (2008) in BMJ.",
 "cover_url": "",
 "authors": "David Warriner",
 "all_authors": [
@@ -34990,8 +34990,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Logic of Experimentation has already shown clear early scholarly and usage impact: it has been downloaded 5,095 times and cited 5 times, indicating that the book is being read and…",
-"cover_url": "",
+"excerpt": "Short impact summary Logic of Experimentation: Rethinking Music Performance Through Artistic Research (2018), published by Leuven University Press, has been cited 5 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/ebd172fd-cf73-4555-8eb6-b5750a809269/retrieve",
 "authors": "Paulo De Assis",
 "all_authors": [
 "Paulo De Assis"
@@ -35113,8 +35113,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This book shows strong early use and visibility: it has been downloaded 2,007 times and has already been cited 5 times in the scholarly record.",
-"cover_url": "",
+"excerpt": "Short impact summary Mapping Landscapes in Transformation (2019), published by Leuven University Press, has been cited 5 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/ba17a8c1-5ea6-4860-a3d0-4d29b5df0ba1/retrieve",
 "authors": "Thomas Coomans, Bieke Cattoor, Krista De Jonge",
 "all_authors": [
 "Thomas Coomans",
@@ -35245,8 +35245,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Migration at Work shows early scholarly uptake and strong reader interest: it has been cited 5 times and downloaded 2,746 times.",
-"cover_url": "",
+"excerpt": "Short impact summary Migration at Work (2020), published by Leuven University Press, has been cited 5 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/56dd1af0-68eb-4f5e-b6d4-6915407bd42b/retrieve",
 "authors": "Fiona-Katharina Seiger, Christiane Timmerman, Noel B. Salazar et al.",
 "all_authors": [
 "Fiona-Katharina Seiger",
@@ -35391,8 +35391,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This open-access scholarly book is showing early uptake: OpenAlex records 5 citations, and OAPEN reports 3,112 downloads, suggesting that it has been actively read as well as cite…",
-"cover_url": "",
+"excerpt": "Short impact summary The Leopard, the Lion, and the Cock (2023), published by Leuven University Press, has been cited 5 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/9481131b-c46e-405c-9b38-9582006369be/retrieve",
 "authors": "Matthew Stanard",
 "all_authors": [
 "Matthew Stanard"
@@ -35512,7 +35512,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Gender and Christianity in Modern Europe shows a clear early scholarly footprint and sustained reader interest.",
+"excerpt": "Short impact summary Gender and Christianity in Modern Europe (2012), published by Leuven University Press, has been cited 5 times.",
 "cover_url": "",
 "authors": "Patrick Pasture",
 "all_authors": [
@@ -35635,7 +35635,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2023 Drosophila neuroanatomy dataset shows early but meaningful scholarly uptake: it has 5 OpenAlex citations and 6 documented downstream reuses.",
+"excerpt": "Short impact summary Ascending Neurons 2023 split-GAL4 lines (2023) in Figshare.",
 "cover_url": "",
 "authors": "Minegishi, Ryo, Dickson, Barry J., FlyLight Project Team",
 "all_authors": [
@@ -35767,7 +35767,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Nature Methods article introduces two fourth-generation glutamate indicators, iGluSnFR4f and iGluSnFR4s, designed to improve sensitivity while tuning deactivation rates for f…",
+"excerpt": "Short impact summary Glutamate indicators with increased sensitivity and tailored deactivation rates (2025) in Nature Methods.",
 "cover_url": "",
 "authors": "Abhi Aggarwal, Adrian Negrean, Yang Chen et al.",
 "all_authors": [
@@ -35958,7 +35958,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This preprint has already shown early scholarly uptake: it has 4 OpenAlex citations, 6 documented downstream reuse events, and a peer-reviewed publication record indicating that t…",
+"excerpt": "Short impact summary Uncovering circuit mechanisms of current sinks and sources with biophysical simulations of primary visual cortex (2022) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Atle E. Rimehaug, A. Stasik, Espen Hagen et al.",
 "all_authors": [
@@ -36091,7 +36091,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint introduced FABCON, a fluorogenic complementation toolkit for visualizing lipid droplet-organelle contact sites in living cells, and it has already begun to be reused…",
+"excerpt": "Short impact summary A fluorogenic complementation tool kit for interrogating lipid droplet-organelle interaction (2023) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Xiao Li, Rico Gamuyao, Ming-Lun Wu et al.",
 "all_authors": [
@@ -36257,7 +36257,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 bioRxiv preprint is already showing an early but recognizable uptake signal: 4 scholarly citations and 6 documented downstream reuse instances, alongside mentions in rel…",
+"excerpt": "Short impact summary FITM2 deficiency results in ER lipid accumulation, ER stress, reduced apolipoprotein B lipidation, and VLDL triglyceride secretion in vitro and in mouse liver (2023) in bioRxiv (C…",
 "cover_url": "",
 "authors": "Haizhen Wang, Cyrus Nikain, Jaime Amengual et al.",
 "all_authors": [
@@ -36427,7 +36427,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 bioRxiv preprint has begun to circulate in the mitotic chromosome literature, with 4 OpenAlex citations and 5 documented downstream reuse events.",
+"excerpt": "Short impact summary Mitotic chromosomes harbor cell type and species-specific structural features within a universal looping architecture (2023) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Marlies E. Oomen, A. Nicole Fox, Inma González et al.",
 "all_authors": [
@@ -36579,7 +36579,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2023 BMC Genomics article introduces sciPlex-ATAC-seq, a sample-multiplexing strategy for single-cell chromatin accessibility profiling that addresses a practical bottleneck …",
+"excerpt": "Short impact summary High-capacity sample multiplexing for single cell chromatin accessibility profiling (2023) in BMC Genomics.",
 "cover_url": "",
 "authors": "Gregory T. Booth, Riza M. Daza, Sanjay Srivatsan et al.",
 "all_authors": [
@@ -36733,8 +36733,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This concise, policy-oriented book has begun to circulate beyond its initial publication context: OpenAlex records 4 citations, OAPEN reports 52 downloads, and the book is associa…",
-"cover_url": "",
+"excerpt": "Short impact summary Migratie in België in 21 vragen en antwoorden (2018), published by Leuven University Press, has been cited 4 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/7dee36a8-1a7d-46d6-a8ff-08f9bb1624b3/retrieve",
 "authors": "Jean-Michel Lafleur, Abdeslam Marfouk",
 "all_authors": [
 "Jean-Michel Lafleur",
@@ -36854,8 +36854,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Images of Immigrants and Refugees has already shown clear early reach: it has been downloaded 10,860 times and has 4 citations in OpenAlex.",
-"cover_url": "",
+"excerpt": "Short impact summary Images of Immigrants and Refugees (2019), published by Leuven University Press, has been cited 4 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/8ea73496-2177-42e6-8ca5-d0b384ac549e/retrieve",
 "authors": "Leen d’Haenens, Willem Joris, François Heinderyckx",
 "all_authors": [
 "Leen d’Haenens",
@@ -36997,8 +36997,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Oil Wealth and Development in Uganda and Beyond is showing clear early uptake as a policy-relevant scholarly book.",
-"cover_url": "",
+"excerpt": "Short impact summary Oil Wealth and Development in Uganda and Beyond (2019), published by Leuven University Press, has been cited 4 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/c73b8c6b-0ecc-42e6-85f8-33b145a38fa8/retrieve",
 "authors": "Arnim Langer, Ukoha Ukiwo",
 "all_authors": [
 "Arnim Langer",
@@ -37145,8 +37145,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Turkish German Muslims and Comedy Entertainment is showing clear early uptake and active use.",
-"cover_url": "",
+"excerpt": "Short impact summary Turkish German Muslims and Comedy Entertainment (2020), published by Leuven University Press, has been cited 4 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/ff88084e-c0e2-463e-852f-eb9f4976962c/retrieve",
 "authors": "Benjamin Nickl",
 "all_authors": [
 "Benjamin Nickl"
@@ -37259,8 +37259,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Revival After the Great War is showing an early but clear pattern of scholarly and public use.",
-"cover_url": "",
+"excerpt": "Short impact summary Revival After the Great War (2021), published by Leuven University Press, has been cited 4 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/dbaf8a52-fca2-4641-af38-38c38d90477e/retrieve",
 "authors": "Luc Verpoest, Leen Engelen, Rajesh Heynickx et al.",
 "all_authors": [
 "Luc Verpoest",
@@ -37379,8 +37379,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Christian Masculinity shows early but meaningful scholarly and public reach: it has been cited four times, downloaded 3,036 times through OAPEN, and appears in teaching-related at…",
-"cover_url": "",
+"excerpt": "Short impact summary Christian Masculinity (2021), published by Leuven University Press, has been cited 4 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/556d76b5-8abc-4543-b90c-cebfe13fd19b/retrieve",
 "authors": "Yvonne Maria Werner",
 "all_authors": [
 "Yvonne Maria Werner"
@@ -37468,8 +37468,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Homo Mimeticus shows strong signs of public visibility and sustained use.",
-"cover_url": "",
+"excerpt": "Short impact summary Homo Mimeticus (2022), published by Leuven University Press, has been cited 4 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/210e22ef-faa6-4fff-901f-6445bf6c6c94/retrieve",
 "authors": "Nidesh Lawtoo",
 "all_authors": [
 "Nidesh Lawtoo"
@@ -37606,8 +37606,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Silver Empowerment shows an early but meaningful impact profile: it has been downloaded 2,448 times, cited 4 times, and linked to an active policy-relevant conversation on empower…",
-"cover_url": "",
+"excerpt": "Short impact summary Silver Empowerment (2023), published by Leuven University Press, has been cited 4 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/fa5d7f94-9ee0-4a6c-93ac-81d59aa00445/retrieve",
 "authors": "Jasper De Witte, Tine Van Regenmortel",
 "all_authors": [
 "Jasper De Witte",
@@ -37738,7 +37738,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Muddy Thinking in the Mississippi River Delta has an early but visible scholarly footprint, with 4 citations, 2,082 downloads, and clear alignment with Climate action.",
+"excerpt": "Short impact summary Muddy Thinking in the Mississippi River Delta: A Call for Reclamation (2024), published by University of California Press, has been cited 4 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9780520397200&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Ned Randolph",
 "all_authors": [
@@ -37866,7 +37866,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Federico Boccaccini's Lotze et son héritage (2015) has generated four citations across European and Latin American scholarship since publication.",
+"excerpt": "Short impact summary Lotze et son héritage (2015), published by Peter Lang Verlag, has been cited 4 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9782875742780&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Federico Boccaccini",
 "all_authors": [
@@ -37980,7 +37980,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Published by Peter Lang Verlag in 2020, Margaret Buck's Renewing the Church-State Partnership for Catholic Education has accumulated four citations as of 2026, with uptake concent…",
+"excerpt": "Short impact summary Renewing the Church-State Partnership for Catholic Education (2020), published by Peter Lang Verlag, has been cited 4 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781789975826&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Margaret Buck",
 "all_authors": [
@@ -38085,7 +38085,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary open2c/distiller-nf: v0.3.4 shows early but concrete uptake: it has 4 OpenAlex citations, 6 documented downstream reuses, and measurable use on Zenodo with 390 downloads and 2,842…",
+"excerpt": "Short impact summary open2c/distiller-nf: v0.3.4 (2022) in Zenodo.",
 "cover_url": "",
 "authors": "Goloborodko, Anton, Venev, Sergey, Spracklin, George et al.",
 "all_authors": [
@@ -38238,7 +38238,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This article’s record is early but tangible: it has 3 scholarly citations and 4 documented downstream reuse signals.",
+"excerpt": "Short impact summary CORR Insights®: Preoperative Pain Sensitization Is Associated With Postoperative Pillar Pain After Open Carpal Tunnel Release (2018) in Clinical Orthopaedics and Related Research.",
 "cover_url": "",
 "authors": "Ana‐Maria Vranceanu",
 "all_authors": [
@@ -38370,7 +38370,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Nature article is still in an early impact phase, but it is already showing signs of scholarly reuse: OpenAlex records 3 citations and 4 downstream reuse instances.",
+"excerpt": "Short impact summary The future of science communication is not an article like this (2026) in Nature.",
 "cover_url": "",
 "authors": "",
 "all_authors": [],
@@ -38489,7 +38489,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 Scientific Data article is an open-access foundational genome resource for chub mackerel, a widely distributed Indo-Pacific fish of ecological and fishery interest.",
+"excerpt": "Short impact summary Chromosome-level genome assembly of chub mackerel (Scomber japonicus) from the Indo-Pacific Ocean (2023) in Scientific Data.",
 "cover_url": "",
 "authors": "Young Ho Lee, Linelle Abueg, Jin‐Koo Kim et al.",
 "all_authors": [
@@ -38647,7 +38647,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint already shows an early but meaningful scholarly footprint: it has 3 citations and 5 documented downstream reuse events, and it has since been published in a peer-rev…",
+"excerpt": "Short impact summary Do organisms need an impact factor?",
 "cover_url": "",
 "authors": "Agata Piękniewska, Nathan Anderson, Martijn Roelandse et al.",
 "all_authors": [
@@ -38792,7 +38792,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This protocol has an early but discernible scholarly footprint: 3 citations in OpenAlex, 4 documented downstream reuses, and one scite citation that explicitly supports its use.",
+"excerpt": "Short impact summary Transfecting Cultured Hippocampal Neurons with an Actin-GFP Plasmid (2007) in Cold Spring Harbor Protocols.",
 "cover_url": "",
 "authors": "Andrew Matus, Virginie Biou, Heike Brinkhaus et al.",
 "all_authors": [
@@ -38910,7 +38910,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2025 review in Addiction is already showing early scholarly uptake, with 3 OpenAlex citations, 12 scite citation statements, and 4 documented downstream reuse events.",
+"excerpt": "Short impact summary The impacts of e‐cigarette flavours: An overview of systematic reviews (2025) in Addiction.",
 "cover_url": "",
 "authors": "Jonathan Livingstone‐Banks, Nargiz Travis, Monserrat Conde et al.",
 "all_authors": [
@@ -39077,7 +39077,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This PLoS Pathogens article has begun to attract a focused, technical readership: it has 3 citations, documented reuse in 4 downstream sources, and early uptake across specialist …",
+"excerpt": "Short impact summary Using viral sequence diversity to estimate time of HIV infection in infants (2023) in PLoS Pathogens.",
 "cover_url": "",
 "authors": "Magdalena L Russell, Carolyn S. Fish, Sara Drescher et al.",
 "all_authors": [
@@ -39233,7 +39233,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 article presents an early but clear uptake signal for SciScore as a tool for improving reproducibility and reporting rigor.",
+"excerpt": "Short impact summary Assessing the Effectiveness of SciScore in Supporting the Reproducibility of Scientific Research (2023) in Science Editor.",
 "cover_url": "",
 "authors": "Martijn Roelandse, İbrahim Burak Özyurt, Daniel Evanko et al.",
 "all_authors": [
@@ -39390,7 +39390,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 preprint shows an early but meaningful impact profile: it has 3 citations and 3 documented downstream reuse instances, with uptake already appearing in a journal article…",
+"excerpt": "Short impact summary Assessing the potential of LLM-assisted annotation for corpus-based pragmatics and discourse analysis: The case of apology (2023) in arXiv (Cornell University).",
 "cover_url": "",
 "authors": "Danni Yu, Luyang Li, Hang Su et al.",
 "all_authors": [
@@ -39527,7 +39527,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This eLife article offers a valuable and convincingly supported account of how second-order gustatory neurons in Drosophila integrate taste and metabolic information to shape feed…",
+"excerpt": "Short impact summary Molecular characterization of gustatory second-order neurons reveals integrative mechanisms of gustatory and metabolic information (2024) in eLife.",
 "cover_url": "",
 "authors": "Rubén Mollá-Albaladejo, Manuel Jiménez-Caballero, Juan Antonio Sánchez‐Alcañiz",
 "all_authors": [
@@ -39675,8 +39675,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Experimental Affinities in Music shows early scholarly uptake: OpenAlex records three citations, spread across 2019, 2020, and 2022.",
-"cover_url": "",
+"excerpt": "Short impact summary Experimental Affinities in Music (2015), published by Leuven University Press, has been cited 3 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/76c17275-2951-466c-b1c0-8afabba14ab0/retrieve",
 "authors": "Paulo De Assis",
 "all_authors": [
 "Paulo De Assis"
@@ -39768,8 +39768,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Transpositions shows early scholarly uptake and some pedagogical reach: it has been cited 3 times, appears in a YouTube discussion, and is held in library collections.",
-"cover_url": "",
+"excerpt": "Short impact summary Transpositions (2018), published by Leuven University Press, has been cited 3 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/d5394824-3d7b-4889-8174-99f1f5589750/retrieve",
 "authors": "Michael Schwab",
 "all_authors": [
 "Michael Schwab"
@@ -39876,8 +39876,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Across Anthropology shows clear early uptake as a scholarly and teaching-oriented book: it has been cited 3 times, downloaded 10,212 times through OAPEN, and appears in a recorded…",
-"cover_url": "",
+"excerpt": "Short impact summary Across Anthropology (2020), published by Leuven University Press, has been cited 3 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/cfafcab6-0bef-4218-8bc3-d677f5e13564/retrieve",
 "authors": "Margareta von Oswald, Jonas Tinius",
 "all_authors": [
 "Margareta von Oswald",
@@ -39967,8 +39967,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Lara Schrijver’s The Tacit Dimension is showing an early but credible impact profile, led by strong usage and a small set of scholarly citations.",
-"cover_url": "",
+"excerpt": "Short impact summary The Tacit Dimension (2021), published by Leuven University Press, has been cited 3 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/71325579-a4bb-40be-95b4-f0b23bd23030/retrieve",
 "authors": "Lara Schrijver",
 "all_authors": [
 "Lara Schrijver"
@@ -40094,8 +40094,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Living with History, 1914-1964 shows clear early scholarly and professional use.",
-"cover_url": "",
+"excerpt": "Short impact summary Living with History, 1914-1964 (2021), published by Leuven University Press, has been cited 3 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/0c2b8f25-f6ba-4f7f-a504-94675b171a84/retrieve",
 "authors": "Nicholas Bullock, Luc Verpoest",
 "all_authors": [
 "Nicholas Bullock",
@@ -40216,8 +40216,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Making Home(s) in Displacement is showing early but meaningful scholarly uptake, with 3 citations and 3,323 recorded downloads.",
-"cover_url": "",
+"excerpt": "Short impact summary Making Home(s) in Displacement (2021), published by Leuven University Press, has been cited 3 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/6b952960-f071-4892-879b-4a18db5f88b2/retrieve",
 "authors": "Luce Beeckmans, Alessandra Gola, Ashika Singh et al.",
 "all_authors": [
 "Luce Beeckmans",
@@ -40347,8 +40347,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2021 scholarly book is already showing early academic uptake, with 3 citations in OpenAlex and 3,415 recorded downloads through OAPEN.",
-"cover_url": "",
+"excerpt": "Short impact summary Translation Policies in Legal and Institutional Settings (2021), published by Leuven University Press, has been cited 3 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/cdd7df9b-1f7c-494f-9c1c-80304818be66/retrieve",
 "authors": "Marie Bourguignon, Bieke Nouws, Heleen van Gerwen",
 "all_authors": [
 "Marie Bourguignon",
@@ -40466,8 +40466,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary At Home in Renaissance Bruges is showing an early but credible scholarly footprint, with 3 OpenAlex citations and 4,918 recorded downloads, alongside open access availability thro…",
-"cover_url": "",
+"excerpt": "Short impact summary At Home in Renaissance Bruges (2022), published by Leuven University Press, has been cited 3 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/49f2f6f5-645a-454b-b480-9d4c7744d226/retrieve",
 "authors": "Julie De Groot",
 "all_authors": [
 "Julie De Groot"
@@ -40567,8 +40567,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2022 handbook is showing early scholarly uptake and clear usage: it has been cited 3 times in OpenAlex and has recorded 2,167 downloads through OAPEN-based metrics.",
-"cover_url": "",
+"excerpt": "Short impact summary Handbook for Ethiopian Public Administration Program Accreditation (2022), published by Leuven University Press, has been cited 3 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/e9559712-cd5c-492e-84dc-d5e98a1a5f8d/retrieve",
 "authors": "Bacha Kebede Debela, Geert Bouckaert, Berhanu Temesgen Eshetu et al.",
 "all_authors": [
 "Bacha Kebede Debela",
@@ -40704,8 +40704,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Absent Presences in the Colonial Archive is showing an early but meaningful scholarly and usage footprint.",
-"cover_url": "",
+"excerpt": "Short impact summary Absent Presences in the Colonial Archive (2022), published by Leuven University Press, has been cited 3 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/fa1badcb-6a80-4400-a879-1acb4f95eeb9/retrieve",
 "authors": "Irene Hilden",
 "all_authors": [
 "Irene Hilden"
@@ -40818,8 +40818,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Newcomers Navigating the Welfare State is already showing early scholarly and practical reach.",
-"cover_url": "",
+"excerpt": "Short impact summary Newcomers Navigating the Welfare State (2023), published by Leuven University Press, has been cited 3 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/44a3228b-4097-44a5-a01b-10cecb214814/retrieve",
 "authors": "Hanne Vandermeerschen, Elsa Mescoli, Jean-Michel Lafleur et al.",
 "all_authors": [
 "Hanne Vandermeerschen",
@@ -40939,7 +40939,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Redesigning Life demonstrates sustained engagement through active readership and emerging scholarly uptake.",
+"excerpt": "Short impact summary Redesigning Life (2015), published by Peter Lang Verlag, has been cited 3 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9782875742810&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Nathan Van Camp",
 "all_authors": [
@@ -41056,7 +41056,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Published in 2017 by Peter Lang in the established \"Travail et Société / Work and Society\" series, this book examines austerity policy implementation under the Europe 2020 strateg…",
+"excerpt": "Short impact summary Austerity and the Implementation of the Europe 2020 Strategy in Spain (2017), published by Peter Lang Verlag, has been cited 3 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9782807604360&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Javier Ramos, Esther del Campo",
 "all_authors": [
@@ -41169,7 +41169,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Digital Disruption , published by Peter Lang Verlag in 2018, shows early traction as a pedagogical anchor and moderate scholarly uptake.",
+"excerpt": "Short impact summary Digital Disruption (2018), published by Peter Lang Verlag, has been cited 3 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781433149214&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Tracey Wilen-Daugenti",
 "all_authors": [
@@ -41258,7 +41258,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Digital Marketing Applications , published by Peter Lang Verlag in 2019, has generated three citations since publication, with scholarly uptake beginning to emerge in 2023 and con…",
+"excerpt": "Short impact summary Digital Marketing Applications (2019), published by Peter Lang Verlag, has been cited 3 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9783631802519&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Hatice Aydin",
 "all_authors": [
@@ -41365,7 +41365,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary When the World Turned Upside Down has begun to establish scholarly presence through citations in peer-reviewed and educational contexts, with particular resonance in indigenous hi…",
+"excerpt": "Short impact summary When the World Turned Upside Down (2023), published by Peter Lang Verlag, has been cited 3 times.",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1290258/large.webp",
 "authors": "Luis Martínez-Fernández",
 "all_authors": [
@@ -41479,7 +41479,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary A Sense of Brutality shows early scholarly uptake and clear evidence of classroom and readership interest.",
+"excerpt": "Short impact summary A Sense of Brutality (2020), published by Amherst College Press, has been cited 3 times.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/03c880bb-72d7-4f24-bc16-ea8ff607d01c/retrieve",
 "authors": "Carlos Sánchez",
 "all_authors": [
@@ -41605,7 +41605,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Sex Sounds shows an early but meaningful scholarly uptake, with three OpenAlex citations already distributed across 2023–2025.",
+"excerpt": "Short impact summary Sex Sounds (2022), published by The MIT Press, has been cited 3 times.",
 "cover_url": "",
 "authors": "Danielle Shlomit Sofer",
 "all_authors": [
@@ -41717,7 +41717,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Dryad dataset shows active use, with 3,224 downloads and 4,655 views, alongside an early but real scholarly footprint of 3 citations and 3 documented downstream reuses.",
+"excerpt": "Short impact summary Data from: Medical-device recalls in the UK and the device-regulation process: retrospective review of safety notices and alerts (2011) in Dryad.",
 "cover_url": "",
 "authors": "Heneghan, C, Thompson, M, Billingsley, M et al.",
 "all_authors": [
@@ -41857,7 +41857,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2022 Figshare dataset is already showing early scholarly uptake, with 3 OpenAlex citations, 5 documented downstream reuse events, and 48 downloads.",
+"excerpt": "Short impact summary Genomic data for Ministeria vibrans, Parvularia atlantis, Pigoraptor vietnamica and Pigoraptor chileana (2022) in Figshare.",
 "cover_url": "",
 "authors": "Lab, Multicellgenome, Ocaña-Pallarès, Eduard",
 "all_authors": [
@@ -41991,7 +41991,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2025 Angewandte Chemie International Edition article is already showing early scholarly uptake, with 2 citations and 3 documented downstream reuse events.",
+"excerpt": "Short impact summary Surface Avidity of Anionic Polypeptide Coatings on Layer‐by‐Layer Nanoparticles Target Cancer‐Associated Amino Acid Transporters (2025) in Angewandte Chemie International Edition.",
 "cover_url": "",
 "authors": "Ivan S. Pires, Margaret M. Billingsley, Ezra Gordon et al.",
 "all_authors": [
@@ -42132,7 +42132,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2025 Journal of Inorganic Biochemistry article is already showing early scholarly uptake, with 2 OpenAlex citations and downstream reuse documented in 3 records.",
+"excerpt": "Short impact summary The cobalamin-binding domain of cobalamin-dependent radical S-adenosylmethionine enzymes: Familiarity in unfamiliar places (2025) in Journal of Inorganic Biochemistry.",
 "cover_url": "",
 "authors": "Dante M. Avalos, Catherine L. Drennan",
 "all_authors": [
@@ -42262,7 +42262,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2026 Nature Communications article offers an early but credible signal of scholarly uptake in the cocaine-use-disorder literature.",
+"excerpt": "Short impact summary Genome-wide association study of cocaine self-administration behavior in Heterogeneous Stock rats (2026) in Nature Communications.",
 "cover_url": "",
 "authors": "Montana Kay Lara, Lieselot L. G. Carrette, Thiago Missfeldt Sanches et al.",
 "all_authors": [
@@ -42449,7 +42449,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2012 New England Journal of Medicine case report has an early but focused scholarly footprint: it has been cited 2 times, with downstream reuse recorded in 3 places.",
+"excerpt": "Short impact summary A Startling Decline (2012) in New England Journal of Medicine.",
 "cover_url": "",
 "authors": "Anand Vaidya, Brigid M. Dolan, Brian L. Edlow et al.",
 "all_authors": [
@@ -42576,7 +42576,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This commentary has begun to attract focused scholarly attention, with 2 citations and 4 documented downstream reuses.",
+"excerpt": "Short impact summary Carnivorous plant evolution: is a killer defense always the best option?",
 "cover_url": "",
 "authors": "Carl Procko, Joanne Chory",
 "all_authors": [
@@ -42705,7 +42705,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint has an early but focused impact profile: it has been cited 2 times, reused in 4 downstream records, and has already been taken up in high-visibility immunology venue…",
+"excerpt": "Short impact summary Lack of association between HLA and asymptomatic SARS-CoV-2 infection (2023) in medRxiv.",
 "cover_url": "",
 "authors": "Astrid Marchal, Elizabeth T. Cirulli, Iva Neveux et al.",
 "all_authors": [
@@ -42866,7 +42866,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint has already begun to circulate within the cilia literature: it has 2 citations, 4 documented downstream reuse events, and a published peer-reviewed version, indicati…",
+"excerpt": "Short impact summary Permanent deconstruction of intracellular primary cilia in differentiating granule cell neurons (2023) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Carolyn M. Ott, Sandii Constable, Tri Nguyen et al.",
 "all_authors": [
@@ -42994,7 +42994,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint has an early but meaningful scholarly footprint: it has 2 citations, has already been reused in downstream scholarship 3 times, and was later published in Optica, in…",
+"excerpt": "Short impact summary Phase diversity-based wavefront sensing for fluorescence microscopy (2023) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Courtney Johnson, Min Guo, Magdalena C. Schneider et al.",
 "all_authors": [
@@ -43250,7 +43250,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This summer report has a modest but genuine scholarly footprint: it has been cited twice and has documented downstream reuse in three records, including one article and one prepri…",
+"excerpt": "Short impact summary Vagelos Report Summer 2017 (2017) in Figshare.",
 "cover_url": "",
 "authors": "Zietz, Michael",
 "all_authors": [
@@ -43387,7 +43387,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This eLife article has an early but credible scholarly footprint.",
+"excerpt": "Short impact summary Gender differences in submission behavior exacerbate publication disparities in elite journals (2023) in eLife.",
 "cover_url": "",
 "authors": "Chaoqun Ni, Isabel Basson, Giovanna Badia et al.",
 "all_authors": [
@@ -43503,7 +43503,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2024 eLife article is already showing early scholarly uptake, with 2 citations and 2 documented downstream reuse events.",
+"excerpt": "Short impact summary A comprehensive neuroanatomical survey of the Drosophila Lobula Plate Tangential Neurons with predictions for their optic flow sensitivity (2024) in eLife.",
 "cover_url": "",
 "authors": "Arthur Zhao, Aljoscha Nern, Sanna Koskela et al.",
 "all_authors": [
@@ -43640,8 +43640,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Participatiegolven shows an early but meaningful scholarly footprint for a 2019 book: it has been cited twice, downloaded 2,061 times, and is openly accessible through repository …",
-"cover_url": "",
+"excerpt": "Short impact summary Participatiegolven (2019), published by Leuven University Press, has been cited 2 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/27f443a5-38f8-4962-8dea-86f94a873436/retrieve",
 "authors": "Annette Kuhk, Hilde Heynen, Liesbeth Huybrechts et al.",
 "all_authors": [
 "Annette Kuhk",
@@ -43759,8 +43759,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This scholarly book shows early but meaningful uptake: it has been cited twice, attracted 1,562 downloads through OAPEN, and is represented in library holdings across subject area…",
-"cover_url": "",
+"excerpt": "Short impact summary Mongameli Mabona (2021), published by Leuven University Press, has been cited 2 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/cbb270d5-a126-4475-83da-b19189c63460/retrieve",
 "authors": "Ernst Wolff",
 "all_authors": [
 "Ernst Wolff"
@@ -43866,8 +43866,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Evolving as a Digital Scholar is already showing practical reach: it has been downloaded 5,052 times through OAPEN, suggesting sustained use by readers exploring digital scholarsh…",
-"cover_url": "",
+"excerpt": "Short impact summary Evolving as a Digital Scholar (2021), published by Leuven University Press, has been cited 2 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/b93aae25-5040-414d-8821-c0a01189d498/retrieve",
 "authors": "Wim Van Petegem, JP Bosman, Miné De Klerk et al.",
 "all_authors": [
 "Wim Van Petegem",
@@ -43989,7 +43989,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Cold War Triangle shows early scholarly uptake alongside modest but real readership: OpenAlex records 2 citations, both appearing in 2021, and OAPEN reports 20 downloads.",
+"excerpt": "Short impact summary Cold War Triangle (2021), published by Leuven University Press, has been cited 2 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789461663979&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Renilde Loeckx",
 "all_authors": [
@@ -44114,8 +44114,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Islamic Glass in the Making shows clear early scholarly and usage uptake: it has 2 OpenAlex citations, 1,965 recorded downloads, and a small but focused citation trail in archaeom…",
-"cover_url": "",
+"excerpt": "Short impact summary Islamic Glass in the Making (2022), published by Leuven University Press, has been cited 2 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/ab9f2615-db07-4fd5-bb4f-3528d91e46d3/retrieve",
 "authors": "Nadine Schibille",
 "all_authors": [
 "Nadine Schibille"
@@ -44238,7 +44238,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Aristotle and the Ontology of St.",
-"cover_url": "",
+"cover_url": "https://library.oapen.org/rest/bitstreams/9a116c69-9db9-4759-8e6d-94ece1f69a8a/retrieve",
 "authors": "Franziska van Buren",
 "all_authors": [
 "Franziska van Buren"
@@ -44345,8 +44345,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Contested Legacies is already showing early scholarly and practical relevance for debates on housing, urban transformation, and sustainable cities.",
-"cover_url": "",
+"excerpt": "Short impact summary Contested Legacies (2023), published by Leuven University Press, has been cited 2 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/09c3c41e-2ce2-43c2-893f-15e54ee87578/retrieve",
 "authors": "Andrea Migotto, Martino Tattara",
 "all_authors": [
 "Andrea Migotto",
@@ -44449,7 +44449,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary A Small Nation in the Turmoil of the Second World War shows a strong record of public visibility and sustained use.",
+"excerpt": "Short impact summary A Small Nation in the Turmoil of the Second World War (2013), published by Leuven University Press, has been cited 2 times.",
 "cover_url": "",
 "authors": "Herman Van der Wee",
 "all_authors": [
@@ -44556,7 +44556,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Poet-Monks shows an early but meaningful scholarly and teaching footprint: it has 2 citations, 2 recorded teaching-related video discussions, and substantial usage with 2,936 down…",
+"excerpt": "Short impact summary Poet-Monks (2024), published by Cornell University Press, has been cited 2 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781501773853&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Thomas J. Mazanec",
 "all_authors": [
@@ -44658,7 +44658,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Border of Water and Ice is already showing early scholarly and teaching reach.",
+"excerpt": "Short impact summary Border of Water and Ice (2024), published by Cornell University Press, has been cited 2 times.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/ce06a01a-5213-43e9-adac-d3cb0d7bbcdb/retrieve",
 "authors": "Joseph A. Seeley",
 "all_authors": [
@@ -44768,7 +44768,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Knowing about Genocide is an open-access scholarly book with an early but visible uptake: it has 2 citations in OpenAlex, one recorded teaching-related video discussion, and libra…",
+"excerpt": "Short impact summary Knowing about Genocide (2021), published by University of California Press, has been cited 2 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9780520380196&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Joachim J. Savelsberg",
 "all_authors": [
@@ -44864,7 +44864,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Published in 2016 by Peter Lang Verlag as part of the established Philosophie et Politique series, Forme(s) et modes d'être / Form(s) and Modes of Being by Olivier Malherbe and Sé…",
+"excerpt": "Short impact summary Forme(s) et modes d’être / Form(s) and Modes of Being (2016), published by Peter Lang Verlag, has been cited 2 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9782875743572&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Olivier Malherbe, Sébastien Richard",
 "all_authors": [
@@ -44962,7 +44962,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Competition, Community, and Educational Growth , published by Peter Lang Verlag in 2018, has generated early scholarly uptake with 2 citations recorded in OpenAlex.",
+"excerpt": "Short impact summary Competition, Community, and Educational Growth (2018), published by Peter Lang Verlag, has been cited 2 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781433152382&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Kristopher Copeland, Garret L. Castleberry",
 "all_authors": [
@@ -45064,7 +45064,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary The Great Irish Famine and Social Class , published by Peter Lang Verlag in 2019, has generated two scholarly citations as of 2022.",
+"excerpt": "Short impact summary The Great Irish Famine and Social Class (2019), published by Peter Lang Verlag, has been cited 2 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781788741668&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Marguerite Corporaal, Peter Gray",
 "all_authors": [
@@ -45157,7 +45157,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Doug Selwyn's All Children Are All Our Children (Peter Lang, 2019) functions as a pedagogical anchor within educational scholarship on child development and school community.",
+"excerpt": "Short impact summary All Children Are All Our Children (2019), published by Peter Lang Verlag, has been cited 2 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781433161643&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Doug Selwyn",
 "all_authors": [
@@ -45272,7 +45272,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Zootechnologies is showing an early but credible impact profile.",
+"excerpt": "Short impact summary Zootechnologies (2025), published by Taylor & Francis, has been cited 2 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789462986206&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Sebastian Vehlken",
 "all_authors": [
@@ -45400,7 +45400,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Human Trafficking in Medieval Europe is already showing early scholarly uptake and clear reader interest.",
+"excerpt": "Short impact summary Human Trafficking in Medieval Europe (2025), published by Taylor & Francis, has been cited 2 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789463723336&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Christopher Paolella",
 "all_authors": [
@@ -45482,7 +45482,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Figshare dataset has already shown early scholarly uptake: it has 2 OpenAlex citations and 3 documented downstream reuse signals.",
+"excerpt": "Short impact summary Isotropic 3D electron microscopy reference data of isolated murine pancreatic islets treated with high glucose (jrc_mus-pancreas-1) (2020) in Figshare.",
 "cover_url": "",
 "authors": "Xu, C. Shan, Pang, Song, Bennett, Davis et al.",
 "all_authors": [
@@ -45630,7 +45630,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2022 Figshare dataset has an early but meaningful reuse profile: it is linked to 2 citations, 3 documented downstream reuses, and reuse in both a preprint and a journal artic…",
+"excerpt": "Short impact summary Isotropic 3D electron microscopy data of isolated murine pancreatic islets treated with low glucose (jrc_mus-pancreas-2) (2022) in Figshare.",
 "cover_url": "",
 "authors": "Technology Group, FIB-SEM, Mueller, Andreas, Solimena, Michele et al.",
 "all_authors": [
@@ -45777,7 +45777,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This open dataset has already shown early scholarly uptake, with 2 OpenAlex citations and 4 documented downstream reuses.",
+"excerpt": "Short impact summary Isotropic 3D electron microscopy data of isolated murine pancreatic islets treated with low glucose (jrc_mus-pancreas-3) (2022) in Figshare.",
 "cover_url": "",
 "authors": "Technology Group, FIB-SEM, Mueller, Andreas, Solimena, Michele et al.",
 "all_authors": [
@@ -45924,7 +45924,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This dataset is showing early but tangible uptake: it has been downloaded 1,202 times, cited 2 times in OpenAlex, and documented as reused in 2 downstream works.",
+"excerpt": "Short impact summary Open Access Publishing Patterns 2015–2024: Global Article Output and Modal Shifts (2025) in Zenodo.",
 "cover_url": "",
 "authors": "Herb, Ulrich",
 "all_authors": [
@@ -46021,7 +46021,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This dataset shows early but real scholarly uptake: it has 2 citations, 5 documented downstream reuse events, and modest usage with 18 downloads and 108 views.",
+"excerpt": "Short impact summary Data from: Gene family innovation, conservation and loss on the animal stem lineage (2018) in Figshare.",
 "cover_url": "",
 "authors": "Richter, Daniel, Parinaz Fozouni, Eisen, Michael et al.",
 "all_authors": [
@@ -46144,7 +46144,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Zenodo software release for JaneliaSciComp/workstation shows early but tangible uptake: it has 303 downloads, 691 views, and 2 OpenAlex citations.",
+"excerpt": "Short impact summary JaneliaSciComp/workstation: 9.20.1 (2025) in Zenodo.",
 "cover_url": "",
 "authors": "Konrad Rokicki, L Foster, Donald J. Olbris et al.",
 "all_authors": [
@@ -46294,7 +46294,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2025 review is already showing early scholarly uptake: OpenAlex records 1 citation, and the article has also been reused in 2 downstream contexts, including a 2026 preprint i…",
+"excerpt": "Short impact summary Probing neuropsychiatric disorders through in vivo CRISPR screening (2025) in Current Opinion in Genetics & Development.",
 "cover_url": "",
 "authors": "Tuo Shi, Xin Jin",
 "all_authors": [
@@ -46437,7 +46437,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2013 review by Barry King has begun to register scholarly uptake, with one documented citation and one recorded downstream reuse.",
+"excerpt": "Short impact summary Fame attack: the inflation of celebrity and its consequences, by Chris Rojek (2013) in Celebrity Studies.",
 "cover_url": "",
 "authors": "Barry King",
 "all_authors": [
@@ -46533,7 +46533,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2025 Journal of Experimental Medicine article is already attracting early scholarly attention for its analysis of authentic latent CD4+ T cell clones carrying intact HIV-1 pr…",
+"excerpt": "Short impact summary Transcription of HIV-1 is heterogenous among authentic latent CD4+ T cell clones (2025) in The Journal of Experimental Medicine.",
 "cover_url": "",
 "authors": "Cíntia Bittar, Ana Rafaela Teixeira, Thiago Y. Oliveira et al.",
 "all_authors": [
@@ -46703,7 +46703,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint shows early scholarly uptake and downstream reuse for a method that enables in situ fluorescence imaging of gas vesicle nanostructures.",
+"excerpt": "Short impact summary Bioorthogonal labeling enables in situ fluorescence imaging of expressed gas vesicle nanostructures (2023) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Erik Schrunk, Przemysław Dutka, Robert C. Hurt et al.",
 "all_authors": [
@@ -46826,7 +46826,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint has already been published in a peer-reviewed journal and is beginning to register downstream scholarly use.",
+"excerpt": "Short impact summary A cell type-aware framework for nominating non-coding variants in Mendelian regulatory disorders (2023) in medRxiv.",
 "cover_url": "",
 "authors": "Arthur S. Lee, Lauren J. Ayers, Michael Kosicki et al.",
 "all_authors": [
@@ -46971,7 +46971,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This perspective article has an early but visible scholarly footprint: it has one OpenAlex citation and one documented downstream reuse.",
+"excerpt": "Short impact summary How vulnerable are amphibians to climate change?",
 "cover_url": "",
 "authors": "Eric A. Riddell, D R Adams, Molly C. Womack",
 "all_authors": [
@@ -47100,7 +47100,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2025 article is already entering scholarly conversation: OpenAlex records 1 citation, a downstream reuse in a preprint, and one teaching-adjacent mention in a YouTube video.",
+"excerpt": "Short impact summary What Is Intelligence?",
 "cover_url": "",
 "authors": "Blaise Agüera y Arcas",
 "all_authors": [
@@ -47188,7 +47188,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2022 preprint shows early scholarly uptake: OpenAlex records 1 citation, and the reuse graph also captures 1 downstream article that reused the work.",
+"excerpt": "Short impact summary Establishing Institutional Scores With the Rigor and Transparency Index: Large-scale Analysis of Scientific Reporting Quality (Preprint) (2022) in Unknown.",
 "cover_url": "",
 "authors": "Joseph Menke, Peter Eckmann, İbrahim Burak Özyurt et al.",
 "all_authors": [
@@ -47314,7 +47314,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2025 bioRxiv preprint is still at an early stage of scholarly uptake, but it already shows measurable downstream use: one citing preprint, two documented reuse signals, and t…",
+"excerpt": "Short impact summary The organization of visual pathways in the Drosophila brain (2025) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Judith Hoeller, Arthur Zhao, Aljoscha Nern et al.",
 "all_authors": [
@@ -47434,7 +47434,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This bioRxiv preprint is still in the early stages of scholarly uptake, but the record already shows one citation and two documented downstream reuse signals.",
+"excerpt": "Short impact summary Coevolutionary constraints of Zika virus nonstructural protein 5 replication and interferon antagonism activities (2025) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "R. Blake Richardson, Caroline Kikawa, Amit Garg et al.",
 "all_authors": [
@@ -47587,7 +47587,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This eLife article is being received as an important and convincing contribution to cortical morphogenesis, with the strongest signal coming from the journal’s own assessment.",
+"excerpt": "Short impact summary Biophysical basis for brain folding and misfolding patterns in ferrets and humans (2025) in eLife.",
 "cover_url": "",
 "authors": "Gary P. T. Choi, Chunzi Liu, Sifan Yin et al.",
 "all_authors": [
@@ -47728,7 +47728,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This eLife article is an early but already visible contribution to the study of GPCR evolution in the closest living relatives of animals.",
+"excerpt": "Short impact summary G-protein-coupled receptor diversity and evolution in the closest living relatives of metazoa (2025) in eLife.",
 "cover_url": "",
 "authors": "Alain Garcia De Las Bayonas, Nicole King",
 "all_authors": [
@@ -47845,7 +47845,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2022 Springer Nature book chapter has already attracted visible public attention and an early scholarly citation.",
+"excerpt": "Short impact summary Smelly Shoes—An Opportunity for Shoe Rack Re-Design (2022), published by Springer Nature, has been cited 1 time.",
 "cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-981-16-2229-8_33",
 "authors": "Vikash Kumar, Sarthak Mittal",
 "all_authors": [
@@ -47938,8 +47938,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary As German as Kafka shows early but real scholarly uptake, with 1 OpenAlex citation and 3,161 recorded downloads from OAPEN indicating sustained reading interest.",
-"cover_url": "",
+"excerpt": "Short impact summary As German as Kafka (2019), published by Leuven University Press, has been cited 1 time.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/f62f957d-9938-44cf-8d3e-34266f17605e/retrieve",
 "authors": "Lene Rock",
 "all_authors": [
 "Lene Rock"
@@ -48059,7 +48059,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Tracheal Transplantation shows early but tangible scholarly and practical reach: it has one OpenAlex citation, 49 recorded downloads, and a teaching-related video signal, alongsid…",
+"excerpt": "Short impact summary Tracheal Transplantation (2019), published by Leuven University Press, has been cited 1 time.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789461662965&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Pierre Delaere",
 "all_authors": [
@@ -48191,8 +48191,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Arrival Cities shows a clear early impact profile: it has been downloaded 4,119 times, appears in public knowledge infrastructure through extensive Wikipedia-linked attention, and…",
-"cover_url": "",
+"excerpt": "Short impact summary Arrival Cities (2020), published by Leuven University Press, has been cited 1 time.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/db190c25-5aab-4a96-ae33-bd43853c3e97/retrieve",
 "authors": "Burcu Dogramaci, Mareike Hetschold, Laura Karp Lugo et al.",
 "all_authors": [
 "Burcu Dogramaci",
@@ -48280,8 +48280,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Dialogen over België shows early scholarly uptake alongside strong signs of use.",
-"cover_url": "",
+"excerpt": "Short impact summary Dialogen over België (2020), published by Leuven University Press, has been cited 1 time.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/496628b1-29c1-4f0d-94c3-1d0e2185ef88/retrieve",
 "authors": "Elke Brems, Marnix Beyen, Ariane Bazan et al.",
 "all_authors": [
 "Elke Brems",
@@ -48386,8 +48386,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Strategic Imaginations shows early scholarly uptake and notable reader interest: it has been cited once and downloaded 2,144 times through OAPEN.",
-"cover_url": "",
+"excerpt": "Short impact summary Strategic Imaginations (2020), published by Leuven University Press, has been cited 1 time.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/e0d70467-0861-45f9-b046-b157f3bfe1ee/retrieve",
 "authors": "Anke Gilleir, Aude Defurne",
 "all_authors": [
 "Anke Gilleir",
@@ -48491,8 +48491,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Working Through Colonial Collections shows early scholarly traction and notable wider use.",
-"cover_url": "",
+"excerpt": "Short impact summary Working Through Colonial Collections (2022), published by Leuven University Press, has been cited 1 time.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/565ca141-7c43-45ee-8e51-7cd5b4056f63/retrieve",
 "authors": "Margareta von Oswald",
 "all_authors": [
 "Margareta von Oswald"
@@ -48598,8 +48598,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This open-access scholarly book is showing early but concrete reach: it has been downloaded 926 times and has received 1 citation to date.",
-"cover_url": "",
+"excerpt": "Short impact summary Comunidad, pertenencia, extrenjería (2022), published by Leuven University Press, has been cited 1 time.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/e3b70912-f3a7-40eb-9c95-fb793eea3ee3/retrieve",
 "authors": "Eleonora Poggio",
 "all_authors": [
 "Eleonora Poggio"
@@ -48703,8 +48703,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Plutarch’s Cosmological Ethics is showing early scholarly uptake and meaningful usage.",
-"cover_url": "",
+"excerpt": "Short impact summary Plutarch’s Cosmological Ethics (2022), published by Leuven University Press, has been cited 1 time.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/7f3fbe1b-86ff-4451-bf9c-c99b71ece9c9/retrieve",
 "authors": "Bram Demulder",
 "all_authors": [
 "Bram Demulder"
@@ -48788,8 +48788,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Portraits and Poses is already showing clear signs of use and visibility.",
-"cover_url": "",
+"excerpt": "Short impact summary Portraits and Poses (2022), published by Leuven University Press, has been cited 1 time.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/84e48fe4-a4fa-4cc9-a500-2316a6ee65b0/retrieve",
 "authors": "Beatrijs Vanacker, Lieke van Deinsen",
 "all_authors": [
 "Beatrijs Vanacker",
@@ -48890,8 +48890,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Maïka De Keyzer’s Tot de bodem is already showing signs of use beyond publication: it has 3,997 recorded downloads, has been discussed in a KU Leuven video event, and has one scho…",
-"cover_url": "",
+"excerpt": "Short impact summary Tot de bodem (2023), published by Leuven University Press, has been cited 1 time.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/d1daecf7-9ead-492b-8bba-92506f66e891/retrieve",
 "authors": "Maïka De Keyzer",
 "all_authors": [
 "Maïka De Keyzer"
@@ -49005,8 +49005,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary The Belgian Photonovel, 1954-1985 shows early scholarly traction and active readership.",
-"cover_url": "",
+"excerpt": "Short impact summary The Belgian Photonovel, 1954-1985 (2023), published by Leuven University Press, has been cited 1 time.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/e8526258-48b4-4875-90a8-cbbe87f64a9d/retrieve",
 "authors": "Clarissa Colangelo",
 "all_authors": [
 "Clarissa Colangelo"
@@ -49102,8 +49102,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Documenting Ancient Sagalassos shows clear early use: it has 2,366 recorded downloads and has already been cited once, indicating that the book is reaching readers and beginning t…",
-"cover_url": "",
+"excerpt": "Short impact summary Documenting Ancient Sagalassos (2023), published by Leuven University Press, has been cited 1 time.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/b31c8a59-5625-4f65-a657-9131318b227a/retrieve",
 "authors": "Jeroen Poblome",
 "all_authors": [
 "Jeroen Poblome"
@@ -49189,8 +49189,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Between Conventional and Experimental is already showing a modest but credible early impact profile: it has 1 OpenAlex citation, 1,472 recorded downloads, and open-access availabi…",
-"cover_url": "",
+"excerpt": "Short impact summary Between Conventional and Experimental (2024), published by Leuven University Press, has been cited 1 time.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/ca51313b-5bd9-4877-ad6c-63898790c03b/retrieve",
 "authors": "Regine Hess, Inbal Ben-Asher Gitler, Tzafrir Fainholtz et al.",
 "all_authors": [
 "Regine Hess",
@@ -49300,8 +49300,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Architectures of Resistance shows clear early reach through 1,623 recorded downloads and one scholarly citation.",
-"cover_url": "",
+"excerpt": "Short impact summary Architectures of Resistance (2024), published by Leuven University Press, has been cited 1 time.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/36cf49fa-a7d9-4ca8-83ba-f4568e0fdb93/retrieve",
 "authors": "Angeliki Sioli, Nishat Awan, Kristopher Palagi",
 "all_authors": [
 "Angeliki Sioli",
@@ -49404,8 +49404,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2024 scholarly book is already showing early uptake: OpenAlex records 1 citation, and the work has accumulated 448 downloads through OAPEN, suggesting active reading beyond i…",
-"cover_url": "",
+"excerpt": "Short impact summary Pietro Pomponazzi and the Renaissance Theory of the Elements (2024), published by Leuven University Press, has been cited 1 time.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/de03df56-5b25-4aef-b755-d4b7c3487aef/retrieve",
 "authors": "Luca Burzelli",
 "all_authors": [
 "Luca Burzelli"
@@ -49500,7 +49500,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2024 scholarly book is showing an early but concrete sign of scholarly uptake: it has been cited once, in a 2025 journal article on Christian leadership and social-ecological…",
+"excerpt": "Short impact summary The Romero Memory (2024), published by Leuven University Press, has been cited 1 time.",
 "cover_url": "",
 "authors": "Judith Gruber, Jonas Van Mulder, Kim Christiaens et al.",
 "all_authors": [
@@ -49608,7 +49608,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary New Multicultural Identities in Europe shows early scholarly uptake and clear reader interest: OpenAlex records 1 citation, while OAPEN reports 2,334 downloads.",
+"excerpt": "Short impact summary New Multicultural Identities in Europe (2014), published by Leuven University Press, has been cited 1 time.",
 "cover_url": "",
 "authors": "Erkan Toğuşlu",
 "all_authors": [
@@ -49721,7 +49721,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Making Sense: Language, Ethics, and Understanding in Deaf Nepal is showing early but real scholarly uptake, with one OpenAlex citation already recorded, alongside strong usage sig…",
+"excerpt": "Short impact summary Making Sense: Language, Ethics, and Understanding in Deaf Nepal (2024), published by University of California Press, has been cited 1 time.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9780520399235&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "E. Mara Green",
 "all_authors": [
@@ -49816,7 +49816,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary The Point of Philosophy , published by Peter Lang Verlag in 2016 as part of the established Philosophie et Politique series, has received one documented citation as of the availab…",
+"excerpt": "Short impact summary The Point of Philosophy (2016), published by Peter Lang Verlag, has been cited 1 time.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9782875743121&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Ludo Abicht, Hendrik Opdebeeck",
 "all_authors": [
@@ -49899,7 +49899,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Imagined Cosmopolis examines the contested relationship between nationalism and internationalism in the arts during the late nineteenth and early twentieth centuries, a period tha…",
+"excerpt": "Short impact summary Imagined Cosmopolis (2019), published by Peter Lang Verlag, has been cited 1 time.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9783034318709&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Charlotte Ashby, Grace Brockington, Daniel Laqua et al.",
 "all_authors": [
@@ -50003,7 +50003,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Pro-vax , published in 2025 by Peter Lang Verlag as part of the Medical Humanities series, addresses vaccine activism and public engagement around vaccination.",
+"excerpt": "Short impact summary Pro-vax (2025), published by Peter Lang Verlag, has been cited 1 time.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781800794719&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Samantha Vanderslott",
 "all_authors": [
@@ -50139,7 +50139,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Trade Unions in the European Union has reached a significant readership through open access channels, with over 2,300 downloads since publication in 2023.",
+"excerpt": "Short impact summary Trade Unions in the European Union (2023), published by Peter Lang Verlag, has been cited 1 time.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/8986f0fa-736b-4b6f-8dca-4c082b63207f/retrieve",
 "authors": "Jeremy Waddington, Torsten Müller, Kurt Vandaele",
 "all_authors": [
@@ -50245,7 +50245,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Stefan Ekman’s Urban Fantasy is already showing a broad early reach: it has been downloaded 325 times, appears in four YouTube discussions or interviews, and has attracted three W…",
+"excerpt": "Short impact summary Urban Fantasy (2024), published by Lever Press, has been cited 1 time.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781643150642&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Stefan Ekman",
 "all_authors": [
@@ -50336,7 +50336,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary List Cultures is still an early-impact scholarly book, but the record already shows a small yet meaningful footprint: one citation in OpenAlex, one teaching-related listing, and a…",
+"excerpt": "Short impact summary List Cultures (2025), published by Taylor & Francis, has been cited 1 time.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789462981102&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Liam Young",
 "all_authors": [
@@ -50445,7 +50445,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Exceptional Bodies in Early Modern Culture is showing an early but meaningful scholarly footprint.",
+"excerpt": "Short impact summary Exceptional Bodies in Early Modern Culture (2025), published by Taylor & Francis, has been cited 1 time.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789463721745&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Maja Bondestam",
 "all_authors": [
@@ -50550,7 +50550,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2024 dataset is already showing early scholarly reuse: it has been cited once in the literature and is linked to eight downstream reuse records in the DataCite graph.",
+"excerpt": "Short impact summary Density functional Bogoliubov-de Gennes theory for superconductors implemented in the SIESTA code (2024) in NCCR MARVEL.",
 "cover_url": "",
 "authors": "Reho, Riccardo, Wittemeier, Nils, Kole, Arnold Herman et al.",
 "all_authors": [
@@ -50666,7 +50666,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This dataset is an early-stage scholarly output with one documented citation and one recorded downstream reuse.",
+"excerpt": "Short impact summary Optimization of Ace2N based voltage indicators (2023) in Figshare.",
 "cover_url": "",
 "authors": "Schreiter, Eric R., Abdelfattah, Ahmed, Hasseman, Jeremy et al.",
 "all_authors": [
@@ -50802,7 +50802,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Figshare dataset has begun to register scholarly uptake: OpenAlex records 1 citation, and the reuse graph shows 2 documented downstream reuses, including a linked associated …",
+"excerpt": "Short impact summary Near-isotropic, reconstructed volume electron microscopy (FIB-SEM) of P7 mouse pancreas (jrc_mus-pancreas-4) (2023) in Figshare.",
 "cover_url": "",
 "authors": "CellMap Project Team, Espinosa Medina, Isabel, Li, Wei-Ping et al.",
 "all_authors": [
@@ -50951,7 +50951,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Dryad dataset is showing early but real reuse: it has 150 downloads, 746 views, one scholarly citation, and two documented downstream reuse signals.",
+"excerpt": "Short impact summary Data from: Novel predators reshape holozoan phylogeny and reveal the presence of a two-component signalling system in the ancestor of animals (2017) in Dryad.",
 "cover_url": "",
 "authors": "Hehenberger, Elisabeth, Tikhonenkov, Denis V., Kolisko, Martin et al.",
 "all_authors": [
@@ -51067,7 +51067,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Dryad dataset has begun to register use in the scholarly record: it has 11 recorded downloads, 43 views, and 1 documented citation/reuse by a 2024 article in Oikos .",
+"excerpt": "Short impact summary Data and code from: Coordinated distributed experiments in ecology do not consistently reduce heterogeneity in effect size (2024) in Dryad.",
 "cover_url": "",
 "authors": "Bebout, Julia, Fox, Jeremy",
 "all_authors": [
@@ -51168,7 +51168,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Dryad dataset shows early but clear scholarly and reuse activity: it has 70 recorded downloads, 421 views, 1 citation in OpenAlex, and 2 documented downstream reuse signals.",
+"excerpt": "Short impact summary Data from: Hunting, exotic carnivores, and habitat loss: anthropogenic effects on a native carnivore community, Madagascar (2015) in Dryad.",
 "cover_url": "",
 "authors": "Farris, Zach J., Golden, Christopher D., Karpanty, Sarah et al.",
 "all_authors": [
@@ -51293,7 +51293,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This EMPIAR dataset is already showing early scholarly uptake: it has one OpenAlex citation and documented downstream reuse in three records, including journal-article citations.",
+"excerpt": "Short impact summary Quantification of gallium cryo-FIB milling damage in biological lamella (2023) in EMPIAR dataset.",
 "cover_url": "",
 "authors": "Lucas BA, Nikolaus Grigorieff",
 "all_authors": [
@@ -51388,7 +51388,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Creolimax fragrantissima genome dataset shows early but real scholarly uptake: it has one citation in OpenAlex and three documented downstream reuse records.",
+"excerpt": "Short impact summary Creolimax fragrantissima genome data (2015) in Figshare.",
 "cover_url": "",
 "authors": "Alex De Mendoza, Hiroshi Suga, Iñaki Ruiz‐Trillo",
 "all_authors": [
@@ -51495,7 +51495,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Figshare dataset is an openly available research resource supporting a 2025 study on G protein-coupled receptor diversity and evolution in the closest living relatives of met…",
+"excerpt": "Short impact summary Supplementary files - G protein-coupled receptor diversity and evolution in the closest living relatives of Metazoa (2025) in Figshare.",
 "cover_url": "",
 "authors": "Garcia De Las Bayonas, Alain",
 "all_authors": [
@@ -51598,7 +51598,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Capsaspora owczarzaki genome dataset shows early but tangible scholarly reuse: it has been cited once, downloaded 5 times, and viewed 19 times.",
+"excerpt": "Short impact summary Genome - Capsaspora owczarzaki (v3) (2016) in Figshare.",
 "cover_url": "",
 "authors": "Multicellgenome Lab",
 "all_authors": [
@@ -51700,7 +51700,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This dataset shows an early but real trace of scholarly uptake: it has been cited once in the literature and appears in two documented downstream reuse records.",
+"excerpt": "Short impact summary Genome - Abeoforma whisleri (2017) in Figshare.",
 "cover_url": "",
 "authors": "Multicellgenome Lab",
 "all_authors": [
@@ -51804,7 +51804,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Figshare dataset on the genome of Ichthyophonus hoferi shows an early but clear reuse signal: it has been cited once and appears in two documented downstream reuse records.",
+"excerpt": "Short impact summary Genome - Ichthyophonus hoferi (2017) in Figshare.",
 "cover_url": "",
 "authors": "Multicellgenome Lab",
 "all_authors": [
@@ -51906,7 +51906,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This dataset shows an early but clear reuse signal: it has been cited once in the scholarly record and has two documented downstream reuse events.",
+"excerpt": "Short impact summary Genome - Chromosphaera perkinsii (2017) in Figshare.",
 "cover_url": "",
 "authors": "Multicellgenome Lab",
 "all_authors": [
@@ -52009,7 +52009,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Figshare dataset for the Pirum gemmata genome shows an early but real reuse signal: it has been cited once in the scholarly literature and is documented as reused in two down…",
+"excerpt": "Short impact summary Genome - Pirum gemmata (2017) in Figshare.",
 "cover_url": "",
 "authors": "Multicellgenome Lab",
 "all_authors": [
@@ -52112,7 +52112,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Figshare dataset presents an assembled transcriptome and predicted nonredundant proteome for the choanoflagellate Choanoeca flexa .",
+"excerpt": "Short impact summary Choanoeca flexa transcriptome and predicted nonredundant proteome (2019) in Figshare.",
 "cover_url": "",
 "authors": "Thibaut Brunet",
 "all_authors": [
@@ -52195,7 +52195,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary pybbi shows an early but credible uptake signal: it has 1 documented citation, including reuse in a 2025 article in Nature Cell Biology , and 1 recorded downstream reuse.",
+"excerpt": "Short impact summary pybbi (2024) in Zenodo.",
 "cover_url": "",
 "authors": "Abdennur, Nezar",
 "all_authors": [
@@ -52330,7 +52330,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2025 Angewandte Chemie article is an early-stage research contribution on how anionic polypeptide coatings on layer-by-layer nanoparticles engage cancer-associated amino acid…",
+"excerpt": "Short impact summary Surface Avidity of Anionic Polypeptide Coatings on Layer‐by‐Layer Nanoparticles Target Cancer‐Associated Amino Acid Transporters (2025) in Angewandte Chemie.",
 "cover_url": "",
 "authors": "Ivan S. Pires, Margaret M. Billingsley, Ezra Gordon et al.",
 "all_authors": [
@@ -52424,7 +52424,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This article is a retraction note, so its main scholarly significance is corrective rather than contributory.",
+"excerpt": "Short impact summary Retraction Note: Characterization of brown rust resistance in bread wheat using yield related morphological indices (2026) in Genetic Resources and Crop Evolution.",
 "cover_url": "",
 "authors": "Anum Iqbal, Beena Alam, Razia Iqbal et al.",
 "all_authors": [
@@ -52518,7 +52518,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Cell Reports study identifies a previously uncharacterized pseudoknot in the hepatitis C virus coding region that binds host ribosomes and modulates translation, offering a m…",
+"excerpt": "Short impact summary A ribosome-bound pseudoknot in the HCV coding region stimulates viral growth by tuning viral translation (2025) in Cell Reports.",
 "cover_url": "",
 "authors": "Han Wan, Harim Jang, Ling Xu et al.",
 "all_authors": [
@@ -52609,7 +52609,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Nature news article has begun to circulate beyond its publication venue, with one documented downstream reuse in Europe PMC and one recorded podcast mention.",
+"excerpt": "Short impact summary Exclusive: NIH ousts infectious-disease leaders as COVID scientists face US charges (2026) in Nature.",
 "cover_url": "",
 "authors": "Max Kozlov",
 "all_authors": [
@@ -52695,7 +52695,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This PNAS article identifies OsDAAT1 as a maternally acting regulator of rice grain chalkiness, linking D-amino acid metabolism to endoplasmic reticulum stress response in plants.",
+"excerpt": "Short impact summary D-amino acid aminotransferase1 regulates grain chalkiness in rice by modulating endoplasmic reticulum stress response (2026) in Proceedings of the National Academy of Sciences.",
 "cover_url": "",
 "authors": "Hui Dong, Jie Lei, Yunlu Tian et al.",
 "all_authors": [
@@ -52839,7 +52839,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2026 editorial introduction to the Journal of Research on Research (J·ROR) is already visible in the scholarly record through open-access availability and a small amount of e…",
+"excerpt": "Short impact summary Introducing the Journal of Research on Research (J·ROR): aligning constellations and communities (2026) in Journal of Research on Research.",
 "cover_url": "",
 "authors": "G. M. Derrick, Serge P. J. M. Horbach, Bart Penders et al.",
 "all_authors": [
@@ -52933,7 +52933,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint has already left a small but meaningful downstream trace: it was later published in Journal of Molecular Biology , and it has one documented reuse in Europe PMC.",
+"excerpt": "Short impact summary Rapid long-distance migration of RPA on single stranded DNA occurs through intersegmental transfer utilizing multivalent interactions (2023) in bioRxiv (Cold Spring Harbor Laborat…",
 "cover_url": "",
 "authors": "Sushil Pangeni, Gargi Biswas, Vikas Kaushik et al.",
 "all_authors": [
@@ -53028,7 +53028,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint was later published in Developmental Biology , and the record already shows one documented downstream reuse in Europe PMC.",
+"excerpt": "Short impact summary Pronounced early differentiation underlies zebra finch gonadal germ cell development (2023) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Matthew T. Biegler, Kirubel Belay, Wei Wang et al.",
 "all_authors": [
@@ -53132,7 +53132,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2025 preprint is already drawing early attention beyond its citation record: it has one online mention, one downstream reuse signal, and a scite record that currently registe…",
+"excerpt": "Short impact summary Generative genomics accurately predicts future experimental results (2025) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Gregory Koytiger, Alice M. Walsh, Vaishali Marar et al.",
 "all_authors": [
@@ -53231,7 +53231,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2007 CSH Protocols article has a very quiet scholarly record so far, but it does show one documented downstream reuse in Europe PMC and one indexed instance in OpenAIRE.",
+"excerpt": "Short impact summary Imaging Actin in Tissue Slices from Transgenic Mouse Brain: Figure 1.",
 "cover_url": "",
 "authors": "Andrew Matus, Virginie Biou, Heike Brinkhaus et al.",
 "all_authors": [
@@ -53314,7 +53314,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This article is already attracting attention beyond its publication venue: one downstream reuse has been documented, and a Language Log post has highlighted the paper’s challenge …",
+"excerpt": "Short impact summary Ousiometrics: The essence of meaning aligns with a power-danger-structure framework instead of valence-arousal-dominance (2026) in Science Advances.",
 "cover_url": "",
 "authors": "Peter Sheridan Dodds, Thayer Alshaabi, Mikaela Irene Fudolig et al.",
 "all_authors": [
@@ -53412,7 +53412,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2026 mBio article is already showing early reach beyond the journal: it was discussed in a MicrobeTV “This Week in Microbiology” episode, has one documented downstream reuse …",
+"excerpt": "Short impact summary Streptococcus mitis bacteriocins drive contact-dependent lysis of S.",
 "cover_url": "",
 "authors": "João Borralho, João Lança, Joana Bryton et al.",
 "all_authors": [
@@ -53506,7 +53506,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 scholarly article is best understood as a practice-oriented conference presentation on supporting open educational resources (OER) adoption in higher education.",
+"excerpt": "Short impact summary OER by Discipline Guide: Reducing Barriers and Building Sustainability for OER Adoption (2023) in Libraries and Cultural Resources (University of Calgary).",
 "cover_url": "",
 "authors": "Adams, Sarah, Sillito, Savannah",
 "all_authors": [
@@ -53589,7 +53589,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This Cancer Discovery article offers a timely national description of childhood and adolescent cancer incidence in the United States from 2001 to 2022, with the strongest evidence…",
+"excerpt": "Short impact summary Trends in Childhood and Adolescent Cancer Incidence Rates in the United States between 2001 and 2022 (2025) in Cancer Discovery.",
 "cover_url": "",
 "authors": "Meredith S. Shiels, Anika T. Haque, Rena R. Jones et al.",
 "all_authors": [
@@ -53728,7 +53728,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2025 PLoS ONE article is best understood as a methodological anchor for the field of biological resources: it brings together citation evidence for key resources, including m…",
+"excerpt": "Short impact summary Do organisms need an impact factor?",
 "cover_url": "",
 "authors": "Agata Piękniewska, Martijn Roelandse, K. C. Kent Lloyd et al.",
 "all_authors": [
@@ -53833,7 +53833,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2024 PRX Quantum article is a large, open-access review of quantum computing for high-energy physics.",
+"excerpt": "Short impact summary Quantum Computing for High-Energy Physics : State of the Art and Challenges (2024) in PRX Quantum.",
 "cover_url": "",
 "authors": "Di Meglio, Alberto, Jansen, Karl, Tavernelli, Ivano et al.",
 "all_authors": [
@@ -53961,7 +53961,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2018 ORCID task force report documents a focused community effort on books workflows, but the measurable impact record is still sparse.",
+"excerpt": "Short impact summary Task Force: ORCID in Books Workflows (2018) in Figshare.",
 "cover_url": "",
 "authors": "ORCID, Alice Meadows, Tony Alves et al.",
 "all_authors": [
@@ -54058,7 +54058,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2024 article is a conference-linked scholarly contribution on technology responses to problems in scholarly publishing, with immediate relevance to research integrity, peer r…",
+"excerpt": "Short impact summary Dotcoms to watch: Addressing the scholarly publishing industry’s challenges through technology (2024) in Information Services & Use.",
 "cover_url": "",
 "authors": "Martijn Roelandse, Adam Day, Tijmen Altena et al.",
 "all_authors": [
@@ -54138,7 +54138,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This ATLAS article quickly became a major reference point for the 2012 Higgs discovery: scite records 5,183 citations, with 137 supporting statements and only 5 contradicting ones…",
+"excerpt": "Short impact summary Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC (2012).",
 "cover_url": "",
 "authors": "The ATLAS Collaboration",
 "all_authors": [
@@ -54218,7 +54218,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2017 astrophysics preprint presents an early, high-redshift example of a massive quiescent galaxy and has generated modest scholarly follow-on: OpenAlex records 0 citations, …",
+"excerpt": "Short impact summary A massive, quiescent galaxy at redshift of z=3.717 (2017) in Leiden Repository (Leiden University).",
 "cover_url": "",
 "authors": "Glazebrook, Karl, Schreiber, Corentin, Labbé, Ivo et al.",
 "all_authors": [
@@ -54308,7 +54308,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint is already drawing early scholarly attention: Scite records 16 citations, with one citing statement categorized as supporting and the remainder as neutral mentions.",
+"excerpt": "Short impact summary How LLMs Distort Our Written Language (2026) in arXiv (Cornell University).",
 "cover_url": "",
 "authors": "Marwa Abdulhai, Isadora White, Yanming Wan et al.",
 "all_authors": [
@@ -54398,7 +54398,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Zenodo deposit presents an admission-form announcement for American University of Nigeria for the 2024/2025 cycle.",
+"excerpt": "Short impact summary American University of Nigeria, Adamawa State Post-U.T.M.E Admission Form for 2024/2025 is out call 09125210477 For More Details On How to Apply And Register Online.Also Sales Of …",
 "cover_url": "",
 "authors": "JUDITH",
 "all_authors": [
@@ -54478,7 +54478,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2025 article is already showing active use, with 3,272 recorded downloads and 1,075 views, and it has one documented downstream reuse in the scholarly record.",
+"excerpt": "Short impact summary Archetypometrics, a Pragmateia: Empirical Determination of the Fundamental Archetypes of Fictional Characters (2025) in Zenodo.",
 "cover_url": "",
 "authors": "Dodds, Peter Sheridan, Zimmerman, Julia Witte, Beauregard, Calla G. et al.",
 "all_authors": [
@@ -54567,7 +54567,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2025 scholarly article is already showing clear signs of use through 3,276 downloads and 1,075 views, suggesting substantial interest in its empirical framework for fictional…",
+"excerpt": "Short impact summary Archetypometrics, a Pragmateia: Empirical Determination of the Fundamental Archetypes of Fictional Characters (2025) in Zenodo.",
 "cover_url": "",
 "authors": "Dodds, Peter Sheridan, Zimmerman, Julia Witte, Beauregard, Calla G. et al.",
 "all_authors": [
@@ -54656,7 +54656,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2025 scholarly article has seen strong early uptake as a downloadable research object, with 3,272 downloads and 1,075 views recorded in DataCite.",
+"excerpt": "Short impact summary Archetypometrics, a Pragmateia: Empirical Determination of the Fundamental Archetypes of Fictional Characters (2025) in Zenodo.",
 "cover_url": "",
 "authors": "Dodds, Peter Sheridan, Zimmerman, Julia Witte, Beauregard, Calla G. et al.",
 "all_authors": [
@@ -54745,7 +54745,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary QuantaPep v4.0 is still early in its public life, but the record already shows a small trace of uptake: 11 downloads, 163 views, and one documented downstream reuse.",
+"excerpt": "Short impact summary QuantaPep v4.0: Autonomous Genotype-Aware Peptide Discovery at Industrial Scale (2026) in Zenodo.",
 "cover_url": "",
 "authors": "Adam Werderits",
 "all_authors": [
@@ -54827,7 +54827,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary QuantaPep v4.0 shows early signs of reach and reuse for a preprint-style research output: it has 11 recorded downloads, 163 views, and one documented downstream reuse linked to an…",
+"excerpt": "Short impact summary QuantaPep v4.0: Autonomous Genotype-Aware Peptide Discovery at Industrial Scale (2026) in Zenodo.",
 "cover_url": "",
 "authors": "Adam Werderits",
 "all_authors": [
@@ -54909,7 +54909,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This scholarly article has a modest but visible early usage record: 83 views and 41 downloads in Zenodo, alongside an open-access repository presence and linked biodiversity data …",
+"excerpt": "Short impact summary Nosophora parvipunctalis Hampson 1896 (2022) in Zenodo.",
 "cover_url": "",
 "authors": "Singh, Navneet, Ranjan, Rahul, Talukdar, Avishek et al.",
 "all_authors": [
@@ -54995,7 +54995,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This openly available taxonomic article has begun to attract light usage, with 83 views and 41 downloads recorded in Zenodo.",
+"excerpt": "Short impact summary Nosophora parvipunctalis Hampson 1896 (2022) in Zenodo.",
 "cover_url": "",
 "authors": "Singh, Navneet, Ranjan, Rahul, Talukdar, Avishek et al.",
 "all_authors": [
@@ -55081,7 +55081,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary Thermal-plex shows early but concrete reach for a 2023 open-access methods paper: the record shows 30 downloads, 239 views, and one documented downstream reuse in a biomedical art…",
+"excerpt": "Short impact summary Thermal-plex: fluidic-free, rapid sequential multiplexed imaging with DNA-encoded thermal channels (2023) in Zenodo.",
 "cover_url": "",
 "authors": "Hong, Fan, Kishi, Jocelyn, Delgado, Ryan et al.",
 "all_authors": [
@@ -55171,7 +55171,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2005 scholarly article presents a neuroscience-focused account of how synaptic activity contributes to the formation and maintenance of neuronal circuits.",
+"excerpt": "Short impact summary Synaptic activity and the formation and maintenance of neuronal circuits (2005) in edoc (University of Basel).",
 "cover_url": "",
 "authors": "Martijn Roelandse",
 "all_authors": [
@@ -55251,7 +55251,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This supplementary file has a quiet but clearly documented reuse record: it is linked to the associated journal article as a supplemental resource, while the public record shows n…",
+"excerpt": "Short impact summary Additional file 1 of High-capacity sample multiplexing for single cell chromatin accessibility profiling (2024) in Figshare.",
 "cover_url": "",
 "authors": "Booth, Gregory T., Daza, Riza M., Srivatsan, Sanjay R. et al.",
 "all_authors": [
@@ -55342,7 +55342,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2025 bioRxiv preprint reports an early-stage therapeutic strategy for osteoarthritis that uses human pluripotent stem cell-derived nociceptive neurons to address both pain an…",
+"excerpt": "Short impact summary Ectopic engraftment of nociceptive neurons derived from hPSCs for pain relief and joint homeostasis (2025) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Zhuolun Wang, Weixin Zhang, Ju Wang et al.",
 "all_authors": [
@@ -55433,7 +55433,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint is beginning to attract downstream scientific reuse: it has one documented citation-like reuse in another 2026 bioRxiv preprint, and the article record also shows a …",
+"excerpt": "Short impact summary Stomatal setpoints and environmental responsiveness are sculpted by developmental trajectories (2025) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "M. Rath, Nidhi Sharma, Madhav Mani et al.",
 "all_authors": [
@@ -55562,7 +55562,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2025 preprint has already shown early scholarly reuse, with two documented downstream mentions in Europe PMC, and it has since been published in a peer-reviewed article.",
+"excerpt": "Short impact summary Mechanisms of HSV-1 helicase–primase inhibition and replication fork complex assembly (2025) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Zishuo Yu, Pradeep Sathyanarayana, C Lui et al.",
 "all_authors": [
@@ -55654,7 +55654,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint has already shown early downstream reuse, with two documented biomedical article mentions, and it later appeared in a peer-reviewed journal version.",
+"excerpt": "Short impact summary Vibrio cholerae serotype impacts pathogenicity (2025) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Franz G. Zingl, Deborah R. Leitner, Bolutife Fakoya et al.",
 "all_authors": [
@@ -55740,7 +55740,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint was later published in a peer-reviewed venue and already shows one documented downstream reuse in Europe PMC, indicating that the work has begun to circulate beyond …",
+"excerpt": "Short impact summary Chromatin profiling for everyone: FFPE-CUTAC for the theory and practice of modern molecular biology (2025) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Yiling Xu, Steven Henikoff, Kami Ahmad",
 "all_authors": [
@@ -55825,7 +55825,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2025 preprint on prostate cancer metastasis already shows early downstream reuse: it is indexed as a biomedical article mention in Europe PMC and has two documented mentions …",
+"excerpt": "Short impact summary TMPO promotes cellular dissemination and metastasis in circulating tumor cells (2025) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Arianna Giacobbe, Aleksandar Obradović, Jinqiu Lu et al.",
 "all_authors": [
@@ -55947,7 +55947,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint shows early but meaningful uptake in a fast-moving computational biology niche: it is already being used in teaching-adjacent public discussion and has a documented …",
+"excerpt": "Short impact summary Template-based RNA structure prediction advanced through a blind code competition (2025) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Youhan Lee, Shujun He, Toshiyuki Oda et al.",
 "all_authors": [
@@ -56155,7 +56155,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint has already begun to shape follow-on prostate cancer research.",
+"excerpt": "Short impact summary Extracellular matrix regulates lineage plasticity in prostate cancer through YAP/TEAD (2025) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Teng Han, Zhen Sun, Matthew Lange et al.",
 "all_authors": [
@@ -56323,7 +56323,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This preprint presents an early but focused story about how mitochondrial depolarization can stabilize the vitamin B12 chaperone MMADHC in the cytosol, with the downstream effect …",
+"excerpt": "Short impact summary Mitochondrial depolarization stabilizes the vitamin B12 chaperone MMADHC in the cytosol to increase MTR activity (2025) in bioRxiv (Cold Spring Harbor Laboratory).",
 "cover_url": "",
 "authors": "Sneha Rath, Zhu Li, Arkajit Guha et al.",
 "all_authors": [
@@ -56411,7 +56411,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2024 eLife article presents a brainstem-circuit account of cough-like airway defensive behaviors in mice, using an experimental neuroscience approach centered on respiratory …",
+"excerpt": "Short impact summary A brainstem circuit controls cough-like airway defensive behaviors in mice (2024) in eLife.",
 "cover_url": "",
 "authors": "Xiaoshan Xu, Xiupeng Nie, Weijia Zhang et al.",
 "all_authors": [
@@ -56505,7 +56505,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This eLife article presents a convincing, landmark-level account of how age-dependent epigenetic change can weaken mitochondrial stress responses and contribute to olfactory neuro…",
+"excerpt": "Short impact summary Age-dependent H3K9 trimethylation by dSetdb1 impairs mitochondrial UPR leading to degeneration of olfactory neurons and loss of olfactory function in Drosophila (2026) in eLife.",
 "cover_url": "",
 "authors": "Francisco Muñoz-Carvajal, Nicole Sanhueza, Mario Sanhueza et al.",
 "all_authors": [
@@ -56596,7 +56596,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2025 eLife article is a gold open-access catalogue of split-GAL4 driver lines for descending neurons in Drosophila melanogaster , a resource-oriented contribution aimed at im…",
+"excerpt": "Short impact summary An updated catalogue of split-GAL4 driver lines for descending neurons in Drosophila melanogaster (2025) in eLife.",
 "cover_url": "",
 "authors": "Jessica L. Zung, Shigehiro Namiki, Geoffrey W Meissner et al.",
 "all_authors": [
@@ -56694,7 +56694,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This eLife article offers a mechanistic hypothesis for how Fusobacterium nucleatum may influence antitumor immunity through the NK cell receptor NKp46.",
+"excerpt": "Short impact summary RadD from Fusobacterium nucleatum Engages NKp46 to Promote Antitumor Cytotoxicity (2025) in eLife.",
 "cover_url": "",
 "authors": "Ahmed Rishiq, Johanna Galski, Reem Bsoul et al.",
 "all_authors": [
@@ -56819,7 +56819,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This eLife article is still early in its citation life, but it already shows a documented downstream reuse in Europe PMC.",
+"excerpt": "Short impact summary Rethinking how research is reviewed and published (2026) in eLife.",
 "cover_url": "",
 "authors": "Timothy E.J. Behrens, Yamini Dalal, Diane M. Harper",
 "all_authors": [
@@ -56903,8 +56903,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This book has a clear scholarly and educational footprint through its open-access availability and its alignment with the theme of Zero hunger, which suggests relevance beyond cla…",
-"cover_url": "",
+"excerpt": "Short impact summary Plutarch's Science of Natural Problems (2017), published by Leuven University Press, has no recorded citations, downloads or public discussion yet.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/70f20aa4-3896-4bc8-9dfe-3f38350621b4/retrieve",
 "authors": "Michiel Meeusen",
 "all_authors": [
 "Michiel Meeusen"
@@ -56985,8 +56985,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Militant Jihadism shows early but meaningful reach for a 2019 scholarly book: it has been downloaded 3,330 times through OAPEN, is openly available in hybrid form, and is held in …",
-"cover_url": "",
+"excerpt": "Short impact summary Militant Jihadism (2019), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 3,330 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/12497e96-3956-4c42-89d5-63eb6c11e136/retrieve",
 "authors": "Serafettin Pektas, Johan Leman",
 "all_authors": [
 "Serafettin Pektas",
@@ -57061,8 +57061,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary The Figure of Knowledge shows clear signs of use and reach for a scholarly book in architectural theory: it has 2,817 recorded downloads and is available in open form through mult…",
-"cover_url": "",
+"excerpt": "Short impact summary The Figure of Knowledge (2020), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 2,817 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/c7aaab81-b6ea-42c9-ba3d-77d1c0b1c401/retrieve",
 "authors": "Sebastiaan Loosen, Rajesh Heynickx, Hilde Heynen",
 "all_authors": [
 "Sebastiaan Loosen",
@@ -57146,8 +57146,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This scholarly book shows clear signs of public reach and ongoing use.",
-"cover_url": "",
+"excerpt": "Short impact summary Japan’s Book Donation to the University of Louvain (2020), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 3,926 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/62dd5fd9-aa3e-427e-8042-c22a7fbd9f1e/retrieve",
 "authors": "Jan Schmidt, Willy Vande Walle",
 "all_authors": [
 "Jan Schmidt",
@@ -57229,8 +57229,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Contact Zones shows early signs of use and visibility rather than citation-driven scholarly uptake.",
-"cover_url": "",
+"excerpt": "Short impact summary Contact Zones (2020), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 2,077 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/e495ff3d-f52b-4084-9a01-19c31ad46c65/retrieve",
 "authors": "Justin Carville, Sigrid Lien",
 "all_authors": [
 "Justin Carville",
@@ -57315,8 +57315,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This book shows clear signs of public visibility and active use.",
-"cover_url": "",
+"excerpt": "Short impact summary Fake news in oorlogstijd (2021), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 1,620 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/75b3562e-9042-4fa2-b6bc-d74b22fe319f/retrieve",
 "authors": "Bruno Yammine",
 "all_authors": [
 "Bruno Yammine"
@@ -57400,8 +57400,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Spatial Boundaries, Abounding Spaces shows early signs of reach rather than citation-based uptake: it has 1,502 recorded downloads, a small amount of public discussion captured th…",
-"cover_url": "",
+"excerpt": "Short impact summary Spatial Boundaries, Abounding Spaces (2021), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 1,502 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/623e685c-2faf-48d5-b516-71d865f549c1/retrieve",
 "authors": "Mohit Chandna",
 "all_authors": [
 "Mohit Chandna"
@@ -57489,8 +57489,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Congoville shows early but visible reach across public discourse, teaching, and open access use.",
-"cover_url": "",
+"excerpt": "Short impact summary Congoville (2021), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 1,613 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/b436aaf2-eaa0-458f-912f-b51cd60e4eba/retrieve",
 "authors": "Pieter Boons, Sandrine Colard",
 "all_authors": [
 "Pieter Boons",
@@ -57570,8 +57570,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Congoville is showing early but meaningful reach as an open-access scholarly book in the humanities and art, with 790 recorded downloads and at least one documented teaching-relat…",
-"cover_url": "",
+"excerpt": "Short impact summary Congoville (2021), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 790 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/31f8d3e8-2f5f-4e57-b7ff-af0f05fe7521/retrieve",
 "authors": "Pieter Boons, Sandrine Colard",
 "all_authors": [
 "Pieter Boons",
@@ -57653,8 +57653,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Ubiquity has found its clearest impact in teaching and use: the record shows four YouTube instances discussing the book and 3,549 downloads through OAPEN.",
-"cover_url": "",
+"excerpt": "Short impact summary Ubiquity (2021), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 3,549 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/cf608fbc-f3ad-4da4-91b3-78b1a0effbc8/retrieve",
 "authors": "Jacob W. Lewis, Kyle Parry",
 "all_authors": [
 "Jacob W. Lewis",
@@ -57741,8 +57741,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Protagonists of War shows early evidence of reach and public visibility: it has been downloaded 2,470 times through OAPEN and appears in public reference sources, including Wikipe…",
-"cover_url": "",
+"excerpt": "Short impact summary Protagonists of War (2021), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 2,470 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/2693a5c8-814a-4a2a-af9c-775a92c5220e/retrieve",
 "authors": "Raymond Fagel",
 "all_authors": [
 "Raymond Fagel"
@@ -57825,7 +57825,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary De stad op de berg is an open-access scholarly book with early but real signs of reach: it is available through open repository channels, is listed in library and reader-facing sy…",
+"excerpt": "Short impact summary De stad op de berg (2021), published by Leuven University Press, has no recorded citations, downloads or public discussion yet.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789461664051&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Jo Tollebeek, Liesbet Nys",
 "all_authors": [
@@ -57910,8 +57910,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Character Constellations shows early signs of reach and use: it has been downloaded 1,663 times through OAPEN, has been discussed in public-facing channels indexed by Crossref, an…",
-"cover_url": "",
+"excerpt": "Short impact summary Character Constellations (2021), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 1,663 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/212d2569-d342-4324-8cba-cef20a8daa3d/retrieve",
 "authors": "Roel Smeets",
 "all_authors": [
 "Roel Smeets"
@@ -57999,8 +57999,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This scholarly book is already showing signs of active use: it has 877 recorded downloads and is openly available in hybrid form, which supports broad access beyond the purchase m…",
-"cover_url": "",
+"excerpt": "Short impact summary Martin Versfeld (2021), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 877 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/dbcb1b0a-30e5-4c95-a52f-6a99071816d8/retrieve",
 "authors": "Ernst Wolff",
 "all_authors": [
 "Ernst Wolff"
@@ -58085,8 +58085,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary A Constellation of Courts is showing clear early use through 2,902 recorded downloads, suggesting sustained readership for a scholarly monograph that connects Habsburg courtly com…",
-"cover_url": "",
+"excerpt": "Short impact summary A Constellation of Courts (2021), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 2,902 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/bd978ff0-d7b1-4cf3-abe6-4fc4e7d780dc/retrieve",
 "authors": "René Vermeir, Dries Raeymaekers, José Eloy Hortal Muñoz",
 "all_authors": [
 "René Vermeir",
@@ -58165,8 +58165,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Dies irae shows early but meaningful reach for a scholarly book in music and the humanities: it has been downloaded 1,614 times through OAPEN, is available as open access, and has…",
-"cover_url": "",
+"excerpt": "Short impact summary Dies irae (2021), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 1,614 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/24ee7041-04d1-4b21-8910-668e5aefe0a6/retrieve",
 "authors": "Pieter Bergé",
 "all_authors": [
 "Pieter Bergé"
@@ -58250,8 +58250,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Leaving Spain shows early but clear signs of use and relevance: it has been downloaded 1,453 times through open-access distribution, is aligned with the Sustainable Development Go…",
-"cover_url": "",
+"excerpt": "Short impact summary Leaving Spain (2022), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 1,453 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/4b258e70-a85a-44fc-8207-492c807b5438/retrieve",
 "authors": "Me-Linh Hannah Riemann",
 "all_authors": [
 "Me-Linh Hannah Riemann"
@@ -58336,8 +58336,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2022 Leuven University Press book is positioned as a practical guide for teaching European citizenship, with the strongest evidence of impact coming from sustained use rather…",
-"cover_url": "",
+"excerpt": "Short impact summary Europees burgerschap in de klas (2022), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 1,994 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/e8f12159-ccfd-481e-a78d-b60a5c99af66/retrieve",
 "authors": "Griet Galle, Kris Grimonprez",
 "all_authors": [
 "Griet Galle",
@@ -58426,8 +58426,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Black Matrilineage, Photography, and Representation shows early but meaningful reach for a 2022 scholarly book: it has been downloaded 2,437 times, is available in open access for…",
-"cover_url": "",
+"excerpt": "Short impact summary Black Matrilineage, Photography, and Representation (2022), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 2,437 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/6b6dc097-8caf-45e6-9fc2-585d573ed4f2/retrieve",
 "authors": "Lesly Deschler Canossi, Zoraida Lopez-Diago",
 "all_authors": [
 "Lesly Deschler Canossi",
@@ -58509,7 +58509,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Stilte in de klas shows clear signs of use beyond citation tracking: it has been downloaded 2,627 times and is being discussed in at least one recorded teaching-related video, sug…",
+"excerpt": "Short impact summary Stilte in de klas (2022), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 2,627 times.",
 "cover_url": "https://lup.be/wp-content/uploads/2024/01/jpg_rgb_original-347-scaled.jpg",
 "authors": "Pieter Verstraete",
 "all_authors": [
@@ -58596,8 +58596,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Exploring the Transnational Neighbourhood shows early signs of reach through open access use and policy-relevant framing.",
-"cover_url": "",
+"excerpt": "Short impact summary Exploring the Transnational Neighbourhood (2022), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 1,957 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/7f847e53-8c95-48d1-81f5-d6e5889f0721/retrieve",
 "authors": "Stephan Ehrig, Britta C. Jung, Gad Schaffer",
 "all_authors": [
 "Stephan Ehrig",
@@ -58687,8 +58687,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Mobs and Microbes is showing early scholarly and practical reach through 1,020 recorded downloads, indicating that the book is being actively consulted.",
-"cover_url": "",
+"excerpt": "Short impact summary Mobs and Microbes (2023), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 1,020 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/341c5934-c886-4de8-b29d-f7c050abce9e/retrieve",
 "authors": "Leila Marie Farah, Samantha L. Martin",
 "all_authors": [
 "Leila Marie Farah",
@@ -58782,8 +58782,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Sugar, Spice, and the Not So Nice shows early signs of scholarly and educational use: it has 2,240 recorded downloads, is openly available in hybrid form, and is aligned with the …",
-"cover_url": "",
+"excerpt": "Short impact summary Sugar, Spice, and the Not So Nice (2023), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 2,240 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/1c503f3b-4dce-4180-9816-5483edf87f39/retrieve",
 "authors": "Dona Pursall, Eva Van de Wiele",
 "all_authors": [
 "Dona Pursall",
@@ -58867,8 +58867,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 scholarly book is showing early signs of active use, with 2,035 recorded downloads from the OAPEN platform and open-access availability through a gold OA model.",
-"cover_url": "",
+"excerpt": "Short impact summary Islamophobia as a Form of Radicalisation (2023), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 2,035 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/51787652-b41e-45b4-acf8-373bf93aaece/retrieve",
 "authors": "Leen d’Haenens, Abdelwahed Mekki-Berrada",
 "all_authors": [
 "Leen d’Haenens",
@@ -58950,8 +58950,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Landscapes of Liberation is already showing clear reader interest, with 616 recorded downloads and open availability through a hybrid-access route.",
-"cover_url": "",
+"excerpt": "Short impact summary Landscapes of Liberation (2023), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 616 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/9acb5892-f456-4053-9778-f6fa95589e14/retrieve",
 "authors": "Noah Oehri",
 "all_authors": [
 "Noah Oehri"
@@ -59029,8 +59029,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Watching, Waiting shows clear signs of active use, with 1,660 recorded downloads and open access availability through a hybrid distribution model.",
-"cover_url": "",
+"excerpt": "Short impact summary Watching, Waiting (2023), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 1,660 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/0a6db3da-565e-4eb0-98f8-af76633b0b16/retrieve",
 "authors": "Sandra Križić Roban, Ana Šverko",
 "all_authors": [
 "Sandra Križić Roban",
@@ -59119,8 +59119,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Modern Etruscans shows early signs of reach and reuse: the book has been downloaded 1,093 times, is available as open access, and aligns strongly with Quality Education.",
-"cover_url": "",
+"excerpt": "Short impact summary Modern Etruscans (2023), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 1,093 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/150a12d1-b8e5-4a32-9ec0-95108832638a/retrieve",
 "authors": "Chiara Zampieri, Martina Piperno, Bart Van den Bossche",
 "all_authors": [
 "Chiara Zampieri",
@@ -59207,8 +59207,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Building a White Nation shows early signs of use and reach: it has been downloaded 1,305 times through OAPEN, and the record also shows institutional support from KU Leuven and Fr…",
-"cover_url": "",
+"excerpt": "Short impact summary Building a White Nation (2023), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 1,305 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/5cad67ce-7aaa-44fe-b338-aac048140901/retrieve",
 "authors": "Katharina Jörder",
 "all_authors": [
 "Katharina Jörder"
@@ -59290,8 +59290,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Comics of the New Europe shows early signs of real use and reach: it has been downloaded 2,249 times, appears to have informed two recorded discussions, and was supported through …",
-"cover_url": "",
+"excerpt": "Short impact summary Comics of the New Europe (2023), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 2,249 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/c0a82e22-0612-4a19-b3f6-6205d4389484/retrieve",
 "authors": "Martha Kuhlman, José Alaniz",
 "all_authors": [
 "Martha Kuhlman",
@@ -59375,8 +59375,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This revised scholarly book shows clear signs of active use rather than citation-based impact: it has been downloaded 1,206 times, is available open access, and is aligned with Qu…",
-"cover_url": "",
+"excerpt": "Short impact summary Alles verandert altijd - Herziene editie (2024), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 1,206 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/3f5fcda1-57d5-4635-b696-f05c82705ae7/retrieve",
 "authors": "Lieven D'hulst, Chris Van de Poel",
 "all_authors": [
 "Lieven D'hulst",
@@ -59464,8 +59464,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2024 scholarly book is already showing early signs of use, with 962 recorded downloads and open-access availability through an academic repository.",
-"cover_url": "",
+"excerpt": "Short impact summary An Opaque Mirror For Trajan (2024), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 962 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/2d95d0f1-bdc1-40d4-ba2c-c1b56dd33d93/retrieve",
 "authors": "Laurens van der Wiel",
 "all_authors": [
 "Laurens van der Wiel"
@@ -59551,8 +59551,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Collecting Asian Art shows clear early use through 1,733 OAPEN downloads and open-access availability, with additional support from KU Leuven and FWF - Der Wissenschaftsfonds.",
-"cover_url": "",
+"excerpt": "Short impact summary Collecting Asian Art (2024), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 1,733 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/9cb19208-48c4-4dcf-956a-68bac37ee807/retrieve",
 "authors": "Markéta Hánová, Yuka Kadoi, Simone Wille",
 "all_authors": [
 "Markéta Hánová",
@@ -59645,8 +59645,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "The Nature of the Game shows clear early use as an open-access scholarly book, with 1,489 recorded downloads and repository availability through multiple open instances.",
-"cover_url": "",
+"excerpt": "The Nature of the Game (2023), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 1,489 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/b68a1e33-6743-4061-9319-5331ffe98221/retrieve",
 "authors": "Gerard-Jan Claes, Stéphane Symons",
 "all_authors": [
 "Gerard-Jan Claes",
@@ -59735,8 +59735,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2023 scholarly book shows early but tangible reach: it has been downloaded 1,772 times through OAPEN, is openly accessible, and is aligned with the SDG theme of gender equali…",
-"cover_url": "",
+"excerpt": "Short impact summary Muslim Marriage and Non-Marriage (2023), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 1,772 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/765adf88-1693-4c56-930e-e4b414d1da28/retrieve",
 "authors": "Julie McBrien, Annelies Moors",
 "all_authors": [
 "Julie McBrien",
@@ -59825,8 +59825,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This open-access scholarly book is drawing clear early use, with 2,132 recorded downloads, and it has a visible public-knowledge footprint through mentions in Wikipedia-linked and…",
-"cover_url": "",
+"excerpt": "Short impact summary The Legacy of Elise Hall (2024), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 2,132 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/330ffeaa-bc4e-418d-b62b-7d01c6f6a0c3/retrieve",
 "authors": "Kurt Bertels, Adrianne Honnold",
 "all_authors": [
 "Kurt Bertels",
@@ -59912,8 +59912,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2024 open-access scholarly book is already showing signs of active use, with 468 recorded downloads and a clear alignment with the SDG area of Peace, Justice and strong insti…",
-"cover_url": "",
+"excerpt": "Short impact summary La Monarquía Indiana de Carlos II en la encrujiada (2024), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 468 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/22fb405e-c98f-4cb1-a526-9bf7975334a0/retrieve",
 "authors": "Juan Jiménez Castillo Jiménez Castillo",
 "all_authors": [
 "Juan Jiménez Castillo Jiménez Castillo"
@@ -60082,8 +60082,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Re-Imagining Class is already showing signs of use, with 1,277 recorded downloads and open availability through a repository instance.",
-"cover_url": "",
+"excerpt": "Short impact summary Re-Imagining Class (2024), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 1,277 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/f2dc0831-c721-4382-86db-0849f34a350f/retrieve",
 "authors": "Liesbeth François, Michiel Rys",
 "all_authors": [
 "Liesbeth François",
@@ -60170,8 +60170,8 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Plutarch and Rhetoric shows early evidence of reach through open access availability and sustained use, with 981 recorded downloads and a Quality Education SDG alignment.",
-"cover_url": "",
+"excerpt": "Short impact summary Plutarch and Rhetoric (2024), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 981 times.",
+"cover_url": "https://library.oapen.org/rest/bitstreams/135d7cf4-6dd9-4a95-93f1-d797d95132f5/retrieve",
 "authors": "Theofanis Tsiampokalos",
 "all_authors": [
 "Theofanis Tsiampokalos"
@@ -60249,7 +60249,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Modern Islamic Thinking and Activism shows clear signs of use rather than citation-led scholarly uptake at this stage.",
+"excerpt": "Short impact summary Modern Islamic Thinking and Activism (2014), published by Leuven University Press, has no recorded citations yet, but it has been downloaded 3,350 times.",
 "cover_url": "",
 "authors": "Erkan Toguslu",
 "all_authors": [
@@ -60325,7 +60325,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Mendl Mann’s The Fall of Berlin shows strong signs of active readership, with 5,129 recorded downloads and broader open-access availability through library and publisher platforms…",
+"excerpt": "Short impact summary Mendl Mann’s 'The Fall of Berlin' (2020), published by Open Book Publishers, has no recorded citations yet, but it has been downloaded 5,129 times.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/7625d4f3-bf18-4904-a407-eb48214e1ab5/retrieve",
 "authors": "Mann, Mendel 1916-1975, Wolfthal, Maurice",
 "all_authors": [
@@ -60408,7 +60408,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Harlem in Disorder centers its impact on policy-relevant scholarship: it offers a spatial history of racial violence and a fresh interpretation of the 1935 Harlem disorder as a ne…",
+"excerpt": "Short impact summary Harlem in Disorder: A Spatial History of How Racial Violence Changed in 1935 (2024), published by Stanford University Press, has no recorded citations, downloads or public discuss…",
 "cover_url": "",
 "authors": "Stephen Robertson",
 "all_authors": [
@@ -60487,7 +60487,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Body, Capital, and Screens shows clear early readership through 1,956 OAPEN downloads, while its citation record remains at 0 in OpenAlex.",
+"excerpt": "Short impact summary Body, Capital, and Screens (2020), published by Amsterdam University Press, has no recorded citations yet, but it has been downloaded 1,956 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789048540310&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Christian Bonah, Anja Laukötter",
 "all_authors": [
@@ -60567,7 +60567,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2014 scholarly source collection on Prussian military socialization has generated steady reader engagement, with nearly 2,000 downloads recorded through the OAPEN platform.",
+"excerpt": "Short impact summary Militär und Gesellschaft in Preußen – Quellen zur Militärsozialisation 1713–1806 (2014), published by Peter Lang Verlag, has no recorded citations yet, but it has been downloaded …",
 "cover_url": "https://library.oapen.org/rest/bitstreams/81f8b02f-c67b-4cfb-aeac-9eff4ebb4ddb/retrieve",
 "authors": "Jürgen Kloosterhuis, Bernhard R. Kroener, Klaus Neitmann et al.",
 "all_authors": [
@@ -60640,7 +60640,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary El mundo de atrás , published by Peter Lang Verlag in 2019 and authored by Claudio Canaparo, remains early in its citation trajectory with no recorded citations in OpenAlex as of …",
+"excerpt": "Short impact summary El mundo de atrás (2019), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781788743655&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Claudio Canaparo",
 "all_authors": [
@@ -60710,7 +60710,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Narrativas periféricas is a 2019 scholarly monograph on history published by Peter Lang Verlag as part of the peer-reviewed \"Exiles and Transterrados\" series.",
+"excerpt": "Short impact summary Narrativas periféricas (2019), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781433163180&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Iliana Olmedo",
 "all_authors": [
@@ -60788,7 +60788,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary The Curriculum of Horror , published by Peter Lang Verlag in 2019, explores the intersection of horror, art, and pedagogy within curriculum design.",
+"excerpt": "Short impact summary The Curriculum of Horror (2019), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781433163227&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "James V. Grant",
 "all_authors": [
@@ -60863,7 +60863,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary The Economy and Meaningfulness (2019) addresses the intersection of economic life and human well-being through a philosophical lens.",
+"excerpt": "Short impact summary The Economy and Meaningfulness (2019), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9782807609648&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Hendrik Opdebeeck",
 "all_authors": [
@@ -60943,7 +60943,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2019 scholarly book examines World War II's transformative impact on Africa and colonial relationships, addressing themes central to peace and institutional justice.",
+"excerpt": "Short impact summary World War II Re-explored (2019), published by Peter Lang Verlag, has no recorded citations yet, but it is discussed on Wikipedia.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9783631777404&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Jarosław Suchoples, Stephanie James, Barbara Törnquist-Plewa",
 "all_authors": [
@@ -61023,7 +61023,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2020 book from Peter Lang addresses cultural diversity in 21st-century workplaces, a topic aligned with the UN Sustainable Development Goal on reduced inequalities.",
+"excerpt": "Short impact summary Les défis de la diversité culturelle dans le monde du travail au XXIe siècle (2020), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9782807610828&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Ariane Le Moing, Saïd Ouaked, Christèle Le Bihan",
 "all_authors": [
@@ -61109,7 +61109,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Samuel Shaw's monograph on William Rothenstein enters a scholarly landscape where this influential twentieth-century British artist remains understudied.",
+"excerpt": "Short impact summary Art, Identity and Cosmopolitanism (2024), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1330533/large.webp",
 "authors": "Samuel Shaw",
 "all_authors": [
@@ -61186,7 +61186,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Embodied Books (2024) is a recent scholarly monograph examining how handmade artists' books engage the senses to communicate lived experiences of illness and disability.",
+"excerpt": "Short impact summary Embodied Books (2024), published by Peter Lang Verlag, has no recorded citations yet, but it is used in teaching.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781800798182&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Darian Goldin Stahl",
 "all_authors": [
@@ -61259,7 +61259,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary The Irish Against the War is a 2024 scholarly monograph published by Peter Lang Verlag as part of the established Reimagining Ireland series.",
+"excerpt": "Short impact summary The Irish Against the War (2024), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781803740485&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Marie-Violaine Louvet",
 "all_authors": [
@@ -61340,7 +61340,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Published in 2023 by Peter Lang Verlag, Fire Burning in My Head is a clinical psychology monograph that bridges spirituality and mental health through the author's introspective c…",
+"excerpt": "Short impact summary Fire Burning in My Head (2023), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781636670461&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "David Y. F. Ho",
 "all_authors": [
@@ -61421,7 +61421,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Published in 2023 by Peter Lang Verlag as part of the established \"Travail et Société / Work and Society\" series, this book by Andrea Maria Locatelli and Cecilia Maria Bravi addre…",
+"excerpt": "Short impact summary Christian Democracy and Labour after World War II (2023), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1313443/large.webp",
 "authors": "Andrea Maria Locatelli, Cecilia Maria Bravi",
 "all_authors": [
@@ -61503,7 +61503,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Compositions, A Life is a scholarly autoethnography published in 2023 by Peter Lang Verlag as part of the Counterpoints series.",
+"excerpt": "Short impact summary Compositions, A Life (2023), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1311827/large.webp",
 "authors": "Judith Summerfield",
 "all_authors": [
@@ -61573,7 +61573,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Contemporary Issues on Adolescents and Counseling , published by Peter Lang Verlag in 2024, addresses a critical phase of human development through the lens of counseling psycholo…",
+"excerpt": "Short impact summary Contemporary Issues on Adolescents and Counseling (2024), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781636670690&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Ruth A. Aderanti, Abiodun M. Gesinde",
 "all_authors": [
@@ -61651,7 +61651,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Published in 2024 by Peter Lang Verlag, Digital Visual Art Education addresses a gap in scholarly literature by proposing a unified framework for studying digital media in visual …",
+"excerpt": "Short impact summary Digital Visual Art Education (2024), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781433195624&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Robert Sweeny",
 "all_authors": [
@@ -61722,7 +61722,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Published in 2024 by Peter Lang Verlag, Luc de Brabandere's The Art of Thinking in a Digital World presents a synthesis of logical, creative, and critical thinking across three de…",
+"excerpt": "Short impact summary The Art of Thinking in a Digital World (2024), published by Peter Lang Verlag, has no recorded citations yet, but it is used in teaching.",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1436624/large.webp",
 "authors": "Luc de Brabandere",
 "all_authors": [
@@ -61803,7 +61803,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Published in 2024 by Peter Lang Verlag within the established \"Travail et Société / Work and Society\" series, this monograph by Silvia Carbone examines how knowledge and practical…",
+"excerpt": "Short impact summary Knowledge and practical knowledge (2024), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
 "cover_url": "https://cdn.openpublishing.com/thumbnail/products/1438907/large.webp",
 "authors": "Silvia Carbone",
 "all_authors": [
@@ -61888,7 +61888,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Baker’s Abortion Pills is already showing early reach as a pedagogical and policy-relevant book: it has been downloaded 179 times through OAPEN, appears in library holdings, and is being discussed in …",
+"excerpt": "Short impact summary Abortion Pills (2024), published by Amherst College Press, has no recorded citations yet, but it has been downloaded 179 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9781943208852&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Carrie Baker",
 "all_authors": [
@@ -61965,7 +61965,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Women in the Silent Cinema shows clear signs of active readership and open access reach.",
+"excerpt": "Short impact summary Women in the Silent Cinema (2017), published by Amsterdam University Press, has no recorded citations yet, but it has been downloaded 1,654 times.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789048524518&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Annette Förster",
 "all_authors": [
@@ -62037,7 +62037,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Islam in a Secular State is a 2025 scholarly book by Walid Jumblatt Abdullah with an early and still limited impact record.",
+"excerpt": "Short impact summary Islam in a Secular State (2025), published by Taylor & Francis, has no recorded citations, downloads or public discussion yet.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789463724012&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Walid Jumblatt Abdullah",
 "all_authors": [
@@ -62121,7 +62121,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Zenodo software release shows clear early use, with 296 downloads and 1,285 views recorded.",
+"excerpt": "Short impact summary stineb/rpmodel: Stocker et al.",
 "cover_url": "",
 "authors": "Stocker, Benjamin",
 "all_authors": [
@@ -62210,7 +62210,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Sisters in Science shows clear early scholarly and educational reach rather than citation-based uptake: it has 416 OAPEN downloads, appears in teaching-related contexts including …",
+"excerpt": "Short impact summary Sisters in Science (2006), published by Purdue University, has no recorded citations yet, but it has been downloaded 416 times.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/d618778c-cb80-4296-bbc4-14f15cdc3052/retrieve",
 "authors": "Diann Jordan",
 "all_authors": [
@@ -62289,7 +62289,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This scholarly book shows early but meaningful uptake: it has 859 recorded downloads, is held by libraries, and appears in open-access discovery systems, indicating real reader ac…",
+"excerpt": "Short impact summary The international politics of the Middle East (2018), published by Manchester University Press, has no recorded citations yet, but it has been downloaded 859 times.",
 "cover_url": "",
 "authors": "Raymond Hinnebusch",
 "all_authors": [
@@ -62366,7 +62366,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Deaf mobility studies: Exploring international networks, tourism, and migration (2024), published by Gallaudet University Press, has no recorded citations, downloads or public dis…",
-"cover_url": "",
+"cover_url": "https://library.oapen.org/rest/bitstreams/e9f9cfd5-2fb2-41f8-8313-68e16df4c952/retrieve",
 "authors": "Annelies Kusters, Erin Moriarty, Amandine Le Maire et al.",
 "all_authors": [
 "Annelies Kusters",
@@ -62453,7 +62453,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This CaltechDATA dataset provides the real-time files, session metadata, and variable descriptions supporting a study on decoding motor plans with a closed-loop ultrasonic brain-m…",
+"excerpt": "Short impact summary Dataset for: Decoding Motor Plans Using a Closed-Loop Ultrasonic Brain-Machine Interface (2022) in CaltechDATA.",
 "cover_url": "",
 "authors": "Griggs, Whitney, Norman, Sumner, Deffieux, Thomas et al.",
 "all_authors": [
@@ -62549,7 +62549,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This CaltechDATA dataset currently shows one documented downstream reuse, through its associated article.",
+"excerpt": "Short impact summary The impact of package selection and versioning on single-cell RNA-seq analysis (2025) in CaltechDATA.",
 "cover_url": "",
 "authors": "Rich, Joseph, Pachter, Lior",
 "all_authors": [
@@ -62626,7 +62626,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This 2017 Figshare dataset offers a survey of how ORCID was being used in book workflows, with the main contribution lying in documenting an emerging publishing practice rather th…",
+"excerpt": "Short impact summary ORCID in Book Workflows: Survey (2017) in Figshare.",
 "cover_url": "",
 "authors": "terence smyre, 0000-0001-7094-8102, Smyre, Terence et al.",
 "all_authors": [
@@ -62730,7 +62730,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2025 Materials Cloud dataset is an early but clearly reusable record: it is linked to six associated articles and one additional biomedical article mention, giving it seven d…",
+"excerpt": "Short impact summary One dimensional edge localized YSR states in CrCl₃ on NbSe₂ (2025) in NCCR MARVEL.",
 "cover_url": "",
 "authors": "Cuperus, Jan P., Kole, Arnold H., Botello-Méndez, Andrés R. et al.",
 "all_authors": [
@@ -62817,7 +62817,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2025 dataset has a modest but already documented reuse record: seven downstream associated articles have been linked to it, showing that the underlying data and methods are b…",
+"excerpt": "Short impact summary One dimensional edge localized YSR states in CrCl₃ on NbSe₂ (2025) in NCCR MARVEL.",
 "cover_url": "",
 "authors": "Cuperus, Jan P., Kole, Arnold H., Botello-Méndez, Andrés R. et al.",
 "all_authors": [
@@ -62904,7 +62904,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary This 2024 dataset documents the SIESTA-BdG implementation for solving Bogoliubov-de Gennes and density functional theory problems within SIESTA, supporting superconductivity resea…",
+"excerpt": "Short impact summary Density functional Bogoliubov-de Gennes theory for superconductors implemented in the SIESTA code (2024) in NCCR MARVEL.",
 "cover_url": "",
 "authors": "Reho, Riccardo, Wittemeier, Nils, Kole, Arnold Herman et al.",
 "all_authors": [
@@ -62991,7 +62991,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Janelia/figshare dataset provides cellular-resolution confocal imagery of Drosophila GAL4 expression patterns, a resource designed to improve neuron and cell-type identificat…",
+"excerpt": "Short impact summary Drosophila GAL4 brain imagery (2023) in Figshare.",
 "cover_url": "",
 "authors": "Meissner, Geoffrey, Nern, Aljoscha, Dorman, Zachary et al.",
 "all_authors": [
@@ -63110,7 +63110,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Dryad dataset from a Johns Hopkins research team has seen early but measurable use: Datacite records 178 views and 18 downloads.",
+"excerpt": "Short impact summary Enhanced mTORC1 signaling and protein synthesis in pathologic alpha-synuclein cellular and animal models of Parkinson’s disease (2023) in Dryad.",
 "cover_url": "",
 "authors": "Dawson, Ted, Dawson, Valina, Khan, Mohammed et al.",
 "all_authors": [
@@ -63214,7 +63214,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Dryad dataset shows early signs of use and reuse in the research record: 38 downloads, 361 views, and two documented downstream reuse events.",
+"excerpt": "Short impact summary Uncovering circuit mechanisms of current sinks and sources with biophysical simulations of primary visual cortex (2022) in Dryad.",
 "cover_url": "",
 "authors": "Rimehaug, Atle, Stasik, Alexander, Hagen, Espen et al.",
 "all_authors": [
@@ -63307,7 +63307,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Dryad dataset is already showing active use: it has been viewed 781 times and downloaded 247 times, and it has documented downstream reuse in four records.",
+"excerpt": "Short impact summary Data for: Emergent dynamics of adult stem cell lineages from single nucleus and single cell RNA-Seq of Drosophila testes (2023) in Dryad.",
 "cover_url": "",
 "authors": "DiNardo, Stephen, Fuller, Margaret, Raz, Amelie",
 "all_authors": [
@@ -63393,7 +63393,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": false,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Dryad dataset is still early in its visible use: it has 4 recorded downloads and no citations, scite links, or public mentions in the available record.",
+"excerpt": "Short impact summary Home alone: Remote work, isolation, and mental health (2026) in Dryad.",
 "cover_url": "",
 "authors": "Natalia Emanuel, Amanda Pallais, Emma Harrington",
 "all_authors": [
@@ -63479,7 +63479,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary FISBe is a dataset built to support instance segmentation of long-range, thin filamentous structures in 3D multicolor light microscopy, with the record showing early but tangible …",
+"excerpt": "Short impact summary FISBe: A real-world benchmark dataset for instance segmentation of long-range thin filamentous structures (2024) in Zenodo.",
 "cover_url": "",
 "authors": "Mais, Lisa, Hirsch, Peter, Managan, Claire et al.",
 "all_authors": [
@@ -63571,7 +63571,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This dataset shows early but concrete uptake: 49 recorded downloads, 236 views, and one documented downstream reuse.",
+"excerpt": "Short impact summary Essential meaning word scores for ousiometric framework of Goodness-Power-Aggression-Danger-Structure (GPADS) (2026) in Zenodo.",
 "cover_url": "",
 "authors": "Dodds, Peter Sheridan",
 "all_authors": [
@@ -63653,7 +63653,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Zenodo-hosted dataset shows early but real uptake: 288 downloads and 297 views indicate active use, and the record already includes 3 documented downstream reuse instances.",
+"excerpt": "Short impact summary Archetypometrics dataset (2025) in Zenodo.",
 "cover_url": "",
 "authors": "Dodds, Peter Sheridan",
 "all_authors": [
@@ -63735,7 +63735,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This dataset shows early practical uptake: Zenodo records 657 downloads and 5,934 views.",
+"excerpt": "Short impact summary Classification of research publications based on data from OpenAlex (2025) in Zenodo.",
 "cover_url": "",
 "authors": "Van Eck, Nees Jan",
 "all_authors": [
@@ -63810,7 +63810,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary CORDA Dataset shows early but tangible use: the record reports 1,366 downloads and one documented downstream reuse.",
+"excerpt": "Short impact summary CORDA Dataset (2023) in Zenodo.",
 "cover_url": "",
 "authors": "Marta Alesina, Carlo Alberto Barbano, Claudio Berzovini et al.",
 "all_authors": [
@@ -63918,7 +63918,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Figshare-hosted dataset provides the supplementary tables for a 2024 study on high-capacity sample multiplexing in single-cell chromatin accessibility profiling.",
+"excerpt": "Short impact summary Additional file 2 of High-capacity sample multiplexing for single cell chromatin accessibility profiling (2024) in Figshare.",
 "cover_url": "",
 "authors": "Booth, Gregory T., Daza, Riza M., Srivatsan, Sanjay R. et al.",
 "all_authors": [
@@ -64009,7 +64009,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This open Figshare dataset for the Tsvekov lab’s FDX1 DMS work is still early in its documented impact profile, but it already shows one downstream reuse in a biomedical article.",
+"excerpt": "Short impact summary FDX1 DMS - Tsvekov lab (2025) in Figshare.",
 "cover_url": "",
 "authors": "Kwon, Jason",
 "all_authors": [
@@ -64089,7 +64089,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Figshare dataset shows early but concrete reuse: it has one documented downstream mention in Europe PMC, while the citation record in OpenAlex remains at zero.",
+"excerpt": "Short impact summary How to edit a manuscript on GitHub with Manubot (2019) in Figshare.",
 "cover_url": "",
 "authors": "Slochower, David, Himmelstein, Daniel",
 "all_authors": [
@@ -64170,7 +64170,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This software record shows early but tangible uptake: 56 downloads, 178 views, and one documented downstream reuse in a biomedical article.",
+"excerpt": "Short impact summary dms-vep/Flu_H5_American-Wigeon_South-Carolina_2021-H5N1_DMS: Flu_H5_American-Wigeon_South-Carolina_2021-H5N1_DMS_PLOSbiology (2024) in Zenodo.",
 "cover_url": "",
 "authors": "Bernadeta Dadonaite, Jesse Bloom, Will Hannon et al.",
 "all_authors": [
@@ -64256,7 +64256,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": true,
-"excerpt": "Short impact summary This Zenodo software release has a small but clear evidence trail: it is openly available, linked to a GitHub source release, and already shows one documented downstream reuse in …",
+"excerpt": "Short impact summary wsgriggs2/rt_fUS_BMI: v0.1.0 - First stable release of real-time fUS-BMI code (2023) in Zenodo.",
 "cover_url": "",
 "authors": "Griggs, Whitney",
 "all_authors": [

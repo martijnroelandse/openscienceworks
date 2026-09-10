@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -379,15 +397,7 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -420,12 +430,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This Figshare dataset has already shown early scholarly uptake: it has 2 OpenAlex citations and 3 documented downstream reuse signals. The strongest evidence comes from a 2023 preprint and a 2024 Nature Communications article that both cite the dataset in work on beta cell primary cilia, suggesting that the resource is being used in active, high-visibility research on pancreatic function and diabetes.</p>
+<p class="story-text">Isotropic 3D electron microscopy reference data of isolated murine pancreatic islets treated with high glucose (jrc_mus-pancreas-1) (2020) in Figshare. 2 citations.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">The dataset provides isotropic 3D electron microscopy reference data for isolated murine pancreatic islets treated with high glucose, supporting structural work at nanometer resolution. Its impact record is still early, but the available evidence points to meaningful scholarly reuse rather than isolated retrieval: OpenAlex records 2 citations, and Crossref data citations show that the dataset was cited as a dataset in both a 2023 preprint and a 2024 journal article.</p>
-<p class="story-text">The citing literature is especially notable for its venue mix and subject alignment. One downstream use appeared first in bioRxiv and then in Nature Communications, both centered on beta cell primary cilia and pancreatic function. That pattern indicates that the dataset is being taken up in research that is closely related to the original biological system and imaging approach, rather than only being mentioned tangentially.</p>
-<p class="story-text">Beyond formal citations, the reuse graph shows additional documented reuse activity, including an article, a preprint, and a biomedical article mention in Europe PMC. The record does not show social-media or broader public-discourse signals, and usage data remain modest, with 6 recorded views and no downloads in the available DataCite record. Taken together, this is a small but credible early impact profile: limited in volume, but anchored by direct scholarly reuse in relevant, visible research.</p>
-<p class="story-text">Authorship and institutional signals also suggest a resource embedded in a collaborative research network. The dataset is associated with Howard Hughes Medical Institute and Janelia-linked contributors, and the citing works draw on an international, multi-institutional team. In that context, the dataset appears to function as a reusable imaging reference for specialized cell-biological and diabetes-related work, with its main value currently visible in citation-based reuse rather than in public attention.</p></div>
+<p class="story-text">Isotropic 3D electron microscopy reference data of isolated murine pancreatic islets treated with high glucose (jrc_mus-pancreas-1) (2020) in Figshare is authored by Xu, C. Shan, Pang, Song and Bennett, Davis. Topics: Islet, Cell biology, Pancreatic islets, Electron microscope and Chemistry.</p>
+<p class="story-text">2 citations (OpenAlex). Citations peaked in 2023 with 1 citing works. Citing venues include bioRxiv (Cold Spring Harbor Laboratory) and Nature Communications.</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1336,7 +1345,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:42+00:00
+                    Generated on 2026-09-10T21:43:27+00:00
                 </div>
                 
             </div>

@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -379,15 +397,7 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -420,12 +430,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">APT: Animal Part Tracker v0.3.4 shows clear scholarly uptake for a software tool focused on animal pose tracking. It has 11 citations in OpenAlex and 11 documented downstream reuses, with most citing works appearing as preprints and research articles in high-profile venues. The record suggests early but meaningful adoption, especially in neurobiology and insect behavior research.</p>
+<p class="story-text">APT: Animal Part Tracker v0.3.4 (2022) in Zenodo. 11 citations.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">APT: Animal Part Tracker v0.3.4 is a machine-learning software package for tracking animal pose and posture in video, designed to work across species and experimental settings. The impact record points to a tool that has moved quickly into active use: OpenAlex shows 11 citations, and the reuse graph also captures 11 downstream works that draw on the software. Most of those citing works are preprints, indicating that the tool is already shaping research in progress rather than waiting only for finished journal articles.</p>
-<p class="story-text">The citing literature is especially concentrated in neurobiology and insect behavior, with strong representation from animal behavior and locomotion research. The most visible citations come from venues such as eLife, bioRxiv, Cell, Current Biology, and Nature, which suggests that APT has been incorporated into work with substantial disciplinary reach. This pattern is consistent with a tool that fills a practical need in high-resolution behavioral analysis and can be integrated into multiple experimental pipelines.</p>
-<p class="story-text">The temporal pattern also supports a story of rapid uptake. Citations begin in 2023 and continue through 2024 and 2025, showing sustained attention after release rather than a one-time burst. The downstream works include both preprints and peer-reviewed articles, which indicates that APT is being used across the research lifecycle, from preliminary dissemination to published studies.</p>
-<p class="story-text">At the same time, the broader visibility record is modest outside scholarly reuse: there are no recorded online mentions in the supplied event-data sources, and the DataCite record shows no views or downloads in the digest. That does not diminish the evidence of academic use; it simply means the strongest documented signal here is citation and reuse within research rather than public-facing attention. The available record portrays APT as a specialized but influential software tool with clear uptake in the scientific community.</p></div>
+<p class="story-text">APT: Animal Part Tracker v0.3.4 (2022) in Zenodo is authored by Kabra, Mayank, Lee, Allen and Robie, Alice. Topics: Computer science, Workstation, Tracking (education), Graphical user interface and Software.</p>
+<p class="story-text">11 citations (OpenAlex). Citations peaked in 2024 with 5 citing works. Citing venues include eLife, bioRxiv (Cold Spring Harbor Laboratory) and Cell.</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1571,7 +1580,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:48+00:00
+                    Generated on 2026-09-10T21:43:33+00:00
                 </div>
                 
             </div>

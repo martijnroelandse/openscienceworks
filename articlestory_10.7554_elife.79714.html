@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -377,15 +395,7 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -429,12 +439,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This 2023 eLife Sciences Publications Ltd article has seen strong and rapid scholarly uptake, with 67 OpenAlex citations placing it in the top 1% of works in its field and year. Its influence is especially visible in ancient-DNA and archaeology research, where it is already being reused by papers, preprints, reviews, and a small number of book chapters. The work has also entered public-facing discussion, including Wikipedia references and a few news mentions.</p>
+<p class="story-text">Stable population structure in Europe since the Iron Age, despite high mobility (2023) in eLife Sciences Publications Ltd. Top 1% most-cited for its field and year.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">The article’s impact is anchored first in its citation record. With 67 citations, it has accumulated clear academic attention in a short time, and the citation trajectory shows particularly fast uptake after publication. The citing literature is concentrated in ancient DNA, forensic and genetic research, bioarchaeology, and historical archaeology, indicating that the paper is being used as a reference point well beyond its immediate topic of Iron Age and later European population structure.</p>
-<p class="story-text">Its reuse pattern suggests that the findings have become part of an active research conversation rather than remaining a one-off result. The downstream literature includes many research articles and a substantial number of preprints, along with a smaller set of reviews and book chapters. Recent citing works span studies of regional ancient genomes and broader syntheses, which is consistent with the paper serving as a methodological and interpretive baseline for later work on mobility, ancestry, and population continuity.</p>
-<p class="story-text">The article is also visible in public and semi-public scholarly spaces. Wikipedia references on topics including Eurasian backflow, Goths, and the genetic history of North Africa show that the paper has been used to support broader explanatory narratives. Event-data records also capture two news items discussing the study, reflecting some outreach beyond specialist circles. A WorldCat holding record further suggests that the work is available in library collections.</p>
-<p class="story-text">Open and transparent research practices likely helped its circulation: the article is gold open access, the record includes linked peer reviews, and one cited dataset is registered in the bibliography. The funding footprint includes support from the Austrian Science Fund, NIH-related awards, the National Science Foundation, and Howard Hughes Medical Institute, underscoring the scale and collaborative nature of the project. Overall, the record shows a paper with early but already substantial influence, especially within ancient-DNA scholarship and adjacent historical disciplines.</p></div>
+<p class="story-text">Stable population structure in Europe since the Iron Age, despite high mobility (2023) in eLife Sciences Publications Ltd is authored by Margaret L. Antonio, Clemens L. Weiß and Ziyue Gao. Topics: Biological dispersal, Population, Demographic history, Geography and Prehistory.</p>
+<p class="story-text">67 citations (OpenAlex). Citations peaked in 2025 with 35 citing works. Citing venues include bioRxiv (Cold Spring Harbor Laboratory), Genome biology and Cell.</p>
+<p class="story-text">It is discussed on Wikipedia (3 mentions). 6 online mentions.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -3130,7 +3139,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:12+00:00
+                    Generated on 2026-09-10T21:42:58+00:00
                 </div>
                 
             </div>

@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -375,15 +393,7 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -416,12 +426,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This article has attracted strong scholarly uptake: OpenAlex records 64 citations, placing it in the top 1% of works in its field and year. The citing record is concentrated in corpus linguistics and pragmatics venues, indicating that the paper is being used as a reference point for methodologically oriented work on LLM-assisted annotation.</p>
+<p class="story-text">Assessing the potential of LLM-assisted annotation for corpus-based pragmatics and discourse analysis (2024) in International Journal of Corpus Linguistics. Top 1% most-cited for its field and year.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Yu, Li, Su, and Fuoli’s 2024 article addresses a practical bottleneck in corpus-based pragmatics and discourse analysis: the difficulty of annotating complex pragmatic features reliably at scale. Its impact profile shows that this methodological contribution quickly found an audience, with 64 citations and a field-normalized standing in the top 1% for its publication year. The citation pattern is especially notable for appearing across journals and edited volumes closely aligned with corpus linguistics, pragmatics, and natural language processing.</p>
-<p class="story-text">The downstream literature suggests that the article is being used not just as background reading but as a touchstone for new LLM-assisted approaches. It is cited most heavily in corpus-linguistic and pragmatics-oriented venues, and the citing works include studies on automated retrieval of speech acts, corpus pragmatics, and LLM use in text linguistics teaching and analysis. That mix points to methodological influence across both research and pedagogy, with the paper helping frame how researchers think about form-function annotation workflows.</p>
-<p class="story-text">Scite also records 20 citation statements, including supporting mentions, which is consistent with the article’s role as an enabling methodological source rather than a contested claim. In addition, the record shows 64 instances of documented reuse and a linked data resource, indicating stewardship beyond the article itself and suggesting that the work sits within a broader, reusable research workflow. The open repository and dataset signals further strengthen its value for researchers seeking to replicate or extend the approach.</p>
-<p class="story-text">Overall, the evidence portrays a paper with clear and early methodological influence in corpus pragmatics and adjacent NLP work. The record is strongest in scholarly reuse and disciplinary citation, while public attention signals are limited in the sources available here. Even so, the combination of high citation standing, concentrated uptake in relevant venues, and reuse of the accompanying research materials indicates that this article has become a meaningful reference for LLM-assisted annotation research.</p></div>
+<p class="story-text">Assessing the potential of LLM-assisted annotation for corpus-based pragmatics and discourse analysis (2024) in International Journal of Corpus Linguistics is authored by Danni Yu, Luyang Li and Hang Su. Topics: Pragmatics, Linguistics, Annotation, Corpus linguistics and Computer science.</p>
+<p class="story-text">64 citations (OpenAlex). Citations peaked in 2025 with 49 citing works. Citing venues include Studies in corpus linguistics, Journal of Pragmatics and SSRN Electronic Journal.</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1926,7 +1935,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:38:39+00:00
+                    Generated on 2026-09-10T21:42:27+00:00
                 </div>
                 
             </div>

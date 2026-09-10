@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -368,30 +386,14 @@
                 
                 <div class="cover-wrap">
                     
-                    <div class="cover-fallback" aria-label="Cover unavailable">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                            <path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3V4z"></path>
-                            <path d="M8 20h11"></path>
-                            <path d="M8 8h7M8 12h7"></path>
-                        </svg>
-                        <div class="cover-fallback-title">Cover pending</div>
-                        <div class="cover-fallback-sub">Image not yet available</div>
-                    </div>
+                    <img src="https://library.oapen.org/rest/bitstreams/e3b70912-f3a7-40eb-9c95-fb793eea3ee3/retrieve" alt="Cover of Comunidad, pertenencia, extrenjería" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -435,12 +437,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This open-access scholarly book is showing early but concrete reach: it has been downloaded 926 times and has received 1 citation to date. Its strongest signal is usage, suggesting that the work is already circulating among readers interested in migration, colonial societies, and questions of belonging and inequality.</p>
+<p class="story-text">Comunidad, pertenencia, extrenjería (2022), published by Leuven University Press, has been cited 1 time. Beyond that, it has been downloaded 926 times.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Published by Leuven University Press in 2022, Comunidad, pertenencia, extranjería examines labor and mercantile migration from the North Sea region to New Spain and argues that these migrants played a strategic role in the expansion and maintenance of the Hispanic monarchy. The book sits across political science, humanities, and philosophy, with thematic alignment to Reduced inequalities, indicating relevance not only for historical scholarship but also for broader discussions of mobility, exclusion, and social difference.</p>
-<p class="story-text">The clearest impact signal in the record is readership. OAPEN download metrics show sustained use, with a total of 926 downloads and noticeable month-to-month variation that includes a stronger peak in March. Because the book is openly available, this usage suggests accessible circulation beyond a narrow specialist audience, although downloads do not by themselves indicate citation or classroom adoption.</p>
-<p class="story-text">Scholarly uptake is still early but present. OpenAlex records 1 citation, appearing in a 2025 book chapter published by Cambridge University Press eBooks. With only a single citation, the evidence is best read as an initial sign of engagement rather than a mature citation pattern. The cited work’s thematic focus on migration and labor dynamics aligns well with the book’s subject matter, reinforcing the book’s relevance to current research on mobility and social formation.</p>
-<p class="story-text">The book’s open-access status, along with support from KU Leuven, the Linnaeus University fund for open access publications, and the LNU Centre for Concurrences in Colonial and Postcolonial Studies, likely helps explain its reach. The record also indicates a dataset citation signal, but it does not provide enough detail to characterize that use further. Overall, the evidence points to a work that is already being read and has begun to enter scholarly conversation, even though the citation base remains small.</p></div>
+<p class="story-text">Comunidad, pertenencia, extrenjería by Eleonora Poggio was published by Leuven University Press in 2022. Conceptually, the work connects to Political science, Humanities and Philosophy.</p>
+<p class="story-text">OpenAlex records 1 citation. Notable citing venues include Cambridge University Press eBooks. The citing authors are based in Spain.</p>
+<p class="story-text">It has been downloaded 926 times via OAPEN. Its subject matter aligns with Reduced inequalities among the Sustainable Development Goals. The work was funded by KU Leuven, Linnaeus University fund for open access publications and LNU Centre for Concurrences in Colonial and Postcolonial Studies.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1062,7 +1063,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:21+00:00
+                    Generated on 2026-09-10T21:43:06+00:00
                 </div>
                 
             </div>

@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -375,15 +393,7 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -416,12 +426,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This preprint introduced FABCON, a fluorogenic complementation toolkit for visualizing lipid droplet-organelle contact sites in living cells, and it has already begun to be reused across the membrane contact-site and fluorescent reporter literature. The record shows an early but credible uptake pattern: 4 citations, 6 documented downstream reuses, and a peer-reviewed article version that extends the work’s reach beyond the preprint.</p>
+<p class="story-text">A fluorogenic complementation tool kit for interrogating lipid droplet-organelle interaction (2023) in bioRxiv (Cold Spring Harbor Laboratory). 4 citations.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">A fluorogenic complementation tool kit for interrogating lipid droplet-organelle interaction addresses a technical bottleneck in cell biology: how to detect lipid droplet contact sites with other organelles at nanometer scale over time without overly perturbing the system being studied. The authors developed FABCON, based on a reversible, low-affinity splitFAST design, to label these contact sites in living cells. That methodological focus fits the work’s concept profile, which centers on organelles, endoplasmic reticulum, lipid droplets, membrane contact sites, and biophysical approaches to cell organization.</p>
-<p class="story-text">The strongest impact signal in the record is not sheer volume but selective reuse in influential venues. The preprint has been cited by work appearing in PLoS Biology, Nature Communications, and Nature Reviews Molecular Cell Biology, including a review focused on defining organelle membrane contact sites. That pattern suggests the paper is being treated as a useful methods reference within an active area of membrane-contact research, rather than as a broadly cited general biology paper.</p>
-<p class="story-text">The downstream reuse record is broader than citations alone. The digest shows 6 documented reuse events, including article, preprint, review, and biomedical article-mention pathways. In addition, the work has a peer-reviewed article version, indicating that the preprint matured into a journal publication and continued to circulate through scholarly channels. Together, these signals point to method adoption and conceptual influence, especially among researchers building or evaluating tools for contact-site imaging.</p>
-<p class="story-text">The citation base is still early, so the evidence should be read as emerging rather than definitive. Even so, the distribution of citing works across high-visibility journals and the presence of reuse in related fluorescent and membrane-dynamics research indicate that the article has found an audience beyond its immediate authorship community. The record supports a narrative of a technical contribution gaining traction in the study of organelle contact biology.</p></div>
+<p class="story-text">A fluorogenic complementation tool kit for interrogating lipid droplet-organelle interaction (2023) in bioRxiv (Cold Spring Harbor Laboratory) is authored by Xiao Li, Rico Gamuyao and Ming-Lun Wu. Topics: Organelle, Endoplasmic reticulum, Lipid droplet, Chemistry and Biogenesis.</p>
+<p class="story-text">4 citations (OpenAlex). Citations peaked in 2024 with 2 citing works. Citing venues include PLoS Biology, Nature Reviews Molecular Cell Biology and bioRxiv (Cold Spring Harbor Laboratory).</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1644,7 +1653,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:38:42+00:00
+                    Generated on 2026-09-10T21:42:30+00:00
                 </div>
                 
             </div>

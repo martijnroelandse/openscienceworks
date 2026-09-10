@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -373,17 +391,12 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-                <li>news_coverage</li>
-            
-            </ul></details>
-        </aside>
+        
+        
+        <details class="no-print" style="margin:.6rem 0 0; font-size:.78rem; color:#6b7280;">
+            <summary style="cursor:pointer; list-style:none;">Some figures carried over from the previous check (news_coverage)</summary>
+            <p style="margin:.4rem 0 0; max-width:60ch;">A source did not respond during the latest refresh, so its previously recorded value is shown rather than being cleared. Not re-verified this run.</p>
+        </details>
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -427,12 +440,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Published in <em>Proceedings of the National Academy of Sciences</em>, this 2023 article has already drawn measurable scholarly attention, with 12 OpenAlex citations and 13 documented downstream reuse events. Its citation footprint is broad enough to suggest that the paper’s model of eukaryotic origin unwinding is being taken up in ongoing work on DNA replication and helicase function.</p>
+<p class="story-text">Mechanism of eukaryotic origin unwinding is a dual helicase DNA shearing process (2023) in Proceedings of the National Academy of Sciences. 12 citations.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Langston, Georgescu, and O’Donnell’s study addresses a central question in DNA replication: how eukaryotic origins are opened to expose single-stranded templates. The paper’s contribution is mechanistically specific and timely, proposing dual-helicase DNA shearing as the basis of origin unwinding in eukaryotes. That framing aligns closely with the article’s core concepts in helicase activity, processivity, and eukaryotic DNA replication, and it places the work squarely in a highly active area of replication biology.</p>
-<p class="story-text">The scholarly record shows that the article is being used beyond a single niche. Citations have accrued steadily since publication, with most appearing in 2024 and additional citations in 2025 and 2026. The citing literature spans research articles, preprints, and a review, and includes venues such as <em>The EMBO Journal</em>, <em>Nature Structural &amp; Molecular Biology</em>, <em>Biochemical Society Transactions</em>, and <em>Current Opinion in Structural Biology</em>. That pattern suggests the paper is serving as a reference point for both primary experiments and synthesis articles on replication initiation.</p>
-<p class="story-text">The downstream reuse signal reinforces that interpretation. The record shows 13 reuse events, including articles, preprints, a review, and an article mention in Europe PMC. Recent citing works focus on closely related questions, such as Mcm10’s role in bracing converging replicative helicases, MCM5 regulation, and broader discussions of genome replication initiation. In other words, the article appears to be helping shape an active mechanistic conversation rather than remaining a standalone finding.</p>
-<p class="story-text">The work also sits within a well-supported research program. The authors are from Rockefeller University, and the paper acknowledges funding from the Howard Hughes Medical Institute and the National Institutes of Health, including NIGMS support. Public-discourse signals in the available record are minimal, so the clearest evidence of impact comes from scholarly reuse and citation rather than media or social attention. Overall, the article’s early impact is strongest in the research literature, where it is being cited and reused in exactly the domain it was designed to inform.</p></div>
+<p class="story-text">Mechanism of eukaryotic origin unwinding is a dual helicase DNA shearing process (2023) in Proceedings of the National Academy of Sciences is authored by Lance D. Langston, Roxana E. Georgescu and Mike O’Donnell. Topics: Processivity, Helicase, Eukaryotic DNA replication, DNA replication and Biology.</p>
+<p class="story-text">12 citations (OpenAlex). Citations peaked in 2024 with 8 citing works. Citing venues include Proceedings of the National Academy of Sciences, The EMBO Journal and Biochemical Society Transactions.</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1565,7 +1577,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:38:38+00:00
+                    Generated on 2026-09-10T21:42:26+00:00
                 </div>
                 
             </div>

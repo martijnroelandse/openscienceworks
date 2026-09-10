@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -374,22 +392,14 @@
                 
                 <div class="cover-wrap">
                     
-                    <img src="https://books.google.com/books/content?vid=ISBN9780472112470&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+                    <img src="https://books.google.com/books/content?vid=ISBN9780472112470&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Quantifying the Impact of Technical Barriers to Trade" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -433,13 +443,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Keith Maskus and John Wilson’s <em>Quantifying the Impact of Technical Barriers to Trade</em> has become a clear reference point in international trade scholarship. With 153 OpenAlex citations, it sits in the top 10% of works for its field and year, and its influence is especially visible in later research on technical regulations, non-tariff measures, trade policy, and export quality. The book’s policy relevance is reinforced by its alignment with sustainability-oriented concerns and its sustained use across economics and trade-oriented research communities.</p>
+<p class="story-text">Quantifying the Impact of Technical Barriers to Trade (2001), published by University of Michigan Press, has been cited 153 times — enough that OpenAlex puts it in the top 10% of works in its field and year.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Published by University of Michigan Press in 2001 as part of the <em>Studies in International Economics</em> series, this book addressed a problem that has only grown more important: how product standards, quality regulations, and performance requirements shape international trade. Its focus on technical barriers to trade, including issues such as genetically modified foods, pesticide use, and computer compatibility standards, gave the work immediate relevance for both trade economics and policy debates.</p>
-<p class="story-text">The citation record shows durable scholarly uptake rather than a short-lived burst of attention. Citations accumulated steadily over time, and the book’s influence spans a wide range of publication types, led by journal articles but also including book chapters, preprints, reports, and dissertations. The citing literature is concentrated in international trade and economics, with strong links to World Trade Organization law, global trade and competitiveness, and development-related research. This pattern suggests that the book has served as a methodological and conceptual anchor for work examining how non-tariff measures affect market access and trade performance.</p>
-<p class="story-text">The venues and authors in the citing landscape further indicate broad disciplinary reach. Citations appear in specialist trade outlets as well as economics journals and policy-facing publications, and the geographic spread of citing work includes the United States, Switzerland, the United Kingdom, Australia, China, South Korea, Malaysia, and Japan. The record also shows repeated engagement by authors working on technical regulations, environmental trade barriers, and export quality, which is consistent with the book’s role as a foundational source for later studies in these areas.</p>
-<p class="story-text">Evidence of community and teaching uptake is also present. Library holdings and subject classifications place the book squarely in international trade, non-tariff trade barriers, free trade, and consumer protection, indicating that it remains discoverable and relevant for study and reference. OpenAIRE records show repository presence, and the book’s inclusion in a major academic series further supports its continued visibility. Public-event data are unavailable in the record, so the most reliable story here comes from sustained scholarly citation and library reach.</p>
-<p class="story-text">Overall, <em>Quantifying the Impact of Technical Barriers to Trade</em> stands as an influential synthesis of trade regulation analysis whose impact is visible in later empirical and policy research. Its citation performance, top-decile standing, and continued resonance in trade, development, and sustainability-oriented debates show that it helped shape how scholars and policymakers think about the trade effects of standards and regulatory measures.</p></div>
+<p class="story-text">Quantifying the Impact of Technical Barriers to Trade by Keith Maskus, John Wilson and others was published by University of Michigan Press in 2001. It is part of the Studies in International Economics series. Conceptually, the work connects to International trade, Economic geography, Business, Geology and Economics.</p>
+<p class="story-text">OpenAlex records 153 citations. That places it in the top 10% of works in its field and year of publication. Citations peaked in 2009 with 32 citing works. Notable citing venues include Cambridge University Press eBooks, SSRN Electronic Journal and World Economy. The citing works include 79 journal articles, 36 book chapters, 18 preprints and 7 reports. They come from 27 countries, led by the United States, Switzerland and the United Kingdom.</p>
+<p class="story-text">It is recorded in 1 library collection. Its subject matter aligns with Partnerships for the goals among the Sustainable Development Goals.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1980,7 +1988,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:39+00:00
+                    Generated on 2026-09-10T21:43:23+00:00
                 </div>
                 
             </div>

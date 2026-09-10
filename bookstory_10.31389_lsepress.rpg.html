@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -368,22 +386,14 @@
                 
                 <div class="cover-wrap">
                     
-                    <img src="https://books.google.com/books/content?vid=ISBN9781911712220&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+                    <img src="https://books.google.com/books/content?vid=ISBN9781911712220&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Renegotiating Patriarchy: Gender, Agency and the Bangladesh Paradox" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -429,12 +439,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Renegotiating Patriarchy: Gender, Agency and the Bangladesh Paradox has already attracted measurable scholarly attention, with 29 OpenAlex citations placing it in the top 1% of cited works for its field and year. It has also seen substantial readership, with 5,589 downloads recorded, and its impact is aligned with SDG 5, gender equality.</p>
+<p class="story-text">Renegotiating Patriarchy: Gender, Agency and the Bangladesh Paradox (2024), published by LSE Press, has been cited 29 times — enough that OpenAlex puts it in the top 1% of works in its field and year. Beyond that, it has been downloaded 5,589 times and is discussed on Bluesky.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Naila Kabeer’s 2024 book examines the “Bangladesh paradox” through the lens of patriarchy, agency, and gendered social change, and the record shows that this framing is being taken up across scholarship. The book’s 29 citations indicate clear academic uptake, and its percentile ranking suggests unusually strong early citation performance for a recent scholarly book. The citing literature is concentrated in social science and gender-focused venues, which is consistent with the book’s interdisciplinary positioning.</p>
-<p class="story-text">The citation landscape also shows that the book is influencing work well beyond a single subfield. Recent citing works include studies on microfinance, women’s empowerment, intimate partner violence, feminist identity, and gender and education, with Bangladesh appearing frequently in the citing record. This pattern suggests that the book is being used not only as a discussion of Bangladesh itself, but also as a conceptual reference point for wider debates about empowerment, inequality, and social transformation.</p>
-<p class="story-text">Readership evidence is strong. The book has recorded 5,589 downloads, indicating sustained access and use in digital channels. It is also openly available, with multiple repository instances recorded, and it has a small but visible online discussion footprint, including one Bluesky mention. These signals point to reach beyond citation-only measures, although they remain lighter than the scholarly uptake seen in the citation record.</p>
-<p class="story-text">The broader record also supports the book’s policy and social relevance. It is aligned with gender equality, and the work was peer reviewed before publication, adding evidence of formal scholarly scrutiny. A LibraryThing record notes that it was a finalist for the ACLS Open Access Book Prize and Arcadia Open Access Publishing Award in the political science category, which further underscores recognition of the book’s contribution. Overall, the evidence depicts a book that is already circulating widely, being cited in diverse scholarly conversations, and establishing a strong early impact profile.</p></div>
+<p class="story-text">Renegotiating Patriarchy: Gender, Agency and the Bangladesh Paradox by Naila Kabeer was published by LSE Press in 2024. Conceptually, the work connects to Patriarchy, Agency (philosophy), Gender studies, Sociology and Political science. The book was recognised: ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Political Science.</p>
+<p class="story-text">OpenAlex records 29 citations. That places it in the top 1% of works in its field and year of publication. Citations peaked in 2025 with 14 citing works. Notable citing venues include Gender & Development, Cambridge University Press eBooks and Gender Work and Organization. The citing works include 23 journal articles, 2 books and 2 book chapters. They come from 14 countries, led by the United Kingdom, Bangladesh and the United States.</p>
+<p class="story-text">It is discussed on Bluesky (1 mention). It has been downloaded 5,589 times via Google Books and OAPEN. A further 1 mention appear in other attention signals. Its subject matter aligns with Gender equality among the Sustainable Development Goals. The work was funded by The London School of Economics and Political Science.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1890,7 +1899,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:30+00:00
+                    Generated on 2026-09-10T21:43:15+00:00
                 </div>
                 
             </div>

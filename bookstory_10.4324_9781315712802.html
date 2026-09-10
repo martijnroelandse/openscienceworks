@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -368,22 +386,14 @@
                 
                 <div class="cover-wrap">
                     
-                    <img src="https://books.google.com/books/content?vid=ISBN9781315712802&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+                    <img src="https://books.google.com/books/content?vid=ISBN9781315712802&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Against Meritocracy" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -429,12 +439,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Jo Littler’s <em>Against Meritocracy</em> has become a widely cited reference point in debates about merit, inequality, and neoliberal legitimation. The book has 319 OpenAlex citations, placing it in the top 1% of works for its field and year, alongside nearly 10,000 recorded OAPEN downloads and a small but visible footprint in public and educational use, including a Wikipedia citation, a formal book review, and a recorded talk that explicitly links to the book.</p>
+<p class="story-text">Against Meritocracy (2017), published by Taylor & Francis, has been cited 319 times — enough that OpenAlex puts it in the top 1% of works in its field and year. Beyond that, it has been downloaded 9,966 times and is used in teaching.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text"><em>Against Meritocracy</em> argues that meritocracy is not a neutral principle of fair competition but a key cultural mechanism through which contemporary neoliberalism justifies inequality. That argument has travelled strongly across scholarly literature: the book is cited in sociology, education, cultural studies, media studies, and related fields, with especially strong uptake in journal articles and book chapters. The citation record shows sustained attention over time, with recent citing works continuing to frame meritocracy in relation to legitimacy, social mobility, gender, education, and cultural recognition.</p>
-<p class="story-text">The citing landscape suggests that the book has been used less as a narrow specialist source than as a conceptual anchor for broader syntheses. It appears most often in education-focused work, but also in scholarship on feminism and media, social policy, cultural industries, and welfare. The venues citing it include established interdisciplinary journals such as the <em>European Journal of Cultural Studies</em>, <em>Feminist Media Studies</em>, and the <em>British Journal of Sociology</em>, indicating that the book’s core argument has resonated across overlapping humanities and social-science conversations. The work’s citation base is geographically broad as well, with the strongest concentration in the United Kingdom and additional use in the United States, Australia, Germany, Canada, and elsewhere.</p>
-<p class="story-text">Usage signals complement the citation record. The book has nearly 10,000 OAPEN downloads, pointing to substantial reader interest in an open-access format, and the monthly pattern shows continuing uptake rather than a one-time spike. Library and discovery data also indicate circulation in academic collections, and the book appears in a YouTube recording from The Sociological Review Foundation, suggesting use in teaching or public scholarly discussion. A single Wikipedia citation to the “myth of meritocracy” page adds a modest sign of public discourse beyond the academy.</p>
-<p class="story-text">Other signals point to durable scholarly and reader-facing visibility. There is one formal book review in the record, and reader-platform traces on sites such as Goodreads, Amazon, and LibraryThing indicate commercial and community discovery, though these are not the same as scholarly uptake. Overall, the record shows a book with strong academic influence, clear interdisciplinary reach, and meaningful open-access readership, especially around debates on social mobility, legitimacy, power, and the politics of inequality.</p></div>
+<p class="story-text">Against Meritocracy by Jo Littler was published by Taylor & Francis in 2017. Conceptually, the work connects to Meritocracy, Political science and Law.</p>
+<p class="story-text">OpenAlex records 319 citations. That places it in the top 1% of works in its field and year of publication. Citations peaked in 2023 with 42 citing works. Notable citing venues include European Journal of Cultural Studies, Cambridge University Press eBooks and Feminist Media Studies. Of 62 citation statements scite has classified, 1 support its claims, 52 mention it in passing, and none contradict it. The citing works include 242 journal articles and 52 book chapters. They come from 40 countries, led by the United Kingdom, the United States and Australia. The citation record includes 1 formal book review.</p>
+<p class="story-text">In teaching, it is discussed in 1 recorded lecture. It is discussed on Wikipedia (1 mention). It has been downloaded 9,966 times via OAPEN. It is recorded in 5 library collections. A further 1 mention appear in other attention signals.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -2253,7 +2262,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:39+00:00
+                    Generated on 2026-09-10T21:43:23+00:00
                 </div>
                 
             </div>

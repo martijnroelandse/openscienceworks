@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -368,30 +386,14 @@
                 
                 <div class="cover-wrap">
                     
-                    <div class="cover-fallback" aria-label="Cover unavailable">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                            <path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3V4z"></path>
-                            <path d="M8 20h11"></path>
-                            <path d="M8 8h7M8 12h7"></path>
-                        </svg>
-                        <div class="cover-fallback-title">Cover pending</div>
-                        <div class="cover-fallback-sub">Image not yet available</div>
-                    </div>
+                    <img src="https://library.oapen.org/rest/bitstreams/cfafcab6-0bef-4218-8bc3-d677f5e13564/retrieve" alt="Cover of Across Anthropology" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -437,13 +439,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Across Anthropology shows clear early uptake as a scholarly and teaching-oriented book: it has been cited 3 times, downloaded 10,212 times through OAPEN, and appears in a recorded discussion tied to museum and curatorial practice. The record also shows institutional support from KU Leuven, Humboldt-Universität zu Berlin, and CARMAH, suggesting the book has circulated across research and pedagogical contexts.</p>
+<p class="story-text">Across Anthropology (2020), published by Leuven University Press, has been cited 3 times. Beyond that, it has been downloaded 10,212 times and is used in teaching.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Across Anthropology is already moving beyond a narrowly disciplinary audience. The strongest evidence is usage: more than 10,000 OAPEN downloads indicate substantial readership, while the book’s presence in open repositories and library holdings points to broad discoverability. Its hybrid open-access status likely helps this reach by making the work available through multiple channels rather than a single access point.</p>
-<p class="story-text">Citation evidence is still modest but meaningful. OpenAlex records 3 citations, all in journal articles, showing that the book is beginning to be taken up in scholarly argument. The citing venues span Performance Research, International Journal of Cultural Policy, and Intersections, which suggests that the book’s themes travel across anthropology, performance, and cultural-policy conversations rather than remaining confined to one subfield.</p>
-<p class="story-text">The topical profile of the citing literature also reflects the book’s interdisciplinary relevance. The cited work is being used in discussions of restitution, knowledge production, postcolonial transition, memory, and performance, aligning with the book’s own concern with anthropology “elsewhere” and “otherwise,” as well as its attention to museums, curatorial practice, and colonial legacies. That pattern supports an interpretation of the book as a conceptual bridge between anthropology and adjacent humanities and social-science debates.</p>
-<p class="story-text">Teaching and public-facing use are also visible. A recorded YouTube discussion from Staatliche Kunstsammlungen Dresden indicates that the book has been used in an interpretive or educational setting focused on colonial legacies, museums, and the curatorial. Combined with library subject classifications in anthropology, museum techniques, postcolonialism, and anthropological ethics, this points to the book functioning as a pedagogical anchor for readers working on collections, decolonial critique, and exhibition-making.</p>
-<p class="story-text">Overall, the record depicts a book with strong circulation, early scholarly citation, and credible teaching adoption. The evidence is not yet extensive in citation terms, but it is consistent with a work that has found attention in both academic and practice-oriented communities around anthropology, museums, and postcolonial inquiry.</p></div>
+<p class="story-text">Across Anthropology by Margareta von Oswald and Jonas Tinius was published by Leuven University Press in 2020. Conceptually, the work connects to Anthropology and Sociology.</p>
+<p class="story-text">OpenAlex records 3 citations. Citations peaked in 2020 with 1 citing works. Notable citing venues include Performance Research, International Journal of Cultural Policy and Intersections.</p>
+<p class="story-text">In teaching, it is discussed in 1 recorded lecture. It has been downloaded 10,212 times via OAPEN. It is recorded in 2 library collections. The work was funded by KU Leuven, Humboldt-Universität zu Berlin and CARMAH.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1190,7 +1190,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:17+00:00
+                    Generated on 2026-09-10T21:43:01+00:00
                 </div>
                 
             </div>

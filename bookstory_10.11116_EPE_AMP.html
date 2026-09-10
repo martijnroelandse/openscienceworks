@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -368,14 +386,24 @@
                 
                 <div class="cover-wrap">
                     
-                    <div class="cover-fallback" aria-label="Cover unavailable">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                            <path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3V4z"></path>
-                            <path d="M8 20h11"></path>
-                            <path d="M8 8h7M8 12h7"></path>
-                        </svg>
-                        <div class="cover-fallback-title">Cover pending</div>
-                        <div class="cover-fallback-sub">Image not yet available</div>
+                    
+                    
+                    
+                        
+                    
+                    
+                    
+                    
+                    
+                    <div class="gen-jacket" style="--jh: 47;"
+                         role="img" aria-label="Essays on Plato’s Epistemology by Franco Trabattoni, Leuven University Press. Cover image not available.">
+                        <span class="gj-pub">Leuven University Press</span>
+                        <span class="gj-rule"></span>
+                        <span class="gj-title">Essays on Plato’s Epistemology</span>
+                        <span class="gj-foot">
+                            <span class="gj-auth">Franco Trabattoni</span>
+                            <span class="gj-year">2016</span>
+                        </span>
                     </div>
                     
                 </div>
@@ -383,15 +411,7 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -433,12 +453,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Essays on Plato’s Epistemology has seen clear scholarly uptake, with 15 citations in OpenAlex and a field-normalized standing in the top 10% for its year. Its reach is also evident in usage: the book has been downloaded 12,375 times through OAPEN, suggesting sustained academic interest alongside citation activity.</p>
+<p class="story-text">Essays on Plato’s Epistemology (2016), published by Leuven University Press, has been cited 15 times — enough that OpenAlex puts it in the top 10% of works in its field and year. Beyond that, it has been downloaded 12,375 times.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Published by Leuven University Press in 2016, Franco Trabattoni’s Essays on Plato’s Epistemology has developed a visible footprint in philosophy and classical studies. The citation record shows steady uptake over time rather than a one-off burst, with citing works appearing across several years and in venues such as Trends in Classics, Apeiron, Plato Journal, and Revista Archai. This pattern indicates that the book has been taken up in ongoing specialist discussion, especially around Plato, epistemology, and related problems in classical philosophy.</p>
-<p class="story-text">The citation landscape is concentrated in humanities and philosophy contexts, with most citing works appearing as journal articles and book chapters. The topics represented in the citing literature align closely with the book’s core concerns—Plato, knowledge, recollection, rhetoric, and the relation between true opinion and science—showing that the book is being used as part of active interpretive and argumentative work in the field. The record also includes recent citations, which points to continued relevance several years after publication.</p>
-<p class="story-text">Open access availability likely contributes to this visibility: the record identifies the book as hybrid OA, with multiple open instances indexed through repository and publisher channels. In addition, the download count from OAPEN indicates substantial reader engagement beyond formal citation. These usage data do not measure scholarly influence in the same way citations do, but they do show that the book has been repeatedly accessed by readers.</p>
-<p class="story-text">Other signals are more limited. The record does not show event-based attention, and the public-discourse archive is unavailable, so the impact story here rests mainly on scholarly citation and usage. Taken together, the evidence shows a specialist book that has found a durable place in Plato scholarship, with measurable academic uptake and strong readership in open-access channels.</p></div>
+<p class="story-text">Essays on Plato’s Epistemology by Franco Trabattoni was published by Leuven University Press in 2016. Conceptually, the work connects to Philosophy and Epistemology.</p>
+<p class="story-text">OpenAlex records 15 citations. That places it in the top 10% of works in its field and year of publication. Citations peaked in 2021 with 3 citing works. Notable citing venues include Trends in Classics, Apeiron and Pensamiento Revista de investigación e información filosófica. The citing works include 10 journal articles and 4 book chapters. They come from 8 countries, led by Italy, Spain and Canada.</p>
+<p class="story-text">It has been downloaded 12,375 times via OAPEN.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1257,7 +1276,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:27+00:00
+                    Generated on 2026-09-10T21:43:11+00:00
                 </div>
                 
             </div>

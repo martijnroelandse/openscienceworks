@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -378,22 +396,14 @@
                 
                 <div class="cover-wrap">
                     
-                    <img src="https://library.oapen.org/rest/bitstreams/2a1dd993-99da-405e-b14c-5a0522f96b50/retrieve" alt="Cover" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+                    <img src="https://library.oapen.org/rest/bitstreams/2a1dd993-99da-405e-b14c-5a0522f96b50/retrieve" alt="Cover of A European Public Investment Outlook" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -437,12 +447,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">A European Public Investment Outlook shows strong scholarly and usage impact. The book has 54 citations in OpenAlex and sits in the top 1% of works for its field and year, while recorded usage is substantial, with 40,400 downloads across major open-access platforms. The evidence points to a book that has been taken up both in academic debate and by a wider readership interested in European public investment policy.</p>
+<p class="story-text">A European Public Investment Outlook (2020), published by Open Book Publishers, has been cited 54 times — enough that OpenAlex puts it in the top 1% of works in its field and year. Beyond that, it has been downloaded 40,400 times.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Published by Open Book Publishers in 2020, A European Public Investment Outlook by Floriana Cerniglia and Francesco Saraceno addresses public investment as a central issue in European fiscal and economic policy. Its impact record is led by scholarly uptake: the book has accumulated 54 OpenAlex citations and is positioned in the top 1% most-cited works for its field and publication year. That combination suggests the volume quickly became a reference point in ongoing discussions about public investment, fiscal rules, and European economic governance.</p>
-<p class="story-text">The citing landscape shows that the book’s influence is concentrated in policy-relevant and interdisciplinary areas. It is cited most often in work on fiscal policy and economic growth, regional development and policy, climate change policy and economics, and energy and environment. Citations appear across articles, book chapters, and books, indicating that the argument has circulated beyond a single niche and into broader conversations about growth, investment, and public policy.</p>
-<p class="story-text">Usage signals reinforce that this is an actively consulted book, not only a cited one. The record shows 40,400 downloads, with activity captured through Open Book Publishers, OAPEN, and Google Books. The book is also present in library holdings, which is consistent with adoption in research and teaching environments, although the available data do not provide direct course-listing evidence.</p>
-<p class="story-text">Open access has likely supported that reach: the book is available as diamond open access, with multiple repository instances recorded. Overall, the evidence portrays a book with clear academic influence, strong discoverability, and sustained reader interest, especially around the policy design of public investment in Europe.</p></div>
+<p class="story-text">A European Public Investment Outlook by Floriana Cerniglia and Francesco Saraceno was published by Open Book Publishers in 2020. It is part of the Open reports series series. Conceptually, the work connects to Investment (military), Public investment, Business, Political science and International trade.</p>
+<p class="story-text">OpenAlex records 54 citations. That places it in the top 1% of works in its field and year of publication. Citations peaked in 2021 with 22 citing works. Notable citing venues include Open reports series, Economia Politica and Environment Development and Sustainability. The citing works include 34 book chapters, 12 journal articles and 5 books. They come from 16 countries, led by Italy, France and Germany.</p>
+<p class="story-text">It has been downloaded 40,400 times via Google Books and OAPEN. It is recorded in 2 library collections.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -2064,7 +2073,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:27+00:00
+                    Generated on 2026-09-10T21:43:13+00:00
                 </div>
                 
             </div>

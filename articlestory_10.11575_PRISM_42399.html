@@ -226,17 +226,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -375,15 +393,7 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -412,13 +422,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This 2023 scholarly article is best understood as a practice-oriented conference presentation on supporting open educational resources (OER) adoption in higher education. The record shows limited measurable downstream impact so far: OpenAlex currently reports 0 citations, and the available platform signals show no recorded views, downloads, or scite evidence. Even so, the work is clearly situated in an active area of open education and sustainability, and it is preserved in an institutional repository with a presentation record.</p>
+<p class="story-text">OER by Discipline Guide: Reducing Barriers and Building Sustainability for OER Adoption (2023) in Libraries and Cultural Resources (University of Calgary).</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Adams and Sillito’s article, published by Libraries and Cultural Resources at the University of Calgary, presents an OER by Discipline Guide developed to reduce barriers for educators seeking to adopt open educational resources into their courses. The abstract frames the work as a lightning talk for Open Education Global Conference 2023, emphasizing a service model intended to make OER discovery and adoption easier for faculty and instructors.</p>
-<p class="story-text">The surrounding metadata points to a topic centered on open educational resources, open education, higher education, sustainability, and service design. That combination suggests the article’s value lies less in theoretical novelty than in operational guidance for institutions trying to build more sustainable support for OER use across disciplines.</p>
-<p class="story-text">At present, the measurable citation record is still thin. OpenAlex reports no citations, and scite does not surface supporting or contradicting citation activity for this DOI. Datacite also shows no recorded views or downloads, so the available usage evidence does not yet indicate broad circulation.</p>
-<p class="story-text">The work does, however, have clear preservation and discoverability through an institutional repository, and OpenAIRE identifies it as a presentation associated with the DOI. That kind of record is consistent with a conference-facing output that may be consulted by practitioners even before it accumulates formal citation impact.</p>
-<p class="story-text">Overall, the story here is one of early-stage scholarly and professional visibility rather than documented downstream influence. The article addresses a timely problem in open education infrastructure, but the current evidence base is sparse, so any assessment of impact should remain cautious and limited to what the record actually shows.</p></div>
+<p class="story-text">OER by Discipline Guide: Reducing Barriers and Building Sustainability for OER Adoption (2023) in Libraries and Cultural Resources (University of Calgary) is authored by Adams, Sarah and Sillito, Savannah. Topics: Open educational resources, Open education, Institution, Sustainability and Subject (documents).</p>
+<p class="story-text">No citations yet.</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -783,7 +791,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:38:52+00:00
+                    Generated on 2026-09-10T21:42:39+00:00
                 </div>
                 
             </div>

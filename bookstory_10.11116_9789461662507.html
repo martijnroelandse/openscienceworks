@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -374,30 +392,14 @@
                 
                 <div class="cover-wrap">
                     
-                    <div class="cover-fallback" aria-label="Cover unavailable">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                            <path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3V4z"></path>
-                            <path d="M8 20h11"></path>
-                            <path d="M8 8h7M8 12h7"></path>
-                        </svg>
-                        <div class="cover-fallback-title">Cover pending</div>
-                        <div class="cover-fallback-sub">Image not yet available</div>
-                    </div>
+                    <img src="https://library.oapen.org/rest/bitstreams/ebd172fd-cf73-4555-8eb6-b5750a809269/retrieve" alt="Cover of Logic of Experimentation: Rethinking Music Performance Through Artistic Research" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -443,12 +445,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Logic of Experimentation has already shown clear early scholarly and usage impact: it has been downloaded 5,095 times and cited 5 times, indicating that the book is being read and taken up within musicology and performance-related research. The record also shows support from the European Research Council and open-access availability, which likely helped widen access.</p>
+<p class="story-text">Logic of Experimentation: Rethinking Music Performance Through Artistic Research (2018), published by Leuven University Press, has been cited 5 times. Beyond that, it has been downloaded 5,095 times.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Published by Leuven University Press in 2018, Paulo de Assis’s Logic of Experimentation: Rethinking Music Performance Through Artistic Research has attracted a modest but visible scholarly response alongside substantial readership. The citation record is still early, but it is not isolated: citing works appear across 2019, 2020, 2021, and 2025, suggesting that the book’s arguments have continued to circulate after publication rather than peaking in a single moment.</p>
-<p class="story-text">The shape of the citing landscape points to disciplinary relevance in musicology, performance studies, and adjacent arts research. Most citing works are journal articles, with one later book among them, and the venues include Revista Vórtex, twentieth-century music, Dramaturgias, and Quodlibet. This pattern suggests that the book is being used as a conceptual reference in discussions of musical performance, artistic research, aesthetics, and historiography.</p>
-<p class="story-text">The download record is especially strong for an academic monograph. More than 5,000 downloads through OAPEN indicate sustained interest from readers, complementing the citation signal and suggesting the book is being consulted beyond the small set of works that have formally cited it so far. Its open-access status likely supports this wider reach.</p>
-<p class="story-text">Additional signals reinforce its academic positioning. The book is held in library collections under subjects including theory of music and musicology, music philosophy and aesthetics, and performance, which is consistent with its interdisciplinary framing. The record also notes funding associated with the European Research Council. Overall, the evidence shows a book with active use and emerging scholarly uptake, especially within research communities concerned with experimental performance and artistic research.</p></div>
+<p class="story-text">Logic of Experimentation: Rethinking Music Performance Through Artistic Research by Paulo De Assis was published by Leuven University Press in 2018. It is part of the MODID-19febebe56a:Leuven University Press series. Conceptually, the work connects to Computer science, Visual arts and Art.</p>
+<p class="story-text">OpenAlex records 5 citations. Citations peaked in 2021 with 2 citing works. Notable citing venues include Revista Vórtex, twentieth-century music and Dramaturgias. The citing works include 4 journal articles and 1 book. They come from 4 countries, led by Belgium, Brazil and the United Kingdom.</p>
+<p class="story-text">It has been downloaded 5,095 times via OAPEN. It is recorded in 1 library collection. The work was funded by European Research Council.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1264,7 +1265,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:15+00:00
+                    Generated on 2026-09-10T21:42:59+00:00
                 </div>
                 
             </div>

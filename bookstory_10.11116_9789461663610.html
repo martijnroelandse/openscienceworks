@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -374,32 +392,19 @@
                 
                 <div class="cover-wrap">
                     
-                    <div class="cover-fallback" aria-label="Cover unavailable">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                            <path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3V4z"></path>
-                            <path d="M8 20h11"></path>
-                            <path d="M8 8h7M8 12h7"></path>
-                        </svg>
-                        <div class="cover-fallback-title">Cover pending</div>
-                        <div class="cover-fallback-sub">Image not yet available</div>
-                    </div>
+                    <img src="https://library.oapen.org/rest/bitstreams/cbb270d5-a126-4475-83da-b19189c63460/retrieve" alt="Cover of Mongameli Mabona" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-                <li>news_coverage</li>
-            
-            </ul></details>
-        </aside>
+        
+        
+        <details class="no-print" style="margin:.6rem 0 0; font-size:.78rem; color:#6b7280;">
+            <summary style="cursor:pointer; list-style:none;">Some figures carried over from the previous check (news_coverage)</summary>
+            <p style="margin:.4rem 0 0; max-width:60ch;">A source did not respond during the latest refresh, so its previously recorded value is shown rather than being cleared. Not re-verified this run.</p>
+        </details>
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -447,12 +452,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This scholarly book shows early but meaningful uptake: it has been cited twice, attracted 1,562 downloads through OAPEN, and is represented in library holdings across subject areas including philosophy, theology, anthropology, and colonialism &amp; imperialism. Its record also suggests policy- and sustainability-adjacent relevance through an SDG alignment with gender equality, while the funded open-access pathway supports broad availability.</p>
+<p class="story-text">Mongameli Mabona (2021), published by Leuven University Press, has been cited 2 times. Beyond that, it has been downloaded 1,562 times.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Ernst Wolff’s book on Mongameli Mabona has already begun to circulate in scholarly and public-facing library ecosystems. The citation record is still small, but it is real: OpenAlex shows two citations, both appearing in 2021, including an article in the African Journal of Inter/Multidisciplinary Studies and a bibliography entry. That pattern points to an emerging scholarly footprint rather than a mature citation history, so the safest reading is that the book is beginning to enter academic conversations, especially around African cultural and philosophical studies and related humanities topics.</p>
-<p class="story-text">Usage evidence is stronger than citation volume at this stage. OAPEN reports 1,562 downloads, indicating sustained reading interest and practical reach for an open-access scholarly book. The monthly download pattern shows continued attention across the year rather than a single short-lived spike. Because downloads measure access and use rather than formal citation, they should be read as complementary evidence: the book is being consulted, even as its citation base is still developing.</p>
-<p class="story-text">The dissemination profile also supports educational and interdisciplinary relevance. WorldCat and Open Library holdings place the book in collections associated with anthropology, theology, philosophy, colonialism &amp; imperialism, and biography, suggesting that it is discoverable by readers across humanities and social-science contexts. OpenAIRE records the work as openly accessible, including an openly available book instance, and the publication is linked to KU Leuven support through a Thoth-verified funding record. Together, these signals show a publication positioned for broad access and long-term scholarly visibility.</p>
-<p class="story-text">The book’s thematic alignment with gender equality further indicates a policy- and sustainability-adjacent dimension, though that should be understood as an interpretive signal rather than a claim of direct policy use. No public event archive was available in the record, so there is no documented event-based discussion to add. Overall, the evidence portrays a book with clear early reach, open-access availability, and growing scholarly visibility, while the citation record remains modest and should be interpreted as an early-stage signal rather than a settled measure of impact.</p></div>
+<p class="story-text">Mongameli Mabona by Ernst Wolff was published by Leuven University Press in 2021. It is part of the ISBN:978-94-6270-255-4 series. Conceptually, the work connects to Work (physics), Engineering and Mechanical engineering.</p>
+<p class="story-text">OpenAlex records 2 citations. Notable citing venues include African Journal of Inter/Multidisciplinary Studies. The citing authors are based in South Africa.</p>
+<p class="story-text">It has been downloaded 1,562 times via OAPEN. It is recorded in 2 library collections. Its subject matter aligns with Gender equality among the Sustainable Development Goals. The work was funded by KU Leuven.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1269,7 +1273,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:18+00:00
+                    Generated on 2026-09-10T21:43:03+00:00
                 </div>
                 
             </div>

@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -368,22 +386,14 @@
                 
                 <div class="cover-wrap">
                     
-                    <img src="https://books.google.com/books/content?vid=ISBN9781433152382&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+                    <img src="https://books.google.com/books/content?vid=ISBN9781433152382&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Competition, Community, and Educational Growth" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -427,17 +437,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text"><em>Competition, Community, and Educational Growth</em>, published by Peter Lang Verlag in 2018, has generated early scholarly uptake with 2 citations recorded in OpenAlex. Both citations appear in <em>Argumentation and Advocacy</em>, the journal venue most closely associated with the work's research community. The book shows modest but measurable scholarly reach within forensics and public advocacy education circles, particularly centered at Oklahoma-based institutions.</p>
-
+<p class="story-text">Competition, Community, and Educational Growth (2018), published by Peter Lang Verlag, has been cited 2 times.</p>
 <h3 class="story-subheading">Full narrative</h3>
-
-<p class="story-text">This scholarly book by Kristopher Copeland and Garret L. Castleberry addresses competition and educational growth within community contexts. The work entered the scholarly record in 2018 and appears indexed across standard academic databases, including OpenAlex, WorldCat, and OpenAIRE. Although the volume's original indexing treats it under biological and ecological concepts, the citation landscape reveals a distinct disciplinary home: the book has been cited in peer-reviewed articles within argumentation studies and forensics education, where competition dynamics in academic debate contexts intersect with questions of identity, advocacy, and community participation.</p>
-
-<p class="story-text">Citation activity, though limited in absolute terms, demonstrates directed scholarly engagement. Both citing works appeared in <em>Argumentation and Advocacy</em> in consecutive years (2020 and 2021), and both count Copeland himself among the authors, indicating continuity of research direction within a cohesive intellectual community. The citing articles focus on self-disclosure in forensic competition contexts, suggesting the book serves as a foundational reference for understanding interpersonal and competitive dynamics in educational debate environments. The concentration of citing authors and institutions—particularly Tulsa Community College and the University of Oklahoma—points to regional clustering of follow-on research rather than dispersed geographic uptake.</p>
-
-<p class="story-text">Library holdings data indicates modest teaching adoption. The work appears in at least five library collections and is cataloged under subjects including debates and debating, public speaking, and forensics education, marking it as a professional resource for instructors and program developers in these fields. This signals presence in curriculum development contexts, though systematic data on course adoption and downloads remain unavailable from the current record.</p>
-
-<p class="story-text">The work's early scholarly impact remains in formation. With citations appearing only after a two-year lag from publication, and with limited geographic and institutional spread, the book's trajectory is still emerging. The evidence available—focused citations, library holdings aligned with teaching domains, and documented data citation practices—suggests a specialized but real research contribution to applied communication and educational studies rather than broad interdisciplinary reach.</p></div>
+<p class="story-text">Competition, Community, and Educational Growth by Kristopher Copeland and Garret L. Castleberry was published by Peter Lang Verlag in 2018. Conceptually, the work connects to Competition (biology), Biology and Ecology.</p>
+<p class="story-text">OpenAlex records 2 citations. Citations peaked in 2020 with 1 citing works. Notable citing venues include Argumentation and Advocacy. The citing authors are based in the United States.</p>
+<p class="story-text">It is recorded in 5 library collections.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1045,7 +1049,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:32+00:00
+                    Generated on 2026-09-10T21:43:16+00:00
                 </div>
                 
             </div>

@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -377,17 +395,12 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-                <li>social_mentions.bluesky</li>
-            
-            </ul></details>
-        </aside>
+        
+        
+        <details class="no-print" style="margin:.6rem 0 0; font-size:.78rem; color:#6b7280;">
+            <summary style="cursor:pointer; list-style:none;">Some figures carried over from the previous check (social_mentions.bluesky)</summary>
+            <p style="margin:.4rem 0 0; max-width:60ch;">A source did not respond during the latest refresh, so its previously recorded value is shown rather than being cleared. Not re-verified this run.</p>
+        </details>
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -433,12 +446,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This article has shown clear scholarly uptake, with 27 citations and a field- and year-normalized standing in the top 10% of its cohort. Its influence is especially visible in methods- and transparency-oriented research, where it has been reused in 28 downstream works and cited by papers in venues such as PLoS ONE, eLife, and bioRxiv. The record also shows practical uptake beyond citations, including four RRIDs and one teaching-related YouTube mention.</p>
+<p class="story-text">Establishing Institutional Scores With the Rigor and Transparency Index: Large-scale Analysis of Scientific Reporting Quality (2022) in Journal of Medical Internet Research. Teaching use: 1 YouTube video(s).</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Published in <em>Journal of Medical Internet Research</em> in 2022, this article on the Rigor and Transparency Index addresses a core problem in research evaluation: how to assess reporting quality at scale rather than by manual review alone. The work has gained measurable academic attention, and its citation performance places it in the top 10% of papers in its field and year, indicating that it has been taken up quickly and competitively within a relevant scholarly niche.</p>
-<p class="story-text">The citation landscape suggests that the paper is being used mainly by communities working on transparency, reproducibility, bibliometrics, and research methods. Its downstream literature is concentrated in article and preprint formats, with repeated appearance in high-visibility venues that span biomedical publishing, open science, and data management. That pattern is consistent with the article functioning as a methodological reference point rather than as a narrowly cited case study.</p>
-<p class="story-text">The record also shows signs of reuse in reproducibility infrastructure. Four RRIDs are associated with the article, which supports the interpretation that it has been incorporated into resource-aware reporting practices. In addition, one recorded YouTube item linked the paper in its metadata or description, suggesting limited but real teaching or explanatory use. These signals do not replace citation evidence, but they do indicate that the article has entered workflows where transparency tools and reporting standards are discussed or demonstrated.</p>
-<p class="story-text">Attention outside formal citation systems appears modest in the available record, and the public-discourse evidence is sparse. Even so, the combination of citations, downstream reuse, and reuse in transparency-focused venues points to sustained interest in the article’s central contribution: making institutional assessments of rigor and transparency more scalable and more transparent themselves. The funding record, which includes multiple NIH awards, is consistent with the article’s methodological and infrastructure-oriented role in biomedical research.</p></div>
+<p class="story-text">Establishing Institutional Scores With the Rigor and Transparency Index: Large-scale Analysis of Scientific Reporting Quality (2022) in Journal of Medical Internet Research is authored by Joseph Menke, Peter Eckmann and İbrahim Burak Özyurt. Topics: Transparency (behavior), Scale (ratio), Index (typography), Quality (philosophy) and Data quality.</p>
+<p class="story-text">27 citations (OpenAlex). Citations peaked in 2022 with 7 citing works. Citing venues include PLoS ONE, bioRxiv (Cold Spring Harbor Laboratory) and Journal of Korean Medical Science.</p>
+<p class="story-text">It is discussed on Bluesky (1 mention). 1 online mentions.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -2262,7 +2274,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:38:57+00:00
+                    Generated on 2026-09-10T21:42:43+00:00
                 </div>
                 
             </div>

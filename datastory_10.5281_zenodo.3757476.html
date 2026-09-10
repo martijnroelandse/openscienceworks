@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -379,15 +397,7 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -420,12 +430,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">The COVID-19 CT Lung and Infection Segmentation Dataset has become a widely used reference point for COVID-19 imaging research, with 240 citations in OpenAlex, 287 documented downstream reuses, and strong usage in Zenodo with 65,781 views and 50,288 downloads. Its impact is concentrated in computer vision and medical imaging workflows, especially segmentation, and it is repeatedly cited in articles, conference papers, and preprints across multiple countries and institutions.</p>
+<p class="story-text">COVID-19 CT Lung and Infection Segmentation Dataset (2020) in Zenodo. 240 citations.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Published in 2020 on Zenodo and released as an open-access dataset, this work provided 20 labeled COVID-19 CT scans with left lung, right lung, and infection annotations verified by radiologists. The dataset was explicitly designed to support annotation-efficient deep learning and segmentation benchmarking, which helps explain why it has functioned as infrastructure rather than as a one-off data release. The record shows sustained scholarly uptake: citations rose quickly after release, peaking in 2021 and 2022, and the citing literature spans journal articles, conference papers, and preprints.</p>
-<p class="story-text">The reuse profile reinforces that role. OpenAlex records 287 downstream reuses, including software, journal articles, conference papers, preprints, reviews, dissertations, and other scholarly outputs. The dataset is especially visible in venues and channels associated with fast-moving methodological work, including arXiv, medRxiv, Research Square, and journals such as Medical Image Analysis, Biomedical Signal Processing and Control, IEEE Access, and Computers in Biology and Medicine. The citing concepts cluster around COVID-19 diagnosis using AI, radiomics and machine learning in medical imaging, and medical image segmentation, showing that the dataset has been used primarily as a methodological benchmark for segmentation and related imaging tasks.</p>
-<p class="story-text">The geographic and institutional spread of the citing literature is broad, with notable activity in China, India, the United States, Iran, South Korea, Brazil, Germany, and Saudi Arabia. The institutional landscape is similarly diverse, spanning universities and medical centers across several regions. This pattern suggests that the dataset has been adopted as a shared technical resource in a global research response to COVID-19, especially in education and healthcare settings where imaging-based AI methods were being rapidly developed and tested.</p>
-<p class="story-text">Usage indicators also point to continued interest beyond formal citation. Zenodo reports more than 50,000 downloads and over 65,000 views, and the dataset is linked to an openly accessible repository environment with multiple open instances. Crossref data citations show early and continuing reuse in both posted content and journal articles, while scite records 45 mentioning works. Public-discourse archives were unavailable in the record, so the impact story here is best understood through scholarly reuse, repository usage, and the dataset’s role as a benchmark foundation for COVID-19 CT segmentation research.</p></div>
+<p class="story-text">COVID-19 CT Lung and Infection Segmentation Dataset (2020) in Zenodo is authored by Jun Ma, Cheng Ge and Yixin Wang. Topics: Coronavirus disease 2019 (COVID-19), Lung infection, Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), 2019-20 coronavirus outbreak and Lung.</p>
+<p class="story-text">240 citations (OpenAlex). Citations peaked in 2021 with 62 citing works. Citing venues include arXiv (Cornell University), medRxiv and Research Square.</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -2358,7 +2367,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:55:01+00:00
+                    Generated on 2026-09-10T21:43:30+00:00
                 </div>
                 
             </div>

@@ -226,17 +226,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -379,17 +397,12 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-                <li>usage_counts</li>
-            
-            </ul></details>
-        </aside>
+        
+        
+        <details class="no-print" style="margin:.6rem 0 0; font-size:.78rem; color:#6b7280;">
+            <summary style="cursor:pointer; list-style:none;">Some figures carried over from the previous check (usage_counts)</summary>
+            <p style="margin:.4rem 0 0; max-width:60ch;">A source did not respond during the latest refresh, so its previously recorded value is shown rather than being cleared. Not re-verified this run.</p>
+        </details>
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -418,12 +431,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This scholarly article has a modest but visible early usage record: 83 views and 41 downloads in Zenodo, alongside an open-access repository presence and linked biodiversity data resources. It has not yet accrued citations in OpenAlex, and there is no recorded scite or public-discourse activity in the available record.</p>
+<p class="story-text">Nosophora parvipunctalis Hampson 1896 (2022) in Zenodo. 41 download(s) recorded.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">The article presents a focused taxonomic record for <em>Nosophora parvipunctalis</em> Hampson, 1896, summarizing type locality and distribution information and situating the species within both historical and regional records. Its scholarly footprint is still early-stage, but the repository metrics show that the work has been accessed and downloaded, indicating practical interest in the specimen and distribution information it consolidates.</p>
-<p class="story-text">The strongest evidence of reach comes from Zenodo usage data, which records 83 views and 41 downloads. The work is openly available through a repository with DOI-based persistence, and it is connected to a companion data object, suggesting that the article is part of a broader stewardship package rather than a standalone text. Related identifiers also link the record to biodiversity infrastructure, including GBIF and other domain repositories, which supports re-use in taxonomic and biodiversity workflows.</p>
-<p class="story-text">At the same time, the citation record is currently quiet: OpenAlex reports 0 citations, and scite lists no citing, supporting, or contradicting papers. That pattern does not imply lack of value; rather, it indicates that any later scholarly uptake has not yet appeared in the indexed citation layer available here. The public-discourse record is similarly sparse, with no captured event-data mentions.</p>
-<p class="story-text">Overall, this is a well-stewarded open-access scholarly item whose immediate signal is usage and infrastructural integration rather than citation impact. For a taxonomic work, that combination often matters: the article is discoverable, citable, and linked to downstream biodiversity resources, even though its formal citation footprint has not yet developed in the available record.</p></div>
+<p class="story-text">Nosophora parvipunctalis Hampson 1896 (2022) in Zenodo is authored by Singh, Navneet, Ranjan, Rahul and Talukdar, Avishek. Topics: Table (database), Ancient history, History, Geography and South asia.</p>
+<p class="story-text">No citations yet.</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -838,7 +850,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:53:52+00:00
+                    Generated on 2026-09-10T21:42:48+00:00
                 </div>
                 
             </div>

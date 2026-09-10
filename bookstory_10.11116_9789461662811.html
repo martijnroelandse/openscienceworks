@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -374,30 +392,14 @@
                 
                 <div class="cover-wrap">
                     
-                    <div class="cover-fallback" aria-label="Cover unavailable">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                            <path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3V4z"></path>
-                            <path d="M8 20h11"></path>
-                            <path d="M8 8h7M8 12h7"></path>
-                        </svg>
-                        <div class="cover-fallback-title">Cover pending</div>
-                        <div class="cover-fallback-sub">Image not yet available</div>
-                    </div>
+                    <img src="https://library.oapen.org/rest/bitstreams/8ea73496-2177-42e6-8ca5-d0b384ac549e/retrieve" alt="Cover of Images of Immigrants and Refugees" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -443,12 +445,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">Images of Immigrants and Refugees has already shown clear early reach: it has been downloaded 10,860 times and has 4 citations in OpenAlex. The record also points to policy and social relevance through its alignment with the SDG “Reduced inequalities,” while funding support from KU Leuven and the Belgian Federal Science Policy Office suggests institutional backing for the project’s aims.</p>
+<p class="story-text">Images of Immigrants and Refugees (2019), published by Leuven University Press, has been cited 4 times. Beyond that, it has been downloaded 10,860 times.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">This scholarly book is an open-access publication from Leuven University Press that examines how immigrants and refugees are represented, a topic that sits squarely at the intersection of media studies, migration, political science, and geography. Its strongest impact signal is usage: the book has been downloaded 10,860 times, indicating substantial reader interest and active consultation in the years since publication. The open-access availability likely supports that reach, and the publication record shows multiple open instances.</p>
-<p class="story-text">The citation record is still modest but meaningful for a 2019 book, with 4 OpenAlex citations spread across 2019, 2020, 2022, and 2023. The citing works are all journal articles, and they appear in venues focused on migration, intercultural communication, ethnic studies, and population research. That pattern suggests the book is being taken up within adjacent research communities concerned with refugees, immigration, media framing, and public opinion.</p>
-<p class="story-text">The broader evidence points to thematic relevance beyond scholarship alone. The book is associated with the SDG “Reduced inequalities,” which is consistent with its focus on immigrants and refugees and with the policy-facing nature of the topic. In addition, the funding record names KU Leuven and the Belgian Federal Science Policy Office, indicating that the work was supported by institutions with an interest in research of public and societal value.</p>
-<p class="story-text">Library subject classifications further show where the book is being discovered and used: migration and asylum, press and journalism, media studies, and communication industries. Taken together, the record portrays a book with strong usage, a small but growing scholarly footprint, and clear relevance to debates about migration, representation, and inequality. The impact story is therefore early rather than conclusive, but the available signals are coherent and encouraging.</p></div>
+<p class="story-text">Images of Immigrants and Refugees by Leen d’Haenens, Willem Joris and François Heinderyckx was published by Leuven University Press in 2019. It is part of the Images of immigrants and refugees in Western Europe. Media representations, public opinion, and refugees’ experiences, Chapt. 2, (21-36) series. Conceptually, the work connects to Geography, Political science, Regional science and Economic geography.</p>
+<p class="story-text">OpenAlex records 4 citations. Citations peaked in 2019 with 1 citing works. Notable citing venues include Journal of Arab & Muslim Media Research, Journal of Ethnic and Migration Studies and Comparative Population Studies. They come from 5 countries, led by Belgium, Bulgaria and Germany.</p>
+<p class="story-text">It has been downloaded 10,860 times via OAPEN. It is recorded in 1 library collection. Its subject matter aligns with Reduced inequalities among the Sustainable Development Goals. The work was funded by KU Leuven and Belgian Federal Science Policy Office.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1451,7 +1452,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:16+00:00
+                    Generated on 2026-09-10T21:43:00+00:00
                 </div>
                 
             </div>

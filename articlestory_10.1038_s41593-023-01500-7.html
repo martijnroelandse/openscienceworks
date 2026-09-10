@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -377,15 +395,7 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -427,13 +437,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This 2023 Springer Nature article has accumulated 47 citations in OpenAlex and sits in the top 10% most-cited papers for its field and year, indicating strong early scholarly uptake. Its influence is also visible in downstream reuse: 48 documented reuses, with citations appearing across articles, preprints, a conference paper, book chapters, and an editorial. The citation record is especially active in preprints and neuroscience-adjacent venues, suggesting that the paper quickly entered ongoing work on brain–computer interfaces and ultrasound-based neural recording.</p>
+<p class="story-text">Decoding motor plans using a closed-loop ultrasonic brain–machine interface (2023) in Springer Nature. Top 10% most-cited for its field and year.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">Whitney S. Griggs and colleagues present a closed-loop ultrasonic brain–machine interface for decoding motor plans, building on functional ultrasound as a recording modality that may help bridge trade-offs in invasiveness, coverage, and temporal or spatial resolution. The paper’s scholarly footprint is substantial for a 2023 article: OpenAlex records 47 citations, and the percentile signal places it in the top 10% of papers in its field and publication year. That combination suggests the work was not only noticed, but also incorporated into subsequent research at a relatively rapid pace.</p>
-<p class="story-text">The citing landscape points to a method that is being read across several research communities. The most frequent citing venues include bioRxiv, Nature Communications, Frontiers in Neuroscience, Science Advances, and Imaging Neuroscience, while the dominant concepts in the citing literature cluster around EEG and brain–computer interfaces, ultrasound imaging and elastography, and neuroscience and neural engineering. Taken together, these patterns suggest that the article is functioning as a reference point for both BMI methodology and ultrasound-enabled neurotechnology rather than remaining confined to a single niche.</p>
-<p class="story-text">The reuse record reinforces that picture. OpenAlex’s reuse graph shows 48 downstream reuses, and the breakdown includes a large share of articles alongside preprints and other scholarly formats. Scite also records two supporting citation statements and many mentioning citations, which is consistent with the paper being used as background, rationale, or methodological context in later work. The record also includes a linked DataCite dataset and a Zenodo deposit, indicating visible research stewardship and a pathway for others to build from the underlying resources.</p>
-<p class="story-text">Authorship and institutional signals also reflect a collaborative, cross-disciplinary project spanning the California Institute of Technology, the Centre National de la Recherche Scientifique, and the University of California, Riverside. Funding from NIH institutes and foundations associated with neuroscience and brain–machine interface research fits the article’s translational ambition. Public-discourse and event-data signals are comparatively sparse in the available record, so the impact story here is best understood as one of strong scholarly reuse and methodological uptake rather than broad off-platform attention.</p>
-<p class="story-text">Overall, the article appears to have become an early reference in closed-loop brain–computer interface research using functional ultrasound, with evidence of citation momentum, reuse across multiple publication types, and reach into adjacent neuroscience, imaging, and engineering literatures. The available data support a clear conclusion: this is a high-visibility and rapidly adopted contribution within its research area.</p></div>
+<p class="story-text">Decoding motor plans using a closed-loop ultrasonic brain–machine interface (2023) in Springer Nature is authored by Whitney S. Griggs, Sumner L. Norman and Thomas Deffieux. Topics: Brain–computer interface, Decoding methods, Neuroscience, Interface (matter) and Computer science.</p>
+<p class="story-text">47 citations (OpenAlex). Citations peaked in 2025 with 34 citing works. Citing venues include bioRxiv (Cold Spring Harbor Laboratory), Nature Communications and Frontiers in Neuroscience.</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -2125,7 +2133,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:38:33+00:00
+                    Generated on 2026-09-10T21:42:21+00:00
                 </div>
                 
             </div>

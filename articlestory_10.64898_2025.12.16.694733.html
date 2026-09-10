@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -373,15 +391,7 @@
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -410,13 +420,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text">This 2025 bioRxiv preprint reports an early-stage therapeutic strategy for osteoarthritis that uses human pluripotent stem cell-derived nociceptive neurons to address both pain and joint degeneration. The clearest downstream signal so far is a documented reuse in Europe PMC, while citation and public attention records remain minimal and the broader impact story is still developing.</p>
+<p class="story-text">Ectopic engraftment of nociceptive neurons derived from hPSCs for pain relief and joint homeostasis (2025) in bioRxiv (Cold Spring Harbor Laboratory). 1 documented downstream reuse(s).</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">The article presents an ambitious stem-cell-based approach to chronic pain: generating nociceptive neurons from human pluripotent stem cells and testing them as therapeutic agents in osteoarthritis. Its scientific framing is notable for aiming at two linked problems at once—pain relief and joint homeostasis—rather than treating symptoms alone. The abstract also points to mechanistic work that includes identifying CD200 as a nociceptor marker, suggesting the study combines translational intent with basic sensory-neuron biology.</p>
-<p class="story-text">In terms of visible research uptake, the record is still early but not empty. OpenAlex currently shows zero citations, so there is not yet evidence of citation-based influence. However, the reuse graph documents one downstream biomedical article mention in Europe PMC, which indicates that the work has already been registered in at least one scholarly indexing or referencing context. That is a modest but meaningful sign that the paper is entering the literature’s awareness, even before formal citation accumulation.</p>
-<p class="story-text">The surrounding attention profile is similarly quiet. There are no recorded event-data mentions or scite citation signals in the digest, and public discourse data are unavailable from the archive. This means the impact story should be read as nascent rather than absent: the work has clear topical relevance for pain, osteoarthritis, transplantation, and induced pluripotent stem cell research, but the available record has not yet captured broader conversation or validation.</p>
-<p class="story-text">The contribution itself sits at the intersection of neuroscience, regenerative medicine, and musculoskeletal biology, with authors from Johns Hopkins University, St. Jude Children’s Research Hospital, and the Howard Hughes Medical Institute. That cross-institutional profile matches the paper’s translational ambition. For now, the strongest evidence is the study’s conceptual originality and its first documented downstream reuse; longer-term influence will depend on whether the approach is replicated, extended, or taken into preclinical and clinical development.</p>
-<p class="story-text">Because this is a preprint and the record is still sparse, the most accurate summary is one of early scholarly emergence. The paper has not yet accumulated citations in the available sources, but it has already left a trace in the biomedical literature ecosystem. That makes it a candidate to watch for future uptake as the field evaluates whether engineered nociceptive neurons can truly serve both analgesic and joint-protective roles.</p></div>
+<p class="story-text">Ectopic engraftment of nociceptive neurons derived from hPSCs for pain relief and joint homeostasis (2025) in bioRxiv (Cold Spring Harbor Laboratory) is authored by Zhuolun Wang, Weixin Zhang and Ju Wang. Topics: Nociceptor, Nociception, Medicine, Osteoarthritis and Chronic pain.</p>
+<p class="story-text">No citations yet.</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -829,7 +837,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:04+00:00
+                    Generated on 2026-09-10T21:42:50+00:00
                 </div>
                 
             </div>

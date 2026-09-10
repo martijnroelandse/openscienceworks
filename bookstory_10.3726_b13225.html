@@ -224,17 +224,35 @@
 .sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
 .sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
 .sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
-.cover-fallback{
-  width:110px;height:155px;border-radius:.55rem;
-  border:1px solid #dbe7f3;
-  box-shadow:0 4px 10px rgba(15,23,42,.08);
-  background:linear-gradient(165deg,#f8fbff 0%,#eef5ff 48%,#e4eef9 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:.55rem;gap:.35rem;
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
 }
-.cover-fallback svg{width:22px;height:22px;color:#7c93ad;stroke-width:1.8;}
-.cover-fallback-title{font-size:.7rem;font-weight:700;color:#516985;line-height:1.2;letter-spacing:.02em;}
-.cover-fallback-sub{font-size:.6rem;color:#7c8ea4;line-height:1.25;}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
 
     /* ── Site nav ──────────────────────────────────────────── */
     .site-nav {
@@ -376,22 +394,14 @@
                 
                 <div class="cover-wrap">
                     
-                    <img src="https://books.google.com/books/content?vid=ISBN9783034318709&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+                    <img src="https://books.google.com/books/content?vid=ISBN9783034318709&printsec=frontcover&img=1&zoom=2&source=gbs_api" alt="Cover of Imagined Cosmopolis" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
                     
                 </div>
                 
             </div>
         </header>
         
-        <aside style="margin: 1rem 0; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px;">
-            <strong>Previously recorded evidence retained.</strong>
-            Some saved records were not returned by the latest source checks. They remain included as historical evidence, not as newly verified results.
-            <details><summary>Retained sources</summary><ul>
-            
-                <li>narrative</li>
-            
-            </ul></details>
-        </aside>
+        
         
 
         <!-- Sticky nav (built from story_nav — only sections present on this page) -->
@@ -435,16 +445,11 @@
         <section class="card" id="sec-story">
             <h2><span>The Story So Far</span></h2>
             <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
-<p class="story-text"><em>Imagined Cosmopolis</em> examines the contested relationship between nationalism and internationalism in the arts during the late nineteenth and early twentieth centuries, a period that saw both world war and the founding of the League of Nations. Published in 2019 as part of the peer-reviewed "Internationalism and the Arts" series by Peter Lang Verlag, the work brings together four established scholars from major art history institutions. Evidence of scholarly uptake remains early: the book has generated one citation to date, appearing in a 2021 article in <em>British Art Studies</em> that extends its inquiry into postcolonial art histories and decolonization.</p>
-
+<p class="story-text">Imagined Cosmopolis (2019), published by Peter Lang Verlag, has been cited 1 time.</p>
 <h3 class="story-subheading">Full narrative</h3>
-<p class="story-text">The book addresses a foundational moment in twentieth-century intellectual history when competing visions of cultural order—rooted in national traditions or reaching toward transnational connection—came into sharp focus. Its four authors, including Charlotte Ashby (Courtauld Institute of Art) and Sarah Victoria Turner (Paul Mellon Centre), situate the arts not as peripheral to these debates but as central agents in imagining both nation-states and alternative political futures. The work is conceptually anchored in internationalism as a political phenomenon, while also engaging historiography, national identity, and cultural exchange as organizing themes.</p>
-
-<p class="story-text">Library holdings confirm modest but deliberate adoption in academic institutions, with four recorded copies in OpenLibrary and cataloguing in institutional collections under subjects including cultural relations and art history. This distribution pattern is consistent with specialized monographs in humanities fields, where library presence often precedes broad citation accumulation. The book's placement within a numbered series—the second volume in "Internationalism and the Arts"—positions it within an active publishing program; peer volumes released in 2015, 2023, and 2024 suggest the series maintains scholarly momentum.</p>
-
-<p class="story-text">The single recorded citation, authored by Ming Tiampo and Liz Bruchet, reflects thematic continuity rather than exhaustive uptake. Their 2021 article in <em>British Art Studies</em> employs <em>Imagined Cosmopolis</em> in examining the Slade School of Art and decolonial perspectives on empire—a downstream application to questions of institutional history and imperial critique that extends the book's foundational work on internationalism into postwar and postcolonial contexts. That citing work itself has accrued eighteen citations, indicating it reaches a substantial secondary audience, though direct measurement of how many readers encounter <em>Imagined Cosmopolis</em> through that pathway remains unavailable.</p>
-
-<p class="story-text">As a 2019 publication, the work remains within an early citation window. Standard patterns in humanities book publishing suggest that significant citation presence often emerges three to five years after publication, particularly when monographs address specialized but foundational themes. The absence of altmetric events or public discourse data does not indicate lack of influence; such signals are often sparse for scholarly monographs regardless of quality or eventual impact. The book's alignment with Sustainable Development Goal 16 (reduced inequalities) reflects its engagement with questions of inclusive cultural representation and transnational solidarity, themes that resonate with contemporary policy discourse even if formal policy citation has not yet occurred.</p></div>
+<p class="story-text">Imagined Cosmopolis by Charlotte Ashby, Grace Brockington, Daniel Laqua and others was published by Peter Lang Verlag in 2019. It is part of the Internationalism and the Arts series. Conceptually, the work connects to Internationalism (politics), Homeland, The arts, League and Political science.</p>
+<p class="story-text">OpenAlex records 1 citation. Notable citing venues include British Art Studies. They come from 2 countries, led by Canada and the United Kingdom.</p>
+<p class="story-text">It is recorded in 4 library collections. Its subject matter aligns with Reduced inequalities among the Sustainable Development Goals.</p></div>
             <div class="muted" style="margin-top:0.6rem;">
                 Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
             </div>
@@ -1199,7 +1204,7 @@
                 </div>
         
                 <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
-                    Generated on 2026-09-10T15:39:32+00:00
+                    Generated on 2026-09-10T21:43:18+00:00
                 </div>
                 
             </div>
