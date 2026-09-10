@@ -1,8 +1,54 @@
 {
-  "schema_version": "articlestory.v1",
+  "schema_version": "datastory.v1",
   "doi": "10.5281/zenodo.10875062",
   "title": "FISBe: A real-world benchmark dataset for instance segmentation of long-range thin filamentous structures",
-  "authors": [],
+  "authors": [
+    {
+      "name": "Mais, Lisa",
+      "orcid": "0000-0002-9281-2668",
+      "affiliation": "Max Delbr\u00fcck Center"
+    },
+    {
+      "name": "Hirsch, Peter",
+      "orcid": "0000-0002-2353-5310",
+      "affiliation": "Max Delbr\u00fcck Center"
+    },
+    {
+      "name": "Managan, Claire",
+      "orcid": "0000-0002-9510-6443",
+      "affiliation": "Howard Hughes Medical Institute"
+    },
+    {
+      "name": "Kandarpa, Ramya",
+      "orcid": null,
+      "affiliation": null
+    },
+    {
+      "name": "Rumberger, Josef Lorenz",
+      "orcid": "0000-0002-7225-7011",
+      "affiliation": "Max Delbr\u00fcck Center"
+    },
+    {
+      "name": "Reinke, Annika",
+      "orcid": "0000-0003-4363-1876",
+      "affiliation": "German Cancer Research Center"
+    },
+    {
+      "name": "Maier-Hein, Lena",
+      "orcid": "0000-0003-4910-9368",
+      "affiliation": "German Cancer Research Center"
+    },
+    {
+      "name": "Ihrke, Gudrun",
+      "orcid": "0000-0003-4604-735X",
+      "affiliation": "Howard Hughes Medical Institute"
+    },
+    {
+      "name": "Kainmueller, Dagmar",
+      "orcid": "0000-0002-9830-2415",
+      "affiliation": "Max Delbr\u00fcck Center"
+    }
+  ],
   "work_type": "dataset",
   "work_stage": "unknown",
   "venue": {
@@ -19,11 +65,11 @@
     "issue": null,
     "pages": null
   },
-  "abstract": null,
-  "language": "en",
+  "abstract": "General For more details and the most up-to-date information please consult our project page: https://kainmueller-lab.github.io/fisbe. Summary A new dataset for neuron instance segmentation in 3d multicolor light microscopy data of fruit fly brains 30 completely labeled (segmented) images 71 partly labeled images altogether comprising \u223c600 expert-labeled neuron instances (labeling a single neuron takes between 30-60 min on average, yet a difficult one can take up to 4 hours) To the best of our knowledge, the first real-world benchmark dataset for instance segmentation of long thin filamentous objects A set of metrics and a novel ranking score for respective meaningful method benchmarking An evaluation of three baseline methods in terms of the above metrics and score Abstract Instance segmentation of neurons in volumetric light microscopy images of nervous systems enables groundbreaking research in neuroscience by facilitating joint functional and morphological analyses of neural circuits at cellular resolution. Yet said multi-neuron light microscopy data exhibits extremely challenging properties for the task of instance segmentation: Individual neurons have long-ranging, thin filamentous and widely branching morphologies, multiple neurons are tightly inter-weaved, and partial volume effects, uneven illumination and noise inherent to light microscopy severely impede local disentangling as well as long-range tracing of individual neurons. These properties reflect a current key challenge in machine learning research, namely to effectively capture long-range dependencies in the data. While respective methodological research is buzzing, to date methods are typically benchmarked on synthetic datasets. To address this gap, we release the FlyLight Instance Segmentation Benchmark (FISBe) dataset, the first publicly available multi-neuron light microscopy dataset with pixel-wise annotations. In addition, we define a set of instance segmentation metrics for benchmarking that we designed to be meaningful with regard to downstream analyses. Lastly, we provide three baselines to kick off a competition that we envision to both advance the field of machine learning regarding methodology for capturing long-range data dependencies, and facilitate scientific discovery in basic neuroscience. Dataset documentation: We provide a detailed documentation of our dataset, following the Datasheet for Datasets questionnaire: >> FISBe Datasheet Our dataset originates from the FlyLight project, where the authors released a large image collection of nervous systems of ~74,000 flies, available for download under CC BY 4.0 license. Files fisbe_v1.0_{completely,partly}.zip contains the image and ground truth segmentation data; there is one zarr file per sample, see below for more information on how to access zarr files. fisbe_v1.0_mips.zip maximum intensity projections of all samples, for convenience. sample_list_per_split.txt a simple list of all samples and the subset they are in, for convenience. view_data.py a simple python script to visualize samples, see below for more information on how to use it. dim_neurons_val_and_test_sets.json a list of instance ids per sample that are considered to be of low intensity/dim; can be used for extended evaluation. Readme.md general information How to work with the image files Each sample consists of a single 3d MCFO image of neurons of the fruit fly.For each image, we provide a pixel-wise instance segmentation for all separable neurons.Each sample is stored as a separate zarr file (zarr is a file storage format for chunked, compressed, N-dimensional arrays based on an open-source specification.\").The image data (\"raw\") and the segmentation (\"gt_instances\") are stored as two arrays within a single zarr file.The segmentation mask for each neuron is stored in a separate channel.The order of dimensions is CZYX. We recommend to work in a virtual environment, e.g., by using conda: conda create -y -n flylight-env -c conda-forge python=3.9conda activate flylight-env How to open zarr files Install the python zarr package: pip install zarr Opened a zarr file with: import zarrraw = zarr.open(<path_to_zarr>, mode='r', path=\"volumes/raw\")seg = zarr.open(<path_to_zarr>, mode='r', path=\"volumes/gt_instances\") # optional:import numpy as npraw_np = np.array(raw) Zarr arrays are read lazily on-demand.Many functions that expect numpy arrays also work with zarr arrays.Optionally, the arrays can also explicitly be converted to numpy arrays. How to view zarr image files We recommend to use napari to view the image data. Install napari: pip install \"napari[all]\" Save the following Python script: import zarr, sys, napari raw = zarr.load(sys.argv[1], mode='r', path=\"volumes/raw\")gts = zarr.load(sys.argv[1], mode='r', path=\"volumes/gt_instances\") viewer = napari.Viewer(ndisplay=3)for idx, gt in enumerate(gts): viewer.add_labels( gt, rendering='translucent', blending='additive', name=f'gt_{idx}')viewer.add_image(raw[0], colormap=\"red\", name='raw_r', blending='additive')viewer.add_image(raw[1], colormap=\"green\", name='raw_g', blending='additive')viewer.add_image(raw[2], colormap=\"blue\", name='raw_b', blending='additive')napari.run() Execute: python view_data.py <path-to-file>/R9F03-20181030_62_B5.zarr Metrics S: Average of avF1 and C avF1: Average F1 Score C: Average ground truth coverage clDice_TP: Average true positives clDice FS: Number of false splits FM: Number of false merges tp: Relative number of true positives For more information on our selected metrics and formal definitions please see our paper. Baseline To showcase the FISBe dataset together with our selection of metrics, we provide evaluation results for three baseline methods, namely PatchPerPix (ppp), Flood Filling Networks (FFN) and a non-learnt application-specific color clustering from Duan et al..For detailed information on the methods and the quantitative results please see our paper. License The FlyLight Instance Segmentation Benchmark (FISBe) dataset is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license. Citation If you use FISBe in your research, please use the following BibTeX entry: @misc{mais2024fisbe, title = {FISBe: A real-world benchmark dataset for instance segmentation of long-range thin filamentous structures}, author = {Lisa Mais and Peter Hirsch and Claire Managan and Ramya Kandarpa and Josef Lorenz Rumberger and Annika Reinke and Lena Maier-Hein and Gudrun Ihrke and Dagmar Kainmueller}, year = 2024, eprint = {2404.00130}, archivePrefix ={arXiv}, primaryClass = {cs.CV} } Acknowledgments We thank Aljoscha Nern for providing unpublished MCFO images as well as Geoffrey W. Meissner and the entire FlyLight Project Team for valuablediscussions.P.H., L.M. and D.K. were supported by the HHMI Janelia Visiting Scientist Program.This work was co-funded by Helmholtz Imaging. Changelog There have been no changes to the dataset so far.All future change will be listed on the changelog page. Contributing If you would like to contribute, have encountered any issues or have any suggestions, please open an issue for the FISBe dataset in the accompanying github repository. All contributions are welcome!",
+  "language": null,
   "identifiers": {
     "doi": "10.5281/zenodo.10875062",
-    "openalex_id": null,
+    "openalex_id": "https://openalex.org/W6967662348",
     "pub_year": 2024
   },
   "graph": {},
@@ -31,188 +77,106 @@
     "template_authors": [
       {
         "name": "Mais, Lisa",
-        "orcid": "https://orcid.org/0000-0002-9281-2668",
-        "affiliation": null,
-        "institutions": [
-          {
-            "country_code": "DE",
-            "display_name": "Max Delbr\u00fcck Center",
-            "id": "https://openalex.org/I205582932",
-            "lineage": [
-              "https://openalex.org/I1305996414",
-              "https://openalex.org/I205582932"
-            ],
-            "ror": "https://ror.org/04p5ggc03",
-            "type": "facility"
-          }
-        ]
+        "orcid": "0000-0002-9281-2668",
+        "affiliation": "Max Delbr\u00fcck Center",
+        "affiliation_url": "https://ror.org/04p5ggc03",
+        "is_corresponding": true
       },
       {
         "name": "Hirsch, Peter",
-        "orcid": "https://orcid.org/0000-0002-2353-5310",
-        "affiliation": null,
-        "institutions": [
-          {
-            "country_code": "DE",
-            "display_name": "Max Delbr\u00fcck Center",
-            "id": "https://openalex.org/I205582932",
-            "lineage": [
-              "https://openalex.org/I1305996414",
-              "https://openalex.org/I205582932"
-            ],
-            "ror": "https://ror.org/04p5ggc03",
-            "type": "facility"
-          }
-        ]
+        "orcid": "0000-0002-2353-5310",
+        "affiliation": "Max Delbr\u00fcck Center",
+        "affiliation_url": "https://ror.org/04p5ggc03",
+        "is_corresponding": false
       },
       {
         "name": "Managan, Claire",
-        "orcid": "https://orcid.org/0000-0002-9510-6443",
-        "affiliation": null,
-        "institutions": [
-          {
-            "country_code": "US",
-            "display_name": "Howard Hughes Medical Institute",
-            "id": "https://openalex.org/I1344073410",
-            "lineage": [
-              "https://openalex.org/I1344073410"
-            ],
-            "ror": "https://ror.org/006w34k90",
-            "type": "facility"
-          },
-          {
-            "country_code": "US",
-            "display_name": "Janelia Research Campus",
-            "id": "https://openalex.org/I195573530",
-            "lineage": [
-              "https://openalex.org/I1344073410",
-              "https://openalex.org/I195573530"
-            ],
-            "ror": "https://ror.org/013sk6x84",
-            "type": "facility"
-          }
-        ]
+        "orcid": "0000-0002-9510-6443",
+        "affiliation": "Howard Hughes Medical Institute",
+        "affiliation_url": "https://ror.org/006w34k90",
+        "is_corresponding": false
       },
       {
         "name": "Kandarpa, Ramya",
         "orcid": null,
         "affiliation": null,
-        "institutions": []
+        "affiliation_url": null,
+        "is_corresponding": false
       },
       {
         "name": "Rumberger, Josef Lorenz",
-        "orcid": "https://orcid.org/0000-0002-7225-7011",
-        "affiliation": null,
-        "institutions": [
-          {
-            "country_code": "DE",
-            "display_name": "Max Delbr\u00fcck Center",
-            "id": "https://openalex.org/I205582932",
-            "lineage": [
-              "https://openalex.org/I1305996414",
-              "https://openalex.org/I205582932"
-            ],
-            "ror": "https://ror.org/04p5ggc03",
-            "type": "facility"
-          }
-        ]
+        "orcid": "0000-0002-7225-7011",
+        "affiliation": "Max Delbr\u00fcck Center",
+        "affiliation_url": "https://ror.org/04p5ggc03",
+        "is_corresponding": false
       },
       {
         "name": "Reinke, Annika",
-        "orcid": "https://orcid.org/0000-0003-4363-1876",
-        "affiliation": null,
-        "institutions": [
-          {
-            "country_code": "DE",
-            "display_name": "German Cancer Research Center",
-            "id": "https://openalex.org/I17937529",
-            "lineage": [
-              "https://openalex.org/I1305996414",
-              "https://openalex.org/I17937529"
-            ],
-            "ror": "https://ror.org/04cdgtt98",
-            "type": "facility"
-          }
-        ]
+        "orcid": "0000-0003-4363-1876",
+        "affiliation": "German Cancer Research Center",
+        "affiliation_url": "https://ror.org/04cdgtt98",
+        "is_corresponding": false
       },
       {
         "name": "Maier-Hein, Lena",
-        "orcid": "https://orcid.org/0000-0003-4910-9368",
-        "affiliation": null,
-        "institutions": [
-          {
-            "country_code": "DE",
-            "display_name": "German Cancer Research Center",
-            "id": "https://openalex.org/I17937529",
-            "lineage": [
-              "https://openalex.org/I1305996414",
-              "https://openalex.org/I17937529"
-            ],
-            "ror": "https://ror.org/04cdgtt98",
-            "type": "facility"
-          }
-        ]
+        "orcid": "0000-0003-4910-9368",
+        "affiliation": "German Cancer Research Center",
+        "affiliation_url": "https://ror.org/04cdgtt98",
+        "is_corresponding": false
       },
       {
         "name": "Ihrke, Gudrun",
-        "orcid": "https://orcid.org/0000-0003-4604-735X",
-        "affiliation": null,
-        "institutions": [
-          {
-            "country_code": "US",
-            "display_name": "Howard Hughes Medical Institute",
-            "id": "https://openalex.org/I1344073410",
-            "lineage": [
-              "https://openalex.org/I1344073410"
-            ],
-            "ror": "https://ror.org/006w34k90",
-            "type": "facility"
-          },
-          {
-            "country_code": "US",
-            "display_name": "Janelia Research Campus",
-            "id": "https://openalex.org/I195573530",
-            "lineage": [
-              "https://openalex.org/I1344073410",
-              "https://openalex.org/I195573530"
-            ],
-            "ror": "https://ror.org/013sk6x84",
-            "type": "facility"
-          }
-        ]
+        "orcid": "0000-0003-4604-735X",
+        "affiliation": "Howard Hughes Medical Institute",
+        "affiliation_url": "https://ror.org/006w34k90",
+        "is_corresponding": false
       },
       {
         "name": "Kainmueller, Dagmar",
-        "orcid": "https://orcid.org/0000-0002-9830-2415",
-        "affiliation": null,
-        "institutions": [
-          {
-            "country_code": "DE",
-            "display_name": "Max Delbr\u00fcck Center",
-            "id": "https://openalex.org/I205582932",
-            "lineage": [
-              "https://openalex.org/I1305996414",
-              "https://openalex.org/I205582932"
-            ],
-            "ror": "https://ror.org/04p5ggc03",
-            "type": "facility"
-          }
-        ]
+        "orcid": "0000-0002-9830-2415",
+        "affiliation": "Max Delbr\u00fcck Center",
+        "affiliation_url": "https://ror.org/04p5ggc03",
+        "is_corresponding": false
       }
     ],
     "raw_events": {
-      "total": 0,
       "events": [],
+      "total": null,
+      "source_status": "archive_unavailable",
+      "api_retired_on": "2026-04-23",
+      "coverage": "local_saved_records_only",
       "examples": []
     },
     "attention_summary": {
       "total_mentions": 0,
+      "substack_channel_count": 69,
+      "pilot_source_count": 112,
       "web_mentions": 0,
       "web_mentions_breakdown": {
         "substack": 0,
         "blog": 0,
         "podcast": 0
-      }
+      },
+      "wikipedia": 0,
+      "bluesky": 0,
+      "reddit": 0,
+      "hypothesis": 0,
+      "substack": 0
+    },
+    "attention_sources": {
+      "by_source": {},
+      "total_mentions": 0,
+      "wikipedia": 0,
+      "bluesky": 0,
+      "reddit": 0,
+      "hypothesis": 0,
+      "substack": 0
+    },
+    "work_type": "dataset",
+    "work_type_raw": {
+      "openalex": "dataset",
+      "openalex_crossref": null,
+      "crossref": null
     },
     "citing_landscape": {
       "total_citing_works": 0,
@@ -225,7 +189,10 @@
       "top_institutions": [],
       "top_authors": [],
       "inst_concentration": 0,
-      "median_cites": 0,
+      "citing_works_url": "https://openalex.org/works?page=1&filter=cites%3AW6967662348&sort=publication_date%3Adesc",
+      "landscape_basis": "group_by_complete",
+      "editorial_mentions": [],
+      "recent_citing_works": [],
       "captured_citing_works": 0
     },
     "citation_count": 0,
@@ -244,7 +211,35 @@
       "data_links": [
         {
           "label": "Zenodo Dataset",
-          "url": "https://doi.org/10.5281/zenodo.10875063"
+          "url": "https://doi.org/10.5281/zenodo.10875063",
+          "repository_registry": {
+            "re3data_id": "r3d100010468",
+            "name": "Zenodo",
+            "url": "https://zenodo.org/",
+            "subjects": [
+              "1 Humanities and Social Sciences",
+              "2 Life Sciences",
+              "3 Natural Sciences",
+              "4 Engineering Sciences"
+            ],
+            "database_access": "open",
+            "data_access_types": [
+              "closed",
+              "open",
+              "restricted"
+            ],
+            "certificates": [],
+            "pid_systems": [
+              "DOI"
+            ],
+            "persistence_policies": [],
+            "countries": [
+              "EEC"
+            ],
+            "software": [],
+            "source": "re3data",
+            "profile_url": "https://www.re3data.org/repository/r3d100010468"
+          }
         }
       ],
       "clinical_trials": [],
@@ -257,55 +252,48 @@
         {
           "name": "Mais, Lisa",
           "openalex_author_id": null,
-          "orcid": "https://orcid.org/0000-0002-9281-2668",
-          "position": "first",
-          "is_corresponding": true,
+          "orcid": "0000-0002-9281-2668",
+          "position": null,
+          "is_corresponding": null,
           "institutions": [
             {
               "name": "Max Delbr\u00fcck Center",
-              "openalex_institution_id": "https://openalex.org/I205582932",
-              "ror": "https://ror.org/04p5ggc03",
-              "country_code": "DE",
-              "type": "facility"
+              "openalex_institution_id": null,
+              "ror": null,
+              "country_code": null,
+              "type": null
             }
           ]
         },
         {
           "name": "Hirsch, Peter",
           "openalex_author_id": null,
-          "orcid": "https://orcid.org/0000-0002-2353-5310",
-          "position": "middle",
-          "is_corresponding": false,
+          "orcid": "0000-0002-2353-5310",
+          "position": null,
+          "is_corresponding": null,
           "institutions": [
             {
               "name": "Max Delbr\u00fcck Center",
-              "openalex_institution_id": "https://openalex.org/I205582932",
-              "ror": "https://ror.org/04p5ggc03",
-              "country_code": "DE",
-              "type": "facility"
+              "openalex_institution_id": null,
+              "ror": null,
+              "country_code": null,
+              "type": null
             }
           ]
         },
         {
           "name": "Managan, Claire",
           "openalex_author_id": null,
-          "orcid": "https://orcid.org/0000-0002-9510-6443",
-          "position": "middle",
-          "is_corresponding": false,
+          "orcid": "0000-0002-9510-6443",
+          "position": null,
+          "is_corresponding": null,
           "institutions": [
             {
               "name": "Howard Hughes Medical Institute",
-              "openalex_institution_id": "https://openalex.org/I1344073410",
-              "ror": "https://ror.org/006w34k90",
-              "country_code": "US",
-              "type": "facility"
-            },
-            {
-              "name": "Janelia Research Campus",
-              "openalex_institution_id": "https://openalex.org/I195573530",
-              "ror": "https://ror.org/013sk6x84",
-              "country_code": "US",
-              "type": "facility"
+              "openalex_institution_id": null,
+              "ror": null,
+              "country_code": null,
+              "type": null
             }
           ]
         },
@@ -313,94 +301,87 @@
           "name": "Kandarpa, Ramya",
           "openalex_author_id": null,
           "orcid": null,
-          "position": "middle",
-          "is_corresponding": false,
+          "position": null,
+          "is_corresponding": null,
           "institutions": []
         },
         {
           "name": "Rumberger, Josef Lorenz",
           "openalex_author_id": null,
-          "orcid": "https://orcid.org/0000-0002-7225-7011",
-          "position": "middle",
-          "is_corresponding": false,
+          "orcid": "0000-0002-7225-7011",
+          "position": null,
+          "is_corresponding": null,
           "institutions": [
             {
               "name": "Max Delbr\u00fcck Center",
-              "openalex_institution_id": "https://openalex.org/I205582932",
-              "ror": "https://ror.org/04p5ggc03",
-              "country_code": "DE",
-              "type": "facility"
+              "openalex_institution_id": null,
+              "ror": null,
+              "country_code": null,
+              "type": null
             }
           ]
         },
         {
           "name": "Reinke, Annika",
           "openalex_author_id": null,
-          "orcid": "https://orcid.org/0000-0003-4363-1876",
-          "position": "middle",
-          "is_corresponding": false,
+          "orcid": "0000-0003-4363-1876",
+          "position": null,
+          "is_corresponding": null,
           "institutions": [
             {
               "name": "German Cancer Research Center",
-              "openalex_institution_id": "https://openalex.org/I17937529",
-              "ror": "https://ror.org/04cdgtt98",
-              "country_code": "DE",
-              "type": "facility"
+              "openalex_institution_id": null,
+              "ror": null,
+              "country_code": null,
+              "type": null
             }
           ]
         },
         {
           "name": "Maier-Hein, Lena",
           "openalex_author_id": null,
-          "orcid": "https://orcid.org/0000-0003-4910-9368",
-          "position": "middle",
-          "is_corresponding": false,
+          "orcid": "0000-0003-4910-9368",
+          "position": null,
+          "is_corresponding": null,
           "institutions": [
             {
               "name": "German Cancer Research Center",
-              "openalex_institution_id": "https://openalex.org/I17937529",
-              "ror": "https://ror.org/04cdgtt98",
-              "country_code": "DE",
-              "type": "facility"
+              "openalex_institution_id": null,
+              "ror": null,
+              "country_code": null,
+              "type": null
             }
           ]
         },
         {
           "name": "Ihrke, Gudrun",
           "openalex_author_id": null,
-          "orcid": "https://orcid.org/0000-0003-4604-735X",
-          "position": "middle",
-          "is_corresponding": false,
+          "orcid": "0000-0003-4604-735X",
+          "position": null,
+          "is_corresponding": null,
           "institutions": [
             {
               "name": "Howard Hughes Medical Institute",
-              "openalex_institution_id": "https://openalex.org/I1344073410",
-              "ror": "https://ror.org/006w34k90",
-              "country_code": "US",
-              "type": "facility"
-            },
-            {
-              "name": "Janelia Research Campus",
-              "openalex_institution_id": "https://openalex.org/I195573530",
-              "ror": "https://ror.org/013sk6x84",
-              "country_code": "US",
-              "type": "facility"
+              "openalex_institution_id": null,
+              "ror": null,
+              "country_code": null,
+              "type": null
             }
           ]
         },
         {
           "name": "Kainmueller, Dagmar",
           "openalex_author_id": null,
-          "orcid": "https://orcid.org/0000-0002-9830-2415",
-          "position": "last",
-          "is_corresponding": false,
+          "orcid": "0000-0002-9830-2415",
+          "position": null,
+          "is_corresponding": null,
           "institutions": [
             {
               "name": "Max Delbr\u00fcck Center",
-              "openalex_institution_id": "https://openalex.org/I205582932",
-              "ror": "https://ror.org/04p5ggc03",
-              "country_code": "DE",
-              "type": "facility"
+              "openalex_institution_id": null,
+              "ror": null,
+              "country_code": null,
+              "type": null
             }
           ]
         }
@@ -408,33 +389,27 @@
       "institutions": [
         {
           "name": "Max Delbr\u00fcck Center",
-          "openalex_institution_id": "https://openalex.org/I205582932",
-          "ror": "https://ror.org/04p5ggc03",
-          "country_code": "DE",
-          "type": "facility"
+          "openalex_institution_id": null,
+          "ror": null,
+          "country_code": null,
+          "type": null
         },
         {
           "name": "Howard Hughes Medical Institute",
-          "openalex_institution_id": "https://openalex.org/I1344073410",
-          "ror": "https://ror.org/006w34k90",
-          "country_code": "US",
-          "type": "facility"
-        },
-        {
-          "name": "Janelia Research Campus",
-          "openalex_institution_id": "https://openalex.org/I195573530",
-          "ror": "https://ror.org/013sk6x84",
-          "country_code": "US",
-          "type": "facility"
+          "openalex_institution_id": null,
+          "ror": null,
+          "country_code": null,
+          "type": null
         },
         {
           "name": "German Cancer Research Center",
-          "openalex_institution_id": "https://openalex.org/I17937529",
-          "ror": "https://ror.org/04cdgtt98",
-          "country_code": "DE",
-          "type": "facility"
+          "openalex_institution_id": null,
+          "ror": null,
+          "country_code": null,
+          "type": null
         }
-      ]
+      ],
+      "warnings": []
     },
     "concepts": [
       {
@@ -543,17 +518,9 @@
         "ol_holdings": 0
       }
     },
-    "preprint_metrics": {
-      "doi": "10.48550/arxiv.2404.00130",
-      "citations": 0,
-      "events": 0,
-      "downloads": 0
-    },
-    "journal_citations": 0,
-    "journal_events": 0,
     "datacite": {
-      "views": "955",
-      "downloads": "1,084",
+      "views": "1,184",
+      "downloads": "1,709",
       "resource_type": "Dataset",
       "relatedIdentifiers": [
         {
@@ -568,6 +535,10 @@
           "relatedIdentifierType": "DOI"
         }
       ]
+    },
+    "usage_landscape": {
+      "downloads_total": 1709,
+      "views_total": 1184
     },
     "reuse_graph": {
       "uses_data": [],
@@ -584,11 +555,16 @@
       "datasets_cited": [],
       "cited_as_dataset": [],
       "total": 0,
-      "endpoint": "crossref-data-citations"
+      "endpoint": "crossref-data-citations",
+      "source_status": {
+        "datasets_cited": "success",
+        "cited_as_dataset": "success"
+      }
     },
     "public_discourse": {
       "news": [],
-      "stackexchange": []
+      "stackexchange": [],
+      "event_data_status": "archive_unavailable"
     },
     "social_mentions": {
       "wikipedia": [],
@@ -598,6 +574,7 @@
       "last_updated": "2026-05-28T15:20:49.632826+00:00",
       "substack": []
     },
+    "web_mentions": [],
     "risk_layer": {
       "is_retracted": false,
       "expression_of_concern": false,
@@ -606,18 +583,66 @@
       "corrections": []
     },
     "elife_assessment": null,
-    "usage_landscape": {
-      "downloads_total": 1084,
-      "views_total": 955
+    "repository_registry": {
+      "re3data_id": "r3d100010468",
+      "name": "Zenodo",
+      "url": "https://zenodo.org/",
+      "subjects": [
+        "1 Humanities and Social Sciences",
+        "2 Life Sciences",
+        "3 Natural Sciences",
+        "4 Engineering Sciences"
+      ],
+      "database_access": "open",
+      "data_access_types": [
+        "closed",
+        "open",
+        "restricted"
+      ],
+      "certificates": [],
+      "pid_systems": [
+        "DOI"
+      ],
+      "persistence_policies": [],
+      "countries": [
+        "EEC"
+      ],
+      "software": [],
+      "source": "re3data",
+      "profile_url": "https://www.re3data.org/repository/r3d100010468"
     },
-    "web_mentions": [],
-    "news_coverage": {
-      "total": 0,
-      "articles": [],
-      "top_domains": [],
-      "top_countries": [],
-      "source": "serpapi_google_news",
-      "query": "\"FISBe: A real-world benchmark dataset for instance segmentation\" lisa"
+    "repository_reach": {
+      "source": "OpenAIRE",
+      "doi": "10.5281/zenodo.10875062",
+      "match_found": true,
+      "open_access_color": null,
+      "instance_count": 3,
+      "open_instance_count": 1,
+      "hosts": [],
+      "countries": [],
+      "instances": [
+        {
+          "type": "Dataset",
+          "access_right": null,
+          "is_open": false,
+          "url": "https://dx.doi.org/10.5281/zenodo.10875063",
+          "hosted_by": null
+        },
+        {
+          "type": "Dataset",
+          "access_right": "OPEN",
+          "is_open": true,
+          "url": "https://zenodo.org/records/10875063",
+          "hosted_by": null
+        },
+        {
+          "type": "Dataset",
+          "access_right": null,
+          "is_open": false,
+          "url": "https://dx.doi.org/10.5281/zenodo.10875062",
+          "hosted_by": null
+        }
+      ]
     }
   },
   "roles": [],
@@ -635,22 +660,34 @@
       "source_url": "https://scite.ai/reports/10.5281/zenodo.10875062"
     },
     "events": {
-      "total": 0,
       "events": [],
+      "total": null,
+      "source_status": "archive_unavailable",
+      "api_retired_on": "2026-04-23",
+      "coverage": "local_saved_records_only",
       "examples": []
     },
     "downloads": {
       "totals": {
-        "downloads": 1084,
-        "views": 955
+        "downloads": 1709,
+        "views": 1184
       }
     }
   },
   "access": {
-    "is_oa": true,
+    "landing_page_url": "https://doi.org/10.5281/zenodo.10875062",
     "oa_status": "green",
-    "oa_url": "https://doi.org/10.5281/zenodo.10875062",
-    "any_repository_has_fulltext": true
+    "is_oa": true,
+    "best_oa_location": {
+      "url": "https://doi.org/10.5281/zenodo.10875062",
+      "pdf_url": null,
+      "is_best": true
+    },
+    "other_locations": [],
+    "license": {
+      "spdx": "cc-by",
+      "source": "openalex"
+    }
   },
   "citations": {
     "citation_count": 0,
@@ -670,10 +707,8 @@
     "related_dois": [],
     "relation_source": null
   },
-  "narrative": "<h3 class=\"story-subheading\">Short impact summary</h3>\n<p class=\"story-text\">FISBe: A real-world benchmark dataset for instance segmentation of long-range thin filamentous structures (2024) in Zenodo. 1084 downloads.</p>\n<h3 class=\"story-subheading\">Full narrative</h3>\n<p class=\"story-text\">FISBe: A real-world benchmark dataset for instance segmentation of long-range thin filamentous structures (2024) in Zenodo is authored by the authors. Topics: Segmentation, Artificial intelligence, Computer science, Tracing and Benchmark (surveying).</p>\n<p class=\"story-text\">No citations yet.</p>\n<p class=\"story-text\">Limited online visibility beyond citations.</p>",
+  "narrative": "<h3 class=\"story-subheading\">Short impact summary</h3>\n<p class=\"story-text\">FISBe is a dataset built to support instance segmentation of long-range, thin filamentous structures in 3D multicolor light microscopy, with the record showing early but tangible use: 1,709 downloads and 1,184 views. The dataset is openly available through Zenodo and is positioned as a benchmark resource for neuron segmentation in fruit fly brain imaging.</p>\n<h3 class=\"story-subheading\">Full narrative</h3>\n<p class=\"story-text\">FISBe appears to have been released as a practical infrastructure contribution for computer vision and connectomics, rather than as a citation-driven paper. Its purpose is clear in the record: to provide a real-world benchmark for instance segmentation of difficult filamentous structures, especially neuron instances in 3D multicolor light microscopy data. The dataset description emphasizes substantial expert effort in producing the labels, underscoring the value of the resource for training and evaluating segmentation methods.</p>\n<p class=\"story-text\">The strongest impact signal so far is use, not citation: the dataset has recorded 1,709 downloads and 1,184 views, which suggests active interest from the research community. It is openly accessible in Zenodo, and OpenAIRE identifies an open instance of the dataset. These stewardship signals support reuse by lowering barriers to access and making the resource straightforward to retrieve and cite.</p>\n<p class=\"story-text\">Scholarly citation impact is still at an early stage in the available record. OpenAlex currently shows 0 citations, and scite records no citing, supporting, or contradicting mentions. That quiet citation profile does not negate relevance; it indicates that the dataset\u2019s measurable footprint is still developing, while user access suggests that researchers are already exploring it.</p>\n<p class=\"story-text\">The surrounding metadata also places FISBe within a clear methodological and biomedical context. Its mapped concepts cluster around segmentation, artificial intelligence, tracing, benchmarking, microscopy, and connectomics, aligning it with computational imaging and neuronal reconstruction workflows. The record shows no archived public-discourse signals and no teaching adoption signal beyond a WorldCat holdings search record, so the evidence base here is mainly stewardship and usage rather than broader commentary or formal classroom uptake.</p>",
   "provenance": {},
   "story_type": "DataStory",
-  "publisher": "CERN",
-  "narrative_llm": "<h3 class=\"story-subheading\">Short impact summary</h3>\n<p class=\"story-text\">The FISBe dataset represents a significant advancement in the instance segmentation of long-range thin filamentous structures. Available on Zenodo, this dataset has achieved 955 views and 1,084 downloads, indicating a healthy engagement from the research community.</p>\n<h3 class=\"story-subheading\">Full narrative</h3>\n<p class=\"story-text\">The FISBe dataset, published in 2024 and hosted on Zenodo, establishes a critical benchmark for the instance segmentation of thin filamentous structures. This dataset, developed by prominent institutions\u2014including the Janelia Research Campus at the Howard Hughes Medical Institute, the Max Delbr\u00fcck Center, and the German Cancer Research Center\u2014reflects a collaborative effort aimed at addressing complex challenges in this area of research.</p>\n<p class=\"story-text\">With a total of 955 views and 1,084 downloads reported on Zenodo, the FISBe dataset demonstrates strong engagement and interest from the scientific community, underscoring its relevance and utility. These metrics can be indicative of a dataset considered valuable for future research endeavors in the field of computer vision and biological imaging.</p>\n<p class=\"story-text\">The authors' commitment to open science is underscored by their practice of early sharing, as indicated by the dataset's early sharing/preprint status. Although no preprint downloads or citations have been reported, the act of sharing this dataset pre-publication exemplifies a proactive approach to nurturing community engagement and collaboration.</p>\n<p class=\"story-text\">In summary, the FISBe dataset stands as a foundational research output that promotes active research in the instance segmentation of biological structures. Its availability on a prominent data repository like Zenodo provides the scientific community with a valuable resource that can facilitate ongoing research and technological advancements in this specialized field.</p>",
-  "narrative_source": "template"
+  "publisher": "CERN"
 }
