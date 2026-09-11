@@ -643,7 +643,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Capital in the Twenty-First Century (2014), published by Harvard University Press, has been cited 13,766 times — enough that OpenAlex puts it in the top 1% of works in its field a…",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780674430006&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9780674369542&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Thomas Piketty",
 "all_authors": [
 "Thomas Piketty"
@@ -6166,7 +6166,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Human Pose Estimation via Convolutional Part Heatmap Regression (2016), published by Springer Nature, has been cited 544 times — enough that OpenAlex puts it in the top 1% of work…",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-319-46478-7_44",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9783319464787&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Adrian Bulat, Georgios Tzimiropoulos",
 "all_authors": [
 "Adrian Bulat",
@@ -7657,8 +7657,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -7683,7 +7684,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Against Meritocracy (2017), published by Taylor & Francis, has been cited 319 times — enough that OpenAlex puts it in the top 1% of works in its field and year.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781315712802&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/b21a4b93-363f-4d77-a83d-f35904b7f0f0/retrieve",
 "authors": "Jo Littler",
 "all_authors": [
 "Jo Littler"
@@ -11291,7 +11292,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary What Does It Mean to Be White?",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781433131103&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Robin DiAngelo",
 "all_authors": [
 "Robin DiAngelo"
@@ -12589,8 +12590,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -12617,7 +12619,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Open: The Philosophy and Practices that are Revolutionizing Education and Science (2017), published by Ubiquity Press, has been cited 103 times — enough that OpenAlex puts it in t…",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781911529002&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/70b695aa-cbcd-476b-82dc-9360defcbc9f/retrieve",
 "authors": "Kwantlen Polytechnic University, CA, Rajiv S. Jhangiani, Robert Biswas-Diener et al.",
 "all_authors": [
 "Kwantlen Polytechnic University, CA",
@@ -12626,7 +12628,7 @@ window.STORIES_DATA = [
 "Noba Project"
 ],
 "institutions": [],
-"download_count": 14287,
+"download_count": 14300,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
@@ -15741,7 +15743,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Smith, Turgot, and the ‘Four Stages’ Theory (1977), published by Springer Nature, has been cited 61 times — enough that OpenAlex puts it in the top 1% of works in its field and ye…",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-1-4899-7303-0_2",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781489973030&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Ronald L. Meek",
 "all_authors": [
 "Ronald L. Meek"
@@ -18394,8 +18396,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -18420,7 +18423,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Virtues for the People (2011), published by Leuven University Press, has been cited 46 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9789461661180&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/1fc96a7a-909a-4bf4-b740-1d3671f7a9cc/retrieve",
 "authors": "Geert Roskam",
 "all_authors": [
 "Geert Roskam"
@@ -20801,8 +20804,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
@@ -20830,13 +20834,13 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Renegotiating Patriarchy: Gender, Agency and the Bangladesh Paradox (2024), published by LSE Press, has been cited 29 times — enough that OpenAlex puts it in the top 1% of works i…",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781911712220&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/4d908c0c-d118-447e-a954-1c872651e4c1/retrieve",
 "authors": "Naila Kabeer",
 "all_authors": [
 "Naila Kabeer"
 ],
 "institutions": [],
-"download_count": 5589,
+"download_count": 5593,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
@@ -22621,8 +22625,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
@@ -22648,7 +22653,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Economic Diversification in Nigeria (2022), published by Bloomsbury Publishing Plc., has been cited 21 times — enough that OpenAlex puts it in the top 10% of works in its field an…",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781350237674&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/3ea3eeda-f681-4ec9-b1e5-16cb80121a85/retrieve",
 "authors": "Zainab Usman",
 "all_authors": [
 "Zainab Usman"
@@ -23361,8 +23366,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
@@ -23390,7 +23396,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary A Life of Worry: Politics, Mental Health, and Vietnam’s Age of Anxiety (2023), published by University of California Press, has been cited 18 times — enough that OpenAlex puts it …",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780520392168&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/78ff4166-4056-42de-a6b7-75c2e9fdcd07/retrieve",
 "authors": "Allen L. Tran",
 "all_authors": [
 "Allen L. Tran"
@@ -23398,7 +23404,7 @@ window.STORIES_DATA = [
 "institutions": [
 "Bucknell University"
 ],
-"download_count": 5421,
+"download_count": 5430,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
@@ -26810,7 +26816,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Research-Based Perspectives on the Psychophysiology of Yoga (2018), published by IGI Global Publishing, has been cited 12 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781522527886&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9781522527893&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Shirley Telles, Nilkamal Singh",
 "all_authors": [
 "Shirley Telles",
@@ -27261,8 +27267,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
@@ -27290,7 +27297,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Decolonial Ecologies (2023), published by Open Book Publishers, has been cited 11 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781800649736&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/6733dc4d-4837-4f75-bebc-9c159558aaa2/retrieve",
 "authors": "Joanna Page",
 "all_authors": [
 "Joanna Page"
@@ -27298,12 +27305,11 @@ window.STORIES_DATA = [
 "institutions": [
 "University of Cambridge"
 ],
-"download_count": 5439,
+"download_count": 5440,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
 "mention_platforms": [
-"News",
 "LibraryThing"
 ],
 "has_librarything": true,
@@ -27312,9 +27318,7 @@ window.STORIES_DATA = [
 "awards": [
 "ACLS Open Access Book Prize & Arcadia Open Access Publishing Award finalist (2026) — Environmental Humanities"
 ],
-"platform_counts": {
-"news": 1
-},
+"platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": true,
 "risk_retracted": false,
@@ -29547,8 +29551,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -29573,7 +29578,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Digital Media Practices in Households (2025), published by Taylor & Francis, has been cited 9 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9789462989504&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/f525e6d8-a207-441c-b94a-e1848a32eece/retrieve",
 "authors": "Larissa Hjorth, Kana Ohashi, Jolynna Sinanan et al.",
 "all_authors": [
 "Larissa Hjorth",
@@ -30186,7 +30191,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Foreign in Two Homelands (2024), published by Cambridge University Press, has been cited 8 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781009486712&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Michelle Lynn Kahn",
 "all_authors": [
 "Michelle Lynn Kahn"
@@ -30448,8 +30453,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
@@ -30475,7 +30481,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The Diagrammatics of ‘Race’ (2024), published by Open Book Publishers, has been cited 8 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781805112600&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/6da568f4-86db-4058-bb7d-e4940c8d5ab8/retrieve",
 "authors": "Marianne Sommer",
 "all_authors": [
 "Marianne Sommer"
@@ -30483,7 +30489,7 @@ window.STORIES_DATA = [
 "institutions": [
 "Pennsylvania State University"
 ],
-"download_count": 3391,
+"download_count": 3393,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
@@ -31296,8 +31302,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
@@ -31325,7 +31332,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Image, Knife, and Gluepot (2019), published by Open Book Publishers, has been cited 7 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781783745166&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/d7839d17-881b-4ab4-a197-4d4c52a03198/retrieve",
 "authors": "Kathryn M. Rudy",
 "all_authors": [
 "Kathryn M. Rudy"
@@ -31333,7 +31340,7 @@ window.STORIES_DATA = [
 "institutions": [
 "University of St Andrews"
 ],
-"download_count": 6453,
+"download_count": 6455,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
@@ -33812,8 +33819,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -33840,7 +33848,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Adaptation in the Age of Media Convergence (2025), published by Taylor & Francis, has been cited 6 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9789462983663&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/46203ed6-5d14-487f-bdcc-1abd77a7ad6c/retrieve",
 "authors": "Johannes Fehrle, Werner Schäfke-Zell",
 "all_authors": [
 "Johannes Fehrle",
@@ -37733,7 +37741,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Lotze et son héritage (2015), published by Peter Lang Verlag, has been cited 4 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9782875742780&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Federico Boccaccini",
 "all_authors": [
 "Federico Boccaccini"
@@ -37847,7 +37855,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Renewing the Church-State Partnership for Catholic Education (2020), published by Peter Lang Verlag, has been cited 4 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781789975826&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Margaret Buck",
 "all_authors": [
 "Margaret Buck"
@@ -40913,8 +40921,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OpenAlex/Crossref",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "OpenAlex/Crossref"
 ],
 "oa_claimed_not_in_doab": false,
@@ -40940,7 +40949,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Redesigning Life (2015), published by Peter Lang Verlag, has been cited 3 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9782875742810&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/8875107d-7f16-478f-af70-4d46ab904ab5/retrieve",
 "authors": "Nathan Van Camp",
 "all_authors": [
 "Nathan Van Camp"
@@ -41057,7 +41066,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Austerity and the Implementation of the Europe 2020 Strategy in Spain (2017), published by Peter Lang Verlag, has been cited 3 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9782807604360&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Javier Ramos, Esther del Campo",
 "all_authors": [
 "Javier Ramos",
@@ -41170,7 +41179,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Digital Disruption (2018), published by Peter Lang Verlag, has been cited 3 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781433149214&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Tracey Wilen-Daugenti",
 "all_authors": [
 "Tracey Wilen-Daugenti"
@@ -41259,7 +41268,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Digital Marketing Applications (2019), published by Peter Lang Verlag, has been cited 3 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9783631802519&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Hatice Aydin",
 "all_authors": [
 "Hatice Aydin"
@@ -44751,7 +44760,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Forme(s) et modes d’être / Form(s) and Modes of Being (2016), published by Peter Lang Verlag, has been cited 2 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9782875743572&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Olivier Malherbe, Sébastien Richard",
 "all_authors": [
 "Olivier Malherbe",
@@ -44849,7 +44858,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Competition, Community, and Educational Growth (2018), published by Peter Lang Verlag, has been cited 2 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781433152382&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Kristopher Copeland, Garret L. Castleberry",
 "all_authors": [
 "Kristopher Copeland",
@@ -44951,7 +44960,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The Great Irish Famine and Social Class (2019), published by Peter Lang Verlag, has been cited 2 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781788741668&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Marguerite Corporaal, Peter Gray",
 "all_authors": [
 "Marguerite Corporaal",
@@ -45044,7 +45053,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary All Children Are All Our Children (2019), published by Peter Lang Verlag, has been cited 2 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781433161643&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Doug Selwyn",
 "all_authors": [
 "Doug Selwyn"
@@ -45132,8 +45141,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OpenAlex/Crossref",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "OpenAlex/Crossref"
 ],
 "oa_claimed_not_in_doab": false,
@@ -45159,7 +45169,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Zootechnologies (2025), published by Taylor & Francis, has been cited 2 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9789462986206&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/0f55eca1-6cc1-40a7-abb9-745f64d49f4f/retrieve",
 "authors": "Sebastian Vehlken",
 "all_authors": [
 "Sebastian Vehlken"
@@ -45258,12 +45268,14 @@ window.STORIES_DATA = [
 "History"
 ],
 "roles": [
+"Sustainability & Policy Relevance",
 "Scholarly Uptake"
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "OpenAlex/Crossref",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "OpenAlex/Crossref"
 ],
 "oa_claimed_not_in_doab": false,
@@ -45271,8 +45283,10 @@ window.STORIES_DATA = [
 "event_count": 0,
 "event_data_status": "archive_unavailable",
 "archived_event_count": null,
-"has_sdgs": false,
-"sdg_ids": [],
+"has_sdgs": true,
+"sdg_ids": [
+"Gender equality"
+],
 "has_teaching": false,
 "ta_ocw": 0,
 "ta_youtube": 0,
@@ -45287,7 +45301,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Human Trafficking in Medieval Europe (2025), published by Taylor & Francis, has been cited 2 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9789463723336&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/cd94981b-36e1-4c70-b21d-83ce72bb519c/retrieve",
 "authors": "Christopher Paolella",
 "all_authors": [
 "Christopher Paolella"
@@ -47732,7 +47746,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Smelly Shoes—An Opportunity for Shoe Rack Re-Design (2022), published by Springer Nature, has been cited 1 time.",
-"cover_url": "https://media.springernature.com/full/springer-static/cover-hires/book/978-981-16-2229-8_33",
+"cover_url": "https://books.google.com/books/content?vid=ISBN9789811622298&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Vikash Kumar, Sarthak Mittal",
 "all_authors": [
 "Vikash Kumar",
@@ -47746,16 +47760,13 @@ window.STORIES_DATA = [
 "series_id": "https://openalex.org/S4210183583",
 "belongs_to_series": true,
 "mention_platforms": [
-"Wikipedia",
 "Blogs"
 ],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {
-"wikipedia": 2
-},
+"platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
@@ -49703,7 +49714,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The Point of Philosophy (2016), published by Peter Lang Verlag, has been cited 1 time.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9782875743121&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Ludo Abicht, Hendrik Opdebeeck",
 "all_authors": [
 "Ludo Abicht",
@@ -49786,7 +49797,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Imagined Cosmopolis (2019), published by Peter Lang Verlag, has been cited 1 time.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9783034318709&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Charlotte Ashby, Grace Brockington, Daniel Laqua et al.",
 "all_authors": [
 "Charlotte Ashby",
@@ -49890,7 +49901,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Pro-vax (2025), published by Peter Lang Verlag, has been cited 1 time.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781800794719&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Samantha Vanderslott",
 "all_authors": [
 "Samantha Vanderslott"
@@ -50195,8 +50206,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "OpenAlex/Crossref"
 ],
@@ -50223,7 +50235,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary List Cultures (2025), published by Taylor & Francis, has been cited 1 time.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9789462981102&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/e198ecd7-a8eb-4323-ad84-ba88cb3145ad/retrieve",
 "authors": "Liam Young",
 "all_authors": [
 "Liam Young"
@@ -50332,7 +50344,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Exceptional Bodies in Early Modern Culture (2025), published by Taylor & Francis, has been cited 1 time.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9789463721745&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Maja Bondestam",
 "all_authors": [
 "Maja Bondestam"
@@ -60527,7 +60539,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary El mundo de atrás (2019), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781788743655&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Claudio Canaparo",
 "all_authors": [
 "Claudio Canaparo"
@@ -60597,7 +60609,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Narrativas periféricas (2019), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781433163180&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Iliana Olmedo",
 "all_authors": [
 "Iliana Olmedo"
@@ -60675,7 +60687,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The Curriculum of Horror (2019), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781433163227&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "James V. Grant",
 "all_authors": [
 "James V. Grant"
@@ -60750,7 +60762,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The Economy and Meaningfulness (2019), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9782807609648&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Hendrik Opdebeeck",
 "all_authors": [
 "Hendrik Opdebeeck"
@@ -60830,7 +60842,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary World War II Re-explored (2019), published by Peter Lang Verlag, has no recorded citations yet, but it is discussed on Wikipedia.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9783631777404&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Jarosław Suchoples, Stephanie James, Barbara Törnquist-Plewa",
 "all_authors": [
 "Jarosław Suchoples",
@@ -60910,7 +60922,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Les défis de la diversité culturelle dans le monde du travail au XXIe siècle (2020), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9782807610828&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Ariane Le Moing, Saïd Ouaked, Christèle Le Bihan",
 "all_authors": [
 "Ariane Le Moing",
@@ -61073,7 +61085,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Embodied Books (2024), published by Peter Lang Verlag, has no recorded citations yet, but it is used in teaching.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781800798182&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Darian Goldin Stahl",
 "all_authors": [
 "Darian Goldin Stahl"
@@ -61146,7 +61158,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary The Irish Against the War (2024), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781803740485&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Marie-Violaine Louvet",
 "all_authors": [
 "Marie-Violaine Louvet"
@@ -61227,7 +61239,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Fire Burning in My Head (2023), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781636670461&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "David Y. F. Ho",
 "all_authors": [
 "David Y. F. Ho"
@@ -61460,7 +61472,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Contemporary Issues on Adolescents and Counseling (2024), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781636670690&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Ruth A. Aderanti, Abiodun M. Gesinde",
 "all_authors": [
 "Ruth A. Aderanti",
@@ -61538,7 +61550,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Digital Visual Art Education (2024), published by Peter Lang Verlag, has no recorded citations, downloads or public discussion yet.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9781433195624&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Robert Sweeny",
 "all_authors": [
 "Robert Sweeny"
@@ -61924,7 +61936,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Islam in a Secular State (2025), published by Taylor & Francis, has no recorded citations, downloads or public discussion yet.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9789463724012&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "",
 "authors": "Walid Jumblatt Abdullah",
 "all_authors": [
 "Walid Jumblatt Abdullah"
@@ -61934,16 +61946,12 @@ window.STORIES_DATA = [
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
-"mention_platforms": [
-"News"
-],
+"mention_platforms": [],
 "has_librarything": false,
 "librarything_rating": null,
 "has_award": false,
 "awards": [],
-"platform_counts": {
-"news": 1
-},
+"platform_counts": {},
 "is_top1pct": false,
 "is_top10pct": false,
 "risk_retracted": false,
