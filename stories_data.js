@@ -30565,140 +30565,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "datastory_10.5281_zenodo.3727291.html",
-"title": "COVID-19 Open Research Dataset (CORD-19)",
-"type": "DataStory",
-"doi": "10.5281/zenodo.3727291",
-"year": 2020,
-"venue": "Zenodo",
-"venue_name": "Zenodo",
-"publisher": "CERN",
-"concepts": [
-"Coronavirus disease 2019 (COVID-19)",
-"Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
-"2019-20 coronavirus outbreak",
-"Virology",
-"Computer science",
-"Biology",
-"Medicine",
-"Internal medicine"
-],
-"roles": [
-"Scholarly Uptake"
-],
-"is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 8,
-"event_count": 0,
-"event_data_status": "archive_unavailable",
-"archived_event_count": null,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": true,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": true,
-"excerpt": "Short impact summary COVID-19 Open Research Dataset (CORD-19) (2020) in Zenodo.",
-"cover_url": "",
-"authors": "Sebastian Kohlmeier, Kyle Lo, Lucy Lu Wang et al.",
-"all_authors": [
-"Sebastian Kohlmeier",
-"Kyle Lo",
-"Lucy Lu Wang",
-"J-J. Yang"
-],
-"institutions": [
-"Allen Institute"
-],
-"download_count": 34665,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Healthcare",
-"count": 2
-},
-{
-"label": "Nonprofit",
-"count": 2
-},
-{
-"label": "Education",
-"count": 1
-}
-],
-"countries": [
-{
-"label": "Canada",
-"count": 2
-},
-{
-"label": "Australia",
-"count": 1
-},
-{
-"label": "China",
-"count": 1
-}
-],
-"citing_institutions": [
-{
-"label": "Mental Health Research Canada",
-"count": 2
-},
-{
-"label": "Queensland University of Technology",
-"count": 1
-},
-{
-"label": "The University of Queensland",
-"count": 1
-},
-{
-"label": "Holland Bloorview Kids Rehabilitation Hospital",
-"count": 1
-},
-{
-"label": "Guangzhou Women and Children Medical Center",
-"count": 1
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 2,
-"version_dois": [
-"10.5281/zenodo.3727291"
-]
-},
-{
 "file": "articlestory_10.1038_s42003-023-05579-3.html",
 "title": "Structural and biochemical investigations of a HEAT-repeat protein involved in the cytosolic iron-sulfur cluster assembly pathway",
 "type": "ArticleStory",
@@ -38037,6 +37903,140 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "datastory_10.5281_zenodo.3727291.html",
+"title": "COVID-19 Open Research Dataset (CORD-19)",
+"type": "DataStory",
+"doi": "10.5281/zenodo.3727291",
+"year": 2020,
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
+"concepts": [
+"Coronavirus disease 2019 (COVID-19)",
+"Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
+"2019-20 coronavirus outbreak",
+"Virology",
+"Computer science",
+"Biology",
+"Medicine",
+"Internal medicine"
+],
+"roles": [
+"Scholarly Uptake"
+],
+"is_oa": true,
+"oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 4,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": true,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary COVID-19 Open Research Dataset (CORD-19) (2020) in Zenodo.",
+"cover_url": "",
+"authors": "Sebastian Kohlmeier, Kyle Lo, Lucy Lu Wang et al.",
+"all_authors": [
+"Sebastian Kohlmeier",
+"Kyle Lo",
+"Lucy Lu Wang",
+"J-J. Yang"
+],
+"institutions": [
+"Allen Institute"
+],
+"download_count": 17363,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [
+{
+"label": "Healthcare",
+"count": 2
+},
+{
+"label": "Nonprofit",
+"count": 2
+},
+{
+"label": "Education",
+"count": 1
+}
+],
+"countries": [
+{
+"label": "Canada",
+"count": 2
+},
+{
+"label": "Australia",
+"count": 1
+},
+{
+"label": "China",
+"count": 1
+}
+],
+"citing_institutions": [
+{
+"label": "Mental Health Research Canada",
+"count": 2
+},
+{
+"label": "Queensland University of Technology",
+"count": 1
+},
+{
+"label": "The University of Queensland",
+"count": 1
+},
+{
+"label": "Holland Bloorview Kids Rehabilitation Hospital",
+"count": 1
+},
+{
+"label": "Guangzhou Women and Children Medical Center",
+"count": 1
+}
+],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.3727291"
+]
+},
+{
 "file": "softwarestory_10.5281_zenodo.1490628.html",
 "title": "open2c/distiller-nf: v0.3.4",
 "type": "SoftwareStory",
@@ -43085,120 +43085,6 @@ window.STORIES_DATA = [
 "version_count": 1,
 "version_dois": [
 "10.1101/2023.12.19.572369"
-]
-},
-{
-"file": "articlestory_10.11116_9789461664419.html",
-"title": "Islamic Glass in the Making",
-"type": "ArticleStory",
-"doi": "10.11116/9789461664419",
-"year": 2022,
-"venue": "Leuven University Press eBooks",
-"venue_name": "Leuven University Press eBooks",
-"publisher": "Leuven University Press",
-"concepts": [
-"Islam",
-"Mesopotamia",
-"Context (archaeology)",
-"Consumption (sociology)",
-"Ancient history",
-"History",
-"Archaeology",
-"Geography"
-],
-"roles": [
-"Sustainability & Policy Relevance",
-"Active Public Discourse"
-],
-"is_oa": true,
-"oa_status": "hybrid",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 2,
-"event_count": 0,
-"event_data_status": null,
-"archived_event_count": 1,
-"has_sdgs": true,
-"sdg_ids": [
-"Peace, Justice and strong institutions"
-],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": false,
-"has_openaire_reach": false,
-"has_openaire_open_instance": false,
-"has_certified_repository": false,
-"has_open_repository": false,
-"excerpt": "Short impact summary Nadine Schibille's work, *Islamic Glass in the Making*, published by Leuven University Press eBooks, has begun to carve a niche within the academic community, evidenced by two cit…",
-"cover_url": "",
-"authors": "Nadine Schibille",
-"all_authors": [
-"Nadine Schibille"
-],
-"institutions": [
-"Institut de Recherche sur les ArchéoMATériaux"
-],
-"download_count": 0,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [
-{
-"label": "Facility",
-"count": 2
-},
-{
-"label": "Education",
-"count": 2
-}
-],
-"countries": [
-{
-"label": "Italy",
-"count": 2
-}
-],
-"citing_institutions": [
-{
-"label": "University of Florence",
-"count": 2
-},
-{
-"label": "Institute of Geosciences and Earth Resources",
-"count": 2
-},
-{
-"label": "Ca' Foscari University of Venice",
-"count": 2
-}
-],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 1,
-"version_dois": [
-"10.11116/9789461664419"
 ]
 },
 {
@@ -62075,88 +61961,6 @@ window.STORIES_DATA = [
 ]
 },
 {
-"file": "softwarestory_10.5281_zenodo.3559815.html",
-"title": "stineb/rpmodel: Stocker et al. (2019) GMD, SUBMISSION2",
-"type": "SoftwareStory",
-"doi": "10.5281/zenodo.3559815",
-"year": 2019,
-"venue": "Zenodo",
-"venue_name": "Zenodo",
-"publisher": "CERN",
-"concepts": [
-"Medicine",
-"Engineering",
-"Context (archaeology)",
-"Computer science",
-"Work (physics)",
-"Term (time)",
-"Relation (database)",
-"Engineering drawing"
-],
-"roles": [],
-"is_oa": true,
-"oa_status": "green",
-"oa_provenance_source": "Publisher-claimed",
-"oa_provenance_sources": [
-"Publisher-claimed",
-"OpenAlex/Crossref"
-],
-"oa_claimed_not_in_doab": false,
-"citation_count": 0,
-"event_count": 0,
-"event_data_status": "archive_unavailable",
-"archived_event_count": null,
-"has_sdgs": false,
-"sdg_ids": [],
-"has_teaching": false,
-"ta_ocw": 0,
-"ta_youtube": 0,
-"ta_ol_holdings": 0,
-"ta_otl": false,
-"has_peer_review": false,
-"has_prism_context": false,
-"has_prism_peer_review": false,
-"has_reuse": true,
-"has_openaire_reach": true,
-"has_openaire_open_instance": true,
-"has_certified_repository": false,
-"has_open_repository": true,
-"excerpt": "Short impact summary stineb/rpmodel: Stocker et al.",
-"cover_url": "",
-"authors": "Stocker, Benjamin",
-"all_authors": [
-"Stocker, Benjamin"
-],
-"institutions": [
-"ETH Zurich"
-],
-"download_count": 568,
-"series_name": null,
-"series_id": null,
-"belongs_to_series": false,
-"mention_platforms": [],
-"has_librarything": false,
-"librarything_rating": null,
-"has_award": false,
-"awards": [],
-"platform_counts": {},
-"is_top1pct": false,
-"is_top10pct": false,
-"risk_retracted": false,
-"risk_eoc": false,
-"risk_pubpeer": 0,
-"funders": [],
-"sectors": [],
-"countries": [],
-"citing_institutions": [],
-"scite_supporting": 0,
-"scite_contradicting": 0,
-"version_count": 2,
-"version_dois": [
-"10.5281/zenodo.3559815"
-]
-},
-{
 "file": "bookstory_10.5703_1288284317628.html",
 "title": "Sisters in Science",
 "type": "BookStory",
@@ -64210,6 +64014,88 @@ window.STORIES_DATA = [
 ]
 },
 {
+"file": "softwarestory_10.5281_zenodo.3559815.html",
+"title": "stineb/rpmodel: Stocker et al. (2019) GMD, SUBMISSION2",
+"type": "SoftwareStory",
+"doi": "10.5281/zenodo.3559815",
+"year": 2019,
+"venue": "Zenodo",
+"venue_name": "Zenodo",
+"publisher": "CERN",
+"concepts": [
+"Medicine",
+"Engineering",
+"Context (archaeology)",
+"Computer science",
+"Work (physics)",
+"Term (time)",
+"Relation (database)",
+"Engineering drawing"
+],
+"roles": [],
+"is_oa": true,
+"oa_status": "green",
+"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_sources": [
+"Publisher-claimed",
+"OpenAlex/Crossref"
+],
+"oa_claimed_not_in_doab": false,
+"citation_count": 0,
+"event_count": 0,
+"event_data_status": "archive_unavailable",
+"archived_event_count": null,
+"has_sdgs": false,
+"sdg_ids": [],
+"has_teaching": false,
+"ta_ocw": 0,
+"ta_youtube": 0,
+"ta_ol_holdings": 0,
+"ta_otl": false,
+"has_peer_review": false,
+"has_prism_context": false,
+"has_prism_peer_review": false,
+"has_reuse": true,
+"has_openaire_reach": true,
+"has_openaire_open_instance": true,
+"has_certified_repository": false,
+"has_open_repository": true,
+"excerpt": "Short impact summary stineb/rpmodel: Stocker et al.",
+"cover_url": "",
+"authors": "Stocker, Benjamin",
+"all_authors": [
+"Stocker, Benjamin"
+],
+"institutions": [
+"ETH Zurich"
+],
+"download_count": 296,
+"series_name": null,
+"series_id": null,
+"belongs_to_series": false,
+"mention_platforms": [],
+"has_librarything": false,
+"librarything_rating": null,
+"has_award": false,
+"awards": [],
+"platform_counts": {},
+"is_top1pct": false,
+"is_top10pct": false,
+"risk_retracted": false,
+"risk_eoc": false,
+"risk_pubpeer": 0,
+"funders": [],
+"sectors": [],
+"countries": [],
+"citing_institutions": [],
+"scite_supporting": 0,
+"scite_contradicting": 0,
+"version_count": 1,
+"version_dois": [
+"10.5281/zenodo.3559815"
+]
+},
+{
 "file": "softwarestory_10.5281_zenodo.8414598.html",
 "title": "wsgriggs2/rt_fUS_BMI: v0.1.0 - First stable release of real-time fUS-BMI code",
 "type": "SoftwareStory",
@@ -64290,4 +64176,4 @@ window.STORIES_DATA = [
 ]
 }
 ];
-window.STORIES_STATS = {"total": 479, "total_articles": 203, "total_books": 213, "total_data": 49, "total_software": 14, "total_oa": 418, "pct_oa": 87, "total_citations": 174434, "num_disciplines": 30};
+window.STORIES_STATS = {"total": 478, "total_articles": 202, "total_books": 213, "total_data": 49, "total_software": 14, "total_oa": 417, "pct_oa": 87, "total_citations": 174428, "num_disciplines": 30};
