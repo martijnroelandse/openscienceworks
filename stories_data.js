@@ -23659,8 +23659,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
@@ -23688,13 +23689,13 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Mal-Nutrition: Maternal Health Science and the Reproduction of Harm (2024), published by University of California Press, has been cited 17 times — enough that OpenAlex puts it in …",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780520404427&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/29ff3c62-8e5d-4e17-ab01-f6c48f7c2c72/retrieve",
 "authors": "Emily Yates-Doerr",
 "all_authors": [
 "Emily Yates-Doerr"
 ],
 "institutions": [],
-"download_count": 2126,
+"download_count": 2135,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
@@ -27374,8 +27375,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
@@ -27401,7 +27403,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary At the Edges of Sleep (2022), published by University of California Press, has been cited 11 times — enough that OpenAlex puts it in the top 10% of works in its field and year.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780520384521&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/7cd28510-dc71-4086-821b-56faf7ab818d/retrieve",
 "authors": "Jean Ma",
 "all_authors": [
 "Jean Ma"
@@ -37584,8 +37586,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
@@ -37613,7 +37616,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Muddy Thinking in the Mississippi River Delta: A Call for Reclamation (2024), published by University of California Press, has been cited 4 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780520397200&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/80cd3dfd-e238-4f85-a228-421cd96d95da/retrieve",
 "authors": "Ned Randolph",
 "all_authors": [
 "Ned Randolph"
@@ -37621,7 +37624,7 @@ window.STORIES_DATA = [
 "institutions": [
 "University of California San Diego"
 ],
-"download_count": 2082,
+"download_count": 2086,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
@@ -44635,8 +44638,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
@@ -44664,7 +44668,7 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Knowing about Genocide (2021), published by University of California Press, has been cited 2 times.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780520380196&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/9cc1bb83-fd7d-48e9-af64-34dcc5ed4c06/retrieve",
 "authors": "Joachim J. Savelsberg",
 "all_authors": [
 "Joachim J. Savelsberg"
@@ -49590,8 +49594,9 @@ window.STORIES_DATA = [
 ],
 "is_oa": true,
 "oa_status": "gold",
-"oa_provenance_source": "Publisher-claimed",
+"oa_provenance_source": "OAPEN",
 "oa_provenance_sources": [
+"OAPEN",
 "Publisher-claimed",
 "ACLS/Arcadia rule",
 "OpenAlex/Crossref"
@@ -49619,13 +49624,13 @@ window.STORIES_DATA = [
 "has_certified_repository": false,
 "has_open_repository": false,
 "excerpt": "Short impact summary Making Sense: Language, Ethics, and Understanding in Deaf Nepal (2024), published by University of California Press, has been cited 1 time.",
-"cover_url": "https://books.google.com/books/content?vid=ISBN9780520399235&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+"cover_url": "https://library.oapen.org/rest/bitstreams/e261e2d9-21bb-4df7-9277-9f5127b8ac1c/retrieve",
 "authors": "E. Mara Green",
 "all_authors": [
 "E. Mara Green"
 ],
 "institutions": [],
-"download_count": 1339,
+"download_count": 1342,
 "series_name": null,
 "series_id": null,
 "belongs_to_series": false,
