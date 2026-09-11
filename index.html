@@ -552,6 +552,7 @@
     .bookshelf-row { display: flex; gap: 1.1rem; overflow-x: auto; padding: 0.2rem 0.2rem 0.6rem; }
     .shelf-slot { flex: 0 0 auto; width: 92px; display: flex; flex-direction: column; align-items: center; }
     .shelf-slot a { width: 100%; text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; }
+    .shelf-cover-wrap { position: relative; width: 88px; height: 128px; }
     .shelf-cover-img, .gen-jacket-sm { width: 88px; height: 128px; border-radius: 3px;
         box-shadow: 0 4px 10px rgba(15,23,42,.16), 0 1px 2px rgba(15,23,42,.10); object-fit: cover; }
     .gen-jacket-sm { --js: 24%; position: relative; overflow: hidden; padding: .6rem .5rem .5rem;
@@ -563,6 +564,22 @@
     .gen-jacket-sm .gj-title-sm { font-family: Georgia, 'Times New Roman', serif; font-weight: 600;
         font-size: .62rem; line-height: 1.15; margin: auto 0; overflow: hidden;
         display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; }
+    /* Datasets rarely have real cover art (Zenodo/Figshare thumbnails are
+       generic file icons, not a per-item visual) — rather than fake a book
+       jacket, use a flatter "data card" look: no spine, monospace title,
+       so it reads as data, not a book. */
+    .gen-jacket-sm.is-dataset { border-radius: 6px;
+        background: linear-gradient(165deg, hsl(var(--jh,214) 16% 30%) 0%, hsl(var(--jh,214) 16% 21%) 100%); }
+    .gen-jacket-sm.is-dataset::before { display: none; }
+    .gen-jacket-sm.is-dataset .gj-title-sm { font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        font-weight: 600; font-size: .56rem; letter-spacing: .01em; -webkit-line-clamp: 6; margin: 0; }
+    /* Small work-type badge so a shelf mixing books, articles, software and
+       data at a glance shows what each cover actually is (real image covers
+       carry no type signal of their own). */
+    .shelf-type-badge { position: absolute; top: 5px; right: 5px; width: 18px; height: 18px;
+        border-radius: 50%; background: rgba(15,23,42,.75); display: flex; align-items: center;
+        justify-content: center; box-shadow: 0 1px 3px rgba(0,0,0,.35); pointer-events: none; }
+    .shelf-type-badge svg { width: 11px; height: 11px; stroke: #f4f6fb; }
     .shelf-plank { width: 88px; height: 14px; margin-top: -1px; border-radius: 3px;
         background: linear-gradient(180deg, #c88a52 0%, #a86b36 55%, #8a5426 100%);
         box-shadow: 0 6px 10px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.25); }
@@ -1881,6 +1898,18 @@ function slugifyPublisher(name) {
   return slug || "unknown-publisher";
 }
 
+const SHELF_TYPE_ICONS = {
+  "Book": '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>',
+  "Dataset": '<ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"></path><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"></path>',
+  "Software": '<polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>',
+};
+const SHELF_TYPE_ICON_DEFAULT = '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line>';
+
+function shelfTypeBadge(type) {
+  const paths = SHELF_TYPE_ICONS[type] || SHELF_TYPE_ICON_DEFAULT;
+  return `<div class="shelf-type-badge" title="${escHtml(type || "Work")}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg></div>`;
+}
+
 function renderBookshelfCard(box) {
   const shelves = [
     { key: "top_cited_items", label: "Top cited", chipClass: "shelf-chip-cite", field: "citations", unit: "citations" },
@@ -1891,11 +1920,15 @@ function renderBookshelfCard(box) {
     const items = box[s.key] || [];
     if (!items.length) return "";
     const row = items.map(it => {
+      const isDataset = it.type === "Dataset";
+      const jacketClass = isDataset ? "gen-jacket-sm is-dataset" : "gen-jacket-sm";
+      const jacketAlt = isDataset ? `${escHtml(it.title)}. Dataset — no cover image available.` : `${escHtml(it.title)}. Cover image not available.`;
       const cover = it.cover_url
         ? `<img class="shelf-cover-img" src="${escHtml(it.cover_url)}" alt="Cover of ${escHtml(it.title)}">`
-        : `<div class="gen-jacket-sm" style="--jh: ${it.cover_hue != null ? it.cover_hue : 214};" role="img" aria-label="${escHtml(it.title)}. Cover image not available."><span class="gj-title-sm">${escHtml(it.title)}</span></div>`;
+        : `<div class="${jacketClass}" style="--jh: ${it.cover_hue != null ? it.cover_hue : 214};" role="img" aria-label="${jacketAlt}"><span class="gj-title-sm">${escHtml(it.title)}</span></div>`;
+      const badge = shelfTypeBadge(it.type);
       const link = it.story_url ? `href="${escHtml(it.story_url)}" target="_blank"` : "";
-      return `<div class="shelf-slot"><a ${link}>${cover}<div class="shelf-plank"></div><div class="shelf-title">${escHtml(it.title)}</div><div class="shelf-chips"><span class="shelf-chip ${s.chipClass}">${fmt(it[s.field])} ${s.unit}</span></div></a></div>`;
+      return `<div class="shelf-slot"><a ${link}><div class="shelf-cover-wrap">${cover}${badge}</div><div class="shelf-plank"></div><div class="shelf-title">${escHtml(it.title)}</div><div class="shelf-chips"><span class="shelf-chip ${s.chipClass}">${fmt(it[s.field])} ${s.unit}</span></div></a></div>`;
     }).join("");
     return `<div class="bookshelf-block"><div class="bookshelf-label">${s.label}</div><div class="bookshelf-row">${row}</div></div>`;
   }).join("");
