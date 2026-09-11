@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ArticleStory - A new generation of Ca2+ indicators with greatly improved fluorescence properties.</title>
+    <style>
+
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        /* AuthorStory links on story pages */
+        a.author-link,
+        .hero-meta a[href^="authorstory_"],
+        .card strong a[href^="authorstory_"],
+        #sec-citing strong a[href^="authorstory_"] {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a.author-link:hover,
+        .hero-meta a[href^="authorstory_"]:hover,
+        .card strong a[href^="authorstory_"]:hover,
+        #sec-citing strong a[href^="authorstory_"]:hover {
+            text-decoration: underline;
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+
+
+/* ── UX Enhancements ── */
+
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+.sticky-nav-more{display:inline-block;position:relative;}
+.sticky-nav-more>summary{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;cursor:pointer;list-style:none;border-bottom:2px solid transparent;}
+.sticky-nav-more>summary::-webkit-details-marker{display:none;}
+.sticky-nav-more[open]>summary,.sticky-nav-more>summary:hover{color:#111827;}
+.sticky-nav-more-menu{position:absolute;right:0;top:100%;min-width:10rem;background:#fff;
+  border:1px solid #e5e7eb;border-radius:.6rem;box-shadow:0 8px 24px rgba(15,23,42,.12);
+  padding:.35rem 0;z-index:120;}
+.sticky-nav-more-menu a{display:block;padding:.5rem .9rem;font-size:.78rem;font-weight:600;
+  color:#374151;text-decoration:none;white-space:nowrap;}
+.sticky-nav-more-menu a:hover{background:#f8fafc;color:#111827;}
+[id^="sec-"]{scroll-margin-top:4.75rem;}
+@media print{.sticky-nav{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
+
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;
+  border:1px solid transparent;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#f7ebeb;color:#B34444;border-color:#f1d5d5;}
+.sig-slate {background:#f3f4f6;color:#6b7280;border-color:#e5e7eb;}
+.sig-indigo{background:#f0ecf9;color:#6A4FA3;border-color:#ddd6fe;}
+.sig-teal  {background:#e8f2ef;color:#34675A;border-color:#cfe7df;}
+.sig-amber {background:#fef3c7;color:#92400e;border-color:#fde68a;}
+.sig-blue  {background:#ebf0f7;color:#3C5A7F;border-color:#cbdcf2;}
+.sig-green {background:#e8f2ef;color:#34675A;border-color:#cfe7df;}
+.sig-risk{background:#fee2e2;color:#b91c1c;border-color:#fca5a5;}
+.sig-warning{background:#fff7ed;color:#c2410c;border-color:#fdba74;}
+.sig-correction{background:#fef3c7;color:#92400e;border-color:#fde68a;}
+.sig-data{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe;}
+.sig-peer{background:#dcfce7;color:#166534;border-color:#bbf7d0;}
+.sig-preprint{background:#f5f3ff;color:#5b21b6;border-color:#ddd6fe;}
+.sig-repo-open{background:#f8fafc;color:#334155;border-color:#cbd5e1;}
+.sig-repo-certified{background:#ecfdf5;color:#047857;border-color:#a7f3d0;}
+.sig-oa-gold{background:#fef3c7;color:#92400e;border-color:#fde68a;}
+.sig-oa-hybrid{background:#e0f2fe;color:#0369a1;border-color:#bae6fd;}
+.sig-oa-green{background:#dcfce7;color:#166534;border-color:#bbf7d0;}
+.sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
+.sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
+.sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
+}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">A new generation of Ca2+ indicators with greatly improved fluorescence properties.</h1>
+
+                        <div class="im-signals-pills" style="margin-top: 0.75rem; margin-bottom: 0.5rem;">
+
+
+
+
+                                <span class="sig-pill sig-oa-hybrid" title="Open access: Hybrid">
+                                    <svg class="sig-oa-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="5" y="11" width="14" height="10" rx="2"/>
+                                        <path d="M7 11V7a5 5 0 0 1 9.5-2.2"/>
+                                        <path d="M16.5 4.8V11"/>
+                                    </svg>
+                                    Access · Hybrid
+                                </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong>
+
+                                    Grzegorz Grynkiewicz, Martin Poenie, Roger Y. Tsien
+
+                            </div>
+
+
+
+
+
+                            <div><strong>Journal:</strong>
+                                Journal of Biological Chemistry
+                            </div>
+
+
+                            <div><strong>Publisher:</strong>
+
+
+
+                                <span id="publisher-value" data-publisher-label="Elsevier">Elsevier</span>
+                            </div>
+
+                            <div><strong>Publication year:</strong>
+
+                                    1985
+
+                            </div>
+
+
+
+                            <div><strong>DOI:</strong>
+                                <a href="https://doi.org/10.1016/s0021-9258(19)83641-4" target="_blank">10.1016/s0021-9258(19)83641-4</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </header>
+
+
+
+
+        <!-- Sticky nav (built from story_nav — only sections present on this page) -->
+
+        <nav aria-label="Page sections" class="sticky-nav no-print" id="story-sticky-nav">
+            <div class="sticky-nav-inner">
+
+                <a href="#sec-hero" data-sec="sec-hero">Overview</a>
+
+                <a href="#sec-story" data-sec="sec-story">Story</a>
+
+                <a href="#sec-impact" data-sec="sec-impact">Impact</a>
+
+                <a href="#sec-roles" data-sec="sec-roles">Roles</a>
+
+                <a href="#sec-access" data-sec="sec-access">Access</a>
+
+                <a href="#sec-citing" data-sec="sec-citing">Who's Citing</a>
+
+
+
+            </div>
+        </nav>
+
+
+
+
+
+
+        <section class="card" id="sec-story">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">A new generation of Ca2+ indicators with greatly improved fluorescence properties. (1985) in Journal of Biological Chemistry. 21781 citations.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">A new generation of Ca2+ indicators with greatly improved fluorescence properties. (1985) in Journal of Biological Chemistry is authored by Grzegorz Grynkiewicz, Martin Poenie and Roger Y. Tsien. Topics: Fluorescence, Chemistry, Biophysics, Biology and Physics.</p>
+<p class="story-text">21781 citations (OpenAlex). Citations peaked in 1999 with 1011 citing works. Citing venues include Journal of Biological Chemistry, Cell Calcium and The Journal of Physiology.</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
+            <div class="muted" style="margin-top:0.6rem;">
+                Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
+            </div>
+        </section>
+
+
+
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+
+
+            <p class="muted">Crossref Event Data: historical records unavailable locally—not zero events. The public API was retired on 23 April 2026. Other attention sources may still be shown.</p>
+
+            <div class="im-wrapper">
+
+
+
+
+
+
+
+
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+
+                                <div class="im-num">21,781</div>
+                                <div class="im-label">Total Citations</div>
+
+                                <div class="im-top-badge">🏆 Top 1% Cited</div>
+
+                            </div>
+
+
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]"
+                                        data-values="[385, 312, 285, 283, 247, 235, 239, 206, 207, 156, 119, 71]"></canvas>
+                                </div>
+                                <div class="im-spark-range">1985–2026</div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+
+
+                    <!-- scite (only when references exist) -->
+
+                    <div class="im-card">
+                        <div class="im-num">2,336</div>
+                        <div class="im-label">scite References</div>
+
+
+
+
+
+
+                        <div class="im-scite-compact">
+                            <div class="im-scite-title">Citation context <span class="im-scite-via">via scite</span></div>
+                            <div class="im-scite-bar">
+                                <div class="im-scite-seg im-scite-sup" data-w="1"></div>
+                                <div class="im-scite-seg im-scite-men" data-w="99"></div>
+                                <div class="im-scite-seg im-scite-con" data-w="0"></div>
+                            </div>
+                            <div class="im-scite-leg">
+                                <span><span class="im-scite-dot" style="background:#22c55e;"></span>33</span>
+                                <span><span class="im-scite-dot" style="background:#94a3b8;"></span>2272</span>
+                                <span><span class="im-scite-dot" style="background:#f87171;"></span>1</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+                <div class="muted" style="margin-top:.7rem; font-size:.8rem;">
+                    Some signals aren’t recorded for this volume yet (online mentions) — these typically accrue after publication.
+                </div>
+
+
+
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <span class="sig-pill sig-green" title="scite: supporting citation statements">✓ scite · 33 supporting</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 40 countries</a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+
+
+
+
+
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Scholarly uptake — Frequently cited in scholarly literature. (score 1.00)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Scholarly uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+
+
+
+
+
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="High-visibility uptake — Appears in high-visibility channels or outlets. (score 0.85)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            High-visibility uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#b45309">📢 Public Engagement & Media</div>
+                    <div class="roles-row">
+
+
+
+
+
+                        <span class="role-pill role-pill-public" data-opacity="0.75"
+                              data-tip="Public visibility & knowledge base — Referenced in public knowledge-base venues. (score 0.00)">
+                            <span class="role-dot" data-bg="#f59e0b"></span>
+                            Public visibility & knowledge base
+                            <span class="role-strength" data-bg="#fef3c7" data-color="#92400e">Emerging</span>
+                        </span>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+
+
+        <div class="grid-2">
+
+
+            <section class="card" style="margin-bottom:0;" id="sec-access">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1016/s0021-9258(19)83641-4" target="_blank">10.1016/s0021-9258(19)83641-4</a></li>
+                    <li><strong>OA status:</strong> Hybrid</li>
+
+                    <li><strong>OA source:</strong> Publisher-claimed</li>
+
+
+
+
+
+
+
+
+
+
+                    <li><strong>OA basis:</strong> OpenAlex/Crossref access flag is OA, OpenAlex/Crossref OA status: HYBRID</li>
+
+                    <li><strong>OA evidence chain:</strong> Publisher-claimed → OpenAlex/Crossref</li>
+
+
+
+
+
+
+
+                </ul>
+            </section>
+
+
+
+
+        </div>
+
+        <div class="grid-2" style="align-items: start;">
+
+
+
+
+
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 2336</li>
+                                <li><strong>Supporting:</strong> 33</li>
+                                <li><strong>Mentioning:</strong> 2272</li>
+                                <li><strong>Contradicting:</strong> 1</li>
+                            </ul>
+
+                        </section>
+
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+
+
+
+                </div>
+
+        </div>
+
+
+
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>21781</strong> citing works.
+                        <strong>12.2%</strong> come from the Top 10 institutions.
+                        <a href="https://openalex.org/works?page=1&filter=cites%3AW2141260882&sort=publication_date%3Adesc" target="_blank" rel="noopener">See the full list on OpenAlex &rarr;</a>
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (20096)</span><span class="tag tag-soft" style="font-size:.75rem;">book-chapter (902)</span><span class="tag tag-soft" style="font-size:.75rem;">dissertation (323)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (162)</span><span class="tag tag-soft" style="font-size:.75rem;">review (99)</span>
+                        <span class="tag" style="font-size:.75rem;">Journal of Biological Chemistry</span><span class="tag" style="font-size:.75rem;">Cell Calcium</span><span class="tag" style="font-size:.75rem;">The Journal of Physiology</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]"
+                    data-values="[9, 90, 243, 444, 601, 643, 847, 883, 843, 955, 930, 885, 938, 912, 1011, 939, 817, 745, 711, 715, 605, 581, 521, 492, 483, 478, 426, 455, 431, 393, 385, 312, 285, 283, 247, 235, 239, 206, 207, 156, 119, 71]">
+                </canvas>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
+
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (7968)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Japan (2433)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Germany (2068)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (1677)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Italy (1132)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">France (1097)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Canada (1007)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Spain (744)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Taiwan (714)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (645)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Sweden (522)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">South Korea (464)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Switzerland (368)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Netherlands (357)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Australia (348)</span>
+
+                </div>
+
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (17539)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Healthcare (4804)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (3987)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (2066)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (1269)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (1121)</span>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Inserm</strong>
+
+                        <span class="muted">(466)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Centre National de la Recherche Scientifique</strong>
+
+                        <span class="muted">(455)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>The University of Tokyo</strong>
+
+                        <span class="muted">(295)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>National Institutes of Health</strong>
+
+                        <span class="muted">(249)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Harvard University</strong>
+
+                        <span class="muted">(239)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kaohsiung Veterans General Hospital</strong>
+
+                        <span class="muted">(223)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Pennsylvania</strong>
+
+                        <span class="muted">(206)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Cambridge</strong>
+
+                        <span class="muted">(192)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Maryland, Baltimore</strong>
+
+                        <span class="muted">(176)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Michigan</strong>
+
+                        <span class="muted">(164)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Johns Hopkins University</strong>
+
+                        <span class="muted">(162)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of California, San Francisco</strong>
+
+                        <span class="muted">(158)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Universidad Nacional Autónoma de México</strong>
+
+                        <span class="muted">(152)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>KU Leuven</strong>
+
+                        <span class="muted">(152)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Uppsala University</strong>
+
+                        <span class="muted">(148)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Karolinska Institutet</strong>
+
+                        <span class="muted">(148)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Yale University</strong>
+
+                        <span class="muted">(145)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Toronto</strong>
+
+                        <span class="muted">(144)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of California, Berkeley</strong>
+
+                        <span class="muted">(144)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Howard Hughes Medical Institute</strong>
+
+                        <span class="muted">(143)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University College London</strong>
+
+                        <span class="muted">(143)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Cornell University</strong>
+
+                        <span class="muted">(142)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of North Carolina at Chapel Hill</strong>
+
+                        <span class="muted">(134)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Universidad de Extremadura</strong>
+
+                        <span class="muted">(134)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of California San Diego</strong>
+
+                        <span class="muted">(133)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kyushu University</strong>
+
+                        <span class="muted">(131)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Washington</strong>
+
+                        <span class="muted">(130)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Milan</strong>
+
+                        <span class="muted">(128)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Tohoku University</strong>
+
+                        <span class="muted">(128)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Washington University in St. Louis</strong>
+
+                        <span class="muted">(128)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Heidelberg University</strong>
+
+                        <span class="muted">(128)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Hokkaido University</strong>
+
+                        <span class="muted">(126)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Charité - Universitätsmedizin Berlin</strong>
+
+                        <span class="muted">(121)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Columbia University</strong>
+
+                        <span class="muted">(120)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>The University of Osaka</strong>
+
+                        <span class="muted">(118)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kyoto University</strong>
+
+                        <span class="muted">(117)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Stanford University</strong>
+
+                        <span class="muted">(116)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Case Western Reserve University</strong>
+
+                        <span class="muted">(115)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of California, Los Angeles</strong>
+
+                        <span class="muted">(113)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Tübingen</strong>
+
+                        <span class="muted">(112)</span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Chung‐Ren Jan</strong>
+
+                        <span class="muted">(154)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Su‐Jane Wang</strong>
+
+                        <span class="muted">(96)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ginés M. Salido</strong>
+
+                        <span class="muted">(96)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Juan A. Rosado</strong>
+
+                        <span class="muted">(84)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Chiang‐Ting Chou</strong>
+
+                        <span class="muted">(74)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>J. Adolfo Garcı́a-Sáinz</strong>
+
+                        <span class="muted">(66)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Erik Gylfe</strong>
+
+                        <span class="muted">(66)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Tullio Pozzan</strong>
+
+                        <span class="muted">(62)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>José A. Pariente</strong>
+
+                        <span class="muted">(58)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Agnese Secondo</strong>
+
+                        <span class="muted">(57)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jong‐Khing Huang</strong>
+
+                        <span class="muted">(57)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Erwin Neher</strong>
+
+                        <span class="muted">(55)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kid Törnquist</strong>
+
+                        <span class="muted">(52)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Stewart O. Sage</strong>
+
+                        <span class="muted">(52)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Chun‐Chi Kuo</strong>
+
+                        <span class="muted">(52)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Mustafa Nazıroğlu</strong>
+
+                        <span class="muted">(51)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Cheng-Wei Lü</strong>
+
+                        <span class="muted">(49)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Javier Garcı́a-Sancho</strong>
+
+                        <span class="muted">(49)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jacopo Meldolesi</strong>
+
+                        <span class="muted">(48)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Tzu‐Yu Lin</strong>
+
+                        <span class="muted">(46)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Stanley A. Thayer</strong>
+
+                        <span class="muted">(45)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kyong‐Tai Kim</strong>
+
+                        <span class="muted">(44)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Eva Grapengiesser</strong>
+
+                        <span class="muted">(44)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Eugen Brailoiu</strong>
+
+                        <span class="muted">(44)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Antonio G. Garcı́a</strong>
+
+                        <span class="muted">(43)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jin‐Shiung Cheng</strong>
+
+                        <span class="muted">(43)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Luís M. Botana</strong>
+
+                        <span class="muted">(42)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Alexei Verkhratsky</strong>
+
+                        <span class="muted">(42)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Hideo Kanaide</strong>
+
+                        <span class="muted">(42)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>P. G. Kostyuk</strong>
+
+                        <span class="muted">(42)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Bo Hellman</strong>
+
+                        <span class="muted">(42)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Wei-Zhe Liang</strong>
+
+                        <span class="muted">(40)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Hong‐Tai Chang</strong>
+
+                        <span class="muted">(40)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jue‐Long Wang</strong>
+
+                        <span class="muted">(39)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Mark P. Mattson</strong>
+
+                        <span class="muted">(39)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Stefan Mergler</strong>
+
+                        <span class="muted">(39)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Roger Y. Tsien</strong>
+
+                        <span class="muted">(39)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Lucio Annunziato</strong>
+
+                        <span class="muted">(38)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Govindan Dayanithi</strong>
+
+                        <span class="muted">(38)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>John A. Connor</strong>
+
+                        <span class="muted">(38)</span>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+
+        <div class="grid-2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>3 authors · 0 institutions</div>
+
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+
+
+
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Grzegorz Grynkiewicz</strong>
+                        <span class="badge">First</span>
+
+                        <a class="orcid-badge" href="0000-0003-2439-2443" target="_blank">ORCID</a>
+                    </li>
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Martin Poenie</strong>
+
+
+                        <a class="orcid-badge" href="0000-0003-2524-4039" target="_blank">ORCID</a>
+                    </li>
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Roger Y. Tsien</strong>
+
+
+
+                    </li>
+
+                </ul>
+
+
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>6 specific concepts identified.</div>
+
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Fluorescence</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Chemistry</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biophysics</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Physics</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Optics</span>
+
+
+                </div>
+
+
+            </section>
+        </div>
+
+
+
+
+
+
+
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.35rem;"
+                 data-total="50">
+                50 most recent citing works (newest first)
+            </div>
+
+
+            <div class="muted" style="margin-bottom:0.75rem; font-size:0.85rem;">
+                This table lists only the 50 most recent citing works; OpenAlex records 21,781 in total &mdash;
+                <a href="https://openalex.org/works?page=1&filter=cites%3AW2141260882&sort=publication_date%3Adesc" target="_blank" rel="noopener">browse the full citation corpus on OpenAlex &rarr;</a>
+            </div>
+
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A Chemigenetic Ca2+ Indicator Based on a Red Fluorescent Protein and a Synthetic Chelator</td>
+                        <td>ACS Chemical Biology</td>
+                        <td><a href="https://doi.org/10.1021/acschembio.6c00209" target="_blank" style="word-break: break-all;">10.1021/acschembio.6c00209</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Selective excitatory effects of γ‐glutamyl‐glycine, a glutathione metabolite, on GluN1 NMDA and mGlu5 receptors impacting synaptic plasticity</td>
+                        <td>British Journal of Pharmacology</td>
+                        <td><a href="https://doi.org/10.1111/bph.70650" target="_blank" style="word-break: break-all;">10.1111/bph.70650</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Calix[4]arene C-1220 – Modulator of calcium homeostasis and contractile activity in smooth muscle cells</td>
+                        <td>Biochimica et Biophysica Acta (BBA) - Biomembranes</td>
+                        <td><a href="https://doi.org/10.1016/j.bbamem.2026.184573" target="_blank" style="word-break: break-all;">10.1016/j.bbamem.2026.184573</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A Sulfonamide Intermediate Elicits Therapeutic Effect Against Sepsis by Enhancing Neutrophil Maturation</td>
+                        <td>Journal of Cellular and Molecular Medicine</td>
+                        <td><a href="https://doi.org/10.1111/jcmm.71346" target="_blank" style="word-break: break-all;">10.1111/jcmm.71346</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Colorimetric and Fluorometric Recognition of Al3+ using Thiazole-Based Schiff base: A Mini-Review</td>
+                        <td>Journal of Fluorescence</td>
+                        <td><a href="https://doi.org/10.1007/s10895-026-04909-y" target="_blank" style="word-break: break-all;">10.1007/s10895-026-04909-y</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Ncbe is the main basolateral Na + loading mechanism of the choroid plexus epithelium</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.08.24.745951" target="_blank" style="word-break: break-all;">10.64898/2026.08.24.745951</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Acute Hypoxia Inhibits K 2P 3 /9 ( TASK1 /3) Independently of Cytosolic ATP in Carotid Body Type 1 Cells</td>
+                        <td>Acta Physiologica</td>
+                        <td><a href="https://doi.org/10.1111/apha.70294" target="_blank" style="word-break: break-all;">10.1111/apha.70294</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Advances in Imaging of Plant Ca2+ Signaling</td>
+                        <td>Biomolecules</td>
+                        <td><a href="https://doi.org/10.3390/biom16081193" target="_blank" style="word-break: break-all;">10.3390/biom16081193</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Modulation of the Fluoroacetate Effects on Calcium Balance and Mitochondrial Potential in Primary Culture of Rat Hippocampal Cells</td>
+                        <td>Biochemistry (Moscow) Supplement Series A Membrane and Cell Biology</td>
+                        <td><a href="https://doi.org/10.1134/s1990747826700212" target="_blank" style="word-break: break-all;">10.1134/s1990747826700212</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Swelling-induced calcium signaling in wild-type and Mlc1-null astrocytes: paradoxical effects of pharmacological TRPV4 and Piezo1 inhibition</td>
+                        <td>Frontiers in Cellular Neuroscience</td>
+                        <td><a href="https://doi.org/10.3389/fncel.2026.1908522" target="_blank" style="word-break: break-all;">10.3389/fncel.2026.1908522</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Tullio Pozzan</td>
+                        <td>Biographical Memoirs of Fellows of the Royal Society</td>
+                        <td><a href="https://doi.org/10.1098/rsbm.2025.0034" target="_blank" style="word-break: break-all;">10.1098/rsbm.2025.0034</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Transcriptome, glycome, and mucinome analysis reveal zinc is essential for the composition of mucus in the human goblet cell model HT-29-MTX</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-026-66227-4" target="_blank" style="word-break: break-all;">10.1038/s41598-026-66227-4</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Anticoagulant effects of echinatin via factor Xa inhibition</td>
+                        <td>Biotechnology and Bioprocess Engineering</td>
+                        <td><a href="https://doi.org/10.1007/s12257-026-00316-z" target="_blank" style="word-break: break-all;">10.1007/s12257-026-00316-z</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Thiacalix[4]arene C-1087 effects on the Са(2+) exchange in mitochondria</td>
+                        <td>The Ukrainian Biochemical Journal</td>
+                        <td><a href="https://doi.org/10.15407/ubj98.04.022" target="_blank" style="word-break: break-all;">10.15407/ubj98.04.022</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Increased ADORA1 expression in pancreatic islets coincides with insulin secretory defects in human type 2 diabetes</td>
+                        <td>Journal of Biological Chemistry</td>
+                        <td><a href="https://doi.org/10.1016/j.jbc.2026.113501" target="_blank" style="word-break: break-all;">10.1016/j.jbc.2026.113501</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Extracellular zinc acts as a dynamic extracellular regulator of fertilization in Xenopus laevis</td>
+                        <td>Biology of Reproduction</td>
+                        <td><a href="https://doi.org/10.1093/biolre/ioag161" target="_blank" style="word-break: break-all;">10.1093/biolre/ioag161</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Dual modulation of intracellular Ca2+ signaling by hispidulin through endoplasmic reticulum mobilization and extracellular Ca2+ entry in human breast cancer cells</td>
+                        <td>Journal of Molecular Histology</td>
+                        <td><a href="https://doi.org/10.1007/s10735-026-10866-4" target="_blank" style="word-break: break-all;">10.1007/s10735-026-10866-4</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A new tridentate ESIPT-active ligand as a ratiometric sensor for Zn2+ ions</td>
+                        <td>Dyes and Pigments</td>
+                        <td><a href="https://doi.org/10.1016/j.dyepig.2026.114051" target="_blank" style="word-break: break-all;">10.1016/j.dyepig.2026.114051</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Roles of the phosphorylation sites of distinct α1A-adrenergic receptor domains</td>
+                        <td>Molecular Pharmacology</td>
+                        <td><a href="https://doi.org/10.1016/j.molpha.2026.100143" target="_blank" style="word-break: break-all;">10.1016/j.molpha.2026.100143</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Macrophage calcium signaling dynamics revealed using genetically-encoded sensors</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.07.13.737685" target="_blank" style="word-break: break-all;">10.64898/2026.07.13.737685</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Sappanchalcone inhibits U46619-induced human platelets aggregation through modulation of phosphoproteins and granule secretion</td>
+                        <td>Journal of Applied Biological Chemistry</td>
+                        <td><a href="https://doi.org/10.3839/jabc.2026.026" target="_blank" style="word-break: break-all;">10.3839/jabc.2026.026</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Effect of carbonic anhydrase inhibitor on H+- and Cl−-transients and epileptiform activity in brain slices of ClopHensor-expressing transgenic mice</td>
+                        <td>Neuroscience</td>
+                        <td><a href="https://doi.org/10.1016/j.neuroscience.2026.07.020" target="_blank" style="word-break: break-all;">10.1016/j.neuroscience.2026.07.020</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Cytosolic calcium oscillations in human adrenocortical cells causing primary aldosteronism</td>
+                        <td>Molecular and Cellular Endocrinology</td>
+                        <td><a href="https://doi.org/10.1016/j.mce.2026.112865" target="_blank" style="word-break: break-all;">10.1016/j.mce.2026.112865</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Red-Shifted Epac-Based FRET cAMP Sensors for All-Optical cAMP Control and Multiparameter Imaging</td>
+                        <td>Cells</td>
+                        <td><a href="https://doi.org/10.3390/cells15131223" target="_blank" style="word-break: break-all;">10.3390/cells15131223</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Coriander Honey Accelerates Human Osteoblast Differentiation and Matrix Mineralization via Intracellular Ca2+ Signaling</td>
+                        <td>Pharmaceuticals</td>
+                        <td><a href="https://doi.org/10.3390/ph19070979" target="_blank" style="word-break: break-all;">10.3390/ph19070979</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A Genetically Encoded Calcium Ion Biosensor with an Exceptionally Large Ratiometric Response</td>
+                        <td>ACS Sensors</td>
+                        <td><a href="https://doi.org/10.1021/acssensors.6c00112" target="_blank" style="word-break: break-all;">10.1021/acssensors.6c00112</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A portable and multi-applicable fluorescent chemosensor for sequential detection of Zn2 + and S2−: Applications to environmental water, test strips, human serum, and bio-imaging</td>
+                        <td>Journal of environmental chemical engineering</td>
+                        <td><a href="https://doi.org/10.1016/j.jece.2026.123605" target="_blank" style="word-break: break-all;">10.1016/j.jece.2026.123605</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Polyphenol-Rich Oenanthe javanica as a Cardioprotective Functional Food Candidate Exhibiting Antiplatelet Activity via Suppression of Ca2+ Mobilization and Thromboxane A2 Production</td>
+                        <td>International Journal of Molecular Sciences</td>
+                        <td><a href="https://doi.org/10.3390/ijms27125326" target="_blank" style="word-break: break-all;">10.3390/ijms27125326</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Prevention of NMDA receptor sensitization by neurotoxic β-amyloid through polyphosphate coacervation</td>
+                        <td>Biomedicine & Pharmacotherapy</td>
+                        <td><a href="https://doi.org/10.1016/j.biopha.2026.119578" target="_blank" style="word-break: break-all;">10.1016/j.biopha.2026.119578</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Pentoxifylline and EDTA can modulate the capacitation of frozen/thawed donkey sperm</td>
+                        <td>Journal of Equine Veterinary Science</td>
+                        <td><a href="https://doi.org/10.1016/j.jevs.2026.106048" target="_blank" style="word-break: break-all;">10.1016/j.jevs.2026.106048</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>High-throughput monitoring of free Mg2+ in IVT reaction reveals effects of free Mg2+ on mRNA synthesis and DNA digestion</td>
+                        <td>Analytical and Bioanalytical Chemistry</td>
+                        <td><a href="https://doi.org/10.1007/s00216-026-06542-x" target="_blank" style="word-break: break-all;">10.1007/s00216-026-06542-x</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Illuminating Small Neutral Molecules: Design and Mechanistic Advances in Fluorescent Chemosensors</td>
+                        <td>Analytical Chemistry</td>
+                        <td><a href="https://doi.org/10.1021/acs.analchem.6c01444" target="_blank" style="word-break: break-all;">10.1021/acs.analchem.6c01444</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Highly Selective Fluorescence Sensing of Ba 2+ With a Benzo‐21‐Crown‐7‐Based BODIPY Through Modulation of an Intramolecular Charge Transfer in Aqueous Solution</td>
+                        <td>Analysis & Sensing</td>
+                        <td><a href="https://doi.org/10.1002/anse.70093" target="_blank" style="word-break: break-all;">10.1002/anse.70093</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>JPT2/HN1L functions as an NAADP-binding protein in a cell-type-specific manner</td>
+                        <td>Cell Calcium</td>
+                        <td><a href="https://doi.org/10.1016/j.ceca.2026.103156" target="_blank" style="word-break: break-all;">10.1016/j.ceca.2026.103156</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Transient Receptor Potential (TRP) channels: Quantitative biophysical correlates of cognitive function across brain regions</td>
+                        <td>Behavioural Brain Research</td>
+                        <td><a href="https://doi.org/10.1016/j.bbr.2026.116267" target="_blank" style="word-break: break-all;">10.1016/j.bbr.2026.116267</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Full-length SARS-CoV-2 envelope protein adopts an interfacial topology in lipid bilayers</td>
+                        <td>Biochimica et Biophysica Acta (BBA) - Biomembranes</td>
+                        <td><a href="https://doi.org/10.1016/j.bbamem.2026.184539" target="_blank" style="word-break: break-all;">10.1016/j.bbamem.2026.184539</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Electroporation-mediated delivery of protein biosensors for metabolic imaging in differentiated myotubes</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.05.11.722572" target="_blank" style="word-break: break-all;">10.64898/2026.05.11.722572</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Activation by statins unveils two putative agonist binding sites in the pore domain of TRPA1</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.05.08.723702" target="_blank" style="word-break: break-all;">10.64898/2026.05.08.723702</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Acidosis Drives Vasculogenic Mimicry in PDAC CSCs via Na+/H+ Exchanger Isoform 1 (NHE1) and Calcium Entry</td>
+                        <td>Cells</td>
+                        <td><a href="https://doi.org/10.3390/cells15100865" target="_blank" style="word-break: break-all;">10.3390/cells15100865</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Protocol for isolating and culturing human monocytes from peripheral blood and measuring intracellular calcium dynamics using Fura-2</td>
+                        <td>STAR Protocols</td>
+                        <td><a href="https://doi.org/10.1016/j.xpro.2026.104511" target="_blank" style="word-break: break-all;">10.1016/j.xpro.2026.104511</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Glyceraldehyde-induced metabolic defects in cortical astrocytes: implication for Alzheimer's disease pathogenesis and therapy</td>
+                        <td>Biomedicine & Pharmacotherapy</td>
+                        <td><a href="https://doi.org/10.1016/j.biopha.2026.119473" target="_blank" style="word-break: break-all;">10.1016/j.biopha.2026.119473</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Stochastic intracellular calcium dynamics show preserved structures identified by deep learning classification</td>
+                        <td>PLoS Computational Biology</td>
+                        <td><a href="https://doi.org/10.1371/journal.pcbi.1014240" target="_blank" style="word-break: break-all;">10.1371/journal.pcbi.1014240</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>TRP-Dependent Calcium Regulation in HCEC-12 Cells: Involvement of Ascorbic Acid and Cannabinoid Receptor Signaling</td>
+                        <td>International Journal of Molecular Sciences</td>
+                        <td><a href="https://doi.org/10.3390/ijms27093902" target="_blank" style="word-break: break-all;">10.3390/ijms27093902</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Effect of ADP on cumulative TRPV1 desensitization to capsaicin in rat DRG neurons</td>
+                        <td>Neuroscience Letters</td>
+                        <td><a href="https://doi.org/10.1016/j.neulet.2026.138609" target="_blank" style="word-break: break-all;">10.1016/j.neulet.2026.138609</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Crosstalk Between Calcium Dynamics and ROS Levels in U87 Glioblastoma Cells Exposed to Extremely low frequency pulsed electromagnetic fields</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.04.15.718611" target="_blank" style="word-break: break-all;">10.64898/2026.04.15.718611</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>African-enriched SLC39A10 (ZIP10) missense variants differentially affect cellular zinc homeostasis and associate with health-related traits</td>
+                        <td>Genes & Nutrition</td>
+                        <td><a href="https://doi.org/10.1186/s12263-026-00801-3" target="_blank" style="word-break: break-all;">10.1186/s12263-026-00801-3</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Harnessing NCX-IP 3 R-dependent Calcium Oscillations to Regulate Angiogenic Signaling in Endothelial Cells</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.04.07.717042" target="_blank" style="word-break: break-all;">10.64898/2026.04.07.717042</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Protocol for monitoring cytoplasmic Ca2+ dynamics using Fura Red-AM on a Zeiss Axio Observer microscope</td>
+                        <td>STAR Protocols</td>
+                        <td><a href="https://doi.org/10.1016/j.xpro.2026.104469" target="_blank" style="word-break: break-all;">10.1016/j.xpro.2026.104469</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Antidepressants interact with an LPA3 receptor binding site: Functional and docking studies</td>
+                        <td>European Journal of Pharmacology</td>
+                        <td><a href="https://doi.org/10.1016/j.ejphar.2026.178799" target="_blank" style="word-break: break-all;">10.1016/j.ejphar.2026.178799</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>KR-62980, a novel PPARγ agonist, inhibits collagen-induced platelet activation and thrombus formation by regulating the GPVI signaling pathway</td>
+                        <td>Biochemical Pharmacology</td>
+                        <td><a href="https://doi.org/10.1016/j.bcp.2026.117919" target="_blank" style="word-break: break-all;">10.1016/j.bcp.2026.117919</a></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-09-11T09:24:50+00:00
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' most recent citing works (newest first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' most recent citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+        .wm-tab-btn {
+            border: none;
+            background: #f3f4f6;
+            color: #4b5563;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .wm-tab-btn.wm-tab-active {
+            outline: 2px solid #3b82f6;
+            outline-offset: 1px;
+        }
+    </style>
+
+    <script>
+        function citeSwitchTab(btn, paneId) {
+            var panes = document.querySelectorAll('#sec-citing .cite-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].classList.remove('active');
+            }
+            var btns = document.querySelectorAll('#sec-citing .cite-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('active');
+            }
+            var pane = document.getElementById(paneId);
+            if (pane) pane.classList.add('active');
+            if (btn) btn.classList.add('active');
+        }
+        function openWebMentionTab(evt, tabId) {
+            var panes = document.querySelectorAll('.wm-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].style.display = 'none';
+            }
+            var btns = document.querySelectorAll('.wm-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('wm-tab-active');
+            }
+            var pane = document.getElementById(tabId);
+            if (pane) pane.style.display = 'block';
+            if (evt && evt.currentTarget) evt.currentTarget.classList.add('wm-tab-active');
+        }
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
+<script>
+(function() {
+    var nav = document.getElementById('story-sticky-nav');
+    if (!nav) return;
+    var links = nav.querySelectorAll('a[href^="#sec-"]');
+    var sectionIds = [];
+    links.forEach(function(a) {
+        var id = (a.getAttribute('href') || '').slice(1);
+        if (id && document.getElementById(id)) sectionIds.push(id);
+    });
+    if (!sectionIds.length) return;
+
+    function setActive(id) {
+        links.forEach(function(a) {
+            a.classList.toggle('snav-active', a.getAttribute('href') === '#' + id);
+        });
+    }
+
+    links.forEach(function(a) {
+        a.addEventListener('click', function(e) {
+            var id = (a.getAttribute('href') || '').slice(1);
+            var target = id ? document.getElementById(id) : null;
+            if (!target) return;
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.replaceState(null, '', '#' + id);
+            setActive(id);
+            var more = nav.querySelector('.sticky-nav-more');
+            if (more) more.removeAttribute('open');
+        });
+    });
+
+    if (!('IntersectionObserver' in window)) return;
+    var visible = new Map();
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            visible.set(entry.target.id, entry.intersectionRatio);
+        });
+        var bestId = null;
+        var bestRatio = 0;
+        sectionIds.forEach(function(id) {
+            var ratio = visible.get(id) || 0;
+            if (ratio > bestRatio) {
+                bestRatio = ratio;
+                bestId = id;
+            }
+        });
+        if (bestId) setActive(bestId);
+    }, { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] });
+
+    sectionIds.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) observer.observe(el);
+    });
+})();
+</script>
+<script>
+(function() {
+    var el = document.getElementById('publisher-value');
+    if (!el) return;
+
+    var label = (el.getAttribute('data-publisher-label') || '').trim();
+    if (!label || label.toLowerCase() === 'unknown') return;
+
+    function norm(s) {
+        return String(s || '').trim().toLowerCase().replace(/\s+/g, ' ');
+    }
+
+    function parseStoriesData(jsText) {
+        var marker = 'window.STORIES_DATA =';
+        var markerIdx = jsText.indexOf(marker);
+        if (markerIdx === -1) return [];
+        var start = jsText.indexOf('[', markerIdx);
+        if (start === -1) return [];
+        var endMarker = 'window.STORIES_STATS =';
+        var endMarkerIdx = jsText.indexOf(endMarker, start);
+        if (endMarkerIdx === -1) return [];
+        var end = jsText.lastIndexOf(';', endMarkerIdx - 1);
+        if (end === -1 || end <= start) return [];
+        var raw = jsText.slice(start, end).trim();
+        try {
+            var data = JSON.parse(raw);
+            return Array.isArray(data) ? data : [];
+        } catch (_err) {
+            return [];
+        }
+    }
+
+    function enablePublisherLink(count) {
+        var link = document.createElement('a');
+        link.href = 'index.html?view=publisher&publisher=' + encodeURIComponent(label);
+        link.textContent = label;
+        link.style.color = '#1d4ed8';
+        link.style.textDecoration = 'none';
+        if (typeof count === 'number' && count > 1) {
+            link.title = 'Open publisher dashboard (' + count + ' stories)';
+        } else {
+            link.title = 'Open publisher dashboard';
+        }
+        el.textContent = '';
+        el.appendChild(link);
+    }
+
+    // Local file previews (file://) often block fetch(). In that case we still
+    // provide direct navigation to the publisher dashboard.
+    if (window.location.protocol === 'file:') {
+        enablePublisherLink();
+        return;
+    }
+
+    fetch('stories_data.js')
+        .then(function(res) { return res.ok ? res.text() : ''; })
+        .then(function(jsText) {
+            if (!jsText) {
+                enablePublisherLink();
+                return;
+            }
+            var stories = parseStoriesData(jsText);
+            if (!stories.length) {
+                enablePublisherLink();
+                return;
+            }
+
+            var target = norm(label);
+            var matches = stories.filter(function(story) {
+                var publisher = norm(story.publisher || story.venue || '');
+                return publisher && publisher === target;
+            }).length;
+
+            if (matches <= 1) return;
+            enablePublisherLink(matches);
+        })
+        .catch(function() {
+            enablePublisherLink();
+        });
+})();
+</script>
+</body>
+</html>

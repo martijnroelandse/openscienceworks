@@ -1,0 +1,2581 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>BookStory - Statistical Physics of Spin Glasses and Information Processing</title>
+    <style>
+
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        /* AuthorStory links on story pages */
+        a.author-link,
+        .hero-meta a[href^="authorstory_"],
+        .card strong a[href^="authorstory_"],
+        #sec-citing strong a[href^="authorstory_"] {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a.author-link:hover,
+        .hero-meta a[href^="authorstory_"]:hover,
+        .card strong a[href^="authorstory_"]:hover,
+        #sec-citing strong a[href^="authorstory_"]:hover {
+            text-decoration: underline;
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+
+
+/* ── UX Enhancements ── */
+
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+.sticky-nav-more{display:inline-block;position:relative;}
+.sticky-nav-more>summary{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;cursor:pointer;list-style:none;border-bottom:2px solid transparent;}
+.sticky-nav-more>summary::-webkit-details-marker{display:none;}
+.sticky-nav-more[open]>summary,.sticky-nav-more>summary:hover{color:#111827;}
+.sticky-nav-more-menu{position:absolute;right:0;top:100%;min-width:10rem;background:#fff;
+  border:1px solid #e5e7eb;border-radius:.6rem;box-shadow:0 8px 24px rgba(15,23,42,.12);
+  padding:.35rem 0;z-index:120;}
+.sticky-nav-more-menu a{display:block;padding:.5rem .9rem;font-size:.78rem;font-weight:600;
+  color:#374151;text-decoration:none;white-space:nowrap;}
+.sticky-nav-more-menu a:hover{background:#f8fafc;color:#111827;}
+[id^="sec-"]{scroll-margin-top:4.75rem;}
+@media print{.sticky-nav{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
+
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;
+  border:1px solid transparent;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#f7ebeb;color:#B34444;border-color:#f1d5d5;}
+.sig-slate {background:#f3f4f6;color:#6b7280;border-color:#e5e7eb;}
+.sig-indigo{background:#f0ecf9;color:#6A4FA3;border-color:#ddd6fe;}
+.sig-teal  {background:#e8f2ef;color:#34675A;border-color:#cfe7df;}
+.sig-amber {background:#fef3c7;color:#92400e;border-color:#fde68a;}
+.sig-blue  {background:#ebf0f7;color:#3C5A7F;border-color:#cbdcf2;}
+.sig-green {background:#e8f2ef;color:#34675A;border-color:#cfe7df;}
+.sig-risk{background:#fee2e2;color:#b91c1c;border-color:#fca5a5;}
+.sig-warning{background:#fff7ed;color:#c2410c;border-color:#fdba74;}
+.sig-correction{background:#fef3c7;color:#92400e;border-color:#fde68a;}
+.sig-data{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe;}
+.sig-peer{background:#dcfce7;color:#166534;border-color:#bbf7d0;}
+.sig-preprint{background:#f5f3ff;color:#5b21b6;border-color:#ddd6fe;}
+.sig-repo-open{background:#f8fafc;color:#334155;border-color:#cbd5e1;}
+.sig-repo-certified{background:#ecfdf5;color:#047857;border-color:#a7f3d0;}
+.sig-oa-gold{background:#fef3c7;color:#92400e;border-color:#fde68a;}
+.sig-oa-hybrid{background:#e0f2fe;color:#0369a1;border-color:#bae6fd;}
+.sig-oa-green{background:#dcfce7;color:#166534;border-color:#bbf7d0;}
+.sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
+.sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
+.sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
+}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="bookstories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">Statistical Physics of Spin Glasses and Information Processing</h1>
+                        <div class="discipline-badge">Stem</div>
+                        <div class="im-signals-pills" style="margin-top: 0.75rem; margin-bottom: 0.5rem;">
+
+
+
+
+                                <span class="sig-pill sig-oa-gold" title="Open access: Gold">
+                                    <svg class="sig-oa-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="5" y="11" width="14" height="10" rx="2"/>
+                                        <path d="M7 11V7a5 5 0 0 1 9.5-2.2"/>
+                                        <path d="M16.5 4.8V11"/>
+                                    </svg>
+                                    Access · Gold
+                                </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong>
+
+                                    Hidetoshi Nishimori
+
+                            </div>
+
+
+
+
+
+
+                            <div><strong>Publisher:</strong>
+
+
+
+                                <span id="publisher-value" data-publisher-label="Oxford University PressOxford">Oxford University PressOxford</span>
+                            </div>
+
+                            <div><strong>Publication year:</strong>
+
+                                    2001
+
+                            </div>
+
+
+
+                            <div><strong>DOI:</strong>
+                                <a href="https://doi.org/10.1093/acprof:oso/9780198509417.001.0001" target="_blank">10.1093/acprof:oso/9780198509417.001.0001</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="cover-wrap">
+
+                    <img src="https://library.oapen.org/rest/bitstreams/587fd4e2-2684-4238-a461-8c180b0e1ad7/retrieve" alt="Cover of Statistical Physics of Spin Glasses and Information Processing" style="max-width:110px; border-radius:0.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+
+                </div>
+
+            </div>
+        </header>
+
+
+
+
+        <!-- Sticky nav (built from story_nav — only sections present on this page) -->
+
+        <nav aria-label="Page sections" class="sticky-nav no-print" id="story-sticky-nav">
+            <div class="sticky-nav-inner">
+
+                <a href="#sec-hero" data-sec="sec-hero">Overview</a>
+
+                <a href="#sec-story" data-sec="sec-story">Story</a>
+
+                <a href="#sec-impact" data-sec="sec-impact">Impact</a>
+
+                <a href="#sec-roles" data-sec="sec-roles">Roles</a>
+
+                <a href="#sec-access" data-sec="sec-access">Access</a>
+
+                <a href="#sec-mentions" data-sec="sec-mentions">Mentions</a>
+
+
+
+                <details class="sticky-nav-more">
+                    <summary>More</summary>
+                    <div class="sticky-nav-more-menu">
+
+                        <a href="#sec-teaching" data-sec="sec-teaching">Teaching</a>
+
+                        <a href="#sec-citing" data-sec="sec-citing">Who's Citing</a>
+
+                        <a href="#sec-downloads" data-sec="sec-downloads">Downloads</a>
+
+                    </div>
+                </details>
+
+            </div>
+        </nav>
+
+
+
+
+
+
+        <section class="card" id="sec-story">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">Statistical Physics of Spin Glasses and Information Processing (2001), published by Oxford University PressOxford, has been cited 1,179 times — enough that OpenAlex puts it in the top 10% of works in its field and year. Beyond that, it has been downloaded 557 times.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">Statistical Physics of Spin Glasses and Information Processing by Hidetoshi Nishimori was published by Oxford University PressOxford in 2001. Conceptually, the work connects to Viewpoints, Spin glass, Statistical mechanics, Spin (aerodynamics) and Field (mathematics).</p>
+<p class="story-text">OpenAlex records 1,179 citations. That places it in the top 10% of works in its field and year of publication. Citations peaked in 2009 with 77 citing works. Notable citing venues include Journal of the Physical Society of Japan, Physical Review E and Physical review. E. Of the citation statements scite has classified, 38 support its claims and 2 contradict them. The citing works include 867 journal articles, 77 book chapters and 55 preprints. They come from 40 countries, led by Japan, the United States and the United Kingdom.</p>
+<p class="story-text">It has been downloaded 557 times via OAPEN. Open Library reports a combined count of 1 reading logs and catalog editions.</p></div>
+            <div class="muted" style="margin-top:0.6rem;">
+                Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
+            </div>
+        </section>
+
+
+
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+
+
+            <p class="muted">Crossref Event Data: historical records unavailable locally—not zero events. The public API was retired on 23 April 2026. Other attention sources may still be shown.</p>
+
+            <div class="im-wrapper">
+
+
+
+
+
+
+
+
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+
+                                <div class="im-num">1,179</div>
+                                <div class="im-label">Total Citations</div>
+
+                                <div class="im-top-badge">⭐ Top 10% Cited</div>
+
+                            </div>
+
+
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]"
+                                        data-values="[44, 58, 45, 47, 62, 48, 45, 39, 47, 50, 45, 27]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2001–2026</div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+
+                    <div class="im-card">
+                        <div class="im-card-top">
+                            <div>
+                                <div class="im-num">557</div>
+                                <div class="im-label">Downloads (OAPEN)</div>
+                            </div>
+
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="downloadsSparkline"
+                                        data-labels="[&#34;Jan&#34;, &#34;Feb&#34;, &#34;Mar&#34;, &#34;Apr&#34;, &#34;May&#34;, &#34;Jun&#34;, &#34;Jul&#34;, &#34;Aug&#34;, &#34;Sep&#34;, &#34;Oct&#34;, &#34;Nov&#34;, &#34;Dec&#34;]"
+                                        data-values="[35, 55, 82, 75, 42, 36, 37, 13, 53, 66, 33, 30]"></canvas>
+                                </div>
+
+                                <div class="im-spark-range">2001 (Jan–Dec)</div>
+
+                            </div>
+
+                        </div>
+                        <a class="im-card-link" href="#sec-downloads">📊 View full timeline ↓</a>
+                    </div>
+
+
+                    <!-- scite (only when references exist) -->
+
+                    <div class="im-card">
+                        <div class="im-num">1,842</div>
+                        <div class="im-label">scite References</div>
+
+
+
+
+
+
+                        <div class="im-scite-compact">
+                            <div class="im-scite-title">Citation context <span class="im-scite-via">via scite</span></div>
+                            <div class="im-scite-bar">
+                                <div class="im-scite-seg im-scite-sup" data-w="2"></div>
+                                <div class="im-scite-seg im-scite-men" data-w="98"></div>
+                                <div class="im-scite-seg im-scite-con" data-w="0"></div>
+                            </div>
+                            <div class="im-scite-leg">
+                                <span><span class="im-scite-dot" style="background:#22c55e;"></span>38</span>
+                                <span><span class="im-scite-dot" style="background:#94a3b8;"></span>1796</span>
+                                <span><span class="im-scite-dot" style="background:#f87171;"></span>2</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+                <div class="muted" style="margin-top:.7rem; font-size:.8rem;">
+                    Some signals aren’t recorded for this volume yet (online mentions) — these typically accrue after publication.
+                </div>
+
+
+
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+
+
+
+
+
+
+
+
+
+
+
+
+                        <a class="sig-pill sig-slate" href="https://www.worldcat.org/search?q=bn:0198509413" target="_blank" style="text-decoration:none;">📚 WorldCat search</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <a class="sig-pill sig-amber" href="#sec-mentions" style="text-decoration:none;" title="Expert newsletters, blogs, podcasts">
+                            📰 Scholarly web · 1
+                        </a>
+
+
+
+
+
+
+
+
+
+
+
+
+                        <span class="sig-pill sig-green" title="scite: supporting citation statements">✓ scite · 38 supporting</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 40 countries</a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+
+
+
+
+
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Reference point for synthesis — Often cited by reviews and synthesis work. (score 0.90)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Reference point for synthesis
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+
+
+
+
+
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Evidence-bearing reference — Backed by evidence-linked citations or stewardship signals. (score 0.85)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Evidence-bearing reference
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+
+
+        <div class="grid-2">
+
+
+            <section class="card" style="margin-bottom:0;" id="sec-access">
+                <h2 style="margin-top:0;"><span>Access</span> <span class="badge" style="background:#f3f4f6; color:#4b5563;">Availability</span></h2>
+                <ul class="metric-list" style="line-height: 1.8;">
+
+
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1093/acprof:oso/9780198509417.001.0001" target="_blank" style="word-break: break-all;">https://doi.org/10.1093/acprof:oso/9780198509417.001.0001</a></li>
+
+
+                    <li><strong>OA status:</strong>
+
+                            Gold
+
+                    </li>
+
+                    <li><strong>OA source:</strong> OAPEN</li>
+
+
+
+
+
+
+                    <li><strong>OA basis:</strong> OAPEN record found for this title</li>
+
+                        <li><strong>OA evidence chain:</strong> OAPEN → Publisher-claimed → OpenAlex/Crossref</li>
+
+
+                        <li>
+                            <strong>OA verification:</strong>
+                            <span class="badge" style="background:#fff7ed; color:#9a3412; border:1px solid #fdba74;">Claimed OA, not in DOAB</span>
+                        </li>
+
+
+                        <li><strong>Landing page:</strong> <a href="https://doi.org/10.1093/acprof:oso/9780198509417.001.0001" target="_blank" style="word-break: break-all;">https://doi.org/10.1093/acprof:oso/9780198509417.001.0001</a></li>
+
+
+
+                        <li><strong>OAPEN Library:</strong> <a href="https://library.oapen.org/handle/20.500.12657/76439" target="_blank" style="word-break: break-all;">https://library.oapen.org/handle/20.500.12657/76439</a></li>
+
+
+
+                </ul>
+            </section>
+
+
+
+
+
+        </div>
+
+        <div class="grid-2" style="align-items: start;">
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Reader reception</span> <span class="badge">Books</span></h2>
+                <ul class="metric-list">
+
+
+
+
+
+
+
+
+
+                </ul>
+            </section>
+
+                <section class="card" style="margin-bottom:0;">
+                    <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+
+                    <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                        <li><strong>Total:</strong> 1842</li>
+                        <li><strong>Supporting:</strong> 38</li>
+                        <li><strong>Mentioning:</strong> 1796</li>
+                        <li><strong>Contradicting:</strong> 2</li>
+                    </ul>
+
+                </section>
+
+
+
+
+
+
+        </div>
+
+
+
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>1179</strong> citing works.
+                        <strong>47.8%</strong> come from the Top 10 institutions.
+                        <a href="https://openalex.org/works?page=1&filter=cites%3AW1527520754&sort=publication_date%3Adesc" target="_blank" rel="noopener">See the full list on OpenAlex &rarr;</a>
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (867)</span><span class="tag tag-soft" style="font-size:.75rem;">conference-paper (148)</span><span class="tag tag-soft" style="font-size:.75rem;">book-chapter (77)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (55)</span><span class="tag tag-soft" style="font-size:.75rem;">dissertation (16)</span>
+                        <span class="tag" style="font-size:.75rem;">Journal of the Physical Society of Japan</span><span class="tag" style="font-size:.75rem;">Physical Review E</span><span class="tag" style="font-size:.75rem;">Physical review. E</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]"
+                    data-values="[3, 16, 35, 27, 51, 56, 47, 61, 77, 51, 57, 47, 53, 41, 44, 58, 45, 47, 62, 48, 45, 39, 47, 50, 45, 27]">
+                </canvas>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
+
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Japan (404)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (198)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (130)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Italy (126)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">France (94)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Germany (73)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (68)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Switzerland (44)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Brazil (37)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Hong Kong (33)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Spain (26)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">India (26)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Canada (23)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Taiwan (22)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Israel (18)</span>
+
+                </div>
+
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (1036)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (296)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (113)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (68)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (41)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Other (24)</span>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Tokyo Institute of Technology</strong>
+
+                        <span class="muted">(132)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>The University of Tokyo</strong>
+
+                        <span class="muted">(68)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Centre National de la Recherche Scientifique</strong>
+
+                        <span class="muted">(63)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Tohoku University</strong>
+
+                        <span class="muted">(52)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Sapienza University of Rome</strong>
+
+                        <span class="muted">(47)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Aston University</strong>
+
+                        <span class="muted">(45)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Commissariat à l'Énergie Atomique et aux Énergies Alternatives</strong>
+
+                        <span class="muted">(41)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>CEA Paris-Saclay</strong>
+
+                        <span class="muted">(40)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kyoto University</strong>
+
+                        <span class="muted">(39)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Institut de Physique Théorique</strong>
+
+                        <span class="muted">(37)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>RIKEN Center for Brain Science</strong>
+
+                        <span class="muted">(36)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Université Paris-Saclay</strong>
+
+                        <span class="muted">(32)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>École Polytechnique Fédérale de Lausanne</strong>
+
+                        <span class="muted">(31)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>The Abdus Salam International Centre for Theoretical Physics (ICTP)</strong>
+
+                        <span class="muted">(30)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Sorbonne Université</strong>
+
+                        <span class="muted">(27)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Hokkaido University</strong>
+
+                        <span class="muted">(26)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kansai University</strong>
+
+                        <span class="muted">(26)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Bologna</strong>
+
+                        <span class="muted">(26)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Hong Kong University of Science and Technology</strong>
+
+                        <span class="muted">(25)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Massachusetts Institute of Technology</strong>
+
+                        <span class="muted">(21)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Université Paris Sciences et Lettres</strong>
+
+                        <span class="muted">(19)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Centro Brasileiro de Pesquisas Físicas</strong>
+
+                        <span class="muted">(19)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Stanford University</strong>
+
+                        <span class="muted">(19)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>École Normale Supérieure - PSL</strong>
+
+                        <span class="muted">(18)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Santa Fe Institute</strong>
+
+                        <span class="muted">(17)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>King's College London</strong>
+
+                        <span class="muted">(16)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Texas A&M University</strong>
+
+                        <span class="muted">(16)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Scuola Internazionale Superiore di Studi Avanzati</strong>
+
+                        <span class="muted">(15)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>National Sun Yat-sen University</strong>
+
+                        <span class="muted">(15)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University College London</strong>
+
+                        <span class="muted">(15)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Université Paris-Sud</strong>
+
+                        <span class="muted">(14)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Oxford</strong>
+
+                        <span class="muted">(14)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Tokyo Metropolitan University</strong>
+
+                        <span class="muted">(14)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>National and Kapodistrian University of Athens</strong>
+
+                        <span class="muted">(13)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of California, Berkeley</strong>
+
+                        <span class="muted">(13)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Friedrich-Alexander-Universität Erlangen-Nürnberg</strong>
+
+                        <span class="muted">(12)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Norwegian University of Science and Technology</strong>
+
+                        <span class="muted">(12)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Laboratoire de Physique Théorique et Modèles Statistiques</strong>
+
+                        <span class="muted">(12)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Laboratoire de Physique de l'Ecole Normale Supérieure</strong>
+
+                        <span class="muted">(12)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Université Paris Cité</strong>
+
+                        <span class="muted">(11)</span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Yoshiyuki Kabashima</strong>
+
+                        <span class="muted">(44)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>David Saad</strong>
+
+                        <span class="muted">(42)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Masato Okada</strong>
+
+                        <span class="muted">(40)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Hidetoshi Nishimori</strong>
+
+                        <span class="muted">(38)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Seiji Miyoshi</strong>
+
+                        <span class="muted">(34)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Andrea Montanari</strong>
+
+                        <span class="muted">(28)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kazuyuki Tanaka</strong>
+
+                        <span class="muted">(28)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Marc Mézard</strong>
+
+                        <span class="muted">(27)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Masayuki Ohzeki</strong>
+
+                        <span class="muted">(26)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ralf R. Müller</strong>
+
+                        <span class="muted">(24)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Yôhei Saika</strong>
+
+                        <span class="muted">(21)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Chao-Kai Wen</strong>
+
+                        <span class="muted">(20)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Muneki Yasuda</strong>
+
+                        <span class="muted">(20)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Lenka Zdeborová</strong>
+
+                        <span class="muted">(20)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jun‐ichi Inoue</strong>
+
+                        <span class="muted">(20)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Florent Krząkała</strong>
+
+                        <span class="muted">(18)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Francesco Zamponi</strong>
+
+                        <span class="muted">(17)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Giorgio Parisi</strong>
+
+                        <span class="muted">(17)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>K. Y. Michael Wong</strong>
+
+                        <span class="muted">(17)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Chi Ho Yeung</strong>
+
+                        <span class="muted">(17)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Pierfrancesco Urbani</strong>
+
+                        <span class="muted">(16)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Pierluigi Contucci</strong>
+
+                        <span class="muted">(16)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Toshiyuki Tanaka</strong>
+
+                        <span class="muted">(15)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Fernando Nobre</strong>
+
+                        <span class="muted">(15)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Helmut G. Katzgraber</strong>
+
+                        <span class="muted">(15)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jean Barbier</strong>
+
+                        <span class="muted">(14)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Mikko Vehkaperä</strong>
+
+                        <span class="muted">(13)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Yoshinobu Kajikawa</strong>
+
+                        <span class="muted">(13)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Koji Hukushima</strong>
+
+                        <span class="muted">(13)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>A. Nihat Berker</strong>
+
+                        <span class="muted">(12)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Nicolas Macris</strong>
+
+                        <span class="muted">(11)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Riccardo Zecchina</strong>
+
+                        <span class="muted">(11)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Keigo Takeuchi</strong>
+
+                        <span class="muted">(11)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ayaka Sakata</strong>
+
+                        <span class="muted">(10)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Roberto C. Alamino</strong>
+
+                        <span class="muted">(10)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ettore Vicari</strong>
+
+                        <span class="muted">(9)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>A C C Coolen</strong>
+
+                        <span class="muted">(9)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kai‐Kit Wong</strong>
+
+                        <span class="muted">(9)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ido Kanter</strong>
+
+                        <span class="muted">(9)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Francesco Camilli</strong>
+
+                        <span class="muted">(9)</span>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+
+        <div class="grid-2">
+
+
+
+
+
+
+
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Open Science Signals</span> <span class="badge" title="PRISM is a structured metadata feed used by DOAB for book-level peer-review context where publishers provide it.">PRISM</span></h2>
+                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Open peer review and repository accessibility signals for this work.</p>
+
+
+
+
+                <h3 style="font-size:0.95rem;margin:1rem 0 0.6rem;">Open Peer Review <span class="badge" style="background:#eef2ff;color:#4338ca;">PRISM</span></h3>
+                <ul class="metric-list">
+
+                    <li><strong>Status:</strong> <span class="badge" style="background:#f3f4f6;color:#4b5563;border:1px solid #e5e7eb;">No explicit PRISM review record returned</span></li>
+                    <li class="muted" style="margin-top:0.25rem;">Interpretation: neutral signal — this does <strong>not</strong> mean the book had no peer review; only that PRISM returned no explicit title-level review metadata.</li>
+
+
+                    <li><strong>Publisher context:</strong> Oxford University Press</li>
+
+                </ul>
+
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <section class="card " style="margin-bottom:0;" id="sec-mentions">
+                <h2><span>Online mentions &amp; public discourse</span> <span class="badge">Open Web</span></h2>
+                <p class="muted" style="margin-top:-0.2rem; margin-bottom:0.5rem; font-size:0.85rem;">
+                    Community platforms and curated expert sources (newsletters, blogs, podcasts), plus
+
+                    historical Crossref Event Data where locally archived.
+
+                </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div style="margin-top: 1.75rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb;">
+        <h3 style="font-size: 1.1rem; color: #1f2937; margin: 0 0 0.35rem 0; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+            <span>Scholarly web mentions</span>
+            <span class="badge" style="background:#fef3c7; color:#92400e; border:1px solid #fde68a; font-size:0.65rem;">Pilot</span>
+        </h3>
+
+    <p class="muted" style="margin-top:0; margin-bottom:1rem;">
+        Expert newsletters, subject blogs, and science podcasts from <code>pilot_sources.tsv</code>
+         — <strong>1</strong> hit
+         · 📧 1
+    </p>
+
+
+
+
+    <div id="wm-all" class="wm-tab-pane" style="display:block;">
+        <div class="wm-row" data-source-type="substack" style="position:relative; margin-bottom:1.35rem; padding-left:0.25rem; border-bottom:1px solid #f3f4f6; padding-bottom:1rem;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; margin-bottom:0.35rem;">
+        <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+
+            <span style="font-size:1rem;" title="Substack">📧</span>
+            <span class="badge" style="background:#fff7ed; color:#c2410c; font-size:0.65rem;">Substack</span>
+
+            <strong style="font-size:0.9rem;">organizationalhistorynetwork.substack.com</strong>
+
+            <span class="muted" style="font-size:0.75rem;">· 2026-05-08</span>
+
+        </div>
+
+        <a href="https://www.historyinorganizations.org/p/historical-methods-in-organizational" target="_blank" style="font-size:0.8rem; color:#2563eb; font-weight:600; white-space:nowrap; text-decoration:none;">Read post →</a>
+
+    </div>
+
+    <div style="font-weight:600; font-size:0.95rem; color:#1e293b; margin-bottom:0.35rem;">Historical Methods in Organizational and Business Research: A Practical Guide</div>
+
+
+    <p style="font-size:0.85rem; color:#475569; line-height:1.5; margin:0; font-style:italic;">…gy. In M. Bucheli & R. D. Wadhwani (Eds), Organizations in Time (pp. 305–329). Oxford University Press. https://doi.org/10.1093/acprof:oso/9780199646890.003.0013 Kipping, M., & Üsdiken, B. (2014). History in organization and management theory: More than meet…</p>
+
+
+</div>
+    </div>
+    <div id="wm-substack" class="wm-tab-pane" style="display:none;"><div class="wm-row" data-source-type="substack" style="position:relative; margin-bottom:1.35rem; padding-left:0.25rem; border-bottom:1px solid #f3f4f6; padding-bottom:1rem;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem; margin-bottom:0.35rem;">
+        <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+
+            <span style="font-size:1rem;" title="Substack">📧</span>
+            <span class="badge" style="background:#fff7ed; color:#c2410c; font-size:0.65rem;">Substack</span>
+
+            <strong style="font-size:0.9rem;">organizationalhistorynetwork.substack.com</strong>
+
+            <span class="muted" style="font-size:0.75rem;">· 2026-05-08</span>
+
+        </div>
+
+        <a href="https://www.historyinorganizations.org/p/historical-methods-in-organizational" target="_blank" style="font-size:0.8rem; color:#2563eb; font-weight:600; white-space:nowrap; text-decoration:none;">Read post →</a>
+
+    </div>
+
+    <div style="font-weight:600; font-size:0.95rem; color:#1e293b; margin-bottom:0.35rem;">Historical Methods in Organizational and Business Research: A Practical Guide</div>
+
+
+    <p style="font-size:0.85rem; color:#475569; line-height:1.5; margin:0; font-style:italic;">…gy. In M. Bucheli & R. D. Wadhwani (Eds), Organizations in Time (pp. 305–329). Oxford University Press. https://doi.org/10.1093/acprof:oso/9780199646890.003.0013 Kipping, M., & Üsdiken, B. (2014). History in organization and management theory: More than meet…</p>
+
+
+</div></div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+            </section>
+
+        </div>
+
+
+        <section class="card" id="sec-teaching">
+            <h2><span>Teaching, Practice & Library Adoption</span></h2>
+            <div class="muted" style="margin-top:-0.2rem; margin-bottom:1.5rem;">
+                Evidence of structured teaching use, reading lists, and library availability.
+            </div>
+
+            <div class="grid-2" style="align-items: start;">
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        OpenCourseWare Mentions <span class="badge" style="float: right;">Google Custom Search</span>
+                    </h3>
+
+                        <p class="muted" style="font-size: 0.85rem; font-style: italic;">No verified course syllabi found in open university repositories.</p>
+
+
+
+                </div>
+
+                <div>
+                    <h3 style="font-size: 0.95rem; margin-bottom: 0.8rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem;">
+                        Library & Community Access <span class="badge" style="float: right; background: #f0fdf4; color: #166534;">Open Library</span>
+                    </h3>
+
+                    <ul class="metric-list" style="margin-top: 0;">
+
+
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Repository Reach (OpenAIRE):</strong>
+                            <span class="badge" style="background:#e0f2fe; color:#075985; border:1px solid #bae6fd;">
+                                4 indexed instances · 3 open
+                            </span>
+                            <div class="muted" style="font-size: 0.8rem; margin-top: 0.2rem;">Repository distribution and availability across indexed hosts.</div>
+                        </li>
+
+
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Community Reach:</strong>
+                            <a href="https://openlibrary.org/search?title=Statistical%20Physics%20of%20Spin%20Glasses%20and%20Information%20Processing" target="_blank" class="badge" style="background:#fef2f2; color:#dc2626; text-decoration: none; display: inline-flex; align-items: center; gap: 0.2rem;">
+                                1 logs/editions ↗
+                            </a>
+                            <div class="muted" style="font-size: 0.8rem; margin-top: 0.2rem;">Tracked across Open Library community reading lists and catalog editions.</div>
+                        </li>
+
+
+
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Institutional Availability:</strong>
+                            <div style="margin-top: 0.4rem;">
+                                <a href="https://www.worldcat.org/search?q=bn:0198509413" target="_blank" class="tag" style="background:#e5f2ff; color:#1d4ed8; font-weight: 600; text-decoration: none;">
+                                    Search Global Libraries (WorldCat) ↗
+                                </a>
+                            </div>
+                        </li>
+
+
+
+                        <li style="margin-bottom: 0.8rem;">
+                            <strong>Library Classification Subjects:</strong>
+                            <div style="display:flex; flex-wrap:wrap; gap:0.3rem; margin-top: 0.4rem;">
+
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Mathematical models</span>
+
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Spin glasses</span>
+
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Statistical mechanics</span>
+
+                                    <span class="tag tag-soft" style="font-size: 0.75rem;">Statistical physics</span>
+
+                            </div>
+                        </li>
+
+
+
+
+
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>1 author · 0 institutions</div>
+
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+
+
+
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Hidetoshi Nishimori</strong>
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0002-0924-1463" target="_blank">ORCID</a>
+                    </li>
+
+                </ul>
+
+
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>26 specific concepts identified.</div>
+
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Viewpoints</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Spin glass</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Statistical mechanics</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Spin (aerodynamics)</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Field (mathematics)</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Statistical physics</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Spin engineering</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Information processing</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Information theory</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Artificial neural network</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Data science</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Physics</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Theoretical computer science</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Theoretical physics</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Artificial intelligence</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Mathematics</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Quantum mechanics</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Spin polarization</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Statistics</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Acoustics</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Neuroscience</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Thermodynamics</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Pure mathematics</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Electron</span>
+
+
+                </div>
+
+
+            </section>
+        </div>
+
+
+
+
+
+        <section class="card" id="sec-downloads">
+            <h2><span>OPERAS Metrics</span> <span class="badge">Widget</span></h2>
+            <div id="metrics-widget"></div>
+            <script type="application/json" id="operas-metrics-config">{"settings": {"locale": "en-US", "element_id": "metrics-widget", "load_graph_data_immediately": true}, "options": {"open_first_tab_by_default": true}, "tabs": [{"id": "tab1", "title": "Downloads", "scopes": {"m1": {"title": "OAPEN \u00b7 downloads", "works": ["info:doi:10.1093/acprof:oso/9780198509417.001.0001"], "measures": ["https://metrics.operas-eu.org/oapen/downloads/v1"]}}, "graphs": [{"id": "g1", "type": "line", "title": "Downloads over time", "scopes": ["m1"], "config": {"stacked": true, "cumulative": false}}]}]}</script>
+            <script src="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.js" async></script>
+        </section>
+
+
+
+
+
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.35rem;"
+                 data-total="46">
+                46 most recent citing works (newest first)
+            </div>
+
+
+            <div class="muted" style="margin-bottom:0.75rem; font-size:0.85rem;">
+                This table lists only the 46 most recent citing works; OpenAlex records 1,179 in total &mdash;
+                <a href="https://openalex.org/works?page=1&filter=cites%3AW1527520754&sort=publication_date%3Adesc" target="_blank" rel="noopener">browse the full citation corpus on OpenAlex &rarr;</a>
+            </div>
+
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Dense Associative Memory with Biased Patterns: A Replica Symmetric Analysis</td>
+                        <td>Journal of Statistical Physics</td>
+                        <td><a href="https://doi.org/10.1007/s10955-026-03679-y" target="_blank" style="word-break: break-all;">10.1007/s10955-026-03679-y</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Simulated-annealing decoder for the XZZX code with greedy-matching initialization</td>
+                        <td>APS Open Science</td>
+                        <td><a href="https://doi.org/10.1103/5z6j-y33z" target="_blank" style="word-break: break-all;">10.1103/5z6j-y33z</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Effects of quenched disorder in three-dimensional lattice Z 2 gauge Higgs models</td>
+                        <td>Physical review. E</td>
+                        <td><a href="https://doi.org/10.1103/q127-fnz1" target="_blank" style="word-break: break-all;">10.1103/q127-fnz1</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Beam Search Decoder for Quantum Low-Density Parity-Check Codes</td>
+                        <td>PRX Quantum</td>
+                        <td><a href="https://doi.org/10.1103/6k5x-ztqt" target="_blank" style="word-break: break-all;">10.1103/6k5x-ztqt</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Finite-temperature topological transitions in the presence of quenched uncorrelated disorder</td>
+                        <td>Physical review. E</td>
+                        <td><a href="https://doi.org/10.1103/v9j9-7gqs" target="_blank" style="word-break: break-all;">10.1103/v9j9-7gqs</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Exact mapping of a spin glass with correlated disorder to the pure Ising model</td>
+                        <td>Physical review. E</td>
+                        <td><a href="https://doi.org/10.1103/99ls-2zdk" target="_blank" style="word-break: break-all;">10.1103/99ls-2zdk</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Statistical Physics of Deep Learning: Optimal Learning of a Multilayer Perceptron near Interpolation</td>
+                        <td>Physical Review X</td>
+                        <td><a href="https://doi.org/10.1103/56sb-pdh6" target="_blank" style="word-break: break-all;">10.1103/56sb-pdh6</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Mean-field theory for Heider balance under heterogeneous social temperatures</td>
+                        <td>Physical review. E</td>
+                        <td><a href="https://doi.org/10.1103/9rlt-78n5" target="_blank" style="word-break: break-all;">10.1103/9rlt-78n5</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Noncommutative weak measurements: Entanglement, symmetry breaking, and the role of readout</td>
+                        <td>Physical review. B./Physical review. B</td>
+                        <td><a href="https://doi.org/10.1103/q7hz-qcxz" target="_blank" style="word-break: break-all;">10.1103/q7hz-qcxz</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Sampling (noisy) quantum circuits through randomized rounding</td>
+                        <td>Quantum</td>
+                        <td><a href="https://doi.org/10.22331/q-2026-04-15-2068" target="_blank" style="word-break: break-all;">10.22331/q-2026-04-15-2068</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Geometry and dynamics of annealed optimization in the coherent Ising machine with hidden and planted solutions</td>
+                        <td>Physical review. E</td>
+                        <td><a href="https://doi.org/10.1103/k73p-5k1w" target="_blank" style="word-break: break-all;">10.1103/k73p-5k1w</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Revisiting Nishimori multicriticality through the lens of information measures</td>
+                        <td>Physical Review Research</td>
+                        <td><a href="https://doi.org/10.1103/b8y5-k3y6" target="_blank" style="word-break: break-all;">10.1103/b8y5-k3y6</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Diffusion-Guided Feature Selection via Nishimori Temperature: Noise-Based Spectral Embedding</td>
+                        <td>arXiv (Cornell University)</td>
+                        <td><a href="https://doi.org/10.1109/dspa69176.2026.11476758" target="_blank" style="word-break: break-all;">10.1109/dspa69176.2026.11476758</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Conformal Field Theory Based Multimodal Spectral Clustering: Generalized Symmetric Eigenvalue Solvers and the Nishimori Temperature</td>
+                        <td>Unknown</td>
+                        <td><a href="https://doi.org/10.1109/dspa69176.2026.11476767" target="_blank" style="word-break: break-all;">10.1109/dspa69176.2026.11476767</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>A Sociological Model of Political Regimes in the Parisi–Talagrand and Sherrington–Kirkpatrick Framework: Imposed vs. Natural Replica Symmetry in Totalitarian Systems</td>
+                        <td>Systems</td>
+                        <td><a href="https://doi.org/10.3390/systems14030310" target="_blank" style="word-break: break-all;">10.3390/systems14030310</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>The maximum-average subtensor problem: Equilibrium and out-of-equilibrium properties</td>
+                        <td>SciPost Physics</td>
+                        <td><a href="https://doi.org/10.21468/scipostphys.20.3.073" target="_blank" style="word-break: break-all;">10.21468/scipostphys.20.3.073</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Near-Field Channel Estimation for RIS-Aided Industrial IoT Systems</td>
+                        <td>IEEE Internet of Things Journal</td>
+                        <td><a href="https://doi.org/10.1109/jiot.2026.3667028" target="_blank" style="word-break: break-all;">10.1109/jiot.2026.3667028</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Information-Theoretic Limits and Vector Approximate Message-Passing for High-Dimensional Time Series</td>
+                        <td>IEEE Transactions on Information Theory</td>
+                        <td><a href="https://doi.org/10.1109/tit.2026.3665948" target="_blank" style="word-break: break-all;">10.1109/tit.2026.3665948</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Quantum Annealing Algorithms for Estimating Ising Partition Functions</td>
+                        <td>Physical Review Letters</td>
+                        <td><a href="https://doi.org/10.1103/8gmb-p619" target="_blank" style="word-break: break-all;">10.1103/8gmb-p619</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Cluster percolation in the three-dimensional ± J random-bond Ising model</td>
+                        <td>Physical review. E</td>
+                        <td><a href="https://doi.org/10.1103/y464-wxbk" target="_blank" style="word-break: break-all;">10.1103/y464-wxbk</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Belief propagation for finite networks using a symmetry-breaking source node</td>
+                        <td>Physical Review Research</td>
+                        <td><a href="https://doi.org/10.1103/pgxg-mhjr" target="_blank" style="word-break: break-all;">10.1103/pgxg-mhjr</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Measurement-induced phase transitions in quantum inference problems and quantum hidden Markov models</td>
+                        <td>Physical Review Research</td>
+                        <td><a href="https://doi.org/10.1103/b3s8-y1wb" target="_blank" style="word-break: break-all;">10.1103/b3s8-y1wb</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>From Chaos to Synchrony in Recurrent Excitatory–Inhibitory Networks with Target-Specific Inhibition</td>
+                        <td>SSRN Electronic Journal</td>
+                        <td><a href="https://doi.org/10.2139/ssrn.6829428" target="_blank" style="word-break: break-all;">10.2139/ssrn.6829428</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Criticality and fragility in a quantum neural memory</td>
+                        <td>Chinese Physics B</td>
+                        <td><a href="https://doi.org/10.1088/1674-1056/ae2d36" target="_blank" style="word-break: break-all;">10.1088/1674-1056/ae2d36</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Bayesian critical points in classical lattice models</td>
+                        <td>Physical review. B./Physical review. B</td>
+                        <td><a href="https://doi.org/10.1103/7dpt-d4s5" target="_blank" style="word-break: break-all;">10.1103/7dpt-d4s5</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Single replica spin-glass phase detection using field variation and machine learning</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0335503" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0335503</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Inference in spreading processes with neural-network priors</td>
+                        <td>Physical review. E</td>
+                        <td><a href="https://doi.org/10.1103/8mww-brdk" target="_blank" style="word-break: break-all;">10.1103/8mww-brdk</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Marginal Probability Maximization on Restricted Boltzmann Machines Based on Blocked Sampling</td>
+                        <td>Communications in computer and information science</td>
+                        <td><a href="https://doi.org/10.1007/978-981-95-4094-5_28" target="_blank" style="word-break: break-all;">10.1007/978-981-95-4094-5_28</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Variational Gaussian Approximation in Replica Analysis of Parametric Models</td>
+                        <td>Journal of the Physical Society of Japan</td>
+                        <td><a href="https://doi.org/10.7566/jpsj.94.124801" target="_blank" style="word-break: break-all;">10.7566/jpsj.94.124801</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Order parameter for non-mean-field spin glasses</td>
+                        <td>Physical review. B./Physical review. B</td>
+                        <td><a href="https://doi.org/10.1103/7lm2-ljrd" target="_blank" style="word-break: break-all;">10.1103/7lm2-ljrd</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>From time crystals to time quasicrystals: Exploring quasiperiodic phases in transverse field Ising chains</td>
+                        <td>Physical review. B./Physical review. B</td>
+                        <td><a href="https://doi.org/10.1103/1tzt-3h5x" target="_blank" style="word-break: break-all;">10.1103/1tzt-3h5x</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Fundamental limits of overparametrized shallow neural networks for supervised learning</td>
+                        <td>Bollettino Della Unione Matematica Italiana</td>
+                        <td><a href="https://doi.org/10.1007/s40574-025-00506-2" target="_blank" style="word-break: break-all;">10.1007/s40574-025-00506-2</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Equalized hyperspin machine</td>
+                        <td>Physical Review A</td>
+                        <td><a href="https://doi.org/10.1103/cxjt-53qy" target="_blank" style="word-break: break-all;">10.1103/cxjt-53qy</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Enhanced, fully connected 360 000-spin spatial photonic Ising machine</td>
+                        <td>Physical Review Applied</td>
+                        <td><a href="https://doi.org/10.1103/c792-d3n9" target="_blank" style="word-break: break-all;">10.1103/c792-d3n9</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Optical Ising spin-glass simulator with tunable short-range couplings</td>
+                        <td>Physical Review A</td>
+                        <td><a href="https://doi.org/10.1103/mwx5-32rj" target="_blank" style="word-break: break-all;">10.1103/mwx5-32rj</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Temperature chaos as a logical consequence of the reentrant transition in spin glasses</td>
+                        <td>Physical review. E</td>
+                        <td><a href="https://doi.org/10.1103/qp1w-qcbs" target="_blank" style="word-break: break-all;">10.1103/qp1w-qcbs</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Optimal thresholds and algorithms for a model of multi-modal learning in high dimensions</td>
+                        <td>Journal of Statistical Mechanics Theory and Experiment</td>
+                        <td><a href="https://doi.org/10.1088/1742-5468/ae0428" target="_blank" style="word-break: break-all;">10.1088/1742-5468/ae0428</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Toward a Theory of Phase Transitions in Quantum Control Landscapes</td>
+                        <td>Physical Review X</td>
+                        <td><a href="https://doi.org/10.1103/27nn-cb3t" target="_blank" style="word-break: break-all;">10.1103/27nn-cb3t</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Geometric Phase Transition of the Three-Dimensional Z 2 Lattice Gauge Model</td>
+                        <td>Physical Review Letters</td>
+                        <td><a href="https://doi.org/10.1103/33q3-g68k" target="_blank" style="word-break: break-all;">10.1103/33q3-g68k</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>The random free field scalar theory</td>
+                        <td>Journal of High Energy Physics</td>
+                        <td><a href="https://doi.org/10.1007/jhep08(2025)072" target="_blank" style="word-break: break-all;">10.1007/jhep08(2025)072</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Topological Phase Transitions in a Constrained Two-Qubit Quantum Control Landscape</td>
+                        <td>Physical Review Letters</td>
+                        <td><a href="https://doi.org/10.1103/dqvj-p6fq" target="_blank" style="word-break: break-all;">10.1103/dqvj-p6fq</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Subsystem Information Capacity in Random Circuits and Hamiltonian Dynamics</td>
+                        <td>Quantum</td>
+                        <td><a href="https://doi.org/10.22331/q-2025-06-24-1783" target="_blank" style="word-break: break-all;">10.22331/q-2025-06-24-1783</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Elemental approximate message passing algorithm for sparse signal recovery</td>
+                        <td>Digital Signal Processing</td>
+                        <td><a href="https://doi.org/10.1016/j.dsp.2025.105410" target="_blank" style="word-break: break-all;">10.1016/j.dsp.2025.105410</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Performance of Bayesian linear regression in a model with mismatch</td>
+                        <td>Information and Inference A Journal of the IMA</td>
+                        <td><a href="https://doi.org/10.1093/imaiai/iaaf019" target="_blank" style="word-break: break-all;">10.1093/imaiai/iaaf019</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Phase Diagram of Extensive-Rank Symmetric Matrix Denoising beyond Rotational Invariance</td>
+                        <td>Physical Review X</td>
+                        <td><a href="https://doi.org/10.1103/physrevx.15.021085" target="_blank" style="word-break: break-all;">10.1103/physrevx.15.021085</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2025</td>
+                        <td>Origin of the Hidden Energy Scale and the f Ratio in Geometrically Frustrated Magnets</td>
+                        <td>Physical Review Letters</td>
+                        <td><a href="https://doi.org/10.1103/physrevlett.134.226701" target="_blank" style="word-break: break-all;">10.1103/physrevlett.134.226701</a></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-09-11T09:24:42+00:00
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' most recent citing works (newest first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' most recent citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+        .wm-tab-btn {
+            border: none;
+            background: #f3f4f6;
+            color: #4b5563;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .wm-tab-btn.wm-tab-active {
+            outline: 2px solid #3b82f6;
+            outline-offset: 1px;
+        }
+    </style>
+
+    <script>
+        function citeSwitchTab(btn, paneId) {
+            var panes = document.querySelectorAll('#sec-citing .cite-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].classList.remove('active');
+            }
+            var btns = document.querySelectorAll('#sec-citing .cite-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('active');
+            }
+            var pane = document.getElementById(paneId);
+            if (pane) pane.classList.add('active');
+            if (btn) btn.classList.add('active');
+        }
+        function openWebMentionTab(evt, tabId) {
+            var panes = document.querySelectorAll('.wm-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].style.display = 'none';
+            }
+            var btns = document.querySelectorAll('.wm-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('wm-tab-active');
+            }
+            var pane = document.getElementById(tabId);
+            if (pane) pane.style.display = 'block';
+            if (evt && evt.currentTarget) evt.currentTarget.classList.add('wm-tab-active');
+        }
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
+<script>
+(function() {
+    var nav = document.getElementById('story-sticky-nav');
+    if (!nav) return;
+    var links = nav.querySelectorAll('a[href^="#sec-"]');
+    var sectionIds = [];
+    links.forEach(function(a) {
+        var id = (a.getAttribute('href') || '').slice(1);
+        if (id && document.getElementById(id)) sectionIds.push(id);
+    });
+    if (!sectionIds.length) return;
+
+    function setActive(id) {
+        links.forEach(function(a) {
+            a.classList.toggle('snav-active', a.getAttribute('href') === '#' + id);
+        });
+    }
+
+    links.forEach(function(a) {
+        a.addEventListener('click', function(e) {
+            var id = (a.getAttribute('href') || '').slice(1);
+            var target = id ? document.getElementById(id) : null;
+            if (!target) return;
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.replaceState(null, '', '#' + id);
+            setActive(id);
+            var more = nav.querySelector('.sticky-nav-more');
+            if (more) more.removeAttribute('open');
+        });
+    });
+
+    if (!('IntersectionObserver' in window)) return;
+    var visible = new Map();
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            visible.set(entry.target.id, entry.intersectionRatio);
+        });
+        var bestId = null;
+        var bestRatio = 0;
+        sectionIds.forEach(function(id) {
+            var ratio = visible.get(id) || 0;
+            if (ratio > bestRatio) {
+                bestRatio = ratio;
+                bestId = id;
+            }
+        });
+        if (bestId) setActive(bestId);
+    }, { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] });
+
+    sectionIds.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) observer.observe(el);
+    });
+})();
+</script>
+<script>
+(function() {
+    var el = document.getElementById('publisher-value');
+    if (!el) return;
+
+    var label = (el.getAttribute('data-publisher-label') || '').trim();
+    if (!label || label.toLowerCase() === 'unknown') return;
+
+    function norm(s) {
+        return String(s || '').trim().toLowerCase().replace(/\s+/g, ' ');
+    }
+
+    function parseStoriesData(jsText) {
+        var marker = 'window.STORIES_DATA =';
+        var markerIdx = jsText.indexOf(marker);
+        if (markerIdx === -1) return [];
+        var start = jsText.indexOf('[', markerIdx);
+        if (start === -1) return [];
+        var endMarker = 'window.STORIES_STATS =';
+        var endMarkerIdx = jsText.indexOf(endMarker, start);
+        if (endMarkerIdx === -1) return [];
+        var end = jsText.lastIndexOf(';', endMarkerIdx - 1);
+        if (end === -1 || end <= start) return [];
+        var raw = jsText.slice(start, end).trim();
+        try {
+            var data = JSON.parse(raw);
+            return Array.isArray(data) ? data : [];
+        } catch (_err) {
+            return [];
+        }
+    }
+
+    function enablePublisherLink(count) {
+        var link = document.createElement('a');
+        link.href = 'index.html?view=publisher&publisher=' + encodeURIComponent(label);
+        link.textContent = label;
+        link.style.color = '#1d4ed8';
+        link.style.textDecoration = 'none';
+        if (typeof count === 'number' && count > 1) {
+            link.title = 'Open publisher dashboard (' + count + ' stories)';
+        } else {
+            link.title = 'Open publisher dashboard';
+        }
+        el.textContent = '';
+        el.appendChild(link);
+    }
+
+    // Local file previews (file://) often block fetch(). In that case we still
+    // provide direct navigation to the publisher dashboard.
+    if (window.location.protocol === 'file:') {
+        enablePublisherLink();
+        return;
+    }
+
+    fetch('stories_data.js')
+        .then(function(res) { return res.ok ? res.text() : ''; })
+        .then(function(jsText) {
+            if (!jsText) {
+                enablePublisherLink();
+                return;
+            }
+            var stories = parseStoriesData(jsText);
+            if (!stories.length) {
+                enablePublisherLink();
+                return;
+            }
+
+            var target = norm(label);
+            var matches = stories.filter(function(story) {
+                var publisher = norm(story.publisher || story.venue || '');
+                return publisher && publisher === target;
+            }).length;
+
+            if (matches <= 1) return;
+            enablePublisherLink(matches);
+        })
+        .catch(function() {
+            enablePublisherLink();
+        });
+})();
+</script>
+</body>
+</html>

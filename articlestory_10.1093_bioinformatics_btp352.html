@@ -1,0 +1,2477 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ArticleStory - The Sequence Alignment/Map format and SAMtools</title>
+    <style>
+
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f3f4f6; color: #111827; margin: 0; padding: 2rem; }
+        .page { max-width: 1000px; margin: auto; }
+        .card { background: white; padding: 1.5rem 1.75rem; border-radius: 0.9rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); margin-bottom: 1.75rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem; }
+        .span-full { grid-column: 1 / -1; }
+        .hero-title { font-size: 2.1rem; margin: 0; font-weight: 700; line-height: 1.2; }
+        .header-bar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1.25rem; }
+        .logo-wrap img { width: 100px; height: 100px; object-fit: contain; }
+        .tag { display: inline-block; background: #e5f2ff; color: #1d4ed8; padding: 0.15rem 0.45rem; border-radius: 999px; font-size: 0.8rem; margin: 0.1rem 0.2rem 0.1rem 0; }
+        .tag-soft { background: #f3f4f6; color: #4b5563; }
+        .badge { display: inline-block; background: #eef2ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; }
+        .orcid-badge { display: inline-flex; background: #a6ce39; color: white; padding: 0.05rem 0.35rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.3rem; font-weight: 600; text-transform: uppercase; text-decoration: none; }
+        /* AuthorStory links on story pages */
+        a.author-link,
+        .hero-meta a[href^="authorstory_"],
+        .card strong a[href^="authorstory_"],
+        #sec-citing strong a[href^="authorstory_"] {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a.author-link:hover,
+        .hero-meta a[href^="authorstory_"]:hover,
+        .card strong a[href^="authorstory_"]:hover,
+        #sec-citing strong a[href^="authorstory_"]:hover {
+            text-decoration: underline;
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.75rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+        th { background: #f9fafb; font-weight: 600; }
+        .muted { color: #6b7280; font-size: 0.85rem; }
+        .discipline-badge { display: inline-block; background: #f3f4f6; border: 1px solid #e5e7eb; padding: 0.25rem 0.6rem; border-radius: 999px; font-size: 0.85rem; margin: 0.5rem 0; }
+        .grid-full-width { grid-column: 1 / -1; }
+        ul.metric-list { padding-left: 1.5rem; margin: 0.8rem 0 0 0; line-height: 1.6; }
+        ul.metric-list li { margin-bottom: 0.4rem; }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background: white !important; }
+            .page { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
+            .card { box-shadow: none !important; border: 1px solid #e5e7eb !important; page-break-inside: avoid; break-inside: avoid; }
+            .grid-2 { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem !important; align-items: start !important; }
+            * { word-wrap: break-word !important; overflow-wrap: break-word !important; }
+            .print-breakable { page-break-inside: auto !important; break-inside: auto !important; display: block !important; grid-column: 1 / -1 !important; }
+            .table-scroll-wrapper { max-height: none !important; overflow: visible !important; }
+            #cit-table tbody tr { display: table-row !important; }
+            #cit-pagination { display: none !important; }
+            table { page-break-inside: auto !important; width: 100% !important; }
+            tr { page-break-inside: avoid !important; page-break-after: auto !important; }
+            thead { display: table-header-group !important; }
+        }
+
+
+/* ── UX Enhancements ── */
+
+
+/* Sticky nav */
+.sticky-nav{position:sticky;top:0;z-index:100;background:white;border-radius:.9rem;
+  box-shadow:0 4px 16px rgba(15,23,42,.1);margin-bottom:1.75rem;overflow-x:auto;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.sticky-nav::-webkit-scrollbar{display:none;}
+.sticky-nav-inner{display:flex;padding:0 .5rem;}
+.sticky-nav a{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;text-decoration:none;border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;white-space:nowrap;}
+.sticky-nav a:hover{color:#111827;}
+.sticky-nav a.snav-active{color:#2563eb;border-bottom-color:#2563eb;}
+.sticky-nav-more{display:inline-block;position:relative;}
+.sticky-nav-more>summary{display:inline-block;padding:.65rem .9rem;font-size:.78rem;font-weight:600;
+  color:#6b7280;cursor:pointer;list-style:none;border-bottom:2px solid transparent;}
+.sticky-nav-more>summary::-webkit-details-marker{display:none;}
+.sticky-nav-more[open]>summary,.sticky-nav-more>summary:hover{color:#111827;}
+.sticky-nav-more-menu{position:absolute;right:0;top:100%;min-width:10rem;background:#fff;
+  border:1px solid #e5e7eb;border-radius:.6rem;box-shadow:0 8px 24px rgba(15,23,42,.12);
+  padding:.35rem 0;z-index:120;}
+.sticky-nav-more-menu a{display:block;padding:.5rem .9rem;font-size:.78rem;font-weight:600;
+  color:#374151;text-decoration:none;white-space:nowrap;}
+.sticky-nav-more-menu a:hover{background:#f8fafc;color:#111827;}
+[id^="sec-"]{scroll-margin-top:4.75rem;}
+@media print{.sticky-nav{display:none!important;}}
+
+/* Collapsible cards */
+.card-collapsible > h2{
+  cursor:pointer;user-select:none;display:flex;justify-content:space-between;align-items:center;}
+.card-collapsible > h2 .chevron{font-size:.85rem;color:#9ca3af;margin-left:.5rem;
+  flex-shrink:0;transition:transform .2s;display:inline-block;}
+.card-collapsible.is-collapsed > h2 .chevron{transform:rotate(-90deg);}
+/* Open state uses a large max-height so async-loaded content (e.g. OPERAS widget) stays visible */
+.card-body-wrap{overflow:hidden;max-height:9999px;opacity:1;
+  transition:max-height .35s ease,opacity .28s ease;}
+.card-collapsible.is-collapsed .card-body-wrap{max-height:0!important;opacity:0;pointer-events:none;}
+
+/* Who is citing — sub-tabs */
+.cite-tabs{display:flex;gap:0;border-bottom:2px solid #e5e7eb;margin-bottom:1rem;overflow-x:auto;scrollbar-width:none;}
+.cite-tabs::-webkit-scrollbar{display:none;}
+.cite-tab-btn{background:none;border:none;padding:.5rem 1rem;font-size:.82rem;font-weight:600;
+  color:#6b7280;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all .15s;}
+.cite-tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+.cite-tab-pane{display:none;}
+.cite-tab-pane.active{display:block;}
+/* cite-analysis-always: inner div already carries the border-top inline style */
+.cite-analysis-always{margin-top:1rem;}
+
+/* ── Inferred Roles ── */
+.roles-domain{margin-bottom:.85rem;}
+.roles-domain:last-of-type{margin-bottom:0;}
+.roles-domain-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+  margin-bottom:.4rem;display:flex;align-items:center;gap:.3rem;}
+.roles-row{display:flex;flex-wrap:wrap;gap:.35rem;}
+
+.role-pill{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.28rem .65rem .28rem .45rem;
+  border-radius:999px;font-size:.78rem;font-weight:600;border:1.5px solid;cursor:help;
+  position:relative;transition:opacity .15s;}
+.role-pill-academic  {background:#eff6ff;color:#1e40af;border-color:#bfdbfe;}
+.role-pill-readership{background:#f5f3ff;color:#4c1d95;border-color:#ddd6fe;}
+.role-pill-public    {background:#fffbeb;color:#92400e;border-color:#fde68a;}
+.role-pill-practical {background:#f0fdf4;color:#065f46;border-color:#bbf7d0;}
+.role-pill:hover{opacity:1!important;}
+
+/* Tooltip affordance: any element carrying a data-tip gets a help cursor.
+   Positioning/visibility is handled by the JS tooltip near </body>. */
+[data-tip]{cursor:help;}
+
+
+.role-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.role-strength{font-size:.6rem;font-weight:700;padding:.05rem .3rem;border-radius:999px;margin-left:.1rem;}
+
+.roles-legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;
+  padding-top:.65rem;border-top:1px solid #f3f4f6;}
+.roles-leg-item{display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:#6b7280;}
+.roles-leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+/* Citation pagination */
+.cit-pagination{display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem .25rem 0;font-size:.82rem;flex-wrap:wrap;gap:.5rem;border-top:1px solid #f3f4f6;margin-top:.5rem;}
+.cit-pagination-info{color:#6b7280;}
+.cit-pagination-btns{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center;}
+.cit-btn{padding:.3rem .7rem;border:1px solid #e5e7eb;border-radius:.4rem;background:white;
+  color:#374151;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .15s;}
+.cit-btn:hover:not(:disabled):not(.cit-active){background:#f9fafb;border-color:#d1d5db;}
+.cit-btn.cit-active{background:#2563eb;color:white;border-color:#2563eb;}
+.cit-btn:disabled{opacity:.4;cursor:default;}
+
+/* ── Impact Metrics enrichment ── */
+.im-wrapper{display:flex;flex-direction:column;gap:.85rem;}
+.im-cards{display:grid;grid-template-columns:2fr 1fr 1fr;gap:.65rem;}
+@media(max-width:640px){.im-cards{grid-template-columns:1fr 1fr;}}
+.im-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-card-primary{background:linear-gradient(135deg,#eff6ff 0%,#f0fdf4 100%);border-color:#bfdbfe;}
+.im-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.4rem;}
+.im-num{font-size:1.75rem;font-weight:800;color:#1e40af;line-height:1.05;}
+.im-label{font-size:.63rem;color:#64748b;text-transform:uppercase;letter-spacing:.06em;margin-top:.2rem;}
+.im-top-badge{margin-top:.4rem;display:inline-block;font-size:.6rem;background:#fef9c3;
+  color:#b45309;border:1px solid #fde68a;border-radius:999px;padding:.1rem .4rem;font-weight:700;}
+.im-spark{display:flex;flex-direction:column;align-items:flex-end;gap:.1rem;flex-shrink:0;max-width:130px;}
+.im-spark-chart{width:118px;height:44px;position:relative;overflow:hidden;flex-shrink:0;}
+.im-spark-chart canvas{display:block;width:118px!important;height:44px!important;max-width:118px;max-height:44px;}
+.im-spark-range{font-size:.57rem;color:#94a3b8;text-align:right;white-space:nowrap;}
+.im-card-hint{font-size:.62rem;color:#2563eb;margin-top:.35rem;font-weight:600;}
+.im-provenance{border-left:2px solid #e5e7eb;padding-left:.65rem;margin-top:.45rem;
+  font-size:.68rem;color:#6b7280;line-height:1.45;font-weight:400;}
+.im-provenance a{color:#2563eb;text-decoration:none;font-weight:500;}
+.im-provenance a:hover{text-decoration:underline;}
+.im-provenance-row{margin-top:.15rem;}
+.im-card[href]{text-decoration:none;display:block;transition:border-color .15s,background .15s;}
+.im-card[href]:hover{border-color:#93c5fd;background:#eff6ff;}
+.im-card-link{display:inline-block;font-size:.62rem;color:#2563eb;font-weight:600;margin-top:.4rem;text-decoration:none;}
+.im-card-link:hover{text-decoration:underline;}
+
+.im-scite-compact{margin-top:.4rem;}
+.im-scite-compact .im-scite-bar{height:6px;margin-top:.15rem;}
+.im-scite-compact .im-scite-leg{margin-top:.28rem;gap:.55rem;}
+.im-scite-compact .im-scite-leg span{font-size:.58rem;}
+.im-scite-title{font-size:.6rem;font-weight:600;color:#6b7280;margin-bottom:0;}
+.im-scite-via{font-weight:400;color:#9ca3af;}
+.im-scite-bar{height:9px;border-radius:999px;overflow:hidden;display:flex;background:#e5e7eb;}
+.im-scite-seg{height:100%;}
+.im-scite-sup{background:#22c55e;}
+.im-scite-men{background:#94a3b8;}
+.im-scite-con{background:#f87171;}
+.im-scite-leg{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:.4rem;}
+.im-scite-leg span{display:flex;align-items:center;gap:.25rem;font-size:.63rem;color:#6b7280;}
+.im-scite-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block;}
+
+.im-signals{background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.8rem 1rem;}
+.im-signals-title{font-size:.72rem;font-weight:700;color:#374151;margin-bottom:.45rem;}
+.im-signals-pills{display:flex;flex-wrap:wrap;gap:.3rem;}
+.sig-pill{display:inline-flex;align-items:center;gap:.28rem;padding:.2rem .55rem;border-radius:999px;
+  font-size:.7rem;font-weight:600;text-decoration:none;transition:opacity .15s;cursor:pointer;
+  border:1px solid transparent;}
+.sig-oa-lock{width:.85em;height:.85em;flex-shrink:0;}
+.sig-pill:hover{opacity:.75;}
+.sig-red   {background:#f7ebeb;color:#B34444;border-color:#f1d5d5;}
+.sig-slate {background:#f3f4f6;color:#6b7280;border-color:#e5e7eb;}
+.sig-indigo{background:#f0ecf9;color:#6A4FA3;border-color:#ddd6fe;}
+.sig-teal  {background:#e8f2ef;color:#34675A;border-color:#cfe7df;}
+.sig-amber {background:#fef3c7;color:#92400e;border-color:#fde68a;}
+.sig-blue  {background:#ebf0f7;color:#3C5A7F;border-color:#cbdcf2;}
+.sig-green {background:#e8f2ef;color:#34675A;border-color:#cfe7df;}
+.sig-risk{background:#fee2e2;color:#b91c1c;border-color:#fca5a5;}
+.sig-warning{background:#fff7ed;color:#c2410c;border-color:#fdba74;}
+.sig-correction{background:#fef3c7;color:#92400e;border-color:#fde68a;}
+.sig-data{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe;}
+.sig-peer{background:#dcfce7;color:#166534;border-color:#bbf7d0;}
+.sig-preprint{background:#f5f3ff;color:#5b21b6;border-color:#ddd6fe;}
+.sig-repo-open{background:#f8fafc;color:#334155;border-color:#cbd5e1;}
+.sig-repo-certified{background:#ecfdf5;color:#047857;border-color:#a7f3d0;}
+.sig-oa-gold{background:#fef3c7;color:#92400e;border-color:#fde68a;}
+.sig-oa-hybrid{background:#e0f2fe;color:#0369a1;border-color:#bae6fd;}
+.sig-oa-green{background:#dcfce7;color:#166534;border-color:#bbf7d0;}
+.sig-oa-bronze{background:#ffedd5;color:#9a3412;border-color:#fdba74;}
+.sig-oa-diamond{background:#ede9fe;color:#5b21b6;border-color:#c4b5fd;}
+.sig-oa-closed{background:#f3f4f6;color:#4b5563;border-color:#d1d5db;}
+/* Generated jacket — shown when no real cover resolves. Binding-cloth gradient
+   with the hue seeded from the DOI/ISBN (deterministic, set inline as --jh). */
+.gen-jacket{
+  --js:24%;
+  width:118px;min-height:172px;border-radius:3px;overflow:hidden;position:relative;
+  box-shadow:0 4px 10px rgba(15,23,42,.14),0 1px 2px rgba(15,23,42,.10);
+  padding:1.05rem .78rem .8rem;
+  display:flex;flex-direction:column;
+  background:linear-gradient(158deg,
+    hsl(var(--jh,214) var(--js) 31%) 0%,
+    hsl(var(--jh,214) var(--js) 24%) 55%,
+    hsl(calc(var(--jh,214) - 8) var(--js) 19%) 100%);
+  color:#f4efe4;
+}
+.gen-jacket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:hsl(var(--jh,214) 26% 15%);box-shadow:1px 0 0 hsl(var(--jh,214) 20% 42% / .35);}
+.gen-jacket::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(hsl(0 0% 100% / .05) .5px,transparent .5px);background-size:3px 3px;}
+.gen-jacket .gj-pub{font-size:.44rem;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:hsl(var(--jh,214) 15% 84%);line-height:1.3;}
+.gen-jacket .gj-rule{height:1px;background:hsl(0 0% 100% / .26);margin:.4rem 0 auto;}
+.gen-jacket .gj-title{font-family:Georgia,'Times New Roman',serif;font-weight:600;
+  font-size:.82rem;line-height:1.18;letter-spacing:-.01em;margin:auto 0;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;}
+.gen-jacket .gj-title.long{font-size:.68rem;-webkit-line-clamp:8;}
+.gen-jacket .gj-foot{margin-top:auto;display:flex;flex-direction:column;gap:.1rem;}
+.gen-jacket .gj-auth{font-size:.5rem;font-weight:600;color:hsl(var(--jh,214) 12% 90%);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.gen-jacket .gj-year{font-size:.46rem;color:hsl(var(--jh,214) 12% 74%);letter-spacing:.04em;}
+
+    /* ── Site nav ──────────────────────────────────────────── */
+    .site-nav {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0.55rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      margin: -2rem -2rem 1.5rem -2rem;
+    }
+    .site-nav-brand {
+      display: flex; align-items: center; gap: 0.55rem;
+      text-decoration: none; color: #111827;
+      font-weight: 700; font-size: 0.95rem;
+    }
+    .site-nav-brand img { width: 28px; height: 28px; object-fit: contain; }
+    .brand-dot { color: #F2C94C; }
+    .site-nav-links { display: flex; gap: 0.2rem; }
+    .site-nav-links a {
+      padding: 0.35rem 0.8rem; border-radius: 0.4rem;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; color: #6b7280;
+      transition: background 0.15s, color 0.15s;
+    }
+    .site-nav-links a:hover { background: #f3f4f6; color: #111827; }
+
+
+    </style>
+    <link rel="stylesheet" href="https://storage.googleapis.com/operas/metrics-widget/v1/latest/widget.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- Site nav -->
+<nav class="site-nav">
+  <a class="site-nav-brand" href="index.html">
+    <img src="openscience.works%20logos/openscience.works%20icon.png" alt="openscience.works">
+    <span>openscience<span class="brand-dot">.</span>works</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:.75rem;">
+    <div class="site-nav-links">
+      <a href="index.html">&#8592; All stories</a>
+      <a href="about.html">About</a>
+    </div>
+    <button class="no-print" onclick="window.print()" style="display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;background:#2563eb;color:white;border:none;border-radius:.45rem;font-size:.82rem;font-weight:600;cursor:pointer;box-shadow:0 2px 8px rgba(37,99,235,.3);">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+      Print PDF
+    </button>
+  </div>
+</nav>
+
+    <div class="page">
+        <header class="hero card" id="sec-hero">
+            <div class="header-bar">
+                <div style="display: flex; align-items: center; gap: 1.25rem;">
+                    <div class="logo-wrap"><img src="articlestories-logo.png" alt="Logo" style="border-radius:0;object-fit:contain;"></div>
+                    <div>
+                        <h1 class="hero-title">The Sequence Alignment/Map format and SAMtools</h1>
+
+                        <div class="im-signals-pills" style="margin-top: 0.75rem; margin-bottom: 0.5rem;">
+
+
+
+
+                                <span class="sig-pill sig-oa-hybrid" title="Open access: Hybrid">
+                                    <svg class="sig-oa-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="5" y="11" width="14" height="10" rx="2"/>
+                                        <path d="M7 11V7a5 5 0 0 1 9.5-2.2"/>
+                                        <path d="M16.5 4.8V11"/>
+                                    </svg>
+                                    Access · Hybrid
+                                </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+
+                        <div class="hero-meta" style="margin-top:0.8rem; line-height: 1.6;">
+                            <div><strong>Author(s):</strong>
+
+                                    Heng Li, Robert E. Handsaker, Alec Wysoker, Tim Fennell, Jue Ruan, Nils Homer, Gábor Marth, Gonçalo R. Abecasis, Richard Durbin, 1000 Genome Project Data Processing Subgroup
+
+                            </div>
+
+
+
+
+
+                            <div><strong>Journal:</strong>
+                                Bioinformatics
+                            </div>
+
+
+                            <div><strong>Publisher:</strong>
+
+
+
+                                <span id="publisher-value" data-publisher-label="Oxford University Press">Oxford University Press</span>
+                            </div>
+
+                            <div><strong>Publication year:</strong>
+
+                                    2009
+
+                            </div>
+
+
+
+                            <div><strong>DOI:</strong>
+                                <a href="https://doi.org/10.1093/bioinformatics/btp352" target="_blank">10.1093/bioinformatics/btp352</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </header>
+
+
+
+
+        <!-- Sticky nav (built from story_nav — only sections present on this page) -->
+
+        <nav aria-label="Page sections" class="sticky-nav no-print" id="story-sticky-nav">
+            <div class="sticky-nav-inner">
+
+                <a href="#sec-hero" data-sec="sec-hero">Overview</a>
+
+                <a href="#sec-story" data-sec="sec-story">Story</a>
+
+                <a href="#sec-impact" data-sec="sec-impact">Impact</a>
+
+                <a href="#sec-roles" data-sec="sec-roles">Roles</a>
+
+                <a href="#sec-access" data-sec="sec-access">Access</a>
+
+                <a href="#sec-citing" data-sec="sec-citing">Who's Citing</a>
+
+
+
+                <details class="sticky-nav-more">
+                    <summary>More</summary>
+                    <div class="sticky-nav-more-menu">
+
+                        <a href="#sec-funding" data-sec="sec-funding">Funding</a>
+
+                    </div>
+                </details>
+
+            </div>
+        </nav>
+
+
+
+
+
+
+        <section class="card" id="sec-story">
+            <h2><span>The Story So Far</span></h2>
+            <div class="story-text"><h3 class="story-subheading">Short impact summary</h3>
+<p class="story-text">The Sequence Alignment/Map format and SAMtools (2009) in Bioinformatics. 68795 citations.</p>
+<h3 class="story-subheading">Full narrative</h3>
+<p class="story-text">The Sequence Alignment/Map format and SAMtools (2009) in Bioinformatics is authored by Heng Li, Robert E. Handsaker and Alec Wysoker. Topics: Computer science, Search engine indexing, Sequence alignment, k-mer and Multiple sequence alignment.</p>
+<p class="story-text">68795 citations (OpenAlex). Citations peaked in 2021 with 7630 citing works. Citing venues include bioRxiv (Cold Spring Harbor Laboratory), Nature Communications and Scientific Reports.</p>
+<p class="story-text">Limited online visibility beyond citations.</p></div>
+            <div class="muted" style="margin-top:0.6rem;">
+                Narrative note: this summary is AI-assisted and generated from structured metadata/signals.
+            </div>
+        </section>
+
+
+
+
+        <section class="card" id="sec-impact">
+            <h2><span>Impact metrics</span> <span class="chevron">▾</span></h2>
+
+
+            <p class="muted">Crossref Event Data: historical records unavailable locally—not zero events. The public API was retired on 23 April 2026. Other attention sources may still be shown.</p>
+
+            <div class="im-wrapper">
+
+
+
+
+
+
+
+
+                <div class="im-cards">
+                    <!-- Primary: citations + sparkline -->
+                    <div class="im-card im-card-primary">
+                        <div class="im-card-top">
+                            <div>
+
+                                <div class="im-num">68,795</div>
+                                <div class="im-label">Total Citations</div>
+
+                                <div class="im-top-badge">🏆 Top 1% Cited</div>
+
+                            </div>
+
+
+                            <div class="im-spark">
+                                <div class="im-spark-chart">
+                                    <canvas id="impactSparkline"
+                                        data-labels="[2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]"
+                                        data-values="[2361, 2728, 3307, 3966, 5013, 6371, 7630, 6969, 6508, 6106, 5999, 3786]"></canvas>
+                                </div>
+                                <div class="im-spark-range">2008–2026</div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <!-- Online mentions (Crossref / open web — not OAPEN downloads) -->
+
+                    <!-- OAPEN / OPERAS downloads (books) — separate from mentions -->
+
+
+                    <!-- scite (only when references exist) -->
+
+                    <div class="im-card">
+                        <div class="im-num">52,001</div>
+                        <div class="im-label">scite References</div>
+
+
+
+
+
+
+                        <div class="im-scite-compact">
+                            <div class="im-scite-title">Citation context <span class="im-scite-via">via scite</span></div>
+                            <div class="im-scite-bar">
+                                <div class="im-scite-seg im-scite-sup" data-w="0"></div>
+                                <div class="im-scite-seg im-scite-men" data-w="100"></div>
+                                <div class="im-scite-seg im-scite-con" data-w="0"></div>
+                            </div>
+                            <div class="im-scite-leg">
+                                <span><span class="im-scite-dot" style="background:#22c55e;"></span>30</span>
+                                <span><span class="im-scite-dot" style="background:#94a3b8;"></span>51882</span>
+                                <span><span class="im-scite-dot" style="background:#f87171;"></span>4</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+                <div class="muted" style="margin-top:.7rem; font-size:.8rem;">
+                    Some signals aren’t recorded for this volume yet (online mentions) — these typically accrue after publication.
+                </div>
+
+
+
+
+                <!-- Additional signals pills -->
+                <div class="im-signals">
+                    <div class="im-signals-title">Additional signals</div>
+                    <div class="im-signals-pills">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <span class="sig-pill sig-green" title="scite: supporting citation statements">✓ scite · 30 supporting</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <a class="sig-pill sig-slate" href="#sec-citing" style="text-decoration:none;">🌍 Reach · 40 countries</a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section class="card" id="sec-roles">
+            <h2><span>Inferred roles</span></h2>
+            <p class="muted" style="margin-top:-.2rem;margin-bottom:.85rem;">Heuristic signals from citation composition, usage, and media activity. <a href="https://www.openscience.works/about.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">Learn about all roles ↗</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="roles-domain">
+                    <div class="roles-domain-label" data-color="#1d4ed8">🎓 Academic & Scientific</div>
+                    <div class="roles-row">
+
+
+
+
+
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="Scholarly uptake — Frequently cited in scholarly literature. (score 1.00)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Scholarly uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+
+
+
+
+
+                        <span class="role-pill role-pill-academic" data-opacity="1"
+                              data-tip="High-visibility uptake — Appears in high-visibility channels or outlets. (score 0.85)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            High-visibility uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Strong</span>
+                        </span>
+
+
+
+
+
+                        <span class="role-pill role-pill-academic" data-opacity="0.75"
+                              data-tip="Rapid uptake — Picked up quickly after publication. (score 0.38)">
+                            <span class="role-dot" data-bg="#3b82f6"></span>
+                            Rapid uptake
+                            <span class="role-strength" data-bg="#dbeafe" data-color="#1d4ed8">Emerging</span>
+                        </span>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="roles-legend">
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#374151;"></span>Strong (≥0.80)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#9ca3af;"></span>Moderate (0.50–0.79)</span>
+                <span class="roles-leg-item"><span class="roles-leg-dot" style="background:#d1d5db;"></span>Emerging (&lt;0.50)</span>
+            </div>
+        </section>
+
+
+        <div class="grid-2">
+
+
+            <section class="card" style="margin-bottom:0;" id="sec-access">
+                <h2><span>Access</span> <span class="badge">OpenAlex</span></h2>
+                <ul class="metric-list">
+                    <li><strong>DOI:</strong> <a href="https://doi.org/10.1093/bioinformatics/btp352" target="_blank">10.1093/bioinformatics/btp352</a></li>
+                    <li><strong>OA status:</strong> Hybrid</li>
+
+                    <li><strong>OA source:</strong> Publisher-claimed</li>
+
+
+
+
+
+
+
+
+
+
+                    <li><strong>OA basis:</strong> OpenAlex/Crossref access flag is OA, OpenAlex/Crossref OA status: HYBRID</li>
+
+                    <li><strong>OA evidence chain:</strong> Publisher-claimed → OpenAlex/Crossref</li>
+
+
+
+                    <li><strong>Repository reach (OpenAIRE):</strong> 9 indexed instances (4 open)</li>
+
+
+
+
+
+                </ul>
+            </section>
+
+
+
+
+        </div>
+
+        <div class="grid-2" style="align-items: start;">
+
+
+
+
+
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+                        <section class="card" style="margin-bottom:0;">
+                            <h2><span>Citation context</span> <span class="badge">scite</span></h2>
+
+                            <ul style="display:flex; flex-wrap:wrap; gap:1rem 1.5rem; list-style:none; padding:0; margin:0.8rem 0 0 0;">
+                                <li><strong>Total:</strong> 52001</li>
+                                <li><strong>Supporting:</strong> 30</li>
+                                <li><strong>Mentioning:</strong> 51882</li>
+                                <li><strong>Contradicting:</strong> 4</li>
+                            </ul>
+
+                        </section>
+
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+
+
+
+                </div>
+
+        </div>
+
+
+
+        <section class="card" id="sec-citing">
+            <h2><span>Who is citing this work?</span> <span class="badge">OpenAlex</span></h2>
+            <!-- Always-visible analysis summary -->
+            <div class="cite-analysis-always">
+                <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:.75rem;padding:.9rem 1.1rem;margin-bottom:1rem;">
+                    <p class="muted" style="margin:0;line-height:1.6;">
+                        Analysis of <strong>68795</strong> citing works.
+                        <strong>23.9%</strong> come from the Top 10 institutions.
+                        <a href="https://openalex.org/works?page=1&filter=cites%3AW2108234281&sort=publication_date%3Adesc" target="_blank" rel="noopener">See the full list on OpenAlex &rarr;</a>
+                    </p>
+                    <div style="margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.3rem;">
+                        <span class="tag tag-soft" style="font-size:.75rem;">article (47905)</span><span class="tag tag-soft" style="font-size:.75rem;">preprint (13079)</span><span class="tag tag-soft" style="font-size:.75rem;">dataset (1000)</span><span class="tag tag-soft" style="font-size:.75rem;">dissertation (926)</span><span class="tag tag-soft" style="font-size:.75rem;">book-chapter (913)</span>
+                        <span class="tag" style="font-size:.75rem;">bioRxiv (Cold Spring Harbor Laboratory)</span><span class="tag" style="font-size:.75rem;">Nature Communications</span><span class="tag" style="font-size:.75rem;">Scientific Reports</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citation timeline -->
+            <div style="height:180px;width:100%;margin-bottom:1.25rem;">
+                <canvas id="citationChart"
+                    data-labels="[2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]"
+                    data-values="[3, 15, 125, 450, 850, 1353, 1952, 2361, 2728, 3307, 3966, 5013, 6371, 7630, 6969, 6508, 6106, 5999, 3786]">
+                </canvas>
+            </div>
+
+            <!-- Sub-tabs -->
+            <div class="cite-tabs">
+                <button class="cite-tab-btn active" onclick="citeSwitchTab(this,'cite-geo')">🌍 Geography</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-inst')">🏛 Institutions</button>
+                <button class="cite-tab-btn" onclick="citeSwitchTab(this,'cite-citers')">👤 Top Citers</button>
+            </div>
+
+            <div id="cite-geo" class="cite-tab-pane active">
+                <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;">
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United States (28124)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">China (14255)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">United Kingdom (9486)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Germany (7140)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">France (4608)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Canada (4137)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Australia (3895)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Japan (3474)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Spain (3341)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Netherlands (2694)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Italy (2642)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Sweden (2436)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Switzerland (2388)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">Denmark (2051)</span>
+
+                    <span class="tag tag-soft" style="background:#f1f5f9;color:#475569;">India (1869)</span>
+
+                </div>
+
+                <div style="margin-top:1rem;">
+                    <div class="muted" style="font-size:.78rem;margin-bottom:.4rem;font-weight:600;">Institutional sectors</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.35rem;">
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Education (59015)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Facility (30728)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Healthcare (17756)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Government (16994)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Nonprofit (12168)</span>
+
+                        <span class="tag tag-soft" style="background:#fdf4ff;color:#9d174d;border:1px solid #fce7f3;">Company (7560)</span>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="cite-inst" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Centre National de la Recherche Scientifique</strong>
+
+                        <span class="muted">(2363)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Chinese Academy of Sciences</strong>
+
+                        <span class="muted">(2265)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Harvard University</strong>
+
+                        <span class="muted">(1881)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Chinese Academy of Sciences</strong>
+
+                        <span class="muted">(1438)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Howard Hughes Medical Institute</strong>
+
+                        <span class="muted">(1380)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Cornell University</strong>
+
+                        <span class="muted">(1339)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Cambridge</strong>
+
+                        <span class="muted">(1334)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Copenhagen</strong>
+
+                        <span class="muted">(1255)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Inserm</strong>
+
+                        <span class="muted">(1200)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Oxford</strong>
+
+                        <span class="muted">(1191)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Chinese Academy of Agricultural Sciences</strong>
+
+                        <span class="muted">(1184)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Stanford University</strong>
+
+                        <span class="muted">(1073)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Wellcome Sanger Institute</strong>
+
+                        <span class="muted">(1058)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Broad Institute</strong>
+
+                        <span class="muted">(926)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of California, Davis</strong>
+
+                        <span class="muted">(892)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Edinburgh</strong>
+
+                        <span class="muted">(891)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>National Institutes of Health</strong>
+
+                        <span class="muted">(855)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Washington</strong>
+
+                        <span class="muted">(855)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University College London</strong>
+
+                        <span class="muted">(853)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Johns Hopkins University</strong>
+
+                        <span class="muted">(848)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Huazhong Agricultural University</strong>
+
+                        <span class="muted">(797)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Zhejiang University</strong>
+
+                        <span class="muted">(793)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of California, Berkeley</strong>
+
+                        <span class="muted">(784)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>The University of Melbourne</strong>
+
+                        <span class="muted">(768)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of California San Diego</strong>
+
+                        <span class="muted">(759)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Institut National de Recherche pour l'Agriculture, l'Alimentation et l'Environnement</strong>
+
+                        <span class="muted">(743)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>The University of Tokyo</strong>
+
+                        <span class="muted">(732)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of British Columbia</strong>
+
+                        <span class="muted">(714)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Pennsylvania</strong>
+
+                        <span class="muted">(712)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Uppsala University</strong>
+
+                        <span class="muted">(703)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Sun Yat-sen University</strong>
+
+                        <span class="muted">(701)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Peking University</strong>
+
+                        <span class="muted">(697)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of California, San Francisco</strong>
+
+                        <span class="muted">(675)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Fudan University</strong>
+
+                        <span class="muted">(668)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Yale University</strong>
+
+                        <span class="muted">(665)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Toronto</strong>
+
+                        <span class="muted">(658)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Washington University in St. Louis</strong>
+
+                        <span class="muted">(654)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Agricultural Research Service</strong>
+
+                        <span class="muted">(650)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Heidelberg University</strong>
+
+                        <span class="muted">(645)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>University of Michigan</strong>
+
+                        <span class="muted">(627)</span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div id="cite-citers" class="cite-tab-pane">
+                <ul style="padding-left:1.2rem;font-size:.85rem;line-height:1.65;margin:.5rem 0 0;">
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jongsun Park</strong>
+
+                        <span class="muted">(125)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>M. Thomas P. Gilbert</strong>
+
+                        <span class="muted">(118)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Huanming Yang</strong>
+
+                        <span class="muted">(84)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Julian Parkhill</strong>
+
+                        <span class="muted">(82)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong><a class="author-link" href="authorstory_0000-0001-6373-6013.html">Martin Mascher</a></strong>
+
+                        <span class="muted">(77)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Michael Hofreiter</strong>
+
+                        <span class="muted">(77)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Eske Willerslev</strong>
+
+                        <span class="muted">(76)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Evan E. Eichler</strong>
+
+                        <span class="muted">(73)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Love Dalén</strong>
+
+                        <span class="muted">(71)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Kerrie Barry</strong>
+
+                        <span class="muted">(70)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jun Wang</strong>
+
+                        <span class="muted">(70)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Martien A. M. Groenen</strong>
+
+                        <span class="muted">(69)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Nicholas R. Thomson</strong>
+
+                        <span class="muted">(69)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Fritz J. Sedlazeck</strong>
+
+                        <span class="muted">(69)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Jianquan Liu</strong>
+
+                        <span class="muted">(67)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Christophe Klopp</strong>
+
+                        <span class="muted">(67)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Steven J.M. Jones</strong>
+
+                        <span class="muted">(66)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Johannes Krause</strong>
+
+                        <span class="muted">(65)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Toni Gabaldón</strong>
+
+                        <span class="muted">(64)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Paul Flicek</strong>
+
+                        <span class="muted">(63)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong><a class="author-link" href="authorstory_0000-0001-7338-0946.html">Axel Himmelbach</a></strong>
+
+                        <span class="muted">(61)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ludovic Orlando</strong>
+
+                        <span class="muted">(61)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Ray Ming</strong>
+
+                        <span class="muted">(58)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Michael C. Schatz</strong>
+
+                        <span class="muted">(58)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Richard A. Gibbs</strong>
+
+                        <span class="muted">(58)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Xun Xu</strong>
+
+                        <span class="muted">(58)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Matthew Berriman</strong>
+
+                        <span class="muted">(57)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>David Reich</strong>
+
+                        <span class="muted">(56)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Michael V. Westbury</strong>
+
+                        <span class="muted">(56)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Detlef Weigel</strong>
+
+                        <span class="muted">(55)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Anders Götherström</strong>
+
+                        <span class="muted">(55)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong><a class="author-link" href="authorstory_0000-0001-8610-8423.html">M Snyder</a></strong>
+
+                        <span class="muted">(55)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Atsushi Toyoda</strong>
+
+                        <span class="muted">(55)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Tomàs Marquès‐Bonet</strong>
+
+                        <span class="muted">(54)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Patrick Wincker</strong>
+
+                        <span class="muted">(53)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Donna M. Muzny</strong>
+
+                        <span class="muted">(52)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Pär K. Ingvarsson</strong>
+
+                        <span class="muted">(51)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Zachariah Gompert</strong>
+
+                        <span class="muted">(51)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>Rajeev K. Varshney</strong>
+
+                        <span class="muted">(50)</span>
+                    </li>
+
+                    <li style="margin-bottom:.4rem;">
+                        <strong>David Edwards</strong>
+
+                        <span class="muted">(50)</span>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+
+        <div class="grid-2">
+
+
+
+
+
+
+
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Open Science Signals</span> <span class="badge" title="PRISM is a structured metadata feed used by DOAB for book-level peer-review context where publishers provide it.">Crossref / OpenAIRE</span></h2>
+                <p class="muted" style="margin-top:-0.2rem; margin-bottom:1rem;">Open peer review and repository accessibility signals for this work.</p>
+
+
+
+
+
+
+
+
+
+
+                <h3 style="font-size:0.95rem;margin:1rem 0 0.6rem;">Repository Reach &amp; Accessibility <span class="badge" style="background:#e0f2fe;color:#075985;">OpenAIRE · Strong</span></h3>
+                <ul class="metric-list">
+                    <li><strong>Indexed repository instances:</strong> 9 (4 open)</li>
+
+                    <li><strong>Countries represented:</strong> 1</li>
+                </ul>
+
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="grid-2">
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Contributors & affiliations</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>10 authors · 0 institutions</div>
+
+                <h3 style="margin:0.6rem 0 0.25rem;">Authors</h3>
+                <ul style="max-height: 150px; overflow-y: auto; padding-left: 1.2rem; margin-bottom: 1rem;">
+
+
+
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Heng Li</strong>
+                        <span class="badge">First</span>
+                        <span class="badge" style="background:#fce7f3; color:#be185d;">Corresponding</span>
+                        <a class="orcid-badge" href="0000-0003-4874-2874" target="_blank">ORCID</a>
+                    </li>
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Robert E. Handsaker</strong>
+
+
+                        <a class="orcid-badge" href="0000-0002-3128-3547" target="_blank">ORCID</a>
+                    </li>
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Alec Wysoker</strong>
+
+
+
+                    </li>
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Tim Fennell</strong>
+
+
+
+                    </li>
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Jue Ruan</strong>
+
+
+                        <a class="orcid-badge" href="0000-0003-3713-3192" target="_blank">ORCID</a>
+                    </li>
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Nils Homer</strong>
+
+
+
+                    </li>
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Gábor Marth</strong>
+
+
+                        <a class="orcid-badge" href="0000-0003-0222-1694" target="_blank">ORCID</a>
+                    </li>
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Gonçalo R. Abecasis</strong>
+
+
+                        <a class="orcid-badge" href="0000-0003-1509-1825" target="_blank">ORCID</a>
+                    </li>
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>Richard Durbin</strong>
+
+
+                        <a class="orcid-badge" href="0000-0002-9130-1006" target="_blank">ORCID</a>
+                    </li>
+
+                    <li style="margin-bottom: 0.4rem;">
+                        <strong>1000 Genome Project Data Processing Subgroup</strong>
+
+
+
+                    </li>
+
+                </ul>
+
+
+            </section>
+
+            <section class="card" style="margin-bottom:0;">
+                <h2><span>Concepts & topics</span> <span class="badge">OpenAlex</span></h2>
+                <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>19 specific concepts identified.</div>
+
+                <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:0.6rem;">
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computer science</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Search engine indexing</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sequence alignment</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">k-mer</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Multiple sequence alignment</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">File format</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sanger sequencing</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Sequence (biology)</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Alignment-free sequence analysis</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Information retrieval</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Computational biology</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Genome</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">DNA sequencing</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Database</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Biology</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Genetics</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Peptide sequence</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">DNA</span>
+
+                        <span class="tag tag-soft" style="background:#e5f2ff; color:#1d4ed8;">Gene</span>
+
+
+                </div>
+
+
+            </section>
+        </div>
+
+
+        <section class="card" id="sec-funding">
+            <h2><span>Research Funding</span> <span class="badge">Europe PMC / OpenAlex</span></h2>
+            <div class='muted' style='margin-top:-0.25rem; margin-bottom:0.75rem;'>4 financial grants and sponsors detected.</div>
+
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>Wellcome Trust</strong>
+                        <span style="opacity: 0.8; font-weight: normal;">(077192/Z/05/Z)</span>
+                    </span>
+
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NHGRI NIH HHS</strong>
+                        <span style="opacity: 0.8; font-weight: normal;">(R01 HG004719)</span>
+                    </span>
+
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NHGRI NIH HHS</strong>
+                        <span style="opacity: 0.8; font-weight: normal;">(U54HG002750)</span>
+                    </span>
+
+                    <span class="tag" style="background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; font-size:0.85rem; padding:0.3rem 0.7rem;">
+                        <strong>NHGRI NIH HHS</strong>
+                        <span style="opacity: 0.8; font-weight: normal;">(U54 HG002750)</span>
+                    </span>
+
+            </div>
+        </section>
+
+
+
+
+
+
+        <section class="card no-print" id="sec-citations-table">
+            <h2><span>Citations</span> <span class="badge">OpenAlex</span></h2>
+            <div class="muted" id="cit-summary" style="margin-top:-0.25rem; margin-bottom:0.35rem;"
+                 data-total="50">
+                50 most recent citing works (newest first)
+            </div>
+
+
+            <div class="muted" style="margin-bottom:0.75rem; font-size:0.85rem;">
+                This table lists only the 50 most recent citing works; OpenAlex records 68,795 in total &mdash;
+                <a href="https://openalex.org/works?page=1&filter=cites%3AW2108234281&sort=publication_date%3Adesc" target="_blank" rel="noopener">browse the full citation corpus on OpenAlex &rarr;</a>
+            </div>
+
+            <div class="table-scroll-wrapper">
+                <table id="cit-table">
+                    <thead><tr><th>Year</th><th>Title</th><th>Venue</th><th>DOI</th></tr></thead>
+                    <tbody>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Sungouiella purgamenti sp. nov., a yeast isolated from hospital wastewater in Brazil: a taxogenomic analysis</td>
+                        <td>INTERNATIONAL JOURNAL OF SYSTEMATIC AND EVOLUTIONARY MICROBIOLOGY</td>
+                        <td><a href="https://doi.org/10.1099/ijsem.0.007279" target="_blank" style="word-break: break-all;">10.1099/ijsem.0.007279</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Correlation assessment of SARS-CoV-2 variants and their subvariants present in clinical and wastewater samples in Oregon, USA (February 7, 2021 - February 26, 2022) using the Freyja bioinformatics approach</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0357591" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0357591</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>HyLnc: a hybrid deep learning and feature-based approach for long non-coding RNA prediction</td>
+                        <td>RNA Biology</td>
+                        <td><a href="https://doi.org/10.1080/15476286.2026.2731913" target="_blank" style="word-break: break-all;">10.1080/15476286.2026.2731913</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Widespread male-female expression imbalance of X-linked genes across phrynosomatid lizards</td>
+                        <td>Molecular Biology and Evolution</td>
+                        <td><a href="https://doi.org/10.1093/molbev/msag232" target="_blank" style="word-break: break-all;">10.1093/molbev/msag232</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Identification and Characterization of MicroRNAs and Their Targets That Respond to Powdery Mildew in Melon</td>
+                        <td>Horticulturae</td>
+                        <td><a href="https://doi.org/10.3390/horticulturae12091141" target="_blank" style="word-break: break-all;">10.3390/horticulturae12091141</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Expanded detection of canine enteric viruses in UK dogs with diarrhoea</td>
+                        <td>Microbial Genomics</td>
+                        <td><a href="https://doi.org/10.1099/mgen.0.001799" target="_blank" style="word-break: break-all;">10.1099/mgen.0.001799</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Overcoming Intrinsic Barriers in Myofibroblasts Permits Efficient Cardiac Reprogramming After Infarction</td>
+                        <td>Circulation</td>
+                        <td><a href="https://doi.org/10.1161/circulationaha.126.078415" target="_blank" style="word-break: break-all;">10.1161/circulationaha.126.078415</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Caerin 1.1/1.9 Inhibits Growth and Biofilm Formation of Carbapenem-Resistant Klebsiella pneumoniae and Induces Coordinated Transcriptomic Stress Responses</td>
+                        <td>Current Microbiology</td>
+                        <td><a href="https://doi.org/10.1007/s00284-026-05135-2" target="_blank" style="word-break: break-all;">10.1007/s00284-026-05135-2</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>African swine fever virus remodels cellular host metabolism and promotes lipid droplet formation in macrophages and cell lines</td>
+                        <td>Frontiers in Cellular and Infection Microbiology</td>
+                        <td><a href="https://doi.org/10.3389/fcimb.2026.1913777" target="_blank" style="word-break: break-all;">10.3389/fcimb.2026.1913777</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Characterization of the Complete Mitochondrial Genome of Tachypleus tridentatus and Mitochondrial Phylogenetic Analysis of Extant Limulidae</td>
+                        <td>Animals</td>
+                        <td><a href="https://doi.org/10.3390/ani16182823" target="_blank" style="word-break: break-all;">10.3390/ani16182823</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Integrated Genome‐Wide Association Studies and Selection Signature Analysis Reveal the Genetic Architecture of the Wattle Trait in Goats</td>
+                        <td>Animal Genetics</td>
+                        <td><a href="https://doi.org/10.1002/age.70198" target="_blank" style="word-break: break-all;">10.1002/age.70198</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>ePE ‐ P3 ‐ SpRY enables efficient and PAM ‐flexible prime editing in rice</td>
+                        <td>New Phytologist</td>
+                        <td><a href="https://doi.org/10.1111/nph.71568" target="_blank" style="word-break: break-all;">10.1111/nph.71568</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Whole-Genome Sequencing Reveals Co-Infection with Bovine Viral Diarrhea Virus, Bovine Enterovirus, and Caprine Parainfluenza Virus Type 3 in a Calf from a Cattle Herd in Xizang, China</td>
+                        <td>Animals</td>
+                        <td><a href="https://doi.org/10.3390/ani16172805" target="_blank" style="word-break: break-all;">10.3390/ani16172805</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Whole-genome sequencing identifies a potentially causative homozygous splicing variant in RAD54 like in non-obstructive azoospermia</td>
+                        <td>International Journal of Reproductive BioMedicine (IJRM)</td>
+                        <td><a href="https://doi.org/10.18502/ijrm.v24i7.21585" target="_blank" style="word-break: break-all;">10.18502/ijrm.v24i7.21585</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Fine-scale mapping and annotation of copy number variation regions in Indian goat breeds</td>
+                        <td>The Nucleus</td>
+                        <td><a href="https://doi.org/10.1007/s13237-026-00710-1" target="_blank" style="word-break: break-all;">10.1007/s13237-026-00710-1</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>An ABA /auxin regulatory module controlled by nitrogen governs symbiotic organogenesis in the bryophyte species Ricciocarpos natans</td>
+                        <td>New Phytologist</td>
+                        <td><a href="https://doi.org/10.1111/nph.71559" target="_blank" style="word-break: break-all;">10.1111/nph.71559</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Cell-cycle control of chromatin creates a therapeutic window for epigenetic therapy in tumors</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.09.03.748889" target="_blank" style="word-break: break-all;">10.64898/2026.09.03.748889</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Molecular characterization of chikungunya viruses associated with outbreaks in Kenya from 2017 to 2020</td>
+                        <td>Archives of Virology</td>
+                        <td><a href="https://doi.org/10.1007/s00705-026-06729-8" target="_blank" style="word-break: break-all;">10.1007/s00705-026-06729-8</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>The complete sequence of chloroplast genome of an important medicinal plant, Chamaemelum nobile Linaeus 1785 (Asteraceae)</td>
+                        <td>Mitochondrial DNA Part B</td>
+                        <td><a href="https://doi.org/10.1080/23802359.2026.2728270" target="_blank" style="word-break: break-all;">10.1080/23802359.2026.2728270</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Genome-Wide Characterization of PEBP, FD, and GRF Families in Amomum villosum Lour. and Their Potential Roles in Flowering</td>
+                        <td>Plants</td>
+                        <td><a href="https://doi.org/10.3390/plants15172722" target="_blank" style="word-break: break-all;">10.3390/plants15172722</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>The fitness landscape of a form II rubisco in a photosynthetic bacterium guides engineering of oxygen tolerance</td>
+                        <td>Science Advances</td>
+                        <td><a href="https://doi.org/10.1126/sciadv.aee9222" target="_blank" style="word-break: break-all;">10.1126/sciadv.aee9222</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Abalone genomics reveals an ancient asymmetry axis and the multifunctionality of the mantle</td>
+                        <td>Science Advances</td>
+                        <td><a href="https://doi.org/10.1126/sciadv.aeb8392" target="_blank" style="word-break: break-all;">10.1126/sciadv.aeb8392</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Fragmentation patterns of human telomeric chromatin in plasma cfDNA</td>
+                        <td>Nature Communications</td>
+                        <td><a href="https://doi.org/10.1038/s41467-026-77352-z" target="_blank" style="word-break: break-all;">10.1038/s41467-026-77352-z</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Exploratory study on blood and urine transcriptomes for identifying miRNA biomarkers in pediatric febrile bacterial and viral infections</td>
+                        <td>Scientific Reports</td>
+                        <td><a href="https://doi.org/10.1038/s41598-026-67949-1" target="_blank" style="word-break: break-all;">10.1038/s41598-026-67949-1</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Genomic and Phenotypic Characterization of Sandstorm-Derived Airborne Bacillus Strains Reveals Diverse Biosynthetic Potential</td>
+                        <td>Antibiotics</td>
+                        <td><a href="https://doi.org/10.3390/antibiotics15090863" target="_blank" style="word-break: break-all;">10.3390/antibiotics15090863</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Cell-type-resolved somatic variant discovery from bulk long-read sequencing</td>
+                        <td>medRxiv</td>
+                        <td><a href="https://doi.org/10.64898/2026.09.01.26361966" target="_blank" style="word-break: break-all;">10.64898/2026.09.01.26361966</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Integration of Multi-Omics Reveals Genomic Features of Chromatin Accessibility in Gardenia jasminoides J.Ellis Leaves</td>
+                        <td>Horticulturae</td>
+                        <td><a href="https://doi.org/10.3390/horticulturae12091121" target="_blank" style="word-break: break-all;">10.3390/horticulturae12091121</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Comparative performance of portable DNA extraction protocols and bioinformatics workflows for rapid detection of gram-negative bacteria and antimicrobial resistance using Oxford Nanopore sequencing</td>
+                        <td>Microbiology Spectrum</td>
+                        <td><a href="https://doi.org/10.1128/spectrum.00692-26" target="_blank" style="word-break: break-all;">10.1128/spectrum.00692-26</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Genome-wide evolutionary shifts shape the emergence of dominant circulating clones in Mycobacterium abscessus</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.09.03.749045" target="_blank" style="word-break: break-all;">10.64898/2026.09.03.749045</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Microsatellites Versus Genome-Wide SNPs Data for Pedigree Reconstruction in Twin Simmental Crossbred Cattle</td>
+                        <td>Animals</td>
+                        <td><a href="https://doi.org/10.3390/ani16172780" target="_blank" style="word-break: break-all;">10.3390/ani16172780</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>ACOD1-dependent succinate signalling acts as a metabolic checkpoint for osteoclast differentiation</td>
+                        <td>Biological Chemistry</td>
+                        <td><a href="https://doi.org/10.1515/hsz-2026-0168" target="_blank" style="word-break: break-all;">10.1515/hsz-2026-0168</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Time-Course Transcriptomic Analysis Identifies MsTIFY11B as a Promising Candidate Regulator of Salt–Alkali Tolerance in Alfalfa (Medicago sativa L.)</td>
+                        <td>Plants</td>
+                        <td><a href="https://doi.org/10.3390/plants15172714" target="_blank" style="word-break: break-all;">10.3390/plants15172714</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Integrated Multi‐Omics Analysis Reveals the Genetic Basis of Phenotypic Variation in Tibetan Sheep</td>
+                        <td>Integrative Zoology</td>
+                        <td><a href="https://doi.org/10.1111/1749-4877.70179" target="_blank" style="word-break: break-all;">10.1111/1749-4877.70179</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Benchmarking Assembly-Free K-mer Methods for Species Identification in Complex Plant Groups: A Case Study in Populus</td>
+                        <td>Systematic Biology</td>
+                        <td><a href="https://doi.org/10.1093/sysbio/syag059" target="_blank" style="word-break: break-all;">10.1093/sysbio/syag059</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Early-life colonization with Clostridioides difficile remodels the developing gut</td>
+                        <td>Science</td>
+                        <td><a href="https://doi.org/10.1126/science.ady2886" target="_blank" style="word-break: break-all;">10.1126/science.ady2886</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Phylogenetic Mosaic of an Arms Race with Asymmetrical Sexual Conflict and Its Macroevolutionary Consequences in a Lineage of Small Water Striders</td>
+                        <td>eLife</td>
+                        <td><a href="https://doi.org/10.7554/elife.112129" target="_blank" style="word-break: break-all;">10.7554/elife.112129</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>The complete chloroplast genome of Heterostemma pingtaoi (Apocynaceae)</td>
+                        <td>Mitochondrial DNA Part B</td>
+                        <td><a href="https://doi.org/10.1080/23802359.2026.2722710" target="_blank" style="word-break: break-all;">10.1080/23802359.2026.2722710</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Unbiased and scalable reduction of diverse bacterial genomes</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.09.02.748983" target="_blank" style="word-break: break-all;">10.64898/2026.09.02.748983</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Comparative Genomic Analysis of Clonal Variants of a Spirabiliibacterium Lineage Recovered from a Chicken in the United States</td>
+                        <td>Microorganisms</td>
+                        <td><a href="https://doi.org/10.3390/microorganisms14091953" target="_blank" style="word-break: break-all;">10.3390/microorganisms14091953</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Draft genomes of Limimaricola soesokkakensis TX01 isolated from the light organ of Anomalops katoptron in Indonesian waters</td>
+                        <td>Microbiology Resource Announcements</td>
+                        <td><a href="https://doi.org/10.1128/mra.00934-26" target="_blank" style="word-break: break-all;">10.1128/mra.00934-26</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Transcriptomic Reprogramming of the Human Placenta Following Maternal Opioid Exposure: Identification of Altered Metabolic and Translational Pathways</td>
+                        <td>Current Issues in Molecular Biology</td>
+                        <td><a href="https://doi.org/10.3390/cimb48090900" target="_blank" style="word-break: break-all;">10.3390/cimb48090900</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>The circulating metatranscriptome in acute myeloid leukemia patients: an RNA-seq reanalysis</td>
+                        <td>Frontiers in Microbiomes</td>
+                        <td><a href="https://doi.org/10.3389/frmbi.2026.1903806" target="_blank" style="word-break: break-all;">10.3389/frmbi.2026.1903806</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>TALE-independent transcriptional activation of the rice executor gene Xa23 is regulated via histone acetylation during zygote development</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.09.02.748781" target="_blank" style="word-break: break-all;">10.64898/2026.09.02.748781</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Enhanced eicosapentaenoic acid productivity in Microchloropsis salina through low-cost medium optimization and EMS-induced random mutagenesis</td>
+                        <td>Research Square</td>
+                        <td><a href="https://doi.org/10.21203/rs.3.rs-10758316/v1" target="_blank" style="word-break: break-all;">10.21203/rs.3.rs-10758316/v1</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Adeno-Associated Virus Mediated Expression of Bcl-xL Attenuates Apoptosis in Fuchs Endothelial Corneal Dystrophy</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.09.01.748650" target="_blank" style="word-break: break-all;">10.64898/2026.09.01.748650</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Uncovering the mechanism of action of a historical antimicrobial against S. aureus and A. baumannii</td>
+                        <td>mSphere</td>
+                        <td><a href="https://doi.org/10.1128/msphere.00494-26" target="_blank" style="word-break: break-all;">10.1128/msphere.00494-26</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>KAT3 Shuttling Between Neuronal Identity and Activity-Dependent Plasticity Programs Drives Large-Scale Chromatin Remodeling</td>
+                        <td>bioRxiv (Cold Spring Harbor Laboratory)</td>
+                        <td><a href="https://doi.org/10.64898/2026.08.28.747502" target="_blank" style="word-break: break-all;">10.64898/2026.08.28.747502</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Whole-genome sequencing reveals divergent and shared selection signatures of heat stress adaptation in indigenous Ethiopian zebu cattle from dry-hot and humid-hot environments</td>
+                        <td>PLoS ONE</td>
+                        <td><a href="https://doi.org/10.1371/journal.pone.0343484" target="_blank" style="word-break: break-all;">10.1371/journal.pone.0343484</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Integrative morphological, palynological, and phylogenomic evidence supports the recognition of Hongdaicitrus as a new genus within Citrus sensu lato</td>
+                        <td>Frontiers in Plant Science</td>
+                        <td><a href="https://doi.org/10.3389/fpls.2026.1905317" target="_blank" style="word-break: break-all;">10.3389/fpls.2026.1905317</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2026</td>
+                        <td>Persistence of Extended Spectrum β-Lactamase-Producing Enterobacterales in the Gut Microbiome of Healthy Newborns</td>
+                        <td>medRxiv</td>
+                        <td><a href="https://doi.org/10.64898/2026.09.01.26361559" target="_blank" style="word-break: break-all;">10.64898/2026.09.01.26361559</a></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div id="cit-pagination" class="cit-pagination" style="display:none;" aria-label="Citation table pages">
+                <div class="cit-pagination-info" id="cit-pagination-info"></div>
+                <div class="cit-pagination-btns" id="cit-pagination-btns"></div>
+            </div>
+        </section>
+
+
+        <footer style="margin-top: 5rem; padding-bottom: 3rem; border-top: 1px solid #e5e7eb; padding-top: 1.5rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+
+                <div class="muted" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="color: #9ca3af;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Understanding our metrics: <a href="https://www.openscience.works/about.html" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">Read the Methodology & Legend ↗</a></span>
+                </div>
+
+                <div class="muted" style="font-size: 0.85rem; padding-left: 1.4rem;">
+                    Generated on 2026-09-11T09:24:49+00:00
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        function initSparkline(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var box = canvas.parentElement;
+            if (!box || !box.classList.contains('im-spark-chart')) return;
+            var labels = JSON.parse(canvas.dataset.labels);
+            var values = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37,99,235,0.12)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: labels.length > 8 ? 0 : 2,
+                        pointHoverRadius: 3,
+                        pointBackgroundColor: '#2563eb',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: 0 },
+                    plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                    scales: {
+                        x: { display: false, grid: { display: false } },
+                        y: { display: false, beginAtZero: true, grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function initCitationBar(canvas) {
+            if (!canvas || !canvas.dataset.labels) return;
+            var labels = JSON.parse(canvas.getAttribute('data-labels'));
+            var data = JSON.parse(canvas.dataset.values);
+            if (!labels.length) return;
+            new Chart(canvas.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Citations',
+                        data: data,
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4,
+                        barPercentage: 0.6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, ticks: { precision: 0, color: '#6b7280' }, border: { display: false } },
+                        x: { grid: { display: false }, ticks: { color: '#6b7280' }, border: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#111827', padding: 10, cornerRadius: 8 }
+                    }
+                }
+            });
+        }
+
+        function initCitationTablePagination() {
+            var table = document.getElementById('cit-table');
+            var wrap = document.getElementById('cit-pagination');
+            var info = document.getElementById('cit-pagination-info');
+            var btns = document.getElementById('cit-pagination-btns');
+            var summary = document.getElementById('cit-summary');
+            if (!table || !wrap || !info || !btns) return;
+            var rows = table.querySelectorAll('tbody tr');
+            var total = rows.length;
+            var perPage = 25;
+            if (total <= perPage) {
+                if (summary) {
+                    summary.textContent = total + ' most recent citing works (newest first)';
+                }
+                return;
+            }
+            wrap.style.display = 'flex';
+            var page = 0;
+            var pageCount = Math.ceil(total / perPage);
+
+            function render() {
+                var start = page * perPage;
+                var end = Math.min(start + perPage, total);
+                for (var i = 0; i < total; i++) {
+                    rows[i].style.display = (i >= start && i < end) ? '' : 'none';
+                }
+                info.textContent = 'Showing ' + (start + 1) + '\u2013' + end + ' of ' + total;
+                if (summary) {
+                    summary.textContent = total + ' most recent citing works \u00b7 page ' + (page + 1) + ' of ' + pageCount;
+                }
+                btns.innerHTML = '';
+                var prev = document.createElement('button');
+                prev.type = 'button';
+                prev.className = 'cit-btn';
+                prev.textContent = '\u2190 Prev';
+                prev.disabled = page === 0;
+                prev.onclick = function() { page--; render(); };
+                btns.appendChild(prev);
+
+                var maxBtns = 7;
+                var pages = [];
+                if (pageCount <= maxBtns) {
+                    for (var p = 0; p < pageCount; p++) pages.push(p);
+                } else {
+                    pages.push(0);
+                    var lo = Math.max(1, page - 1);
+                    var hi = Math.min(pageCount - 2, page + 1);
+                    if (lo > 1) pages.push(-1);
+                    for (var m = lo; m <= hi; m++) pages.push(m);
+                    if (hi < pageCount - 2) pages.push(-1);
+                    pages.push(pageCount - 1);
+                }
+                pages.forEach(function(pi) {
+                    if (pi === -1) {
+                        var ell = document.createElement('span');
+                        ell.className = 'muted';
+                        ell.style.padding = '0 .25rem';
+                        ell.textContent = '\u2026';
+                        btns.appendChild(ell);
+                        return;
+                    }
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'cit-btn' + (pi === page ? ' cit-active' : '');
+                    btn.textContent = String(pi + 1);
+                    btn.onclick = (function(target) {
+                        return function() { page = target; render(); };
+                    })(pi);
+                    btns.appendChild(btn);
+                });
+
+                var next = document.createElement('button');
+                next.type = 'button';
+                next.className = 'cit-btn';
+                next.textContent = 'Next \u2192';
+                next.disabled = page >= pageCount - 1;
+                next.onclick = function() { page++; render(); };
+                btns.appendChild(next);
+            }
+            render();
+        }
+
+        initSparkline(document.getElementById('impactSparkline'));
+        initSparkline(document.getElementById('downloadsSparkline'));
+        initCitationBar(document.getElementById('citationChart'));
+        initCitationTablePagination();
+    })();
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .soc-tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            color: #6b7280;
+            margin-bottom: -2px;
+            transition: all 0.2s;
+        }
+
+        .soc-tab-btn.soc-tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #111827;
+        }
+        .wm-tab-btn {
+            border: none;
+            background: #f3f4f6;
+            color: #4b5563;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .wm-tab-btn.wm-tab-active {
+            outline: 2px solid #3b82f6;
+            outline-offset: 1px;
+        }
+    </style>
+
+    <script>
+        function citeSwitchTab(btn, paneId) {
+            var panes = document.querySelectorAll('#sec-citing .cite-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].classList.remove('active');
+            }
+            var btns = document.querySelectorAll('#sec-citing .cite-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('active');
+            }
+            var pane = document.getElementById(paneId);
+            if (pane) pane.classList.add('active');
+            if (btn) btn.classList.add('active');
+        }
+        function openWebMentionTab(evt, tabId) {
+            var panes = document.querySelectorAll('.wm-tab-pane');
+            for (var i = 0; i < panes.length; i++) {
+                panes[i].style.display = 'none';
+            }
+            var btns = document.querySelectorAll('.wm-tab-btn');
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].classList.remove('wm-tab-active');
+            }
+            var pane = document.getElementById(tabId);
+            if (pane) pane.style.display = 'block';
+            if (evt && evt.currentTarget) evt.currentTarget.classList.add('wm-tab-active');
+        }
+        function openSocialTab(evt, tabId) {
+            // Hide all tab content
+            var contents = document.getElementsByClassName("soc-tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].style.display = "none";
+            }
+            // Remove the active class from all buttons
+            var btns = document.getElementsByClassName("soc-tab-btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("soc-tab-active");
+            }
+            // Show the selected tab and add the active class to the clicked button
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.classList.add("soc-tab-active");
+        }
+    </script>
+<div id="role-tooltip" style="
+  position:fixed;display:none;z-index:9999;
+  background:#111827;color:white;padding:.5rem .75rem;
+  border-radius:.5rem;font-size:.72rem;width:240px;
+  line-height:1.5;white-space:normal;font-weight:400;
+  pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);
+"></div>
+<script>
+(function(){
+  var tip = document.getElementById('role-tooltip');
+  document.querySelectorAll('[data-tip]').forEach(function(pill){
+    pill.addEventListener('mouseenter', function(){
+      tip.textContent = pill.getAttribute('data-tip');
+      tip.style.top = '-9999px'; tip.style.display = 'block';
+      var r   = pill.getBoundingClientRect();
+      var th  = tip.offsetHeight;
+      var top = (window.innerHeight - r.bottom > th + 16)
+                ? r.bottom + 8          /* open downward */
+                : r.top - th - 8;       /* flip upward   */
+      var left = Math.min(r.left, window.innerWidth - 252);
+      left = Math.max(left, 8);
+      tip.style.top  = top  + 'px';
+      tip.style.left = left + 'px';
+    });
+    pill.addEventListener('mouseleave', function(){
+      tip.style.display = 'none';
+    });
+  });
+})();
+</script>
+<script>
+// Apply dynamic, data-driven styles (kept out of inline `style` so the CSS
+// linter doesn't choke on templated values; Chromium runs this before PDF export).
+(function() {
+    document.querySelectorAll('[data-w]').forEach(function(el) { el.style.width = el.getAttribute('data-w') + '%'; });
+    document.querySelectorAll('[data-opacity]').forEach(function(el) { el.style.opacity = el.getAttribute('data-opacity'); });
+    document.querySelectorAll('[data-bg]').forEach(function(el) { el.style.background = el.getAttribute('data-bg'); });
+    document.querySelectorAll('[data-color]').forEach(function(el) { el.style.color = el.getAttribute('data-color'); });
+})();
+</script>
+<script>
+(function() {
+    var nav = document.getElementById('story-sticky-nav');
+    if (!nav) return;
+    var links = nav.querySelectorAll('a[href^="#sec-"]');
+    var sectionIds = [];
+    links.forEach(function(a) {
+        var id = (a.getAttribute('href') || '').slice(1);
+        if (id && document.getElementById(id)) sectionIds.push(id);
+    });
+    if (!sectionIds.length) return;
+
+    function setActive(id) {
+        links.forEach(function(a) {
+            a.classList.toggle('snav-active', a.getAttribute('href') === '#' + id);
+        });
+    }
+
+    links.forEach(function(a) {
+        a.addEventListener('click', function(e) {
+            var id = (a.getAttribute('href') || '').slice(1);
+            var target = id ? document.getElementById(id) : null;
+            if (!target) return;
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.replaceState(null, '', '#' + id);
+            setActive(id);
+            var more = nav.querySelector('.sticky-nav-more');
+            if (more) more.removeAttribute('open');
+        });
+    });
+
+    if (!('IntersectionObserver' in window)) return;
+    var visible = new Map();
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            visible.set(entry.target.id, entry.intersectionRatio);
+        });
+        var bestId = null;
+        var bestRatio = 0;
+        sectionIds.forEach(function(id) {
+            var ratio = visible.get(id) || 0;
+            if (ratio > bestRatio) {
+                bestRatio = ratio;
+                bestId = id;
+            }
+        });
+        if (bestId) setActive(bestId);
+    }, { rootMargin: '-40% 0px -50% 0px', threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] });
+
+    sectionIds.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) observer.observe(el);
+    });
+})();
+</script>
+<script>
+(function() {
+    var el = document.getElementById('publisher-value');
+    if (!el) return;
+
+    var label = (el.getAttribute('data-publisher-label') || '').trim();
+    if (!label || label.toLowerCase() === 'unknown') return;
+
+    function norm(s) {
+        return String(s || '').trim().toLowerCase().replace(/\s+/g, ' ');
+    }
+
+    function parseStoriesData(jsText) {
+        var marker = 'window.STORIES_DATA =';
+        var markerIdx = jsText.indexOf(marker);
+        if (markerIdx === -1) return [];
+        var start = jsText.indexOf('[', markerIdx);
+        if (start === -1) return [];
+        var endMarker = 'window.STORIES_STATS =';
+        var endMarkerIdx = jsText.indexOf(endMarker, start);
+        if (endMarkerIdx === -1) return [];
+        var end = jsText.lastIndexOf(';', endMarkerIdx - 1);
+        if (end === -1 || end <= start) return [];
+        var raw = jsText.slice(start, end).trim();
+        try {
+            var data = JSON.parse(raw);
+            return Array.isArray(data) ? data : [];
+        } catch (_err) {
+            return [];
+        }
+    }
+
+    function enablePublisherLink(count) {
+        var link = document.createElement('a');
+        link.href = 'index.html?view=publisher&publisher=' + encodeURIComponent(label);
+        link.textContent = label;
+        link.style.color = '#1d4ed8';
+        link.style.textDecoration = 'none';
+        if (typeof count === 'number' && count > 1) {
+            link.title = 'Open publisher dashboard (' + count + ' stories)';
+        } else {
+            link.title = 'Open publisher dashboard';
+        }
+        el.textContent = '';
+        el.appendChild(link);
+    }
+
+    // Local file previews (file://) often block fetch(). In that case we still
+    // provide direct navigation to the publisher dashboard.
+    if (window.location.protocol === 'file:') {
+        enablePublisherLink();
+        return;
+    }
+
+    fetch('stories_data.js')
+        .then(function(res) { return res.ok ? res.text() : ''; })
+        .then(function(jsText) {
+            if (!jsText) {
+                enablePublisherLink();
+                return;
+            }
+            var stories = parseStoriesData(jsText);
+            if (!stories.length) {
+                enablePublisherLink();
+                return;
+            }
+
+            var target = norm(label);
+            var matches = stories.filter(function(story) {
+                var publisher = norm(story.publisher || story.venue || '');
+                return publisher && publisher === target;
+            }).length;
+
+            if (matches <= 1) return;
+            enablePublisherLink(matches);
+        })
+        .catch(function() {
+            enablePublisherLink();
+        });
+})();
+</script>
+</body>
+</html>
