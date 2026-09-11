@@ -6,7 +6,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/s0021-9258(19)52451-6",
 "year": 1951,
-"venue": "Journal of Biological Chemistry",
+"venue": "Elsevier",
 "venue_name": "Journal of Biological Chemistry",
 "publisher": "Elsevier",
 "concepts": [
@@ -157,7 +157,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1186/s13059-014-0550-8",
 "year": 2014,
-"venue": "Genome biology",
+"venue": "Springer Nature",
 "venue_name": "Genome biology",
 "publisher": "Springer Nature",
 "concepts": [
@@ -631,7 +631,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/s0021-9258(18)64849-5",
 "year": 1957,
-"venue": "Journal of Biological Chemistry",
+"venue": "Elsevier",
 "venue_name": "Journal of Biological Chemistry",
 "publisher": "Elsevier",
 "concepts": [
@@ -1237,7 +1237,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41586-021-03819-2",
 "year": 2021,
-"venue": "Nature",
+"venue": "Nature Portfolio",
 "venue_name": "Nature",
 "publisher": "Springer Nature",
 "concepts": [
@@ -1436,7 +1436,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1007/s11747-014-0403-8",
 "year": 2014,
-"venue": "Journal of the Academy of Marketing Science",
+"venue": "Springer Nature",
 "venue_name": "Journal of the Academy of Marketing Science",
 "publisher": "Springer Nature",
 "concepts": [
@@ -1739,7 +1739,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1007/s00214-007-0310-x",
 "year": 2007,
-"venue": "Theoretical Chemistry Accounts",
+"venue": "Springer Nature",
 "venue_name": "Theoretical Chemistry Accounts",
 "publisher": "Springer Nature",
 "concepts": [
@@ -2194,7 +2194,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.3168/jds.s0022-0302(91)78551-2",
 "year": 1991,
-"venue": "Journal of Dairy Science",
+"venue": "Elsevier",
 "venue_name": "Journal of Dairy Science",
 "publisher": "Elsevier",
 "concepts": [
@@ -2522,7 +2522,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1186/1471-2105-12-323",
 "year": 2011,
-"venue": "BMC Bioinformatics",
+"venue": "BMC",
 "venue_name": "BMC Bioinformatics",
 "publisher": "Springer Nature",
 "concepts": [
@@ -2673,7 +2673,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41586-020-2649-2",
 "year": 2020,
-"venue": "Nature",
+"venue": "Nature Portfolio",
 "venue_name": "Nature",
 "publisher": "Springer Nature",
 "concepts": [
@@ -2865,7 +2865,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1186/gb-2009-10-3-r25",
 "year": 2009,
-"venue": "Genome biology",
+"venue": "Springer Nature",
 "venue_name": "Genome biology",
 "publisher": "Springer Nature",
 "concepts": [
@@ -3172,7 +3172,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/s0021-9258(19)83641-4",
 "year": 1985,
-"venue": "Journal of Biological Chemistry",
+"venue": "Elsevier",
 "venue_name": "Journal of Biological Chemistry",
 "publisher": "Elsevier",
 "concepts": [
@@ -3635,7 +3635,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1186/gb-2008-9-9-r137",
 "year": 2008,
-"venue": "Genome biology",
+"venue": "Springer Nature",
 "venue_name": "Genome biology",
 "publisher": "Springer Nature",
 "concepts": [
@@ -4315,7 +4315,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.physletb.2012.08.020",
 "year": 2012,
-"venue": "Physics Letters B",
+"venue": "Elsevier",
 "venue_name": "Physics Letters B",
 "publisher": "Elsevier",
 "concepts": [
@@ -9386,7 +9386,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/nature11543",
 "year": 2012,
-"venue": "Nature",
+"venue": "Nature Portfolio",
 "venue_name": "Nature",
 "publisher": "Springer Nature",
 "concepts": [
@@ -10847,7 +10847,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41586-019-1364-3",
 "year": 2019,
-"venue": "Nature",
+"venue": "Nature Portfolio",
 "venue_name": "Nature",
 "publisher": "Springer Nature",
 "concepts": [
@@ -11162,7 +11162,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.5334/aogh.2831",
 "year": 2020,
-"venue": "Annals of Global Health",
+"venue": "Elsevier",
 "venue_name": "Annals of Global Health",
 "publisher": "Elsevier",
 "concepts": [
@@ -13223,7 +13223,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1007/s12599-020-00656-x",
 "year": 2020,
-"venue": "Business & Information Systems Engineering",
+"venue": "Springer Nature",
 "venue_name": "Business & Information Systems Engineering",
 "publisher": "Springer Nature",
 "concepts": [
@@ -13379,7 +13379,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1007/s40747-021-00563-y",
 "year": 2021,
-"venue": "Complex & Intelligent Systems",
+"venue": "Springer Nature",
 "venue_name": "Complex & Intelligent Systems",
 "publisher": "Springer Nature",
 "concepts": [
@@ -13533,7 +13533,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1007/s41748-020-00161-x",
 "year": 2020,
-"venue": "Earth Systems and Environment",
+"venue": "Springer Nature",
 "venue_name": "Earth Systems and Environment",
 "publisher": "Springer Nature",
 "concepts": [
@@ -13691,7 +13691,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.celrep.2022.110986",
 "year": 2022,
-"venue": "Cell Reports",
+"venue": "Cell Press",
 "venue_name": "Cell Reports",
 "publisher": "Elsevier",
 "concepts": [
@@ -13861,7 +13861,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.molmet.2021.101351",
 "year": 2021,
-"venue": "Molecular Metabolism",
+"venue": "Elsevier",
 "venue_name": "Molecular Metabolism",
 "publisher": "Elsevier",
 "concepts": [
@@ -14017,7 +14017,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.redox.2020.101530",
 "year": 2020,
-"venue": "Redox Biology",
+"venue": "Elsevier",
 "venue_name": "Redox Biology",
 "publisher": "Elsevier",
 "concepts": [
@@ -14175,7 +14175,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41392-022-01080-1",
 "year": 2022,
-"venue": "Signal Transduction and Targeted Therapy",
+"venue": "Springer Nature",
 "venue_name": "Signal Transduction and Targeted Therapy",
 "publisher": "Springer Nature",
 "concepts": [
@@ -14339,7 +14339,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41467-021-23737-1",
 "year": 2021,
-"venue": "Nature Communications",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Communications",
 "publisher": "Springer Nature",
 "concepts": [
@@ -14497,7 +14497,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41467-021-24329-9",
 "year": 2021,
-"venue": "Nature Communications",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Communications",
 "publisher": "Springer Nature",
 "concepts": [
@@ -17006,7 +17006,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/nrn.2017.26",
 "year": 2017,
-"venue": "Nature reviews. Neuroscience",
+"venue": "Nature Portfolio",
 "venue_name": "Nature reviews. Neuroscience",
 "publisher": "Springer Nature",
 "concepts": [
@@ -19722,7 +19722,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/nature03124",
 "year": 2004,
-"venue": "Nature",
+"venue": "Nature Portfolio",
 "venue_name": "Nature",
 "publisher": "Springer Nature",
 "concepts": [
@@ -20312,7 +20312,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/nature21680",
 "year": 2017,
-"venue": "Nature",
+"venue": "Nature Portfolio",
 "venue_name": "Nature",
 "publisher": "Springer Nature",
 "concepts": [
@@ -23107,7 +23107,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/nrd.2016.136",
 "year": 2016,
-"venue": "Nature Reviews Drug Discovery",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Reviews Drug Discovery",
 "publisher": "Springer Nature",
 "concepts": [
@@ -23716,7 +23716,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1182/blood.2023022222",
 "year": 2023,
-"venue": "Blood",
+"venue": "Elsevier",
 "venue_name": "Blood",
 "publisher": "Elsevier",
 "concepts": [
@@ -25028,7 +25028,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.jacc.2022.01.038",
 "year": 2022,
-"venue": "Journal of the American College of Cardiology",
+"venue": "Elsevier",
 "venue_name": "Journal of the American College of Cardiology",
 "publisher": "Elsevier",
 "concepts": [
@@ -25340,7 +25340,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.neuron.2022.09.009",
 "year": 2022,
-"venue": "Neuron",
+"venue": "Cell Press",
 "venue_name": "Neuron",
 "publisher": "Elsevier",
 "concepts": [
@@ -25523,7 +25523,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41893-020-0532-7",
 "year": 2020,
-"venue": "Nature Sustainability",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Sustainability",
 "publisher": "Springer Nature",
 "concepts": [
@@ -25678,7 +25678,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41557-023-01379-8",
 "year": 2023,
-"venue": "Nature Chemistry",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Chemistry",
 "publisher": "Springer Nature",
 "concepts": [
@@ -26172,7 +26172,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41588-023-01603-8",
 "year": 2023,
-"venue": "Nature Genetics",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Genetics",
 "publisher": "Springer Nature",
 "concepts": [
@@ -26334,7 +26334,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.socscimed.2019.112499",
 "year": 2019,
-"venue": "Social Science & Medicine",
+"venue": "Elsevier",
 "venue_name": "Social Science & Medicine",
 "publisher": "Elsevier",
 "concepts": [
@@ -26493,7 +26493,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.devcel.2023.11.004",
 "year": 2023,
-"venue": "Developmental Cell",
+"venue": "Elsevier",
 "venue_name": "Developmental Cell",
 "publisher": "Elsevier",
 "concepts": [
@@ -26654,7 +26654,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/d41586-019-01643-3",
 "year": 2019,
-"venue": "Nature",
+"venue": "Nature Portfolio",
 "venue_name": "Nature",
 "publisher": "Springer Nature",
 "concepts": [
@@ -26818,7 +26818,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.isci.2020.101698",
 "year": 2020,
-"venue": "iScience",
+"venue": "Cell Press",
 "venue_name": "iScience",
 "publisher": "Elsevier",
 "concepts": [
@@ -27791,7 +27791,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41598-020-63014-7",
 "year": 2020,
-"venue": "Scientific Reports",
+"venue": "Springer Nature",
 "venue_name": "Scientific Reports",
 "publisher": "Springer Nature",
 "concepts": [
@@ -27952,7 +27952,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.molcel.2023.10.045",
 "year": 2023,
-"venue": "Molecular Cell",
+"venue": "Cell Press",
 "venue_name": "Molecular Cell",
 "publisher": "Elsevier",
 "concepts": [
@@ -28854,7 +28854,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41586-023-06933-5",
 "year": 2023,
-"venue": "Nature",
+"venue": "Nature Portfolio",
 "venue_name": "Nature",
 "publisher": "Springer Nature",
 "concepts": [
@@ -29442,7 +29442,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41598-021-90639-z",
 "year": 2021,
-"venue": "Scientific Reports",
+"venue": "Springer Nature",
 "venue_name": "Scientific Reports",
 "publisher": "Springer Nature",
 "concepts": [
@@ -30423,7 +30423,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.cell.2023.11.036",
 "year": 2023,
-"venue": "Cell",
+"venue": "Cell Press",
 "venue_name": "Cell",
 "publisher": "Elsevier",
 "concepts": [
@@ -30812,7 +30812,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.cell.2023.11.010",
 "year": 2023,
-"venue": "Cell",
+"venue": "Cell Press",
 "venue_name": "Cell",
 "publisher": "Elsevier",
 "concepts": [
@@ -32440,7 +32440,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41593-023-01500-7",
 "year": 2023,
-"venue": "Nature Neuroscience",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Neuroscience",
 "publisher": "Springer Nature",
 "concepts": [
@@ -33069,7 +33069,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.tcb.2023.10.013",
 "year": 2023,
-"venue": "Trends in Cell Biology",
+"venue": "Elsevier",
 "venue_name": "Trends in Cell Biology",
 "publisher": "Elsevier",
 "concepts": [
@@ -33926,7 +33926,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/s0306-4522(03)00405-6",
 "year": 2003,
-"venue": "Neuroscience",
+"venue": "Elsevier",
 "venue_name": "Neuroscience",
 "publisher": "Elsevier",
 "concepts": [
@@ -34544,7 +34544,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.cub.2023.11.025",
 "year": 2023,
-"venue": "Current Biology",
+"venue": "Cell Press",
 "venue_name": "Current Biology",
 "publisher": "Elsevier",
 "concepts": [
@@ -34872,7 +34872,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41591-026-04206-y",
 "year": 2026,
-"venue": "Nature Medicine",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Medicine",
 "publisher": "Springer Nature",
 "concepts": [
@@ -36094,7 +36094,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1007/s10875-023-01629-x",
 "year": 2023,
-"venue": "Journal of Clinical Immunology",
+"venue": "Springer Nature",
 "venue_name": "Journal of Clinical Immunology",
 "publisher": "Springer Nature",
 "concepts": [
@@ -36416,7 +36416,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.15252/emmm.202012739",
 "year": 2020,
-"venue": "EMBO Molecular Medicine",
+"venue": "EMBO",
 "venue_name": "EMBO Molecular Medicine",
 "publisher": "Springer Nature",
 "concepts": [
@@ -36886,7 +36886,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41586-025-09772-8",
 "year": 2025,
-"venue": "Nature",
+"venue": "Nature Portfolio",
 "venue_name": "Nature",
 "publisher": "Springer Nature",
 "concepts": [
@@ -37328,7 +37328,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41467-025-67869-0",
 "year": 2025,
-"venue": "Nature Communications",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Communications",
 "publisher": "Springer Nature",
 "concepts": [
@@ -38214,7 +38214,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41592-023-02115-3",
 "year": 2023,
-"venue": "Nature Methods",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Methods",
 "publisher": "Springer Nature",
 "concepts": [
@@ -40226,7 +40226,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41556-025-01834-3",
 "year": 2025,
-"venue": "Nature Cell Biology",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Cell Biology",
 "publisher": "Springer Nature",
 "concepts": [
@@ -40840,7 +40840,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41467-025-65594-2",
 "year": 2025,
-"venue": "Nature Communications",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Communications",
 "publisher": "Springer Nature",
 "concepts": [
@@ -41014,7 +41014,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41556-025-01828-1",
 "year": 2025,
-"venue": "Nature Cell Biology",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Cell Biology",
 "publisher": "Springer Nature",
 "concepts": [
@@ -41177,7 +41177,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41572-025-00674-7",
 "year": 2025,
-"venue": "Nature Reviews Disease Primers",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Reviews Disease Primers",
 "publisher": "Springer Nature",
 "concepts": [
@@ -41806,7 +41806,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/nphys1170",
 "year": 2009,
-"venue": "Nature Physics",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Physics",
 "publisher": "Springer Nature",
 "concepts": [
@@ -44706,7 +44706,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1007/s00180-017-0762-y",
 "year": 2017,
-"venue": "Computational Statistics",
+"venue": "Springer Nature",
 "venue_name": "Computational Statistics",
 "publisher": "Springer Nature",
 "concepts": [
@@ -45734,7 +45734,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.cell.2025.11.030",
 "year": 2025,
-"venue": "Cell",
+"venue": "Cell Press",
 "venue_name": "Cell",
 "publisher": "Elsevier",
 "concepts": [
@@ -46643,7 +46643,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s42003-023-05579-3",
 "year": 2023,
-"venue": "Communications Biology",
+"venue": "Springer Nature",
 "venue_name": "Communications Biology",
 "publisher": "Springer Nature",
 "concepts": [
@@ -47789,7 +47789,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.cell.2025.11.041",
 "year": 2025,
-"venue": "Cell",
+"venue": "Cell Press",
 "venue_name": "Cell",
 "publisher": "Elsevier",
 "concepts": [
@@ -52235,7 +52235,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.ajhg.2025.12.007",
 "year": 2026,
-"venue": "The American Journal of Human Genetics",
+"venue": "Elsevier",
 "venue_name": "The American Journal of Human Genetics",
 "publisher": "Elsevier",
 "concepts": [
@@ -52438,7 +52438,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41592-025-02965-z",
 "year": 2025,
-"venue": "Nature Methods",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Methods",
 "publisher": "Springer Nature",
 "concepts": [
@@ -53251,7 +53251,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1186/s12864-023-09832-1",
 "year": 2023,
-"venue": "BMC Genomics",
+"venue": "BMC",
 "venue_name": "BMC Genomics",
 "publisher": "Springer Nature",
 "concepts": [
@@ -55303,7 +55303,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/d41586-026-01723-1",
 "year": 2026,
-"venue": "Nature",
+"venue": "Nature Portfolio",
 "venue_name": "Nature",
 "publisher": "Springer Nature",
 "concepts": [
@@ -55419,7 +55419,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41597-023-02782-z",
 "year": 2023,
-"venue": "Scientific Data",
+"venue": "Springer Nature",
 "venue_name": "Scientific Data",
 "publisher": "Springer Nature",
 "concepts": [
@@ -59214,7 +59214,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.ajhg.2025.12.014",
 "year": 2026,
-"venue": "The American Journal of Human Genetics",
+"venue": "Elsevier",
 "venue_name": "The American Journal of Human Genetics",
 "publisher": "Elsevier",
 "concepts": [
@@ -59360,7 +59360,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.jinorgbio.2025.113204",
 "year": 2025,
-"venue": "Journal of Inorganic Biochemistry",
+"venue": "Elsevier",
 "venue_name": "Journal of Inorganic Biochemistry",
 "publisher": "Elsevier",
 "concepts": [
@@ -59490,7 +59490,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41467-026-73694-w",
 "year": 2026,
-"venue": "Nature Communications",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Communications",
 "publisher": "Springer Nature",
 "concepts": [
@@ -63656,7 +63656,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.cirep.2024.200194",
 "year": 2024,
-"venue": "Comparative Immunology Reports",
+"venue": "Elsevier",
 "venue_name": "Comparative Immunology Reports",
 "publisher": "Elsevier",
 "concepts": [
@@ -63776,7 +63776,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.crmicr.2024.100337",
 "year": 2024,
-"venue": "Current Research in Microbial Sciences",
+"venue": "Elsevier",
 "venue_name": "Current Research in Microbial Sciences",
 "publisher": "Elsevier",
 "concepts": [
@@ -63882,7 +63882,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.gde.2025.102424",
 "year": 2025,
-"venue": "Current Opinion in Genetics & Development",
+"venue": "Elsevier",
 "venue_name": "Current Opinion in Genetics & Development",
 "publisher": "Elsevier",
 "concepts": [
@@ -64028,7 +64028,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/s41467-025-65703-1",
 "year": 2025,
-"venue": "Nature Communications",
+"venue": "Nature Portfolio",
 "venue_name": "Nature Communications",
 "publisher": "Springer Nature",
 "concepts": [
@@ -64924,7 +64924,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1186/s12884-024-07109-3",
 "year": 2024,
-"venue": "BMC Pregnancy and Childbirth",
+"venue": "BMC",
 "venue_name": "BMC Pregnancy and Childbirth",
 "publisher": "Springer Nature",
 "concepts": [
@@ -65037,7 +65037,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1186/s12905-024-03526-w",
 "year": 2024,
-"venue": "BMC Women s Health",
+"venue": "BMC",
 "venue_name": "BMC Women s Health",
 "publisher": "Springer Nature",
 "concepts": [
@@ -73989,7 +73989,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1007/s00366-026-02398-y",
 "year": 2026,
-"venue": "Engineering With Computers",
+"venue": "Springer Nature",
 "venue_name": "Engineering With Computers",
 "publisher": "Springer Nature",
 "concepts": [
@@ -74075,7 +74075,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1007/s00574-026-00528-0",
 "year": 2026,
-"venue": "Bulletin of the Brazilian Mathematical Society New Series",
+"venue": "Springer Nature",
 "venue_name": "Bulletin of the Brazilian Mathematical Society New Series",
 "publisher": "Springer Nature",
 "concepts": [
@@ -74155,7 +74155,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1007/s10722-026-02786-9",
 "year": 2026,
-"venue": "Genetic Resources and Crop Evolution",
+"venue": "Springer Nature",
 "venue_name": "Genetic Resources and Crop Evolution",
 "publisher": "Springer Nature",
 "concepts": [
@@ -74247,7 +74247,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1007/s11079-026-09877-1",
 "year": 2026,
-"venue": "Open Economies Review",
+"venue": "Springer Nature",
 "venue_name": "Open Economies Review",
 "publisher": "Springer Nature",
 "concepts": [
@@ -74327,7 +74327,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.ajhg.2025.12.012",
 "year": 2026,
-"venue": "The American Journal of Human Genetics",
+"venue": "Elsevier",
 "venue_name": "The American Journal of Human Genetics",
 "publisher": "Elsevier",
 "concepts": [
@@ -74424,7 +74424,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.celrep.2025.116739",
 "year": 2025,
-"venue": "Cell Reports",
+"venue": "Cell Press",
 "venue_name": "Cell Reports",
 "publisher": "Elsevier",
 "concepts": [
@@ -74520,7 +74520,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.childyouth.2024.108113",
 "year": 2024,
-"venue": "Children and Youth Services Review",
+"venue": "Elsevier",
 "venue_name": "Children and Youth Services Review",
 "publisher": "Elsevier",
 "concepts": [
@@ -74649,7 +74649,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.compag.2026.112408",
 "year": 2026,
-"venue": "Computers and Electronics in Agriculture",
+"venue": "Elsevier",
 "venue_name": "Computers and Electronics in Agriculture",
 "publisher": "Elsevier",
 "concepts": [
@@ -74736,7 +74736,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.ecolecon.2026.109232",
 "year": 2026,
-"venue": "Ecological Economics",
+"venue": "Elsevier",
 "venue_name": "Ecological Economics",
 "publisher": "Elsevier",
 "concepts": [
@@ -74820,7 +74820,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.egyr.2026.109636",
 "year": 2026,
-"venue": "Energy Reports",
+"venue": "Elsevier",
 "venue_name": "Energy Reports",
 "publisher": "Elsevier",
 "concepts": [
@@ -74909,7 +74909,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.fuproc.2026.108577",
 "year": 2026,
-"venue": "Fuel Processing Technology",
+"venue": "Elsevier",
 "venue_name": "Fuel Processing Technology",
 "publisher": "Elsevier",
 "concepts": [
@@ -74992,7 +74992,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1016/j.wneu.2024.12.014",
 "year": 2024,
-"venue": "World Neurosurgery",
+"venue": "Elsevier",
 "venue_name": "World Neurosurgery",
 "publisher": "Elsevier",
 "concepts": [
@@ -75197,7 +75197,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1038/d41586-026-01558-w",
 "year": 2026,
-"venue": "Nature",
+"venue": "Nature Portfolio",
 "venue_name": "Nature",
 "publisher": "Springer Nature",
 "concepts": [
@@ -75280,7 +75280,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1057/s41599-026-08528-7",
 "year": 2026,
-"venue": "Humanities and Social Sciences Communications",
+"venue": "Springer Nature",
 "venue_name": "Humanities and Social Sciences Communications",
 "publisher": "Springer Nature",
 "concepts": [
@@ -75362,7 +75362,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1057/s41599-026-08968-1",
 "year": 2026,
-"venue": "Humanities and Social Sciences Communications",
+"venue": "Springer Nature",
 "venue_name": "Humanities and Social Sciences Communications",
 "publisher": "Springer Nature",
 "concepts": [
@@ -76566,7 +76566,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1186/s12884-026-09905-5",
 "year": 2026,
-"venue": "BMC Pregnancy and Childbirth",
+"venue": "BMC",
 "venue_name": "BMC Pregnancy and Childbirth",
 "publisher": "Springer Nature",
 "concepts": [
@@ -76660,7 +76660,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1186/s12889-026-29248-2",
 "year": 2026,
-"venue": "BMC Public Health",
+"venue": "BMC",
 "venue_name": "BMC Public Health",
 "publisher": "Springer Nature",
 "concepts": [
@@ -76751,7 +76751,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1186/s12903-026-09527-5",
 "year": 2026,
-"venue": "BMC Oral Health",
+"venue": "BMC",
 "venue_name": "BMC Oral Health",
 "publisher": "Springer Nature",
 "concepts": [
@@ -76838,7 +76838,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1186/s13019-024-03272-y",
 "year": 2024,
-"venue": "Journal of Cardiothoracic Surgery",
+"venue": "Springer Nature",
 "venue_name": "Journal of Cardiothoracic Surgery",
 "publisher": "Springer Nature",
 "concepts": [
@@ -76981,7 +76981,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1186/s13195-026-02178-2",
 "year": 2026,
-"venue": "Alzheimer s Research & Therapy",
+"venue": "Springer Nature",
 "venue_name": "Alzheimer s Research & Therapy",
 "publisher": "Springer Nature",
 "concepts": [
@@ -77074,7 +77074,7 @@ window.STORIES_DATA = [
 "type": "ArticleStory",
 "doi": "10.1186/s41077-024-00329-9",
 "year": 2024,
-"venue": "Advances in Simulation",
+"venue": "Springer Nature",
 "venue_name": "Advances in Simulation",
 "publisher": "Springer Nature",
 "concepts": [
@@ -81094,7 +81094,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary Plutarch's Science of Natural Problems (2017), published by Leuven University Press, has no recorded citations, downloads or public discussion yet.",
+"excerpt": "Short impact summary Plutarch's Science of Natural Problems (2017), published by Leuven University Press, has no recorded citations or download figures yet.",
 "cover_url": "https://library.oapen.org/rest/bitstreams/70f20aa4-3896-4bc8-9dfe-3f38350621b4/retrieve",
 "authors": "Michiel Meeusen",
 "all_authors": [
@@ -82034,7 +82034,7 @@ window.STORIES_DATA = [
 "has_openaire_open_instance": true,
 "has_certified_repository": false,
 "has_open_repository": false,
-"excerpt": "Short impact summary De stad op de berg (2021), published by Leuven University Press, has no recorded citations, downloads or public discussion yet.",
+"excerpt": "Short impact summary De stad op de berg (2021), published by Leuven University Press, has no recorded citations or download figures yet.",
 "cover_url": "https://books.google.com/books/content?vid=ISBN9789461664051&printsec=frontcover&img=1&zoom=2&source=gbs_api",
 "authors": "Jo Tollebeek, Liesbet Nys",
 "all_authors": [
