@@ -2155,7 +2155,8 @@ function setView(v) {
 function drillInto(facetKey, idx) {
   const val = _aggDrillMap[idx];
   if (!val) return;
-  setView("stories");
+  state.view = facetKey === "venue" ? "publisher" : "stories";
+  syncViewButtons();
   state.filters[facetKey].clear();
   state.filters[facetKey].add(val);
   update();
