@@ -573,13 +573,33 @@
     .gen-jacket-sm.is-dataset::before { display: none; }
     .gen-jacket-sm.is-dataset .gj-title-sm { font-family: ui-monospace, "SF Mono", Menlo, monospace;
         font-weight: 600; font-size: .56rem; letter-spacing: .01em; -webkit-line-clamp: 6; margin: 0; }
+    /* Journal articles have no real per-work cover either, and reusing the
+       book jacket made an article shelf visually indistinguishable from a
+       book shelf (same dark spine-jacket look, only a tiny badge differed).
+       Give articles a lighter "paper" card instead: no spine, sans-serif,
+       a colored masthead rule, and a few decorative text-lines standing in
+       for a body of text. */
+    .gen-jacket-sm.is-article { border-radius: 4px; align-items: flex-start;
+        border-top: 3px solid hsl(var(--jh,214) 45% 42%);
+        background: linear-gradient(170deg, hsl(var(--jh,214) 30% 95%) 0%, hsl(var(--jh,214) 22% 89%) 100%);
+        color: hsl(var(--jh,214) 45% 24%); }
+    .gen-jacket-sm.is-article::before { display: none; }
+    .gen-jacket-sm.is-article .gj-title-sm { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-weight: 700; font-size: .58rem; letter-spacing: -0.005em; -webkit-line-clamp: 5; margin: 0 0 auto 0; }
+    .gen-jacket-sm.is-article .gj-lines { display: flex; flex-direction: column; gap: 3px; width: 100%; margin-top: .4rem; }
+    .gen-jacket-sm.is-article .gj-lines span { display: block; height: 2px; border-radius: 1px;
+        background: hsl(var(--jh,214) 25% 65%); }
+    .gen-jacket-sm.is-article .gj-lines span:nth-child(1) { width: 100%; }
+    .gen-jacket-sm.is-article .gj-lines span:nth-child(2) { width: 78%; }
+    .gen-jacket-sm.is-article .gj-lines span:nth-child(3) { width: 58%; }
     /* Small work-type badge so a shelf mixing books, articles, software and
        data at a glance shows what each cover actually is (real image covers
-       carry no type signal of their own). */
+       carry no type signal of their own). Color-coded to match the type
+       colors used elsewhere on the site (story-card type-badge, agg dots). */
     .shelf-type-badge { position: absolute; top: 5px; right: 5px; width: 18px; height: 18px;
-        border-radius: 50%; background: rgba(15,23,42,.75); display: flex; align-items: center;
+        border-radius: 50%; display: flex; align-items: center;
         justify-content: center; box-shadow: 0 1px 3px rgba(0,0,0,.35); pointer-events: none; }
-    .shelf-type-badge svg { width: 11px; height: 11px; stroke: #f4f6fb; }
+    .shelf-type-badge svg { width: 11px; height: 11px; stroke: #fff; }
     .shelf-plank { width: 88px; height: 14px; margin-top: -1px; border-radius: 3px;
         background: linear-gradient(180deg, #c88a52 0%, #a86b36 55%, #8a5426 100%);
         box-shadow: 0 6px 10px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.25); }
@@ -1905,9 +1925,16 @@ const SHELF_TYPE_ICONS = {
 };
 const SHELF_TYPE_ICON_DEFAULT = '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line>';
 
+// Same palette used elsewhere on the site for these four types (story-card
+// type-badge, aggregate-table type dots) — reused here so a shelf badge
+// means the same color everywhere, not a one-off.
+const SHELF_TYPE_COLORS = { "Book": "#B34444", "Dataset": "#34675A", "Software": "#6A4FA3" };
+const SHELF_TYPE_COLOR_DEFAULT = "#3C5A7F"; // Article and article-like types (Posted Content, Report, ...)
+
 function shelfTypeBadge(type) {
   const paths = SHELF_TYPE_ICONS[type] || SHELF_TYPE_ICON_DEFAULT;
-  return `<div class="shelf-type-badge" title="${escHtml(type || "Work")}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg></div>`;
+  const color = SHELF_TYPE_COLORS[type] || SHELF_TYPE_COLOR_DEFAULT;
+  return `<div class="shelf-type-badge" style="background:${color}" title="${escHtml(type || "Work")}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg></div>`;
 }
 
 function renderBookshelfCard(box) {
@@ -1921,11 +1948,19 @@ function renderBookshelfCard(box) {
     if (!items.length) return "";
     const row = items.map(it => {
       const isDataset = it.type === "Dataset";
-      const jacketClass = isDataset ? "gen-jacket-sm is-dataset" : "gen-jacket-sm";
-      const jacketAlt = isDataset ? `${escHtml(it.title)}. Dataset — no cover image available.` : `${escHtml(it.title)}. Cover image not available.`;
+      const isArticle = !isDataset && it.type !== "Book" && it.type !== "Software";
+      const jacketClass = isDataset ? "gen-jacket-sm is-dataset" : isArticle ? "gen-jacket-sm is-article" : "gen-jacket-sm";
+      const jacketAlt = isDataset
+        ? `${escHtml(it.title)}. Dataset — no cover image available.`
+        : isArticle
+        ? `${escHtml(it.title)}. Article — no cover image available.`
+        : `${escHtml(it.title)}. Cover image not available.`;
+      const jacketInner = isArticle
+        ? `<span class="gj-title-sm">${escHtml(it.title)}</span><span class="gj-lines" aria-hidden="true"><span></span><span></span><span></span></span>`
+        : `<span class="gj-title-sm">${escHtml(it.title)}</span>`;
       const cover = it.cover_url
         ? `<img class="shelf-cover-img" src="${escHtml(it.cover_url)}" alt="Cover of ${escHtml(it.title)}">`
-        : `<div class="${jacketClass}" style="--jh: ${it.cover_hue != null ? it.cover_hue : 214};" role="img" aria-label="${jacketAlt}"><span class="gj-title-sm">${escHtml(it.title)}</span></div>`;
+        : `<div class="${jacketClass}" style="--jh: ${it.cover_hue != null ? it.cover_hue : 214};" role="img" aria-label="${jacketAlt}">${jacketInner}</div>`;
       const badge = shelfTypeBadge(it.type);
       const link = it.story_url ? `href="${escHtml(it.story_url)}" target="_blank"` : "";
       return `<div class="shelf-slot"><a ${link}><div class="shelf-cover-wrap">${cover}${badge}</div><div class="shelf-plank"></div><div class="shelf-title">${escHtml(it.title)}</div><div class="shelf-chips"><span class="shelf-chip ${s.chipClass}">${fmt(it[s.field])} ${s.unit}</span></div></a></div>`;
